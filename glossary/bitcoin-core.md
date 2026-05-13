@@ -21,5 +21,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Bitcoin Core is the "gold standard" in Bitcoin software, representing a full node client and codebase that enforces the consensus rules. Initially launched by Satoshi Nakamoto, it has since evolved under the stewardship of a global community of open-source contributors. It's generally seen as the authoritative reference for protocol behavior.
-Most Bitcoin Improvement Proposals (BIPs) are tested and eventually integrated into Bitcoin Core, though not all changes are accepted automatically. The robust review process underscores Bitcoin's decentralized nature: no one entity can unilaterally impose changes. By running Bitcoin Core, users gain maximum security and help secure the network by independently validating all blocks and transactions.
+Bitcoin Core is the reference implementation of the Bitcoin protocol. It's the codebase [Satoshi](/glossary/satoshi-nakamoto) originally wrote in 2008 (under the name "Bitcoin"), renamed in 2014 when Bitcoin-the-software needed to be distinguished from Bitcoin-the-network. It powers the large majority of publicly reachable [full nodes](/glossary/full-node) and is what most other wallets and libraries quietly defer to.
+
+The codebase lives at **[github.com/bitcoin/bitcoin](https://github.com/bitcoin/bitcoin)**, maintained by a rotating cast of contributors with no formal governance structure. Changes go through:
+
+1. A **Bitcoin Improvement Proposal (BIP)** spec for anything user-facing or consensus-affecting.
+2. A pull request to the codebase, reviewed by anyone who wants to (and many serious reviewers do).
+3. Integration by maintainers - a small group with merge access. They don't set the rules; they merge what passes review.
+4. A release tagged by the release manager, signed by multiple key holders.
+5. **Adoption is voluntary.** Every node operator chooses whether to upgrade. A change ships only when enough operators run the new version that the network has effectively migrated.
+
+The combination of open review and voluntary adoption is what makes Bitcoin's protocol genuinely hard to change. A hostile maintainer can't sneak in a change; reviewers will spot it. A hostile group can't fork the rules; nodes won't run their version. The system optimizes for *not making mistakes*, even at the cost of slow evolution.
+
+Bitcoin Core releases roughly every 6 months. Major versions have brought SegWit (2017), Taproot signaling (2021), and incremental improvements to mempool policy, networking, and validation performance. It's the most-reviewed cryptocurrency codebase in existence, and the de facto standard for "what Bitcoin actually is."
+
+See [Full Node](/glossary/full-node) for what running it means, and [Sovereignty Journey](/journey/sovereignty) for why you might want to.
