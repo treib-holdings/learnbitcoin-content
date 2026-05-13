@@ -29,5 +29,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BOLT 11 is the LN's version of a 'payment address'-except it's more like a detailed invoice containing the amount, destination node public key, and expiry time. These invoices often begin with 'lnbc' for mainnet or 'lntb' for testnet, followed by encoded data.
-When a user wants to receive funds, they generate a BOLT 11 invoice and share it with the payer, who uses their LN wallet to decode and route the payment. This format ensures the network knows exactly how much to send, where to send it, and any optional hints like routing instructions. As LN evolves, BOLT 11 continues to add fields that support new features (e.g., multi-path payments).
+BOLT 11 is the specification for [Lightning invoices](/glossary/lightning-invoice) - the encoded payment requests that begin with `lnbc` (mainnet) or `lntb` (testnet). It's one of the [BOLT specs](/glossary/bolt) that define how Lightning implementations interoperate.
+
+A BOLT-11 invoice encodes everything a payer needs to complete a payment:
+
+- **Amount** (optional - the payer can specify if the invoice doesn't).
+- **Payment hash** - hash of the secret preimage that, when revealed, completes the payment.
+- **Destination node public key.**
+- **Routing hints** for nodes that aren't well-connected to the public graph (useful for mobile wallets).
+- **Expiry** - default 1 hour.
+- **Optional description / memo.**
+- **A signature** from the recipient's node, proving it created the invoice.
+
+The whole thing is encoded as bech32 - the same address format used for native SegWit addresses. The result is a relatively short string that fits in a QR code and can be copy-pasted, scanned, or NFC-tapped.
+
+Single-use by design. Once the payment hash is revealed (when the payment settles), reusing the same invoice would either fail or be a fraud signal. To accept recurring payments at one fixed handle, you need [BOLT-12 offers](/glossary/lightning-invoice) (the modern successor) or a separate invoice-per-payment workflow.
+
+BOLT-11 has been Lightning's payment-request lingua franca since 2017. Every Lightning wallet supports it. BOLT-12 is gradually displacing it, but BOLT-11 will be in heavy use for many years yet.

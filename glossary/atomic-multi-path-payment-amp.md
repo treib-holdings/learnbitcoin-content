@@ -23,5 +23,23 @@ relatedTerms:
 liveWidget: ~
 ---
 
-AMP is like sending several puzzle pieces through different mail carriers, ensuring that only when all parts arrive do they form a complete payment. Instead of relying on a single path in the Lightning Network, AMP divides the total amount into smaller chunks, routing each through potentially different channels. This helps avoid capacity bottlenecks and increases the likelihood of a successful payment.
-From the receiver's perspective, the funds only finalize when all partial payments come in, preventing scenarios where you get stuck with incomplete amounts. AMP's design also preserves privacy: observers can't easily tell these smaller parts belong to the same overall payment. While a bit more complex under the hood, AMP adds significant flexibility to the Lightning Network, making it more robust for larger payments.
+Atomic Multi-Path Payment (AMP) is a [Lightning](/glossary/lightning-network) technique that splits a single logical payment into multiple smaller partial payments, each [routed](/glossary/lightning-routing) along a different path through the network. The receiver only "completes" the payment when all parts arrive.
+
+The motivation: any single [Lightning channel](/glossary/lightning-channel) has a limited capacity, often a few million sats or less. Sending a payment larger than the smallest channel on any candidate route would fail with the single-path approach. AMP works around this by spreading the load across multiple routes.
+
+How it works:
+
+1. The sender's wallet decides to use AMP and splits the total into chunks (say, 5 × 200,000 sats for a 1,000,000-sat payment).
+2. It finds different routes for each chunk - ideally through disjoint channels so no one path is fully loaded.
+3. All chunks are sent simultaneously using [HTLCs](/glossary/htlc-hashed-time-locked-contract).
+4. The receiver holds each incoming HTLC until they've received all of them.
+5. Once complete, the receiver releases the preimage and all chunks settle atomically.
+
+If even one chunk fails to route, the receiver refuses to release the preimage and the entire payment unwinds via HTLC timeouts. Nothing partial gets settled.
+
+Variants:
+
+- **MPP** (Multi-Path Payment) - the basic split-and-recombine variant. All parts share the same payment hash.
+- **AMP proper** - introduced by Olaoluwa Osuntokun in BOLT-12-era specs. Uses separate sub-hashes per part for slightly better privacy and reliability properties.
+
+Both are widely supported in 2026 across major Lightning implementations. The practical upshot for users: payments that would have failed in 2019 due to liquidity constraints now succeed routinely. Wallets retry automatically with different splits if the first attempt doesn't route.

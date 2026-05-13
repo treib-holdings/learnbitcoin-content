@@ -17,5 +17,24 @@ relatedTerms:
 liveWidget: ~
 ---
 
-An atomic swap is like trading your baseball card for a friend's comic book without relying on a shopkeeper to hold both items in escrow. The idea is that if either party fails to hand over their crypto, the entire trade automatically cancels, protecting both sides. This is usually accomplished through hashed timelock contracts (HTLCs), which lock up funds until both parties have fulfilled the agreed conditions.
-By eliminating the middleman, users can maintain custody of their coins until the very moment the exchange is completed. This reduces counterparty risk and can save on fees. However, setting up an atomic swap can be more technical compared to a traditional exchange process. It's a prime example of how cryptographic tools can bring peer-to-peer finance closer to a trustless ideal.
+An atomic swap is a trustless cross-chain or cross-layer trade. Two parties exchange tokens on different chains (or one on-chain and one Lightning) without ever giving up custody to a third party. Either both sides of the trade happen, or neither side does. There's no "I sent mine, but you didn't send yours" failure mode.
+
+The mechanism is a paired [HTLC](/glossary/htlc-hashed-time-locked-contract):
+
+1. **Alice picks a random secret** `s` and computes `hash(s)`. She publishes only the hash.
+2. **Alice locks her funds** in an HTLC on chain A: "Bob can claim if he reveals `s`; otherwise Alice refunds after 24 hours."
+3. **Bob locks his funds** in an HTLC on chain B: "Alice can claim if she reveals `s`; otherwise Bob refunds after 12 hours" (shorter timeout intentionally, so Bob isn't left exposed).
+4. **Alice claims Bob's funds** by revealing `s`. This unavoidably publishes `s` on chain B.
+5. **Bob sees `s`**, uses it to claim Alice's funds on chain A.
+
+If anyone bails at any step, the HTLCs time out and refund automatically. The trade either completes atomically or unwinds atomically. No counterparty risk for either party.
+
+Practical uses:
+
+- **BTC ↔ BTC across layers.** Swap on-chain BTC for Lightning BTC and vice versa - see [submarine swaps](/glossary/submarine-swap).
+- **BTC ↔ other Bitcoin-derived chains** (Liquid, sidechains, etc.).
+- **BTC ↔ stablecoins** via decentralized swap markets like Robosats.
+
+The catch is operational complexity. Atomic swaps require both parties' wallets to speak the protocol, both chains to support the necessary script primitives, and careful timeout management. Most ordinary users delegate to a swap service (which may itself be trust-minimized) rather than doing it raw.
+
+This is one of the elegant primitives Bitcoin's [Script](/glossary/bitcoin-script) and [HTLCs](/glossary/htlc-hashed-time-locked-contract) make possible. It's also what powers a lot of decentralized exchange across the broader Bitcoin ecosystem.

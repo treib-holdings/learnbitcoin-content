@@ -23,5 +23,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BOLT specifications are like the rulebook for Lightning Network clients, ensuring they speak the same language and follow the same protocols. Co-authored by different developer groups, the BOLT documents cover everything from how payment channels are established and closed, to the cryptographic details for routing payments.
-By adhering to these standards, different Lightning node implementations (like LND, c-lightning, and Eclair) can interoperate seamlessly. This open, collaborative process mirrors Bitcoin's ethos: no single company controls the LN, and anyone can build a BOLT-compliant client to join the network. Over time, BOLT updates introduce refinements such as better routing or new features like multi-path payments.
+BOLT - **B**asis **O**f **L**ightning **T**echnology - is the specification series that defines how [Lightning Network](/glossary/lightning-network) implementations interoperate. It's to Lightning what [BIPs](/glossary/bip-bitcoin-improvement-proposal) are to Bitcoin: a set of versioned, community-reviewed documents that anyone building Lightning software is expected to follow.
+
+The current BOLT documents (numbered 0 through 12 with some experimental additions) cover:
+
+- **BOLT 1** - base protocol, message framing.
+- **BOLT 2** - peer protocol for channel management (open, close, update).
+- **BOLT 3** - transaction and script formats for on-chain channel state.
+- **BOLT 4** - onion routing (the [Sphinx](/glossary/lightning-sphinx) packet format).
+- **BOLT 5** - on-chain transactions and channel closure logic.
+- **BOLT 7** - gossip protocol for advertising channel info.
+- **BOLT 9** - feature flags.
+- **[BOLT 11](/glossary/bolt-11)** - invoice format.
+- **BOLT 12** - offers (the reusable-invoice successor to BOLT 11), merged 2024.
+
+Maintained on [github.com/lightning/bolts](https://github.com/lightning/bolts) by representatives of the major implementations - Lightning Labs (LND), Blockstream (Core Lightning), ACINQ (Eclair), Spiral (LDK). Changes go through pull requests, review, and broad consensus across implementations.
+
+This multi-vendor coordination is why a Phoenix wallet (Eclair) can open a channel with a Core Lightning node and route through LND-operated infrastructure to pay an LDK-based receiver. They all follow the same BOLTs.
