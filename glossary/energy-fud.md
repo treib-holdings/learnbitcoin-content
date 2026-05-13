@@ -18,5 +18,23 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Energy FUD (Fear, Uncertainty, Doubt) surfaces when skeptics highlight Bitcoin's electricity consumption as inherently wasteful, ignoring that miners often locate where energy is cheapest, frequently near surplus hydro or wind power. Critics also overlook how mining can spur renewable buildouts or stabilize grids by absorbing excess energy.
-While valid environmental concerns exist if mining relies on fossil fuels, the conversation is more complex than 'Bitcoin = bad for environment.' Supporters counter that the costliness of proof-of-work is what secures the network. They argue PoW's energy use is a feature, not a bug, aligning security with economic incentives and the broader transition to sustainable energy sources.
+"Energy FUD" is the Bitcoin community's term for criticism of Bitcoin's [proof-of-work](/glossary/proof-work-pow) energy consumption that the community considers misleading, manipulative, or technically uninformed. Like the broader [FUD](/glossary/fud-fear-uncertainty-doubt) category, the label is sometimes deserved and sometimes used too quickly to dismiss legitimate concerns.
+
+The honest case for being skeptical of "Bitcoin wastes energy" framings:
+
+- **Bitcoin mining migrates toward stranded and otherwise wasted energy.** Hydro overflow, flared natural gas, off-peak nuclear, curtailed wind - sources that produce electricity that would otherwise be wasted. The marginal mining operation runs on energy nobody else is bidding for.
+- **Bitcoin doesn't directly consume gas or oil.** It consumes electricity, which is increasingly generated from renewables. The "Bitcoin's carbon footprint" calculation depends entirely on grid mix assumptions, which vary wildly by jurisdiction.
+- **Mining can stabilize renewable grids.** ERCOT (Texas) has explicit programs using Bitcoin miners as flexible demand: miners turn off in seconds when grid demand spikes, freeing capacity. This is a real grid-services value that conventional industrial loads can't provide.
+- **The energy is the security.** Bitcoin's [proof-of-work](/glossary/proof-work-pow) is what makes the chain expensive to attack. Removing the energy expenditure would remove the security.
+
+The honest case for being concerned anyway:
+
+- **Some mining runs on coal or other heavy emitters.** Not all of it is stranded renewables. The real grid mix matters.
+- **Heat and noise externalities.** A mining operation produces local pollution that residents near data centers experience directly.
+- **Aggregate scale is real.** Bitcoin's global mining draw is in the high tens of TWh per year - meaningful even if the marginal operation runs on stranded power.
+
+"Energy FUD" as a label is most accurate when applied to claims that ignore these nuances - "Bitcoin uses more energy than [country]" without context, "every Bitcoin transaction costs [X kWh]" calculations that conflate marginal and average energy use, etc. It's least accurate when applied to *any* energy-related concern reflexively.
+
+The Bitcoiner discipline: don't dismiss energy concerns wholesale. Engage with the strong forms of the critique. The strong forms have answers; the weak forms get called FUD because they don't.
+
+See [Mining](/glossary/mining) and the [Mining rabbit hole §7](/rabbit-hole/mining) for the longer treatment of Bitcoin's energy story.
