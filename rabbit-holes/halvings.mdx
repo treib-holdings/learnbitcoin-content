@@ -1,0 +1,169 @@
+---
+title: "Halvings"
+slug: halvings
+draft: false
+status: live
+section: rabbit-hole
+tagline: "Every 210,000 blocks, the new-Bitcoin tap halves. Why, when, and what happens after."
+order: 3
+estimatedMinutes: 9
+sources:
+  - { label: "Bitcoin Core source - GetBlockSubsidy", url: "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp" }
+  - { label: "BIP 42 - finite monetary supply", url: "https://github.com/bitcoin/bips/blob/master/bip-0042.mediawiki" }
+  - { label: "chainquery - live halving countdown (/api/edu/halving, in progress)", url: "https://chainquery.com" }
+relatedTerms: ["halving-halvening", "block-subsidy", "block-reward", "mining-subsidy", "disinflation", "miner-capitulation", "coinbase-transaction"]
+hasInteractive: ["halvingCountdown"]
+---
+
+> **Where you're going:** A halving is just a number cut in half, but it's the most important number in Bitcoin's monetary policy. You'll learn what one is, why the schedule exists, what's happened at each of the five so far, and what changes for miners and holders when the next one hits.
+
+## 1. What a Halving Is
+
+Every 210,000 blocks, the amount of new bitcoin paid to miners for finding the next block gets cut in half.
+
+That's it. That's the whole event.
+
+The block reward started at **50 BTC** when the network launched in January 2009. After block 210,000 (November 2012), it dropped to 25. After block 420,000 (July 2016), 12.5. After 630,000 (May 2020), 6.25. After 840,000 (April 2024), 3.125. That's where we are now.
+
+The next halving will be at block 1,050,000, sometime around April 2028. The reward will drop to 1.5625 BTC.
+
+> **Coming soon:** A live countdown to the next halving, pulled from our own Bitcoin node via `chainquery.com/api/edu/halving`. The endpoint is being built in parallel; when it's live, the count will appear here in real time.
+
+## 2. The Why: Disinflation by Design
+
+Halvings are not a quirk. They are the central mechanism of Bitcoin's monetary policy.
+
+The goal is to mimic a commodity like gold: front-loaded issuance during the early "easy to mine" years, then progressively harder and lower-yield extraction over time. With gold, this happened naturally as the easiest deposits got mined out. With Bitcoin, it's enforced by code on a deterministic schedule.
+
+The result is a **disinflationary asset**: not just stable in supply, but with a *decreasing* rate of new issuance. Each halving reduces Bitcoin's annual inflation rate (see [the Supply Schedule rabbit hole](/rabbit-hole/supply)). After the next one, Bitcoin's inflation rate will be roughly 0.4% per year - lower than gold, dramatically lower than any major fiat currency.
+
+This wasn't accidental. From the [whitepaper](/bitcoin.pdf):
+
+> "The steady addition of a constant of amount of new coins is analogous to gold miners expending resources to add gold to circulation. In our case, it is CPU time and electricity that is expended."
+
+Satoshi was modeling a commodity, not a payment app.
+
+## 3. The Schedule
+
+The halving schedule in full, projecting forward:
+
+| # | Block | Approx. date | New reward | % of total mined |
+|---|---|---|---|---|
+| Genesis | 0 | Jan 3, 2009 | 50 BTC | 0% |
+| 1 | 210,000 | Nov 28, 2012 | 25 BTC | 50% |
+| 2 | 420,000 | Jul 9, 2016 | 12.5 BTC | 75% |
+| 3 | 630,000 | May 11, 2020 | 6.25 BTC | 87.5% |
+| 4 | 840,000 | Apr 19, 2024 | 3.125 BTC | 93.75% |
+| **5** | **1,050,000** | **~Apr 2028** | **1.5625 BTC** | **96.875%** |
+| 6 | 1,260,000 | ~2032 | 0.78125 BTC | 98.4375% |
+| 7 | 1,470,000 | ~2036 | 0.390625 BTC | 99.22% |
+| ... | ... | ... | ... | ... |
+| 33 | ~6,930,000 | ~2140 | 0 (rounds down) | 100% |
+
+Each halving doubles the percentage of "supply remaining" that's been mined. After halving 1, half of all Bitcoin had been issued. After halving 2, three-quarters. After halving 4 (where we are now), more than 93%.
+
+The asymptote is set: by 2140 the last fractional satoshi will be issued, after which miners earn revenue exclusively from transaction fees.
+
+## 4. The Five That Have Happened
+
+A halving is more than an arithmetic event. It's a moment of structural change for the mining industry, with downstream effects on price, narrative, and network security. Here's what each looked like:
+
+### 1st Halving — November 28, 2012
+- **Block 210,000.** Reward dropped from 50 to 25 BTC.
+- **Mining still mostly CPU/GPU** at this point. Some early ASICs were just coming online.
+- **Price** at the halving: ~$12. Twelve months later: ~$700.
+- **Aftermath:** First proof that the halving schedule actually executes as designed. Sounds obvious; was novel.
+
+### 2nd Halving — July 9, 2016
+- **Block 420,000.** Reward dropped from 25 to 12.5 BTC.
+- **ASIC era** in full swing. China dominated mining hash share.
+- **Price** at the halving: ~$650. Twelve months later: ~$2,500.
+- **Aftermath:** Began the run-up to the 2017 bull market and SegWit activation. Bitcoin's first taste of mainstream attention.
+
+### 3rd Halving — May 11, 2020
+- **Block 630,000.** Reward dropped from 12.5 to 6.25 BTC.
+- Happened **two months after the COVID crash and the largest Fed money printing in history.** Strange juxtaposition.
+- **Price** at the halving: ~$8,500. Twelve months later: ~$50,000.
+- **Aftermath:** Massive institutional adoption wave, MicroStrategy bought, Tesla bought, El Salvador adopted.
+
+### 4th Halving — April 19, 2024
+- **Block 840,000.** Reward dropped from 6.25 to 3.125 BTC.
+- **First halving with significant fee revenue from ordinals/inscriptions** - the block had record-high fee revenue (37.6 BTC in fees vs. 3.125 BTC subsidy).
+- **Price** at the halving: ~$64,000. Twelve months later: varies, generally higher.
+- **Aftermath:** Spot Bitcoin ETFs launched the same year. Bitcoin entered mainstream financial infrastructure.
+
+The pattern: each halving has been followed, within 12-24 months, by a significant bull market. We'll come back to whether this is causation, correlation, or coincidence.
+
+## 5. The Mining Economics of a Halving
+
+A halving cuts miner revenue in half overnight. (Or, more precisely, it cuts the *subsidy* portion of revenue in half; fees are unaffected.)
+
+What this looks like in practice:
+
+**Before halving 4** (block 839,999): a miner that found a block received 6.25 BTC + accumulated fees (typically 0.1-0.5 BTC). Total ≈ 6.35-6.75 BTC.
+
+**After halving 4** (block 840,000): same miner finds a block, gets 3.125 BTC + same accumulated fees. Total ≈ 3.225-3.625 BTC.
+
+The hardware cost, the electricity cost, and the difficulty are all the same the day before and the day after. Revenue, in BTC terms, drops by ~45%.
+
+This puts pressure on miners. Specifically:
+
+- **Inefficient miners get pushed out.** If your power cost was breakeven at the old reward, you're losing money at the new one. You either upgrade hardware, find cheaper power, or shut down.
+- **Hash rate drops temporarily.** Marginal miners going offline reduces total network hash rate.
+- **Difficulty adjusts down.** After 2016 blocks of below-target performance, difficulty recalibrates, making mining easier and more profitable for the survivors.
+- **Equilibrium is reached.** Usually within 2-3 months, the network stabilizes with stronger miners on more efficient hardware.
+
+If Bitcoin's price doesn't rise to compensate, the halving is a major test of network security. So far, it has always risen sufficiently within months. The fee market also takes up some slack - on halving 4, ordinals activity sent fees to record highs, partially offsetting the subsidy drop.
+
+## 6. The Price Mythology (and What's Actually True)
+
+You will hear, often, that "halvings cause bull markets." This is the most commonly repeated and most superficially analyzed claim in Bitcoin.
+
+Here's what is *actually* true:
+
+**The first-order effect.** A halving cuts the *flow* of new bitcoin entering the market in half. If demand stays constant, this is a supply-side shock that should, all else equal, push prices up. The math is straightforward.
+
+**The complication.** "All else equal" never holds. The 2020 halving coincided with COVID money printing. The 2024 halving coincided with US Bitcoin ETF approvals. Attributing the subsequent price action *exclusively* to the halving is bad statistics.
+
+**The honest take.** Halvings are a *factor* in Bitcoin's price dynamics, alongside macroeconomic conditions, regulatory developments, narrative cycles, and adoption growth. They are not magical. The 4-year cycle is a real pattern; it's also been only 3 cycles, which is not enough data to call it law.
+
+Anyone who tells you with high confidence what the price will be 18 months after the next halving is selling you something. The structural argument for Bitcoin's value isn't "halvings pump price." It's "the supply is fixed, demand is growing, and the math will work it out across decades."
+
+## 7. The Long Tail
+
+After halving 32 (around block ~6,720,000, ~2136), the subsidy will drop to roughly 1 satoshi per block. After halving 33 (~6,930,000, ~2140), integer rounding takes the subsidy to zero. From that point forward, miners earn nothing from new issuance.
+
+This is sometimes posed as a worry: *how will the network be secured when miners aren't paid?*
+
+The answer is: they will be paid - in fees. Already today, on heavy-volume blocks, fees can match or exceed the subsidy. As the subsidy diminishes (each halving cuts it again), fees naturally become a larger share of total miner revenue.
+
+What this transition looks like:
+
+- **2024:** Subsidy 3.125 BTC, average fees ~0.1-0.3 BTC. Fees = 3-10% of revenue.
+- **2028:** Subsidy 1.5625 BTC, average fees probably 0.2-0.5 BTC. Fees = 15-25%.
+- **2032:** Subsidy 0.78 BTC, fees probably 0.3-0.7 BTC. Fees = 30-50%.
+- **2040s:** Subsidy approaches zero, fees become the dominant revenue source.
+- **2140:** Subsidy is zero. Fees are 100% of miner revenue.
+
+This is the design. It assumes Bitcoin will be used heavily enough by 2140 that the fee market alone secures the chain. So far, the trend is consistent with that assumption.
+
+## 8. The Next One
+
+Halving 5 will happen at block 1,050,000. Current estimate: somewhere around April 2028.
+
+What you can expect:
+
+- **Subsidy drops from 3.125 to 1.5625 BTC.**
+- **Annual issuance drops from ~164,250 BTC to ~82,125 BTC.**
+- **Bitcoin's inflation rate halves**, from ~0.83% to ~0.4%. That's lower than every major commodity.
+- **A miner consolidation event.** Marginal operations close, efficient ones survive.
+- **A media moment.** Halvings get covered. Each one slightly less novel than the last.
+- **Possibly a bull market.** Three for three so far, but n=3 isn't statistically meaningful.
+
+What you don't need to worry about:
+
+- The halving "not happening." It happens at block 1,050,000, deterministically, no matter what.
+- The schedule "being changed." It can't be, for the reasons covered in [the Supply Schedule rabbit hole](/rabbit-hole/supply).
+- The network "breaking." Networks don't break on halvings. They sometimes wobble, then re-equilibrate.
+
+> **Pro tip:** Halvings are a great moment to explain Bitcoin to people who haven't paid attention. The narrative is concrete (number goes down), the date is announced years in advance, and the structural claim is verifiable. Use the moment. Just don't promise anyone what comes after.
