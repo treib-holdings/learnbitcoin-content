@@ -18,5 +18,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A chain flag day is like setting a time on the calendar when everyone agrees to adopt a new policy. In Bitcoin, this might be a specific block height after which nodes enforce new rules, ignoring blocks that don't comply. This approach was notably used in BIP 148 (UASF) to activate SegWit.
-By coordinating around a future date, users and miners can upgrade their software in advance, ensuring a smoother transition. If enough of the network enforces the new rules, dissenting miners risk creating invalid blocks. Thus, a flag day can catalyze community-driven upgrades while avoiding lengthy activation mechanisms-or it can spark a chain split if consensus is lacking.
+A "chain flag day" is a Bitcoin upgrade activation mechanism where new consensus rules begin enforcing at a pre-announced block height or timestamp - rather than waiting for [BIP-9](/glossary/bip-9-versionbits)-style miner signaling thresholds.
+
+The pattern:
+
+1. **Developers announce the change** with months of lead time and a specific activation height.
+2. **Node operators upgrade software** to enforce the new rules starting at the flag day.
+3. **At the activation height**, nodes running new software begin rejecting blocks that violate the new rules.
+4. **Non-upgraded nodes** continue accepting old-rule-conformant blocks, but if a majority of the economic network is upgraded, miners following the old rules see their blocks orphaned.
+
+The famous example: [BIP-148 (UASF)](/glossary/bip-148-uasf) for SegWit activation in 2017. The UASF set August 1, 2017 as the flag day - nodes running BIP-148 would reject blocks not signaling for SegWit starting that date. The credibility of the flag day broke the miner-signaling deadlock and SegWit activated cleanly via [BIP-91](/glossary/bip-91) a week before the deadline.
+
+Flag day mechanics matter because they shift the activation power from miners (who can stall BIP-9 signaling) to nodes (who can enforce the rule unilaterally). The economic majority of nodes - exchanges, businesses, large holders, the long tail of self-custody users - is what ultimately decides what "Bitcoin" is.
+
+The Taproot activation in 2021 used a softer variant called "speedy trial," which combined miner signaling with a fallback flag day if miners failed to coordinate. It worked smoothly.
+
+Flag days are powerful but risky. If they're not actually supported by the economic majority, they can fragment the network. If they are, they're the most credible activation tool in Bitcoin's governance toolkit.
+
+See [BIP-148](/glossary/bip-148-uasf) for the historical case study and [Soft Fork](/glossary/soft-fork) for the broader activation landscape.
