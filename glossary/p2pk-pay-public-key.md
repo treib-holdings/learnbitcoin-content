@@ -19,4 +19,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-In Bitcoin's early days, some transactions used scripts requiring a direct signature from a specified public key, known as Pay-to-PubKey. While functional, it forced the full public key to appear in the blockchain upon spending, which impacted privacy and reusability. Over time, Pay-to-PubKey-Hash (P2PKH) became standard, hashing the key in the script to reduce on-chain data and add a layer of obfuscation. P2PK can still be spent, but modern wallets rarely generate new P2PK outputs, instead opting for P2PKH, SegWit, or Taproot addresses.
+P2PK - "Pay to Public Key" - is Bitcoin's original script format, used in the earliest blocks of the chain. It locks an output to a raw [public key](/glossary/public-key) (not a hash of one), and unlocks via a signature over the spending transaction.
+
+Notable history:
+
+- **Used in the [genesis block](/glossary/genesis-block).** Satoshi's first 50 BTC coinbase output is a P2PK. The format also dominates the first several thousand blocks.
+- **Used by Satoshi's early mining.** Most of the ~1.1M BTC Satoshi mined sits at P2PK outputs.
+- **Mostly abandoned by ~2010.** [P2PKH](/glossary/p2pkh-pay-public-key-hash) replaced it for new receives once the community recognized that revealing the public key only at spend time (rather than at receive time) was strictly better.
+
+What P2PK has against it:
+
+- **Public key visible on-chain immediately.** Defeats the quantum-defense-in-depth that hash-based addresses provide.
+- **Bigger outputs.** A 33-byte compressed pubkey (or 65-byte uncompressed) is larger than a 20-byte hash.
+- **Address ergonomics never developed.** P2PK was usually displayed as raw hex, not a checksummed address format. Easy to fat-finger.
+
+P2PK outputs are still spendable - any Bitcoin Core node can validate them - but no wallet you'd want to use generates new P2PK addresses. They mostly live on as a historical artifact and a vector for academic curiosity. The Satoshi P2PKs, in particular, are the most-watched unspent outputs in cryptocurrency.
+
+See [P2PKH](/glossary/p2pkh-pay-public-key-hash) for the format that replaced it.

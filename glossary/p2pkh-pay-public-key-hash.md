@@ -19,4 +19,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-P2PKH is the script type you see in classic Bitcoin addresses, typically starting with '1.' It's a straightforward method: the script expects a valid signature that matches the hashed public key. This approach overshadowed P2PK in early Bitcoin, as it only reveals the public key upon spending (not when receiving). Though P2PKH remains widespread, it's slowly being superseded by SegWit variants (P2WPKH) that offer lower fees and better malleability fixes. Still, P2PKH addresses are fully supported and extremely common in existing wallets and transactions.
+P2PKH - "Pay to Public Key Hash" - is the original mainstream Bitcoin script format. Its [addresses](/glossary/address) start with `1` (e.g. `1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa`).
+
+The locking script is straightforward: "to spend this UTXO, provide a [public key](/glossary/public-key) that hashes to a specific 20-byte value, and a valid signature over the spending transaction." The recipient publishes only the hash (the address); the actual public key isn't revealed until the funds are spent.
+
+Two reasons P2PKH replaced the older [P2PK](/glossary/p2pk-pay-public-key) format around 2010:
+
+- **Shorter addresses.** A hash is 20 bytes vs a public key's 33 bytes. Easier to copy, share, and read aloud.
+- **Defense-in-depth.** If the underlying elliptic-curve cryptography were ever broken, funds at unspent P2PKH addresses would still be protected by the hash. Public keys only get exposed when the user spends.
+
+P2PKH has been Bitcoin's workhorse for over a decade. It's still fully supported and fully secure, but it's more expensive in fees than newer formats. Modern wallets default to [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash) (SegWit, `bc1q...`) or [P2TR](/glossary/taproot) (Taproot, `bc1p...`) for new receives. Existing P2PKH UTXOs are commonly spent into newer-format change outputs, gradually migrating the supply.
+
+See [Address](/glossary/address) for the full lineup of address formats coexisting on Bitcoin today.

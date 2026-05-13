@@ -22,4 +22,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Merkle block is how lightweight (SPV) wallets verify that specific transactions exist in a block without downloading the entire block's transaction set. It includes the block header, the Merkle root, and just enough hashes in the Merkle tree path to prove that the wallet's transaction(s) are indeed part of that block. By sending these compact proofs, full nodes help SPV clients confirm payments efficiently, reducing bandwidth and storage requirements. This concept was further developed in BIP 37 Bloom filter-based wallets, and modern improvements like BIP 157/158 compact filters aim to enhance privacy and efficiency for SPV users.
+A Merkle block is a Bitcoin peer-to-peer message ([defined in BIP-37](https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki)) that a [full node](/glossary/full-node) sends to an [SPV](/glossary/spv-simplified-payment-verification) client. It contains:
+
+- The full [block header](/glossary/block-header) (80 bytes).
+- A list of transactions in the block that match the SPV client's [Bloom filter](/glossary/bloom-filter).
+- A [Merkle proof](/glossary/merkle-proof) showing those transactions are committed in the block's [Merkle root](/glossary/merkle-root).
+
+This is what lets a phone wallet check whether *its* transactions appeared in the latest block, without downloading the whole block.
+
+The downside, which has gotten more attention over the years: **Bloom filters leak privacy**. The SPV client sends its filter to the full node, which can probabilistically reverse-engineer which addresses or transactions the client cares about. For a privacy-conscious user, this is a meaningful concern - one that BIP-37 didn't anticipate when it was written in 2012.
+
+The modern replacement is **[BIP-157/158](/glossary/bip-158) compact block filters**: the *server* computes a filter per block, the *client* downloads it and checks for matches locally without revealing which addresses are theirs. Better privacy at modest bandwidth cost. Most modern SPV-style mobile wallets (Phoenix, Mutiny, Breez, etc.) use this approach rather than BIP-37 Merkle blocks.
+
+Merkle blocks still work and are still implemented by Bitcoin Core, but their use has been deprecated in many parts of the modern wallet ecosystem.

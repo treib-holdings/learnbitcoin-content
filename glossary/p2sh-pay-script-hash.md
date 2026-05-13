@@ -20,4 +20,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-P2SH introduced the concept of sending BTC to a script's hash instead of a public key hash. The spender only reveals the full script when they spend, preserving privacy for more complex scripts (like multisig). It shortens what senders must see or handle-just a single hash. Then the real logic (multisig or otherwise) is revealed in the spending transaction. This setup facilitated easily shareable addresses for complex scripts (like 2-of-3 multisig), as recipients don't need to broadcast the entire script upfront. Bech32-based P2WSH offers a native SegWit version, but P2SH remains widely used for multisig wallets.
+P2SH - "Pay to Script Hash" - is the script format that made complex [Bitcoin Scripts](/glossary/bitcoin-script) practical to use as receive addresses. Introduced in 2012 via [BIP-16](/glossary/bip-16-p2sh), its addresses start with `3` (e.g. `3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy`).
+
+The mechanism: instead of putting a complex spending script directly in an output (which would mean the sender needs to know it and pay for its bytes), you hash the script into a short 20-byte commitment. The output just locks to "the script whose hash is X." When you later spend, you reveal the actual script (the "redeem script") plus whatever it requires - signatures, preimages, locktime checks, etc.
+
+Why this was a big deal:
+
+- **Shareable addresses for complex setups.** A 2-of-3 multisig used to require the sender to know all three public keys and construct the script themselves. With P2SH, the receiver gives them a single short address, just like a regular P2PKH.
+- **Cost transfer.** The byte cost of the complex script is paid by the spender (when revealing it), not the funder. Reasonable.
+- **Hidden complexity.** The chain shows the address, not the script structure. Privacy benefit until spent.
+
+P2SH is most commonly used for multisig (`OP_CHECKMULTISIG`-based scripts) and was, for years, the way to wrap a SegWit output to be compatible with non-SegWit wallets (so-called "P2SH-wrapped SegWit," addresses starting with `3` but spending under SegWit rules).
+
+The modern successor is [P2WSH](/glossary/p2wsh-pay-witness-script-hash) (native SegWit script hash) and Taproot script-path spending. Both are cheaper and have cleaner properties. P2SH remains in heavy use for legacy multisig and wrapped-SegWit setups.
