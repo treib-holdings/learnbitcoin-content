@@ -23,5 +23,17 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 144, in [BIP-144](https://github.com/bitcoin/bips/blob/master/bip-0144.mediawiki), lays out the modifications to Bitcoin's peer-to-peer protocol to accommodate SegWit. It introduced message types like 'witnessTx' and 'witnessBlock,' allowing nodes to share transaction data that includes witness information.
-These changes ensure that SegWit transactions propagate seamlessly and that upgraded nodes can verify the witness data. Meanwhile, older nodes, unaware of SegWit, ignore the witness portion without breaking consensus. BIP 144's design helped ensure a smooth soft-fork transition, ensuring compatibility in a network comprising both updated and legacy nodes.
+[BIP-144](https://github.com/bitcoin/bips/blob/master/bip-0144.mediawiki) defines the peer-to-peer protocol changes needed to relay [SegWit](/glossary/segwit-segregated-witness-bip-141) transactions and blocks across the Bitcoin network. It's the network-protocol companion to BIP-141 (SegWit consensus) and BIP-143 (signature hashing).
+
+The challenge SegWit posed at the P2P layer: witness data is part of the block but not part of the legacy transaction format. Old nodes need to be able to receive valid blocks without choking on data they don't understand; new nodes need to see and validate the witness data to enforce SegWit rules.
+
+BIP-144's solution:
+
+- **New service bit `NODE_WITNESS`** signals SegWit-aware nodes.
+- **Witness-aware message types.** `tx` messages from SegWit-aware peers include witness data in the new format. Legacy peers receive transactions stripped of witness data (which is valid for them - they don't enforce SegWit rules).
+- **Witness-aware `getdata` requests.** A SegWit-aware peer can request blocks with witness data; a legacy peer requests them without.
+- **Backwards compatibility.** Old nodes that don't signal NODE_WITNESS still receive valid blocks via the legacy code path, just without witness verification.
+
+This dual-protocol approach is what let SegWit deploy without splitting the network. SegWit-aware nodes enforce all the new rules; non-upgraded nodes still validate the parts they understand and accept SegWit blocks as valid under their (slightly more permissive) view of the rules.
+
+BIP-144 is one of those infrastructure pieces that everyone takes for granted but that was essential for the SegWit rollout to actually work in practice. See [SegWit](/glossary/segwit-segregated-witness-bip-141) for the consensus change this enables at the network layer.

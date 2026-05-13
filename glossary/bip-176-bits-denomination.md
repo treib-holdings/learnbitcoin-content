@@ -15,5 +15,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 176, found in [BIP-176](https://github.com/bitcoin/bips/blob/master/bip-0176.mediawiki), suggests that instead of talking about '0.0001 BTC,' users might find it easier to say '100 bits.' Since 1 bit = 100 satoshis, it's a more human-scale unit than the full BTC, which can be worth thousands of dollars.
-Despite the straightforward premise, the idea hasn't gained universal adoption. Different wallets and services use different ways of showing sub-Bitcoin amounts, including satoshis (the smallest unit). Still, BIP 176 underlines ongoing efforts to make Bitcoin more approachable for newcomers who might find decimal points confusing.
+[BIP-176](https://github.com/bitcoin/bips/blob/master/bip-0176.mediawiki) proposed using "bits" as a standard small-denomination unit for Bitcoin. **1 bit = 1 microbitcoin (μBTC) = 100 [satoshis](/glossary/satoshi-unit) = 0.000001 BTC.**
+
+The rationale: as BTC's price rose, the decimals required to express everyday amounts became awkward ("0.0001 BTC for a cup of coffee" is hard to read). Bits offered a unit roughly comparable to a US cent at typical 2010s prices, making small amounts more intuitive.
+
+The reality, after a decade: **bits lost to sats.** The Bitcoin community largely converged on the satoshi as the unit of choice for small amounts, with phrases like "stacking sats" becoming culturally embedded. Bits did see some adoption (Coinbase used them briefly; a few wallets continue to support them as a display option) but never became dominant.
+
+Where the "bits" framing survives:
+
+- **A handful of wallets** still offer it as a display unit option.
+- **Older [BIP](/glossary/bip-bitcoin-improvement-proposal) references** continue to mention it.
+- **Educational comparisons** sometimes use bits to bridge between BTC and sat magnitudes.
+
+For most users in 2026, you can safely think in two units: **BTC** for large amounts, **sats** for small ones. Bits exist but are mostly a historical curiosity. See the [Bitcoin Units rabbit hole](/rabbit-hole/bitcoin-units) for the full unit scale.

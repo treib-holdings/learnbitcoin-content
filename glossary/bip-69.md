@@ -18,5 +18,19 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 69 proposes a straightforward sorting approach for transaction inputs and outputs: sort inputs by their txid, then index, and outputs by their amount. This aims to eliminate random differences in transaction structure, preventing certain malleability vectors and enhancing privacy by making transactions appear more uniform.
-However, BIP 69 isn't enforced by consensus. It's an optional best practice for wallets that want consistency, simpler fee estimation, or a slightly higher degree of privacy. Critics argue that fully deterministic ordering could also reveal patterns (e.g., always sorting by size), so some wallets mix or randomize to obscure these details. Despite these debates, BIP 69 remains a reference point for uniform transaction creation.
+[BIP-69](https://github.com/bitcoin/bips/blob/master/bip-0069.mediawiki) proposes a canonical, deterministic ordering for transaction inputs and outputs:
+
+- **Inputs:** sorted by source txid (lexicographic, ascending), then by output index.
+- **Outputs:** sorted by amount (ascending), then by scriptPubKey lexicographic.
+
+The goal is to make transactions from BIP-69-compliant wallets look structurally identical regardless of how the wallet originally constructed them - reducing wallet-fingerprinting opportunities for chain analysts.
+
+The privacy logic: every wallet has its own quirks in how it builds transactions. Some sort inputs by value; some preserve UTXO selection order; some randomize. Each pattern is a fingerprint. If you can identify the wallet from the transaction structure, you've started to identify the user. BIP-69 standardizes the structure to make this harder.
+
+BIP-69 is **not** a consensus rule. It's an opt-in convention at the wallet level. Some wallets (Wasabi, Bitcoin Core in some contexts) follow it; others don't. The practical privacy gain has been debated:
+
+- **Pro:** Wallets that *do* follow BIP-69 look like each other rather than like themselves. Bigger anonymity set.
+- **Con:** Wallets that don't follow it stand out more. And BIP-69 has its own fingerprint (deterministic sorting is itself a pattern).
+- **Newer view:** Some research suggests randomizing output ordering (or shuffling more aggressively) is actually better for privacy than any deterministic approach.
+
+The community as of 2026 hasn't fully settled on the right answer. BIP-69 is a useful reference point, but most modern privacy-focused wallets do something more nuanced. See [Address Clustering](/glossary/address-clustering) for the broader chain-analysis problem this is one small piece of.
