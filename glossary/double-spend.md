@@ -22,4 +22,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A double spend is the fundamental attack Bitcoin was designed to thwart. If you try to send the same coins to multiple addresses, only one transaction can be confirmed on the legitimate chain. Nodes reject any other transaction that tries to use those already-spent outputs. On rare occasions, if a block reorganization occurs at the same moment a transaction is confirmed, there's a tiny window where a transaction might be replaced on a reorganized chain. But once a transaction is several blocks deep, it becomes nearly impossible to reverse it without overwhelming the network's total hashing power.
+A double spend is when someone tries to spend the same Bitcoin twice. It's the central problem Bitcoin was invented to solve.
+
+In a digital system without trusted intermediaries, there's no obvious reason you can't make two copies of a payment and broadcast both. Earlier digital cash projects (DigiCash, e-gold, others) handled this by routing every transaction through a central server that maintained a single authoritative ledger. The server prevented double spends; the server was also a single point of failure and trust.
+
+Bitcoin's design eliminates the server. Instead, the global UTXO set is replicated across every full node, and every node enforces the rule: once a [UTXO](/glossary/utxo-unspent-transaction-output) has been spent, no other transaction can reference it. Try to spend the same UTXO twice and your second transaction is rejected by every honest node it reaches.
+
+The remaining edge case is what happens *before* a transaction confirms. While in the [mempool](/glossary/mempool), two conflicting transactions can race. Whichever gets mined first wins; the other becomes invalid the moment a block including its rival is found. This is why zero-confirmation transactions aren't truly final - and why the Bitcoin community uses the **6-confirmation rule** for large amounts. After six blocks (~60 minutes), reversing the transaction would require an attacker to secretly mine six replacement blocks faster than the entire honest network mines them. That requires more than half the global hash rate, sustained, and even then succeeds only probabilistically.
+
+Bitcoin's security against double spends is what proof-of-work *buys*. See the [Mining rabbit hole](/rabbit-hole/mining) for why the energy spent isn't waste - it's the cost of making the ledger forgery-resistant.

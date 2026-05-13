@@ -27,4 +27,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-In Bitcoin's model, transactions use existing UTXOs as inputs, then produce new outputs (UTXOs). Each UTXO has a specific amount of BTC and a script locking it. Once spent, it's no longer valid. This approach simplifies account tracking: no single 'balance' per address is stored on-chain, only these discrete coins. Wallets sum relevant UTXOs to display the user's total. Managing UTXOs well can optimize fees (consolidating small outputs during low-fee times) and bolster privacy (avoiding unnecessary merges that reveal address clusters).
+A UTXO - **u**nspent **t**ransaction **o**utput - is a chunk of BTC sitting on the chain, available to be spent. Bitcoin doesn't track account balances. It tracks UTXOs. The "balance" your wallet shows is just the sum of all UTXOs it can unlock.
+
+Each UTXO has two parts: an **amount** (in satoshis) and a **locking script** that defines what's required to spend it. The most common script is "prove you have the private key for this address." More advanced scripts can require multiple signatures, a time delay, or other conditions.
+
+UTXOs are all-or-nothing. When you spend one as a [transaction input](/glossary/input-transaction-input), the whole thing gets consumed. If you only want to send part of it, your transaction creates two outputs: one to the recipient, one back to yourself as **change**. Most wallets do this invisibly and pick a new address for the change.
+
+Thinking in UTXOs matters for two practical reasons:
+
+- **Fees.** Every input you spend takes up roughly 68-148 bytes (depending on script type), and bigger transactions cost more. Many small UTXOs = expensive transactions. Periodically consolidating them when fees are low can save you money later.
+- **Privacy.** When you spend two UTXOs in the same transaction, you're publicly declaring they had a common owner. Chain analysts use this to cluster addresses. Coin control (manually choosing which UTXOs to spend) and tools like [CoinJoin](/glossary/coinjoin) let you push back.
+
+See [Transaction](/glossary/transaction) for the data structure that consumes and creates UTXOs, and the [Mining rabbit hole §6](/rabbit-hole/mining) for how miners value them.

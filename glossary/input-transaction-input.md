@@ -12,4 +12,10 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-Each transaction input points to a previously unspent output, referencing the transaction ID and output index. By providing a valid signature matching the output's script, the input demonstrates it controls those funds. Multiple inputs can be combined in a single transaction (like paying from multiple addresses). Input data also includes the scriptSig (for legacy) or witness data (in SegWit), where the actual unlocking proof resides. If any input fails validation, the entire transaction is invalid, highlighting the atomic nature of Bitcoin's spend logic.
+A transaction input is a pointer to a [UTXO](/glossary/utxo-unspent-transaction-output) being spent, plus the proof that the spender is allowed to spend it.
+
+Each input references the UTXO by its source **txid** (the transaction that created it) and **output index** (which output of that transaction). It also carries unlocking data - a digital signature for legacy transactions, or witness data for SegWit transactions - that satisfies the UTXO's locking script.
+
+A single [transaction](/glossary/transaction) can have many inputs. Spending three UTXOs in one transaction means three inputs, each needing its own valid signature. If any one input fails to validate, the entire transaction is rejected by every node - inputs are atomic with the transaction containing them.
+
+Once a transaction confirms, every input it referenced is permanently consumed. Trying to reuse an already-spent UTXO is what makes a [double spend](/glossary/double-spend) attempt; the network rejects it.

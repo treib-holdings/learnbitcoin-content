@@ -12,4 +12,8 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-A Bitcoin transaction comprises inputs (where BTC is coming from) and outputs (where BTC goes). Each output includes an amount in satoshis and a scriptPubKey, which defines conditions for spending (e.g., 'must prove ownership of this public key hash'). Once created, an output becomes an unspent transaction output (UTXO) until another transaction references it as an input and provides the correct signature or other unlocking data. Outputs cannot be partially spent; it's an all-or-nothing approach, requiring new outputs to return 'change' if needed.
+A transaction output specifies an amount of BTC and a **locking script** (technically the *scriptPubKey*) that defines what's required to spend it later. Once the transaction confirms, the output becomes a [UTXO](/glossary/utxo-unspent-transaction-output) in the global unspent set, sitting on the chain until someone produces a [transaction input](/glossary/input-transaction-input) that satisfies its script.
+
+The locking script can be simple ("the holder of this private key can spend") or complex (multisig, time-locked, hash-locked, or arbitrary [Bitcoin Script](/glossary/bitcoin-script) logic). The script determines who - or what conditions - can move the money next.
+
+Outputs are *indivisible*. You can't spend half a UTXO; you spend the whole thing and direct the leftover back to yourself in a new **change** output. This is why most [transactions](/glossary/transaction) you make have two outputs: one to the actual recipient, one back to your own wallet.

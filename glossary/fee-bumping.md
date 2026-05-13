@@ -23,5 +23,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-When network congestion rises, your original transaction might get stuck indefinitely if the fee is too low. Fee bumping solves this by revising the transaction with a higher fee or creating a child transaction that compensates for the parent's insufficient fee. RBF allows you to replace the original unconfirmed transaction, while CPFP has a dependent transaction pay extra to cover its parent's fee shortfall.
-Both methods let you rescue a stuck transaction, but not all wallets or nodes support RBF. CPFP can be used even if the original transaction isn't RBF-enabled-assuming you control the unconfirmed output's address. Fee bumping has become standard practice, especially during mempool spikes, ensuring time-sensitive transactions confirm promptly.
+Fee bumping is what you do when your [transaction](/glossary/transaction) is stuck. The [mempool](/glossary/mempool) has more transactions than will fit in the next several blocks, miners are picking the higher-fee ones first, and yours is sitting too far down the priority list. Two mechanisms let you raise the effective fee after broadcast:
+
+**Replace-by-Fee (RBF).** Rebroadcast the same transaction with a higher fee, replacing the original in mempools. Defined in [BIP 125](/glossary/bip-125-replace-fee), now opt-in by default in most wallets. Requires the original transaction to signal RBF (or, with **full-RBF**, doesn't require it - nodes running full-RBF will accept the replacement regardless).
+
+**Child-Pays-for-Parent (CPFP).** Don't touch the stuck transaction. Instead, spend one of its unconfirmed outputs in a new "child" transaction with a fee large enough to cover both itself and the parent's shortfall. Miners are economically incentivized to include both - the child only confirms if the parent does. Useful when you can't RBF (the original didn't signal, or you don't control all the inputs) but you do control an output.
+
+Most modern wallets handle this for you with a "bump fee" button. The actual decision tree:
+
+- **You're the sender, RBF was signaled** → RBF (cleaner, replaces in place).
+- **You're the receiver of a stuck incoming transaction** → CPFP, spending the unconfirmed output to yourself.
+- **Sender, RBF wasn't signaled** → CPFP if you have a spendable output, otherwise wait.
+
+See [Fee Estimation](/glossary/fee-estimation) to avoid needing this in the first place.
