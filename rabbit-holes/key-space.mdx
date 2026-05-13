@@ -17,13 +17,23 @@ hasInteractive: ["keySpaceVisualizer"]
 
 import KeySpaceVisualizer from '@components/keyspace/KeySpaceVisualizer.svelte';
 
-> **Where you're going:** A visceral, scale-by-scale walk through 2^256, the number of possible Bitcoin private keys. By the end you'll understand why "guessing" a Bitcoin key is not a strategy that can be improved by more computers.
+> **Where you're going:** A visceral, scale-by-scale walk through the number of possible Bitcoin private keys. By the end you'll understand why "guessing" a Bitcoin key is not a strategy that can be improved by more computers.
+
+## Why This Matters
+
+Your Bitcoin lives behind a private key. Anyone who knows the key can spend the BTC. Anyone who doesn't, can't.
+
+That sounds fragile. What stops an attacker from just trying every possible key until they hit yours?
+
+The answer is "the math," and it is not a casual answer. The number of possible Bitcoin keys is so large that it overwhelms every intuition you have for *large*. Bigger than the number of grains of sand on Earth. Bigger than the number of stars in the observable universe. Bigger than the number of *atoms* in the observable universe, by many orders of magnitude.
+
+This rabbit hole is a tour through that number. The goal isn't to teach you cryptography; it's to make you *feel* the scale at a gut level, so you understand why "brute-forcing a Bitcoin key" isn't a real category of threat. It's not even on the menu.
 
 ## The Number
 
-A Bitcoin private key is a 256-bit number. That means there are 2^256 possible private keys, give or take a few that the secp256k1 curve excludes.
+A Bitcoin private key is a 256-bit number. "256-bit" means it can take any of 2^256 possible values - call it the **key space**. (A few of those values are excluded by the secp256k1 curve, but that subtracts essentially nothing from the total.)
 
-2^256 is written, in decimal:
+2^256 written out in decimal:
 
 > 115,792,089,237,316,195,423,570,985,008,687,907,853,269,984,665,640,564,039,457,584,007,913,129,639,936
 
