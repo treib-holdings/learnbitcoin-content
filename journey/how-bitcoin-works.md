@@ -10,7 +10,7 @@ prerequisites: ["what-bitcoin-actually-is"]
 relatedTerms: ["block", "transaction", "utxo-unspent-transaction-output", "mempool", "transaction-fee", "miner", "merkle-root", "nonce", "difficulty", "difficulty-retargeting", "full-node"]
 sources:
   - { label: "Bitcoin developer documentation", url: "https://developer.bitcoin.org/reference/transactions.html" }
-  - { label: "chainquery - inspect any block or transaction yourself", url: "https://chainquery.com" }
+  - { label: "ChainQuery - inspect any block or transaction yourself", url: "https://chainquery.com" }
   - { label: "Bitcoin Wiki - block protocol spec", url: "https://en.bitcoin.it/wiki/Block" }
   - { label: "Mastering Bitcoin (Andreas Antonopoulos, CC-BY-SA)", url: "https://github.com/bitcoinbook/bitcoinbook" }
 ---
@@ -65,7 +65,7 @@ A few things to notice:
 - **Mempool transactions are valid but unconfirmed.** Every node has already checked: signatures are valid, the UTXOs being spent actually exist and are unspent, the math adds up. If any check fails, the transaction is dropped.
 - **The mempool is sorted by fee rate.** Miners want to maximize their earnings per block, so they pick the highest-fee transactions first. Your fee determines your seat in line.
 
-You can [look at the live mempool yourself](https://chainquery.com/reports/data/mempool.json) - that's a JSON feed from our own Bitcoin node, updated every few seconds.
+You can [look at the live mempool yourself](https://chainquery.com/reports/data/mempool.json) - that's a JSON feed from a live Bitcoin node, updated every few seconds.
 
 ## 5. Mining: How a Block Actually Gets Made
 
@@ -95,7 +95,7 @@ To keep blocks coming at ~10-minute average, the protocol adjusts difficulty eve
 
 This is the most beautiful piece of mechanism design in Bitcoin. **No human sets the difficulty.** No committee meets to "raise rates." The network responds to its own conditions, automatically, every two weeks, forever.
 
-You can [watch the next difficulty adjustment counting down](https://chainquery.com/reports/data/mining.json) on our own node's feed.
+You can [watch the next difficulty adjustment counting down](https://chainquery.com/reports/data/mining.json) on the live node feed.
 
 ## 7. Block Headers and Merkle Trees
 

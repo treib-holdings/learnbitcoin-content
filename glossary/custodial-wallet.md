@@ -27,14 +27,9 @@ A custodial wallet is one where a third party holds the [private keys](/glossary
 
 What this actually means: you don't own Bitcoin. You own a *claim* on Bitcoin held by a company, recorded in that company's internal database. If they're solvent and cooperative, that claim works just like owning Bitcoin. If they're not, it doesn't.
 
-The historical record of custodians failing is long:
+Custodians fail more often than crypto promoters acknowledge. Mt. Gox lost 850,000 BTC in 2014. QuadrigaCX lost the keys with its CEO in 2019. The 2022 contagion took Celsius, BlockFi, Voyager, Genesis, and FTX inside the same calendar year, with an $8B customer shortfall at FTX alone. Customer recoveries take years and are usually partial.
 
-- **Mt. Gox** (2014) - 850,000 BTC lost in a slow-rolling hack. Customers got partial reimbursement starting in 2024, after a decade of bankruptcy proceedings.
-- **QuadrigaCX** (2019) - $190M CAD gone when the CEO died (or allegedly died) with the keys.
-- **Celsius / BlockFi / Voyager / Genesis** (2022) - all collapsed within months of each other when the "yield" they paid customers turned out to be funded by lending into a leveraged bubble.
-- **FTX** (2022) - $8B customer shortfall. CEO Sam Bankman-Fried convicted of fraud.
-
-Even working custodians can freeze your account, demand additional KYC, restrict withdrawals during volatility, or simply lose access to their own hot wallets via internal compromise. The risks are not theoretical and not rare.
+Even working custodians can freeze your account, demand additional KYC, restrict withdrawals during volatility, or quietly lose access to their own hot wallets via internal compromise. The risk pattern is structural, not theoretical.
 
 "Not your keys, not your coins" is the response. It's not a slogan; it's the technical reality. Bitcoin only delivers its core property - censorship-resistant, seizure-resistant, debasement-resistant money - to the actual key holder. Anyone else is just using a high-friction bank.
 
