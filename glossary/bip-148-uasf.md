@@ -21,5 +21,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 148, documented in [BIP-148](https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki), is a user-activated soft fork (UASF) that pressured miners to support SegWit. After a specified deadline, nodes enforcing BIP 148 would reject any blocks that didn't signal readiness for SegWit, effectively risking a chain split if miners failed to comply.
-This maneuver underscored the power of nodes in Bitcoin's governance, highlighting that miners alone don't decide consensus rules. BIP 148 played a key role in the 2017 activation of SegWit, ultimately succeeding in forcing miner compliance. While contentious at the time, it became a historical moment demonstrating community-driven consensus in Bitcoin's decentralized ecosystem.
+[BIP-148](https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki) is the user-activated soft fork (UASF) proposal that ended the multi-year [SegWit](/glossary/segwit-segregated-witness-bip-141) activation deadlock in mid-2017. It's one of the most important episodes in Bitcoin's governance history.
+
+The setup: SegWit had broad support from developers, exchanges, businesses, and a clear majority of [nodes](/glossary/node) - but a significant fraction of miners refused to signal for it under [BIP-9](/glossary/bip-9-versionbits). The deadlock persisted for over a year. Some miners wanted concessions (notably a larger block size); others were simply running mining hardware that could exploit a covert optimization called [AsicBoost](/glossary/asicboost) that SegWit would have disrupted.
+
+BIP-148's proposal, authored by Shaolinfry: starting August 1, 2017, BIP-148-compliant nodes would *reject* any block that didn't signal for SegWit. If enough nodes ran this software, miners would either signal SegWit or get their blocks orphaned by the economic majority of the network.
+
+What actually happened:
+
+- **The threat of BIP-148 was credible.** Major exchanges, businesses, and node operators signaled intent to run it.
+- **Miners blinked.** Before the August 1 deadline, miners agreed to activate [BIP-91](/glossary/bip-91), which forced SegWit signaling without splitting the chain. SegWit locked in soon after, activating in late August.
+- **The chain didn't split (on Bitcoin's side).** The dispute did spawn Bitcoin Cash as a separate altcoin, but Bitcoin itself remained one chain.
+
+The lesson: **nodes - not miners - are the ultimate authority on Bitcoin's rules.** Miners can refuse to signal, but they can't force the network to accept blocks that the economic majority of nodes will reject. BIP-148 established this principle in practice. It's been referenced in every subsequent activation discussion.
