@@ -23,5 +23,25 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The 'fee floor' evolves alongside network usage. If the mempool is persistently full, miners naturally pick transactions with higher fees, pushing out extremely low-fee transactions. Over time, this behavior establishes a practical threshold-often in the range of a few sat/vByte-below which it's improbable your transaction will confirm in a timely manner.
-This floor isn't a hard rule; if the network quiets down, even very low-fee transactions might confirm eventually. But under steady demand, transactions paying a fraction of the dominant rate end up stuck. Recognizing this dynamic helps users set realistic fees to avoid indefinite delays.
+The fee floor is the practical minimum fee rate (in sat/vByte) below which Bitcoin transactions are unlikely to confirm in a reasonable timeframe. It's not a single protocol-level constant; it's an emergent property of the [mempool](/glossary/mempool) state and miner behavior at any given moment.
+
+Two related concepts that get conflated:
+
+- **The relay-policy minimum.** Bitcoin Core's default minimum to *accept* a transaction into its mempool: 1 sat/vB. Below this, the transaction won't be relayed by Core nodes at all. Knots and other implementations can set this higher.
+- **The market floor.** The actual fee rate the cheapest currently-mined transactions are paying. During congestion this can be much higher than the relay minimum; during quiet periods it equals the relay minimum.
+
+How the market floor behaves:
+
+- **Idle periods (typical 2024-2026 low-traffic times):** the cheapest mined transactions pay 1-2 sat/vB. Nearly anything gets in.
+- **Moderate congestion:** 5-20 sat/vB floor. Lowest-fee transactions sit in mempool for hours.
+- **Severe congestion (Ordinals mints, exchange exodus, market panic):** floor spikes to 50-500+ sat/vB. Transactions below this can wait days or get evicted.
+
+What sets the floor:
+
+- **Block space is fixed.** Roughly 4MB equivalent weight per block, ~144 blocks/day = bounded throughput.
+- **Demand varies wildly.** Spikes can be 10x baseline within hours.
+- **Miners pack by fee rate.** Highest-paying transactions get in first; lower-paying ones queue.
+
+The fee floor isn't enforced by anyone. It's just what happens when there's more transaction demand than block space. Modern wallets do [fee estimation](/glossary/fee-estimation) to set rates that comfortably clear the current floor; aggressive users sometimes underpay and rely on [RBF](/glossary/replace-fee-rbf) to bump up later if needed.
+
+In the long run, the fee floor becomes a more meaningful number as [block subsidies](/glossary/block-subsidy) decline and miner revenue depends more on fees. The 2140 endgame requires fees alone to fund mining; the floor under those conditions has to be high enough to sustain network security.
