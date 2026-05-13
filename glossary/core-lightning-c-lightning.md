@@ -26,5 +26,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Previously known as ‘Elements Project’s c-lightning,’ now simply ‘Core Lightning,’ it’s an LN node software that interacts with Bitcoin Core. Written in C, it aims for a lightweight, highly customizable approach. Power users can manage channels via a robust command-line tool and plug in extra functionality with an extensive plugin system.
-Compared to LND (Lightning Labs) or Eclair (ACINQ), c-lightning emphasizes minimal resource usage and script-based extensibility. It’s well-suited for advanced deployments, offering granular control over channel states, routing, and billing. Those comfortable with terminal commands often pick c-lightning for a more “under the hood” LN experience.
+Previously known as 'Elements Project's c-lightning,' now simply 'Core Lightning,' it's an LN node software that interacts with Bitcoin Core. Written in C, it aims for a lightweight, highly customizable approach. Power users can manage channels via a robust command-line tool and plug in extra functionality with an extensive plugin system.
+Compared to LND (Lightning Labs) or Eclair (ACINQ), c-lightning emphasizes minimal resource usage and script-based extensibility. It's well-suited for advanced deployments, offering granular control over channel states, routing, and billing. Those comfortable with terminal commands often pick c-lightning for a more "under the hood" LN experience.

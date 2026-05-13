@@ -25,4 +25,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-In Bitcoin, hashing is central to proof-of-work. Miners repeatedly apply SHA-256 to block headers, racing to find a hash under a specific difficulty target. Hashes also secure the blockchain’s data structure: transactions are hashed into a Merkle tree, and blocks reference the previous block’s hash, forming a chain. A minor change in the input radically changes the hash, making it a one-way function that’s incredibly difficult to reverse or predict. This property underpins both Bitcoin’s security and its consensus mechanism.
+In Bitcoin, hashing is central to proof-of-work. Miners repeatedly apply SHA-256 to block headers, racing to find a hash under a specific difficulty target. Hashes also secure the blockchain's data structure: transactions are hashed into a Merkle tree, and blocks reference the previous block's hash, forming a chain. A minor change in the input radically changes the hash, making it a one-way function that's incredibly difficult to reverse or predict. This property underpins both Bitcoin's security and its consensus mechanism.

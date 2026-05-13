@@ -22,4 +22,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-In a submarine swap, a user sends on-chain BTC to a special address controlled by an HTLC-like script, and upon seeing proof, an LN node releases LN BTC to the user’s channel (or vice versa). This ensures an atomic exchange: either both sides of the swap succeed or none does. It’s especially handy for replenishing or withdrawing LN liquidity without fully closing channels. Lightning Labs’ Loop In/Out is a prominent example, letting LN users move funds on- or off-chain in a trust-minimized way, just using scripts and preimages, not a centralized custodian.
+In a submarine swap, a user sends on-chain BTC to a special address controlled by an HTLC-like script, and upon seeing proof, an LN node releases LN BTC to the user's channel (or vice versa). This ensures an atomic exchange: either both sides of the swap succeed or none does. It's especially handy for replenishing or withdrawing LN liquidity without fully closing channels. Lightning Labs' Loop In/Out is a prominent example, letting LN users move funds on- or off-chain in a trust-minimized way, just using scripts and preimages, not a centralized custodian.

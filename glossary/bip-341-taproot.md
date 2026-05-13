@@ -22,5 +22,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 341, found in [BIP-341](https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki), is the backbone of Taproot, allowing users to hide complex script conditions within a single Schnorr public key. If all parties agree to a single signature, the transaction looks identical to a simple ‘pay-to-public-key’ spend.
-This design is powerful for privacy and efficiency: complex multi-signature or conditional scripts only get revealed if alternative spending paths are used. Taproot also paves the way for more advanced protocols like channel factories or discreet log contracts. Overall, it’s a cornerstone upgrade expanding Bitcoin’s flexibility and confidentiality.
+BIP 341, found in [BIP-341](https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki), is the backbone of Taproot, allowing users to hide complex script conditions within a single Schnorr public key. If all parties agree to a single signature, the transaction looks identical to a simple 'pay-to-public-key' spend.
+This design is powerful for privacy and efficiency: complex multi-signature or conditional scripts only get revealed if alternative spending paths are used. Taproot also paves the way for more advanced protocols like channel factories or discreet log contracts. Overall, it's a cornerstone upgrade expanding Bitcoin's flexibility and confidentiality.

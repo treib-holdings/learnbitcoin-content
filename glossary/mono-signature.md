@@ -21,4 +21,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Most basic Bitcoin transactions use one private key to sign a transaction input, producing a single signature. This is sometimes labeled ‘mono-signature’ or single-sig, distinguishing it from multi-signature setups. With Schnorr, a single-sig is smaller in size compared to ECDSA, but the concept remains the same: one private key is required to authorize spending. While simpler and cheaper on-chain than multisig, it lacks the collaborative security or redundancy multisig offers.
+Most basic Bitcoin transactions use one private key to sign a transaction input, producing a single signature. This is sometimes labeled 'mono-signature' or single-sig, distinguishing it from multi-signature setups. With Schnorr, a single-sig is smaller in size compared to ECDSA, but the concept remains the same: one private key is required to authorize spending. While simpler and cheaper on-chain than multisig, it lacks the collaborative security or redundancy multisig offers.

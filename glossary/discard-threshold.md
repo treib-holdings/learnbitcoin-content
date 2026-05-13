@@ -19,5 +19,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-When the Bitcoin mempool overflows, nodes prioritize higher-fee transactions. At some point, a node must discard lower-fee transactions to maintain memory usage. This discard threshold is effectively a dynamic ‘minimum fee rate’ for a transaction to remain in the mempool.
-Nodes can set their own policies, leading to slight variations across the network. If your transaction’s fee is below the discard threshold, your node might forget it, though other nodes may still retain it if they have more memory or different rules. This mechanism motivates users to pay competitive fees during congestion if they want timely confirmation.
+When the Bitcoin mempool overflows, nodes prioritize higher-fee transactions. At some point, a node must discard lower-fee transactions to maintain memory usage. This discard threshold is effectively a dynamic 'minimum fee rate' for a transaction to remain in the mempool.
+Nodes can set their own policies, leading to slight variations across the network. If your transaction's fee is below the discard threshold, your node might forget it, though other nodes may still retain it if they have more memory or different rules. This mechanism motivates users to pay competitive fees during congestion if they want timely confirmation.

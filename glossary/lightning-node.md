@@ -33,4 +33,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Lightning node is your gateway to LN, maintaining a database of channels and participating in the network gossip protocol. It can create invoices, route third-party payments for fees, and manage local user balances. Nodes come in various forms: full-featured daemons like lnd or c-lightning, mobile clients, or specialized hardware. Running a node requires stable uptime (so channels remain reliably connected) and some on-chain capital for funding channels. By routing payments, node operators can earn small fees, contributing to LN’s decentralized ecosystem.
+A Lightning node is your gateway to LN, maintaining a database of channels and participating in the network gossip protocol. It can create invoices, route third-party payments for fees, and manage local user balances. Nodes come in various forms: full-featured daemons like lnd or c-lightning, mobile clients, or specialized hardware. Running a node requires stable uptime (so channels remain reliably connected) and some on-chain capital for funding channels. By routing payments, node operators can earn small fees, contributing to LN's decentralized ecosystem.

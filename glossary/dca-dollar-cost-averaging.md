@@ -19,5 +19,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-DCA is the investment equivalent of setting your watch to ‘Buy BTC every Monday.’ Instead of trying to time big price swings, you regularly purchase small amounts. Over time, your average cost basis can smooth out market fluctuations.
-Fans of DCA argue it’s psychologically easier and helps avoid the pitfalls of panic buying or selling. Detractors say you might miss opportunities if BTC dips significantly and you don’t buy more at once. Still, for many, DCA is a ‘set it and forget it’ strategy that fosters disciplined accumulation of Bitcoin.
+DCA is the investment equivalent of setting your watch to 'Buy BTC every Monday.' Instead of trying to time big price swings, you regularly purchase small amounts. Over time, your average cost basis can smooth out market fluctuations.
+Fans of DCA argue it's psychologically easier and helps avoid the pitfalls of panic buying or selling. Detractors say you might miss opportunities if BTC dips significantly and you don't buy more at once. Still, for many, DCA is a 'set it and forget it' strategy that fosters disciplined accumulation of Bitcoin.

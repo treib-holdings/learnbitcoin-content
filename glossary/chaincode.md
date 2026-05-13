@@ -21,5 +21,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Chaincode is essentially the ‘secret sauce’ used alongside a parent private/public key to generate a hierarchy of child keys in the BIP 32 scheme. When you derive a child key, you combine the parent key with the chaincode via HMAC-SHA512, producing the child’s private (or public) key and new chaincode.
-This mechanism ensures that a single seed can produce countless keys without revealing the master private key. By splitting the derivation data into a key and chaincode, HD wallets can securely manage advanced setups like separate accounts or layered passphrases. Chaincode never changes arbitrarily; it remains consistent once it’s generated at each step in the derivation path.
+Chaincode is essentially the 'secret sauce' used alongside a parent private/public key to generate a hierarchy of child keys in the BIP 32 scheme. When you derive a child key, you combine the parent key with the chaincode via HMAC-SHA512, producing the child's private (or public) key and new chaincode.
+This mechanism ensures that a single seed can produce countless keys without revealing the master private key. By splitting the derivation data into a key and chaincode, HD wallets can securely manage advanced setups like separate accounts or layered passphrases. Chaincode never changes arbitrarily; it remains consistent once it's generated at each step in the derivation path.

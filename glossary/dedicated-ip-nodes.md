@@ -22,5 +22,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-When you run a node behind a dedicated IP, other peers can reliably connect to you, enhancing network resilience. However, it also makes your node’s IP visible, which can reduce privacy-especially if that IP is tied to personal information.
-Some advanced node operators prefer dedicated IP setups to ensure consistent uptime and faster block/transaction propagation. Others opt for Tor or VPN to hide their IP, trading some performance benefits for stronger anonymity. Ultimately, it’s a personal choice balancing convenience, privacy, and security considerations.
+When you run a node behind a dedicated IP, other peers can reliably connect to you, enhancing network resilience. However, it also makes your node's IP visible, which can reduce privacy-especially if that IP is tied to personal information.
+Some advanced node operators prefer dedicated IP setups to ensure consistent uptime and faster block/transaction propagation. Others opt for Tor or VPN to hide their IP, trading some performance benefits for stronger anonymity. Ultimately, it's a personal choice balancing convenience, privacy, and security considerations.

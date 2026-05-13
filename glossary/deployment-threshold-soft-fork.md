@@ -21,5 +21,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Historically, Bitcoin used thresholds like 95% miner signaling for certain soft fork deployments. Once enough miners set a ‘support bit’ in their blocks, the upgrade was ‘locked in,’ and the network enforced new rules.
-While this can coordinate activation smoothly, it also sparked debate over whether miners wield too much power in deciding upgrades. Alternatives include user-activated soft forks, where node operators set the rules. Regardless, a deployment threshold is a common mechanism for phased rollouts, minimizing disruptions and chain splits, provided there’s broad consensus.
+Historically, Bitcoin used thresholds like 95% miner signaling for certain soft fork deployments. Once enough miners set a 'support bit' in their blocks, the upgrade was 'locked in,' and the network enforced new rules.
+While this can coordinate activation smoothly, it also sparked debate over whether miners wield too much power in deciding upgrades. Alternatives include user-activated soft forks, where node operators set the rules. Regardless, a deployment threshold is a common mechanism for phased rollouts, minimizing disruptions and chain splits, provided there's broad consensus.

@@ -35,4 +35,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Sometimes abbreviated ‘HD wallet,’ this design is defined by BIP 32 (with BIP 44 for multi-account structures). Instead of manually managing numerous private keys, the user secures one seed phrase, from which all child keys are algorithmically generated. If you back up the seed once, you can restore every address that might be created in the future. This approach has become the norm for modern Bitcoin wallets-fostering ease of backup, multi-account setups, and compatibility across multiple wallet implementations.
+Sometimes abbreviated 'HD wallet,' this design is defined by BIP 32 (with BIP 44 for multi-account structures). Instead of manually managing numerous private keys, the user secures one seed phrase, from which all child keys are algorithmically generated. If you back up the seed once, you can restore every address that might be created in the future. This approach has become the norm for modern Bitcoin wallets-fostering ease of backup, multi-account setups, and compatibility across multiple wallet implementations.

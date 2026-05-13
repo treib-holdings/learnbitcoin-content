@@ -19,4 +19,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Hierarchical Deterministic (HD) wallets generate a master private key (seed) and master public key (xpub). The xpub can be shared safely to create receive addresses, watch-only wallets, or partial multi-sig setups. It doesn’t let anyone spend funds, as private keys remain offline. This suits scenarios like a website showing fresh deposit addresses or a co-signer verifying transactions. However, if the xpub leaks, it can compromise privacy by revealing all child addresses. Some wallets also use ypub/zpub versions for specific script types like P2WPKH or P2WSH.
+Hierarchical Deterministic (HD) wallets generate a master private key (seed) and master public key (xpub). The xpub can be shared safely to create receive addresses, watch-only wallets, or partial multi-sig setups. It doesn't let anyone spend funds, as private keys remain offline. This suits scenarios like a website showing fresh deposit addresses or a co-signer verifying transactions. However, if the xpub leaks, it can compromise privacy by revealing all child addresses. Some wallets also use ypub/zpub versions for specific script types like P2WPKH or P2WSH.

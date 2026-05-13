@@ -20,4 +20,4 @@ liveWidget: ~
 ---
 
 Dust sweeping is like tidying up spare change from various pockets into one jar. By consolidating dust outputs into a single higher-value UTXO, you eliminate clutter and reduce the overhead for future transactions. Because each input adds bytes-and thus fees-to a transaction, merging them at a time when fees are cheap can save you money in the long run.
-However, combining dust can reduce privacy if it links separate addresses. That’s why some privacy-focused users prefer mixing dust outputs via CoinJoin or other techniques. Sweeping might also not be worthwhile if the dust is so minuscule that even a low-fee environment won’t justify the cost. It’s a balancing act between practicality and on-chain footprints.
+However, combining dust can reduce privacy if it links separate addresses. That's why some privacy-focused users prefer mixing dust outputs via CoinJoin or other techniques. Sweeping might also not be worthwhile if the dust is so minuscule that even a low-fee environment won't justify the cost. It's a balancing act between practicality and on-chain footprints.

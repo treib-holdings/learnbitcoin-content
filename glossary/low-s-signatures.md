@@ -2,7 +2,7 @@
 title: "Low-S Signatures"
 slug: low-s-signatures
 draft: false
-shortDefinition: "A standard enforcing the ECDSA ‘S’ component’s value be below a certain threshold, reducing transaction malleability."
+shortDefinition: "A standard enforcing the ECDSA 'S' component's value be below a certain threshold, reducing transaction malleability."
 keyTakeaways:
   - "Eliminates multiple valid encodings of a single ECDSA signature"
   - "Curtails malleability by standardizing the S value"

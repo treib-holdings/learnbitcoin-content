@@ -18,4 +18,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Gadget UTXOs serve specialized purposes beyond standard wallet-to-wallet transfers. For instance, a Lightning Network channel commit transaction or a Discreet Log Contract (DLC) funding output might be considered a ‘gadget.’ These outputs often rely on more complex scripts or opcodes, potentially involving time locks, multi-sig conditions, or other advanced features. By bundling extra logic into the UTXO itself, developers can build higher-level functionality without altering Bitcoin’s consensus at the base layer.
+Gadget UTXOs serve specialized purposes beyond standard wallet-to-wallet transfers. For instance, a Lightning Network channel commit transaction or a Discreet Log Contract (DLC) funding output might be considered a 'gadget.' These outputs often rely on more complex scripts or opcodes, potentially involving time locks, multi-sig conditions, or other advanced features. By bundling extra logic into the UTXO itself, developers can build higher-level functionality without altering Bitcoin's consensus at the base layer.

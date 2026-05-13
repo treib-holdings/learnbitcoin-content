@@ -23,4 +23,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Jamming occurs when an attacker floods a route with HTLCs that remain stuck, effectively ‘congesting’ the channel’s capacity. These payments aren’t settled or timed out promptly, so legitimate payments can’t proceed. While not financially profitable for the jammer, it disrupts the network. Proposals to mitigate jamming include imposing upfront fees or requiring proof-of-payment intent. LN nodes also track suspicious behavior, flagging peers that consistently route non-finalizing HTLCs. As LN scales, preventing channel jamming remains an active area of research.
+Jamming occurs when an attacker floods a route with HTLCs that remain stuck, effectively 'congesting' the channel's capacity. These payments aren't settled or timed out promptly, so legitimate payments can't proceed. While not financially profitable for the jammer, it disrupts the network. Proposals to mitigate jamming include imposing upfront fees or requiring proof-of-payment intent. LN nodes also track suspicious behavior, flagging peers that consistently route non-finalizing HTLCs. As LN scales, preventing channel jamming remains an active area of research.

@@ -2,10 +2,10 @@
 title: "qTes"
 slug: qtes
 draft: false
-shortDefinition: "Hypothetical ‘Quantum Tolerant Elliptic Signatures’ proposal to resist future quantum attacks, not adopted in Bitcoin."
+shortDefinition: "Hypothetical 'Quantum Tolerant Elliptic Signatures' proposal to resist future quantum attacks, not adopted in Bitcoin."
 keyTakeaways:
   - "Designed to defend against quantum decryption of private keys"
-  - "Remains speculative; not integrated into Bitcoin’s consensus"
+  - "Remains speculative; not integrated into Bitcoin's consensus"
   - "Illustrates ongoing research into post-quantum cryptographic methods"
 sources: []
 relatedTerms: []

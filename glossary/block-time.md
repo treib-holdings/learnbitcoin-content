@@ -20,5 +20,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Satoshi Nakamoto set Bitcoin’s target block time to ~10 minutes, balancing security and transaction processing frequency. Miners attempt to find a valid proof-of-work that meets the difficulty target. If blocks start arriving too quickly, the difficulty adjusts upward, and vice versa.
+Satoshi Nakamoto set Bitcoin's target block time to ~10 minutes, balancing security and transaction processing frequency. Miners attempt to find a valid proof-of-work that meets the difficulty target. If blocks start arriving too quickly, the difficulty adjusts upward, and vice versa.
 In practice, 10 minutes is an average; some blocks can take seconds, others can take over an hour. Over longer periods, the network self-corrects to maintain a stable block interval. This parameter also influences network throughput and how fast transactions gain confirmations.

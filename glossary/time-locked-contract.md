@@ -22,4 +22,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Bitcoin scripts can implement time locks, requiring a certain block height or timestamp be reached (CLTV) or a number of blocks since the UTXO was confirmed (CSV). These time-locked outputs prevent spending until conditions are met, enabling escrow-like deals, LN channels (where outdated states are penalized), or DLCs that wait on an oracle signature. They’re a fundamental building block in many advanced protocols, ensuring no early unauthorized spends without satisfying the time-based rules.
+Bitcoin scripts can implement time locks, requiring a certain block height or timestamp be reached (CLTV) or a number of blocks since the UTXO was confirmed (CSV). These time-locked outputs prevent spending until conditions are met, enabling escrow-like deals, LN channels (where outdated states are penalized), or DLCs that wait on an oracle signature. They're a fundamental building block in many advanced protocols, ensuring no early unauthorized spends without satisfying the time-based rules.

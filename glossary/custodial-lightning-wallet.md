@@ -27,5 +27,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A custodial Lightning wallet takes the do-it-yourself complexity of channel management and moves it behind a service provider’s curtain. You simply log in, send or receive Lightning payments, and trust the operator to maintain channels, handle liquidity, and keep fees low.
-While that’s convenient, it comes with the classic trade-off: you don’t directly control the private keys or the LN channels. If the custodian freezes withdrawals or experiences technical issues, your LN balance is at risk. Many see custodial LN wallets as a stepping stone for beginners before migrating to self-custody solutions.
+A custodial Lightning wallet takes the do-it-yourself complexity of channel management and moves it behind a service provider's curtain. You simply log in, send or receive Lightning payments, and trust the operator to maintain channels, handle liquidity, and keep fees low.
+While that's convenient, it comes with the classic trade-off: you don't directly control the private keys or the LN channels. If the custodian freezes withdrawals or experiences technical issues, your LN balance is at risk. Many see custodial LN wallets as a stepping stone for beginners before migrating to self-custody solutions.

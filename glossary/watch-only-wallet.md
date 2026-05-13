@@ -22,4 +22,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-For security or convenience, you may track addresses in a wallet that lacks private keys. This is common for read-only access: a business accountant verifying incoming transactions or a user wanting to track funds from multiple sources. Watch-only wallets can’t sign transactions. To spend, you’d import or use the private keys in a fully capable wallet. Hierarchical Deterministic watch-only setups rely on extended public keys (xpub) to generate all receiving addresses but hide the corresponding private keys.
+For security or convenience, you may track addresses in a wallet that lacks private keys. This is common for read-only access: a business accountant verifying incoming transactions or a user wanting to track funds from multiple sources. Watch-only wallets can't sign transactions. To spend, you'd import or use the private keys in a fully capable wallet. Hierarchical Deterministic watch-only setups rely on extended public keys (xpub) to generate all receiving addresses but hide the corresponding private keys.

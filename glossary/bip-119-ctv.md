@@ -22,5 +22,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 119, referencing [BIP-119](https://github.com/bitcoin/bips/blob/master/bip-0119.mediawiki), introduces CHECKTEMPLATEVERIFY (CTV), which enables pre-authorized transaction templates. Think of it like a ‘covenant’ that dictates the exact script paths or addresses that coins can move to, restricting subsequent transactions to specific patterns.
-Proponents see CTV as a powerful new tool for batch transactions, vaults, and trust-minimized channel factories. Critics worry about potential overreach, saying covenants might limit fungibility or open the door to intrusive policy scripts. While still an active discussion, BIP 119 reflects ongoing efforts to expand Bitcoin’s scripting abilities within the existing framework.
+BIP 119, referencing [BIP-119](https://github.com/bitcoin/bips/blob/master/bip-0119.mediawiki), introduces CHECKTEMPLATEVERIFY (CTV), which enables pre-authorized transaction templates. Think of it like a 'covenant' that dictates the exact script paths or addresses that coins can move to, restricting subsequent transactions to specific patterns.
+Proponents see CTV as a powerful new tool for batch transactions, vaults, and trust-minimized channel factories. Critics worry about potential overreach, saying covenants might limit fungibility or open the door to intrusive policy scripts. While still an active discussion, BIP 119 reflects ongoing efforts to expand Bitcoin's scripting abilities within the existing framework.

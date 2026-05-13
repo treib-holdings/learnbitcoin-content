@@ -6,7 +6,7 @@ shortDefinition: "A computer running Bitcoin software to validate and relay bloc
 keyTakeaways:
   - "Validates transactions/blocks according to consensus"
   - "Can be full (entire chain) or SPV (partial verification)"
-  - "Key to Bitcoin’s decentralized security model"
+  - "Key to Bitcoin's decentralized security model"
 sources: []
 relatedTerms:
   - bitcoin-client
@@ -28,4 +28,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Bitcoin nodes maintain a copy of the blockchain and independently verify all blocks and transactions. Full nodes store and validate the entire ledger, ensuring no invalid data is accepted. SPV (light) nodes rely on partial data or filter-based approaches for simpler resource usage, trusting some external confirmations. Running a node is pivotal to Bitcoin’s decentralized ethos, as it prevents reliance on centralized services for transaction validation and ledger updates. Many node operators also relay data, helping new transactions and blocks propagate through the network.
+Bitcoin nodes maintain a copy of the blockchain and independently verify all blocks and transactions. Full nodes store and validate the entire ledger, ensuring no invalid data is accepted. SPV (light) nodes rely on partial data or filter-based approaches for simpler resource usage, trusting some external confirmations. Running a node is pivotal to Bitcoin's decentralized ethos, as it prevents reliance on centralized services for transaction validation and ledger updates. Many node operators also relay data, helping new transactions and blocks propagate through the network.

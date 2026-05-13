@@ -2,7 +2,7 @@
 title: "BIP (Bitcoin Improvement Proposal)"
 slug: bip-bitcoin-improvement-proposal
 draft: false
-shortDefinition: "A design document suggesting changes or additions to Bitcoin’s protocol and ecosystem standards."
+shortDefinition: "A design document suggesting changes or additions to Bitcoin's protocol and ecosystem standards."
 keyTakeaways:
   - "Formal proposals for Bitcoin protocol or standards"
   - "Undergo community review and testing"
@@ -23,5 +23,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A BIP is like a proposal slip you drop in the community suggestion box, except this box influences how Bitcoin evolves. Each BIP outlines a problem, rationale, and technical specification for a proposed change. They range from consensus-critical modifications (e.g., [BIP-32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) for HD wallets) to minor process updates (like BIP-1’s guidelines for submitting BIPs).
-While anyone can author a BIP, acceptance typically depends on community review, developer discussions, and real-world testing. The process helps ensure that Bitcoin remains an open, collaborative project without a single central authority. Some BIPs become milestones, such as BIP-141 (SegWit) and BIP-340 (Schnorr Signatures), shaping the protocol’s future.
+A BIP is like a proposal slip you drop in the community suggestion box, except this box influences how Bitcoin evolves. Each BIP outlines a problem, rationale, and technical specification for a proposed change. They range from consensus-critical modifications (e.g., [BIP-32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) for HD wallets) to minor process updates (like BIP-1's guidelines for submitting BIPs).
+While anyone can author a BIP, acceptance typically depends on community review, developer discussions, and real-world testing. The process helps ensure that Bitcoin remains an open, collaborative project without a single central authority. Some BIPs become milestones, such as BIP-141 (SegWit) and BIP-340 (Schnorr Signatures), shaping the protocol's future.

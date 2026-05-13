@@ -22,4 +22,4 @@ liveWidget: ~
 ---
 
 BIP 342, detailed in [BIP-342](https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki), complements Taproot by specifying Tapscript: an updated script version that supports new opcodes and execution rules. It ensures that the script logic under the Taproot umbrella remains flexible and forward-compatible.
-This BIP provides the technical details on how Taproot outputs validate signatures and how new opcodes can be introduced. By designing Tapscript with versioning in mind, Bitcoin developers aim to avoid repeated soft forks for future expansions. It’s a critical piece in the puzzle that lets Taproot evolve without constantly rewriting the protocol.
+This BIP provides the technical details on how Taproot outputs validate signatures and how new opcodes can be introduced. By designing Tapscript with versioning in mind, Bitcoin developers aim to avoid repeated soft forks for future expansions. It's a critical piece in the puzzle that lets Taproot evolve without constantly rewriting the protocol.

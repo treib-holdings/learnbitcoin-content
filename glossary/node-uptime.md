@@ -22,4 +22,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A node with high uptime rarely drops connections, ensuring consistent transaction relay and quick block propagation. Such nodes are seen as more stable peers, beneficial to the P2P network’s redundancy. Exchanges or merchants may desire 24/7 uptime to avoid missing transactions. Hobbyist nodes might have intermittent shutdowns, though frequent restarts can hamper mempool continuity. Some node monitors track uptime to spot potential issues (ISP cuts, hardware failures). High-uptime nodes bolster Bitcoin’s resilience, as others can rely on them for fast data.
+A node with high uptime rarely drops connections, ensuring consistent transaction relay and quick block propagation. Such nodes are seen as more stable peers, beneficial to the P2P network's redundancy. Exchanges or merchants may desire 24/7 uptime to avoid missing transactions. Hobbyist nodes might have intermittent shutdowns, though frequent restarts can hamper mempool continuity. Some node monitors track uptime to spot potential issues (ISP cuts, hardware failures). High-uptime nodes bolster Bitcoin's resilience, as others can rely on them for fast data.

@@ -6,7 +6,7 @@ shortDefinition: "The open nature of Bitcoin mining, where anyone with ASIC hard
 keyTakeaways:
   - "Anyone can mine BTC with proper equipment"
   - "ASIC hardware and cheap electricity are competitive advantages"
-  - "Supports Bitcoin’s security via proof-of-work"
+  - "Supports Bitcoin's security via proof-of-work"
 sources: []
 relatedTerms:
   - block-propagation
@@ -24,5 +24,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Competitive mining means there are no gatekeepers; if you own or rent ASIC miners and electricity, you can participate. This open competition for block rewards is a cornerstone of Bitcoin’s proof-of-work security model, preventing central authority over issuance.
-Because miners are economically incentivized, hardware races and electricity cost optimizations flourish. Over time, mining has become industrialized, with large-scale farms vying for the edge in efficiency. Some worry about centralization in regions with cheap power, but Bitcoin’s fundamental design still allows any individual to join if they can stay profitable. It’s all about finding valid hashes faster than the next miner.
+Competitive mining means there are no gatekeepers; if you own or rent ASIC miners and electricity, you can participate. This open competition for block rewards is a cornerstone of Bitcoin's proof-of-work security model, preventing central authority over issuance.
+Because miners are economically incentivized, hardware races and electricity cost optimizations flourish. Over time, mining has become industrialized, with large-scale farms vying for the edge in efficiency. Some worry about centralization in regions with cheap power, but Bitcoin's fundamental design still allows any individual to join if they can stay profitable. It's all about finding valid hashes faster than the next miner.

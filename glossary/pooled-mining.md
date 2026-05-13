@@ -5,7 +5,7 @@ draft: false
 shortDefinition: "Multiple miners combining their hash power in a mining pool and splitting rewards according to contributed work."
 keyTakeaways:
   - "Reduces income variance by sharing block rewards"
-  - "Dominant in Bitcoin’s ASIC age, overshadowing solo mining"
+  - "Dominant in Bitcoin's ASIC age, overshadowing solo mining"
   - "Can raise centralization issues if a handful of pools control most hash rate"
 sources: []
 relatedTerms:

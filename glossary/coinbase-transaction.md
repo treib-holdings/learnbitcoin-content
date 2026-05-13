@@ -24,4 +24,4 @@ liveWidget: ~
 ---
 
 A coinbase transaction is how newly created bitcoins enter circulation. Miners construct it as the first entry in a freshly mined block, listing themselves (or a mining pool) as the receiver of the block subsidy plus any fees from included transactions. Unlike normal transactions, it has no inputs from previous UTXOs.
-The coinbase transaction often includes a coinbase field, which can store arbitrary data (like mining pool tags or messages). The block reward earned here is subject to a 100-block maturity rule, meaning miners can’t spend those coins immediately. This mechanism steadily releases BTC into the ecosystem, continuing until the 21 million coin cap is reached.
+The coinbase transaction often includes a coinbase field, which can store arbitrary data (like mining pool tags or messages). The block reward earned here is subject to a 100-block maturity rule, meaning miners can't spend those coins immediately. This mechanism steadily releases BTC into the ecosystem, continuing until the 21 million coin cap is reached.

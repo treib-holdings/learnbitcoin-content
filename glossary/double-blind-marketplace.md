@@ -19,5 +19,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A double-blind marketplace is like a cloak-and-dagger bazaar where only essential details (like what’s being bought or sold) are shared, not personal identities. Bitcoin-based escrows-especially multisig arrangements-allow funds to be held until both parties verify completion of the deal. Neither side learns more than necessary, protecting privacy.
-In practice, these marketplaces may run over Tor to hide IP addresses and rely on dispute arbitration if something goes wrong. The ‘double-blind’ aspect reduces the risk of targeted scams or harassment, but it can also attract illicit use if not carefully moderated. Nonetheless, it demonstrates how Bitcoin’s pseudonymous nature can foster privacy-centric commerce.
+A double-blind marketplace is like a cloak-and-dagger bazaar where only essential details (like what's being bought or sold) are shared, not personal identities. Bitcoin-based escrows-especially multisig arrangements-allow funds to be held until both parties verify completion of the deal. Neither side learns more than necessary, protecting privacy.
+In practice, these marketplaces may run over Tor to hide IP addresses and rely on dispute arbitration if something goes wrong. The 'double-blind' aspect reduces the risk of targeted scams or harassment, but it can also attract illicit use if not carefully moderated. Nonetheless, it demonstrates how Bitcoin's pseudonymous nature can foster privacy-centric commerce.

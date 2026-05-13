@@ -2,7 +2,7 @@
 title: "Resource Exhaustion Attack"
 slug: resource-exhaustion-attack
 draft: false
-shortDefinition: "A denial-of-service tactic flooding a node’s CPU, memory, or bandwidth with spam or malformed data."
+shortDefinition: "A denial-of-service tactic flooding a node's CPU, memory, or bandwidth with spam or malformed data."
 keyTakeaways:
   - "Targets node capacity with spammy or malformed data"
   - "Nodes use auto-ban, mempool limits, or advanced relay to defend"

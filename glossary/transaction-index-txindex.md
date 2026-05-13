@@ -16,4 +16,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-By default, Bitcoin Core focuses on validating blocks without indexing every individual transaction. Enabling ‘-txindex=1’ instructs the node to maintain a database mapping TXIDs to their block locations, allowing quick direct lookups. This costs extra disk space and increases I/O. Explorers, block analysis apps, or third-party services often need txindex for fast retrieval of any arbitrary transaction. Regular users typically leave it off to save resources, as normal wallets only track relevant addresses/UTXOs, not entire chain queries by TXID.
+By default, Bitcoin Core focuses on validating blocks without indexing every individual transaction. Enabling '-txindex=1' instructs the node to maintain a database mapping TXIDs to their block locations, allowing quick direct lookups. This costs extra disk space and increases I/O. Explorers, block analysis apps, or third-party services often need txindex for fast retrieval of any arbitrary transaction. Regular users typically leave it off to save resources, as normal wallets only track relevant addresses/UTXOs, not entire chain queries by TXID.

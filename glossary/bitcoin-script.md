@@ -32,4 +32,4 @@ liveWidget: ~
 ---
 
 Bitcoin Script is like a stack-based set of instructions that outlines how funds can be spent. For example, a typical pay-to-pubkey-hash script demands a valid signature from the holder of the corresponding private key. More advanced scripts enable multi-signature arrangements, time locks, or other conditional logic.
-Unlike more flexible Turing-complete languages, Bitcoin Script is intentionally limited to enhance security and mitigate attack vectors. That said, developers continue to extend its functionality via soft forks (like Taproot). Although it’s not the easiest language to master, understanding Script opens the door to creative on-chain contracts and advanced features.
+Unlike more flexible Turing-complete languages, Bitcoin Script is intentionally limited to enhance security and mitigate attack vectors. That said, developers continue to extend its functionality via soft forks (like Taproot). Although it's not the easiest language to master, understanding Script opens the door to creative on-chain contracts and advanced features.

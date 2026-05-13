@@ -20,4 +20,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-In Bitcoin’s soft-fork activation process (e.g., BIP 9), miners signal support for new rules. Once enough blocks in a period show support (meeting the threshold), the network enters a ‘locked-in’ state. During this window, the community expects all participants to upgrade or ensure compatibility. After the locked-in period expires (often one difficulty period), the soft fork activates, and blocks must follow the new rules. This transition phase prevents sudden forks; it gives time for nodes to upgrade, avoiding confusion or chain splits.
+In Bitcoin's soft-fork activation process (e.g., BIP 9), miners signal support for new rules. Once enough blocks in a period show support (meeting the threshold), the network enters a 'locked-in' state. During this window, the community expects all participants to upgrade or ensure compatibility. After the locked-in period expires (often one difficulty period), the soft fork activates, and blocks must follow the new rules. This transition phase prevents sudden forks; it gives time for nodes to upgrade, avoiding confusion or chain splits.

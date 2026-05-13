@@ -6,7 +6,7 @@ shortDefinition: "A field specifying the earliest block height or timestamp at w
 keyTakeaways:
   - "Prevents confirmation before a certain block/time"
   - "Used by advanced scripting for timed releases or escrow"
-  - "Zero or a past value means it’s immediately valid"
+  - "Zero or a past value means it's immediately valid"
 sources: []
 relatedTerms:
   - absolute-locktime
@@ -24,4 +24,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-nLocktime (one word, short for ‘transaction locktime’) works with nSequence fields to determine when a transaction is valid for inclusion in a block. If nLocktime is set to a block height or timestamp in the future, the transaction can’t be confirmed before that point. This is useful for escrow or delayed payout scenarios-though actual enforcement also depends on miner acceptance and the network’s median time. Many wallets default nLocktime to zero for immediate spending, while advanced scripts leverage it for time-based contract logic (together with CHECKLOCKTIMEVERIFY).
+nLocktime (one word, short for 'transaction locktime') works with nSequence fields to determine when a transaction is valid for inclusion in a block. If nLocktime is set to a block height or timestamp in the future, the transaction can't be confirmed before that point. This is useful for escrow or delayed payout scenarios-though actual enforcement also depends on miner acceptance and the network's median time. Many wallets default nLocktime to zero for immediate spending, while advanced scripts leverage it for time-based contract logic (together with CHECKLOCKTIMEVERIFY).

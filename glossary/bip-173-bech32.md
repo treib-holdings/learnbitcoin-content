@@ -21,5 +21,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 173, located at [BIP-173](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki), unveiled the bech32 address format. Recognizable by their “bc1” prefix for Bitcoin mainnet, bech32 addresses employ a base32 scheme that is both more human-friendly and resistant to common typing errors.
+BIP 173, located at [BIP-173](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki), unveiled the bech32 address format. Recognizable by their "bc1" prefix for Bitcoin mainnet, bech32 addresses employ a base32 scheme that is both more human-friendly and resistant to common typing errors.
 Apart from the better checksum, bech32 fully supports native SegWit outputs, helping reduce transaction fees and enable advanced features like the Lightning Network. The format has become increasingly popular, especially after wallets and exchanges embraced SegWit. While older address types remain valid, bech32 is widely considered the future of Bitcoin address encoding.

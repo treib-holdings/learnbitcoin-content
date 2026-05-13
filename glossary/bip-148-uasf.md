@@ -21,5 +21,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 148, documented in [BIP-148](https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki), is a user-activated soft fork (UASF) that pressured miners to support SegWit. After a specified deadline, nodes enforcing BIP 148 would reject any blocks that didn’t signal readiness for SegWit, effectively risking a chain split if miners failed to comply.
-This maneuver underscored the power of nodes in Bitcoin’s governance, highlighting that miners alone don’t decide consensus rules. BIP 148 played a key role in the 2017 activation of SegWit, ultimately succeeding in forcing miner compliance. While contentious at the time, it became a historical moment demonstrating community-driven consensus in Bitcoin’s decentralized ecosystem.
+BIP 148, documented in [BIP-148](https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki), is a user-activated soft fork (UASF) that pressured miners to support SegWit. After a specified deadline, nodes enforcing BIP 148 would reject any blocks that didn't signal readiness for SegWit, effectively risking a chain split if miners failed to comply.
+This maneuver underscored the power of nodes in Bitcoin's governance, highlighting that miners alone don't decide consensus rules. BIP 148 played a key role in the 2017 activation of SegWit, ultimately succeeding in forcing miner compliance. While contentious at the time, it became a historical moment demonstrating community-driven consensus in Bitcoin's decentralized ecosystem.

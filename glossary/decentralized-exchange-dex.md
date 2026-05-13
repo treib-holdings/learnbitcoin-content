@@ -18,5 +18,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A DEX is the polar opposite of an exchange that holds your coins. Instead, trades happen directly between users’ wallets-sometimes via smart contracts. Bitcoin DEXs typically rely on atomic swaps or layer-2 protocols for trust-minimized trading, though liquidity can be thinner compared to centralized counterparts.
+A DEX is the polar opposite of an exchange that holds your coins. Instead, trades happen directly between users' wallets-sometimes via smart contracts. Bitcoin DEXs typically rely on atomic swaps or layer-2 protocols for trust-minimized trading, though liquidity can be thinner compared to centralized counterparts.
 Proponents love DEXs for removing middlemen and reducing counterparty risk. However, without a central mediator, user interfaces can be less polished, and advanced features like leveraged trading might be limited. For privacy advocates, DEXs are a step closer to the permissionless ideal of Bitcoin, albeit with current technological limitations in speed and usability.
