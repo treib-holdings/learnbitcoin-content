@@ -23,5 +23,19 @@ relatedTerms:
 liveWidget: ~
 ---
 
-In a custodial wallet, someone else retains your private keys. This is common on centralized exchanges or certain payment apps. While convenient-particularly for new users-it undermines one of Bitcoin's core tenets: sovereignty over your own funds.
-If the custodian faces hacks, insolvency, or simply decides to freeze your account, you lose access to your BTC. Thus, the mantra 'Not your keys, not your coins' remains paramount. Many users transition away from custodial wallets as they gain technical confidence or wish to reduce counterparty risk.
+A custodial wallet is one where a third party holds the [private keys](/glossary/private-key) and you hold an account balance. Coinbase, Binance, Cash App, Robinhood - any service where you "have BTC" but never see a seed phrase is custodial.
+
+What this actually means: you don't own Bitcoin. You own a *claim* on Bitcoin held by a company, recorded in that company's internal database. If they're solvent and cooperative, that claim works just like owning Bitcoin. If they're not, it doesn't.
+
+The historical record of custodians failing is long:
+
+- **Mt. Gox** (2014) - 850,000 BTC lost in a slow-rolling hack. Customers got partial reimbursement starting in 2024, after a decade of bankruptcy proceedings.
+- **QuadrigaCX** (2019) - $190M CAD gone when the CEO died (or allegedly died) with the keys.
+- **Celsius / BlockFi / Voyager / Genesis** (2022) - all collapsed within months of each other when the "yield" they paid customers turned out to be funded by lending into a leveraged bubble.
+- **FTX** (2022) - $8B customer shortfall. CEO Sam Bankman-Fried convicted of fraud.
+
+Even working custodians can freeze your account, demand additional KYC, restrict withdrawals during volatility, or simply lose access to their own hot wallets via internal compromise. The risks are not theoretical and not rare.
+
+"Not your keys, not your coins" is the response. It's not a slogan; it's the technical reality. Bitcoin only delivers its core property - censorship-resistant, seizure-resistant, debasement-resistant money - to the actual key holder. Anyone else is just using a high-friction bank.
+
+Custodial wallets have legitimate uses: as on-ramps from fiat (you have to start somewhere), as venues for active trading, as occasional payment rails. Just don't confuse them with owning Bitcoin. Move out to self-custody (see [Wallet](/glossary/wallet), [Hardware Wallet](/glossary/hardware-wallet)) for anything you actually want to keep.

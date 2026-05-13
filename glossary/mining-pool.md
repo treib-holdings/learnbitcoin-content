@@ -28,4 +28,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Mining pools solve the issue of unpredictable block rewards for solo miners. By combining hash power, they find blocks more frequently and distribute payouts based on each member's share of work (often measured as 'shares'). This reduces variance-rather than waiting ages for a solo find, miners receive smaller, more regular earnings. Pool operators typically take a small fee for maintaining infrastructure, like pool servers and payout systems. However, centralization concerns arise if a handful of large pools gain too much hash rate, potentially threatening the network's security.
+A mining pool is a group of [miners](/glossary/miner) who combine their hash rate to find blocks together and split the rewards proportionally.
+
+Why pools exist: variance. A miner with 0.1% of global hash rate would, on average, find one block every ~70 days - but the variance around that average is enormous. Some months they'd find three; some months zero. With electricity bills due every month, "averaged over years" is not a viable cash flow. Pools fix this by aggregating many miners' hash power so blocks come more frequently (proportional to combined hash), and paying each contributor based on the "shares" of work they submit.
+
+The biggest pools today (Foundry USA, AntPool, ViaBTC, F2Pool, and a handful of others) collectively control well over half of global hash rate. This is the centralization concern that keeps Bitcoin developers up at night: if a few pool operators decide together to censor certain transactions, or to attempt a reorganization, they have the hash power to attempt it.
+
+The counterweight is that **pool operators are not miners**. The hash rate in a pool comes from individual miners who can switch pools at will. If a pool starts misbehaving, miners can - and do - migrate elsewhere within hours. There's also work happening to push power back to individual miners: **Stratum V2** is a protocol upgrade that lets miners (not pool operators) choose which transactions go into the blocks they're hashing on. It's been slow to deploy but is the structural fix.
+
+The current state is uncomfortable but not catastrophic. See [Mining rabbit hole §8](/rabbit-hole/mining) for a longer look at mining centralization and how it's actually evolving.

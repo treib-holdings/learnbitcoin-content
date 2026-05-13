@@ -22,4 +22,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-If BTC's price drops while difficulty remains high, miners may find electricity costs exceed their expected block reward. Some turn off machines (leading to difficulty eventually adjusting), and might sell existing BTC holdings to cover operational costs. This 'capitulation' can cause short-term downward price pressure, as well as a slight dip in hash rate until the difficulty readjusts. Historically, miner capitulation phases have marked market cycle bottoms, but it's a loosely observed correlation rather than a guaranteed indicator.
+Miner capitulation is what happens when [miners](/glossary/miner) collectively give up - powering down rigs and dumping BTC reserves - because the math has stopped working at the current Bitcoin price.
+
+The mechanism is straightforward. Mining costs roughly the same in fiat regardless of where the BTC price is: hardware depreciation, electricity, labor, financing. When the price drops far enough that the [block reward](/glossary/block-reward) in fiat terms is less than the cost of producing it, the weakest miners (highest power costs, oldest hardware) start losing money on every block. They have two options:
+
+1. **Power down.** Stop mining, mothball the equipment, wait for better conditions.
+2. **Sell their BTC reserves** to cover ongoing fiat-denominated obligations - keeping the machines on, but adding sell pressure to an already-falling market.
+
+Both happen during capitulation events. Hash rate visibly drops; on-chain analyses show miners moving BTC to exchanges in larger-than-usual quantities. Within an epoch or two, [difficulty](/glossary/difficulty) corrects downward, restoring economics for the survivors.
+
+Historically, miner capitulation has often coincided with the late-cycle bottom in BTC's price - the moment when the most marginal operators have flushed out and the next move tends to be up. This isn't a guarantee. It's a pattern that's held three of the last three major bear markets. Sample size: three.
+
+What capitulation is *not* is a network failure. Bitcoin keeps producing blocks throughout. The survivors get cheaper difficulty and stronger margins on the other side. The system is designed to weather this kind of stress; it has, repeatedly.

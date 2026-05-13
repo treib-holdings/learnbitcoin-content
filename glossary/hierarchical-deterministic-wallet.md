@@ -35,4 +35,19 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Sometimes abbreviated 'HD wallet,' this design is defined by BIP 32 (with BIP 44 for multi-account structures). Instead of manually managing numerous private keys, the user secures one seed phrase, from which all child keys are algorithmically generated. If you back up the seed once, you can restore every address that might be created in the future. This approach has become the norm for modern Bitcoin wallets-fostering ease of backup, multi-account setups, and compatibility across multiple wallet implementations.
+A hierarchical deterministic (HD) wallet is one where every [private key](/glossary/private-key) and every [address](/glossary/address) is derived deterministically from a single master seed. Back up the seed once and you've backed up every key the wallet has ever generated, and every key it will ever generate in the future.
+
+The HD design is specified across three [BIPs](/glossary/bip-bitcoin-improvement-proposal):
+
+- **BIP-32** - the master derivation algorithm. Defines how to turn a master seed into a tree of child keys, using HMAC-SHA-512 to derive deterministically without leaking the parent.
+- **[BIP-39](/glossary/mnemonic-seed-phrase)** - the seed-to-words encoding (the 12/24-word [seed phrase](/glossary/seed-phrase)).
+- **[BIP-44](/glossary/bip-44)** - a standardized derivation path structure (`m/purpose'/coin'/account'/change/index`) that lets different wallet software discover each other's accounts and addresses.
+
+Why this matters in practice:
+
+- **Backup is trivial.** Write down 12 or 24 words. Done. That covers all current and future keys.
+- **Each transaction gets a fresh address.** No reuse, better privacy, no extra backup burden.
+- **The seed is portable.** Restore your wallet in completely different software (Sparrow, Electrum, Bitcoin Core, Trezor Suite) and it can re-derive the same keys and find the same coins.
+- **Watch-only mode is possible.** You can share an extended *public* key (xpub) with another tool to derive receive addresses without exposing any private keys.
+
+Almost every modern Bitcoin wallet is HD. Pre-2013 wallets (early Bitcoin Core, Bitcoin-Qt) generated random standalone keys and required backing up the wallet file after every transaction - a much worse user experience that's been fully obsolete for over a decade.

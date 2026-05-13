@@ -12,4 +12,16 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-In Bitcoin, a private key underpins an entire address or range of addresses in hierarchical wallets. Anyone who obtains the private key can sign transactions moving associated funds. Good key management is vital-leaking the key means losing control of the BTC. Private keys are usually represented in WIF format or derived from a mnemonic seed. Wallets hide these details from users, but they remain the foundation of 'not your keys, not your coins.' If compromised, funds can be stolen instantly.
+A private key in Bitcoin is a 256-bit number. That's it. 32 random bytes, drawn from a space of 2^256 possible values. Whoever knows that number can spend the BTC controlled by it. Whoever doesn't, can't.
+
+The implications are absolute and immediate:
+
+- **Lose your private key, lose your BTC.** There's no password reset, no account recovery, no support line. The protocol has no concept of "the rightful owner" beyond "whoever can produce a valid signature with the key."
+- **Reveal your private key, lose your BTC.** A photo of a backup card on social media, a key file synced to a compromised cloud drive, a phishing email that captures it - any of those is enough.
+- **Generate it poorly, lose your BTC.** A predictable random number generator can produce keys that are statistically more guessable than the 2^256 space implies. This has happened, and people have lost millions to it.
+
+Modern wallets shield you from the raw 32-byte private key by working with a [seed phrase](/glossary/seed-phrase) (a [BIP-39](/glossary/mnemonic-seed-phrase) mnemonic) that deterministically generates thousands of private keys via a [hierarchical deterministic wallet](/glossary/hierarchical-deterministic-wallet) structure. You back up 12 or 24 words instead of 32 bytes. Functionally identical security; better human ergonomics.
+
+The phrase "not your keys, not your coins" is the most important sentence in self-custody. If your BTC sits on an exchange, the exchange holds the keys. Their solvency is your security model. The whole point of Bitcoin is to not need that.
+
+See [Public Key](/glossary/public-key) for what gets derived from this and why that direction is one-way, and the [Key Space rabbit hole](/rabbit-hole/key-space) for why 2^256 is bigger than your intuition wants it to be.

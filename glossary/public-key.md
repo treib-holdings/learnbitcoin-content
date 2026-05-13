@@ -16,4 +16,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A public key, safe to share publicly, corresponds uniquely to a private key. In Bitcoin's ECDSA/Schnorr system, the private key remains secret, while the public key proves ownership by verifying signatures. Addresses like P2PKH or P2WPKH typically employ a hashed version of the public key (like RIPEMD160(SHA-256(pubkey))) for better privacy and shorter on-chain data. Public keys come in compressed or uncompressed form, but compressed (33-byte) is now standard. They're fundamental to cryptographic ownership, letting the network confirm signatures match the rightful owner without revealing the private key.
+A public key is a number derived from a [private key](/glossary/private-key) via elliptic curve multiplication. It corresponds uniquely to the private key but reveals nothing about it - you can publish your public key without compromising your secret.
+
+The mechanism: Bitcoin uses the secp256k1 elliptic curve. Multiplying a curve generator point G by your private key k gives a point P = k·G. That point P (encoded as 33 bytes in compressed form) is your public key. Going forward from k to P is cheap. Going backward from P to k requires solving the elliptic curve discrete logarithm problem, which is computationally intractable - the same intractability that secures most of the modern internet's cryptography.
+
+What public keys are used for:
+
+- **Verifying signatures.** When you spend BTC, your wallet signs the transaction with your private key. Anyone, including every node on the network, can verify that signature against your public key without learning your private key. That's how Bitcoin enforces "only the rightful owner can spend."
+- **Generating [addresses](/glossary/address).** Most Bitcoin address types are derived by hashing the public key (SHA-256 then RIPEMD-160, or just SHA-256 for newer formats). The hash is what's typically shared publicly; the public key itself is only revealed when you spend.
+
+Why hash the public key into an address instead of just sharing the public key? Two reasons. First, addresses are much shorter and easier to handle. Second, hashing adds a layer of defense: if elliptic curve cryptography is ever broken (e.g. by a sufficiently powerful quantum computer), funds at unspent addresses remain safe as long as the public key has never been revealed. Reused or already-spent addresses are more exposed.
+
+The asymmetry between private and public keys - cheap one way, impossible the other - is the foundation of everything in Bitcoin that involves cryptographic ownership.

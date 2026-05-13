@@ -25,5 +25,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Bitcoin address is like your street address in the digital realm, except it's derived from cryptographic magic rather than city zoning. Each address is hashed from a public key, ensuring that only someone with the corresponding private key can spend the coins sent there. Addresses come in different flavors, from the older P2PKH (starting with '1') to Bech32 (starting with 'bc1'), which is defined in [BIP-173](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki).
-When you share an address, you're effectively saying, "Send Bitcoin here, please." It's a lot shorter than a full public key, and it's also a bit like wearing a costume that hides some of your underlying identity. Still, it's important to remember that transactions on the blockchain are public, so good privacy practices (like avoiding address reuse) are vital.
+A Bitcoin address is a short string that represents a destination for a payment. It encodes a [hash](/glossary/hash) of a [public key](/glossary/public-key) (or a script), formatted to be easy to copy, paste, and scan.
+
+You'll see several address formats coexisting on the network:
+
+- **Legacy / P2PKH** - starts with `1`. The original format. Still works; uses more block space than newer types.
+- **P2SH** - starts with `3`. Pay-to-Script-Hash, often used for multisig or older SegWit-wrapped addresses.
+- **Native SegWit / Bech32** - starts with `bc1q`. Introduced by [BIP-173](/glossary/bip-173-bech32). Cheaper fees, better error detection.
+- **Taproot / Bech32m** - starts with `bc1p`. Introduced with [BIP-341](/glossary/bip-341-taproot). Best privacy, smallest signatures, supports advanced scripts that look identical to single-sig.
+
+All formats represent the same underlying concept: "to spend BTC sent here, you must produce a valid script and signature(s) that satisfy the locking conditions encoded in this address." Different formats just specify different locking script structures and different on-chain footprints.
+
+A few things addresses are not:
+
+- **Not your identity.** An address is a destination, not an account. A wallet typically generates many addresses to receive on.
+- **Not anonymous.** The chain is fully public. If an address has been linked to you (by an exchange KYC, a public donation, a re-used address), every transaction touching it can be linked back. See [Fungibility](/glossary/fungibility).
+- **Not permanent.** Most wallets generate a fresh address for each incoming payment. Reusing addresses leaks privacy by concentrating activity in one observable bucket.
+
+Share addresses casually for receiving. Generate new ones often. Treat the on-chain history of any address as a public ledger entry, because that's exactly what it is.

@@ -12,4 +12,17 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-Rather than backing up a string of random hex digits, BIP 39 defines a process for generating human-readable word lists. Users write down these words as their primary backup for a hierarchical deterministic (HD) wallet. Losing the phrase means losing access, so secure storage is critical. Conversely, if it's compromised, all derived addresses are at risk. Typically, wallets let you restore funds simply by re-entering the same 12/18/24 words. Some setups also add a passphrase (a '25th word') for extra security.
+A mnemonic seed phrase is the formal name for what most people call a [seed phrase](/glossary/seed-phrase) - the 12, 18, or 24 English words that back up a Bitcoin wallet. The terms are interchangeable in everyday usage.
+
+The standard is **[BIP-39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)**, published in 2013. It defines:
+
+- A fixed list of 2,048 words, in 10 languages (English is by far the most common).
+- The mapping between binary entropy and word sequences (each word encodes 11 bits).
+- A checksum so a mistyped or randomly-guessed phrase fails validation.
+- The derivation from words to a 512-bit master seed (PBKDF2 with the phrase, optionally salted by a passphrase).
+
+The 512-bit master seed then feeds into the [BIP-32](/glossary/hierarchical-deterministic-wallet) hierarchical key derivation, which produces every private key and address the wallet uses. The whole chain - words → master seed → master private key → derived keys → addresses - is purely deterministic. Same words in, same wallet out, on any BIP-39/32 compatible software.
+
+This portability is why BIP-39 has won. You can back up with one wallet and restore on a completely different brand of wallet, and your coins are still there - as long as both implement the standard. That interoperability is one of the quiet wins of Bitcoin's standards process.
+
+See [Seed Phrase](/glossary/seed-phrase) for the practical handling and storage guidance.

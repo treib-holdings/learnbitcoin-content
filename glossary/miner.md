@@ -31,4 +31,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Bitcoin mining involves running SHA-256 computations on potential block headers. When a miner finds a hash below the difficulty target, they broadcast their block. If the network accepts it, the miner collects the block reward (new BTC + transaction fees). Modern mining is dominated by ASIC (Application-Specific Integrated Circuit) rigs, as GPUs or CPUs are uncompetitive. Miners often join pools to share hashing power and earn more frequent, smaller payouts. Their collective work maintains Bitcoin's proof-of-work security, making attacks extremely costly.
+A miner is anyone running hardware that participates in Bitcoin's [proof-of-work](/glossary/proof-work-pow) - generating candidate [block headers](/glossary/block-header) and hashing them, trying to find one valid enough to propose to the network. In return, the miner collects the [block reward](/glossary/block-reward): newly minted BTC plus all the fees from transactions they include.
+
+In practice "miners" today are large industrial operations running thousands of ASIC chips, sited near cheap electricity (hydro in Sichuan during the wet season, stranded gas in West Texas, geothermal in Iceland, off-peak nuclear in France). The hardware is specialized; the economics are razor-thin; the margins live or die on the cost of one kilowatt-hour.
+
+Smaller actors still exist. Solo miners with one or two machines occasionally win blocks via lottery hardware. Hobbyists run small rigs for the experience. Most production hash rate, though, flows through [mining pools](/glossary/mining-pool) - aggregators that bundle small contributors so each receives smooth payouts instead of waiting years for a solo block find.
+
+Miners are not Bitcoin's rulers. The protocol is enforced by every full node, not by miners. Miners can choose *which valid transactions* to include in their blocks, but they can't change the rules. Any block that violates consensus (more than the allowed subsidy, an invalid signature, etc.) gets rejected by every honest node on Earth.
+
+See the [Mining rabbit hole](/rabbit-hole/mining) for the full mechanism, and [Mining Pool](/glossary/mining-pool) for the centralization concerns around how miners actually organize.
