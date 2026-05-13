@@ -25,4 +25,24 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Although individual miners can contribute hash power, many pool their resources to smooth payouts. Consequently, a handful of major pools often command a significant share of Bitcoin's total hash rate. If one pool or colluding group surpasses 51%, they could theoretically double-spend or censor transactions. This is considered highly unlikely given economic incentives and pool self-interest to maintain trust, but it remains a worry for decentralization advocates. Efforts to encourage smaller pools or P2Pool aim to distribute mining power more evenly.
+Mining centralization is the concern that Bitcoin's [hash rate](/glossary/hash-rate) is concentrated in too few hands, undermining the [decentralization](/glossary/decentralization) property Bitcoin depends on.
+
+The structural reality in 2026:
+
+- **A few [mining pools](/glossary/mining-pool) coordinate most of the hash rate.** Foundry USA, AntPool, ViaBTC, F2Pool, and a few others collectively command well over half of global hash.
+- **A few [ASIC](/glossary/asic-application-specific-integrated-circuit) manufacturers supply most of the hardware.** Bitmain, MicroBT, Canaan, and a small number of others.
+- **A few jurisdictions host most of the mining.** The US is the largest, followed by various others depending on the year. China's 2021 ban shifted geography substantially.
+
+What this means in practice:
+
+- **A coordinated attack is theoretically possible.** Pools collectively controlling >50% of hash rate could attempt to reorg recent blocks, censor specific transactions, or double-spend their own outputs. None of this has happened at scale on Bitcoin, but the capability exists.
+- **A single point of pressure exists.** Governments wanting to censor Bitcoin transactions could in principle pressure mining pool operators in their jurisdictions to comply. This has been observed in milder forms (some pools have voluntarily filtered OFAC-sanctioned addresses).
+
+What counterbalances it:
+
+- **Pools aren't miners.** The hash rate inside a pool comes from individual miners who can switch pools within hours. A misbehaving pool tends to bleed hash rate fast.
+- **Stratum V2 progress.** The new pool-miner protocol shifts transaction selection from pool operators to individual miners. Adoption is gradual but moving in the right direction.
+- **Geographic dispersion has improved.** Compared to 2018-2020 when ~65% of hash was in China, the network is now spread across many more countries.
+- **Mining hardware is fungible.** Miners can and do route their hash rate through different pools, in different jurisdictions, on short notice.
+
+The honest assessment: mining centralization is a real concern with real failure modes, but the structural counterweights are also real. It's an area worth watching, worth pushing back on with Stratum V2 adoption and pool-operator scrutiny, and worth not panicking about. See [Mining rabbit hole §8](/rabbit-hole/mining) for a longer look.

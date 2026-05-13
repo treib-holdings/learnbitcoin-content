@@ -26,5 +26,24 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Covenants extend Bitcoin's script to dictate not just who can spend an output, but also how those coins can be spent down the line. For example, you might enforce that funds can only go to specific addresses or require certain transaction formats. BIP 119's [CheckTemplateVerify (CTV)](https://github.com/bitcoin/bips/blob/master/bip-0119.mediawiki) is one approach to implementing these constraints.
-Supporters argue covenants unlock new use cases: vaults with restricted withdrawal patterns, channel factories, or mass coin management. Critics worry about potential censorship or reduced fungibility if covenants become widespread. Nonetheless, the idea of limiting future transaction paths intrigues developers seeking more robust on-chain contracts without fully replicating a Turing-complete environment.
+A covenant is a [Bitcoin Script](/glossary/bitcoin-script) construct that restricts not just *who* can spend a UTXO, but *how it must be spent*. The locking script doesn't just check signatures; it imposes constraints on what the spending transaction can look like - which addresses receive, in what amounts, with what timing, etc.
+
+Bitcoin doesn't currently support covenants. They've been proposed in various forms since at least 2013, and the post-Taproot era (2022-2026) has seen the most serious discussion of activating one.
+
+What covenants would enable:
+
+- **Vault constructions.** Cold storage where withdrawal must go through a specific multi-step path with a cancellation window. Even if your signing key gets stolen, the attacker is forced into a slow, observable path you can interrupt.
+- **Channel factories.** A single on-chain transaction that pre-commits to opening many [Lightning channels](/glossary/lightning-channel) later, deferring the bulk of fee cost.
+- **Cross-input signature aggregation patterns.**
+- **Trust-minimized custody products** with enforced policy.
+- **Improved layer-2 protocols** (some of the harder Lightning UX problems get easier with covenants).
+
+The debate has two sides:
+
+**For:** Covenants unlock useful real-world constructions that are awkward or impossible today. The simplest proposals are well-scoped and don't break anything.
+
+**Against:** Adding covenant capability is a major expansion of Script's expressiveness. Once a covenant opcode is activated, it's effectively permanent. There are concerns about subtle interactions with future protocol changes, and about the policy precedent - if covenants can enforce "this UTXO can only be spent to whitelisted addresses," that capability is dual-use (legitimate vaults vs forced KYC compliance schemes).
+
+Current candidate proposals: [BIP-119 (CTV)](/glossary/bip-119-ctv), OP_VAULT, OP_CAT re-enablement, ANYPREVOUT, and others. No single proposal has yet built broad enough consensus to activate. The discussion continues.
+
+The covenants debate is one of the more substantive open questions in Bitcoin protocol development as of 2026. Worth understanding even if you don't have a strong view on it yet.

@@ -22,5 +22,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 119, referencing [BIP-119](https://github.com/bitcoin/bips/blob/master/bip-0119.mediawiki), introduces CHECKTEMPLATEVERIFY (CTV), which enables pre-authorized transaction templates. Think of it like a 'covenant' that dictates the exact script paths or addresses that coins can move to, restricting subsequent transactions to specific patterns.
-Proponents see CTV as a powerful new tool for batch transactions, vaults, and trust-minimized channel factories. Critics worry about potential overreach, saying covenants might limit fungibility or open the door to intrusive policy scripts. While still an active discussion, BIP 119 reflects ongoing efforts to expand Bitcoin's scripting abilities within the existing framework.
+[BIP-119](https://github.com/bitcoin/bips/blob/master/bip-0119.mediawiki) is a draft Bitcoin Improvement Proposal by Jeremy Rubin that proposes adding the [`OP_CHECKTEMPLATEVERIFY`](/glossary/checktemplateverify-ctv) (CTV) opcode. It's the most-discussed "covenant" proposal of the post-Taproot era, and as of 2026 it remains a draft - not activated, not rejected, ongoing.
+
+What the proposal does at a technical level: CTV would let a [Bitcoin Script](/glossary/bitcoin-script) commit to the *shape* of any transaction that's allowed to spend an output - the number of inputs and outputs, their amounts, the script types involved, etc. This is a [covenant](/glossary/covenants): a restriction on how the coins can move in the future, not just who can move them.
+
+Use cases the proposal targets:
+
+- **Vaults.** A withdrawal from cold storage that's forced to go through a pre-committed two-step process, with a delay where the user can cancel if it wasn't them.
+- **Channel factories.** Open a single on-chain transaction that commits to opening many Lightning channels later, deferring most of the fee cost.
+- **Discrete log contracts and similar advanced primitives.**
+- **Batch payments to many recipients with one on-chain transaction.**
+
+Where the debate sits:
+
+- **Pro:** CTV is the smallest, simplest covenant primitive proposed. It would unlock useful structures while leaving the door open to more advanced covenant ideas later.
+- **Con:** Adding *any* covenant opcode is irreversible. Some Bitcoin developers worry about subtle interactions with future protocol changes, or about the precedent of opening the covenant door at all. Other covenant proposals (like OP_VAULT, OP_CTV+CSFS, and various Taproot-based alternatives) have different tradeoffs.
+
+BIP-119 has been technically ready for years. Whether it activates depends on community consensus that hasn't yet formed. See [Covenants](/glossary/covenants) for the broader concept and [CTV](/glossary/checktemplateverify-ctv) for the opcode-level mechanic.
