@@ -28,4 +28,23 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A mining rig is often a purpose-built machine with ASIC chips explicitly designed for Bitcoin's proof-of-work. Earlier eras saw GPUs and CPUs, but ASICs now rule due to their massive efficiency advantage. Rigs typically include a power supply, cooling system, and a control board running mining software. Many rigs operate in large farms or colocation facilities where cheap electricity and cooling can be arranged. The term can also refer to a home-brewed setup-though in modern mining, efficiency demands large-scale deployment to remain profitable.
+A mining rig is the physical hardware that does the [SHA-256d hashing](/glossary/mining-algorithm) for Bitcoin mining. In 2026, that means [ASIC](/glossary/asic-application-specific-integrated-circuit)-based machines designed specifically for this single task.
+
+A typical modern Bitcoin ASIC miner (Bitmain S21, MicroBT M60S series, etc.) consists of:
+
+- **The hash boards** - PCBs holding many SHA-256-optimized ASIC chips. Each board does 30-60 TH/s (terahashes/sec).
+- **Control board** - manages chip work distribution, monitors temperatures, reports back to the [mining software](/glossary/mining-software).
+- **Power supply** - typically 3-4 kW continuous draw for a single unit.
+- **Cooling** - aggressive fans for air-cooled units, immersion liquid for hydro/immersion variants.
+
+Modern flagship units in 2026 are around 200-300 TH/s and 14-17 joules per terahash. Compare to early ASICs (2013) at 1 TH/s and 1,000+ J/TH. The efficiency improvement curve has been astonishing.
+
+What rigs cost:
+
+- **Hardware:** $1,500-5,000 per unit depending on generation and efficiency.
+- **Electricity:** The dominant operational cost. Profitability requires <$0.05/kWh in most market conditions.
+- **Cooling, maintenance, internet, real estate:** Real but secondary.
+
+Rigs at scale need [colocation](/glossary/mining-colocation) - dedicated facilities with industrial power, cooling, and bandwidth. Home rigs exist for hobbyists, often using mining heat for space or water heating in cold climates, but profit-driven home mining has been impractical since around 2014.
+
+See [ASIC](/glossary/asic-application-specific-integrated-circuit) for the chips inside and [Mining](/glossary/mining) for the broader picture.
