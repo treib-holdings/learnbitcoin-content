@@ -21,5 +21,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 85, found in [BIP-85](https://github.com/bitcoin/bips/blob/master/bip-0085.mediawiki), provides a structured way to generate multiple child seeds (e.g., mnemonic phrases) from one master seed. It's akin to using one 'master key' for everything, yet each child wallet remains distinct and compartmentalized.
-This is particularly useful for people or organizations who need multiple independent seeds-say, for different use cases or different family members-but only want to secure one master backup. By deriving additional seeds from an already backed-up root, users reduce the complexity of maintaining multiple passphrases. BIP 85 extends the convenience of hierarchical deterministic wallets, making multi-wallet management more efficient.
+[BIP-85](https://github.com/bitcoin/bips/blob/master/bip-0085.mediawiki) defines a deterministic way to generate child secrets (typically new BIP-39 mnemonics, but also other formats like WIF private keys, HD seed bytes, or generic 256-bit entropy) from a single master BIP-32 wallet. Each child derivation is fully independent in terms of resulting wallet operation, but reproducible from the master plus a derivation path.
+
+Why this is useful:
+
+- **One backup, many wallets.** A user with a single carefully-protected master seed can deterministically generate seeds for separate "sub-wallets" - one for daily spending, one for savings, one to give to a family member, etc. Backups consolidate to the master.
+- **Recoverable secrets, not random ones.** If you lose a sub-wallet's mnemonic, you can re-derive it from the master + path. No need to back up each sub-wallet independently.
+- **General-purpose entropy generation.** BIP-85 supports deriving non-mnemonic outputs too - PGP keys, password seeds, arbitrary bytes for any application that wants deterministic randomness anchored to a backed-up source.
+
+The downside: **the master seed becomes a single point of catastrophic failure.** If the master leaks, every sub-wallet is compromised at once. For users with serious operational security (hardware wallets, secure backup storage), this concentration can be acceptable. For users with weaker key hygiene, it can be worse than independent seeds.
+
+BIP-85 is widely supported in Bitcoin Core, hardware wallets (ColdCard, Trezor, Foundation Passport), and several wallet stacks. It's the standard for "I want multiple wallets but only one backup to safeguard."
+
+See [Hierarchical Deterministic Wallet](/glossary/hierarchical-deterministic-wallet) for the BIP-32 framework this builds on.
