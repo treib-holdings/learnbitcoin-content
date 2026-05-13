@@ -2,8 +2,11 @@
 title: "Bitcoin Units"
 slug: bitcoin-units
 draft: false
-section: deep-dive
+status: live
+section: rabbit-hole
 tagline: "Big Coins, Tiny Bits — Making Sense of BTC, Sats, and Everything in Between"
+order: 1
+estimatedMinutes: 9
 sources:
   - { label: "Bitcoin Wiki — Units", url: "https://en.bitcoin.it/wiki/Units" }
 relatedTerms: ["satoshi", "bitcoin", "lightning-network", "halving-halvening"]
