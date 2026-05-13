@@ -24,4 +24,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-nLocktime (one word, short for 'transaction locktime') works with nSequence fields to determine when a transaction is valid for inclusion in a block. If nLocktime is set to a block height or timestamp in the future, the transaction can't be confirmed before that point. This is useful for escrow or delayed payout scenarios-though actual enforcement also depends on miner acceptance and the network's median time. Many wallets default nLocktime to zero for immediate spending, while advanced scripts leverage it for time-based contract logic (together with CHECKLOCKTIMEVERIFY).
+`nLockTime` is the protocol-level name for Bitcoin's [locktime](/glossary/locktime) field - a 32-bit value in every transaction specifying the earliest block height or Unix timestamp at which the transaction may be included in a block.
+
+The `n` prefix is a holdover from Satoshi's original C++ code, where integer fields conventionally started with `n`. You'll see it in source code, BIPs, and protocol docs; in conversation, people just say "locktime."
+
+Value semantics:
+
+- **0** - immediate validity (default).
+- **1 to 499,999,999** - interpreted as a block height.
+- **500,000,000 and above** - interpreted as a Unix timestamp (seconds since the epoch).
+
+`nLockTime` is paired with the per-input `nSequence` field. If every input's `nSequence` is `0xffffffff`, `nLockTime` is *ignored* - the transaction is treated as having no time lock regardless of the field's value. Setting any `nSequence` below the maximum makes `nLockTime` enforceable.
+
+This little quirk is the foundation for [Replace-by-Fee](/glossary/replace-fee-rbf), which uses `nSequence` to signal "this transaction can be replaced." It's also how older relative-locktime workflows handled things before [CHECKSEQUENCEVERIFY](/glossary/checksequenceverify-csv) was added.
+
+See [Locktime](/glossary/locktime) for the practical view and [Absolute Locktime](/glossary/absolute-locktime) for the contrast with relative-locktime via `nSequence`.
