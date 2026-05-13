@@ -24,5 +24,19 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Difficulty retargeting is the mechanism behind the scenes ensuring that no matter how many new mining rigs come online, Bitcoin blocks don't start popping out every 30 seconds. After every 2016 blocks (about two weeks), the network compares actual block times to the 10-minute target. If blocks were found faster on average, difficulty goes up; if slower, it goes down.
-Without this retarget, an influx of mining power could accelerate block production and flood the market with new BTC. Similarly, a mass exodus of miners could slow the chain to a crawl. Retargeting keeps the issuance schedule on track, reinforcing Bitcoin's predictable monetary policy.
+Difficulty retargeting is the mechanism by which Bitcoin keeps its average [block time](/glossary/block-time) at ~10 minutes regardless of how much [hash rate](/glossary/hash-rate) is on the network.
+
+The rule is mechanical:
+
+- Every **2,016 blocks** (roughly two weeks), every node computes how long that 2,016-block "epoch" actually took.
+- If it took **less than two weeks**, blocks were too fast: [difficulty](/glossary/difficulty) goes **up**.
+- If it took **more than two weeks**, blocks were too slow: difficulty goes **down**.
+- The adjustment ratio is proportional, **clamped at ±300%** to prevent extreme swings.
+
+The adjustment kicks in instantly at the start of the next epoch. The new difficulty is then in force for the next 2,016 blocks, when the cycle repeats.
+
+This is one of the most consequential and underappreciated pieces of mechanism design in Bitcoin. There is no committee. There is no Federal Reserve raising rates. The network observes its own conditions and corrects, on a fixed schedule, forever. A miner with 80 MW of hash power coming online doesn't change Bitcoin's issuance schedule; they just trigger a higher difficulty at the next retarget.
+
+The mechanism has held through enormous events: China's 2021 mining ban (hash rate dropped ~50% in weeks; difficulty corrected down 28% in the next retarget), the 2022 bear market miner exodus, and four halvings. Every time, the network rebalances and returns to its 10-minute average within an epoch or two.
+
+See the live current epoch progress and next-adjustment estimate in the [Mining rabbit hole §4](/rabbit-hole/mining) or on the [Node page](/node).

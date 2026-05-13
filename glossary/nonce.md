@@ -18,4 +18,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-In mining, the nonce is the primary 'knob' miners twist to produce different hashes. Once they exhaust the nonce range (2^32 possibilities), they adjust other fields (like the extranonce in the coinbase transaction) to continue searching. The goal: find any combination that yields a block header hash lower than the difficulty target. It's called a 'nonce' (number used once) because each combination is tried once; changing it leads to a different potential block hash. A valid solution secures the block reward for the successful miner.
+The nonce is a 32-bit field in the [block header](/glossary/block-header) that miners change while searching for a valid block. "Nonce" is short for "number used once."
+
+[Mining](/glossary/mining) at the lowest level looks like this:
+
+```
+loop:
+  set nonce to next value
+  hash = SHA-256(SHA-256(header))
+  if hash < target: broadcast block
+  else: try again
+```
+
+That's it. There's no shortcut, no algebra, no clever derivation. You just compute hashes until one happens to fall below the target. Modern ASICs do this around 100 trillion times per second per chip.
+
+The 32-bit nonce only has 2^32 = ~4.3 billion possible values, which a serious mining operation burns through in a fraction of a second. When it runs out, the miner changes another part of the block (typically the *extranonce* inside the coinbase transaction), which changes the [Merkle root](/glossary/merkle-root) in the header, which gives them a fresh 4.3-billion-value nonce space to search. Repeat until something works.
+
+The nonce is the most boring 4 bytes in Bitcoin and also the entire mechanism by which proof-of-work happens. See [Hash](/glossary/hash) for what's being computed, and the [Mining rabbit hole](/rabbit-hole/mining) for why finding a good one matters.
