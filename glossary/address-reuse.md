@@ -20,5 +20,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Address reuse is like wearing a giant name tag all around town. Every time you reuse the same address for incoming payments, you're effectively making it easier for observers to link those transactions. It's a common rookie mistake, especially among new Bitcoin users who aren't aware of how the blockchain's transparency works.
-By not generating a fresh address, you allow blockchain watchers to see a clearer pattern of how much BTC you're receiving or spending over time. It's also considered poor wallet hygiene. Most modern wallets automatically generate a new address for each payment to improve your privacy and security posture. So, if you find yourself reusing addresses, think about rotating them-just like changing your socks every day.
+Address reuse is the practice of receiving multiple payments at the same Bitcoin [address](/glossary/address). It's one of the most common privacy mistakes and one of the easiest to avoid.
+
+Why it matters: every Bitcoin transaction is publicly visible on the chain, forever. An address that receives one payment shows up once. An address that receives a hundred payments shows up a hundred times, with every counterparty, amount, and timestamp linked together in plain view. Anyone who knows that address belongs to you - because you posted it on Twitter, used it for a donation page, gave it to one KYC exchange - can now see your entire history through that address.
+
+The fix is trivial: use a fresh address for every incoming payment. Modern [hierarchical deterministic wallets](/glossary/hierarchical-deterministic-wallet) generate new addresses automatically. The same 12 or 24 [seed phrase](/glossary/seed-phrase) words back up thousands of addresses; you don't have to track them individually.
+
+Where reuse still happens in practice:
+
+- **Donation addresses on personal sites and Twitter bios.** Convenient, but every donor sees the same address and can correlate. Better alternatives: a [Lightning](/glossary/lightning-network) address (instant + private), [Silent Payments](/glossary/silent-payments) (one reusable code, fresh on-chain addresses), or rotating the static address periodically.
+- **Exchange withdrawal addresses.** Some users withdraw repeatedly to the same address. The exchange sees this; chain analysts see it; the address's history is fully exposed.
+- **Multi-signature setups** where regenerating addresses is operationally awkward.
+
+If you can't avoid reusing one specific address, at least make it a clearly-public one - your donation address, your business receiving address - that's already understood to be linked to your identity. Don't reuse the same address for personal savings.
+
+The protocol allows reuse. The privacy model doesn't. Treat addresses as one-shot.

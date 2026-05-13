@@ -23,4 +23,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Stealth addresses predate BIP 47 Payment Codes and share conceptual overlap-users publish a stealth key from which senders create ephemeral addresses. The receiver can then scan the chain to find payments to them. While similar to Payment Codes, stealth addresses aren't widely adopted in Bitcoin due to complexity and the requirement to constantly scan the blockchain for incoming transactions. Altcoins like Monero incorporate stealth addresses by default. New proposals like Silent Payments refine the idea further but aren't yet merged into Bitcoin's base protocol.
+Stealth addresses are a privacy primitive: the receiver publishes a single long-term public key, and senders derive a fresh on-chain [address](/glossary/address) for each payment from that key. The receiver scans the chain for outputs that match their key and finds the payments without ever publishing a static receive address.
+
+The cryptographic idea has existed in Bitcoin discussions since 2014 but never made it into the base protocol. The reasons:
+
+- **Receiver-side scanning is expensive.** To find your payments, you must check every transaction on the chain against your stealth key. This is doable for a server with the full chain available, but awkward for light wallets and bandwidth-constrained users.
+- **Two-way handshake variants** (like [BIP-47 Payment Codes](/glossary/bip-47-payment-codes)) require a "notification" transaction that itself reveals you're using payment codes - which leaks a different kind of metadata.
+
+Monero builds stealth addresses into its protocol by default. Bitcoin has historically left them to wallet-level conventions and BIP-47, which had limited adoption.
+
+The modern revival is **[Silent Payments](/glossary/silent-payments)** ([BIP-352](https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki), 2023), which refines the stealth-address idea to work cleanly with Bitcoin's existing Taproot infrastructure. Silent Payments is the stealth-address concept that's actually shipping in 2026 wallets.
+
+See [Silent Payments](/glossary/silent-payments) for the practical 2026 version of this idea.

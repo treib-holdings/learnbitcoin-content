@@ -37,4 +37,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-When you pay someone on LN but lack a direct channel with them, your node consults the network graph, searching for a route where each channel has enough capacity to forward the amount. LN nodes gossip channel info, enabling route-finding algorithms (like Dijkstra's or variations). If the chosen route fails mid-payment, the node retries with an alternate path or a smaller chunk (AMP). Routing complexities arise from the dynamic nature of liquidity-channels can deplete or rebalance unpredictably-making LN routing an ongoing challenge for node software developers to optimize.
+Lightning routing is the process of finding a path through the network of [Lightning channels](/glossary/lightning-channel) that can carry your payment from sender to receiver, when no direct channel exists between them.
+
+Most Lightning users don't have direct channels with the people they pay - that would require opening an [on-chain transaction](/glossary/transaction) with every counterparty, defeating the point. Instead, your [Lightning node](/glossary/lightning-node) routes payments through intermediate nodes that *do* have a path to the destination, atomically, via chained [HTLCs](/glossary/htlc-hashed-time-locked-contract).
+
+How it works under the hood:
+
+1. **Build the graph.** Lightning nodes share a [gossip protocol](/glossary/gossip-protocol-lightning) advertising which channels exist, their capacity, and their fee policies. Your node maintains a local view of this graph.
+2. **Find a path.** Run a modified Dijkstra's algorithm to find a sequence of channels from you to the destination, with enough capacity on the relevant side of each channel, optimizing for fees and reliability.
+3. **Onion-route the payment.** Each hop knows only the previous and next hop, not the full path. This is **[Sphinx](/glossary/lightning-sphinx) onion routing**, similar to Tor.
+4. **HTLCs lock the payment** at every hop. If any hop fails, the whole payment unwinds atomically - you don't lose money in a partial route.
+5. **If routing fails, retry.** Modern wallets retry with different paths or split the payment across multiple paths ([Atomic Multi-Path Payments / AMP](/glossary/atomic-multi-path-payment-amp)).
+
+The hard problems in routing:
+
+- **Liquidity is private.** Gossip tells you channels exist and their total capacity, but not which side has the balance. Routing has to probe or guess.
+- **Channels deplete.** A channel that worked for routing a minute ago might be depleted on the relevant side after your payment passed through. Other people's payments are invisible to you.
+- **Larger payments are harder.** Probability of finding a complete path drops as payment size approaches typical channel capacity. AMP and channel splicing help, but huge payments often require multiple attempts or out-of-band coordination.
+
+Routing reliability has improved dramatically since 2020 - most everyday payments under a few hundred thousand sats route on the first try. Larger or more remote payments still occasionally fail, but the failure modes are recoverable and never lose funds.

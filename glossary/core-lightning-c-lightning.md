@@ -26,5 +26,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Previously known as 'Elements Project's c-lightning,' now simply 'Core Lightning,' it's an LN node software that interacts with Bitcoin Core. Written in C, it aims for a lightweight, highly customizable approach. Power users can manage channels via a robust command-line tool and plug in extra functionality with an extensive plugin system.
-Compared to LND (Lightning Labs) or Eclair (ACINQ), c-lightning emphasizes minimal resource usage and script-based extensibility. It's well-suited for advanced deployments, offering granular control over channel states, routing, and billing. Those comfortable with terminal commands often pick c-lightning for a more "under the hood" LN experience.
+Core Lightning (CLN), formerly **c-lightning**, is one of the major [Lightning Network](/glossary/lightning-network) implementations. Developed by [Blockstream](https://blockstream.com/), it's written in C and emphasizes modularity, minimal resource footprint, and a plugin architecture that lets developers extend functionality without forking the core daemon.
+
+How it stacks up against the other main implementations:
+
+- **CLN** - C, modular, plugin-first. Strong on advanced workflows and resource efficiency. Notable for shipping [BOLT-12 offers](/glossary/lightning-invoice) support early.
+- **LND** (Lightning Labs) - Go, monolithic, REST/gRPC APIs. Most common in turnkey node-in-a-box products. Largest user base.
+- **Eclair** (ACINQ) - Scala, powers the Phoenix mobile wallet. Strong on mobile/embedded use cases.
+- **LDK** (Spiral) - Library, not a daemon. Embedded into apps like Cash App, Mutiny.
+
+CLN's plugin system is the differentiator. Common plugins handle things like channel rebalancing, advanced routing strategies, [splicing](/glossary/lightning-channel-splicing), watchtowers, and accounting. The model is "small core, many plugins" rather than "big monolith with feature flags."
+
+For self-hosted Lightning operators in 2026, CLN is a strong choice especially for:
+
+- Operators who want minimal resource use on cheap hardware (Raspberry Pi, low-end VPS).
+- Routing nodes that benefit from plugin-based rebalancing.
+- Anyone wanting native BOLT-12 support.
+
+Less ideal for users who want a click-to-install graphical experience - Umbrel and similar node distributions historically defaulted to LND, though many now offer CLN as an option. See [Lightning Node](/glossary/lightning-node) for the broader landscape.
