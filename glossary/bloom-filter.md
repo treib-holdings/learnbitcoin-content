@@ -2,7 +2,7 @@
 title: "Bloom Filter"
 slug: bloom-filter
 draft: false
-shortDefinition: "A probabilistic data structure enabling SPV wallets to request only relevant transactions—though with known privacy drawbacks."
+shortDefinition: "A probabilistic data structure enabling SPV wallets to request only relevant transactions-though with known privacy drawbacks."
 keyTakeaways:
   - "Helps SPV wallets reduce bandwidth by filtering transactions"
   - "Potentially reveals information about user addresses"

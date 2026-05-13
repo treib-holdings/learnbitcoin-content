@@ -2,7 +2,7 @@
 title: "Paper Code Check"
 slug: paper-code-check
 draft: false
-shortDefinition: "Reading and reviewing Bitcoin’s source code in printed form—an extreme security measure against digital tampering."
+shortDefinition: "Reading and reviewing Bitcoin’s source code in printed form-an extreme security measure against digital tampering."
 keyTakeaways:
   - "An extreme, old-school approach to ensure no malicious code goes unnoticed"
   - "Drastically increases the time/effort needed for thorough reviews"

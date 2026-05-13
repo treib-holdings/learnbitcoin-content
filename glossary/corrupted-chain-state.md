@@ -21,5 +21,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A corrupted chain state occurs if a node’s local copy of the blockchain or its indexing data gets tampered with—due to hardware failures, software bugs, or malicious interference. Symptoms include failing to validate blocks or mismatched UTXO sets.
+A corrupted chain state occurs if a node’s local copy of the blockchain or its indexing data gets tampered with-due to hardware failures, software bugs, or malicious interference. Symptoms include failing to validate blocks or mismatched UTXO sets.
 The standard fix is to re-index (rebuild the database from the raw block files) or, in severe cases, delete all local data and sync from scratch. Running a node on reliable hardware, keeping software updated, and verifying checksums can reduce the risk of chain state corruption. In a well-run setup, the blockchain’s integrity is protected by cryptographic proofs, so corruption is typically local, not network-wide.

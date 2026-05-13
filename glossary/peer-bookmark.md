@@ -12,4 +12,4 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-Some node implementations allow ‘peer bookmarks’ or ‘persistent peers’—an internal list so your node reconnects to favored addresses on restarts. This helps maintain stable connections with trusted or known peers, especially for private nets or organizations wanting consistent routing. Whitelisting can also exempt these peers from certain rate limits, ensuring smoother data flow. While most public nodes rely on random peer discovery or DNS seeds, peer bookmarks give operators more direct control over their node’s connectivity profile.
+Some node implementations allow ‘peer bookmarks’ or ‘persistent peers’-an internal list so your node reconnects to favored addresses on restarts. This helps maintain stable connections with trusted or known peers, especially for private nets or organizations wanting consistent routing. Whitelisting can also exempt these peers from certain rate limits, ensuring smoother data flow. While most public nodes rely on random peer discovery or DNS seeds, peer bookmarks give operators more direct control over their node’s connectivity profile.

@@ -23,5 +23,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-In a custodial wallet, someone else retains your private keys. This is common on centralized exchanges or certain payment apps. While convenient—particularly for new users—it undermines one of Bitcoin’s core tenets: sovereignty over your own funds.
+In a custodial wallet, someone else retains your private keys. This is common on centralized exchanges or certain payment apps. While convenient-particularly for new users-it undermines one of Bitcoin’s core tenets: sovereignty over your own funds.
 If the custodian faces hacks, insolvency, or simply decides to freeze your account, you lose access to your BTC. Thus, the mantra ‘Not your keys, not your coins’ remains paramount. Many users transition away from custodial wallets as they gain technical confidence or wish to reduce counterparty risk.

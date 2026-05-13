@@ -19,5 +19,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A clawback mechanism in Bitcoin is like a safety net for a transaction. It allows the sender or a third party to retrieve funds if specific script conditions remain unfulfilled—such as a business deal failing or a time lock expiring without proper signatures.
+A clawback mechanism in Bitcoin is like a safety net for a transaction. It allows the sender or a third party to retrieve funds if specific script conditions remain unfulfilled-such as a business deal failing or a time lock expiring without proper signatures.
 For instance, an escrow script might let the buyer reclaim funds if the seller doesn’t deliver on time. These clawback conditions must be baked into the original script, and they often involve time-based opcodes (like OP_CSV) or multi-signature logic. While they offer added protection, they also require more scripting complexity, careful design, and trust that the clawback trigger isn’t misused.

@@ -18,4 +18,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-WIF is a Base58Check-encoded string that includes version bytes and a checksum, making manual entry or scanning simpler. For instance, a compressed WIF might begin with ‘K’ or ‘L,’ indicating a compressed public key, while an uncompressed one often starts with ‘5.’ Despite being more readable than raw hex, it’s still sensitive data—anyone holding your WIF can spend your BTC. Modern wallets often skip WIF in favor of seed phrases but it remains relevant for importing single private keys or recovering older addresses.
+WIF is a Base58Check-encoded string that includes version bytes and a checksum, making manual entry or scanning simpler. For instance, a compressed WIF might begin with ‘K’ or ‘L,’ indicating a compressed public key, while an uncompressed one often starts with ‘5.’ Despite being more readable than raw hex, it’s still sensitive data-anyone holding your WIF can spend your BTC. Modern wallets often skip WIF in favor of seed phrases but it remains relevant for importing single private keys or recovering older addresses.

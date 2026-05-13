@@ -20,4 +20,4 @@ liveWidget: ~
 ---
 
 A bear market is like a long winter season where hibernation seems more appealing than venturing outside. In the context of Bitcoin and cryptocurrencies, prices may keep dipping, and negative news often compounds fear. Traders become wary of taking long positions, and some leave the market altogether.
-However, bear markets are also known for building strong foundations. Projects with real utility and solid funding often focus on development, quietly building during these downturns. Veteran crypto enthusiasts sometimes see bear markets as opportunities to accumulate at lower prices. The length and severity of a bear market can vary, but eventually spring does come—though timing it is never an exact science.
+However, bear markets are also known for building strong foundations. Projects with real utility and solid funding often focus on development, quietly building during these downturns. Veteran crypto enthusiasts sometimes see bear markets as opportunities to accumulate at lower prices. The length and severity of a bear market can vary, but eventually spring does come-though timing it is never an exact science.

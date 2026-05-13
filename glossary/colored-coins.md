@@ -18,5 +18,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Colored Coins attempts to treat certain satoshis as tokens tied to real-world assets—like stocks, bonds, or property titles. This is done by inserting additional metadata that identifies which satoshis carry the ‘color’ value. While it was a novel concept, it never achieved widespread adoption on Bitcoin’s main chain due to complexities and limited scripting.
+Colored Coins attempts to treat certain satoshis as tokens tied to real-world assets-like stocks, bonds, or property titles. This is done by inserting additional metadata that identifies which satoshis carry the ‘color’ value. While it was a novel concept, it never achieved widespread adoption on Bitcoin’s main chain due to complexities and limited scripting.
 Projects like Omni Layer or newer protocols partially evolved from these ideas, adding more functionality to create stablecoins or other digital assets. Meanwhile, the concept of ‘coloring’ satoshis on a base-level transaction remains mostly experimental, overshadowed by more flexible smart-contract platforms or dedicated sidechains.

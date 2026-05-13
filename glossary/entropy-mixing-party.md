@@ -18,5 +18,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-An entropy mixing party is like a potluck for randomness. Each participant brings their own random input—like dice rolls, coin flips, or hardware-based randomness—then all these inputs are combined to generate a master seed. This collaborative process reduces the risk that any single party can predict or manipulate the final seed, because doing so would require compromising all participants’ randomness sources.
+An entropy mixing party is like a potluck for randomness. Each participant brings their own random input-like dice rolls, coin flips, or hardware-based randomness-then all these inputs are combined to generate a master seed. This collaborative process reduces the risk that any single party can predict or manipulate the final seed, because doing so would require compromising all participants’ randomness sources.
 In practice, groups sometimes perform these sessions offline, using air-gapped devices or physical randomness to ensure higher security. Once the joint seed is created, it can be split into shares, or used directly as a multisig setup. It’s a fun yet serious approach that emphasizes trust minimization: no one person fully controls the final seed, making it harder for attackers to compromise or steal funds.

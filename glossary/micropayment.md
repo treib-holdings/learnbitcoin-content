@@ -12,4 +12,4 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-Paying a few cents on the Bitcoin mainnet can be costlier than the amount itself if on-chain fees are high. With Lightning Network channels or similar second-layer methods, near-zero fees and instant finality allow these tiny payments. Micropayments open up possibilities like pay-per-second streaming, tips, or IoT-based machine-to-machine commerce—use cases not viable with traditional banking rails. While LN is the main micropayment enabler, alternative solutions include trust-based custodial wallets or sidechains, albeit with different trade-offs.
+Paying a few cents on the Bitcoin mainnet can be costlier than the amount itself if on-chain fees are high. With Lightning Network channels or similar second-layer methods, near-zero fees and instant finality allow these tiny payments. Micropayments open up possibilities like pay-per-second streaming, tips, or IoT-based machine-to-machine commerce-use cases not viable with traditional banking rails. While LN is the main micropayment enabler, alternative solutions include trust-based custodial wallets or sidechains, albeit with different trade-offs.

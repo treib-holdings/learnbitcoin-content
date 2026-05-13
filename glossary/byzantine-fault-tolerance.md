@@ -20,5 +20,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Byzantine Fault Tolerance (BFT) references the classic ‘Byzantine Generals Problem,’ where participants must coordinate a strategy despite some potentially being traitors. In Bitcoin, proof-of-work consensus tackles this by making dishonest behavior expensive—nodes only accept the longest valid chain, ignoring invalid blocks.
+Byzantine Fault Tolerance (BFT) references the classic ‘Byzantine Generals Problem,’ where participants must coordinate a strategy despite some potentially being traitors. In Bitcoin, proof-of-work consensus tackles this by making dishonest behavior expensive-nodes only accept the longest valid chain, ignoring invalid blocks.
 Other blockchains use different BFT algorithms (like delegated proof-of-stake). But in general, the term means the network can continue functioning even if some fraction of actors lie, cheat, or simply fail. Bitcoin’s design ensures no single malicious miner or node can rewrite history without controlling the majority of hashing power, exemplifying robust BFT in practice.

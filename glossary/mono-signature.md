@@ -2,7 +2,7 @@
 title: "Mono-Signature"
 slug: mono-signature
 draft: false
-shortDefinition: "A single ECDSA or Schnorr signature controlling an output—typical single-sig scenario versus multisig."
+shortDefinition: "A single ECDSA or Schnorr signature controlling an output-typical single-sig scenario versus multisig."
 keyTakeaways:
   - "Standard approach: one private key signs, one signature suffices"
   - "Less secure than multisig if the key is compromised"

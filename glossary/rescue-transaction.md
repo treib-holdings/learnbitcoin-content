@@ -12,4 +12,4 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-In LN or advanced custody, some users create a ‘rescue transaction’ that can be broadcast if something goes wrong—e.g., if hardware wallet access is lost or a channel partner vanishes. For LN, it may be a pre-signed commitment transaction ensuring you can force-close a channel. In a multisig context, it might be an emergency scenario if certain cosigners are unreachable. These transactions often carry high fees or use time locks. While beneficial for disaster recovery, they must be stored safely and not accidentally leaked or invalidated.
+In LN or advanced custody, some users create a ‘rescue transaction’ that can be broadcast if something goes wrong-e.g., if hardware wallet access is lost or a channel partner vanishes. For LN, it may be a pre-signed commitment transaction ensuring you can force-close a channel. In a multisig context, it might be an emergency scenario if certain cosigners are unreachable. These transactions often carry high fees or use time locks. While beneficial for disaster recovery, they must be stored safely and not accidentally leaked or invalidated.

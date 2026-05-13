@@ -36,13 +36,25 @@ OUTPUT_DIR = CONTENT_REPO / "glossary"
 A_TAG = re.compile(r'<a\s+href="([^"]+)"[^>]*>(.*?)</a>', re.IGNORECASE | re.DOTALL)
 
 
+def fix_dashes(text: str) -> str:
+    """Sitewide policy: no em dashes. Use short dashes (hyphen with spaces)
+    where punctuation is needed, preserving readability."""
+    text = text.replace(" — ", " - ")
+    text = text.replace(" —", " -")
+    text = text.replace("— ", "- ")
+    text = text.replace("—", "-")
+    text = text.replace(" – ", " - ")
+    text = text.replace("–", "-")
+    return text
+
+
 def html_to_md(text: str) -> str:
     """Convert the limited HTML used in source to markdown.
 
     Only <a href="…">…</a> appears (65 instances across 488 entries).
-    Curly apostrophes / em-dashes are plain text and preserved as-is.
+    Curly apostrophes preserved; em/en dashes downgraded sitewide.
     """
-    return A_TAG.sub(r"[\2](\1)", text)
+    return fix_dashes(A_TAG.sub(r"[\2](\1)", text))
 
 
 def yaml_double_quoted(s: str) -> str:
@@ -71,6 +83,8 @@ def render_frontmatter(
     related: list[str],
     legacy_title: str | None,
 ) -> str:
+    short = fix_dashes(short)
+    takeaways = [fix_dashes(t) for t in takeaways]
     lines = [
         "---",
         f"title: {yaml_double_quoted(live_title)}",

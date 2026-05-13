@@ -20,4 +20,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Some people speculate about whether Satoshi has private keys to large swaths of early-mined BTC (including the genesis block’s coinbase reward, which is actually unspendable). Over the years, rumors have surfaced whenever old coins move from 2009–2010 addresses, but there’s no confirmed record of Satoshi ever having spent them. ‘Genesis keys’ remains an intrigue within the community, tinged with the mystique of Bitcoin’s founder. Ultimately, the coins remain dormant, fueling speculation about their future use or permanent loss.
+Some people speculate about whether Satoshi has private keys to large swaths of early-mined BTC (including the genesis block’s coinbase reward, which is actually unspendable). Over the years, rumors have surfaced whenever old coins move from 2009-2010 addresses, but there’s no confirmed record of Satoshi ever having spent them. ‘Genesis keys’ remains an intrigue within the community, tinged with the mystique of Bitcoin’s founder. Ultimately, the coins remain dormant, fueling speculation about their future use or permanent loss.

@@ -12,4 +12,4 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-In a two-way pegged sidechain model, ‘pegging in’ means sending BTC to an address controlled by the sidechain federation or a multi-sig. Once confirmed, the sidechain mints equivalent tokens representing those locked BTC. You can then use the sidechain’s faster or more private environment. Eventually, to return to mainnet, you peg out by redeeming sidechain tokens for the locked BTC. Peg-ins are typically one-way—your BTC remain inaccessible on mainnet until you formally peg out. This design preserves a 1:1 relationship between sidechain tokens and mainnet BTC.
+In a two-way pegged sidechain model, ‘pegging in’ means sending BTC to an address controlled by the sidechain federation or a multi-sig. Once confirmed, the sidechain mints equivalent tokens representing those locked BTC. You can then use the sidechain’s faster or more private environment. Eventually, to return to mainnet, you peg out by redeeming sidechain tokens for the locked BTC. Peg-ins are typically one-way-your BTC remain inaccessible on mainnet until you formally peg out. This design preserves a 1:1 relationship between sidechain tokens and mainnet BTC.

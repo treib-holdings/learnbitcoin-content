@@ -2,7 +2,7 @@
 title: "Kickstart Mining"
 slug: kickstart-mining
 draft: false
-shortDefinition: "A term referring to Bitcoin’s earliest mining phase (2009–2010) by hobbyists, effectively jumpstarting the network’s security."
+shortDefinition: "A term referring to Bitcoin’s earliest mining phase (2009-2010) by hobbyists, effectively jumpstarting the network’s security."
 keyTakeaways:
   - "CPU-based mining in Bitcoin’s early days, quickly transitioning to GPUs"
   - "Bootstrapped the chain’s initial stability and distribution"

@@ -2,7 +2,7 @@
 title: "Fiat"
 slug: fiat
 draft: false
-shortDefinition: "Government-issued currency—like USD or EUR—unbacked by physical commodities, relying on state authority."
+shortDefinition: "Government-issued currency-like USD or EUR-unbacked by physical commodities, relying on state authority."
 keyTakeaways:
   - "Issued and regulated by governments"
   - "No inherent commodity backing, value rests on trust and policy"

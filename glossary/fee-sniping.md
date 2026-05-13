@@ -26,4 +26,4 @@ liveWidget: ~
 ---
 
 Fee sniping imagines a situation in which a miner sees a newly mined block with modest fees and decides to mine a competing block at the same height, hoping to claim a higher-fee transaction set for themselves. This becomes more tempting once the block subsidy diminishes, since fees represent a larger share of the block reward.
-Though theoretically possible, fee sniping is risky—it requires significant hashing power to outcompete the existing block. If the attempt fails, the miner misses out on building on top of the valid chain, losing potential rewards. Various measures, like increased block propagation speed, reduce the incentive by making each block quickly recognized by other miners.
+Though theoretically possible, fee sniping is risky-it requires significant hashing power to outcompete the existing block. If the attempt fails, the miner misses out on building on top of the valid chain, losing potential rewards. Various measures, like increased block propagation speed, reduce the incentive by making each block quickly recognized by other miners.

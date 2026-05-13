@@ -12,4 +12,4 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-In ECDSA, the signature has two parts: R and S. By finding an R value that fits into fewer bytes (leading zeros removed, etc.), the signature’s overall size shrinks. This can cut a few bytes from each signature, marginally lowering fees for transactions with many inputs. Wallets like Bitcoin Core have integrated low-R signing, so most end users never notice—it happens automatically. While it doesn’t revolutionize fees, every byte saved counts in high-volume or large-input scenarios, reflecting the Bitcoin ethos of efficient data usage.
+In ECDSA, the signature has two parts: R and S. By finding an R value that fits into fewer bytes (leading zeros removed, etc.), the signature’s overall size shrinks. This can cut a few bytes from each signature, marginally lowering fees for transactions with many inputs. Wallets like Bitcoin Core have integrated low-R signing, so most end users never notice-it happens automatically. While it doesn’t revolutionize fees, every byte saved counts in high-volume or large-input scenarios, reflecting the Bitcoin ethos of efficient data usage.

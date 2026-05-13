@@ -2,7 +2,7 @@
 title: "Minsky Moment"
 slug: minsky-moment
 draft: false
-shortDefinition: "An economic term for a sudden market collapse due to excessive leverage or speculation—used metaphorically for Bitcoin crashes."
+shortDefinition: "An economic term for a sudden market collapse due to excessive leverage or speculation-used metaphorically for Bitcoin crashes."
 keyTakeaways:
   - "Describes abrupt market downturns due to over-leverage"
   - "Applies to traditional assets but also suits volatile Bitcoin cycles"

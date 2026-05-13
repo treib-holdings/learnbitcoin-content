@@ -19,4 +19,4 @@ liveWidget: ~
 ---
 
 Coin age plays a central role in proof-of-stake blockchains, where older ‘staked’ coins can have more influence in forging blocks. In Bitcoin, a proof-of-work system, coin age isn’t directly tied to consensus. However, analysts do track how long BTC sits idle as part of metrics like ‘Bitcoin Days Destroyed.’
-Studying coin age (even in Bitcoin) can highlight the behavior of long-term holders. But it has no bearing on block production or mining power in Bitcoin—just a useful insight into holder sentiment or potential spending patterns. Some altcoins tried to use coin age as a security measure, though none has rivaled Bitcoin’s hashrate-based approach for longevity or adoption.
+Studying coin age (even in Bitcoin) can highlight the behavior of long-term holders. But it has no bearing on block production or mining power in Bitcoin-just a useful insight into holder sentiment or potential spending patterns. Some altcoins tried to use coin age as a security measure, though none has rivaled Bitcoin’s hashrate-based approach for longevity or adoption.

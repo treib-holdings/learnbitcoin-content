@@ -2,7 +2,7 @@
 title: "Block Explorer"
 slug: block-explorer
 draft: false
-shortDefinition: "An online tool letting users search blockchain data—transactions, addresses, blocks, and more."
+shortDefinition: "An online tool letting users search blockchain data-transactions, addresses, blocks, and more."
 keyTakeaways:
   - "Publicly displays transaction histories and block info"
   - "A common way to verify confirmations or address balances"

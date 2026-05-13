@@ -20,4 +20,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-I2P routes traffic through a network of volunteer ‘relays’—like Tor but with differences in design, encryption layers, and usage. Some Bitcoin node operators use I2P instead of clearnet or Tor to hide their IP addresses, potentially avoiding censorship or surveillance. While not as popular as Tor among Bitcoin users, I2P remains an option for those seeking added privacy layers. The main hurdle is that fewer nodes run on I2P, so connectivity and performance can be more limited compared to Tor or standard connections.
+I2P routes traffic through a network of volunteer ‘relays’-like Tor but with differences in design, encryption layers, and usage. Some Bitcoin node operators use I2P instead of clearnet or Tor to hide their IP addresses, potentially avoiding censorship or surveillance. While not as popular as Tor among Bitcoin users, I2P remains an option for those seeking added privacy layers. The main hurdle is that fewer nodes run on I2P, so connectivity and performance can be more limited compared to Tor or standard connections.

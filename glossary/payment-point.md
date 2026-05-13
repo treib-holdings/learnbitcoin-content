@@ -12,4 +12,4 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-Lightning Network payments revolve around hashed preimages. A ‘payment point’ is the public key you get by applying elliptic-curve multiplication to the preimage. The payee controls the private counterpart—i.e., the preimage. If a node along the route or the final recipient reveals the preimage, they can settle the payment and prove they’re entitled to the HTLC funds. This concept ensures hashed timelock contracts (HTLCs) remain trustless: participants only get paid upon revealing the correct secret, preventing fraudulent or partial claims along the route.
+Lightning Network payments revolve around hashed preimages. A ‘payment point’ is the public key you get by applying elliptic-curve multiplication to the preimage. The payee controls the private counterpart-i.e., the preimage. If a node along the route or the final recipient reveals the preimage, they can settle the payment and prove they’re entitled to the HTLC funds. This concept ensures hashed timelock contracts (HTLCs) remain trustless: participants only get paid upon revealing the correct secret, preventing fraudulent or partial claims along the route.

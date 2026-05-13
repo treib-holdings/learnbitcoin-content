@@ -22,4 +22,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Hal Finney was a pioneering cryptographer and an early collaborator with Satoshi Nakamoto. His famous tweet, “Running bitcoin,” signaled that he had bootstrapped a Bitcoin node just a week after Bitcoin’s launch. This moment is often celebrated as a piece of Bitcoin lore—Finney not only tested early software but also famously received the first Bitcoin transaction from Satoshi. While the tweet itself is brief, it encapsulates the dawn of a transformative technology and Hal’s key role in nurturing its infancy.
+Hal Finney was a pioneering cryptographer and an early collaborator with Satoshi Nakamoto. His famous tweet, “Running bitcoin,” signaled that he had bootstrapped a Bitcoin node just a week after Bitcoin’s launch. This moment is often celebrated as a piece of Bitcoin lore-Finney not only tested early software but also famously received the first Bitcoin transaction from Satoshi. While the tweet itself is brief, it encapsulates the dawn of a transformative technology and Hal’s key role in nurturing its infancy.

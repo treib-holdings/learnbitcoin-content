@@ -20,4 +20,4 @@ liveWidget: ~
 ---
 
 Bitcoin’s cryptography is built around the secp256k1 elliptic curve, chosen by Satoshi for its efficiency and security properties. Private keys map to points on this curve, generating public keys via point multiplication. The inherent complexity of solving discrete logarithms on this curve underpins Bitcoin’s key security.
-Different curves exist in other systems (like ed25519), but Bitcoin’s curve stands out for having no known serious vulnerabilities despite extensive usage. Understanding how elliptic curves work mathematically isn’t strictly necessary to use Bitcoin, but it’s fundamental to its trustless design—breaking the curve’s security would instantly undermine ownership proofs.
+Different curves exist in other systems (like ed25519), but Bitcoin’s curve stands out for having no known serious vulnerabilities despite extensive usage. Understanding how elliptic curves work mathematically isn’t strictly necessary to use Bitcoin, but it’s fundamental to its trustless design-breaking the curve’s security would instantly undermine ownership proofs.
