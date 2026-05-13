@@ -9,6 +9,7 @@ keyTakeaways:
   - "Coupled with fees to maintain miner incentives long-term"
 sources: []
 relatedTerms:
+  - asymptote
   - bip-42
   - block
   - block-reward

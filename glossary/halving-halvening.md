@@ -9,6 +9,7 @@ keyTakeaways:
   - "Can influence miner profits and market sentiment"
 sources: []
 relatedTerms:
+  - asymptote
   - bip-42
   - block-height
   - block-reward

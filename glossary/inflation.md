@@ -9,6 +9,7 @@ keyTakeaways:
   - "Shapes Bitcoin's scarcity narrative versus fiat inflation"
 sources: []
 relatedTerms:
+  - asymptote
   - bip-42
   - block-reward
   - block-subsidy
