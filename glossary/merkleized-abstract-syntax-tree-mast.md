@@ -18,4 +18,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-MAST breaks a Bitcoin script into distinct branches, each hashed into a Merkle tree. Only the executed branch is revealed on-chain, while others remain hidden. Combined with Taproot’s key path spending, MAST helps scripts appear like regular single-sig spends unless alternative branches are used. This improves privacy (unexecuted conditions aren’t exposed) and reduces on-chain data, lowering fees. Though not mandatory, MAST is part of Bitcoin’s ongoing move toward more flexible smart contracts under the Taproot upgrade (BIP 341/342).
+MAST breaks a Bitcoin script into distinct branches, each hashed into a Merkle tree. Only the executed branch is revealed on-chain, while others remain hidden. Combined with Taproot's key path spending, MAST helps scripts appear like regular single-sig spends unless alternative branches are used. This improves privacy (unexecuted conditions aren't exposed) and reduces on-chain data, lowering fees. Though not mandatory, MAST is part of Bitcoin's ongoing move toward more flexible smart contracts under the Taproot upgrade (BIP 341/342).

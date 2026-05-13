@@ -2,7 +2,7 @@
 title: "Dust Attack"
 slug: dust-attack
 draft: false
-shortDefinition: "Sending tiny BTC amounts to addresses in an attempt to track them when they’re later consolidated, revealing wallet clusters."
+shortDefinition: "Sending tiny BTC amounts to addresses in an attempt to track them when they're later consolidated, revealing wallet clusters."
 keyTakeaways:
   - "Exploits dust consolidation to deanonymize addresses"
   - "Users can freeze or ignore dust to preserve privacy"

@@ -2,9 +2,9 @@
 title: "Partial Signature"
 slug: partial-signature
 draft: false
-shortDefinition: "In multisig or PSBT workflows, a single participant’s signature, awaiting more signatures to finalize spending."
+shortDefinition: "In multisig or PSBT workflows, a single participant's signature, awaiting more signatures to finalize spending."
 keyTakeaways:
-  - "Represents one cosigner’s authorization in a multisig transaction"
+  - "Represents one cosigner's authorization in a multisig transaction"
   - "Many partial signatures combine to meet the M-of-N threshold"
   - "Employed in distributed/PSBT setups for secure multi-party approvals"
 sources: []

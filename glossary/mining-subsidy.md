@@ -15,4 +15,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Each mined block grants a reward to the miner: a subsidy of newly created BTC plus the sum of transaction fees included in that block. The mining subsidy starts at 50 BTC per block and halves roughly every four years (210,000 blocks), ensuring a maximum of 21 million BTC will ever exist. The term ‘mining subsidy’ emphasizes it as a reward for securing the network-akin to an issuance plan minted via proof-of-work. Over time, fees are expected to compensate for the subsidy’s reduction.
+Each mined block grants a reward to the miner: a subsidy of newly created BTC plus the sum of transaction fees included in that block. The mining subsidy starts at 50 BTC per block and halves roughly every four years (210,000 blocks), ensuring a maximum of 21 million BTC will ever exist. The term 'mining subsidy' emphasizes it as a reward for securing the network-akin to an issuance plan minted via proof-of-work. Over time, fees are expected to compensate for the subsidy's reduction.

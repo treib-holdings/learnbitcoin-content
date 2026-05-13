@@ -2,7 +2,7 @@
 title: "Merkle Root"
 slug: merkle-root
 draft: false
-shortDefinition: "The single 32-byte hash at the top of a block’s Merkle tree, summarizing all included transactions."
+shortDefinition: "The single 32-byte hash at the top of a block's Merkle tree, summarizing all included transactions."
 keyTakeaways:
   - "Final hash encapsulating every transaction in the block"
   - "Integral to proof-of-work since miners hash the block header"

@@ -30,4 +30,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-In Bitcoin’s early CPU/GPU stages, mining from home could be profitable or at least feasible. As ASICs took over, large farms with economies of scale dominated, leaving small hobby miners facing high electricity costs and minimal returns. Some enthusiasts still run rigs for ideological reasons or to capture otherwise wasted energy. Others mine for heat reuse in cold climates. But purely profit-driven ‘retail mining’ is rare unless one secures extremely cheap or free power. Most home miners now direct power to altcoins or experiment with new technologies instead.
+In Bitcoin's early CPU/GPU stages, mining from home could be profitable or at least feasible. As ASICs took over, large farms with economies of scale dominated, leaving small hobby miners facing high electricity costs and minimal returns. Some enthusiasts still run rigs for ideological reasons or to capture otherwise wasted energy. Others mine for heat reuse in cold climates. But purely profit-driven 'retail mining' is rare unless one secures extremely cheap or free power. Most home miners now direct power to altcoins or experiment with new technologies instead.

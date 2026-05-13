@@ -14,5 +14,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The Axolotl Ratchet is a method of continuously updating encryption keys to ensure past and future messages remain secure, even if current keys are compromised. While used primarily in secure messaging apps like Signal, it’s sometimes compared (albeit loosely) to the way Bitcoin’s Lightning Network updates payment states via HTLCs.
-However, Lightning’s hash timelocks and incremental channel updates don’t exactly match the complexity of a full ratchet protocol. The analogy highlights the shared principle of rolling forward keys and states to minimize the risk of compromise. But if Axolotl Ratchet is an exotic sports car of secure key exchange, Lightning’s simpler approach is more like a reliable sedan-each has its place.
+The Axolotl Ratchet is a method of continuously updating encryption keys to ensure past and future messages remain secure, even if current keys are compromised. While used primarily in secure messaging apps like Signal, it's sometimes compared (albeit loosely) to the way Bitcoin's Lightning Network updates payment states via HTLCs.
+However, Lightning's hash timelocks and incremental channel updates don't exactly match the complexity of a full ratchet protocol. The analogy highlights the shared principle of rolling forward keys and states to minimize the risk of compromise. But if Axolotl Ratchet is an exotic sports car of secure key exchange, Lightning's simpler approach is more like a reliable sedan-each has its place.

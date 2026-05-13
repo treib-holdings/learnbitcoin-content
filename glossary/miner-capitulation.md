@@ -22,4 +22,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-If BTC’s price drops while difficulty remains high, miners may find electricity costs exceed their expected block reward. Some turn off machines (leading to difficulty eventually adjusting), and might sell existing BTC holdings to cover operational costs. This ‘capitulation’ can cause short-term downward price pressure, as well as a slight dip in hash rate until the difficulty readjusts. Historically, miner capitulation phases have marked market cycle bottoms, but it’s a loosely observed correlation rather than a guaranteed indicator.
+If BTC's price drops while difficulty remains high, miners may find electricity costs exceed their expected block reward. Some turn off machines (leading to difficulty eventually adjusting), and might sell existing BTC holdings to cover operational costs. This 'capitulation' can cause short-term downward price pressure, as well as a slight dip in hash rate until the difficulty readjusts. Historically, miner capitulation phases have marked market cycle bottoms, but it's a loosely observed correlation rather than a guaranteed indicator.

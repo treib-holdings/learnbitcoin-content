@@ -18,5 +18,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Auto unwrap is like a self-expiring gift card: once the conditions are met or time runs out, the sidechain BTC moves back to the main chain on autopilot. The idea is to reduce the friction of manually moving BTC in and out of sidechains, so you don’t have to remember to redeem your tokens.
-By streamlining this process, users might gain a more seamless experience across sidechains or layered solutions. It can also help alleviate worries about leaving funds ‘stuck’ on a sidechain long-term. However, the mechanism’s design must ensure no security holes or unexpected behaviors occur when these automatic re-pegs happen.
+Auto unwrap is like a self-expiring gift card: once the conditions are met or time runs out, the sidechain BTC moves back to the main chain on autopilot. The idea is to reduce the friction of manually moving BTC in and out of sidechains, so you don't have to remember to redeem your tokens.
+By streamlining this process, users might gain a more seamless experience across sidechains or layered solutions. It can also help alleviate worries about leaving funds 'stuck' on a sidechain long-term. However, the mechanism's design must ensure no security holes or unexpected behaviors occur when these automatic re-pegs happen.

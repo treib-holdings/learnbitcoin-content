@@ -15,4 +15,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-While mining nonces are always publicly visible, cryptographic nonces in ECDSA or Schnorr must remain secret or properly randomized. If the same nonce is used twice with the same private key, an attacker can mathematically derive the private key. This has historically led to wallet thefts when a bug or poor randomization duplicated ECDSA nonces across transactions. Libraries like RFC6979 ensure deterministic, unique nonces to avoid this pitfall. It’s a distinct issue from mining nonces, focusing on signature generation rather than proof-of-work.
+While mining nonces are always publicly visible, cryptographic nonces in ECDSA or Schnorr must remain secret or properly randomized. If the same nonce is used twice with the same private key, an attacker can mathematically derive the private key. This has historically led to wallet thefts when a bug or poor randomization duplicated ECDSA nonces across transactions. Libraries like RFC6979 ensure deterministic, unique nonces to avoid this pitfall. It's a distinct issue from mining nonces, focusing on signature generation rather than proof-of-work.

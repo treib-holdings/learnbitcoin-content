@@ -24,4 +24,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A ‘hashpool’ is sometimes used to describe powerful mining groups or pool operators who can quickly shift their equipment between different blockchains or different difficulty strategies. By pivoting their SHA-256 rigs, they might exploit variance in block rewards, difficulty adjustments, or altcoin mining profitability. Although less a formal term and more a colloquial expression, it underscores the agility some large-scale miners wield in chasing the best yield or attacking smaller chains with 51% attacks if they so chose.
+A 'hashpool' is sometimes used to describe powerful mining groups or pool operators who can quickly shift their equipment between different blockchains or different difficulty strategies. By pivoting their SHA-256 rigs, they might exploit variance in block rewards, difficulty adjustments, or altcoin mining profitability. Although less a formal term and more a colloquial expression, it underscores the agility some large-scale miners wield in chasing the best yield or attacking smaller chains with 51% attacks if they so chose.

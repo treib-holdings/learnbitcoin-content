@@ -19,5 +19,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Fraud proofs are akin to a detective presenting bulletproof evidence of wrongdoing. In scalable solutions like rollups or sidechains, users often don’t verify every transaction themselves. Instead, they rely on the ability to provide a ‘fraud proof’ if someone tries to post a bogus state. This proof demonstrates that a particular block or transaction violates the rules.
+Fraud proofs are akin to a detective presenting bulletproof evidence of wrongdoing. In scalable solutions like rollups or sidechains, users often don't verify every transaction themselves. Instead, they rely on the ability to provide a 'fraud proof' if someone tries to post a bogus state. This proof demonstrates that a particular block or transaction violates the rules.
 In practice, watchers or validators keep an eye on the chain and generate a fraud proof if they spot cheating. Honest participants then reject that invalid block, reverting to the last valid state. If no fraud proof is presented, everyone assumes the blocks are legitimate. This technique can reduce on-chain data while preserving trust-but requires robust incentives to keep watchers vigilant.

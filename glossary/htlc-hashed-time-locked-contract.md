@@ -6,7 +6,7 @@ shortDefinition: "A mechanism requiring a secret (preimage) to unlock payment be
 keyTakeaways:
   - "Enables trust-minimized payment and swaps"
   - "Uses a hash puzzle + time lock for safe fallback"
-  - "Foundation of LN’s multi-hop payment logic"
+  - "Foundation of LN's multi-hop payment logic"
 sources: []
 relatedTerms:
   - atomic-multi-path-payment-amp

@@ -37,4 +37,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Lightning channel is like a direct tunnel between two participants. They lock a certain amount of BTC into a multi-signature address and can then transact instantly by updating the channel’s balance allocation. These updates happen off-chain, so they’re not visible to the main Bitcoin ledger. When either party decides or is forced to settle, the final balance is written back to layer-1 via a commitment transaction. Channels form the basis of LN’s ‘mesh’ topology, routing payments through connected nodes without cluttering the main blockchain.
+A Lightning channel is like a direct tunnel between two participants. They lock a certain amount of BTC into a multi-signature address and can then transact instantly by updating the channel's balance allocation. These updates happen off-chain, so they're not visible to the main Bitcoin ledger. When either party decides or is forced to settle, the final balance is written back to layer-1 via a commitment transaction. Channels form the basis of LN's 'mesh' topology, routing payments through connected nodes without cluttering the main blockchain.

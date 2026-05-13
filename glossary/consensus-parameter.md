@@ -24,5 +24,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Bitcoin’s consensus parameters are the rules that determine block validity, like the maximum block weight, the halving schedule, or valid script opcodes. Full nodes enforce these settings: if a block violates them, nodes reject it. This ensures the network collectively agrees on the correct ledger state.
+Bitcoin's consensus parameters are the rules that determine block validity, like the maximum block weight, the halving schedule, or valid script opcodes. Full nodes enforce these settings: if a block violates them, nodes reject it. This ensures the network collectively agrees on the correct ledger state.
 Adjusting a consensus parameter typically requires a coordinated soft or hard fork. Examples include changing the block size limit or introducing new opcodes via BIPs. Because altering these parameters can split the chain if not universally adopted, proposals undergo extensive debate and testing before any wide deployment.

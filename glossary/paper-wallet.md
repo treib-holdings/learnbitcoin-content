@@ -18,4 +18,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-One of the earliest forms of cold storage, a paper wallet typically features a QR code or text for both the public address (to receive BTC) and the private key (to spend). It’s air-gapped by design, with no digital footprint to be hacked. However, generating a paper wallet safely requires offline, secure software tools to avoid key leaks. Physical risks include theft, fire, water damage, or fading ink. Most modern users opt for hardware wallets or multisig solutions instead of paper wallets, but they remain an accessible offline method for some.
+One of the earliest forms of cold storage, a paper wallet typically features a QR code or text for both the public address (to receive BTC) and the private key (to spend). It's air-gapped by design, with no digital footprint to be hacked. However, generating a paper wallet safely requires offline, secure software tools to avoid key leaks. Physical risks include theft, fire, water damage, or fading ink. Most modern users opt for hardware wallets or multisig solutions instead of paper wallets, but they remain an accessible offline method for some.

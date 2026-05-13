@@ -5,7 +5,7 @@ draft: false
 shortDefinition: "Any technique preventing an attacker from cheaply spinning up numerous nodes or identities, thus maintaining fair consensus."
 keyTakeaways:
   - "Stops attackers from creating infinite fake identities"
-  - "Proof-of-work is Bitcoin’s main anti-Sybil method"
+  - "Proof-of-work is Bitcoin's main anti-Sybil method"
   - "Crucial for maintaining decentralized consensus"
 sources: []
 relatedTerms:

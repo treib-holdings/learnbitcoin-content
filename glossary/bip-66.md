@@ -18,5 +18,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 66, detailed in [BIP-66](https://github.com/bitcoin/bips/blob/master/bip-0066.mediawiki), standardized the format of signatures in Bitcoin transactions, requiring them to follow strict Distinguished Encoding Rules (DER). Before this, looser rules allowed varying encodings that could alter a transaction’s signature without changing its meaning.
+BIP 66, detailed in [BIP-66](https://github.com/bitcoin/bips/blob/master/bip-0066.mediawiki), standardized the format of signatures in Bitcoin transactions, requiring them to follow strict Distinguished Encoding Rules (DER). Before this, looser rules allowed varying encodings that could alter a transaction's signature without changing its meaning.
 This variability contributed to transaction malleability issues, as modified signatures could change the transaction ID. By enforcing exact DER formatting, BIP 66 reduced these potential exploits, making the network more reliable. Although it might seem minor, consistent signature rules are vital for wallet software and mining pools to function predictably and securely.

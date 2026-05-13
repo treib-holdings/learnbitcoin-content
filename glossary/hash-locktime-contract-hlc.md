@@ -23,4 +23,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-While the term ‘HTLC’ (Hashed Timelock Contract) is standard in LN, an ‘HLC’ emphasizes the locktime aspect, imagining a variant of LN where time-based constraints are paramount. This might explore scenarios like multi-party channel updates or sidechain solutions where participants rely on time locks for finality. In practice, LN predominantly uses HTLCs, which combine hash commitments and time-based refunds. So, HLC is more of a hypothetical spin on LN’s building blocks rather than a distinct, widely used protocol.
+While the term 'HTLC' (Hashed Timelock Contract) is standard in LN, an 'HLC' emphasizes the locktime aspect, imagining a variant of LN where time-based constraints are paramount. This might explore scenarios like multi-party channel updates or sidechain solutions where participants rely on time locks for finality. In practice, LN predominantly uses HTLCs, which combine hash commitments and time-based refunds. So, HLC is more of a hypothetical spin on LN's building blocks rather than a distinct, widely used protocol.

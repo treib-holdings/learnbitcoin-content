@@ -23,4 +23,4 @@ liveWidget: ~
 ---
 
 Autopilot in Lightning is like having a personal assistant who sets up your phone calls with the best possible signal. Instead of manually picking nodes and opening channels, Autopilot looks at factors like network graph connectivity, node reputation, or past transaction patterns to make channel management decisions on your behalf.
-This can save new users from the complexities of channel selection, though it doesn’t guarantee perfect results. Some advanced users prefer to handpick channels for strategic routing or privacy reasons. As the Lightning Network matures, these automated tools may become increasingly sophisticated, making LN more user-friendly for the average Bitcoiner.
+This can save new users from the complexities of channel selection, though it doesn't guarantee perfect results. Some advanced users prefer to handpick channels for strategic routing or privacy reasons. As the Lightning Network matures, these automated tools may become increasingly sophisticated, making LN more user-friendly for the average Bitcoiner.

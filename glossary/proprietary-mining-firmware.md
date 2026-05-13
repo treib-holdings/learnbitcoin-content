@@ -2,7 +2,7 @@
 title: "Proprietary Mining Firmware"
 slug: proprietary-mining-firmware
 draft: false
-shortDefinition: "Custom ASIC firmware that optimizes performance or power efficiency beyond the manufacturer’s default setup."
+shortDefinition: "Custom ASIC firmware that optimizes performance or power efficiency beyond the manufacturer's default setup."
 keyTakeaways:
   - "Replaces stock firmware for improved efficiency/performance"
   - "Common in large-scale mining farms to squeeze out more hash power"

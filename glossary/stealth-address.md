@@ -23,4 +23,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Stealth addresses predate BIP 47 Payment Codes and share conceptual overlap-users publish a stealth key from which senders create ephemeral addresses. The receiver can then scan the chain to find payments to them. While similar to Payment Codes, stealth addresses aren’t widely adopted in Bitcoin due to complexity and the requirement to constantly scan the blockchain for incoming transactions. Altcoins like Monero incorporate stealth addresses by default. New proposals like Silent Payments refine the idea further but aren’t yet merged into Bitcoin’s base protocol.
+Stealth addresses predate BIP 47 Payment Codes and share conceptual overlap-users publish a stealth key from which senders create ephemeral addresses. The receiver can then scan the chain to find payments to them. While similar to Payment Codes, stealth addresses aren't widely adopted in Bitcoin due to complexity and the requirement to constantly scan the blockchain for incoming transactions. Altcoins like Monero incorporate stealth addresses by default. New proposals like Silent Payments refine the idea further but aren't yet merged into Bitcoin's base protocol.

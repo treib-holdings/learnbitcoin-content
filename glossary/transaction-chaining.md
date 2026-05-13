@@ -4,7 +4,7 @@ slug: transaction-chaining
 draft: false
 shortDefinition: "Broadcasting multiple transactions that depend on the outputs of earlier unconfirmed transactions."
 keyTakeaways:
-  - "Multiple unconfirmed TXs depend on each other’s outputs"
+  - "Multiple unconfirmed TXs depend on each other's outputs"
   - "Mempool policies may restrict how many TXs can chain"
   - "Used in CPFP or rapid-fire sending before confirmations"
 sources: []

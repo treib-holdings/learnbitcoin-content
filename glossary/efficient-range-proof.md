@@ -17,5 +17,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Efficient range proofs let someone verify that a hidden value is within valid bounds (e.g., non-negative, below a maximum) without revealing the actual amount. Sidechains or privacy coins often utilize these proofs to enable confidential transactions-obscuring how much is sent while ensuring it’s not an invalid amount.
+Efficient range proofs let someone verify that a hidden value is within valid bounds (e.g., non-negative, below a maximum) without revealing the actual amount. Sidechains or privacy coins often utilize these proofs to enable confidential transactions-obscuring how much is sent while ensuring it's not an invalid amount.
 Bulletproofs, for instance, significantly reduce proof size and verification time compared to older methods like Pedersen range proofs. In the Bitcoin ecosystem, these are more likely found in sidechain implementations or altcoins focusing on privacy. They represent a key cryptographic advancement for transaction confidentiality without sacrificing total supply auditing.

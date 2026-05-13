@@ -6,7 +6,7 @@ shortDefinition: "Software that implements the Bitcoin protocol, such as Bitcoin
 keyTakeaways:
   - "Implements consensus rules for validating transactions"
   - "Options include full nodes, SPV wallets, or specialized versions"
-  - "Ensures your transactions comply with Bitcoin’s protocol"
+  - "Ensures your transactions comply with Bitcoin's protocol"
 sources: []
 relatedTerms:
   - api-application-programming-interface

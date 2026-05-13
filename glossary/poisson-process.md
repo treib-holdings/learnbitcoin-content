@@ -15,4 +15,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Mining can be viewed as a Poisson process: each hash attempt is independent, and the probability of finding a valid block is constant. Over many attempts, the expected time between blocks is ~10 minutes, but block arrivals can cluster (multiple blocks in quick succession) or space out (long gap). Over the long run, the average hovers near 10 minutes, thanks to difficulty adjustments. This random distribution is central to Bitcoin’s design-no block schedule is predetermined, and luck can cause short-term bursts or droughts in blocks mined.
+Mining can be viewed as a Poisson process: each hash attempt is independent, and the probability of finding a valid block is constant. Over many attempts, the expected time between blocks is ~10 minutes, but block arrivals can cluster (multiple blocks in quick succession) or space out (long gap). Over the long run, the average hovers near 10 minutes, thanks to difficulty adjustments. This random distribution is central to Bitcoin's design-no block schedule is predetermined, and luck can cause short-term bursts or droughts in blocks mined.

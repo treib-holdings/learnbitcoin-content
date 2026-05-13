@@ -23,5 +23,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 144, in [BIP-144](https://github.com/bitcoin/bips/blob/master/bip-0144.mediawiki), lays out the modifications to Bitcoin’s peer-to-peer protocol to accommodate SegWit. It introduced message types like ‘witnessTx’ and ‘witnessBlock,’ allowing nodes to share transaction data that includes witness information.
-These changes ensure that SegWit transactions propagate seamlessly and that upgraded nodes can verify the witness data. Meanwhile, older nodes, unaware of SegWit, ignore the witness portion without breaking consensus. BIP 144’s design helped ensure a smooth soft-fork transition, ensuring compatibility in a network comprising both updated and legacy nodes.
+BIP 144, in [BIP-144](https://github.com/bitcoin/bips/blob/master/bip-0144.mediawiki), lays out the modifications to Bitcoin's peer-to-peer protocol to accommodate SegWit. It introduced message types like 'witnessTx' and 'witnessBlock,' allowing nodes to share transaction data that includes witness information.
+These changes ensure that SegWit transactions propagate seamlessly and that upgraded nodes can verify the witness data. Meanwhile, older nodes, unaware of SegWit, ignore the witness portion without breaking consensus. BIP 144's design helped ensure a smooth soft-fork transition, ensuring compatibility in a network comprising both updated and legacy nodes.

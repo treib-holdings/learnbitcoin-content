@@ -2,7 +2,7 @@
 title: "Script"
 slug: script
 draft: false
-shortDefinition: "Bitcoin’s stack-based, programmable instruction set defining how outputs can be spent (e.g., single-sig, multisig)."
+shortDefinition: "Bitcoin's stack-based, programmable instruction set defining how outputs can be spent (e.g., single-sig, multisig)."
 keyTakeaways:
   - "Operates via a last-in-first-out stack model"
   - "Restrictive design helps security and determinism"

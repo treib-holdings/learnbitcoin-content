@@ -24,4 +24,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Channel capacity is the combined amount of Bitcoin both parties deposit into the multi-sig address. If a channel has 1 BTC total capacity, it means there’s 1 BTC of liquidity to route or spend. However, capacity distribution matters: if all 1 BTC sits on one side, that side can pay while the other can’t. Balancing inbound vs. outbound liquidity is a common challenge, especially for merchants receiving payments (they need inbound capacity). Tools like circular rebalancing or splicing help maintain healthy capacity without closing channels.
+Channel capacity is the combined amount of Bitcoin both parties deposit into the multi-sig address. If a channel has 1 BTC total capacity, it means there's 1 BTC of liquidity to route or spend. However, capacity distribution matters: if all 1 BTC sits on one side, that side can pay while the other can't. Balancing inbound vs. outbound liquidity is a common challenge, especially for merchants receiving payments (they need inbound capacity). Tools like circular rebalancing or splicing help maintain healthy capacity without closing channels.

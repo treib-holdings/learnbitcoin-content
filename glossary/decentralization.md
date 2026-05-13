@@ -22,5 +22,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Decentralization is Bitcoin’s heartbeat. By preventing any single group or institution from controlling the ledger, Bitcoin fosters censorship resistance and trustlessness. Full nodes independently validate transactions, and miners worldwide compete to secure blocks.
-This concept goes beyond just technology. Decentralization influences governance: changes to Bitcoin’s protocol require broad consensus among node operators, developers, and miners. The ethos extends to user sovereignty-manage your own keys, run your own node, and rely on open-source communities rather than corporate overlords.
+Decentralization is Bitcoin's heartbeat. By preventing any single group or institution from controlling the ledger, Bitcoin fosters censorship resistance and trustlessness. Full nodes independently validate transactions, and miners worldwide compete to secure blocks.
+This concept goes beyond just technology. Decentralization influences governance: changes to Bitcoin's protocol require broad consensus among node operators, developers, and miners. The ethos extends to user sovereignty-manage your own keys, run your own node, and rely on open-source communities rather than corporate overlords.

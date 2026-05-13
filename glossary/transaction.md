@@ -5,7 +5,7 @@ draft: false
 shortDefinition: "A data structure moving BTC from inputs (referencing UTXOs) to outputs (locking scripts). Signed by private keys."
 keyTakeaways:
   - "Consists of inputs, outputs, signatures, and optional scripts/data"
-  - "Consumes existing UTXOs and creates new ones, forming the ledger’s flow"
+  - "Consumes existing UTXOs and creates new ones, forming the ledger's flow"
   - "Valid transactions must satisfy script constraints for each input"
 sources: []
 relatedTerms:

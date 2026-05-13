@@ -21,4 +21,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-After a chain fork (like Bitcoin vs. Bitcoin Cash), a transaction broadcast on one chain may still be valid on the other if both share the same addresses/keys and no replay protection is implemented. Attackers can ‘replay’ your TX from chain A on chain B, unintentionally spending your funds there too. Solutions include unique transaction formats (replay protection), spending coins on each chain separately, or using address types only valid on one chain. Without such safeguards, users must carefully isolate coins after a fork to avoid accidental losses.
+After a chain fork (like Bitcoin vs. Bitcoin Cash), a transaction broadcast on one chain may still be valid on the other if both share the same addresses/keys and no replay protection is implemented. Attackers can 'replay' your TX from chain A on chain B, unintentionally spending your funds there too. Solutions include unique transaction formats (replay protection), spending coins on each chain separately, or using address types only valid on one chain. Without such safeguards, users must carefully isolate coins after a fork to avoid accidental losses.
