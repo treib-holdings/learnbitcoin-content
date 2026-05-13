@@ -19,5 +19,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A chain split happens if the community doesn't uniformly upgrade or if there's a contentious hard fork. Like a fork in the road, some nodes follow one rule set while others follow another, producing two separate histories from the split point onward. Each chain has its own blocks, transactions, and potentially duplicate coins.
-Notable examples include the Bitcoin-Bitcoin Cash fork in 2017, where one group sought larger blocks, leading to separate networks. Chain splits can be intentional (contentious forks) or accidental (software bugs). Users must decide which chain to support, and if they held coins before the split, they typically receive coins on both forks-though the new chain's value is never guaranteed.
+A chain split happens when Bitcoin's network diverges into two persistent, separately-valid chains - either accidentally (because of a software bug) or deliberately (because of a contentious [hard fork](/glossary/fork)).
+
+Once split, each chain proceeds with its own blocks, its own miners, and its own followers. Coins that existed before the split duplicate: holders end up with one balance on each chain, controlled by the same [private keys](/glossary/private-key). The chains never reconcile.
+
+Notable chain splits in Bitcoin's history:
+
+- **Bitcoin Cash (BCH) - August 2017.** The big one. The "scaling wars" of 2015-2017 culminated in BCH forking off Bitcoin with larger blocks but no [SegWit](/glossary/segwit-segregated-witness-bip-141). Today BCH still exists as a separate, much smaller network.
+- **Bitcoin SV (BSV) - November 2018.** A fork from BCH, not Bitcoin. Even smaller; even further from relevance.
+- **March 2013 (accidental).** A subtle database difference between Bitcoin v0.7 and v0.8 caused a 24-block accidental fork. Resolved within hours by miners coordinating to roll back to v0.7-compatible behavior. The only "consensus bug" chain split in Bitcoin's history.
+
+What the BCH split clarified: when there's a contentious hard fork, the market decides which chain is "Bitcoin." Both technical and economic factors matter, but in practice the chain with the original ticker symbol, exchange listings, brand association, and developer mindshare retains the "Bitcoin" name and most of the value. The fork chain rebrands and trades as a separate asset, typically at a fraction of Bitcoin's value.
+
+If a chain split were ever to happen again, holders of the pre-split chain would have coins on both sides, but the two chains' markets would price them very differently. This pattern is a meaningful structural defense against changes nobody really wants: the threat of "rebrand as an altcoin" keeps protocol changes conservative.

@@ -15,4 +15,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Named after Bitcoin's creator, the 'satoshi' is the smallest indivisible unit in Bitcoin. Every on-chain transaction references amounts in satoshis. Many LN wallets and modern interfaces also show balances in sats for user friendliness, particularly for small micropayments. As BTC's price grows, it becomes more intuitive for day-to-day usage to quote sats instead of BTC fractions. There's periodic debate about whether to adopt sats as the default Bitcoin denomination, akin to how most fiat currency uses sub-units (e.g., cents for USD).
+A satoshi (sat) is the smallest unit of Bitcoin. **1 BTC = 100,000,000 sats.** Below the sat is nothing - on-chain, Bitcoin is not divisible further. ([Lightning](/glossary/lightning-network) operates internally in millisats for finer routing precision, but those don't exist on the base chain.)
+
+Named after [Satoshi Nakamoto](/glossary/satoshi-nakamoto), the sat is the protocol-level integer unit. Internally, Bitcoin Core tracks all balances and amounts in satoshis. "BTC" is a human-readable rendering of the sat count divided by 100,000,000.
+
+In 2026 wallet culture, sats are increasingly the default unit for talking about Bitcoin in everyday contexts:
+
+- **Lightning balances** are almost universally shown in sats.
+- **Fee rates** are always quoted in sats per virtual byte (sat/vB).
+- **Stacker culture** uses "stacking sats" as the standard phrase for accumulating BTC.
+- **Tips and small payments** are denominated in sats - "1,000 sats" is more readable than "0.00001 BTC."
+- **Nostr zaps**, which run on Lightning, are quoted entirely in sats.
+
+A useful mental anchor: at a BTC price of $1,000,000 (which many expect within a decade or two), **1 sat = $0.01**. The sat becomes the everyday Bitcoin "cent." This convergence is why sats are increasingly the natural unit even for users who aren't deep in Lightning culture.
+
+See the [Bitcoin Units rabbit hole](/rabbit-hole/bitcoin-units) for the full unit scale and where the in-between units (mBTC, μBTC, Finney) sit.
