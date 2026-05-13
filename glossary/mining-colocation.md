@@ -42,4 +42,24 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Miners compete on low electricity rates and stable infrastructure. Some rent rack space in dedicated data centers ("colocation facilities") that manage power and cooling. Others build containerized mining farms near hydro, wind, or natural gas flaring sites. By colocating rigs, miners reduce overhead and downtime, leveraging professional-grade networking and climate control. The strategy also fosters geographic diversification: from Texas wind fields to Chinese hydropower or Icelandic geothermal. Though crucial for profitability at scale, colocation can increase centralization if many rigs cluster in the same few facilities.
+Mining colocation is the practice of running [Bitcoin mining hardware](/glossary/mining-rig) in dedicated industrial facilities, rather than at home or in office space. It's how essentially all serious Bitcoin mining happens in 2026.
+
+What colocation facilities provide:
+
+- **Cheap power, usually under fixed-rate contracts.** The single biggest cost determinant in mining. Facilities sited near stranded energy (West Texas wind, Quebec hydro, Iceland geothermal, flared natural gas in shale basins) offer rates of $0.03-0.06/kWh - vs $0.10-0.30/kWh for residential power.
+- **Industrial cooling.** Air-cooled rooms, immersion cooling, hydro cooling, depending on facility design. Heat dissipation at 100 kW+ per square meter is non-trivial.
+- **Network infrastructure.** Reliable, low-latency internet connections for pool communication. Block-propagation latency directly affects miner revenue (slow blocks are stale blocks).
+- **Physical security and uptime.** 24/7 staff, redundant power, redundant cooling. Mining operations don't tolerate downtime - every hour offline is irrecoverable revenue.
+- **Operational simplicity for the customer.** A miner who ships hardware to a colocation facility pays a hosting fee and doesn't worry about the rest.
+
+The geographic distribution as of 2026:
+
+- **United States** is the largest mining jurisdiction by share, driven by ERCOT (Texas) wind/solar, Bitmain Bitdeer's data centers, and many smaller operators.
+- **Russia, Kazakhstan, and post-Soviet states** continue substantial operations on cheap fossil-fuel power.
+- **Iceland, Norway, and other Nordic countries** for hydro and geothermal.
+- **Latin America** is growing - Paraguay (Itaipu hydro), some Brazilian operations.
+- **Africa** is emerging - solar in Ethiopia, hydro in DRC, methane flaring in Nigeria.
+
+The concentration concern is real: a meaningful share of global hash rate is in a relatively small number of large facilities. Geopolitically, this creates pressure points (China's 2021 ban being the dramatic example). The trend is toward more geographic diversification over time, partly driven by miners deliberately seeking jurisdictional resilience after observing China.
+
+See [Mining Centralization](/glossary/mining-centralization) for the structural concern this feeds into.
