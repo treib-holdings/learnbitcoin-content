@@ -10,10 +10,12 @@ estimatedMinutes: 9
 sources:
   - { label: "Bitcoin Core source - GetBlockSubsidy", url: "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp" }
   - { label: "BIP 42 - finite monetary supply", url: "https://github.com/bitcoin/bips/blob/master/bip-0042.mediawiki" }
-  - { label: "chainquery - live halving countdown (/api/edu/halving, in progress)", url: "https://chainquery.com" }
+  - { label: "chainquery - live halving countdown (/api/edu/halving)", url: "https://chainquery.com/api/edu/halving" }
 relatedTerms: ["halving-halvening", "block-subsidy", "block-reward", "mining-subsidy", "disinflation", "miner-capitulation", "coinbase-transaction"]
 hasInteractive: ["halvingCountdown"]
 ---
+
+import HalvingCountdown from '@components/halving/HalvingCountdown.svelte';
 
 > **Where you're going:** A halving is just a number cut in half, but it's the most important number in Bitcoin's monetary policy. You'll learn what one is, why the schedule exists, what's happened at each of the five so far, and what changes for miners and holders when the next one hits.
 
@@ -27,7 +29,7 @@ The block reward started at **50 BTC** when the network launched in January 2009
 
 The next halving will be at block 1,050,000, sometime around April 2028. The reward will drop to 1.5625 BTC.
 
-> **Coming soon:** A live countdown to the next halving, pulled from our own Bitcoin node via `chainquery.com/api/edu/halving`. The endpoint is being built in parallel; when it's live, the count will appear here in real time.
+<HalvingCountdown client:visible />
 
 ## 2. The Why: Disinflation by Design
 

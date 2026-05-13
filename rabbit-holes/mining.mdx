@@ -11,10 +11,14 @@ sources:
   - { label: "SHA-256 spec (NIST FIPS 180-4)", url: "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf" }
   - { label: "Bitcoin Core - GetNextWorkRequired (difficulty calc)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/pow.cpp" }
   - { label: "Cambridge Bitcoin Electricity Consumption Index", url: "https://ccaf.io/cbnsi/cbeci" }
-  - { label: "chainquery - live difficulty + mempool (/api/edu/* in progress)", url: "https://chainquery.com" }
+  - { label: "chainquery - live difficulty (/api/edu/difficulty)", url: "https://chainquery.com/api/edu/difficulty" }
+  - { label: "chainquery - live mempool (/api/edu/mempool-summary)", url: "https://chainquery.com/api/edu/mempool-summary" }
 relatedTerms: ["mining", "miner", "hash", "hash-rate", "difficulty", "difficulty-retargeting", "nonce", "block-reward", "block-subsidy", "proof-work-pow", "mempool", "mining-pool"]
 hasInteractive: ["miningSimulator", "feeMarketSimulator", "difficultyClock"]
 ---
+
+import DifficultyClock from '@components/mining/DifficultyClock.svelte';
+import MempoolHistogram from '@components/mining/MempoolHistogram.svelte';
 
 > **Where you're going:** Mining is often described as "Bitcoin's energy problem" or "Bitcoin's lottery." Both are misleading. You'll learn what mining actually is (a cryptographic race with a clock), why it secures the network, and what the long-term economics look like as the subsidy approaches zero.
 
@@ -77,7 +81,7 @@ This is the most consequential single piece of mechanism design in Bitcoin. Ther
 
 Difficulty has gone up roughly 10^13 times since the genesis block - mining is now astronomically harder than it was in 2009, by design, because hash power has scaled up by that much.
 
-> **Coming soon:** A live difficulty countdown and current value, pulled from our own Bitcoin node via `chainquery.com/api/edu/difficulty`.
+<DifficultyClock client:visible />
 
 ## 5. What Miners Are Paid
 
@@ -107,7 +111,7 @@ The process:
 
 This is why your transaction's *fee rate* matters more than its *amount*. A transaction with 1 BTC and a 1 sat/vB fee sits at the bottom of the mempool. A transaction with 0.001 BTC and a 100 sat/vB fee gets mined immediately.
 
-> **Coming soon:** A live mempool histogram and fee market visualization powered by `chainquery.com/api/edu/mempool-summary`. Will show how the fee market is sorting transactions right now.
+<MempoolHistogram client:visible />
 
 ## 7. Energy as Security Budget
 
