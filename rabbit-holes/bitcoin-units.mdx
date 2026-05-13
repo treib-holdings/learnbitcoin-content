@@ -4,12 +4,14 @@ slug: bitcoin-units
 draft: false
 status: live
 section: rabbit-hole
-tagline: "Big Coins, Tiny Bits - Making Sense of BTC, Sats, and Everything in Between"
+tagline: "BTC, sats, mBTC, μBTC, Finney. Which unit to use, when, and why there are so many of them."
 order: 1
 estimatedMinutes: 9
 sources:
   - { label: "Bitcoin Wiki - Units", url: "https://en.bitcoin.it/wiki/Units" }
-relatedTerms: ["satoshi", "bitcoin", "lightning-network", "halving-halvening"]
+  - { label: "BIP 176 - Bits as a denomination", url: "https://github.com/bitcoin/bips/blob/master/bip-0176.mediawiki" }
+  - { label: "chainquery - live BTC/USD price (/api/edu/price, in progress)", url: "https://chainquery.com" }
+relatedTerms: ["satoshi", "bitcoin", "lightning-network", "halving-halvening", "bip-176-bits-denomination"]
 hasInteractive:
   - unitsConverter
   - unitsVisualization
@@ -20,149 +22,163 @@ downloads:
 import UnitsConverter from '@components/units/UnitsConverter.svelte';
 import UnitsVisualization from '@components/units/UnitsVisualization.svelte';
 
-Ever tried buying a pack of gum with a hundred-dollar bill? Sure, it's doable, but you might get a strange look - plus, counting the change can get messy. Now imagine trying to pay for something small with an entire Bitcoin without knowing how to "break it down." That's where Bitcoin's smaller denominations ride to the rescue, whether you're a newcomer still learning about your seed phrase or a seasoned Bitcoiner who remembers MtGox. Grab a comfy seat: we're about to dive deep into the fascinating world of Bitcoin units.
+> **Where you're going:** Bitcoin is divisible to eight decimal places. That gives you nine possible units between "one BTC" and "one satoshi," and people have named most of them. By the end of this rabbit hole you'll know which units matter in practice, which exist for historical reasons, and how to think in any of them without doing decimal math in your head.
 
-> **Pro tip:** Bookmark this page or press `Ctrl+D` (`Cmd+D` on Mac) to come back whenever you need a quick refresher or want to check our interactive converter.
+## 1. Why There Are So Many Units
 
-## 1. Why Bitcoin Units Matter (For Everyone)
+Bitcoin's protocol tracks balances in satoshis. One satoshi is the smallest possible amount; one bitcoin equals 100,000,000 satoshis. Everything between those two scales is a label humans invented because the numbers got awkward.
 
-**From newbies to veterans - we all need the right change.**
+When 1 BTC was worth $0.10 (in 2010), nobody needed smaller units. As the price climbed, "0.0001 BTC for a cup of coffee" became a typical amount, and the trailing zeros got annoying. Communities started using mBTC, then μBTC, then sats. Lightning Network operators needed even finer precision and added millisats (1/1000 of a satoshi).
 
-When Bitcoin was new, no one thought much about fractions - you either had a whole coin or you didn't. But as its value climbed, the smaller units started to matter. Understanding those units is key to using Bitcoin without getting lost in a sea of decimals.
+The result: a forest of unit names, most of which you'll never use, and a few you'll use constantly. This rabbit hole sorts the useful from the historical.
 
-- **For beginners:** Think of it like dollars and cents - but in Bitcoin, the "cents" are called satoshis. And you can slice things even thinner if needed.
-- **For pros:** Whether you're tweaking fees or settling microtransactions, knowing your way around mBTC, µBTC, and Finney can mean the difference between precision and overpayment.
+## 2. The Three That Matter
 
-> **Analogy alert:** If 1 BTC is a giant bag containing 100 million grains of rice, 1 satoshi is like a single grain. You wouldn't lug the entire bag around if you just need a few grains for a micro-payment.
+If you ignore everything else, you can get through 95% of Bitcoin life with three units:
 
-## 2. The Bitcoin Units to Satoshi Visualization
+- **BTC** - the whole unit. Used for large amounts, quoting market prices, savings discussions.
+- **sat** (satoshi) - the smallest unit. Used for fees, tips, microtransactions, fee rates (sat/vByte).
+- **msat** (millisat) - one thousandth of a sat. Used inside the [Lightning Network](/glossary/lightning-network) for fine routing fee precision. You'll rarely see msat directly in a wallet UI.
 
-Each unit lives at a fixed position in Bitcoin's decimal scale. The orange circles are everything from that unit *down* to the satoshi - the outlined circles are the leading zeros above it.
+The other units (mBTC, μBTC, Finney) are mostly historical or community-specific. If you're learning Bitcoin in 2026, learning BTC and sats is sufficient.
+
+## 3. The Full Scale
+
+Bitcoin has eight decimal places. That means there are nine "positions" from BTC down to sat. The visualization below shows what each position represents - orange circles are the unit at that decimal place and everything finer; outlined circles are the higher-magnitude positions above it.
 
 <UnitsVisualization client:visible unit="finney" />
 
-## 3. Meet the Gang - BTC, mBTC, µBTC, Finney, and Sats
+The "Finney" example shows position 4 (0.0001 BTC = 10,000 sats). The four outlined circles to the left represent BTC, dBTC, cBTC, mBTC - all coarser denominations not part of this unit. The five filled circles starting at the Finney position represent the unit and everything below it down to the satoshi.
 
-Let's step through each unit, why it exists, and how you might use it.
+## 4. Every Unit, With Its Reason for Existing
 
-### BTC (Bitcoin) - The whole coin
+Working from biggest to smallest:
+
+### BTC (Bitcoin) - the whole coin
 
 <UnitsVisualization client:visible unit="btc" showLabel={false} />
 
-- **What it is:** The standard unit we all know. There will never be more than 21 million Bitcoin.
-- **How it helps:** Useful for quoting big trades or referencing the overall market price.
-- **Fun fact:** 1 BTC = 100,000,000 satoshis. That's a lot of slices.
+The base unit. Equals 100,000,000 satoshis. Used for market prices ("BTC is at $87,000"), large transfers ("I bought 0.5 BTC"), and any discussion where the amount is bigger than a few hundred dollars. There will never be more than 21 million of these in existence (see [the Supply Schedule rabbit hole](/rabbit-hole/supply)).
 
-### dBTC (deci-Bitcoin) - Unnamed
+### dBTC (deci-Bitcoin) - mostly unused
 
 <UnitsVisualization client:visible unit="dbtc" showLabel={false} />
 
-- **What it is:** One-tenth of a Bitcoin, or 0.1 BTC. That's 10,000,000 satoshis.
-- **How it helps:** A solid chunk of value - often used in savings, OTC trades, or quoting mid-size balances.
-- **Fun fact:** If 1 BTC is a dollar, this would be a dime. In Bitcoin, this "dime" could someday buy a whole lot more.
+One-tenth of a BTC. Has a name in theory; nobody uses it in practice. If you see it, it's usually in academic contexts or completeness-driven documentation.
 
-### cBTC (Centibit) - The handy middle ground
+### cBTC (centi-Bitcoin) - also mostly unused
 
 <UnitsVisualization client:visible unit="cbtc" showLabel={false} />
 
-- **What it is:** One hundredth of a Bitcoin, or 0.01 BTC. That's 1,000,000 satoshis.
-- **How it helps:** Great for everyday transactions - big enough to feel meaningful, small enough to be practical.
-- **Fun fact:** If Bitcoin were gold, a centibit would be like carrying around a hefty gold coin - compact, but still packing real value.
+One-hundredth of a BTC, or 1,000,000 sats. Theoretically the "cent" of Bitcoin. In practice, also unused. People who want this magnitude tend to just write 0.01 BTC.
 
-### mBTC (Millibitcoin, Millibits)
+### mBTC (Millibitcoin)
 
 <UnitsVisualization client:visible unit="mbtc" showLabel={false} />
 
-- **What it is:** One-thousandth of a Bitcoin.
-- **Definition:** 1 mBTC = 0.001 BTC.
-- **Bonus:** Great for quoting smaller amounts without resorting to too many trailing zeros.
+One-thousandth of a BTC, or 100,000 sats. Has some adoption: at typical Bitcoin prices, 1 mBTC is in the range of a meal or a small purchase, which makes it a reasonable display unit. Some wallets and merchants prefer mBTC over BTC to avoid showing leading zeros.
 
 ### Finney
 
 <UnitsVisualization client:visible unit="finney" showLabel={false} />
 
-- **What it is:** A tribute to Hal Finney, one of Bitcoin's earliest pioneers.
-- **Definition:** Commonly 1 Finney = 0.0001 BTC (10,000 satoshis).
-- **Why it matters:** Some people honor Bitcoin's history by using Finneys to measure everyday amounts - a nod to the second-ever person to run Bitcoin software.
+One ten-thousandth of a BTC, or 10,000 sats. Named after Hal Finney, the cryptographer who received the first Bitcoin transaction from Satoshi in January 2009 and was probably the second person to ever run Bitcoin software. The name is community-honorary; you won't see it in many wallets. Worth knowing about because of who Hal was.
 
-### Unnamed (0.00001 BTC)
+### Unnamed (10^-5 BTC)
 
 <UnitsVisualization client:visible unit="p5" showLabel={false} />
 
-- **What it is:** One hundred-thousandth of a Bitcoin, or 0.00001 BTC. That's 1,000 satoshis.
-- **How it helps:** Ideal for microtransactions, fine-tuning fees, or testing wallet setups with minimal risk.
-- **Fun fact:** This unit is exactly one milli-satoshi away from rounding-error territory for many apps - small, but mighty in the right context.
+One hundred-thousandth of a BTC, or 1,000 sats. Has no widely-used name. The decimal slot exists; the social convention doesn't.
 
-### µBTC (Microbitcoin, "bits")
+### μBTC (Microbitcoin) - aka "bits"
 
 <UnitsVisualization client:visible unit="ubtc" showLabel={false} />
 
-- **What it is:** One-millionth of a Bitcoin.
-- **Definition:** 1 µBTC = 0.000001 BTC.
-- **Why we love it:** Works with all legacy financial systems that already support two decimal places for the smallest unit.
+One-millionth of a BTC, or 100 sats. [BIP 176](https://github.com/bitcoin/bips/blob/master/bip-0176.mediawiki) proposed calling these "bits" - a shorter, more memorable name. The proposal had genuine adoption in some wallets (and on Coinbase for a while) but largely lost out to "sats" as the preferred small-amount unit.
 
-### Unnamed (0.0000001 BTC)
+### Unnamed (10^-7 BTC)
 
 <UnitsVisualization client:visible unit="p7" showLabel={false} />
 
-- **What it is:** One ten-millionth of a Bitcoin, or 0.0000001 BTC. That's 10 satoshis.
-- **How it helps:** Used in ultra-fine fee adjustments and experimental micropayments. Not common, but technically valid.
-- **Fun fact:** Most wallets won't let you send a 10-sat payment without rounding up.
+One ten-millionth of a BTC, or 10 sats. Like the 10^-5 slot, this one exists but has no name. Most wallets won't even let you specify amounts at this resolution without rounding.
 
-### Satoshis (Sats) - The smallest slice
+### Satoshis (sats) - the smallest unit
 
 <UnitsVisualization client:visible unit="sat" showLabel={false} />
 
-- **What it is:** Named after Satoshi Nakamoto, the mysterious creator(s) of Bitcoin.
-- **Definition:** 1 sat = 0.00000001 BTC. Eight decimal places.
-- **Why we love it:** Perfect for tips, micropayments, or simply avoiding decimal heartbreak.
+One hundred-millionth of a BTC. The atomic unit; you cannot transact in less on the main chain. Named after Satoshi Nakamoto.
 
-## 4. Bitcoin Units Table
+Sats have become the de-facto standard small unit in 2020s Bitcoin culture. "Stacking sats" is the common phrase for accumulating Bitcoin. Fees are typically quoted in sat/vByte. Lightning balances are often shown in sats. If BTC keeps appreciating, eventually most user-facing displays will probably default to sats.
 
-**When 1 BTC = $1,000,000** - here's how the smaller Bitcoin units stack up when that milestone hits, just in case "a few sats" turns out to be more than pocket change.
+## 5. The Units Table
 
-| Name           | Symbol | Decimal       | Precision | Value at $1M/BTC |
-|----------------|--------|---------------|-----------|------------------|
-| Bitcoin        | BTC    | 1             | 8         | $1,000,000.00    |
-|                |        | 0.1           | 7         | $100,000.00      |
-| Centi-Bitcoin  | cBTC   | 0.01          | 6         | $10,000.00       |
-| Milli-Bitcoin  | mBTC   | 0.001         | 5         | $1,000.00        |
-| Finney         | -      | 0.0001        | 4         | $100.00          |
-|                |        | 0.00001       | 3         | $10.00           |
-| Micro-Bitcoin  | µBTC   | 0.000001      | 2         | $1.00            |
-|                |        | 0.0000001     | 1         | $0.10            |
-| Satoshi        | sat    | 0.00000001    | 0         | $0.01            |
+When 1 BTC equals $1,000,000 (a milestone many expect within the next decade or two), the smaller units start to be more like familiar everyday amounts. Here's the alignment:
 
-## 5. Why 8 Decimals?
+| Name | Symbol | Fraction of BTC | Value at $1M/BTC |
+|---|---|---|---|
+| Bitcoin | BTC | 1 | $1,000,000.00 |
+| (unnamed) | - | 0.1 | $100,000.00 |
+| Centi-Bitcoin | cBTC | 0.01 | $10,000.00 |
+| Milli-Bitcoin | mBTC | 0.001 | $1,000.00 |
+| Finney | - | 0.0001 | $100.00 |
+| (unnamed) | - | 0.00001 | $10.00 |
+| Micro-Bitcoin | μBTC (bit) | 0.000001 | $1.00 |
+| (unnamed) | - | 0.0000001 | $0.10 |
+| Satoshi | sat | 0.00000001 | $0.01 |
 
-There's no official record of why Satoshi Nakamoto chose 8 decimal places, but most believe it struck a balance: precise enough for microtransactions, yet broad enough to support Bitcoin's early price volatility. At 8 decimals, Bitcoin can be divided into 100 million satoshis - plenty of granularity for everything from billion-dollar trades to tiny tips.
+At that price point: 1 sat = 1 cent, 1 bit = 1 dollar, 1 mBTC = 1,000 dollars. The naming starts to feel intuitive in a way it doesn't today. Some people argue this is when "the world will start pricing in sats" - which is plausible but not predictable.
 
-While 8 decimal places may sound like overkill, some modern use cases are already brushing up against the limit - especially on the Lightning Network. In high-volume, low-value environments like gaming, tipping, or IoT micropayments, even a single satoshi can feel too large. Developers sometimes work around this by "abstracting" units or using off-chain accounting, but it's a sign that more precision could eventually be needed.
+## 6. Why 8 Decimals?
 
-Could we go smaller? Technically, yes. Bitcoin was designed with adaptability in mind. Expanding the decimal limit would require a network-wide consensus update - not something taken lightly, but entirely possible if and when the need becomes clear.
+Satoshi Nakamoto picked eight decimal places when designing Bitcoin. There's no public record of *why* exactly eight. The conventional wisdom, repeated in many places, is that it was a guess: precise enough for microtransactions, broad enough to handle a long volatility curve.
 
-## 6. Bitcoin Units Converter
+At 8 decimals, Bitcoin can represent values from $1M+ (1 BTC) down to $0.01 (1 sat) - even if the dollar-per-BTC price reaches a million. That's the rough envelope the choice covers.
+
+In some modern uses, 8 decimals is brushing up against the limit. The [Lightning Network](/glossary/lightning-network) needs finer precision for routing fees, which is why it operates internally in **millisatoshis** (1/1000 of a sat, 11 decimals total). On-chain Bitcoin is still 8 decimals, but second-layer protocols have extended the resolution off-chain.
+
+Could the protocol go to 10 or 12 decimals? Technically yes, but it would require a network-wide soft fork to redefine the smallest unit. No serious proposal has been made. The current scope works for the foreseeable future.
+
+## 7. The Converter
+
+Try it. Type any amount in any unit and watch the others update:
 
 <UnitsConverter client:load />
 
-> **Pro tip:** Double-check your decimals. If you meant 10,000 sats but typed 100,000, that's a big difference.
+> **Pro tip:** Double-check decimals before sending. The difference between 10,000 sats and 100,000 sats might look like a typo, but it's a 10x difference in actual value. Reputable wallets show fee rates and amounts in monospace fonts specifically to keep the decimals aligned. Use that affordance.
 
-## 7. Tips, Pitfalls & Best Practices
+## 8. What People Actually Use
 
-**Decimal danger.** The difference between 0.01 BTC and 0.001 BTC might look like a minor slip, but financially it's a huge difference. Always check - and then double-check - the decimal place before hitting Send.
+In practice, here's the breakdown of which units you'll encounter most:
 
-**Use monospaced fonts.** Many reputable wallets and exchanges use a monospaced font to align numbers and keep decimal places clear. If you're building personal tools, do the same. It's easy on the eyes and saves your future self from heartbreak.
+**You'll see BTC in:**
+- Market prices and exchange interfaces
+- Large transfers and savings discussions
+- Whitepapers and academic writing
 
-**Everyday referencing.** Some communities love talking purely in sats. Others stick to BTC. Some prefer the metric feel of mBTC or µBTC. A few are proud Finney fans. There's no one right way - just make sure both sides of a transaction agree on the unit beforehand. ("That's 10,000 sats, right?" never hurts.)
+**You'll see sats in:**
+- Wallet balances (especially Lightning wallets)
+- Tipping and microtransactions
+- Fee rates (always expressed as sat/vByte)
+- Stacker culture ("stacking sats")
+- Nostr zaps and similar
 
-## 8. Fun Facts & Culture
+**You'll see mBTC in:**
+- A minority of merchant interfaces, especially European ones
+- Some hardware wallet displays
 
-**Satoshi Nakamoto's legacy.** We still don't know the true identity, but their influence is everywhere - right down to each "sat" in your wallet.
+**You'll see μBTC ("bits") in:**
+- A few wallets that adopted BIP 176
+- Older Coinbase interfaces (mostly retired now)
 
-**Hal Finney's role.** Hal was one of the earliest adopters, famously receiving the first BTC transaction from Satoshi. Naming 0.0001 BTC the "Finney" is a tribute to that contribution. Not universally used, but a nice personal touch.
+**You'll basically never see:**
+- dBTC, cBTC, Finney, or the unnamed positions, except in this kind of comprehensive list
 
-**Community tipping.** On Twitter/X, Reddit, and Nostr, you'll often see sats thrown around for funny memes, insightful posts, or random acts of Bitcoin kindness.
+The natural reading-and-writing convention now is:
 
-**Block subsidy halvings.** Every ~4 years the amount of new BTC entering circulation halves, making each sat arguably more precious over time - and reminding us that eventually we'll need those smaller units.
+- **Amounts under 0.01 BTC**: use sats
+- **Amounts from 0.01 to 0.5 BTC**: either, your call
+- **Amounts over 0.5 BTC**: use BTC
 
-**The "10,000 BTC for pizza" legend.** In 2010, Laszlo Hanyecz famously paid 10,000 BTC for two pizzas - worth around $41 at the time. The perfect example of how even large amounts of BTC were once pocket change, and a reminder that as Bitcoin's value increases, smaller units become critical for everyday transactions.
+That's it. Two units handle everything. The rest of this rabbit hole is for completeness and historical context.
+
+> **Pro tip:** When chatting with another Bitcoiner about a payment, confirm the unit before you send. "10k sats" and "0.0001 BTC" are the same amount; "10,000 sats" and "0.001 BTC" differ by 10x. The shared cultural language has converged on sats for small and BTC for large, but mismatches happen. Always verify.
