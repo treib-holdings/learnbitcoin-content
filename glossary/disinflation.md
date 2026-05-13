@@ -19,5 +19,19 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Disinflation means inflation is still happening but at a decreasing pace. In Bitcoin, new BTC are minted with each block, so there's inflation relative to total supply-albeit on a strictly declining schedule. Every 210,000 blocks, the block subsidy halves, lowering Bitcoin's inflation rate.
-Compared to fiat currencies with flexible monetary policy, Bitcoin's supply growth is mathematically locked in, eventually approaching zero inflation once the total supply nears 21 million. This is a key narrative for Bitcoin as 'digital gold'-fostering a perception of scarcity and long-term store-of-value potential.
+Disinflation means inflation is happening *less* over time. Prices or money supply are still going up, but the rate of increase is slowing.
+
+Bitcoin is the cleanest example of programmed disinflation in monetary history. New BTC are minted with every block, so the circulating supply grows continuously - but every 210,000 blocks (about every 4 years), per-block issuance is cut in half. That makes the inflation rate fall in discrete steps:
+
+- **2009-2012:** 50 BTC/block subsidy
+- **2012-2016:** 25 BTC/block (post 1st halving)
+- **2016-2020:** 12.5 BTC/block
+- **2020-2024:** 6.25 BTC/block
+- **2024-2028:** 3.125 BTC/block (current, ~0.83% annual inflation)
+- **2028-2032:** 1.5625 BTC/block (~0.4% inflation)
+
+This continues every 210,000 blocks until the subsidy rounds to zero around 2140. From that point forward, Bitcoin has zero monetary inflation - all miner revenue comes from transaction fees.
+
+Disinflation is the opposite of how fiat systems usually run. Central banks typically *target* a positive inflation rate (the Federal Reserve targets 2%). Bitcoin targets none, and reaches it asymptotically.
+
+See [Halving](/glossary/halving-halvening) for the mechanism, and the [Supply Schedule rabbit hole](/rabbit-hole/supply) for the long version.
