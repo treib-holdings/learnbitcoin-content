@@ -10,10 +10,12 @@ estimatedMinutes: 8
 sources:
   - { label: "Bitcoin Core source - GetBlockSubsidy", url: "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp" }
   - { label: "BIP 42 - finite monetary supply (fixed the original infinite-supply bug)", url: "https://github.com/bitcoin/bips/blob/master/bip-0042.mediawiki" }
-  - { label: "chainquery - live supply data (/api/edu/supply, in progress)", url: "https://chainquery.com" }
+  - { label: "chainquery - live supply data (/api/edu/supply)", url: "https://chainquery.com/api/edu/supply" }
 relatedTerms: ["block-subsidy", "halving-halvening", "inflation", "disinflation", "bip-42", "coinbase-transaction", "block-reward"]
 hasInteractive: ["supplyChart"]
 ---
+
+import SupplyChart from '@components/supply/SupplyChart.svelte';
 
 > **Where you're going:** You'll understand exactly where the 21 million number comes from, why the actual cap is 20,999,999.9769 BTC (not a clean 21M), and why this schedule is enforced not by a promise but by every node on Earth.
 
@@ -118,7 +120,7 @@ After the next halving (block 1,050,000, around 2028), Bitcoin's annual issuance
 
 **Bitcoin's monetary expansion rate is already lower than gold's.** That's a remarkable fact and one most people get wrong.
 
-> **Coming soon:** A live chart pulling current supply, annual issuance, and inflation rate from our own Bitcoin node via `chainquery.com/api/edu/supply`. The endpoint is being built in parallel.
+<SupplyChart client:visible />
 
 ## 7. The Social Contract Argument
 
