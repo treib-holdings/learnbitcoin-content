@@ -9,6 +9,7 @@ keyTakeaways:
   - "Positions BTC as more scarce than traditional fiat"
 sources: []
 relatedTerms:
+  - asymptote
   - block-reward
   - block-subsidy
   - fungibility
