@@ -37,4 +37,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Lightning channel is like a direct tunnel between two participants. They lock a certain amount of BTC into a multi-signature address and can then transact instantly by updating the channel's balance allocation. These updates happen off-chain, so they're not visible to the main Bitcoin ledger. When either party decides or is forced to settle, the final balance is written back to layer-1 via a commitment transaction. Channels form the basis of LN's 'mesh' topology, routing payments through connected nodes without cluttering the main blockchain.
+A Lightning channel is a payment pipe between two parties on the [Lightning Network](/glossary/lightning-network). Both parties lock funds into a shared 2-of-2 multisig on-chain output (the **funding transaction**), and from there they can exchange unlimited off-chain payments by signing successive **commitment transactions** that update the channel's balance allocation.
+
+How a channel works, end to end:
+
+1. **Opening.** Alice and Bob both contribute (or one contributes, depending on the protocol variant) to a 2-of-2 multisig. The funding transaction goes on-chain and confirms.
+2. **Transacting.** To pay Bob, Alice constructs a new commitment transaction that allocates less of the channel's balance to herself and more to Bob, signs it, and shares it. Bob signs and stores it too. The old commitment is invalidated using a revocation key. The new state is now the "current truth" between them, even though nothing is on-chain.
+3. **Many updates.** They can repeat this back and forth, in either direction, thousands of times. Each update is just a signed transaction sitting in their wallets.
+4. **Closing.** Either party can broadcast the latest commitment to the chain at any time. The funds settle according to the latest state. **Cooperative close** is signed by both and clean. **Force close** is unilateral and includes a delay window during which the other party can punish a cheating counterparty (broadcasting an outdated state) using the revocation key.
+
+The cheating protection is what makes Lightning trustless. If Bob ever tries to broadcast an old commitment that favored him more, Alice can use the revocation key to claim *all* of the channel's funds, including Bob's. The mechanism is mutually assured destruction at the channel level. In practice, attempted cheating is extremely rare.
+
+A few practical realities:
+
+- **Inactive channels expose nothing.** A channel that hasn't been updated in months still works fine. You can come back to it.
+- **You must watch for cheating.** If you're offline when your counterparty cheats, you miss the dispute window. Watchtower services exist for this.
+- **Capacity is fixed at open time.** A channel funded with 0.05 BTC can route up to 0.05 BTC; rebalancing or splicing is required for more.
+
+See [Lightning Network](/glossary/lightning-network) for the network-level view and HTLC routing.

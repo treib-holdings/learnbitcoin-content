@@ -20,4 +20,28 @@ relatedTerms:
 liveWidget: ~
 ---
 
-When a user wants to receive payment over LN, they generate a BOLT 11 invoice-an alphanumeric string that typically starts with 'lnbc' (mainnet) or 'lntb' (testnet). It includes information like the payment amount, the node's public key, an expiry time, and a payment hash. The payer scans or pastes this invoice into their LN wallet, which decodes the details and initiates a route. If the transaction succeeds, the receiver discloses the preimage to finalize payment. LN invoices keep the process smooth and user-friendly, avoiding lengthy addresses or manual references.
+A Lightning invoice is a payment request on the [Lightning Network](/glossary/lightning-network). It's a string the recipient generates and shares with the payer, encoding everything the payer needs to find and complete a payment.
+
+The standard format is **BOLT-11**, an encoded string typically starting with `lnbc` (mainnet) or `lntb` (testnet). It contains:
+
+- **Amount** (optional - some invoices let the payer pick).
+- **Payment hash** - a hash of a secret (the *preimage*) the recipient knows. The payment only completes when the preimage is revealed.
+- **Recipient node public key** - which Lightning node should receive.
+- **Routing hints** - optional info about which channels can deliver the payment, useful for nodes with limited public connectivity.
+- **Expiry** - how long the invoice is valid (default usually 1 hour).
+- **Description / memo** - optional human-readable note.
+- **Signature** from the recipient's node.
+
+The payment flow:
+
+1. Recipient generates an invoice; copies it to the payer (QR code, copy-paste, NFC, etc.).
+2. Payer's wallet decodes the invoice, finds a route through the network, and forwards an HTLC.
+3. Each hop holds the payment locked until the preimage is revealed.
+4. The final recipient reveals the preimage to claim the payment, which cascades back through the route.
+5. Each routing node along the path now has proof the payment completed.
+
+Invoices are single-use. The payment hash gets revealed when the payment settles, so paying the same invoice twice would either fail (the recipient won't accept it again) or be a fraud signal.
+
+A newer format, **BOLT-12 offers**, addresses some BOLT-11 limitations - reusable, supports recurring payments, smaller, more private. Adoption is growing in 2024-2026 but BOLT-11 remains the lingua franca.
+
+See [Lightning Network](/glossary/lightning-network) for how invoices get routed.

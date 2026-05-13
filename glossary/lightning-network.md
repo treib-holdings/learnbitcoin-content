@@ -46,4 +46,28 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The Lightning Network addresses Bitcoin's scalability limits by letting parties open payment channels funded by on-chain transactions. Subsequent transfers occur off-chain, with each channel participant updating balances. When the channel closes-voluntarily or due to disputes-the final state is settled on the main blockchain. This approach allows near-instant payments and minimal fees, making microtransactions and everyday commerce feasible. LN uses hashed timelock contracts (HTLCs) to chain channels together, routing payments across multiple hops without requiring trust in intermediate nodes.
+The Lightning Network is a payment layer built on top of Bitcoin. It enables instant, low-fee payments by routing them through a network of pre-funded payment channels, only settling on the base chain when channels open or close.
+
+The mechanics, simplified:
+
+1. **Open a [channel](/glossary/lightning-channel).** Two parties create a 2-of-2 multisig on-chain Bitcoin output, funded by one or both. This is a normal on-chain transaction, pays a normal fee.
+2. **Transact off-chain.** The two parties exchange signed "balance updates" - cryptographically valid claims about the current allocation of channel funds. These updates are not broadcast; they live only between the two participants.
+3. **Route through the network.** Most channels aren't between you and your final recipient directly. The Lightning Network is a mesh of channels; payments hop through intermediate nodes using [Hash Time-Locked Contracts (HTLCs)](/glossary/htlc-hashed-time-locked-contract) so that each hop is atomic - the whole payment succeeds, or none of it does.
+4. **Close the channel.** Either party can close at any time by broadcasting the latest mutually-signed state on-chain. The funds get distributed according to that final state. Done.
+
+What this buys you:
+
+- **Speed.** Payments confirm in seconds, not minutes.
+- **Cost.** Sub-cent fees are typical. You can actually use Bitcoin for small payments.
+- **Privacy.** Lightning payments are *not* broadcast on the public chain. Only channel opens and closes appear; the payments in between are between the participants and the routing nodes.
+- **Scalability.** Each channel supports unlimited transactions between its two parties without bloating the base chain.
+
+Limitations are real:
+
+- **Liquidity.** A channel can only route as much as it has on the relevant side. Inbound liquidity is a real concept and a real problem for new nodes.
+- **Online requirement.** Nodes must be online to send, receive, and (importantly) watch for fraud attempts from a channel counterparty.
+- **Operational complexity.** Running your own Lightning node requires more attention than just holding Bitcoin. Many users prefer custodial Lightning wallets - which, as with custodial on-chain wallets, trade self-custody for convenience.
+
+Lightning is how Bitcoin scales without changing the base layer. The base layer optimizes for settlement security across decades; Lightning optimizes for instant payments. The two are complementary by design.
+
+See [Lightning Channel](/glossary/lightning-channel) for the building block, and [Journey: Using Bitcoin](/journey/using-bitcoin) for the practical user view.
