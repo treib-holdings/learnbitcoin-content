@@ -20,4 +20,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-KYC policies mean a crypto exchange or custodial wallet must collect identification details-like passports or driver's licenses-to meet legal obligations. Regulators believe this deters criminals by associating real-world IDs with transactions, while skeptics argue it compromises privacy and can be circumvented. KYC requirements vary by region but commonly pair with Anti-Money Laundering (AML) rules. For Bitcoiners, KYC is controversial: on one hand, it grants mainstream legitimacy; on the other, it erodes pseudonymity and fosters data honey pots vulnerable to hacks or misuse.
+KYC - **K**now **Y**our **C**ustomer - is the regulatory regime requiring financial service providers to verify the identity of their users. For Bitcoin, this typically means [centralized exchanges](/glossary/centralized-exchange-cex), [custodial wallets](/glossary/custodial-wallet), and on-ramp services collect government-issued ID, photos, addresses, and often more before letting you transact.
+
+The official rationale: prevent money laundering and terrorism financing. The unofficial reality is more nuanced.
+
+Two honest observations about KYC in practice:
+
+- **It does deter casual crime.** Petty fraudsters who would have used Bitcoin's pseudonymity for trivial scams find the on-ramp friction discouraging. Some.
+- **It does almost nothing against serious crime.** Sophisticated criminals route around KYC easily. The Lazarus Group doesn't sign up to Coinbase with their real names. Meanwhile, KYC databases become honeypots: every exchange that's been hacked since 2014 has leaked KYC data, including passport scans and home addresses, to attackers who use it for targeted physical attacks ("wrench attacks") on Bitcoin holders.
+
+For ordinary users, KYC creates several real costs:
+
+- **Surveillance.** Your on-chain history becomes legally linked to your real-world identity at the moment you withdraw from a KYC venue. Once linked, it stays linked.
+- **Censorship vector.** A KYC-bound exchange can freeze your account, demand additional verification on withdrawal, refuse to release funds, or close your account for any reason.
+- **Data risk.** Your ID photos are stored on servers that get hacked.
+- **Geographic asymmetry.** KYC requirements vary wildly. The same activity that's frictionless in one country is heavily regulated in another.
+
+Non-KYC options exist for Bitcoin specifically: peer-to-peer markets (Robosats, Bisq), mining your own BTC, accepting Bitcoin as payment, [submarine swaps](/glossary/submarine-swap), and decentralized exchange venues. They're more friction than the giants but preserve the properties most people came to Bitcoin for.
+
+A defensible Bitcoiner approach: KYC is sometimes the only available on-ramp, and that's fine to use deliberately. But minimize how much of your stack ever touches it, and avoid making KYC venues the long-term custody point.
