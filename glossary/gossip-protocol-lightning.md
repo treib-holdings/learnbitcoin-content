@@ -22,5 +22,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Lightning nodes must know which channels exist and their respective capacities to route payments effectively. Rather than relying on a central server, LN uses a gossip protocol: nodes announce their channels and state changes (like capacity updates) to peers, who relay this data further. This decentralized approach ensures no single point of failure for LN topology.
-Too much gossip can overload the network, so LN implementations optimize what's shared and how often. The result is a collectively maintained network graph, letting nodes find payment routes. If a route fails mid-payment, the node learns and adjusts for future attempts. Gossip is essential to LN's peer-to-peer nature, keeping the network up to date without centralized oversight.
+The Lightning gossip protocol is how [Lightning nodes](/glossary/lightning-node) share information about the network's topology: which channels exist, who they connect, what fees they charge, and whether they're currently active. Without it, nodes couldn't [route](/glossary/lightning-routing) payments through paths they don't directly participate in.
+
+Three kinds of gossip messages, defined in [BOLT-7](https://github.com/lightning/bolts/blob/master/07-routing-gossip.md):
+
+1. **`channel_announcement`** - declares a new channel exists. Includes proof that the channel is real (signed by both endpoints' node keys plus a Bitcoin signature confirming the on-chain funding transaction exists).
+2. **`node_announcement`** - declares a node's metadata: alias, color, advertised network addresses.
+3. **`channel_update`** - declares a channel's current policy: fee rate, time-lock delta, enable/disable status. These are issued frequently as channels rebalance or adjust their fees.
+
+When a node receives a valid gossip message it doesn't already have, it stores it and forwards it to its peers. The whole network ends up with the same (eventually consistent) view of the public graph.
+
+What gossip *doesn't* reveal:
+
+- **Channel balances.** You know a channel exists and its total capacity, but not how that capacity is currently allocated between its two endpoints. This is a deliberate privacy choice. It also makes routing harder (you have to probe to discover liquidity).
+- **Private channels.** Many channels are opt-out from gossip - common between a mobile wallet and its routing node. These channels work fine but aren't usable as intermediate hops in others' routes.
+
+Gossip volume grew large enough that newer optimizations (gossip sync v2, range queries, compact filters) became necessary. A modern Lightning node downloads tens of megabytes of gossip data when fully syncing. Once synced, ongoing gossip is a few KB/sec at most.
+
+See [Lightning Routing](/glossary/lightning-routing) for how the gossip graph gets used to actually move payments.
