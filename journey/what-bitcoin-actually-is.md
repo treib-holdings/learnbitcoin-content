@@ -10,7 +10,7 @@ prerequisites: ["why-money-is-broken"]
 relatedTerms: ["satoshi-nakamoto", "whitepaper", "proof-work-pow", "decentralization", "halving-halvening", "genesis-block", "block-subsidy", "hash"]
 sources:
   - { label: "Bitcoin Whitepaper (Satoshi Nakamoto, 2008)", url: "/bitcoin.pdf" }
-  - { label: "Genesis block - bitcoin.org explorer", url: "https://blockstream.info/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f" }
+  - { label: "Genesis block via chainquery (run getblock on our node)", url: "https://chainquery.com/rpc/getblock" }
   - { label: "Cypherpunks mailing list announcement (October 31, 2008)", url: "https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html" }
   - { label: "Satoshi Nakamoto Institute - Bitcoin emails", url: "https://satoshi.nakamotoinstitute.org/emails/" }
 ---
@@ -179,4 +179,4 @@ Chapter 4 is *owning it for real*. Seed phrases, hardware wallets, self-custody.
 
 For now, sit with the thing you just learned. **Money got broken in 1971. Sixty-eight days after the 2008 financial crisis peaked, someone proposed an alternative. Fifteen years later, it's still running, the supply schedule is still on track, and the rules haven't changed.** That's the basic fact of the matter. Everything else is detail.
 
-> **Pro tip:** If you want to verify *any* claim in this chapter, the [whitepaper](/bitcoin.pdf) is nine pages and unchanged since 2009. The [genesis block](https://blockstream.info/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f) is still there, with the *Times* headline embedded in it. The network has been running, with public source code, for sixteen years. Verify, don't trust.
+> **Pro tip:** If you want to verify *any* claim in this chapter, the [whitepaper](/bitcoin.pdf) is nine pages and unchanged since 2009. The [genesis block](https://chainquery.com/rpc/getblock) is still there (run `getblock` on our node with hash `000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f`), with the *Times* headline embedded in it. The network has been running, with public source code, for sixteen years. Verify, don't trust.

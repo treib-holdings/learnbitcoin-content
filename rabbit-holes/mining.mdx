@@ -1,0 +1,164 @@
+---
+title: "Mining"
+slug: mining
+draft: false
+status: live
+section: rabbit-hole
+tagline: "Hash, nonce, target. The simplest hard problem in the world, and why it secures $T."
+order: 4
+estimatedMinutes: 13
+sources:
+  - { label: "SHA-256 spec (NIST FIPS 180-4)", url: "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf" }
+  - { label: "Bitcoin Core - GetNextWorkRequired (difficulty calc)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/pow.cpp" }
+  - { label: "Cambridge Bitcoin Electricity Consumption Index", url: "https://ccaf.io/cbnsi/cbeci" }
+  - { label: "chainquery - live difficulty + mempool (/api/edu/* in progress)", url: "https://chainquery.com" }
+relatedTerms: ["mining", "miner", "hash", "hash-rate", "difficulty", "difficulty-retargeting", "nonce", "block-reward", "block-subsidy", "proof-work-pow", "mempool", "mining-pool"]
+hasInteractive: ["miningSimulator", "feeMarketSimulator", "difficultyClock"]
+---
+
+> **Where you're going:** Mining is often described as "Bitcoin's energy problem" or "Bitcoin's lottery." Both are misleading. You'll learn what mining actually is (a cryptographic race with a clock), why it secures the network, and what the long-term economics look like as the subsidy approaches zero.
+
+## 1. The Lottery No One Cheats At
+
+A Bitcoin block contains transactions and a header. The header includes a 32-bit number called the **nonce**.
+
+To "mine" a block, a computer assembles a candidate header, then tries values of the nonce, one after another, looking for a header whose SHA-256 hash starts with enough zero bits to be below the current target.
+
+There is no shortcut. There is no algebra that gets you the right nonce. You guess, you hash, you check, you increment, you hash again. Modern ASICs do this trillions of times per second per chip.
+
+When a miner finds a valid nonce, they broadcast the block. Every other node verifies in milliseconds (hashing the header once is cheap; finding the nonce in the first place is the work). The block is added to the chain. Everyone moves on to mining the next one.
+
+This is the entire mining loop. Everything else is engineering and accounting.
+
+## 2. SHA-256, in One Page
+
+Mining depends on a cryptographic property of the SHA-256 hash function: **for any given output, there is no known way to find an input that produces it except by trying inputs.**
+
+This is called **preimage resistance**, and it's the foundation of every proof-of-work system.
+
+A few facts about SHA-256:
+
+- **Input:** any binary data
+- **Output:** exactly 256 bits (a 64-character hex string)
+- **Deterministic:** same input always produces same output
+- **One-way:** computationally infeasible to reverse (see the [Key Space rabbit hole](/rabbit-hole/key-space) on why 2^256 is unbreachable)
+- **Avalanche effect:** changing one bit of input changes ~half the bits of output, unpredictably
+
+To "mine," you compute `SHA-256(SHA-256(header))` and check whether the resulting 256-bit number is below the current target. The target is what gets adjusted to control how often blocks come out.
+
+That's it. The entire security model rests on this one function and its one property.
+
+## 3. The Race
+
+Mining is competitive. Thousands of mining operations worldwide are all trying to find a valid nonce for the same height block at the same time. Whoever finds one first gets the reward.
+
+A few practical consequences:
+
+**You can't "cheat" by working from someone else's progress.** Each miner picks slightly different transactions for their candidate block (and thus different merkle roots), so their candidate headers are different. Finding a nonce for *your* candidate doesn't help anyone else.
+
+**You can't predict who will win.** Hashing is uniformly random in expectation. A miner with 1% of global hash rate finds, on average, 1% of blocks. But which specific block, and when, is genuinely random.
+
+**The clock is hash rate, not wall time.** Bitcoin doesn't care what time it is; it cares how much computation has happened. Blocks appear "every 10 minutes on average," but only because difficulty adjusts to make that average hold.
+
+The combination of cryptographic randomness, global competition, and difficulty adjustment gives Bitcoin its most important property: **finality through computational expense**. Once a block is buried under a few more, undoing it would require re-doing all the work, faster than the rest of the world is doing the new work.
+
+## 4. Difficulty (and How It Adjusts)
+
+Bitcoin's target block time is 10 minutes. But hash rate goes up and down all the time. So Bitcoin uses an automatic, deterministic mechanism to keep blocks coming on schedule: **difficulty adjustment**.
+
+The rule:
+
+- Every **2016 blocks** (about every two weeks), the network looks at how long the last 2016 blocks took.
+- If they took **less than two weeks**, difficulty goes **up** (making future blocks harder).
+- If they took **more than two weeks**, difficulty goes **down** (making future blocks easier).
+- The adjustment is precisely proportional, clamped at ±300%.
+
+This is the most consequential single piece of mechanism design in Bitcoin. There is no committee. There is no Federal Reserve raising rates. The network observes its own conditions and corrects, on a fixed schedule, forever.
+
+Difficulty has gone up roughly 10^13 times since the genesis block - mining is now astronomically harder than it was in 2009, by design, because hash power has scaled up by that much.
+
+> **Coming soon:** A live difficulty countdown and current value, pulled from our own Bitcoin node via `chainquery.com/api/edu/difficulty`.
+
+## 5. What Miners Are Paid
+
+A miner who finds a valid block gets paid in two parts:
+
+1. **Block subsidy** - the freshly-issued bitcoin per the [supply schedule](/rabbit-hole/supply). Currently 3.125 BTC. Halves every 210,000 blocks (see the [Halvings rabbit hole](/rabbit-hole/halvings)).
+2. **Transaction fees** - the sum of fees from every transaction included in the block. Variable; depends on mempool conditions.
+
+The miner constructs the "coinbase transaction" - a special transaction that pays themselves both amounts. This is the only place new bitcoin enters circulation.
+
+In Bitcoin's early years, subsidy was essentially all of the revenue (transactions were free). Today, fees are typically 3-10% of miner revenue per block, with occasional spikes much higher during congestion events. By 2140, when the subsidy reaches zero, fees will be 100% of miner revenue.
+
+The transition from subsidy-dominated to fee-dominated revenue is one of the central long-term economic questions in Bitcoin. We covered it briefly in the [Halvings rabbit hole](/rabbit-hole/halvings); the short version is that as long as Bitcoin is *used*, fees will be sufficient.
+
+## 6. The Mempool, From the Miner's Side
+
+Miners don't just include transactions randomly. They pick the ones that maximize their fee revenue per block.
+
+The process:
+
+1. Take the [mempool](/glossary/mempool) (the pool of unconfirmed transactions).
+2. Sort by **fee rate** (sat/vB, not total fee - block space is the scarce resource).
+3. Greedily pack transactions starting from the highest fee rate, until the block is full (~4 million weight units).
+4. Add the coinbase transaction.
+5. Compute the merkle root, hash the header with various nonces, find one below target.
+6. Broadcast.
+
+This is why your transaction's *fee rate* matters more than its *amount*. A transaction with 1 BTC and a 1 sat/vB fee sits at the bottom of the mempool. A transaction with 0.001 BTC and a 100 sat/vB fee gets mined immediately.
+
+> **Coming soon:** A live mempool histogram and fee market visualization powered by `chainquery.com/api/edu/mempool-summary`. Will show how the fee market is sorting transactions right now.
+
+## 7. Energy as Security Budget
+
+Bitcoin mining uses electricity. A lot of it. The current global Bitcoin mining footprint is roughly 0.5% of global electricity consumption, varying with price and hash rate.
+
+This is often presented as a problem. It is, more accurately, a *feature*. Here's why:
+
+**The energy is what makes the security real.** To attack Bitcoin's consensus, an attacker would need to outpace the global mining network. That means matching its hash rate - which means matching its hardware investment and electricity consumption. The energy isn't waste; it's the cost of forging the security.
+
+**The alternative isn't "no energy used." The alternative is "less security."** Proof-of-stake systems use less energy but achieve security through different means (capital deposits, slashing). Those mechanisms have their own trade-offs, and you can have legitimate debates about which is better, but "uses less energy" alone isn't an argument that something is more secure.
+
+**Mining incentivizes finding *cheapest* energy.** Miners aren't bidding on premium power. They're bidding on whatever is cheapest globally - stranded renewables, flared natural gas that would otherwise be wasted, geothermal in Iceland, hydro in Sichuan during the wet season. The marginal Bitcoin mining operation runs on energy that has no other buyer.
+
+**Mining can be turned on and off in milliseconds.** This makes it uniquely well-suited as a "buyer of last resort" for energy grids. When demand on the grid spikes (heat wave, sudden outage), miners can turn off in seconds; when there's excess supply (sunny day, low industrial demand), they turn on. This stabilizes grids and improves renewables economics. The University of Texas at Austin has published research on this; Texas ERCOT has actively integrated mining as a grid stabilizer.
+
+None of this means Bitcoin's energy use is irrelevant. It means it's not the simple "waste" story the headlines use.
+
+## 8. Mining Pools, ASICs, and Centralization Risks
+
+A few realities of the mining industry:
+
+**ASICs dominate.** Application-Specific Integrated Circuits designed to do SHA-256 and nothing else. They are vastly more efficient than CPUs or GPUs and have been the only economically viable mining hardware since around 2014. There are a small number of ASIC manufacturers; this is a centralization vector worth watching.
+
+**Mining pools dominate.** Most miners don't solo-mine; they join a pool that aggregates hash rate, smooths out variance, and pays members proportionally. A small number of pools control most of the network's hash rate. As of recent years: Foundry USA, AntPool, ViaBTC, F2Pool, and a few others account for most blocks. This is a structural concern.
+
+**But pools aren't miners.** The hash rate in a pool comes from individual miners, who can switch pools at will if one starts misbehaving. The "Stratum V2" protocol enables miners (not pools) to choose which transactions go into blocks, even if the pool is coordinating the hashing. This shifts power back to individual miners over time.
+
+**Geography has shifted.** China dominated mining until 2021, when a government crackdown pushed operations to the US, Kazakhstan, and elsewhere. The US is now the largest mining country. Geographic dispersion has roughly doubled compared to a decade ago.
+
+**Solo mining is alive.** Several individuals have found blocks solo-mining on lottery hardware in the past few years. The odds are astronomically low, but not zero.
+
+The state of mining centralization is a real conversation in the Bitcoin community. None of the failure modes here are immediate; all of them are worth attention.
+
+## 9. The Long-Term Picture
+
+Mining's role in Bitcoin's economic model evolves over time. Three phases:
+
+**Subsidy era (2009-2030s):** Most miner revenue comes from the block subsidy. Fee revenue exists but is secondary. This is the period we're in.
+
+**Transition era (2030s-2100s):** As halvings continue, the subsidy diminishes. Fee revenue grows to take its place - both because Bitcoin's usage grows, and because layer-2 scaling pushes the *value-per-byte* of on-chain transactions up.
+
+**Fee-only era (~2140+):** The last satoshi has been issued. Miners earn revenue exclusively from fees. The network's security is funded entirely by the demand to transact.
+
+The transition between these phases is the central long-term question in Bitcoin's design. So far, the trajectory is consistent with the model: fees are growing faster than the network needs them to.
+
+## 10. What This Buys Us
+
+A Bitcoin block, with its 80-byte header and the right nonce, is the proof that someone spent enormous computational effort to produce it. Stack hundreds of thousands of those together, and you have a chain whose history cannot be plausibly rewritten by anyone, including all the miners on Earth combined.
+
+That's what mining is for. It's not a coincidence; it's not a side effect; it's the core mechanism that makes the entire system trustless.
+
+The energy spent isn't paying for transactions to confirm. It's paying for the *immutability* of the entire chain, retroactively, every ten minutes, forever.
+
+> **Pro tip:** When someone tells you "Bitcoin mining is wasteful," ask them what they think it's *producing*. The answer is: a globally-shared, censorship-resistant, irreversible record of every transaction, secured against attackers wealthy enough to outspend nation-states. That's not nothing.
