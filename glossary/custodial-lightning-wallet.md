@@ -27,5 +27,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A custodial Lightning wallet takes the do-it-yourself complexity of channel management and moves it behind a service provider's curtain. You simply log in, send or receive Lightning payments, and trust the operator to maintain channels, handle liquidity, and keep fees low.
-While that's convenient, it comes with the classic trade-off: you don't directly control the private keys or the LN channels. If the custodian freezes withdrawals or experiences technical issues, your LN balance is at risk. Many see custodial LN wallets as a stepping stone for beginners before migrating to self-custody solutions.
+A custodial [Lightning](/glossary/lightning-network) wallet is one where a third party manages the channels, [private keys](/glossary/private-key), and liquidity on your behalf. You log in, you see a balance, you send and receive Lightning payments - but underneath, the channels and signing keys belong to the operator.
+
+Examples in 2026: Wallet of Satoshi, Strike (in custodial mode), most exchange-hosted Lightning balances, Cash App's Lightning support.
+
+Why custodial Lightning wallets exist:
+
+- **UX is dramatically simpler.** No channels to manage, no [inbound liquidity](/glossary/lightning-channel-capacity) to acquire, no node uptime requirement. Onboard with an email, send and receive within seconds.
+- **Onboarding is realistic for non-technical users.** Self-custody Lightning, while improving fast, still has more moving parts than custodial.
+- **Lightning's UX has historically been the limiter on adoption.** Custodial wallets bridge the gap while non-custodial UX catches up.
+
+What you give up:
+
+- **Self-custody.** "[Not your keys, not your coins](/glossary/custodial-wallet)" applies just as much to Lightning balances as to on-chain. The custodian can freeze withdrawals, comply with subpoenas, go bankrupt, or simply get hacked.
+- **Privacy.** The custodian sees every payment you make and receive. They can correlate Lightning activity with your real-world identity if KYC was involved.
+- **Censorship resistance.** The custodian can refuse payments to specific addresses, geofence usage, or shut you down for any reason.
+
+The pragmatic stance for most users: custodial Lightning wallets are appropriate for **spending money you'd carry as cash** - the small daily-spend portion of your stack. For meaningful savings, the same logic that applies to [custodial on-chain](/glossary/custodial-wallet) applies here: move it to a wallet you actually control.
+
+Self-custody Lightning options like **Phoenix** and **Mutiny** approach custodial UX while keeping the keys in your hands - those are increasingly the practical alternatives for users who want both convenience and sovereignty.
