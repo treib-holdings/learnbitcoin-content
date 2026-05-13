@@ -23,5 +23,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A BIP is like a proposal slip you drop in the community suggestion box, except this box influences how Bitcoin evolves. Each BIP outlines a problem, rationale, and technical specification for a proposed change. They range from consensus-critical modifications (e.g., [BIP-32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) for HD wallets) to minor process updates (like BIP-1's guidelines for submitting BIPs).
-While anyone can author a BIP, acceptance typically depends on community review, developer discussions, and real-world testing. The process helps ensure that Bitcoin remains an open, collaborative project without a single central authority. Some BIPs become milestones, such as BIP-141 (SegWit) and BIP-340 (Schnorr Signatures), shaping the protocol's future.
+A BIP - **B**itcoin **I**mprovement **P**roposal - is a formal design document proposing a change or addition to Bitcoin's protocol, software, or standards. The BIP system, modeled on Python's PEP process, is how Bitcoin's open-source development actually proposes, debates, and codifies changes.
+
+Anyone can write a BIP. The process, defined in [BIP-1](https://github.com/bitcoin/bips/blob/master/bip-0001.mediawiki) and [BIP-2](https://github.com/bitcoin/bips/blob/master/bip-0002.mediawiki):
+
+1. **Draft.** Author writes the proposal in the standard BIP format - abstract, motivation, specification, rationale, backwards compatibility, etc.
+2. **Discussion.** The draft is shared on the bitcoin-dev mailing list and Github. Anyone interested - developers, miners, users, researchers - reviews and comments.
+3. **Assignment.** If the proposal is well-formed and worth a number, the BIP editors assign it a permanent BIP number.
+4. **Iteration.** The author revises based on feedback. Many BIPs never make it past this stage.
+5. **Status progression.** Draft → Proposed → Final (if widely accepted and implemented) or Withdrawn / Rejected / Replaced.
+6. **Actual deployment.** Acceptance into Bitcoin Core (or other implementations) is a separate decision. Activation on the network requires voluntary adoption by node operators and, for consensus changes, signaling by miners.
+
+BIP types:
+
+- **Standards Track** - changes to the protocol itself (consensus rules, network protocol, peer-to-peer messaging). Examples: BIP-141 ([SegWit](/glossary/segwit-segregated-witness-bip-141)), BIP-340/341/342 ([Schnorr](/glossary/schnorr-signature) / [Taproot](/glossary/taproot)), BIP-352 ([Silent Payments](/glossary/silent-payments)).
+- **Informational** - design guidelines or implementation notes, no consensus impact.
+- **Process** - changes to the BIP process itself.
+
+The BIP process is intentionally slow, conservative, and adversarial. A consensus-affecting change typically takes years from initial proposal to network activation - and many proposals never make it. This is a feature: a global monetary protocol with $1-2T in value should be very, very hard to change accidentally. See [SegWit](/glossary/segwit-segregated-witness-bip-141) and [Taproot](/glossary/taproot) for two BIPs that did make it all the way through.

@@ -22,4 +22,14 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Hal Finney was a pioneering cryptographer and an early collaborator with Satoshi Nakamoto. His famous tweet, "Running bitcoin," signaled that he had bootstrapped a Bitcoin node just a week after Bitcoin's launch. This moment is often celebrated as a piece of Bitcoin lore-Finney not only tested early software but also famously received the first Bitcoin transaction from Satoshi. While the tweet itself is brief, it encapsulates the dawn of a transformative technology and Hal's key role in nurturing its infancy.
+"Running bitcoin." Two words, posted by Hal Finney on Twitter on January 10, 2009. It's the most quietly important tweet in Bitcoin's history.
+
+The context: Bitcoin had launched a week earlier when [Satoshi](/glossary/satoshi-nakamoto) mined the [genesis block](/glossary/genesis-block). Bitcoin Core v0.1 had been posted to the cypherpunks mailing list a few days after that. Hal Finney - a legendary cryptographer who'd worked on PGP and authored RPOW (an earlier reusable-proof-of-work system) - downloaded the software, ran it, and tweeted those two words.
+
+He was the second person ever known to run Bitcoin. Within days, he received block 70's reward of 10 BTC from Satoshi - the first peer-to-peer Bitcoin transaction in history. He corresponded with Satoshi over email about bugs and improvements through much of 2009.
+
+Hal was diagnosed with ALS later that year. As the disease progressed, he wrote a Bitcoin Talk forum post in 2013 reflecting on his journey, his hope for Bitcoin's future, and his decision to keep his BTC. He died in 2014. His body was cryonically preserved by the Alcor Life Extension Foundation - a choice consistent with the broader transhumanist current that ran through the early cypherpunk community.
+
+"Running bitcoin" the tweet has become a cultural touchstone in Bitcoin. The phrase appears on T-shirts, conference banners, and the wall of pretty much every node-runner's home setup. It captures, in the simplest possible language, what early Bitcoiners did: download the software, run a node, contribute to the network. That ethos hasn't changed.
+
+Hal's old [Bitcoin Talk profile](https://bitcointalk.org/index.php?action=profile;u=2) is still up. His public BTC, last known balance roughly 200,000+ BTC across various addresses, has remained untouched. See [Satoshi Nakamoto](/glossary/satoshi-nakamoto) for the only other person who can plausibly claim that level of early Bitcoin credibility.
