@@ -19,4 +19,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Unlike fiat currencies, Bitcoin's inflation schedule is deterministic. Each block brings a fixed subsidy, halving approximately every four years, thus reducing the flow of newly minted coins. Early on, inflation was high (50 BTC per block), but over subsequent halvings, it declines to near zero, ultimately capping the supply at 21 million. Advocates see this scarcity as a hedge against unlimited money printing by central banks, while critics argue that a deflationary currency can discourage spending. Nonetheless, Bitcoin's predictable issuance is a hallmark of its design, drawing many users to view it as 'digital gold.'
+"Inflation" can mean two different things, and they're worth keeping straight.
+
+In economics broadly, inflation usually means the general rise in prices over time - what costs $1 today costs $1.03 next year. This is measured by indexes like CPI and driven by many factors, but in a fiat system the dominant long-term cause is expansion of the money supply.
+
+In Bitcoin specifically, "inflation" refers to the rate at which *new BTC* enters the circulating supply each year. It's purely a function of the block subsidy schedule and the average block rate. As of the fifth subsidy era (post-April 2024 halving), Bitcoin's annual issuance is about 164,250 BTC against a circulating supply of ~19.9M - an inflation rate of roughly 0.83% per year. That's already lower than gold's historical 1.5-2%.
+
+Each halving cuts the issuance rate in half. After the 2028 halving, Bitcoin's inflation rate drops to ~0.4%. After the 33rd halving around 2140, it reaches zero and stays there forever.
+
+The contrast with fiat is the whole point. Bitcoin's monetary inflation is mathematically locked, publicly verifiable, and trending toward zero. Fiat monetary inflation is set by committees behind closed doors, with no upper bound. See the [Supply Schedule rabbit hole](/rabbit-hole/supply) for the math, and [Disinflation](/glossary/disinflation) for what "decreasing inflation rate" means.

@@ -23,4 +23,10 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The halving, also nicknamed the "halvening," is a built-in feature of Bitcoin's monetary policy. Starting at 50 BTC per block, the subsidy halves every 210,000 blocks, from 50 to 25, then 12.5, 6.25, and so on. These scheduled cuts ensure the total Bitcoin supply never exceeds 21 million coins. Many see the halving cycles as crucial to Bitcoin's deflationary narrative, often sparking market interest and debates about the impact on price and miner revenue.
+Every 210,000 blocks - about every 4 years - the block subsidy paid to Bitcoin miners is cut in half. The event is called a halving, or, in older meme form, the "halvening."
+
+The subsidy started at 50 BTC per block when the network launched in January 2009. After block 210,000 (November 2012) it dropped to 25. After 420,000 (July 2016), 12.5. After 630,000 (May 2020), 6.25. After 840,000 (April 2024), 3.125 - where we are now. The next halving will be at block 1,050,000, around April 2028, dropping the subsidy to 1.5625 BTC.
+
+The halving is the central mechanism of Bitcoin's monetary policy. It enforces the 21 million supply cap, halves the rate of new issuance every four years, and creates regular pressure on miner economics that the network has weathered five times so far.
+
+See the [Halvings rabbit hole](/rabbit-hole/halvings) for the full history and a live countdown to the next one. See [Disinflation](/glossary/disinflation) for what the halving schedule means for Bitcoin's inflation rate over time.

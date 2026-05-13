@@ -21,5 +21,10 @@ relatedTerms:
 liveWidget: ~
 ---
 
-In an ideal world, a single BTC is always worth exactly one BTC, regardless of where it's been. However, blockchain transparency sometimes leads to 'tainted' coins if they're traced to illicit activity. Exchanges or analytics firms may then flag or blacklist specific UTXOs, hurting fungibility.
-Some argue that mixing or privacy tools help preserve Bitcoin's fungibility by obscuring transaction history. Others believe the best fix is cultural or regulatory acceptance that all BTC is the same. Regardless, fungibility remains a cornerstone of any currency. If coins carry a reputation, you undermine the uniformity that makes them freely tradable in all markets.
+Fungibility is the property that any one unit of a currency is interchangeable with any other. A dollar from your wallet and a dollar from the cash register are the same dollar; nobody asks where it's been.
+
+Bitcoin is fungible *in protocol*: 1 BTC always equals 1 BTC, and the consensus rules don't distinguish between coins based on history. But Bitcoin is also fully *transparent* - every transaction is publicly visible forever, which means coins can be traced to past activity, including illicit activity. Blockchain analytics firms exploit this, and some exchanges or counterparties may refuse coins associated with hacks, ransomware, or sanctioned addresses. That practical reality erodes pure fungibility.
+
+Several tools push back. [CoinJoin](/glossary/coinjoin) breaks transaction-graph linkage by combining inputs from many users in a single transaction. [Silent Payments](/glossary/silent-payments) and [stealth addresses](/glossary/stealth-address) reduce on-chain address reuse. [Lightning](/glossary/lightning-network) routes payments off-chain, where they aren't individually broadcast.
+
+The deeper argument is that fungibility is a property a community has to defend, not just one a protocol enforces. The protocol can't prevent a third party from deciding some coins are "tainted." Bitcoiners can - by refusing to accept that framing and by using privacy tools as a matter of course. A currency where coins have memory eventually becomes a currency where coins have permission.
