@@ -2,7 +2,7 @@
 title: "Hashlet"
 slug: hashlet
 draft: false
-shortDefinition: "A now-defunct term for "cloud mining shares," often linked to historical scams such as GAW Miners."
+shortDefinition: "A now-defunct term for 'cloud mining shares,' often linked to historical scams such as GAW Miners."
 keyTakeaways:
   - "Marketed as fractional cloud mining ownership"
   - "Associated with notable Ponzi schemes and scams"

@@ -2,7 +2,7 @@
 title: "Green Address"
 slug: green-address
 draft: false
-shortDefinition: "A concept or service branding quick "trusted" BTC transactions, sometimes using partial multi-sig or third-party assurance."
+shortDefinition: "A concept or service branding quick 'trusted' BTC transactions, sometimes using partial multi-sig or third-party assurance."
 keyTakeaways:
   - "Seeks instant trust in transactions via a known intermediary"
   - "Contradicts Bitcoin's decentralized model"

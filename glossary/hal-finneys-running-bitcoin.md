@@ -2,7 +2,7 @@
 title: "Hal Finney's Running Bitcoin"
 slug: hal-finneys-running-bitcoin
 draft: false
-shortDefinition: "A historic January 10, 2009 tweet: "Running bitcoin," marking one of the earliest known Bitcoin adopters."
+shortDefinition: "A historic January 10, 2009 tweet: 'Running bitcoin,' marking one of the earliest known Bitcoin adopters."
 keyTakeaways:
   - "Hal Finney was a key figure in Bitcoin's early development"
   - "His tweet underscores how soon he supported Satoshi's project"

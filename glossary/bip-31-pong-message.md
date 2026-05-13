@@ -2,7 +2,7 @@
 title: "BIP 31 (pong message)"
 slug: bip-31-pong-message
 draft: false
-shortDefinition: "Introduced the "pong" reply to a "ping" on Bitcoin's P2P network, ensuring both nodes stay responsive."
+shortDefinition: "Introduced the 'pong' reply to a 'ping' on Bitcoin's P2P network, ensuring both nodes stay responsive."
 keyTakeaways:
   - "Creates a standardized ping-pong for node health checks"
   - "Simplifies detecting stale connections"

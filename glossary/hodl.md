@@ -2,7 +2,7 @@
 title: "HODL"
 slug: hodl
 draft: false
-shortDefinition: "A humorous misspelling of "hold" that became a rallying cry for long-term Bitcoin holders."
+shortDefinition: "A humorous misspelling of 'hold' that became a rallying cry for long-term Bitcoin holders."
 keyTakeaways:
   - "Encourages ignoring short-term price swings"
   - "Originated from a drunken forum post in 2013"

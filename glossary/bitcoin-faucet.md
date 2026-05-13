@@ -4,7 +4,7 @@ slug: bitcoin-faucet
 draft: false
 shortDefinition: "A website or application distributing small BTC amounts-satoshis-often for education or marketing."
 keyTakeaways:
-  - "Distributes tiny BTC amounts as a "freebie""
+  - "Distributes tiny BTC amounts as a 'freebie'"
   - "Helps newcomers learn about Bitcoin transactions"
   - "Commonly funded by ads or promotional budgets"
 sources: []
