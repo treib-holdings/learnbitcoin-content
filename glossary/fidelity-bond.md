@@ -19,5 +19,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Fidelity bonds lock up some BTC for a period, creating a financial cost to maliciously spin up fake identities. In JoinMarket, for instance, participants can demonstrate they have 'skin in the game,' making Sybil attacks more expensive and thus less likely. The longer or larger the bond, the higher the trust participants might place in you.
-This approach balances anonymity with accountability: you remain pseudonymous, but your locked BTC proves economic sincerity. If you misbehave or try to cheat, you forfeit time or potential opportunity costs. Fidelity bonds represent one of several innovations aimed at improving privacy protocols by hardening them against cheap sybil tactics.
+A fidelity bond is a [time-locked](/glossary/locktime) BTC deposit used as an [anti-sybil](/glossary/anti-sybil-mechanism) mechanism. The participant commits to having capital locked up for a period; this makes spinning up many fake identities expensive, which makes attacking a privacy protocol economically unattractive.
+
+The canonical use case is **JoinMarket** - a decentralized [CoinJoin](/glossary/coinjoin) coordination protocol. JoinMarket's matching market lets participants act as either "makers" (provide liquidity, earn fees) or "takers" (pay for the mix). Without anti-sybil measures, an attacker could spin up many fake makers, all controlled by the same entity, and dominate the matching process to compromise the mix.
+
+Fidelity bonds fix this. A maker can prove their commitment by locking BTC in a time-locked output - typically a [CLTV](/glossary/checklocktimeverify-cltv)-protected UTXO that can't be spent until some future block. Takers prefer to mix with makers who have larger bonds locked for longer, because:
+
+- **An attacker would need to lock real BTC** to spin up convincing fake identities.
+- **Larger bonds + longer locks = higher attack cost** for the same level of sybil capability.
+- **Bond holders have skin in the game** - they can't recover the BTC for the lock period, so they're committed to behaving consistently.
+
+The capital isn't lost; it's just unspendable for the lock period. The attacker bears the *opportunity cost* of capital tied up. At scale, that opportunity cost becomes prohibitive.
+
+This concept generalizes. Similar economic-stake mechanisms appear in:
+
+- Lightning Network's channel funding (channel parties have skin in the game).
+- Proof-of-stake systems (validators stake to participate).
+- Some federated systems where committee members post bonds.
+
+Fidelity bonds are a clean example of how Bitcoin's primitives ([time locks](/glossary/locktime), public verifiability) can be composed to solve adjacent problems like sybil resistance, without changing the base protocol.
