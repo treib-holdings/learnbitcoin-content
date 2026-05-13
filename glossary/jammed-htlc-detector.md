@@ -19,4 +19,25 @@ relatedTerms:
 liveWidget: ~
 ---
 
-If a Lightning channel is packed with pending HTLCs that never settle, operators suspect a jamming attack. A 'jammed HTLC detector' flags channels showing unusual patterns-e.g., large numbers of small HTLCs or repeated payment timeouts without resolution. With detection, the node can penalize or disconnect from the offending peer, impose new fees, or close the channel altogether. Such detectors are still evolving, balancing false positives (legitimate but slow routes) against blocking real attacks. Ultimately, robust detection helps maintain LN liquidity for legitimate users.
+A jammed HTLC detector is a node-side mechanism that watches for patterns suggestive of a [Lightning jamming attack](/glossary/jamming-attack-ln) and takes defensive action - typically flagging the offending peer, throttling future routing requests from them, or in extreme cases force-closing the channel.
+
+What detectors actually look for:
+
+- **High HTLC slot usage** by a single peer without successful settlements.
+- **Many small HTLCs** initiated in rapid succession - the slot-exhaustion variant of jamming.
+- **Long-duration pending HTLCs** that don't make progress.
+- **Failure-rate spikes** on specific routes or peers.
+- **Asymmetric in/out patterns** suggesting deliberate liquidity tie-up.
+
+Modern Lightning implementations include various heuristics. LND's "circuit breaker" pattern, Core Lightning's plugin-based monitoring, and third-party tools like Charge-LND can all be configured to detect and respond to jamming-like patterns.
+
+The hard problem: distinguishing actual jamming from honest patterns like:
+
+- A wallet retrying a payment with exponential backoff.
+- Multi-path payments (AMP) that touch many channels with small HTLCs.
+- Probe traffic from honest [route probing](/glossary/lightning-probe).
+- General payment failure during congested moments.
+
+False positives - blocking honest payments while trying to defend against jamming - is the real cost of aggressive detection. Detection logic has to be conservative enough to not break Lightning's UX for legitimate users.
+
+As Lightning matures, detectors are getting more sophisticated and more standardized. They're part of the answer to jamming, not the whole answer; the full solution likely combines detection with upfront fees and reputation systems.
