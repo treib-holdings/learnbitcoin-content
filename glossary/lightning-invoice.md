@@ -42,6 +42,6 @@ The payment flow:
 
 Invoices are single-use. The payment hash gets revealed when the payment settles, so paying the same invoice twice would either fail (the recipient won't accept it again) or be a fraud signal.
 
-A newer format, **BOLT-12 offers**, addresses some BOLT-11 limitations - reusable, supports recurring payments, smaller, more private. Adoption is growing in 2024-2026 but BOLT-11 remains the lingua franca.
+A newer format, **BOLT-12 offers**, addresses some BOLT-11 limitations - reusable, supports recurring payments, smaller, more private. It was officially merged into the Lightning spec in September 2024. As of 2026 it's supported by Core Lightning, LDK, and eclair/Phoenix; LND adoption is still in progress. Expect BOLT-12 to gradually displace BOLT-11 over the next few years.
 
 See [Lightning Network](/glossary/lightning-network) for how invoices get routed.
