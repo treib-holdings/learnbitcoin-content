@@ -2,7 +2,7 @@
 title: "Fork"
 slug: fork
 draft: false
-shortDefinition: "A change in blockchain rules—can be ‘hard’ (incompatible) or ‘soft’ (compatible with previous rules)."
+shortDefinition: "A change in blockchain rules-can be ‘hard’ (incompatible) or ‘soft’ (compatible with previous rules)."
 keyTakeaways:
   - "Hard forks risk creating permanent alternate chains"
   - "Soft forks remain compatible with older clients"

@@ -10,11 +10,11 @@ prerequisites: ["using-bitcoin"]
 relatedTerms: ["full-node", "node", "hierarchical-multisig", "hardware-security-module-hsm", "tor-hidden-service", "bitcoin-knots", "bitcoin-core", "bitcoin-inheritance-planning", "coin-control", "address-reuse"]
 legacyUrls: ["/run-your-own-node"]
 sources:
-  - { label: "Bitcoin Core — official downloads and source", url: "https://bitcoincore.org" }
-  - { label: "Bitcoin Knots — alternate full-node implementation", url: "https://bitcoinknots.org" }
-  - { label: "Umbrel — node OS for Raspberry Pi / x86", url: "https://umbrel.com" }
-  - { label: "Start9 — sovereign node OS", url: "https://start9.com" }
-  - { label: "Sparrow Wallet — multisig coordinator", url: "https://sparrowwallet.com" }
+  - { label: "Bitcoin Core - official downloads and source", url: "https://bitcoincore.org" }
+  - { label: "Bitcoin Knots - alternate full-node implementation", url: "https://bitcoinknots.org" }
+  - { label: "Umbrel - node OS for Raspberry Pi / x86", url: "https://umbrel.com" }
+  - { label: "Start9 - sovereign node OS", url: "https://start9.com" }
+  - { label: "Sparrow Wallet - multisig coordinator", url: "https://sparrowwallet.com" }
   - { label: "Privacy Best Practices PDF (this site)", url: "/downloads/bitcoin-privacy-best-practices.pdf" }
 ---
 
@@ -24,7 +24,7 @@ sources:
 
 This is the longest chapter in the journey. It's also the one that turns Bitcoin from "I own some" into "I am a participant."
 
-Up to this point, even with self-custody, you've been *consuming* Bitcoin — relying on someone else's node for transaction data, someone else's hardware for signing, someone else's recommendation for security. That's fine. Most people stop there forever. The system works for them.
+Up to this point, even with self-custody, you've been *consuming* Bitcoin - relying on someone else's node for transaction data, someone else's hardware for signing, someone else's recommendation for security. That's fine. Most people stop there forever. The system works for them.
 
 This chapter is for people who don't want to stop there. By the end you will:
 
@@ -39,13 +39,13 @@ Pick what's useful. Skip what isn't. The point is sovereignty, not a checklist.
 
 You can use Bitcoin without running a node. You're using Bitcoin right now without running one, if you're holding from chapter 4. So why?
 
-**Verification.** Bitcoin's claim — "you don't have to trust anyone" — is only true if you *verify*. A wallet that connects to someone else's server is trusting that server to tell the truth about your balance and the chain's state. The third party probably tells the truth. But probably is not the same as definitely. Your own node tells you definitely.
+**Verification.** Bitcoin's claim - "you don't have to trust anyone" - is only true if you *verify*. A wallet that connects to someone else's server is trusting that server to tell the truth about your balance and the chain's state. The third party probably tells the truth. But probably is not the same as definitely. Your own node tells you definitely.
 
 **Privacy.** When you use a public Electrum server (the default for most light wallets), that server sees every address in your wallet, every balance, every transaction you query. Running your own node means none of that leaks to anyone.
 
-**Censorship resistance.** A wallet relying on a service can be cut off from that service. A wallet talking to your own node cannot be — your node is yours.
+**Censorship resistance.** A wallet relying on a service can be cut off from that service. A wallet talking to your own node cannot be - your node is yours.
 
-**Supporting the network.** Each additional full node strengthens the network's decentralization. There are tens of thousands of nodes globally; adding one is a meaningful contribution. (Not a financial one — running a node doesn't earn you anything. The reward is the system itself.)
+**Supporting the network.** Each additional full node strengthens the network's decentralization. There are tens of thousands of nodes globally; adding one is a meaningful contribution. (Not a financial one - running a node doesn't earn you anything. The reward is the system itself.)
 
 **Fee data, mempool data, address data on demand.** With your own node, you have direct access to everything the network knows. Want to monitor an address? Query your node. Want to know the current fee market? Query your node. Want a custom data feed? Query your node.
 
@@ -61,10 +61,10 @@ Cheapest to most polished, roughly:
 
 **Pre-built node OS.** Operating systems designed specifically to run a Bitcoin node (plus Lightning, plus other self-hosted apps) on commodity hardware:
 
-- **Umbrel** — easy-on-ramp, big app store, hosted on Raspberry Pi or x86. Some controversy in the community about its licensing changes; verify current state before committing.
-- **Start9 (StartOS)** — sovereignty-focused, more rigorous, also runs on commodity hardware. Less polished UI but ideologically tighter.
-- **Nix Bitcoin** — for the NixOS-curious. Maximally reproducible, audited modules, harder learning curve.
-- **MyNode** — older but still respected; less actively developed than the above.
+- **Umbrel** - easy-on-ramp, big app store, hosted on Raspberry Pi or x86. Some controversy in the community about its licensing changes; verify current state before committing.
+- **Start9 (StartOS)** - sovereignty-focused, more rigorous, also runs on commodity hardware. Less polished UI but ideologically tighter.
+- **Nix Bitcoin** - for the NixOS-curious. Maximally reproducible, audited modules, harder learning curve.
+- **MyNode** - older but still respected; less actively developed than the above.
 
 **A purpose-built bare-metal box.** For serious users: build your own using a small Linux server, install Bitcoin Core and your wallets directly. Maximum control, maximum complexity. Worth it once you've outgrown the pre-built node OSes.
 
@@ -78,7 +78,7 @@ Don't try to perfect this on the first pass. Just get something running. Improve
 2. **Pick your OS.** Start9 or Umbrel for the pre-built path. Bitcoin Core directly if you're comfortable with shell.
 3. **Flash the OS** to the SSD or boot drive. The node OS providers give clear flash instructions. (Mac: balenaEtcher. Windows: Rufus. Linux: `dd`.)
 4. **Boot the node** and connect to it via web interface (Umbrel/Start9 give you a `.local` URL on your home network).
-5. **Wait for sync.** The initial download is the painful part — 700 GB to fetch and validate. On a Pi with a decent SSD, this takes 1-3 days. Don't worry about it; just leave it running.
+5. **Wait for sync.** The initial download is the painful part - 700 GB to fetch and validate. On a Pi with a decent SSD, this takes 1-3 days. Don't worry about it; just leave it running.
 6. **While it syncs,** read the docs. Set up Tor (it's usually a checkbox in the node OS). Decide if you want Lightning (yes, eventually).
 7. **Once synced,** test it. Run a query: get the latest block height. Get a transaction by ID. Verify a balance.
 
@@ -105,10 +105,10 @@ A single seed phrase is a single point of failure. Lose it, all coins gone. Comp
 
 Why this matters:
 
-- Lose one key — coins are still safe and recoverable (any 2 of the remaining 2)
-- One key is compromised — coins are still safe (attacker needs another key)
-- A bad actor gets your house — they might find one key, not all three
-- Inheritance becomes manageable — heirs need help from multiple parties, not just a recovered hard drive
+- Lose one key - coins are still safe and recoverable (any 2 of the remaining 2)
+- One key is compromised - coins are still safe (attacker needs another key)
+- A bad actor gets your house - they might find one key, not all three
+- Inheritance becomes manageable - heirs need help from multiple parties, not just a recovered hard drive
 
 Multisig isn't just for paranoid whales. The right setup for $20,000 of bitcoin is roughly the same as for $200,000. If you have any meaningful balance, 2-of-3 is reasonable.
 
@@ -116,9 +116,9 @@ Multisig isn't just for paranoid whales. The right setup for $20,000 of bitcoin 
 
 A 2-of-3 multisig requires:
 
-- **Three hardware wallets, ideally from three different manufacturers.** Coldcard, Trezor, Foundation Passport, Ledger, Jade — pick any three. Different vendors means a hardware vulnerability in one model doesn't compromise all your keys.
+- **Three hardware wallets, ideally from three different manufacturers.** Coldcard, Trezor, Foundation Passport, Ledger, Jade - pick any three. Different vendors means a hardware vulnerability in one model doesn't compromise all your keys.
 - **Three seed phrases**, each generated on its own hardware wallet, each backed up independently on metal in physically separate locations.
-- **A coordinator** — software that knows the public keys for all three and constructs transactions that any two can sign. **Sparrow Wallet** is the standard recommendation; **Specter Desktop** is also excellent. The coordinator does *not* hold your keys. It just knows what they are publicly and orchestrates signing.
+- **A coordinator** - software that knows the public keys for all three and constructs transactions that any two can sign. **Sparrow Wallet** is the standard recommendation; **Specter Desktop** is also excellent. The coordinator does *not* hold your keys. It just knows what they are publicly and orchestrates signing.
 
 The flow:
 
@@ -151,7 +151,7 @@ The basics, in order of effort:
 
 **7. Consider CoinJoin.** A privacy-enhancing technique where multiple users pool transactions to obscure which inputs map to which outputs. Wasabi and JoinMarket are the leading implementations. Useful but increasingly scrutinized; research before using.
 
-We've put together a [Privacy Best Practices PDF](/downloads/bitcoin-privacy-best-practices.pdf) and a [Privacy Checklist](/downloads/privacy-checklist.pdf) — both downloadable from this site. Read them before scaling up.
+We've put together a [Privacy Best Practices PDF](/downloads/bitcoin-privacy-best-practices.pdf) and a [Privacy Checklist](/downloads/privacy-checklist.pdf) - both downloadable from this site. Read them before scaling up.
 
 ## 9. Inheritance Planning
 
@@ -192,7 +192,7 @@ You're done with the journey.
 
 You understand why money is broken. You know what Bitcoin actually is. You know how it works under the hood. You self-custody. You use both layers. You run your own node. You have multisig. You have a plan for what happens after you.
 
-You don't need permission. You don't need a custodian. You don't need to ask anyone whether your money is safe — you can verify it yourself, end to end, at any moment.
+You don't need permission. You don't need a custodian. You don't need to ask anyone whether your money is safe - you can verify it yourself, end to end, at any moment.
 
 **That's the deal Bitcoin offered in October 2008.** It took six chapters and however many hours of your time, but you got it.
 
@@ -200,4 +200,4 @@ There is more, of course. Lightning routing nodes. Liquid sidechains. Watchtower
 
 The journey ends here. The rabbit holes are forever.
 
-> **Pro tip:** Sovereignty is not a destination, it's a posture. The work you did over these six chapters isn't a finish line — it's a foundation. The next ten years of your relationship with Bitcoin will be richer than the first six chapters because you put in the foundation now. Have fun. Stay humble. Run a node.
+> **Pro tip:** Sovereignty is not a destination, it's a posture. The work you did over these six chapters isn't a finish line - it's a foundation. The next ten years of your relationship with Bitcoin will be richer than the first six chapters because you put in the foundation now. Have fun. Stay humble. Run a node.

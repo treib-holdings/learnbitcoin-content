@@ -22,4 +22,4 @@ liveWidget: ~
 ---
 
 HDM stands for Hierarchical Deterministic Multisig. It’s where multiple cosigners each use their own HD seed to form a multisig wallet. Rather than storing a single private key offline, you distribute keys among different devices or people, requiring multiple signatures to spend. Each cosigner’s HD path can generate countless addresses, and as long as each cosigner has their seed, you can add or rotate addresses without additional setup.
-This approach greatly enhances security and flexibility. For instance, a 2-of-3 setup might involve one key on a hardware device, another on your phone, and the third with a trusted relative. Because each is an HD seed, you can manage numerous addresses with consistent xpub coordination—ideal for businesses or families handling large BTC holdings.
+This approach greatly enhances security and flexibility. For instance, a 2-of-3 setup might involve one key on a hardware device, another on your phone, and the third with a trusted relative. Because each is an HD seed, you can manage numerous addresses with consistent xpub coordination-ideal for businesses or families handling large BTC holdings.

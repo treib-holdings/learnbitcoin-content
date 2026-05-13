@@ -21,4 +21,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Bitcoin Core and other node implementations often include logic to track misbehaving peers—e.g., those relaying invalid blocks, spamming low-fee transactions, or repeatedly sending malformed data. Once a threshold of offenses is reached, the node ‘autobans’ that IP or peer for a set period (usually hours) to prevent further resource waste. This helps keep the mempool clean, prevents denial-of-service attacks, and ensures consensus remains robust. Honest nodes rarely trip the ban threshold, but malicious or buggy peers can get cut off automatically.
+Bitcoin Core and other node implementations often include logic to track misbehaving peers-e.g., those relaying invalid blocks, spamming low-fee transactions, or repeatedly sending malformed data. Once a threshold of offenses is reached, the node ‘autobans’ that IP or peer for a set period (usually hours) to prevent further resource waste. This helps keep the mempool clean, prevents denial-of-service attacks, and ensures consensus remains robust. Honest nodes rarely trip the ban threshold, but malicious or buggy peers can get cut off automatically.

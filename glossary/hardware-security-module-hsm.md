@@ -26,4 +26,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-An HSM is a dedicated appliance that handles cryptographic operations—like signing transactions—within a secure boundary, preventing keys from ever leaving the device unencrypted. In large-scale or enterprise Bitcoin custody solutions, HSMs help maintain high security against insider threats and external hacks. They can integrate with multi-signature setups, ensuring multiple approvals or hardware checks before releasing funds. While commonly used in traditional finance, HSMs are increasingly relevant to Bitcoin as institutional participation grows.
+An HSM is a dedicated appliance that handles cryptographic operations-like signing transactions-within a secure boundary, preventing keys from ever leaving the device unencrypted. In large-scale or enterprise Bitcoin custody solutions, HSMs help maintain high security against insider threats and external hacks. They can integrate with multi-signature setups, ensuring multiple approvals or hardware checks before releasing funds. While commonly used in traditional finance, HSMs are increasingly relevant to Bitcoin as institutional participation grows.

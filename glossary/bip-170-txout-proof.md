@@ -20,5 +20,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 170, detailed in [BIP-170](https://github.com/bitcoin/bips/blob/master/bip-0170.mediawiki), outlines a standardized format for creating a “TxOut proof”—effectively, a merkle proof that demonstrates a transaction’s presence in a specific block. This is an essential component for SPV wallets that want to confirm funds without downloading the full blockchain.
+BIP 170, detailed in [BIP-170](https://github.com/bitcoin/bips/blob/master/bip-0170.mediawiki), outlines a standardized format for creating a “TxOut proof”-effectively, a merkle proof that demonstrates a transaction’s presence in a specific block. This is an essential component for SPV wallets that want to confirm funds without downloading the full blockchain.
 Although the BIP offered a structured solution, it’s not as widely employed as some other protocols. Still, the concept of a TxOut proof remains fundamental in verifying on-chain data with minimal resource usage. Having a consistent standard for these proofs can reduce development complexity and promote interoperability.

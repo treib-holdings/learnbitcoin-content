@@ -19,4 +19,4 @@ liveWidget: ~
 ---
 
 A ‘chain bulletin board’ is the concept of using Bitcoin’s blockchain as a transparent, time-stamped log for commitments or announcements. For example, if you want to prove you had certain data at a given time without revealing it, you can publish a hash on-chain. Later, you reveal the original data to validate that the hash matches.
-Developers sometimes use this idea for verifiable data publication—like proving an agreement or contract existed at a specific block height. It’s not necessarily about storing large data directly in Bitcoin (which is expensive), but rather embedding a fingerprint that can be confirmed by anyone examining the chain.
+Developers sometimes use this idea for verifiable data publication-like proving an agreement or contract existed at a specific block height. It’s not necessarily about storing large data directly in Bitcoin (which is expensive), but rather embedding a fingerprint that can be confirmed by anyone examining the chain.

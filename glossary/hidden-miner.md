@@ -22,5 +22,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A hidden miner—also called ‘cryptojacking’—uses malware to silently run mining software on infected machines. While feasible for low-difficulty altcoins, Bitcoin’s ASIC-dominated environment makes CPU/GPU mining unprofitable. Nevertheless, some viruses may attempt to mine BTC anyway, siphoning small amounts of electricity at scale.
+A hidden miner-also called ‘cryptojacking’-uses malware to silently run mining software on infected machines. While feasible for low-difficulty altcoins, Bitcoin’s ASIC-dominated environment makes CPU/GPU mining unprofitable. Nevertheless, some viruses may attempt to mine BTC anyway, siphoning small amounts of electricity at scale.
 Besides raising electricity bills and hogging system resources, such malware rarely yields meaningful BTC rewards. High-profile incidents targeted enterprise servers or cloud infrastructures, hoping to leverage massive computing clusters. Generally, cryptojacking is more impactful on altcoins or privacy coins with CPU-friendly algorithms. For Bitcoin, it’s largely a nuisance rather than a lucrative racket.

@@ -19,5 +19,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Address clustering is a detective game on the blockchain. By examining how addresses send and receive funds, analysts attempt to figure out which ones belong to the same person. Think of it like spotting someone wearing the same shoes in different photos—some patterns give away that multiple addresses are controlled by a single entity.
-This technique is often used by blockchain analysis companies, law enforcement, or even marketing agencies seeking to understand user behavior. While it might sound innocent—like assembling puzzle pieces—address clustering can erode privacy. So, many privacy-conscious users try to avoid patterns like combining inputs from different addresses in a single transaction or reusing addresses too frequently.
+Address clustering is a detective game on the blockchain. By examining how addresses send and receive funds, analysts attempt to figure out which ones belong to the same person. Think of it like spotting someone wearing the same shoes in different photos-some patterns give away that multiple addresses are controlled by a single entity.
+This technique is often used by blockchain analysis companies, law enforcement, or even marketing agencies seeking to understand user behavior. While it might sound innocent-like assembling puzzle pieces-address clustering can erode privacy. So, many privacy-conscious users try to avoid patterns like combining inputs from different addresses in a single transaction or reusing addresses too frequently.

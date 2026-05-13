@@ -1,0 +1,94 @@
+---
+title: "Key Space"
+slug: key-space
+draft: false
+status: live
+section: rabbit-hole
+tagline: "2^256. A number so large the universe doesn't have enough atoms to brute-force one."
+order: 5
+estimatedMinutes: 6
+sources:
+  - { label: "Observable universe atom count (estimate)", url: "https://en.wikipedia.org/wiki/Observable_universe#Matter_content%E2%80%94number_of_atoms" }
+  - { label: "SHA-256 (NIST FIPS 180-4)", url: "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf" }
+  - { label: "Bitcoin Wiki - secp256k1", url: "https://en.bitcoin.it/wiki/Secp256k1" }
+relatedTerms: ["private-key", "public-key", "elliptic-curve", "schnorr-signature", "seed-phrase", "address"]
+hasInteractive: ["keySpaceVisualizer"]
+---
+
+import KeySpaceVisualizer from '@components/keyspace/KeySpaceVisualizer.svelte';
+
+> **Where you're going:** A visceral, scale-by-scale walk through 2^256, the number of possible Bitcoin private keys. By the end you'll understand why "guessing" a Bitcoin key is not a strategy that can be improved by more computers.
+
+## The Number
+
+A Bitcoin private key is a 256-bit number. That means there are 2^256 possible private keys, give or take a few that the secp256k1 curve excludes.
+
+2^256 is written, in decimal:
+
+> 115,792,089,237,316,195,423,570,985,008,687,907,853,269,984,665,640,564,039,457,584,007,913,129,639,936
+
+Seventy-eight digits. We don't have intuition for numbers this big. So let's build some.
+
+## Walk It
+
+<KeySpaceVisualizer client:load />
+
+## What This Means in Practice
+
+Bitcoin's security against brute-force key guessing rests on this number being absurdly large. To make it concrete:
+
+- Imagine you control every computer on Earth, repurposed to do nothing but guess private keys.
+- Imagine each one tries a trillion keys per second.
+- Imagine you keep this up for a billion years.
+
+You will have explored roughly 2^140 of the 2^256 possible keys. That's about 2^116 keys deep, on a space that's 2^256 wide. Your search has covered an *infinitesimal* fraction of one percent. You will not find a single private key in use.
+
+The math doesn't care how fast your hardware gets. Doubling computing power moves you exactly one bit further. To brute-force a 256-bit key, you'd need to halve the search space 256 times. **Each doubling of compute halves it once.** That is not a war you can win by buying more GPUs.
+
+## So Why 256 Bits?
+
+256 bits is generous. AES-128 (the symmetric encryption used everywhere from your WiFi to your hard drive) uses 128-bit keys and is already considered safe against brute force. Bitcoin doubles that.
+
+The extra margin matters because:
+
+1. **Quantum computers.** A sufficiently large quantum computer running Grover's algorithm would effectively halve the bit-strength of symmetric crypto - reducing 128-bit security to ~64-bit (potentially feasible) and 256-bit to ~128-bit (still safe). The 256-bit choice is partly future-proofing.
+2. **Birthday attacks.** Finding *any* collision in a 256-bit space takes ~2^128 work, not 2^256. Bitcoin's design accounts for this.
+3. **Belt and suspenders.** Cryptographic primitives are rarely defeated by brute force; they're defeated by *flaws*. Generous bit-length is the safety net.
+
+Most attacks on Bitcoin keys in practice are not brute force. They're:
+
+- Stolen seed phrases (the human element)
+- Weak entropy in key generation (the bug element)
+- Side-channel attacks on hardware (the implementation element)
+- Phishing and social engineering (the everything-else element)
+
+The 2^256 number is what stops attackers from doing the obvious thing. Everything else is what stops them from doing the subtle things.
+
+## The Math, Simplified
+
+For context, the powers of 2 from the visualizer above translate to these "real world" comparisons:
+
+| Bits | Approximate size | What it's roughly equivalent to |
+|---|---|---|
+| 2^32 | 4.3 × 10^9 | IPv4 address space |
+| 2^64 | 1.8 × 10^19 | Grains of sand on Earth |
+| 2^128 | 3.4 × 10^38 | Atoms in your body |
+| 2^160 | 1.5 × 10^48 | Bitcoin's address space (160-bit hashes) |
+| 2^192 | 6.3 × 10^57 | Atoms in the Sun |
+| 2^224 | 2.7 × 10^67 | Atoms in the Milky Way |
+| 2^256 | 1.2 × 10^77 | Bitcoin's private key space - close to the atom count of the observable universe |
+
+The universe has somewhere between 10^78 and 10^82 atoms total. Bitcoin's key space (10^77) is the same order of magnitude. **Each Bitcoin key is, in a real sense, the address of an atom in the universe.** That's not a metaphor; it's an arithmetic comparison.
+
+## The Practical Takeaway
+
+You don't have to "trust" Bitcoin's key security. You can reason about it.
+
+- Generate a key randomly (good entropy)
+- Keep it secret
+- Use a wallet that doesn't leak metadata
+- Don't get phished
+
+Brute force is not on the threat model. The math is doing its job. The remaining attack surface is operational, not cryptographic.
+
+> **Pro tip:** Whenever someone tells you Bitcoin will "eventually be cracked by computers," ask them what fraction of 2^256 the most powerful computer in history has explored to date. The answer is, effectively, zero - and exponential improvements in compute do not change the answer.

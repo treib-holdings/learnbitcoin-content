@@ -27,4 +27,4 @@ liveWidget: ~
 ---
 
 A block is like a page in Bitcoin’s ledger, containing a set of transactions verified within a certain timeframe (approximately every 10 minutes on average). Each block references the hash of its predecessor, creating a linked chain. This architecture ensures any tampering in one block invalidates all subsequent blocks.
-Miners compete to find a valid proof-of-work for each block, securing the network and earning newly minted BTC plus transaction fees. Over time, these blocks collectively form the blockchain—a chronological, tamper-evident record of all Bitcoin transactions ever processed. It’s the fundamental building unit of Bitcoin’s consensus system.
+Miners compete to find a valid proof-of-work for each block, securing the network and earning newly minted BTC plus transaction fees. Over time, these blocks collectively form the blockchain-a chronological, tamper-evident record of all Bitcoin transactions ever processed. It’s the fundamental building unit of Bitcoin’s consensus system.

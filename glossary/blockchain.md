@@ -25,5 +25,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A blockchain is Bitcoin’s core innovation: each block references the previous block’s hash, forming a continuous chain. This creates a tamper-evident record—altering any past block invalidates all subsequent references. The entire network collectively maintains and verifies this ledger, preventing a single point of failure.
+A blockchain is Bitcoin’s core innovation: each block references the previous block’s hash, forming a continuous chain. This creates a tamper-evident record-altering any past block invalidates all subsequent references. The entire network collectively maintains and verifies this ledger, preventing a single point of failure.
 Beyond Bitcoin, many other projects have adopted the ‘blockchain’ structure for various purposes, though not all share Bitcoin’s proof-of-work or decentralization ethos. In Bitcoin, the blockchain’s role is straightforward and robust: store and secure transaction data in a way that’s transparent, verifiable, and extremely resistant to modifications.

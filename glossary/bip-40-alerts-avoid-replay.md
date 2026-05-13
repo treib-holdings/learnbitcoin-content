@@ -19,4 +19,4 @@ liveWidget: ~
 ---
 
 BIP 40, located in [BIP-40](https://github.com/bitcoin/bips/blob/master/bip-0040.mediawiki), was focused on preventing malicious or accidental replay of outdated alert messages in Bitcoin’s alert system. In earlier days, alerts could be broadcast to warn users of network issues or emergencies.
-Eventually, the entire alert system was deprecated and removed in newer Bitcoin Core versions. The measure to avoid alert replays became less relevant, but BIP 40 remains a historical artifact that showcases how Bitcoin’s notification mechanisms evolved—and why they were ultimately retired for more decentralized communication methods.
+Eventually, the entire alert system was deprecated and removed in newer Bitcoin Core versions. The measure to avoid alert replays became less relevant, but BIP 40 remains a historical artifact that showcases how Bitcoin’s notification mechanisms evolved-and why they were ultimately retired for more decentralized communication methods.

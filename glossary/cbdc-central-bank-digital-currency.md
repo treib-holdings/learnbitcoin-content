@@ -2,7 +2,7 @@
 title: "CBDC (Central Bank Digital Currency)"
 slug: cbdc-central-bank-digital-currency
 draft: false
-shortDefinition: "A state-issued digital currency managed by a central authority—contrasting Bitcoin’s decentralized model."
+shortDefinition: "A state-issued digital currency managed by a central authority-contrasting Bitcoin’s decentralized model."
 keyTakeaways:
   - "Operated by central banks, not trustless or permissionless"
   - "Can offer new monetary tools but raises privacy concerns"

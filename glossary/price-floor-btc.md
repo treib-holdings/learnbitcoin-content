@@ -19,4 +19,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Some argue that if Bitcoin dips below the average mining breakeven point (covering electricity and overhead), many miners shut down, reducing hash rate until difficulty adjusts. This is seen as creating a ‘price floor.’ In practice, market prices have occasionally gone below or hovered around mining costs for months. Other factors—like miner hedging, speculation, or non-economic hodling—complicate any hard price limit. While there may be psychological or cost-driven support levels, it’s not a fixed rule that absolutely prevents drops below mining cost.
+Some argue that if Bitcoin dips below the average mining breakeven point (covering electricity and overhead), many miners shut down, reducing hash rate until difficulty adjusts. This is seen as creating a ‘price floor.’ In practice, market prices have occasionally gone below or hovered around mining costs for months. Other factors-like miner hedging, speculation, or non-economic hodling-complicate any hard price limit. While there may be psychological or cost-driven support levels, it’s not a fixed rule that absolutely prevents drops below mining cost.

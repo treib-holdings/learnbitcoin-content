@@ -21,4 +21,4 @@ liveWidget: ~
 ---
 
 A Bitcoin bridge is like a digital ferry that carries BTC across to a different blockchain or layer. For instance, wrapped Bitcoin (WBTC) allows users to use Bitcoin’s value in Ethereum’s DeFi ecosystem, while atomic swaps let you exchange BTC for another chain’s coins without trusting a third party.
-Although bridging fosters interoperability, it introduces various complexities and risks—such as trust in custodians for wrapped assets or complexities in cross-chain protocols. If a bridge is compromised, users might lose funds. Nonetheless, bridging remains a popular way to expand Bitcoin’s reach and utility across the broader crypto landscape.
+Although bridging fosters interoperability, it introduces various complexities and risks-such as trust in custodians for wrapped assets or complexities in cross-chain protocols. If a bridge is compromised, users might lose funds. Nonetheless, bridging remains a popular way to expand Bitcoin’s reach and utility across the broader crypto landscape.

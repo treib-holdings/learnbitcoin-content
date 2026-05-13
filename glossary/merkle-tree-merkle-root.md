@@ -22,4 +22,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Merkle tree is built by repeatedly hashing pairs of data until only one hash remains—the Merkle root. In Bitcoin, each transaction ID (txid) is hashed together in pairs, then those hashes are hashed again, and so on, forming a tree structure. The final hash, the Merkle root, is placed in the block header. This design lets nodes verify transaction inclusion without downloading or verifying every other transaction in the block. It’s a fundamental component for SPV wallets and block explorers aiming for efficient validation and minimal bandwidth use.
+A Merkle tree is built by repeatedly hashing pairs of data until only one hash remains-the Merkle root. In Bitcoin, each transaction ID (txid) is hashed together in pairs, then those hashes are hashed again, and so on, forming a tree structure. The final hash, the Merkle root, is placed in the block header. This design lets nodes verify transaction inclusion without downloading or verifying every other transaction in the block. It’s a fundamental component for SPV wallets and block explorers aiming for efficient validation and minimal bandwidth use.

@@ -2,7 +2,7 @@
 title: "Mnemonic (Seed) Phrase"
 slug: mnemonic-seed-phrase
 draft: false
-shortDefinition: "A BIP 39–compliant set of 12/18/24 words encoding the private/extended key for a deterministic wallet backup."
+shortDefinition: "A BIP 39-compliant set of 12/18/24 words encoding the private/extended key for a deterministic wallet backup."
 keyTakeaways:
   - "Transforms cryptographic entropy into a memorable set of words"
   - "One phrase recovers all derived addresses in HD wallets"

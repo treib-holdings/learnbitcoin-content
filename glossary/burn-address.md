@@ -18,4 +18,4 @@ liveWidget: ~
 ---
 
 Sending BTC to a burn address is like throwing money into a digital black hole. Commonly starting with ‘1BitcoinEater...’ or other patterns, these addresses are intentionally created with no known corresponding private keys. Thus, the coins can never be spent again.
-While sometimes used as a proof of token destruction or to reduce supply, sending BTC to a burn address is irreversible. It can also be done for symbolic gestures—such as burning coins to show commitment to a project—or to destroy confiscated or compromised funds. Regardless of purpose, sending BTC there essentially removes them from the market forever.
+While sometimes used as a proof of token destruction or to reduce supply, sending BTC to a burn address is irreversible. It can also be done for symbolic gestures-such as burning coins to show commitment to a project-or to destroy confiscated or compromised funds. Regardless of purpose, sending BTC there essentially removes them from the market forever.

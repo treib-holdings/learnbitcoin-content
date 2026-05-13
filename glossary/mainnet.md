@@ -12,4 +12,4 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-Mainnet is the production environment for Bitcoin, distinct from test networks (like testnet or signet) used for experimentation. Real BTC on mainnet hold monetary value recognized worldwide. Security is paramount—protocol changes or forks must be rigorously tested before touching mainnet. When people say ‘running a Bitcoin node,’ they typically mean mainnet. For new features or riskier testing, devs rely on testnet or private regtest environments to avoid risking real user funds on the main blockchain.
+Mainnet is the production environment for Bitcoin, distinct from test networks (like testnet or signet) used for experimentation. Real BTC on mainnet hold monetary value recognized worldwide. Security is paramount-protocol changes or forks must be rigorously tested before touching mainnet. When people say ‘running a Bitcoin node,’ they typically mean mainnet. For new features or riskier testing, devs rely on testnet or private regtest environments to avoid risking real user funds on the main blockchain.

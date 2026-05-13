@@ -19,4 +19,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-When generating a wallet seed, a single user’s random source might be compromised. By mixing random inputs from several participants, the final seed is secure unless every source is compromised. Dice rolls or hardware RNG outputs are XORed together—no single participant knows the entire seed in isolation, nor can they unilaterally predict it. Some advanced multisig ceremonies use such mixers to ensure no one party generates the master seed alone. The approach maximizes entropy and trust minimization, albeit needing careful coordination and offline procedures.
+When generating a wallet seed, a single user’s random source might be compromised. By mixing random inputs from several participants, the final seed is secure unless every source is compromised. Dice rolls or hardware RNG outputs are XORed together-no single participant knows the entire seed in isolation, nor can they unilaterally predict it. Some advanced multisig ceremonies use such mixers to ensure no one party generates the master seed alone. The approach maximizes entropy and trust minimization, albeit needing careful coordination and offline procedures.

@@ -23,4 +23,4 @@ liveWidget: ~
 ---
 
 In an escrowed Lightning channel, an external entity or condition is introduced to oversee or arbitrate channel operations. This could be a multi-signature setup where an ‘escrow’ key is required to finalize certain updates, or a specialized script that triggers if one participant fails to fulfill obligations.
-These modifications can help in business deals or more complex arrangements. For instance, a service provider and a client might open a channel, with an escrow agent stepping in only if disputes arise—reducing the need for trust in a fully custodial third party. It’s an example of how LN channels can be customized for higher-level contract logic while retaining off-chain efficiency.
+These modifications can help in business deals or more complex arrangements. For instance, a service provider and a client might open a channel, with an escrow agent stepping in only if disputes arise-reducing the need for trust in a fully custodial third party. It’s an example of how LN channels can be customized for higher-level contract logic while retaining off-chain efficiency.

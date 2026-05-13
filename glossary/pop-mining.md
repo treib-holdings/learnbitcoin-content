@@ -22,4 +22,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-‘Pop mining’ is an informal term rarely used in Bitcoin’s main ecosystem. Some alt projects or earlier proposals referenced ‘proof-of-publication’—like posting data hashes to a chain—but this never became a recognized protocol for Bitcoin. Bitcoin remains focused on SHA-256 PoW. Where ‘pop mining’ does appear, it typically means partial or derivative solutions that revolve around publishing data to attest some action, but these are fringe or altcoin ideas. In short, it’s not a mainstream Bitcoin concept.
+‘Pop mining’ is an informal term rarely used in Bitcoin’s main ecosystem. Some alt projects or earlier proposals referenced ‘proof-of-publication’-like posting data hashes to a chain-but this never became a recognized protocol for Bitcoin. Bitcoin remains focused on SHA-256 PoW. Where ‘pop mining’ does appear, it typically means partial or derivative solutions that revolve around publishing data to attest some action, but these are fringe or altcoin ideas. In short, it’s not a mainstream Bitcoin concept.

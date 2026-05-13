@@ -24,4 +24,4 @@ liveWidget: ~
 ---
 
 When you broadcast a Bitcoin transaction, your wallet or a block explorer might say “Estimated confirmation in ~3 blocks.” This is based on mempool conditions, current fee rates, and miners’ recent block-building patterns. Essentially, it’s an educated guess about when your transaction’s fee will be competitive enough to be included in a block.
-Because fee markets fluctuate, these estimates can change. If a sudden influx of high-fee transactions arrives, your transaction might take longer unless you bump your fee via Replace-by-Fee (RBF) or Child-Pays-for-Parent (CPFP). Nonetheless, it provides a convenient rough timeline—helpful for managing user expectations, especially for time-sensitive transactions.
+Because fee markets fluctuate, these estimates can change. If a sudden influx of high-fee transactions arrives, your transaction might take longer unless you bump your fee via Replace-by-Fee (RBF) or Child-Pays-for-Parent (CPFP). Nonetheless, it provides a convenient rough timeline-helpful for managing user expectations, especially for time-sensitive transactions.

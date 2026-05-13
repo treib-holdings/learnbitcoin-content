@@ -17,5 +17,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Normally, Bitcoin nodes don’t relay conflicting transactions—once one is accepted to the mempool, a conflicting transaction (spending the same inputs) is discarded. However, Double Spend Relay modifies that behavior so that nodes share any newly received conflicting transaction. This helps merchants or service providers detect attempted double spends more quickly.
+Normally, Bitcoin nodes don’t relay conflicting transactions-once one is accepted to the mempool, a conflicting transaction (spending the same inputs) is discarded. However, Double Spend Relay modifies that behavior so that nodes share any newly received conflicting transaction. This helps merchants or service providers detect attempted double spends more quickly.
 While it improves awareness of potential attacks, it can also clutter the network with invalid transactions. Some systems use it to provide real-time alerts for zero-confirmation payments, highlighting that a conflict is in the mempool. Ultimately, waiting for confirmations remains the safest defense, but double-spend relay can offer early detection in low-latency commerce scenarios.

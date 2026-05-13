@@ -6,7 +6,7 @@ shortDefinition: "Recommends a canonical ordering of inputs and outputs to reduc
 keyTakeaways:
   - "Sorts inputs/outputs deterministically"
   - "Aims to reduce random factors that cause malleability"
-  - "Optional practice—adopted by some wallets, not all"
+  - "Optional practice-adopted by some wallets, not all"
 sources: []
 relatedTerms:
   - batch-transaction

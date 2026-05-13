@@ -24,5 +24,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A ‘Bitcoin vault’ combines advanced scripting tools—such as time locks, additional signatures, or staged withdrawal processes—to protect large amounts of BTC. Think of it as a bank vault with multiple locks and a timed door, ensuring thieves can’t just smash and grab.
+A ‘Bitcoin vault’ combines advanced scripting tools-such as time locks, additional signatures, or staged withdrawal processes-to protect large amounts of BTC. Think of it as a bank vault with multiple locks and a timed door, ensuring thieves can’t just smash and grab.
 Some vault designs use OP_CSV (CheckSequenceVerify) or other opcodes to create a ‘grace period,’ during which suspicious withdrawals can be reversed with a second key. Others might require multiple confirmations from different parties or devices before releasing funds. The overarching goal is to add layers of protection in case any single key is compromised.

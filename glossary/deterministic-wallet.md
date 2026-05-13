@@ -29,4 +29,4 @@ liveWidget: ~
 ---
 
 In a deterministic wallet, one seed phrase is your master key to an entire ‘forest’ of addresses. You can restore all your funds and addresses just by importing that seed into any compatible wallet. This approach is defined in [BIP 32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) and extended by [BIP 44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) for multiple accounts or coin types.
-Before deterministic wallets, users had to back up each individual private key. Lose one key—lose those funds. Deterministic frameworks are more user-friendly, especially if you maintain an offline or paper backup of the seed. It’s a hallmark of modern wallet design, bridging convenience and robust security.
+Before deterministic wallets, users had to back up each individual private key. Lose one key-lose those funds. Deterministic frameworks are more user-friendly, especially if you maintain an offline or paper backup of the seed. It’s a hallmark of modern wallet design, bridging convenience and robust security.

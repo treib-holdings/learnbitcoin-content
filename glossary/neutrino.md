@@ -2,7 +2,7 @@
 title: "Neutrino"
 slug: neutrino
 draft: false
-shortDefinition: "A privacy-preserving lightweight protocol (BIP 157/158) using block filters, replacing older Bloom filter–based SPV."
+shortDefinition: "A privacy-preserving lightweight protocol (BIP 157/158) using block filters, replacing older Bloom filter-based SPV."
 keyTakeaways:
   - "Uses BIP 157/158 compact filters for SPV"
   - "Clients selectively download only blocks containing relevant transactions"

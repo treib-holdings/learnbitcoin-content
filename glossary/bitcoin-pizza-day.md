@@ -2,7 +2,7 @@
 title: "Bitcoin Pizza Day"
 slug: bitcoin-pizza-day
 draft: false
-shortDefinition: "May 22, 2010—famously marking the first real-world BTC purchase (10,000 BTC for two pizzas)."
+shortDefinition: "May 22, 2010-famously marking the first real-world BTC purchase (10,000 BTC for two pizzas)."
 keyTakeaways:
   - "Marks the first reported commercial transaction with BTC"
   - "Highlights Bitcoin’s early novelty and later astronomical appreciation"

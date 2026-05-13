@@ -12,4 +12,4 @@ relatedTerms: ["block-subsidy", "halving-halvening", "inflation", "disinflation"
 hasInteractive: ["supplyChart"]
 ---
 
-Coming soon. The full math of Bitcoin's issuance schedule — the geometric subsidy halving, the asymptote, the rounding error that capped supply at 20,999,999.9769 BTC instead of a clean 21M, and why none of it can change without breaking the social contract.
+Coming soon. The full math of Bitcoin's issuance schedule - the geometric subsidy halving, the asymptote, the rounding error that capped supply at 20,999,999.9769 BTC instead of a clean 21M, and why none of it can change without breaking the social contract.

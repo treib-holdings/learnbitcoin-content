@@ -10,8 +10,8 @@ prerequisites: ["how-bitcoin-works"]
 relatedTerms: ["seed-phrase", "private-key", "hardware-wallet", "custodial-wallet", "address", "deterministic-wallet", "watch-only-wallet", "paper-wallet", "hierarchical-multisig"]
 legacyUrls: ["/be-your-own-bank"]
 sources:
-  - { label: "BIP 39 — Mnemonic seed phrases (Bitcoin Improvement Proposal)", url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" }
-  - { label: "BIP 32 — Hierarchical deterministic wallets", url: "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" }
+  - { label: "BIP 39 - Mnemonic seed phrases (Bitcoin Improvement Proposal)", url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" }
+  - { label: "BIP 32 - Hierarchical deterministic wallets", url: "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" }
   - { label: "Bitcoin Privacy Best Practices (PDF, this site)", url: "/downloads/bitcoin-privacy-best-practices.pdf" }
   - { label: "12-word seed backup form (PDF, this site)", url: "/downloads/seed-backup-12-word.pdf" }
   - { label: "24-word seed backup form (PDF, this site)", url: "/downloads/seed-backup-24-word.pdf" }
@@ -21,7 +21,7 @@ sources:
 
 ## 1. The Promise You Make to Yourself
 
-Up until this chapter, you've been *learning about* Bitcoin. From here on, you can *use* it — but only if you're willing to take on the responsibility that comes with sovereign money.
+Up until this chapter, you've been *learning about* Bitcoin. From here on, you can *use* it - but only if you're willing to take on the responsibility that comes with sovereign money.
 
 The bargain is this: **you, and only you, hold the keys. Nobody can take them. Nobody can freeze them. And nobody is going to help you if you lose them.**
 
@@ -33,13 +33,13 @@ This is the deal. This chapter is about taking it seriously without being scared
 
 Most people who "own Bitcoin" don't, technically.
 
-When you buy bitcoin on an exchange — Coinbase, Kraken, Binance, Cash App — the exchange holds the keys. You hold a number in their database that says "you are owed X bitcoin." It's an IOU. It looks like Bitcoin on your screen, but legally and technically it's a claim against the exchange.
+When you buy bitcoin on an exchange - Coinbase, Kraken, Binance, Cash App - the exchange holds the keys. You hold a number in their database that says "you are owed X bitcoin." It's an IOU. It looks like Bitcoin on your screen, but legally and technically it's a claim against the exchange.
 
 This is fine for some uses (trading, beginners, very small amounts). It is **not Bitcoin's value proposition.** Custodial bitcoin can be frozen by the custodian, seized by a government, lost in a hack, lost in a bankruptcy, withheld for KYC reasons, or simply unavailable when their servers are down.
 
-You can't have the properties from chapter 2 — *portable, scarce, sovereign* — and trust a third party with your keys. The whole point was to remove the third party.
+You can't have the properties from chapter 2 - *portable, scarce, sovereign* - and trust a third party with your keys. The whole point was to remove the third party.
 
-**Self-custody** means you generate and hold the private keys yourself. Your wallet software does this — it generates a random number, derives the keys, and shows you addresses. The number lives on your device (and a backup), not in anyone's database.
+**Self-custody** means you generate and hold the private keys yourself. Your wallet software does this - it generates a random number, derives the keys, and shows you addresses. The number lives on your device (and a backup), not in anyone's database.
 
 The trade-off is symmetric: with custody comes risk (someone freezes you), and with self-custody comes responsibility (lose your keys, lose your coins). Bitcoin lets you choose; most other systems don't even give you the option.
 
@@ -47,22 +47,22 @@ The trade-off is symmetric: with custody comes risk (someone freezes you), and w
 
 The mental shift that matters most: **you don't own coins. You own keys.**
 
-Bitcoin doesn't exist as files on your computer. It exists as UTXOs (see chapter 3) on the global ledger. Your wallet doesn't "contain" bitcoin in any meaningful sense — it contains the keys that authorize spending specific UTXOs on the ledger.
+Bitcoin doesn't exist as files on your computer. It exists as UTXOs (see chapter 3) on the global ledger. Your wallet doesn't "contain" bitcoin in any meaningful sense - it contains the keys that authorize spending specific UTXOs on the ledger.
 
 This is why:
 - A wallet on a hardware device with no internet can still "have" bitcoin
 - You can have the same wallet open on multiple devices (they're showing the same UTXOs)
 - Restoring a wallet on a new device shows the same balance instantly (the chain is the truth; the device just reads it)
 
-When you "back up your wallet," you're backing up the *keys* — specifically, the seed they're derived from. If you have the seed, you can reconstruct all the keys, on any device, forever.
+When you "back up your wallet," you're backing up the *keys* - specifically, the seed they're derived from. If you have the seed, you can reconstruct all the keys, on any device, forever.
 
 This is one of Bitcoin's most powerful properties and one of the easiest to underestimate.
 
 ## 4. The Seed Phrase
 
-Modern Bitcoin wallets don't make you back up individual private keys. They give you a **seed phrase** — usually 12 or 24 English words.
+Modern Bitcoin wallets don't make you back up individual private keys. They give you a **seed phrase** - usually 12 or 24 English words.
 
-It looks like this (don't use this one — it's a public example):
+It looks like this (don't use this one - it's a public example):
 
 ```
 abandon abandon abandon abandon abandon abandon
@@ -73,7 +73,7 @@ Those words encode a number. The number seeds a deterministic generator (defined
 
 **A few facts that should change your behavior:**
 
-- **Anyone with your seed phrase has your bitcoin.** Period. There is no second factor. There is no recovery. There is no "but they'd need your password too" — the password is part of the wallet software, not the chain.
+- **Anyone with your seed phrase has your bitcoin.** Period. There is no second factor. There is no recovery. There is no "but they'd need your password too" - the password is part of the wallet software, not the chain.
 - **12 vs 24 words.** Both are secure. 12 words = 128 bits of entropy; 24 words = 256 bits. Both are well beyond brute-force range. The choice is a matter of preference. (24-word is the default for most hardware wallets.)
 - **Never type your seed into a website. Never. Ever.** Not your wallet provider's site. Not a help page. Not anywhere. The only places the seed should live are on your wallet device and on physical backups *you* created.
 - **Do not memorize it.** People think this is clever; it is in fact the leading cause of seed loss. Brains forget. Steel does not.
@@ -81,15 +81,15 @@ Those words encode a number. The number seeds a deterministic generator (defined
 
 The seed phrase is not a password. It is the *root* of your entire Bitcoin existence. Treat it accordingly.
 
-## 5. Wallet Types — When to Use Each
+## 5. Wallet Types - When to Use Each
 
 A "wallet" is just software that manages keys. The categories matter more than the brands:
 
-- **Hot wallet** — keys live on an internet-connected device (phone, laptop). Convenient. Higher attack surface. Best for small, working-balance amounts.
-- **Cold wallet** — keys live on a device that's never connected to the internet. More effort to use. Much harder to compromise. Best for long-term holdings.
-- **Hardware wallet** — a small dedicated device (about the size of a USB stick) that holds keys and signs transactions, while a companion app on your phone or laptop handles everything else. The keys never leave the hardware. **This is the standard recommendation for any amount you'd be sad to lose.**
-- **Paper wallet** — keys written on paper, no device at all. Cheap. Easy to mess up. We don't recommend it as a primary backup anymore (lots of subtle ways to get it wrong) but as a *secondary* backup of a seed, it's useful.
-- **Multisig** — a wallet where spending requires multiple keys, often held in different places. Eliminates single-point-of-failure. The right answer for serious balances. We'll get to it in chapter 6.
+- **Hot wallet** - keys live on an internet-connected device (phone, laptop). Convenient. Higher attack surface. Best for small, working-balance amounts.
+- **Cold wallet** - keys live on a device that's never connected to the internet. More effort to use. Much harder to compromise. Best for long-term holdings.
+- **Hardware wallet** - a small dedicated device (about the size of a USB stick) that holds keys and signs transactions, while a companion app on your phone or laptop handles everything else. The keys never leave the hardware. **This is the standard recommendation for any amount you'd be sad to lose.**
+- **Paper wallet** - keys written on paper, no device at all. Cheap. Easy to mess up. We don't recommend it as a primary backup anymore (lots of subtle ways to get it wrong) but as a *secondary* backup of a seed, it's useful.
+- **Multisig** - a wallet where spending requires multiple keys, often held in different places. Eliminates single-point-of-failure. The right answer for serious balances. We'll get to it in chapter 6.
 
 **The right pattern for most people:**
 
@@ -104,15 +104,15 @@ You can mix and match. Wallets are just tools.
 We don't sell wallets. We don't take affiliate commissions. Here's the unvarnished filter:
 
 **For a free, open-source mobile wallet (hot, beginner-friendly):**
-- **BlueWallet** (iOS, Android) — Bitcoin-only, open source, works fine for everyday amounts
-- **Phoenix** — Bitcoin + Lightning, very low friction; runs an embedded LN node
-- **Mutiny** — newer, web-first Lightning wallet
+- **BlueWallet** (iOS, Android) - Bitcoin-only, open source, works fine for everyday amounts
+- **Phoenix** - Bitcoin + Lightning, very low friction; runs an embedded LN node
+- **Mutiny** - newer, web-first Lightning wallet
 
 **For a hardware wallet (cold, serious balances):**
-- **Coldcard** (Mk4 or Q) — Bitcoin-only, fully open-source firmware, designed for paranoid users
-- **Foundation Passport** — Bitcoin-only, air-gapped (no USB, uses QR codes and microSD)
-- **Trezor Safe 5** — multi-coin by default but supports Bitcoin-only firmware
-- **Jade** by Blockstream — affordable, Bitcoin-focused
+- **Coldcard** (Mk4 or Q) - Bitcoin-only, fully open-source firmware, designed for paranoid users
+- **Foundation Passport** - Bitcoin-only, air-gapped (no USB, uses QR codes and microSD)
+- **Trezor Safe 5** - multi-coin by default but supports Bitcoin-only firmware
+- **Jade** by Blockstream - affordable, Bitcoin-focused
 
 **Why "Bitcoin-only" matters:** wallets that support 50 cryptocurrencies have 50× the attack surface. Every supported coin is more code, more libraries, more places things can go wrong. Bitcoin-only firmware has fewer features but a smaller, more thoroughly audited codebase. If you're using a hardware wallet for Bitcoin, run Bitcoin-only firmware. (Most of the above support it.)
 
@@ -120,7 +120,7 @@ We don't sell wallets. We don't take affiliate commissions. Here's the unvarnish
 - Any wallet that asks you to upload your seed for "backup"
 - Any wallet without published source code
 - Any "wallet" that's actually a custodial app pretending (Robinhood, PayPal "crypto," etc.)
-- Browser extensions, for any serious amount — too much attack surface
+- Browser extensions, for any serious amount - too much attack surface
 
 The wallet ecosystem moves quickly. The specific brand may shift over the next few years. The *category* recommendations won't.
 
@@ -135,9 +135,9 @@ Your seed phrase needs to survive: fire, flood, theft, loss, your own forgetfuln
 3. **Verify the backup.** Before you put any meaningful amount in the wallet, wipe the device and restore from your seed. If the restored wallet shows the same addresses, the backup is good. This is the only way to *know* the backup works.
 4. **Document for inheritance.** Write a sealed letter for your heirs that explains where the backups are, what software to install, and what addresses to expect. Don't put the seed itself in the letter; put instructions for finding it.
 
-We've made [printable seed-backup forms](/downloads/seed-backup-12-word.pdf) for 12-word and 24-word seeds, available on this site. Use them or your own format — what matters is consistency and durability.
+We've made [printable seed-backup forms](/downloads/seed-backup-12-word.pdf) for 12-word and 24-word seeds, available on this site. Use them or your own format - what matters is consistency and durability.
 
-**One more thing.** Do not split your seed phrase across multiple locations as a security measure ("first 6 words here, last 6 words there"). This is called *seed splitting* and it provides much less security than you'd expect — losing one location loses everything, *and* the second location is easier to attack. If you want geographic redundancy for advanced setups, use [multisig](/glossary/hierarchical-multisig) (chapter 6) or [Shamir Secret Sharing](/downloads/shamirs-secret-sharing-backup.pdf), not seed splitting.
+**One more thing.** Do not split your seed phrase across multiple locations as a security measure ("first 6 words here, last 6 words there"). This is called *seed splitting* and it provides much less security than you'd expect - losing one location loses everything, *and* the second location is easier to attack. If you want geographic redundancy for advanced setups, use [multisig](/glossary/hierarchical-multisig) (chapter 6) or [Shamir Secret Sharing](/downloads/shamirs-secret-sharing-backup.pdf), not seed splitting.
 
 ## 8. Receiving Your First Transaction
 
@@ -153,18 +153,18 @@ Congratulations. You just did self-custody.
 
 The bitcoin you just received is yours in a way that custodial bitcoin never was. No exchange can freeze it. No government can seize it without your private key. You can move it anywhere, anytime, on a Sunday at 3 a.m., for any reason. That's the whole point.
 
-## 9. Sign a Message — Prove You Own It
+## 9. Sign a Message - Prove You Own It
 
 Here's a useful trick: you can prove you control an address *without* moving any coins.
 
-Bitcoin supports **message signing**. Your wallet uses your private key to produce a signature on an arbitrary text message. Anyone with the signature, the message, and your address can verify the signature is valid — proving you have the key.
+Bitcoin supports **message signing**. Your wallet uses your private key to produce a signature on an arbitrary text message. Anyone with the signature, the message, and your address can verify the signature is valid - proving you have the key.
 
 How:
 
 1. In your wallet, find "Sign message." (Most wallets have it; some require an advanced settings toggle.)
 2. Enter a message: *"I control address bc1qexampleaddress. Today's date is YYYY-MM-DD."*
 3. Sign. You get a base64 blob.
-4. Anyone can paste the (message, signature, address) triple into a verifier — Bitcoin Core has one, or use a wallet's "Verify message" feature — and they will see "valid" or "invalid."
+4. Anyone can paste the (message, signature, address) triple into a verifier - Bitcoin Core has one, or use a wallet's "Verify message" feature - and they will see "valid" or "invalid."
 
 This is how you prove ownership of an address to an insurance company, an inheritance lawyer, or a future suspicious you. No coins move. No fees pay. The signature is portable and timestamps anchor it in time.
 
@@ -195,4 +195,4 @@ Before you move on to chapter 5, do these four things:
 
 That's it. You've done self-custody. You're no longer dependent on an exchange or a custodian to hold the keys to your money. Whether or not you go bigger from here is your call.
 
-> **Pro tip:** The hardest part of self-custody isn't technical, it's psychological. The first time you hold a real seed you're solely responsible for, it feels heavy. That weight is the actual product of Bitcoin — sovereign ownership. People who claim self-custody is "too hard" mostly mean it feels heavy. They're not wrong. They're just not seeing the trade.
+> **Pro tip:** The hardest part of self-custody isn't technical, it's psychological. The first time you hold a real seed you're solely responsible for, it feels heavy. That weight is the actual product of Bitcoin - sovereign ownership. People who claim self-custody is "too hard" mostly mean it feels heavy. They're not wrong. They're just not seeing the trade.

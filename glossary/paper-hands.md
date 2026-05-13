@@ -2,7 +2,7 @@
 title: "Paper Hands"
 slug: paper-hands
 draft: false
-shortDefinition: "Slang for quickly selling BTC at the first sign of volatility or market fear—opposite of ‘diamond hands.’"
+shortDefinition: "Slang for quickly selling BTC at the first sign of volatility or market fear-opposite of ‘diamond hands.’"
 keyTakeaways:
   - "Depicts selling quickly under market stress"
   - "Contrast with diamond hands (steadfast holders)"

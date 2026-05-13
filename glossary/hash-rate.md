@@ -27,4 +27,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Hash rate reflects how many SHA-256 computations miners perform per second across Bitcoin’s entire mining ecosystem. A higher hash rate typically means more competition for block rewards and greater difficulty, enhancing security—an attacker would need proportionally more hashing power to perform a 51% attack. Mining hardware generations (CPU → GPU → ASIC) and changes in electricity prices can shift the network’s hash rate over time. Observers often see it as an indicator of miner confidence and the network’s overall health.
+Hash rate reflects how many SHA-256 computations miners perform per second across Bitcoin’s entire mining ecosystem. A higher hash rate typically means more competition for block rewards and greater difficulty, enhancing security-an attacker would need proportionally more hashing power to perform a 51% attack. Mining hardware generations (CPU → GPU → ASIC) and changes in electricity prices can shift the network’s hash rate over time. Observers often see it as an indicator of miner confidence and the network’s overall health.

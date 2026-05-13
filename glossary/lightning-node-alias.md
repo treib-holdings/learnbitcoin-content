@@ -12,4 +12,4 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-Aliases let LN node operators display a memorable name, like “Satoshi’s Coffee Shop,” which peers see in LN explorers or their node lists. However, the alias isn’t cryptographically secured; anyone can claim a fancy name. Real LN identity relies on node public keys and established reputations. The alias is just for convenience in routing tables and user interfaces. Some node operators use whimsical or thematic aliases, contributing to LN’s social culture—yet it’s essential to remember aliases alone don’t guarantee trust or reliability.
+Aliases let LN node operators display a memorable name, like “Satoshi’s Coffee Shop,” which peers see in LN explorers or their node lists. However, the alias isn’t cryptographically secured; anyone can claim a fancy name. Real LN identity relies on node public keys and established reputations. The alias is just for convenience in routing tables and user interfaces. Some node operators use whimsical or thematic aliases, contributing to LN’s social culture-yet it’s essential to remember aliases alone don’t guarantee trust or reliability.

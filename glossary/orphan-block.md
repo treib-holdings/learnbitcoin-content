@@ -12,4 +12,4 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-Historically, any block found around the same time as another valid block—yet losing the race to be extended—was called an ‘orphan block.’ Modern usage prefers ‘stale block’ or ‘orphaned block’ for clarity. These blocks form when two miners produce valid blocks almost simultaneously; the network eventually converges on one chain. The other block, although valid, isn’t part of the main chain and the miner receives no reward. ‘Orphan block’ has also been used ambiguously for blocks missing a known parent, but actual orphan blocks are exceedingly rare in practice.
+Historically, any block found around the same time as another valid block-yet losing the race to be extended-was called an ‘orphan block.’ Modern usage prefers ‘stale block’ or ‘orphaned block’ for clarity. These blocks form when two miners produce valid blocks almost simultaneously; the network eventually converges on one chain. The other block, although valid, isn’t part of the main chain and the miner receives no reward. ‘Orphan block’ has also been used ambiguously for blocks missing a known parent, but actual orphan blocks are exceedingly rare in practice.

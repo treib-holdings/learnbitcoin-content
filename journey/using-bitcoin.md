@@ -9,10 +9,10 @@ tagline: "On-chain transactions, fees in practice, Lightning basics. Now that yo
 prerequisites: ["be-your-own-bank"]
 relatedTerms: ["lightning-network", "transaction-fee", "fee-estimation", "lightning-channel", "payment-channel", "bolt-11", "htlc-hashed-time-locked-contract", "replace-fee-rbf", "fee-bumping"]
 sources:
-  - { label: "mempool.space — live fee dashboard", url: "https://mempool.space" }
-  - { label: "Bitcoin developer guide — transactions", url: "https://developer.bitcoin.org/devguide/transactions.html" }
+  - { label: "mempool.space - live fee dashboard", url: "https://mempool.space" }
+  - { label: "Bitcoin developer guide - transactions", url: "https://developer.bitcoin.org/devguide/transactions.html" }
   - { label: "Lightning Network whitepaper (Poon & Dryja, 2016)", url: "https://lightning.network/lightning-network-paper.pdf" }
-  - { label: "chainquery — live mempool feed", url: "https://chainquery.com/reports/data/mempool.json" }
+  - { label: "chainquery - live mempool feed", url: "https://chainquery.com/reports/data/mempool.json" }
 ---
 
 > **Where you're going:** You'll send an on-chain transaction with a fee you chose deliberately, generate a Lightning invoice, and receive a Lightning payment. Both should feel different. Both should leave you with a working mental model of when to use which.
@@ -21,7 +21,7 @@ sources:
 
 Self-custody is the foundation. *Use* is what gives it a point.
 
-Most people, once they self-custody, treat their bitcoin like a savings bond they're afraid to touch. That's fine — bitcoin is genuinely excellent as a savings instrument, and *not selling* is a real strategy. But Bitcoin is also money, and money that never circulates isn't really money. This chapter is how to use it.
+Most people, once they self-custody, treat their bitcoin like a savings bond they're afraid to touch. That's fine - bitcoin is genuinely excellent as a savings instrument, and *not selling* is a real strategy. But Bitcoin is also money, and money that never circulates isn't really money. This chapter is how to use it.
 
 The two layers we care about:
 
@@ -36,11 +36,11 @@ Open your wallet. Tap Send. You'll be asked for three things:
 
 - **A destination address.** A long string starting with `bc1` (modern format) or `3` or `1` (older formats). Always paste from a trusted source. Always double-check the first and last several characters. Treat addresses like account numbers, not URLs.
 - **An amount.** In BTC or sats, your call. Modern wallets let you toggle.
-- **A fee rate.** Usually in **sat/vB** (satoshis per virtual byte) — how much you'll pay per byte of transaction data.
+- **A fee rate.** Usually in **sat/vB** (satoshis per virtual byte) - how much you'll pay per byte of transaction data.
 
 A few things to internalize:
 
-- **Fees are not a percentage of the amount.** Sending 1 BTC costs the same fee as sending 0.001 BTC (assuming both transactions use the same number of inputs and outputs). The fee is paying for *block space*, not for moving value. This is why Bitcoin is cheaper for large transfers and proportionally expensive for tiny ones — and why Lightning exists.
+- **Fees are not a percentage of the amount.** Sending 1 BTC costs the same fee as sending 0.001 BTC (assuming both transactions use the same number of inputs and outputs). The fee is paying for *block space*, not for moving value. This is why Bitcoin is cheaper for large transfers and proportionally expensive for tiny ones - and why Lightning exists.
 - **Always send a tiny test first** when you're using a new address for any serious amount. A few thousand sats. Confirm it arrived. Then send the rest.
 - **Address checking is your job.** No central authority can reverse a misdirected transaction. Bitcoin works exactly like Bitcoin says it works.
 
@@ -50,13 +50,13 @@ Most wallets give you three suggested fee rates (e.g., 2 sat/vB, 5 sat/vB, 12 sa
 
 The mempool is the queue of unconfirmed transactions, sorted by fee rate. Every node has its own copy; they're nearly identical (see chapter 3).
 
-When the mempool is empty (mining capacity exceeds demand), almost any fee gets in next block. When it's congested (demand exceeds capacity), the fee market gets real. During major events — ordinals frenzies, large liquidations, network surges — fee rates can spike from 1 sat/vB to 500+ sat/vB for a few hours.
+When the mempool is empty (mining capacity exceeds demand), almost any fee gets in next block. When it's congested (demand exceeds capacity), the fee market gets real. During major events - ordinals frenzies, large liquidations, network surges - fee rates can spike from 1 sat/vB to 500+ sat/vB for a few hours.
 
 **Tools that show you the live state:**
 
-- [**mempool.space**](https://mempool.space) — the standard. Live mempool visualization, fee estimates, block timing.
-- [**chainquery's live mempool feed**](https://chainquery.com/reports/data/mempool.json) — JSON data from our own Bitcoin node, updated every few seconds. Same data, different presentation.
-- Your own node's `bitcoin-cli estimatesmartfee` — if you run one.
+- [**mempool.space**](https://mempool.space) - the standard. Live mempool visualization, fee estimates, block timing.
+- [**chainquery's live mempool feed**](https://chainquery.com/reports/data/mempool.json) - JSON data from our own Bitcoin node, updated every few seconds. Same data, different presentation.
+- Your own node's `bitcoin-cli estimatesmartfee` - if you run one.
 
 A sensible workflow:
 
@@ -67,11 +67,11 @@ A sensible workflow:
 
 There is no "right" fee. There is "the fee you need to pay to get into the next *N* blocks." Pick *N* based on your patience.
 
-## 4. Replace-by-Fee (RBF) — When Your Tx Gets Stuck
+## 4. Replace-by-Fee (RBF) - When Your Tx Gets Stuck
 
 Suppose you sent at 5 sat/vB and then a mempool surge raised the floor to 50 sat/vB. Your transaction will sit there, possibly for hours, possibly until the mempool drops back. Bitcoin doesn't time out transactions, but if you can't wait:
 
-**Replace-by-Fee (RBF)** lets you rebroadcast the same transaction with a higher fee. Miners prefer the higher-paying version; the original disappears from the mempool. Most modern wallets do this with one button — usually labeled "Boost," "Bump fee," or "Speed up."
+**Replace-by-Fee (RBF)** lets you rebroadcast the same transaction with a higher fee. Miners prefer the higher-paying version; the original disappears from the mempool. Most modern wallets do this with one button - usually labeled "Boost," "Bump fee," or "Speed up."
 
 The mechanics: RBF requires the original transaction to have signaled "replaceable" (a flag in the transaction). Most wallets enable this by default. If yours didn't, you have another option called **Child Pays for Parent (CPFP)**, where you spend the *change output* of your stuck transaction with a higher fee, dragging the parent into a block alongside it.
 
@@ -79,7 +79,7 @@ Don't memorize the mechanics. Memorize the principle: **your transaction isn't s
 
 ## 5. The Lightning Network: An Overview
 
-On-chain Bitcoin is excellent at high-value, low-frequency settlement. It is *not* the right layer for buying a $4 coffee. The economics don't work — you'd pay $1 in fees, your coffee would take an hour to confirm, and the block space cost would outweigh the value of the transaction.
+On-chain Bitcoin is excellent at high-value, low-frequency settlement. It is *not* the right layer for buying a $4 coffee. The economics don't work - you'd pay $1 in fees, your coffee would take an hour to confirm, and the block space cost would outweigh the value of the transaction.
 
 The Lightning Network solves this by moving small, frequent payments **off-chain**, while keeping Bitcoin's settlement guarantees.
 
@@ -87,10 +87,10 @@ The mechanics, simplified:
 
 1. **Open a channel.** Two parties (you and another node) commit some bitcoin to a 2-of-2 multisig address via an on-chain transaction. That's the only on-chain transaction you'll need for thousands of subsequent payments between you.
 2. **Update the balance.** Inside the channel, you and the other party can update the relative balance as many times as you want, near-instantly, with cryptographic guarantees. Each update is a signed message; the latest one is the "current truth."
-3. **Route payments.** If you don't have a direct channel with the person you want to pay, the network finds a path through other people's channels — A pays B, who pays C, who pays your destination — using a clever mechanism called HTLCs that makes each hop atomic.
+3. **Route payments.** If you don't have a direct channel with the person you want to pay, the network finds a path through other people's channels - A pays B, who pays C, who pays your destination - using a clever mechanism called HTLCs that makes each hop atomic.
 4. **Close the channel.** Either party can close at any time by broadcasting the latest channel state on-chain. The final balances settle on Bitcoin's main chain. You're back to layer 1.
 
-Routing payments through Lightning takes milliseconds. The fees are typically a few sats — orders of magnitude smaller than on-chain fees. The settlement is final the moment the recipient sees the payment.
+Routing payments through Lightning takes milliseconds. The fees are typically a few sats - orders of magnitude smaller than on-chain fees. The settlement is final the moment the recipient sees the payment.
 
 The whitepaper for Lightning ([Poon & Dryja, 2016](https://lightning.network/lightning-network-paper.pdf)) is dense but readable. You don't need to read it to use Lightning, but you should know it exists.
 
@@ -98,11 +98,11 @@ The whitepaper for Lightning ([Poon & Dryja, 2016](https://lightning.network/lig
 
 Three categories of Lightning wallets, ordered by sovereignty:
 
-**Custodial** — someone else runs the Lightning node, you have an account. Easiest to use, almost no setup, but you've reintroduced a trusted third party. Examples: Wallet of Satoshi, Cash App's Lightning support. **Fine for tiny working balances**, the same way a coffee-money wallet on your phone is fine. *Not where you store anything serious.*
+**Custodial** - someone else runs the Lightning node, you have an account. Easiest to use, almost no setup, but you've reintroduced a trusted third party. Examples: Wallet of Satoshi, Cash App's Lightning support. **Fine for tiny working balances**, the same way a coffee-money wallet on your phone is fine. *Not where you store anything serious.*
 
-**Non-custodial, self-hosted simplified** — you run a Lightning node *inside the app*, on your phone, with managed channel management. The keys are yours; the operational complexity is handled. Examples: Phoenix, Breez, Mutiny. **The sweet spot for most users**, especially after chapter 4.
+**Non-custodial, self-hosted simplified** - you run a Lightning node *inside the app*, on your phone, with managed channel management. The keys are yours; the operational complexity is handled. Examples: Phoenix, Breez, Mutiny. **The sweet spot for most users**, especially after chapter 4.
 
-**Fully sovereign** — you run a Lightning node on your own hardware (Umbrel, Start9, raw LND/CLN on a Linux box). Maximum control, maximum complexity. Best paired with chapter 6's full-node setup.
+**Fully sovereign** - you run a Lightning node on your own hardware (Umbrel, Start9, raw LND/CLN on a Linux box). Maximum control, maximum complexity. Best paired with chapter 6's full-node setup.
 
 For your first Lightning experience, **Phoenix** (iOS/Android, by ACINQ) is the cleanest entry point: self-custodial, opens channels automatically when you receive your first payment, has a usable interface for beginners. Set it up the way you set up your on-chain wallet: install, write down the seed, back it up.
 
@@ -122,7 +122,7 @@ A heuristic that gets most cases right:
 | Over a few thousand | On-chain | LN channel capacity limits + settlement preference |
 | To someone who doesn't have LN | On-chain | They can't receive what they can't receive |
 | Repeated payments to the same party | Open an LN channel | Pay once, transact forever |
-| Long-term storage | Neither — just don't move it | Cold storage, see chapter 4 |
+| Long-term storage | Neither - just don't move it | Cold storage, see chapter 4 |
 
 Most people use both. A Lightning wallet on the phone for daily stuff; an on-chain wallet (preferably on hardware) for holding.
 
@@ -132,12 +132,12 @@ The flip side of sending: how to *get* paid.
 
 **On-chain:**
 - Generate a fresh address each time. Modern wallets do this automatically.
-- Avoid address reuse. It's a privacy leak — anyone who sees the address can later see all subsequent receipts to it. (Newer wallets default to never showing the same address twice.)
+- Avoid address reuse. It's a privacy leak - anyone who sees the address can later see all subsequent receipts to it. (Newer wallets default to never showing the same address twice.)
 - Share the address as a string or a QR code. The sender pays at whatever fee rate they pick; you have no control over the fee.
 
 **Lightning:**
 - Generate an invoice. You can specify an amount (e.g., "pay me 5,000 sats") or leave it open ("pay me any amount").
-- Invoices are time-limited — usually one hour. After they expire, you generate a new one.
+- Invoices are time-limited - usually one hour. After they expire, you generate a new one.
 - The sender pays your invoice; the payment arrives in milliseconds; the invoice is consumed.
 
 There's an emerging standard called **Lightning Address** (looks like an email: `you@yourdomain.com`) that lets people pay you without generating a new invoice each time. Convenient, but requires running a small server or using a service that does. Optional for most users, useful if you do public-facing work that takes tips.
@@ -148,18 +148,18 @@ Once you're using Bitcoin for real, a few things become tangible that were previ
 
 - **You can pay anyone, anywhere, anytime.** No bank hours. No correspondent banking. No "we can't send to that country." A wallet on a phone with internet is a global financial terminal.
 - **Privacy is your job.** Every on-chain transaction is public forever. Avoid address reuse. Consider coin control if you're handling sensitive amounts. We have a [Privacy Best Practices](/downloads/bitcoin-privacy-best-practices.pdf) PDF on this site; read it before serious use.
-- **Mistakes are permanent.** Wrong address, wrong amount, wrong network — there's no helpdesk. Always test small first. Always verify before sending.
+- **Mistakes are permanent.** Wrong address, wrong amount, wrong network - there's no helpdesk. Always test small first. Always verify before sending.
 - **You're a target.** Anyone who knows you hold real bitcoin is, statistically, a slightly elevated security risk. Don't talk publicly about how much you hold. Don't put a sign outside your house that says "I HODL." The threat is low for most people but nonzero.
 
 These aren't reasons to avoid Bitcoin. They're the operational consequences of opting out of the trusted-third-party world. Worth it. Just real.
 
 ## 10. Your Milestone
 
-Before chapter 6 (Sovereignty — running a node, multisig, op-sec), do these three things:
+Before chapter 6 (Sovereignty - running a node, multisig, op-sec), do these three things:
 
-- [ ] Send a deliberate on-chain transaction — pick the fee rate yourself, watch it confirm
+- [ ] Send a deliberate on-chain transaction - pick the fee rate yourself, watch it confirm
 - [ ] Open a Lightning channel or fund a self-custodial LN wallet (Phoenix is the easy path)
-- [ ] Send and receive a Lightning payment — it should take seconds
+- [ ] Send and receive a Lightning payment - it should take seconds
 
 That's it. You're using Bitcoin, not just holding it. Welcome to actually living in the new monetary system.
 

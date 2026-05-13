@@ -23,4 +23,4 @@ relatedTerms:
 liveWidget: ~
 ---
 
-On the Lightning Network, invoices typically include a payment hash. When a sender initiates a payment, each hop in the route sets up an HTLC that references that hash. The final recipient claims the payment by disclosing the hash preimage—thus proving they’re entitled to the funds. This system prevents partial or fraudulent claims. Once the invoice’s preimage is revealed, intermediate nodes are assured they’ll receive their share of the routing fees. LN wallets automate this behind the scenes, but the concept remains the backbone of LN routing and settlement.
+On the Lightning Network, invoices typically include a payment hash. When a sender initiates a payment, each hop in the route sets up an HTLC that references that hash. The final recipient claims the payment by disclosing the hash preimage-thus proving they’re entitled to the funds. This system prevents partial or fraudulent claims. Once the invoice’s preimage is revealed, intermediate nodes are assured they’ll receive their share of the routing fees. LN wallets automate this behind the scenes, but the concept remains the backbone of LN routing and settlement.

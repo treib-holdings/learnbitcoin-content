@@ -23,5 +23,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-When Bitcoin usage spikes—like during market volatility or popular NFT experiments—more transactions flood the mempool. Miners have limited block space, so they prioritize the highest fee rates. This bidding process drives up fees, sometimes dramatically.
+When Bitcoin usage spikes-like during market volatility or popular NFT experiments-more transactions flood the mempool. Miners have limited block space, so they prioritize the highest fee rates. This bidding process drives up fees, sometimes dramatically.
 Fee escalation often self-regulates: as fees climb, casual users may postpone sending non-urgent transactions, causing demand to subside. Meanwhile, others might switch to Lightning Network for cheaper off-chain settlements. If usage remains high for an extended period, fees can stay elevated, prompting wallet providers to implement robust fee estimation and RBF support.

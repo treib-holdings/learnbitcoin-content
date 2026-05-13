@@ -25,5 +25,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A full node is your private gatekeeper, verifying every piece of data without relying on trust. By running a full node, you confirm all consensus rules—block sizes, valid signatures, transaction scripts—leaving no room for a sneaky miner or hostile node to feed you invalid data. Bitcoin Core is the most prominent full node software, though alternatives exist.
+A full node is your private gatekeeper, verifying every piece of data without relying on trust. By running a full node, you confirm all consensus rules-block sizes, valid signatures, transaction scripts-leaving no room for a sneaky miner or hostile node to feed you invalid data. Bitcoin Core is the most prominent full node software, though alternatives exist.
 While demanding more storage and bandwidth than light wallets, full nodes strengthen the network’s decentralization and give you maximum sovereignty over your transactions. You aren’t dependent on a third party’s interpretation of the chain, and you can set your own policies for mempool acceptance, ensuring you remain unfooled by potential forks or malicious peers.

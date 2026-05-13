@@ -21,5 +21,5 @@ relatedTerms:
 liveWidget: ~
 ---
 
-In some Lightning Network designs, the punishment for cheating—trying to broadcast an old channel state—doesn’t happen instantly. Instead, there’s a ‘delayed justice’ window, giving the honest participant time to react and claim the cheater’s balance if cheating is confirmed.
+In some Lightning Network designs, the punishment for cheating-trying to broadcast an old channel state-doesn’t happen instantly. Instead, there’s a ‘delayed justice’ window, giving the honest participant time to react and claim the cheater’s balance if cheating is confirmed.
 This delay helps avoid accidental or mis-timed penalties, ensuring only truly malicious attempts are punished. It’s akin to receiving an official warning before losing everything, making LN dispute resolution a bit more forgiving while still deterring dishonesty. The concept underscores LN’s complexity, balancing fairness and security in a trust-minimized environment.

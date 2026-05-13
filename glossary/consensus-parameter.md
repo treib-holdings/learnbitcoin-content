@@ -2,7 +2,7 @@
 title: "Consensus Parameter"
 slug: consensus-parameter
 draft: false
-shortDefinition: "A network-wide rule or setting—like block size or difficulty—that all full nodes must follow for consensus."
+shortDefinition: "A network-wide rule or setting-like block size or difficulty-that all full nodes must follow for consensus."
 keyTakeaways:
   - "Defines fundamental rules of block and transaction validity"
   - "Changes risk chain splits if not broadly accepted"
