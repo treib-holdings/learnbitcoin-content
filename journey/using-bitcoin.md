@@ -12,7 +12,7 @@ sources:
   - { label: "mempool.space - live fee dashboard", url: "https://mempool.space" }
   - { label: "Bitcoin developer guide - transactions", url: "https://developer.bitcoin.org/devguide/transactions.html" }
   - { label: "Lightning Network whitepaper (Poon & Dryja, 2016)", url: "https://lightning.network/lightning-network-paper.pdf" }
-  - { label: "chainquery - live mempool feed", url: "https://chainquery.com/reports/data/mempool.json" }
+  - { label: "ChainQuery - live mempool feed", url: "https://chainquery.com/reports/data/mempool.json" }
 ---
 
 > **Where you're going:** You'll send an on-chain transaction with a fee you chose deliberately, generate a Lightning invoice, and receive a Lightning payment. Both should feel different. Both should leave you with a working mental model of when to use which.
@@ -55,7 +55,7 @@ When the mempool is empty (mining capacity exceeds demand), almost any fee gets 
 **Tools that show you the live state:**
 
 - [**mempool.space**](https://mempool.space) - the standard. Live mempool visualization, fee estimates, block timing.
-- [**chainquery's live mempool feed**](https://chainquery.com/reports/data/mempool.json) - JSON data from our own Bitcoin node, updated every few seconds. Same data, different presentation.
+- [**ChainQuery's live mempool feed**](https://chainquery.com/reports/data/mempool.json) - JSON data from a live Bitcoin node, updated every few seconds. Same data, different presentation.
 - Your own node's `bitcoin-cli estimatesmartfee` - if you run one.
 
 A sensible workflow:

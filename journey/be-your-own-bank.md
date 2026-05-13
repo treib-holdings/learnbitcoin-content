@@ -147,7 +147,7 @@ This is the moment.
 2. **Generate a fresh address.** Every wallet has a "Receive" button. Click it. The wallet derives a new address from your seed and shows it to you, usually as a QR code and a string starting with `bc1`.
 3. **Send a small amount to that address.** From an exchange, another wallet, anywhere. Five or ten dollars worth of sats. Don't send your life savings to a brand-new wallet you've never used.
 4. **Watch the mempool.** Your wallet will show "unconfirmed" almost immediately as the transaction enters the mempool. Within ~10 minutes you should see 1 confirmation. After about an hour, 6.
-5. **Verify the receive address externally.** Open [chainquery.com/address/](https://chainquery.com/address) and paste your address. You should see the same balance and the same incoming transaction. Two independent views of the same chain. This is the verify-don't-trust step.
+5. **Verify the receive address externally.** Open [ChainQuery.com/address/](https://chainquery.com/address) and paste your address. You should see the same balance and the same incoming transaction. Two independent views of the same chain. This is the verify-don't-trust step.
 
 Congratulations. You just did self-custody.
 
