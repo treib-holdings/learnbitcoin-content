@@ -70,4 +70,6 @@ Limitations are real:
 
 Lightning is how Bitcoin scales without changing the base layer. The base layer optimizes for settlement security across decades; Lightning optimizes for instant payments. The two are complementary by design.
 
+**A note on BOLT-12 offers.** The legacy invoice format is [BOLT-11](/glossary/bolt-11) - single-use, point-in-time payment requests. BOLT-12 ("offers") is the modern successor: reusable, supports recurring payments, smaller, more private. It was officially merged into the Lightning specification in September 2024. Adoption is implementation-dependent as of 2026: Core Lightning, LDK, and eclair/Phoenix support it natively; LND does not yet (workable via the LNDK shim). Services like Strike, Lightspark, and CoinOS have shipped support; most everyday wallets still default to BOLT-11. Expect that to shift over the next few years.
+
 See [Lightning Channel](/glossary/lightning-channel) for the building block, and [Journey: Using Bitcoin](/journey/using-bitcoin) for the practical user view.
