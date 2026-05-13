@@ -17,6 +17,9 @@ downloads:
   - { label: "Bitcoin Units Cheat Sheet (PDF)", file: "bitcoin-units-cheatsheet.pdf" }
 ---
 
+import UnitsConverter from '@components/units/UnitsConverter.svelte';
+import UnitsVisualization from '@components/units/UnitsVisualization.svelte';
+
 Ever tried buying a pack of gum with a hundred-dollar bill? Sure, it's doable, but you might get a strange look — plus, counting the change can get messy. Now imagine trying to pay for something small with an entire Bitcoin without knowing how to "break it down." That's where Bitcoin's smaller denominations ride to the rescue, whether you're a newcomer still learning about your seed phrase or a seasoned Bitcoiner who remembers MtGox. Grab a comfy seat: we're about to dive deep into the fascinating world of Bitcoin units.
 
 > **Pro tip:** Bookmark this page or press `Ctrl+D` (`Cmd+D` on Mac) to come back whenever you need a quick refresher or want to check our interactive converter.
@@ -34,7 +37,9 @@ When Bitcoin was new, no one thought much about fractions — you either had a w
 
 ## 2. The Bitcoin Units to Satoshi Visualization
 
-::unitsVisualization
+Each unit lives at a fixed position in Bitcoin's decimal scale. The orange circles are everything from that unit *down* to the satoshi — the outlined circles are the leading zeros above it.
+
+<UnitsVisualization client:visible unit="finney" />
 
 ## 3. Meet the Gang — BTC, mBTC, µBTC, Finney, and Sats
 
@@ -42,11 +47,15 @@ Let's step through each unit, why it exists, and how you might use it.
 
 ### BTC (Bitcoin) — The whole coin
 
+<UnitsVisualization client:visible unit="btc" showLabel={false} />
+
 - **What it is:** The standard unit we all know. There will never be more than 21 million Bitcoin.
 - **How it helps:** Useful for quoting big trades or referencing the overall market price.
 - **Fun fact:** 1 BTC = 100,000,000 satoshis. That's a lot of slices.
 
 ### dBTC (deci-Bitcoin) — Unnamed
+
+<UnitsVisualization client:visible unit="dbtc" showLabel={false} />
 
 - **What it is:** One-tenth of a Bitcoin, or 0.1 BTC. That's 10,000,000 satoshis.
 - **How it helps:** A solid chunk of value — often used in savings, OTC trades, or quoting mid-size balances.
@@ -54,11 +63,15 @@ Let's step through each unit, why it exists, and how you might use it.
 
 ### cBTC (Centibit) — The handy middle ground
 
+<UnitsVisualization client:visible unit="cbtc" showLabel={false} />
+
 - **What it is:** One hundredth of a Bitcoin, or 0.01 BTC. That's 1,000,000 satoshis.
 - **How it helps:** Great for everyday transactions — big enough to feel meaningful, small enough to be practical.
 - **Fun fact:** If Bitcoin were gold, a centibit would be like carrying around a hefty gold coin — compact, but still packing real value.
 
 ### mBTC (Millibitcoin, Millibits)
+
+<UnitsVisualization client:visible unit="mbtc" showLabel={false} />
 
 - **What it is:** One-thousandth of a Bitcoin.
 - **Definition:** 1 mBTC = 0.001 BTC.
@@ -66,11 +79,15 @@ Let's step through each unit, why it exists, and how you might use it.
 
 ### Finney
 
+<UnitsVisualization client:visible unit="finney" showLabel={false} />
+
 - **What it is:** A tribute to Hal Finney, one of Bitcoin's earliest pioneers.
 - **Definition:** Commonly 1 Finney = 0.0001 BTC (10,000 satoshis).
 - **Why it matters:** Some people honor Bitcoin's history by using Finneys to measure everyday amounts — a nod to the second-ever person to run Bitcoin software.
 
 ### Unnamed (0.00001 BTC)
+
+<UnitsVisualization client:visible unit="p5" showLabel={false} />
 
 - **What it is:** One hundred-thousandth of a Bitcoin, or 0.00001 BTC. That's 1,000 satoshis.
 - **How it helps:** Ideal for microtransactions, fine-tuning fees, or testing wallet setups with minimal risk.
@@ -78,17 +95,23 @@ Let's step through each unit, why it exists, and how you might use it.
 
 ### µBTC (Microbitcoin, "bits")
 
+<UnitsVisualization client:visible unit="ubtc" showLabel={false} />
+
 - **What it is:** One-millionth of a Bitcoin.
 - **Definition:** 1 µBTC = 0.000001 BTC.
 - **Why we love it:** Works with all legacy financial systems that already support two decimal places for the smallest unit.
 
 ### Unnamed (0.0000001 BTC)
 
+<UnitsVisualization client:visible unit="p7" showLabel={false} />
+
 - **What it is:** One ten-millionth of a Bitcoin, or 0.0000001 BTC. That's 10 satoshis.
 - **How it helps:** Used in ultra-fine fee adjustments and experimental micropayments. Not common, but technically valid.
 - **Fun fact:** Most wallets won't let you send a 10-sat payment without rounding up.
 
 ### Satoshis (Sats) — The smallest slice
+
+<UnitsVisualization client:visible unit="sat" showLabel={false} />
 
 - **What it is:** Named after Satoshi Nakamoto, the mysterious creator(s) of Bitcoin.
 - **Definition:** 1 sat = 0.00000001 BTC. Eight decimal places.
@@ -120,7 +143,7 @@ Could we go smaller? Technically, yes. Bitcoin was designed with adaptability in
 
 ## 6. Bitcoin Units Converter
 
-::unitsConverter
+<UnitsConverter client:load />
 
 > **Pro tip:** Double-check your decimals. If you meant 10,000 sats but typed 100,000, that's a big difference.
 
