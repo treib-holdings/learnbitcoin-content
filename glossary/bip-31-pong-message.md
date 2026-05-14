@@ -20,5 +20,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 31, found in [BIP-31](https://github.com/bitcoin/bips/blob/master/bip-0031.mediawiki), added a simple but important feature to the Bitcoin peer-to-peer protocol: when a node receives a "ping," it can now send back a matching "pong." This exchange helps confirm an active connection and ensures messages aren't just disappearing into the void.
-Though small, it standardized a keep-alive mechanism. Before BIP 31, nodes had less direct feedback on network health. Now, by matching ping-pong sequences, nodes quickly detect unresponsive or disconnected peers. This paves the way for more efficient resource management and a better-connected network overall.
+BIP 31, authored by Mike Hearn in 2012, added the `pong` message to Bitcoin's P2P protocol. Before BIP 31, the existing `ping` message had no required reply: a node could send `ping` and the peer might ignore it or just disconnect; you couldn't tell which.
+
+BIP 31 fixed that. `ping` now includes a randomly-chosen 64-bit nonce; the peer is expected to reply with `pong` echoing the same nonce. The round trip confirms the peer is alive and yields a measurable latency.
+
+Modest as it sounds, this enables:
+
+- **Liveness detection.** A node that doesn't return `pong` within a reasonable window gets disconnected, freeing the slot.
+- **Latency-based peer selection.** Bitcoin Core prefers faster-responding peers for block propagation.
+- **NAT keep-alive.** Periodic ping / pong keeps stateful firewalls and NAT mappings from collapsing the connection during idle periods.
+
+It's one of those tiny BIPs that feels invisible because the protocol couldn't really work without it. Activated by software version negotiation: peers that support BIP 31 (effectively all peers since Bitcoin 0.6.1, released March 2012) use it; older peers fall back to the no-reply ping.
+
+Spec: [BIP-31](https://github.com/bitcoin/bips/blob/master/bip-0031.mediawiki).
