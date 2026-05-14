@@ -12,4 +12,10 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-In older Bitcoin Core implementations, the wallet generates a set of future addresses (a key pool) during startup. When you request a new receiving address, the wallet pulls from this pool instead of generating it on the fly. This reduces the chance of address reuse, which erodes privacy. If the key pool is exhausted, Bitcoin Core automatically creates more addresses in the background. Modern HD wallet approaches also maintain a similar concept, though behind the scenes, they derive fresh keys from the master seed instead of storing them individually. Still, the 'key pool' notion remains an internal wallet mechanism preventing accidental reuse and ensuring quick address generation.
+The key pool is a Bitcoin Core wallet implementation detail: a cache of pre-generated keys (and addresses) so that fresh addresses are instantly available without on-demand key generation, and so backups remain valid across some window of address creation.
+
+In the original legacy (non-HD) wallets, the key pool was load-bearing. Each generated key was independent random data; if the user requested addresses faster than the wallet backed itself up, the backup could become stale and addresses created after the backup wouldn't be recoverable. The pool (default 100 keys) was a buffer: as long as you backed up after the pool was generated, you were covered for the next 100 addresses.
+
+After HD wallet support landed in Bitcoin Core 0.13 (2016), the keypool concept became less load-bearing. HD derivation lets the wallet generate any future address deterministically from the seed, so backup is just "back up the seed." But the keypool is still maintained internally so addresses are pre-generated and so the wallet keeps a derivation window for gap-limit scanning (the standard convention is that addresses beyond 20 unused derivations don't get scanned).
+
+In 2026, Bitcoin Core's descriptor wallets handle this through descriptor ranges instead of an opaque "keypool," but the underlying idea is the same. For users, it's invisible. Wallets just produce fresh addresses on demand, and backup is one seed phrase. The keypool plumbing is one of those things that makes "just use the wallet" work.

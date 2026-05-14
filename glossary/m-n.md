@@ -23,4 +23,17 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Multisignature addresses aren't limited to 2-of-3 or 3-of-5. Any combination M-of-N can be used, where M is the threshold of signatures needed to spend funds. This provides granular control over security and redundancy. For instance, a corporation might adopt 3-of-5 for board approvals, or a family might use 2-of-2 to require both spouses' agreement. Bitcoin's standard script supports up to 15-of-15, though storing and coordinating that many keys can be impractical. M-of-N is the backbone of advanced custody, forging trustless cooperation between signers.
+M-of-N is the standard shorthand for threshold multisig: any M signatures out of N total cosigners are sufficient to spend. The two numbers tune two independent dials:
+
+- M is the security threshold. Larger M means more cosigners must agree, harder to steal.
+- N - M is the redundancy. The wallet survives loss of up to N - M cosigners without losing access.
+
+Common configurations:
+
+- 2-of-3: the personal-custody sweet spot. One key with you, one with a trusted backup location, one with a third party (lawyer, friend, custody service). Survives loss of any one. Steal one and you can't spend; steal two and you can.
+- 3-of-5: institutional default. Survives loss of two, requires three to spend. Standard for corporate treasuries.
+- 4-of-7 or higher: large federations and high-stakes custody. Liquid's functionary set is 11-of-15.
+
+Legacy Bitcoin multisig (pre-Taproot, P2SH or P2WSH) hard-caps at 15 cosigners due to the `OP_CHECKMULTISIG` opcode design. Taproot script-path spends with MAST trees can go much higher. Taproot key-path spends with MuSig2 / FROST aggregation make the M-of-N structure invisible on-chain entirely.
+
+The right choice is rarely "more cosigners." Each cosigner is a real human or device, and each is a failure mode: lost device, dead person, forgotten passphrase, miscommunication during signing. Most retail users do better with 2-of-3 than with anything fancier. Institutional setups generally settle on 3-of-5 unless there's a regulatory reason to go higher.

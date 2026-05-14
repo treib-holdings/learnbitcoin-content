@@ -24,4 +24,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A key generation ceremony involves multiple participants, each providing entropy (random data), ensuring no single person can control or predict the final key. This approach may use hardware security modules, offline devices, or elaborate rituals (like rolling dice) to guarantee randomness. Often recorded or witnessed, it aims to build trust that the resulting keys (e.g., for a multisig or a protocol's master key) aren't secretly known or compromised by one participant. Common in high-stakes applications-such as hardware wallet manufacturing or multi-party custody-ceremonies bolster confidence in the system's foundational cryptography.
+A key generation ceremony is the structured event of creating a high-stakes cryptographic key under conditions designed to ensure no single party knows or could have influenced the result.
+
+Typical components:
+
+- Multiple participants. Each contributes independent entropy (sometimes literally by rolling physical dice). The final key is derived from the combined contributions.
+- Air-gapped or hardened hardware. No general-purpose computer with a network interface; the work happens on a dedicated device that's destroyed or wiped at the end.
+- Witnesses, often with video recording or independent observers. The ceremony is reviewable after the fact.
+- Verification of the resulting public key, with the private key (or shares of it) sealed before anyone leaves the room.
+
+Real Bitcoin examples:
+
+- Liquid sidechain functionary key setup, where the 11-of-15 federation keys were generated in a coordinated ceremony.
+- Hardware wallet manufacturer master keys for firmware signing.
+- DKG (distributed key generation) for FROST-based threshold setups, where the protocol mathematically guarantees no single participant ever sees the combined key.
+- Self-custody multisig setups for high-net-worth families or institutions, where each cosigner generates their seed on an air-gapped device in front of witnesses.
+
+The cryptography by itself is fine. The ceremony exists to defeat social engineering, supply chain attacks, and the "trust me, the key is safe" claim that always sounds reasonable right before something goes wrong.

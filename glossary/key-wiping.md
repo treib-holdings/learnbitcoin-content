@@ -21,4 +21,10 @@ relatedTerms:
 liveWidget: ~
 ---
 
-When private keys remain in RAM or on disk, sophisticated attackers (or well-funded forensics teams) can sometimes retrieve them. Key wiping uses cryptographic erasure, overwriting memory with random data and ensuring there are no remnants left on persistent storage. Many hardware wallets and secure OS environments practice automatic wiping after each signing operation, or upon lockout/factory reset. The goal is to minimize the time a key sits unencrypted, reducing the window for potential theft. Good key wiping routines help preserve the air of 'cold storage' even when a device occasionally signs transactions.
+Key wiping is the practice of overwriting private-key material in memory (and persistent storage) so it can't be recovered through later forensic analysis, cold-boot attacks, or malware that scrapes the device after the fact.
+
+In hardware wallets it's part of the firmware contract. Trezor, ColdCard, Jade, BitBox, Ledger, and the rest unpack the seed only when needed for a derivation or signature, do the work in a constrained region of memory, and overwrite that region before returning. On factory reset, the entire secure element or flash region holding the seed is overwritten (not just marked deleted).
+
+In general-purpose software the picture is messier. Bitcoin Core's wallet encryption tries to clear sensitive buffers when locked, but it's running on a multi-tasking OS where swap files, memory pressure, and kernel paging can copy buffers to disk without the application's knowledge. This is one of the reasons hardware wallets exist: the controlled execution environment makes key wiping actually enforceable.
+
+The practical goal is to minimize the window during which a key sits decrypted in any kind of recoverable storage. A well-implemented hardware wallet signs in milliseconds and wipes immediately, keeping the exposed window short even relative to a fast attacker. A signing operation done by typing a seed into a general-purpose computer leaves traces that may persist for months.

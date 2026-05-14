@@ -26,4 +26,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Key rotation is like changing the locks on your house periodically. In Bitcoin, you might create new addresses after a certain number of transactions or time intervals, preventing hackers or malicious insiders from having indefinite access if they ever obtained a key. This practice also helps limit how much data can be correlated to one address, improving privacy. Large custodians or corporate wallets often integrate automated key rotation into their security protocols, ensuring they don't rely too heavily on a single static set of private keys over the long run.
+"Key rotation" has two distinct meanings in Bitcoin, and conflating them is a common source of confusion:
+
+- Address rotation: using a fresh address for every receive. HD wallets do this automatically, and the keys for each address are derived from the same master seed. The seed itself doesn't rotate. This is privacy hygiene, not security rotation, and every modern wallet does it by default.
+
+- True key rotation: moving funds from one set of keys to a brand new set, then destroying or retiring the old keys. This is what corporate security policy means by "rotate the keys." In Bitcoin it's a deliberate, manual operation: spend everything to fresh addresses derived from a new seed.
+
+True key rotation makes sense when:
+
+- A cosigner in a multisig leaves and you don't want them holding even a now-insufficient share of the quorum.
+- You suspect a key has been compromised but aren't sure (cold backup that was briefly exposed, for example).
+- A long-running setup has accumulated enough operational history that you'd rather start fresh than audit every past touchpoint.
+
+For most individual users, periodic key rotation in this stronger sense is overkill. The seed sitting in your hardware wallet is not at higher risk this year than it was last year. Address rotation (automatic) handles the privacy story; rotating the underlying seed without cause just introduces opportunities for human error during the migration.

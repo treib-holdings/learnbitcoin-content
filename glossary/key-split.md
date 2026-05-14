@@ -21,4 +21,13 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Key splitting protects against a single point of failure: if an attacker (or an internal threat) obtains just one fragment, they still can't move your Bitcoin. Shamir's Secret Sharing is one well-known method-n-of-m shares can reconstruct the private key, but fewer than n is useless. Enterprises, families, or collaborative custody services leverage key splits to distribute control across different people or secure locations. It's not exactly the same as a multisig on-chain, but it can serve a similar function off-chain, requiring partial collaboration to rebuild the key for signing.
+Key splitting partitions a private key (or a seed) into multiple shares such that any threshold number can reconstruct the secret but fewer cannot. The canonical math is Shamir's Secret Sharing (SSS).
+
+In Bitcoin practice, the most common form is SLIP-39, a standardized SSS scheme for BIP 39 seeds. Trezor supports it natively, and tools like SeedSigner can produce SLIP-39 shares from any seed. Typical configurations: 2-of-3 or 3-of-5 shares spread across geographic locations or trusted parties.
+
+The crucial caveat that most introductions skip: key splitting is not the same security model as multisig.
+
+- Multisig: each cosigner signs independently with their own key, and the M signatures get combined by the script. No single device ever holds the spending capacity.
+- Key splitting: at signing time, the threshold of shares must be combined back into a single private key on one device, which then signs. That device momentarily holds the full key.
+
+So key splitting is excellent for cold backup distribution (no one location is sufficient to steal the wallet) but worse than multisig for hot/warm operational use (the reconstruction event is a juicy target). Most security-serious setups use multisig for the operational layer and may use SSS to distribute backup of any single key.
