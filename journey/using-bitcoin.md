@@ -12,7 +12,7 @@ sources:
   - { label: "mempool.space - live fee dashboard", url: "https://mempool.space" }
   - { label: "Bitcoin developer guide - transactions", url: "https://developer.bitcoin.org/devguide/transactions.html" }
   - { label: "Lightning Network whitepaper (Poon & Dryja, 2016)", url: "https://lightning.network/lightning-network-paper.pdf" }
-  - { label: "ChainQuery - live mempool feed", url: "https://chainquery.com/reports/data/mempool.json" }
+  - { label: "ChainQuery - fee pressure dashboard", url: "https://chainquery.com/fee-pressure" }
 ---
 
 > **Where you're going:** You'll send an on-chain transaction with a fee you chose deliberately, generate a Lightning invoice, and receive a Lightning payment. Both should feel different. Both should leave you with a working mental model of when to use which.
@@ -55,8 +55,8 @@ When the mempool is empty (mining capacity exceeds demand), almost any fee gets 
 **Tools that show you the live state:**
 
 - [**mempool.space**](https://mempool.space) - the standard. Live mempool visualization, fee estimates, block timing.
-- [**ChainQuery's live mempool feed**](https://chainquery.com/reports/data/mempool.json) - JSON data from a live Bitcoin node, updated every few seconds. Same data, different presentation.
-- Your own node's `bitcoin-cli estimatesmartfee` - if you run one.
+- [**ChainQuery's fee pressure dashboard**](https://chainquery.com/fee-pressure) - live read on what's clearing right now, served from a real Bitcoin node.
+- Your own node's [`estimatesmartfee`](https://chainquery.com/rpc/estimatesmartfee) - if you run one.
 
 A sensible workflow:
 
@@ -75,7 +75,7 @@ Suppose you sent at 5 sat/vB and then a mempool surge raised the floor to 50 sat
 
 The mechanics: RBF requires the original transaction to have signaled "replaceable" (a flag in the transaction). Most wallets enable this by default. If yours didn't, you have another option called **Child Pays for Parent (CPFP)**, where you spend the *change output* of your stuck transaction with a higher fee, dragging the parent into a block alongside it.
 
-Don't memorize the mechanics. Memorize the principle: **your transaction isn't stuck forever; it's just at the wrong fee level for current conditions.** Wait or bump.
+Don't memorize the mechanics. Memorize the principle: **your transaction isn't stuck forever; it's just at the wrong fee level for current conditions.** Wait or bump. And if the fee is so low that it never confirms at all, the transaction eventually drops out of the mempool (typically after about two weeks at most nodes' default expiry) and the funds return to spendable in your wallet. You never lose bitcoin to a stuck transaction - the UTXOs are still yours, the broadcast just didn't take.
 
 ## 5. The Lightning Network: An Overview
 
@@ -117,7 +117,7 @@ A heuristic that gets most cases right:
 | If your payment is... | Use... | Why |
 |---|---|---|
 | Under $50 | Lightning | Fees and speed both favor LN |
-| $50 to a few hundred | Either | Personal preference |
+| $50 to a few hundred | On-chain or LN | Personal preference |
 | A few hundred to a few thousand | On-chain or LN | LN works fine, on-chain is fine if you're not in a rush |
 | Over a few thousand | On-chain | LN channel capacity limits + settlement preference |
 | To someone who doesn't have LN | On-chain | They can't receive what they can't receive |

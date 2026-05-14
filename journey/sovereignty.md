@@ -188,7 +188,7 @@ This is not a competitive sport. The point of sovereignty is calm, not anxiety.
 
 ## 11. Graduation
 
-You're done with the journey.
+You're done with the first part of the journey.
 
 You understand why money is broken. You know what Bitcoin actually is. You know how it works under the hood. You self-custody. You use both layers. You run your own node. You have multisig. You have a plan for what happens after you.
 
@@ -198,6 +198,6 @@ You don't need permission. You don't need a custodian. You don't need to ask any
 
 There is more, of course. Lightning routing nodes. Liquid sidechains. Watchtowers. Coinjoin. Discreet log contracts. PSBTs across air-gapped multisig. Sovereign computing more broadly. Network privacy at the application layer. We've started a section called **Rabbit Holes** for those, each one a self-contained explorer on a single topic. Pick one when you feel like it. None of them is required to use Bitcoin well.
 
-The journey ends here. The rabbit holes are forever.
+Your journey has begun. [The rabbit holes](/rabbit-holes) go deeper.
 
 > **Pro tip:** Sovereignty is not a destination, it's a posture. The work you did over these six chapters isn't a finish line - it's a foundation. The next ten years of your relationship with Bitcoin will be richer than the first six chapters because you put in the foundation now. Have fun. Stay humble. Run a node.
