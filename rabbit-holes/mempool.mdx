@@ -1,0 +1,146 @@
+---
+title: "The Mempool"
+slug: mempool
+draft: false
+status: planned
+section: rabbit-hole
+tagline: "Where transactions wait before they are real. The auction-house buffer between you and a block."
+order: 7
+estimatedMinutes: 11
+sources:
+  - { label: "BIP 125 - Opt-in Full Replace-by-Fee Signaling", url: "https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki" }
+  - { label: "Bitcoin Core source - txmempool.h", url: "https://github.com/bitcoin/bitcoin/blob/master/src/txmempool.h" }
+  - { label: "mempool.space - real-time mempool visualization", url: "https://mempool.space/" }
+relatedTerms: ["mempool", "transaction-fee", "bip-125-replace-fee", "fee-rate-escalation", "fee-floor", "fee-sniping"]
+hasInteractive: ["mempoolHistogram"]
+---
+
+import MempoolHistogram from '@components/mining/MempoolHistogram.svelte';
+
+> **Where you're going:** A walk through the most misunderstood piece of Bitcoin's plumbing. You will learn why "the mempool" does not exist as a single global object (each node has its own), how transactions enter and leave, why fee *rate* is the only number that matters, and what to do when your transaction gets stuck.
+
+## 1. The Mempool, In One Line
+
+The mempool is the holding area for transactions that have been broadcast but not yet included in a block.
+
+When you send a Bitcoin transaction, it does not go straight into the blockchain. It goes into the mempool of whichever node received it first, gets relayed to that node's peers, gets relayed to *their* peers, and propagates across the global network within seconds. From there, it sits and waits.
+
+Until a miner picks it up and includes it in a block, your transaction is *unconfirmed*. It exists, it is valid, but it is not yet permanent.
+
+## 2. There Is No "The" Mempool
+
+A common mistake: treating the mempool as a single global object.
+
+It is not. **Every full node maintains its own mempool.** They mostly converge because they all relay transactions and apply similar policies, but they are not identical.
+
+When you check "the mempool" on a website like mempool.space, you are looking at *that website's node's* mempool. A different node, particularly one with a different policy configuration, might see a slightly different set of transactions.
+
+This matters in a few practical cases:
+
+- **Network partitions** (rare but real) can cause mempools to diverge for minutes.
+- **Bitcoin Knots vs Core** apply different relay policies. Knots is more restrictive about inscription-style transactions and will not relay some that Core will.
+- **Miners' private mempools.** Mining pools sometimes accept transactions out-of-band that are not in any public mempool, then include them in blocks they mine.
+
+For most users, "the mempool" is a useful approximation. For anyone debugging a stuck transaction, knowing the abstraction is leaky is essential.
+
+## 3. How Transactions Enter
+
+When you broadcast a transaction:
+
+1. Your wallet sends it to a Bitcoin node (yours, your wallet provider's, or via a public broadcast service).
+2. That node validates it. Signatures correct? Inputs exist and unspent? Fee meets relay minimum? Script policy ok?
+3. If valid, the node adds it to its mempool and relays it to peers via the `inv` → `getdata` → `tx` message sequence.
+4. Each receiving peer repeats steps 2 and 3.
+
+Within roughly 5 to 10 seconds, the transaction is in most mempools globally.
+
+The validation in step 2 is **node policy**, not consensus. A transaction can be valid by consensus rules (it would be accepted in a block) but rejected by relay policy (the node will not pass it on). This is why some transactions sit in zero public mempools but still get mined - they are submitted directly to a miner.
+
+## 4. How Transactions Leave
+
+A transaction in the mempool has four possible exits:
+
+- **Confirmed.** A miner included it in a block. The block was relayed, accepted, and added to the chain. The transaction is now part of consensus. This is the goal.
+- **Evicted.** The mempool has size limits (default 300 MB in Bitcoin Core). When the mempool fills up, transactions with the lowest fee rates get dropped. A dropped transaction can be rebroadcast later, but most wallets do not automate this.
+- **Replaced.** If the transaction signaled RBF (or the node uses full-RBF policy), a higher-fee version replaces it in the mempool. The original is forgotten.
+- **Conflicted.** If a different transaction spends one of the same UTXOs and gets mined first, your transaction becomes invalid (the UTXO no longer exists) and gets dropped.
+
+The default Bitcoin Core mempool keeps unconfirmed transactions for up to **two weeks** before eviction.
+
+## 5. Fee Rate, Not Absolute Fee
+
+This is the single most important thing to understand about the mempool:
+
+**Miners care about fee rate, not absolute fee.**
+
+Fee rate is the fee divided by the transaction's size, expressed in satoshis per virtual byte (**sat/vB**). A 250-byte transaction with a 2,500 sat fee has the same fee rate (10 sat/vB) as a 1,000-byte transaction with a 10,000 sat fee.
+
+Why? Because block space is the scarce resource. A miner with a fixed roughly 4 million weight units of space maximizes revenue by including the highest-fee-per-byte transactions first.
+
+This means:
+
+- A small transaction paying a tiny absolute fee can confirm faster than a large transaction paying a huge absolute fee, if the small one's *fee rate* is higher.
+- "I paid $20 in fees" is meaningless unless you also know how big the transaction was.
+- A transaction with many inputs costs more *absolutely* than one with few, because it is bigger - but the fee rate is what the miner optimizes for.
+
+The UTXOs you choose to spend (see [UTXOs](/rabbit-hole/utxos)) directly determine your transaction size, which directly determines what fee rate buys you a given confirmation time. The two are inseparable.
+
+## 6. The Histogram
+
+Here is the current state of the mempool, ordered by fee rate:
+
+<MempoolHistogram client:visible />
+
+Each bucket shows how much pending fee revenue sits at each rate level. The buckets at the top of the histogram are the ones that will be mined first.
+
+When the mempool is empty, almost any fee rate gets you confirmed in the next block. When the mempool is full (typical during high-volume periods), you need to outbid the transactions ahead of you.
+
+## 7. RBF and CPFP: What to Do When Stuck
+
+If you broadcast a transaction with too low a fee rate, it can sit in the mempool indefinitely. Two tools exist to unstick it:
+
+**Replace-By-Fee (RBF):** broadcast a replacement transaction with a higher fee. If the original signaled RBF (per [BIP 125](/glossary/bip-125-replace-fee)), nodes that follow the standard will replace it. Bitcoin Core 28.0 (October 2024) made full-RBF the default, so even non-signaling transactions can now be replaced on most of the network. This is the cleanest fix; you need RBF support in your wallet.
+
+**Child-Pays-For-Parent (CPFP):** if you cannot replace the original (you did not send it, or it came from a non-RBF wallet), you can spend the output of the stuck transaction in a *new* transaction that pays a high fee. Miners include transactions as packages; the high fee on the child incentivizes them to also include the parent. CPFP requires the recipient to participate (since they control the unconfirmed UTXO).
+
+If neither works, you wait. Either the mempool clears enough that your low-fee transaction makes it in, or after two weeks it gets evicted and you can try again.
+
+## 8. Mempool Policy Is Not Consensus
+
+A subtle but important distinction:
+
+- **Consensus rules** define what is valid in a block. These are enforced by every node and are very slow to change. They require a [soft fork](/glossary/soft-fork) or hard fork.
+- **Mempool / relay policy** defines what individual nodes choose to accept and relay. These are local, opinion-based, and can vary between node implementations.
+
+A transaction can be valid by consensus but rejected by relay policy. Examples:
+
+- A transaction with a non-standard script (technically valid, but no node will relay it). To get it mined, you submit directly to a miner.
+- A very large or very low-fee transaction (relay policy might drop it).
+- Inscription-bearing transactions (Bitcoin Core relays them; Bitcoin Knots, by default, does not).
+
+This matters because *policy* is what gets debated. When you hear "should Bitcoin Core filter inscriptions?" the question is whether to change relay policy. It is not a consensus change; it is a question of what individual nodes choose to do.
+
+## 9. The Mempool During Inscriptions
+
+Starting in early 2023, **inscriptions** (arbitrary data encoded into transaction witness data) caused sustained mempool congestion for the first time in years. Effects:
+
+- **Fee rates spiked** from typical 1 to 5 sat/vB to 50 to 300+ sat/vB during peak periods.
+- **The mempool grew** from typically 1 to 50 MB to consistently 100 to 500 MB.
+- **Wallets without RBF stranded.** Users could not bump fees on stuck transactions.
+- **Bitcoin Knots saw adoption growth.** Some operators want to filter inscriptions; Knots provides that policy by default.
+
+The debate about whether inscriptions are "spam" is real and ongoing. The technical reality is: they are valid Bitcoin transactions, they pay fees like any other, and the mempool sorts them by fee rate like any other. Whether a node operator chooses to relay them is up to that operator.
+
+## 10. What This Buys Us
+
+The mempool's role in Bitcoin is **price discovery for block space.**
+
+Block space is the scarce, valuable resource. The mempool is the live auction. Every block is a sealed-bid first-price auction where the miner picks the highest-bidding transactions to fill the roughly 4 million weight units of space available.
+
+Without the mempool: no fee market, no fee signaling, no graceful congestion handling. The chain would just drop transactions that arrived faster than they could be mined.
+
+With the mempool: a transparent, adversarial, real-time market that prices block space from second to second. The system that lets miners earn fees, lets users signal urgency, and lets the network handle 10x demand spikes without falling over.
+
+It is not pretty. It is, however, the right design.
+
+> **Pro tip:** Before sending a non-trivial Bitcoin transaction, glance at the current mempool fee histogram. Three minutes of attention to fee rates can save you hours of waiting or dollars of overpaying.

@@ -1,0 +1,193 @@
+---
+title: "Seed Backup Strategies"
+slug: seed-backup-strategies
+draft: false
+status: planned
+section: rabbit-hole
+tagline: "Twelve words is your wallet. Lose them and you lose your bitcoin. Here is how serious people back them up."
+order: 8
+estimatedMinutes: 12
+sources:
+  - { label: "BIP 39 - Mnemonic code for generating deterministic keys", url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" }
+  - { label: "SLIP 39 - Shamir's Secret-Sharing for Mnemonic Codes", url: "https://github.com/satoshilabs/slips/blob/master/slip-0039.md" }
+  - { label: "Glacier Protocol - high-security cold storage", url: "https://glacierprotocol.org/" }
+relatedTerms: ["seed-phrase", "bip-39", "bip-32", "shamir-secret-sharing", "multisig", "inheritance-seed-backup", "hardware-seed-vault"]
+hasInteractive: []
+---
+
+> **Where you're going:** A practical, threat-model-first walk through how to back up a Bitcoin seed phrase. You will learn what you are actually backing up, the three threats you are defending against (theft, loss, coercion), and the concrete options - from a sheet of paper to a multi-location, multi-party, multi-signature setup.
+
+## 1. What You Are Actually Backing Up
+
+When you set up a Bitcoin wallet, somewhere in the process the wallet shows you 12 or 24 words. Write them down, the wallet says. Keep them safe.
+
+Those words are your [seed phrase](/glossary/seed-phrase), more precisely a [BIP 39](/glossary/bip-39) mnemonic. They encode the entropy from which every private key in your wallet is derived. Lose the words, lose every key, lose every bitcoin those keys ever controlled.
+
+Critical: the seed phrase is the *only* thing you need to back up. You do not need to back up:
+
+- **The wallet software.** Any BIP-39 compatible wallet can re-derive your keys from the words.
+- **The list of addresses.** They are derived deterministically from the seed.
+- **Transaction history.** It is on the blockchain.
+
+You also do not need to back up the device. A hardware wallet is just a key-derivation device; if the device dies, you restore the seed into a new device and you are back where you started.
+
+The seed is everything. Everything else is recoverable from the seed.
+
+## 2. The Threat Triangle
+
+Backup strategy is a triangle of three threats:
+
+1. **Theft.** Someone finds your seed and steals your bitcoin.
+2. **Loss.** You misplace, destroy, or forget where you put the seed; your house burns down; your safety-deposit box bank fails.
+3. **Coercion.** Someone with a wrench, a court order, or a kidnap victim compels you to hand over your seed.
+
+A good backup defends against all three. The hard part: defending against any one of them often *worsens* your defense against the others.
+
+- Keep the seed at home (no loss risk from third parties) → higher theft risk.
+- Split the seed across locations (loss-resistant) → if any one location is compromised, you have made attack easier.
+- Use a passphrase to protect against theft → if you forget the passphrase, full loss.
+- Distribute shares to family → coercion attack on any family member can compromise you.
+
+There is no single "best" backup. There is the backup that fits *your* threats and amounts. Treat the rest of this rabbit hole as a menu, not a prescription.
+
+## 3. Paper: The Floor
+
+A piece of paper with your seed words written in pencil is a valid backup. For small amounts (under a few thousand dollars, say), it is often sufficient.
+
+Properties of paper:
+- **Cheap.** Nothing to buy.
+- **Trivial to copy.** You can make three copies in three minutes.
+- **Fragile.** Burns in a house fire. Smudges in a flood. Fades in sunlight.
+- **Easy to read.** No special tools needed.
+- **Easy for others to read.** If someone finds it, there is no decryption barrier.
+
+Paper backup best practices:
+- Pencil, not pen. Pen ink fades faster than pencil graphite.
+- Acid-free paper.
+- Multiple copies in physically separated locations.
+- Tamper-evident envelope if you want to know whether it has been seen.
+
+For wallets under five figures, paper is reasonable. For more, you want metal.
+
+## 4. Metal: The Standard
+
+A metal seed backup is a stamped or engraved record of your seed in stainless steel or titanium. Many product names exist; they all do the same fundamental thing.
+
+Properties of metal:
+- **Fire-resistant.** Stainless steel survives a house fire intact. Titanium products survive 1,000+ degrees Celsius.
+- **Water-resistant.** No fading, no smudging.
+- **Decade-durable.** With reasonable care, indefinite life.
+- **Costs $50 to $300** depending on durability tier and form factor.
+
+For amounts in the four-to-six figures, metal is the right floor. Two metal backups in physically separated locations is a strong baseline.
+
+Things to consider:
+- **Do not photograph the metal plate "for backup."** A digital copy of your seed defeats the purpose of an offline backup. Many wallet leaks trace to phone-photo backups.
+- **Test recovery before you trust it.** Reset your wallet, restore from the metal, verify the addresses match. Once. Then never again.
+- **Store separately from the hardware wallet.** Keeping seed and device together is two-thirds of a complete kit for a thief.
+
+(See [hardware seed vault](/glossary/hardware-seed-vault) for the higher-end offerings.)
+
+## 5. The Passphrase ("25th word")
+
+[BIP 39](/glossary/bip-39) supports an optional **passphrase** in addition to the 12 or 24 mnemonic words. Sometimes called "the 25th word," though it can be any string of any length.
+
+The passphrase is mixed into seed derivation. Different passphrase → completely different wallet, with completely different addresses, derived from the same words.
+
+Why it matters:
+- **Theft defense.** Someone who finds your seed words alone gets a wallet with no funds. The wallet with the actual bitcoin is behind the passphrase.
+- **Plausible deniability.** You can set up a "decoy" wallet without a passphrase that holds a small amount, and a "real" wallet with a passphrase that holds everything. A coercer who demands "your wallet" gets the decoy.
+- **Single point of failure (the other way).** Forget the passphrase, lose everything. There is no recovery, no customer-service line, no password reset.
+
+Passphrase best practices:
+- Choose something long and not memorable, then write it down separately from the seed.
+- Do not rely on remembering it. Human memory is a worse storage medium than steel.
+- Test recovery with the passphrase before depositing real funds.
+
+For high-value wallets, a passphrase is standard practice. For low-value wallets, it adds risk without much gain.
+
+## 6. Shamir Secret Sharing (SLIP 39)
+
+[Shamir Secret Sharing](/glossary/shamir-secret-sharing) (via [SLIP 39](https://github.com/satoshilabs/slips/blob/master/slip-0039.md)) splits a seed into N shares, of which M are required to reconstruct (M-of-N).
+
+Example: 3-of-5. You generate 5 shares. Any 3 can recover the seed. Any 2 reveal nothing.
+
+This is **not** the same as splitting words across pieces of paper. Naive splitting (write words 1 to 12 on paper A and 13 to 24 on paper B) drastically reduces the brute-force space of the missing half. 12 words is much, much less than 24, and is a serious security mistake.
+
+Shamir Secret Sharing is mathematically sound. Each share is the same size as the original; no share gives any information about the secret on its own.
+
+Use cases:
+- **Geographic distribution.** Shares at home, at a parent's house, in a bank box, and at a friend's. Recover any 3-of-5.
+- **Inheritance.** Heirs each hold a share; M-of-N can spend after your death.
+- **Operational.** A business holds shares with key principals; M-of-N approves a spend.
+
+Hardware wallets that support SLIP-39 include Trezor and Coldcard (via different paths). Some software wallets support it; most do not.
+
+Tradeoffs:
+- **Adds complexity.** More to back up, more to coordinate.
+- **Harder to recover from operator error.** A simple paper backup is one piece. Shamir is M pieces; if any one share's recovery fails, you need to track down others.
+- **Custom format.** Not all wallets read SLIP-39 shares. Recovery requires a compatible tool.
+
+For mid-to-high-value setups with real inheritance or geographic concerns, Shamir is excellent. For everyday savings, it is overkill.
+
+## 7. Multisig: Backup as a Wallet Strategy
+
+[Multisig](/glossary/multisig) - a wallet that requires M-of-N signatures to spend - is more than a backup; it is a different wallet model. But it functions powerfully as a backup strategy.
+
+A 2-of-3 multisig:
+- 3 keys, held in 3 separate locations or by 3 separate parties.
+- Any 2 keys can spend.
+- **Loss of any 1 key:** no funds lost. You can re-create the lost key and migrate.
+- **Theft of any 1 key:** no funds lost.
+
+This is dramatically more resilient than single-sig with multiple seed backups. Each "key" can have its own backup (paper, metal, passphrase). Loss of an entire key's worth of backup is recoverable as long as 2 of the 3 keys remain.
+
+Tradeoffs:
+- **More complex setup.** Three hardware wallets, three seeds, careful configuration.
+- **Heir difficulty.** Inheriting a multisig is harder than inheriting a seed phrase.
+- **PSBTs.** Spending requires coordinated signatures, typically via [Partially-Signed Bitcoin Transactions](/glossary/psbt).
+
+For meaningful amounts of bitcoin, multisig is the gold standard. For under five figures, single-sig with strong backup is fine.
+
+## 8. Inheritance: The Dead-Man's-Switch Problem
+
+The hardest backup question is not "what if I lose my seed" but "what happens when I die?"
+
+Default outcome: nothing. Your bitcoin is gone forever, locked behind a seed no one else has. By some estimates, several million BTC are already permanently lost this way.
+
+Options:
+- **Sealed instructions.** A letter with your lawyer or in a safe, opened on death, that explains how to access your bitcoin. Simple, but trust-dependent.
+- **Multisig with heirs.** Some keys held by you, some by heirs or executors. Designed to be unspendable while you are alive but spendable after.
+- **Time-locked transactions.** Pre-signed transactions that become valid after a long delay (years). Requires periodic refresh.
+- **Inheritance services.** Specialized custodians who execute on death certificates. Centralization tradeoff.
+
+Whatever the mechanism, a real inheritance plan requires *testing*. A plan you never tested is a plan that probably does not work.
+
+There is no excuse for skipping this once your stack is meaningful. (See [inheritance seed backup](/glossary/inheritance-seed-backup) for more.)
+
+## 9. The Single-Point-of-Failure Mistake
+
+The most common failure mode in seed backup is one form of "single point of failure" or another:
+
+- **One seed copy.** House fire → all gone.
+- **All copies in one place.** Same outcome.
+- **Cloud-stored "encrypted" backup.** Cloud provider breach plus weak password → all gone.
+- **Memorized passphrase, no written copy.** You forget → all gone.
+- **Heirs do not know where the backup is.** You die → all gone.
+- **"Encrypted" with a password only you know.** You forget → all gone.
+
+The pattern: any backup strategy that depends on a single thing not failing is a bad strategy. Real backups depend on multiple things failing simultaneously, with each component's failure being independent of the others.
+
+A good test: write down everything that has to *not* fail for you to retain access. If the list is one item, your backup is fragile. If it is three or more independent items, you are in good shape.
+
+## 10. What This Buys Us
+
+A well-designed seed backup is the difference between "I own bitcoin" and "I temporarily control bitcoin until something happens to my paperwork."
+
+Bitcoin self-custody is the most extreme form of personal financial responsibility yet invented. No customer support, no password reset, no fraud department. The seed is the wallet, the wallet is the bitcoin, the responsibility is yours.
+
+That is not a bug. It is the entire point. The cost of full sovereignty is the obligation to manage your own keys, including planning for every reasonable failure mode.
+
+Take it seriously. Test your recovery. Update your plan as your stack grows. Tell at least one person you trust where the recovery instructions live.
+
+> **Pro tip:** The single highest-leverage action you can take this week, if you hold meaningful bitcoin, is to test your recovery procedure. Erase your hardware wallet, restore from your backup, verify the addresses match. If you cannot do it cold, your backup is theoretical.

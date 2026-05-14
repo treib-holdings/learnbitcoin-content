@@ -1,0 +1,121 @@
+---
+title: "The Inflation Bug Postmortem"
+slug: inflation-bug-postmortem
+draft: false
+status: planned
+section: rabbit-hole
+tagline: "August 15, 2010: someone created 184 billion BTC out of thin air. Five hours later, it was fixed. Here is the full story."
+order: 9
+estimatedMinutes: 10
+sources:
+  - { label: "CVE-2010-5139 - Bitcoin value overflow vulnerability", url: "https://nvd.nist.gov/vuln/detail/CVE-2010-5139" }
+  - { label: "BitcoinTalk - The Strange Story of the Bitcoin Bug (thread #823)", url: "https://bitcointalk.org/index.php?topic=823.0" }
+  - { label: "BIP 42 - finite monetary supply (the OTHER infinite-supply bug)", url: "https://github.com/bitcoin/bips/blob/master/bip-0042.mediawiki" }
+  - { label: "Bitcoin Wiki - Value overflow incident", url: "https://en.bitcoin.it/wiki/Value_overflow_incident" }
+relatedTerms: ["bip-42", "soft-fork", "chain-split", "satoshi-nakamoto", "fork", "asymptote"]
+hasInteractive: []
+---
+
+> **Where you're going:** A story-format deep dive on the closest Bitcoin ever came to dying. Sixteen years later, it is the cleanest case study available for why "verify, don't trust" is not a slogan but a survival principle. Five hours of crisis, more than a decade of vindication.
+
+## 1. August 15, 2010
+
+Bitcoin was nineteen months old. The network had a few hundred users, a couple thousand nodes, a price under a penny per BTC, and zero serious adversaries.
+
+At 19:13 UTC, on a Sunday afternoon, an unknown actor broadcast a transaction that exploited a bug in Bitcoin's validation code. The transaction created **184,467,440,737.09551616 BTC** - more than 8,000 times the total amount of bitcoin that should ever exist - and sent it to two addresses, splitting the supply nearly evenly.
+
+The next miner picked up the transaction and mined block **74,638**, including it. The block was valid by the code that was running. Every node accepted it. For a few hours, Bitcoin had a supply problem in the exact opposite direction of its design promise.
+
+This was the closest Bitcoin has ever come to dying. The fix arrived five hours later. It is worth understanding why it worked.
+
+## 2. The Bug: Integer Overflow
+
+The bug was in `CTransaction::CheckTransaction`, the function every node calls to validate that a transaction is well-formed. One of the checks: confirm that the sum of all output values does not exceed `MAX_MONEY` (21 million BTC, in satoshis).
+
+The code that did this check used a **signed 64-bit integer** to hold the sum, and added each output value in sequence. If two outputs each had values near 2^63, their sum would overflow. Wrap around past the maximum representable positive number into the negative range. A negative sum is, of course, less than `MAX_MONEY`. The check passed.
+
+The transaction had two outputs, each set to roughly 9.2 × 10^18 satoshis - just past the overflow threshold. Their sum overflowed to a small negative number. The validation function said "looks fine." The transaction got mined.
+
+This is a textbook example of a class of bugs that has been understood since at least the 1970s. C and C++ allow signed integer overflow, the behavior is technically undefined, and writing checks that do not account for it is a known footgun. Satoshi wrote it anyway. So would any of us.
+
+## 3. Block 74,638
+
+The block looked normal at first glance. One mining reward (50 BTC), a few ordinary transactions, and one transaction that issued 184 billion BTC.
+
+The chain accepted it. For five hours, every node that had downloaded the block was running a Bitcoin where roughly 9,200x the intended supply was now circulating.
+
+If left to stand, this would have permanently destroyed Bitcoin. The promise of a 21 million cap is the only reason to hold any of it. If the cap had been broken once, demonstrably, in production, there would be no reason to believe it would not be broken again. Bitcoin would have ended in 2010.
+
+## 4. Satoshi's Response: Five Hours
+
+The bug was noticed within an hour. By 19:50 UTC, BitcoinTalk forum posts were flagging the strange transaction. By 23:30 UTC, Satoshi had committed a fix to Bitcoin's source code and released version 0.3.10. The fix: add an additional check that catches the overflow case before it can cause the validation to pass incorrectly.
+
+In a forum post, Satoshi wrote:
+
+> "It was a bad block. Versions 0.3.10 and later will not accept it. Please upgrade ASAP."
+
+The technical fix was small. The hard part was getting node operators to upgrade *and* coordinating a reorganization of the chain to remove the bad block.
+
+## 5. The "Soft Fork" That Wasn't
+
+Bitcoin documentation often describes the inflation-bug fix as a [soft fork](/glossary/soft-fork). Strictly, it was not. It was a **hard fork** with extremely rapid coordination.
+
+A soft fork tightens the rules: new clients reject blocks the old clients would accept, but old clients still accept everything the new clients produce. The chain stays unified.
+
+A hard fork *changes* the rules: new clients reject some blocks old clients accept (or accept blocks old clients reject). If both versions stay running, the chain splits.
+
+The inflation-bug fix rejected block 74,638, which old clients had accepted. By definition: hard fork. The reason it did not split the chain into two permanent versions is that almost every node operator updated within hours, and the longer chain (the one without 74,638) ended up being the unanimous one.
+
+This is the only successful hard fork in Bitcoin's history that the entire community accepted within hours of being proposed. The reason: the alternative was extinction.
+
+## 6. The Reorg: 53 Blocks
+
+To remove block 74,638 from history, the network needed to mine a *longer* chain that did not include it. This is a **reorg** - reorganizing what blocks the network considers canonical.
+
+By the time the fix was deployed and adoption reached a tipping point, the original chain was at block 74,691 - 53 blocks past the bad block. The patched clients started mining a new chain from block 74,637, ignoring 74,638 and everything that followed.
+
+About 19 hours after the bad block was mined, the patched chain caught up and surpassed the bad chain. Nodes reorganized to it. Block 74,638 (and the 53 blocks that followed) were rolled back. The 184 billion BTC ceased to exist.
+
+This is the largest intentional reorg in Bitcoin's history. It remains a reminder that "the chain" is whatever the majority of nodes choose to accept, and that under genuine emergency, that majority can move quickly.
+
+## 7. BIP 42: The OTHER Infinite-Supply Bug
+
+The August 2010 incident was not Bitcoin's only flirtation with infinite supply.
+
+In 2014, developer Pieter Wuille noticed that the way the block subsidy was coded - using bit shifting to halve every 210,000 blocks - had a subtle bug. After enough halvings, the subsidy did not drop to zero; it wrapped around to a large positive value. Bitcoin's supply, on the books, was technically not capped.
+
+The bug would not trigger until block roughly 13,440,000, sometime around the year 2256, so it was not urgent. But Wuille wrote [BIP 42](/glossary/bip-42) - the only BIP whose stated purpose is to make Bitcoin's monetary policy work the way Bitcoin's monetary policy is described.
+
+BIP 42 was a soft fork: it added the rule that the subsidy must be zero once the shift count exceeds 64. It activated quietly. Most users have never heard of it.
+
+The fact that this BIP exists, and was deployed without controversy, is itself an interesting data point about Bitcoin's culture. The supply cap is taken seriously enough that even a bug not triggering for 240 years was fixed because the spec said "21 million." (See also: the actual cap is [20,999,999.9769](/glossary/asymptote), but that is a different story, told in [The Supply Schedule](/rabbit-hole/supply).)
+
+## 8. Lessons for "Trustless"
+
+The inflation bug is often cited as evidence that Bitcoin is *not* trustless - after all, it had a bug, and the bug was fixed by [Satoshi](/glossary/satoshi-nakamoto) in particular, and the chain was rewritten.
+
+The honest reading is more interesting than that:
+
+**Software is never bug-free.** Bitcoin's code in 2010 had bugs. Bitcoin's code today has bugs that have not been found yet. This is true of every nontrivial software system.
+
+**Adversaries find bugs.** Someone deliberately exploited the bug within nineteen months of launch. As the value at stake grows, the incentive to find bugs grows.
+
+**Open source is what saves you.** The bug was visible. The fix was visible. The reorg was visible. Every step was public, verifiable, and reviewable. The reason the network coordinated the fix is that everyone could see exactly what was being proposed and why.
+
+**Reorgs are possible, briefly, under emergency.** The "blocks are immutable" promise is *probabilistic*. Six confirmations make a reorg vanishingly unlikely; 19 hours of accumulated chain can still be undone if the emergency is severe enough.
+
+**"Verify, don't trust" includes verifying the software.** Every full node validates the chain against its own copy of the rules. In 2010, the rules included an overflow bug. The fix was a rule change that every node operator chose to accept. The same is true today: any future supply-breaking bug is fixable only if node operators choose to fix it.
+
+## 9. What This Buys Us
+
+The inflation bug is the strongest case study for why Bitcoin's properties are emergent, not declared.
+
+Bitcoin does not have a 21M cap because the whitepaper says so. It has a 21M cap because every node enforces it, every block is checked against it, and every operator has a clear economic incentive to reject any attempt to break it.
+
+In 2010, the cap was nearly broken by a bug. The network's response - five hours from discovery to fix, 19 hours to reorg - was *proof of the system working*, not proof of fragility. The cap held because the people running nodes wanted it to hold. The fix succeeded because it was verifiable, transparent, and uncontroversial in its goal.
+
+Sixteen years later, that is still the model. Bitcoin's promises are kept by the active, vigilant participation of node operators. The code is human. The discipline is structural.
+
+A monetary system that survives its own bugs in public, with the receipts, is a more credible long-term proposition than one that has never been tested.
+
+> **Pro tip:** Anyone who claims Bitcoin can be inflated "if developers decide to" should read the August 2010 incident in full. The fix worked because operators chose to run it, not because anyone could compel them. The same gating mechanism still holds, and grows stronger every year.

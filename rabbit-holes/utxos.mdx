@@ -1,0 +1,135 @@
+---
+title: "UTXOs"
+slug: utxos
+draft: false
+status: planned
+section: rabbit-hole
+tagline: "Bitcoin does not have balances. It has UTXOs. Once you see them, you can not unsee them."
+order: 6
+estimatedMinutes: 10
+sources:
+  - { label: "Mastering Bitcoin Ch. 6 - Transactions", url: "https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch06.asciidoc" }
+  - { label: "Bitcoin Core source - CCoinsViewCache", url: "https://github.com/bitcoin/bitcoin/blob/master/src/coins.h" }
+  - { label: "Bitcoin Core source - CoinSelection", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/coinselection.cpp" }
+relatedTerms: ["utxo-unspent-transaction-output", "transaction-fee", "coin-control", "dust-limit", "address-clustering", "coinjoin", "payjoin"]
+hasInteractive: []
+---
+
+> **Where you're going:** Most newcomers picture a Bitcoin wallet like a bank account: a balance that goes up and down. Bitcoin does not work that way. You will learn what a UTXO is, why "your balance" is calculated from scratch every time you open your wallet, and why almost every privacy leak in Bitcoin traces back to how UTXOs link together.
+
+## 1. The Mental Model Swap
+
+When someone says "I have 0.3 BTC," it sounds like there is a row in a database with their name and the number 0.3. Bitcoin does not have such rows.
+
+Bitcoin has **UTXOs** - **U**nspent **T**ransaction **O**utputs. Discrete chunks of bitcoin, each locked by a specific script, scattered across the blockchain. When your wallet says you have 0.3 BTC, what it actually means is: "we found seventeen UTXOs you can spend, and they add up to 0.3 BTC."
+
+Once you see this, you can not unsee it. The change problem, the privacy leaks, the fee math, the dust problem - all of them are downstream of UTXOs.
+
+## 2. What a UTXO Actually Is
+
+A UTXO has three pieces:
+
+- **A value.** How much bitcoin, measured in satoshis (1 BTC = 100,000,000 sats).
+- **A locking script.** A small program that defines who can spend it. The most common script says "whoever can provide a signature matching this public key hash."
+- **A provenance.** The transaction it came from and which output index within that transaction.
+
+That is the entire structure. A UTXO is a value gated by a script. When someone spends a UTXO, they prove they can satisfy the script (usually by providing a signature), and the UTXO is consumed.
+
+The blockchain does not store "balances." It stores a giant set of UTXOs. Your node calculates your balance by checking which UTXOs your wallet can unlock.
+
+## 3. Spending: Inputs In, Outputs Out
+
+A Bitcoin [transaction](/glossary/transaction-fee) has two sides:
+
+- **Inputs:** UTXOs being consumed (spent entirely).
+- **Outputs:** new UTXOs being created.
+
+Here is the critical part: **UTXOs are consumed whole.** You can not spend half of a UTXO. If you have a UTXO worth 0.5 BTC and you want to send someone 0.1 BTC, you spend the entire 0.5 BTC UTXO. The transaction creates two new UTXOs: one for 0.1 BTC to the recipient, one for roughly 0.39999 BTC (minus fees) back to you.
+
+That second UTXO is **change.** It is your own money, returned to you, in a new chunk.
+
+This is mechanically identical to paying for a $4 coffee with a $20 bill. You do not tear the $20 in half. You hand over the whole bill and get $16 in change. Bitcoin transactions work the same way.
+
+## 4. The Change Address Problem
+
+When your wallet creates change, it has a choice: send the change back to the **same address** you spent from, or send it to a **new address** you also control.
+
+Almost every modern wallet picks a new address. Why? Privacy.
+
+If change always went back to the spending address, anyone watching the blockchain could trivially link every transaction you ever made. By using a fresh change address each time, your wallet breaks that easy link.
+
+But this creates a different problem: **address reuse is now a strong fingerprint.** If you reuse an address, anyone watching can see all the UTXOs that ever went to it, and can confidently say "this person controls all of these." Most privacy leaks in Bitcoin start with address reuse.
+
+(See [address clustering](/glossary/address-clustering) for how [chain-analysis](/glossary/chain-analysis) firms exploit this.)
+
+## 5. Your "Balance" Is a Sum
+
+Your wallet's "balance" is calculated, not stored. When you open your wallet:
+
+1. The wallet derives every address it can control (from the seed, via a [BIP 32](/glossary/bip-32) derivation path).
+2. The wallet (or its backing node) scans the UTXO set for outputs locked to those addresses.
+3. The wallet sums their values.
+
+That sum is your balance. There is no row in any database that says "user X has 0.3 BTC." There are 17 UTXOs, each locked by a script your wallet can satisfy, and the sum of their values is 0.3 BTC.
+
+This has practical consequences. If your balance of 0.3 BTC is one UTXO worth 0.3 BTC, sending 0.1 BTC is straightforward: one input, two outputs, small transaction, small fee. If your balance of 0.3 BTC is 300 UTXOs of 0.001 BTC each, sending 0.1 BTC requires consuming 100 of them as inputs - a much larger transaction with a much higher fee.
+
+The shape of your UTXO set matters as much as the total.
+
+## 6. Coin Selection
+
+Picking which UTXOs to spend is called **coin selection.** It is a non-trivial optimization problem with several competing goals:
+
+- **Minimize fees.** Fewer and smaller inputs make a smaller transaction.
+- **Minimize change.** Create change that is useful, not dust.
+- **Preserve privacy.** Do not link UTXOs that do not need to be linked.
+- **Manage UTXO set size.** Avoid leaving a wallet full of tiny UTXOs.
+
+Bitcoin Core uses an algorithm called **Branch and Bound** as its primary coin selector, falling back to **Knapsack** when BnB cannot find an exact match. Other wallets use simpler heuristics ("largest first," "smallest first," "random").
+
+Most users never think about coin selection. Most users probably should. (See [coin control](/glossary/coin-control) for wallets that expose it.)
+
+## 7. The UTXO Set, Globally
+
+As of 2026, the Bitcoin UTXO set contains roughly **85 to 110 million UTXOs**, totaling slightly under 20 million BTC.
+
+This set is what every full node holds (in memory, on disk, with a cache, depending on configuration). When you receive a transaction, your node verifies that every input refers to a real, unspent UTXO. That check has to be fast - which is why nodes optimize the UTXO set heavily.
+
+The size of the UTXO set is a load-bearing performance metric. Every new node that spins up has to download and verify enough chain history to reconstruct it. Spam transactions that create lots of small UTXOs (dust attacks, inscription-heavy transactions) bloat the set and impose cost on every node operator, forever.
+
+This is why "small transactions are free" is not true. Even a transaction with a tiny fee imposes a permanent cost on the UTXO set, which every node operator pays for in storage and validation work.
+
+## 8. Privacy: UTXOs Are Linked
+
+Once you create a transaction with multiple inputs, you have publicly declared that the same entity controls all of them. This is called **input clustering**, and it is the single most powerful tool chain-analysis firms have.
+
+If you receive UTXO A on Monday and UTXO B on Tuesday from different sources, they are privately linkable only by you - the world does not know they share an owner. But the moment you spend them together in a single transaction, the link is permanent and public.
+
+This is why [coin control](/glossary/coin-control) matters. It is also why [CoinJoin](/glossary/coinjoin) and [PayJoin](/glossary/payjoin) exist - to deliberately create ambiguity about which UTXOs belong to whom.
+
+A useful rule of thumb: every input you add to a transaction adds a public claim of common ownership. Combine UTXOs from different sources only when you have already accepted that those sources are now publicly linked.
+
+## 9. Dust: When a UTXO Costs More to Spend Than It Is Worth
+
+There is a fee floor for transactions: the smaller a UTXO, the larger a percentage of its value the fee will be when you try to spend it. At some point, the fee exceeds the value.
+
+Bitcoin Core defines a [dust limit](/glossary/dust-limit) - currently around 546 satoshis for a typical P2WPKH output - below which the network will not even relay transactions creating that output. The reasoning: a UTXO that costs more to spend than it is worth is permanently wasted space in every node's UTXO set.
+
+[Dust attacks](/glossary/dust-attack) exploit this: an attacker sends tiny UTXOs (just above dust limit) to many addresses they are trying to deanonymize. If a victim accidentally spends one in a transaction with their other UTXOs, the attacker confirms ownership of all of those UTXOs through the input clustering described above.
+
+The defense: never sweep dust into your main wallet. See [dust sweeping](/glossary/dust-sweeping) for the careful version.
+
+## 10. What This Buys Us
+
+The UTXO model is one of Bitcoin's most underappreciated design choices. Compared to account-based systems (Ethereum, most banks), UTXOs are:
+
+- **Statelessly validatable.** Each transaction can be verified independently, in any order. There is no "global state" you need the latest version of to check whether a transaction is valid.
+- **Parallelizable.** Two transactions touching different UTXOs can be validated in parallel without coordination.
+- **Auditable.** The supply at any block height is the sum of all UTXOs at that height. No "what's the total balance of all accounts" gymnastics.
+- **Privacy-flexible.** Multiple UTXOs per user are the *substrate* for techniques like CoinJoin and PayJoin. Account-based systems do not have this option.
+
+The tradeoff is mental model. Account balances are easier to explain to a beginner. UTXOs are easier to scale and audit.
+
+Bitcoin chose auditability and scalability. Now you understand why.
+
+> **Pro tip:** When debugging a stuck or surprisingly expensive transaction, the first question is always "how many UTXOs did your wallet consume to build it?" Most surprises in Bitcoin fees trace back to coin selection.

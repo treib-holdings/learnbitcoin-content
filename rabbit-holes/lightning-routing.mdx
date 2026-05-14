@@ -1,0 +1,172 @@
+---
+title: "Lightning Routing"
+slug: lightning-routing
+draft: false
+status: planned
+section: rabbit-hole
+tagline: "The Lightning Network is a graph. Sending a payment is finding a path through it. Here is how routing actually works."
+order: 10
+estimatedMinutes: 13
+sources:
+  - { label: "BOLT 4 - Onion Routing", url: "https://github.com/lightning/bolts/blob/master/04-onion-routing.md" }
+  - { label: "BOLT 7 - P2P Node and Channel Discovery", url: "https://github.com/lightning/bolts/blob/master/07-routing-gossip.md" }
+  - { label: "BOLT 11 - Invoice Protocol for Lightning Payments", url: "https://github.com/lightning/bolts/blob/master/11-payment-encoding.md" }
+relatedTerms: ["lightning-network", "routing-node", "bolt-11", "bolt", "lightning-sphinx", "atomic-multi-path-payment-amp", "lightning-channel-capacity", "liquidity"]
+hasInteractive: []
+---
+
+> **Where you're going:** Lightning is often described as a "second layer" or a "scaling solution." Both are true and both miss what it actually is: a graph of channels through which routed payments hop, using onion encryption that keeps each hop blind to the full path. You will learn how nodes find routes, why payments fail, what privacy guarantees you actually get, and why none of this looks like the base layer.
+
+## 1. The Shape of the Problem
+
+Bitcoin's base layer is a chain. Every transaction is appended sequentially, broadcast globally, validated by every node, and stored forever.
+
+[Lightning](/glossary/lightning-network) is not a chain. It is a **graph.** Nodes have **channels** to other nodes. Channels can route payments. A payment from Alice to Carol can hop Alice → Bob → Carol if Alice and Bob share a channel, and Bob and Carol share another channel.
+
+This is the entire premise. Off the chain, in a separate network, with payments that route through intermediaries who do not need to trust each other.
+
+The hard problems are:
+- How does Alice find a path to Carol?
+- What does each intermediary node learn?
+- What happens when the path does not work?
+- What does Alice pay for the privilege?
+
+This rabbit hole walks through each.
+
+## 2. Channels Are Edges in a Graph
+
+A Lightning channel is a 2-of-2 multisig output on the Bitcoin base layer with two parties (the channel partners) holding the keys. The channel has a fixed [capacity](/glossary/lightning-channel-capacity) (the amount of bitcoin locked in the multisig) and a [balance](/glossary/liquidity) (how much is on each side at any moment).
+
+When Alice opens a channel with Bob and funds it with 0.1 BTC, the channel starts with balance 0.1 BTC on Alice's side, 0 BTC on Bob's. Alice can route up to 0.1 BTC outbound through Bob. Bob, until he receives some funds from Alice, can route 0 outbound through Alice.
+
+Capacity is symmetric (the channel has 0.1 BTC total). Balance is asymmetric (it shifts as payments flow). This asymmetry is the source of nearly every Lightning routing failure.
+
+## 3. Gossip: How Nodes Learn the Graph
+
+[BOLT 7](https://github.com/lightning/bolts/blob/master/07-routing-gossip.md) defines how Lightning nodes broadcast information about themselves and their channels. The protocol has two main message types:
+
+- **`channel_announcement`** - "I have a channel to node X with capacity Y." Broadcast when the funding transaction confirms.
+- **`channel_update`** - "My current routing fee is Z, my minimum HTLC is M, here is my CLTV expiry delta." Broadcast whenever a node updates its policy.
+
+Every node receives these messages and builds a local view of the entire public graph. A node's "channel graph" is its understanding of who has channels with whom and at what fees.
+
+Two important caveats:
+
+**Capacity is public; balance is private.** You can see Alice and Bob share a channel of capacity 0.1 BTC. You cannot see whether the balance is 0.1 / 0 or 0.05 / 0.05 or 0 / 0.1. This is why probing for routes can fail repeatedly: the graph says "this channel exists," but the actual balance at that moment may make the payment impossible.
+
+**Not all channels are public.** A node can open a **private channel** (or "unannounced" channel) that does not broadcast to the gossip layer. Private channels are useful for end users who do not want to route for others; they can still receive payments via route hints in the [BOLT 11](/glossary/bolt-11) invoice.
+
+## 4. Onion Routing (Sphinx)
+
+Lightning uses onion routing - specifically a construction called [Sphinx](/glossary/lightning-sphinx) - so each hop in the route learns only what it needs to forward the payment, nothing more.
+
+When Alice wants to pay Carol via Bob, her node:
+
+1. Constructs the route: Alice → Bob → Carol.
+2. Builds an "onion" with layered encryption: outermost layer for Bob, inner layer for Carol.
+3. Sends the onion to Bob.
+4. Bob decrypts his layer. He sees: "forward this onion to Carol, with this amount, this fee, this expiry."
+5. Bob forwards. Carol decrypts the innermost layer. She sees: "this payment is for you, here is the preimage to claim it."
+
+Crucially:
+
+- **Bob does not know Carol is the final destination.** He only knows the next hop.
+- **Bob does not know Alice is the original source.** He only knows the previous hop (which gave him the onion).
+- **Bob does not know the full route length.** Padding is added to keep onions a constant size regardless of hops.
+
+This is the same construction Tor uses. The privacy guarantees are real but bounded: with enough hops along the path observed, traffic analysis can sometimes correlate.
+
+## 5. Source Routing vs. Trampoline
+
+In standard Lightning, **the sender computes the entire route.** Alice's node looks at the gossip graph, runs a pathfinding algorithm (typically Dijkstra-style with weighted edges), and produces the complete onion before sending.
+
+This is called **source routing.** It puts the burden on the sender to maintain an accurate, complete graph. For a mobile wallet on a phone, this can be expensive: the public Lightning graph has hundreds of thousands of channels.
+
+**Trampoline routing** delegates the routing decision to a trusted intermediary. Alice sends a partially-routed onion to a "trampoline node," which figures out the rest of the path and forwards it. Alice's node does not need the full graph.
+
+Tradeoff: trampoline simplifies the sender but introduces some trust in the trampoline node. The trampoline knows more than a standard hop would, including potentially the final destination if the structure leaks. As of 2026, trampoline is supported by some implementations (notably Eclair) and unevenly adopted.
+
+## 6. Why Payments Fail
+
+Lightning payments fail more often than base-layer payments, and they fail for reasons that surprise newcomers. The common failure modes:
+
+**Insufficient liquidity.** A hop in the chosen route does not have enough balance on the outbound side. The graph said the channel had 0.5 BTC capacity; in reality, only 0.001 BTC was on the right side.
+
+**Channel offline.** A node on the route is offline. The HTLC cannot be forwarded. The payment fails and the sender retries with a different route.
+
+**Fee too low.** A hop's routing policy requires higher fees than the sender offered. The sender retries.
+
+**HTLC limit.** Nodes set maximum-HTLC sizes for protection. A large payment may not fit through narrow channels.
+
+**Timeout.** HTLCs have CLTV expiry deltas. If a payment cannot complete before the relevant timeout, it fails and the sender's funds are returned.
+
+The user-visible result: the wallet says "trying route 1, trying route 2, trying route 3, succeeded." Modern wallets try dozens of routes transparently. Most failures are invisible to the user.
+
+This is fundamentally different from base-layer Bitcoin, where a transaction either gets included in a block or does not. On Lightning, payment success is a property of the *network state*, not just the transaction.
+
+## 7. Multi-Part Payments
+
+When no single route has enough liquidity, the sender can split the payment across multiple routes simultaneously. This is **Multi-Part Payments** (MPP) or its more flexible variant, [Atomic Multi-Path Payments](/glossary/atomic-multi-path-payment-amp) (AMP).
+
+A 1 BTC payment can be split into ten 0.1 BTC chunks, each routed through a different path. The recipient collects all ten and reveals the preimage to claim the full payment. If any chunk fails, all chunks are returned.
+
+MPP dramatically expands what Lightning can route. In 2018, a 1 BTC Lightning payment was nearly impossible (no single channel had enough). In 2026, with MPP, it is routine.
+
+Tradeoffs:
+- **More overhead.** Each chunk pays its own fee. Total fees can be higher than a single-path payment.
+- **More failure modes.** Any one chunk failing means the whole thing retries.
+- **Privacy.** The sender's node sees more of the graph; intermediaries see chunks of payments rather than full ones, which is its own kind of leakage.
+
+## 8. What Each Hop Knows (Privacy)
+
+The privacy story on Lightning is "much better than the base layer, with caveats."
+
+**An intermediate hop knows:**
+- The previous hop (the node that gave them the onion).
+- The next hop (the node they are forwarding to).
+- The amount being forwarded.
+- The amount of fee they are keeping.
+- The CLTV expiry of the HTLC.
+
+**An intermediate hop does NOT know:**
+- The original sender.
+- The final receiver.
+- Whether they are the first hop, last hop, or middle hop.
+- The total path length.
+
+**The first hop after the sender** knows the sender (it received the onion directly), but not the receiver.
+
+**The last hop before the receiver** knows the receiver, but not the sender.
+
+**Anyone watching multiple hops in sequence** can correlate timing and amount to potentially trace a payment. This is a real risk for large or unusual payments, especially if the adversary runs many nodes.
+
+Compared to the base layer, where every transaction is fully public and pseudonymous addresses cluster easily (see [UTXOs](/rabbit-hole/utxos)), Lightning is a substantial privacy improvement. Compared to ideal privacy, it has gaps.
+
+## 9. The Fee Market for Routing
+
+Lightning routing is not free. Each hop charges a fee for forwarding, expressed as `base_fee_msat + proportional_fee_msat_per_million * amount`.
+
+A typical [routing node](/glossary/routing-node) might charge `1,000 msat base + 100 ppm`. Routing 0.01 BTC (1,000,000 sats = 1,000,000,000 msat) costs: 1,000 + (100 × 1,000) = 101,000 msat ≈ 101 sats total fee.
+
+For a multi-hop payment, fees from each hop sum.
+
+The fee market dynamics:
+- **Well-connected nodes can charge higher fees.** Liquidity in central hubs is more valuable.
+- **Newer routing nodes undercut.** A node trying to attract routing traffic offers lower fees.
+- **Fees are extremely competitive.** Lightning routing fees on most payments are negligible compared to base-layer fees.
+
+There is no equivalent of mempool fee competition. Each hop sets its own price; the sender picks routes that minimize cost subject to liquidity and reliability constraints.
+
+## 10. What This Buys Us
+
+Lightning routing solves a problem the base layer can not: high-volume, low-latency Bitcoin payments at micro-fee scale.
+
+Trade the base layer's guarantees (global verification, persistent recording) for Lightning's properties (instant settlement, fractions of a satoshi in fees, off-chain capacity). For the right use cases - tipping, point-of-sale, microtransactions, machine-to-machine payments - this trade is enormous.
+
+Routing is what makes the whole thing work. Without it, Lightning would be a network of disconnected payment channels, useful only between direct counterparties. With it, Lightning is an actual *network*: a graph through which value flows, with no central operator, no permissioned ledger, no payment processor.
+
+The privacy story is genuine but partial. The reliability story is dramatically improved since 2018. The fee story is essentially "free" for typical payments. The capacity story keeps growing as more nodes open more channels.
+
+It is, like Bitcoin itself, not theoretically perfect. It is, like Bitcoin itself, the best thing of its kind that has ever existed in production.
+
+> **Pro tip:** If you want to understand Lightning at a deeper level than this rabbit hole goes, run your own routing node for a month. The dashboards alone - liquidity in vs. out, channel utilization, fee earnings, failure logs - teach more about the network's actual shape than any document.
