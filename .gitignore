@@ -5,3 +5,6 @@ __pycache__/
 *.swp
 .idea/
 .vscode/
+
+# Private brand-voice reference for the AI collaborator. Not for the public CC-BY-SA repo.
+BRAND_VOICE.md
