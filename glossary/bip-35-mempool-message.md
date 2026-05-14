@@ -19,5 +19,8 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 35, outlined in [BIP-35](https://github.com/bitcoin/bips/blob/master/bip-0035.mediawiki), introduced a 'mempool' message that peers could send to a node to ask for a list of currently unconfirmed transactions. While conceptually useful, it never gained widespread adoption in everyday node communications.
-Many nodes simply limit or disable direct mempool queries, focusing on more efficient or privacy-preserving protocols. As a result, BIP 35 is part of Bitcoin's historical evolution of P2P message types-still valid, but overshadowed by newer, more robust ways of sharing transaction data.
+BIP 35 added a `mempool` P2P message: a peer sends `mempool` and the node replies with an `inv` listing every txid currently in its mempool. Useful around 2012, when nascent block explorers and wallets wanted a quick way to see unconfirmed activity from any willing peer.
+
+Then it became a footgun. Dumping the whole mempool on request lets an observer fingerprint a node's policy, time propagation, and probe for transactions other peers haven't seen yet. Bitcoin Core now gates the response behind the `NODE_BLOOM` service bit (or peer whitelisting), so the wider P2P network has effectively stopped serving it. In 2026, public mempool data flows through block explorers and dedicated mempool infrastructure, not opportunistic `mempool` queries.
+
+Spec: [BIP-35](https://github.com/bitcoin/bips/blob/master/bip-0035.mediawiki). Still defined, almost never used in the wild.

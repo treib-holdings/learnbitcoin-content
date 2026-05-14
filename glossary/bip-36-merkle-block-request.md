@@ -19,5 +19,8 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 36, described in [BIP-36](https://github.com/bitcoin/bips/blob/master/bip-0036.mediawiki), aimed to formalize how lightweight nodes could request only relevant parts of a block (the merkle block) without downloading everything. This technique saved bandwidth by delivering a pruned version of the block containing only transactions that matched a user's filters.
-Although it showed promise, subsequent developments like [BIP-37](https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki) and later [BIP-157/158](https://github.com/bitcoin/bips/blob/master/bip-0157.mediawiki) introduced more advanced, privacy-friendly methods. As such, BIP 36 is more of a stepping stone in Bitcoin's journey toward efficient light client protocols than an active feature widely in use today.
+BIP 36 was an early sketch (2012) for letting SPV-style clients pull only relevant pieces of a block instead of the whole thing. It never made it past draft status.
+
+What actually shipped was BIP 37 (Bloom Filter requests), which had its own privacy problems and is now mostly disabled on the public network. Modern light clients use BIP 158 compact block filters: the node publishes a small deterministic filter per block, the client downloads filters and decides locally which blocks to fetch. The wallet never tells the node what it's looking for.
+
+Spec: [BIP-36](https://github.com/bitcoin/bips/blob/master/bip-0036.mediawiki). Pure history; useful only as the first attempt in a line that eventually got it right.

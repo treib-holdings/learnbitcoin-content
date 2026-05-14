@@ -17,5 +17,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 50, found in [BIP-50](https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki), is less about a protocol change and more a historical record. It describes the method the Bitcoin community used to address the blockchain fork that occurred in March 2013, which was triggered by an unintentional incompatibility between older and newer versions of Bitcoin Core.
-This BIP highlights how node operators, miners, and developers coordinated a swift rollback to the shorter chain, effectively reuniting the network. It's a testament to early crisis management and how consensus was reached in a decentralized environment. Ultimately, it served as a learning experience that guided future release and deployment practices.
+BIP 50 isn't a protocol change. It's a postmortem.
+
+On March 11, 2013, the network split. Bitcoin 0.7 used Berkeley DB with a hard cap on database locks per block; 0.8 had migrated to LevelDB with no equivalent limit. A larger-than-usual block produced by a 0.8 miner exceeded the BDB lock count on 0.7 nodes, which rejected it as invalid. The chain forked: 0.8+ followed the new block, 0.7 followed an alternative chain.
+
+Resolution took six hours of frantic IRC coordination. Miners running 0.8 voluntarily downgraded back to 0.7 rules so the shorter (0.7-compatible) chain would overtake the longer one, and the network rejoined. One double-spend hit an OKPay deposit during the window; everything else recovered cleanly.
+
+The lessons stuck. Bitcoin Core's release process got dramatically more paranoid about consensus-touching changes, and the incident is still cited as the canonical example of why "non-consensus" implementation details aren't really non-consensus. Anything that changes which blocks a node accepts is a consensus change, even when the spec says it shouldn't be.
+
+Spec: [BIP-50](https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki).

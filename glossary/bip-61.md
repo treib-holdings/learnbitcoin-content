@@ -18,5 +18,10 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 61, documented in [BIP-61](https://github.com/bitcoin/bips/blob/master/bip-0061.mediawiki), introduced the 'reject' message for nodes to notify peers about invalid transactions or blocks. While it provided direct feedback, the idea had drawbacks: broadcasting reject messages could reveal node policies or transaction details, posing potential privacy risks.
-Over time, Bitcoin Core developers concluded that the feature was less beneficial than initially hoped and could expose sensitive information. As a result, the 'reject' protocol messages were deprecated and then removed, reflecting Bitcoin's ongoing push toward minimal, privacy-respecting communication. BIP 61 remains a footnote in the evolution of the P2P layer.
+BIP 61 specified a `reject` P2P message: when a node rejects a transaction or block, it tells the sender why. Sounds helpful. Wasn't.
+
+Two problems. The reject reason is advisory and trivially forgeable, so wallets that relied on it were trusting an unreliable signal from anonymous peers. And broadcasting rejections leaks a node's mempool policy (fee floor, standardness rules, version preferences) that's better kept private. Bitcoin Core disabled `reject` by default in 0.18 (2019) and removed the code entirely in 0.20 (2020).
+
+Modern wallets infer rejection from absence. If a transaction doesn't appear in block explorers or peer mempools after a reasonable window, assume it was dropped and rebroadcast with a higher fee, ideally signaling [Replace-by-Fee (RBF)](/glossary/replace-fee-rbf) so the bump is unambiguous.
+
+Spec: [BIP-61](https://github.com/bitcoin/bips/blob/master/bip-0061.mediawiki).
