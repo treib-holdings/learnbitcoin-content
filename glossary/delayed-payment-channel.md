@@ -25,5 +25,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-This concept is like a protective buffer. One side of the channel can't instantly withdraw their funds; they must wait through a locktime first. The other side monitors the blockchain and can swoop in with a penalty transaction if any attempt to broadcast an outdated channel state occurs.
-The approach aims to maintain LN's security while allowing flexibility in how each channel is set up. By introducing a forced delay on one party's outputs, it gives the other party time to respond to misbehavior, similar to the logic behind Delayed Justice Transactions. The main trade-off is liquidity-those funds aren't immediately available on-chain.
+"Delayed payment channel" is a descriptive name for the standard Lightning channel design where each party's own balance, in a unilaterally-broadcast commitment, is locked behind a [CSV](/glossary/checksequenceverify-csv) timelock for some number of blocks before it can be spent.
+
+The mechanics are the same as the [delayed justice transaction](/glossary/delayed-justice-transaction) story: when you broadcast your own latest commitment to close a channel unilaterally, your own balance gets a CSV-locked output (typically 144-2016 blocks) while your counterparty's balance is immediately spendable. The asymmetry isn't unfair; it's deliberate. The delay is the window during which your counterparty can punish you if your "latest commitment" turns out to be an outdated one (a [penalty transaction](/glossary/penalty-transaction) sweep).
+
+For users, the practical takeaways:
+
+- **Cooperative closes are fast.** When both parties agree to close, the channel produces a normal on-chain transaction with no CSV delays. Funds are available after one confirmation.
+- **Unilateral force-closes are slow.** If you close without your counterparty's cooperation, expect to wait through the `to_self_delay` (whatever was negotiated at channel-open) before your own balance is spendable.
+- **The delay protects you too.** When your counterparty force-closes, the same CSV delay applies to their balance, giving you (or your watchtower) time to respond if their broadcast was a cheat attempt.
+
+The term "delayed payment channel" isn't standard Lightning vocabulary - most documentation just calls it "a Lightning channel" and treats the CSV delay as an implementation detail. The phrase exists in some older glossaries to emphasize the asymmetric-delay property as a defining feature of the design.
+
+[Eltoo](/glossary/eltoo)-style channels (which depend on SIGHASH_ANYPREVOUT, not yet activated) would soften this asymmetry: any newer state automatically invalidates older ones, removing the need for the unilaterally-broadcast-then-wait-then-punish dance.
