@@ -17,5 +17,25 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Bitcoin Core's RPC (Remote Procedure Call) interface is like an interpreter that speaks Bitcoin on your behalf. Through JSON-based commands, you can query blockchain data, create transactions, and manage your node's settings. For example, the 'getblockchaininfo' call retrieves synchronization status, while 'sendtoaddress' broadcasts a transaction.
-This interface enables wallets, explorers, and various services to build on top of Bitcoin without rewriting node logic. Developers can integrate these commands into their applications, automating tasks like transaction tracking or cold storage management. Although advanced usage requires some technical know-how, the RPC is a cornerstone of Bitcoin's flexible, programmable infrastructure.
+The Bitcoin Core RPC is the JSON-RPC interface that every modern Bitcoin Core node exposes for programmatic access. Wallets, block explorers, Lightning nodes, Electrum servers, and basically every Bitcoin service runs against an RPC connection to a backing Bitcoin Core node.
+
+Connection basics:
+
+- **Default port** is 8332 for mainnet, 18332 for testnet, 38332 for signet. Configurable via `rpcport` in `bitcoin.conf`.
+- **Authentication** is via either an `rpcauth` line in the config (preferred, hashes the password) or a generated cookie file in the data directory. Username / password in cleartext is supported but discouraged.
+- **Format** is JSON-RPC 1.0 over HTTP. Each call is a single HTTP POST with a method name and parameters.
+
+The standard CLI driver is `bitcoin-cli`, which wraps RPC in a shell-friendly interface. `bitcoin-cli getblockchaininfo` is roughly equivalent to `curl -X POST -d '{"jsonrpc":"1.0","method":"getblockchaininfo","params":[]}' http://user:pass@localhost:8332/`.
+
+The RPC surface is enormous. Categories you'll see in practice:
+
+- **Blockchain queries.** `getblock`, `getblockhash`, `getblockchaininfo`, `getbestblockhash`, `getrawtransaction`.
+- **Wallet operations.** `sendtoaddress`, `getbalance`, `listunspent`, `listtransactions`, `signrawtransactionwithwallet`, `walletprocesspsbt`.
+- **Mempool inspection.** `getmempoolinfo`, `getrawmempool`, `getmempoolentry`.
+- **Network state.** `getpeerinfo`, `getconnectioncount`, `getnetworkinfo`.
+- **Mining helpers.** `getblocktemplate`, `submitblock`, `getmininginfo`.
+- **Diagnostic.** `getmemoryinfo`, `gettxoutsetinfo`, `validateaddress`.
+
+Security: the RPC is by default bound to localhost only. Exposing it to the network without TLS and strong authentication is a fast way to lose any wallet attached to the node. The `rpcwhitelist` setting in modern versions lets operators restrict each authenticated user to a specific subset of methods, which is the right pattern for multi-tenant setups (a block explorer doesn't need wallet RPC access; restrict accordingly).
+
+For users of Bitcoin-on-top services, the RPC is invisible plumbing. For anyone running infrastructure - exchanges, payment processors, Lightning routing nodes - it's the daily working surface of Bitcoin Core.
