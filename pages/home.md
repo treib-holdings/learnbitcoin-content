@@ -5,4 +5,4 @@ description: "The honest Bitcoin school. No altcoins. No price predictions. No n
 ---
 
 No altcoins. No price predictions. No newsletter. The Bitcoin school
-for people who want to actually understand.
+for people who want to actually understand Bitcoin.
