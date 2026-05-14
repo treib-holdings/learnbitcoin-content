@@ -38,6 +38,7 @@ Batch Transaction	batch-transaction
 Batching Optimizer	batching-optimizer
 Bear Market	bear-market
 BECH32m	bech32m
+BIP 101 (Increase Block Size)	bip-101-increase-block-size
 BIP 102 (2MB Block Size)	bip-102-2mb-block-size
 BIP 113	bip-113
 BIP 119 (CTV)	bip-119-ctv
@@ -58,6 +59,7 @@ BIP 30	bip-30
 BIP 300 (Drivechains)	bip-300-drivechains
 BIP 301	bip-301
 BIP 31 (pong message)	bip-31-pong-message
+BIP 339 (WTXID Relay)	bip-339-wtxid-relay
 BIP 34	bip-34
 BIP 341 (Taproot)	bip-341-taproot
 BIP 342 (Tapscript)	bip-342-tapscript
