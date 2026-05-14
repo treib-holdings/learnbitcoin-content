@@ -15,7 +15,6 @@ relatedTerms:
   - difficulty-retargeting
   - double-spend
   - mining-subsidy
-  - module-signing
   - nonce
   - poisson-process
   - proof-work-pow

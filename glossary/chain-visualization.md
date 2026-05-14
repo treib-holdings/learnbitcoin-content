@@ -12,7 +12,6 @@ relatedTerms:
   - block-explorer
   - blockchain
   - chain-analysis
-  - chain-bulletin-board
   - merkle-root
   - transaction
   - transaction-index-txindex

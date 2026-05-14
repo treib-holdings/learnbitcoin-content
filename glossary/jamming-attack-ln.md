@@ -12,7 +12,6 @@ relatedTerms:
   - eavesdropping-attack
   - griefing-attack
   - htlc-hashed-time-locked-contract
-  - hybrid-mining
   - jammed-htlc-detector
   - lightning-network
   - lightning-payment

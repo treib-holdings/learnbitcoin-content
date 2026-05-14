@@ -13,7 +13,6 @@ relatedTerms:
   - eltoo
   - escrow
   - escrowed-lightning-channel
-  - hash-locktime-contract-hlc
   - htlc-hashed-time-locked-contract
   - lightning-channel
   - lightning-channel-splicing

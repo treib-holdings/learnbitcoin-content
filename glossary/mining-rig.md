@@ -15,15 +15,12 @@ relatedTerms:
   - competitive-mining
   - cpu-mining
   - gui-miner
-  - hybrid-mining
-  - pop-mining
   - miner
   - mining
   - mining-pool
   - mining-algorithm
   - mining-colocation
   - mining-software
-  - phone-mining
   - retail-mining
 liveWidget: ~
 ---

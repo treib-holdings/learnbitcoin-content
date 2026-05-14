@@ -12,7 +12,6 @@ relatedTerms:
   - aml-anti-money-laundering
   - bitlicense
   - decentralized-exchange-dex
-  - evm-bitcoin
   - exchange
   - exchange-api-key
   - kyc-know-your-customer

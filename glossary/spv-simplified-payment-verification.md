@@ -9,7 +9,6 @@ keyTakeaways:
   - "Privacy concerns arise unless advanced methods (e.g., Neutrino) are used"
 sources: []
 relatedTerms:
-  - adaptive-block-filter
   - bip-37
   - bip-158
   - bitcoin-client

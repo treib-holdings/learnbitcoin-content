@@ -9,13 +9,9 @@ keyTakeaways:
   - "Still a niche market with relatively low liquidity"
 sources: []
 relatedTerms:
-  - cuckoo-cycle
   - hash
-  - hash-fever
   - hash-rate
   - hashlet
-  - hashpool
-  - pop-mining
   - mining-algorithm
   - mining-colocation
   - revenue-ths

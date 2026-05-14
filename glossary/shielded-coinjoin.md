@@ -9,10 +9,8 @@ keyTakeaways:
   - "Represents a potential future direction for privacy enhancements in Bitcoin"
 sources: []
 relatedTerms:
-  - coin-plasma
   - coinjoin
   - fungibility
-  - gadget-utxo
   - mixing-service
   - payjoin
   - stealth-address

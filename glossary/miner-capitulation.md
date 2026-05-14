@@ -10,8 +10,6 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - coinbase-transaction
-  - hash-fever
-  - pop-mining
   - miner
   - mining
   - mining-algorithm

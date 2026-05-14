@@ -10,7 +10,6 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - batch-transaction
-  - batching-optimizer
   - bip-bitcoin-improvement-proposal
   - bitcoin-core
   - transaction

@@ -15,7 +15,6 @@ relatedTerms:
   - block-subsidy
   - blockchain
   - coinbase-transaction
-  - genesis-keys
   - satoshi-nakamoto
   - whitepaper
 liveWidget: ~

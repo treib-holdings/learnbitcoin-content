@@ -10,20 +10,16 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - clawback-mechanism
-  - covariance-transaction
   - fidelity-bond
-  - grothendiecks-proof
   - hdm-multi-signature-hd-wallet
   - hierarchical-multisig
   - interactive-multi-sig
   - m-n
-  - module-signing
   - mono-signature
   - musig
   - musig2
   - partial-signature
   - partially-signed-bitcoin-transaction-psbt
-  - poelstras-proof
 liveWidget: ~
 ---
 

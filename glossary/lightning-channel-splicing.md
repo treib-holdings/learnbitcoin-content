@@ -17,7 +17,6 @@ relatedTerms:
   - eltoo
   - escrowed-lightning-channel
   - fraudulent-channel-close
-  - hash-locktime-contract-hlc
   - htlc-hashed-time-locked-contract
   - htlc-invoice
   - htlc-preimage-manager

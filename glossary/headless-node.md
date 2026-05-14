@@ -11,7 +11,6 @@ sources: []
 relatedTerms:
   - dedicated-ip-nodes
   - full-node
-  - hidden-miner
   - node
   - node-autoban
   - node-headcount

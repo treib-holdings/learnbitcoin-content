@@ -10,7 +10,6 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - hashlet
-  - hashpool
   - mining-pool
   - mining-subsidy
   - revenue-ths

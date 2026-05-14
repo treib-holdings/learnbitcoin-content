@@ -11,21 +11,16 @@ sources: []
 relatedTerms:
   - asic-application-specific-integrated-circuit
   - cpu-mining
-  - dyson-sphere-mining
   - energy-fud
   - geographic-mining-distribution
-  - hidden-miner
   - hidden-miner-tax
-  - hybrid-mining
   - merged-mining
-  - pop-mining
   - mining
   - mining-pool
   - mining-centralization
   - mining-colocation
   - mining-rig
   - mining-software
-  - phone-mining
   - revenue-ths
 liveWidget: ~
 ---

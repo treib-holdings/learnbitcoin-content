@@ -11,7 +11,6 @@ sources: []
 relatedTerms:
   - clawback-mechanism
   - coin-freeze
-  - coin-plasma
   - counterparty-risk
   - custodial-wallet
   - escrowed-lightning-channel

@@ -12,7 +12,6 @@ relatedTerms:
   - bitcoin-script
   - checktemplateverify-ctv
   - covenants
-  - gzen-generalized-zen
   - op-code-operation-code
   - script
 liveWidget: ~

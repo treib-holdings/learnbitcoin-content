@@ -13,7 +13,6 @@ relatedTerms:
   - block-time
   - competitive-mining
   - consensus-parameter
-  - cuckoo-cycle
   - difficulty
   - halving-halvening
   - miner

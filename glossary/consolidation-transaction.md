@@ -10,10 +10,8 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - batch-transaction
-  - batching-optimizer
   - bitcoin-days-destroyed
   - coin-age
-  - incremental-batching
   - transaction
   - transaction-chaining
   - transaction-fee

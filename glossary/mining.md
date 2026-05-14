@@ -11,13 +11,9 @@ sources: []
 relatedTerms:
   - competitive-mining
   - cpu-mining
-  - dyson-sphere-mining
   - geographic-mining-distribution
   - hash-rate
-  - hidden-miner
   - hidden-miner-tax
-  - hybrid-mining
-  - pop-mining
   - miner
   - miner-capitulation
   - miner-extractable-value-mev

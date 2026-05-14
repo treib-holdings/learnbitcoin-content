@@ -11,8 +11,6 @@ sources: []
 relatedTerms:
   - block-reward
   - coinbase-transaction
-  - hashpool
-  - hidden-miner
   - merged-mining
   - miner
   - mining

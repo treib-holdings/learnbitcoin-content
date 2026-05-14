@@ -13,7 +13,6 @@ relatedTerms:
   - bitcoin-cash
   - bitcoin-dominance
   - fork
-  - namecoin
 liveWidget: ~
 ---
 

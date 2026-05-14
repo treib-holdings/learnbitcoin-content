@@ -10,7 +10,6 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - bip-148-uasf
-  - chain-bulletin-board
   - chain-split
   - deployment-threshold-soft-fork
   - locked-period-soft-fork

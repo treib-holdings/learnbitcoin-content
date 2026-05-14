@@ -10,8 +10,6 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - hash
-  - hashpool
-  - hybrid-mining
   - miner
   - mining-pool
   - mining-algorithm

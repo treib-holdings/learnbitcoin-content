@@ -10,7 +10,6 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - double-spend
-  - dyson-sphere-mining
   - mining-algorithm
   - mining-centralization
   - proof-work-pow

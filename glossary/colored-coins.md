@@ -12,7 +12,6 @@ relatedTerms:
   - bitcoin-days-destroyed
   - clawback-mechanism
   - coin-freeze
-  - coin-plasma
   - covenants
   - opreturn-based-tokens
 liveWidget: ~

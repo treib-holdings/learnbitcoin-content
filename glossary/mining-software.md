@@ -13,16 +13,13 @@ relatedTerms:
   - competitive-mining
   - cpu-mining
   - gui-miner
-  - hybrid-mining
   - merged-mining
-  - pop-mining
   - miner
   - mining
   - mining-pool
   - mining-algorithm
   - mining-colocation
   - mining-rig
-  - phone-mining
   - retail-mining
 liveWidget: ~
 ---

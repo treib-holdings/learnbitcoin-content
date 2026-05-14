@@ -19,7 +19,6 @@ relatedTerms:
   - fee-rate-escalation
   - fee-sniping
   - full-rbf
-  - incremental-batching
   - mining-subsidy
   - replace-fee-rbf
   - transaction

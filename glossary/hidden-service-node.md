@@ -9,9 +9,7 @@ keyTakeaways:
   - "Can reduce performance compared to clearnet nodes"
 sources: []
 relatedTerms:
-  - gzen-generalized-zen
   - headless-node
-  - hidden-miner
   - hidden-miner-tax
   - i2p-invisible-internet-project
   - node

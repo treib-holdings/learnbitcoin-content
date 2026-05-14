@@ -9,9 +9,7 @@ keyTakeaways:
   - "Requires trust in the entity performing the batch"
 sources: []
 relatedTerms:
-  - batching-optimizer
   - consolidation-transaction
-  - incremental-batching
   - transaction
   - transaction-chaining
   - transaction-fee

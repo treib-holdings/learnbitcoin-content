@@ -9,8 +9,6 @@ keyTakeaways:
   - "An example of advanced contract logic possible on top of Bitcoin"
 sources: []
 relatedTerms:
-  - gzen-generalized-zen
-  - hash-locktime-contract-hlc
   - hash-puzzle
   - htlc-hashed-time-locked-contract
 liveWidget: ~

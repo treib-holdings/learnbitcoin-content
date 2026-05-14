@@ -10,10 +10,8 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - address-reuse
-  - coin-plasma
   - coinjoin
   - fungibility
-  - gzen-generalized-zen
   - key-rotation
   - mixing-service
   - payjoin

@@ -18,7 +18,6 @@ relatedTerms:
   - eavesdropping-attack
   - eclipse-attack
   - fungibility
-  - genesis-keys
   - green-address
   - hardware-seed-vault
   - hardware-security-module-hsm

@@ -9,7 +9,6 @@ keyTakeaways:
   - "Useful for advanced or paranoid setups requiring total transparency"
 sources: []
 relatedTerms:
-  - entropy-mixing-party
   - hd-wallet-hierarchical-deterministic-wallet
   - hierarchical-deterministic-wallet
   - seed-entropy-mixer

@@ -15,7 +15,6 @@ relatedTerms:
   - clawback-mechanism
   - coin-age
   - coin-freeze
-  - coin-plasma
   - coinjoin
   - deterministic-wallet
   - difficulty

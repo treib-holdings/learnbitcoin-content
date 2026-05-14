@@ -14,7 +14,6 @@ relatedTerms:
   - merkle-inclusion-proof
   - merkle-proof
   - penalty-transaction
-  - ring-verification
   - spv-simplified-payment-verification
 liveWidget: ~
 ---

@@ -9,7 +9,6 @@ keyTakeaways:
   - "Ensures your transactions comply with Bitcoin's protocol"
 sources: []
 relatedTerms:
-  - api-application-programming-interface
   - bitcoin-core
   - bitcoin-core-rpc
   - bitcoin-knots

@@ -12,7 +12,6 @@ relatedTerms:
   - aml-anti-money-laundering
   - bitcoin-bond
   - decentralized-exchange-dex
-  - evm-bitcoin
   - fiat
   - fincen
   - kyc-know-your-customer

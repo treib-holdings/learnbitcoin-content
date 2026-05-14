@@ -9,8 +9,6 @@ keyTakeaways:
   - "Sparks debate on whether block rewards mirror a 'tax' on holders"
 sources: []
 relatedTerms:
-  - gzen-generalized-zen
-  - hidden-miner
   - hidden-service-node
   - miner-extractable-value-mev
   - mining

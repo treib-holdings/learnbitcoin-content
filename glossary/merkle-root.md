@@ -9,14 +9,12 @@ keyTakeaways:
   - "One small alteration in transactions would break the chain of hashes"
 sources: []
 relatedTerms:
-  - adaptive-block-filter
   - bip-37
   - bip-158
   - block-header
   - block-size
   - bloom-filter
   - chain-visualization
-  - efficient-range-proof
   - hash
   - merkle-block
   - merkle-inclusion-proof

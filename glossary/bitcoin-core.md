@@ -9,7 +9,6 @@ keyTakeaways:
   - "Offers the most thorough blockchain validation"
 sources: []
 relatedTerms:
-  - api-application-programming-interface
   - bitcoin-client
   - bitcoin-core-rpc
   - bitcoin-knots

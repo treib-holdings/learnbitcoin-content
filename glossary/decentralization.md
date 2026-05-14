@@ -12,9 +12,7 @@ relatedTerms:
   - anti-sybil-mechanism
   - byzantine-fault-tolerance
   - consensus-parameter
-  - dapp-decentralized-application
   - decentralized-exchange-dex
-  - dyson-sphere-mining
   - full-rbf
   - mining-centralization
   - mining-colocation

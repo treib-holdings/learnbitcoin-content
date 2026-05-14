@@ -10,8 +10,6 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - bitcoin-inheritance-planning
-  - dukpt-derived-unique-key-transaction
-  - genesis-keys
   - hardware-security-module-hsm
   - key-generation-ceremony
   - key-rotation

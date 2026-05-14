@@ -20,7 +20,6 @@ relatedTerms:
   - fraud-proof
   - fraudulent-channel-close
   - griefing-attack
-  - hash-locktime-contract-hlc
   - hash-puzzle
   - htlc-invoice
   - htlc-preimage-manager

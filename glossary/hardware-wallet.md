@@ -14,7 +14,6 @@ relatedTerms:
   - bitcoin-vault
   - custodial-wallet
   - deterministic-wallet
-  - dukpt-derived-unique-key-transaction
   - hardware-seed-vault
   - hardware-security-module-hsm
   - hd-wallet-hierarchical-deterministic-wallet

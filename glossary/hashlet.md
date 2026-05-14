@@ -10,13 +10,10 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - hash
-  - hash-fever
   - hash-rate
   - hash-rate-derivative
-  - hashpool
   - mining-algorithm
   - mining-colocation
-  - mutxo
   - pooled-mining
   - revenue-ths
 liveWidget: ~

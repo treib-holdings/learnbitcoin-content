@@ -10,9 +10,7 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - bitlicense
-  - chain-bulletin-board
   - colored-coins
-  - dapp-decentralized-application
   - opreturn
 liveWidget: ~
 ---

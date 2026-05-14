@@ -25,7 +25,6 @@ relatedTerms:
   - fee-rate-escalation
   - fee-sniping
   - full-rbf
-  - gadget-utxo
   - nlocktime
   - nsequence
   - replace-fee-rbf

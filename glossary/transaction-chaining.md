@@ -10,7 +10,6 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - consolidation-transaction
-  - incremental-batching
   - transaction
   - transaction-fee
 liveWidget: ~

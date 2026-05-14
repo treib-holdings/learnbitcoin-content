@@ -9,7 +9,6 @@ keyTakeaways:
   - "Crucial for secure node management in remote or shared setups"
 sources: []
 relatedTerms:
-  - api-application-programming-interface
   - exchange-api-key
   - oracle-based-betting
 liveWidget: ~

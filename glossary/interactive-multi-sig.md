@@ -9,7 +9,6 @@ keyTakeaways:
   - "More complex to implement but can enhance efficiency or privacy"
 sources: []
 relatedTerms:
-  - gyft-block
   - hierarchical-multisig
   - m-n
   - mono-signature

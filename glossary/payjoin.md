@@ -11,9 +11,7 @@ sources: []
 relatedTerms:
   - address-clustering
   - address-reuse
-  - coin-plasma
   - coinjoin
-  - gadget-utxo
   - mixing-service
   - shielded-coinjoin
   - stealth-address

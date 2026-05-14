@@ -9,7 +9,6 @@ keyTakeaways:
   - "API key breaches can result in lost funds or unauthorized trades"
 sources: []
 relatedTerms:
-  - api-application-programming-interface
   - centralized-exchange-cex
   - decentralized-exchange-dex
   - exchange

@@ -10,7 +10,6 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - bitcoin-script
-  - chain-bulletin-board
   - op-code-operation-code
   - opreturn-based-tokens
   - script

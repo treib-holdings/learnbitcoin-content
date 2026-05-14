@@ -9,7 +9,6 @@ keyTakeaways:
   - "Enables partial verification of transactions via Merkle proofs"
 sources: []
 relatedTerms:
-  - adaptive-block-filter
   - bip-37
   - bip-158
   - block-header

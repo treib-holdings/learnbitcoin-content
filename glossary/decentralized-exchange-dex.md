@@ -11,7 +11,6 @@ sources: []
 relatedTerms:
   - bitlicense
   - centralized-exchange-cex
-  - dapp-decentralized-application
   - decentralization
   - exchange
   - exchange-api-key

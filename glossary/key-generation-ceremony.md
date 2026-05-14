@@ -12,8 +12,6 @@ relatedTerms:
   - bitcoin-inheritance-planning
   - chaincode
   - deterministic-wallet
-  - dukpt-derived-unique-key-transaction
-  - entropy-mixing-party
   - hardware-security-module-hsm
   - hardware-wallet
   - key-rotation

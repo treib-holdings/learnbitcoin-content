@@ -9,10 +9,8 @@ keyTakeaways:
   - "Ensures no tampering occurred without downloading the full block"
 sources: []
 relatedTerms:
-  - adaptive-block-filter
   - bip-37
   - bip-158
-  - efficient-range-proof
   - fraud-proof
   - merkle-block
   - merkle-tree-merkle-root

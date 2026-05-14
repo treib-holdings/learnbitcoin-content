@@ -11,7 +11,6 @@ sources: []
 relatedTerms:
   - inactive-channel
   - lightning-invoice
-  - lucas-number
   - pruning-mode
 liveWidget: ~
 ---

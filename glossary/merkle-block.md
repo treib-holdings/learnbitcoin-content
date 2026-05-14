@@ -9,12 +9,10 @@ keyTakeaways:
   - "Saves bandwidth/storage, enabling lightweight verification"
 sources: []
 relatedTerms:
-  - adaptive-block-filter
   - bip-37
   - bip-158
   - block-header
   - bloom-filter
-  - efficient-range-proof
   - merkle-inclusion-proof
   - merkle-tree-merkle-root
   - merkle-proof

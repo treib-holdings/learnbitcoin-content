@@ -9,7 +9,6 @@ keyTakeaways:
   - "Prevents reliance on a single server or centralized directory"
 sources: []
 relatedTerms:
-  - api-application-programming-interface
   - bip-159
   - dedicated-ip-nodes
   - eclipse-attack

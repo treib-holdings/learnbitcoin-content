@@ -9,7 +9,6 @@ keyTakeaways:
   - "Essential for building robust Bitcoin services and apps"
 sources: []
 relatedTerms:
-  - api-application-programming-interface
   - bip-22-getblocktemplate
   - bitcoin-client
   - bitcoin-core

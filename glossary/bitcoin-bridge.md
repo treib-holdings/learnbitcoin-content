@@ -9,7 +9,6 @@ keyTakeaways:
   - "Involves trade-offs in security and trust models"
 sources: []
 relatedTerms:
-  - auto-unwrap-sidechains
   - bip-300-drivechains
   - bip-301
   - liquid-network

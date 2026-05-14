@@ -10,7 +10,6 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - hash
-  - hash-locktime-contract-hlc
   - htlc-hashed-time-locked-contract
   - zkcp-zero-knowledge-contingent-payment
 liveWidget: ~

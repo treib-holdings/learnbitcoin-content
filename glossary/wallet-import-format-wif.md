@@ -9,7 +9,6 @@ keyTakeaways:
   - "Gradually superseded by HD seed phrases for typical backups"
 sources: []
 relatedTerms:
-  - garlium
   - gui-wallet
   - hd-wallet-hierarchical-deterministic-wallet
   - hierarchical-deterministic-wallet

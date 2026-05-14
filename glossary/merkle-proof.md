@@ -9,12 +9,10 @@ keyTakeaways:
   - "A core part of SPV wallet validation strategies"
 sources: []
 relatedTerms:
-  - adaptive-block-filter
   - bip-37
   - bip-158
   - block-header
   - bloom-filter
-  - efficient-range-proof
   - fraud-proof
   - hash
   - merkle-block

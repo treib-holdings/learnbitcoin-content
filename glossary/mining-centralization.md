@@ -12,7 +12,6 @@ relatedTerms:
   - competitive-block-propagation
   - competitive-mining
   - decentralization
-  - dyson-sphere-mining
   - energy-fud
   - geographic-mining-distribution
   - hidden-miner-tax

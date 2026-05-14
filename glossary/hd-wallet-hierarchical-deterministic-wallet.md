@@ -19,7 +19,6 @@ relatedTerms:
   - custodial-lightning-wallet
   - custodial-wallet
   - deterministic-wallet
-  - garlium
   - gui-wallet
   - hardware-seed-vault
   - hardware-wallet

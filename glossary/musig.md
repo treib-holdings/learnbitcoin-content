@@ -10,7 +10,6 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - bip-174-psbt
-  - covariance-transaction
   - ecdsa-elliptic-curve-digital-signature-algorithm
   - elliptic-curve
   - hdm-multi-signature-hd-wallet

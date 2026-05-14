@@ -11,7 +11,6 @@ sources: []
 relatedTerms:
   - bitcoin-pizza-day
   - genesis-block
-  - genesis-keys
   - hal-finneys-running-bitcoin
   - satoshi-unit
   - whitepaper

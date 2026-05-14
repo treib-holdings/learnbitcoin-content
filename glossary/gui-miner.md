@@ -18,7 +18,6 @@ relatedTerms:
   - mining-colocation
   - mining-rig
   - mining-software
-  - phone-mining
   - retail-mining
 liveWidget: ~
 ---

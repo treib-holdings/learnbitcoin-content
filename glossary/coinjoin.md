@@ -13,7 +13,6 @@ relatedTerms:
   - address-reuse
   - chain-analysis
   - coin-control
-  - coin-plasma
   - mixing-service
   - payjoin
   - shielded-coinjoin

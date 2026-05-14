@@ -12,7 +12,6 @@ relatedTerms:
   - custodial-lightning-wallet
   - custodial-wallet
   - deterministic-wallet
-  - garlium
   - gui-wallet
   - hd-wallet-hierarchical-deterministic-wallet
   - hierarchical-deterministic-wallet

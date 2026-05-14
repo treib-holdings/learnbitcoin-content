@@ -11,11 +11,9 @@ sources: []
 relatedTerms:
   - difficulty
   - halving-halvening
-  - hash-fever
   - hash-rate
   - hash-rate-derivative
   - hashlet
-  - hashpool
   - miner
   - miner-capitulation
   - mining

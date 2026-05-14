@@ -14,7 +14,6 @@ relatedTerms:
   - bitcoin-inheritance-planning
   - chaincode
   - deterministic-wallet
-  - entropy-mixing-party
   - hardware-seed-vault
   - hardware-wallet
   - hd-wallet-hierarchical-deterministic-wallet

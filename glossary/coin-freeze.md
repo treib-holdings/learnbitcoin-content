@@ -12,7 +12,6 @@ relatedTerms:
   - burn-address
   - clawback-mechanism
   - coin-control
-  - coin-plasma
   - colored-coins
   - covenants
   - escrow

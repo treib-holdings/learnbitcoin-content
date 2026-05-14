@@ -16,7 +16,6 @@ relatedTerms:
   - custodial-lightning-wallet
   - custodial-wallet
   - deterministic-wallet
-  - garlium
   - green-address
   - gui-wallet
   - hardware-wallet

@@ -10,7 +10,6 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - deterministic-wallet
-  - entropy-mixing-party
   - hd-wallet-hierarchical-deterministic-wallet
   - hierarchical-deterministic-wallet
   - seed-phrase

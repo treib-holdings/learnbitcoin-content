@@ -10,10 +10,8 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - anti-sybil-mechanism
-  - bounty
   - byzantine-fault-tolerance
   - consensus-parameter
-  - cuckoo-cycle
   - decentralization
   - difficulty
   - difficulty-retargeting

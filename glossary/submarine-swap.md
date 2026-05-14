@@ -13,7 +13,6 @@ relatedTerms:
   - atomic-swap
   - atomic-swap-refill
   - bridge-node-lightning
-  - hash-locktime-contract-hlc
   - htlc-hashed-time-locked-contract
   - lightning-network
   - lightning-payment

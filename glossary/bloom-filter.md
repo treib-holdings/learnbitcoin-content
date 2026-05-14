@@ -9,7 +9,6 @@ keyTakeaways:
   - "Largely replaced by more private methods (BIP 157/158)"
 sources: []
 relatedTerms:
-  - adaptive-block-filter
   - bip-37
   - bip-158
   - merkle-block

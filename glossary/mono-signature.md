@@ -11,7 +11,6 @@ sources: []
 relatedTerms:
   - interactive-multi-sig
   - m-n
-  - module-signing
   - musig
   - musig2
   - quorum-signatures
