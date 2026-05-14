@@ -17,5 +17,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Sending BTC to a burn address is like throwing money into a digital black hole. Commonly starting with '1BitcoinEater...' or other patterns, these addresses are intentionally created with no known corresponding private keys. Thus, the coins can never be spent again.
-While sometimes used as a proof of token destruction or to reduce supply, sending BTC to a burn address is irreversible. It can also be done for symbolic gestures-such as burning coins to show commitment to a project-or to destroy confiscated or compromised funds. Regardless of purpose, sending BTC there essentially removes them from the market forever.
+A burn address is a Bitcoin address whose private key is provably unknown. Coins sent there are unspendable forever, because no signature can be produced to claim them.
+
+Three common ways to build a burn address:
+
+- **Provably-unowned vanity addresses.** Patterns like `1BitcoinEater...Eat...` are chosen specifically so the address looks intentional and unspendable. The full address still has to derive from a hash, which means there is *some* private key, but the structure of the address makes it astronomically improbable that anyone could find it.
+- **`OP_RETURN` outputs.** Strictly speaking these aren't addresses at all; they're outputs with a script that's deliberately invalid for spending. Bitcoin Core won't even index them as UTXOs. Used for embedding data on-chain (timestamps, commitments, attestations).
+- **Mathematically-impossible addresses.** Addresses derived from "magic" hash inputs (all zeros, the SHA-256 of "burn", etc.) that no realistic key search can reproduce.
+
+Why anyone deliberately burns BTC:
+
+- **Proof of burn.** Some sidechain bootstrap mechanisms required participants to burn BTC on mainnet to receive sidechain coins. Real money, on the line, no easy revoke.
+- **Symbolic destruction.** Demonstrating commitment to a protocol, expressing protest, or making a public statement.
+- **Confiscation handling.** Governments occasionally destroy seized coins; sending to a burn address is one way (sending to a legitimate treasury address is more common).
+
+Quietly, Bitcoin's circulating supply is also reduced by accidental burns: lost seeds, dead drives, addresses with keys nobody can recover. Best estimates suggest 3-4 million BTC are effectively lost (Glassnode and Chainalysis publish ranges). Those aren't ceremonial burns, but the net effect on supply is the same.
+
+Sending to a burn address is irreversible by design. There is no recovery process and no human you can appeal to. If you're doing it, do it carefully.
