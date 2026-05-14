@@ -21,4 +21,14 @@ relatedTerms:
 liveWidget: ~
 ---
 
-After a chain fork (like Bitcoin vs. Bitcoin Cash), a transaction broadcast on one chain may still be valid on the other if both share the same addresses/keys and no replay protection is implemented. Attackers can 'replay' your TX from chain A on chain B, unintentionally spending your funds there too. Solutions include unique transaction formats (replay protection), spending coins on each chain separately, or using address types only valid on one chain. Without such safeguards, users must carefully isolate coins after a fork to avoid accidental losses.
+A replay attack happens after a chain fork: a transaction signed and broadcast on chain A is also valid on chain B because both chains share UTXOs, addresses, and signature rules. An attacker (or just the natural P2P network) can rebroadcast your transaction on the other chain, spending the corresponding "twin" coins without your consent.
+
+The canonical historical example is the August 2017 Bitcoin Cash split. Initially BCH had partial replay protection; Bitcoin Cash later added strong replay protection via a custom `SIGHASH_FORKID` flag that makes a BCH transaction invalid on Bitcoin and vice versa. Bitcoin SV's later split from BCH added its own.
+
+Mitigations on a forking chain:
+
+- Strong replay protection: the fork introduces a chain-specific signature change (a different sighash, a chain-ID-style commit, etc.) so transactions don't cross-validate.
+- Separate spending: spend each side's coins to a fresh address before broadcasting anywhere, using inputs that are valid only on one chain.
+- "Splitter" services: trusted helpers that produce a transaction explicitly valid on only one chain.
+
+In 2026 the practical replay-attack risk is essentially zero for normal Bitcoin users. Any contentious fork that mattered would ship with replay protection, because the experience without it was painful enough in 2017 that no future fork would skip it.
