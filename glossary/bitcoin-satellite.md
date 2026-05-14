@@ -18,5 +18,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Bitcoin Satellite is akin to having a cosmic safety net for Bitcoin data. Instead of relying solely on internet connectivity, these satellites beam down blockchain blocks, allowing anyone with a small satellite dish to receive updates and run a node. This bolsters network resilience in regions with limited or unreliable internet.
-The service is provided by Blockstream, aiming to make Bitcoin accessible across the globe. While you still need a way to broadcast your own transactions (possibly via SMS gateways or occasional internet), Bitcoin Satellite ensures you won't miss new blocks even if your local internet goes down. It's another step toward decentralized infrastructure-quite literally sending Bitcoin into orbit.
+Bitcoin Satellite is Blockstream's broadcast of Bitcoin blocks over geostationary satellite. Several leased transponders cover most of the populated planet. A small receive-only dish (around 45 cm) plus a $200-300 receiver gives a node a real-time block feed without an internet connection.
+
+The use cases are narrower than the marketing implies. You still need some way to broadcast your own transactions: a phone with cell service, an SMS gateway, or Blockstream's paid satellite uplink service that queues messages for satellite transmission. So it's not quite "Bitcoin without the internet" for the user. But it does mean:
+
+- A node in a censored network can keep its chain state current without revealing that it's running Bitcoin. The dish points at a satellite, not at a server.
+- A node in a remote location with intermittent internet can fill gaps from satellite.
+- The network has a redundant, hard-to-jam block distribution path that doesn't depend on any single ISP, country, or peering arrangement.
+
+It's a "good to know it exists" infrastructure piece. Most node operators with reliable internet will never touch it. For the few who need it, it's the difference between a working node and a stale one.
