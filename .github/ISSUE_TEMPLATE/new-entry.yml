@@ -1,0 +1,54 @@
+name: Propose a new entry
+description: A glossary term, rabbit hole, or journey chapter that should exist
+title: "New entry: "
+labels: ["new-content"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: What kind of entry?
+      options:
+        - Glossary term
+        - Rabbit hole
+        - Journey chapter
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Proposed title
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does this belong?
+      description: |
+        What gap does it fill? Who would read it? Is there a related
+        page that should link to it?
+    validations:
+      required: true
+  - type: textarea
+    id: sketch
+    attributes:
+      label: Rough sketch (optional)
+      description: |
+        A few bullet points of what the entry would cover. Not
+        required, but speeds up the conversation.
+  - type: textarea
+    id: sources
+    attributes:
+      label: Primary sources
+      description: |
+        Where would you cite for the factual claims? Skip if obvious.
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: Bitcoin only. Not about altcoins or "crypto generally."
+          required: true
+        - label: Not a price prediction or "this could moon" piece.
+          required: true
+        - label: Not an affiliate piece for a specific product.
+          required: true

@@ -1,0 +1,46 @@
+name: Typo or factual correction
+description: A small fix to existing content
+title: "Typo / fix: "
+labels: ["typo"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For typos and broken links, you can also just open a pull
+        request directly. Both work.
+  - type: input
+    id: page
+    attributes:
+      label: Which page?
+      description: URL on learnbitcoin.com, or the file path in this repo.
+      placeholder: e.g. /glossary/utxo-unspent-transaction-output
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current text
+      description: Quote the line as it appears today.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed text
+      description: What it should say instead.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source (if factual)
+      description: |
+        If this is a factual correction, link a primary source.
+        BIPs, source code, papers, reputable references.
+  - type: checkboxes
+    id: voice
+    attributes:
+      label: Voice check
+      options:
+        - label: No em dashes, ASCII straight punctuation only
+        - label: No affiliate links, no altcoins, no price predictions

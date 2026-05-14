@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Email
+    url: mailto:hello@learnbitcoin.com
+    about: Anything that does not fit a template
+  - name: Manifesto
+    url: https://learnbitcoin.com/manifesto
+    about: What we believe, what we will not do, who this is for

@@ -1,0 +1,39 @@
+name: Clarification request
+description: Something is confusing or could be explained better
+title: "Clarification: "
+labels: ["clarification"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Which page?
+      placeholder: e.g. /rabbit-hole/utxos
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What was unclear?
+      description: Quote the section if you can. Tell us where you got stuck.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: How could it be better? (optional)
+      description: |
+        Even a rough sketch helps. We can usually find a better wording
+        once we understand where the confusion lives.
+  - type: dropdown
+    id: experience
+    attributes:
+      label: Roughly how would you describe your Bitcoin background?
+      description: |
+        Helps us calibrate how much prior context to assume. Not used
+        for anything else.
+      options:
+        - Brand new
+        - Heard about it, never used it
+        - Use it casually
+        - Self-custody, run a node, etc.
+        - Deep technical background
