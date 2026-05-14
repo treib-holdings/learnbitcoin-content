@@ -45,3 +45,22 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for what we welcome, what we will not mer
 Content: [Creative Commons Attribution-ShareAlike 4.0 International (CC-BY-SA-4.0)](LICENSE).
 
 Translate it. Embed it. Remix it. Build your own Bitcoin school on top of it. Attribution + share-alike is the only ask.
+
+## How to attribute
+
+If you reuse any of this content, please credit it with something like:
+
+> Content from [LearnBitcoin.com](https://learnbitcoin.com), licensed
+> [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+For print or contexts where hyperlinks do not render, include the URLs
+in plain text. The license requires a link to the license itself; a
+link or citation back to learnbitcoin.com is encouraged and helps
+readers find the source.
+
+Two extra things to know if you are publishing a derivative:
+
+- **Share-alike applies.** Your version must also be licensed CC-BY-SA-4.0
+  (or a compatible later version).
+- **Modifications must be noted.** If you change the content, say so. A
+  line like "Adapted from LearnBitcoin.com, with edits." is enough.
