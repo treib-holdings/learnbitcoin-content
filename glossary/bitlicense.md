@@ -19,5 +19,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The BitLicense, introduced by the New York State Department of Financial Services, is like the bouncer's stamp of approval for crypto businesses operating within New York. It mandates stringent KYC/AML practices, cybersecurity standards, and regular reporting. Exchanges, custodians, and certain wallet providers typically need a BitLicense to legally serve New York residents.
-Critics argue it's overly restrictive and stifles innovation by forcing startups to navigate expensive legal hurdles. Consequently, some crypto platforms have opted out of NY entirely, leading users to lament "Not available in your state." Supporters, however, see it as a necessary regulatory framework for consumer protection in one of the world's biggest financial markets.
+The BitLicense is a state-level virtual currency license issued by the New York State Department of Financial Services (NYDFS). Introduced in 2015, it's one of the earliest jurisdiction-specific crypto regulatory frameworks anywhere in the world, and famously demanding in its requirements.
+
+What a BitLicense holder commits to:
+
+- **KYC / AML.** Full identity verification on customers, ongoing monitoring of transactions, suspicious activity reporting.
+- **Cybersecurity.** Detailed program documentation, regular audits, formal incident response plans.
+- **Capital and bonding.** Maintain minimum capital reserves; some activities require surety bonds.
+- **Consumer protection.** Disclosure obligations, complaint handling procedures, restrictions on certain practices.
+- **Reporting.** Quarterly financial reports plus ad-hoc reports on material changes.
+
+The application process is famously slow and expensive. Legal and compliance costs to file run into the hundreds of thousands of dollars. The license itself only authorizes operation in New York; businesses serving other US states need to navigate separate state-level money transmitter licensing.
+
+Most major US-based crypto businesses that serve New York hold a BitLicense (or operate under one of the limited exemptions): Coinbase, Gemini, Circle, Paxos, Bitstamp, and others. Other businesses simply restrict service to non-NY residents - the "Not available in your state" pattern. Kraken famously withdrew its primary service from New York rather than apply, citing the cost-to-benefit ratio.
+
+The BitLicense remains a contentious framework. Defenders argue it provides consumer protection in a market with significant fraud history (and NYDFS does enforce against bad actors). Critics argue it advantages well-funded incumbents while pricing smaller competitors out and pushing innovation to other jurisdictions. Both views have evidence behind them.
