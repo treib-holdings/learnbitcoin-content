@@ -56,8 +56,6 @@ The site has a consistent voice. The short version:
   to blog posts.
 - **Opinionated, not preachy.** Take positions where they are earned.
   Skip the moralizing.
-- **No em dashes.** Use a spaced short dash ` - ` or other punctuation.
-  This is enforced site-wide.
 - **ASCII straight punctuation only.** No curly quotes, no smart
   apostrophes, no en-dashes, no ellipsis characters. Curly quotes
   break YAML frontmatter.
