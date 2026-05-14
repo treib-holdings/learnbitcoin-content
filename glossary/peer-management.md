@@ -12,4 +12,17 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-A healthy Bitcoin node usually connects to 8-125 peers (configurable). If a peer sends invalid blocks or spam, the node might drop or ban them. Conversely, nodes prefer stable, high-bandwidth peers to propagate blocks efficiently. Algorithms ensure a mix of inbound and outbound connections so the node is both discoverable and well-connected. Peer management aims for a resilient P2P mesh: too few peers leaves the node isolated, while too many wastes resources. Automatic or manual controls can refine the node's connectivity, improving sync speed and network reliability.
+Peer management is the set of rules a node uses to decide which connections to keep, which to drop, and how to respond to misbehavior.
+
+Bitcoin Core's defaults in 2026:
+
+- 8 outbound full-relay peers (the ones it actively gossips transactions and blocks with).
+- 2 outbound block-relay-only peers, which receive only blocks. They harden against transaction-based eclipse attacks because they don't reveal which transactions the node has seen.
+- Up to about 115 inbound peers, configurable via `maxconnections`.
+- 1 outbound "feeler" connection that briefly probes new peers to test reachability and then disconnects.
+
+Outbound peer selection prefers diversity: different ASNs (using the bundled `asmap` file), different network types (clearnet, Tor, I2P), different geographies where the signal allows. That diversity is the main defense against [eclipse attacks](/glossary/eclipse-attack), where an adversary tries to fill all your peer slots with peers they control.
+
+Misbehavior is tracked per-peer. Invalid messages, malformed protocol traffic, repeated useless requests: the peer's score rises and eventually triggers disconnection and a temporary ban (see [node-autoban](/glossary/node-autoban)). Honest peers almost never trip it.
+
+The art of peer management is balance. Enough peers for redundancy and diverse paths, not so many that resource usage gets out of hand or that the node becomes a target for resource-exhaustion attacks. Bitcoin Core's defaults are sensible; most operators should leave them alone.

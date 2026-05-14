@@ -22,5 +22,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A headless node is the purest form of a full node: it doesn't display windows or buttons, instead relying on config files, RPC commands, or CLI prompts. This mode suits servers, embedded devices, or power users who automate tasks (like reindexing or transaction broadcasting) via scripts. Bitcoin Core can run in headless mode (bitcoind), consuming fewer system resources and allowing remote administration.
-Many advanced Bitcoin services (e.g., payment processors, block explorers) integrate directly with a headless node using JSON-RPC, enabling custom functionalities and automated workflows. While it requires more technical know-how, a headless setup can be incredibly efficient and flexible for those comfortable with the command line.
+A headless node is `bitcoind` running without the `bitcoin-qt` GUI: no window, no menus, just the daemon process listening on RPC and the P2P network. It's the standard production deployment.
+
+Why headless:
+
+- Less RAM and CPU than running Qt. Frees resources for the actual node work.
+- Easy to run on a server, a Raspberry Pi, a NAS, or any embedded device.
+- Configurable entirely through `bitcoin.conf`. Drivable through `bitcoin-cli` or RPC, so scripts and other software can talk to it directly.
+- Runs as a systemd service or launchd job that survives reboots, restarts, and SSH disconnections.
+
+It's how every packaged node distro (Umbrel, Start9, RaspiBlitz, MyNode, Citadel) actually runs Bitcoin Core under the hood. The friendly web UI talks to `bitcoind` via RPC. It's also how exchanges, payment processors, block explorers, Electrum servers, and Lightning nodes interact with Bitcoin: not through a GUI, but through `getblockchaininfo`, `gettxout`, `sendrawtransaction`, and the rest of the RPC surface.
+
+If you don't need a GUI, headless is the right default. Less surface area, less resource usage, easier to automate and monitor.

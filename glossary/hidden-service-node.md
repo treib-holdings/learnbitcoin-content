@@ -23,4 +23,17 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Running a Bitcoin node as a hidden service means it can't be reached via a standard public IP. Instead, it provides a .onion address, which only Tor-enabled peers can connect to. This setup bolsters privacy for the node operator by masking geolocation and network details. It also helps circumvent certain ISP or jurisdiction-based restrictions, as Tor traffic is encrypted and routed through multiple relays. Many privacy-conscious users prefer hidden service nodes to protect themselves from targeted attacks or eavesdropping. The trade-off is slightly more complex configuration and potential lower bandwidth or connectivity speed than non-Tor connections.
+A hidden service node runs Bitcoin Core behind a Tor v3 onion address (56 characters, ed25519-keyed) instead of, or in addition to, a clearnet IP. Other Tor-enabled peers connect via `.onion`; clearnet-only peers don't see the node at all.
+
+What you gain:
+
+- The operator's IP is not visible to peers. Useful if you'd rather not advertise to neighbors, ISPs, or chain analysts that you run a Bitcoin node.
+- The node accepts inbound connections without port forwarding or a public IPv4 address. Behind NAT? Doesn't matter.
+- Censorship resistance. Tor's relay model makes blanket "block all Bitcoin peers" rules much harder to enforce than a clearnet block list.
+
+What you give up:
+
+- Some latency. Tor adds hops, so block and transaction propagation is a few seconds slower than clearnet.
+- Some peer diversity. The node only sees other onion-reachable peers unless you also enable clearnet outbound (the typical config does both).
+
+BIP 155 (addrv2, deployed 2021) gave Bitcoin proper P2P support for advertising Tor v3, I2P, and CJDNS addresses through address gossip. Before that, hidden service nodes were second-class citizens in peer discovery. Today, running Bitcoin Core on a host with Tor installed automatically enables hidden service mode, and a meaningful fraction of the network is reachable only via Tor.

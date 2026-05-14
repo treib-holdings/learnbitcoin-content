@@ -21,4 +21,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Bitcoin Core and other node implementations often include logic to track misbehaving peers-e.g., those relaying invalid blocks, spamming low-fee transactions, or repeatedly sending malformed data. Once a threshold of offenses is reached, the node 'autobans' that IP or peer for a set period (usually hours) to prevent further resource waste. This helps keep the mempool clean, prevents denial-of-service attacks, and ensures consensus remains robust. Honest nodes rarely trip the ban threshold, but malicious or buggy peers can get cut off automatically.
+Node autoban is Bitcoin Core's misbehavior tracking. The node assigns each peer a running misbehavior score; certain offenses bump it; once the score crosses a threshold (default 100), the peer is disconnected and its IP is banned for 24 hours.
+
+What earns points:
+
+- Invalid blocks (often an immediate ban-class offense: large score in one shot).
+- Invalid transactions that violate consensus rules (smaller score, additive).
+- Malformed P2P messages, oversized payloads, protocol violations.
+- Repeated requests for data the peer should already have.
+- DoS-style behavior: spamming `INV`, requesting nonexistent data, flooding with garbage.
+
+Honest peers basically never get banned. Almost every points-accumulating behavior requires either a bug in the peer's software or active malice. The system exists to make it expensive for an attacker to keep spending your bandwidth and CPU on garbage.
+
+The ban list is local to each node. There's no global "bad peer" registry, and there shouldn't be: a network-wide peer-banning consensus would itself be a centralization vector. Each node decides for itself. You can inspect and edit your own ban list with `listbanned` / `setban` via RPC.
