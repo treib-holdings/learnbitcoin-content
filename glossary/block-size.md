@@ -20,5 +20,17 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Originally, Bitcoin blocks had a hard-coded limit of 1 MB. This restriction helps prevent network spam and controls resource usage for node operators. However, with the activation of Segregated Witness (BIP 141), the concept of 'block weight' was introduced, allowing some transactions (particularly those using SegWit) to occupy additional space beyond the nominal 1 MB limit.
-In practice, this means that post-SegWit blocks can exceed 1 MB in raw data size, often reaching around 1.3-1.5 MB on average. The new measure, called the 'block weight limit,' tops out at 4 million weight units. The broader goal is to balance transaction throughput with decentralization, ensuring full nodes remain accessible to the widest range of participants.
+Block size is Bitcoin's most famous consensus parameter. The original 1 MB hard cap (introduced in July 2010 as an anti-spam measure) was the focus of years of debate and ultimately the 2017 [SegWit](/glossary/segwit-segregated-witness-bip-141) soft fork. The current rule isn't a flat size in bytes; it's a 4 million weight unit limit, where non-witness data costs 4 weight units per byte and witness data costs 1.
+
+Effects in practice:
+
+- **Typical block sizes** range from 1.3 to 2.0 MB on disk, depending on what fraction of transactions are SegWit/Taproot (which pay the witness discount).
+- **The hard cap** keeps validation costs bounded. A modest laptop can validate every block in seconds; a Raspberry Pi can keep up with the chain tip. That's deliberate. Larger blocks would shift node-running cost upward and centralize the validator set.
+- **The block weight limit** has been politically untouchable since 2017. The 2015-2017 "block size war" (see [BIP 101](/glossary/bip-101-increase-block-size) and [BIP 102](/glossary/bip-102-2mb-block-size)) ended with the SegWit soft fork plus the Bitcoin Cash hard fork; the surviving Bitcoin community settled on "blocks stay small, scaling happens off-chain via Lightning."
+
+What this isn't:
+
+- It's not 1 MB anymore. Anyone citing "Bitcoin's 1 MB blocks" in 2026 is using outdated information.
+- It's not a literal byte limit. The weight unit framing matters because it changes the economics of SegWit vs legacy transactions.
+
+The block-size question is settled for the foreseeable future. The substantive throughput debates have moved to Lightning channel design, payment-routing efficiency, and Taproot script optimization, not on-chain capacity.

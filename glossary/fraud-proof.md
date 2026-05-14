@@ -18,5 +18,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Fraud proofs are akin to a detective presenting bulletproof evidence of wrongdoing. In scalable solutions like rollups or sidechains, users often don't verify every transaction themselves. Instead, they rely on the ability to provide a 'fraud proof' if someone tries to post a bogus state. This proof demonstrates that a particular block or transaction violates the rules.
-In practice, watchers or validators keep an eye on the chain and generate a fraud proof if they spot cheating. Honest participants then reject that invalid block, reverting to the last valid state. If no fraud proof is presented, everyone assumes the blocks are legitimate. This technique can reduce on-chain data while preserving trust-but requires robust incentives to keep watchers vigilant.
+A fraud proof is a compact cryptographic demonstration that a specific transaction or block violates a chain's consensus rules. The receiver of the proof can independently verify the violation without needing to download or validate everything else.
+
+The use cases:
+
+- **SPV / light clients.** A full node could send a fraud proof to a light client showing "this block your trusted peer told you about contains an invalid transaction, here's the proof." The client gets full-validation-level security without running a full node. This was a key motivation in early SPV design but never fully shipped for Bitcoin's mainline P2P.
+- **Optimistic rollups (mostly other chains).** Rollups assume layer-2 state transitions are valid by default; anyone can challenge with a fraud proof during a contestation window. If no proof appears, the state is finalized. Used heavily on Ethereum L2s (Optimism, Arbitrum); proposed but not yet deployed for Bitcoin layer-2 designs.
+- **Drivechain proposals (BIP 300/301).** Sidechain withdrawals could be challenged via fraud proofs during the multi-month withdrawal period.
+- **BitVM and related Bitcoin-side-chain experiments.** Bridge constructions where one party posts a claim and the counterparty has time to disprove it with a fraud proof.
+
+The pattern is always the same: an optimistic assumption ("the state is valid"), a challenge window, and a mechanism for any honest party to disprove a false claim. The trust assumption shifts from "every participant verifies everything" to "at least one honest participant is willing to challenge." That's a much weaker assumption to satisfy, which is what makes fraud-proof designs attractive for scaling.
+
+The downside: someone has to actually be watching and willing to spend the resources to challenge. If the contestation window passes without a challenge, the false state finalizes. Reliable fraud-proof systems need either economic incentives for watchers or trusted committees willing to monitor.

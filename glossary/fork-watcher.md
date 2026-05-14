@@ -18,5 +18,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A fork watcher is like the early-warning siren in a coastal town that detects tsunamis. When a chain reorganization goes beyond a few blocks, or if a new fork emerges with non-standard blocks, the watcher sounds the alarm. Some watchers provide real-time alerts via email, SMS, or dashboards, helping node operators and miners quickly pivot if needed.
-Developers and exchange operators rely on these watchers to freeze deposits or withdrawals when something suspicious happens, preventing double spends or orphaned block chaos. This level of vigilance is especially valuable during software upgrades or the activation of new consensus rules, as it can prevent nasty surprises when chain splits happen in the wild.
+A fork watcher is the dedicated tooling that does [fork detection](/glossary/fork-detection) as a continuous service, alerting operators when something unusual happens at the chain-consensus layer.
+
+The reference implementation is [forkmonitor.info](https://forkmonitor.info), run by Bitcoin Core developer Sjors Provoost. It does several things at once:
+
+- Runs many Bitcoin node implementations side-by-side (Core, Knots, btcd, libbitcoin, etc.) plus multiple versions of each.
+- Watches for chain divergence between any of them.
+- Tracks stale-block events, deep reorgs, soft-fork activation signal bits, and inflation-bug-style consensus failures.
+- Publishes alerts to public RSS / Twitter / mailing-list feeds.
+- Maintains the canonical public record of "what the chain actually looked like during event X."
+
+Why fork-watcher infrastructure matters beyond any single operator:
+
+- During the 2018 inflation-bug (CVE-2018-17144) patching window, fork watchers helped track which versions were upgraded and whether any actually-buggy chain existed.
+- During soft-fork activations (SegWit, Taproot), fork watchers tracked signaling and confirmation that the activation didn't split the chain.
+- During the BCH split (August 2017) and subsequent BCH-internal splits (November 2018), fork watchers were the authoritative public source for "what hash is the tip on each chain right now."
+
+Commercial offerings (exchanges, custodians) typically run their own fork watchers internally as a deposit-freezing trigger. Public watchers like forkmonitor.info serve the community-research function. Both exist because Bitcoin's correctness is too important to assume nothing's gone wrong - someone has to actively check.

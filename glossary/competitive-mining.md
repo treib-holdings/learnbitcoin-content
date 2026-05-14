@@ -24,5 +24,14 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Competitive mining means there are no gatekeepers; if you own or rent ASIC miners and electricity, you can participate. This open competition for block rewards is a cornerstone of Bitcoin's proof-of-work security model, preventing central authority over issuance.
-Because miners are economically incentivized, hardware races and electricity cost optimizations flourish. Over time, mining has become industrialized, with large-scale farms vying for the edge in efficiency. Some worry about centralization in regions with cheap power, but Bitcoin's fundamental design still allows any individual to join if they can stay profitable. It's all about finding valid hashes faster than the next miner.
+Competitive mining is the permissionless nature of Bitcoin's proof-of-work: no licensing, no minimum-stake gating, no protocol-level discrimination. Anyone who acquires ASIC hardware and electricity can hash, and the winner of each block is determined purely by who finds a valid nonce first.
+
+What the competition optimizes for:
+
+- **Hash rate per dollar.** New ASIC generations (Antminer S21, Whatsminer M60, Bitmain S21 XP, etc.) deliver more terahashes per watt. The fleet refresh cycle is fast; 2-3 year old ASICs are typically uneconomic at current difficulty.
+- **Electricity cost.** The dominant variable in mining economics. Profitable operations pay 3-5 cents per kWh; anything over 7-8 cents is marginal. This is why mining clusters around stranded hydro, flared natural gas, nuclear baseload, and underutilized grid capacity.
+- **Operational efficiency.** Cooling (immersion or hydro), facility uptime, firmware tuning, [proprietary firmware](/glossary/proprietary-mining-firmware), pool selection. Every percent matters at scale.
+
+The decentralization story is mixed. Mining is permissionless in principle, but in practice the capital intensity (industrial-scale facilities, ASIC supply chains, cheap-power deals) concentrates mining among well-capitalized operators. The mining-pool layer further aggregates hash rate even when underlying miners are diverse. See [mining centralization](/glossary/mining-centralization) for the honest accounting.
+
+Still, the structural property holds: the protocol doesn't pick winners. A new entrant with ASICs and cheap power can join, mine, get paid, and exit without anyone's permission. That's the floor of decentralization that competitive mining provides.

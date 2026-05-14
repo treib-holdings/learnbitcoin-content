@@ -19,4 +19,30 @@ relatedTerms:
 liveWidget: ~
 ---
 
-If multiple blockchains share the same PoW function (like SHA-256), miners can submit proof-of-work for both chains without doubling their hash computations-this is merged mining. When they find a valid block hash, it can be packaged for each chain, potentially earning rewards on both if the blocks meet each chain's difficulty target. Bitcoin+Namecoin is a classic example. Critics note that merged mining can introduce security concerns if one chain becomes overly reliant on another chain's mining power, but it remains a notable way to bootstrap smaller networks with Bitcoin's existing ASIC ecosystem.
+Merged mining lets a miner produce valid proof-of-work for two (or more) SHA-256 blockchains simultaneously, without doing extra hashing. The miner's work nonce satisfies both chains' difficulty requirements; if it does, both chains get a new block from the same effort.
+
+The canonical example is Bitcoin + Namecoin, set up in 2011 when Namecoin's hash rate was too low to be secure on its own. Namecoin's block-header validation accepts a Bitcoin coinbase transaction as proof of work (encoded with a commitment to the Namecoin block), letting Bitcoin miners mine Namecoin essentially for free.
+
+How the mechanics work:
+
+1. The miner constructs a Namecoin block (with its own transactions, merkle root, etc.).
+2. The miner includes a commitment to the Namecoin block's hash inside their Bitcoin coinbase transaction.
+3. The miner hashes the Bitcoin block header normally.
+4. If the resulting hash meets *Bitcoin's* difficulty, they win a Bitcoin block. If it also meets *Namecoin's* (lower) difficulty, they win a Namecoin block too.
+5. The Namecoin block is constructed with a proof showing the Bitcoin coinbase committed to it, and Namecoin validators accept it.
+
+Other merged-mined chains over Bitcoin's history: Namecoin, Devcoin, Ixcoin, Rootstock (RSK), Syscoin. All are smaller chains that benefit from Bitcoin's enormous hash rate without competing for it.
+
+What merged mining buys you:
+
+- **Hash rate for free**, from the perspective of the smaller chain.
+- **Higher security floor** for the smaller chain (now requires attacking a fraction of Bitcoin's hash rather than just its own).
+- **Optional revenue for Bitcoin miners** who choose to include the commitment, if the smaller chain's rewards are worth claiming.
+
+What it doesn't fix:
+
+- The smaller chain still has its own consensus rules, validators, and trust model.
+- Bitcoin miners aren't *required* to merge-mine; if they collectively decided to stop, the smaller chain's security would drop.
+- The smaller chain inherits some Bitcoin-mining concentration risks at the level of pool operators.
+
+Merged mining is an interesting technical trick but mostly a footnote in Bitcoin's own story. It matters more for the chains that depend on Bitcoin's hash than for Bitcoin itself.

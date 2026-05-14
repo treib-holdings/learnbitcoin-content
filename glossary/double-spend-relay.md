@@ -17,5 +17,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Normally, Bitcoin nodes don't relay conflicting transactions-once one is accepted to the mempool, a conflicting transaction (spending the same inputs) is discarded. However, Double Spend Relay modifies that behavior so that nodes share any newly received conflicting transaction. This helps merchants or service providers detect attempted double spends more quickly.
-While it improves awareness of potential attacks, it can also clutter the network with invalid transactions. Some systems use it to provide real-time alerts for zero-confirmation payments, highlighting that a conflict is in the mempool. Ultimately, waiting for confirmations remains the safest defense, but double-spend relay can offer early detection in low-latency commerce scenarios.
+Double-spend relay is the practice of propagating conflicting (mutually-incompatible) unconfirmed transactions through the P2P network so that merchants and services can detect double-spend attempts in real time.
+
+By default, a Bitcoin Core node accepts the first version of a transaction it sees and silently drops any conflicting versions that arrive later. That's fine for the node's own bookkeeping but bad for anyone trying to detect a [race attack](/glossary/race-attack): if Alice sends one tx to the merchant and a conflicting tx to most of the network, the merchant's node never hears about the conflict until the wrong one confirms.
+
+Double-spend relay flips that default. When a conflicting transaction arrives, the node forwards it to peers (typically with a flag indicating it's a conflict) so monitoring services can see both versions and raise an alert.
+
+Where this matters:
+
+- **Zero-conf merchants.** Coffee shops, point-of-sale terminals, and instant-settlement services that accept payments before confirmation rely on double-spend monitoring to flag suspicious activity. Bitrefill, mempool.space, and various commercial monitoring services consume the relay.
+- **Mempool monitoring infrastructure.** Block explorers and chain-analysis tools track conflict events as signals.
+- **Research.** Studying real-world race-attack rates and mempool behavior.
+
+The flip side: the full-RBF default in Bitcoin Core 28.0 (2024) means most transactions are explicitly replaceable, so "conflict relay" is now closer to "RBF replacement relay" - a feature, not an attack signal. Genuine attempted double-spends (non-RBF conflicts) are now rare because zero-conf reliance on unmarked-final transactions has largely been abandoned in favor of Lightning or waiting for confirmations.

@@ -19,5 +19,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-When a miner finds a valid block, they want to broadcast it ASAP to the entire network-this is competitive block propagation. If other miners receive it quickly, they'll switch to building on that block, reducing orphan risk. Techniques like [Compact Blocks](https://github.com/bitcoin/bips/blob/master/bip-0152.mediawiki) and other relay optimizations help new blocks spread within seconds.
-Speed matters because any delay in sharing a newly discovered block means other miners might also discover a block on the old chain, creating a short-lived fork. The miner whose block is more widely recognized first often wins, while late-propagating blocks can become orphans, denying that miner the block reward. Hence, efficient propagation infrastructure is critical for competitive mining operations.
+Competitive block propagation is the high-stakes version of [block propagation](/glossary/block-propagation): the race to broadcast a freshly-mined block to enough of the network that other miners switch to building on top of it before they find a competing block of their own.
+
+The economics:
+
+- A block that propagates faster has a better chance of being the one other miners extend. That's the block whose reward gets paid.
+- A block that propagates slowly may be overtaken by a near-simultaneous block from a better-connected miner. The slower block becomes an orphan; its reward is lost.
+- For large operations, the orphan rate is a real percentage of revenue. Cutting it by half a percent is worth significant engineering investment.
+
+How miners compete:
+
+- **Compact Blocks (BIP 152)** at the protocol level: every miner gets this for free in Bitcoin Core.
+- **Direct peering** with other miners and pools: skip the public P2P network for the most latency-sensitive hops.
+- **Dedicated relay networks** (FIBRE, Falcon): UDP-based low-latency block relay, run by miners and infrastructure providers, push blocks globally in tens of milliseconds.
+- **Geographic placement.** Mining near major internet exchange points (Frankfurt, Amsterdam, Singapore, Ashburn) shaves milliseconds of latency.
+- **Validation-free forwarding.** "Spy mining" / "headers-first mining" lets a miner build on a new block's *header* before validating its body. Risky if the body turns out invalid, but for the seconds it saves it can be worth it.
+
+The arms race is bounded by the same protocol everyone runs. No miner can structurally pull ahead; the optimizations are marginal and well-known. But at industrial scale, marginal becomes meaningful.
