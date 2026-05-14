@@ -32,7 +32,7 @@ Why this is interesting:
 - **The oracle can't unilaterally steal funds.** They can only influence the outcome distribution - and the bettors choose which oracle they trust.
 - **Settlement happens on Bitcoin's main chain** without any custodial intermediary or specialized infrastructure beyond the oracle's signature.
 
-Real-world DLC oracles in 2026: a small but growing ecosystem. Suredbits, Lava Loans, P2DEX, and various sports/election oracles operate publicly. Most DLC activity is still niche relative to traditional betting markets but the technology is production-ready.
+Real-world DLC oracles in 2026: a small but growing ecosystem. **Suredbits** runs the most-established oracle infrastructure (including the Krystal Bull oracle tool and a public oracle explorer). **Lava Protocol** uses DLCs for Bitcoin-collateralized stablecoin loans, with their own Pythia oracle. **DLC.Link** has been building DLC-Chainlink bridge infrastructure. Various smaller sports and election oracles operate publicly. Most DLC activity is still niche relative to traditional betting markets, but the underlying technology is production-ready.
 
 The privacy advantage is real: from the chain's perspective, a DLC settlement looks like an ordinary [Taproot](/glossary/taproot) spend, indistinguishable from a regular cooperative spend. Bets, sports outcomes, election predictions - all settling on-chain without revealing what they are.
 
