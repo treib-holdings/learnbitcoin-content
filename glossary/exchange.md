@@ -20,5 +20,19 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Exchanges help users swap fiat currencies like USD or EUR for Bitcoin, or trade BTC against altcoins. Centralized exchanges (CEXs) are run by a company holding user funds and matching orders internally. Decentralized exchanges (DEXs) operate without a single custodian; users trade directly from their wallets, often facilitated by smart contracts or peer-to-peer matching.
-Both formats differ in liquidity, user experience, and regulatory compliance. CEXs typically have higher volumes and simpler interfaces but require trusting the platform with your private keys. DEXs minimize trust but can feel more complex and sometimes have lower liquidity. Most Bitcoin newcomers start on a CEX for convenience, but many graduate to DEXs or self-custody once they grasp the importance of holding private keys.
+An exchange is any service that lets users trade Bitcoin for other assets (fiat currency, stablecoins, or other crypto). The two structural categories matter more than the brands:
+
+- **Centralized exchange (CEX).** A company holds customer funds, matches orders on an internal order book, and settles trades on its own books. The exchange holds the private keys; customers hold IOUs in the exchange's database. Coinbase, Kraken, Binance, Bitstamp, Bitfinex, and dozens more.
+- **Decentralized exchange (DEX).** Trading happens through smart contracts or peer-to-peer matching protocols; users keep custody of their own funds throughout. On Bitcoin specifically, atomic swaps and protocols like Bisq fall here; most "DEX" volume happens on other chains (Uniswap, etc.) and isn't directly Bitcoin trading.
+
+The trust model is the dividing line. A CEX is a custodian: you trust them not to lose, freeze, or steal your coins. A DEX (in the strict sense) is a venue: you trust the protocol, but you keep your keys.
+
+The CEX failure record is one of the most important things a new Bitcoiner should learn from. The major historical collapses:
+
+- **Mt. Gox (2014)**: Tokyo-based exchange that handled ~70% of global Bitcoin volume; lost or had stolen ~850,000 BTC. Customers still being made partially whole more than a decade later.
+- **QuadrigaCX (2019)**: Canadian exchange whose CEO died (or "died") with the only access to the cold wallets; ~$190M customer funds gone.
+- **Celsius (2022)**: Crypto lender that froze withdrawals, declared bankruptcy. Customer funds locked for years.
+- **FTX (2022)**: Second-largest crypto exchange globally at peak; collapsed in days after revelations of misuse of customer funds. ~$8B customer shortfall.
+- **BlockFi, Voyager, Genesis, Gemini Earn (2022-2023)**: Crypto lenders and lending products that froze withdrawals during the 2022 contagion.
+
+The pattern is consistent: a CEX is only as safe as its operators' competence and honesty. Most users start on a CEX for convenience (KYC fiat on-ramps, simple UI, customer service), but the manifesto rule from chapter 4 still holds: not your keys, not your coins. Withdraw to self-custody for any amount that matters to you.
