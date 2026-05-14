@@ -27,4 +27,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Quorum signatures generalize multisig. Instead of each cosigner separately appending their signature, multiple private keys combine to yield a single aggregated signature, but only if enough parties (the quorum) participate. This approach can be based on advanced schemes like threshold Schnorr or other group-oriented cryptography. Federations-like Liquid's functionaries-often use thresholds: e.g., a 11-of-15 setup controlling pegged BTC. Quorum signatures enhance privacy and reduce on-chain data by consolidating multiple approvals into one, though they necessitate extra cryptographic steps and collaborative protocols among signers.
+Quorum signatures are threshold signatures: m of n cosigners collaborate to produce a single aggregated signature without needing all n to participate. The on-chain output looks indistinguishable from a regular Taproot single-sig.
+
+The active protocol in Bitcoin land is FROST (Flexible Round-Optimized Schnorr Threshold), with serious implementation work in 2024-2026. FROST lets, for example, 5 of 8 signers collectively produce one signature on a Taproot output, with the other 3 holding shares but sitting out this particular signing session.
+
+Why care:
+
+- Privacy: the spend looks identical whether 5 of 8 or 1 of 1 signed it. No m-of-n structure leaks on-chain.
+- Fees: one signature instead of m, one public key instead of n. Significant savings on complex multisig.
+- Resilience: any m signers can spend, so losing up to n-m keys is survivable without a separate timelock-recovery path.
+
+The tradeoffs are interactivity and ceremony complexity. FROST requires a distributed key-generation ceremony at setup (no single party ever sees the full key) and signing requires multiple coordinated rounds between the participating signers. Classical M-of-N multisig is operationally simpler: each cosigner signs independently and asynchronously, at the cost of larger on-chain footprint and obvious multisig leakage.
+
+For retail users this is overkill. For federations (Liquid functionaries, Fedimint guardians) and institutional custody, threshold Schnorr is becoming the modern default as tooling matures.

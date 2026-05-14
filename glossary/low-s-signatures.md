@@ -12,4 +12,10 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-BIP 62 and BIP 66 introduced strict DER encoding and the low-S requirement to minimize signature malleability-where different encodings of the same signature could change the txID. The low-S rule ensures only one canonical form for S, preventing alternative representations from being valid. This not only improves predictability of txIDs but also supports workflows like multi-sig or hardware wallets that rely on stable transaction hashes. Most modern wallets and miners reject high-S signatures to enforce this consistency, helping standardize the mempool and block validation.
+ECDSA signatures have an inherent malleability: for any valid (r, s) pair, (r, n-s) where n is the secp256k1 curve order is also a valid signature on the same message. An attacker could grab your unconfirmed transaction, flip the S, and rebroadcast a signature with identical meaning but a different txid.
+
+The low-S rule pins down one canonical form. Require s less than or equal to n/2, and the higher half of possible S values becomes invalid. Now there's exactly one low-S signature per (key, message) pair.
+
+History: proposed as part of BIP 62 (which never activated as a unified malleability fix), enforced as relay policy via BIP 146, and made consensus-mandatory for SegWit inputs via BIP 141. Pre-SegWit legacy inputs technically still accept high-S in consensus rules, but the relay policy makes high-S transactions non-standard so they don't propagate.
+
+Combined with BIP 66 strict DER encoding and SegWit's separation of signature data from txid hashing, low-S effectively eliminated practical signature malleability on Bitcoin.

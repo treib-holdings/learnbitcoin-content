@@ -12,4 +12,10 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-In ECDSA, the signature has two parts: R and S. By finding an R value that fits into fewer bytes (leading zeros removed, etc.), the signature's overall size shrinks. This can cut a few bytes from each signature, marginally lowering fees for transactions with many inputs. Wallets like Bitcoin Core have integrated low-R signing, so most end users never notice-it happens automatically. While it doesn't revolutionize fees, every byte saved counts in high-volume or large-input scenarios, reflecting the Bitcoin ethos of efficient data usage.
+ECDSA signatures have two components, R and S. R is derived from a per-signature nonce, and the resulting bytes are roughly uniform: about half the time R's high bit is set, which requires an extra leading zero byte to encode as a positive DER integer.
+
+Low-R signing grinds. The signer tries successive deterministic nonces (RFC 6979 derivation) until it produces an R whose high bit is clear, saving one byte. On average it takes two attempts to find one, with a long tail. The resulting signature is cryptographically equivalent; the only difference is the encoded length.
+
+Bitcoin Core adopted low-R signing in 0.17 (2018) and most major wallets followed. Across the network it saves roughly one vbyte per ECDSA signature, which sounds trivial but adds up over millions of transactions. For Taproot / Schnorr signatures the trick doesn't apply (Schnorr signatures are a fixed 64 bytes regardless), so this is a legacy-ECDSA-only optimization.
+
+Most users never see it. It happens automatically inside the signing code.

@@ -12,4 +12,12 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-When signing a transaction, you can choose from several SIGHASH flags to determine which parts are 'locked in.' SIGHASH_ANYONECANPAY restricts a signature so it applies only to that signer's inputs, allowing other parties to append new inputs later. This feature can be combined with other flags (e.g., SIGHASH_ALL|ANYONECANPAY) to create collaborative transactions or partial coinjoins where each participant only guarantees their own inputs, but all can collectively fund the same outputs without rewriting previously signed parts.
+`SIGHASH_ANYONECANPAY` is a modifier flag (OR'd into `SIGHASH_ALL`, `SIGHASH_NONE`, or `SIGHASH_SINGLE`) that tells the signer "commit only to this input, not the other inputs." Anyone can add more inputs to the transaction afterward without invalidating your signature.
+
+It enables patterns where multiple parties contribute to a shared transaction without trusting each other:
+
+- Crowdfunding: a published partial transaction sets the recipient outputs; supporters each add an input signed with `SIGHASH_ALL | SIGHASH_ANYONECANPAY`. Once the inputs cover the outputs, anyone can broadcast.
+- PayJoin (BIP 78) style flows, where sender and receiver each contribute inputs and the result looks like an ordinary transaction to outside observers.
+- Fee-bumping in pre-Replace-by-Fee designs, though [Replace-by-Fee (RBF)](/glossary/replace-fee-rbf) and CPFP now handle this better.
+
+It's a powerful flag with sharp edges. Sign with `SIGHASH_NONE | SIGHASH_ANYONECANPAY` and you've effectively signed "spend my UTXO however you want," which is rarely what anyone actually means. The safe default for ad-hoc construction is `SIGHASH_ALL | SIGHASH_ANYONECANPAY`: my input is committed, the outputs are fixed, the rest is open.

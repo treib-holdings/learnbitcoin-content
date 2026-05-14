@@ -12,4 +12,10 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-By default (SIGHASH_ALL), a signature covers all outputs, preventing changes. In contrast, SIGHASH_SINGLE binds each input's signature only to its matching output index, ignoring others. This can facilitate scenarios like partially filled transactions, custom payment flows, or advanced scripts. However, it can be tricky-if an output index doesn't exist or if multiple inputs sign the same single output, unexpected effects can occur. Consequently, SIGHASH_SINGLE sees less common usage than ALL, but it remains an important option in Bitcoin's flexible transaction model.
+`SIGHASH_SINGLE` signs only the output at the same index as the input being signed. Other outputs can change without invalidating the signature.
+
+The use case: build a transaction where your contribution is "send my coins to this specific destination" but you don't care what other inputs or outputs the transaction contains. Atomic swaps, partial assembly across mutually-distrustful parties, and certain marketplace constructions use it.
+
+Pre-SegWit it had a famous footgun. If the input index was greater than the number of outputs, the sighash algorithm fell back to a constant value (the integer 1). Anyone could replay that signature against an unrelated transaction. The bug was caught early and worked around by careful tool authors. BIP 143 (SegWit sighash) eliminated it cleanly for SegWit inputs, and Taproot's sighash (BIP 341) closed the door entirely.
+
+Outside of specific protocol designs, `SIGHASH_SINGLE` is rarely the right choice. `SIGHASH_ALL` is the default for a reason: it commits to everything, leaving the smallest possible attack surface.
