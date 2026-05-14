@@ -1,12 +1,13 @@
-name: Trigger Pages rebuild
+name: Trigger Cloudflare rebuild
 
 # The web app (learnbitcoin-web) reads content from this repo at build
-# time on Cloudflare Pages. Pages only rebuilds when its connected repo
-# changes, so pushes here must explicitly poke Pages via a deploy hook.
+# time on Cloudflare Workers (Static Assets). Cloudflare only rebuilds
+# when its connected repo changes, so pushes here must explicitly poke
+# the worker via a deploy hook.
 #
 # Setup (one-time):
-#   1. In Cloudflare Pages -> learnbitcoin-web project -> Settings ->
-#      Builds & deployments -> Deploy hooks, create a hook for main.
+#   1. In Cloudflare -> Workers & Pages -> learnbitcoin-web -> Settings ->
+#      Builds -> Deploy hooks, create a hook for main.
 #   2. Copy the hook URL.
 #   3. In this repo, Settings -> Secrets and variables -> Actions,
 #      add a secret named CF_DEPLOY_HOOK_URL with the URL as the value.
