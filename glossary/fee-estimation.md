@@ -34,4 +34,4 @@ Bitcoin Core exposes its own estimator via the `estimatesmartfee` RPC; this is w
 
 In low-traffic periods, the estimator often returns 1 sat/vB across all tiers - the relay minimum. In congestion events (Ordinals mints, exchange withdrawal storms, market panic), the next-block estimate can spike to hundreds of sat/vB in minutes.
 
-Estimates are *guesses*. If you underpay and get stuck, see [Fee Bumping](/glossary/fee-bumping). The live fee market on our node is visible in the [Mining rabbit hole §6](/rabbit-hole/mining) and on the [Node page](/node).
+Estimates are *guesses*. If you underpay and get stuck, see [Fee Bumping](/glossary/fee-bumping). The live fee market is visible in the [Mining rabbit hole §6](/rabbit-hole/mining) and on the [Node page](/node).

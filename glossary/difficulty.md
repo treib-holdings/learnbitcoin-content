@@ -30,4 +30,4 @@ A rough sense of the scale: the Bitcoin network has done difficulty adjustments 
 
 Difficulty is the part of [proof-of-work](/glossary/proof-work-pow) that makes the system self-tuning. Whether 10 miners or 10,000 are competing, blocks still come out roughly every 10 minutes and BTC is issued on schedule. The network doesn't care about the price of hardware or electricity. It cares about hash rate, and it adjusts in response to it.
 
-See the [Mining rabbit hole §4](/rabbit-hole/mining) for the mechanism, and the [Node page](/node) for the current difficulty and epoch progress on our Bitcoin node.
+See the [Mining rabbit hole §4](/rabbit-hole/mining) for the mechanism, and the [Node page](/node) for the current difficulty and epoch progress.
