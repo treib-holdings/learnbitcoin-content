@@ -47,9 +47,10 @@ express or implied, of any kind. If a number is stale, a tutorial
 breaks, a linked tool misbehaves, or your hardware wallet eats your
 coffee table, that is between you and the universe.
 
-The on-chain numbers come from a Bitcoin node we run. We trust it
-more than we trust an exchange API. We still cannot promise it is
-right every second of every day. Verify, do not trust.
+The on-chain numbers come from a full Bitcoin node, accessed via
+[ChainQuery](https://chainquery.com). We trust that more than we
+trust an exchange API. We still cannot promise it is right every
+second of every day. Verify, do not trust.
 
 ## What we will not do
 

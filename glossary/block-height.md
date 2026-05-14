@@ -35,4 +35,4 @@ Most of Bitcoin's protocol-level events are scheduled by height, not by date:
 - **[Difficulty retargets](/glossary/difficulty-retargeting)** happen at heights that are multiples of 2,016.
 - **Soft forks** (Taproot, SegWit, BIP-66, etc.) activate when a target height is reached or signaling thresholds clear in a retarget window.
 
-If you want a single number that locates "what's happening on Bitcoin right now," it's the current block height. See the [Node page](/node) for the live current height from our Bitcoin node.
+If you want a single number that locates "what's happening on Bitcoin right now," it's the current block height. See the [Node page](/node) for the live current height.

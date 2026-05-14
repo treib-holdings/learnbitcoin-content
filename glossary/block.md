@@ -32,4 +32,4 @@ Every block contains the hash of the previous block in its header. That's what m
 
 [Miners](/glossary/miner) compete to find a valid proof-of-work for the next block. The first one to succeed gets a fresh [block subsidy](/glossary/block-subsidy) (currently 3.125 BTC, halved every 210,000 blocks) plus the fees from every transaction they pack in. That's the entire incentive structure keeping the chain growing. For the mechanism in detail, see the [Mining rabbit hole](/rabbit-hole/mining).
 
-Above is the latest block our Bitcoin node accepted. Refresh this page in about 10 minutes and the number should change.
+Above is the latest block accepted by the Bitcoin node powering [ChainQuery](https://chainquery.com). Refresh this page in about 10 minutes and the number should change.
