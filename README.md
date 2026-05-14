@@ -1,19 +1,21 @@
 # learnbitcoin-content
 
-Source content for [learnbitcoin.com](https://learnbitcoin.com) — the honest Bitcoin school.
+Source content for [learnbitcoin.com](https://learnbitcoin.com) - the
+honest Bitcoin school.
 
 **Bitcoin only. No bullshit. Have fun.**
 
 ## What lives here
 
-- [`glossary/`](glossary/) — 488 Bitcoin terms, each in its own markdown file.
-- [`deep-dives/`](deep-dives/) — long-form explainers (e.g. Bitcoin units).
-- [`journey/`](journey/) — the opinionated path from "what is money?" to "I run my own node."
-- [`scripts/migrate/`](scripts/migrate/) — one-shot migration scripts from the legacy Drupal site.
+- [`glossary/`](glossary/) - 428 Bitcoin terms, one markdown file each.
+- [`rabbit-holes/`](rabbit-holes/) - self-contained deep dives, mostly MDX so they can embed interactive widgets.
+- [`journey/`](journey/) - the opinionated path from "what is money?" to "I run my own node."
+- [`pages/`](pages/) - editorial body of the top-level site pages (manifesto, home, /node, the three index pages).
+- [`downloads/`](downloads/) - PDFs served at `/downloads/` on the site.
 
 ## File format
 
-Each piece of content is a markdown file with YAML frontmatter:
+Each piece of content is a markdown or MDX file with YAML frontmatter:
 
 ```markdown
 ---
@@ -32,28 +34,14 @@ liveWidget: ~
 Body text in markdown.
 ```
 
-The site renderer ([`learnbitcoin-web`](https://github.com/treib-holdings/learnbitcoin-web)) reads this repo as a content collection.
+The site renderer ([`learnbitcoin-web`](https://github.com/treib-holdings/learnbitcoin-web)) reads this repo as a set of Astro content collections. The schema is defined in `learnbitcoin-web/src/content.config.ts`; look at neighboring files in each directory for the exact fields a given collection expects.
 
 ## Contributing
 
-When this repo goes public, we'll accept PRs for:
-
-- Typo fixes, clarifications, citation additions
-- New glossary entries (with sources)
-- Translations
-- "Why it matters" expansions
-
-We won't accept:
-
-- Altcoin content. This is a Bitcoin-only site.
-- Affiliate links.
-- Price speculation.
-- Marketing-flavored rewrites.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for what we welcome, what we will not merge, voice notes, and how to submit. Every content page on the site has an "Edit this page on GitHub" link in the footer that drops you straight at the right source file.
 
 ## License
 
 Content: [Creative Commons Attribution-ShareAlike 4.0 International (CC-BY-SA-4.0)](LICENSE).
 
 Translate it. Embed it. Remix it. Build your own Bitcoin school on top of it. Attribution + share-alike is the only ask.
-
-Scripts: [MIT](scripts/LICENSE) — fork freely.
