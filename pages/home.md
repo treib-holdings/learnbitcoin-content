@@ -1,8 +1,8 @@
 ---
 title: "Home"
-description: "The honest Bitcoin school. Bitcoin only. No bullshit. Have fun."
+heading: "The honest Bitcoin school."
+description: "The honest Bitcoin school. No altcoins. No price predictions. No newsletter. For people who want to actually understand Bitcoin."
 ---
 
-We teach Bitcoin the way it deserves to be taught - honestly, deeply,
-and without selling you anything you don't need. No altcoins. No price
-predictions. No affiliate links.
+No altcoins. No price predictions. No newsletter. The Bitcoin school
+for people who want to actually understand.
