@@ -7,7 +7,7 @@ order: 4
 estimatedMinutes: 35
 tagline: "If your keys live on an exchange, you don't own Bitcoin. You own an IOU. This chapter teaches you to own actual Bitcoin."
 prerequisites: ["how-bitcoin-works"]
-relatedTerms: ["seed-phrase", "private-key", "hardware-wallet", "custodial-wallet", "address", "deterministic-wallet", "watch-only-wallet", "paper-wallet", "hierarchical-multisig"]
+relatedTerms: ["seed-phrase", "private-key", "hardware-wallet", "custodial-wallet", "address", "deterministic-wallet", "watch-only-wallet", "paper-wallet", "multisig", "shamir-secret-sharing", "hierarchical-multisig"]
 legacyUrls: ["/be-your-own-bank"]
 sources:
   - { label: "BIP 39 - Mnemonic seed phrases (Bitcoin Improvement Proposal)", url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" }
@@ -41,7 +41,7 @@ You can't have the properties from chapter 2 - *portable, scarce, sovereign* - a
 
 **Self-custody** means you generate and hold the private keys yourself. Your wallet software does this - it generates a random number, derives the keys, and shows you addresses. The number lives on your device (and a backup), not in anyone's database.
 
-The trade-off is symmetric: with custody comes risk (someone freezes you), and with self-custody comes responsibility (lose your keys, lose your coins). Bitcoin lets you choose; most other systems don't even give you the option.
+The trade-off is symmetric: with custody comes risk (not your keys, not your coins), and with self-custody comes responsibility (lose your keys, lose your coins). Bitcoin lets you choose; most other systems don't even give you the option.
 
 ## 3. Keys, Not Coins
 
@@ -76,7 +76,7 @@ Those words encode a number. The number seeds a deterministic generator (defined
 - **Anyone with your seed phrase has your bitcoin.** Period. There is no second factor. There is no recovery. There is no "but they'd need your password too" - the password is part of the wallet software, not the chain.
 - **12 vs 24 words.** Both are secure. 12 words = 128 bits of entropy; 24 words = 256 bits. Both are well beyond brute-force range. The choice is a matter of preference. (24-word is the default for most hardware wallets.)
 - **Never type your seed into a website. Never. Ever.** Not your wallet provider's site. Not a help page. Not anywhere. The only places the seed should live are on your wallet device and on physical backups *you* created.
-- **Do not memorize it.** People think this is clever; it is in fact the leading cause of seed loss. Brains forget. Steel does not.
+- **Do not memorize it.** Brains forget seeds, even ones you were sure you'd remember. Steel does not.
 - **Do not photograph it.** Phones back up to clouds. Clouds get breached.
 
 The seed phrase is not a password. It is the *root* of your entire Bitcoin existence. Treat it accordingly.
@@ -109,9 +109,9 @@ We don't sell wallets. We don't take affiliate commissions. Here's the unvarnish
 - **Mutiny** - newer, web-first Lightning wallet
 
 **For a hardware wallet (cold, serious balances):**
+- **Trezor Safe 5** - widely used, established brand; multi-coin by default but supports Bitcoin-only firmware
 - **Coldcard** (Mk4 or Q) - Bitcoin-only, fully open-source firmware, designed for paranoid users
-- **Foundation Passport** - Bitcoin-only, air-gapped (no USB, uses QR codes and microSD)
-- **Trezor Safe 5** - multi-coin by default but supports Bitcoin-only firmware
+- **Foundation Passport** - Bitcoin-only, fully air-gapped (no USB data, uses QR codes and microSD); US-made
 - **Jade** by Blockstream - affordable, Bitcoin-focused
 
 **Why "Bitcoin-only" matters:** wallets that support 50 cryptocurrencies have 50× the attack surface. Every supported coin is more code, more libraries, more places things can go wrong. Bitcoin-only firmware has fewer features but a smaller, more thoroughly audited codebase. If you're using a hardware wallet for Bitcoin, run Bitcoin-only firmware. (Most of the above support it.)
@@ -135,9 +135,9 @@ Your seed phrase needs to survive: fire, flood, theft, loss, your own forgetfuln
 3. **Verify the backup.** Before you put any meaningful amount in the wallet, wipe the device and restore from your seed. If the restored wallet shows the same addresses, the backup is good. This is the only way to *know* the backup works.
 4. **Document for inheritance.** Write a sealed letter for your heirs that explains where the backups are, what software to install, and what addresses to expect. Don't put the seed itself in the letter; put instructions for finding it.
 
-We've made [printable seed-backup forms](/downloads/seed-backup-12-word.pdf) for 12-word and 24-word seeds, available on this site. Use them or your own format - what matters is consistency and durability.
+We've made printable seed-backup forms for both [12-word](/downloads/seed-backup-12-word.pdf) and [24-word](/downloads/seed-backup-24-word.pdf) seeds, available on this site. Use them or your own format - what matters is consistency and durability.
 
-**One more thing.** Do not split your seed phrase across multiple locations as a security measure ("first 6 words here, last 6 words there"). This is called *seed splitting* and it provides much less security than you'd expect - losing one location loses everything, *and* the second location is easier to attack. If you want geographic redundancy for advanced setups, use [multisig](/glossary/hierarchical-multisig) (chapter 6) or [Shamir Secret Sharing](/downloads/shamirs-secret-sharing-backup.pdf), not seed splitting.
+**One more thing.** Do not split your seed phrase across multiple locations as a security measure ("first 6 words here, last 6 words there"). This is called *seed splitting* and it provides much less security than you'd expect - losing one location loses everything, *and* the second location is easier to attack. If you want geographic redundancy for advanced setups, use [multisig](/glossary/multisig) (chapter 6) or [Shamir's Secret Sharing](/glossary/shamir-secret-sharing), not seed splitting.
 
 ## 8. Receiving Your First Transaction
 
@@ -164,15 +164,13 @@ How:
 1. In your wallet, find "Sign message." (Most wallets have it; some require an advanced settings toggle.)
 2. Enter a message: *"I control address bc1qexampleaddress. Today's date is YYYY-MM-DD."*
 3. Sign. You get a base64 blob.
-4. Anyone can paste the (message, signature, address) triple into a verifier - Bitcoin Core has one, or use a wallet's "Verify message" feature - and they will see "valid" or "invalid."
+4. Anyone can paste the (message, signature, address) triple into a verifier - try the [Bitcoin Core signature verification RPC](https://chainquery.com/rpc/verifymessage) or your wallet's "Verify message" feature - and they will see "valid" or "invalid."
 
 This is how you prove ownership of an address to an insurance company, an inheritance lawyer, or a future suspicious you. No coins move. No fees pay. The signature is portable and timestamps anchor it in time.
 
-It's also one of the achievements you'll be able to earn on this site (chapter ahead: proof-of-action badges).
-
 ## 10. The Common Ways People Lose Bitcoin
 
-Honest list, ordered roughly from most to least common:
+Honest list, ordered by what shows up most often in incident postmortems and exchange compromise reports. The ordering is editorial - exact frequencies aren't published anywhere reliable.
 
 1. **Leaving funds on an exchange.** Exchange goes bankrupt (Mt. Gox, FTX, Celsius, BlockFi…). Funds gone.
 2. **Phishing the seed.** Fake support reps, fake wallet updates, fake "verify your wallet" pages. **No legitimate wallet, ever, asks you to type your seed online.** If it does, it's a scam.

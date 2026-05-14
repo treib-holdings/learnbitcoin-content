@@ -356,6 +356,7 @@ Mnemonic Password	mnemonic-password
 Module Signing	module-signing
 Mono-Signature	mono-signature
 MTP (Median Time Past)	mtp-median-time-past
+Multisig	multisig
 MuSig	musig
 MuSig2	musig2
 MUtxo	mutxo
@@ -454,6 +455,7 @@ Security	security
 Seed Entropy Mixer	seed-entropy-mixer
 Seed Phrase	seed-phrase
 Seed Tool	seed-tool
+Shamir's Secret Sharing	shamir-secret-sharing
 Shielded CoinJoin	shielded-coinjoin
 Sibling Transaction	sibling-transaction
 Sidechain	sidechain
