@@ -15,4 +15,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Vanity address generation involves brute-forcing random private keys until the resulting address has a desired pattern. Tools like Vanitygen or custom scripts automate the process. The complexity of generating a vanity address grows exponentially with each extra character. A short pattern like '1abc...' can be found quickly, but something lengthy might take vast computation. While fun or brand-friendly, vanity generation can leak private keys if done on untrusted services. Thus, best practice is to generate them locally in a secure environment or with multi-party protocols that avoid exposing the full private key to a single participant.
+A vanity address is a Bitcoin address whose prefix has been chosen for vanity reasons rather than left to chance. The generation method is brute force: derive random keypairs and check if the resulting address starts with the desired pattern. The search cost grows exponentially with the prefix length.
+
+Rough orders of magnitude for bech32 (`bc1q...` / `bc1p...`) addresses:
+
+- 4 custom characters: ~1 million tries (seconds on a laptop)
+- 6 custom characters: ~1 billion tries (minutes to an hour on a laptop)
+- 8 custom characters: ~1 trillion tries (multiple GPU-hours)
+- 10+ custom characters: realistically requires GPU clusters and days of compute
+
+Famous examples include the `1BitcoinEater...` burn-address vanities and various exchange "branded" addresses.
+
+The security trap is letting someone else do the work. If a vanity service generates the key and emails you the seed, they have the private key (and so does anyone who breaks into their database). Best practice is one of:
+
+- **Local generation** with an open-source tool (Vanitygen, bitcoin-vanity-search, etc.) on hardware you control. The private key never leaves your machine.
+- **Split-key vanity generation.** A two-party protocol where one party brute-forces a partial key matching the prefix, and the other party adds a secret scalar offset. Neither party ever sees the full private key. Useful when you want to outsource the compute without trusting the compute provider.
+
+Vanity addresses are a privacy mistake by default. Reusing one address for vanity-branding purposes destroys the wallet's transactional privacy by aggregating activity onto one identifier. If you really want a vanity address, generate one and use it as a vanity *receive* address that you then sweep into normal HD-wallet addresses for actual custody.

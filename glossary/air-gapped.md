@@ -17,5 +17,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-An air-gapped system is basically a digital fortress with a moat, drawbridge, and alligators thrown in for good measure. This setup ensures there's no internet connection or external network access, making it much harder for hackers to sneak in and pilfer your private keys. You might use a dedicated, never-connected laptop or hardware device to generate seed phrases and sign transactions.
-Air-gapping is often used by serious Bitcoin holders who value peace of mind over convenience. It can feel like using a safe buried under a mountain, guarded by a friendly dragon, but it's one of the best ways to protect your keys from remote compromise. The only trade-off is that every interaction with the device-like signing a transaction-requires physically transferring data via USB stick or QR codes, which can be a bit of extra work.
+"Air-gapped" describes a device that has no network connection of any kind: no Wi-Fi, no Ethernet, no Bluetooth, no cellular, no NFC. The only way data crosses to or from the device is through a deliberate, physical, single-use channel: a QR code shown on the screen, a microSD card carried over, or in extreme cases manual entry.
+
+For Bitcoin self-custody, air-gap is a security strategy: the device that holds private keys never sees the public internet, so remote attackers have no network path to the seed.
+
+What an air-gapped setup looks like in practice:
+
+- **Hardware wallets done right.** Coldcard, Foundation Passport, SeedSigner, and similar devices are designed for air-gap operation. Transactions are passed in as PSBTs via SD card or QR; signed PSBTs come back the same way. The signing device never touches the network.
+- **Old laptop, network hardware removed.** A dedicated machine with the Wi-Fi card physically removed (or never installed), running an offline signing tool. Common for advanced multisig setups.
+- **Faraday-shielded signing rooms.** Institutional cold-storage operations sometimes do signing inside a room shielded against radio emissions, defeating both network attacks and side-channel attacks like keystroke-EM monitoring.
+
+What air-gap doesn't protect against:
+
+- **Supply-chain attacks.** A compromised device that arrives already malicious can leak the seed via subtle side channels (timing, micro-modulated screen output, etc.). Buy hardware wallets from the manufacturer directly when possible.
+- **Physical theft and coercion.** Air-gap is a network defense, not a physical one. Pair it with appropriate physical security.
+- **PSBT tampering.** The signing device must independently verify that the transaction it's signing matches what the user intended. A compromised online machine could send a malicious PSBT to the air-gapped device; if the device's display doesn't show the actual destination, the user signs the attack. This is why hardware wallets have screens.
+
+For most users, a single hardware wallet (which is air-gapped by design for the key material) is the practical answer. Dedicated air-gapped computers with PSBT shuffling are for higher-value or institutional setups where the marginal security justifies the operational overhead.

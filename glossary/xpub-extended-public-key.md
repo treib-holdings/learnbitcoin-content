@@ -19,4 +19,26 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Hierarchical Deterministic (HD) wallets generate a master private key (seed) and master public key (xpub). The xpub can be shared safely to create receive addresses, watch-only wallets, or partial multi-sig setups. It doesn't let anyone spend funds, as private keys remain offline. This suits scenarios like a website showing fresh deposit addresses or a co-signer verifying transactions. However, if the xpub leaks, it can compromise privacy by revealing all child addresses. Some wallets also use ypub/zpub versions for specific script types like P2WPKH or P2WSH.
+An xpub is a [BIP 32](/glossary/bip-32) extended public key: a parent public key bundled together with its [chaincode](/glossary/chaincode). With both pieces, anyone can derive all non-hardened child public keys (and therefore all addresses) under that branch of the wallet tree, without ever seeing a private key.
+
+What you can do with someone's xpub:
+
+- **Watch their wallet.** Import the xpub into Sparrow, Specter, BlueWallet, etc., and you'll see every receive address, every spend, every balance change in real time. No private key needed.
+- **Generate fresh receive addresses for them.** A merchant server can hand out new addresses for each customer without holding any spending capability.
+- **Participate as a watch-only cosigner.** Combine an xpub from each cosigner to build a multisig watching wallet.
+
+What you give up by leaking an xpub:
+
+- **Privacy.** Every present and future address in that branch is now visible to whoever has the xpub. The chain-analysis story collapses; the holder of the xpub sees the entire balance and transaction graph.
+- **Forward secrecy on activity.** Even if you never share the xpub again, the holder can derive your next 1000 addresses just by walking the tree.
+
+Treat an xpub like a balance sheet, not like an address.
+
+Format variants you'll see in older wallets:
+
+- `xpub...` - the original BIP 32 form, conventionally tied to legacy P2PKH derivations.
+- `ypub...` - P2SH-wrapped SegWit (BIP 49).
+- `zpub...` - native P2WPKH (BIP 84).
+- `Ypub` / `Zpub` - multisig variants.
+
+In 2026, the prefix variants are mostly historical: modern [descriptor wallets](/glossary/output-descriptor) carry the script-type information explicitly, so a single `xpub` plus a descriptor template covers everything cleanly.
