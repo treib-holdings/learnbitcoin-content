@@ -59,6 +59,7 @@ BIP 30	bip-30
 BIP 300 (Drivechains)	bip-300-drivechains
 BIP 301	bip-301
 BIP 31 (pong message)	bip-31-pong-message
+BIP 32 (HD Wallets)	bip-32
 BIP 339 (WTXID Relay)	bip-339-wtxid-relay
 BIP 34	bip-34
 BIP 341 (Taproot)	bip-341-taproot
@@ -66,6 +67,7 @@ BIP 342 (Tapscript)	bip-342-tapscript
 BIP 35 (mempool message)	bip-35-mempool-message
 BIP 36 (merkle block request)	bip-36-merkle-block-request
 BIP 37	bip-37
+BIP 39 (Mnemonic Seed)	bip-39
 BIP 40 (Alerts Avoid Replay)	bip-40-alerts-avoid-replay
 BIP 42	bip-42
 BIP 44	bip-44

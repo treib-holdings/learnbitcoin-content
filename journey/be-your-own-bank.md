@@ -69,7 +69,7 @@ abandon abandon abandon abandon abandon abandon
 abandon abandon abandon abandon abandon about
 ```
 
-Those words encode a number. The number seeds a deterministic generator (defined in [BIP 39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) and [BIP 32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)) that produces every key and address your wallet will ever need. From one seed, you get a tree of millions of addresses. They're all derived; only one secret matters.
+Those words encode a number. The number seeds a deterministic generator (defined in [BIP 39](/glossary/bip-39) and [BIP 32](/glossary/bip-32)) that produces every key and address your wallet will ever need. From one seed, you get a tree of millions of addresses. They're all derived; only one secret matters.
 
 **A few facts that should change your behavior:**
 
