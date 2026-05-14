@@ -18,5 +18,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Coin age plays a central role in proof-of-stake blockchains, where older 'staked' coins can have more influence in forging blocks. In Bitcoin, a proof-of-work system, coin age isn't directly tied to consensus. However, analysts do track how long BTC sits idle as part of metrics like 'Bitcoin Days Destroyed.'
-Studying coin age (even in Bitcoin) can highlight the behavior of long-term holders. But it has no bearing on block production or mining power in Bitcoin-just a useful insight into holder sentiment or potential spending patterns. Some altcoins tried to use coin age as a security measure, though none has rivaled Bitcoin's hashrate-based approach for longevity or adoption.
+Coin age is the time elapsed since a UTXO was created. In Bitcoin it has no consensus role - blocks are selected purely by proof-of-work, not by the age of coins included - but it's a key input to on-chain analytics.
+
+Where coin age shows up:
+
+- **[Bitcoin Days Destroyed](/glossary/bitcoin-days-destroyed)**: BDD weights each spend by the coin age of the inputs. A spend of coins that were dormant for years generates much higher BDD than a spend of recently-received coins.
+- **[HODL Waves](/glossary/hodl-waves)**: visualization of the supply broken down by coin age bands. Glassnode's standard chart uses bands like <1m, 1-3m, 3-6m, 6-12m, 1-2y, 2-3y, 3-5y, 5-7y, 7-10y, 10y+.
+- **Long-term-holder vs short-term-holder classifications.** Glassnode uses a 155-day threshold: UTXOs older than that are considered "long-term holder" supply. The split is a useful sentiment indicator.
+- **"Realized cap"**: the sum of all UTXOs valued at the price they last moved at. Old coins contribute their original (lower) cost basis; recently-moved coins reflect current prices.
+
+Coin age was also a central concept in proof-of-stake altcoins (Peercoin and successors) where the staking right was weighted by coin age. Critics noted this incentivized hoarding and centralization. Bitcoin avoids the entire issue by using proof-of-work instead.
+
+For Bitcoin specifically: coin age is interesting because it's directly observable on-chain (anyone can compute it from any node), making it one of the few "wallet behavior" metrics that doesn't require trusting a third party's clustering heuristics. Whether the holders moving their coins are actually long-term-conviction holders or just exchange hot wallets is a separate question that requires more analysis.

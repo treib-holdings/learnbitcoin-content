@@ -23,5 +23,29 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Not everyone wants to type JSON-RPC commands or navigate text prompts. GUI wallets are built for everyday users: they feature clickable menus, easy address generation, and (often) integrated fee estimation. Bitcoin Core itself offers a GUI version, though power users might prefer the command line for advanced tasks.
-Other GUI wallets range from simple mobile apps to robust desktop clients with multi-sig support. The common denominator is accessibility-a well-designed interface can reduce friction, making Bitcoin more approachable to newcomers. Security, however, isn't necessarily guaranteed by the presence of a GUI; the underlying code and best practices for key management remain paramount.
+A GUI wallet is any Bitcoin wallet with a graphical user interface: clickable buttons, address QR codes, transaction history views. The opposite of a CLI / RPC-only wallet that requires the user to type commands or send JSON.
+
+Categories of GUI wallets:
+
+- **Bitcoin Core (Qt build).** The reference implementation also ships with a GUI version. Validates the full chain, manages a wallet, exposes most node functions through menus. Default choice for anyone running a full node who wants a wallet on top.
+- **Specter Desktop, Sparrow, Nunchuk.** Desktop GUI wallets focused on power users, hardware wallet support, multisig coordination. Built on top of a separate Bitcoin Core node (or Electrum-protocol backend). Sparrow in particular is widely recommended for serious self-custody.
+- **BlueWallet, Wallet of Satoshi-style mobile.** Phone-based wallets with simple UX. Range from non-custodial (BlueWallet, Phoenix, Mutiny) to custodial (Wallet of Satoshi, Strike).
+- **Hardware wallet companion apps.** Trezor Suite, Ledger Live, Foundation Envoy, Bitbox app. The GUI runs on a computer or phone; signing happens on the connected hardware device.
+- **Lightweight clients.** Electrum (the original) and various forks. Connect to Electrum servers rather than running a full node; faster setup but trades off some self-sovereignty.
+
+What a good GUI wallet provides:
+
+- Clear receive/send flows with confirmation screens.
+- Fee estimation with sensible defaults.
+- Address book / labeling for sent transactions.
+- Coin control for power users who want it (Sparrow is exemplary here).
+- Hardware wallet pairing where applicable.
+- PSBT support for multisig and air-gapped signing.
+
+What "GUI" doesn't guarantee:
+
+- **Security.** A pretty interface doesn't make the underlying key management correct. Some GUI wallets have catastrophic security histories (Electrum phishing waves, various forked-and-malicious clones).
+- **Privacy.** A GUI wallet that talks to a third-party Electrum server reveals your addresses to that server. Self-hosted backends preserve privacy; default cloud-backed setups don't.
+- **Self-custody.** Some GUI wallets are custodial - the slick UI hides that the actual coins are on someone else's server.
+
+For most users in 2026, the right GUI wallet stack is: a mobile wallet for spending money (Phoenix for Lightning, BlueWallet for on-chain) and a desktop GUI like Sparrow paired with a hardware wallet for serious holdings.
