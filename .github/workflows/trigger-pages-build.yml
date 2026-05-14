@@ -1,0 +1,31 @@
+name: Trigger Pages rebuild
+
+# The web app (learnbitcoin-web) reads content from this repo at build
+# time on Cloudflare Pages. Pages only rebuilds when its connected repo
+# changes, so pushes here must explicitly poke Pages via a deploy hook.
+#
+# Setup (one-time):
+#   1. In Cloudflare Pages -> learnbitcoin-web project -> Settings ->
+#      Builds & deployments -> Deploy hooks, create a hook for main.
+#   2. Copy the hook URL.
+#   3. In this repo, Settings -> Secrets and variables -> Actions,
+#      add a secret named CF_DEPLOY_HOOK_URL with the URL as the value.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: POST to Cloudflare Pages deploy hook
+        env:
+          HOOK_URL: ${{ secrets.CF_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK_URL" ]; then
+            echo "CF_DEPLOY_HOOK_URL secret not set; skipping."
+            exit 0
+          fi
+          curl -fsSL -X POST "$HOOK_URL" -o /dev/null -w "HTTP %{http_code}\n"
