@@ -21,11 +21,11 @@ import MempoolHistogram from '@components/mining/MempoolHistogram.svelte';
 
 ## 1. The Mempool, In One Line
 
-The mempool is the holding area for transactions that have been broadcast but not yet included in a block.
+The mempool is the holding area for transactions that have been broadcast but not yet included in a [block](/glossary/block).
 
-When you send a Bitcoin transaction, it does not go straight into the blockchain. It goes into the mempool of whichever node received it first, gets relayed to that node's peers, gets relayed to *their* peers, and propagates across the global network within seconds. From there, it sits and waits.
+When you send a Bitcoin transaction, it does not go straight into the [blockchain](/glossary/blockchain). It goes into the mempool of whichever [node](/glossary/node) received it first, gets relayed to that node's peers, gets relayed to *their* peers, and propagates across the global network within seconds. From there, it sits and waits.
 
-Until a miner picks it up and includes it in a block, your transaction is *unconfirmed*. It exists, it is valid, but it is not yet permanent.
+Until a [miner](/glossary/miner) picks it up and includes it in a block, your transaction is *unconfirmed*. It exists, it is valid, but it is not yet permanent.
 
 ## 2. There Is No "The" Mempool
 
@@ -38,7 +38,7 @@ When you check "the mempool" on a website like mempool.space, you are looking at
 This matters in a few practical cases:
 
 - **Network partitions** (rare but real) can cause mempools to diverge for minutes.
-- **Bitcoin Knots vs Core** apply different relay policies. Knots is more restrictive about inscription-style transactions and will not relay some that Core will.
+- **Bitcoin Knots vs [Bitcoin Core](/glossary/bitcoin-core)** apply different relay policies. Knots is more restrictive about inscription-style transactions and will not relay some that Core will.
 - **Miners' private mempools.** Mining pools sometimes accept transactions out-of-band that are not in any public mempool, then include them in blocks they mine.
 
 For most users, "the mempool" is a useful approximation. For anyone debugging a stuck transaction, knowing the abstraction is leaky is essential.
@@ -61,7 +61,7 @@ The validation in step 2 is **node policy**, not consensus. A transaction can be
 A transaction in the mempool has four possible exits:
 
 - **Confirmed.** A miner included it in a block. The block was relayed, accepted, and added to the chain. The transaction is now part of consensus. This is the goal.
-- **Evicted.** The mempool has size limits (default 300 MB in Bitcoin Core). When the mempool fills up, transactions with the lowest fee rates get dropped. A dropped transaction can be rebroadcast later, but most wallets do not automate this.
+- **Evicted.** The mempool has size limits (default 300 MB in Bitcoin Core). When the mempool fills up, transactions with the lowest fee rates get dropped. A dropped transaction can be rebroadcast later, but most wallets do not automate this. See [fee bumping](/glossary/fee-bumping) for the recovery path.
 - **Replaced.** If the transaction signaled RBF (or the node uses full-RBF policy), a higher-fee version replaces it in the mempool. The original is forgotten.
 - **Conflicted.** If a different transaction spends one of the same UTXOs and gets mined first, your transaction becomes invalid (the UTXO no longer exists) and gets dropped.
 
@@ -73,7 +73,7 @@ This is the single most important thing to understand about the mempool:
 
 **Miners care about fee rate, not absolute fee.**
 
-Fee rate is the fee divided by the transaction's size, expressed in satoshis per virtual byte (**sat/vB**). A 250-byte transaction with a 2,500 sat fee has the same fee rate (10 sat/vB) as a 1,000-byte transaction with a 10,000 sat fee.
+Fee rate is the [transaction fee](/glossary/transaction-fee) divided by the transaction's size, expressed in satoshis per virtual byte (**sat/vB**). A 250-byte transaction with a 2,500 sat fee has the same fee rate (10 sat/vB) as a 1,000-byte transaction with a 10,000 sat fee.
 
 Why? Because block space is the scarce resource. A miner with a fixed roughly 4 million weight units of space maximizes revenue by including the highest-fee-per-byte transactions first.
 
@@ -87,11 +87,11 @@ The UTXOs you choose to spend (see [UTXOs](/rabbit-hole/utxos)) directly determi
 
 ## 6. The Histogram
 
-Here is the current state of the mempool, ordered by fee rate:
+Here is the current state of the mempool, ordered highest-fee-rate first:
 
 <MempoolHistogram client:visible />
 
-Each bucket shows how much pending fee revenue sits at each rate level. The buckets at the top of the histogram are the ones that will be mined first.
+The bands are sorted with the highest sat/vB at the top, matching miner priority - top is what gets into the next block first. Each band shows how much pending volume sits at that fee-rate level.
 
 When the mempool is empty, almost any fee rate gets you confirmed in the next block. When the mempool is full (typical during high-volume periods), you need to outbid the transactions ahead of you.
 
