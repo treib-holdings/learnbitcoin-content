@@ -34,7 +34,7 @@ liveWidget: ~
 Body text in markdown.
 ```
 
-The site renderer ([`learnbitcoin-web`](https://github.com/treib-holdings/learnbitcoin-web)) reads this repo as a set of Astro content collections. The schema is defined in `learnbitcoin-web/src/content.config.ts`; look at neighboring files in each directory for the exact fields a given collection expects.
+The site renderer reads this repo as a set of Astro content collections. 
 
 ## Contributing
 
