@@ -13,6 +13,8 @@ sources:
   - { label: "Glacier Protocol - high-security cold storage", url: "https://glacierprotocol.org/" }
 relatedTerms: ["seed-phrase", "bip-39", "bip-32", "shamir-secret-sharing", "multisig", "inheritance-seed-backup", "hardware-seed-vault"]
 hasInteractive: []
+ogImage: "/diagrams/og/threat-triangle.png"
+ogImageAlt: "A triangle with three corners labeled THEFT, LOSS, and COERCION, each with a concrete example. At the center sits the seed phrase being defended. The three threats every Bitcoin seed backup must plan for."
 ---
 
 > **Where you're going:** A practical, threat-model-first walk through how to back up a Bitcoin seed phrase. You will learn what you are actually backing up, the three threats you are defending against (theft, loss, coercion), and the concrete options - from a sheet of paper to a multi-location, multi-party, multi-signature setup.
@@ -40,6 +42,11 @@ Backup strategy is a triangle of three threats:
 1. **Theft.** Someone finds your seed and steals your bitcoin.
 2. **Loss.** You misplace, destroy, or forget where you put the seed; your house burns down; your safety-deposit box bank fails.
 3. **Coercion.** Someone with a wrench, a court order, or a kidnap victim compels you to hand over your seed.
+
+<figure>
+  <img src="/diagrams/threat-triangle.svg" alt="A triangle with three corners labeled THEFT (someone finds your seed), LOSS (fire, flood, forgotten), and COERCION (wrench, warrant, kidnap). At the geometric center is a pill labeled YOUR SEED. The three threats every seed backup must plan against." />
+  <figcaption>Three threats. Defending one often weakens defense against another.</figcaption>
+</figure>
 
 A good backup defends against all three. The hard part: defending against any one of them often *worsens* your defense against the others.
 
