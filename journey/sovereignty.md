@@ -9,6 +9,8 @@ tagline: "Run your own node. Use multisig. Lock down your op-sec. Graduation: yo
 prerequisites: ["using-bitcoin"]
 relatedTerms: ["full-node", "node", "hierarchical-multisig", "hardware-security-module-hsm", "tor-hidden-service", "bitcoin-knots", "bitcoin-core", "bitcoin-inheritance-planning", "coin-control", "address-reuse"]
 legacyUrls: ["/run-your-own-node"]
+ogImage: "/diagrams/og/verify-dont-trust.png"
+ogImageAlt: "Verify, don't trust: a side-by-side comparison showing a wallet talking to your own node (which verifies every block and rule, giving a definite answer) versus the same wallet talking to a third-party server (which only claims an answer you cannot independently audit)."
 sources:
   - { label: "Bitcoin Core - official downloads and source", url: "https://bitcoincore.org" }
   - { label: "Bitcoin Knots - alternate full-node implementation", url: "https://bitcoinknots.org" }
@@ -40,6 +42,11 @@ Pick what's useful. Skip what isn't. The point is sovereignty, not a checklist.
 You can use Bitcoin without running a node. You're using Bitcoin right now without running one, if you're holding from chapter 4. So why?
 
 **Verification.** Bitcoin's claim - "you don't have to trust anyone" - is only true if you *verify*. A wallet that connects to someone else's server is trusting that server to tell the truth about your balance and the chain's state. The third party probably tells the truth. But probably is not the same as definitely. Your own node tells you definitely.
+
+<figure>
+  <img src="/diagrams/verify-dont-trust.svg" alt="Verify, don't trust: a side-by-side comparison showing a wallet talking to your own node (which verifies every block and rule, giving a definite answer) versus the same wallet talking to a third-party server (which only claims an answer you cannot independently audit)." />
+  <figcaption>Your node tells you definitely. Their server tells you probably. Probably is not the same as definitely.</figcaption>
+</figure>
 
 **Privacy.** When you use a public Electrum server (the default for most light wallets), that server sees every address in your wallet, every balance, every transaction you query. Running your own node means none of that leaks to anyone.
 
