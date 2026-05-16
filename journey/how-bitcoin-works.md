@@ -119,6 +119,11 @@ The header is dense. It contains:
 
 The clever part is the **merkle root**. It's the root of a binary tree built by hashing transactions in pairs, then hashing pairs of those hashes, all the way up. The result is a single value that depends on every transaction in the block. Change any transaction, and the merkle root changes, and the block's hash changes, and the chain breaks.
 
+<figure>
+  <img src="/diagrams/merkle-tree.svg" alt="A binary Merkle tree. Eight transactions (TX1 through TX8) at the bottom are paired and hashed together to produce four intermediate hashes. Those four are paired and hashed again to produce two more. The final pair is hashed once more to produce the single Merkle root at the top. The block's 80-byte header contains only that root." />
+  <figcaption>Eight transactions, hashed pairwise up to a single root. Change any leaf, and every hash on the path to the root changes too.</figcaption>
+</figure>
+
 Why does this matter? Because someone who only has the 80-byte header has a cryptographic commitment to all the transactions, without having to download them. This is what makes light wallets (SPV) possible: they can verify that a particular transaction is in a particular block by downloading the merkle path - a handful of hashes - instead of the whole block.
 
 The merkle tree is one of those ideas that, the first time you see it, you think "that's overkill." The hundredth time, you realize it's exactly the right amount of kill.
