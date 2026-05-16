@@ -8,6 +8,8 @@ estimatedMinutes: 30
 tagline: "Blocks, transactions, mining, fees, UTXOs. The machinery, demystified, without skipping the parts that matter."
 prerequisites: ["what-bitcoin-actually-is"]
 relatedTerms: ["block", "transaction", "utxo-unspent-transaction-output", "mempool", "transaction-fee", "miner", "merkle-root", "nonce", "difficulty", "difficulty-retargeting", "full-node"]
+ogImage: "/diagrams/og/alice-pays-bob.png"
+ogImageAlt: "Alice pays Bob 0.5 BTC: a UTXO transaction diagram showing how the 1.0 BTC input is consumed and two new UTXOs are created (0.5 BTC to Bob and 0.499 BTC change to Alice), with 0.001 BTC fee to the miner."
 sources:
   - { label: "Bitcoin developer documentation", url: "https://developer.bitcoin.org/reference/transactions.html" }
   - { label: "ChainQuery - inspect any block or transaction yourself", url: "https://chainquery.com" }
