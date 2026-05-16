@@ -153,6 +153,11 @@ Here's the rough probability math, assuming the attacker controls 30% of hash po
 | 5 | ~0.1% |
 | 6 | ~0.025% |
 
+<figure>
+  <img src="/diagrams/confirmations-stack.svg" alt="A chain of six Bitcoin blocks. The first block contains Alice's transaction; each subsequent block is a confirmation built on top. Below each block is the probability that a 30 percent attacker reverses the payment given that many confirmations, dropping from 17.5 percent at one confirmation to effectively 0 percent at six. A use-case axis above maps small purchases (t-shirt) on the left to large purchases (house) on the right; a time axis below shows roughly ten minutes per block, with the full chain settling in about an hour." />
+  <figcaption>Each confirmation drops the reversal probability roughly an order of magnitude. After six, the chance is effectively zero - practically irreversible.</figcaption>
+</figure>
+
 That's why six confirmations (about an hour) is the conventional "settled" threshold. For very large amounts you might wait longer; for a coffee, one confirmation is plenty. Exchanges typically want six. Hardware wallets default to six.
 
 The deeper a transaction is, the more astronomical the cost of un-doing it becomes. At twelve confirmations, you'd need to outpace the entire global hash rate for two hours straight. That's not "hard," it's "this has not happened in 16 years."
