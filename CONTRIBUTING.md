@@ -23,6 +23,9 @@ the rendering pipeline) lives in a separate private repo.
   words.
 - **Better cross-links.** The rehype plugin auto-links exact title
   matches, but manual links still beat auto-links for prose flow.
+- **sameAs values for glossary entries.** External entity URLs in the
+  frontmatter `sameAs:` array (Wikipedia, Wikidata, Bitcoin Wiki, BIP
+  source, Optech). See the dedicated section below for conventions.
 - **Translations.** Long-term goal. Talk to us first.
 
 ## What we will not merge
@@ -66,6 +69,44 @@ The site has a consistent voice. The short version:
 
 If you are unsure whether something fits the voice, look at a few
 existing entries and match the cadence.
+
+## sameAs values for glossary entries
+
+Glossary entries support a `sameAs:` array in their frontmatter, listing
+authoritative external URLs that describe the same Bitcoin concept.
+Adding values for entries that do not have them yet is a high-leverage
+contribution.
+
+**Source priority** (use these in order; include all that apply):
+
+1. **Wikipedia (English)** — `https://en.wikipedia.org/wiki/<Article_Title>` with underscores
+2. **Wikidata** — `https://www.wikidata.org/wiki/Q<number>`. Find the Q-number from the Wikipedia article's "Wikidata item" sidebar link.
+3. **Bitcoin Wiki** — `https://en.bitcoin.it/wiki/<Article_Title>`
+4. **BIP source** — `https://github.com/bitcoin/bips/blob/master/bip-NNNN.mediawiki` with leading zeros (`bip-0032`, `bip-0141`, `bip-0341`)
+5. **Bitcoin Optech topic page** — `https://bitcoinops.org/en/topics/<slug>/`
+
+**Rules:**
+
+- Verify every URL loads and describes the right concept before adding.
+  Wikipedia has redirect chains that mislead: for example
+  `Bitcoin_address` redirects into the broader `Bitcoin_protocol`
+  article, which is too generic to count as the same entity. Omit
+  rather than alias to something misleading.
+- 2 to 5 URLs per entry is the sweet spot. Fewer is fine. More than 5
+  dilutes the signal.
+- Skip blog posts, Bitcoin Magazine, Medium articles, exchange
+  marketing. The list is for canonical references only.
+- Use canonical URL form: underscores not spaces, no trailing slashes,
+  no fragments.
+
+**Frontmatter example:**
+
+```yaml
+sameAs:
+  - "https://en.wikipedia.org/wiki/Unspent_transaction_output"
+  - "https://www.wikidata.org/wiki/Q55636735"
+  - "https://en.bitcoin.it/wiki/UTXO"
+```
 
 ## Where things live
 
