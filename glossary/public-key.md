@@ -13,6 +13,9 @@ relatedTerms:
   - b32-address
   - p2pk-pay-public-key
   - xpub-extended-public-key
+sameAs:
+  - "https://en.wikipedia.org/wiki/Public-key_cryptography"
+  - "https://www.wikidata.org/wiki/Q201339"
 liveWidget: ~
 ---
 

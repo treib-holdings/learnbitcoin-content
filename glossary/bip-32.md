@@ -19,6 +19,9 @@ relatedTerms:
   - key-aggregation
   - seed-phrase
   - xpub-extended-public-key
+sameAs:
+  - "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki"
+  - "https://en.bitcoin.it/wiki/BIP_0032"
 liveWidget: ~
 ---
 

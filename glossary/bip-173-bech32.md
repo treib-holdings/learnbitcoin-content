@@ -18,6 +18,10 @@ relatedTerms:
   - native-segwit
   - p2wpkh-pay-witness-public-key-hash
   - p2wsh-pay-witness-script-hash
+sameAs:
+  - "https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki"
+  - "https://en.bitcoin.it/wiki/BIP_0173"
+  - "https://bitcoinops.org/en/topics/bech32/"
 liveWidget: ~
 ---
 

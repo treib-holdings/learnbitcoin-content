@@ -17,6 +17,10 @@ relatedTerms:
   - coinbase-transaction
   - satoshi-nakamoto
   - whitepaper
+sameAs:
+  - "https://en.wikipedia.org/wiki/Blockchain"
+  - "https://www.wikidata.org/wiki/Q20514253"
+  - "https://en.bitcoin.it/wiki/Genesis_block"
 liveWidget: ~
 ---
 

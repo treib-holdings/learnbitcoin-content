@@ -19,6 +19,10 @@ relatedTerms:
   - schnorr-signature
   - signature-aggregation
   - taproot
+sameAs:
+  - "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki"
+  - "https://en.bitcoin.it/wiki/BIP_0341"
+  - "https://bitcoinops.org/en/topics/taproot/"
 liveWidget: ~
 ---
 

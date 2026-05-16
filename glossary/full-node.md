@@ -22,6 +22,8 @@ relatedTerms:
   - node-operator
   - node-synchronization
   - node-uptime
+sameAs:
+  - "https://en.bitcoin.it/wiki/Full_node"
 liveWidget: ~
 ---
 

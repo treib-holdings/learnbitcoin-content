@@ -20,6 +20,10 @@ relatedTerms:
   - nonce
   - nonce-exhaustion
   - poisson-process
+sameAs:
+  - "https://en.wikipedia.org/wiki/Proof_of_work"
+  - "https://www.wikidata.org/wiki/Q7249984"
+  - "https://en.bitcoin.it/wiki/Proof_of_work"
 liveWidget: ~
 ---
 

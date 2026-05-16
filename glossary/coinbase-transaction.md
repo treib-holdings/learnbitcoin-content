@@ -20,6 +20,8 @@ relatedTerms:
   - mining-pool
   - mining-subsidy
   - transaction
+sameAs:
+  - "https://en.bitcoin.it/wiki/Coinbase"
 liveWidget: ~
 ---
 

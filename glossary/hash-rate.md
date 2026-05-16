@@ -20,6 +20,8 @@ relatedTerms:
   - mining-algorithm
   - mining-colocation
   - revenue-ths
+sameAs:
+  - "https://en.bitcoin.it/wiki/Hash_per_second"
 liveWidget: ~
 ---
 

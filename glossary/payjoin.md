@@ -15,6 +15,10 @@ relatedTerms:
   - mixing-service
   - shielded-coinjoin
   - stealth-address
+sameAs:
+  - "https://en.bitcoin.it/wiki/PayJoin"
+  - "https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki"
+  - "https://bitcoinops.org/en/topics/payjoin/"
 liveWidget: ~
 ---
 

@@ -23,6 +23,8 @@ relatedTerms:
   - replace-fee-rbf
   - transaction
   - transaction-chaining
+sameAs:
+  - "https://en.bitcoin.it/wiki/Miner_fees"
 liveWidget: ~
 ---
 

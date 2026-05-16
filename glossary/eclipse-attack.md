@@ -16,6 +16,8 @@ relatedTerms:
   - replay-attack
   - resource-exhaustion-attack
   - tor-hidden-service
+sameAs:
+  - "https://bitcoinops.org/en/topics/eclipse-attacks/"
 liveWidget: ~
 ---
 

@@ -18,6 +18,9 @@ relatedTerms:
   - merkleized-abstract-syntax-tree-mast
   - merkle-proof
   - merkle-root
+sameAs:
+  - "https://en.wikipedia.org/wiki/Merkle_tree"
+  - "https://www.wikidata.org/wiki/Q14746"
 liveWidget: ~
 ---
 

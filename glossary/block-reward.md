@@ -22,6 +22,9 @@ relatedTerms:
   - mining-algorithm
   - mining-colocation
   - mining-subsidy
+sameAs:
+  - "https://en.bitcoin.it/wiki/Controlled_supply"
+  - "https://en.bitcoin.it/wiki/Mining"
 liveWidget: ~
 ---
 

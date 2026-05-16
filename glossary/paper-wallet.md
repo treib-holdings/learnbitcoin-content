@@ -15,6 +15,8 @@ relatedTerms:
   - key-split
   - key-wiping
   - mixing-service
+sameAs:
+  - "https://en.bitcoin.it/wiki/Paper_wallet"
 liveWidget: ~
 ---
 

@@ -15,6 +15,11 @@ relatedTerms:
   - schnorr-signature
   - signature-aggregation
   - signature-clipping
+sameAs:
+  - "https://en.bitcoin.it/wiki/Taproot"
+  - "https://en.bitcoin.it/wiki/BIP_0341"
+  - "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki"
+  - "https://bitcoinops.org/en/topics/taproot/"
 liveWidget: ~
 ---
 

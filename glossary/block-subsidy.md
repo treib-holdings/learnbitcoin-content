@@ -19,6 +19,8 @@ relatedTerms:
   - hal-finneys-running-bitcoin
   - halving-halvening
   - mining-subsidy
+sameAs:
+  - "https://en.bitcoin.it/wiki/Controlled_supply"
 liveWidget: ~
 ---
 

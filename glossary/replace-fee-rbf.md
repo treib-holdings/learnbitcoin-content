@@ -21,6 +21,9 @@ relatedTerms:
   - full-rbf
   - transaction
   - transaction-fee
+sameAs:
+  - "https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki"
+  - "https://bitcoinops.org/en/topics/replace-by-fee/"
 liveWidget: ~
 ---
 

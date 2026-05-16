@@ -9,6 +9,10 @@ keyTakeaways:
   - "Usually generated/managed by wallets behind the scenes"
 sources: []
 relatedTerms: []
+sameAs:
+  - "https://en.wikipedia.org/wiki/Public-key_cryptography"
+  - "https://www.wikidata.org/wiki/Q201339"
+  - "https://en.bitcoin.it/wiki/Private_key"
 liveWidget: ~
 ---
 

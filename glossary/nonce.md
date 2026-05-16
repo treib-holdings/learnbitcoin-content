@@ -15,6 +15,10 @@ relatedTerms:
   - hash
   - nonce-exhaustion
   - proof-work-pow
+sameAs:
+  - "https://en.wikipedia.org/wiki/Cryptographic_nonce"
+  - "https://www.wikidata.org/wiki/Q1749235"
+  - "https://en.bitcoin.it/wiki/Nonce"
 liveWidget: ~
 ---
 

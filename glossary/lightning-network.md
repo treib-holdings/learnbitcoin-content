@@ -43,6 +43,10 @@ relatedTerms:
   - payment-channel
   - submarine-swap
   - wumbo-channels-lightning
+sameAs:
+  - "https://en.wikipedia.org/wiki/Lightning_Network"
+  - "https://www.wikidata.org/wiki/Q30325114"
+  - "https://en.bitcoin.it/wiki/Lightning_Network"
 liveWidget: ~
 ---
 

@@ -26,6 +26,10 @@ relatedTerms:
   - mining-subsidy
   - retail-mining
   - revenue-ths
+sameAs:
+  - "https://en.wikipedia.org/wiki/Bitcoin_protocol"
+  - "https://www.wikidata.org/wiki/Q17001427"
+  - "https://en.bitcoin.it/wiki/Mining"
 liveWidget: ~
 ---
 

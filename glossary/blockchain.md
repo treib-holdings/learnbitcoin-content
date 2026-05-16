@@ -22,6 +22,9 @@ relatedTerms:
   - market-depth
   - reorg-reorganization
   - stale-block
+sameAs:
+  - "https://en.wikipedia.org/wiki/Blockchain"
+  - "https://www.wikidata.org/wiki/Q20514253"
 liveWidget: ~
 ---
 

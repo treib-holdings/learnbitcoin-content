@@ -17,6 +17,10 @@ relatedTerms:
   - partially-signed-bitcoin-transaction-psbt
   - psbt
   - transaction
+sameAs:
+  - "https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki"
+  - "https://en.bitcoin.it/wiki/BIP_0174"
+  - "https://bitcoinops.org/en/topics/psbt/"
 liveWidget: ~
 ---
 

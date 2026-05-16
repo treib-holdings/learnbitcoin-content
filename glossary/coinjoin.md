@@ -17,6 +17,9 @@ relatedTerms:
   - payjoin
   - shielded-coinjoin
   - stealth-address
+sameAs:
+  - "https://en.bitcoin.it/wiki/CoinJoin"
+  - "https://bitcoinops.org/en/topics/coinjoin/"
 liveWidget: ~
 ---
 

@@ -21,6 +21,10 @@ relatedTerms:
   - partially-signed-bitcoin-transaction-psbt
   - quorum-signatures
   - shamir-secret-sharing
+sameAs:
+  - "https://en.wikipedia.org/wiki/Cryptocurrency_wallet"
+  - "https://www.wikidata.org/wiki/Q40186999"
+  - "https://en.bitcoin.it/wiki/Multi-signature"
 liveWidget: ~
 ---
 

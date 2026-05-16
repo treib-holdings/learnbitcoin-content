@@ -20,6 +20,9 @@ relatedTerms:
   - bip-341-taproot
   - bip-342-tapscript
   - bolt-11
+sameAs:
+  - "https://en.bitcoin.it/wiki/BIP"
+  - "https://github.com/bitcoin/bips"
 liveWidget: ~
 ---
 
