@@ -95,32 +95,3 @@ Some widgets accept props. For example, `UnitsVisualization` takes a `unit` and 
 ```
 
 When a widget is new to you, check the `.svelte` source in the web repo for the `export let` declarations to see what it accepts.
-
----
-
-## Authoring a new SVG diagram
-
-The full workflow lives in `~/Sync/Treib Holdings LLC/HANDOFF-diagrams.md` (scratch directory, not in this repo). Highlights:
-
-1. Read the target section of the markdown so the diagram matches the prose exactly.
-2. Draft SVG in `~/Sync/Treib Holdings LLC/<name>-v1.svg`. Adhere to the brand convention: viewBox `0 0 800 420`, Geist font, brand orange `#F79009`, ink-700 `#202939`, attribution block at `translate(625, 378)`, ASCII-only punctuation, no em-dashes.
-3. Rasterize a preview via the web repo's `sharp` install:
-   ```bash
-   cd learnbitcoin-web && node -e "require('sharp')('<path>.svg', {density:288}).resize(1200,630).png().toFile('<path>.png')"
-   ```
-4. Iterate to v2, v3, … (typically 3-6 iterations on typography + layout).
-5. Once approved, copy the final SVG to `learnbitcoin-web/public/diagrams/<name>.svg`. The prebuild pipeline rasterizes it.
-6. Embed in target markdown(s) with a `<figure>` block. Add `ogImage` + `ogImageAlt` to the lead page's frontmatter.
-7. Commit and push the web repo (asset) and the content repo (embed) in two commits.
-8. Update the table above in this file when adding new diagrams.
-
----
-
-## Authoring a new interactive widget
-
-Widget development is a web-repo task, not a content-repo task. The contract from content's perspective:
-
-1. The widget exists at `learnbitcoin-web/src/components/<group>/<Name>.svelte`.
-2. It is exported as a default Svelte component.
-3. Its props are documented in the component source.
-4. Once it's available, embed it in MDX using the import + tag pattern above, and add a row to the widget table in this file.
