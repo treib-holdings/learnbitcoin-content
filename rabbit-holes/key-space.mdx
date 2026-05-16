@@ -13,6 +13,8 @@ sources:
   - { label: "Bitcoin Wiki - secp256k1", url: "https://en.bitcoin.it/wiki/Secp256k1" }
 relatedTerms: ["private-key", "public-key", "elliptic-curve", "schnorr-signature", "seed-phrase", "address"]
 hasInteractive: ["keySpaceVisualizer"]
+ogImage: "/diagrams/og/hd-wallet-tree.png"
+ogImageAlt: "One seed, every address. A 12-word seed phrase at the top derives a master key, which deterministically derives every child key and address the wallet will ever use. Each wallet picks one tree out of a space of 2^256 possible keys."
 ---
 
 import KeySpaceVisualizer from '@components/keyspace/KeySpaceVisualizer.svelte';
@@ -28,6 +30,11 @@ That sounds fragile. What stops an attacker from just trying every possible key 
 The answer is "the math," and it is not a casual answer. The number of possible Bitcoin keys is so large that it overwhelms every intuition you have for *large*. Bigger than the number of grains of sand on Earth. Bigger than the number of stars in the observable universe. Bigger than the number of *atoms* in the observable universe, by many orders of magnitude.
 
 This rabbit hole is a tour through that number. The goal isn't to teach you cryptography; it's to make you *feel* the scale at a gut level, so you understand why "brute-forcing a Bitcoin key" isn't a real category of threat. It's not even on the menu.
+
+<figure>
+  <img src="/diagrams/hd-wallet-tree.svg" alt="A hierarchical deterministic wallet tree: a 12-word seed phrase at the top derives a master key, which in turn derives an unlimited sequence of child keys and addresses. Five sample bc1q addresses branch from the master key, with the implication that millions more follow the same derivation." />
+  <figcaption>Every wallet derives a tree of keys from one seed. That seed lives somewhere in the 2^256-sized space we're about to walk.</figcaption>
+</figure>
 
 ## The Number
 
