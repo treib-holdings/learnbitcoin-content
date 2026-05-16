@@ -9,6 +9,8 @@ tagline: "If your keys live on an exchange, you don't own Bitcoin. You own an IO
 prerequisites: ["how-bitcoin-works"]
 relatedTerms: ["seed-phrase", "private-key", "hardware-wallet", "custodial-wallet", "address", "deterministic-wallet", "watch-only-wallet", "paper-wallet", "multisig", "shamir-secret-sharing", "hierarchical-multisig"]
 legacyUrls: ["/be-your-own-bank"]
+ogImage: "/diagrams/og/hd-wallet-tree.png"
+ogImageAlt: "One seed, every address. A 12-word seed phrase at the top derives a master key, which deterministically derives every child key and address the wallet will ever use. Back up the seed once and the whole tree is recoverable forever."
 sources:
   - { label: "BIP 39 - Mnemonic seed phrases (Bitcoin Improvement Proposal)", url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" }
   - { label: "BIP 32 - Hierarchical deterministic wallets", url: "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" }
@@ -55,6 +57,11 @@ This is why:
 - Restoring a wallet on a new device shows the same balance instantly (the chain is the truth; the device just reads it)
 
 When you "back up your wallet," you're backing up the *keys* - specifically, the seed they're derived from. If you have the seed, you can reconstruct all the keys, on any device, forever.
+
+<figure>
+  <img src="/diagrams/hd-wallet-tree.svg" alt="A hierarchical deterministic wallet tree: a 12-word seed phrase at the top derives a master key, which in turn derives an unlimited sequence of child keys and addresses. Five sample bc1q addresses branch from the master key, with the implication that millions more follow the same derivation." />
+  <figcaption>One seed encodes a deterministic tree of keys and addresses. Back up the seed once; the whole tree is recoverable forever.</figcaption>
+</figure>
 
 This is one of Bitcoin's most powerful properties and one of the easiest to underestimate.
 
