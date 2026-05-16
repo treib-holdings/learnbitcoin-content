@@ -44,7 +44,12 @@ A Bitcoin [transaction](/glossary/transaction-fee/) has two sides:
 - **Inputs:** UTXOs being consumed (spent entirely).
 - **Outputs:** new UTXOs being created.
 
-Here is the critical part: **UTXOs are consumed whole.** You can not spend half of a UTXO. If you have a UTXO worth 0.5 BTC and you want to send someone 0.1 BTC, you spend the entire 0.5 BTC UTXO. The transaction creates two new UTXOs: one for 0.1 BTC to the recipient, one for roughly 0.39999 BTC (minus fees) back to you.
+Here is the critical part: **UTXOs are consumed whole.** You can not spend half of a UTXO. If Alice has a UTXO worth 1.0 BTC and wants to send Bob 0.5 BTC, she spends the entire 1.0 BTC UTXO. The transaction creates two new UTXOs: one for 0.5 BTC to Bob, one for roughly 0.499 BTC (minus fees) back to Alice.
+
+<figure>
+  <img src="/diagrams/alice-pays-bob.svg" alt="Alice's 1.0 BTC UTXO is consumed by a transaction that creates two new UTXOs: 0.5 BTC to Bob and 0.499 BTC change to Alice at a new address. The remaining 0.001 BTC is the fee paid to the miner." />
+  <figcaption>Alice's 1.0 BTC UTXO is consumed whole. Two new UTXOs are created; the 0.001 BTC fee is the difference between inputs and outputs.</figcaption>
+</figure>
 
 That second UTXO is **change.** It is your own money, returned to you, in a new chunk.
 
