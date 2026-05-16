@@ -15,6 +15,9 @@ relatedTerms:
   - mnemonic-password
   - mnemonic-seed-phrase
   - seed-phrase
+sameAs:
+  - "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"
+  - "https://en.bitcoin.it/wiki/BIP_0039"
 liveWidget: ~
 ---
 

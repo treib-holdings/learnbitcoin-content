@@ -14,6 +14,10 @@ relatedTerms:
   - hal-finneys-running-bitcoin
   - satoshi-unit
   - whitepaper
+sameAs:
+  - "https://en.wikipedia.org/wiki/Satoshi_Nakamoto"
+  - "https://www.wikidata.org/wiki/Q13382352"
+  - "https://en.bitcoin.it/wiki/Satoshi_Nakamoto"
 liveWidget: ~
 ---
 

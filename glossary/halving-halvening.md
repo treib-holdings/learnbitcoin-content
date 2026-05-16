@@ -21,6 +21,10 @@ relatedTerms:
   - hal-finneys-running-bitcoin
   - mining-subsidy
   - revenue-ths
+sameAs:
+  - "https://en.wikipedia.org/wiki/Bitcoin_protocol"
+  - "https://www.wikidata.org/wiki/Q17001427"
+  - "https://en.bitcoin.it/wiki/Controlled_supply"
 liveWidget: ~
 ---
 

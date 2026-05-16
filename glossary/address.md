@@ -22,6 +22,8 @@ relatedTerms:
   - silent-payments
   - stealth-address
   - vanity-address
+sameAs:
+  - "https://en.bitcoin.it/wiki/Address"
 liveWidget: ~
 ---
 

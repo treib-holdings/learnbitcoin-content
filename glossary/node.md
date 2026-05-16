@@ -25,6 +25,9 @@ relatedTerms:
   - node-operator
   - node-synchronization
   - node-uptime
+sameAs:
+  - "https://en.wikipedia.org/wiki/Node_(networking)"
+  - "https://www.wikidata.org/wiki/Q173106"
 liveWidget: ~
 ---
 

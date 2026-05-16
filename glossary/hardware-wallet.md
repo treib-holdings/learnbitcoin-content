@@ -24,6 +24,10 @@ relatedTerms:
   - seed-phrase
   - security
   - wallet
+sameAs:
+  - "https://en.wikipedia.org/wiki/Cryptocurrency_wallet"
+  - "https://www.wikidata.org/wiki/Q40186999"
+  - "https://en.bitcoin.it/wiki/Hardware_wallet"
 liveWidget: ~
 ---
 

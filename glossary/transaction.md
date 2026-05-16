@@ -33,6 +33,10 @@ relatedTerms:
   - transaction-fee
   - transaction-index-txindex
   - utxo-unspent-transaction-output
+sameAs:
+  - "https://en.wikipedia.org/wiki/Bitcoin_protocol"
+  - "https://www.wikidata.org/wiki/Q17001427"
+  - "https://en.bitcoin.it/wiki/Transaction"
 liveWidget: ~
 ---
 

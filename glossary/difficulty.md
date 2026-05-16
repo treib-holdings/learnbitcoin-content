@@ -19,6 +19,8 @@ relatedTerms:
   - poisson-process
   - proof-work-pow
   - revenue-ths
+sameAs:
+  - "https://en.bitcoin.it/wiki/Difficulty"
 liveWidget: ~
 ---
 

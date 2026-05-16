@@ -30,6 +30,9 @@ relatedTerms:
   - lightning-routing
   - payment-channel
   - submarine-swap
+sameAs:
+  - "https://en.bitcoin.it/wiki/Hashed_Timelock_Contracts"
+  - "https://bitcoinops.org/en/topics/htlc/"
 liveWidget: ~
 ---
 

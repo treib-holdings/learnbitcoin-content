@@ -19,6 +19,12 @@ relatedTerms:
   - nonce
   - nonce-exhaustion
   - proof-work-pow
+sameAs:
+  - "https://en.wikipedia.org/wiki/Hash_function"
+  - "https://www.wikidata.org/wiki/Q183427"
+  - "https://en.wikipedia.org/wiki/Cryptographic_hash_function"
+  - "https://www.wikidata.org/wiki/Q477202"
+  - "https://en.bitcoin.it/wiki/Hash"
 liveWidget: ~
 ---
 

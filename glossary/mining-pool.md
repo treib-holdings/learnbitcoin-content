@@ -23,6 +23,10 @@ relatedTerms:
   - pooled-mining
   - retail-mining
   - revenue-ths
+sameAs:
+  - "https://en.wikipedia.org/wiki/Mining_pool"
+  - "https://www.wikidata.org/wiki/Q18207063"
+  - "https://en.bitcoin.it/wiki/Mining_pool"
 liveWidget: ~
 ---
 

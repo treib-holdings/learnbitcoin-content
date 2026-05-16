@@ -23,6 +23,10 @@ relatedTerms:
   - block-subsidy
   - block-time
   - blockchain
+sameAs:
+  - "https://en.wikipedia.org/wiki/Blockchain"
+  - "https://www.wikidata.org/wiki/Q20514253"
+  - "https://en.bitcoin.it/wiki/Block"
 liveWidget: liveBlockHeight
 ---
 

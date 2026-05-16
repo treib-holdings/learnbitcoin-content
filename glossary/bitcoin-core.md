@@ -17,6 +17,10 @@ relatedTerms:
   - node-operator
   - node-synchronization
   - spv-simplified-payment-verification
+sameAs:
+  - "https://en.wikipedia.org/wiki/Bitcoin_Core"
+  - "https://www.wikidata.org/wiki/Q18198917"
+  - "https://en.bitcoin.it/wiki/Bitcoin_Core"
 liveWidget: ~
 ---
 

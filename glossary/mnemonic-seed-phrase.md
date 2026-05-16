@@ -9,6 +9,10 @@ keyTakeaways:
   - "Central to modern wallet backup best practices"
 sources: []
 relatedTerms: []
+sameAs:
+  - "https://en.bitcoin.it/wiki/Seed_phrase"
+  - "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"
+  - "https://en.bitcoin.it/wiki/BIP_0039"
 liveWidget: ~
 ---
 

@@ -20,6 +20,11 @@ relatedTerms:
   - signature-aggregation
   - signature-clipping
   - taproot
+sameAs:
+  - "https://en.wikipedia.org/wiki/Schnorr_signature"
+  - "https://www.wikidata.org/wiki/Q1465057"
+  - "https://en.bitcoin.it/wiki/Schnorr"
+  - "https://bitcoinops.org/en/topics/schnorr-signatures/"
 liveWidget: ~
 ---
 

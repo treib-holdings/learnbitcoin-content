@@ -21,6 +21,10 @@ relatedTerms:
   - transaction
   - transaction-index-txindex
   - vanity-address
+sameAs:
+  - "https://en.wikipedia.org/wiki/Unspent_transaction_output"
+  - "https://www.wikidata.org/wiki/Q55636735"
+  - "https://en.bitcoin.it/wiki/UTXO"
 liveWidget: ~
 ---
 

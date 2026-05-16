@@ -20,6 +20,9 @@ relatedTerms:
   - security
   - wallet
   - watch-only-wallet
+sameAs:
+  - "https://en.wikipedia.org/wiki/Cryptocurrency_wallet"
+  - "https://www.wikidata.org/wiki/Q40186999"
 liveWidget: ~
 ---
 

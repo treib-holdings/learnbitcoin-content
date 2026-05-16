@@ -33,6 +33,10 @@ relatedTerms:
   - lightning-routing
   - payment-channel
   - wumbo-channels-lightning
+sameAs:
+  - "https://en.wikipedia.org/wiki/Lightning_Network"
+  - "https://www.wikidata.org/wiki/Q30325114"
+  - "https://en.bitcoin.it/wiki/Payment_channels"
 liveWidget: ~
 ---
 

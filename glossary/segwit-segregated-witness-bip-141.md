@@ -22,6 +22,12 @@ relatedTerms:
   - p2wpkh-pay-witness-public-key-hash
   - p2wsh-pay-witness-script-hash
   - taproot
+sameAs:
+  - "https://en.wikipedia.org/wiki/SegWit"
+  - "https://www.wikidata.org/wiki/Q30327698"
+  - "https://en.bitcoin.it/wiki/Segregated_Witness"
+  - "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki"
+  - "https://bitcoinops.org/en/topics/segregated-witness/"
 liveWidget: ~
 legacyTitle: "BIP 141 (SegWit)"
 ---

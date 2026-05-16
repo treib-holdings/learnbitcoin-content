@@ -30,6 +30,9 @@ relatedTerms:
   - onion-routing-lightning
   - tor-hidden-service
   - wumbo-channels-lightning
+sameAs:
+  - "https://en.wikipedia.org/wiki/Lightning_Network"
+  - "https://www.wikidata.org/wiki/Q30325114"
 liveWidget: ~
 ---
 
