@@ -8,6 +8,8 @@ estimatedMinutes: 25
 tagline: "Not a stock. Not a company. Not a payment app. Bitcoin is a new kind of money - and the difference matters."
 prerequisites: ["why-money-is-broken"]
 relatedTerms: ["satoshi-nakamoto", "whitepaper", "proof-work-pow", "decentralization", "halving-halvening", "genesis-block", "block-subsidy", "hash"]
+ogImage: "/diagrams/og/network-topology.png"
+ogImageAlt: "Two network topologies side by side. On the left, a single central bank hub stands alone. On the right, Bitcoin as roughly thirty-five peer nodes connected in an organic mesh with no center. One central bank, versus tens of thousands of Bitcoin nodes. No one is in charge."
 sources:
   - { label: "Bitcoin Whitepaper (Satoshi Nakamoto, 2008)", url: "/bitcoin.pdf" }
   - { label: "Genesis block via ChainQuery (run getblock on a live node)", url: "https://chainquery.com/rpc/getblock" }
@@ -135,6 +137,11 @@ There are three groups of participants, and they keep each other honest:
 - **Node operators** - anyone running Bitcoin software that validates every transaction and every block. Their copy of the rules is what counts as Bitcoin. There are tens of thousands.
 - **Miners** - specialized computers competing to add the next block in exchange for the reward. They produce blocks but they don't *make the rules*; if they produce an invalid block, nodes reject it and the work is wasted.
 - **Developers** - people who write the software. There are several independent implementations; the dominant one is called Bitcoin Core. Developers can propose changes, but they cannot impose them; nodes choose what software to run.
+
+<figure>
+  <img src="/diagrams/network-topology.svg" alt="Two network topologies side by side. On the left, a central bank: a single institutional hub standing alone. On the right, the Bitcoin network: roughly thirty-five peer nodes scattered across the panel and connected to their neighbors in an organic mesh, with no central node." />
+  <figcaption>One central bank, versus tens of thousands of Bitcoin nodes. No center, no headquarters, no off switch.</figcaption>
+</figure>
 
 This is the genuinely radical part. **No one is in charge.** Not the largest miner. Not the most prolific developer. Not the wealthiest holder. The rules are upheld by everyone running a node, and changes to the rules require near-universal agreement. There have been attempted "takeovers" - chiefly in 2017, by a coalition of large miners and businesses - and the network defeated them by simply continuing to enforce the existing rules. The fork that resulted is now a footnote.
 
