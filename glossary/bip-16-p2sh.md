@@ -17,6 +17,10 @@ relatedTerms:
   - bitcoin-script
   - p2sh-pay-script-hash
   - script
+sameAs:
+  - "https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki"
+  - "https://en.bitcoin.it/wiki/BIP_0016"
+  - "https://en.bitcoin.it/wiki/Pay_to_script_hash"
 liveWidget: ~
 ---
 

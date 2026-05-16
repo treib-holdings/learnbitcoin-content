@@ -22,6 +22,8 @@ relatedTerms:
   - merkle-tree-merkle-root
   - merkle-proof
   - merkle-root
+sameAs:
+  - "https://en.bitcoin.it/wiki/Block_hashing_algorithm"
 liveWidget: ~
 ---
 

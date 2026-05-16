@@ -9,6 +9,9 @@ keyTakeaways:
   - "Improves clarity over older, ad hoc address generation approaches"
 sources: []
 relatedTerms: []
+sameAs:
+  - "https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md"
+  - "https://bitcoinops.org/en/topics/output-script-descriptors/"
 liveWidget: ~
 ---
 

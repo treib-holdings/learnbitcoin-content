@@ -17,6 +17,10 @@ relatedTerms:
   - schnorr-signature
   - signature-aggregation
   - signature-clipping
+sameAs:
+  - "https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm"
+  - "https://www.wikidata.org/wiki/Q915079"
+  - "https://en.bitcoin.it/wiki/ECDSA"
 liveWidget: ~
 ---
 

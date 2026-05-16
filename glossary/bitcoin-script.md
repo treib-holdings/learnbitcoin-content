@@ -28,6 +28,8 @@ relatedTerms:
   - script
   - scriptless-scripts
   - taproot
+sameAs:
+  - "https://en.bitcoin.it/wiki/Script"
 liveWidget: ~
 ---
 

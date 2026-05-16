@@ -24,6 +24,8 @@ relatedTerms:
   - schnorr-signature
   - signature-aggregation
   - signature-clipping
+sameAs:
+  - "https://bitcoinops.org/en/topics/musig/"
 liveWidget: ~
 ---
 

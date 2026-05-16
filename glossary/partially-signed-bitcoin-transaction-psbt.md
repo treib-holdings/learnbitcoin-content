@@ -20,6 +20,11 @@ relatedTerms:
   - partial-signature
   - quorum-signatures
   - schnorr-signature
+sameAs:
+  - "https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki"
+  - "https://en.bitcoin.it/wiki/BIP_0174"
+  - "https://en.bitcoin.it/wiki/PSBT"
+  - "https://bitcoinops.org/en/topics/psbt/"
 liveWidget: ~
 ---
 

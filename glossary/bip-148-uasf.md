@@ -18,6 +18,10 @@ relatedTerms:
   - deployment-threshold-soft-fork
   - locked-period-soft-fork
   - soft-fork
+sameAs:
+  - "https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki"
+  - "https://en.bitcoin.it/wiki/BIP_0148"
+  - "https://en.bitcoin.it/wiki/Softfork"
 liveWidget: ~
 ---
 

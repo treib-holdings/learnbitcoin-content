@@ -19,6 +19,10 @@ relatedTerms:
   - nlocktime
   - nsequence
   - time-locked-contract
+sameAs:
+  - "https://github.com/bitcoin/bips/blob/master/bip-0068.mediawiki"
+  - "https://en.bitcoin.it/wiki/BIP_0068"
+  - "https://en.bitcoin.it/wiki/Timelock"
 liveWidget: ~
 ---
 

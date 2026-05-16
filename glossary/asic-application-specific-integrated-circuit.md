@@ -17,6 +17,11 @@ relatedTerms:
   - mining-algorithm
   - mining-rig
   - mining-software
+sameAs:
+  - "https://en.wikipedia.org/wiki/Application-specific_integrated_circuit"
+  - "https://www.wikidata.org/wiki/Q217302"
+  - "https://en.bitcoin.it/wiki/ASIC"
+  - "https://en.bitcoin.it/wiki/Mining_hardware_comparison"
 liveWidget: ~
 ---
 

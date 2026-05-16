@@ -17,6 +17,11 @@ relatedTerms:
   - partially-signed-bitcoin-transaction-psbt
   - p2pkh-pay-public-key-hash
   - p2pk-pay-public-key
+sameAs:
+  - "https://en.wikipedia.org/wiki/Pay_to_script_hash"
+  - "https://en.bitcoin.it/wiki/Pay_to_script_hash"
+  - "https://en.bitcoin.it/wiki/BIP_0016"
+  - "https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki"
 liveWidget: ~
 ---
 

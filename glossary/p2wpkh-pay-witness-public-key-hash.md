@@ -16,6 +16,11 @@ relatedTerms:
   - p2pkh-pay-public-key-hash
   - p2pk-pay-public-key
   - utxo-unspent-transaction-output
+sameAs:
+  - "https://en.wikipedia.org/wiki/SegWit"
+  - "https://www.wikidata.org/wiki/Q30327698"
+  - "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki"
+  - "https://en.bitcoin.it/wiki/BIP_0141"
 liveWidget: ~
 ---
 

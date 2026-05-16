@@ -16,6 +16,10 @@ relatedTerms:
   - bip-16-p2sh
   - taproot
   - p2wpkh-pay-witness-public-key-hash
+sameAs:
+  - "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki"
+  - "https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki"
+  - "https://en.bitcoin.it/wiki/BIP_0141"
 liveWidget: ~
 ---
 

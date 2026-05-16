@@ -29,6 +29,8 @@ relatedTerms:
   - lightning-routing
   - payment-channel
   - wumbo-channels-lightning
+sameAs:
+  - "https://bitcoinops.org/en/topics/splicing/"
 liveWidget: ~
 ---
 

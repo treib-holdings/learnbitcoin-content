@@ -13,6 +13,12 @@ relatedTerms:
   - i2p-invisible-internet-project
   - lightning-node
   - onion-routing-lightning
+sameAs:
+  - "https://en.wikipedia.org/wiki/Tor_(network)"
+  - "https://www.wikidata.org/wiki/Q202044"
+  - "https://en.wikipedia.org/wiki/.onion"
+  - "https://www.wikidata.org/wiki/Q848715"
+  - "https://en.bitcoin.it/wiki/Setting_up_a_Tor_hidden_service"
 liveWidget: ~
 ---
 

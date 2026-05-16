@@ -16,6 +16,9 @@ relatedTerms:
   - hd-wallet-hierarchical-deterministic-wallet
   - hierarchical-deterministic-wallet
   - wallet
+sameAs:
+  - "https://github.com/bitcoindevkit/bdk"
+  - "https://bitcoindevkit.org"
 liveWidget: ~
 ---
 

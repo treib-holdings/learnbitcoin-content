@@ -17,6 +17,9 @@ relatedTerms:
   - node-headcount
   - node-operator
   - node-synchronization
+sameAs:
+  - "https://en.bitcoin.it/wiki/Network"
+  - "https://en.bitcoin.it/wiki/Satoshi_Client_Node_Discovery"
 liveWidget: ~
 ---
 

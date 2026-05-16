@@ -16,6 +16,10 @@ relatedTerms:
   - fork-detection
   - fork-watcher
   - reorg-reorganization
+sameAs:
+  - "https://en.wikipedia.org/wiki/Fork_(blockchain)"
+  - "https://www.wikidata.org/wiki/Q48893562"
+  - "https://en.wikipedia.org/wiki/Bitcoin_Cash"
 liveWidget: ~
 ---
 

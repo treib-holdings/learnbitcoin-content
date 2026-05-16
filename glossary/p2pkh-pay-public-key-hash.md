@@ -16,6 +16,8 @@ relatedTerms:
   - p2wsh-pay-witness-script-hash
   - p2pk-pay-public-key
   - utxo-unspent-transaction-output
+sameAs:
+  - "https://en.bitcoin.it/wiki/Invoice_address"
 liveWidget: ~
 ---
 

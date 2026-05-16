@@ -26,6 +26,9 @@ relatedTerms:
   - lightning-payment
   - lightning-refund-invoice
   - lightning-routing
+sameAs:
+  - "https://github.com/lightning/bolts/blob/master/11-payment-encoding.md"
+  - "https://github.com/lightning/bolts"
 liveWidget: ~
 ---
 

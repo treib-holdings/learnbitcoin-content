@@ -15,6 +15,9 @@ relatedTerms:
   - elliptic-curve
   - schnorr-signature
   - signature-aggregation
+sameAs:
+  - "https://github.com/bitcoin/bips/blob/master/bip-0066.mediawiki"
+  - "https://en.bitcoin.it/wiki/BIP_0066"
 liveWidget: ~
 ---
 

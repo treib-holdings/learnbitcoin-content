@@ -16,6 +16,9 @@ relatedTerms:
   - schnorr-signature
   - signature-aggregation
   - signature-clipping
+sameAs:
+  - "https://en.wikipedia.org/wiki/Elliptic-curve_cryptography"
+  - "https://www.wikidata.org/wiki/Q1048911"
 liveWidget: ~
 ---
 

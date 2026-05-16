@@ -17,6 +17,9 @@ relatedTerms:
   - key-generation-ceremony
   - seed-phrase
   - xpub-extended-public-key
+sameAs:
+  - "https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki"
+  - "https://en.bitcoin.it/wiki/BIP_0044"
 liveWidget: ~
 ---
 

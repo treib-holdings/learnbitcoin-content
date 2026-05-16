@@ -22,6 +22,10 @@ relatedTerms:
   - fork-watcher
   - reorg-reorganization
   - replay-attack
+sameAs:
+  - "https://en.wikipedia.org/wiki/Fork_(blockchain)"
+  - "https://www.wikidata.org/wiki/Q48893562"
+  - "https://en.bitcoin.it/wiki/Fork"
 liveWidget: ~
 ---
 

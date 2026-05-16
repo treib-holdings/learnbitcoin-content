@@ -14,6 +14,9 @@ relatedTerms:
   - deployment-threshold-soft-fork
   - locked-period-soft-fork
   - soft-fork
+sameAs:
+  - "https://en.wikipedia.org/wiki/Flag_day_(computing)"
+  - "https://www.wikidata.org/wiki/Q5456662"
 liveWidget: ~
 ---
 

@@ -16,6 +16,8 @@ relatedTerms:
   - opreturn
   - script
   - scriptless-scripts
+sameAs:
+  - "https://en.bitcoin.it/wiki/Script"
 liveWidget: ~
 ---
 

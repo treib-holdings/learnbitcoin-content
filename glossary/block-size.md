@@ -17,6 +17,10 @@ relatedTerms:
   - blockchain
   - halving-halvening
   - merkle-root
+sameAs:
+  - "https://en.wikipedia.org/wiki/Bitcoin_scalability_problem"
+  - "https://www.wikidata.org/wiki/Q30325190"
+  - "https://en.bitcoin.it/wiki/Block_size_limit_controversy"
 liveWidget: ~
 ---
 

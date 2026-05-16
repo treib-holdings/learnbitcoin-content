@@ -21,6 +21,8 @@ relatedTerms:
   - transaction
   - transaction-index-txindex
   - utxo-unspent-transaction-output
+sameAs:
+  - "https://en.bitcoin.it/wiki/Block_explorer"
 liveWidget: ~
 ---
 

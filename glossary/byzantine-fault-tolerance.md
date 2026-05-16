@@ -17,6 +17,9 @@ relatedTerms:
   - node
   - node-headcount
   - proof-work-pow
+sameAs:
+  - "https://en.wikipedia.org/wiki/Byzantine_fault"
+  - "https://www.wikidata.org/wiki/Q1353446"
 liveWidget: ~
 ---
 

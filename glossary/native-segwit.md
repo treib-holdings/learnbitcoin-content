@@ -9,6 +9,12 @@ keyTakeaways:
   - "Becoming the preferred standard for modern wallets"
 sources: []
 relatedTerms: []
+sameAs:
+  - "https://en.wikipedia.org/wiki/SegWit"
+  - "https://www.wikidata.org/wiki/Q30327698"
+  - "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki"
+  - "https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki"
+  - "https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki"
 liveWidget: ~
 ---
 

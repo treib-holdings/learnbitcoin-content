@@ -21,6 +21,8 @@ relatedTerms:
   - mining-colocation
   - mining-rig
   - retail-mining
+sameAs:
+  - "https://en.bitcoin.it/wiki/Mining_software"
 liveWidget: ~
 ---
 

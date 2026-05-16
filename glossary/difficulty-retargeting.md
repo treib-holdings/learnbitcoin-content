@@ -20,6 +20,10 @@ relatedTerms:
   - nonce-exhaustion
   - poisson-process
   - proof-work-pow
+sameAs:
+  - "https://en.bitcoin.it/wiki/Difficulty"
+  - "https://en.bitcoin.it/wiki/Target"
+  - "https://en.bitcoin.it/wiki/Protocol_rules"
 liveWidget: ~
 ---
 

@@ -17,6 +17,10 @@ relatedTerms:
   - consensus-parameter
   - deployment-threshold-soft-fork
   - locked-period-soft-fork
+sameAs:
+  - "https://en.wikipedia.org/wiki/Fork_(blockchain)"
+  - "https://www.wikidata.org/wiki/Q48893562"
+  - "https://en.bitcoin.it/wiki/Softfork"
 liveWidget: ~
 ---
 

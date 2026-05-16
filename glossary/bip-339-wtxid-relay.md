@@ -15,6 +15,9 @@ relatedTerms:
   - segwit-segregated-witness-bip-141
   - signature-clipping
   - transaction
+sameAs:
+  - "https://github.com/bitcoin/bips/blob/master/bip-0339.mediawiki"
+  - "https://en.bitcoin.it/wiki/BIP_0339"
 liveWidget: ~
 ---
 

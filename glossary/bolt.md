@@ -20,6 +20,8 @@ relatedTerms:
   - lightning-node
   - lightning-refund-invoice
   - lightning-routing
+sameAs:
+  - "https://github.com/lightning/bolts"
 liveWidget: ~
 ---
 

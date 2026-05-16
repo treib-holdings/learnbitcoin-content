@@ -17,6 +17,9 @@ relatedTerms:
   - blockchain
   - difficulty-retargeting
   - mtp-median-time-past
+sameAs:
+  - "https://en.bitcoin.it/wiki/Block_timestamp"
+  - "https://en.bitcoin.it/wiki/Confirmation"
 liveWidget: ~
 ---
 

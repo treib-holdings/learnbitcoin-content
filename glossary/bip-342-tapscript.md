@@ -18,6 +18,10 @@ relatedTerms:
   - merkleized-abstract-syntax-tree-mast
   - script
   - taproot
+sameAs:
+  - "https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki"
+  - "https://en.bitcoin.it/wiki/BIP_0342"
+  - "https://bitcoinops.org/en/topics/tapscript/"
 liveWidget: ~
 ---
 

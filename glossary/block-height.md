@@ -22,6 +22,8 @@ relatedTerms:
   - genesis-block
   - hal-finneys-running-bitcoin
   - halving-halvening
+sameAs:
+  - "https://en.bitcoin.it/wiki/Confirmation"
 liveWidget: ~
 ---
 

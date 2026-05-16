@@ -16,6 +16,9 @@ relatedTerms:
   - schnorr-signature
   - signature-clipping
   - taproot
+sameAs:
+  - "https://en.bitcoin.it/wiki/Schnorr"
+  - "https://bitcoinops.org/en/topics/musig/"
 liveWidget: ~
 ---
 

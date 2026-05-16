@@ -16,6 +16,9 @@ relatedTerms:
   - merkle-proof
   - merkle-root
   - spv-simplified-payment-verification
+sameAs:
+  - "https://en.wikipedia.org/wiki/Bloom_filter"
+  - "https://www.wikidata.org/wiki/Q885373"
 liveWidget: ~
 ---
 

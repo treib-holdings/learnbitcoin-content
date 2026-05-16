@@ -17,6 +17,10 @@ relatedTerms:
   - block-propagation
   - block-time
   - blockchain
+sameAs:
+  - "https://github.com/bitcoin/bips/blob/master/bip-0152.mediawiki"
+  - "https://en.bitcoin.it/wiki/BIP_0152"
+  - "https://bitcoinops.org/en/topics/compact-block-relay/"
 liveWidget: ~
 ---
 
