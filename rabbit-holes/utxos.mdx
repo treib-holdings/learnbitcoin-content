@@ -13,6 +13,8 @@ sources:
   - { label: "Bitcoin Core source - CoinSelection", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/coinselection.cpp" }
 relatedTerms: ["utxo-unspent-transaction-output", "transaction-fee", "coin-control", "dust-limit", "address-clustering", "coinjoin", "payjoin"]
 hasInteractive: []
+ogImage: "/diagrams/og/alice-pays-bob.png"
+ogImageAlt: "Alice pays Bob 0.5 BTC: a UTXO transaction diagram showing how the 1.0 BTC input is consumed and two new UTXOs are created (0.5 BTC to Bob and 0.499 BTC change to Alice), with 0.001 BTC fee to the miner."
 ---
 
 > **Where you're going:** Most newcomers picture a Bitcoin wallet like a bank account: a balance that goes up and down. Bitcoin does not work that way. You will learn what a UTXO is, why "your balance" is calculated from scratch every time you open your wallet, and why almost every privacy leak in Bitcoin traces back to how UTXOs link together.
