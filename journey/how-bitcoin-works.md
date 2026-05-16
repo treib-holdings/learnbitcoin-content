@@ -51,6 +51,11 @@ Alice's transaction to Bob has three parts:
 
 In Alice's example, inputs total 1.0 BTC, outputs total 0.999 BTC, and the missing 0.001 BTC is the fee.
 
+<figure>
+  <img src="/diagrams/alice-pays-bob.svg" alt="Alice's 1.0 BTC UTXO is consumed by a transaction that creates two new UTXOs: 0.5 BTC to Bob and 0.499 BTC change to Alice at a new address. The remaining 0.001 BTC is the fee paid to the miner." />
+  <figcaption>Alice's 1.0 BTC UTXO is consumed whole. Two new UTXOs are created; the 0.001 BTC fee is the difference between inputs and outputs.</figcaption>
+</figure>
+
 The transaction is then **signed** - Alice's wallet uses her private key to produce a signature that proves she's authorized to spend those specific inputs. The signature does not reveal the private key. Anyone can verify it; only Alice could have created it.
 
 What gets broadcast to the network is roughly 250 bytes of data: the inputs, the outputs, the signatures, the metadata. That's it. The whole transaction fits in a thumbnail image's worth of bytes.
