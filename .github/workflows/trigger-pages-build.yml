@@ -1,16 +1,17 @@
-name: Trigger Cloudflare rebuild
+name: Notify on content push
 
-# The web app (learnbitcoin-web) reads content from this repo at build
-# time on Cloudflare Workers (Static Assets). Cloudflare only rebuilds
-# when its connected repo changes, so pushes here must explicitly poke
-# the worker via a deploy hook.
+# When content lands on main, fan out two notifications:
+#   1. Cloudflare deploy hook -> rebuild learnbitcoin-web on Workers.
+#   2. IndexNow -> tell Bing, Yandex, Naver, Seznam to re-crawl.
 #
 # Setup (one-time):
-#   1. In Cloudflare -> Workers & Pages -> learnbitcoin-web -> Settings ->
-#      Builds -> Deploy hooks, create a hook for main.
-#   2. Copy the hook URL.
-#   3. In this repo, Settings -> Secrets and variables -> Actions,
-#      add a secret named CF_DEPLOY_HOOK_URL with the URL as the value.
+#   1. Cloudflare -> Workers & Pages -> learnbitcoin-web -> Settings ->
+#      Builds -> Deploy hooks, create a hook for main. Copy URL.
+#   2. This repo -> Settings -> Secrets and variables -> Actions ->
+#      add CF_DEPLOY_HOOK_URL with the hook URL as the value.
+#
+# The IndexNow key is a public proof-of-control value (the same key
+# is served at /<key>.txt on the live site). Safe to inline.
 
 on:
   push:
@@ -18,7 +19,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  trigger:
+  notify:
     runs-on: ubuntu-latest
     steps:
       - name: POST to Cloudflare Pages deploy hook
@@ -29,4 +30,19 @@ jobs:
             echo "CF_DEPLOY_HOOK_URL secret not set; skipping."
             exit 0
           fi
-          curl -fsSL -X POST "$HOOK_URL" -o /dev/null -w "HTTP %{http_code}\n"
+          curl -fsSL -X POST "$HOOK_URL" -o /dev/null -w "Cloudflare: HTTP %{http_code}\n"
+
+      - name: Notify IndexNow (Bing, Yandex, Naver, Seznam)
+        run: |
+          curl -fsSL -X POST https://api.indexnow.org/IndexNow \
+            -H "Content-Type: application/json" \
+            -w "IndexNow: HTTP %{http_code}\n" \
+            -d '{
+              "host": "www.learnbitcoin.com",
+              "key": "8586b7edc30249992186264cbb885886",
+              "keyLocation": "https://www.learnbitcoin.com/8586b7edc30249992186264cbb885886.txt",
+              "urlList": [
+                "https://www.learnbitcoin.com/",
+                "https://www.learnbitcoin.com/sitemap-index.xml"
+              ]
+            }'
