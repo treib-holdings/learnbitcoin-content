@@ -8,6 +8,8 @@ estimatedMinutes: 22
 tagline: "Inflation isn't a force of nature. It's a policy. Once you see how fiat actually works, Bitcoin stops looking strange."
 prerequisites: []
 relatedTerms: ["fiat", "inflation", "disinflation", "cbdc-central-bank-digital-currency", "satoshi-nakamoto"]
+ogImage: "/diagrams/og/dollar-purchasing-power.png"
+ogImageAlt: "What a dollar buys, 1971 to today: a line chart showing one dollar declining to about 13 cents over 55 years of compounded inflation at roughly 4 percent annual CPI."
 sources:
   - { label: "FRED - M2 Money Stock (St. Louis Fed)", url: "https://fred.stlouisfed.org/series/M2SL" }
   - { label: "BLS CPI Inflation Calculator", url: "https://www.bls.gov/data/inflation_calculator.htm" }
@@ -110,6 +112,11 @@ If you own assets, monetary expansion is roughly neutral or beneficial to you. I
 | 7% | −50% | −74% | −93% |
 
 The official US CPI averaged around 4% from 1971 to today. That's a working life of erosion.
+
+<figure>
+  <img src="/diagrams/dollar-purchasing-power.svg" alt="What a dollar buys, 1971 to today: a line chart showing one dollar declining to about 13 cents over 55 years of compounded inflation at roughly 4 percent annual CPI." />
+  <figcaption>$1 in 1971 is worth about $0.13 today. 55 years of ~4% compounded CPI.</figcaption>
+</figure>
 
 And CPI is a conservative measure. It's been re-weighted multiple times since the 1980s in ways that reduce the headline number. Honest measures - like the cost of housing, healthcare, and a college degree - have run dramatically hotter. A house, a hospital stay, and a four-year degree all cost a multiple of what they cost a generation ago, in real terms, even after adjusting for the "official" inflation rate.
 
