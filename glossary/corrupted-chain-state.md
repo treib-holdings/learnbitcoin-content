@@ -38,6 +38,6 @@ The fix ladder, easiest first:
 - **`-reindex-chainstate`.** Rebuilds the UTXO set from the existing on-disk blocks. Fast if blocks are intact; cleans most corruption in the chainstate database.
 - **`-reindex`.** Rebuilds both the block index and the chainstate by re-reading and re-validating every block file. Takes longer (hours), but doesn't require re-downloading.
 - **Delete `chainstate/` and reindex.** If `-reindex-chainstate` fails, manually remove the chainstate directory before reindexing.
-- **Nuke and resync from scratch.** Delete `blocks/` and `chainstate/`, start fresh. Last resort; takes a full IBD time (12+ hours on good hardware).
+- **Delete and resync from scratch.** Delete `blocks/` and `chainstate/`, start fresh. Last resort; takes a full IBD time (12+ hours on good hardware).
 
 Prevention is mostly operational: run on reliable hardware (consumer SSD with power-loss protection, ECC RAM if you're paranoid), use an uninterruptible power supply, don't run nodes on networked filesystems, and back up the wallet (not the chain state - the chain state is reproducible from the network).
