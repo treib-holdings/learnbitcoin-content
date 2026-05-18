@@ -8,6 +8,8 @@ estimatedMinutes: 30
 tagline: "On-chain transactions, fees in practice, Lightning basics. Now that you have it, here's how to actually use it."
 prerequisites: ["be-your-own-bank"]
 relatedTerms: ["lightning-network", "transaction-fee", "fee-estimation", "lightning-channel", "payment-channel", "bolt-11", "htlc-hashed-time-locked-contract", "replace-fee-rbf", "fee-bumping"]
+ogImage: "/diagrams/og/lightning-channel.png"
+ogImageAlt: "A two-layer diagram of a Lightning channel between Alice and Bob. The top shows Bitcoin Mainnet as a chain of blocks with OPEN and CLOSE highlighted. Below, the channel pipe connects Alice and Bob with multiple back-and-forth payment arrows. Each has dashed channel lines to additional ghost nodes, signaling that Alice and Bob each have other channels into the wider Lightning network."
 sources:
   - { label: "mempool.space - live fee dashboard", url: "https://mempool.space" }
   - { label: "Bitcoin developer guide - transactions", url: "https://developer.bitcoin.org/devguide/transactions.html" }
@@ -89,6 +91,11 @@ The mechanics, simplified:
 2. **Update the balance.** Inside the channel, you and the other party can update the relative balance as many times as you want, near-instantly, with cryptographic guarantees. Each update is a signed message; the latest one is the "current truth."
 3. **Route payments.** If you don't have a direct channel with the person you want to pay, the network finds a path through other people's channels - A pays B, who pays C, who pays your destination - using a clever mechanism called HTLCs that makes each hop atomic.
 4. **Close the channel.** Either party can close at any time by broadcasting the latest channel state on-chain. The final balances settle on Bitcoin's main chain. You're back to layer 1.
+
+<figure>
+  <img src="/diagrams/lightning-channel.svg" alt="A Lightning channel between Alice and Bob. On Bitcoin Mainnet, an OPEN block locks BTC into a 2-of-2 multisig; later, a CLOSE block settles the final balances back to mainnet. Between the two on-chain anchors, the channel runs off-chain with many back-and-forth payments. Alice and Bob each have dashed channel lines to additional ghost nodes, indicating they also have channels into the wider Lightning network." />
+  <figcaption>One channel between Alice and Bob: open once on-chain, transact freely off-chain, close on-chain if ever. Each side has other channels to the wider network.</figcaption>
+</figure>
 
 Routing payments through Lightning takes milliseconds. The fees are typically a few sats - orders of magnitude smaller than on-chain fees. The settlement is final the moment the recipient sees the payment.
 
