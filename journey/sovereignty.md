@@ -52,7 +52,7 @@ You can use Bitcoin without running a node. You're using Bitcoin right now witho
 
 **Censorship resistance.** A wallet relying on a service can be cut off from that service. A wallet talking to your own node cannot be - your node is yours.
 
-**Supporting the network.** Each additional full node strengthens the network's decentralization. There are tens of thousands of nodes globally; adding one is a meaningful contribution. (Not a financial one - running a node doesn't earn you anything. The reward is the system itself.)
+**Supporting the network.** Each additional full node strengthens the network's [decentralization](/rabbit-hole/decentralization). There are tens of thousands of nodes globally; adding one is a meaningful contribution. (Not a financial one - running a node doesn't earn you anything. The reward is the system itself.)
 
 **Fee data, mempool data, address data on demand.** With your own node, you have direct access to everything the network knows. Want to monitor an address? Query your node. Want to know the current fee market? Query your node. Want a custom data feed? Query your node.
 
