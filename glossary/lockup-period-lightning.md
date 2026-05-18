@@ -20,13 +20,13 @@ The mechanics:
 - **For the duration** that the channel is open, those funds are not directly spendable on-chain. They can only be transferred off-chain between you and your partner via channel state updates.
 - **Closing the channel** broadcasts a settlement transaction that unlocks the funds back to each party's on-chain wallet according to the current channel balance.
 
-The lockup period is open-ended. A channel can stay open for hours or for years; the only requirement is that both parties remain connected periodically (or use [watchtowers](/glossary/lightning-network-penalty/)) to detect and respond to any unilateral close attempts.
+The lockup period is open-ended. A channel can stay open for hours or for years; the only requirement is that both parties remain connected periodically (or use [watchtowers](/glossary/lightning-network-penalty)) to detect and respond to any unilateral close attempts.
 
 What you give up during the lockup:
 
 - **On-chain liquidity.** The locked BTC isn't directly accessible. Need to spend on-chain? Either close the channel (with its on-chain fee cost) or use submarine swaps to move balance between Lightning and on-chain without closing.
 - **Channel partner dependency.** Your funds are co-controlled with your partner. If they go offline permanently, you can force-close (recovering after a CSV-locked window), but the process is more involved than spending an on-chain UTXO.
-- **Static-channel-backup risk.** If you lose your Lightning node state without an [SCB](/glossary/static-channel-backup-scb/), recovery requires force-closing channels with their last-known state, which might be older than current.
+- **Static-channel-backup risk.** If you lose your Lightning node state without an [SCB](/glossary/static-channel-backup-scb), recovery requires force-closing channels with their last-known state, which might be older than current.
 
 What you gain:
 

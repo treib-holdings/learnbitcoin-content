@@ -26,7 +26,7 @@ liveWidget: ~
 
 [BIP-152](https://github.com/bitcoin/bips/blob/master/bip-0152.mediawiki) defines **compact block relay**, the protocol Bitcoin nodes use to propagate newly-mined blocks efficiently. Activated in Bitcoin Core in 2016, it dramatically reduced the bandwidth and latency of block propagation.
 
-The problem it solves: when a new block is found, every node on the network needs to receive it as quickly as possible. Slow propagation means stale-block rates go up, which hurts miners and makes the network less efficient overall. Naively sending the full block to every peer is wasteful - if those peers already have most of the transactions in their [mempools](/glossary/mempool/), you'd be sending data they already have.
+The problem it solves: when a new block is found, every node on the network needs to receive it as quickly as possible. Slow propagation means stale-block rates go up, which hurts miners and makes the network less efficient overall. Naively sending the full block to every peer is wasteful - if those peers already have most of the transactions in their [mempools](/glossary/mempool), you'd be sending data they already have.
 
 How compact blocks work:
 

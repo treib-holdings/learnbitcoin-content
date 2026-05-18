@@ -18,7 +18,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A hash-rate derivative is a financial contract whose payout is tied to Bitcoin's [network hash rate](/glossary/hash-rate/) or [difficulty](/glossary/difficulty/). Like commodity futures for natural gas or oil, these instruments let miners and investors take positions on what mining conditions will look like in the future.
+A hash-rate derivative is a financial contract whose payout is tied to Bitcoin's [network hash rate](/glossary/hash-rate) or [difficulty](/glossary/difficulty). Like commodity futures for natural gas or oil, these instruments let miners and investors take positions on what mining conditions will look like in the future.
 
 Why they exist:
 
@@ -29,7 +29,7 @@ Why they exist:
 How they work in practice:
 
 - **Hash-rate futures.** Settle based on average hash rate over a defined period. Miners typically take the *short* side (hedging against hash-rate growth eroding their revenue); speculators take the *long* side.
-- **Difficulty-adjustment futures.** Similar but anchored to the [difficulty retargeting](/glossary/difficulty-retargeting/) events specifically.
+- **Difficulty-adjustment futures.** Similar but anchored to the [difficulty retargeting](/glossary/difficulty-retargeting) events specifically.
 - **Hashrate-linked tokens / pools** like Luxor's hashprice index, FRNT's hash futures, and others.
 
 Limitations:

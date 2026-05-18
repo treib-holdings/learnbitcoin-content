@@ -20,4 +20,4 @@ Shamir's Secret Sharing (SSS) is the math behind splitting a Bitcoin seed (or an
 
 In Bitcoin practice, the standard form is SLIP-39: a wordlist-based SSS scheme for BIP 39 seeds. Trezor implements it natively; SeedSigner can produce SLIP-39 shares from any seed. Typical configurations: 2-of-3 or 3-of-5 shares distributed across geographic locations or trusted parties.
 
-The full discussion of SSS in Bitcoin - including the crucial caveat that SSS is **not** the same security model as [multisig](/glossary/multisig/), because key reconstruction at signing time momentarily holds the full key on one device - lives at [key-split](/glossary/key-split/).
+The full discussion of SSS in Bitcoin - including the crucial caveat that SSS is **not** the same security model as [multisig](/glossary/multisig), because key reconstruction at signing time momentarily holds the full key on one device - lives at [key-split](/glossary/key-split).

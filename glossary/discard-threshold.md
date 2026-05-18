@@ -32,7 +32,7 @@ Why this is operationally important:
 
 - During fee-rate escalation (Ordinals era, post-halving periods, market spikes), the discard threshold can jump from ~1 sat/vB to 50+ sat/vB within hours.
 - A transaction broadcast at "normal" fees during a calm period can become unrelayable if the mempool fills before it confirms.
-- Bumping with [RBF](/glossary/bip-125-replace-fee/) is the standard recovery: replace the stuck transaction with a higher-feerate version.
+- Bumping with [RBF](/glossary/bip-125-replace-fee) is the standard recovery: replace the stuck transaction with a higher-feerate version.
 - Tools like mempool.space's "next-block fee" estimate effectively show the current discard threshold so wallets can set fees that will actually stick.
 
 The discard threshold is also a defense against mempool spam: an attacker who wants to flood the network with low-fee garbage finds that the floor rises as their attack continues, naturally pricing out the spam. The mempool is a fee market, and the discard threshold is the price-clearing mechanism.

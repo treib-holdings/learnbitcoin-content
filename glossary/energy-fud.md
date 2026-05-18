@@ -17,14 +17,14 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Energy FUD" is the Bitcoin community's term for criticism of Bitcoin's [proof-of-work](/glossary/proof-work-pow/) energy consumption that the community considers misleading, manipulative, or technically uninformed. Like the broader [FUD](/glossary/fud-fear-uncertainty-doubt/) category, the label is sometimes deserved and sometimes used too quickly to dismiss legitimate concerns.
+"Energy FUD" is the Bitcoin community's term for criticism of Bitcoin's [proof-of-work](/glossary/proof-work-pow) energy consumption that the community considers misleading, manipulative, or technically uninformed. Like the broader [FUD](/glossary/fud-fear-uncertainty-doubt) category, the label is sometimes deserved and sometimes used too quickly to dismiss legitimate concerns.
 
 The honest case for being skeptical of "Bitcoin wastes energy" framings:
 
 - **Bitcoin mining migrates toward stranded and otherwise wasted energy.** Hydro overflow, flared natural gas, off-peak nuclear, curtailed wind - sources that produce electricity that would otherwise be wasted. The marginal mining operation runs on energy nobody else is bidding for.
 - **Bitcoin doesn't directly consume gas or oil.** It consumes electricity, which is increasingly generated from renewables. The "Bitcoin's carbon footprint" calculation depends entirely on grid mix assumptions, which vary wildly by jurisdiction.
 - **Mining can stabilize renewable grids.** ERCOT (Texas) has explicit programs using Bitcoin miners as flexible demand: miners turn off in seconds when grid demand spikes, freeing capacity. This is a real grid-services value that conventional industrial loads can't provide.
-- **The energy is the security.** Bitcoin's [proof-of-work](/glossary/proof-work-pow/) is what makes the chain expensive to attack. Removing the energy expenditure would remove the security.
+- **The energy is the security.** Bitcoin's [proof-of-work](/glossary/proof-work-pow) is what makes the chain expensive to attack. Removing the energy expenditure would remove the security.
 
 The honest case for being concerned anyway:
 
@@ -36,4 +36,4 @@ The honest case for being concerned anyway:
 
 The Bitcoiner discipline: don't dismiss energy concerns wholesale. Engage with the strong forms of the critique. The strong forms have answers; the weak forms get called FUD because they don't.
 
-See [Mining](/glossary/mining/) and the [Mining rabbit hole §7](/rabbit-hole/mining/) for the longer treatment of Bitcoin's energy story.
+See [Mining](/glossary/mining) and the [Mining rabbit hole §7](/rabbit-hole/mining) for the longer treatment of Bitcoin's energy story.

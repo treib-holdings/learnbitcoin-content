@@ -33,11 +33,11 @@ MuSig is a Schnorr-based n-of-n multi-signature aggregation protocol. Multiple c
 
 The original MuSig had a subtle issue: a naive implementation that let signers reveal nonces concurrently was vulnerable to a key-cancellation attack. The fix required a three-round protocol with explicit nonce commitments. That worked, but three rounds of round-trips between cosigners is operationally painful.
 
-[MuSig2](/glossary/musig2/) (2020, Nick / Ruffing / Seurin) replaced original MuSig in practice. MuSig2 uses a different mathematical approach to achieve the same security in just two rounds, with the additional benefit that the first round can be pre-computed and reused across signing sessions. Almost every modern implementation that talks about "MuSig" really means MuSig2.
+[MuSig2](/glossary/musig2) (2020, Nick / Ruffing / Seurin) replaced original MuSig in practice. MuSig2 uses a different mathematical approach to achieve the same security in just two rounds, with the additional benefit that the first round can be pre-computed and reused across signing sessions. Almost every modern implementation that talks about "MuSig" really means MuSig2.
 
 Key properties (shared by both versions):
 
-- **n-of-n only.** All cosigners must participate. For m-of-n threshold setups, use [FROST](/glossary/quorum-signatures/) instead.
+- **n-of-n only.** All cosigners must participate. For m-of-n threshold setups, use [FROST](/glossary/quorum-signatures) instead.
 - **Aggregated public key.** The combined key is a deterministic function of the cosigner public keys. Anyone can compute it; nobody needs to share private material.
 - **Single 64-byte signature.** Same size as Taproot single-sig.
 - **Privacy.** A MuSig spend looks like any other Taproot key-path spend. The cosigner structure stays off-chain.

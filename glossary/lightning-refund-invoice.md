@@ -29,7 +29,7 @@ The contexts where refund invoices come up:
 - **Overpayments.** Rare in Lightning (payments are amount-locked), but possible in some workflows.
 - **Subscription cancellations.** Pro-rated refunds via refund invoice.
 
-The technical reality: a Lightning refund is just a regular Lightning payment in the reverse direction. It uses a [BOLT-11](/glossary/bolt-11/) invoice (or [BOLT-12 offer](/glossary/lightning-invoice/)), gets routed through the network normally, and settles normally. There's no protocol-level "refund" primitive - it's just two payments going opposite ways.
+The technical reality: a Lightning refund is just a regular Lightning payment in the reverse direction. It uses a [BOLT-11](/glossary/bolt-11) invoice (or [BOLT-12 offer](/glossary/lightning-invoice)), gets routed through the network normally, and settles normally. There's no protocol-level "refund" primitive - it's just two payments going opposite ways.
 
 What can make refunds awkward in practice:
 

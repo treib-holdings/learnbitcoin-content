@@ -19,14 +19,14 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A double-blind marketplace is one where neither buyer nor seller has personally identifying information about the other beyond what's strictly needed to complete the transaction. Bitcoin's pseudonymous nature, combined with [escrow](/glossary/escrow/) primitives and [privacy networks](/glossary/tor-hidden-service/) like Tor, makes this kind of marketplace technically practical.
+A double-blind marketplace is one where neither buyer nor seller has personally identifying information about the other beyond what's strictly needed to complete the transaction. Bitcoin's pseudonymous nature, combined with [escrow](/glossary/escrow) primitives and [privacy networks](/glossary/tor-hidden-service) like Tor, makes this kind of marketplace technically practical.
 
 The pattern that makes it work:
 
 - **Identity layer:** participants connect only via pseudonymous handles (random usernames, public keys). No KYC, no real-name accounts.
 - **Network layer:** transactions happen over Tor or I2P to hide IPs.
-- **Settlement layer:** Bitcoin (and especially [Lightning](/glossary/lightning-network/)) handles payment without requiring traditional financial-system identifiers.
-- **Escrow layer:** [multisig](/glossary/escrowed-lightning-channel/) or HTLC-based escrow holds funds during the trade. A trusted (but not custodial) third party can mediate disputes.
+- **Settlement layer:** Bitcoin (and especially [Lightning](/glossary/lightning-network)) handles payment without requiring traditional financial-system identifiers.
+- **Escrow layer:** [multisig](/glossary/escrowed-lightning-channel) or HTLC-based escrow holds funds during the trade. A trusted (but not custodial) third party can mediate disputes.
 
 Real Bitcoin-native double-blind marketplaces in 2026:
 

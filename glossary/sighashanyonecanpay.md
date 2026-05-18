@@ -18,6 +18,6 @@ It enables patterns where multiple parties contribute to a shared transaction wi
 
 - Crowdfunding: a published partial transaction sets the recipient outputs; supporters each add an input signed with `SIGHASH_ALL | SIGHASH_ANYONECANPAY`. Once the inputs cover the outputs, anyone can broadcast.
 - PayJoin (BIP 78) style flows, where sender and receiver each contribute inputs and the result looks like an ordinary transaction to outside observers.
-- Fee-bumping in pre-Replace-by-Fee designs, though [Replace-by-Fee (RBF)](/glossary/replace-fee-rbf/) and CPFP now handle this better.
+- Fee-bumping in pre-Replace-by-Fee designs, though [Replace-by-Fee (RBF)](/glossary/replace-fee-rbf) and CPFP now handle this better.
 
 It's a powerful flag with sharp edges. Sign with `SIGHASH_NONE | SIGHASH_ANYONECANPAY` and you've effectively signed "spend my UTXO however you want," which is rarely what anyone actually means. The safe default for ad-hoc construction is `SIGHASH_ALL | SIGHASH_ANYONECANPAY`: my input is committed, the outputs are fixed, the rest is open.

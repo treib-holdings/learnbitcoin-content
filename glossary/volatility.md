@@ -40,7 +40,7 @@ The honest framing: Bitcoin's price is a multi-decade information-discovery proc
 For users, this means:
 
 - **Don't trade if you can help it.** Most active traders underperform passive holders, on Bitcoin and everywhere else.
-- **[DCA](/glossary/dca-dollar-cost-averaging/)** is the practical defense against trying to time the volatility. Buy on a schedule; ignore the price.
+- **[DCA](/glossary/dca-dollar-cost-averaging)** is the practical defense against trying to time the volatility. Buy on a schedule; ignore the price.
 - **Hold what you can afford to hold.** If volatility makes you sleep poorly, you have too much in BTC. Right-sizing the position to your tolerance is more important than predicting the next move.
 
-People who survived the 2018, 2022, and 2024 bear markets without selling are the ones who learned to ignore the volatility. The asset moves; the protocol doesn't. See [HODL](/glossary/hodl/) for the cultural shorthand.
+People who survived the 2018, 2022, and 2024 bear markets without selling are the ones who learned to ignore the volatility. The asset moves; the protocol doesn't. See [HODL](/glossary/hodl) for the cultural shorthand.

@@ -21,7 +21,7 @@ A decentralized exchange (DEX) is a trading venue where no central party holds u
 
 For Bitcoin specifically, the main DEX patterns are:
 
-- **[Atomic swaps](/glossary/atomic-swap/)** between BTC and other assets - HTLC-based trustless exchange. Slower than centralized order books but custody-free.
+- **[Atomic swaps](/glossary/atomic-swap)** between BTC and other assets - HTLC-based trustless exchange. Slower than centralized order books but custody-free.
 - **Robosats** - a Tor-only peer-to-peer marketplace using Lightning escrow. Order book matches BTC against fiat (sent via local payment rails); escrow is held by a Lightning HTLC, not by the platform.
 - **Bisq** - longer-established peer-to-peer marketplace with on-chain multisig escrow. Slower than Robosats but more flexible payment methods.
 - **Submarine-swap providers** like Boltz Exchange for trustless on-chain ↔ Lightning conversion.
@@ -38,4 +38,4 @@ Tradeoffs:
 - **UX is rougher.** DEX interfaces are typically less polished than commercial exchanges.
 - **Fiat ramps are local.** You're often paying via bank transfer, cash deposit, or local payment apps rather than a unified deposit flow.
 
-For users who care about avoiding [counterparty risk](/glossary/counterparty-risk/) and [KYC](/glossary/kyc-know-your-customer/), DEXs are the principled answer. They're not as smooth as Coinbase, but they preserve the properties that brought you to Bitcoin in the first place.
+For users who care about avoiding [counterparty risk](/glossary/counterparty-risk) and [KYC](/glossary/kyc-know-your-customer), DEXs are the principled answer. They're not as smooth as Coinbase, but they preserve the properties that brought you to Bitcoin in the first place.

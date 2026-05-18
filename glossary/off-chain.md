@@ -21,9 +21,9 @@ liveWidget: ~
 
 The major flavors:
 
-- **Trust-minimized off-chain.** The [Lightning Network](/glossary/lightning-network/) is the canonical example. Two parties open a channel with one on-chain funding transaction, exchange unlimited signed off-chain state updates between themselves, and only return to the chain when they close the channel or get into a dispute. The off-chain state is enforceable on-chain if anyone misbehaves.
+- **Trust-minimized off-chain.** The [Lightning Network](/glossary/lightning-network) is the canonical example. Two parties open a channel with one on-chain funding transaction, exchange unlimited signed off-chain state updates between themselves, and only return to the chain when they close the channel or get into a dispute. The off-chain state is enforceable on-chain if anyone misbehaves.
 
-- **Sidechains.** Liquid, Drivechains-style proposals, and other [sidechain](/glossary/sidechain/) designs run a separate chain that pegs into Bitcoin. Activity happens on the sidechain; the base layer only sees the peg events.
+- **Sidechains.** Liquid, Drivechains-style proposals, and other [sidechain](/glossary/sidechain) designs run a separate chain that pegs into Bitcoin. Activity happens on the sidechain; the base layer only sees the peg events.
 
 - **Custodial off-chain.** Every exchange's internal ledger is off-chain. When you trade BTC on Coinbase or move balance between accounts on Strike, no Bitcoin transaction happens. The custodian just updates rows in a database. Fast, free, and exactly as secure as the custodian.
 
@@ -36,7 +36,7 @@ What off-chain lets you do that on-chain can't:
 
 What you give up:
 
-- **Some trust.** Trust-minimized off-chain (Lightning) has carefully-designed dispute resolution. Custodial off-chain doesn't, and the [exchange failure list](/glossary/exchange/) is the warning label.
+- **Some trust.** Trust-minimized off-chain (Lightning) has carefully-designed dispute resolution. Custodial off-chain doesn't, and the [exchange failure list](/glossary/exchange) is the warning label.
 - **Some liquidity flexibility.** Lightning channel balance is locked between two parties; on-chain UTXOs can be spent to anyone.
 - **Some auditability.** Off-chain activity isn't publicly verifiable unless the operator chooses to publish it.
 

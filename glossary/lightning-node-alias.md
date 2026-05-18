@@ -12,7 +12,7 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-A Lightning node alias is a human-readable nickname a [Lightning node](/glossary/lightning-node/) advertises via the [gossip protocol](/glossary/gossip-protocol-lightning/) as part of its `node_announcement` message. It's a label, not an identity.
+A Lightning node alias is a human-readable nickname a [Lightning node](/glossary/lightning-node) advertises via the [gossip protocol](/glossary/gossip-protocol-lightning) as part of its `node_announcement` message. It's a label, not an identity.
 
 Examples: "ACINQ", "WalletOfSatoshi.com", "Bitfinex", "Satoshi's Coffee Shop", "🌩️ Lightning Bot 🌩️". Aliases are whatever the operator chooses, plus a 24-bit color value for UI rendering.
 

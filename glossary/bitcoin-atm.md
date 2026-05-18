@@ -19,7 +19,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Bitcoin ATM is a physical kiosk that lets you trade cash for Bitcoin (and sometimes vice versa). You scan a [receive address](/glossary/address/) from your own [wallet](/glossary/wallet/) on your phone, insert cash, and the operator sends BTC on-chain to that address.
+A Bitcoin ATM is a physical kiosk that lets you trade cash for Bitcoin (and sometimes vice versa). You scan a [receive address](/glossary/address) from your own [wallet](/glossary/wallet) on your phone, insert cash, and the operator sends BTC on-chain to that address.
 
 Pros:
 

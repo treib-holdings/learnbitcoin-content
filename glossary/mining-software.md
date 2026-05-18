@@ -26,7 +26,7 @@ sameAs:
 liveWidget: ~
 ---
 
-Mining software is the layer that sits between a [Bitcoin node](/glossary/node/) (or [mining pool](/glossary/mining-pool/)) and the [ASIC](/glossary/asic-application-specific-integrated-circuit/) hardware doing the actual hashing. It receives work, distributes it to chips, collects valid shares, and reports back results.
+Mining software is the layer that sits between a [Bitcoin node](/glossary/node) (or [mining pool](/glossary/mining-pool)) and the [ASIC](/glossary/asic-application-specific-integrated-circuit) hardware doing the actual hashing. It receives work, distributes it to chips, collects valid shares, and reports back results.
 
 The common pieces:
 
@@ -37,4 +37,4 @@ The common pieces:
 
 For solo operators, mining software handles pool failover, temperature monitoring, hash-rate reporting, and basic operational dashboards. For industrial operations, the stack is usually integrated into broader fleet-management platforms.
 
-The Stratum V2 transition is the most interesting current development. Under V1, the pool decides which transactions go into the blocks miners hash on. Under V2, individual miners can specify their own transaction selection while still letting the pool aggregate hash rate for variance smoothing. That's a meaningful redistribution of power back toward individual miners - and a real, if gradual, structural fix to the [mining centralization](/glossary/mining-centralization/) concern.
+The Stratum V2 transition is the most interesting current development. Under V1, the pool decides which transactions go into the blocks miners hash on. Under V2, individual miners can specify their own transaction selection while still letting the pool aggregate hash rate for variance smoothing. That's a meaningful redistribution of power back toward individual miners - and a real, if gradual, structural fix to the [mining centralization](/glossary/mining-centralization) concern.

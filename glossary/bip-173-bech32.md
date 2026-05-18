@@ -25,7 +25,7 @@ sameAs:
 liveWidget: ~
 ---
 
-[BIP-173](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki) defines **bech32**, the address format used for native [SegWit](/glossary/segwit-segregated-witness-bip-141/) outputs. Bech32 addresses are recognizable by their `bc1q` prefix (mainnet) or `tb1q` (testnet).
+[BIP-173](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki) defines **bech32**, the address format used for native [SegWit](/glossary/segwit-segregated-witness-bip-141) outputs. Bech32 addresses are recognizable by their `bc1q` prefix (mainnet) or `tb1q` (testnet).
 
 Why bech32 exists and is worth caring about:
 
@@ -36,6 +36,6 @@ Why bech32 exists and is worth caring about:
 
 Designed by Pieter Wuille (Bitcoin Core dev) and proposed in 2017, bech32 became the default address format for new SegWit deployments through the late 2010s.
 
-A successor, **bech32m** (BIP-350), was introduced for [Taproot](/glossary/taproot/) addresses (prefix `bc1p`). It uses essentially the same format with one constant changed, fixing a subtle weakness in bech32 that mattered for the new witness versions.
+A successor, **bech32m** (BIP-350), was introduced for [Taproot](/glossary/taproot) addresses (prefix `bc1p`). It uses essentially the same format with one constant changed, fixing a subtle weakness in bech32 that mattered for the new witness versions.
 
-In 2026, most wallets default to bech32 or bech32m addresses for new receives. Legacy formats (`1...`, `3...`) still work but are gradually being phased out in everyday use. See [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash/) and [Taproot](/glossary/taproot/) for the script formats bech32/bech32m wrap.
+In 2026, most wallets default to bech32 or bech32m addresses for new receives. Legacy formats (`1...`, `3...`) still work but are gradually being phased out in everyday use. See [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash) and [Taproot](/glossary/taproot) for the script formats bech32/bech32m wrap.

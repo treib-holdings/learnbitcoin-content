@@ -29,9 +29,9 @@ Common applications:
 
 - **Self-imposed savings discipline.** Lock coins for 1-5 years to prevent yourself from spending them impulsively during volatility.
 - **Inheritance setups.** A spending path that becomes valid after 6 months without primary-key activity, designed to give heirs access if the primary holder dies or loses keys.
-- **[Vaults](/glossary/bitcoin-vault/).** A clawback path that lets a cold key override a hot-key spend within a CSV window.
+- **[Vaults](/glossary/bitcoin-vault).** A clawback path that lets a cold key override a hot-key spend within a CSV window.
 - **Trustless escrow.** Buyer and seller agree on a deal; coins are released after a delay or by mutual consent before the delay expires.
-- **Lightning channels.** Every channel commitment uses CSV-locked outputs as part of the [delayed justice mechanism](/glossary/delayed-justice-transaction/).
+- **Lightning channels.** Every channel commitment uses CSV-locked outputs as part of the [delayed justice mechanism](/glossary/delayed-justice-transaction).
 
 What a coin freeze isn't:
 

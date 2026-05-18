@@ -23,7 +23,7 @@ sameAs:
 liveWidget: ~
 ---
 
-[BIP-44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) defines the standard derivation-path structure for [hierarchical deterministic wallets](/glossary/hierarchical-deterministic-wallet/). It's the convention that lets you back up a [seed phrase](/glossary/seed-phrase/) in one wallet and restore the same accounts in any other BIP-44-compliant wallet.
+[BIP-44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) defines the standard derivation-path structure for [hierarchical deterministic wallets](/glossary/hierarchical-deterministic-wallet). It's the convention that lets you back up a [seed phrase](/glossary/seed-phrase) in one wallet and restore the same accounts in any other BIP-44-compliant wallet.
 
 The path structure is:
 
@@ -47,4 +47,4 @@ What each level means:
 
 The apostrophes mean "hardened" derivation - a level that can't be derived from a parent extended *public* key alone. This prevents an exposed xpub from compromising the rest of the wallet hierarchy.
 
-BIP-44 is the spec that turned "back up your seed phrase" into a portable, reliable, multi-implementation standard. Almost every modern wallet follows it (or a BIP-49 / BIP-84 / BIP-86 variant for different address types). See [Hierarchical Deterministic Wallet](/glossary/hierarchical-deterministic-wallet/) for the underlying BIP-32 framework this builds on.
+BIP-44 is the spec that turned "back up your seed phrase" into a portable, reliable, multi-implementation standard. Almost every modern wallet follows it (or a BIP-49 / BIP-84 / BIP-86 variant for different address types). See [Hierarchical Deterministic Wallet](/glossary/hierarchical-deterministic-wallet) for the underlying BIP-32 framework this builds on.

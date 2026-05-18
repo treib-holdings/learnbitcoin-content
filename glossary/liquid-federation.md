@@ -12,7 +12,7 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-The **Liquid Federation** is the consortium of organizations that collectively operate the [Liquid Network](/glossary/liquid-network/) sidechain. Each member runs a hardware-secured node ("functionary") that participates in block signing and the multi-sig that controls the [two-way peg](/glossary/peg/) with Bitcoin's mainnet.
+The **Liquid Federation** is the consortium of organizations that collectively operate the [Liquid Network](/glossary/liquid-network) sidechain. Each member runs a hardware-secured node ("functionary") that participates in block signing and the multi-sig that controls the [two-way peg](/glossary/peg) with Bitcoin's mainnet.
 
 The structure as of 2026:
 
@@ -30,6 +30,6 @@ What this trust gets in exchange:
 - **Issued assets.** USDT, gold tokens, securities, etc. all use the federation's framework.
 - **Real adoption.** Liquid carries meaningful institutional Bitcoin volume in 2026.
 
-The Liquid Federation is the most well-funded, well-organized federated Bitcoin sidechain operation in existence. It's the practical answer to "what does a federated peg look like at scale?" If you accept the trust model, Liquid delivers on its promises. If you don't, you have to look elsewhere - mainnet, Lightning, or watch what [BIP-300 drivechains](/glossary/bip-300-drivechains/) eventually become.
+The Liquid Federation is the most well-funded, well-organized federated Bitcoin sidechain operation in existence. It's the practical answer to "what does a federated peg look like at scale?" If you accept the trust model, Liquid delivers on its promises. If you don't, you have to look elsewhere - mainnet, Lightning, or watch what [BIP-300 drivechains](/glossary/bip-300-drivechains) eventually become.
 
-See [Liquid Network](/glossary/liquid-network/) for the sidechain itself.
+See [Liquid Network](/glossary/liquid-network) for the sidechain itself.

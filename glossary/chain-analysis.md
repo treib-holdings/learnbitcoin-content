@@ -25,11 +25,11 @@ Chain analysis is the industry and craft of extracting information about real-wo
 
 The methods rely on the fact that Bitcoin's chain is fully public and never forgets. Common techniques:
 
-- **[Address clustering](/glossary/address-clustering/).** Use transaction patterns (common inputs, change-output heuristics, timing correlations) to group addresses that probably share an owner.
+- **[Address clustering](/glossary/address-clustering).** Use transaction patterns (common inputs, change-output heuristics, timing correlations) to group addresses that probably share an owner.
 - **Exchange / KYC anchoring.** Match clustered addresses to known on-ramps (Coinbase, Kraken, etc.) and demand customer records when needed.
 - **OFAC / sanctions tagging.** Flag specific addresses tied to ransomware, sanctioned entities, or stolen-funds investigations.
-- **Behavioral profiles.** Identify mixing patterns, [CoinJoin](/glossary/coinjoin/) participation, exchange-to-cold-storage flows, and so on.
-- **Network-layer correlation.** Combine on-chain analysis with [eavesdropping](/glossary/eavesdropping-attack/) on the peer-to-peer network to link broadcasts to IPs.
+- **Behavioral profiles.** Identify mixing patterns, [CoinJoin](/glossary/coinjoin) participation, exchange-to-cold-storage flows, and so on.
+- **Network-layer correlation.** Combine on-chain analysis with [eavesdropping](/glossary/eavesdropping-attack) on the peer-to-peer network to link broadcasts to IPs.
 
 What chain analysis is *good* for:
 
@@ -40,9 +40,9 @@ What chain analysis is *good* for:
 What chain analysis is *also* used for:
 
 - Mass surveillance of ordinary users' financial activity.
-- "Tainted coin" determinations that erode [fungibility](/glossary/fungibility/) and create two-tier markets.
+- "Tainted coin" determinations that erode [fungibility](/glossary/fungibility) and create two-tier markets.
 - Targeting and deanonymization of activists, journalists, and dissidents in repressive jurisdictions.
 
-The defenses are the privacy techniques covered elsewhere in this glossary: [avoid address reuse](/glossary/address-reuse/), use [CoinJoin](/glossary/coinjoin/) or [PayJoin](/glossary/payjoin/) where applicable, prefer [Lightning](/glossary/lightning-network/) for payments, run your node over [Tor](/glossary/tor-hidden-service/), avoid KYC choke points where possible.
+The defenses are the privacy techniques covered elsewhere in this glossary: [avoid address reuse](/glossary/address-reuse), use [CoinJoin](/glossary/coinjoin) or [PayJoin](/glossary/payjoin) where applicable, prefer [Lightning](/glossary/lightning-network) for payments, run your node over [Tor](/glossary/tor-hidden-service), avoid KYC choke points where possible.
 
 Chain analysis isn't going away. Privacy-preserving Bitcoin use is a discipline, not a default.

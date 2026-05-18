@@ -21,11 +21,11 @@ import MempoolHistogram from '@components/mining/MempoolHistogram.svelte';
 
 ## 1. The Mempool, In One Line
 
-The mempool is the holding area for transactions that have been broadcast but not yet included in a [block](/glossary/block/).
+The mempool is the holding area for transactions that have been broadcast but not yet included in a [block](/glossary/block).
 
-When you send a Bitcoin transaction, it does not go straight into the [blockchain](/glossary/blockchain/). It goes into the mempool of whichever [node](/glossary/node/) received it first, gets relayed to that node's peers, gets relayed to *their* peers, and propagates across the global network within seconds. From there, it sits and waits.
+When you send a Bitcoin transaction, it does not go straight into the [blockchain](/glossary/blockchain). It goes into the mempool of whichever [node](/glossary/node) received it first, gets relayed to that node's peers, gets relayed to *their* peers, and propagates across the global network within seconds. From there, it sits and waits.
 
-Until a [miner](/glossary/miner/) picks it up and includes it in a block, your transaction is *unconfirmed*. It exists, it is valid, but it is not yet permanent.
+Until a [miner](/glossary/miner) picks it up and includes it in a block, your transaction is *unconfirmed*. It exists, it is valid, but it is not yet permanent.
 
 ## 2. There Is No "The" Mempool
 
@@ -38,7 +38,7 @@ When you check "the mempool" on a website like mempool.space, you are looking at
 This matters in a few practical cases:
 
 - **Network partitions** (rare but real) can cause mempools to diverge for minutes.
-- **Bitcoin Knots vs [Bitcoin Core](/glossary/bitcoin-core/)** apply different relay policies. Knots is more restrictive about inscription-style transactions and will not relay some that Core will.
+- **Bitcoin Knots vs [Bitcoin Core](/glossary/bitcoin-core)** apply different relay policies. Knots is more restrictive about inscription-style transactions and will not relay some that Core will.
 - **Miners' private mempools.** Mining pools sometimes accept transactions out-of-band that are not in any public mempool, then include them in blocks they mine.
 
 For most users, "the mempool" is a useful approximation. For anyone debugging a stuck transaction, knowing the abstraction is leaky is essential.
@@ -61,7 +61,7 @@ The validation in step 2 is **node policy**, not consensus. A transaction can be
 A transaction in the mempool has four possible exits:
 
 - **Confirmed.** A miner included it in a block. The block was relayed, accepted, and added to the chain. The transaction is now part of consensus. This is the goal.
-- **Evicted.** The mempool has size limits (default 300 MB in Bitcoin Core). When the mempool fills up, transactions with the lowest fee rates get dropped. A dropped transaction can be rebroadcast later, but most wallets do not automate this. See [fee bumping](/glossary/fee-bumping/) for the recovery path.
+- **Evicted.** The mempool has size limits (default 300 MB in Bitcoin Core). When the mempool fills up, transactions with the lowest fee rates get dropped. A dropped transaction can be rebroadcast later, but most wallets do not automate this. See [fee bumping](/glossary/fee-bumping) for the recovery path.
 - **Replaced.** If the transaction signaled RBF (or the node uses full-RBF policy), a higher-fee version replaces it in the mempool. The original is forgotten.
 - **Conflicted.** If a different transaction spends one of the same UTXOs and gets mined first, your transaction becomes invalid (the UTXO no longer exists) and gets dropped.
 
@@ -73,7 +73,7 @@ This is the single most important thing to understand about the mempool:
 
 **Miners care about fee rate, not absolute fee.**
 
-Fee rate is the [transaction fee](/glossary/transaction-fee/) divided by the transaction's size, expressed in satoshis per virtual byte (**sat/vB**). A 250-byte transaction with a 2,500 sat fee has the same fee rate (10 sat/vB) as a 1,000-byte transaction with a 10,000 sat fee.
+Fee rate is the [transaction fee](/glossary/transaction-fee) divided by the transaction's size, expressed in satoshis per virtual byte (**sat/vB**). A 250-byte transaction with a 2,500 sat fee has the same fee rate (10 sat/vB) as a 1,000-byte transaction with a 10,000 sat fee.
 
 Why? Because block space is the scarce resource. A miner with a fixed roughly 4 million weight units of space maximizes revenue by including the highest-fee-per-byte transactions first.
 
@@ -83,7 +83,7 @@ This means:
 - "I paid $20 in fees" is meaningless unless you also know how big the transaction was.
 - A transaction with many inputs costs more *absolutely* than one with few, because it is bigger - but the fee rate is what the miner optimizes for.
 
-The UTXOs you choose to spend (see [UTXOs](/rabbit-hole/utxos/)) directly determine your transaction size, which directly determines what fee rate buys you a given confirmation time. The two are inseparable.
+The UTXOs you choose to spend (see [UTXOs](/rabbit-hole/utxos)) directly determine your transaction size, which directly determines what fee rate buys you a given confirmation time. The two are inseparable.
 
 ## 6. The Histogram
 
@@ -99,7 +99,7 @@ When the mempool is empty, almost any fee rate gets you confirmed in the next bl
 
 If you broadcast a transaction with too low a fee rate, it can sit in the mempool indefinitely. Two tools exist to unstick it:
 
-**Replace-By-Fee (RBF):** broadcast a replacement transaction with a higher fee. If the original signaled RBF (per [BIP 125](/glossary/bip-125-replace-fee/)), nodes that follow the standard will replace it. Bitcoin Core 28.0 (October 2024) made full-RBF the default, so even non-signaling transactions can now be replaced on most of the network. This is the cleanest fix; you need RBF support in your wallet.
+**Replace-By-Fee (RBF):** broadcast a replacement transaction with a higher fee. If the original signaled RBF (per [BIP 125](/glossary/bip-125-replace-fee)), nodes that follow the standard will replace it. Bitcoin Core 28.0 (October 2024) made full-RBF the default, so even non-signaling transactions can now be replaced on most of the network. This is the cleanest fix; you need RBF support in your wallet.
 
 **Child-Pays-For-Parent (CPFP):** if you cannot replace the original (you did not send it, or it came from a non-RBF wallet), you can spend the output of the stuck transaction in a *new* transaction that pays a high fee. Miners include transactions as packages; the high fee on the child incentivizes them to also include the parent. CPFP requires the recipient to participate (since they control the unconfirmed UTXO).
 
@@ -109,7 +109,7 @@ If neither works, you wait. Either the mempool clears enough that your low-fee t
 
 A subtle but important distinction:
 
-- **Consensus rules** define what is valid in a block. These are enforced by every node and are very slow to change. They require a [soft fork](/glossary/soft-fork/) or hard fork.
+- **Consensus rules** define what is valid in a block. These are enforced by every node and are very slow to change. They require a [soft fork](/glossary/soft-fork) or hard fork.
 - **Mempool / relay policy** defines what individual nodes choose to accept and relay. These are local, opinion-based, and can vary between node implementations.
 
 A transaction can be valid by consensus but rejected by relay policy. Examples:

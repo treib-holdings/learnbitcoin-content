@@ -36,12 +36,12 @@ sameAs:
 liveWidget: ~
 ---
 
-A Lightning node is a piece of software that participates in the [Lightning Network](/glossary/lightning-network/). It manages your [payment channels](/glossary/lightning-channel/), tracks the network gossip graph, routes payments through itself when asked, and lets you send and receive instant off-chain payments.
+A Lightning node is a piece of software that participates in the [Lightning Network](/glossary/lightning-network). It manages your [payment channels](/glossary/lightning-channel), tracks the network gossip graph, routes payments through itself when asked, and lets you send and receive instant off-chain payments.
 
 The major implementations as of 2026:
 
 - **LND** (Lightning Labs) - written in Go, widely used in node-in-a-box products like Umbrel, Start9, MyNode.
-- **[Core Lightning](/glossary/core-lightning-c-lightning/)** (Blockstream, formerly c-lightning) - written in C, modular plugin architecture, lightweight.
+- **[Core Lightning](/glossary/core-lightning-c-lightning)** (Blockstream, formerly c-lightning) - written in C, modular plugin architecture, lightweight.
 - **Eclair** (ACINQ) - written in Scala, powers the Phoenix mobile wallet.
 - **LDK** (Lightning Dev Kit, Spiral) - a library you embed into your own application rather than a standalone daemon. Used by Cash App, Mutiny, Mercury Layer, others.
 
@@ -54,4 +54,4 @@ What running a Lightning node costs you operationally:
 
 What you might earn: small **routing fees** when your node forwards payments along a multi-hop route. In practice these are tiny per-payment but accumulate if you run a well-connected node. Most home Lightning operators don't earn meaningful revenue; commercial routing nodes are a different category.
 
-For most users in 2026, a custodial Lightning wallet (Phoenix, Wallet of Satoshi, etc.) is the practical entry point. Running your own node is the sovereign answer and is well worth doing for users who care about that property. See [Lightning Network](/glossary/lightning-network/) for the protocol view.
+For most users in 2026, a custodial Lightning wallet (Phoenix, Wallet of Satoshi, etc.) is the practical entry point. Running your own node is the sovereign answer and is well worth doing for users who care about that property. See [Lightning Network](/glossary/lightning-network) for the protocol view.

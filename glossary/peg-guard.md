@@ -12,7 +12,7 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-A **peg-guard** is a security mechanism in a [sidechain](/glossary/sidechain/) peg system designed to prevent fraudulent withdrawals - especially the catastrophic failure mode where a bug or attack lets someone "print" pegged BTC out of thin air, creating sidechain tokens that aren't backed by actual mainnet BTC reserves.
+A **peg-guard** is a security mechanism in a [sidechain](/glossary/sidechain) peg system designed to prevent fraudulent withdrawals - especially the catastrophic failure mode where a bug or attack lets someone "print" pegged BTC out of thin air, creating sidechain tokens that aren't backed by actual mainnet BTC reserves.
 
 What a peg-guard needs to protect against:
 
@@ -22,7 +22,7 @@ What a peg-guard needs to protect against:
 
 Common peg-guard implementations:
 
-- **Multi-signature thresholds on peg-out.** Requiring 11-of-15 federation signatures means a single rogue operator can't drain funds. Used by [Liquid](/glossary/liquid-network/).
+- **Multi-signature thresholds on peg-out.** Requiring 11-of-15 federation signatures means a single rogue operator can't drain funds. Used by [Liquid](/glossary/liquid-network).
 - **Cross-validation requirements.** Federation members independently validate both the sidechain state and the peg-out proposal before signing. If a sidechain bug looks like it's draining the peg reserve, members refuse to sign.
 - **Audit reserves.** Some sidechains publish proof-of-reserves regularly so users can verify the peg backing matches the issued tokens.
 - **Slow withdrawal windows** (drivechain style). Long delays before peg-outs finalize give time to detect anomalies.

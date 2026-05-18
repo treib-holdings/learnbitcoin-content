@@ -12,7 +12,7 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-A mining front-end is the software layer that sits between mining hardware (ASICs) and the protocol that delivers them work: Stratum from a pool, or [getblocktemplate](/glossary/bip-22-getblocktemplate/) for solo mining. The front-end handles connection management, work assignment, share submission, and operator-facing controls.
+A mining front-end is the software layer that sits between mining hardware (ASICs) and the protocol that delivers them work: Stratum from a pool, or [getblocktemplate](/glossary/bip-22-getblocktemplate) for solo mining. The front-end handles connection management, work assignment, share submission, and operator-facing controls.
 
 For a single home miner, the "front-end" is just the firmware running on the ASIC itself. For an industrial operation with hundreds or thousands of devices, the front-end is a separate layer running on a server somewhere, often called a fleet manager or farm controller.
 
@@ -22,7 +22,7 @@ What the front-end does:
 - **Work distribution.** Receive block-template jobs from the pool and route them to individual ASICs (or to a Stratum proxy that does the routing).
 - **Share submission.** Take found shares from ASICs and submit them back to the pool.
 - **Monitoring and control.** Track each ASIC's hash rate, temperature, voltage, frequency, fan speed; alert or auto-shutdown on overheating; remotely reboot misbehaving devices.
-- **Firmware management.** Push firmware updates across the fleet, particularly important for [proprietary firmware](/glossary/proprietary-mining-firmware/) like BraiinsOS or LuxOS.
+- **Firmware management.** Push firmware updates across the fleet, particularly important for [proprietary firmware](/glossary/proprietary-mining-firmware) like BraiinsOS or LuxOS.
 
 Common products in the category (2026):
 

@@ -19,13 +19,13 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Hidden miner tax" is a term used in some Bitcoin economic-theory discussions to describe the [block subsidy](/glossary/block-subsidy/) as effectively a recurring tax on existing BTC holders, paid in the form of new BTC issuance diluting their share of the total supply.
+"Hidden miner tax" is a term used in some Bitcoin economic-theory discussions to describe the [block subsidy](/glossary/block-subsidy) as effectively a recurring tax on existing BTC holders, paid in the form of new BTC issuance diluting their share of the total supply.
 
 The argument:
 
 - Every block, ~3.125 BTC of new supply enters circulation (current era, 2024-2028).
 - This dilutes the supply share of every existing BTC holder, even if only marginally.
-- The new BTC goes to miners as payment for [proof-of-work](/glossary/proof-work-pow/) security.
+- The new BTC goes to miners as payment for [proof-of-work](/glossary/proof-work-pow) security.
 - Therefore, *holders pay for network security through dilution*, regardless of whether they transact - it's a "tax" you can't opt out of.
 
 This framing has some validity but also some significant differences from a literal tax:
@@ -37,4 +37,4 @@ This framing has some validity but also some significant differences from a lite
 
 The "hidden tax" framing is most useful for thinking carefully about what current holders actually fund: ongoing network security via accepted dilution. It's least useful when pushed too hard toward "Bitcoin is just slow fiat inflation" - the structural difference (fixed cap, decreasing rate, no discretionary issuance) is large enough to be a difference in kind, not just degree.
 
-See [Block Subsidy](/glossary/block-subsidy/), [Inflation](/glossary/inflation/), and [Disinflation](/glossary/disinflation/) for the standard framings of the same underlying mechanism.
+See [Block Subsidy](/glossary/block-subsidy), [Inflation](/glossary/inflation), and [Disinflation](/glossary/disinflation) for the standard framings of the same underlying mechanism.

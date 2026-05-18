@@ -34,4 +34,4 @@ The history of ASIC resistance is essentially "every attempt eventually gets ASI
 
 Bitcoin's bet: better to accept specialization, build a deep ASIC ecosystem, and rely on competition between manufacturers and miners to maintain healthy decentralization. The bet has worked imperfectly - manufacturer concentration is real - but the alternative of perpetual algorithm churn has worse failure modes.
 
-See [ASIC](/glossary/asic-application-specific-integrated-circuit/) for the hardware itself and [Mining Centralization](/glossary/mining-centralization/) for the real concerns about industry concentration.
+See [ASIC](/glossary/asic-application-specific-integrated-circuit) for the hardware itself and [Mining Centralization](/glossary/mining-centralization) for the real concerns about industry concentration.

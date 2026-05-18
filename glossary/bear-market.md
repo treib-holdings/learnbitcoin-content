@@ -34,9 +34,9 @@ What's reliably true about bear markets:
 
 - **The bottom is never obvious.** Every false rally during a bear market looks like the start of recovery. Most of them aren't.
 - **Capitulation events** - exchanges blow up, miners shut down, "Bitcoin is dead" articles trend - cluster near the actual bottom. Not at random points throughout.
-- **The strongest holders accumulate.** People who [DCA](/glossary/dca-dollar-cost-averaging/) through a bear market end up with a much lower average cost basis than people who only buy in bull markets.
+- **The strongest holders accumulate.** People who [DCA](/glossary/dca-dollar-cost-averaging) through a bear market end up with a much lower average cost basis than people who only buy in bull markets.
 - **The protocol doesn't change.** Bitcoin keeps producing blocks every ten minutes regardless of what the price is doing. Bear markets are an asset-price phenomenon, not a network phenomenon.
 
 The Bitcoiner discipline during a bear market is to remember it's part of the cycle. Stop trading. Keep stacking. Build the things you can build when there's no hype to chase. The bull market that follows tends to reward people who used the bear well.
 
-See [Bull Market](/glossary/bull-market/) for the other side and [Volatility](/glossary/volatility/) for the underlying dynamic.
+See [Bull Market](/glossary/bull-market) for the other side and [Volatility](/glossary/volatility) for the underlying dynamic.

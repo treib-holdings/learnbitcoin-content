@@ -26,16 +26,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Core Lightning (CLN), formerly **c-lightning**, is one of the major [Lightning Network](/glossary/lightning-network/) implementations. Developed by [Blockstream](https://blockstream.com/), it's written in C and emphasizes modularity, minimal resource footprint, and a plugin architecture that lets developers extend functionality without forking the core daemon.
+Core Lightning (CLN), formerly **c-lightning**, is one of the major [Lightning Network](/glossary/lightning-network) implementations. Developed by [Blockstream](https://blockstream.com/), it's written in C and emphasizes modularity, minimal resource footprint, and a plugin architecture that lets developers extend functionality without forking the core daemon.
 
 How it stacks up against the other main implementations:
 
-- **CLN** - C, modular, plugin-first. Strong on advanced workflows and resource efficiency. Notable for shipping [BOLT-12 offers](/glossary/lightning-invoice/) support early.
+- **CLN** - C, modular, plugin-first. Strong on advanced workflows and resource efficiency. Notable for shipping [BOLT-12 offers](/glossary/lightning-invoice) support early.
 - **LND** (Lightning Labs) - Go, monolithic, REST/gRPC APIs. Most common in turnkey node-in-a-box products. Largest user base.
 - **Eclair** (ACINQ) - Scala, powers the Phoenix mobile wallet. Strong on mobile/embedded use cases.
 - **LDK** (Spiral) - Library, not a daemon. Embedded into apps like Cash App, Mutiny.
 
-CLN's plugin system is the differentiator. Common plugins handle things like channel rebalancing, advanced routing strategies, [splicing](/glossary/lightning-channel-splicing/), watchtowers, and accounting. The model is "small core, many plugins" rather than "big monolith with feature flags."
+CLN's plugin system is the differentiator. Common plugins handle things like channel rebalancing, advanced routing strategies, [splicing](/glossary/lightning-channel-splicing), watchtowers, and accounting. The model is "small core, many plugins" rather than "big monolith with feature flags."
 
 For self-hosted Lightning operators in 2026, CLN is a strong choice especially for:
 
@@ -43,4 +43,4 @@ For self-hosted Lightning operators in 2026, CLN is a strong choice especially f
 - Routing nodes that benefit from plugin-based rebalancing.
 - Anyone wanting native BOLT-12 support.
 
-Less ideal for users who want a click-to-install graphical experience - Umbrel and similar node distributions historically defaulted to LND, though many now offer CLN as an option. See [Lightning Node](/glossary/lightning-node/) for the broader landscape.
+Less ideal for users who want a click-to-install graphical experience - Umbrel and similar node distributions historically defaulted to LND, though many now offer CLN as an option. See [Lightning Node](/glossary/lightning-node) for the broader landscape.

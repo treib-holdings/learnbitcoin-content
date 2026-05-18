@@ -22,7 +22,7 @@ sameAs:
 liveWidget: ~
 ---
 
-An xpub is a [BIP 32](/glossary/bip-32/) extended public key: a parent public key bundled together with its [chaincode](/glossary/chaincode/). With both pieces, anyone can derive all non-hardened child public keys (and therefore all addresses) under that branch of the wallet tree, without ever seeing a private key.
+An xpub is a [BIP 32](/glossary/bip-32) extended public key: a parent public key bundled together with its [chaincode](/glossary/chaincode). With both pieces, anyone can derive all non-hardened child public keys (and therefore all addresses) under that branch of the wallet tree, without ever seeing a private key.
 
 What you can do with someone's xpub:
 
@@ -44,4 +44,4 @@ Format variants you'll see in older wallets:
 - `zpub...` - native P2WPKH (BIP 84).
 - `Ypub` / `Zpub` - multisig variants.
 
-In 2026, the prefix variants are mostly historical: modern [descriptor wallets](/glossary/output-descriptor/) carry the script-type information explicitly, so a single `xpub` plus a descriptor template covers everything cleanly.
+In 2026, the prefix variants are mostly historical: modern [descriptor wallets](/glossary/output-descriptor) carry the script-type information explicitly, so a single `xpub` plus a descriptor template covers everything cleanly.

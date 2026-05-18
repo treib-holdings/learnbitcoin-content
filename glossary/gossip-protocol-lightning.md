@@ -22,7 +22,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The Lightning gossip protocol is how [Lightning nodes](/glossary/lightning-node/) share information about the network's topology: which channels exist, who they connect, what fees they charge, and whether they're currently active. Without it, nodes couldn't [route](/glossary/lightning-routing/) payments through paths they don't directly participate in.
+The Lightning gossip protocol is how [Lightning nodes](/glossary/lightning-node) share information about the network's topology: which channels exist, who they connect, what fees they charge, and whether they're currently active. Without it, nodes couldn't [route](/glossary/lightning-routing) payments through paths they don't directly participate in.
 
 Three kinds of gossip messages, defined in [BOLT-7](https://github.com/lightning/bolts/blob/master/07-routing-gossip.md):
 
@@ -39,4 +39,4 @@ What gossip *doesn't* reveal:
 
 Gossip volume grew large enough that newer optimizations (gossip sync v2, range queries, compact filters) became necessary. A modern Lightning node downloads tens of megabytes of gossip data when fully syncing. Once synced, ongoing gossip is a few KB/sec at most.
 
-See [Lightning Routing](/glossary/lightning-routing/) for how the gossip graph gets used to actually move payments.
+See [Lightning Routing](/glossary/lightning-routing) for how the gossip graph gets used to actually move payments.

@@ -40,7 +40,7 @@ sameAs:
 liveWidget: ~
 ---
 
-A Lightning channel is a payment pipe between two parties on the [Lightning Network](/glossary/lightning-network/). Both parties lock funds into a shared 2-of-2 multisig on-chain output (the **funding transaction**), and from there they can exchange unlimited off-chain payments by signing successive **commitment transactions** that update the channel's balance allocation.
+A Lightning channel is a payment pipe between two parties on the [Lightning Network](/glossary/lightning-network). Both parties lock funds into a shared 2-of-2 multisig on-chain output (the **funding transaction**), and from there they can exchange unlimited off-chain payments by signing successive **commitment transactions** that update the channel's balance allocation.
 
 How a channel works, end to end:
 
@@ -57,4 +57,4 @@ A few practical realities:
 - **You must watch for cheating.** If you're offline when your counterparty cheats, you miss the dispute window. Watchtower services exist for this.
 - **Capacity is fixed at open time.** A channel funded with 0.05 BTC can route up to 0.05 BTC; rebalancing or splicing is required for more.
 
-See [Lightning Network](/glossary/lightning-network/) for the network-level view and HTLC routing.
+See [Lightning Network](/glossary/lightning-network) for the network-level view and HTLC routing.

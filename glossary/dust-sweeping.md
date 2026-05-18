@@ -31,7 +31,7 @@ How to do it correctly:
 
 - **Wait for low fees.** Mempool.space's fee estimator shows the bottom-of-mempool feerate; consolidate when it's below 5 sat/vB (often weekends, late nights, post-fee-spike clearouts).
 - **Group by privacy boundary.** Don't merge UTXOs from different identity / use-case clusters in the same transaction. If you have wallet-A and wallet-B intentionally separated, keep them separated through consolidation.
-- **Watch out for dust attacks.** If you've received [dust attack](/glossary/dust-attack/) outputs, consolidating them with your main wallet defeats your privacy. Either exclude them or sweep them through a CoinJoin first.
+- **Watch out for dust attacks.** If you've received [dust attack](/glossary/dust-attack) outputs, consolidating them with your main wallet defeats your privacy. Either exclude them or sweep them through a CoinJoin first.
 - **Sign once, broadcast once.** Build one large consolidation transaction rather than many small ones to amortize transaction overhead.
 
 What not to do:

@@ -31,7 +31,7 @@ The major implementations as of 2026:
 
 Why implementation diversity matters:
 
-- **Bug resilience.** A bug in one client's validation that lets an invalid transaction through gets caught by other implementations that don't share the bug. The 2018 inflation-bug-style incidents are at least partially detectable by cross-implementation comparison ([fork watcher](/glossary/fork-watcher/) infrastructure relies on this).
+- **Bug resilience.** A bug in one client's validation that lets an invalid transaction through gets caught by other implementations that don't share the bug. The 2018 inflation-bug-style incidents are at least partially detectable by cross-implementation comparison ([fork watcher](/glossary/fork-watcher) infrastructure relies on this).
 - **Decentralization of development.** Multiple independent teams reduces the risk of any single party being a chokepoint for the protocol.
 - **Resistance to monoculture vulnerabilities.** A 0-day vulnerability in Core wouldn't immediately compromise the entire network if alternative implementations exist.
 

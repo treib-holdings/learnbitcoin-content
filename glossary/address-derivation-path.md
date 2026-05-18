@@ -20,7 +20,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A derivation path is the slash-separated address into a [BIP 32](/glossary/bip-32/) HD wallet tree, telling the wallet exactly which key to derive from the master seed. The format is:
+A derivation path is the slash-separated address into a [BIP 32](/glossary/bip-32) HD wallet tree, telling the wallet exactly which key to derive from the master seed. The format is:
 
 ```
 m / purpose' / coin_type' / account' / change / address_index

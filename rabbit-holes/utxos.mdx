@@ -41,7 +41,7 @@ The blockchain does not store "balances." It stores a giant set of UTXOs. Your n
 
 ## 3. Spending: Inputs In, Outputs Out
 
-A Bitcoin [transaction](/glossary/transaction-fee/) has two sides:
+A Bitcoin [transaction](/glossary/transaction-fee) has two sides:
 
 - **Inputs:** UTXOs being consumed (spent entirely).
 - **Outputs:** new UTXOs being created.
@@ -67,13 +67,13 @@ If change always went back to the spending address, anyone watching the blockcha
 
 But this creates a different problem: **address reuse is now a strong fingerprint.** If you reuse an address, anyone watching can see all the UTXOs that ever went to it, and can confidently say "this person controls all of these." Most privacy leaks in Bitcoin start with address reuse.
 
-(See [address clustering](/glossary/address-clustering/) for how [chain-analysis](/glossary/chain-analysis/) firms exploit this.)
+(See [address clustering](/glossary/address-clustering) for how [chain-analysis](/glossary/chain-analysis) firms exploit this.)
 
 ## 5. Your "Balance" Is a Sum
 
 Your wallet's "balance" is calculated, not stored. When you open your wallet:
 
-1. The wallet derives every address it can control (from the seed, via a [BIP 32](/glossary/bip-32/) derivation path).
+1. The wallet derives every address it can control (from the seed, via a [BIP 32](/glossary/bip-32) derivation path).
 2. The wallet (or its backing node) scans the UTXO set for outputs locked to those addresses.
 3. The wallet sums their values.
 
@@ -94,7 +94,7 @@ Picking which UTXOs to spend is called **coin selection.** It is a non-trivial o
 
 Bitcoin Core uses an algorithm called **Branch and Bound** as its primary coin selector, falling back to **Knapsack** when BnB cannot find an exact match. Other wallets use simpler heuristics ("largest first," "smallest first," "random").
 
-Most users never think about coin selection. Most users probably should. (See [coin control](/glossary/coin-control/) for wallets that expose it.)
+Most users never think about coin selection. Most users probably should. (See [coin control](/glossary/coin-control) for wallets that expose it.)
 
 ## 7. The UTXO Set, Globally
 
@@ -112,7 +112,7 @@ Once you create a transaction with multiple inputs, you have publicly declared t
 
 If you receive UTXO A on Monday and UTXO B on Tuesday from different sources, they are privately linkable only by you - the world does not know they share an owner. But the moment you spend them together in a single transaction, the link is permanent and public.
 
-This is why [coin control](/glossary/coin-control/) matters. It is also why [CoinJoin](/glossary/coinjoin/) and [PayJoin](/glossary/payjoin/) exist - to deliberately create ambiguity about which UTXOs belong to whom.
+This is why [coin control](/glossary/coin-control) matters. It is also why [CoinJoin](/glossary/coinjoin) and [PayJoin](/glossary/payjoin) exist - to deliberately create ambiguity about which UTXOs belong to whom.
 
 A useful rule of thumb: every input you add to a transaction adds a public claim of common ownership. Combine UTXOs from different sources only when you have already accepted that those sources are now publicly linked.
 
@@ -120,11 +120,11 @@ A useful rule of thumb: every input you add to a transaction adds a public claim
 
 There is a fee floor for transactions: the smaller a UTXO, the larger a percentage of its value the fee will be when you try to spend it. At some point, the fee exceeds the value.
 
-Bitcoin Core defines a [dust limit](/glossary/dust-limit/) - currently around 546 satoshis for a typical P2WPKH output - below which the network will not even relay transactions creating that output. The reasoning: a UTXO that costs more to spend than it is worth is permanently wasted space in every node's UTXO set.
+Bitcoin Core defines a [dust limit](/glossary/dust-limit) - currently around 546 satoshis for a typical P2WPKH output - below which the network will not even relay transactions creating that output. The reasoning: a UTXO that costs more to spend than it is worth is permanently wasted space in every node's UTXO set.
 
-[Dust attacks](/glossary/dust-attack/) exploit this: an attacker sends tiny UTXOs (just above dust limit) to many addresses they are trying to deanonymize. If a victim accidentally spends one in a transaction with their other UTXOs, the attacker confirms ownership of all of those UTXOs through the input clustering described above.
+[Dust attacks](/glossary/dust-attack) exploit this: an attacker sends tiny UTXOs (just above dust limit) to many addresses they are trying to deanonymize. If a victim accidentally spends one in a transaction with their other UTXOs, the attacker confirms ownership of all of those UTXOs through the input clustering described above.
 
-The defense: never sweep dust into your main wallet. See [dust sweeping](/glossary/dust-sweeping/) for the careful version.
+The defense: never sweep dust into your main wallet. See [dust sweeping](/glossary/dust-sweeping) for the careful version.
 
 ## 10. What This Buys Us
 

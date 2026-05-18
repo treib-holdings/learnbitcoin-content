@@ -31,7 +31,7 @@ sameAs:
 liveWidget: ~
 ---
 
-A hardware wallet is a small, dedicated device whose only job is to store [private keys](/glossary/private-key/) and sign [transactions](/glossary/transaction/). The keys are generated inside the device and never leave it. When you want to spend, the unsigned transaction is sent in, you verify the destination and amount on the device's built-in screen, you confirm, and a signed transaction comes back out. Your laptop never sees the key.
+A hardware wallet is a small, dedicated device whose only job is to store [private keys](/glossary/private-key) and sign [transactions](/glossary/transaction). The keys are generated inside the device and never leave it. When you want to spend, the unsigned transaction is sent in, you verify the destination and amount on the device's built-in screen, you confirm, and a signed transaction comes back out. Your laptop never sees the key.
 
 The threat model this defends against: a fully compromised PC. If your computer is running malware that watches every keystroke and reads every file, a hot wallet's keys are toast - the attacker can just sign transactions to themselves at will. With a hardware wallet, the malware can show you a fake "Send to your friend" screen on the PC, but when the actual transaction goes to the hardware device, the device shows you the *real* destination address and amount on its trusted screen. You see the malware's substituted address, you reject the transaction, you're safe.
 
@@ -44,6 +44,6 @@ What to look for when picking one:
 
 Recommendations rot fast. Rather than name specific products here, search "open-source bitcoin hardware wallet" or check what experienced self-custody-focused Bitcoiners are currently endorsing.
 
-A hardware wallet is not magic. The [seed phrase](/glossary/seed-phrase/) it generates is still the master backup; if someone gets that phrase, they don't need the device. The device's job is to keep the keys offline during day-to-day use, not to replace good phrase hygiene.
+A hardware wallet is not magic. The [seed phrase](/glossary/seed-phrase) it generates is still the master backup; if someone gets that phrase, they don't need the device. The device's job is to keep the keys offline during day-to-day use, not to replace good phrase hygiene.
 
-For amounts above casual-spending size, a hardware wallet is the floor. Multisig with multiple hardware devices is the next level up. See [Journey: Be Your Own Bank](/journey/be-your-own-bank/) for the walkthrough.
+For amounts above casual-spending size, a hardware wallet is the floor. Multisig with multiple hardware devices is the next level up. See [Journey: Be Your Own Bank](/journey/be-your-own-bank) for the walkthrough.

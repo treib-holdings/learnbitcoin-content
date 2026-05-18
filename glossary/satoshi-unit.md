@@ -15,9 +15,9 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A satoshi (sat) is the smallest unit of Bitcoin. **1 BTC = 100,000,000 sats.** Below the sat is nothing - on-chain, Bitcoin is not divisible further. ([Lightning](/glossary/lightning-network/) operates internally in millisats for finer routing precision, but those don't exist on the base chain.)
+A satoshi (sat) is the smallest unit of Bitcoin. **1 BTC = 100,000,000 sats.** Below the sat is nothing - on-chain, Bitcoin is not divisible further. ([Lightning](/glossary/lightning-network) operates internally in millisats for finer routing precision, but those don't exist on the base chain.)
 
-Named after [Satoshi Nakamoto](/glossary/satoshi-nakamoto/), the sat is the protocol-level integer unit. Internally, Bitcoin Core tracks all balances and amounts in satoshis. "BTC" is a human-readable rendering of the sat count divided by 100,000,000.
+Named after [Satoshi Nakamoto](/glossary/satoshi-nakamoto), the sat is the protocol-level integer unit. Internally, Bitcoin Core tracks all balances and amounts in satoshis. "BTC" is a human-readable rendering of the sat count divided by 100,000,000.
 
 In 2026 wallet culture, sats are increasingly the default unit for talking about Bitcoin in everyday contexts:
 
@@ -29,4 +29,4 @@ In 2026 wallet culture, sats are increasingly the default unit for talking about
 
 A useful mental anchor: at a BTC price of $1,000,000 (which many expect within a decade or two), **1 sat = $0.01**. The sat becomes the everyday Bitcoin "cent." This convergence is why sats are increasingly the natural unit even for users who aren't deep in Lightning culture.
 
-See the [Bitcoin Units rabbit hole](/rabbit-hole/bitcoin-units/) for the full unit scale and where the in-between units (mBTC, μBTC, Finney) sit.
+See the [Bitcoin Units rabbit hole](/rabbit-hole/bitcoin-units) for the full unit scale and where the in-between units (mBTC, μBTC, Finney) sit.

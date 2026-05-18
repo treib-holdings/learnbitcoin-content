@@ -35,4 +35,4 @@ This continues every 210,000 blocks until the subsidy rounds to zero around 2140
 
 Disinflation is the opposite of how fiat systems usually run. Central banks typically *target* a positive inflation rate (the Federal Reserve targets 2%). Bitcoin targets none, and reaches it asymptotically.
 
-See [Halving](/glossary/halving-halvening/) for the mechanism, and the [Supply Schedule rabbit hole](/rabbit-hole/supply/) for the long version.
+See [Halving](/glossary/halving-halvening) for the mechanism, and the [Supply Schedule rabbit hole](/rabbit-hole/supply) for the long version.

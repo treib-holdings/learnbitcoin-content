@@ -29,7 +29,7 @@ sameAs:
 liveWidget: ~
 ---
 
-MuSig2 is the practical successor to the original [MuSig](/glossary/musig/) Schnorr-aggregation protocol, published in 2020 by Jonas Nick, Tim Ruffing, and Yannick Seurin. It does the same job - aggregate n cosigners into a single combined public key with a single combined signature - in just two rounds of communication instead of three, with the additional benefit that the first round's nonces can be pre-computed and reused across signing sessions.
+MuSig2 is the practical successor to the original [MuSig](/glossary/musig) Schnorr-aggregation protocol, published in 2020 by Jonas Nick, Tim Ruffing, and Yannick Seurin. It does the same job - aggregate n cosigners into a single combined public key with a single combined signature - in just two rounds of communication instead of three, with the additional benefit that the first round's nonces can be pre-computed and reused across signing sessions.
 
 What changed mechanically:
 

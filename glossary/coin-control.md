@@ -25,13 +25,13 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Coin control is the wallet feature that lets you manually choose which [UTXOs](/glossary/utxo-unspent-transaction-output/) to spend when constructing a [transaction](/glossary/transaction/), rather than letting the wallet auto-select them. It's the wallet equivalent of deliberately picking specific dollar bills out of your physical wallet for a transaction.
+Coin control is the wallet feature that lets you manually choose which [UTXOs](/glossary/utxo-unspent-transaction-output) to spend when constructing a [transaction](/glossary/transaction), rather than letting the wallet auto-select them. It's the wallet equivalent of deliberately picking specific dollar bills out of your physical wallet for a transaction.
 
 Why coin control matters:
 
-- **Privacy.** [Address clustering](/glossary/address-clustering/) heuristics depend on the common-input assumption: all UTXOs spent in one transaction share an owner. By manually choosing which UTXOs to combine, you can avoid linking addresses that you'd rather keep separate.
+- **Privacy.** [Address clustering](/glossary/address-clustering) heuristics depend on the common-input assumption: all UTXOs spent in one transaction share an owner. By manually choosing which UTXOs to combine, you can avoid linking addresses that you'd rather keep separate.
 - **Fees.** Fewer inputs = smaller transaction = lower fees at any given sat/vB. If you have many small UTXOs and one large one, sometimes spending the large one alone is much cheaper.
-- **Dust management.** You can deliberately consolidate small UTXOs ([dust](/glossary/dust/)) during low-fee periods, or avoid combining them with valuable UTXOs that you don't want linked to dust sources.
+- **Dust management.** You can deliberately consolidate small UTXOs ([dust](/glossary/dust)) during low-fee periods, or avoid combining them with valuable UTXOs that you don't want linked to dust sources.
 - **Source-of-funds tagging.** If you've labeled UTXOs by source (KYC vs non-KYC, business vs personal), you can selectively spend from the appropriate bucket without crossing streams.
 
 The basic operation:
@@ -44,4 +44,4 @@ Wallets that expose coin control well: Sparrow, Bitcoin Core, Electrum, Specter 
 
 The general guidance: if you care about privacy or fee optimization, learn coin control. If you're using Bitcoin as casual spending money, the auto-select default is fine. The control is there when you need it.
 
-See [UTXO](/glossary/utxo-unspent-transaction-output/) for the underlying concept and [Address Clustering](/glossary/address-clustering/) for the privacy concern this addresses.
+See [UTXO](/glossary/utxo-unspent-transaction-output) for the underlying concept and [Address Clustering](/glossary/address-clustering) for the privacy concern this addresses.

@@ -23,7 +23,7 @@ sameAs:
 liveWidget: ~
 ---
 
-Peer discovery is how a fresh [Bitcoin node](/glossary/node/) finds other nodes to connect to. Without an initial peer list, the node would be isolated; without ongoing discovery, the network couldn't heal after churn.
+Peer discovery is how a fresh [Bitcoin node](/glossary/node) finds other nodes to connect to. Without an initial peer list, the node would be isolated; without ongoing discovery, the network couldn't heal after churn.
 
 Bitcoin Core uses several mechanisms, in order of fallback:
 
@@ -35,4 +35,4 @@ Bitcoin Core uses several mechanisms, in order of fallback:
 
 The DNS-seed step is the most centralized part of the bootstrap, and it's worth knowing about. A malicious DNS seed could feed your node a curated list of attacker-controlled peers (an "eclipse attack" setup). The defense is having multiple independent seeds; an attacker would need to compromise most of them simultaneously. The seeds themselves are operated by separate, well-known individuals across multiple jurisdictions.
 
-For a long-running node, the initial bootstrap matters far less than the ongoing peer health - Bitcoin Core continuously evaluates peer behavior, drops misbehaving connections, and replaces them via the gossip mechanism. See [Eclipse Attack](/glossary/eclipse-attack/) for the relevant threat model.
+For a long-running node, the initial bootstrap matters far less than the ongoing peer health - Bitcoin Core continuously evaluates peer behavior, drops misbehaving connections, and replaces them via the gossip mechanism. See [Eclipse Attack](/glossary/eclipse-attack) for the relevant threat model.

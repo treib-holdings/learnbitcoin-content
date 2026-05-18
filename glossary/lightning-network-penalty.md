@@ -35,6 +35,6 @@ What can still go wrong:
 - **Watchtower failures** can leave you vulnerable during long offline periods.
 - **Extreme network congestion** could in principle prevent the penalty from confirming within the CSV window - rare but real edge case.
 
-[Eltoo](/glossary/eltoo/) would replace the penalty model with a simpler "newer states override older states" mechanism, eliminating the catastrophic-failure-on-mistake risk. Until [ANYPREVOUT](/glossary/anyprevout/) activates, the penalty model is what Lightning channels use, and the operational discipline around state management matters.
+[Eltoo](/glossary/eltoo) would replace the penalty model with a simpler "newer states override older states" mechanism, eliminating the catastrophic-failure-on-mistake risk. Until [ANYPREVOUT](/glossary/anyprevout) activates, the penalty model is what Lightning channels use, and the operational discipline around state management matters.
 
-See [Fraudulent Channel Close](/glossary/fraudulent-channel-close/) for the attack the penalty defends against.
+See [Fraudulent Channel Close](/glossary/fraudulent-channel-close) for the attack the penalty defends against.

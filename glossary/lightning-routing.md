@@ -37,17 +37,17 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Lightning routing is the process of finding a path through the network of [Lightning channels](/glossary/lightning-channel/) that can carry your payment from sender to receiver, when no direct channel exists between them.
+Lightning routing is the process of finding a path through the network of [Lightning channels](/glossary/lightning-channel) that can carry your payment from sender to receiver, when no direct channel exists between them.
 
-Most Lightning users don't have direct channels with the people they pay - that would require opening an [on-chain transaction](/glossary/transaction/) with every counterparty, defeating the point. Instead, your [Lightning node](/glossary/lightning-node/) routes payments through intermediate nodes that *do* have a path to the destination, atomically, via chained [HTLCs](/glossary/htlc-hashed-time-locked-contract/).
+Most Lightning users don't have direct channels with the people they pay - that would require opening an [on-chain transaction](/glossary/transaction) with every counterparty, defeating the point. Instead, your [Lightning node](/glossary/lightning-node) routes payments through intermediate nodes that *do* have a path to the destination, atomically, via chained [HTLCs](/glossary/htlc-hashed-time-locked-contract).
 
 How it works under the hood:
 
-1. **Build the graph.** Lightning nodes share a [gossip protocol](/glossary/gossip-protocol-lightning/) advertising which channels exist, their capacity, and their fee policies. Your node maintains a local view of this graph.
+1. **Build the graph.** Lightning nodes share a [gossip protocol](/glossary/gossip-protocol-lightning) advertising which channels exist, their capacity, and their fee policies. Your node maintains a local view of this graph.
 2. **Find a path.** Run a modified Dijkstra's algorithm to find a sequence of channels from you to the destination, with enough capacity on the relevant side of each channel, optimizing for fees and reliability.
-3. **Onion-route the payment.** Each hop knows only the previous and next hop, not the full path. This is **[Sphinx](/glossary/lightning-sphinx/) onion routing**, similar to Tor.
+3. **Onion-route the payment.** Each hop knows only the previous and next hop, not the full path. This is **[Sphinx](/glossary/lightning-sphinx) onion routing**, similar to Tor.
 4. **HTLCs lock the payment** at every hop. If any hop fails, the whole payment unwinds atomically - you don't lose money in a partial route.
-5. **If routing fails, retry.** Modern wallets retry with different paths or split the payment across multiple paths ([Atomic Multi-Path Payments / AMP](/glossary/atomic-multi-path-payment-amp/)).
+5. **If routing fails, retry.** Modern wallets retry with different paths or split the payment across multiple paths ([Atomic Multi-Path Payments / AMP](/glossary/atomic-multi-path-payment-amp)).
 
 The hard problems in routing:
 

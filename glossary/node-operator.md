@@ -33,7 +33,7 @@ What you actually do when you run a node:
 - Serve historical data to new nodes during their initial sync, if you accept inbound connections.
 - Refuse to follow any rule change you don't agree with. This is the structural mechanism by which Bitcoin remains user-controlled.
 
-You don't earn money for running a node. Block rewards belong to [miners](/glossary/miner/). What you get is independence. You stop trusting a third party to tell you the truth about your own balance, your own transactions, or whether a block is valid.
+You don't earn money for running a node. Block rewards belong to [miners](/glossary/miner). What you get is independence. You stop trusting a third party to tell you the truth about your own balance, your own transactions, or whether a block is valid.
 
 Hardware requirements in 2026 are modest. A ~1 TB SSD, a quad-core CPU, 4-8 GB RAM, decent internet. A Raspberry Pi 5 or any old laptop runs a node comfortably. Packaged distributions (Umbrel, Start9, RaspiBlitz, MyNode, Citadel) make setup roughly as easy as installing an app.
 

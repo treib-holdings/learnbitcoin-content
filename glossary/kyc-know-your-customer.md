@@ -20,7 +20,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-KYC - **K**now **Y**our **C**ustomer - is the regulatory regime requiring financial service providers to verify the identity of their users. For Bitcoin, this typically means [centralized exchanges](/glossary/centralized-exchange-cex/), [custodial wallets](/glossary/custodial-wallet/), and on-ramp services collect government-issued ID, photos, addresses, and often more before letting you transact.
+KYC - **K**now **Y**our **C**ustomer - is the regulatory regime requiring financial service providers to verify the identity of their users. For Bitcoin, this typically means [centralized exchanges](/glossary/centralized-exchange-cex), [custodial wallets](/glossary/custodial-wallet), and on-ramp services collect government-issued ID, photos, addresses, and often more before letting you transact.
 
 The official rationale: prevent money laundering and terrorism financing. The unofficial reality is more nuanced.
 
@@ -36,6 +36,6 @@ For ordinary users, KYC creates several real costs:
 - **Data risk.** Your ID photos are stored on servers that get hacked.
 - **Geographic asymmetry.** KYC requirements vary wildly. The same activity that's frictionless in one country is heavily regulated in another.
 
-Non-KYC options exist for Bitcoin specifically: peer-to-peer markets (Robosats, Bisq), mining your own BTC, accepting Bitcoin as payment, [submarine swaps](/glossary/submarine-swap/), and decentralized exchange venues. They're more friction than the giants but preserve the properties most people came to Bitcoin for.
+Non-KYC options exist for Bitcoin specifically: peer-to-peer markets (Robosats, Bisq), mining your own BTC, accepting Bitcoin as payment, [submarine swaps](/glossary/submarine-swap), and decentralized exchange venues. They're more friction than the giants but preserve the properties most people came to Bitcoin for.
 
 A defensible Bitcoiner approach: KYC is sometimes the only available on-ramp, and that's fine to use deliberately. But minimize how much of your stack ever touches it, and avoid making KYC venues the long-term custody point.

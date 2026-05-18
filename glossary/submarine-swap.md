@@ -21,14 +21,14 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A submarine swap is an [atomic swap](/glossary/atomic-swap/) between on-chain Bitcoin and [Lightning](/glossary/lightning-network/) Bitcoin. It lets you move BTC across the layer boundary trustlessly, without going through a custodian and without closing or opening a Lightning channel.
+A submarine swap is an [atomic swap](/glossary/atomic-swap) between on-chain Bitcoin and [Lightning](/glossary/lightning-network) Bitcoin. It lets you move BTC across the layer boundary trustlessly, without going through a custodian and without closing or opening a Lightning channel.
 
 Two directions:
 
 - **Submarine swap *in*.** You have on-chain BTC; you want Lightning BTC (e.g., to fund inbound liquidity on a Lightning channel, or to pay a Lightning invoice without first opening a channel). The swap service receives your on-chain transaction and sends you Lightning BTC.
 - **Submarine swap *out*.** You have Lightning BTC; you want it on-chain (e.g., to withdraw to cold storage). The swap service sends you on-chain BTC after you complete a Lightning payment.
 
-Both directions use [HTLCs](/glossary/htlc-hashed-time-locked-contract/) on each side to enforce atomicity: the service can't take your BTC and not send the other side. If anything goes wrong, the timeouts kick in and you get refunded.
+Both directions use [HTLCs](/glossary/htlc-hashed-time-locked-contract) on each side to enforce atomicity: the service can't take your BTC and not send the other side. If anything goes wrong, the timeouts kick in and you get refunded.
 
 Why this matters in practice:
 

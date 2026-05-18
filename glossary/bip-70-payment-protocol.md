@@ -22,6 +22,6 @@ BIP 70 tried to make Bitcoin payments feel like card payments. A merchant genera
 
 It died for the usual reasons. The signing model leaned on CAs - the same CA system Bitcoiners had close to zero trust in. The "phone home" payment ACK callback leaked the buyer's IP and timing to the merchant on every transaction. Implementation complexity drove wallets to quietly drop support. Bitcoin Core deprecated BIP 70 in 0.18 (2019) and removed it in 0.20.
 
-What replaced it is just simpler. `bitcoin:` URIs (`bitcoin:bc1q...?amount=0.01&label=Acme`) cover most on-chain merchant flows in a single QR code. For interactive payments, [Lightning invoices](/glossary/lightning-invoice/) and BOLT-12 offers do the user-experience job BIP 70 was reaching for, without CA trust, without identity-leaking callbacks, and with cryptographic proof of payment baked into the protocol rather than bolted on.
+What replaced it is just simpler. `bitcoin:` URIs (`bitcoin:bc1q...?amount=0.01&label=Acme`) cover most on-chain merchant flows in a single QR code. For interactive payments, [Lightning invoices](/glossary/lightning-invoice) and BOLT-12 offers do the user-experience job BIP 70 was reaching for, without CA trust, without identity-leaking callbacks, and with cryptographic proof of payment baked into the protocol rather than bolted on.
 
 Spec: [BIP-70](https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki).

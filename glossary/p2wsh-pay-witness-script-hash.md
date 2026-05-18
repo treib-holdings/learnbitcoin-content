@@ -23,14 +23,14 @@ sameAs:
 liveWidget: ~
 ---
 
-P2WSH - "Pay to Witness Script Hash" - is the native [SegWit](/glossary/segwit-segregated-witness-bip-141/) version of [P2SH](/glossary/p2sh-pay-script-hash/). It carries the same "send to a script's hash" model into SegWit's witness structure, with all the SegWit benefits: smaller effective fees, no malleability.
+P2WSH - "Pay to Witness Script Hash" - is the native [SegWit](/glossary/segwit-segregated-witness-bip-141) version of [P2SH](/glossary/p2sh-pay-script-hash). It carries the same "send to a script's hash" model into SegWit's witness structure, with all the SegWit benefits: smaller effective fees, no malleability.
 
-Addresses start with `bc1q` and are noticeably longer than [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash/) addresses, because P2WSH uses a 32-byte script hash (SHA-256) vs P2WPKH's 20-byte key hash (RIPEMD-160 of SHA-256). The longer hash provides stronger collision resistance, which matters for scripts that might be shared with potentially adversarial counterparties.
+Addresses start with `bc1q` and are noticeably longer than [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash) addresses, because P2WSH uses a 32-byte script hash (SHA-256) vs P2WPKH's 20-byte key hash (RIPEMD-160 of SHA-256). The longer hash provides stronger collision resistance, which matters for scripts that might be shared with potentially adversarial counterparties.
 
 Where P2WSH is used in practice:
 
 - **Multisig wallets.** Native SegWit 2-of-3, 3-of-5, etc.
-- **Complex HTLCs.** Some [Lightning](/glossary/lightning-network/) channel constructions use P2WSH outputs.
+- **Complex HTLCs.** Some [Lightning](/glossary/lightning-network) channel constructions use P2WSH outputs.
 - **Anything with non-trivial spending logic.** Time locks, hash locks, vault constructions.
 
-For Taproot-aware setups, [P2TR](/glossary/taproot/) (witness version 1) generally replaces P2WSH with better properties: aggregated signatures via MuSig2, MAST for hidden script branches, smaller on-chain footprint, single-sig-indistinguishable spends. New multisig wallets typically default to Taproot in 2026. P2WSH remains in heavy use for older multisig setups and ecosystems that haven't migrated yet.
+For Taproot-aware setups, [P2TR](/glossary/taproot) (witness version 1) generally replaces P2WSH with better properties: aggregated signatures via MuSig2, MAST for hidden script branches, smaller on-chain footprint, single-sig-indistinguishable spends. New multisig wallets typically default to Taproot in 2026. P2WSH remains in heavy use for older multisig setups and ecosystems that haven't migrated yet.

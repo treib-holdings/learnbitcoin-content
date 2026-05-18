@@ -27,9 +27,9 @@ sameAs:
 liveWidget: ~
 ---
 
-Replace-by-Fee (RBF) is a [mempool](/glossary/mempool/) policy that lets a sender rebroadcast a stuck [transaction](/glossary/transaction/) with a higher [fee](/glossary/fee-estimation/), replacing the original.
+Replace-by-Fee (RBF) is a [mempool](/glossary/mempool) policy that lets a sender rebroadcast a stuck [transaction](/glossary/transaction) with a higher [fee](/glossary/fee-estimation), replacing the original.
 
-Defined in [BIP-125](/glossary/bip-125-replace-fee/), opt-in RBF works like this: the original transaction signals it's replaceable by setting an `nSequence` value below the maximum. If congestion makes your transaction stall, you can construct a new transaction that:
+Defined in [BIP-125](/glossary/bip-125-replace-fee), opt-in RBF works like this: the original transaction signals it's replaceable by setting an `nSequence` value below the maximum. If congestion makes your transaction stall, you can construct a new transaction that:
 
 - Spends at least one of the same UTXOs.
 - Pays a higher absolute fee than the original.
@@ -44,6 +44,6 @@ What RBF buys you:
 
 What it costs:
 
-- **Zero-confirmation reliability.** A recipient looking at "unconfirmed in the mempool" can no longer assume the transaction won't be replaced. RBF-signaled transactions explicitly admit this. (Non-RBF transactions historically had stronger zero-conf guarantees, but see [Full RBF](/glossary/full-rbf/) for why those are eroding.)
+- **Zero-confirmation reliability.** A recipient looking at "unconfirmed in the mempool" can no longer assume the transaction won't be replaced. RBF-signaled transactions explicitly admit this. (Non-RBF transactions historically had stronger zero-conf guarantees, but see [Full RBF](/glossary/full-rbf) for why those are eroding.)
 
-Most modern wallets default to RBF-enabled transactions. Some merchants who accept zero-conf payments require non-RBF transactions or just wait for the first confirmation. See [Fee Bumping](/glossary/fee-bumping/) for the broader concept (RBF is one method; CPFP is the other).
+Most modern wallets default to RBF-enabled transactions. Some merchants who accept zero-conf payments require non-RBF transactions or just wait for the first confirmation. See [Fee Bumping](/glossary/fee-bumping) for the broader concept (RBF is one method; CPFP is the other).

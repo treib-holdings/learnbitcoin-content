@@ -76,7 +76,7 @@ abandon abandon abandon abandon abandon abandon
 abandon abandon abandon abandon abandon about
 ```
 
-Those words encode a number. The number seeds a deterministic generator (defined in [BIP 39](/glossary/bip-39/) and [BIP 32](/glossary/bip-32/)) that produces every key and address your wallet will ever need. From one seed, you get a tree of millions of addresses. They're all derived; only one secret matters.
+Those words encode a number. The number seeds a deterministic generator (defined in [BIP 39](/glossary/bip-39) and [BIP 32](/glossary/bip-32)) that produces every key and address your wallet will ever need. From one seed, you get a tree of millions of addresses. They're all derived; only one secret matters.
 
 **A few facts that should change your behavior:**
 
@@ -144,7 +144,7 @@ Your seed phrase needs to survive: fire, flood, theft, loss, your own forgetfuln
 
 We've made printable seed-backup forms for both [12-word](/downloads/seed-backup-12-word.pdf) and [24-word](/downloads/seed-backup-24-word.pdf) seeds, available on this site. Use them or your own format - what matters is consistency and durability.
 
-**One more thing.** Do not split your seed phrase across multiple locations as a security measure ("first 6 words here, last 6 words there"). This is called *seed splitting* and it provides much less security than you'd expect - losing one location loses everything, *and* the second location is easier to attack. If you want geographic redundancy for advanced setups, use [multisig](/glossary/multisig/) (chapter 6) or [Shamir's Secret Sharing](/glossary/shamir-secret-sharing/), not seed splitting.
+**One more thing.** Do not split your seed phrase across multiple locations as a security measure ("first 6 words here, last 6 words there"). This is called *seed splitting* and it provides much less security than you'd expect - losing one location loses everything, *and* the second location is easier to attack. If you want geographic redundancy for advanced setups, use [multisig](/glossary/multisig) (chapter 6) or [Shamir's Secret Sharing](/glossary/shamir-secret-sharing), not seed splitting.
 
 ## 8. Receiving Your First Transaction
 

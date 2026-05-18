@@ -17,7 +17,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-**ANYPREVOUT** (specifically `SIGHASH_ANYPREVOUT` and its variant `SIGHASH_ANYPREVOUTANYSCRIPT`) is a proposed [Bitcoin Script](/glossary/bitcoin-script/) signature-hashing mode that would let a signed transaction be applied against *any* matching prior output rather than committing to one specific input. Specified in [BIP-118](https://github.com/bitcoin/bips/blob/master/bip-0118.mediawiki), it's the key cryptographic primitive needed for [Eltoo](/glossary/eltoo/)-style channels and various advanced protocols.
+**ANYPREVOUT** (specifically `SIGHASH_ANYPREVOUT` and its variant `SIGHASH_ANYPREVOUTANYSCRIPT`) is a proposed [Bitcoin Script](/glossary/bitcoin-script) signature-hashing mode that would let a signed transaction be applied against *any* matching prior output rather than committing to one specific input. Specified in [BIP-118](https://github.com/bitcoin/bips/blob/master/bip-0118.mediawiki), it's the key cryptographic primitive needed for [Eltoo](/glossary/eltoo)-style channels and various advanced protocols.
 
 The technical change in plain terms:
 
@@ -26,10 +26,10 @@ The technical change in plain terms:
 
 What this enables:
 
-- **[Eltoo channels](/glossary/eltoo/).** The proposed simpler alternative to current Lightning channel design. Every new channel state is signed in a way that lets it apply against any prior commitment, replacing the punishment-based mechanism with a simpler "newer states override older states" model.
+- **[Eltoo channels](/glossary/eltoo).** The proposed simpler alternative to current Lightning channel design. Every new channel state is signed in a way that lets it apply against any prior commitment, replacing the punishment-based mechanism with a simpler "newer states override older states" model.
 - **Lightning Network protocol cleanups.** Various advanced Lightning constructions (multi-party channels, channel factories, simplified routing) become more practical.
 - **Simpler vault designs.** Some vault constructions become easier with ANYPREVOUT.
 
-ANYPREVOUT has been proposed for years. As of 2026, it has not activated. The technical implementation is well-understood; the holdup is the same as for other proposed [soft forks](/glossary/soft-fork/) - building broad enough community consensus to activate. It's discussed in roughly the same activation conversations as [BIP-119 (CTV)](/glossary/bip-119-ctv/) and other covenant-adjacent proposals, with similar arguments for and against expanding Bitcoin's scripting flexibility.
+ANYPREVOUT has been proposed for years. As of 2026, it has not activated. The technical implementation is well-understood; the holdup is the same as for other proposed [soft forks](/glossary/soft-fork) - building broad enough community consensus to activate. It's discussed in roughly the same activation conversations as [BIP-119 (CTV)](/glossary/bip-119-ctv) and other covenant-adjacent proposals, with similar arguments for and against expanding Bitcoin's scripting flexibility.
 
-See [Eltoo](/glossary/eltoo/) for the flagship use case and [Covenants](/glossary/covenants/) for the broader expansion debate.
+See [Eltoo](/glossary/eltoo) for the flagship use case and [Covenants](/glossary/covenants) for the broader expansion debate.

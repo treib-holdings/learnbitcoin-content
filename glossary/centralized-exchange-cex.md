@@ -31,8 +31,8 @@ What CEXs are not:
 
 - **Where you should keep Bitcoin you actually want to own.** A CEX balance is a *claim* on Bitcoin, not Bitcoin itself. The exchange's solvency, custody practices, and regulatory good standing are all between you and your money.
 
-The historical record on CEXs failing is long and continuing: Mt. Gox (2014), QuadrigaCX (2019), Celsius/BlockFi/Voyager/Genesis (2022), FTX (2022). The 2022 contagion alone destroyed tens of billions in customer balances. See [Counterparty Risk](/glossary/counterparty-risk/) for the broader framing.
+The historical record on CEXs failing is long and continuing: Mt. Gox (2014), QuadrigaCX (2019), Celsius/BlockFi/Voyager/Genesis (2022), FTX (2022). The 2022 contagion alone destroyed tens of billions in customer balances. See [Counterparty Risk](/glossary/counterparty-risk) for the broader framing.
 
-The pragmatic approach: CEXs are useful on-ramps. Use one to convert fiat to BTC. Withdraw to a self-custody [wallet](/glossary/wallet/) (ideally a [hardware wallet](/glossary/hardware-wallet/)) for any meaningful amount. Don't treat the exchange balance as savings.
+The pragmatic approach: CEXs are useful on-ramps. Use one to convert fiat to BTC. Withdraw to a self-custody [wallet](/glossary/wallet) (ideally a [hardware wallet](/glossary/hardware-wallet)) for any meaningful amount. Don't treat the exchange balance as savings.
 
-See [Decentralized Exchange (DEX)](/glossary/decentralized-exchange-dex/) for the non-custodial alternative.
+See [Decentralized Exchange (DEX)](/glossary/decentralized-exchange-dex) for the non-custodial alternative.

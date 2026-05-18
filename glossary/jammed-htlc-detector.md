@@ -19,7 +19,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A jammed HTLC detector is a node-side mechanism that watches for patterns suggestive of a [Lightning jamming attack](/glossary/jamming-attack-ln/) and takes defensive action - typically flagging the offending peer, throttling future routing requests from them, or in extreme cases force-closing the channel.
+A jammed HTLC detector is a node-side mechanism that watches for patterns suggestive of a [Lightning jamming attack](/glossary/jamming-attack-ln) and takes defensive action - typically flagging the offending peer, throttling future routing requests from them, or in extreme cases force-closing the channel.
 
 What detectors actually look for:
 
@@ -35,7 +35,7 @@ The hard problem: distinguishing actual jamming from honest patterns like:
 
 - A wallet retrying a payment with exponential backoff.
 - Multi-path payments (AMP) that touch many channels with small HTLCs.
-- Probe traffic from honest [route probing](/glossary/lightning-probe/).
+- Probe traffic from honest [route probing](/glossary/lightning-probe).
 - General payment failure during congested moments.
 
 False positives - blocking honest payments while trying to defend against jamming - is the real cost of aggressive detection. Detection logic has to be conservative enough to not break Lightning's UX for legitimate users.

@@ -31,7 +31,7 @@ Real-world adversaries running eavesdropping attacks include: chainalysis firms 
 
 Defenses, roughly in order of effectiveness:
 
-- **Run your node over [Tor](/glossary/tor-hidden-service/).** Your transactions get broadcast from random Tor exit points, not your real IP. Most credible defense for a self-custody user.
+- **Run your node over [Tor](/glossary/tor-hidden-service).** Your transactions get broadcast from random Tor exit points, not your real IP. Most credible defense for a self-custody user.
 - **Use Lightning for actual payments** wherever possible. Lightning payments aren't broadcast publicly; they hop directly to the receiver through encrypted channels.
 - **Limit inbound connections** on your node to trusted peers if possible.
 - **Use Dandelion++** (a transaction-relay improvement implemented in some clients) to make the originating node harder to identify.

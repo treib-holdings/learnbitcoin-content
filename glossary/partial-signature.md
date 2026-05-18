@@ -23,7 +23,7 @@ A partial signature is one cosigner's contribution to a multi-party signed trans
 
 There are two flavors in modern Bitcoin:
 
-- Classical multisig. Each cosigner produces a full ECDSA or Schnorr signature against the same sighash. The script combines M of them on-chain (e.g., 2-of-3 P2WSH or a Taproot script-path leaf). Partial signatures are tracked through the [PSBT](/glossary/partially-signed-bitcoin-transaction-psbt/) workflow: each signer adds their signature to the PSBT and passes it on until the threshold is met, then anyone finalizes the transaction.
+- Classical multisig. Each cosigner produces a full ECDSA or Schnorr signature against the same sighash. The script combines M of them on-chain (e.g., 2-of-3 P2WSH or a Taproot script-path leaf). Partial signatures are tracked through the [PSBT](/glossary/partially-signed-bitcoin-transaction-psbt) workflow: each signer adds their signature to the PSBT and passes it on until the threshold is met, then anyone finalizes the transaction.
 
 - Aggregated signatures (MuSig2, FROST). Each cosigner produces a partial signature that's a fragment of a single Schnorr signature. None of them is a valid signature on its own; the protocol combines them into one signature, and one signature is what ends up on-chain. To outside observers it's indistinguishable from single-sig.
 

@@ -68,7 +68,7 @@ The "missing" 0.0231 BTC isn't a bug. It's the floor on what can be expressed in
 
 ## 4. The Halving Schedule
 
-We covered this briefly in [Chapter 2](/journey/what-bitcoin-actually-is/) of the Journey. Here it is in full detail:
+We covered this briefly in [Chapter 2](/journey/what-bitcoin-actually-is) of the Journey. Here it is in full detail:
 
 | Halving | Block | Date | New reward | Cumulative supply |
 |---|---|---|---|---|
@@ -92,7 +92,7 @@ This is what people mean when they say Bitcoin is *front-loaded* and *disinflati
 
 The slightly-less-than-21M number is worth pausing on, because it gets at something interesting about Bitcoin's design.
 
-Bitcoin tracks balances in **satoshis**, not BTC. One satoshi is the smallest representable unit: 1 / 100,000,000 of a BTC. (See the [Bitcoin Units rabbit hole](/rabbit-hole/bitcoin-units/) for a full walk through the scale.)
+Bitcoin tracks balances in **satoshis**, not BTC. One satoshi is the smallest representable unit: 1 / 100,000,000 of a BTC. (See the [Bitcoin Units rabbit hole](/rabbit-hole/bitcoin-units) for a full walk through the scale.)
 
 When you halve a reward, you halve the satoshi count. 50 BTC = 5,000,000,000 satoshis. After 1 halving: 2,500,000,000. After 2: 1,250,000,000. And so on.
 
@@ -143,7 +143,7 @@ This is sometimes posed as a worry: *will miners still mine if there's no subsid
 
 In practice, fees have been growing as a percentage of miner revenue for years. By 2140, the network expects them to be the entire compensation. The economics work out as long as Bitcoin is being used at all.
 
-This is also why scaling Bitcoin matters - the [Lightning Network](/glossary/lightning-network/), batching, and second-layer protocols all reduce on-chain transaction volume *per user* but increase the *value* moving through Bitcoin, which translates to higher per-byte fees, which keeps miners paid.
+This is also why scaling Bitcoin matters - the [Lightning Network](/glossary/lightning-network), batching, and second-layer protocols all reduce on-chain transaction volume *per user* but increase the *value* moving through Bitcoin, which translates to higher per-byte fees, which keeps miners paid.
 
 The 21 million cap is the *monetary* policy. The fee market is the *security* policy. Both are in the code. Neither has a backdoor.
 

@@ -51,6 +51,6 @@ Limitations:
 
 - **Forecasting the timeout** is awkward in absolute-time mode if mempool conditions vary. Most clawback designs use CSV (relative time) for predictability.
 - **Storage of the clawback transaction** matters: a pre-signed clawback transaction must be safely stored and accessible at the right moment.
-- **Soft-fork upgrades** like [BIP 119 CTV](/glossary/bip-119-ctv/) or other covenant proposals would simplify clawback patterns further; today's designs work but require more careful script engineering.
+- **Soft-fork upgrades** like [BIP 119 CTV](/glossary/bip-119-ctv) or other covenant proposals would simplify clawback patterns further; today's designs work but require more careful script engineering.
 
 Clawback is one of the load-bearing primitives that makes Bitcoin contracts useful beyond simple transfers. Almost every interesting Bitcoin protocol (Lightning, vaults, swaps) builds on clawback in some form.

@@ -23,7 +23,7 @@ ogImageAlt: "A triangle with three corners labeled THEFT, LOSS, and COERCION, ea
 
 When you set up a Bitcoin wallet, somewhere in the process the wallet shows you 12 or 24 words. Write them down, the wallet says. Keep them safe.
 
-Those words are your [seed phrase](/glossary/seed-phrase/), more precisely a [BIP 39](/glossary/bip-39/) mnemonic. They encode the entropy from which every private key in your wallet is derived. Lose the words, lose every key, lose every bitcoin those keys ever controlled.
+Those words are your [seed phrase](/glossary/seed-phrase), more precisely a [BIP 39](/glossary/bip-39) mnemonic. They encode the entropy from which every private key in your wallet is derived. Lose the words, lose every key, lose every bitcoin those keys ever controlled.
 
 Critical: the seed phrase is the *only* thing you need to back up. You do not need to back up:
 
@@ -93,11 +93,11 @@ Things to consider:
 - **Test recovery before you trust it.** Reset your wallet, restore from the metal, verify the addresses match. Once. Then never again.
 - **Store separately from the hardware wallet.** Keeping seed and device together is two-thirds of a complete kit for a thief.
 
-(See [hardware seed vault](/glossary/hardware-seed-vault/) for the higher-end offerings.)
+(See [hardware seed vault](/glossary/hardware-seed-vault) for the higher-end offerings.)
 
 ## 5. The Passphrase ("25th word")
 
-[BIP 39](/glossary/bip-39/) supports an optional **passphrase** in addition to the 12 or 24 mnemonic words. Sometimes called "the 25th word," though it can be any string of any length.
+[BIP 39](/glossary/bip-39) supports an optional **passphrase** in addition to the 12 or 24 mnemonic words. Sometimes called "the 25th word," though it can be any string of any length.
 
 The passphrase is mixed into seed derivation. Different passphrase → completely different wallet, with completely different addresses, derived from the same words.
 
@@ -115,7 +115,7 @@ For high-value wallets, a passphrase is standard practice. For low-value wallets
 
 ## 6. Shamir Secret Sharing (SLIP 39)
 
-[Shamir Secret Sharing](/glossary/shamir-secret-sharing/) (via [SLIP 39](https://github.com/satoshilabs/slips/blob/master/slip-0039.md)) splits a seed into N shares, of which M are required to reconstruct (M-of-N).
+[Shamir Secret Sharing](/glossary/shamir-secret-sharing) (via [SLIP 39](https://github.com/satoshilabs/slips/blob/master/slip-0039.md)) splits a seed into N shares, of which M are required to reconstruct (M-of-N).
 
 Example: 3-of-5. You generate 5 shares. Any 3 can recover the seed. Any 2 reveal nothing.
 
@@ -139,7 +139,7 @@ For mid-to-high-value setups with real inheritance or geographic concerns, Shami
 
 ## 7. Multisig: Backup as a Wallet Strategy
 
-[Multisig](/glossary/multisig/) - a wallet that requires M-of-N signatures to spend - is more than a backup; it is a different wallet model. But it functions powerfully as a backup strategy.
+[Multisig](/glossary/multisig) - a wallet that requires M-of-N signatures to spend - is more than a backup; it is a different wallet model. But it functions powerfully as a backup strategy.
 
 A 2-of-3 multisig:
 - 3 keys, held in 3 separate locations or by 3 separate parties.
@@ -152,7 +152,7 @@ This is dramatically more resilient than single-sig with multiple seed backups. 
 Tradeoffs:
 - **More complex setup.** Three hardware wallets, three seeds, careful configuration.
 - **Heir difficulty.** Inheriting a multisig is harder than inheriting a seed phrase.
-- **PSBTs.** Spending requires coordinated signatures, typically via [Partially-Signed Bitcoin Transactions](/glossary/psbt/).
+- **PSBTs.** Spending requires coordinated signatures, typically via [Partially-Signed Bitcoin Transactions](/glossary/psbt).
 
 For meaningful amounts of bitcoin, multisig is the gold standard. For under five figures, single-sig with strong backup is fine.
 
@@ -170,7 +170,7 @@ Options:
 
 Whatever the mechanism, a real inheritance plan requires *testing*. A plan you never tested is a plan that probably does not work.
 
-There is no excuse for skipping this once your stack is meaningful. (See [inheritance seed backup](/glossary/inheritance-seed-backup/) for more.)
+There is no excuse for skipping this once your stack is meaningful. (See [inheritance seed backup](/glossary/inheritance-seed-backup) for more.)
 
 ## 9. The Single-Point-of-Failure Mistake
 

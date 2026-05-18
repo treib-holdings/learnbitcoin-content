@@ -23,8 +23,8 @@ liveWidget: ~
 
 There were two practical vectors:
 
-- DER encoding variability. ECDSA signatures are wrapped in DER, and the DER spec allowed multiple encodings of the same numbers (extra padding bytes, alternate integer-length representations). [BIP 66](/glossary/bip-66/) (2015) enforced strict DER and made non-canonical encodings non-standard.
-- Inherent S-malleability. For any valid (r, s) ECDSA signature, (r, n-s) is also valid for the same message. The [low-S rule](/glossary/low-s-signatures/) (BIP 62 proposal, BIP 146 relay policy, BIP 141 consensus for SegWit) requires s less than half the curve order, picking one canonical form.
+- DER encoding variability. ECDSA signatures are wrapped in DER, and the DER spec allowed multiple encodings of the same numbers (extra padding bytes, alternate integer-length representations). [BIP 66](/glossary/bip-66) (2015) enforced strict DER and made non-canonical encodings non-standard.
+- Inherent S-malleability. For any valid (r, s) ECDSA signature, (r, n-s) is also valid for the same message. The [low-S rule](/glossary/low-s-signatures) (BIP 62 proposal, BIP 146 relay policy, BIP 141 consensus for SegWit) requires s less than half the curve order, picking one canonical form.
 
 SegWit (BIP 141) closed the issue at the protocol level by moving signature data out of the txid calculation entirely. For SegWit and Taproot inputs, signature tweaks don't change the txid no matter what an attacker does.
 

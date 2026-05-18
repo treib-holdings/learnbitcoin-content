@@ -113,7 +113,7 @@ Three categories of Lightning wallets, ordered by sovereignty:
 
 For your first Lightning experience, **Phoenix** (iOS/Android, by ACINQ) is the cleanest entry point: self-custodial, opens channels automatically when you receive your first payment, has a usable interface for beginners. Set it up the way you set up your on-chain wallet: install, write down the seed, back it up.
 
-To receive a Lightning payment: in your wallet, tap "Receive," optionally enter an amount, and you'll get a long string starting with `lnbc...` (a [BOLT-11 invoice](/glossary/bolt-11/)) plus a QR code. Anyone with a Lightning wallet can pay it.
+To receive a Lightning payment: in your wallet, tap "Receive," optionally enter an amount, and you'll get a long string starting with `lnbc...` (a [BOLT-11 invoice](/glossary/bolt-11)) plus a QR code. Anyone with a Lightning wallet can pay it.
 
 To send: paste an invoice, hit Pay, done. The payment completes in milliseconds.
 

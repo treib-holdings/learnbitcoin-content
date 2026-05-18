@@ -21,9 +21,9 @@ relatedTerms:
 liveWidget: ~
 ---
 
-[BIP-91](https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki) is the miner-coordinated mechanism that activated [SegWit](/glossary/segwit-segregated-witness-bip-141/) in August 2017, defusing what was about to be a chain-splitting confrontation with [BIP-148 (UASF)](/glossary/bip-148-uasf/).
+[BIP-91](https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki) is the miner-coordinated mechanism that activated [SegWit](/glossary/segwit-segregated-witness-bip-141) in August 2017, defusing what was about to be a chain-splitting confrontation with [BIP-148 (UASF)](/glossary/bip-148-uasf).
 
-The deadlock context: SegWit had been ready for a year. The [BIP-9](/glossary/bip-9-versionbits/) signaling threshold (95%) couldn't be reached because a minority of miners were holding out. The UASF crowd was preparing to enforce SegWit unilaterally starting August 1, 2017, which would have orphaned non-signaling blocks and potentially split the chain.
+The deadlock context: SegWit had been ready for a year. The [BIP-9](/glossary/bip-9-versionbits) signaling threshold (95%) couldn't be reached because a minority of miners were holding out. The UASF crowd was preparing to enforce SegWit unilaterally starting August 1, 2017, which would have orphaned non-signaling blocks and potentially split the chain.
 
 BIP-91 was the compromise. Authored by James Hilliard and adopted by miners as part of the "SegWit2x" / New York Agreement effort, it lowered the activation threshold and forced rapid coordination:
 

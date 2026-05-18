@@ -25,7 +25,7 @@ sameAs:
 liveWidget: ~
 ---
 
-An ASIC - **A**pplication-**S**pecific **I**ntegrated **C**ircuit - is a chip designed to do exactly one thing extremely well. For Bitcoin, that one thing is SHA-256 [hashing](/glossary/hash/). A modern Bitcoin mining ASIC chip can do roughly 100 trillion SHA-256 hashes per second, while consuming tens of watts. A general-purpose CPU running flat-out can do maybe a billion hashes per second. The ratio is ~100,000x.
+An ASIC - **A**pplication-**S**pecific **I**ntegrated **C**ircuit - is a chip designed to do exactly one thing extremely well. For Bitcoin, that one thing is SHA-256 [hashing](/glossary/hash). A modern Bitcoin mining ASIC chip can do roughly 100 trillion SHA-256 hashes per second, while consuming tens of watts. A general-purpose CPU running flat-out can do maybe a billion hashes per second. The ratio is ~100,000x.
 
 The Bitcoin hardware progression went:
 
@@ -46,4 +46,4 @@ What it costs:
 - **Centralization pressure.** ASIC supply is dominated by a few manufacturers (Bitmain, MicroBT, Canaan, others). Geographic mining concentration follows electricity prices.
 - **Energy footprint.** Bitcoin's global mining draw is roughly 0.5% of world electricity. Most of it now comes from stranded or low-cost sources, but it's not nothing.
 
-See [Mining](/glossary/mining/) for the broader picture and [Mining Centralization](/glossary/mining-centralization/) for the structural concerns.
+See [Mining](/glossary/mining) for the broader picture and [Mining Centralization](/glossary/mining-centralization) for the structural concerns.

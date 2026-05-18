@@ -28,4 +28,4 @@ In Bitcoin specifically, "inflation" refers to the rate at which *new BTC* enter
 
 Each halving cuts the issuance rate in half. After the 2028 halving, Bitcoin's inflation rate drops to ~0.4%. After the 33rd halving around 2140, it reaches zero and stays there forever.
 
-The contrast with fiat is the whole point. Bitcoin's monetary inflation is mathematically locked, publicly verifiable, and trending toward zero. Fiat monetary inflation is set by committees behind closed doors, with no upper bound. See the [Supply Schedule rabbit hole](/rabbit-hole/supply/) for the math, and [Disinflation](/glossary/disinflation/) for what "decreasing inflation rate" means.
+The contrast with fiat is the whole point. Bitcoin's monetary inflation is mathematically locked, publicly verifiable, and trending toward zero. Fiat monetary inflation is set by committees behind closed doors, with no upper bound. See the [Supply Schedule rabbit hole](/rabbit-hole/supply) for the math, and [Disinflation](/glossary/disinflation) for what "decreasing inflation rate" means.

@@ -24,13 +24,13 @@ sameAs:
 liveWidget: ~
 ---
 
-Block size is Bitcoin's most famous consensus parameter. The original 1 MB hard cap (introduced in July 2010 as an anti-spam measure) was the focus of years of debate and ultimately the 2017 [SegWit](/glossary/segwit-segregated-witness-bip-141/) soft fork. The current rule isn't a flat size in bytes; it's a 4 million weight unit limit, where non-witness data costs 4 weight units per byte and witness data costs 1.
+Block size is Bitcoin's most famous consensus parameter. The original 1 MB hard cap (introduced in July 2010 as an anti-spam measure) was the focus of years of debate and ultimately the 2017 [SegWit](/glossary/segwit-segregated-witness-bip-141) soft fork. The current rule isn't a flat size in bytes; it's a 4 million weight unit limit, where non-witness data costs 4 weight units per byte and witness data costs 1.
 
 Effects in practice:
 
 - **Typical block sizes** range from 1.3 to 2.0 MB on disk, depending on what fraction of transactions are SegWit/Taproot (which pay the witness discount).
 - **The hard cap** keeps validation costs bounded. A modest laptop can validate every block in seconds; a Raspberry Pi can keep up with the chain tip. That's deliberate. Larger blocks would shift node-running cost upward and centralize the validator set.
-- **The block weight limit** has been politically untouchable since 2017. The 2015-2017 "block size war" (see [BIP 101](/glossary/bip-101-increase-block-size/) and [BIP 102](/glossary/bip-102-2mb-block-size/)) ended with the SegWit soft fork plus the Bitcoin Cash hard fork; the surviving Bitcoin community settled on "blocks stay small, scaling happens off-chain via Lightning."
+- **The block weight limit** has been politically untouchable since 2017. The 2015-2017 "block size war" (see [BIP 101](/glossary/bip-101-increase-block-size) and [BIP 102](/glossary/bip-102-2mb-block-size)) ended with the SegWit soft fork plus the Bitcoin Cash hard fork; the surviving Bitcoin community settled on "blocks stay small, scaling happens off-chain via Lightning."
 
 What this isn't:
 

@@ -25,7 +25,7 @@ sameAs:
 liveWidget: ~
 ---
 
-Hash rate is the total computational throughput being thrown at Bitcoin's [proof-of-work](/glossary/proof-work-pow/) puzzle, measured in [hashes](/glossary/hash/) per second. As of mid-2026, the global Bitcoin hash rate is around **700 EH/s** - 700 exahashes per second, or 7 × 10^20 hashes every second.
+Hash rate is the total computational throughput being thrown at Bitcoin's [proof-of-work](/glossary/proof-work-pow) puzzle, measured in [hashes](/glossary/hash) per second. As of mid-2026, the global Bitcoin hash rate is around **700 EH/s** - 700 exahashes per second, or 7 × 10^20 hashes every second.
 
 The units climb fast:
 
@@ -36,7 +36,7 @@ The units climb fast:
 - 1 **PH/s** = 1 quadrillion (a small mining farm)
 - 1 **EH/s** = 1 quintillion (a major industrial operation)
 
-Bitcoin's hash rate has grown by roughly **13 orders of magnitude** since the genesis block, when one person on a laptop CPU represented the entire network. That growth is exactly what [difficulty retargeting](/glossary/difficulty-retargeting/) absorbs to keep block times near 10 minutes.
+Bitcoin's hash rate has grown by roughly **13 orders of magnitude** since the genesis block, when one person on a laptop CPU represented the entire network. That growth is exactly what [difficulty retargeting](/glossary/difficulty-retargeting) absorbs to keep block times near 10 minutes.
 
 Hash rate matters because it's Bitcoin's security budget. To rewrite history, an attacker has to outpace the global hash rate - which means buying, powering, and operating mining hardware on a scale comparable to the entire global mining industry. At 700 EH/s, the cost of doing that for even a brief reorg is in the billions of dollars per day. That's what proof-of-work *buys*.
 

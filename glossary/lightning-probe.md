@@ -18,7 +18,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Lightning probe is a test payment sent along a candidate [route](/glossary/lightning-routing/) before committing a real payment. Probes deliberately fail at the final hop (typically by using a random payment hash the receiver can't resolve), letting the sender learn whether the route has enough liquidity without actually moving real funds.
+A Lightning probe is a test payment sent along a candidate [route](/glossary/lightning-routing) before committing a real payment. Probes deliberately fail at the final hop (typically by using a random payment hash the receiver can't resolve), letting the sender learn whether the route has enough liquidity without actually moving real funds.
 
 Why probing exists: Lightning's gossip layer tells you channels exist and their *total* capacity, but not their *current balance distribution*. A 1 BTC channel might have all the liquidity on one side, making it useless for routing in the other direction. Probing is how you discover the hidden balance state.
 
@@ -41,6 +41,6 @@ What probing costs:
 - **Time.** Each probe is a multi-hop round trip; not free.
 - **Network load.** Probes consume hops' channel slots temporarily.
 - **Privacy.** Heavy probing reveals what routes you're considering.
-- **Looks like jamming.** Excessive probing can trigger [jamming detectors](/glossary/jammed-htlc-detector/) on the hops you're testing. Defensive nodes might throttle you.
+- **Looks like jamming.** Excessive probing can trigger [jamming detectors](/glossary/jammed-htlc-detector) on the hops you're testing. Defensive nodes might throttle you.
 
 Modern Lightning wallets use minimal automatic probing - typically just enough to validate the first candidate route before sending. Aggressive probing is mostly a research/analytics tool, not an everyday user behavior.

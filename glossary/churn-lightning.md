@@ -23,12 +23,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Channel churn is the rate at which [Lightning channels](/glossary/lightning-channel/) are opened and closed on-chain. Some churn is unavoidable - users add/remove liquidity, channels go inactive, services rebalance. High churn is a problem because every channel open and close is an on-chain Bitcoin transaction with real fee cost.
+Channel churn is the rate at which [Lightning channels](/glossary/lightning-channel) are opened and closed on-chain. Some churn is unavoidable - users add/remove liquidity, channels go inactive, services rebalance. High churn is a problem because every channel open and close is an on-chain Bitcoin transaction with real fee cost.
 
 What contributes to churn:
 
 - **Users opening channels they don't end up using much.** Inactive channels eventually get closed to recover the locked capital.
-- **Liquidity rebalancing.** Without [splicing](/glossary/lightning-channel-splicing/), the only way to change a channel's capacity is to close it and reopen. Frequent rebalancing = high churn.
+- **Liquidity rebalancing.** Without [splicing](/glossary/lightning-channel-splicing), the only way to change a channel's capacity is to close it and reopen. Frequent rebalancing = high churn.
 - **Custodial wallet operators** who open and close channels in response to user activity.
 - **LSP onboarding flows** that may rotate channels as user balances grow.
 - **Routing nodes** managing liquidity across many counterparties.
@@ -41,7 +41,7 @@ Why churn matters:
 
 How modern Lightning reduces churn:
 
-- **[Channel splicing](/glossary/lightning-channel-splicing/)** lets capacity be adjusted without closing. Major win, deployed 2024+.
+- **[Channel splicing](/glossary/lightning-channel-splicing)** lets capacity be adjusted without closing. Major win, deployed 2024+.
 - **Better LSP designs** open right-sized channels initially.
 - **Channel reuse** for repeat customers via inbound liquidity services.
 - **Better wallet UX** that doesn't push users to close channels unnecessarily.

@@ -18,7 +18,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A fork watcher is the dedicated tooling that does [fork detection](/glossary/fork-detection/) as a continuous service, alerting operators when something unusual happens at the chain-consensus layer.
+A fork watcher is the dedicated tooling that does [fork detection](/glossary/fork-detection) as a continuous service, alerting operators when something unusual happens at the chain-consensus layer.
 
 The reference implementation is [forkmonitor.info](https://forkmonitor.info), run by Bitcoin Core developer Sjors Provoost. It does several things at once:
 

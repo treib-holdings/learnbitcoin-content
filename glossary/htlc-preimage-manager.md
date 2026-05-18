@@ -24,7 +24,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-An HTLC preimage manager is the component inside a [Lightning node](/glossary/lightning-node/) (or a separate service) that tracks the cryptographic secrets associated with pending [HTLCs](/glossary/htlc-hashed-time-locked-contract/) and coordinates their revelation as payments resolve.
+An HTLC preimage manager is the component inside a [Lightning node](/glossary/lightning-node) (or a separate service) that tracks the cryptographic secrets associated with pending [HTLCs](/glossary/htlc-hashed-time-locked-contract) and coordinates their revelation as payments resolve.
 
 Why a node needs to manage preimages carefully:
 

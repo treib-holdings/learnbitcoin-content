@@ -17,7 +17,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-[BIP-47](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki) ("Reusable Payment Codes") defines a system where a receiver publishes one long-term **payment code**, and senders derive fresh on-chain [addresses](/glossary/address/) from it for each payment. The goal: avoid [address reuse](/glossary/address-reuse/) while still having a single, shareable identifier.
+[BIP-47](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki) ("Reusable Payment Codes") defines a system where a receiver publishes one long-term **payment code**, and senders derive fresh on-chain [addresses](/glossary/address) from it for each payment. The goal: avoid [address reuse](/glossary/address-reuse) while still having a single, shareable identifier.
 
 How it worked:
 
@@ -30,4 +30,4 @@ In practice, BIP-47 saw limited adoption. The Samourai Wallet team championed it
 - **The notification transaction is a privacy leak in itself.** It tells chain observers "this user is using payment codes," and links the sender and receiver via that single on-chain transaction. The whole point was supposed to be privacy.
 - **The infrastructure burden.** Each receiver needed to scan the chain for incoming notification transactions, then derive and watch all the corresponding addresses.
 
-The modern successor is **[Silent Payments](/glossary/silent-payments/)** (BIP-352, 2023), which achieves the same "one reusable code, fresh addresses per payment" goal without any notification transaction. As of 2026, BIP-47 is mostly of historical interest; new wallets adopting reusable receive codes are picking Silent Payments instead.
+The modern successor is **[Silent Payments](/glossary/silent-payments)** (BIP-352, 2023), which achieves the same "one reusable code, fresh addresses per payment" goal without any notification transaction. As of 2026, BIP-47 is mostly of historical interest; new wallets adopting reusable receive codes are picking Silent Payments instead.

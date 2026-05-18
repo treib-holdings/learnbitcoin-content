@@ -34,7 +34,7 @@ sameAs:
 liveWidget: ~
 ---
 
-Lightning channel splicing is the ability to add to or withdraw from a [Lightning channel](/glossary/lightning-channel/)'s on-chain funding without closing and reopening it. Before splicing, the only way to change a channel's [capacity](/glossary/lightning-channel-capacity/) was to close it, do an on-chain transaction, and open a new one - paying fees twice and losing the channel's accumulated routing history.
+Lightning channel splicing is the ability to add to or withdraw from a [Lightning channel](/glossary/lightning-channel)'s on-chain funding without closing and reopening it. Before splicing, the only way to change a channel's [capacity](/glossary/lightning-channel-capacity) was to close it, do an on-chain transaction, and open a new one - paying fees twice and losing the channel's accumulated routing history.
 
 How it works at a high level:
 

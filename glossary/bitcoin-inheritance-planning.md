@@ -25,7 +25,7 @@ liveWidget: ~
 
 Bitcoin inheritance planning is the practice of ensuring your heirs can access your BTC if you die or become permanently incapacitated, without giving them premature access while you're alive.
 
-Bitcoin has no probate court, no executor with administrative override, no bank to subpoena. If your heirs don't have a workable path to your [private keys](/glossary/private-key/) (or your [seed phrase](/glossary/seed-phrase/), or your multisig setup), the BTC is permanently lost. Many real fortunes have been buried this way - the chain doesn't care about your death certificate.
+Bitcoin has no probate court, no executor with administrative override, no bank to subpoena. If your heirs don't have a workable path to your [private keys](/glossary/private-key) (or your [seed phrase](/glossary/seed-phrase), or your multisig setup), the BTC is permanently lost. Many real fortunes have been buried this way - the chain doesn't care about your death certificate.
 
 The competing requirements:
 
@@ -42,4 +42,4 @@ Common approaches:
 
 Testing matters enormously. **Have your heir (or a stand-in) walk through the recovery procedure** with a tiny test wallet. Update the plan whenever your custody setup changes. A plan you've never rehearsed is a plan you don't have.
 
-See [Inheritance Seed Backup](/glossary/inheritance-seed-backup/) for backup mechanics and [Hierarchical Multisig](/glossary/hierarchical-multisig/) for the multisig patterns underlying most modern plans.
+See [Inheritance Seed Backup](/glossary/inheritance-seed-backup) for backup mechanics and [Hierarchical Multisig](/glossary/hierarchical-multisig) for the multisig patterns underlying most modern plans.

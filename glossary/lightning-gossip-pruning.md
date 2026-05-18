@@ -12,7 +12,7 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-Lightning gossip pruning is the practice of removing stale or inactive channel announcements from a [Lightning node's](/glossary/lightning-node/) local view of the [gossip graph](/glossary/gossip-protocol-lightning/). It's the housekeeping that keeps routing tables manageable as the network grows.
+Lightning gossip pruning is the practice of removing stale or inactive channel announcements from a [Lightning node's](/glossary/lightning-node) local view of the [gossip graph](/glossary/gossip-protocol-lightning). It's the housekeeping that keeps routing tables manageable as the network grows.
 
 Why pruning matters:
 
@@ -26,6 +26,6 @@ The protocol-level rules ([BOLT-7](https://github.com/lightning/bolts/blob/maste
 - **Node announcements** similarly have a freshness window; nodes not heard from in two weeks are considered offline.
 - **Closed channels** detected via on-chain monitoring can be pruned immediately - if the funding transaction has been spent, the channel definitely doesn't exist anymore.
 
-Implementations handle pruning slightly differently. [LND](/glossary/lightning-network-daemon-lnd/), [Core Lightning](/glossary/core-lightning-c-lightning/), Eclair, and LDK all have their own pruning policies and configuration options.
+Implementations handle pruning slightly differently. [LND](/glossary/lightning-network-daemon-lnd), [Core Lightning](/glossary/core-lightning-c-lightning), Eclair, and LDK all have their own pruning policies and configuration options.
 
 For end users, gossip pruning is invisible infrastructure. For node operators, tuning pruning policy can affect memory usage, sync time, and routing performance. The protocol-level freshness rules are conservative; more aggressive pruning is sometimes useful for resource-constrained nodes.

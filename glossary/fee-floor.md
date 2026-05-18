@@ -23,7 +23,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The fee floor is the practical minimum fee rate (in sat/vByte) below which Bitcoin transactions are unlikely to confirm in a reasonable timeframe. It's not a single protocol-level constant; it's an emergent property of the [mempool](/glossary/mempool/) state and miner behavior at any given moment.
+The fee floor is the practical minimum fee rate (in sat/vByte) below which Bitcoin transactions are unlikely to confirm in a reasonable timeframe. It's not a single protocol-level constant; it's an emergent property of the [mempool](/glossary/mempool) state and miner behavior at any given moment.
 
 Two related concepts that get conflated:
 
@@ -42,6 +42,6 @@ What sets the floor:
 - **Demand varies wildly.** Spikes can be 10x baseline within hours.
 - **Miners pack by fee rate.** Highest-paying transactions get in first; lower-paying ones queue.
 
-The fee floor isn't enforced by anyone. It's just what happens when there's more transaction demand than block space. Modern wallets do [fee estimation](/glossary/fee-estimation/) to set rates that comfortably clear the current floor; aggressive users sometimes underpay and rely on [RBF](/glossary/replace-fee-rbf/) to bump up later if needed.
+The fee floor isn't enforced by anyone. It's just what happens when there's more transaction demand than block space. Modern wallets do [fee estimation](/glossary/fee-estimation) to set rates that comfortably clear the current floor; aggressive users sometimes underpay and rely on [RBF](/glossary/replace-fee-rbf) to bump up later if needed.
 
-In the long run, the fee floor becomes a more meaningful number as [block subsidies](/glossary/block-subsidy/) decline and miner revenue depends more on fees. The 2140 endgame requires fees alone to fund mining; the floor under those conditions has to be high enough to sustain network security.
+In the long run, the fee floor becomes a more meaningful number as [block subsidies](/glossary/block-subsidy) decline and miner revenue depends more on fees. The 2140 endgame requires fees alone to fund mining; the floor under those conditions has to be high enough to sustain network security.

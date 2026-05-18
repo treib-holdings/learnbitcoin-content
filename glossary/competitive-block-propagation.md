@@ -19,7 +19,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Competitive block propagation is the high-stakes version of [block propagation](/glossary/block-propagation/): the race to broadcast a freshly-mined block to enough of the network that other miners switch to building on top of it before they find a competing block of their own.
+Competitive block propagation is the high-stakes version of [block propagation](/glossary/block-propagation): the race to broadcast a freshly-mined block to enough of the network that other miners switch to building on top of it before they find a competing block of their own.
 
 The economics:
 

@@ -32,11 +32,11 @@ A UTXO - **u**nspent **t**ransaction **o**utput - is a chunk of BTC sitting on t
 
 Each UTXO has two parts: an **amount** (in satoshis) and a **locking script** that defines what's required to spend it. The most common script is "prove you have the private key for this address." More advanced scripts can require multiple signatures, a time delay, or other conditions.
 
-UTXOs are all-or-nothing. When you spend one as a [transaction input](/glossary/input-transaction-input/), the whole thing gets consumed. If you only want to send part of it, your transaction creates two outputs: one to the recipient, one back to yourself as **change**. Most wallets do this invisibly and pick a new address for the change.
+UTXOs are all-or-nothing. When you spend one as a [transaction input](/glossary/input-transaction-input), the whole thing gets consumed. If you only want to send part of it, your transaction creates two outputs: one to the recipient, one back to yourself as **change**. Most wallets do this invisibly and pick a new address for the change.
 
 Thinking in UTXOs matters for two practical reasons:
 
 - **Fees.** Every input you spend takes up roughly 68-148 bytes (depending on script type), and bigger transactions cost more. Many small UTXOs = expensive transactions. Periodically consolidating them when fees are low can save you money later.
-- **Privacy.** When you spend two UTXOs in the same transaction, you're publicly declaring they had a common owner. Chain analysts use this to cluster addresses. Coin control (manually choosing which UTXOs to spend) and tools like [CoinJoin](/glossary/coinjoin/) let you push back.
+- **Privacy.** When you spend two UTXOs in the same transaction, you're publicly declaring they had a common owner. Chain analysts use this to cluster addresses. Coin control (manually choosing which UTXOs to spend) and tools like [CoinJoin](/glossary/coinjoin) let you push back.
 
-See [Transaction](/glossary/transaction/) for the data structure that consumes and creates UTXOs, and the [Mining rabbit hole §6](/rabbit-hole/mining/) for how miners value them.
+See [Transaction](/glossary/transaction) for the data structure that consumes and creates UTXOs, and the [Mining rabbit hole §6](/rabbit-hole/mining) for how miners value them.

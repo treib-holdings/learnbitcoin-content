@@ -24,12 +24,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Mining centralization is the concern that Bitcoin's [hash rate](/glossary/hash-rate/) is concentrated in too few hands, undermining the [decentralization](/glossary/decentralization/) property Bitcoin depends on.
+Mining centralization is the concern that Bitcoin's [hash rate](/glossary/hash-rate) is concentrated in too few hands, undermining the [decentralization](/glossary/decentralization) property Bitcoin depends on.
 
 The structural reality in 2026:
 
-- **A few [mining pools](/glossary/mining-pool/) coordinate most of the hash rate.** Foundry USA, AntPool, ViaBTC, F2Pool, and a few others collectively command well over half of global hash.
-- **A few [ASIC](/glossary/asic-application-specific-integrated-circuit/) manufacturers supply most of the hardware.** Bitmain, MicroBT, Canaan, and a small number of others.
+- **A few [mining pools](/glossary/mining-pool) coordinate most of the hash rate.** Foundry USA, AntPool, ViaBTC, F2Pool, and a few others collectively command well over half of global hash.
+- **A few [ASIC](/glossary/asic-application-specific-integrated-circuit) manufacturers supply most of the hardware.** Bitmain, MicroBT, Canaan, and a small number of others.
 - **A few jurisdictions host most of the mining.** The US is the largest, followed by various others depending on the year. China's 2021 ban shifted geography substantially.
 
 What this means in practice:
@@ -44,4 +44,4 @@ What counterbalances it:
 - **Geographic dispersion has improved.** Compared to 2018-2020 when ~65% of hash was in China, the network is now spread across many more countries.
 - **Mining hardware is fungible.** Miners can and do route their hash rate through different pools, in different jurisdictions, on short notice.
 
-The honest assessment: mining centralization is a real concern with real failure modes, but the structural counterweights are also real. It's an area worth watching, worth pushing back on with Stratum V2 adoption and pool-operator scrutiny, and worth not panicking about. See [Mining rabbit hole §8](/rabbit-hole/mining/) for a longer look.
+The honest assessment: mining centralization is a real concern with real failure modes, but the structural counterweights are also real. It's an area worth watching, worth pushing back on with Stratum V2 adoption and pool-operator scrutiny, and worth not panicking about. See [Mining rabbit hole §8](/rabbit-hole/mining) for a longer look.

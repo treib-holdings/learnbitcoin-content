@@ -23,7 +23,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Locktime is a field in every Bitcoin [transaction](/glossary/transaction/) (technically called `nLockTime`) that specifies the earliest moment the transaction can be included in a block. Until that threshold passes, [nodes](/glossary/node/) reject the transaction.
+Locktime is a field in every Bitcoin [transaction](/glossary/transaction) (technically called `nLockTime`) that specifies the earliest moment the transaction can be included in a block. Until that threshold passes, [nodes](/glossary/node) reject the transaction.
 
 The field has two interpretations depending on its value:
 
@@ -34,10 +34,10 @@ If locktime is 0 (the default for most wallets), the transaction is valid immedi
 
 Where this matters:
 
-- **[Payment channels](/glossary/payment-channel/) and [Lightning](/glossary/lightning-network/).** Channel commitment transactions use locktime to enforce withdrawal delays during disputes.
+- **[Payment channels](/glossary/payment-channel) and [Lightning](/glossary/lightning-network).** Channel commitment transactions use locktime to enforce withdrawal delays during disputes.
 - **Escrow and timed releases.** A transaction can be pre-signed but not broadcast (or broadcast but not mineable) until a specific future block or date.
-- **[Fee sniping](/glossary/fee-sniping/) prevention.** Many modern wallets set locktime to the current block height when constructing transactions. This discourages a kind of attack where a miner deliberately reorgs to capture old high-fee transactions.
+- **[Fee sniping](/glossary/fee-sniping) prevention.** Many modern wallets set locktime to the current block height when constructing transactions. This discourages a kind of attack where a miner deliberately reorgs to capture old high-fee transactions.
 
-For more sophisticated time-based logic, locktime works alongside the [CHECKLOCKTIMEVERIFY](/glossary/checklocktimeverify-cltv/) opcode (which lets scripts check the locktime themselves), and the related [CSV](/glossary/checksequenceverify-csv/) / [nSequence](/glossary/nsequence/) fields, which provide *relative* (rather than absolute) timing.
+For more sophisticated time-based logic, locktime works alongside the [CHECKLOCKTIMEVERIFY](/glossary/checklocktimeverify-cltv) opcode (which lets scripts check the locktime themselves), and the related [CSV](/glossary/checksequenceverify-csv) / [nSequence](/glossary/nsequence) fields, which provide *relative* (rather than absolute) timing.
 
-See [Absolute Locktime](/glossary/absolute-locktime/) for the broader concept and [nLocktime](/glossary/nlocktime/) for the field-level synonym.
+See [Absolute Locktime](/glossary/absolute-locktime) for the broader concept and [nLocktime](/glossary/nlocktime) for the field-level synonym.

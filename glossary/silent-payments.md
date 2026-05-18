@@ -27,12 +27,12 @@ The mechanism, simplified:
 
 What this buys, compared to the alternatives:
 
-- **No address reuse on-chain.** Each payment lands at a unique [Taproot](/glossary/taproot/) output. Chain observers see normal-looking single-use addresses.
-- **No notification transaction.** Older payment-code systems like [BIP-47](/glossary/bip-47-payment-codes/) required a separate on-chain "notification" that publicly outed the user as using payment codes. Silent Payments has no such handshake; the sender's derivation is invisible.
+- **No address reuse on-chain.** Each payment lands at a unique [Taproot](/glossary/taproot) output. Chain observers see normal-looking single-use addresses.
+- **No notification transaction.** Older payment-code systems like [BIP-47](/glossary/bip-47-payment-codes) required a separate on-chain "notification" that publicly outed the user as using payment codes. Silent Payments has no such handshake; the sender's derivation is invisible.
 - **No protocol change required.** Silent Payments uses existing Bitcoin script primitives. It's a wallet-layer protocol, not a soft fork.
 
 The tradeoff is receiver-side scanning cost. To find payments, the receiver's wallet must check every Taproot transaction on the chain against their silent-payment key. This is workable on a full node or a beefy server, less ideal on a light wallet.
 
 BIP-352 was formally adopted in 2023. As of 2026, several wallets and node implementations ship Silent Payments support; broader adoption is in progress. It's the most credible practical "stealth address" mechanism on Bitcoin today.
 
-See [Stealth Address](/glossary/stealth-address/) for the historical context, and [Address Reuse](/glossary/address-reuse/) for the problem this solves.
+See [Stealth Address](/glossary/stealth-address) for the historical context, and [Address Reuse](/glossary/address-reuse) for the problem this solves.

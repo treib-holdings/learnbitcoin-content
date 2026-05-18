@@ -23,7 +23,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-[BIP-144](https://github.com/bitcoin/bips/blob/master/bip-0144.mediawiki) defines the peer-to-peer protocol changes needed to relay [SegWit](/glossary/segwit-segregated-witness-bip-141/) transactions and blocks across the Bitcoin network. It's the network-protocol companion to BIP-141 (SegWit consensus) and BIP-143 (signature hashing).
+[BIP-144](https://github.com/bitcoin/bips/blob/master/bip-0144.mediawiki) defines the peer-to-peer protocol changes needed to relay [SegWit](/glossary/segwit-segregated-witness-bip-141) transactions and blocks across the Bitcoin network. It's the network-protocol companion to BIP-141 (SegWit consensus) and BIP-143 (signature hashing).
 
 The challenge SegWit posed at the P2P layer: witness data is part of the block but not part of the legacy transaction format. Old nodes need to be able to receive valid blocks without choking on data they don't understand; new nodes need to see and validate the witness data to enforce SegWit rules.
 
@@ -36,4 +36,4 @@ BIP-144's solution:
 
 This dual-protocol approach is what let SegWit deploy without splitting the network. SegWit-aware nodes enforce all the new rules; non-upgraded nodes still validate the parts they understand and accept SegWit blocks as valid under their (slightly more permissive) view of the rules.
 
-BIP-144 is one of those infrastructure pieces that everyone takes for granted but that was essential for the SegWit rollout to actually work in practice. See [SegWit](/glossary/segwit-segregated-witness-bip-141/) for the consensus change this enables at the network layer.
+BIP-144 is one of those infrastructure pieces that everyone takes for granted but that was essential for the SegWit rollout to actually work in practice. See [SegWit](/glossary/segwit-segregated-witness-bip-141) for the consensus change this enables at the network layer.

@@ -152,7 +152,7 @@ This is the genuinely radical part. **No one is in charge.** Not the largest min
 Chapter 1 ended with a list of six properties we'd want from sound money. Let's check Bitcoin against each:
 
 - **Portable** - bitcoin moves at the speed of an internet packet. A billion dollars can cross any border in minutes.
-- **Divisible** - one bitcoin divides into 100 million satoshis. (See the [Bitcoin Units rabbit hole](/rabbit-hole/bitcoin-units/) for the full scale.)
+- **Divisible** - one bitcoin divides into 100 million satoshis. (See the [Bitcoin Units rabbit hole](/rabbit-hole/bitcoin-units) for the full scale.)
 - **Durable** - the network has run continuously since January 2009 with one known outage in its first eight months and zero since. Your coins exist as long as the network exists.
 - **Verifiable** - you can run a node on a laptop and personally verify the entire history. No trust required.
 - **Scarce** - capped at 21 million by code that every node enforces. The cap has never been raised. It almost certainly never will be.

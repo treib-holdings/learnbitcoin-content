@@ -22,7 +22,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Market depth is the volume of buy and sell orders sitting at various price levels on an [exchange](/glossary/centralized-exchange-cex/). A market with "deep" books has enough orders queued up that even large trades execute close to the current quoted price. A "thin" market has so few orders that even moderate trades move the price significantly.
+Market depth is the volume of buy and sell orders sitting at various price levels on an [exchange](/glossary/centralized-exchange-cex). A market with "deep" books has enough orders queued up that even large trades execute close to the current quoted price. A "thin" market has so few orders that even moderate trades move the price significantly.
 
 Why it matters:
 

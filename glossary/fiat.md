@@ -27,4 +27,4 @@ Fiat has two superpowers that Bitcoin doesn't. First, a state's authority can fo
 
 Bitcoin was designed as a direct alternative: no issuer, no discretionary policy, a fixed supply. That doesn't mean fiat is going away tomorrow. Most people on Earth get paid in fiat, pay rent in fiat, and convert to BTC through a "fiat on-ramp" - an exchange, ATM, or peer-to-peer trade. The two systems coexist. Bitcoin's role is to be the option that can't be diluted.
 
-See [Inflation](/glossary/inflation/) for the specific mechanism by which fiat purchasing power declines, and [Journey Chapter 1](/journey/why-money-is-broken/) for the long version of why this matters.
+See [Inflation](/glossary/inflation) for the specific mechanism by which fiat purchasing power declines, and [Journey Chapter 1](/journey/why-money-is-broken) for the long version of why this matters.

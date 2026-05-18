@@ -32,4 +32,4 @@ BIP-69 is **not** a consensus rule. It's an opt-in convention at the wallet leve
 - **Con:** Wallets that don't follow it stand out more. And BIP-69 has its own fingerprint (deterministic sorting is itself a pattern).
 - **Newer view:** Some research suggests randomizing output ordering (or shuffling more aggressively) is actually better for privacy than any deterministic approach.
 
-The community as of 2026 hasn't fully settled on the right answer. BIP-69 is a useful reference point, but most modern privacy-focused wallets do something more nuanced. See [Address Clustering](/glossary/address-clustering/) for the broader chain-analysis problem this is one small piece of.
+The community as of 2026 hasn't fully settled on the right answer. BIP-69 is a useful reference point, but most modern privacy-focused wallets do something more nuanced. See [Address Clustering](/glossary/address-clustering) for the broader chain-analysis problem this is one small piece of.

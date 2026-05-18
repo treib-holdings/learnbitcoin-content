@@ -26,4 +26,4 @@ The cultural meaning runs deeper than "don't sell." Hodling implies you understa
 
 Sometimes back-formed as an acronym for "Hold On for Dear Life." That's a retrofit; the typo came first.
 
-See also [DCA](/glossary/dca-dollar-cost-averaging/), which is essentially hodling with new purchases.
+See also [DCA](/glossary/dca-dollar-cost-averaging), which is essentially hodling with new purchases.

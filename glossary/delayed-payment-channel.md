@@ -25,9 +25,9 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Delayed payment channel" is a descriptive name for the standard Lightning channel design where each party's own balance, in a unilaterally-broadcast commitment, is locked behind a [CSV](/glossary/checksequenceverify-csv/) timelock for some number of blocks before it can be spent.
+"Delayed payment channel" is a descriptive name for the standard Lightning channel design where each party's own balance, in a unilaterally-broadcast commitment, is locked behind a [CSV](/glossary/checksequenceverify-csv) timelock for some number of blocks before it can be spent.
 
-The mechanics are the same as the [delayed justice transaction](/glossary/delayed-justice-transaction/) story: when you broadcast your own latest commitment to close a channel unilaterally, your own balance gets a CSV-locked output (typically 144-2016 blocks) while your counterparty's balance is immediately spendable. The asymmetry isn't unfair; it's deliberate. The delay is the window during which your counterparty can punish you if your "latest commitment" turns out to be an outdated one (a [penalty transaction](/glossary/penalty-transaction/) sweep).
+The mechanics are the same as the [delayed justice transaction](/glossary/delayed-justice-transaction) story: when you broadcast your own latest commitment to close a channel unilaterally, your own balance gets a CSV-locked output (typically 144-2016 blocks) while your counterparty's balance is immediately spendable. The asymmetry isn't unfair; it's deliberate. The delay is the window during which your counterparty can punish you if your "latest commitment" turns out to be an outdated one (a [penalty transaction](/glossary/penalty-transaction) sweep).
 
 For users, the practical takeaways:
 
@@ -37,4 +37,4 @@ For users, the practical takeaways:
 
 The term "delayed payment channel" isn't standard Lightning vocabulary - most documentation just calls it "a Lightning channel" and treats the CSV delay as an implementation detail. The phrase exists in some older glossaries to emphasize the asymmetric-delay property as a defining feature of the design.
 
-[Eltoo](/glossary/eltoo/)-style channels (which depend on SIGHASH_ANYPREVOUT, not yet activated) would soften this asymmetry: any newer state automatically invalidates older ones, removing the need for the unilaterally-broadcast-then-wait-then-punish dance.
+[Eltoo](/glossary/eltoo)-style channels (which depend on SIGHASH_ANYPREVOUT, not yet activated) would soften this asymmetry: any newer state automatically invalidates older ones, removing the need for the unilaterally-broadcast-then-wait-then-punish dance.

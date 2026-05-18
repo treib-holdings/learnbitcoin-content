@@ -31,4 +31,4 @@ Laszlo went on to be the first person to mine Bitcoin on a GPU (a major performa
 
 **May 22 is now Bitcoin Pizza Day** - celebrated with pizza-themed meetups, sat-denominated pizza promotions from Lightning-enabled vendors, and a recurring reminder of how far the network has come. In 2026 you can still order a pizza with sats via Lightning at any number of merchants. The thing Laszlo did experimentally in 2010 now takes 30 seconds and a QR code.
 
-See [Journey Chapter 5](/journey/using-bitcoin/) for the modern version of "actually spending bitcoin."
+See [Journey Chapter 5](/journey/using-bitcoin) for the modern version of "actually spending bitcoin."

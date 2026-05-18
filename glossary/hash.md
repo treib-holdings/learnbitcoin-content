@@ -38,12 +38,12 @@ Three properties make hashes useful for Bitcoin:
 
 Bitcoin uses hashes everywhere:
 
-- **[Block headers](/glossary/block-header/)** are hashed (twice, via double-SHA-256) and the result must be below the difficulty target to be valid. This is the search [miners](/glossary/miner/) are racing to win.
-- **Each block references the previous block's hash**, creating the tamper-evident [blockchain](/glossary/blockchain/).
-- **Transactions are organized into a [Merkle tree](/glossary/merkle-tree-merkle-root/)** whose root commits to every transaction in the block with a single hash.
+- **[Block headers](/glossary/block-header)** are hashed (twice, via double-SHA-256) and the result must be below the difficulty target to be valid. This is the search [miners](/glossary/miner) are racing to win.
+- **Each block references the previous block's hash**, creating the tamper-evident [blockchain](/glossary/blockchain).
+- **Transactions are organized into a [Merkle tree](/glossary/merkle-tree-merkle-root)** whose root commits to every transaction in the block with a single hash.
 - **Addresses are hashes of public keys**, which keeps the underlying public key private until you spend.
 - **TXIDs are hashes** of serialized transactions.
 
 The bet Bitcoin makes is that SHA-256 stays one-way for the foreseeable future. If that ever breaks, Bitcoin breaks. So far, after 16 years of being one of the most attacked cryptographic systems on Earth, SHA-256 has held.
 
-See the [Mining rabbit hole §2](/rabbit-hole/mining/) for how the one-way property turns into security, and [Key Space rabbit hole](/rabbit-hole/key-space/) for why 2^256 is bigger than your intuition wants it to be.
+See the [Mining rabbit hole §2](/rabbit-hole/mining) for how the one-way property turns into security, and [Key Space rabbit hole](/rabbit-hole/key-space) for why 2^256 is bigger than your intuition wants it to be.

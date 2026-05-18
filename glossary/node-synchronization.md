@@ -42,4 +42,4 @@ Speedups available:
 
 A node only does IBD once. After that, it just keeps up with the chain tip at ~10-minute intervals, which costs almost nothing. Offline for a few days, catch up is fast; for months, slower but still manageable.
 
-The reason IBD takes hours instead of minutes is the same reason Bitcoin is secure: every signature on every transaction in every block gets verified locally. That's the work. Skipping it is what makes [light wallets](/glossary/spv-simplified-payment-verification/) light.
+The reason IBD takes hours instead of minutes is the same reason Bitcoin is secure: every signature on every transaction in every block gets verified locally. That's the work. Skipping it is what makes [light wallets](/glossary/spv-simplified-payment-verification) light.

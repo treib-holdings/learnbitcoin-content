@@ -19,7 +19,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Eltoo (sometimes written L2 or "Eltoo channels") is a proposed alternative design for [Lightning](/glossary/lightning-network/) channels that would significantly simplify their security model. Designed by Christian Decker, Rusty Russell, and Olaoluwa Osuntokun, it requires a Bitcoin soft fork that hasn't yet activated.
+Eltoo (sometimes written L2 or "Eltoo channels") is a proposed alternative design for [Lightning](/glossary/lightning-network) channels that would significantly simplify their security model. Designed by Christian Decker, Rusty Russell, and Olaoluwa Osuntokun, it requires a Bitcoin soft fork that hasn't yet activated.
 
 The problem Eltoo addresses: current Lightning channels use a **penalty-based** dispute mechanism. If you broadcast an old channel state (claiming to be richer than you actually are), your counterparty can take *all* the channel's funds as punishment. This works but has costs:
 
@@ -36,6 +36,6 @@ What this enables:
 - **Simpler watchtowers.** Watch logic becomes "publish the latest known state" rather than "detect and punish cheating."
 - **Better multi-party constructions.** Channel factories, multi-party channels, and other advanced layer-2 designs become much more practical.
 
-What it needs: **ANYPREVOUT**, a new SIGHASH variant that lets a signed transaction be applied to any prior commitment transaction in a chain. ANYPREVOUT is documented in [BIP-118](https://github.com/bitcoin/bips/blob/master/bip-0118.mediawiki). It's a proposed [soft fork](/glossary/soft-fork/) but, like other covenant-adjacent proposals, hasn't yet built broad enough consensus to activate.
+What it needs: **ANYPREVOUT**, a new SIGHASH variant that lets a signed transaction be applied to any prior commitment transaction in a chain. ANYPREVOUT is documented in [BIP-118](https://github.com/bitcoin/bips/blob/master/bip-0118.mediawiki). It's a proposed [soft fork](/glossary/soft-fork) but, like other covenant-adjacent proposals, hasn't yet built broad enough consensus to activate.
 
 If ANYPREVOUT activates, Eltoo channels become practical to deploy alongside (eventually replacing) the current Lightning channel design. Until then, Eltoo is one of the more compelling reasons people give for wanting more script flexibility in Bitcoin.

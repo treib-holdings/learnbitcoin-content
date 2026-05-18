@@ -22,8 +22,8 @@ Coin age is the time elapsed since a UTXO was created. In Bitcoin it has no cons
 
 Where coin age shows up:
 
-- **[Bitcoin Days Destroyed](/glossary/bitcoin-days-destroyed/)**: BDD weights each spend by the coin age of the inputs. A spend of coins that were dormant for years generates much higher BDD than a spend of recently-received coins.
-- **[HODL Waves](/glossary/hodl-waves/)**: visualization of the supply broken down by coin age bands. Glassnode's standard chart uses bands like <1m, 1-3m, 3-6m, 6-12m, 1-2y, 2-3y, 3-5y, 5-7y, 7-10y, 10y+.
+- **[Bitcoin Days Destroyed](/glossary/bitcoin-days-destroyed)**: BDD weights each spend by the coin age of the inputs. A spend of coins that were dormant for years generates much higher BDD than a spend of recently-received coins.
+- **[HODL Waves](/glossary/hodl-waves)**: visualization of the supply broken down by coin age bands. Glassnode's standard chart uses bands like <1m, 1-3m, 3-6m, 6-12m, 1-2y, 2-3y, 3-5y, 5-7y, 7-10y, 10y+.
 - **Long-term-holder vs short-term-holder classifications.** Glassnode uses a 155-day threshold: UTXOs older than that are considered "long-term holder" supply. The split is a useful sentiment indicator.
 - **"Realized cap"**: the sum of all UTXOs valued at the price they last moved at. Old coins contribute their original (lower) cost basis; recently-moved coins reflect current prices.
 

@@ -43,7 +43,7 @@ A few facts about SHA-256:
 - **Input:** any binary data
 - **Output:** exactly 256 bits (a 64-character hex string)
 - **Deterministic:** same input always produces same output
-- **One-way:** computationally infeasible to reverse (see the [Key Space rabbit hole](/rabbit-hole/key-space/) on why 2^256 is unbreachable)
+- **One-way:** computationally infeasible to reverse (see the [Key Space rabbit hole](/rabbit-hole/key-space) on why 2^256 is unbreachable)
 - **Avalanche effect:** changing one bit of input changes ~half the bits of output, unpredictably
 
 To "mine," you compute `SHA-256(SHA-256(header))` and check whether the resulting 256-bit number is below the current target. The target is what gets adjusted to control how often blocks come out.
@@ -85,14 +85,14 @@ Difficulty has gone up roughly 10^13 times since the genesis block - mining is n
 
 A miner who finds a valid block gets paid in two parts:
 
-1. **Block subsidy** - the freshly-issued bitcoin per the [supply schedule](/rabbit-hole/supply/). Currently 3.125 BTC. Halves every 210,000 blocks (see the [Halvings rabbit hole](/rabbit-hole/halvings/)).
+1. **Block subsidy** - the freshly-issued bitcoin per the [supply schedule](/rabbit-hole/supply). Currently 3.125 BTC. Halves every 210,000 blocks (see the [Halvings rabbit hole](/rabbit-hole/halvings)).
 2. **Transaction fees** - the sum of fees from every transaction included in the block. Variable; depends on mempool conditions.
 
 The miner constructs the "coinbase transaction" - a special transaction that pays themselves both amounts. This is the only place new bitcoin enters circulation.
 
 In Bitcoin's early years, subsidy was essentially all of the revenue (transactions were free). Today, fees are typically 3-10% of miner revenue per block, with occasional spikes much higher during congestion events. By 2140, when the subsidy reaches zero, fees will be 100% of miner revenue.
 
-The transition from subsidy-dominated to fee-dominated revenue is one of the central long-term economic questions in Bitcoin. We covered it briefly in the [Halvings rabbit hole](/rabbit-hole/halvings/); the short version is that as long as Bitcoin is *used*, fees will be sufficient.
+The transition from subsidy-dominated to fee-dominated revenue is one of the central long-term economic questions in Bitcoin. We covered it briefly in the [Halvings rabbit hole](/rabbit-hole/halvings); the short version is that as long as Bitcoin is *used*, fees will be sufficient.
 
 ## 6. The Mempool, From the Miner's Side
 
@@ -100,7 +100,7 @@ Miners don't just include transactions randomly. They pick the ones that maximiz
 
 The process:
 
-1. Take the [mempool](/glossary/mempool/) (the pool of unconfirmed transactions).
+1. Take the [mempool](/glossary/mempool) (the pool of unconfirmed transactions).
 2. Sort by **fee rate** (sat/vB, not total fee - block space is the scarce resource).
 3. Greedily pack transactions starting from the highest fee rate, until the block is full (~4 million weight units).
 4. Add the coinbase transaction.

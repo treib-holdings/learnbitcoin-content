@@ -36,7 +36,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Mining colocation is the practice of running [Bitcoin mining hardware](/glossary/mining-rig/) in dedicated industrial facilities, rather than at home or in office space. It's how essentially all serious Bitcoin mining happens in 2026.
+Mining colocation is the practice of running [Bitcoin mining hardware](/glossary/mining-rig) in dedicated industrial facilities, rather than at home or in office space. It's how essentially all serious Bitcoin mining happens in 2026.
 
 What colocation facilities provide:
 
@@ -56,4 +56,4 @@ The geographic distribution as of 2026:
 
 The concentration concern is real: a meaningful share of global hash rate is in a relatively small number of large facilities. Geopolitically, this creates pressure points (China's 2021 ban being the dramatic example). The trend is toward more geographic diversification over time, partly driven by miners deliberately seeking jurisdictional resilience after observing China.
 
-See [Mining Centralization](/glossary/mining-centralization/) for the structural concern this feeds into.
+See [Mining Centralization](/glossary/mining-centralization) for the structural concern this feeds into.

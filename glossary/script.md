@@ -31,8 +31,8 @@ The common script templates that cover the vast majority of UTXOs:
 - **P2PK** (`<pubkey> OP_CHECKSIG`). The original. Almost extinct on mainnet outside Satoshi-era coins.
 - **P2PKH** (`OP_DUP OP_HASH160 <hash> OP_EQUALVERIFY OP_CHECKSIG`). Legacy `1...` addresses.
 - **P2SH** (`OP_HASH160 <hash> OP_EQUAL`). `3...` addresses; wraps any redeem script behind a hash.
-- **P2WPKH / P2WSH** ([native SegWit](/glossary/native-segwit/), witness version 0). `bc1q...` addresses; same logic as P2PKH / P2SH but in the witness portion.
-- **P2TR** ([Taproot](/glossary/bip-341-taproot/), witness version 1). `bc1p...` addresses; Schnorr signatures, key-path or script-path spending, MAST trees in the script path.
+- **P2WPKH / P2WSH** ([native SegWit](/glossary/native-segwit), witness version 0). `bc1q...` addresses; same logic as P2PKH / P2SH but in the witness portion.
+- **P2TR** ([Taproot](/glossary/bip-341-taproot), witness version 1). `bc1p...` addresses; Schnorr signatures, key-path or script-path spending, MAST trees in the script path.
 
 What lives on top of plain Script: time locks via `OP_CHECKLOCKTIMEVERIFY` and `OP_CHECKSEQUENCEVERIFY` (the foundation of Lightning HTLCs), multisig via `OP_CHECKMULTISIG` or aggregated Schnorr, hash-preimage commitments, and various policy combinators stitched together to form vaults, swaps, and channels.
 

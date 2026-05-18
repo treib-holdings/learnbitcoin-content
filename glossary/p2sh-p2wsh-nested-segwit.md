@@ -23,11 +23,11 @@ sameAs:
 liveWidget: ~
 ---
 
-P2SH-P2WSH - sometimes called "nested SegWit script" or "P2SH-wrapped P2WSH" - is a [P2WSH](/glossary/p2wsh-pay-witness-script-hash/) output wrapped inside a [P2SH](/glossary/p2sh-pay-script-hash/) outer layer. The address looks legacy (starts with `3`), but the spend follows [SegWit](/glossary/segwit-segregated-witness-bip-141/) rules: the redeem script just commits to a P2WSH `scriptPubKey`, and the actual witness data sits outside the legacy transaction structure.
+P2SH-P2WSH - sometimes called "nested SegWit script" or "P2SH-wrapped P2WSH" - is a [P2WSH](/glossary/p2wsh-pay-witness-script-hash) output wrapped inside a [P2SH](/glossary/p2sh-pay-script-hash) outer layer. The address looks legacy (starts with `3`), but the spend follows [SegWit](/glossary/segwit-segregated-witness-bip-141) rules: the redeem script just commits to a P2WSH `scriptPubKey`, and the actual witness data sits outside the legacy transaction structure.
 
 It existed for one reason: backwards compatibility during the SegWit rollout in 2017-2018.
 
-When SegWit activated in August 2017, most wallets and exchanges did not yet support sending to native SegWit addresses (`bc1q...`). They did know how to send to `3...` addresses ([P2SH](/glossary/p2sh-pay-script-hash/) had been around since 2012, via [BIP-16](/glossary/bip-16-p2sh/)). To let users adopt SegWit before the rest of the ecosystem caught up, wallets generated P2SH-P2WSH addresses: legacy-looking on the outside, SegWit on the inside. Senders saw a familiar `3...` address; the receiver got SegWit's fee discount and malleability fix.
+When SegWit activated in August 2017, most wallets and exchanges did not yet support sending to native SegWit addresses (`bc1q...`). They did know how to send to `3...` addresses ([P2SH](/glossary/p2sh-pay-script-hash) had been around since 2012, via [BIP-16](/glossary/bip-16-p2sh)). To let users adopt SegWit before the rest of the ecosystem caught up, wallets generated P2SH-P2WSH addresses: legacy-looking on the outside, SegWit on the inside. Senders saw a familiar `3...` address; the receiver got SegWit's fee discount and malleability fix.
 
 How the wrapping works:
 
@@ -44,8 +44,8 @@ In practice it is a P2WSH spend with one extra wrapping layer. You pay the bytes
 
 **Modern picture:**
 
-- New wallets default to [native SegWit](/glossary/native-segwit/) (`bc1q...`) or [Taproot](/glossary/taproot/) (`bc1p...`). No reason to nest anymore.
+- New wallets default to [native SegWit](/glossary/native-segwit) (`bc1q...`) or [Taproot](/glossary/taproot) (`bc1p...`). No reason to nest anymore.
 - Existing P2SH-P2WSH UTXOs are still spendable forever; nothing about the format expired.
 - If you hold one, sweeping it to a native SegWit or Taproot address on a fee-light day costs you a transaction but pays back in lower future spend costs.
 
-The same pattern exists for single-sig: P2SH-wrapped [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash/) gives a `3...` address that spends under SegWit. Same rationale, same modern story.
+The same pattern exists for single-sig: P2SH-wrapped [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash) gives a `3...` address that spends under SegWit. Same rationale, same modern story.

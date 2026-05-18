@@ -21,7 +21,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Sphinx is the specific cryptographic packet format Lightning uses for [onion routing](/glossary/onion-routing-lightning/). Defined in [BOLT-4](https://github.com/lightning/bolts/blob/master/04-onion-routing.md), it's the data structure that travels with each Lightning payment, telling each routing hop the next destination without revealing the full path.
+Sphinx is the specific cryptographic packet format Lightning uses for [onion routing](/glossary/onion-routing-lightning). Defined in [BOLT-4](https://github.com/lightning/bolts/blob/master/04-onion-routing.md), it's the data structure that travels with each Lightning payment, telling each routing hop the next destination without revealing the full path.
 
 The Sphinx packet is a fixed size (1,300 bytes for the standard format) regardless of how many hops the payment will traverse. This is by design: if packet size varied with hop count, observers could infer route length. Padding keeps every onion the same width.
 

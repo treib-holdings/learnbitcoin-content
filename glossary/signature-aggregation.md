@@ -24,7 +24,7 @@ liveWidget: ~
 
 Signature aggregation is the technique of taking multiple cosigners on a single spend and producing one combined signature that the chain can verify against a single combined public key. The chain learns "this output was authorized," but not how many people authorized it.
 
-This is only practical with [Schnorr signatures](/glossary/schnorr-signature/), whose linear math lets partial signatures and partial public keys be summed cleanly. The flagship aggregation protocol is **MuSig2**, the second-generation multi-signature scheme designed by Blockstream researchers.
+This is only practical with [Schnorr signatures](/glossary/schnorr-signature), whose linear math lets partial signatures and partial public keys be summed cleanly. The flagship aggregation protocol is **MuSig2**, the second-generation multi-signature scheme designed by Blockstream researchers.
 
 A 3-of-3 spend under MuSig2 works like this:
 
@@ -43,4 +43,4 @@ The wins:
 
 The catch is the off-chain coordination - cosigners must exchange nonces and partial sigs in a careful sequence (MuSig2 is non-trivial to implement). Production-grade libraries exist (libsecp256k1's MuSig2 module, BDK, etc.) and adoption is growing.
 
-Aggregation is one of the quietest big wins Taproot brought. See [Taproot](/glossary/taproot/) and [Schnorr Signature](/glossary/schnorr-signature/) for the foundations.
+Aggregation is one of the quietest big wins Taproot brought. See [Taproot](/glossary/taproot) and [Schnorr Signature](/glossary/schnorr-signature) for the foundations.

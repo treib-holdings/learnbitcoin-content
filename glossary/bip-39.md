@@ -29,9 +29,9 @@ The math:
 2. Append a SHA-256-derived checksum (entropy / 32 bits long).
 3. Split into 11-bit groups and look each up in the 2048-word BIP 39 wordlist.
 
-The result is a phrase of 12, 15, 18, 21, or 24 words. 12 words encode 128 bits of entropy; 24 words encode 256 bits (see [mnemonic entropy bits](/glossary/mnemonic-entropy-bits/) for the full ladder). Both are well beyond brute-force range; the choice is preference. Hardware wallets typically default to 24.
+The result is a phrase of 12, 15, 18, 21, or 24 words. 12 words encode 128 bits of entropy; 24 words encode 256 bits (see [mnemonic entropy bits](/glossary/mnemonic-entropy-bits) for the full ladder). Both are well beyond brute-force range; the choice is preference. Hardware wallets typically default to 24.
 
-To get the actual wallet seed (the input for [BIP 32](/glossary/bip-32/) derivation), the mnemonic is fed through PBKDF2-HMAC-SHA512 with 2048 iterations, with an optional passphrase as the salt. Pass an empty passphrase and you get one wallet; pass a non-empty passphrase and you get a completely different wallet from the same words. That optional [passphrase](/glossary/mnemonic-password/) is sometimes called the "25th word."
+To get the actual wallet seed (the input for [BIP 32](/glossary/bip-32) derivation), the mnemonic is fed through PBKDF2-HMAC-SHA512 with 2048 iterations, with an optional passphrase as the salt. Pass an empty passphrase and you get one wallet; pass a non-empty passphrase and you get a completely different wallet from the same words. That optional [passphrase](/glossary/mnemonic-password) is sometimes called the "25th word."
 
 Why BIP 39 matters:
 

@@ -24,7 +24,7 @@ BIP 170, drafted by Mark Friedenbach in 2013, proposed a standardized merkle pro
 
 It never activated as a network-level standard. The functionality survived in a different form: Bitcoin Core implements the proofs as RPC commands. `gettxoutproof` produces a proof for one or more transactions, and `verifytxoutproof` validates one. Wallets and explorers use these RPCs for SPV-style verification against a trusted full node.
 
-For modern light-client work, the dominant pattern isn't TxOut proofs sent peer-to-peer; it's [BIP 158](/glossary/bip-158/) compact block filters. Filters let a client decide locally what to fetch without telling any peer what addresses it cares about. The privacy story is dramatically better than asking peers for proofs.
+For modern light-client work, the dominant pattern isn't TxOut proofs sent peer-to-peer; it's [BIP 158](/glossary/bip-158) compact block filters. Filters let a client decide locally what to fetch without telling any peer what addresses it cares about. The privacy story is dramatically better than asking peers for proofs.
 
 BIP 170 is mostly interesting now as another point in the evolution from "early SPV ideas" to "modern compact block filter design."
 

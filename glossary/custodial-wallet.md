@@ -26,7 +26,7 @@ sameAs:
 liveWidget: ~
 ---
 
-A custodial wallet is one where a third party holds the [private keys](/glossary/private-key/) and you hold an account balance. Coinbase, Binance, Cash App, Robinhood - any service where you "have BTC" but never see a seed phrase is custodial.
+A custodial wallet is one where a third party holds the [private keys](/glossary/private-key) and you hold an account balance. Coinbase, Binance, Cash App, Robinhood - any service where you "have BTC" but never see a seed phrase is custodial.
 
 What this actually means: you don't own Bitcoin. You own a *claim* on Bitcoin held by a company, recorded in that company's internal database. If they're solvent and cooperative, that claim works just like owning Bitcoin. If they're not, it doesn't.
 
@@ -36,4 +36,4 @@ Even working custodians can freeze your account, demand additional KYC, restrict
 
 "Not your keys, not your coins" is the response. It's not a slogan; it's the technical reality. Bitcoin only delivers its core property - censorship-resistant, seizure-resistant, debasement-resistant money - to the actual key holder. Anyone else is just using a high-friction bank.
 
-Custodial wallets have legitimate uses: as on-ramps from fiat (you have to start somewhere), as venues for active trading, as occasional payment rails. Just don't confuse them with owning Bitcoin. Move out to self-custody (see [Wallet](/glossary/wallet/), [Hardware Wallet](/glossary/hardware-wallet/)) for anything you actually want to keep.
+Custodial wallets have legitimate uses: as on-ramps from fiat (you have to start somewhere), as venues for active trading, as occasional payment rails. Just don't confuse them with owning Bitcoin. Move out to self-custody (see [Wallet](/glossary/wallet), [Hardware Wallet](/glossary/hardware-wallet)) for anything you actually want to keep.

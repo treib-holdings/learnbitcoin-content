@@ -21,7 +21,7 @@ hasInteractive: []
 
 Bitcoin's base layer is a chain. Every transaction is appended sequentially, broadcast globally, validated by every node, and stored forever.
 
-[Lightning](/glossary/lightning-network/) is not a chain. It is a **graph.** Nodes have **channels** to other nodes. Channels can route payments. A payment from Alice to Carol can hop Alice → Bob → Carol if Alice and Bob share a channel, and Bob and Carol share another channel.
+[Lightning](/glossary/lightning-network) is not a chain. It is a **graph.** Nodes have **channels** to other nodes. Channels can route payments. A payment from Alice to Carol can hop Alice → Bob → Carol if Alice and Bob share a channel, and Bob and Carol share another channel.
 
 This is the entire premise. Off the chain, in a separate network, with payments that route through intermediaries who do not need to trust each other.
 
@@ -35,7 +35,7 @@ This rabbit hole walks through each.
 
 ## 2. Channels Are Edges in a Graph
 
-A Lightning channel is a 2-of-2 multisig output on the Bitcoin base layer with two parties (the channel partners) holding the keys. The channel has a fixed [capacity](/glossary/lightning-channel-capacity/) (the amount of bitcoin locked in the multisig) and a [balance](/glossary/liquidity/) (how much is on each side at any moment).
+A Lightning channel is a 2-of-2 multisig output on the Bitcoin base layer with two parties (the channel partners) holding the keys. The channel has a fixed [capacity](/glossary/lightning-channel-capacity) (the amount of bitcoin locked in the multisig) and a [balance](/glossary/liquidity) (how much is on each side at any moment).
 
 When Alice opens a channel with Bob and funds it with 0.1 BTC, the channel starts with balance 0.1 BTC on Alice's side, 0 BTC on Bob's. Alice can route up to 0.1 BTC outbound through Bob. Bob, until he receives some funds from Alice, can route 0 outbound through Alice.
 
@@ -54,11 +54,11 @@ Two important caveats:
 
 **Capacity is public; balance is private.** You can see Alice and Bob share a channel of capacity 0.1 BTC. You cannot see whether the balance is 0.1 / 0 or 0.05 / 0.05 or 0 / 0.1. This is why probing for routes can fail repeatedly: the graph says "this channel exists," but the actual balance at that moment may make the payment impossible.
 
-**Not all channels are public.** A node can open a **private channel** (or "unannounced" channel) that does not broadcast to the gossip layer. Private channels are useful for end users who do not want to route for others; they can still receive payments via route hints in the [BOLT 11](/glossary/bolt-11/) invoice.
+**Not all channels are public.** A node can open a **private channel** (or "unannounced" channel) that does not broadcast to the gossip layer. Private channels are useful for end users who do not want to route for others; they can still receive payments via route hints in the [BOLT 11](/glossary/bolt-11) invoice.
 
 ## 4. Onion Routing (Sphinx)
 
-Lightning uses onion routing - specifically a construction called [Sphinx](/glossary/lightning-sphinx/) - so each hop in the route learns only what it needs to forward the payment, nothing more.
+Lightning uses onion routing - specifically a construction called [Sphinx](/glossary/lightning-sphinx) - so each hop in the route learns only what it needs to forward the payment, nothing more.
 
 When Alice wants to pay Carol via Bob, her node:
 
@@ -106,7 +106,7 @@ This is fundamentally different from base-layer Bitcoin, where a transaction eit
 
 ## 7. Multi-Part Payments
 
-When no single route has enough liquidity, the sender can split the payment across multiple routes simultaneously. This is **Multi-Part Payments** (MPP) or its more flexible variant, [Atomic Multi-Path Payments](/glossary/atomic-multi-path-payment-amp/) (AMP).
+When no single route has enough liquidity, the sender can split the payment across multiple routes simultaneously. This is **Multi-Part Payments** (MPP) or its more flexible variant, [Atomic Multi-Path Payments](/glossary/atomic-multi-path-payment-amp) (AMP).
 
 A 1 BTC payment can be split into ten 0.1 BTC chunks, each routed through a different path. The recipient collects all ten and reveals the preimage to claim the full payment. If any chunk fails, all chunks are returned.
 
@@ -140,13 +140,13 @@ The privacy story on Lightning is "much better than the base layer, with caveats
 
 **Anyone watching multiple hops in sequence** can correlate timing and amount to potentially trace a payment. This is a real risk for large or unusual payments, especially if the adversary runs many nodes.
 
-Compared to the base layer, where every transaction is fully public and pseudonymous addresses cluster easily (see [UTXOs](/rabbit-hole/utxos/)), Lightning is a substantial privacy improvement. Compared to ideal privacy, it has gaps.
+Compared to the base layer, where every transaction is fully public and pseudonymous addresses cluster easily (see [UTXOs](/rabbit-hole/utxos)), Lightning is a substantial privacy improvement. Compared to ideal privacy, it has gaps.
 
 ## 9. The Fee Market for Routing
 
 Lightning routing is not free. Each hop charges a fee for forwarding, expressed as `base_fee_msat + proportional_fee_msat_per_million * amount`.
 
-A typical [routing node](/glossary/routing-node/) might charge `1,000 msat base + 100 ppm`. Routing 0.01 BTC (1,000,000 sats = 1,000,000,000 msat) costs: 1,000 + (100 × 1,000) = 101,000 msat ≈ 101 sats total fee.
+A typical [routing node](/glossary/routing-node) might charge `1,000 msat base + 100 ppm`. Routing 0.01 BTC (1,000,000 sats = 1,000,000,000 msat) costs: 1,000 + (100 × 1,000) = 101,000 msat ≈ 101 sats total fee.
 
 For a multi-hop payment, fees from each hop sum.
 

@@ -39,8 +39,8 @@ Anyone can write a BIP. The process, defined in [BIP-1](https://github.com/bitco
 
 BIP types:
 
-- **Standards Track** - changes to the protocol itself (consensus rules, network protocol, peer-to-peer messaging). Examples: BIP-141 ([SegWit](/glossary/segwit-segregated-witness-bip-141/)), BIP-340/341/342 ([Schnorr](/glossary/schnorr-signature/) / [Taproot](/glossary/taproot/)), BIP-352 ([Silent Payments](/glossary/silent-payments/)).
+- **Standards Track** - changes to the protocol itself (consensus rules, network protocol, peer-to-peer messaging). Examples: BIP-141 ([SegWit](/glossary/segwit-segregated-witness-bip-141)), BIP-340/341/342 ([Schnorr](/glossary/schnorr-signature) / [Taproot](/glossary/taproot)), BIP-352 ([Silent Payments](/glossary/silent-payments)).
 - **Informational** - design guidelines or implementation notes, no consensus impact.
 - **Process** - changes to the BIP process itself.
 
-The BIP process is intentionally slow, conservative, and adversarial. A consensus-affecting change typically takes years from initial proposal to network activation - and many proposals never make it. This is a feature: a global monetary protocol with $1-2T in value should be very, very hard to change accidentally. See [SegWit](/glossary/segwit-segregated-witness-bip-141/) and [Taproot](/glossary/taproot/) for two BIPs that did make it all the way through.
+The BIP process is intentionally slow, conservative, and adversarial. A consensus-affecting change typically takes years from initial proposal to network activation - and many proposals never make it. This is a feature: a global monetary protocol with $1-2T in value should be very, very hard to change accidentally. See [SegWit](/glossary/segwit-segregated-witness-bip-141) and [Taproot](/glossary/taproot) for two BIPs that did make it all the way through.

@@ -22,15 +22,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Merkle proof is a compact piece of evidence that a specific [transaction](/glossary/transaction/) is included in a specific [block](/glossary/block/), without requiring the verifier to download the entire block.
+A Merkle proof is a compact piece of evidence that a specific [transaction](/glossary/transaction) is included in a specific [block](/glossary/block), without requiring the verifier to download the entire block.
 
-It works by walking the [Merkle tree](/glossary/merkle-tree-merkle-root/): from a leaf (the transaction's txid) up to the root (which is stored in the [block header](/glossary/block-header/)), the proof contains the sibling hashes at each level. With those hashes, anyone can recompute what the [Merkle root](/glossary/merkle-root/) *should* be given the claimed transaction, and check it against the block header's actual root. If it matches, the transaction is provably in the block. If it doesn't, the proof is invalid.
+It works by walking the [Merkle tree](/glossary/merkle-tree-merkle-root): from a leaf (the transaction's txid) up to the root (which is stored in the [block header](/glossary/block-header)), the proof contains the sibling hashes at each level. With those hashes, anyone can recompute what the [Merkle root](/glossary/merkle-root) *should* be given the claimed transaction, and check it against the block header's actual root. If it matches, the transaction is provably in the block. If it doesn't, the proof is invalid.
 
 Why this is useful:
 
 - **Small.** A Merkle proof for a block with N transactions has size `O(log N)` - typically 10-12 hashes, ~320-400 bytes, for any realistically-sized block.
 - **Cryptographic.** Trust nothing about the source; the math either checks out or it doesn't.
-- **Powers [SPV](/glossary/spv-simplified-payment-verification/).** Light clients use Merkle proofs to verify their own transactions without downloading whole blocks. They store just [block headers](/glossary/block-header/) (4 MB/year, total) and ask full nodes for proofs when they need to confirm a specific tx.
+- **Powers [SPV](/glossary/spv-simplified-payment-verification).** Light clients use Merkle proofs to verify their own transactions without downloading whole blocks. They store just [block headers](/glossary/block-header) (4 MB/year, total) and ask full nodes for proofs when they need to confirm a specific tx.
 
 Sometimes called a "Merkle inclusion proof" or "Merkle path." All three terms refer to the same construction.
 

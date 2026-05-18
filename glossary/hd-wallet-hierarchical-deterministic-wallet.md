@@ -34,9 +34,9 @@ liveWidget: ~
 
 A Hierarchical Deterministic (HD) wallet is the standard Bitcoin wallet design where every key the wallet will ever need is deterministically derived from a single root seed. Back up the seed; you've backed up everything.
 
-The structure, defined in [BIP 32](/glossary/bip-32/):
+The structure, defined in [BIP 32](/glossary/bip-32):
 
-- A single seed (typically 12 or 24 [BIP 39](/glossary/bip-39/) words) plus optional passphrase produces a 512-bit master seed.
+- A single seed (typically 12 or 24 [BIP 39](/glossary/bip-39) words) plus optional passphrase produces a 512-bit master seed.
 - The master seed splits into a master private key and a master chaincode.
 - Children are derived by HMAC-SHA512 of (parent key, chaincode, index). Each child is itself a parent that can derive its own children. This forms the tree.
 - Standardized paths (BIP 44 for legacy, BIP 49 for wrapped SegWit, BIP 84 for native SegWit, BIP 86 for Taproot) tell wallets exactly where to look for addresses.

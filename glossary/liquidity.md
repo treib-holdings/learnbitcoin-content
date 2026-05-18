@@ -26,7 +26,7 @@ Lightning users without enough inbound liquidity can't receive payments larger t
 Getting inbound liquidity:
 
 - Spend your existing outbound first (every payment you send shifts balance to the other side, increasing your inbound).
-- Buy inbound liquidity from a routing-node service ([liquidity ads](/glossary/liquidity-ads/), Lightning Labs' Pool, etc.).
+- Buy inbound liquidity from a routing-node service ([liquidity ads](/glossary/liquidity-ads), Lightning Labs' Pool, etc.).
 - Splice or open a channel where the other side commits the capital.
 - Earn inbound by receiving payments (which is circular if you can't receive in the first place).
 

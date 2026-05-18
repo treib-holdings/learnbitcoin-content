@@ -25,7 +25,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Fee sniping is a theoretical mining strategy where a miner who has just found a block decides to *not* build on top of it, but instead try to re-mine the same block height to capture the high-fee transactions for themselves. It's a niche attack that becomes more relevant as the [block subsidy](/glossary/block-subsidy/) decreases and transaction fees become the dominant share of miner revenue.
+Fee sniping is a theoretical mining strategy where a miner who has just found a block decides to *not* build on top of it, but instead try to re-mine the same block height to capture the high-fee transactions for themselves. It's a niche attack that becomes more relevant as the [block subsidy](/glossary/block-subsidy) decreases and transaction fees become the dominant share of miner revenue.
 
 How it would work, hypothetically:
 
@@ -42,6 +42,6 @@ Why this is rare and risky:
 Defensive measures already in place:
 
 - **`nLockTime` set to current height.** Modern wallets set transaction locktimes to the current block height. This makes those transactions invalid for any *earlier* block, so a fee sniper can't include them in a re-mined block at the same height - only in N or later.
-- **Fast block propagation.** With [compact block relay (BIP-152)](/glossary/bip-152-compact-blocks/) propagating new blocks in milliseconds, the window during which a competing block could be assembled is tiny.
+- **Fast block propagation.** With [compact block relay (BIP-152)](/glossary/bip-152-compact-blocks) propagating new blocks in milliseconds, the window during which a competing block could be assembled is tiny.
 
-Fee sniping is more of an open theoretical concern than a present-day problem. As Bitcoin approaches the fee-dominated era (post-2140), the math changes, and the strategy could become more attractive. The community is aware and watching. So far, no observed cases. See [Miner Extractable Value (MEV)](/glossary/miner-extractable-value-mev/) for the broader category of strategies fee sniping fits into.
+Fee sniping is more of an open theoretical concern than a present-day problem. As Bitcoin approaches the fee-dominated era (post-2140), the math changes, and the strategy could become more attractive. The community is aware and watching. So far, no observed cases. See [Miner Extractable Value (MEV)](/glossary/miner-extractable-value-mev) for the broader category of strategies fee sniping fits into.

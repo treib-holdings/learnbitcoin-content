@@ -26,7 +26,7 @@ The term is meme culture, but the underlying behavior is real and well-studied. 
 - **Profit-taking too early.** Selling 10% gains during a multi-year bull run leaves the bulk of the move on the table.
 - **Re-entering at higher prices.** Once you've sold, you're either right (and feel smart) or wrong (and now need to buy back in at higher prices to participate). Most return to buying higher than they sold.
 
-The opposite discipline - [HODL](/glossary/hodl/), or in colloquial terms diamond hands - is empirically the better strategy across every multi-year window in Bitcoin's history. Not because holding is clever, but because the alternative requires you to be a better market timer than essentially everyone, and you're probably not.
+The opposite discipline - [HODL](/glossary/hodl), or in colloquial terms diamond hands - is empirically the better strategy across every multi-year window in Bitcoin's history. Not because holding is clever, but because the alternative requires you to be a better market timer than essentially everyone, and you're probably not.
 
 Two honest qualifications:
 

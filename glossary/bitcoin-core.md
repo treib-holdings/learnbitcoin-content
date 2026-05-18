@@ -24,7 +24,7 @@ sameAs:
 liveWidget: ~
 ---
 
-Bitcoin Core is the reference implementation of the Bitcoin protocol. It's the codebase [Satoshi](/glossary/satoshi-nakamoto/) originally wrote in 2008 (under the name "Bitcoin"), renamed in 2014 when Bitcoin-the-software needed to be distinguished from Bitcoin-the-network. It powers the large majority of publicly reachable [full nodes](/glossary/full-node/) and is what most other wallets and libraries quietly defer to.
+Bitcoin Core is the reference implementation of the Bitcoin protocol. It's the codebase [Satoshi](/glossary/satoshi-nakamoto) originally wrote in 2008 (under the name "Bitcoin"), renamed in 2014 when Bitcoin-the-software needed to be distinguished from Bitcoin-the-network. It powers the large majority of publicly reachable [full nodes](/glossary/full-node) and is what most other wallets and libraries quietly defer to.
 
 The codebase lives at **[github.com/bitcoin/bitcoin](https://github.com/bitcoin/bitcoin)**, maintained by a rotating cast of contributors with no formal governance structure. Changes go through:
 
@@ -38,4 +38,4 @@ The combination of open review and voluntary adoption is what makes Bitcoin's pr
 
 Bitcoin Core releases roughly every 6 months. Major versions have brought SegWit (2017), Taproot signaling (2021), and incremental improvements to mempool policy, networking, and validation performance. It's the most-reviewed cryptocurrency codebase in existence, and the de facto standard for "what Bitcoin actually is."
 
-See [Full Node](/glossary/full-node/) for what running it means, and [Sovereignty Journey](/journey/sovereignty/) for why you might want to.
+See [Full Node](/glossary/full-node) for what running it means, and [Sovereignty Journey](/journey/sovereignty) for why you might want to.

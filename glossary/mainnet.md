@@ -12,7 +12,7 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-Mainnet is the Bitcoin network - the one where real BTC moves, where real value is at stake, and where every block is part of the chain stretching back to [genesis](/glossary/genesis-block/) on January 3, 2009.
+Mainnet is the Bitcoin network - the one where real BTC moves, where real value is at stake, and where every block is part of the chain stretching back to [genesis](/glossary/genesis-block) on January 3, 2009.
 
 When you "use Bitcoin," you're using mainnet. When you "run a Bitcoin node," it's a mainnet node unless you explicitly configured it otherwise. When you read about hash rate, supply, fees, or any number on this site, it's about mainnet.
 
@@ -24,8 +24,8 @@ What distinguishes mainnet from the alternatives:
 
 The other Bitcoin-protocol networks exist for developers and experimentation:
 
-- **[Testnet](/glossary/testnet/)** - public dev network with valueless coins.
-- **[Signet](/glossary/signet/)** - more stable test network with a signed block coordinator.
+- **[Testnet](/glossary/testnet)** - public dev network with valueless coins.
+- **[Signet](/glossary/signet)** - more stable test network with a signed block coordinator.
 - **Regtest** - private local network for testing, blocks mined on demand.
 
 None of these are mainnet. They all use different magic-number genesis blocks, so chains are not portable between them. A wallet configured for testnet cannot send to a mainnet address; the network IDs don't match.

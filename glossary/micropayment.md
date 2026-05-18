@@ -18,7 +18,7 @@ Why micropayments don't work on-chain:
 
 - A typical Bitcoin transaction costs anywhere from a few cents to several dollars in fees depending on mempool conditions.
 - Paying someone $0.01 via on-chain Bitcoin while fees are $1 means the recipient gets paid $0.01 and pays $1 to access the value. Net result is loss.
-- The [dust limit](/glossary/dust-limit/) (~300-550 sats per output) is a separate hard floor that prevents creating outputs smaller than ~$0.20 worth of BTC at current prices.
+- The [dust limit](/glossary/dust-limit) (~300-550 sats per output) is a separate hard floor that prevents creating outputs smaller than ~$0.20 worth of BTC at current prices.
 
 Lightning Network is the canonical answer:
 

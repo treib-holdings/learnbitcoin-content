@@ -23,15 +23,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Atomic Multi-Path Payment (AMP) is a [Lightning](/glossary/lightning-network/) technique that splits a single logical payment into multiple smaller partial payments, each [routed](/glossary/lightning-routing/) along a different path through the network. The receiver only "completes" the payment when all parts arrive.
+Atomic Multi-Path Payment (AMP) is a [Lightning](/glossary/lightning-network) technique that splits a single logical payment into multiple smaller partial payments, each [routed](/glossary/lightning-routing) along a different path through the network. The receiver only "completes" the payment when all parts arrive.
 
-The motivation: any single [Lightning channel](/glossary/lightning-channel/) has a limited capacity, often a few million sats or less. Sending a payment larger than the smallest channel on any candidate route would fail with the single-path approach. AMP works around this by spreading the load across multiple routes.
+The motivation: any single [Lightning channel](/glossary/lightning-channel) has a limited capacity, often a few million sats or less. Sending a payment larger than the smallest channel on any candidate route would fail with the single-path approach. AMP works around this by spreading the load across multiple routes.
 
 How it works:
 
 1. The sender's wallet decides to use AMP and splits the total into chunks (say, 5 × 200,000 sats for a 1,000,000-sat payment).
 2. It finds different routes for each chunk - ideally through disjoint channels so no one path is fully loaded.
-3. All chunks are sent simultaneously using [HTLCs](/glossary/htlc-hashed-time-locked-contract/).
+3. All chunks are sent simultaneously using [HTLCs](/glossary/htlc-hashed-time-locked-contract).
 4. The receiver holds each incoming HTLC until they've received all of them.
 5. Once complete, the receiver releases the preimage and all chunks settle atomically.
 

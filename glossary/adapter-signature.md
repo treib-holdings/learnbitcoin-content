@@ -25,7 +25,7 @@ The trick that makes it useful: this turns "if you sign, you reveal a secret" an
 
 What this unlocks:
 
-- **Atomic cross-chain swaps** without [HTLCs](/glossary/htlc-hashed-time-locked-contract/). The two transactions can look like ordinary single-signature spends; no hash-preimage commitment is visible on either chain. Privacy and cost both improve.
+- **Atomic cross-chain swaps** without [HTLCs](/glossary/htlc-hashed-time-locked-contract). The two transactions can look like ordinary single-signature spends; no hash-preimage commitment is visible on either chain. Privacy and cost both improve.
 - **Discreet Log Contracts (DLCs).** Oracles publish adapter-signature-shaped attestations; contracts complete automatically when the oracle's signature unblocks a counterparty's pre-signature.
 - **Lightning PTLCs.** Payment Point Time-Locked Contracts replace HTLC hash-preimages with adapter signatures, fixing the cross-hop correlation issue that lets observers link Lightning routing paths.
 - **Scriptless scripts.** A broader research direction where contract logic moves out of Bitcoin Script and into adapter-signature math, leaving on-chain transactions indistinguishable from plain spends.

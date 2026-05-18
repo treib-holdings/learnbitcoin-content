@@ -34,4 +34,4 @@ The subsidy started at 50 BTC per block when the network launched in January 200
 
 The halving is the central mechanism of Bitcoin's monetary policy. It enforces the 21 million supply cap, halves the rate of new issuance every four years, and creates regular pressure on miner economics that the network has weathered five times so far.
 
-See the [Halvings rabbit hole](/rabbit-hole/halvings/) for the full history and a live countdown to the next one. See [Disinflation](/glossary/disinflation/) for what the halving schedule means for Bitcoin's inflation rate over time.
+See the [Halvings rabbit hole](/rabbit-hole/halvings) for the full history and a live countdown to the next one. See [Disinflation](/glossary/disinflation) for what the halving schedule means for Bitcoin's inflation rate over time.

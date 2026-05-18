@@ -38,7 +38,7 @@ What you can do during fee escalation:
 
 - Wait. Fee escalation is usually self-correcting. As fees climb, the marginal user drops out, and the mempool clears within hours or days.
 - Use Lightning. Off-chain payments aren't bidding for the same block space.
-- Use [Replace-by-Fee](/glossary/replace-fee-rbf/) to bump a stuck transaction.
+- Use [Replace-by-Fee](/glossary/replace-fee-rbf) to bump a stuck transaction.
 - Batch. Multiple recipients in one transaction amortize the fee overhead.
 - Use Taproot. Schnorr signatures and key-path Taproot spends are slightly smaller than ECDSA-based equivalents.
 

@@ -19,9 +19,9 @@ A resource exhaustion attack is the broad category of denial-of-service attacks 
 
 The shapes a resource exhaustion attack can take against Bitcoin nodes:
 
-- **Mempool spam.** Flood the network with low-fee transactions to fill up mempool memory. Mitigated by the [discard threshold](/glossary/discard-threshold/) - low-fee transactions get evicted when memory is full, so the spam has to actually pay competitive fees, which gets expensive.
-- **CPU exhaustion via expensive scripts.** Pre-SegWit, certain script patterns required quadratic-time hashing for signature verification. An attacker could construct a transaction that took seconds of CPU to verify. SegWit's [BIP 143](/glossary/segwit-segregated-witness-bip-141/) sighash fixed this.
-- **Bandwidth flooding.** Send many `INV` messages, request many blocks, force the node to use upstream bandwidth on garbage. Mitigated by per-peer rate limits and [node autoban](/glossary/node-autoban/) for repeat offenders.
+- **Mempool spam.** Flood the network with low-fee transactions to fill up mempool memory. Mitigated by the [discard threshold](/glossary/discard-threshold) - low-fee transactions get evicted when memory is full, so the spam has to actually pay competitive fees, which gets expensive.
+- **CPU exhaustion via expensive scripts.** Pre-SegWit, certain script patterns required quadratic-time hashing for signature verification. An attacker could construct a transaction that took seconds of CPU to verify. SegWit's [BIP 143](/glossary/segwit-segregated-witness-bip-141) sighash fixed this.
+- **Bandwidth flooding.** Send many `INV` messages, request many blocks, force the node to use upstream bandwidth on garbage. Mitigated by per-peer rate limits and [node autoban](/glossary/node-autoban) for repeat offenders.
 - **Connection slot exhaustion.** Open many incoming connections to fill the node's inbound slot limit. Mitigated by maxconnections and by reserving slots for outbound and "feeler" connections.
 - **Disk exhaustion.** Push the node to fill its disk with logs or unconfirmed transaction data. Less of a problem with modern node software but historically a concern.
 - **CVE-class attacks.** Targeted exploits of specific implementation bugs. The 2018 inflation bug (CVE-2018-17144) had a denial-of-service side effect as well as the inflation primary risk; certain crash bugs in early Bitcoin Core versions could be triggered by malformed P2P messages.

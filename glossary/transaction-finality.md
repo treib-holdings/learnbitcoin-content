@@ -25,6 +25,6 @@ Practical confirmation conventions:
 - **100 confirmations (~17 hours).** Coinbase transaction maturity: newly-mined block rewards can't be spent until 100 blocks pass. Hard rule, encoded in consensus, not a wait-time convention.
 - **N >> 6.** For nation-state-attacker threat models or extremely high-value transfers, wait days. The exponential decay makes a sufficiently old transaction effectively unreversible.
 
-Reorg history in practice. Bitcoin has experienced reorgs of 1-2 blocks routinely (a few times a year), 3-block reorgs occasionally, and only a handful of 4+-block reorgs in its history (most famously the March 2013 chain split documented in [BIP 50](/glossary/bip-50/)). No reorg has ever overturned a transaction with 6+ confirmations in normal network operation.
+Reorg history in practice. Bitcoin has experienced reorgs of 1-2 blocks routinely (a few times a year), 3-block reorgs occasionally, and only a handful of 4+-block reorgs in its history (most famously the March 2013 chain split documented in [BIP 50](/glossary/bip-50)). No reorg has ever overturned a transaction with 6+ confirmations in normal network operation.
 
 Lightning Network offers near-instant settlement within a channel; the underlying channel state still ultimately settles on the base chain, inheriting whatever finality the base layer provides. For the user, a Lightning payment is final the moment it settles; for the channel's funds, the on-chain anchor is what matters in the long run.

@@ -20,9 +20,9 @@ relatedTerms:
 liveWidget: ~
 ---
 
-I2P (Invisible Internet Project) is an alternative anonymity network to [Tor](/glossary/tor-hidden-service/). It routes traffic through a network of volunteer relays using "garlic routing" (a multi-layered onion-routing variant that bundles multiple messages together) to obscure the path between sender and destination.
+I2P (Invisible Internet Project) is an alternative anonymity network to [Tor](/glossary/tor-hidden-service). It routes traffic through a network of volunteer relays using "garlic routing" (a multi-layered onion-routing variant that bundles multiple messages together) to obscure the path between sender and destination.
 
-Bitcoin Core has supported I2P as a peer transport since version 22 (2021). For a [node](/glossary/node/) operator, this means peers can advertise I2P addresses (ending in `.i2p` or formatted as base32 destinations) alongside Tor `.onion` and clearnet IP addresses. The network discovers and connects to peers across all available transports.
+Bitcoin Core has supported I2P as a peer transport since version 22 (2021). For a [node](/glossary/node) operator, this means peers can advertise I2P addresses (ending in `.i2p` or formatted as base32 destinations) alongside Tor `.onion` and clearnet IP addresses. The network discovers and connects to peers across all available transports.
 
 I2P vs Tor for Bitcoin:
 

@@ -25,7 +25,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Retail mining" is small-scale Bitcoin mining done at home or in a small operation, typically with one or a few [ASIC](/glossary/asic-application-specific-integrated-circuit/) units. It's been economically marginal since around 2014 when industrial mining took over, but the category has been quietly revived in 2024-2026 by some specific tailwinds.
+"Retail mining" is small-scale Bitcoin mining done at home or in a small operation, typically with one or a few [ASIC](/glossary/asic-application-specific-integrated-circuit) units. It's been economically marginal since around 2014 when industrial mining took over, but the category has been quietly revived in 2024-2026 by some specific tailwinds.
 
 What makes retail mining viable in 2026 for some operators:
 

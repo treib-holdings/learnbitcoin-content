@@ -12,7 +12,7 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-PSBT is the Partially Signed Bitcoin Transaction format, defined in [BIP 174](/glossary/bip-174-psbt/) and extended in BIP 370 / 371. It's a serializable blob that captures everything needed for multiple parties or devices to cooperate on signing a Bitcoin transaction without ever sharing private keys.
+PSBT is the Partially Signed Bitcoin Transaction format, defined in [BIP 174](/glossary/bip-174-psbt) and extended in BIP 370 / 371. It's a serializable blob that captures everything needed for multiple parties or devices to cooperate on signing a Bitcoin transaction without ever sharing private keys.
 
 For day-to-day Bitcoin users, PSBT is the plumbing that makes hardware wallets work. When you tap "send" in a hardware-wallet-paired app:
 
@@ -30,4 +30,4 @@ What makes PSBT load-bearing for sovereignty:
 
 A PSBT is binary by default but typically displayed as a base64-encoded string or rendered as a QR code. The format is verbose by design: it carries all the metadata signers need to verify amounts and destinations independently, so an offline device can confirm what it's signing without trusting the coordinator.
 
-See [BIP 174](/glossary/bip-174-psbt/) for the formal spec.
+See [BIP 174](/glossary/bip-174-psbt) for the formal spec.

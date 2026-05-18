@@ -17,12 +17,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Bitcoin Dominance is Bitcoin's [market capitalization](/glossary/market-capitalization/) as a percentage of the total cryptocurrency market cap. If BTC's market cap is $2 trillion and total crypto market cap is $3.3 trillion, dominance is roughly 60%.
+Bitcoin Dominance is Bitcoin's [market capitalization](/glossary/market-capitalization) as a percentage of the total cryptocurrency market cap. If BTC's market cap is $2 trillion and total crypto market cap is $3.3 trillion, dominance is roughly 60%.
 
 The number is widely tracked as a sentiment indicator:
 
-- **Dominance rising** typically means capital is flowing toward Bitcoin and away from [altcoins](/glossary/altcoin/). Happens during bear markets (flight to relative quality), early bull markets (Bitcoin moves first), and macro stress events.
-- **Dominance falling** typically means capital is rotating into altcoins. Happens during late-cycle euphoria, [alt seasons](/glossary/alt-season/), and periods when retail speculation is high.
+- **Dominance rising** typically means capital is flowing toward Bitcoin and away from [altcoins](/glossary/altcoin). Happens during bear markets (flight to relative quality), early bull markets (Bitcoin moves first), and macro stress events.
+- **Dominance falling** typically means capital is rotating into altcoins. Happens during late-cycle euphoria, [alt seasons](/glossary/alt-season), and periods when retail speculation is high.
 
 Historical context:
 

@@ -21,7 +21,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Delayed justice transaction" describes the time-window mechanics of Lightning's [penalty transaction](/glossary/penalty-transaction/) system. The cheater's own balance in a unilaterally-broadcast channel close is held behind a CSV timelock (typically 144 blocks, about a day) before the cheater can spend it. During that window, the honest party can broadcast a justice transaction that sweeps the entire channel balance away.
+"Delayed justice transaction" describes the time-window mechanics of Lightning's [penalty transaction](/glossary/penalty-transaction) system. The cheater's own balance in a unilaterally-broadcast channel close is held behind a CSV timelock (typically 144 blocks, about a day) before the cheater can spend it. During that window, the honest party can broadcast a justice transaction that sweeps the entire channel balance away.
 
 The "delay" isn't a grace period for the cheater - it's a window for the victim to detect and respond. Sequence:
 
@@ -40,4 +40,4 @@ What "typically 144 blocks" actually means in practice:
 - Larger channels often use longer delays (giving defenders more reaction time at the cost of locking funds longer if you force-close legitimately).
 - The setting is per-channel and per-side; you set your peer's delay, they set yours.
 
-This is one of the design choices that makes Lightning channels safe-by-default for non-vigilant operators - as long as a [watchtower](/glossary/lightning-network-penalty/) is monitoring on your behalf during the CSV window, sleeping through a cheat attempt doesn't cost you the channel.
+This is one of the design choices that makes Lightning channels safe-by-default for non-vigilant operators - as long as a [watchtower](/glossary/lightning-network-penalty) is monitoring on your behalf during the CSV window, sleeping through a cheat attempt doesn't cost you the channel.

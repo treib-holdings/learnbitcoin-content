@@ -16,12 +16,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-ASICBoost is a mining-efficiency optimization that exploits a quirk in SHA-256's structure to skip some redundant work, gaining roughly 15-20% efficiency on top of baseline [ASIC](/glossary/asic-application-specific-integrated-circuit/) performance. Two variants exist:
+ASICBoost is a mining-efficiency optimization that exploits a quirk in SHA-256's structure to skip some redundant work, gaining roughly 15-20% efficiency on top of baseline [ASIC](/glossary/asic-application-specific-integrated-circuit) performance. Two variants exist:
 
 - **Overt ASICBoost.** Manipulates the block header version field to find collisions that share state in the SHA-256 midstate computation. Visible on-chain; doesn't require any tricks at the protocol level.
-- **Covert ASICBoost.** Manipulates the merkle root by reordering transactions, achieving the same midstate-collision effect. Not directly visible on-chain. Famously incompatible with [SegWit](/glossary/segwit-segregated-witness-bip-141/), which restructures how the merkle root is computed.
+- **Covert ASICBoost.** Manipulates the merkle root by reordering transactions, achieving the same midstate-collision effect. Not directly visible on-chain. Famously incompatible with [SegWit](/glossary/segwit-segregated-witness-bip-141), which restructures how the merkle root is computed.
 
-The covert variant became a political flashpoint during the 2017 [SegWit](/glossary/segwit-segregated-witness-bip-141/) activation deadlock. Greg Maxwell publicly observed that some major mining hardware (notably from one specific manufacturer at the time) appeared to use covert ASICBoost, and that the manufacturer's resistance to SegWit might be partly driven by SegWit incompatibility with that optimization. The accusation was disputed; the timing was suggestive.
+The covert variant became a political flashpoint during the 2017 [SegWit](/glossary/segwit-segregated-witness-bip-141) activation deadlock. Greg Maxwell publicly observed that some major mining hardware (notably from one specific manufacturer at the time) appeared to use covert ASICBoost, and that the manufacturer's resistance to SegWit might be partly driven by SegWit incompatibility with that optimization. The accusation was disputed; the timing was suggestive.
 
 The episode raised the question: who is gaining hidden efficiency advantages, and does the network know? The answer, broadly, was "yes, this was happening" - leading to discussions about whether to deliberately disable covert ASICBoost in future protocol changes.
 

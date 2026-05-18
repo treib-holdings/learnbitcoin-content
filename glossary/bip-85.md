@@ -33,4 +33,4 @@ The downside: **the master seed becomes a single point of catastrophic failure.*
 
 BIP-85 is widely supported in Bitcoin Core, hardware wallets (ColdCard, Trezor, Foundation Passport), and several wallet stacks. It's the standard for "I want multiple wallets but only one backup to safeguard."
 
-See [Hierarchical Deterministic Wallet](/glossary/hierarchical-deterministic-wallet/) for the BIP-32 framework this builds on.
+See [Hierarchical Deterministic Wallet](/glossary/hierarchical-deterministic-wallet) for the BIP-32 framework this builds on.

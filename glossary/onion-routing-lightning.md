@@ -20,11 +20,11 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Onion routing is the privacy technique [Lightning](/glossary/lightning-network/) uses to keep intermediate routing nodes from knowing the full path a payment is taking. Each routing hop knows only its previous and next hop, never the original sender or final recipient.
+Onion routing is the privacy technique [Lightning](/glossary/lightning-network) uses to keep intermediate routing nodes from knowing the full path a payment is taking. Each routing hop knows only its previous and next hop, never the original sender or final recipient.
 
 The mechanism: the sending wallet wraps the payment instructions in nested layers of encryption, like an onion. Each routing node decrypts (peels) one layer to learn where to forward the payment next, but cannot see deeper into the onion. After forwarding, the node knows only "I got this from X, and forwarded it to Y" - not who's at either end of the chain.
 
-This is the same general idea as the **Tor** anonymity network (which actually inspired Lightning's choice). The specific Lightning protocol is called **[Sphinx](/glossary/lightning-sphinx/)** and is defined in [BOLT-4](https://github.com/lightning/bolts/blob/master/04-onion-routing.md).
+This is the same general idea as the **Tor** anonymity network (which actually inspired Lightning's choice). The specific Lightning protocol is called **[Sphinx](/glossary/lightning-sphinx)** and is defined in [BOLT-4](https://github.com/lightning/bolts/blob/master/04-onion-routing.md).
 
 What onion routing achieves:
 

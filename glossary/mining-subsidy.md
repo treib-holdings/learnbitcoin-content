@@ -30,7 +30,7 @@ The schedule is deterministic and built into the protocol:
 | ... | ... | ... |
 | Era 33+ | block ~6,930,000+ | 0 (full reduction to zero satoshis) |
 
-Each era halves the subsidy, hence "halving" or "halvening" (block 210,000 in November 2012 was the first). The integer-truncation arithmetic means the total ever issued is exactly 20,999,999.9769 BTC, slightly under the round-number 21 million (see [asymptote](/glossary/asymptote/)).
+Each era halves the subsidy, hence "halving" or "halvening" (block 210,000 in November 2012 was the first). The integer-truncation arithmetic means the total ever issued is exactly 20,999,999.9769 BTC, slightly under the round-number 21 million (see [asymptote](/glossary/asymptote)).
 
 What this means for the long-term economics:
 

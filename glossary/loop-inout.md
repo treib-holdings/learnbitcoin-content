@@ -12,7 +12,7 @@ relatedTerms: []
 liveWidget: ~
 ---
 
-Loop In and Loop Out are Lightning Labs' non-custodial swap service for moving balance between on-chain BTC and Lightning channel liquidity without closing or opening channels. Built on [submarine swap](/glossary/submarine-swap/) primitives, so the trades are atomic and trust-minimized.
+Loop In and Loop Out are Lightning Labs' non-custodial swap service for moving balance between on-chain BTC and Lightning channel liquidity without closing or opening channels. Built on [submarine swap](/glossary/submarine-swap) primitives, so the trades are atomic and trust-minimized.
 
 - **Loop Out**: send Lightning balance, receive on-chain BTC. Free up inbound capacity on your channels by emptying them.
 - **Loop In**: send on-chain BTC, receive Lightning balance. Top up your outbound capacity to spend more via Lightning.

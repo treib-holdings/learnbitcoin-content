@@ -32,6 +32,6 @@ The historical record:
 
 Trace Mayer's framing (paraphrased): "If you do this every year, you can see whether your exchange is solvent. If you only do it during a crisis, you might be too late."
 
-The practical takeaway aligns with the [Be Your Own Bank chapter](/journey/be-your-own-bank/): for any amount of BTC you actually care about, self-custody is the answer. Use exchanges for fiat on-ramps and trading; withdraw to hardware-wallet-controlled addresses promptly. Proof of Keys Day is a useful reminder, but the underlying discipline applies year-round.
+The practical takeaway aligns with the [Be Your Own Bank chapter](/journey/be-your-own-bank): for any amount of BTC you actually care about, self-custody is the answer. Use exchanges for fiat on-ramps and trading; withdraw to hardware-wallet-controlled addresses promptly. Proof of Keys Day is a useful reminder, but the underlying discipline applies year-round.
 
 January 3rd will probably remain a Bitcoin cultural moment for as long as Bitcoin exists. It's the annual reminder that the network's value proposition is sovereignty, and sovereignty requires actually controlling the keys.

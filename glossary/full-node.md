@@ -27,7 +27,7 @@ sameAs:
 liveWidget: ~
 ---
 
-A full node is a Bitcoin [node](/glossary/node/) that downloads, validates, and stores the entire blockchain - every block from the [genesis block](/glossary/genesis-block/) on January 3, 2009 through whatever the current tip is right now. It enforces every consensus rule independently and answers to no one's interpretation but its own.
+A full node is a Bitcoin [node](/glossary/node) that downloads, validates, and stores the entire blockchain - every block from the [genesis block](/glossary/genesis-block) on January 3, 2009 through whatever the current tip is right now. It enforces every consensus rule independently and answers to no one's interpretation but its own.
 
 The practical specs as of 2026:
 
@@ -36,7 +36,7 @@ The practical specs as of 2026:
 - **CPU:** Anything from a Raspberry Pi 4 upward will run it. Initial sync is CPU-bound and takes a few days; ongoing operation is trivial.
 - **Bandwidth:** Several hundred GB per month of outbound, mostly serving blocks to peers. Cap-able via configuration if your ISP is hostile.
 
-The software is almost always [Bitcoin Core](/glossary/bitcoin-core/), the reference implementation. Alternatives like [Bitcoin Knots](/glossary/bitcoin-knots/) exist but are essentially patched versions of Core.
+The software is almost always [Bitcoin Core](/glossary/bitcoin-core), the reference implementation. Alternatives like [Bitcoin Knots](/glossary/bitcoin-knots) exist but are essentially patched versions of Core.
 
 Why bother running a full node, when wallets can connect to public servers? Three reasons:
 
@@ -46,4 +46,4 @@ Why bother running a full node, when wallets can connect to public servers? Thre
 
 The Bitcoin community runs an estimated 15,000-20,000 publicly reachable full nodes, plus many more behind NAT or on Tor. Yours can be one of them.
 
-See the [Sovereignty Journey](/journey/sovereignty/) for the full walkthrough.
+See the [Sovereignty Journey](/journey/sovereignty) for the full walkthrough.

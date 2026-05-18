@@ -37,7 +37,7 @@ If you ignore everything else, you can get through 95% of Bitcoin life with thre
 
 - **BTC** - the whole unit. Used for large amounts, quoting market prices, savings discussions.
 - **sat** (satoshi) - the smallest unit. Used for fees, tips, microtransactions, fee rates (sat/vByte).
-- **msat** (millisat) - one thousandth of a sat. Used inside the [Lightning Network](/glossary/lightning-network/) for fine routing fee precision. You'll rarely see msat directly in a wallet UI.
+- **msat** (millisat) - one thousandth of a sat. Used inside the [Lightning Network](/glossary/lightning-network) for fine routing fee precision. You'll rarely see msat directly in a wallet UI.
 
 The other units (mBTC, μBTC, Finney) are mostly historical or community-specific. If you're learning Bitcoin in 2026, learning BTC and sats is sufficient.
 
@@ -57,7 +57,7 @@ Working from biggest to smallest:
 
 <UnitsVisualization client:visible unit="btc" showLabel={false} />
 
-The base unit. Equals 100,000,000 satoshis. Used for market prices ("BTC is at $87,000"), large transfers ("I bought 0.5 BTC"), and any discussion where the amount is bigger than a few hundred dollars. There will never be more than 21 million of these in existence (see [the Supply Schedule rabbit hole](/rabbit-hole/supply/)).
+The base unit. Equals 100,000,000 satoshis. Used for market prices ("BTC is at $87,000"), large transfers ("I bought 0.5 BTC"), and any discussion where the amount is bigger than a few hundred dollars. There will never be more than 21 million of these in existence (see [the Supply Schedule rabbit hole](/rabbit-hole/supply)).
 
 ### dBTC (deci-Bitcoin) - mostly unused
 
@@ -133,7 +133,7 @@ Satoshi Nakamoto picked eight decimal places when designing Bitcoin. There's no 
 
 At 8 decimals, Bitcoin can represent values from $1M+ (1 BTC) down to $0.01 (1 sat) - even if the dollar-per-BTC price reaches a million. That's the rough envelope the choice covers.
 
-In some modern uses, 8 decimals is brushing up against the limit. The [Lightning Network](/glossary/lightning-network/) needs finer precision for routing fees, which is why it operates internally in **millisatoshis** (1/1000 of a sat, 11 decimals total). On-chain Bitcoin is still 8 decimals, but second-layer protocols have extended the resolution off-chain.
+In some modern uses, 8 decimals is brushing up against the limit. The [Lightning Network](/glossary/lightning-network) needs finer precision for routing fees, which is why it operates internally in **millisatoshis** (1/1000 of a sat, 11 decimals total). On-chain Bitcoin is still 8 decimals, but second-layer protocols have extended the resolution off-chain.
 
 Could the protocol go to 10 or 12 decimals? Technically yes, but it would require a network-wide soft fork to redefine the smallest unit. No serious proposal has been made. The current scope works for the foreseeable future.
 

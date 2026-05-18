@@ -17,9 +17,9 @@ relatedTerms:
 liveWidget: ~
 ---
 
-**asmap** is a feature in [Bitcoin Core](/glossary/bitcoin-core/) that maps peer IP addresses to their **Autonomous System Numbers (ASNs)** - the routing entities that own and operate ranges of internet IP space. Using this mapping, the node spreads its outbound peer connections across many *different* ASNs rather than risking many connections to the same network operator.
+**asmap** is a feature in [Bitcoin Core](/glossary/bitcoin-core) that maps peer IP addresses to their **Autonomous System Numbers (ASNs)** - the routing entities that own and operate ranges of internet IP space. Using this mapping, the node spreads its outbound peer connections across many *different* ASNs rather than risking many connections to the same network operator.
 
-Why this matters for [eclipse-attack](/glossary/eclipse-attack/) defense:
+Why this matters for [eclipse-attack](/glossary/eclipse-attack) defense:
 
 - **An ASN is a real-world entity** (e.g., AS15169 = Google, AS16509 = Amazon AWS, etc.). All IPs belonging to one ASN are administratively under the same authority.
 - **If your node has 8 outbound peers all on AWS**, then an attacker who can compromise AWS or coerce them can isolate your node trivially. They control the entire path.
@@ -31,4 +31,4 @@ The asmap data is generated from public BGP routing announcements and shipped or
 
 For most home node operators, the default asmap behavior is good enough. For operators serious about defense-in-depth - high-value Lightning routing nodes, exchange-operated nodes, or anyone whose node is a meaningful target - asmap is one of several network-layer defenses worth knowing about.
 
-See [Eclipse Attack](/glossary/eclipse-attack/) for the threat this defends against and [Peer Discovery](/glossary/peer-discovery/) for the broader peer-selection process.
+See [Eclipse Attack](/glossary/eclipse-attack) for the threat this defends against and [Peer Discovery](/glossary/peer-discovery) for the broader peer-selection process.

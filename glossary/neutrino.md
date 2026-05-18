@@ -28,7 +28,7 @@ The privacy property is the killer feature:
 
 What Neutrino is used for:
 
-- **Lightning Labs' [LND](/glossary/lightning-network-daemon-lnd/)** supports Neutrino as a backend for clients that don't want to run their own Bitcoin Core full node. Most non-routing-node Lightning users on LND-based wallets use it.
+- **Lightning Labs' [LND](/glossary/lightning-network-daemon-lnd)** supports Neutrino as a backend for clients that don't want to run their own Bitcoin Core full node. Most non-routing-node Lightning users on LND-based wallets use it.
 - **Many mobile Bitcoin wallets** use Neutrino or similar BIP 158-based backends rather than connecting to a trusted Electrum server.
 - **Lightning Dev Kit (LDK)** speaks Neutrino as one of its supported chain-data sources.
 

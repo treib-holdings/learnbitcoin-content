@@ -24,13 +24,13 @@ sameAs:
 liveWidget: ~
 ---
 
-P2WPKH - "Pay to Witness Public Key Hash" - is the native [SegWit](/glossary/segwit-segregated-witness-bip-141/) version of [P2PKH](/glossary/p2pkh-pay-public-key-hash/). It's the single-signature address format that became standard after SegWit activated in 2017. Addresses start with `bc1q` (e.g. `bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq`).
+P2WPKH - "Pay to Witness Public Key Hash" - is the native [SegWit](/glossary/segwit-segregated-witness-bip-141) version of [P2PKH](/glossary/p2pkh-pay-public-key-hash). It's the single-signature address format that became standard after SegWit activated in 2017. Addresses start with `bc1q` (e.g. `bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq`).
 
-Functionally identical to P2PKH: lock to a 20-byte [public-key](/glossary/public-key/) hash, unlock with a public key + signature. What changes is *where the signature lives*.
+Functionally identical to P2PKH: lock to a 20-byte [public-key](/glossary/public-key) hash, unlock with a public key + signature. What changes is *where the signature lives*.
 
 In SegWit, the unlocking data (the "witness") is separated from the main transaction body. This has two practical consequences:
 
 - **Smaller effective fee.** Witness data counts at 1/4 the weight of non-witness data. A typical P2WPKH spend costs ~40% less in fees than the equivalent P2PKH spend.
-- **No transaction malleability.** The [txid](/glossary/transaction/) is computed over the non-witness part only. The signature can't be tweaked after broadcast to change the txid. This is what made [Lightning](/glossary/lightning-network/) practically deployable.
+- **No transaction malleability.** The [txid](/glossary/transaction) is computed over the non-witness part only. The signature can't be tweaked after broadcast to change the txid. This is what made [Lightning](/glossary/lightning-network) practically deployable.
 
-P2WPKH was the dominant new-receive format from 2018 through ~2023. As of 2026, many wallets have shifted defaults again toward [P2TR](/glossary/taproot/) (Taproot, `bc1p...`) for further fee savings and privacy. P2WPKH remains fully supported, cheaper than P2PKH/P2SH, and a perfectly good choice for everyday use.
+P2WPKH was the dominant new-receive format from 2018 through ~2023. As of 2026, many wallets have shifted defaults again toward [P2TR](/glossary/taproot) (Taproot, `bc1p...`) for further fee savings and privacy. P2WPKH remains fully supported, cheaper than P2PKH/P2SH, and a perfectly good choice for everyday use.

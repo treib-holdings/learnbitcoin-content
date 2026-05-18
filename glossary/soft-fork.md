@@ -30,12 +30,12 @@ This is the *backwards-compatible* way to evolve Bitcoin's protocol. It contrast
 
 Notable Bitcoin soft forks:
 
-- **[BIP-16 (P2SH)](/glossary/bip-16-p2sh/)** - 2012. Added the [P2SH](/glossary/p2sh-pay-script-hash/) address format.
-- **[BIP-65 (CLTV)](/glossary/bip-65-opchecklocktimeverify/)** - 2015. Added `OP_CHECKLOCKTIMEVERIFY` for [absolute locktimes](/glossary/absolute-locktime/) in scripts.
-- **[BIP-68/112/113 (CSV)](/glossary/checksequenceverify-csv/)** - 2016. Added relative locktimes.
-- **[BIP-141 (SegWit)](/glossary/segwit-segregated-witness-bip-141/)** - 2017. The big one; restructured witness data, fixed malleability, doubled effective block capacity.
-- **[BIP-340/341/342 (Taproot)](/glossary/taproot/)** - 2021. Added [Schnorr signatures](/glossary/schnorr-signature/), Taproot, and Tapscript.
+- **[BIP-16 (P2SH)](/glossary/bip-16-p2sh)** - 2012. Added the [P2SH](/glossary/p2sh-pay-script-hash) address format.
+- **[BIP-65 (CLTV)](/glossary/bip-65-opchecklocktimeverify)** - 2015. Added `OP_CHECKLOCKTIMEVERIFY` for [absolute locktimes](/glossary/absolute-locktime) in scripts.
+- **[BIP-68/112/113 (CSV)](/glossary/checksequenceverify-csv)** - 2016. Added relative locktimes.
+- **[BIP-141 (SegWit)](/glossary/segwit-segregated-witness-bip-141)** - 2017. The big one; restructured witness data, fixed malleability, doubled effective block capacity.
+- **[BIP-340/341/342 (Taproot)](/glossary/taproot)** - 2021. Added [Schnorr signatures](/glossary/schnorr-signature), Taproot, and Tapscript.
 
-Activation typically involves miner signaling: enough miners must signal readiness for the new rules in their block headers before the fork "locks in" and starts being enforced. The mechanism is defined in [BIP-9](/glossary/bip-9-versionbits/) and its successors. After activation, nodes that haven't upgraded continue working but may accept blocks that violate the new rules - which is why genuinely majority-supported soft forks are essentially safe, while contested ones can create chain splits.
+Activation typically involves miner signaling: enough miners must signal readiness for the new rules in their block headers before the fork "locks in" and starts being enforced. The mechanism is defined in [BIP-9](/glossary/bip-9-versionbits) and its successors. After activation, nodes that haven't upgraded continue working but may accept blocks that violate the new rules - which is why genuinely majority-supported soft forks are essentially safe, while contested ones can create chain splits.
 
 The soft-fork approach is conservative: Bitcoin can add features without forcing everyone to upgrade simultaneously. It's also part of why Bitcoin evolves slowly - any proposal has to satisfy a high bar of community + miner + economic-node consensus to actually activate.

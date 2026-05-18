@@ -21,20 +21,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-An inactive [Lightning channel](/glossary/lightning-channel/) is one that hasn't routed any payments recently. There's no formal protocol definition of "inactive" - it's a heuristic each node operator applies based on their own policy. Common thresholds: 14 days, 30 days, 90 days without traffic.
+An inactive [Lightning channel](/glossary/lightning-channel) is one that hasn't routed any payments recently. There's no formal protocol definition of "inactive" - it's a heuristic each node operator applies based on their own policy. Common thresholds: 14 days, 30 days, 90 days without traffic.
 
 Inactivity isn't a problem in itself. A channel that's just sitting there, perfectly balanced and not being used, isn't doing harm. It's just... not being useful, either. The capital is locked up in 2-of-2 multisig, paying opportunity cost.
 
 Why operators care about inactive channels:
 
 - **Capital efficiency.** A routing node might have 100 BTC distributed across 50 channels, 20 of which haven't moved a sat in months. That capital could be redeployed.
-- **Network bloat.** [Gossip](/glossary/gossip-protocol-lightning/) about channels that aren't useful adds noise to the routing graph without adding routing value.
+- **Network bloat.** [Gossip](/glossary/gossip-protocol-lightning) about channels that aren't useful adds noise to the routing graph without adding routing value.
 - **Topology health.** A network full of stagnant channels is harder to route through than a network with active, rebalanced channels.
 
 What operators do with inactive channels:
 
 - **Close them** to free the BTC for redeployment.
-- **Rebalance them** via [circular payments](/glossary/lightning-routing/) or [splicing](/glossary/lightning-channel-splicing/) - sometimes inactivity is a side effect of being fully depleted on one side, and rebalancing brings them back to useful.
+- **Rebalance them** via [circular payments](/glossary/lightning-routing) or [splicing](/glossary/lightning-channel-splicing) - sometimes inactivity is a side effect of being fully depleted on one side, and rebalancing brings them back to useful.
 - **Mark them as private** if the counterparty is e.g. a personal contact who only occasionally uses the channel.
 - **Just leave them alone** if the cost of closing exceeds the value of recovering the capital.
 

@@ -58,7 +58,7 @@ The technical fix was small. The hard part was getting node operators to upgrade
 
 ## 5. The "Soft Fork" That Wasn't
 
-Bitcoin documentation often describes the inflation-bug fix as a [soft fork](/glossary/soft-fork/). Strictly, it was not. It was a **hard fork** with extremely rapid coordination.
+Bitcoin documentation often describes the inflation-bug fix as a [soft fork](/glossary/soft-fork). Strictly, it was not. It was a **hard fork** with extremely rapid coordination.
 
 A soft fork tightens the rules: new clients reject blocks the old clients would accept, but old clients still accept everything the new clients produce. The chain stays unified.
 
@@ -84,15 +84,15 @@ The August 2010 incident was not Bitcoin's only flirtation with infinite supply.
 
 In 2014, developer Pieter Wuille noticed that the way the block subsidy was coded - using bit shifting to halve every 210,000 blocks - had a subtle bug. After enough halvings, the subsidy did not drop to zero; it wrapped around to a large positive value. Bitcoin's supply, on the books, was technically not capped.
 
-The bug would not trigger until block roughly 13,440,000, sometime around the year 2256, so it was not urgent. But Wuille wrote [BIP 42](/glossary/bip-42/) - the only BIP whose stated purpose is to make Bitcoin's monetary policy work the way Bitcoin's monetary policy is described.
+The bug would not trigger until block roughly 13,440,000, sometime around the year 2256, so it was not urgent. But Wuille wrote [BIP 42](/glossary/bip-42) - the only BIP whose stated purpose is to make Bitcoin's monetary policy work the way Bitcoin's monetary policy is described.
 
 BIP 42 was a soft fork: it added the rule that the subsidy must be zero once the shift count exceeds 64. It activated quietly. Most users have never heard of it.
 
-The fact that this BIP exists, and was deployed without controversy, is itself an interesting data point about Bitcoin's culture. The supply cap is taken seriously enough that even a bug not triggering for 240 years was fixed because the spec said "21 million." (See also: the actual cap is [20,999,999.9769](/glossary/asymptote/), but that is a different story, told in [The Supply Schedule](/rabbit-hole/supply/).)
+The fact that this BIP exists, and was deployed without controversy, is itself an interesting data point about Bitcoin's culture. The supply cap is taken seriously enough that even a bug not triggering for 240 years was fixed because the spec said "21 million." (See also: the actual cap is [20,999,999.9769](/glossary/asymptote), but that is a different story, told in [The Supply Schedule](/rabbit-hole/supply).)
 
 ## 8. Lessons for "Trustless"
 
-The inflation bug is often cited as evidence that Bitcoin is *not* trustless - after all, it had a bug, and the bug was fixed by [Satoshi](/glossary/satoshi-nakamoto/) in particular, and the chain was rewritten.
+The inflation bug is often cited as evidence that Bitcoin is *not* trustless - after all, it had a bug, and the bug was fixed by [Satoshi](/glossary/satoshi-nakamoto) in particular, and the chain was rewritten.
 
 The honest reading is more interesting than that:
 

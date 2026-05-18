@@ -21,7 +21,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-[BIP-42](https://github.com/bitcoin/bips/blob/master/bip-0042.mediawiki) is the consensus fix that closed a subtle bug in Bitcoin's original [supply](/glossary/block-subsidy/) code. The bug, discovered by Pieter Wuille in 2014, was that integer arithmetic in the original `GetBlockSubsidy` function would, after enough halvings, overflow and start producing positive subsidies again - meaning Bitcoin would inflate indefinitely starting around year 2214.
+[BIP-42](https://github.com/bitcoin/bips/blob/master/bip-0042.mediawiki) is the consensus fix that closed a subtle bug in Bitcoin's original [supply](/glossary/block-subsidy) code. The bug, discovered by Pieter Wuille in 2014, was that integer arithmetic in the original `GetBlockSubsidy` function would, after enough halvings, overflow and start producing positive subsidies again - meaning Bitcoin would inflate indefinitely starting around year 2214.
 
 The original code looked roughly like:
 
@@ -38,6 +38,6 @@ The fix in BIP-42 was simple: explicitly return zero after enough halvings have 
 if (halvings >= 64) return 0;
 ```
 
-This made the 21-million cap genuinely permanent rather than dependent on undefined C++ behavior. As a consensus change, BIP-42 was deployed as a [soft fork](/glossary/soft-fork/) (since it tightens behavior to "no, you really can't get a positive subsidy after halving 33").
+This made the 21-million cap genuinely permanent rather than dependent on undefined C++ behavior. As a consensus change, BIP-42 was deployed as a [soft fork](/glossary/soft-fork) (since it tightens behavior to "no, you really can't get a positive subsidy after halving 33").
 
-The episode is a small but instructive moment in Bitcoin's history. The [21M cap](/glossary/asymptote/) isn't an aspiration; it's a property of the code, enforced by every node, every block, forever. BIP-42 made sure the code actually said what everyone thought it said.
+The episode is a small but instructive moment in Bitcoin's history. The [21M cap](/glossary/asymptote) isn't an aspiration; it's a property of the code, enforced by every node, every block, forever. BIP-42 made sure the code actually said what everyone thought it said.

@@ -20,15 +20,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Address reuse is the practice of receiving multiple payments at the same Bitcoin [address](/glossary/address/). It's one of the most common privacy mistakes and one of the easiest to avoid.
+Address reuse is the practice of receiving multiple payments at the same Bitcoin [address](/glossary/address). It's one of the most common privacy mistakes and one of the easiest to avoid.
 
 Why it matters: every Bitcoin transaction is publicly visible on the chain, forever. An address that receives one payment shows up once. An address that receives a hundred payments shows up a hundred times, with every counterparty, amount, and timestamp linked together in plain view. Anyone who knows that address belongs to you - because you posted it on Twitter, used it for a donation page, gave it to one KYC exchange - can now see your entire history through that address.
 
-The fix is trivial: use a fresh address for every incoming payment. Modern [hierarchical deterministic wallets](/glossary/hierarchical-deterministic-wallet/) generate new addresses automatically. The same 12 or 24 [seed phrase](/glossary/seed-phrase/) words back up thousands of addresses; you don't have to track them individually.
+The fix is trivial: use a fresh address for every incoming payment. Modern [hierarchical deterministic wallets](/glossary/hierarchical-deterministic-wallet) generate new addresses automatically. The same 12 or 24 [seed phrase](/glossary/seed-phrase) words back up thousands of addresses; you don't have to track them individually.
 
 Where reuse still happens in practice:
 
-- **Donation addresses on personal sites and Twitter bios.** Convenient, but every donor sees the same address and can correlate. Better alternatives: a [Lightning](/glossary/lightning-network/) address (instant + private), [Silent Payments](/glossary/silent-payments/) (one reusable code, fresh on-chain addresses), or rotating the static address periodically.
+- **Donation addresses on personal sites and Twitter bios.** Convenient, but every donor sees the same address and can correlate. Better alternatives: a [Lightning](/glossary/lightning-network) address (instant + private), [Silent Payments](/glossary/silent-payments) (one reusable code, fresh on-chain addresses), or rotating the static address periodically.
 - **Exchange withdrawal addresses.** Some users withdraw repeatedly to the same address. The exchange sees this; chain analysts see it; the address's history is fully exposed.
 - **Multi-signature setups** where regenerating addresses is operationally awkward.
 

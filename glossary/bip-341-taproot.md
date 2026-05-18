@@ -28,7 +28,7 @@ liveWidget: ~
 
 BIP 341 defines the Taproot output type and its spending rules. Authored by Pieter Wuille, Jonas Nick, and Anthony Towns; activated as a soft fork in November 2021 at block height 709,632. Combined with BIP 340 (Schnorr signatures) and BIP 342 (Tapscript), it's the Taproot upgrade.
 
-The core idea: a Taproot output commits to either a single public key (the "internal key") or a tree of alternative spending scripts (the script paths), or both. The output address starts with `bc1p` (using [bech32m](/glossary/bech32m/) encoding).
+The core idea: a Taproot output commits to either a single public key (the "internal key") or a tree of alternative spending scripts (the script paths), or both. The output address starts with `bc1p` (using [bech32m](/glossary/bech32m) encoding).
 
 Two spending paths:
 
@@ -40,7 +40,7 @@ What this unlocks:
 - **MuSig2 / FROST aggregation.** Multiple cosigners produce a single Schnorr signature on a single internal key. A 5-of-7 federation spends a Taproot output indistinguishably from a single-sig wallet.
 - **Lightning channel privacy.** Cooperative channel closes look like any other Taproot key-path spend, no longer visibly "2-of-2 multisig closing."
 - **Cheap multisig.** Pay for the signature you actually use, not for all the keys you committed to.
-- **Less data on-chain.** Schnorr signatures are a fixed 64 bytes vs ECDSA's ~71-72 bytes after [low-R](/glossary/low-r-signatures/) grinding.
+- **Less data on-chain.** Schnorr signatures are a fixed 64 bytes vs ECDSA's ~71-72 bytes after [low-R](/glossary/low-r-signatures) grinding.
 
 Taproot adoption took a few years to ripple through wallet software, hardware wallets, and infrastructure. As of 2026 it's widely supported, and a meaningful and growing share of new addresses are `bc1p...`.
 

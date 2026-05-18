@@ -27,14 +27,14 @@ Byzantine Fault Tolerance (BFT) is the property of a distributed system being ab
 
 For decades, BFT was understood to require *known, identified participants* with assigned voting weights. The classical results (PBFT and successors) needed a fixed set of validators and could tolerate up to ~1/3 of them being malicious.
 
-What Satoshi did with [proof-of-work](/glossary/proof-work-pow/) was solve BFT for *open, permissionless* membership - where anyone can join or leave the validator set at any time. The trick: instead of identified validators, identity itself is proven via expended computational work. An attacker can't just pretend to be many validators; each "vote" costs real energy.
+What Satoshi did with [proof-of-work](/glossary/proof-work-pow) was solve BFT for *open, permissionless* membership - where anyone can join or leave the validator set at any time. The trick: instead of identified validators, identity itself is proven via expended computational work. An attacker can't just pretend to be many validators; each "vote" costs real energy.
 
 Bitcoin's specific BFT properties:
 
 - **Resists 51% attacks** economically. An attacker would need more than half of global hash rate, sustained, plus a willingness to spend the energy. Even succeeding only buys a probabilistic reorg of recent history, not a rewrite of deep history.
-- **Heals from temporary disagreement.** When two miners find blocks at the same time, the network temporarily forks; the [longest chain rule](/glossary/longest-chain-rule/) resolves it within a block or two.
+- **Heals from temporary disagreement.** When two miners find blocks at the same time, the network temporarily forks; the [longest chain rule](/glossary/longest-chain-rule) resolves it within a block or two.
 - **Tolerates network partitions.** If parts of the network are disconnected, each side keeps mining; when they reconnect, the side with more cumulative work wins.
 
 Proof-of-stake systems achieve BFT through different means (slashable bonds, identified validators). Bitcoin's energy-based BFT trades efficiency for permissionless openness - anyone can participate in validating, anyone can mine, anyone can run a node. The Byzantine generals don't have to know each other's names.
 
-This was the key conceptual breakthrough in the Bitcoin [whitepaper](/glossary/whitepaper/): permissionless BFT via proof-of-work. Every cryptocurrency that exists today is in some sense a variation on that idea.
+This was the key conceptual breakthrough in the Bitcoin [whitepaper](/glossary/whitepaper): permissionless BFT via proof-of-work. Every cryptocurrency that exists today is in some sense a variation on that idea.

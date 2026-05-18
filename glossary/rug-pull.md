@@ -30,9 +30,9 @@ Why this is structurally less common in Bitcoin:
 
 Where rug-pull-like scams DO happen in the Bitcoin context:
 
-- **Custodial scams.** [Mt. Gox](/glossary/exchange/), [QuadrigaCX](/glossary/exchange/), Bitconnect, BitClub Network. Functionally similar pattern: trust the operator, operator drains funds. The Bitcoin is real; the custodian is the scam.
+- **Custodial scams.** [Mt. Gox](/glossary/exchange), [QuadrigaCX](/glossary/exchange), Bitconnect, BitClub Network. Functionally similar pattern: trust the operator, operator drains funds. The Bitcoin is real; the custodian is the scam.
 - **Bitcoin "yield" products.** Companies promising Bitcoin yield often turn out to be running fractional reserves, lending unsecured, or operating Ponzi structures. Celsius, Genesis, BlockFi exposed this pattern in 2022-2023.
-- **Mining-share scams.** [Hashlet](/glossary/hashlet/) / GAW Miners' Hashlets are the canonical example: sold fractional ownership of mining hash rate that didn't exist. Pure Ponzi.
+- **Mining-share scams.** [Hashlet](/glossary/hashlet) / GAW Miners' Hashlets are the canonical example: sold fractional ownership of mining hash rate that didn't exist. Pure Ponzi.
 - **"Bitcoin-related" tokens.** Various BRC-20s and inscription-based tokens have followed standard altcoin rug-pull patterns. These technically use Bitcoin's chain but are functionally separate from BTC itself.
 
 The protective framing:

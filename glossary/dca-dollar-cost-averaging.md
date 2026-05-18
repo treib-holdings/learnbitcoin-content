@@ -27,4 +27,4 @@ Several Bitcoin-only services (Strike, Swan, River, others) automate this, as do
 
 DCA is not the highest-return strategy if you happen to time a bottom correctly. It is the highest-return strategy among realistic humans who can't reliably do that.
 
-See also [HODL](/glossary/hodl/) - DCA is hodling, with new purchases layered in.
+See also [HODL](/glossary/hodl) - DCA is hodling, with new purchases layered in.

@@ -25,7 +25,7 @@ Merchant adoption is the slow, uneven process of businesses accepting Bitcoin as
 
 What real merchant adoption looks like in 2026:
 
-- **Lightning-first acceptance.** [Lightning](/glossary/lightning-network/) solves the practical problems on-chain Bitcoin can't: payments confirm in seconds, fees are sub-cent, and price exposure is minimal because settlement is instant. Strike, Phoenix, Cash App, and others have made Lightning acceptance trivial to add.
+- **Lightning-first acceptance.** [Lightning](/glossary/lightning-network) solves the practical problems on-chain Bitcoin can't: payments confirm in seconds, fees are sub-cent, and price exposure is minimal because settlement is instant. Strike, Phoenix, Cash App, and others have made Lightning acceptance trivial to add.
 - **El Salvador's experiment.** Bitcoin has been legal tender in El Salvador since 2021. Adoption has been mixed - widespread tourist use, more limited everyday domestic use, infrastructure (Chivo) had teething issues. As a real-world test of "what happens when a nation-state actively pushes Bitcoin acceptance," it's been informative.
 - **Tail of small merchants.** Coffee shops, freelancers, small businesses worldwide. Often Lightning-enabled via Strike, Phoenix, or similar. Hard to quantify globally but the visible long tail keeps growing.
 - **Recurring Bitcoin-payroll services.** Bitwage, Strike's payroll product, and others let employees route a fraction of paychecks straight into BTC.
@@ -39,4 +39,4 @@ What slows broader adoption:
 
 The encouraging trend: Lightning-enabled point-of-sale is now competitive with credit-card processing on fees and *better* on settlement speed. As the volatility issue eases (long term) and as more people earn directly in sats, "Pay with Bitcoin" becomes a real option rather than a curiosity. We're not there yet at scale, but the trajectory is the right one.
 
-See [Bitcoin Pizza Day](/glossary/bitcoin-pizza-day/) for the foundational story of the first real-world Bitcoin payment.
+See [Bitcoin Pizza Day](/glossary/bitcoin-pizza-day) for the foundational story of the first real-world Bitcoin payment.

@@ -27,7 +27,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A bridge node is a [Lightning node](/glossary/lightning-node/) that maintains channels across what would otherwise be disconnected segments of the Lightning Network graph - acting as connective tissue between regions of nodes that wouldn't have direct routing options without it.
+A bridge node is a [Lightning node](/glossary/lightning-node) that maintains channels across what would otherwise be disconnected segments of the Lightning Network graph - acting as connective tissue between regions of nodes that wouldn't have direct routing options without it.
 
 In practice, "bridge node" overlaps heavily with "routing node" - the distinction is more about position in the network topology than about role. A node with many high-capacity channels connecting otherwise sparsely-connected parts of the gossip graph is a bridge whether or not it advertises itself that way.
 
@@ -45,4 +45,4 @@ What bridge nodes earn vs. cost:
 
 The economics for bridge nodes have been tight historically. Some operators run them profitably; others run them at marginal cost to support the network. Either way, well-connected bridge nodes are part of what makes Lightning's routing reliable - a sparsely-bridged graph means more failed payments.
 
-See [Lightning Routing](/glossary/lightning-routing/) for how bridge nodes get used and [Lightning Node](/glossary/lightning-node/) for the broader landscape.
+See [Lightning Routing](/glossary/lightning-routing) for how bridge nodes get used and [Lightning Node](/glossary/lightning-node) for the broader landscape.

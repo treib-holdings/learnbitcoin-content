@@ -29,7 +29,7 @@ A consensus parameter is any rule the protocol requires every full node to enfor
 The major Bitcoin consensus parameters:
 
 - **Block weight limit.** 4 million weight units. The post-SegWit replacement for the original 1 MB block size cap.
-- **Halving schedule.** Subsidy halves every 210,000 blocks (~4 years), starting at 50 BTC and decreasing toward the 20,999,999.9769 BTC [asymptote](/glossary/asymptote/).
+- **Halving schedule.** Subsidy halves every 210,000 blocks (~4 years), starting at 50 BTC and decreasing toward the 20,999,999.9769 BTC [asymptote](/glossary/asymptote).
 - **Valid script opcodes and their semantics.** Defined by the consensus implementation; what `OP_CHECKLOCKTIMEVERIFY` does, what `OP_CHECKMULTISIG` does, what's allowed in a SegWit witness, what's allowed in a Tapscript leaf.
 - **Difficulty retarget rule.** Every 2016 blocks, difficulty adjusts so the expected interval between blocks targets 10 minutes.
 - **Coinbase maturity.** Newly-minted block rewards aren't spendable for 100 confirmations.

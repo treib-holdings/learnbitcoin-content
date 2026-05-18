@@ -19,7 +19,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The "audiobook model" is a [Lightning](/glossary/lightning-network/) micropayment pattern where content is paid for in tiny increments as it's consumed, rather than via subscription or upfront purchase. Audio content was the early canonical example - "pay per minute of audiobook listened" - but the model applies to anything time-streamed.
+The "audiobook model" is a [Lightning](/glossary/lightning-network) micropayment pattern where content is paid for in tiny increments as it's consumed, rather than via subscription or upfront purchase. Audio content was the early canonical example - "pay per minute of audiobook listened" - but the model applies to anything time-streamed.
 
 How it works in practice:
 

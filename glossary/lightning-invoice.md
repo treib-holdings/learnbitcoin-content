@@ -24,7 +24,7 @@ sameAs:
 liveWidget: ~
 ---
 
-A Lightning invoice is a payment request on the [Lightning Network](/glossary/lightning-network/). It's a string the recipient generates and shares with the payer, encoding everything the payer needs to find and complete a payment.
+A Lightning invoice is a payment request on the [Lightning Network](/glossary/lightning-network). It's a string the recipient generates and shares with the payer, encoding everything the payer needs to find and complete a payment.
 
 The standard format is **BOLT-11**, an encoded string typically starting with `lnbc` (mainnet) or `lntb` (testnet). It contains:
 
@@ -48,4 +48,4 @@ Invoices are single-use. The payment hash gets revealed when the payment settles
 
 A newer format, **BOLT-12 offers**, addresses some BOLT-11 limitations - reusable, supports recurring payments, smaller, more private. It was officially merged into the Lightning spec in September 2024. As of 2026 it's supported by Core Lightning, LDK, and eclair/Phoenix; LND adoption is still in progress. Expect BOLT-12 to gradually displace BOLT-11 over the next few years.
 
-See [Lightning Network](/glossary/lightning-network/) for how invoices get routed.
+See [Lightning Network](/glossary/lightning-network) for how invoices get routed.

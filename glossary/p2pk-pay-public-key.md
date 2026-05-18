@@ -19,13 +19,13 @@ relatedTerms:
 liveWidget: ~
 ---
 
-P2PK - "Pay to Public Key" - is Bitcoin's original script format, used in the earliest blocks of the chain. It locks an output to a raw [public key](/glossary/public-key/) (not a hash of one), and unlocks via a signature over the spending transaction.
+P2PK - "Pay to Public Key" - is Bitcoin's original script format, used in the earliest blocks of the chain. It locks an output to a raw [public key](/glossary/public-key) (not a hash of one), and unlocks via a signature over the spending transaction.
 
 Notable history:
 
-- **Used in the [genesis block](/glossary/genesis-block/).** Satoshi's first 50 BTC coinbase output is a P2PK. The format also dominates the first several thousand blocks.
+- **Used in the [genesis block](/glossary/genesis-block).** Satoshi's first 50 BTC coinbase output is a P2PK. The format also dominates the first several thousand blocks.
 - **Used by Satoshi's early mining.** Most of the ~1.1M BTC Satoshi mined sits at P2PK outputs.
-- **Mostly abandoned by ~2010.** [P2PKH](/glossary/p2pkh-pay-public-key-hash/) replaced it for new receives once the community recognized that revealing the public key only at spend time (rather than at receive time) was strictly better.
+- **Mostly abandoned by ~2010.** [P2PKH](/glossary/p2pkh-pay-public-key-hash) replaced it for new receives once the community recognized that revealing the public key only at spend time (rather than at receive time) was strictly better.
 
 What P2PK has against it:
 
@@ -35,4 +35,4 @@ What P2PK has against it:
 
 P2PK outputs are still spendable - any Bitcoin Core node can validate them - but no wallet you'd want to use generates new P2PK addresses. They mostly live on as a historical artifact and a vector for academic curiosity. The Satoshi P2PKs, in particular, are the most-watched unspent outputs in cryptocurrency.
 
-See [P2PKH](/glossary/p2pkh-pay-public-key-hash/) for the format that replaced it.
+See [P2PKH](/glossary/p2pkh-pay-public-key-hash) for the format that replaced it.

@@ -23,13 +23,13 @@ sameAs:
 liveWidget: ~
 ---
 
-A chain split happens when Bitcoin's network diverges into two persistent, separately-valid chains - either accidentally (because of a software bug) or deliberately (because of a contentious [hard fork](/glossary/fork/)).
+A chain split happens when Bitcoin's network diverges into two persistent, separately-valid chains - either accidentally (because of a software bug) or deliberately (because of a contentious [hard fork](/glossary/fork)).
 
-Once split, each chain proceeds with its own blocks, its own miners, and its own followers. Coins that existed before the split duplicate: holders end up with one balance on each chain, controlled by the same [private keys](/glossary/private-key/). The chains never reconcile.
+Once split, each chain proceeds with its own blocks, its own miners, and its own followers. Coins that existed before the split duplicate: holders end up with one balance on each chain, controlled by the same [private keys](/glossary/private-key). The chains never reconcile.
 
 Notable chain splits in Bitcoin's history:
 
-- **Bitcoin Cash (BCH) - August 2017.** The big one. The "scaling wars" of 2015-2017 culminated in BCH forking off Bitcoin with larger blocks but no [SegWit](/glossary/segwit-segregated-witness-bip-141/). Today BCH still exists as a separate, much smaller network.
+- **Bitcoin Cash (BCH) - August 2017.** The big one. The "scaling wars" of 2015-2017 culminated in BCH forking off Bitcoin with larger blocks but no [SegWit](/glossary/segwit-segregated-witness-bip-141). Today BCH still exists as a separate, much smaller network.
 - **Bitcoin SV (BSV) - November 2018.** A fork from BCH, not Bitcoin. Even smaller; even further from relevance.
 - **March 2013 (accidental).** A subtle database difference between Bitcoin v0.7 and v0.8 caused a 24-block accidental fork. Resolved within hours by miners coordinating to roll back to v0.7-compatible behavior. The only "consensus bug" chain split in Bitcoin's history.
 

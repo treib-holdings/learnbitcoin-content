@@ -24,7 +24,7 @@ liveWidget: ~
 
 "Running bitcoin." Two words, posted by Hal Finney on Twitter on January 10, 2009. It's the most quietly important tweet in Bitcoin's history.
 
-The context: Bitcoin had launched a week earlier when [Satoshi](/glossary/satoshi-nakamoto/) mined the [genesis block](/glossary/genesis-block/). Bitcoin Core v0.1 had been posted to the cypherpunks mailing list a few days after that. Hal Finney - a legendary cryptographer who'd worked on PGP and authored RPOW (an earlier reusable-proof-of-work system) - downloaded the software, ran it, and tweeted those two words.
+The context: Bitcoin had launched a week earlier when [Satoshi](/glossary/satoshi-nakamoto) mined the [genesis block](/glossary/genesis-block). Bitcoin Core v0.1 had been posted to the cypherpunks mailing list a few days after that. Hal Finney - a legendary cryptographer who'd worked on PGP and authored RPOW (an earlier reusable-proof-of-work system) - downloaded the software, ran it, and tweeted those two words.
 
 He was the second person ever known to run Bitcoin. Within days, he received block 70's reward of 10 BTC from Satoshi - the first peer-to-peer Bitcoin transaction in history. He corresponded with Satoshi over email about bugs and improvements through much of 2009.
 
@@ -32,4 +32,4 @@ Hal was diagnosed with ALS later that year. As the disease progressed, he wrote 
 
 "Running bitcoin" the tweet has become a cultural touchstone in Bitcoin. The phrase appears on T-shirts, conference banners, and the wall of pretty much every node-runner's home setup. It captures, in the simplest possible language, what early Bitcoiners did: download the software, run a node, contribute to the network. That ethos hasn't changed.
 
-Hal's old [Bitcoin Talk profile](https://bitcointalk.org/index.php?action=profile;u=2) is still up. His public BTC, last known balance roughly 200,000+ BTC across various addresses, has remained untouched. See [Satoshi Nakamoto](/glossary/satoshi-nakamoto/) for the only other person who can plausibly claim that level of early Bitcoin credibility.
+Hal's old [Bitcoin Talk profile](https://bitcointalk.org/index.php?action=profile;u=2) is still up. His public BTC, last known balance roughly 200,000+ BTC across various addresses, has remained untouched. See [Satoshi Nakamoto](/glossary/satoshi-nakamoto) for the only other person who can plausibly claim that level of early Bitcoin credibility.
