@@ -110,6 +110,11 @@ You can mix and match. Wallets are just tools.
 
 We don't sell wallets. We don't take affiliate commissions. Here's the unvarnished filter:
 
+<figure>
+  <img src="/photos/hardware-wallet-ecosystem.jpg" alt="Four Bitcoin hardware wallets from four different vendors on a light wood surface, left to right: Trezor Safe 5 (vertical touchscreen with secure element), Blockstream Jade (compact single-button stick), Coldcard Mk4 (transparent case showing the circuit board and physical numeric keypad), and Keystone 3 Pro (large landscape touchscreen with fingerprint sensor and QR-only air-gapped operation). Four different design philosophies for the same problem: keeping a private key off an internet-connected device." />
+  <figcaption>The hardware wallet ecosystem. Four vendors, four design philosophies, one job: keep the private key off the internet.</figcaption>
+</figure>
+
 **For a free, open-source mobile wallet (hot, beginner-friendly):**
 - **BlueWallet** (iOS, Android) - Bitcoin-only, open source, works fine for everyday amounts
 - **Phoenix** - Bitcoin + Lightning, very low friction; runs an embedded LN node
@@ -117,9 +122,33 @@ We don't sell wallets. We don't take affiliate commissions. Here's the unvarnish
 
 **For a hardware wallet (cold, serious balances):**
 - **Trezor Safe 5** - widely used, established brand; multi-coin by default but supports Bitcoin-only firmware
+
+<figure>
+  <img src="/photos/trezor-safe-5-pin.jpg" alt="The Trezor Safe 5 hardware wallet powered on, displaying its scrambled PIN entry screen. The number positions are randomized on each unlock to prevent shoulder-surfing and smudge-pattern attacks. The device sits on dark leather, with the embossed Trezor lock icon visible below the screen." />
+  <figcaption>Trezor Safe 5 in PIN entry. Numbers shuffle on every unlock - shoulder-surfing and smudge attacks don't work when the layout changes.</figcaption>
+</figure>
+
 - **Coldcard** (Mk4 or Q) - Bitcoin-only, fully open-source firmware, designed for paranoid users
+
+<figure>
+  <img src="/photos/coldcard-mk4-pin.jpg" alt="The Coldcard Mk4 hardware wallet mid-PIN-entry. The transparent case reveals the circuit board and secure element chip. A small green status LED indicates the device is powered. The OLED screen displays 'Enter PIN Prefix' with a numeric counter. A physical 12-button keypad is below the screen." />
+  <figcaption>Coldcard Mk4 in PIN-prefix entry. The transparent case is intentional - anyone can verify the chip on the device matches the public spec.</figcaption>
+</figure>
+
 - **Foundation Passport** - Bitcoin-only, fully air-gapped (no USB data, uses QR codes and microSD); US-made
+- **Keystone 3 Pro** - Bitcoin-friendly, fully air-gapped (no USB data, QR-only), fingerprint sensor, large landscape touchscreen
+
+<figure>
+  <img src="/photos/keystone-3-pro-box.jpg" alt="The Keystone 3 Pro hardware wallet resting on its blue retail packaging. The device's landscape touchscreen is dark; the box shows the Keystone wordmark and product name. Light wood surface in the background." />
+  <figcaption>Keystone 3 Pro arrives in this box. Landscape touchscreen, QR-only operation - no USB data, no Bluetooth.</figcaption>
+</figure>
+
 - **Jade** by Blockstream - affordable, Bitcoin-focused
+
+<figure>
+  <img src="/photos/jade-unlock.jpg" alt="The Blockstream Jade hardware wallet powered on, displaying its unlock screen. The compact device shows 'Unlock Jade' on a small color screen, with status indicators for initialization and firmware version. The JADE wordmark is embossed on the side." />
+  <figcaption>Blockstream Jade at unlock. Single button, color screen, secure element - the budget-conscious entry into self-custody.</figcaption>
+</figure>
 
 **Why "Bitcoin-only" matters:** wallets that support 50 cryptocurrencies have 50× the attack surface. Every supported coin is more code, more libraries, more places things can go wrong. Bitcoin-only firmware has fewer features but a smaller, more thoroughly audited codebase. If you're using a hardware wallet for Bitcoin, run Bitcoin-only firmware. (Most of the above support it.)
 
@@ -130,6 +159,11 @@ We don't sell wallets. We don't take affiliate commissions. Here's the unvarnish
 - Browser extensions, for any serious amount - too much attack surface
 
 The wallet ecosystem moves quickly. The specific brand may shift over the next few years. The *category* recommendations won't.
+
+<figure>
+  <img src="/photos/trezor-evolution.jpg" alt="Four Trezor hardware wallets in chronological order on a light wood surface, left to right: Trezor One (2014), Trezor Model T (2018), Trezor Safe 3 (2023), Trezor Safe 5 (2024). The shapes and screen sizes show a decade of progression - from the original two-button monochrome design to the current touchscreen flagship with a secure element." />
+  <figcaption>Ten years of Bitcoin hardware wallets. The Trezor One on the left shipped in 2014 as the first hardware wallet ever made. The Safe 5 on the right shipped in 2024. The category has matured. The specifics will keep changing; the idea won't.</figcaption>
+</figure>
 
 ## 7. Backing Up Properly
 
