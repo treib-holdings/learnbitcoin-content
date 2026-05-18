@@ -147,6 +147,8 @@ This is the genuinely radical part. **No one is in charge.** Not the largest min
 
 **About Satoshi.** The person or people who created Bitcoin disappeared in 2010. They left no will, no trademark, no foundation, no chosen successor. Their early mined coins have never moved. We don't know who they were. We probably never will. This is a feature: there is no founder to capture, coerce, or compromise. Bitcoin has been ownerless for nearly its entire existence. That is part of what makes it durable.
 
+If you want to go deeper on this - what "decentralized" actually means, where Bitcoin lands on the spectrum, and how the 2017 takeover attempt was defeated - see the [Decentralization rabbit hole](/rabbit-hole/decentralization).
+
 ## 8. The Properties, Re-Examined
 
 Chapter 1 ended with a list of six properties we'd want from sound money. Let's check Bitcoin against each:
