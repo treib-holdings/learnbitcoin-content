@@ -1,31 +1,132 @@
 ---
 title: "Decentralization"
 slug: decentralization
-draft: true
-status: planned
+draft: false
+status: live
 section: rabbit-hole
 tagline: "What 'decentralized' actually means, where Bitcoin sits on the spectrum, and how the network has defeated takeover attempts without anyone in charge."
 order: 11
 estimatedMinutes: 9
-relatedTerms: ["decentralization", "full-node", "miner", "consensus-parameter", "soft-fork", "fork", "chain-split", "bitcoin-cash"]
+sources:
+  - { label: "Paul Baran - On Distributed Communications (RAND, 1964)", url: "https://www.rand.org/pubs/research_memoranda/RM3420.html" }
+  - { label: "bitnodes.io - live Bitcoin node count", url: "https://bitnodes.io" }
+  - { label: "mempool.space mining dashboard - live pool concentration", url: "https://mempool.space/mining" }
+  - { label: "SegWit2x cancellation announcement (Bitcoin Magazine, November 2017)", url: "https://bitcoinmagazine.com/business/breaking-segwit2x-called-its-over-now" }
+relatedTerms: ["decentralization", "full-node", "miner", "consensus-parameter", "soft-fork", "fork", "chain-split", "bitcoin-cash", "bip-148-uasf", "bitcoin-core"]
 ogImage: "/diagrams/og/network-topology.png"
 ogImageAlt: "Two network topologies side by side. On the left, a single central bank hub stands alone. On the right, Bitcoin as roughly thirty-five peer nodes connected in an organic mesh with no center. One central bank, versus tens of thousands of Bitcoin nodes."
 ---
 
-> **Coming soon.** A walk through what decentralization actually means, where Bitcoin sits on the spectrum, and how a network with no one in charge defends itself against takeover.
+> **Where you're going:** A clear-eyed look at what "decentralized" actually means, where Bitcoin lands on the spectrum, and why a network with no one in charge can still defend itself against takeover.
 
 <figure>
   <img src="/diagrams/network-topology.svg" alt="Two network topologies side by side. On the left, a central bank: a single institutional hub standing alone. On the right, the Bitcoin network: roughly thirty-five peer nodes scattered across the panel and connected to their neighbors in an organic mesh, with no central node." />
   <figcaption>One central bank, versus tens of thousands of Bitcoin nodes. No center, no headquarters, no off switch.</figcaption>
 </figure>
 
-## What this rabbit hole will cover
+## 1. Three Network Shapes
 
-- **The Baran taxonomy.** In 1962, Paul Baran sketched three network shapes: centralized, decentralized, distributed. The difference matters more than the words suggest, and most things called "decentralized" today are actually the middle option.
-- **What "decentralized" doesn't mean.** Federated is not distributed. Many companies on a shared ledger is not "decentralized." Decentralization is a property of who can be coerced, not who is on the cap table.
-- **Where Bitcoin sits.** Tens of thousands of validating nodes, a handful of substantial mining pools, several independent software implementations. The concentration concerns - and the structural reasons they have not, so far, become control.
-- **The 2017 takeover attempt.** A coalition of large miners and businesses tried to push through a rule change. The network defeated them by simply continuing to enforce the existing rules. The chain that resulted is a footnote. The lesson is in the mechanics.
-- **How to measure decentralization.** Node count, geographic distribution, mining pool concentration, client diversity. Imperfect metrics, useful comparisons.
-- **The "decentralization theater" critique.** Where it applies, where it does not, and how to tell the difference.
+In the early 1960s, an engineer at RAND named Paul Baran was trying to design a communications network that could survive a nuclear strike. He sketched three shapes:
 
-Until then, the journey chapter [What Bitcoin Actually Is](/journey/what-bitcoin-actually-is/) covers the core argument in section 7.
+- **Centralized.** One hub. Every node talks to the hub. Lose the hub, lose the network. The most efficient design, and the most fragile.
+- **Decentralized.** Several hubs, each with their own clusters of nodes. Lose one hub and one cluster goes dark, but the rest survive. Still has hubs, just more of them.
+- **Distributed.** No hubs. Every node connects to several neighbors directly. The network can lose huge swaths of itself and the survivors keep talking.
+
+Most things we casually call "decentralized" are actually the middle option, a federation. Real distribution is rarer than the word suggests. Bitcoin's claim is the third shape: distributed, in the strong sense.
+
+## 2. What "Decentralized" Doesn't Mean
+
+The word has been abused. Some examples of things called "decentralized" that are not:
+
+- **"It's on a blockchain, so it's decentralized."** Most blockchains have a small number of validators, sometimes literally a handful. Putting a database on a blockchain doesn't decentralize the database. It just makes it slower.
+- **"Multiple companies run it."** Federation isn't distribution. Visa, Mastercard, and SWIFT are all "federated" with many member institutions, but if a few of them coordinate, they control the network. That's not what Bitcoin offers.
+- **"It's open source."** Open code is necessary for decentralization but doesn't produce it. Plenty of open-source projects are controlled by one company or one foundation.
+- **"It's governed by token holders."** Voting weighted by holdings is just plutocracy with extra steps. A handful of large holders effectively decide outcomes.
+
+What decentralization *actually* means, in the Bitcoin sense: **no single party - or coordinated small group of parties - can force changes, censor users, or shut the network down.** The test isn't who's on the cap table. It's who can be coerced.
+
+## 3. Where Bitcoin Sits
+
+Bitcoin is the most decentralized monetary system humans have ever built. Three categories of participant, each plays a different role, each constrains the others.
+
+**Node operators.** Around 17,000 to 22,000 reachable Bitcoin nodes are live at any moment, with estimates of 50,000 to 100,000+ when you count non-reachable nodes behind firewalls. Anyone running Bitcoin software that validates every transaction and block. The rules each node enforces define what Bitcoin *is* on that node's copy of the chain. If you don't like a proposed change, you don't run the new software, and your node continues operating on the old rules. A node runs on a laptop, a Raspberry Pi, or any cheap computer with disk space. No permission required. Live count: [bitnodes.io](https://bitnodes.io).
+
+**Miners.** Specialized hardware competing to add blocks for the reward. Geographically distributed across the US, Russia, Kazakhstan, Canada, Western Europe, and others. They produce blocks, but they don't make the rules. If miners produce a block that violates consensus, every node rejects it and the miner's electricity is wasted. **Miners follow nodes, not the other way around.**
+
+**Developers.** People who write the software. [Bitcoin Core](/glossary/bitcoin-core/) is the dominant implementation, but Bitcoin Knots, btcd, and Libbitcoin are independent implementations of the same protocol. Developers can propose changes; they can't impose them. A pull request to Bitcoin Core has to convince thousands of node operators to actually run the new code. Across 16 years, Bitcoin Core has had over a thousand contributors and no single contributor's commits represent more than a few percent of the code.
+
+**Concentration concerns, and the structural answer.**
+
+Mining pool concentration: the top few pools control the majority of global hashrate. That sounds alarming until you realize **pools don't own the hashrate**. Individual miners (often thousands per pool) point their hardware at whichever pool gives them the best terms. If a pool tried to attack the network, the miners would leave within days. We saw exactly this in 2014 when [GHash.io](https://en.bitcoin.it/wiki/GHash.IO) approached 51%, and miners voluntarily migrated out within weeks.
+
+Implementation concentration: Bitcoin Core dominates by node count. This is a real risk if Core developers were ever captured. The mitigation is the existence of alternative implementations (which can be promoted quickly if needed) and the fact that Core's review process involves dozens of independent contributors with the power to refuse merges.
+
+These aren't perfect protections. They're better than every other system humans have tried to use as money.
+
+## 4. The 2017 Takeover Attempt
+
+The clearest stress test of Bitcoin's decentralization happened in 2017.
+
+A coalition of large mining pools, exchanges, and Bitcoin companies signed the **New York Agreement** (NYA). The plan: activate [SegWit](/glossary/segwit-segregated-witness-bip-141/) *plus* hard-fork the chain to double the block size, in a package called SegWit2x or simply "2x." The signers represented something like 80% of mining hashrate and most major businesses in the space.
+
+This looked like an overwhelming consensus. It wasn't.
+
+A grassroots movement called **UASF** (User-Activated Soft Fork, organized around [BIP 148](https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki)) ran in parallel. Thousands of node operators committed to enforce SegWit by August 1, 2017 *regardless* of miner approval, and to reject blocks from miners who didn't signal SegWit support. UASF supporters wore yellow hats and changed their Twitter avatars. The marketing was silly. The coordinated network position was not.
+
+What actually happened:
+
+- SegWit activated cleanly on August 23, 2017. The mining majority caved when faced with the potential chain split UASF threatened.
+- The 2x hard fork was scheduled for November 2017, and was **cancelled three days before the planned activation**. Once node operators made it clear they would not run the new software, the agreement collapsed. The signers had hashrate; they had money; their nodes still ran old rules. They couldn't actually force the change.
+- Earlier in 2017, on August 1, a different group had forked off and created Bitcoin Cash with bigger blocks. It's now a separate network worth a small fraction of Bitcoin's market value.
+
+**The lesson is in the mechanics.** Miners had hashrate. Businesses had money. Developers had attention. None of those groups were the deciders. The deciders were the thousands of node operators who chose what software to run. The same people who run a node on a laptop are the same people whose collective choices determine what Bitcoin is.
+
+That's what "no one is in charge" looks like in practice. Not no rules. The rules are extremely strict. Just no central party who can change them.
+
+## 5. How to Measure It
+
+Decentralization is hard to quantify. Several imperfect metrics, taken together, paint a picture:
+
+| Metric | Bitcoin | What it tells you |
+|---|---|---|
+| Reachable nodes | 17,000-22,000 | Lower bound on participants enforcing rules |
+| Estimated total nodes | 50,000-100,000+ | Real population including non-reachable |
+| Mining hash rate, top pool | varies, ~25-35% | Largest single coordinator of block production |
+| Mining hash rate, top 5 pools | varies, ~80-90% | Concentration vulnerability (mitigated by miner mobility) |
+| Geographic mining distribution | 8+ countries with significant share | Jurisdictional spread |
+| Independent client implementations | 4+ (Core, Knots, btcd, Libbitcoin) | Diversity at the code layer |
+| Bitcoin Core contributors | 1,000+ over 16 years | No single point of failure in dev |
+
+By comparison, most "decentralized" chains have between 10 and 200 validators, run a single client, and have a foundation or team that effectively controls roadmap.
+
+These metrics aren't dispositive. Together, they paint a picture: Bitcoin is the most distributed monetary system that has ever existed, by a wide margin, with real concentration risks at specific layers that the community actively works to manage.
+
+## 6. Decentralization Theater
+
+A lot of projects claim "decentralization" while running on something between a database and an oligarchy. The critique is fair, and important to apply consistently, including to Bitcoin.
+
+Some common patterns of decentralization theater:
+
+- **"It's permissionless."** Anyone can join, but a small group writes all the upgrades.
+- **"It's governed by token holders."** A small set of large holders effectively control governance votes.
+- **"The validator set is open."** It's open *if you stake $X million* and run specific hardware in a specific data center.
+- **"The code is on GitHub."** Yes, but pull requests are reviewed and merged exclusively by one foundation's employees.
+- **"It's L2 on Bitcoin."** Sometimes true, sometimes a federation calling itself Bitcoin-adjacent.
+
+These can all be features of useful systems. They're not what Bitcoin's design is aiming at, and they don't survive the "who can be coerced" test.
+
+Bitcoin's claim is testable: any node operator on any device can verify the chain themselves, run their own software, and refuse to accept changes they disagree with. The bar is "no permission required, no coordination required, just the math and the software you choose to run."
+
+That's the standard. It's the right one for sound money. Anything weaker is not a substitute. It's just a different product.
+
+## 7. Why It's Hard to Replace
+
+Decentralization is expensive. It costs throughput, it costs energy, it costs developer convenience, it costs UX. Most blockchains compromise on it to gain speed and features.
+
+That's a defensible trade-off for many use cases. It's a fatal trade-off for *sound money*, because sound money's whole job is to be a monetary store that no one can devalue, freeze, seize, or unilaterally upgrade. The moment a single party can change the rules, the money is no longer sound.
+
+If you accept that money is uniquely worth defending against capture, you accept the cost of decentralization to defend it. Bitcoin is the implementation of that choice.
+
+The price is real, and the price is the product.
+
+> **Pro tip:** When someone tells you a project is decentralized, ask: "If ten specific people coordinated, could they change the rules, freeze funds, or shut it down?" For most things called blockchains, the honest answer is yes. For Bitcoin, after sixteen years of stress tests, the answer is still no. That's the entire product.
