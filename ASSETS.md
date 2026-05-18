@@ -44,6 +44,50 @@ The OG PNG is auto-generated; you do not need to create it by hand. Each chapter
 
 ---
 
+## Original photography
+
+Operator-shot photos of real hardware, stored at `learnbitcoin-web/public/photos/<name>.jpg`. Resized to 1600px max edge at JPEG quality 85 (~600KB-1MB per file). Authentic device photography proves the gear is real and in use, which is the whole brand differentiator versus sites that lean on vendor marketing shots or stock imagery.
+
+| Photo | File | Currently embedded in |
+|---|---|---|
+| **Hardware wallet ecosystem** | `hardware-wallet-ecosystem.jpg` | [be-your-own-bank §6](journey/be-your-own-bank.md) — hero shot, four vendors side by side |
+| **Trezor Safe 5 PIN entry** | `trezor-safe-5-pin.jpg` | [be-your-own-bank §6](journey/be-your-own-bank.md) — next to Safe 5 bullet, shows scrambled keypad |
+| **Coldcard Mk4 PIN prefix** | `coldcard-mk4-pin.jpg` | [be-your-own-bank §6](journey/be-your-own-bank.md) — next to Coldcard bullet, transparent case showing the chip |
+| **Keystone 3 Pro retail box** | `keystone-3-pro-box.jpg` | [be-your-own-bank §6](journey/be-your-own-bank.md) — next to Keystone bullet |
+| **Blockstream Jade unlock** | `jade-unlock.jpg` | [be-your-own-bank §6](journey/be-your-own-bank.md) — next to Jade bullet |
+| **Trezor four-generation lineup** | `trezor-evolution.jpg` | [be-your-own-bank §6](journey/be-your-own-bank.md) — closes the section, 2014-2024 historical anchor |
+
+### How to embed a photo
+
+Same `<figure>` block pattern as static diagrams, with a `/photos/` path:
+
+```html
+<figure>
+  <img src="/photos/<name>.jpg" alt="<long descriptive alt text>" />
+  <figcaption><short editorial caption>.</figcaption>
+</figure>
+```
+
+Photos do not auto-rasterize into OG cards (that pipeline is SVG-only). If a photo should be a page's social card, point `ogImage` in frontmatter directly at the photo and make sure the source is close to 1200×630:
+
+```yaml
+ogImage: "/photos/<name>.jpg"
+ogImageAlt: "..."
+```
+
+### Authoring new photos
+
+Photos.app on macOS sandboxes its library bundle — CLI tools cannot read inside `~/Pictures/Photos Library.photoslibrary/`. To get photos out:
+
+1. Export from Photos.app (File → Export → Export N Photos…) as JPEG, High quality, sRGB, 2400px long edge.
+2. Save to `~/Sync/Treib Holdings LLC/<batch-name>/` (Desktop and Downloads are TCC-restricted too on this machine; the Sync folder is unrestricted).
+3. Resize to web-friendly with `sips`: `sips -s format jpeg -s formatOptions 85 -Z 1600 input.jpeg --out output.jpg`.
+4. Copy to `learnbitcoin-web/public/photos/<descriptive-name>.jpg`.
+5. Embed via `<figure>` block (above).
+6. Update the table here when adding a new photo.
+
+---
+
 ## Interactive Svelte widgets
 
 Live components in `learnbitcoin-web/src/components/`. Embedded in MDX (not plain markdown) via `import` + JSX-style tag. Each MDX page that embeds a widget should also declare it in the frontmatter `hasInteractive` array so the listing pages can flag it.
