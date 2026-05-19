@@ -20,6 +20,19 @@ sources:
 
 > **Where you're going:** By the end of this chapter, you'll be able to explain - in plain English, to your dad - why every fiat currency in history has lost most of its purchasing power, and why that isn't an accident. You won't have met Bitcoin yet. You'll just see the shape of the problem it tries to solve.
 
+<figure>
+  <video
+    src="/videos/purchasing-power.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    aria-label="Animated line chart: $1 from 1970 declines decade by decade to about $0.12 today, with green dollar coins continuously fading as purchasing power erodes."
+  ></video>
+  <figcaption>Half a century of inflation, decade by decade. $1 in 1970 → about $0.12 today.</figcaption>
+</figure>
+
 ## 1. The Feeling That Something's Wrong
 
 You make more money than you used to. Your rent is higher. Your groceries cost more. The number on your paycheck went up; the number of grocery bags it carries home didn't.
