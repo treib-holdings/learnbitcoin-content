@@ -44,6 +44,39 @@ The OG PNG is auto-generated; you do not need to create it by hand. Each chapter
 
 ---
 
+## Animated explainers (manim videos)
+
+Short data-driven animations rendered with manim CE and served as MP4 from `learnbitcoin-web/public/videos/<name>.mp4`. Brand grammar locked in v1: white background, Geist + Geist Mono, ink-800 chrome, **green = fiat / decay, orange = Bitcoin**, end card with site logo + `www.LearnBitcoin.com`. 1920×1080 @ 60fps, ~15-25s, ~1-2MB.
+
+| Video | File | Currently embedded in |
+|---|---|---|
+| **What $1 from 1970 buys** | `purchasing-power.mp4` | [why-money-is-broken](journey/why-money-is-broken.md) — top-of-chapter visual hook, above the fold |
+
+### How to embed a video
+
+```html
+<figure>
+  <video
+    src="/videos/<name>.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    aria-label="<description of what the animation shows, for screen readers>"
+  ></video>
+  <figcaption>One-line caption with the key takeaway.</figcaption>
+</figure>
+```
+
+`autoplay muted loop playsinline` is the loop-friendly default for decorative motion graphics. Browsers honor `prefers-reduced-motion` and pause autoplay for users who request it.
+
+### Authoring new videos
+
+Source code for the animations lives in the private repo `treib-holdings/learnbitcoin-animations` (kept private to avoid intimidating contributors with a Python/manim toolchain, and to give editorial control over drafts). Setup and render instructions are in that repo's README. The deliverable is the rendered MP4, which gets copied to `learnbitcoin-web/public/videos/<name>.mp4` and committed there.
+
+---
+
 ## Original photography
 
 Operator-shot photos of real hardware, stored at `learnbitcoin-web/public/photos/<name>.jpg`. Resized to 1600px max edge at JPEG quality 85 (~600KB-1MB per file). Authentic device photography proves the gear is real and in use, which is the whole brand differentiator versus sites that lean on vendor marketing shots or stock imagery.
