@@ -27,6 +27,8 @@ sources:
     muted
     loop
     playsinline
+    controls
+    controlslist="nodownload noplaybackrate noremoteplayback"
     preload="metadata"
     aria-label="Animated line chart: $1 from 1970 declines decade by decade to about $0.12 today, with green dollar coins continuously fading as purchasing power erodes."
   ></video>

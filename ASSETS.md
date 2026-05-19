@@ -62,6 +62,8 @@ Short data-driven animations rendered with manim CE and served as MP4 from `lear
     muted
     loop
     playsinline
+    controls
+    controlslist="nodownload noplaybackrate noremoteplayback"
     preload="metadata"
     aria-label="<description of what the animation shows, for screen readers>"
   ></video>
@@ -69,7 +71,7 @@ Short data-driven animations rendered with manim CE and served as MP4 from `lear
 </figure>
 ```
 
-`autoplay muted loop playsinline` is the loop-friendly default for decorative motion graphics. Browsers honor `prefers-reduced-motion` and pause autoplay for users who request it.
+`autoplay muted loop playsinline` is the loop-friendly default for decorative motion graphics. `controls` gives readers pause/play + scrubber on hover; `controlslist` suppresses download, playback rate, and cast buttons we don't need. Browsers honor `prefers-reduced-motion` and pause autoplay for users who request it.
 
 ### Authoring new videos
 
