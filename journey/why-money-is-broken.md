@@ -9,7 +9,7 @@ tagline: "Inflation isn't a force of nature. It's a policy. Once you see how fia
 prerequisites: []
 relatedTerms: ["fiat", "inflation", "disinflation", "cbdc-central-bank-digital-currency", "satoshi-nakamoto"]
 ogImage: "/diagrams/og/dollar-purchasing-power.png"
-ogImageAlt: "What a dollar buys, 1971 to today: a line chart showing one dollar declining to about 13 cents over 55 years of compounded inflation at roughly 4 percent annual CPI."
+ogImageAlt: "What a dollar buys, 1970 to today: a line chart showing one dollar declining to about 12 cents over half a century of compounded inflation at roughly 4 percent annual CPI."
 sources:
   - { label: "FRED - M2 Money Stock (St. Louis Fed)", url: "https://fred.stlouisfed.org/series/M2SL" }
   - { label: "BLS CPI Inflation Calculator", url: "https://www.bls.gov/data/inflation_calculator.htm" }
