@@ -51,6 +51,7 @@ Short data-driven animations rendered with manim CE and served as MP4 from `lear
 | Video | File | Currently embedded in |
 |---|---|---|
 | **What $1 from 1970 buys** | `purchasing-power.mp4` | [why-money-is-broken](journey/why-money-is-broken.md) — top-of-chapter visual hook, above the fold |
+| **One has a supply cap. One doesn't.** | `fixed-vs-infinite.mp4` | [what-bitcoin-actually-is](journey/what-bitcoin-actually-is.md) — top-of-chapter hook, side-by-side USD vs BTC supply with "Glass ceiling" / "21M cap" contrast |
 
 ### How to embed a video
 

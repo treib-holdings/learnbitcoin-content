@@ -19,6 +19,21 @@ sources:
 
 > **Where you're going:** You'll be able to describe Bitcoin from first principles - not as a "coin" or "investment," but as a network, a protocol, and a fixed supply of monetary units governed by rules no one can change unilaterally. By the end you'll know who made it, what it actually does, and what trade-offs it asks of you.
 
+<figure>
+  <video
+    src="/videos/fixed-vs-infinite.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls
+    controlslist="nodownload noplaybackrate noremoteplayback"
+    preload="metadata"
+    aria-label="Side-by-side animated chart: the US Dollar M2 supply growing past a 'Glass ceiling' to over $22 trillion, while Bitcoin supply rises with halving steps and plateaus below its 21 million cap. The end-card spells out the difference in zeros: 22,000,000,000,000 versus 21,000,000."
+  ></video>
+  <figcaption>Two supply schedules, side by side. USD: $22T and climbing. BTC: 21M, locked.</figcaption>
+</figure>
+
 ## 1. A Strange Email
 
 On Friday, October 31, 2008 - Halloween - at 2:10pm Eastern, an email landed on the cypherpunks mailing list. The sender was someone calling themselves Satoshi Nakamoto. The subject line was unremarkable: *"Bitcoin P2P e-cash paper."* The body was nine sentences.
