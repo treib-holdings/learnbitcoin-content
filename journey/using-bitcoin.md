@@ -19,6 +19,21 @@ sources:
 
 > **Where you're going:** You'll send an on-chain transaction with a fee you chose deliberately, generate a Lightning invoice, and receive a Lightning payment. Both should feel different. Both should leave you with a working mental model of when to use which.
 
+<figure>
+  <video
+    src="/videos/lightning-mesh.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls
+    controlslist="nodownload noplaybackrate noremoteplayback"
+    preload="metadata"
+    aria-label="Animated Lightning Network mesh. Alice has a single channel to Bob. She uses that same channel to pay Bob directly, then to route payments to Carol, Frank, and Ivy through the network. The animation then reverses to show payments flowing back to Alice through the same one channel. The bidirectional flow is the lesson: one channel, many destinations, both directions."
+  ></video>
+  <figcaption>Alice opens one channel — to Bob. Same channel routes payments to anyone reachable in the network, in either direction.</figcaption>
+</figure>
+
 ## 1. You Hold Some. Now What?
 
 Self-custody is the foundation. *Use* is what gives it a point.
