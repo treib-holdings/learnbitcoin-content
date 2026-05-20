@@ -27,20 +27,9 @@ The technique was introduced by Casey Rodarmor in January 2023 as part of the [O
 
 ## How it works
 
-The inscription is encoded inside a Taproot script using a pattern that looks roughly like:
+The inscription is encoded inside a Taproot script using the pattern `OP_FALSE OP_IF ... OP_ENDIF` — a conditional block that, because the condition is always false, never actually executes. Inside the conditional sits the protocol identifier (`"ord"`), a content-type field marker (`OP_1`), the MIME type (e.g. `"image/png"`), a data marker (`OP_0`), and finally the raw bytes of the inscribed data.
 
-```
-OP_FALSE
-OP_IF
-  "ord"           // protocol identifier
-  OP_1            // content-type field marker
-  "image/png"     // MIME type
-  OP_0            // data field marker
-  <bytes>         // the actual data
-OP_ENDIF
-```
-
-Because `OP_FALSE OP_IF ... OP_ENDIF` is always skipped at execution time, the data inside is never evaluated as script — it just sits in the witness. This pattern is sometimes called the *envelope*.
+Because the conditional is always skipped at execution time, the data inside is never evaluated as script — it just sits permanently in the witness. This pattern is sometimes called the *envelope*.
 
 The crucial property is *where* this data lives: in the witness, not in the transaction's main body. Under [SegWit](/glossary/segwit-segregated-witness-bip-141) weight rules, witness data counts at one-quarter the weight of base data, so a 1 MB inscription occupies far less than 1 MB of "block-space cost" than the raw size would suggest. Without that discount, inscriptions would be too expensive to be common.
 
