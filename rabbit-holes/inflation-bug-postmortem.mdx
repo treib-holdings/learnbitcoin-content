@@ -1,12 +1,14 @@
 ---
 title: "The Inflation Bug Postmortem"
 slug: inflation-bug-postmortem
-draft: true
+draft: false
 status: live
 section: rabbit-hole
 tagline: "August 15, 2010: someone created 184 billion BTC out of thin air. Five hours later, it was fixed. Here is the full story."
 order: 9
 estimatedMinutes: 10
+ogImage: "/diagrams/og/inflation-bug-postmortem.png"
+ogImageAlt: "Block 74,638 created billions of bitcoin over the 21M cap. The bug value 184,467,440,737 stacked above the legitimate 21,000,000 cap — visualizing the moment Bitcoin almost became fiat-like uncapped supply."
 sources:
   - { label: "CVE-2010-5139 - Bitcoin value overflow vulnerability", url: "https://nvd.nist.gov/vuln/detail/CVE-2010-5139" }
   - { label: "BitcoinTalk - The Strange Story of the Bitcoin Bug (thread #823)", url: "https://bitcointalk.org/index.php?topic=823.0" }
@@ -17,6 +19,21 @@ hasInteractive: []
 ---
 
 > **Where you're going:** A story-format deep dive on the closest Bitcoin ever came to dying. Sixteen years later, it is the cleanest case study available for why "verify, don't trust" is not a slogan but a survival principle. Five hours of crisis, more than a decade of vindication.
+
+<figure>
+  <video
+    src="/videos/inflation-bug.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls
+    controlslist="nodownload noplaybackrate noremoteplayback"
+    preload="metadata"
+    aria-label="Animated postmortem of the August 15, 2010 inflation bug. Block 74,638 created 184 billion BTC against a 21 million cap. The bad chain grows for 53 blocks before Satoshi's patched client takes over; the bad chain orphans, and the cap holds."
+  ></video>
+  <figcaption>Five hours of crisis, one strike-through, and the cap held. The full story below.</figcaption>
+</figure>
 
 ## 1. August 15, 2010
 
