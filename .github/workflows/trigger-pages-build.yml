@@ -11,7 +11,11 @@ name: Notify on content push
 # Setup (one-time):
 #   1. Generate a GitHub fine-grained PAT scoped to
 #      treib-holdings/learnbitcoin-web with permission:
-#        Repository permissions → Actions → Read and write
+#        Repository permissions → Contents → Read and write
+#      (NOT "Actions: write" — the POST /repos/.../dispatches endpoint
+#       specifically requires the Contents write scope per GitHub's REST
+#       API docs. Actions:write alone returns 403 "Resource not
+#       accessible by personal access token".)
 #      Create at https://github.com/settings/personal-access-tokens
 #   2. This repo → Settings → Secrets and variables → Actions →
 #      add WEB_DEPLOY_PAT with the PAT as the value.
