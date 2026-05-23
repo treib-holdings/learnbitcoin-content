@@ -7,7 +7,7 @@ honest Bitcoin school.
 
 ## What lives here
 
-- [`glossary/`](glossary/) - 431 Bitcoin terms, one markdown file each.
+- [`glossary/`](glossary/) - 437 Bitcoin terms, one markdown file each.
 - [`rabbit-holes/`](rabbit-holes/) - self-contained deep dives, mostly MDX so they can embed interactive widgets.
 - [`journey/`](journey/) - the opinionated path from "what is money?" to "I run my own node."
 - [`pages/`](pages/) - editorial body of the top-level site pages (manifesto, home, /node, the three index pages).
