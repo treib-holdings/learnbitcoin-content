@@ -29,4 +29,4 @@ In 2026 wallet culture, sats are increasingly the default unit for talking about
 
 A useful mental anchor: at a BTC price of $1,000,000 (which many expect within a decade or two), **1 sat = $0.01**. The sat becomes the everyday Bitcoin "cent." This convergence is why sats are increasingly the natural unit even for users who aren't deep in Lightning culture.
 
-See the [Bitcoin Units rabbit hole](/rabbit-hole/bitcoin-units) for the full unit scale and where the in-between units (mBTC, μBTC, Finney) sit.
+See the [Bitcoin Units rabbit hole](/rabbit-hole/bitcoin-units) for the full unit scale and where the in-between units (mBTC, µBTC, Finney) sit.

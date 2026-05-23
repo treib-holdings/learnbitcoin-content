@@ -2,7 +2,7 @@
 title: "BIP 176 (Bits Denomination)"
 slug: bip-176-bits-denomination
 draft: false
-shortDefinition: "Proposed using 'bits' (1 μBTC) as a user-friendly unit for smaller denominations of Bitcoin."
+shortDefinition: "Proposed using 'bits' (1 µBTC) as a user-friendly unit for smaller denominations of Bitcoin."
 keyTakeaways:
   - "Advocates using microbitcoin ('bits') for everyday amounts"
   - "Aims to reduce confusion around decimal places"
@@ -15,7 +15,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-[BIP-176](https://github.com/bitcoin/bips/blob/master/bip-0176.mediawiki) proposed using "bits" as a standard small-denomination unit for Bitcoin. **1 bit = 1 microbitcoin (μBTC) = 100 [satoshis](/glossary/satoshi-unit) = 0.000001 BTC.**
+[BIP-176](https://github.com/bitcoin/bips/blob/master/bip-0176.mediawiki) proposed using "bits" as a standard small-denomination unit for Bitcoin. **1 bit = 1 microbitcoin (µBTC) = 100 [satoshis](/glossary/satoshi-unit) = 0.000001 BTC.**
 
 The rationale: as BTC's price rose, the decimals required to express everyday amounts became awkward ("0.0001 BTC for a cup of coffee" is hard to read). Bits offered a unit roughly comparable to a US cent at typical 2010s prices, making small amounts more intuitive.
 
