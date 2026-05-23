@@ -1,7 +1,7 @@
 ---
 title: "Ordinals"
 slug: ordinals
-draft: true
+draft: false
 shortDefinition: "A protocol that assigns unique sequential identity to individual satoshis, allowing them to be tracked across transactions and inscribed with arbitrary data."
 keyTakeaways:
   - "Every satoshi gets a unique ordinal number based on the order it was mined"
