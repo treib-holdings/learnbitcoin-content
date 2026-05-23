@@ -18,9 +18,9 @@ third parties grade it, and where we know we still owe work.
   Encrypt and Google Trust Services. We publish CAA DNS records so no
   other CA can issue a cert for this domain even if compromised.
 - **HSTS with preload.** Once your browser visits us over HTTPS, it
-  refuses to fall back to plain HTTP for a year. We are submitting to
-  the [browser preload list](https://hstspreload.org) so the protection
-  also covers your *first* visit.
+  refuses to fall back to plain HTTP for a year. We are on the
+  [browser preload list](https://hstspreload.org) so the protection
+  covers your *first* visit too.
 - **Strict Content Security Policy.** Every executable script on every
   page is allow-listed by SHA-256 content hash. No `unsafe-inline`
   anywhere. A build-time linter blocks new inline scripts so the policy
@@ -59,20 +59,6 @@ This is a content site that serves HTML and a few PNGs. We do not:
 - Run any custodial service, exchange, or wallet.
 - Promise zero-day-fix SLAs. We rescan after every significant change
   and patch real findings within 14 days.
-
-## Known gaps
-
-Two open advisories on the underlying framework (Astro 5.x):
-
-- An XSS in `define:vars` - we verified by grep that we do not use
-  `define:vars` anywhere in the codebase.
-- A server-island encrypted-parameter replay issue - we verified that
-  we do not use server islands either.
-
-Both resolve cleanly on an Astro 6 upgrade, which we will do as a
-focused session rather than a rushed audit response. The lack of impact
-is documented internally so any contributor PR that introduces either
-feature triggers explicit review.
 
 ## Report a vulnerability
 
