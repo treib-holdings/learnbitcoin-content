@@ -26,6 +26,12 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# This workflow uses an external PAT (WEB_DEPLOY_PAT) for the cross-repo
+# dispatch and doesn't touch the GITHUB_TOKEN at all. Lock GITHUB_TOKEN
+# to no scopes — leak surface is minimised even if a step is ever
+# compromised.
+permissions: {}
+
 jobs:
   notify:
     runs-on: ubuntu-latest
