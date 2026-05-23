@@ -1,17 +1,25 @@
 name: Notify on content push
 
 # When content lands on main, fan out two notifications:
-#   1. Cloudflare deploy hook -> rebuild learnbitcoin-web on Workers.
-#   2. IndexNow -> tell Bing, Yandex, Naver, Seznam to re-crawl.
+#   1. Trigger learnbitcoin-web's deploy workflow via repository_dispatch.
+#      (Replaced the old Cloudflare Pages deploy hook — that hook URL still
+#       returns 200 but stopped triggering builds when the web project
+#       migrated from Cloudflare Pages to Workers Static Assets. Workers
+#       deploys can't be triggered by Pages hooks.)
+#   2. IndexNow → tell Bing, Yandex, Naver, Seznam to re-crawl.
 #
 # Setup (one-time):
-#   1. Cloudflare -> Workers & Pages -> learnbitcoin-web -> Settings ->
-#      Builds -> Deploy hooks, create a hook for main. Copy URL.
-#   2. This repo -> Settings -> Secrets and variables -> Actions ->
-#      add CF_DEPLOY_HOOK_URL with the hook URL as the value.
+#   1. Generate a GitHub fine-grained PAT scoped to
+#      treib-holdings/learnbitcoin-web with permission:
+#        Repository permissions → Actions → Read and write
+#      Create at https://github.com/settings/personal-access-tokens
+#   2. This repo → Settings → Secrets and variables → Actions →
+#      add WEB_DEPLOY_PAT with the PAT as the value.
+#   3. The old CF_DEPLOY_HOOK_URL secret is no longer used and can be
+#      removed (safe to leave in place too — nothing reads it).
 #
-# The IndexNow key is a public proof-of-control value (the same key
-# is served at /<key>.txt on the live site). Safe to inline.
+# The IndexNow key is a public proof-of-control value (the same key is
+# served at /<key>.txt on the live site). Safe to inline.
 
 on:
   push:
@@ -22,15 +30,19 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: POST to Cloudflare Pages deploy hook
+      - name: Trigger learnbitcoin-web deploy
         env:
-          HOOK_URL: ${{ secrets.CF_DEPLOY_HOOK_URL }}
+          GH_TOKEN: ${{ secrets.WEB_DEPLOY_PAT }}
         run: |
-          if [ -z "$HOOK_URL" ]; then
-            echo "CF_DEPLOY_HOOK_URL secret not set; skipping."
+          if [ -z "$GH_TOKEN" ]; then
+            echo "WEB_DEPLOY_PAT secret not set; skipping deploy trigger."
             exit 0
           fi
-          curl -fsSL -X POST "$HOOK_URL" -o /dev/null -w "Cloudflare: HTTP %{http_code}\n"
+          gh api -X POST \
+            -H "Accept: application/vnd.github+json" \
+            "repos/treib-holdings/learnbitcoin-web/dispatches" \
+            -f event_type=content-updated
+          echo "Dispatched content-updated event to learnbitcoin-web."
 
       - name: Notify IndexNow (Bing, Yandex, Naver, Seznam)
         run: |
