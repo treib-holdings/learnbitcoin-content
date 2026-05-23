@@ -4,7 +4,7 @@ slug: bitcoin-units
 draft: false
 status: live
 section: rabbit-hole
-tagline: "BTC, sats, mBTC, μBTC, Finney. Which unit to use, when, and why there are so many of them."
+tagline: "BTC, sats, mBTC, µBTC, Finney. Which unit to use, when, and why there are so many of them."
 order: 1
 estimatedMinutes: 9
 sources:
@@ -27,7 +27,7 @@ import UnitsVisualization from '@components/units/UnitsVisualization.svelte';
 
 Bitcoin's protocol tracks balances in satoshis. One satoshi is the smallest possible amount; one bitcoin equals 100,000,000 satoshis. Everything between those two scales is a label humans invented because the numbers got awkward.
 
-When 1 BTC was worth $0.10 (in 2010), nobody needed smaller units. As the price climbed, "0.0001 BTC for a cup of coffee" became a typical amount, and the trailing zeros got annoying. Communities started using mBTC, then μBTC, then sats. Lightning Network operators needed even finer precision and added millisats (1/1000 of a satoshi).
+When 1 BTC was worth $0.10 (in 2010), nobody needed smaller units. As the price climbed, "0.0001 BTC for a cup of coffee" became a typical amount, and the trailing zeros got annoying. Communities started using mBTC, then µBTC, then sats. Lightning Network operators needed even finer precision and added millisats (1/1000 of a satoshi).
 
 The result: a forest of unit names, most of which you'll never use, and a few you'll use constantly. This rabbit hole sorts the useful from the historical.
 
@@ -39,7 +39,7 @@ If you ignore everything else, you can get through 95% of Bitcoin life with thre
 - **sat** (satoshi) - the smallest unit. Used for fees, tips, microtransactions, fee rates (sat/vByte).
 - **msat** (millisat) - one thousandth of a sat. Used inside the [Lightning Network](/glossary/lightning-network) for fine routing fee precision. You'll rarely see msat directly in a wallet UI.
 
-The other units (mBTC, μBTC, Finney) are mostly historical or community-specific. If you're learning Bitcoin in 2026, learning BTC and sats is sufficient.
+The other units (mBTC, µBTC, Finney) are mostly historical or community-specific. If you're learning Bitcoin in 2026, learning BTC and sats is sufficient.
 
 ## 3. The Full Scale
 
@@ -89,7 +89,7 @@ One ten-thousandth of a BTC, or 10,000 sats. Named after Hal Finney, the cryptog
 
 One hundred-thousandth of a BTC, or 1,000 sats. Has no widely-used name. The decimal slot exists; the social convention doesn't.
 
-### μBTC (Microbitcoin) - aka "bits"
+### µBTC (Microbitcoin) - aka "bits"
 
 <UnitsVisualization client:visible unit="ubtc" showLabel={false} />
 
@@ -121,7 +121,7 @@ When 1 BTC equals $1,000,000 (a milestone many expect within the next decade or 
 | Milli-Bitcoin | mBTC | 0.001 | $1,000.00 |
 | Finney | - | 0.0001 | $100.00 |
 | (unnamed) | - | 0.00001 | $10.00 |
-| Micro-Bitcoin | μBTC (bit) | 0.000001 | $1.00 |
+| Micro-Bitcoin | µBTC (bit) | 0.000001 | $1.00 |
 | (unnamed) | - | 0.0000001 | $0.10 |
 | Satoshi | sat | 0.00000001 | $0.01 |
 
@@ -165,7 +165,7 @@ In practice, here's the breakdown of which units you'll encounter most:
 - A minority of merchant interfaces, especially European ones
 - Some hardware wallet displays
 
-**You'll see μBTC ("bits") in:**
+**You'll see µBTC ("bits") in:**
 - A few wallets that adopted BIP 176
 - Older Coinbase interfaces (mostly retired now)
 
