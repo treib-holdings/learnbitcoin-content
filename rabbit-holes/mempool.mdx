@@ -7,6 +7,8 @@ section: rabbit-hole
 tagline: "Where transactions wait before they are real. The auction-house buffer between you and a block."
 order: 7
 estimatedMinutes: 11
+ogImage: "/diagrams/og/mempool.png"
+ogImageAlt: "Block #950,000 sliding across Bitcoin's top fee tier as Bob's 50 sat/vB tx confirms; Alice's 3 sat/vB tx waits at the bottom band. Visualizing how the mempool sorts by fee rate, not arrival time."
 sources:
   - { label: "BIP 125 - Opt-in Full Replace-by-Fee Signaling", url: "https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki" }
   - { label: "Bitcoin Core source - txmempool.h", url: "https://github.com/bitcoin/bitcoin/blob/master/src/txmempool.h" }
@@ -17,7 +19,22 @@ hasInteractive: ["mempoolHistogram"]
 
 import MempoolHistogram from '@components/mining/MempoolHistogram.svelte';
 
-> **Where you're going:** A walk through the most misunderstood piece of Bitcoin's plumbing. You will learn why "the mempool" does not exist as a single global object (each node has its own), how transactions enter and leave, why fee *rate* is the only number that matters, and what to do when your transaction gets stuck.
+> **Where you're going:** The most misunderstood piece of Bitcoin's plumbing. There is no "the" mempool — every node has its own, transactions sort by sat/vB, and fee rate is the only number that matters. Here is how it actually works.
+
+<figure>
+  <video
+    src="/videos/mempool.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls
+    controlslist="nodownload noplaybackrate noremoteplayback"
+    preload="metadata"
+    aria-label="Animated walkthrough of the Bitcoin mempool. Alice broadcasts a transaction at 3 sat/vB and lands at the bottom fee tier. Bob broadcasts later at 50 sat/vB and jumps to the top. A block scoops the top tier and Bob confirms. Over more blocks the mempool drains and Alice eventually mines. Leftover low-fee transactions evict after two weeks and the value returns to the sender's wallet, where it can be rebroadcast at a higher rate."
+  ></video>
+  <figcaption>Broadcast, propagation, fee-rate sorting, mining, eviction, rebroadcast — the full mempool lifecycle in under a minute.</figcaption>
+</figure>
 
 ## 1. The Mempool, In One Line
 
@@ -61,7 +78,7 @@ The validation in step 2 is **node policy**, not consensus. A transaction can be
 A transaction in the mempool has four possible exits:
 
 - **Confirmed.** A miner included it in a block. The block was relayed, accepted, and added to the chain. The transaction is now part of consensus. This is the goal.
-- **Evicted.** The mempool has size limits (default 300 MB in Bitcoin Core). When the mempool fills up, transactions with the lowest fee rates get dropped. A dropped transaction can be rebroadcast later, but most wallets do not automate this. See [fee bumping](/glossary/fee-bumping) for the recovery path.
+- **Evicted.** The mempool has size limits (default 300 MB in Bitcoin Core). When the mempool fills up, transactions with the lowest fee rates get dropped. A dropped transaction can be rebroadcast later, but most wallets do not automate this.
 - **Replaced.** If the transaction signaled RBF (or the node uses full-RBF policy), a higher-fee version replaces it in the mempool. The original is forgotten.
 - **Conflicted.** If a different transaction spends one of the same UTXOs and gets mined first, your transaction becomes invalid (the UTXO no longer exists) and gets dropped.
 
@@ -81,7 +98,6 @@ This means:
 
 - A small transaction paying a tiny absolute fee can confirm faster than a large transaction paying a huge absolute fee, if the small one's *fee rate* is higher.
 - "I paid $20 in fees" is meaningless unless you also know how big the transaction was.
-- A transaction with many inputs costs more *absolutely* than one with few, because it is bigger - but the fee rate is what the miner optimizes for.
 
 The UTXOs you choose to spend (see [UTXOs](/rabbit-hole/utxos)) directly determine your transaction size, which directly determines what fee rate buys you a given confirmation time. The two are inseparable.
 
