@@ -61,6 +61,11 @@ The site has a consistent voice. The short version:
 - **ASCII straight punctuation only.** No curly quotes, no smart
   apostrophes, no en-dashes, no ellipsis characters. Curly quotes
   break YAML frontmatter.
+- **Use U+00B5 (µ) for unit prefixes, not U+03BC (μ).** They look
+  identical but the OG card font subset includes only the Latin block,
+  so Greek mu renders as a missing-glyph box on social previews. The
+  Unicode standard recommends U+00B5 (Micro Sign) for unit prefixes
+  like µBTC, µs, µm anyway. On macOS, Option+M types µ.
 - **No price predictions.** Ever.
 - **Real numbers, current era.** If you cite supply, fees, hash rate,
   or similar, use figures consistent with the current era and
@@ -92,6 +97,35 @@ sameAs:
   - "https://www.wikidata.org/wiki/Q55636735"
   - "https://en.bitcoin.it/wiki/UTXO"
 ```
+
+## OG cards and the `ogImage` override
+
+Every glossary entry, rabbit hole, and journey chapter gets a social
+preview card (`og:image`). The site auto-renders one at
+`/og/<collection>/<slug>.png` from the entry's `title` and short text,
+so you do not need to do anything for a stock card.
+
+You can override the auto-resolved URL with an `ogImage` field in
+frontmatter:
+
+```yaml
+ogImage: "/og/glossary/bip-361.png?v=2"     # cache-bust after editing
+ogImage: "/diagrams/og/halvings.png"        # static diagram image
+ogImageAlt: "Description of the image."     # optional alt text
+```
+
+Common use cases:
+
+- **Cache-bust after editing.** Twitter caches OG cards for ~7 days
+  and the Cloudflare CDN caches for 24h. Append `?v=2` (then `?v=3`,
+  etc.) to force a re-fetch when you change a `shortDefinition` or
+  `tagline` that affects the card.
+- **Custom diagram.** Point at a checked-in static image when the
+  entry deserves a richer visual than the text-only template can do.
+  Every journey chapter does this today.
+
+The Worker routes off URL path, so the `?v=N` query string is purely
+a cache-busting facade — the rendered card content is unchanged.
 
 ## Where things live
 
