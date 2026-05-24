@@ -10,6 +10,8 @@ keyTakeaways:
 sources:
   - label: "Jeremy 'jercos' Sturdivant on the pizza transaction (X, May 2026)"
     url: "https://x.com/jercos/status/2058387155119202805"
+  - label: "jercos grants LearnBitcoin permission to quote (X, May 2026)"
+    url: "https://x.com/jercos/status/2058557130727477546"
 relatedTerms:
   - bitcoin-script
   - merchant-adoption
@@ -26,7 +28,7 @@ This is the **first known commercial transaction** in Bitcoin's history. At the 
 
 ## The other side of the trade
 
-The story is usually told from Laszlo's side. The other party - jercos, who actually called the pizzeria and received the 10,000 BTC - is rarely heard from. In May 2026, jercos posted a short handheld video on X giving his own account of the trade, and gave LearnBitcoin permission to quote it here:
+The story is usually told from Laszlo's perspective. The other party, jercos, who actually called the pizzeria and received the 10,000 BTC, was rarely heard from until May 2026. Jercos posted a short handheld video on X giving his own account of the trade, and gave LearnBitcoin permission to quote it here:
 
 > My name is Jeremy, or jercos. I was the other party in the Bitcoin pizza transaction.
 >
@@ -42,7 +44,7 @@ The story is usually told from Laszlo's side. The other party - jercos, who actu
 >
 > This is real me, real nature. Don't think AI's very good at interactions with nature. One cut of course.
 
-[Source: jercos on X, May 2026.](https://x.com/jercos/status/2058387155119202805) Lightly normalized to plain ASCII per site style; the words are jercos's.
+[Source: jercos on X, May 2026.](https://x.com/jercos/status/2058387155119202805)
 
 Two things stand out in his account:
 
