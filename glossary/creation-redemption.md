@@ -53,7 +53,7 @@ The AP delivers BTC directly to the issuer. Issuer accepts the BTC into custody 
 The Bitcoin-specific history:
 
 - **January 2024 launch - cash-only.** When the US SEC approved the first eleven [spot Bitcoin ETFs](/glossary/spot-bitcoin-etf), it required cash-only creation/redemption. Gary Gensler's stated rationale was that broker-dealers (APs) were not registered to handle BTC directly. Critics argued this was a friction the SEC imposed to keep the wrapper one step removed from BTC itself; under cash-only, only the issuer's custodian (typically Coinbase Custody) touched the asset.
-- **Subsequent in-kind approval.** After leadership changes at the SEC, in-kind creation/redemption was approved for spot Bitcoin ETFs, bringing them into line with traditional commodity ETF mechanics.
+- **July 29, 2025 - in-kind approval.** SEC Chair Paul Atkins (post-Gensler) approved in-kind creation and redemption for all US spot Bitcoin and Ethereum ETPs (release [2025-101](https://www.sec.gov/newsroom/press-releases/2025-101-sec-permits-kind-creations-redemptions-crypto-etps)). The first major crypto-friendly policy shift of the new SEC, bringing spot Bitcoin ETFs into line with traditional commodity ETF mechanics. Major issuers (BlackRock, Fidelity, Ark) had filed amendments seeking in-kind handling since January 2025.
 
 Why this matters:
 

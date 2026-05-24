@@ -52,8 +52,8 @@ How the wrapper actually works:
 
 - **NAV strikes daily** against the [CME CF Bitcoin Reference Rate](/glossary/cme-cf-bitcoin-reference-rate) at 4:00 PM London time.
 - **[Authorized Participants](/glossary/authorized-participant)** create and redeem shares in large blocks. The mechanism keeps the market price within basis points of [NAV](/glossary/nav-net-asset-value).
-- **[Creation/redemption](/glossary/creation-redemption)** was initially cash-only at SEC insistence; in-kind has since been approved.
-- **Expense ratios** range from 0.19% to 0.30% for the major products, with GBTC charging 1.50% (legacy fee from its closed-end days).
+- **[Creation/redemption](/glossary/creation-redemption)** was initially cash-only at SEC insistence; in-kind was approved July 29, 2025 under SEC Chair Paul Atkins.
+- **Expense ratios** cluster at 0.19% to 0.25% for the major products, with WisdomTree BTCW at 0.50% and GBTC at 1.50% (legacy fee from its closed-end days). Grayscale's Bitcoin Mini Trust (BTC, launched 2024) is the cheapest at 0.15%.
 
 What spot ETFs changed:
 
