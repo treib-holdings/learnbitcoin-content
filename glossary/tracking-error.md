@@ -32,19 +32,20 @@ Sources of tracking gap for a spot Bitcoin ETF:
 
 | Product | Ticker | Expense Ratio |
 |---|---|---|
-| Bitwise Bitcoin ETF | BITB | 0.20% |
-| VanEck Bitcoin Trust | HODL | 0.20% |
+| Grayscale Bitcoin Mini Trust | BTC | 0.15% |
 | Franklin Bitcoin ETF | EZBC | 0.19% |
+| Bitwise Bitcoin ETF | BITB | 0.20% |
 | Ark 21Shares Bitcoin ETF | ARKB | 0.21% |
 | BlackRock iShares Bitcoin Trust | IBIT | 0.25% |
 | Fidelity Wise Origin Bitcoin Fund | FBTC | 0.25% |
-| Valkyrie Bitcoin Fund | BRRR | 0.25% |
+| VanEck Bitcoin Trust | HODL | 0.25% |
+| Valkyrie Bitcoin Fund (CoinShares) | BRRR | 0.25% |
 | Invesco Galaxy Bitcoin ETF | BTCO | 0.25% |
-| WisdomTree Bitcoin Fund | BTCW | 0.30% |
-| Hashdex Bitcoin ETF | DEFI | 0.90% |
+| Hashdex Bitcoin ETF | DEFI | 0.25% |
+| WisdomTree Bitcoin Fund | BTCW | 0.50% |
 | Grayscale Bitcoin Trust | GBTC | 1.50% |
 
-(Most issuers ran 0% fee waivers for the first six to twelve months after launch; the table reflects standing post-waiver rates.)
+The Grayscale Bitcoin Mini Trust (BTC) launched in mid-2024 as Grayscale's cheaper sibling product to GBTC, seeded with a portion of GBTC's BTC and priced to compete with the new entrants. At 0.15% it is the lowest-fee spot Bitcoin ETF on the US market. (Most issuers ran 0% fee waivers for the first six to twelve months after launch; the table reflects standing post-waiver rates.)
 
 **2. Cash drag.** BTC not yet deployed earns nothing. Whenever the fund receives cash from a [creation](/glossary/creation-redemption) and has not yet executed the BTC trade, those dollars sit idle while still counted in NAV. In a strong BTC up-move, cash drag is a real (small) headwind.
 
