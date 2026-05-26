@@ -36,7 +36,7 @@ A Bitcoin wallet doesn't actually hold Bitcoin. Bitcoin lives on the chain. A wa
 
 What a wallet does, mechanically:
 
-- **Generates and stores keys**, typically by deriving them from a [BIP-39](/glossary/mnemonic-seed-phrase) seed phrase using a [hierarchical deterministic](/glossary/hierarchical-deterministic-wallet) structure.
+- **Generates and stores keys**, typically by deriving them from a [BIP-39](/glossary/bip-39) seed phrase using a [hierarchical deterministic](/glossary/hierarchical-deterministic-wallet) structure.
 - **Tracks the on-chain UTXOs you can spend** - either by querying a remote server, or, with a full-validation wallet like [Bitcoin Core](/glossary/bitcoin-core), by running a full node alongside.
 - **Constructs and signs [transactions](/glossary/transaction)** when you want to send.
 - **Generates fresh receive [addresses](/glossary/address)** as you need them.

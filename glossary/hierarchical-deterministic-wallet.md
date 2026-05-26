@@ -43,7 +43,7 @@ A hierarchical deterministic (HD) wallet is one where every [private key](/gloss
 The HD design is specified across three [BIPs](/glossary/bip-bitcoin-improvement-proposal):
 
 - **BIP-32** - the master derivation algorithm. Defines how to turn a master seed into a tree of child keys, using HMAC-SHA-512 to derive deterministically without leaking the parent.
-- **[BIP-39](/glossary/mnemonic-seed-phrase)** - the seed-to-words encoding (the 12/24-word [seed phrase](/glossary/seed-phrase)).
+- **[BIP-39](/glossary/bip-39)** - the seed-to-words encoding (the 12/24-word [seed phrase](/glossary/seed-phrase)).
 - **[BIP-44](/glossary/bip-44)** - a standardized derivation path structure (`m/purpose'/coin'/account'/change/index`) that lets different wallet software discover each other's accounts and addresses.
 
 Why this matters in practice:
