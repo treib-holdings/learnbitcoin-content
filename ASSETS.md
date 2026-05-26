@@ -100,7 +100,7 @@ Reference the OG in the chapter frontmatter as `ogImage: "/diagrams/og/<chapter-
 
 ## Original photography
 
-Operator-shot photos of real hardware, stored at `learnbitcoin-web/public/photos/<name>.jpg`. Resized to 1600px max edge at JPEG quality 85 (~600KB-1MB per file). Authentic device photography proves the gear is real and in use, which is the whole brand differentiator versus sites that lean on vendor marketing shots or stock imagery.
+Operator-shot photos of real hardware, stored at `learnbitcoin-web/public/photos/<name>.jpg` for single shots or `public/photos/<chapter-slug>/<name>.jpg` for chapters with multiple photos. Resized to 1200-1600px max edge at JPEG quality 72-85 (~250KB-1MB per file). Authentic device photography proves the gear is real and in use, which is the whole brand differentiator versus sites that lean on vendor marketing shots or stock imagery.
 
 | Photo | File | Currently embedded in |
 |---|---|---|
@@ -110,6 +110,13 @@ Operator-shot photos of real hardware, stored at `learnbitcoin-web/public/photos
 | **Keystone 3 Pro retail box** | `keystone-3-pro-box.jpg` | [be-your-own-bank §6](journey/be-your-own-bank.md) — next to Keystone bullet |
 | **Blockstream Jade unlock** | `jade-unlock.jpg` | [be-your-own-bank §6](journey/be-your-own-bank.md) — next to Jade bullet |
 | **Trezor four-generation lineup** | `trezor-evolution.jpg` | [be-your-own-bank §6](journey/be-your-own-bank.md) — closes the section, 2014-2024 historical anchor |
+| **Trezor paper backup card** | `seed-backup/paper-card.jpg` | [rabbit-holes/seed-backup-strategies §3](rabbit-holes/seed-backup-strategies.mdx) — opens the Paper section |
+| **Coldcard recovery card** | `seed-backup/paper-coldcard-recovery.jpg` | [rabbit-holes/seed-backup-strategies §3](rabbit-holes/seed-backup-strategies.mdx) — closes Paper section, shows metadata fields beyond seed words |
+| **Steel tube backup (dot-matrix)** | `seed-backup/steel-tube.jpg` | [rabbit-holes/seed-backup-strategies §4](rabbit-holes/seed-backup-strategies.mdx) — tube format |
+| **Steel plate backup (tile)** | `seed-backup/steel-plate-tile.jpg` | [rabbit-holes/seed-backup-strategies §4](rabbit-holes/seed-backup-strategies.mdx) — tile-insertion format |
+| **Steel plate backup (tab)** | `seed-backup/steel-plate-tab.jpg` | [rabbit-holes/seed-backup-strategies §4](rabbit-holes/seed-backup-strategies.mdx) — bend-tab format |
+| **SLIP-39 share card** | `seed-backup/shamir-shares.jpg` | [rabbit-holes/seed-backup-strategies §6](rabbit-holes/seed-backup-strategies.mdx) — 20-word Shamir share format |
+| **Multisig HW lineup** | `seed-backup/multisig-three-devices.jpg` | [rabbit-holes/seed-backup-strategies §7](rabbit-holes/seed-backup-strategies.mdx) — Coldcard + Jade + Trezor (also cropped for chapter OG card at `/diagrams/og/seed-backup.jpg`) |
 
 ### How to embed a photo
 
@@ -135,8 +142,9 @@ Photos.app on macOS sandboxes its library bundle — CLI tools cannot read insid
 
 1. Export from Photos.app (File → Export → Export N Photos…) as JPEG, High quality, sRGB, 2400px long edge.
 2. Save to `~/Sync/Treib Holdings LLC/<batch-name>/` (Desktop and Downloads are TCC-restricted too on this machine; the Sync folder is unrestricted).
-3. Resize to web-friendly with `sips`: `sips -s format jpeg -s formatOptions 85 -Z 1600 input.jpeg --out output.jpg`.
-4. Copy to `learnbitcoin-web/public/photos/<descriptive-name>.jpg`.
+3. Resize to web-friendly with `sips`: `sips -s format jpeg -s formatOptions 72 -Z 1200 input.jpeg --out output.jpg` (target ~250KB per photo for chapter-embedded shots; single hero shots can go larger).
+4. Strip EXIF (avoids leaking phone model, GPS, timestamps): `exiftool -all= -overwrite_original output.jpg`.
+5. Copy to `learnbitcoin-web/public/photos/<descriptive-name>.jpg` (single shot) or `learnbitcoin-web/public/photos/<chapter-slug>/<descriptive-name>.jpg` (chapter with multiple photos).
 5. Embed via `<figure>` block (above).
 6. Update the table here when adding a new photo.
 

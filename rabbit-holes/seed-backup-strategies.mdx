@@ -13,8 +13,8 @@ sources:
   - { label: "Glacier Protocol - high-security cold storage", url: "https://glacierprotocol.org/" }
 relatedTerms: ["seed-phrase", "bip-39", "bip-32", "shamir-secret-sharing", "multisig", "inheritance-seed-backup", "hardware-seed-vault"]
 hasInteractive: []
-ogImage: "/diagrams/og/threat-triangle.png"
-ogImageAlt: "A triangle with three corners labeled THEFT, LOSS, and COERCION, each with a concrete example. At the center sits the seed phrase being defended. The three threats every Bitcoin seed backup must plan for."
+ogImage: "/diagrams/og/seed-backup.jpg"
+ogImageAlt: "Three hardware wallets in a row on a wood surface: a Coldcard Mk4 keypad device on the left, a Blockstream Jade in the middle, and a Trezor Safe on the right. The lineup that anchors a 2-of-3 multisig setup."
 ---
 
 > **Where you're going:** A practical, threat-model-first walk through how to back up a Bitcoin seed phrase. You will learn what you are actually backing up, the three threats you are defending against (theft, loss, coercion), and the concrete options - from a sheet of paper to a multi-location, multi-party, multi-signature setup.
@@ -61,6 +61,11 @@ There is no single "best" backup. There is the backup that fits *your* threats a
 
 A piece of paper with your seed words written in pencil is a valid backup. For small amounts (under a few thousand dollars, say), it is often sufficient.
 
+<figure>
+  <img src="/photos/seed-backup/paper-card.jpg" alt="A blank Trezor paper recovery card on light wood, printed with sections for device PIN, anti-phishing code words, and a 24-word seed grid." />
+  <figcaption>Most hardware wallets ship with a paper card formatted for the seed they generate. Free, immediate, fragile.</figcaption>
+</figure>
+
 Properties of paper:
 - **Cheap.** Nothing to buy.
 - **Trivial to copy.** You can make three copies in three minutes.
@@ -74,11 +79,31 @@ Paper backup best practices:
 - Multiple copies in physically separated locations.
 - Tamper-evident envelope if you want to know whether it has been seen.
 
+<figure>
+  <img src="/photos/seed-backup/paper-coldcard-recovery.jpg" alt="A blank Coldcard 'ultimate recovery card' with fields for the base seed words, extended fingerprint, derivation type, derivation paths, software versions, and multisig role." />
+  <figcaption>Paper can record more than seed words. For wallets with derivation quirks or multisig roles, the metadata that lets someone actually restore the wallet matters as much as the words.</figcaption>
+</figure>
+
 For wallets under five figures, paper is reasonable. For more, you want metal.
 
 ## 4. Metal: The Standard
 
 A metal seed backup is a stamped or engraved record of your seed in stainless steel or titanium. Many product names exist; they all do the same fundamental thing.
+
+<figure>
+  <img src="/photos/seed-backup/steel-tube.jpg" alt="A tube-style stainless-steel seed backup on light wood with the protective sleeve removed. Each letter is marked by punching dots into a fixed grid. The shaft is blank." />
+  <figcaption>Tube format. The shaft encodes letters in a dot-matrix grid; the sleeve guards against impact and casual inspection.</figcaption>
+</figure>
+
+<figure>
+  <img src="/photos/seed-backup/steel-plate-tile.jpg" alt="A two-piece stainless-steel seed backup on light wood: a lid plate above and a channel plate below. Pre-stamped letter tiles slide into rows; the lid screws on top." />
+  <figcaption>Tile format. Pre-stamped letter tiles drop into channels and the lid locks them.</figcaption>
+</figure>
+
+<figure>
+  <img src="/photos/seed-backup/steel-plate-tab.jpg" alt="A two-piece stainless-steel seed backup on light wood: a cover plate above and a marking plate below. Word numbers 13 through 24 are visible alongside letter slots designed to be bent or punched for each character." />
+  <figcaption>Tab format. Pre-cut tabs in the front plate get bent through letter slots in the back plate. Same job, no loose pieces.</figcaption>
+</figure>
 
 Properties of metal:
 - **Fire-resistant.** Stainless steel survives a house fire intact. Titanium products survive 1,000+ degrees Celsius.
@@ -119,6 +144,11 @@ For high-value wallets, a passphrase is standard practice. For low-value wallets
 
 Example: 3-of-5. You generate 5 shares. Any 3 can recover the seed. Any 2 reveal nothing.
 
+<figure>
+  <img src="/photos/seed-backup/shamir-shares.jpg" alt="Four blank paper cards laid end-to-end on light wood, each with five rows of letter cells, numbered 1-5, 6-10, 11-15, and 16-20. The format matches a 20-word SLIP-39 share." />
+  <figcaption>One SLIP-39 share, formatted on perforated paper. A full M-of-N setup is several of these, ideally re-encoded onto metal, distributed across separate locations.</figcaption>
+</figure>
+
 This is **not** the same as splitting words across pieces of paper. Naive splitting (write words 1 to 12 on paper A and 13 to 24 on paper B) drastically reduces the brute-force space of the missing half. 12 words is much, much less than 24, and is a serious security mistake.
 
 Shamir Secret Sharing is mathematically sound. Each share is the same size as the original; no share gives any information about the secret on its own.
@@ -140,6 +170,11 @@ For mid-to-high-value setups with real inheritance or geographic concerns, Shami
 ## 7. Multisig: Backup as a Wallet Strategy
 
 [Multisig](/glossary/multisig) - a wallet that requires M-of-N signatures to spend - is more than a backup; it is a different wallet model. But it functions powerfully as a backup strategy.
+
+<figure>
+  <img src="/photos/seed-backup/multisig-three-devices.jpg" alt="Three hardware wallets in a row on light wood: a Coldcard Mk4 keypad device on the left, a Blockstream Jade in the middle, and a Trezor Safe on the right." />
+  <figcaption>A 2-of-3 multisig setup with three different vendors. Vendor diversity is a defense against any single firmware or supply-chain compromise.</figcaption>
+</figure>
 
 A 2-of-3 multisig:
 - 3 keys, held in 3 separate locations or by 3 separate parties.
