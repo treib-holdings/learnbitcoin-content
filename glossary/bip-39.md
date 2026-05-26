@@ -13,7 +13,6 @@ relatedTerms:
   - bip-bitcoin-improvement-proposal
   - mnemonic-entropy-bits
   - mnemonic-password
-  - mnemonic-seed-phrase
   - seed-phrase
 sameAs:
   - "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"
