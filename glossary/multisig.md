@@ -26,7 +26,24 @@ sameAs:
   - "https://www.wikidata.org/wiki/Q40186999"
   - "https://en.bitcoin.it/wiki/Multi-signature"
 liveWidget: ~
+ogImage: "/diagrams/og/multisig.png"
+ogImageAlt: "BITCOIN MULTISIG in large bold type, with the subtitle 'Threshold-of-keys, not single-key-of-failure.' The opening frame of LearnBitcoin's 35-second animated walkthrough of 2-of-3 multisig."
 ---
+
+<figure>
+  <video
+    src="/videos/multisig.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls
+    controlslist="nodownload noplaybackrate noremoteplayback"
+    preload="metadata"
+    aria-label="Animated walkthrough of a 2-of-3 multisig wallet. Three hardware keys appear in a row with a 'Threshold: 2 of 3' label and the caption 'Three different makers. A bug in one can't break the others.' A transaction signs with two keys and broadcasts. Loss scenario: Key B fades to gray with a 'lost' label; the other two keys still sign and the spend goes through. Theft scenario: a hooded figure grabs Key A, which turns green and is marked 'stolen'; the thief's attempt to sign alone halts at one of two signatures. Closing pillars: Multisig. Threshold-of-keys. Vendor-diverse."
+  ></video>
+  <figcaption>Three keys. Any two sign. Lose one and you still spend. Steal one and you still can't.</figcaption>
+</figure>
 
 Multisig is a wallet structure where the output requires multiple signatures to spend, not just one. The script encodes "M of N cosigners must sign" - you might have 3 cosigner keys (N=3) and require any 2 of them to sign for a spend to be valid (M=2). That's the classic [2-of-3](/glossary/m-n).
 
