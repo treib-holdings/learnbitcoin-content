@@ -78,11 +78,11 @@ The validation in step 2 is **node policy**, not consensus. A transaction can be
 A transaction in the mempool has four possible exits:
 
 - **Confirmed.** A miner included it in a block. The block was relayed, accepted, and added to the chain. The transaction is now part of consensus. This is the goal.
-- **Evicted.** The mempool has size limits (default 300 MB in Bitcoin Core). When the mempool fills up, transactions with the lowest fee rates get dropped. A dropped transaction can be rebroadcast later, but most wallets do not automate this.
+- **Evicted.** The mempool has size limits (default 300 MB in Bitcoin Core). When the mempool fills up, transactions with the lowest fee rates get dropped. The UTXOs the dropped transaction was trying to spend stay unspent on the chain; your keys still control them, and the transaction can be rebroadcast at a higher fee. Most wallets do not automate this.
 - **Replaced.** If the transaction signaled RBF (or the node uses full-RBF policy), a higher-fee version replaces it in the mempool. The original is forgotten.
 - **Conflicted.** If a different transaction spends one of the same UTXOs and gets mined first, your transaction becomes invalid (the UTXO no longer exists) and gets dropped.
 
-The default Bitcoin Core mempool keeps unconfirmed transactions for up to **two weeks** before eviction.
+By default, Bitcoin Core's mempool keeps unconfirmed transactions for up to **two weeks** before eviction. This is the `-mempoolexpiry` configuration value (336 hours by default); node operators can shorten or extend it.
 
 ## 5. Fee Rate, Not Absolute Fee
 
