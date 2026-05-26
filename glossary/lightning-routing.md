@@ -56,3 +56,5 @@ The hard problems in routing:
 - **Larger payments are harder.** Probability of finding a complete path drops as payment size approaches typical channel capacity. AMP and channel splicing help, but huge payments often require multiple attempts or out-of-band coordination.
 
 Routing reliability has improved dramatically since 2020 - most everyday payments under a few hundred thousand sats route on the first try. Larger or more remote payments still occasionally fail, but the failure modes are recoverable and never lose funds.
+
+See the [Lightning Routing rabbit hole](/rabbit-hole/lightning-routing) for the deeper treatment - source routing, onion encryption, multi-path payments, pathfinding heuristics, and the probing techniques wallets use to find liquidity.

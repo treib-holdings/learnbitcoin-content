@@ -23,4 +23,4 @@ There is no single global mempool. Every node maintains its own. Most are simila
 
 When a transaction gets included in a block, every node sees that block, validates it, and removes the included transactions from their mempools. Transactions that have been waiting can also be evicted under memory pressure or replaced via [fee bumping](/glossary/fee-bumping).
 
-Watch the live mempool state on the [Node Status page](/node/) or in the [Mining rabbit hole §6](/rabbit-hole/mining).
+Go deeper in the [Mempool rabbit hole](/rabbit-hole/mempool) - fee markets, eviction rules, RBF, and what a "stuck" transaction actually looks like at the protocol level. Watch the live mempool state on the [Node Status page](/node/) or in the [Mining rabbit hole §6](/rabbit-hole/mining).

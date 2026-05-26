@@ -33,3 +33,5 @@ Bitcoin is decentralized along several distinct axes:
 Decentralization isn't binary; it's a spectrum and a continuously contested property. Mining centralization is a real concern. So is the concentration of certain wallet software, exchange infrastructure, and BIP authorship. The protocol is more decentralized than almost anything else in computing, *and* there are real centralization vectors worth watching.
 
 The opposite of decentralization isn't "tyranny." It's just "ordinary." Almost everything in the financial system - banks, payment networks, central banks, custody services - has a single party who can be subpoenaed, threatened, bribed, or shut down. Bitcoin's decentralization is the property that makes it different. Defending it is everyone's job.
+
+See the [Decentralization rabbit hole](/rabbit-hole/decentralization) for the deeper treatment - what's actually decentralized versus centralized in Bitcoin, how to measure it, and where the real fault lines sit.

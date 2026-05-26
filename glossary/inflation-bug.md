@@ -44,3 +44,5 @@ Why this matters:
 - **It's a reminder that "the code is the constitution" requires the code to actually be right.** Bitcoin's monetary commitments depend on Bitcoin Core (and its compatible implementations) actually enforcing the rules. Subtle bugs in optimization paths can undermine the commitments.
 
 CVE-2018-17144 remains the most cited example when developers argue for conservative changes to the validation code path, more test coverage on consensus-critical functions, and minimum review periods on optimizations.
+
+See the [Inflation Bug Postmortem rabbit hole](/rabbit-hole/inflation-bug-postmortem) for the full timeline - the duplicate-input check that wasn't, how the bug was found, the private-disclosure process, and how the patch shipped without panicking the market.

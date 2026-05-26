@@ -66,3 +66,5 @@ That power cuts both ways. Anyone who reads your seed phrase has the same capabi
 - **Consider a passphrase** (the "25th word"). An optional, user-chosen additional secret that combines with the 12 or 24 words to derive a separate wallet. Powerful but adds operational risk: forget the passphrase and the funds are gone.
 
 The seed phrase is the **one** thing you must protect to truly self-custody Bitcoin. Everything else is recoverable; this is not.
+
+See the [Seed Backup Strategies rabbit hole](/rabbit-hole/seed-backup-strategies) for the deeper treatment - paper versus metal, multisig backup schemes, inheritance planning, and how to verify a backup without exposing the words to anyone else.
