@@ -7,7 +7,8 @@ keyTakeaways:
   - "Core principle ensuring no single point of failure"
   - "Full nodes and open participation drive resilience"
   - "Empowers user control and resists censorship"
-sources: []
+sources:
+  - { label: "Decentralization rabbit hole", url: "https://www.learnbitcoin.com/rabbit-hole/decentralization" }
 relatedTerms:
   - anti-sybil-mechanism
   - byzantine-fault-tolerance

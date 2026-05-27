@@ -7,7 +7,8 @@ keyTakeaways:
   - "Selects a route of connected channels with sufficient capacity"
   - "Uses LN gossip data for up-to-date channel states"
   - "Relies on ephemeral HTLCs ensuring trustless multi-hop payments"
-sources: []
+sources:
+  - { label: "Lightning Routing rabbit hole", url: "https://www.learnbitcoin.com/rabbit-hole/lightning-routing" }
 relatedTerms:
   - atomic-multi-path-payment-amp
   - bolt

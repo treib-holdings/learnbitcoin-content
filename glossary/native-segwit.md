@@ -27,6 +27,6 @@ Why "native" vs "wrapped":
 
 Native SegWit was the cleaner end state of the SegWit design (BIP 141), but the ecosystem rolled out wrapped first to ease the transition. By 2026, native SegWit is the default for new wallets, and the wrapped form is mostly legacy.
 
-Fee savings are real but modest: a P2WPKH spend is roughly 10-15% cheaper than the wrapped equivalent in vbytes. Add [Taproot](/glossary/bip-341-taproot) (`bc1p...`, [bech32m](/glossary/bech32m)) for slightly more savings and better privacy, and you've got the modern address-format stack: legacy P2PKH (`1...`) for old wallets, wrapped SegWit (`3...`) for transition cases, native SegWit (`bc1q...`) for current use, Taproot (`bc1p...`) for the cutting edge.
+Fee savings are real but modest: a P2WPKH spend is roughly 10-15% cheaper than the wrapped equivalent in vbytes. Add [Taproot](/glossary/taproot) (`bc1p...`, [bech32m](/glossary/bech32m)) for slightly more savings and better privacy, and you've got the modern address-format stack: legacy P2PKH (`1...`) for old wallets, wrapped SegWit (`3...`) for transition cases, native SegWit (`bc1q...`) for current use, Taproot (`bc1p...`) for the cutting edge.
 
 If you're picking an address type for a new wallet in 2026: Taproot if your senders support it, native SegWit otherwise.

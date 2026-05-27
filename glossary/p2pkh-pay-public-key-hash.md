@@ -11,7 +11,7 @@ sources: []
 relatedTerms:
   - address
   - b32-address
-  - p2sh-pay-script-hash
+  - p2sh
   - p2wpkh-pay-witness-public-key-hash
   - p2wsh-pay-witness-script-hash
   - p2pk-pay-public-key

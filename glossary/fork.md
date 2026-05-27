@@ -33,7 +33,7 @@ liveWidget: ~
 
 **[Soft fork](/glossary/soft-fork).** *Tightens* the rules. Blocks that were valid under old rules become invalid under new rules; blocks valid under new rules remain valid under old rules. Old nodes that haven't upgraded still see new blocks as legitimate, they just don't enforce the new constraints themselves. Backwards-compatible. Bitcoin's standard way of upgrading.
 
-Examples: [SegWit](/glossary/segwit-segregated-witness-bip-141) (2017), [Taproot](/glossary/taproot) (2021), [BIP-65 CLTV](/glossary/bip-65-opchecklocktimeverify), [BIP-68 CSV](/glossary/bip-68-relative-locktime), [P2SH](/glossary/bip-16-p2sh), and others.
+Examples: [SegWit](/glossary/segwit-segregated-witness-bip-141) (2017), [Taproot](/glossary/taproot) (2021), [BIP-65 CLTV](/glossary/bip-65-opchecklocktimeverify), [BIP-68 CSV](/glossary/bip-68-relative-locktime), [P2SH](/glossary/p2sh), and others.
 
 **Hard fork.** *Loosens or otherwise breaks* the rules. Blocks valid under new rules may be invalid under old rules. Old nodes reject new blocks. Not backwards-compatible. Creates a permanent [chain split](/glossary/chain-split) unless every node upgrades.
 

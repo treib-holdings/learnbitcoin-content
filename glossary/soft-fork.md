@@ -30,7 +30,7 @@ This is the *backwards-compatible* way to evolve Bitcoin's protocol. It contrast
 
 Notable Bitcoin soft forks:
 
-- **[BIP-16 (P2SH)](/glossary/bip-16-p2sh)** - 2012. Added the [P2SH](/glossary/p2sh-pay-script-hash) address format.
+- **[BIP-16 (P2SH)](/glossary/p2sh)** - 2012. Added the [P2SH](/glossary/p2sh) address format.
 - **[BIP-65 (CLTV)](/glossary/bip-65-opchecklocktimeverify)** - 2015. Added `OP_CHECKLOCKTIMEVERIFY` for [absolute locktimes](/glossary/absolute-locktime) in scripts.
 - **[BIP-68/112/113 (CSV)](/glossary/checksequenceverify-csv)** - 2016. Added relative locktimes.
 - **[BIP-141 (SegWit)](/glossary/segwit-segregated-witness-bip-141)** - 2017. The big one; restructured witness data, fixed malleability, doubled effective block capacity.

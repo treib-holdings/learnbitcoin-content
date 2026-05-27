@@ -14,7 +14,7 @@ relatedTerms:
   - mono-signature
   - musig
   - musig2
-  - partially-signed-bitcoin-transaction-psbt
+  - psbt
   - quorum-signatures
 liveWidget: ~
 ---

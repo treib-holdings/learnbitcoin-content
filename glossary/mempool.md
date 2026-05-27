@@ -7,7 +7,8 @@ keyTakeaways:
   - "Holds pending transactions awaiting confirmation"
   - "Policies differ, so not all nodes have identical mempools"
   - "Fee estimation and RBF rely heavily on mempool dynamics"
-sources: []
+sources:
+  - { label: "Mempool rabbit hole", url: "https://www.learnbitcoin.com/rabbit-hole/mempool" }
 relatedTerms: []
 liveWidget: ~
 ---

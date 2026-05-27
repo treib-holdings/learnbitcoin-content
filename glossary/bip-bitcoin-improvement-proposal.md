@@ -10,14 +10,14 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - bip-9-versionbits
-  - bip-16-p2sh
+  - p2sh
   - bip-22-getblocktemplate
   - bip-65-opchecklocktimeverify
   - bip-68-relative-locktime
   - segwit-segregated-witness-bip-141
   - bip-173-bech32
-  - bip-174-psbt
-  - bip-341-taproot
+  - psbt
+  - taproot
   - bip-342-tapscript
   - bolt-11
 sameAs:

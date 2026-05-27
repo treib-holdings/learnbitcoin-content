@@ -9,17 +9,16 @@ keyTakeaways:
   - "Forms the basis for advanced features like MuSig/MAST"
 sources: []
 relatedTerms:
-  - bip-341-taproot
+  - taproot
   - bip-342-tapscript
   - ecdsa-elliptic-curve-digital-signature-algorithm
   - elliptic-curve
   - mono-signature
   - musig
   - musig2
-  - partially-signed-bitcoin-transaction-psbt
+  - psbt
   - signature-aggregation
   - signature-clipping
-  - taproot
 sameAs:
   - "https://en.wikipedia.org/wiki/Schnorr_signature"
   - "https://www.wikidata.org/wiki/Q1465057"

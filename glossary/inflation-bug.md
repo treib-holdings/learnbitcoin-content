@@ -7,7 +7,8 @@ keyTakeaways:
   - "Threatens Bitcoin's core scarcity feature if unpatched"
   - "Highlight of why rapid fixes and community diligence matter"
   - "Historically rare but extremely serious vulnerability"
-sources: []
+sources:
+  - { label: "Inflation Bug Postmortem rabbit hole", url: "https://www.learnbitcoin.com/rabbit-hole/inflation-bug-postmortem" }
 relatedTerms:
   - bip-42
   - block-reward

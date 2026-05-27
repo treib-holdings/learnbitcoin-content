@@ -15,7 +15,7 @@ relatedTerms:
   - bitcoin-script
   - p2pk-pay-public-key
   - p2pkh-pay-public-key-hash
-  - p2sh-pay-script-hash
+  - p2sh
   - p2wpkh-pay-witness-public-key-hash
   - p2wsh-pay-witness-script-hash
   - price-discovery
@@ -34,7 +34,7 @@ You'll see several address formats coexisting on the network:
 - **Legacy / P2PKH** - starts with `1`. The original format. Still works; uses more block space than newer types.
 - **P2SH** - starts with `3`. Pay-to-Script-Hash, often used for multisig or older SegWit-wrapped addresses.
 - **Native SegWit / Bech32** - starts with `bc1q`. Introduced by [BIP-173](/glossary/bip-173-bech32). Cheaper fees, better error detection.
-- **Taproot / Bech32m** - starts with `bc1p`. Introduced with [BIP-341](/glossary/bip-341-taproot). Best privacy, smallest signatures, supports advanced scripts that look identical to single-sig.
+- **Taproot / Bech32m** - starts with `bc1p`. Introduced with [BIP-341](/glossary/taproot). Best privacy, smallest signatures, supports advanced scripts that look identical to single-sig.
 
 All formats represent the same underlying concept: "to spend BTC sent here, you must produce a valid script and signature(s) that satisfy the locking conditions encoded in this address." Different formats just specify different locking script structures and different on-chain footprints.
 

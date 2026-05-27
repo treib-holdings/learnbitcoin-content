@@ -13,7 +13,7 @@ relatedTerms:
   - b32-address
   - hierarchical-multisig
   - m-n
-  - partially-signed-bitcoin-transaction-psbt
+  - psbt
   - security
   - wallet
 liveWidget: ~

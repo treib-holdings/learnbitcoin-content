@@ -9,7 +9,7 @@ keyTakeaways:
   - "Practical for corporate, family, or co-managed funds"
 sources: []
 relatedTerms:
-  - bip-174-psbt
+  - psbt
   - bitcoin-vault
   - fidelity-bond
   - green-address
@@ -18,7 +18,6 @@ relatedTerms:
   - interactive-multi-sig
   - musig
   - musig2
-  - partially-signed-bitcoin-transaction-psbt
   - quorum-signatures
 liveWidget: ~
 ---

@@ -7,7 +7,8 @@ keyTakeaways:
   - "Reflects the 'coin' concept in Bitcoin's ledger model"
   - "Must be fully spent; leftover must go to a 'change' output"
   - "Fundamental to on-chain transaction logic and privacy"
-sources: []
+sources:
+  - { label: "UTXOs rabbit hole", url: "https://www.learnbitcoin.com/rabbit-hole/utxos" }
 relatedTerms:
   - absolute-fee
   - coin-age

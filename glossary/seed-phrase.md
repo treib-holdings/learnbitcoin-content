@@ -8,7 +8,8 @@ keyTakeaways:
   - "12 words = 128 bits of entropy. 24 words = 256 bits. Either is unguessable in practice"
   - "Every key and address in an HD wallet derives from this single phrase"
   - "Store offline. Verify the backup. Consider geographic redundancy"
-sources: []
+sources:
+  - { label: "Seed Backup Strategies rabbit hole", url: "https://www.learnbitcoin.com/rabbit-hole/seed-backup-strategies" }
 relatedTerms:
   - bip-32
   - bip-39

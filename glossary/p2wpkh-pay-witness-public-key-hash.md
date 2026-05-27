@@ -11,7 +11,7 @@ sources: []
 relatedTerms:
   - address
   - bip-85
-  - p2sh-pay-script-hash
+  - p2sh
   - p2wsh-pay-witness-script-hash
   - p2pkh-pay-public-key-hash
   - p2pk-pay-public-key

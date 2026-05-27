@@ -9,7 +9,7 @@ keyTakeaways:
   - "Requires careful planning to avoid excessive complexity"
 sources: []
 relatedTerms:
-  - bip-174-psbt
+  - psbt
   - custodial-lightning-wallet
   - green-address
   - hd-wallet-hierarchical-deterministic-wallet
@@ -19,7 +19,6 @@ relatedTerms:
   - mono-signature
   - musig
   - musig2
-  - partially-signed-bitcoin-transaction-psbt
   - quorum-signatures
   - wallet
 liveWidget: ~
@@ -33,6 +32,6 @@ Why it exists: simple multisig works fine for personal or small-team custody. Bu
 - **Departmental separation.** Engineering, finance, and operations might each control one "key" that internally is a sub-multisig of their respective team members.
 - **Defense in depth.** A hot wallet for daily operations might be 2-of-3, but withdrawals from cold storage might require 3-of-5 where one of those keys is itself a 4-of-7 time-locked geographic-distributed signature.
 
-The construction can in principle use [Bitcoin Script](/glossary/bitcoin-script)'s native multisig opcodes or, more elegantly with [Taproot](/glossary/taproot), express complex policies via MAST. Modern hardware-wallet ecosystems (Sparrow, Specter, Nunchuk) increasingly support these arrangements via [PSBT](/glossary/partially-signed-bitcoin-transaction-psbt)-based workflows.
+The construction can in principle use [Bitcoin Script](/glossary/bitcoin-script)'s native multisig opcodes or, more elegantly with [Taproot](/glossary/taproot), express complex policies via MAST. Modern hardware-wallet ecosystems (Sparrow, Specter, Nunchuk) increasingly support these arrangements via [PSBT](/glossary/psbt)-based workflows.
 
 The tradeoff is operational complexity. Every additional layer adds a chance for someone to lose a key, forget a procedure, or get locked out. Hierarchical multisig is genuinely useful for organizations with real custody policies, and probably overkill for individuals. Most personal users are well-served by a flat 2-of-3 with hardware devices.

@@ -29,7 +29,7 @@ What BDK provides:
 - **Descriptor-based wallet primitives.** Output script descriptors (the modern way to specify "what scripts does this wallet use") let BDK handle complex setups - multisig, miniscript, custom locktime constructions - through a clean interface.
 - **Pluggable backends.** Connect to a Bitcoin Core node, an Electrum server, an Esplora REST API, or run completely offline with PSBT-based workflows.
 - **Coin selection algorithms.** Built-in strategies for picking UTXOs (largest-first, branch-and-bound, etc.).
-- **PSBT support.** First-class [PSBT](/glossary/partially-signed-bitcoin-transaction-psbt) construction and finalization.
+- **PSBT support.** First-class [PSBT](/glossary/psbt) construction and finalization.
 - **Cross-platform.** Rust core with FFI bindings for Swift, Kotlin, Python, JavaScript - so mobile and embedded wallets can use it.
 
 Where BDK shines: anyone building a new Bitcoin wallet doesn't have to write descriptor parsing, PSBT logic, coin selection, fee estimation, and the rest from scratch. BDK handles the plumbing; the wallet builder focuses on UX and features.

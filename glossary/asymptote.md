@@ -7,7 +7,8 @@ keyTakeaways:
   - "Bitcoin's total supply approaches but never exactly reaches 21,000,000 BTC"
   - "The true asymptote is 20,999,999.9769 BTC due to satoshi-level integer rounding"
   - "Bitcoin's annual inflation rate asymptotes to zero around the year 2140"
-sources: []
+sources:
+  - { label: "Supply Schedule rabbit hole", url: "https://www.learnbitcoin.com/rabbit-hole/supply" }
 relatedTerms:
   - block-subsidy
   - disinflation

@@ -1,33 +1,67 @@
 ---
-title: "PSBT"
+title: "PSBT (Partially Signed Bitcoin Transaction)"
 slug: psbt
 draft: false
-shortDefinition: "Acronym for Partially Signed Bitcoin Transaction (BIP 174), enabling multi-device or multi-signer workflows."
+shortDefinition: "BIP 174 standard format for passing a not-yet-fully-signed transaction between multiple devices or cosigners without exposing private keys. The workflow standard that makes modern self-custody actually practical."
 keyTakeaways:
-  - "Streamlines multi-signature or offline signing processes"
-  - "Safeguards private keys by limiting exposed data"
-  - "Adopted widely by wallets, hardware devices, and advanced scripts"
+  - "Single binary blob (typically base64-encoded) that carries the unsigned tx skeleton plus per-input UTXO data, derivation paths, and partial signatures"
+  - "Enables hardware wallets to sign air-gapped (USB / microSD / QR / NFC) without ever exposing the seed"
+  - "Cross-vendor: any BIP-174 wallet can pass a PSBT to any other BIP-174 wallet and finalize it"
+  - "PSBT v2 (BIP 370 / BIP 371) adds Taproot support and post-creation tx mutation; modern tooling speaks v2 natively"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bip-bitcoin-improvement-proposal
+  - bitcoin-core
+  - hardware-wallet
+  - hierarchical-multisig
+  - interactive-multi-sig
+  - m-n
+  - mono-signature
+  - musig
+  - musig2
+  - partial-signature
+  - quorum-signatures
+  - schnorr-signature
+  - transaction
+sameAs:
+  - "https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki"
+  - "https://en.bitcoin.it/wiki/BIP_0174"
+  - "https://en.bitcoin.it/wiki/PSBT"
+  - "https://bitcoinops.org/en/topics/psbt/"
 liveWidget: ~
 ---
 
-PSBT is the Partially Signed Bitcoin Transaction format, defined in [BIP 174](/glossary/bip-174-psbt) and extended in BIP 370 / 371. It's a serializable blob that captures everything needed for multiple parties or devices to cooperate on signing a Bitcoin transaction without ever sharing private keys.
+PSBT - **P**artially **S**igned **B**itcoin **T**ransaction - is a standardized format ([BIP-174](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki), authored by Andrew Chow and merged into Bitcoin Core 0.17 in 2018) for passing a not-yet-fully-signed transaction between multiple devices or cosigners. It is the workflow standard that makes modern self-custody actually practical.
 
-For day-to-day Bitcoin users, PSBT is the plumbing that makes hardware wallets work. When you tap "send" in a hardware-wallet-paired app:
+The problem PSBT solves: in any non-trivial signing setup, you typically have a device that *knows the wallet state* (which UTXOs exist, which addresses are yours) but does not have the [private keys](/glossary/private-key), and a separate device that *has the keys* but does not know the wallet state. The unsigned-but-fully-described transaction is the artifact that has to travel between them.
 
-1. The app builds a PSBT with the unsigned transaction and all the metadata the device needs (input amounts, derivation paths, change-script types).
-2. The app hands the PSBT to the hardware wallet via USB, QR code, microSD, or NFC.
-3. The hardware wallet shows you the amount and destination on its trusted display, asks for confirmation, and signs.
-4. The hardware wallet returns the signed PSBT.
-5. The app finalizes the PSBT into a complete transaction and broadcasts it.
+## The format
 
-What makes PSBT load-bearing for sovereignty:
+A PSBT is a single binary blob (typically encoded as a base64 string), sectioned per-input, per-output, plus a global section. It carries:
 
-- **Air-gapped signing.** A PSBT can travel by QR code or SD card; the signing device never connects to a network.
-- **Multisig coordination.** The PSBT moves between cosigners (each on their own hardware wallet, possibly in different cities) until enough signatures are present.
-- **Software interoperability.** Sparrow, Specter, Nunchuk, BlueWallet, Bitcoin Core, and every modern hardware wallet speak PSBT. You can build a transaction in one tool and sign it in another.
+- The unsigned transaction skeleton
+- Per-input UTXO data (so signers can verify amounts independently)
+- Derivation paths and pubkeys for each input
+- Partial signatures as each cosigner adds them
+- BIP 32 master key fingerprints
 
-A PSBT is binary by default but typically displayed as a base64-encoded string or rendered as a QR code. The format is verbose by design: it carries all the metadata signers need to verify amounts and destinations independently, so an offline device can confirm what it's signing without trusting the coordinator.
+## A typical PSBT flow
 
-See [BIP 174](/glossary/bip-174-psbt) for the formal spec.
+1. **A coordinator** (Sparrow, Bitcoin Core, Specter, Nunchuk, etc.) builds the [transaction](/glossary/transaction): selects UTXOs, sets the recipient and amount, computes the fee. Exports the result as a PSBT - either a binary file or a base64 string.
+2. **The signer** (typically a [hardware wallet](/glossary/hardware-wallet)) receives the PSBT via USB, microSD, QR code, or NFC. The signer displays the transaction details on its trusted screen, the user verifies them, the signer signs and returns the updated PSBT.
+3. **If multisig**, repeat step 2 across each cosigner. Each adds their partial signature to the appropriate input section and passes it on.
+4. **The coordinator** finalizes the PSBT into a fully-formed transaction once enough signatures satisfy each input's script, and broadcasts it.
+
+## Why it matters
+
+- **Air-gapped signing works.** Hardware wallets that never touch a USB cable can sign via QR codes. The seed never touches an internet-connected device.
+- **Multisig is portable.** Cosigners can be different hardware vendors, different software, different jurisdictions, and still cooperate via a standardized file format.
+- **No key reuse across devices.** Every signer keeps their key locally; only the partial signature crosses a boundary.
+
+## PSBT v2
+
+PSBT v2 (BIP 370 / BIP 371) adds richer [Taproot](/glossary/taproot) support and lets the input and output sets be modified after PSBT creation. Modern tooling (Sparrow, Specter, Nunchuk, BlueWallet, Bitcoin Core, every major hardware wallet) speaks v2 natively.
+
+PSBT is the unsung infrastructure of serious self-custody. If your wallet stack uses hardware devices or multisig, it almost certainly uses PSBT under the hood.
+
+See [Hardware Wallet](/glossary/hardware-wallet) for the most common use case, and [Hierarchical Multisig](/glossary/hierarchical-multisig) for the multi-device pattern PSBT enables.

@@ -9,7 +9,7 @@ keyTakeaways:
   - "Relies on Schnorr signatures introduced with Taproot"
 sources: []
 relatedTerms:
-  - bip-174-psbt
+  - psbt
   - ecdsa-elliptic-curve-digital-signature-algorithm
   - elliptic-curve
   - hdm-multi-signature-hd-wallet
@@ -19,7 +19,6 @@ relatedTerms:
   - mono-signature
   - musig2
   - partial-signature
-  - partially-signed-bitcoin-transaction-psbt
   - quorum-signatures
   - schnorr-signature
   - signature-aggregation

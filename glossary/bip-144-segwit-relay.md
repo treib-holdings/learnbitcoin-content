@@ -14,12 +14,11 @@ relatedTerms:
   - bip-91
   - segwit-segregated-witness-bip-141
   - bip-148-uasf
-  - bip-341-taproot
+  - taproot
   - bip-342-tapscript
   - native-segwit
   - p2wpkh-pay-witness-public-key-hash
   - p2wsh-pay-witness-script-hash
-  - taproot
 liveWidget: ~
 ---
 

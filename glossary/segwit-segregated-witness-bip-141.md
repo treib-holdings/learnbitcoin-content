@@ -12,16 +12,15 @@ relatedTerms:
   - bech32m
   - bip-bitcoin-improvement-proposal
   - bip-9-versionbits
-  - bip-16-p2sh
+  - p2sh
   - bip-91
   - bip-144-segwit-relay
   - bip-148-uasf
-  - bip-341-taproot
+  - taproot
   - bip-342-tapscript
   - native-segwit
   - p2wpkh-pay-witness-public-key-hash
   - p2wsh-pay-witness-script-hash
-  - taproot
 sameAs:
   - "https://en.wikipedia.org/wiki/SegWit"
   - "https://www.wikidata.org/wiki/Q30327698"

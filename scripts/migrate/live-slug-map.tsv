@@ -1,6 +1,3 @@
-BIP (Bitcoin Improvement Proposal)	bip-bitcoin-improvement-proposal
-SegWit (Segregated Witness, BIP 141)	segwit-segregated-witness-bip-141
-UTXO (Unspent Transaction Output)	utxo-unspent-transaction-output
 Absolute Fee	absolute-fee
 Absolute Locktime	absolute-locktime
 Accelerator	accelerator
@@ -32,6 +29,7 @@ Balanced Channel (Lightning)	balanced-channel-lightning
 Batch Transaction	batch-transaction
 Bear Market	bear-market
 BECH32m	bech32m
+BIP (Bitcoin Improvement Proposal)	bip-bitcoin-improvement-proposal
 BIP 101 (Increase Block Size)	bip-101-increase-block-size
 BIP 102 (2MB Block Size)	bip-102-2mb-block-size
 BIP 113	bip-113
@@ -43,10 +41,8 @@ BIP 152 (Compact Blocks)	bip-152-compact-blocks
 BIP 155 (Addr v2)	bip-155-addr-v2
 BIP 158	bip-158
 BIP 159	bip-159
-BIP 16 (P2SH)	bip-16-p2sh
 BIP 170 (TxOut Proof)	bip-170-txout-proof
 BIP 173 (Bech32)	bip-173-bech32
-BIP 174 (PSBT)	bip-174-psbt
 BIP 176 (Bits Denomination)	bip-176-bits-denomination
 BIP 22 (getblocktemplate)	bip-22-getblocktemplate
 BIP 30	bip-30
@@ -56,10 +52,10 @@ BIP 31 (pong message)	bip-31-pong-message
 BIP 32 (HD Wallets)	bip-32
 BIP 339 (WTXID Relay)	bip-339-wtxid-relay
 BIP 34	bip-34
-BIP 341 (Taproot)	bip-341-taproot
 BIP 342 (Tapscript)	bip-342-tapscript
 BIP 35 (mempool message)	bip-35-mempool-message
 BIP 36 (merkle block request)	bip-36-merkle-block-request
+BIP 361 (Post Quantum Migration)	bip-361
 BIP 37	bip-37
 BIP 39 (Mnemonic Seed)	bip-39
 BIP 40 (Alerts Avoid Replay)	bip-40-alerts-avoid-replay
@@ -202,7 +198,7 @@ Greenlist	greenlist
 Griefing Attack	griefing-attack
 GUI Miner	gui-miner
 GUI Wallet	gui-wallet
-Hal Finney’s Running Bitcoin	hal-finneys-running-bitcoin
+Hal Finney's Running Bitcoin	hal-finneys-running-bitcoin
 Halving (Halvening)	halving-halvening
 Hardware Security Module (HSM)	hardware-security-module-hsm
 Hardware Seed Vault	hardware-seed-vault
@@ -232,6 +228,7 @@ Inflation	inflation
 Inflation Bug	inflation-bug
 Inheritance Seed Backup	inheritance-seed-backup
 Input (Transaction Input)	input-transaction-input
+Inscriptions	inscriptions
 Interactive Multi-Sig	interactive-multi-sig
 Jammed HTLC Detector	jammed-htlc-detector
 Jamming Attack (LN)	jamming-attack-ln
@@ -303,7 +300,6 @@ Mining Software	mining-software
 Mining Subsidy	mining-subsidy
 Minsky Moment	minsky-moment
 Mixing Service	mixing-service
-Mnemonic (Seed) Phrase	mnemonic-seed-phrase
 Mnemonic Entropy Bits	mnemonic-entropy-bits
 Mnemonic Password	mnemonic-password
 Mono-Signature	mono-signature
@@ -330,18 +326,19 @@ OP Code (Operation Code)	op-code-operation-code
 OP_RETURN	opreturn
 OP_RETURN-based Tokens	opreturn-based-tokens
 Oracle-based Betting	oracle-based-betting
+Ordinals	ordinals
 Orphan Block	orphan-block
 Output (Transaction Output)	output-transaction-output
 Output Descriptor	output-descriptor
 P2PK (Pay to Public Key)	p2pk-pay-public-key
 P2PKH (Pay to Public Key Hash)	p2pkh-pay-public-key-hash
-P2SH (Pay to Script Hash)	p2sh-pay-script-hash
+P2SH (Pay to Script Hash)	p2sh
+P2SH-P2WSH (Nested SegWit Script)	p2sh-p2wsh-nested-segwit
 P2WPKH (Pay to Witness Public Key Hash)	p2wpkh-pay-witness-public-key-hash
 P2WSH (Pay to Witness Script Hash)	p2wsh-pay-witness-script-hash
 Paper Hands	paper-hands
 Paper Wallet	paper-wallet
 Partial Signature	partial-signature
-Partially Signed Bitcoin Transaction (PSBT)	partially-signed-bitcoin-transaction-psbt
 Pay-to-IP	pay-ip
 PayJoin	payjoin
 Payment Channel	payment-channel
@@ -365,7 +362,7 @@ Proof of Keys	proof-keys
 Proof-of-Work (PoW)	proof-work-pow
 Proprietary Mining Firmware	proprietary-mining-firmware
 Pruning Mode	pruning-mode
-PSBT	psbt
+PSBT (Partially Signed Bitcoin Transaction)	psbt
 Public Key	public-key
 Quorum Signatures	quorum-signatures
 Race Attack	race-attack
@@ -391,6 +388,7 @@ Security	security
 Seed Entropy Mixer	seed-entropy-mixer
 Seed Phrase	seed-phrase
 Seed Tool	seed-tool
+SegWit (Segregated Witness, BIP 141)	segwit-segregated-witness-bip-141
 Shamir's Secret Sharing	shamir-secret-sharing
 Shielded CoinJoin	shielded-coinjoin
 Sidechain	sidechain
@@ -417,6 +415,7 @@ Transaction Chaining	transaction-chaining
 Transaction Fee	transaction-fee
 Transaction Finality	transaction-finality
 Transaction Index (txindex)	transaction-index-txindex
+UTXO (Unspent Transaction Output)	utxo-unspent-transaction-output
 Vanity Address	vanity-address
 Volatility	volatility
 Wallet	wallet

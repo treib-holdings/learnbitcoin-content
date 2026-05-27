@@ -11,7 +11,6 @@ sources: []
 relatedTerms:
   - ordinals
   - taproot
-  - bip-341-taproot
   - bip-342-tapscript
   - segwit-segregated-witness-bip-141
   - opreturn

@@ -13,7 +13,7 @@ relatedTerms:
   - b32-address
   - bech32m
   - bip-bitcoin-improvement-proposal
-  - bip-16-p2sh
+  - p2sh
   - segwit-segregated-witness-bip-141
   - native-segwit
   - p2wpkh-pay-witness-public-key-hash

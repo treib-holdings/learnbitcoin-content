@@ -7,7 +7,8 @@ keyTakeaways:
   - "Secures the ledger via proof-of-work computations"
   - "Distributes new BTC issuance in a competitive market"
   - "High energy consumption but provides robust decentralization"
-sources: []
+sources:
+  - { label: "Mining rabbit hole", url: "https://www.learnbitcoin.com/rabbit-hole/mining" }
 relatedTerms:
   - competitive-mining
   - cpu-mining

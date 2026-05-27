@@ -10,7 +10,7 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - adapter-signature
-  - bip-16-p2sh
+  - p2sh
   - bip-65-opchecklocktimeverify
   - bip-68-relative-locktime
   - bip-113
@@ -24,7 +24,6 @@ relatedTerms:
   - merkleized-abstract-syntax-tree-mast
   - op-code-operation-code
   - opreturn
-  - p2sh-pay-script-hash
   - script
   - scriptless-scripts
   - taproot

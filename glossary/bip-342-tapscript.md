@@ -10,14 +10,13 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - bip-bitcoin-improvement-proposal
-  - bip-16-p2sh
+  - p2sh
   - segwit-segregated-witness-bip-141
   - bip-144-segwit-relay
-  - bip-341-taproot
+  - taproot
   - bitcoin-script
   - merkleized-abstract-syntax-tree-mast
   - script
-  - taproot
 sameAs:
   - "https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki"
   - "https://en.bitcoin.it/wiki/BIP_0342"

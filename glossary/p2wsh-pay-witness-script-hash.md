@@ -10,7 +10,7 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - address
-  - p2sh-pay-script-hash
+  - p2sh
   - p2wpkh-pay-witness-public-key-hash
   - p2pkh-pay-public-key-hash
   - p2pk-pay-public-key
@@ -23,7 +23,7 @@ sameAs:
 liveWidget: ~
 ---
 
-P2WSH - "Pay to Witness Script Hash" - is the native [SegWit](/glossary/segwit-segregated-witness-bip-141) version of [P2SH](/glossary/p2sh-pay-script-hash). It carries the same "send to a script's hash" model into SegWit's witness structure, with all the SegWit benefits: smaller effective fees, no malleability.
+P2WSH - "Pay to Witness Script Hash" - is the native [SegWit](/glossary/segwit-segregated-witness-bip-141) version of [P2SH](/glossary/p2sh). It carries the same "send to a script's hash" model into SegWit's witness structure, with all the SegWit benefits: smaller effective fees, no malleability.
 
 Addresses start with `bc1q` and are noticeably longer than [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash) addresses, because P2WSH uses a 32-byte script hash (SHA-256) vs P2WPKH's 20-byte key hash (RIPEMD-160 of SHA-256). The longer hash provides stronger collision resistance, which matters for scripts that might be shared with potentially adversarial counterparties.
 

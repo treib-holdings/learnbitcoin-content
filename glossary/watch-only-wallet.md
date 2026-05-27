@@ -23,7 +23,7 @@ liveWidget: ~
 
 A watch-only wallet contains [public keys](/glossary/public-key) or [extended public keys](/glossary/xpub-extended-public-key) but no [private keys](/glossary/private-key). It can show you balances, track incoming transactions, generate receive addresses, and build unsigned transactions - but it can't actually sign or spend.
 
-The standard pattern: a [hardware wallet](/glossary/hardware-wallet) holds the private keys, and you load its **xpub** (extended public key) into a watch-only wallet on your laptop or phone. The watch-only wallet derives every address you'll ever use from that xpub, monitors them on-chain, and shows you the wallet state in real time. When you want to send, the watch-only wallet builds a [PSBT](/glossary/partially-signed-bitcoin-transaction-psbt) and hands it to the hardware wallet to sign.
+The standard pattern: a [hardware wallet](/glossary/hardware-wallet) holds the private keys, and you load its **xpub** (extended public key) into a watch-only wallet on your laptop or phone. The watch-only wallet derives every address you'll ever use from that xpub, monitors them on-chain, and shows you the wallet state in real time. When you want to send, the watch-only wallet builds a [PSBT](/glossary/psbt) and hands it to the hardware wallet to sign.
 
 Why this split is useful:
 
@@ -34,4 +34,4 @@ Why this split is useful:
 
 Watch-only wallets are widely supported. Sparrow, Electrum, Bitcoin Core, Specter Desktop, Nunchuk, BlueWallet, and others all handle xpubs natively. Modern self-custody workflows almost always pair a hardware wallet with a watch-only desktop or mobile companion - it's the cleanest separation between "knowing your balance" and "having the keys."
 
-See [Hardware Wallet](/glossary/hardware-wallet) for the signing-side device and [PSBT](/glossary/partially-signed-bitcoin-transaction-psbt) for how watch-only and signing wallets actually exchange transactions.
+See [Hardware Wallet](/glossary/hardware-wallet) for the signing-side device and [PSBT](/glossary/psbt) for how watch-only and signing wallets actually exchange transactions.

@@ -36,6 +36,6 @@ Real-world deployment patterns:
 - **3-of-5 institutional.** Standard corporate treasury setup. Five cosigners spread across executives or geographic offices; three required to spend.
 - **2-of-2 Lightning channels.** Every Lightning channel is technically HDM (2-of-2) under the hood, with each channel partner's keys derived from their HD seed.
 
-The convention is now standardized via [BIP 48](/glossary/bip-48) which specifies derivation paths for multisig wallets, and via the descriptor wallet format that captures the full multisig setup in a portable string.
+The convention is now standardized via [BIP-48](https://github.com/bitcoin/bips/blob/master/bip-0048.mediawiki) which specifies derivation paths for multisig wallets, and via the descriptor wallet format that captures the full multisig setup in a portable string.
 
 What HDM doesn't simplify: setup ceremonies (you still need to securely exchange xpubs at setup time), inheritance planning (each cosigner's seed needs its own succession plan), and recovery testing (the more cosigners, the more rehearsal needed). But the standard makes operating multisig wallets meaningfully more practical than the pre-HD-multisig days when each cosigner had to back up individual private keys.

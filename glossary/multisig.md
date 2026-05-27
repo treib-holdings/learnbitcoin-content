@@ -18,7 +18,7 @@ relatedTerms:
   - musig
   - musig2
   - partial-signature
-  - partially-signed-bitcoin-transaction-psbt
+  - psbt
   - quorum-signatures
   - shamir-secret-sharing
 sameAs:
@@ -60,6 +60,6 @@ Bitcoin has two ways to express multisig on-chain:
 - **Classical multisig** (`OP_CHECKMULTISIG`, pre-Taproot). Wrapped in P2SH or P2WSH. The script is visible on-chain when spent, so observers can see "this was a 2-of-3 spend." Capped at 15 cosigners by opcode design.
 - **Taproot multisig** (post-2021). Either the script-path (a MAST tree, can go to many more cosigners) or, with MuSig2 / FROST [key aggregation](/glossary/key-aggregation), the spend looks identical to a single-sig Taproot output. Outside observers can't tell it was multisig at all. Privacy and fees both improve.
 
-The signing flow uses [PSBT](/glossary/partially-signed-bitcoin-transaction-psbt). One cosigner builds the transaction, signs their part, passes it to the next, who adds their signature, and so on until the threshold is met. With hardware wallets and coordination tools like Sparrow, Nunchuk, or Specter, this is straightforward but more involved than single-sig.
+The signing flow uses [PSBT](/glossary/psbt). One cosigner builds the transaction, signs their part, passes it to the next, who adds their signature, and so on until the threshold is met. With hardware wallets and coordination tools like Sparrow, Nunchuk, or Specter, this is straightforward but more involved than single-sig.
 
 When to use multisig: when the value justifies the operational complexity. For small balances, a well-backed-up single-sig hardware wallet is more secure than a multisig you'll fumble. For amounts you can't afford to lose and won't move daily, multisig is the right answer.

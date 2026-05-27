@@ -19,7 +19,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Bech32m is the address-encoding format used for [Taproot](/glossary/bip-341-taproot) and any future SegWit version. It looks like `bc1p...` on mainnet and `tb1p...` on testnet, using the same character set as the original [bech32](/glossary/bip-173-bech32) format but with a different checksum constant.
+Bech32m is the address-encoding format used for [Taproot](/glossary/taproot) and any future SegWit version. It looks like `bc1p...` on mainnet and `tb1p...` on testnet, using the same character set as the original [bech32](/glossary/bip-173-bech32) format but with a different checksum constant.
 
 The reason for the new format is a subtle bug in bech32. The original bech32 checksum used the constant 1, which interacted badly with certain edit-distance properties: a typo or attacker could create variations of an address that still validated as bech32 despite encoding different data. Pieter Wuille discovered the issue in 2020 and proposed bech32m (BIP 350) with a different checksum constant (`0x2bc830a3`) that closes the weakness.
 

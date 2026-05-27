@@ -9,7 +9,7 @@ keyTakeaways:
   - "Ideal for collaborative setups with participants in different time zones"
 sources: []
 relatedTerms:
-  - bip-174-psbt
+  - psbt
   - ecdsa-elliptic-curve-digital-signature-algorithm
   - elliptic-curve
   - hdm-multi-signature-hd-wallet
@@ -19,7 +19,6 @@ relatedTerms:
   - mono-signature
   - musig
   - partial-signature
-  - partially-signed-bitcoin-transaction-psbt
   - quorum-signatures
   - schnorr-signature
   - signature-aggregation

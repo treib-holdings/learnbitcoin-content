@@ -9,11 +9,10 @@ keyTakeaways:
   - "Larger and more expensive than native P2WSH; modern wallets default to bc1q or Taproot"
 sources: []
 relatedTerms:
-  - p2sh-pay-script-hash
+  - p2sh
   - p2wsh-pay-witness-script-hash
   - segwit-segregated-witness-bip-141
   - native-segwit
-  - bip-16-p2sh
   - taproot
   - p2wpkh-pay-witness-public-key-hash
 sameAs:
@@ -23,11 +22,11 @@ sameAs:
 liveWidget: ~
 ---
 
-P2SH-P2WSH - sometimes called "nested SegWit script" or "P2SH-wrapped P2WSH" - is a [P2WSH](/glossary/p2wsh-pay-witness-script-hash) output wrapped inside a [P2SH](/glossary/p2sh-pay-script-hash) outer layer. The address looks legacy (starts with `3`), but the spend follows [SegWit](/glossary/segwit-segregated-witness-bip-141) rules: the redeem script just commits to a P2WSH `scriptPubKey`, and the actual witness data sits outside the legacy transaction structure.
+P2SH-P2WSH - sometimes called "nested SegWit script" or "P2SH-wrapped P2WSH" - is a [P2WSH](/glossary/p2wsh-pay-witness-script-hash) output wrapped inside a [P2SH](/glossary/p2sh) outer layer. The address looks legacy (starts with `3`), but the spend follows [SegWit](/glossary/segwit-segregated-witness-bip-141) rules: the redeem script just commits to a P2WSH `scriptPubKey`, and the actual witness data sits outside the legacy transaction structure.
 
 It existed for one reason: backwards compatibility during the SegWit rollout in 2017-2018.
 
-When SegWit activated in August 2017, most wallets and exchanges did not yet support sending to native SegWit addresses (`bc1q...`). They did know how to send to `3...` addresses ([P2SH](/glossary/p2sh-pay-script-hash) had been around since 2012, via [BIP-16](/glossary/bip-16-p2sh)). To let users adopt SegWit before the rest of the ecosystem caught up, wallets generated P2SH-P2WSH addresses: legacy-looking on the outside, SegWit on the inside. Senders saw a familiar `3...` address; the receiver got SegWit's fee discount and malleability fix.
+When SegWit activated in August 2017, most wallets and exchanges did not yet support sending to native SegWit addresses (`bc1q...`). They did know how to send to `3...` addresses ([P2SH](/glossary/p2sh) had been around since 2012, via [BIP-16](/glossary/p2sh)). To let users adopt SegWit before the rest of the ecosystem caught up, wallets generated P2SH-P2WSH addresses: legacy-looking on the outside, SegWit on the inside. Senders saw a familiar `3...` address; the receiver got SegWit's fee discount and malleability fix.
 
 How the wrapping works:
 

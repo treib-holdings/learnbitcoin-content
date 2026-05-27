@@ -10,16 +10,15 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - inscriptions
-  - satoshi-currency-unit
+  - satoshi-unit
   - taproot
-  - bip-341-taproot
-  - utxos
+  - utxo-unspent-transaction-output
 sameAs:
   - "https://en.wikipedia.org/wiki/Ordinals_(protocol)"
 liveWidget: ~
 ---
 
-*Ordinals* is a numbering scheme — and a protocol built around that scheme — that assigns a unique identifier to each [satoshi](/glossary/satoshi-currency-unit) based on the order in which it was mined. Combined with [inscriptions](/glossary/inscriptions), the system enables Bitcoin-native digital collectibles, often informally called "Bitcoin NFTs."
+*Ordinals* is a numbering scheme — and a protocol built around that scheme — that assigns a unique identifier to each [satoshi](/glossary/satoshi-unit) based on the order in which it was mined. Combined with [inscriptions](/glossary/inscriptions), the system enables Bitcoin-native digital collectibles, often informally called "Bitcoin NFTs."
 
 The protocol was introduced by Casey Rodarmor in January 2023. It runs entirely client-side and does not require any change to Bitcoin's consensus rules.
 
@@ -27,7 +26,7 @@ The protocol was introduced by Casey Rodarmor in January 2023. It runs entirely 
 
 The core idea is simple: number every satoshi in the order it comes into existence. The first satoshi ever mined (in the genesis block, January 2009) is ordinal 0. The second is 1. The 100-trillionth — the 2,099,999,997,690,000th — will be the last satoshi ever mined, sometime around the year 2140.
 
-Each ordinal has a fixed identity. When two [UTXOs](/glossary/utxos) are combined as inputs to a new transaction, the protocol uses a simple first-in, first-out rule to track which output satoshis end up where. The Bitcoin protocol itself doesn't care — to a node, satoshis are fungible — but an ordinals-aware indexer can reconstruct the lineage of any particular sat.
+Each ordinal has a fixed identity. When two [UTXOs](/glossary/utxo-unspent-transaction-output) are combined as inputs to a new transaction, the protocol uses a simple first-in, first-out rule to track which output satoshis end up where. The Bitcoin protocol itself doesn't care — to a node, satoshis are fungible — but an ordinals-aware indexer can reconstruct the lineage of any particular sat.
 
 This lets the community talk about "rare sats" using categories like:
 

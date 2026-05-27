@@ -7,7 +7,8 @@ keyTakeaways:
   - "Fundamental unit for Bitcoin's ledger, simplifying small amounts"
   - "Commonly used in LN or micro-transaction contexts"
   - "Integral to the discussion of everyday BTC denominational usage"
-sources: []
+sources:
+  - { label: "Bitcoin Units rabbit hole", url: "https://www.learnbitcoin.com/rabbit-hole/bitcoin-units" }
 relatedTerms:
   - bitcoin-pizza-day
   - satoshi-nakamoto

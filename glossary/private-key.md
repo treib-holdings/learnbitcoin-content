@@ -7,7 +7,8 @@ keyTakeaways:
   - "The core secret used to sign transactions"
   - "Losing or exposing it forfeits control of the BTC"
   - "Usually generated/managed by wallets behind the scenes"
-sources: []
+sources:
+  - { label: "Key Space rabbit hole", url: "https://www.learnbitcoin.com/rabbit-hole/key-space" }
 relatedTerms: []
 sameAs:
   - "https://en.wikipedia.org/wiki/Public-key_cryptography"

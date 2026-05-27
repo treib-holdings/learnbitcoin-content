@@ -7,7 +7,8 @@ keyTakeaways:
   - "Occurs roughly every four years, reducing new BTC rewards"
   - "Central to Bitcoin's fixed supply design"
   - "Can influence miner profits and market sentiment"
-sources: []
+sources:
+  - { label: "Halvings rabbit hole", url: "https://www.learnbitcoin.com/rabbit-hole/halvings" }
 relatedTerms:
   - asymptote
   - bip-42

@@ -14,7 +14,7 @@ relatedTerms:
   - bip-173-bech32
   - p2pk-pay-public-key
   - p2pkh-pay-public-key-hash
-  - p2sh-pay-script-hash
+  - p2sh
   - p2wpkh-pay-witness-public-key-hash
   - p2wsh-pay-witness-script-hash
   - silent-payments

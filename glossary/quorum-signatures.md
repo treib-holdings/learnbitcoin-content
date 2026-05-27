@@ -19,7 +19,7 @@ relatedTerms:
   - musig
   - musig2
   - partial-signature
-  - partially-signed-bitcoin-transaction-psbt
+  - psbt
 liveWidget: ~
 ---
 

@@ -12,7 +12,7 @@ relatedTerms:
   - absolute-fee
   - accelerator
   - batch-transaction
-  - bip-174-psbt
+  - psbt
   - coin-age
   - coin-control
   - coinbase-transaction

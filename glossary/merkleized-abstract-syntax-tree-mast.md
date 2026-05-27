@@ -9,12 +9,11 @@ keyTakeaways:
   - "Reduces on-chain footprint and fees for complex contracts"
 sources: []
 relatedTerms:
-  - bip-341-taproot
+  - taproot
   - bip-342-tapscript
   - bitcoin-script
   - merkle-tree-merkle-root
   - merkle-root
-  - taproot
 liveWidget: ~
 ---
 
@@ -26,6 +25,6 @@ Why MAST is useful: consider a vault script with multiple spending branches - "o
 
 Combined with Taproot's "key path spending" (the cooperative-signature option), the privacy gain compounds: if all participants agree, the script never needs to be revealed at all. Observers see what looks like a single-signature spend. If cooperation breaks down, only one branch of the script is exposed.
 
-MAST has been part of Bitcoin since the Taproot soft fork activated in November 2021 ([BIP-341 / BIP-342](/glossary/bip-341-taproot)). It's not a separate feature you opt into; it's the way Taproot script-path spending works.
+MAST has been part of Bitcoin since the Taproot soft fork activated in November 2021 ([BIP-341 / BIP-342](/glossary/taproot)). It's not a separate feature you opt into; it's the way Taproot script-path spending works.
 
 The acronym is a mouthful and the explanation is dense, but the upshot is clean: Bitcoin can now have complex contracts that look the same on-chain as the simplest transactions, until they don't have to.
