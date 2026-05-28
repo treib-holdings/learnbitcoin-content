@@ -14,9 +14,26 @@ sources:
   - { label: "Lightning Routing glossary entry", url: "https://www.learnbitcoin.com/glossary/lightning-routing" }
 relatedTerms: ["lightning-network", "routing-node", "bolt-11", "bolt", "lightning-sphinx", "atomic-multi-path-payment-amp", "lightning-channel-capacity", "liquidity"]
 hasInteractive: []
+ogImage: "/diagrams/og/lightning-routing.png"
+ogImageAlt: "A Lightning Network mesh diagram with ten labeled nodes (Alice, Bob, Carol, Dave, Eve, Frank, Grace, Hank, Ivy, Jack) and a multi-hop payment route lit up in orange from Alice through Bob, Eve, and Grace to Ivy. The frame title reads 'Open once. Pay many. And receive.' Visualizes the central premise of Lightning routing: payments hop through intermediaries across a graph."
 ---
 
 > **Where you're going:** Lightning is often described as a "second layer" or a "scaling solution." Both are true and both miss what it actually is: a graph of channels through which routed payments hop, using onion encryption that keeps each hop blind to the full path. You will learn how nodes find routes, why payments fail, what privacy guarantees you actually get, and why none of this looks like the base layer.
+
+<figure>
+  <video
+    src="/videos/lightning-mesh.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls
+    controlslist="nodownload noplaybackrate noremoteplayback"
+    preload="metadata"
+    aria-label="Animated walkthrough of the Lightning Network as a mesh of channels. Alice opens a single channel to Bob. Through that channel, she can route payments to anyone else on the network. Multi-hop routes light up across the graph: Alice to Bob to Eve to Grace to Ivy. Other nodes can also pay Alice through the same channel. Closes with the takeaway 'Instant. Low fees. Settles on-chain.'"
+  ></video>
+  <figcaption>Lightning is a graph. One open channel reaches the whole network through routed multi-hop payments.</figcaption>
+</figure>
 
 ## 1. The Shape of the Problem
 
@@ -147,7 +164,7 @@ Compared to the base layer, where every transaction is fully public and pseudony
 
 Lightning routing is not free. Each hop charges a fee for forwarding, expressed as `base_fee_msat + proportional_fee_msat_per_million * amount`.
 
-A typical [routing node](/glossary/routing-node) might charge `1,000 msat base + 100 ppm`. Routing 0.01 BTC (1,000,000 sats = 1,000,000,000 msat) costs: 1,000 + (100 × 1,000) = 101,000 msat ≈ 101 sats total fee.
+A typical [routing node](/glossary/routing-node) might charge `1,000 msat base + 100 ppm`. Routing 0.01 BTC (1,000,000 sats = 1,000,000,000 msat) costs: 1,000 + (100 x 1,000) = 101,000 msat, or roughly 101 sats total fee.
 
 For a multi-hop payment, fees from each hop sum.
 
