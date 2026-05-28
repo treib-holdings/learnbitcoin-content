@@ -55,6 +55,11 @@ This rabbit hole walks through each.
 
 A Lightning channel is a 2-of-2 multisig output on the Bitcoin base layer with two parties (the channel partners) holding the keys. The channel has a fixed [capacity](/glossary/lightning-channel-capacity) (the amount of bitcoin locked in the multisig) and a [balance](/glossary/liquidity) (how much is on each side at any moment).
 
+<figure>
+  <img src="/diagrams/lightning-channel.svg" alt="A Lightning channel between Alice and Bob. On Bitcoin Mainnet, an OPEN block locks BTC into a 2-of-2 multisig; later, a CLOSE block settles the final balances back to mainnet. Between the two on-chain anchors, the channel runs off-chain with many back-and-forth payments. Alice and Bob each have dashed channel lines to additional ghost nodes, indicating they also have channels into the wider Lightning network." />
+  <figcaption>One channel is one edge in the Lightning graph: opened on Bitcoin, used off-chain, closed back to Bitcoin if ever. Each end has other channels to the wider network. That is what makes routing possible.</figcaption>
+</figure>
+
 When Alice opens a channel with Bob and funds it with 0.1 BTC, the channel starts with balance 0.1 BTC on Alice's side, 0 BTC on Bob's. Alice can route up to 0.1 BTC outbound through Bob. Bob, until he receives some funds from Alice, can route 0 outbound through Alice.
 
 Capacity is symmetric (the channel has 0.1 BTC total). Balance is asymmetric (it shifts as payments flow). This asymmetry is the source of nearly every Lightning routing failure.
