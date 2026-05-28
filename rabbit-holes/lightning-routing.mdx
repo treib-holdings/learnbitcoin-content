@@ -81,6 +81,21 @@ Two important caveats:
 
 ## 4. Onion Routing (Sphinx)
 
+<figure>
+  <video
+    src="/videos/onion-routing.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls
+    controlslist="nodownload noplaybackrate noremoteplayback"
+    preload="metadata"
+    aria-label="Animated walkthrough of Lightning's Sphinx onion routing protocol. Alice constructs a four-layer onion inside out: an orange preimage payload for Dave at the center, then a wrap for Eve, a wrap for Carol, and an outermost wrap for Bob. Each route node flashes orange as Alice writes its layer. The onion travels Alice to Bob; Bob peels his outer layer with a callout 'knows: prev = Alice, next = Carol, nothing else.' Then Carol peels, then Eve peels, each with their own privacy callout showing what they can and cannot see. Dave receives just the payload and reveals the preimage. Closes with the pillars 'Onion routing. The privacy is the peeling.'"
+  ></video>
+  <figcaption>Alice builds the onion inside out. Each hop peels only its own layer.</figcaption>
+</figure>
+
 Lightning uses onion routing - specifically a construction called [Sphinx](/glossary/lightning-sphinx) - so each hop in the route learns only what it needs to forward the payment, nothing more.
 
 When Alice wants to pay Carol via Bob, her node:
