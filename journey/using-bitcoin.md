@@ -65,6 +65,21 @@ Most wallets give you three suggested fee rates (e.g., 2 sat/vB, 5 sat/vB, 12 sa
 
 ## 3. Reading the Mempool
 
+<figure>
+  <video
+    src="/videos/mempool.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls
+    controlslist="nodownload noplaybackrate noremoteplayback"
+    preload="metadata"
+    aria-label="Animated mempool lifecycle. A transaction is broadcast and propagates across four nodes, each of which adds it to their local mempool. Transactions are sorted by fee rate into bands - 50 plus sat per virtual byte at the top, scaling down to 1-5 sat per virtual byte at the bottom. Alice broadcasts at a low fee rate early; Bob broadcasts later at a high fee rate. A miner mines the next block by scooping the top fee band. Bob confirms in that block. Time passes; subsequent blocks drain the mempool further; eventually Alice's low-fee transaction confirms several blocks later. Closing tagline: Pay the rate. Or wait."
+  ></video>
+  <figcaption>The mempool is a fee-rate-sorted queue. Higher fees confirm first. Lower fees wait, or eventually drop out and have to be rebroadcast.</figcaption>
+</figure>
+
 The mempool is the queue of unconfirmed transactions, sorted by fee rate. Every node has its own copy; they're nearly identical (see chapter 3).
 
 When the mempool is empty (mining capacity exceeds demand), almost any fee gets in next block. When it's congested (demand exceeds capacity), the fee market gets real. During sustained demand for block space, fee rates can spike from 1 sat/vB to 500+ sat/vB for a few hours.
