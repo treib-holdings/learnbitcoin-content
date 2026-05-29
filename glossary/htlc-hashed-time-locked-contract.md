@@ -29,6 +29,7 @@ relatedTerms:
   - lightning-payment
   - lightning-routing
   - payment-channel
+  - payment-point
   - submarine-swap
 sameAs:
   - "https://en.bitcoin.it/wiki/Hashed_Timelock_Contracts"
@@ -59,3 +60,5 @@ Why HTLCs are so useful:
 The "time-locked" part isn't optional. Without a deadline, funds could be stuck forever waiting for a secret that may never be revealed. The deadline ensures that *something* happens - either the payment completes (secret revealed) or it doesn't (refund triggers). Time itself becomes part of the security model.
 
 HTLCs are the cryptographic primitive that makes Bitcoin's layer-2 ecosystem actually trustless. They've been in production since 2017 and have moved trillions of sats worth of payments without ever requiring an intermediary to be honest.
+
+See [Payment Points](/glossary/payment-point) for the PTLC successor concept: same atomicity, same time-lock guarantees, but the hash-and-preimage lock is replaced by an elliptic-curve point and scalar. Smaller on-chain footprint and better privacy properties, pending wider Taproot adoption.

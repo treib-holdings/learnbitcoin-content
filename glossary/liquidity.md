@@ -8,7 +8,12 @@ keyTakeaways:
   - "LN channels: inbound/outbound capacity for successful routing"
   - "Vital to both exchange usage and off-chain LN payment flow"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - balanced-channel-lightning
+  - lightning-channel
+  - lightning-channel-capacity
+  - liquidity-ads
+  - loop-inout
 liveWidget: ~
 ---
 
@@ -21,12 +26,12 @@ liveWidget: ~
 - **Outbound liquidity.** The balance on your side of your channels, available to send.
 - **Inbound liquidity.** The balance on the other side of your channels, available for others to send to you. A new channel you funded has zero inbound liquidity; you can't receive until balance flows in.
 
-Lightning users without enough inbound liquidity can't receive payments larger than what's already on the remote side. Lightning users without enough outbound can't send. Routing nodes need balanced channels (substantial liquidity on both sides) to forward in either direction.
+Lightning users without enough inbound liquidity can't receive payments larger than what's already on the remote side. Lightning users without enough outbound can't send. Routing nodes need [balanced channels](/glossary/balanced-channel-lightning) (substantial liquidity on both sides) to forward in either direction.
 
 Getting inbound liquidity:
 
 - Spend your existing outbound first (every payment you send shifts balance to the other side, increasing your inbound).
-- Buy inbound liquidity from a routing-node service ([liquidity ads](/glossary/liquidity-ads), Lightning Labs' Pool, etc.).
+- Buy inbound liquidity from a routing-node service ([liquidity ads](/glossary/liquidity-ads), Lightning Labs' Pool, etc.) or rebalance via non-custodial submarine swaps ([Loop In/Out](/glossary/loop-inout)).
 - Splice or open a channel where the other side commits the capital.
 - Earn inbound by receiving payments (which is circular if you can't receive in the first place).
 

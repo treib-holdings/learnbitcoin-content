@@ -39,6 +39,7 @@ relatedTerms:
   - lightning-refund-invoice
   - lightning-routing
   - lightning-sphinx
+  - micropayment
   - onion-routing-lightning
   - payment-channel
   - submarine-swap
@@ -62,7 +63,7 @@ The mechanics, simplified:
 What this buys you:
 
 - **Speed.** Payments confirm in seconds, not minutes.
-- **Cost.** Sub-cent fees are typical. You can actually use Bitcoin for small payments.
+- **Cost.** Sub-cent fees are typical. You can actually use Bitcoin for [micropayments](/glossary/micropayment).
 - **Privacy.** Lightning payments are *not* broadcast on the public chain. Only channel opens and closes appear; the payments in between are between the participants and the routing nodes.
 - **Scalability.** Each channel supports unlimited transactions between its two parties without bloating the base chain.
 

@@ -31,6 +31,7 @@ relatedTerms:
   - lightning-network-daemon-lnd
   - lightning-node
   - lightning-routing
+  - loop-inout
   - payment-channel
   - wumbo-channels-lightning
 sameAs:
@@ -55,6 +56,6 @@ A few practical realities:
 
 - **Inactive channels expose nothing.** A channel that hasn't been updated in months still works fine. You can come back to it.
 - **You must watch for cheating.** If you're offline when your counterparty cheats, you miss the dispute window. Watchtower services exist for this.
-- **Capacity is fixed at open time.** A channel funded with 0.05 BTC can route up to 0.05 BTC; rebalancing or splicing is required for more.
+- **Capacity is fixed at open time.** A channel funded with 0.05 BTC can route up to 0.05 BTC; rebalancing (via submarine-swap services like [Loop In/Out](/glossary/loop-inout)) or splicing is required for more.
 
 See [Lightning Network](/glossary/lightning-network) for the network-level view and HTLC routing.

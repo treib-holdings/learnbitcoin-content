@@ -1,4 +1,5 @@
----title: "Lightning Routing"
+---
+title: "Lightning Routing"
 slug: lightning-routing
 draft: true
 status: live
@@ -12,7 +13,7 @@ sources:
   - { label: "BOLT 7 - P2P Node and Channel Discovery", url: "https://github.com/lightning/bolts/blob/master/07-routing-gossip.md" }
   - { label: "BOLT 11 - Invoice Protocol for Lightning Payments", url: "https://github.com/lightning/bolts/blob/master/11-payment-encoding.md" }
   - { label: "Lightning Routing glossary entry", url: "https://www.learnbitcoin.com/glossary/lightning-routing" }
-relatedTerms: ["lightning-network", "routing-node", "bolt-11", "bolt", "lightning-sphinx", "atomic-multi-path-payment-amp", "lightning-channel-capacity", "liquidity"]
+relatedTerms: ["lightning-network", "routing-node", "bolt-11", "bolt", "lightning-sphinx", "atomic-multi-path-payment-amp", "lightning-channel-capacity", "liquidity", "balanced-channel-lightning"]
 hasInteractive: []
 ogImage: "/diagrams/og/lightning-routing.png"
 ogImageAlt: "A Lightning Network mesh diagram with ten labeled nodes (Alice, Bob, Carol, Dave, Eve, Frank, Grace, Hank, Ivy, Jack) and a multi-hop payment route lit up in orange from Alice through Bob, Eve, and Grace to Ivy. The frame title reads 'Open once. Pay many. And receive.' Visualizes the central premise of Lightning routing: payments hop through intermediaries across a graph."
@@ -62,7 +63,7 @@ A Lightning channel is a 2-of-2 multisig output on the Bitcoin base layer with t
 
 When Alice opens a channel with Bob and funds it with 0.1 BTC, the channel starts with balance 0.1 BTC on Alice's side, 0 BTC on Bob's. Alice can route up to 0.1 BTC outbound through Bob. Bob, until he receives some funds from Alice, can route 0 outbound through Alice.
 
-Capacity is symmetric (the channel has 0.1 BTC total). Balance is asymmetric (it shifts as payments flow). This asymmetry is the source of nearly every Lightning routing failure.
+Capacity is symmetric (the channel has 0.1 BTC total). Balance is asymmetric (it shifts as payments flow). This asymmetry is the source of nearly every Lightning routing failure. The closer to a [balanced channel](/glossary/balanced-channel-lightning) - capacity split roughly 50/50 between both sides - the more reliable that channel is for routing in either direction.
 
 ## 3. Gossip: How Nodes Learn the Graph
 
