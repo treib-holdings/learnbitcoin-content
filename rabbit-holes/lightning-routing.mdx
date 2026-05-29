@@ -160,16 +160,16 @@ Tradeoffs:
 The privacy story on Lightning is "much better than the base layer, with caveats." The matrix below summarizes who knows what along the route. Each row is a fact about the payment; each column is a position on the route. An orange dot means the position knows the fact; a dash means it does not.
 
 <figure>
-  <img src="/diagrams/lightning-hop-knowledge.svg" alt="A six-column matrix showing what each position on a Lightning route (Sender Alice, First Hop Bob, Middle Hops Carol and Fred, Last Hop Eve, Receiver Dave) knows about a payment. The top three rows (Previous hop, Next hop, Forwarded amount) are nearly solid orange, because every hop has to know its neighbors and the amount in order to forward. The bottom three rows (Original sender, Final receiver, Position in path) are mostly dashes in the middle, with orange clusters at the endpoints. The visual donut in the bottom half is the privacy story: middle hops are blind to who is at the ends." />
-  <figcaption>Top three rows: operational truths every hop needs in order to forward. Bottom three rows: the privacy story. Middle hops are blind to the endpoints.</figcaption>
+  <img src="/diagrams/lightning-hop-knowledge.svg" alt="A six-column matrix showing what each position on a Lightning route (Sender Alice, First Hop Bob, Middle Hops Carol and Fred, Last Hop Eve, Receiver Dave) knows about a payment. The top three rows (Original sender, Final receiver, Position in path) are mostly dashes in the middle, with orange clusters at the endpoints. The visual donut in the top half is the privacy story: middle hops are blind to who is at the ends. The bottom three rows (Previous hop, Next hop, Forwarded amount) are nearly solid orange, because every hop has to know its neighbors and the amount in order to forward." />
+  <figcaption>Top three rows: the privacy story. Middle hops are blind to the endpoints. Bottom three rows: operational truths every hop needs in order to forward.</figcaption>
 </figure>
 
-The top three rows are operational. Every hop has to know its neighbors and the amount being forwarded, otherwise it cannot route the HTLC at all.
-
-The bottom three rows are the privacy. The matrix shows two important asymmetries:
+The top three rows are the privacy. The matrix shows two important asymmetries:
 
 - **The middle hops** are completely blind to the endpoints. They know their immediate neighbors and the amount they are forwarding, and that is it. They cannot tell whether they are the second hop or the fifth, the start of the route or near the end.
 - **The endpoints leak.** The first hop received the onion via a direct channel from the sender, so it can often infer who the sender is, especially if that sender does not also run a routing node. The last hop has to deliver the payment via a direct channel to the receiver, so it knows the recipient with certainty. Sphinx hides the path; it cannot hide who is sitting next to you.
+
+The bottom three rows are the floor: every hop must know its immediate neighbors and the forwarded amount, or no payment moves. Sphinx privacy is everything beyond that minimum that the protocol refuses to reveal.
 
 **Anyone watching multiple hops in sequence** can correlate timing and amount to potentially trace a payment. This is a real risk for large or unusual payments, especially if the adversary runs many nodes.
 
