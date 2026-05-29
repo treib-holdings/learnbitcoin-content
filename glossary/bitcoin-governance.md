@@ -35,6 +35,11 @@ Five groups hold practical influence over what Bitcoin actually does:
 - **Users and businesses** - exchanges, wallets, custodians, merchants. They choose which chain to recognize as "Bitcoin" if a split occurs, and their decision determines which fork retains value.
 - **Hodlers** - the long-term economic majority. They don't sign blocks or write code, but their willingness to hold (or sell) defines what miners actually earn and which chain has market-recognized scarcity.
 
+<figure>
+  <img src="/diagrams/bitcoin-governance-vetoes.svg" alt="A pentagon diagram of Bitcoin's five governance stakeholder groups, each able to veto a consensus change. Developers at top (vetoes by refusing to merge), Miners upper-right (by refusing to signal), Nodes lower-right (by refusing to upgrade), Users lower-left (by recognizing another chain), and Hodlers upper-left (by selling the new chain). A central CONSENSUS badge represents the alignment all five must reach. No one is in charge; everyone can refuse." />
+  <figcaption>Five groups, five vetoes. No central authority. Any rule change has to clear all five.</figcaption>
+</figure>
+
 Any change to Bitcoin's consensus rules ultimately requires alignment across these groups. If any one group refuses, the change either fails or creates a chain split.
 
 ## The process
