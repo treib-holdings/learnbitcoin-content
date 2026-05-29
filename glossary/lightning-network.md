@@ -40,6 +40,7 @@ relatedTerms:
   - lightning-routing
   - lightning-sphinx
   - micropayment
+  - off-chain
   - onion-routing-lightning
   - payment-channel
   - submarine-swap
@@ -56,7 +57,7 @@ The Lightning Network is a payment layer built on top of Bitcoin. It enables ins
 The mechanics, simplified:
 
 1. **Open a [channel](/glossary/lightning-channel).** Two parties create a 2-of-2 multisig on-chain Bitcoin output, funded by one or both. This is a normal on-chain transaction, pays a normal fee.
-2. **Transact off-chain.** The two parties exchange signed "balance updates" - cryptographically valid claims about the current allocation of channel funds. These updates are not broadcast; they live only between the two participants.
+2. **Transact [off-chain](/glossary/off-chain).** The two parties exchange signed "balance updates" - cryptographically valid claims about the current allocation of channel funds. These updates are not broadcast; they live only between the two participants.
 3. **Route through the network.** Most channels aren't between you and your final recipient directly. The Lightning Network is a mesh of channels; payments hop through intermediate nodes using [Hash Time-Locked Contracts (HTLCs)](/glossary/htlc-hashed-time-locked-contract) so that each hop is atomic - the whole payment succeeds, or none of it does.
 4. **Close the channel.** Either party can close at any time by broadcasting the latest mutually-signed state on-chain. The funds get distributed according to that final state. Done.
 

@@ -9,6 +9,7 @@ keyTakeaways:
   - "Allows experimentation without risking mainnet consensus"
 sources: []
 relatedTerms:
+  - off-chain
   - one-way-peg
 liveWidget: ~
 ---
@@ -29,4 +30,4 @@ Notable Bitcoin sidechains in 2026:
 - **RSK (Rootstock)** - federated, EVM-compatible smart contracts.
 - **Statechains / Mercury Layer** - newer, smaller user base; off-chain transfers of UTXO control without on-chain transactions.
 
-The general framing: sidechains let you experiment with features Bitcoin can't safely adopt on its base layer. The trade-off is some additional trust assumption (typically a federation). Different users will value that trade differently. See [Second Layer](/glossary/second-layer) for the broader category of off-mainchain constructions.
+The general framing: sidechains let you experiment with features Bitcoin can't safely adopt on its base layer. The trade-off is some additional trust assumption (typically a federation). Different users will value that trade differently. Sidechains are one species of the broader [off-chain](/glossary/off-chain) category; see also [Second Layer](/glossary/second-layer) for the constructions that anchor to Bitcoin without running a separate chain.

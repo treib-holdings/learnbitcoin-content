@@ -16,6 +16,7 @@ relatedTerms:
   - eclipse-attack
   - full-validation
   - merkle-root
+  - neutrino
   - race-attack
   - replay-attack
 liveWidget: ~
@@ -35,7 +36,7 @@ If the proof checks out, the transaction is provably in the chain at the depth s
 What SPV trades off:
 
 - **You learn nothing about the rest of the block.** You can't verify that other transactions in the block obey consensus rules; you have to trust that the [miners](/glossary/miner) and full nodes you're talking to aren't lying about the chain's validity.
-- **Privacy leakage.** Naive SPV asks "what's the proof for transaction X?" - which tells the queried node that you care about X. Better protocols ([BIP-157/158](/glossary/bip-158) compact block filters) let clients download filters and check for matches locally without revealing which addresses are theirs.
+- **Privacy leakage.** Naive SPV asks "what's the proof for transaction X?" - which tells the queried node that you care about X. Better protocols ([BIP-157/158](/glossary/bip-158) compact block filters, implemented in production as [Neutrino](/glossary/neutrino)) let clients download filters and check for matches locally without revealing which addresses are theirs.
 - **Eclipse-attack vulnerability.** If an attacker isolates your SPV client from honest peers, they can feed you a fork. A [full node](/glossary/full-node) is more resistant because it independently validates every rule.
 
 Most lightweight mobile wallets use SPV-style logic, often combined with compact block filters for privacy. It's a reasonable tradeoff for everyday use. For high-value or high-stakes use, run a [full node](/glossary/full-node).

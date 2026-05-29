@@ -11,6 +11,7 @@ sources: []
 relatedTerms:
   - taproot
   - bip-342-tapscript
+  - constant-time
   - ecdsa-elliptic-curve-digital-signature-algorithm
   - elliptic-curve
   - mono-signature
@@ -36,6 +37,8 @@ What Schnorr brings that ECDSA doesn't:
 - **Smaller signatures.** A Schnorr signature is 64 bytes vs ECDSA's variable 70-72. Saves block space, saves fees.
 - **Cleaner provable security.** Schnorr has a tighter security proof than ECDSA under standard assumptions, which makes cryptographers happier.
 - **No malleability.** Schnorr signatures are unique for a given key and message - the malleability that bothered ECDSA is gone.
+
+Production Schnorr implementations - Bitcoin's libsecp256k1 chief among them - require strict [constant-time](/glossary/constant-time) discipline at the signing path to avoid leaking key material through timing or cache-access side channels. The math is clean; the engineering needed to defend it on real hardware is its own discipline.
 
 The reason Bitcoin didn't use Schnorr from day one: it was patented when Satoshi designed Bitcoin. The patent expired in 2008 (just after the whitepaper), and it took the community more than a decade to design, review, and deploy it well. The wait paid off; Schnorr is now considered one of the cleanest signature schemes in production cryptography.
 

@@ -19,6 +19,7 @@ relatedTerms:
   - reorg-reorganization
   - replay-attack
   - spv-simplified-payment-verification
+  - transaction-finality
 liveWidget: ~
 ---
 
@@ -28,6 +29,6 @@ In a digital system without trusted intermediaries, there's no obvious reason yo
 
 Bitcoin's design eliminates the server. Instead, the global UTXO set is replicated across every full node, and every node enforces the rule: once a [UTXO](/glossary/utxo-unspent-transaction-output) has been spent, no other transaction can reference it. Try to spend the same UTXO twice and your second transaction is rejected by every honest node it reaches.
 
-The remaining edge case is what happens *before* a transaction confirms. While in the [mempool](/glossary/mempool), two conflicting transactions can race. Whichever gets mined first wins; the other becomes invalid the moment a block including its rival is found. This is why zero-confirmation transactions aren't truly final - and why the Bitcoin community uses the **6-confirmation rule** for large amounts. After six blocks (~60 minutes), reversing the transaction would require an attacker to secretly mine six replacement blocks faster than the entire honest network mines them. That requires more than half the global hash rate, sustained, and even then succeeds only probabilistically.
+The remaining edge case is what happens *before* a transaction confirms. While in the [mempool](/glossary/mempool), two conflicting transactions can race. Whichever gets mined first wins; the other becomes invalid the moment a block including its rival is found. This is why zero-confirmation transactions aren't truly final - and why the Bitcoin community uses the **6-confirmation rule** for large amounts. After six blocks (~60 minutes), reversing the transaction would require an attacker to secretly mine six replacement blocks faster than the entire honest network mines them. That requires more than half the global hash rate, sustained, and even then succeeds only probabilistically. This exponential decay is the practical shape of [transaction finality](/glossary/transaction-finality) on Bitcoin: never absolute, but each confirmation makes reversal exponentially harder.
 
 Bitcoin's security against double spends is what proof-of-work *buys*. See the [Mining rabbit hole](/rabbit-hole/mining) for why the energy spent isn't waste - it's the cost of making the ledger forgery-resistant.
