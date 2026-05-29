@@ -31,7 +31,7 @@ sources:
     preload="metadata"
     aria-label="Animated Lightning Network mesh. Alice has a single channel to Bob. She uses that same channel to pay Bob directly, then to route payments to Carol, Frank, and Ivy through the network. The animation then reverses to show payments flowing back to Alice through the same one channel. The bidirectional flow is the lesson: one channel, many destinations, both directions."
   ></video>
-  <figcaption>Alice opens one channel — to Bob. Same channel routes payments to anyone reachable in the network, in either direction.</figcaption>
+  <figcaption>Alice opens one channel - to Bob. Same channel routes payments to anyone reachable in the network, in either direction.</figcaption>
 </figure>
 
 ## 1. You Hold Some. Now What?
@@ -67,7 +67,7 @@ Most wallets give you three suggested fee rates (e.g., 2 sat/vB, 5 sat/vB, 12 sa
 
 The mempool is the queue of unconfirmed transactions, sorted by fee rate. Every node has its own copy; they're nearly identical (see chapter 3).
 
-When the mempool is empty (mining capacity exceeds demand), almost any fee gets in next block. When it's congested (demand exceeds capacity), the fee market gets real. During major events - ordinals frenzies, large liquidations, network surges - fee rates can spike from 1 sat/vB to 500+ sat/vB for a few hours.
+When the mempool is empty (mining capacity exceeds demand), almost any fee gets in next block. When it's congested (demand exceeds capacity), the fee market gets real. During sustained demand for block space, fee rates can spike from 1 sat/vB to 500+ sat/vB for a few hours.
 
 **Tools that show you the live state:**
 
@@ -118,15 +118,15 @@ The whitepaper for Lightning ([Poon & Dryja, 2016](https://lightning.network/lig
 
 ## 6. Lightning in Practice
 
-Three categories of Lightning wallets, ordered by sovereignty:
+Three categories of Lightning wallets, ordered by sovereignty. The category matters more than the specific app.
 
-**Custodial** - someone else runs the Lightning node, you have an account. Easiest to use, almost no setup, but you've reintroduced a trusted third party. Examples: Wallet of Satoshi, Cash App's Lightning support. **Fine for tiny working balances**, the same way a coffee-money wallet on your phone is fine. *Not where you store anything serious.*
+**Custodial.** Someone else runs the Lightning node; you have an account. Easiest setup, almost no operational complexity. You have reintroduced a trusted third party. Fine for tiny working balances, the same way a coffee-money wallet on your phone is fine. *Not where you store anything serious.*
 
-**Non-custodial, self-hosted simplified** - you run a Lightning node *inside the app*, on your phone, with managed channel management. The keys are yours; the operational complexity is handled. Examples: Phoenix, Breez, Mutiny. **The sweet spot for most users**, especially after chapter 4.
+**Non-custodial, managed.** You run a Lightning node *inside the app*, on your phone, with channel management abstracted. The keys are yours; the operational complexity is handled. The sweet spot for most users post-chapter-4.
 
-**Fully sovereign** - you run a Lightning node on your own hardware (Umbrel, Start9, raw LND/CLN on a Linux box). Maximum control, maximum complexity. Best paired with chapter 6's full-node setup.
+**Fully sovereign.** You run a Lightning node on your own hardware. Maximum control, maximum complexity. Best paired with the node setup in [chapter 6 (Sovereignty)](/journey/sovereignty).
 
-For your first Lightning experience, **Phoenix** (iOS/Android, by ACINQ) is the cleanest entry point: self-custodial, opens channels automatically when you receive your first payment, has a usable interface for beginners. Set it up the way you set up your on-chain wallet: install, write down the seed, back it up.
+> **Starting points, not gospel.** The Lightning wallet ecosystem moves quickly. Specific apps come and go; the categories are stable. Pick the simplest option in the category that fits your trust model, verify it is currently maintained, and start.
 
 To receive a Lightning payment: in your wallet, tap "Receive," optionally enter an amount, and you'll get a long string starting with `lnbc...` (a [BOLT-11 invoice](/glossary/bolt-11)) plus a QR code. Anyone with a Lightning wallet can pay it.
 
@@ -180,7 +180,7 @@ These aren't reasons to avoid Bitcoin. They're the operational consequences of o
 Before chapter 6 (Sovereignty - running a node, multisig, op-sec), do these three things:
 
 - [ ] Send a deliberate on-chain transaction - pick the fee rate yourself, watch it confirm
-- [ ] Open a Lightning channel or fund a self-custodial LN wallet (Phoenix is the easy path)
+- [ ] Open a Lightning channel or fund a self-custodial LN wallet (the non-custodial managed category in §6 is the easy path)
 - [ ] Send and receive a Lightning payment - it should take seconds
 
 That's it. You're using Bitcoin, not just holding it. Welcome to actually living in the new monetary system.
