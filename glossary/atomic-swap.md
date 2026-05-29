@@ -11,6 +11,7 @@ sources: []
 relatedTerms:
   - atomic-multi-path-payment-amp
   - atomic-swap-refill
+  - bitcoin-bridge
   - htlc-hashed-time-locked-contract
   - payjoin
   - submarine-swap
@@ -36,5 +37,7 @@ Practical uses:
 - **BTC ↔ stablecoins** via decentralized swap markets like Robosats.
 
 The catch is operational complexity. Atomic swaps require both parties' wallets to speak the protocol, both chains to support the necessary script primitives, and careful timeout management. Most ordinary users delegate to a swap service (which may itself be trust-minimized) rather than doing it raw.
+
+Atomic swaps are the trustless alternative to a [Bitcoin bridge](/glossary/bitcoin-bridge). Where bridges hold real BTC and issue a wrapped representation on another chain (introducing custodial or federated trust assumptions), atomic swaps keep both sides of the trade native to their own chains with no intermediary ever holding either asset. Different tradeoffs: bridges are easier and support more downstream use cases; swaps are safer and require a willing counterparty.
 
 This is one of the elegant primitives Bitcoin's [Script](/glossary/bitcoin-script) and [HTLCs](/glossary/htlc-hashed-time-locked-contract) make possible. It's also what powers a lot of decentralized exchange across the broader Bitcoin ecosystem.

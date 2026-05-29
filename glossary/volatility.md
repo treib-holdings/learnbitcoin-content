@@ -20,6 +20,7 @@ relatedTerms:
   - market-capitalization
   - market-depth
   - merchant-adoption
+  - minsky-moment
   - paper-hands
   - price-discovery
   - price-floor-btc
@@ -35,7 +36,7 @@ A few practical facts:
 - **Long-term trend.** Volatility has been falling for years as the market depth and institutional participation have grown. Bitcoin's volatility in 2024-2026 is roughly half what it was in 2014-2017.
 - **Correlation with traditional assets fluctuates.** Sometimes BTC trades like a tech stock, sometimes like gold, sometimes uncorrelated. It depends on the macro regime.
 
-The honest framing: Bitcoin's price is a multi-decade information-discovery process. Markets are slowly figuring out what a fixed-supply, permissionless, neutral monetary asset is worth in a world that didn't have one before. That process is bumpy by definition. The bumps are not bugs.
+The honest framing: Bitcoin's price is a multi-decade information-discovery process. Markets are slowly figuring out what a fixed-supply, permissionless, neutral monetary asset is worth in a world that didn't have one before. That process is bumpy by definition. The bumps are not bugs. Some of the larger ones are [Minsky moments](/glossary/minsky-moment) - leverage cascades where futures positions and lending exposures liquidate together, producing 50-80% drawdowns that say more about Bitcoin's derivative ecosystem than about Bitcoin itself.
 
 For users, this means:
 

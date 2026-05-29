@@ -13,6 +13,7 @@ relatedTerms:
   - market-capitalization
   - market-depth
   - merchant-adoption
+  - minsky-moment
   - price-discovery
   - price-floor-btc
   - price-slippage
@@ -34,6 +35,7 @@ What's reliably true about bear markets:
 
 - **The bottom is never obvious.** Every false rally during a bear market looks like the start of recovery. Most of them aren't.
 - **Capitulation events** - exchanges blow up, miners shut down, "Bitcoin is dead" articles trend - cluster near the actual bottom. Not at random points throughout.
+- **Leverage cascades amplify the moves.** Each cycle's bull run accumulates more leverage (perpetual futures, lending platforms, DeFi); the bear unwind is a [Minsky moment](/glossary/minsky-moment) where the leverage liquidates faster than fundamentals shift. 2018's $20K → $3.2K and 2022's $69K → $15.5K both fit the pattern.
 - **The strongest holders accumulate.** People who [DCA](/glossary/dca-dollar-cost-averaging) through a bear market end up with a much lower average cost basis than people who only buy in bull markets.
 - **The protocol doesn't change.** Bitcoin keeps producing blocks every ten minutes regardless of what the price is doing. Bear markets are an asset-price phenomenon, not a network phenomenon.
 
