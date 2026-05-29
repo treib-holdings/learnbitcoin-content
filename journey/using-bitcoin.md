@@ -101,6 +101,11 @@ There is no "right" fee. There is "the fee you need to pay to get into the next 
 
 ## 4. Replace-by-Fee (RBF) - When Your Tx Gets Stuck
 
+<figure>
+  <img src="/diagrams/bumping-stuck-tx.svg" alt="Two-row diagram of the two mechanisms for unsticking a Bitcoin transaction. Top row, RBF: a stuck transaction at 5 sat per virtual byte (gray) is replaced by the same transaction at 50 sat per virtual byte (orange), which confirms in the next block while the original disappears. Bottom row, CPFP: a stuck parent at 5 sat per virtual byte (gray) has its change output spent by a new child transaction at 50 sat per virtual byte (orange); both parent and child end up in the next block because the miner sees the combined fee. Tagline: Your transaction is not stuck forever. It is at the wrong fee level for current conditions." />
+  <figcaption>Two mechanisms, same outcome: a stuck transaction gets into the next block. RBF replaces the original. CPFP rescues it via a high-fee child.</figcaption>
+</figure>
+
 Suppose you sent at 5 sat/vB and then a mempool surge raised the floor to 50 sat/vB. Your transaction will sit there, possibly for hours, possibly until the mempool drops back. Bitcoin doesn't time out transactions, but if you can't wait:
 
 **Replace-by-Fee (RBF)** lets you rebroadcast the same transaction with a higher fee. Miners prefer the higher-paying version; the original disappears from the mempool. Most modern wallets do this with one button - usually labeled "Boost," "Bump fee," or "Speed up."
