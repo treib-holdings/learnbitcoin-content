@@ -1,8 +1,8 @@
----
-title: "How Bitcoin Works"
+---title: "How Bitcoin Works"
 slug: how-bitcoin-works
 draft: false
 status: live
+published: "2026-05-15"
 order: 3
 estimatedMinutes: 30
 tagline: "Blocks, transactions, mining, fees, UTXOs. The machinery, demystified, without skipping the parts that matter."

@@ -1,8 +1,8 @@
----
-title: "What Bitcoin Actually Is"
+---title: "What Bitcoin Actually Is"
 slug: what-bitcoin-actually-is
 draft: false
 status: live
+published: "2026-05-15"
 order: 2
 estimatedMinutes: 25
 tagline: "Not a stock. Not a company. Not a payment app. Bitcoin is a new kind of money - and the difference matters."

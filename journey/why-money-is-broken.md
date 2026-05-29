@@ -1,8 +1,8 @@
----
-title: "Why Money Is Broken"
+---title: "Why Money Is Broken"
 slug: why-money-is-broken
 draft: false
 status: live
+published: "2026-05-15"
 order: 1
 estimatedMinutes: 22
 tagline: "Inflation isn't a force of nature. It's a policy. Once you see how fiat actually works, Bitcoin stops looking strange."
