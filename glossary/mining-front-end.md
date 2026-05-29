@@ -8,7 +8,12 @@ keyTakeaways:
   - "Displays performance metrics and config options"
   - "Essential for large-scale mining management"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - asic-application-specific-integrated-circuit
+  - miner
+  - mining-pool
+  - mining-software
+  - proprietary-mining-firmware
 liveWidget: ~
 ---
 

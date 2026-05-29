@@ -8,7 +8,12 @@ keyTakeaways:
   - "Receiver claims payment by revealing preimage of the hashed secret"
   - "Ensures route-level security without revealing the entire payment path"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - htlc-hashed-time-locked-contract
+  - lightning-routing
+  - lightning-sphinx
+  - schnorr-signature
+  - taproot
 liveWidget: ~
 ---
 

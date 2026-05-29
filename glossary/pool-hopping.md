@@ -8,7 +8,12 @@ keyTakeaways:
   - "Countered by modern methods (PPLNS, PPS+), making hopping unprofitable"
   - "Highlights the importance of robust mining pool reward structures"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - block-reward
+  - miner
+  - mining
+  - mining-pool
+  - pooled-mining
 liveWidget: ~
 ---
 

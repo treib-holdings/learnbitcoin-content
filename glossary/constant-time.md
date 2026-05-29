@@ -8,7 +8,12 @@ keyTakeaways:
   - "Important for cryptographic operations involving private keys"
   - "Often achieved by uniform code paths and memory access"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - ecdsa-elliptic-curve-digital-signature-algorithm
+  - elliptic-curve
+  - hardware-security-module-hsm
+  - private-key
+  - schnorr-signature
 liveWidget: ~
 ---
 

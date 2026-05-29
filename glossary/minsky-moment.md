@@ -8,7 +8,12 @@ keyTakeaways:
   - "Applies to traditional assets but also suits volatile Bitcoin cycles"
   - "Highlights risks of hype-fueled speculation in crypto markets"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bear-market
+  - bull-market
+  - exchange
+  - fud-fear-uncertainty-doubt
+  - volatility
 liveWidget: ~
 ---
 

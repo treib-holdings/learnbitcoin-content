@@ -8,7 +8,11 @@ keyTakeaways:
   - "No absolute guarantee, but risk diminishes rapidly"
   - "Higher-value transactions typically wait more confirmations"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - double-spend
+  - proof-work-pow
+  - race-attack
+  - reorg-reorganization
 liveWidget: ~
 ---
 

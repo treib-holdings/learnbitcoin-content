@@ -8,7 +8,12 @@ keyTakeaways:
   - "Adds a protective layer for sensitive wallet data"
   - "Relies on OS support and correct configuration"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bitcoin-core
+  - hardware-security-module-hsm
+  - private-key
+  - seed-phrase
+  - wallet
 liveWidget: ~
 ---
 

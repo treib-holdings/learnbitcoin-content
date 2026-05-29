@@ -8,7 +8,12 @@ keyTakeaways:
   - "Clients selectively download only blocks containing relevant transactions"
   - "Improves privacy and bandwidth efficiency over Bloom filters"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bip-37
+  - bip-158
+  - full-node
+  - lightning-network-daemon-lnd
+  - spv-simplified-payment-verification
 liveWidget: ~
 ---
 

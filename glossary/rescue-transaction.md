@@ -8,7 +8,11 @@ keyTakeaways:
   - "Typically pre-signed with certain conditions or time locks"
   - "Essential for LN forced closures or emergency multisig retrieval"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - hierarchical-multisig
+  - lightning-channel
+  - psbt
+  - time-locked-contract
 liveWidget: ~
 ---
 

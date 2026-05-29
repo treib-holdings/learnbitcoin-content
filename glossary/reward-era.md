@@ -8,7 +8,12 @@ keyTakeaways:
   - "Helps create Bitcoin's deflationary issuance model"
   - "Cyclical speculation and miner adjustments often align with halving events"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - block-reward
+  - block-subsidy
+  - coinbase-transaction
+  - halving-halvening
+  - mining-subsidy
 liveWidget: ~
 ---
 

@@ -8,7 +8,11 @@ keyTakeaways:
   - "Used to conceal balance from the GUI view"
   - "An example of Bitcoin Core's open-source culture"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bitcoin-core
+  - bitcoin-knots
+  - coin-control
+  - wallet
 liveWidget: ~
 ---
 
