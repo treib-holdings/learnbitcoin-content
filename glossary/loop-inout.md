@@ -8,7 +8,13 @@ keyTakeaways:
   - "Uses atomic swaps for trust-minimized on-chain / off-chain transfers"
   - "Useful for merchants, large LN users, or node operators rebalancing channels"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - lightning-channel
+  - lightning-channel-capacity
+  - lightning-network
+  - liquidity
+  - liquidity-ads
+  - submarine-swap
 liveWidget: ~
 ---
 

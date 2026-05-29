@@ -8,7 +8,12 @@ keyTakeaways:
   - "Investors lose funds as the project collapses or devs steal tokens"
   - "Highlighting Bitcoin's advantage in decentralization and self-custody"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - altcoin
+  - bitcoin-faucet
+  - exchange
+  - fud-fear-uncertainty-doubt
+  - hashlet
 liveWidget: ~
 ---
 

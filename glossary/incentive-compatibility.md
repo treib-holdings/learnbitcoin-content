@@ -8,7 +8,12 @@ keyTakeaways:
   - "Cheating becomes unprofitable or leads to wasted work"
   - "Core reason Bitcoin can remain secure in a decentralized environment"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - byzantine-fault-tolerance
+  - decentralization
+  - miner
+  - mining
+  - proof-work-pow
 liveWidget: ~
 ---
 

@@ -8,7 +8,12 @@ keyTakeaways:
   - "LN or sidechains enable fractions-of-a-cent payments"
   - "Drives new use cases like streaming payments or micro-tipping"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bolt-11
+  - lightning-channel
+  - lightning-network
+  - lightning-payment
+  - satoshi-unit
 liveWidget: ~
 ---
 

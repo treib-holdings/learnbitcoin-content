@@ -8,7 +8,10 @@ keyTakeaways:
   - "Abandoned due to privacy and network architecture issues"
   - "An artifact of Bitcoin's experimental beginnings"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bolt-11
+  - lightning-invoice
+  - lightning-payment
 liveWidget: ~
 ---
 

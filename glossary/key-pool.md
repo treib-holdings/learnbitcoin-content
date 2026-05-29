@@ -8,7 +8,11 @@ keyTakeaways:
   - "Prevents inadvertent address reuse affecting privacy"
   - "Part of older or internal wallet logic, now usually hidden by HD frameworks"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bitcoin-core
+  - hd-wallet-hierarchical-deterministic-wallet
+  - hierarchical-deterministic-wallet
+  - output-descriptor
 liveWidget: ~
 ---
 

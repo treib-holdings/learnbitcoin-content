@@ -8,7 +8,12 @@ keyTakeaways:
   - "Prevents direct IP exposure for remote RPC usage"
   - "Requires extra configuration but significantly boosts privacy"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bitcoin-core
+  - bitcoin-core-rpc
+  - hidden-service-node
+  - node-operator
+  - tor-hidden-service
 liveWidget: ~
 ---
 

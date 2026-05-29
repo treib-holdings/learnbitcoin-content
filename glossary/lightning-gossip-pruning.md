@@ -8,7 +8,12 @@ keyTakeaways:
   - "Improves LN node performance and memory usage"
   - "Ensures network maps reflect only viable, live channels"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bolt
+  - gossip-protocol-lightning
+  - lightning-network
+  - lightning-routing
+  - routing-node
 liveWidget: ~
 ---
 
