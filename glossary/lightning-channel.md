@@ -33,6 +33,7 @@ relatedTerms:
   - lightning-routing
   - loop-inout
   - payment-channel
+  - rescue-transaction
   - wumbo-channels-lightning
 sameAs:
   - "https://en.wikipedia.org/wiki/Lightning_Network"
@@ -48,7 +49,7 @@ How a channel works, end to end:
 1. **Opening.** Alice and Bob both contribute (or one contributes, depending on the protocol variant) to a 2-of-2 multisig. The funding transaction goes on-chain and confirms.
 2. **Transacting.** To pay Bob, Alice constructs a new commitment transaction that allocates less of the channel's balance to herself and more to Bob, signs it, and shares it. Bob signs and stores it too. The old commitment is invalidated using a revocation key. The new state is now the "current truth" between them, even though nothing is on-chain.
 3. **Many updates.** They can repeat this back and forth, in either direction, thousands of times. Each update is just a signed transaction sitting in their wallets.
-4. **Closing.** Either party can broadcast the latest commitment to the chain at any time. The funds settle according to the latest state. **Cooperative close** is signed by both and clean. **Force close** is unilateral and includes a delay window during which the other party can punish a cheating counterparty (broadcasting an outdated state) using the revocation key.
+4. **Closing.** Either party can broadcast the latest commitment to the chain at any time. The commitment itself is a kind of [rescue transaction](/glossary/rescue-transaction) - pre-signed at every state update, ready to broadcast if the channel partner goes offline or misbehaves. The funds settle according to the latest state. **Cooperative close** is signed by both and clean. **Force close** is unilateral and includes a delay window during which the other party can punish a cheating counterparty (broadcasting an outdated state) using the revocation key.
 
 The cheating protection is what makes Lightning trustless. If Bob ever tries to broadcast an old commitment that favored him more, Alice can use the revocation key to claim *all* of the channel's funds, including Bob's. The mechanism is mutually assured destruction at the channel level. In practice, attempted cheating is extremely rare.
 

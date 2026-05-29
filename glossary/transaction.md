@@ -27,6 +27,7 @@ relatedTerms:
   - full-rbf
   - nlocktime
   - nsequence
+  - output-transaction-output
   - replace-fee-rbf
   - satoshi-unit
   - transaction-chaining
@@ -40,7 +41,7 @@ sameAs:
 liveWidget: ~
 ---
 
-A Bitcoin transaction is a data structure that moves BTC from one set of owners to another. It does this by consuming existing [unspent outputs](/glossary/utxo-unspent-transaction-output) (UTXOs) as **inputs** and creating new **outputs** that lock the funds to new spending conditions.
+A Bitcoin transaction is a data structure that moves BTC from one set of owners to another. It does this by consuming existing [unspent outputs](/glossary/utxo-unspent-transaction-output) (UTXOs) as **inputs** and creating new [**outputs**](/glossary/output-transaction-output) that lock the funds to new spending conditions.
 
 The structure is atomic: a transaction either succeeds entirely or fails entirely. Every input must produce a valid signature (or script witness) proving the spender controls the UTXO being consumed. If even one input fails, the whole transaction is invalid. The sum of input values must be at least the sum of output values; the difference is the [transaction fee](/glossary/fee-estimation) paid to the miner.
 

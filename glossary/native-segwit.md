@@ -8,7 +8,14 @@ keyTakeaways:
   - "Simplifies address parsing, with better error detection"
   - "Becoming the preferred standard for modern wallets"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bech32m
+  - p2sh
+  - p2sh-p2wsh-nested-segwit
+  - p2wpkh-pay-witness-public-key-hash
+  - p2wsh-pay-witness-script-hash
+  - segwit-segregated-witness-bip-141
+  - taproot
 sameAs:
   - "https://en.wikipedia.org/wiki/SegWit"
   - "https://www.wikidata.org/wiki/Q30327698"
@@ -22,7 +29,7 @@ liveWidget: ~
 
 Why "native" vs "wrapped":
 
-- **Wrapped SegWit** (P2SH-P2WPKH, P2SH-P2WSH). A SegWit output dressed up as a P2SH output so wallets that didn't yet understand bech32 could still send to it. Compatible with everything but pays for the wrapper overhead.
+- **Wrapped SegWit** (P2SH-P2WPKH, [P2SH-P2WSH](/glossary/p2sh-p2wsh-nested-segwit)). A SegWit output dressed up as a P2SH output so wallets that didn't yet understand bech32 could still send to it. Compatible with everything but pays for the wrapper overhead.
 - **Native SegWit** (P2WPKH, P2WSH). Direct bech32 encoding, no wrapper. Smaller transactions, lower fees, identical security properties. Requires the sender's wallet to understand bech32, which all modern wallets do.
 
 Native SegWit was the cleaner end state of the SegWit design (BIP 141), but the ecosystem rolled out wrapped first to ease the transition. By 2026, native SegWit is the default for new wallets, and the wrapped form is mostly legacy.

@@ -19,6 +19,7 @@ relatedTerms:
   - taproot
   - bip-342-tapscript
   - native-segwit
+  - p2sh-p2wsh-nested-segwit
   - p2wpkh-pay-witness-public-key-hash
   - p2wsh-pay-witness-script-hash
 sameAs:
@@ -42,5 +43,7 @@ What SegWit fixed:
 - **Future upgrades.** SegWit introduced a versioning scheme for witness data that allowed [Taproot](/glossary/taproot) (witness version 1) to be added later as a clean soft fork.
 
 The 2017 activation was politically explosive - it came out of the multi-year "scaling wars" between people who wanted bigger raw block size and people who wanted layer-2 scaling. The bigger-block side eventually forked off as Bitcoin Cash. The remaining Bitcoin community kept SegWit and the layered-scaling roadmap, and the [Lightning Network](/glossary/lightning-network) - which depends on stable txids - became viable shortly afterward.
+
+Initial adoption was eased by P2SH-wrapped variants - [P2SH-P2WPKH and P2SH-P2WSH](/glossary/p2sh-p2wsh-nested-segwit) - that let receivers collect SegWit benefits behind a familiar `3...` address senders already knew how to handle. By 2019-2020 most wallets had migrated to [native SegWit](/glossary/native-segwit) (`bc1q...`), and the wrapped variants became legacy.
 
 By 2026, the large majority of new Bitcoin outputs are SegWit or Taproot. Pre-SegWit legacy outputs still exist but are gradually being spent.

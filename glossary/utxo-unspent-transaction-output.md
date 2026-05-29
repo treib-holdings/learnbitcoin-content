@@ -15,6 +15,7 @@ relatedTerms:
   - coin-control
   - coinbase-transaction
   - consolidation-transaction
+  - output-transaction-output
   - p2wpkh-pay-witness-public-key-hash
   - p2wsh-pay-witness-script-hash
   - p2pkh-pay-public-key-hash
@@ -29,7 +30,7 @@ sameAs:
 liveWidget: ~
 ---
 
-A UTXO - **u**nspent **t**ransaction **o**utput - is a chunk of BTC sitting on the chain, available to be spent. Bitcoin doesn't track account balances. It tracks UTXOs. The "balance" your wallet shows is just the sum of all UTXOs it can unlock.
+A UTXO - **u**nspent **t**ransaction **o**utput - is a [transaction output](/glossary/output-transaction-output) that's still spendable. Bitcoin doesn't track account balances; it tracks UTXOs. The "balance" your wallet shows is just the sum of all UTXOs it can unlock.
 
 Each UTXO has two parts: an **amount** (in satoshis) and a **locking script** that defines what's required to spend it. The most common script is "prove you have the private key for this address." More advanced scripts can require multiple signatures, a time delay, or other conditions.
 

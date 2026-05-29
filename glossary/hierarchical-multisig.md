@@ -20,6 +20,7 @@ relatedTerms:
   - musig
   - musig2
   - quorum-signatures
+  - rescue-transaction
   - wallet
 liveWidget: ~
 ---
@@ -33,5 +34,7 @@ Why it exists: simple multisig works fine for personal or small-team custody. Bu
 - **Defense in depth.** A hot wallet for daily operations might be 2-of-3, but withdrawals from cold storage might require 3-of-5 where one of those keys is itself a 4-of-7 time-locked geographic-distributed signature.
 
 The construction can in principle use [Bitcoin Script](/glossary/bitcoin-script)'s native multisig opcodes or, more elegantly with [Taproot](/glossary/taproot), express complex policies via MAST. Modern hardware-wallet ecosystems (Sparrow, Specter, Nunchuk) increasingly support these arrangements via [PSBT](/glossary/psbt)-based workflows.
+
+Many hierarchical setups pair the live multisig with [pre-signed rescue transactions](/glossary/rescue-transaction) prepared at setup time. The agreed worst-case recovery path - cosigner unavailable, key compromised, geographic event - is signed in advance and held in cold storage, broadcastable when needed without re-coordinating signatures during a crisis.
 
 The tradeoff is operational complexity. Every additional layer adds a chance for someone to lose a key, forget a procedure, or get locked out. Hierarchical multisig is genuinely useful for organizations with real custody policies, and probably overkill for individuals. Most personal users are well-served by a flat 2-of-3 with hardware devices.
