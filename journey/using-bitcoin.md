@@ -1,8 +1,8 @@
----
-title: "Using Bitcoin"
+---title: "Using Bitcoin"
 slug: using-bitcoin
 draft: false
 status: live
+published: "2026-05-15"
 order: 5
 estimatedMinutes: 30
 tagline: "On-chain transactions, fees in practice, Lightning basics. Now that you have it, here's how to actually use it."

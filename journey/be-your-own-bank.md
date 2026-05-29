@@ -1,8 +1,8 @@
----
-title: "Be Your Own Bank"
+---title: "Be Your Own Bank"
 slug: be-your-own-bank
 draft: false
 status: live
+published: "2026-05-15"
 order: 4
 estimatedMinutes: 35
 tagline: "If your keys live on an exchange, you don't own Bitcoin. You own an IOU. This chapter teaches you to own actual Bitcoin."
