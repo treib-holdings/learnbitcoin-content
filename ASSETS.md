@@ -22,6 +22,7 @@ All shipped diagrams live at `learnbitcoin-web/public/diagrams/<name>.svg`. Each
 | **Confirmations stack** | `confirmations-stack.svg` | [how-bitcoin-works §8](journey/how-bitcoin-works.md) |
 | **Lightning channel** | `lightning-channel.svg` | [using-bitcoin §5](journey/using-bitcoin.md), [rabbit-holes/lightning-routing §2](rabbit-holes/lightning-routing.mdx) — same SVG reused; routing chapter pairs it with the "channel is an edge in the graph" framing |
 | **Lightning hop knowledge** | `lightning-hop-knowledge.svg` | [rabbit-holes/lightning-routing §8](rabbit-holes/lightning-routing.mdx) — six-column matrix of what each position on a route (Alice / Bob / Carol / Fred / Eve / Dave) knows about a payment. Top three rows are operational (every hop has to know neighbors and amount); bottom three rows form a privacy donut, with the middle hops blind to the endpoints. Reuses the named characters from the onion-routing animation for continuity. |
+| **Lightning MPP** | `lightning-mpp.svg` | [rabbit-holes/lightning-routing §7](rabbit-holes/lightning-routing.mdx) — Alice's 1 BTC payment to Dave split into three chunks (0.4 / 0.3 / 0.3) across three routes of different hop counts. Top route runs through three middle hops (Bob, Jack, Grace); middle and bottom routes through two each (Carol/Hank, Frank/Ivy). Mirror-symmetric branching and converging curves. Chunk amounts pilled on the path just after Alice. |
 
 ### How to embed an SVG diagram
 

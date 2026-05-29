@@ -146,6 +146,11 @@ This is fundamentally different from base-layer Bitcoin, where a transaction eit
 
 When no single route has enough liquidity, the sender can split the payment across multiple routes simultaneously. This is **Multi-Part Payments** (MPP) or its more flexible variant, [Atomic Multi-Path Payments](/glossary/atomic-multi-path-payment-amp) (AMP).
 
+<figure>
+  <img src="/diagrams/lightning-mpp.svg" alt="Alice sends 1 BTC to Dave via three parallel routes. The payment is split into three chunks of 0.4, 0.3, and 0.3 BTC, each labeled on a small pill on its route just after leaving Alice. The top route runs through three middle hops (Bob, Jack, Grace), the middle route through two (Carol, Hank), the bottom route through two (Frank, Ivy). Paths can have different numbers of hops. All three routes leave Alice's right edge through a tight branching curve and converge at Dave's left edge through the mirror-image curve." />
+  <figcaption>One payment splits into chunks across different paths. Path lengths can vary. All chunks succeed, or all return.</figcaption>
+</figure>
+
 A 1 BTC payment can be split into ten 0.1 BTC chunks, each routed through a different path. The recipient collects all ten and reveals the preimage to claim the full payment. If any chunk fails, all chunks are returned.
 
 MPP dramatically expands what Lightning can route. In 2018, a 1 BTC Lightning payment was nearly impossible (no single channel had enough). In 2026, with MPP, it is routine.
