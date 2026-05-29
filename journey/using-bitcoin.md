@@ -8,8 +8,8 @@ estimatedMinutes: 30
 tagline: "On-chain transactions, fees in practice, Lightning basics. Now that you have it, here's how to actually use it."
 prerequisites: ["be-your-own-bank"]
 relatedTerms: ["lightning-network", "transaction-fee", "fee-estimation", "lightning-channel", "payment-channel", "bolt-11", "htlc-hashed-time-locked-contract", "replace-fee-rbf", "fee-bumping"]
-ogImage: "/diagrams/og/lightning-channel.png"
-ogImageAlt: "A two-layer diagram of a Lightning channel between Alice and Bob. The top shows Bitcoin Mainnet as a chain of blocks with OPEN and CLOSE highlighted. Below, the channel pipe connects Alice and Bob with multiple back-and-forth payment arrows. Each has dashed channel lines to additional ghost nodes, signaling that Alice and Bob each have other channels into the wider Lightning network."
+ogImage: "/diagrams/og/bitcoin-lifecycle.png"
+ogImageAlt: "Final frame of the Bitcoin transaction lifecycle animation. Alice's wallet on the left shows the transaction she sent (To bc1q...x4z, Amount 0.1 BTC, Fee 20 sat/vB, SEND button). Bob's wallet on the right shows the receipt (+0.1 BTC) with the confirmations counter at Final in orange. The blockchain strip across the bottom shows seven sequential blocks 920,247 through 920,253; Alice's block at 920,251 is highlighted orange. Caption: Three blocks deep. Effectively final."
 sources:
   - { label: "mempool.space - live fee dashboard", url: "https://mempool.space" }
   - { label: "Bitcoin developer guide - transactions", url: "https://developer.bitcoin.org/devguide/transactions.html" }
