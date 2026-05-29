@@ -21,7 +21,7 @@ sources:
 
 <figure>
   <video
-    src="/videos/lightning-mesh.mp4"
+    src="/videos/bitcoin-lifecycle.mp4"
     autoplay
     muted
     loop
@@ -29,9 +29,9 @@ sources:
     controls
     controlslist="nodownload noplaybackrate noremoteplayback"
     preload="metadata"
-    aria-label="Animated Lightning Network mesh. Alice has a single channel to Bob. She uses that same channel to pay Bob directly, then to route payments to Carol, Frank, and Ivy through the network. The animation then reverses to show payments flowing back to Alice through the same one channel. The bidirectional flow is the lesson: one channel, many destinations, both directions."
+    aria-label="Animated walkthrough of an on-chain Bitcoin transaction lifecycle. Alice's wallet shows three fields - destination address, amount, fee rate - and a SEND button. A transaction packet leaves her wallet and joins the mempool, a fee-sorted queue of unconfirmed transactions. Alice's transaction slots into its fee tier. A miner selects the top of the mempool; the chosen transactions including Alice's zip into a forming block. The block is sealed and snaps onto the end of the chain. Bob's wallet receives a notification of plus 0.1 BTC. A confirmation counter ticks from 1 to 2 to 3 to Final. Closing pillars: Public. Final. Yours."
   ></video>
-  <figcaption>Alice opens one channel - to Bob. Same channel routes payments to anyone reachable in the network, in either direction.</figcaption>
+  <figcaption>Send. Sit in the mempool sorted by fee. Sealed into a block. Snapped onto the chain. Confirmed at the recipient. No intermediary anywhere in the loop.</figcaption>
 </figure>
 
 ## 1. You Hold Some. Now What?
@@ -48,21 +48,6 @@ The two layers we care about:
 You'll use both. Knowing which is which is most of the skill.
 
 ## 2. The Anatomy of Sending On-Chain
-
-<figure>
-  <video
-    src="/videos/bitcoin-lifecycle.mp4"
-    autoplay
-    muted
-    loop
-    playsinline
-    controls
-    controlslist="nodownload noplaybackrate noremoteplayback"
-    preload="metadata"
-    aria-label="Animated walkthrough of an on-chain Bitcoin transaction lifecycle. Alice's wallet shows three fields - destination address, amount, fee rate - and a SEND button. A transaction packet leaves her wallet and joins the mempool, a fee-sorted queue of unconfirmed transactions. Alice's transaction slots into its fee tier. A miner selects the top of the mempool; the chosen transactions including Alice's zip into a forming block. The block is sealed and snaps onto the end of the chain. Bob's wallet receives a notification of plus 0.1 BTC. A confirmation counter ticks from 1 to 2 to 3 to Final. Closing pillars: Public. Final. Yours."
-  ></video>
-  <figcaption>Send. Sit in the mempool sorted by fee. Sealed into a block. Snapped onto the chain. Confirmed at the recipient. No intermediary anywhere in the loop.</figcaption>
-</figure>
 
 Open your wallet. Tap Send. You'll be asked for three things:
 
@@ -132,6 +117,21 @@ Routing payments through Lightning takes milliseconds. The fees are typically a 
 The whitepaper for Lightning ([Poon & Dryja, 2016](https://lightning.network/lightning-network-paper.pdf)) is dense but readable. You don't need to read it to use Lightning, but you should know it exists.
 
 ## 6. Lightning in Practice
+
+<figure>
+  <video
+    src="/videos/lightning-mesh.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls
+    controlslist="nodownload noplaybackrate noremoteplayback"
+    preload="metadata"
+    aria-label="Animated Lightning Network mesh. Alice has a single channel to Bob. She uses that same channel to pay Bob directly, then to route payments to Carol, Frank, and Ivy through the network. The animation then reverses to show payments flowing back to Alice through the same one channel. The bidirectional flow is the lesson: one channel, many destinations, both directions."
+  ></video>
+  <figcaption>Alice opens one channel - to Bob. Same channel routes payments to anyone reachable in the network, in either direction.</figcaption>
+</figure>
 
 Three categories of Lightning wallets, ordered by sovereignty. The category matters more than the specific app.
 
