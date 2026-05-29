@@ -1,8 +1,7 @@
 ---
-title: "Home"
-heading: "The honest Bitcoin school."
-description: "The honest Bitcoin school. No altcoins. No price predictions. No newsletter. For people who want to actually understand Bitcoin."
+title: "Learn Bitcoin: The Bitcoin School"
+heading: "For people who want to understand Bitcoin.|Not flip it."
+description: "For people who want to understand Bitcoin, not flip it. Plain language, sourced claims, on-chain numbers verified. No altcoins, no ads, no newsletter."
 ---
 
-No altcoins. No price predictions. No newsletter. No paywall. For
-people who want to actually understand Bitcoin.
+Plain language. Sourced claims. On-chain numbers verified against a real node. 447 glossary entries, 11 deep dives, one opinionated Journey from "what is money?" to running a full node. No altcoins, no affiliate links, no newsletter pitch.
