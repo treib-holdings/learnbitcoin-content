@@ -8,7 +8,12 @@ keyTakeaways:
   - "Forces channel closure on the known state, ignoring newer updates"
   - "A partial fallback requiring subsequent re-channeling if used"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - fraudulent-channel-close
+  - lightning-channel
+  - lightning-network
+  - lightning-network-daemon-lnd
+  - seed-phrase
 liveWidget: ~
 ---
 

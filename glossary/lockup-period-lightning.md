@@ -8,7 +8,12 @@ keyTakeaways:
   - "Funds remain off-limits for direct on-chain spending"
   - "Channels close at any time, returning funds to on-chain addresses"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - absolute-locktime
+  - checksequenceverify-csv
+  - htlc-hashed-time-locked-contract
+  - lightning-channel
+  - lightning-network
 liveWidget: ~
 ---
 

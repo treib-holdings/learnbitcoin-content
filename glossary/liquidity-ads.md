@@ -8,7 +8,12 @@ keyTakeaways:
   - "Helps new merchants or heavy receivers get inbound liquidity"
   - "Implemented as a plugin for c-lightning to automate channel leasing"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - lightning-channel
+  - lightning-channel-capacity
+  - liquidity
+  - loop-inout
+  - routing-node
 liveWidget: ~
 ---
 

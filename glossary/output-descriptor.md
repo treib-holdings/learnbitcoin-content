@@ -8,7 +8,13 @@ keyTakeaways:
   - "Works with watch-only wallets or complex multi-sig setups"
   - "Improves clarity over older, ad hoc address generation approaches"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bitcoin-core
+  - hd-wallet-hierarchical-deterministic-wallet
+  - hierarchical-deterministic-wallet
+  - p2wpkh-pay-witness-public-key-hash
+  - psbt
+  - taproot
 sameAs:
   - "https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md"
   - "https://bitcoinops.org/en/topics/output-script-descriptors/"

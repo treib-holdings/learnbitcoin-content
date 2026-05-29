@@ -8,7 +8,13 @@ keyTakeaways:
   - "Requires careful liquidity management and stable uptime"
   - "Essential for LN's decentralized payment routing"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - gossip-protocol-lightning
+  - lightning-channel
+  - lightning-network
+  - lightning-routing
+  - liquidity
+  - node-operator
 liveWidget: ~
 ---
 

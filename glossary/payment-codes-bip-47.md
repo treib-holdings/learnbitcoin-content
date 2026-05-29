@@ -8,7 +8,12 @@ keyTakeaways:
   - "Prevents the privacy leaks of address reuse"
   - "Requires a notification TX to synchronize the code between parties"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - address-reuse
+  - bip-47-payment-codes
+  - bip-bitcoin-improvement-proposal
+  - silent-payments
+  - stealth-address
 liveWidget: ~
 ---
 

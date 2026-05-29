@@ -8,7 +8,11 @@ keyTakeaways:
   - "Helps human users differentiate nodes in gossip data"
   - "Public key remains the true unique identifier for LN routes"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bolt
+  - gossip-protocol-lightning
+  - lightning-node
+  - node-operator
 liveWidget: ~
 ---
 

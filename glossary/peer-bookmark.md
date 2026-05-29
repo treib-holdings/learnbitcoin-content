@@ -8,7 +8,11 @@ keyTakeaways:
   - "Aids stable networks or private usage where specific connections matter"
   - "Pairs with whitelisting to avoid default policy throttles"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bitcoin-core
+  - node
+  - node-operator
+  - peer-management
 liveWidget: ~
 ---
 

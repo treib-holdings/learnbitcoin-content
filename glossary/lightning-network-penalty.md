@@ -8,7 +8,12 @@ keyTakeaways:
   - "Transfers the cheating party's funds to the honest peer"
   - "Ensures strong incentives for correct channel state updates"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - fraudulent-channel-close
+  - htlc-hashed-time-locked-contract
+  - lightning-channel
+  - lightning-network
+  - static-channel-backup-scb
 liveWidget: ~
 ---
 

@@ -8,7 +8,11 @@ keyTakeaways:
   - "Curtails malleability by standardizing the S value"
   - "Became standard in Bitcoin after BIP 66 and related updates"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bip-66
+  - ecdsa-elliptic-curve-digital-signature-algorithm
+  - low-r-signatures
+  - schnorr-signature
 liveWidget: ~
 ---
 

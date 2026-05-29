@@ -8,7 +8,12 @@ keyTakeaways:
   - "Greatly boosts security at the cost of redundancy"
   - "Requires careful backup to prevent permanent lockups"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - hierarchical-multisig
+  - m-n
+  - multisig
+  - musig
+  - musig2
 liveWidget: ~
 ---
 

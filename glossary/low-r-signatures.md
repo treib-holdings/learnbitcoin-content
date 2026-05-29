@@ -8,7 +8,11 @@ keyTakeaways:
   - "Saves a few bytes, trimming transaction fees slightly"
   - "Implemented in many modern wallets as a default optimization"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bip-66
+  - ecdsa-elliptic-curve-digital-signature-algorithm
+  - low-s-signatures
+  - schnorr-signature
 liveWidget: ~
 ---
 

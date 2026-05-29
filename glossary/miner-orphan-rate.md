@@ -8,7 +8,12 @@ keyTakeaways:
   - "Reflects network propagation speed, not malicious activity"
   - "Impacts miner profitability; larger pools tend to have fewer orphans"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - block-propagation
+  - miner
+  - mining
+  - mining-pool
+  - orphan-block
 liveWidget: ~
 ---
 

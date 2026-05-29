@@ -8,7 +8,12 @@ keyTakeaways:
   - "Often fueled by rumors and incomplete info"
   - "Long-term users focus on fundamentals amid swirling FUD"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - altcoin
+  - bear-market
+  - bull-market
+  - minsky-moment
+  - volatility
 liveWidget: ~
 ---
 

@@ -8,7 +8,12 @@ keyTakeaways:
   - "A second factor that must be remembered or backed up securely"
   - "If lost, the wallet becomes impossible to recover"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bip-39
+  - hierarchical-deterministic-wallet
+  - mnemonic-entropy-bits
+  - private-key
+  - seed-phrase
 liveWidget: ~
 ---
 

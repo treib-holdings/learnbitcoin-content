@@ -8,7 +8,12 @@ keyTakeaways:
   - "Allows partial TX modifications without invalidating existing signatures"
   - "More complex to use securely compared to standard SIGHASH_ALL"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bitcoin-script
+  - ecdsa-elliptic-curve-digital-signature-algorithm
+  - sighash
+  - sighashanyonecanpay
+  - transaction
 liveWidget: ~
 ---
 

@@ -8,7 +8,12 @@ keyTakeaways:
   - "Higher entropy means stronger cryptographic security"
   - "Checksum ensures small mistakes don't create an invalid seed"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bip-39
+  - hierarchical-deterministic-wallet
+  - mnemonic-password
+  - private-key
+  - seed-phrase
 liveWidget: ~
 ---
 

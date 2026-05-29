@@ -8,7 +8,12 @@ keyTakeaways:
   - "Autoban kicks in for repeated invalid data or spam"
   - "Ensures resource efficiency and robust block/transaction relay"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bitcoin-core
+  - eclipse-attack
+  - node
+  - node-operator
+  - peer-bookmark
 liveWidget: ~
 ---
 

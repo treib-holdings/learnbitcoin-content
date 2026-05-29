@@ -8,7 +8,13 @@ keyTakeaways:
   - "Settles on the main chain only once the channel closes"
   - "Enables real-time trading or micropayments with minimal fees"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bolt-11
+  - htlc-hashed-time-locked-contract
+  - lightning-channel
+  - lightning-network
+  - payment-channel
+  - second-layer
 liveWidget: ~
 ---
 

@@ -8,7 +8,12 @@ keyTakeaways:
   - "Federation or multi-sig typically verifies legitimate peg-outs"
   - "Crucial to sidechain security where two-way pegs are used"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - liquid-federation
+  - liquid-network
+  - peg
+  - peg-out
+  - sidechain
 liveWidget: ~
 ---
 

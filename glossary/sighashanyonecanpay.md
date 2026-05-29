@@ -8,7 +8,12 @@ keyTakeaways:
   - "Enables partial signing in multi-input transactions"
   - "Useful for coinjoin-like flows or flexible transaction construction"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bitcoin-script
+  - ecdsa-elliptic-curve-digital-signature-algorithm
+  - sighash
+  - sighashsingle
+  - transaction
 liveWidget: ~
 ---
 

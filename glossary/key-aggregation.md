@@ -8,7 +8,12 @@ keyTakeaways:
   - "Saves block space, lowering transaction fees"
   - "Obscures multisig usage, enhancing privacy"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - musig
+  - musig2
+  - schnorr-signature
+  - signature-aggregation
+  - taproot
 liveWidget: ~
 ---
 

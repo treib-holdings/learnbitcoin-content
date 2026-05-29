@@ -8,7 +8,13 @@ keyTakeaways:
   - "SIGHASH_ALL is default for typical transactions"
   - "Advanced flags enable partial or flexible transaction modifications"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bitcoin-script
+  - ecdsa-elliptic-curve-digital-signature-algorithm
+  - schnorr-signature
+  - sighashanyonecanpay
+  - sighashsingle
+  - transaction
 liveWidget: ~
 ---
 

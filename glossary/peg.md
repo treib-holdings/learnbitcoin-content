@@ -8,7 +8,13 @@ keyTakeaways:
   - "Federation or functionaries validate the lock, issue pegged assets"
   - "Enables sidechain features like faster blocks or privacy"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bitcoin-bridge
+  - liquid-federation
+  - liquid-network
+  - peg-guard
+  - peg-out
+  - sidechain
 liveWidget: ~
 ---
 

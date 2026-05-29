@@ -8,7 +8,13 @@ keyTakeaways:
   - "Uses CPFP on special outputs to bump fees post-broadcast"
   - "Requires node implementations that support anchor outputs"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - fee-bumping
+  - fee-rate-escalation
+  - fraudulent-channel-close
+  - htlc-hashed-time-locked-contract
+  - lightning-channel
+  - lightning-network
 liveWidget: ~
 ---
 

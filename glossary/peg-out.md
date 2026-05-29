@@ -8,7 +8,12 @@ keyTakeaways:
   - "Federation multi-sig or functionaries confirm no double spends"
   - "Closes the loop on two-way pegging from sidechain to Bitcoin"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - liquid-federation
+  - liquid-network
+  - peg
+  - peg-guard
+  - sidechain
 liveWidget: ~
 ---
 
