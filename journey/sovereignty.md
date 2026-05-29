@@ -13,10 +13,9 @@ ogImage: "/diagrams/og/verify-dont-trust.png"
 ogImageAlt: "Verify, don't trust: a side-by-side comparison showing a wallet talking to your own node (which verifies every block and rule, giving a definite answer) versus the same wallet talking to a third-party server (which only claims an answer you cannot independently audit)."
 sources:
   - { label: "Bitcoin Core - official downloads and source", url: "https://bitcoincore.org" }
-  - { label: "Bitcoin Knots - alternate full-node implementation", url: "https://bitcoinknots.org" }
-  - { label: "Umbrel - node OS for Raspberry Pi / x86", url: "https://umbrel.com" }
-  - { label: "Start9 - sovereign node OS", url: "https://start9.com" }
-  - { label: "Sparrow Wallet - multisig coordinator", url: "https://sparrowwallet.com" }
+  - { label: "BIP 174 - Partially Signed Bitcoin Transaction (PSBT)", url: "https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki" }
+  - { label: "BIP 67 - deterministic public key sorting for multisig", url: "https://github.com/bitcoin/bips/blob/master/bip-0067.mediawiki" }
+  - { label: "Bitcoin Privacy - bitcoin.org reference", url: "https://bitcoin.org/en/protect-your-privacy" }
   - { label: "Privacy Best Practices PDF (this site)", url: "/downloads/bitcoin-privacy-best-practices.pdf" }
 ---
 
@@ -24,7 +23,7 @@ sources:
 
 ## 1. The Graduation
 
-This is the longest chapter in the journey. It's also the one that turns Bitcoin from "I own some" into "I am a participant."
+This is the graduation chapter. The one that turns Bitcoin from "I own some" into "I am a participant."
 
 Up to this point, even with self-custody, you've been *consuming* Bitcoin - relying on someone else's node for transaction data, someone else's hardware for signing, someone else's recommendation for security. That's fine. Most people stop there forever. The system works for them.
 
@@ -56,26 +55,25 @@ You can use Bitcoin without running a node. You're using Bitcoin right now witho
 
 **Fee data, mempool data, address data on demand.** With your own node, you have direct access to everything the network knows. Want to monitor an address? Query your node. Want to know the current fee market? Query your node. Want a custom data feed? Query your node.
 
-A full node uses about 700 GB of disk and a few hundred MB of RAM. It runs on any modern hardware. Once it's running, you can mostly forget about it for months at a time.
+A full node uses a few hundred MB of RAM and disk space equal to the full blockchain - about 700 GB as of 2026, growing by roughly 50 GB per year. It runs on any modern hardware. Once it's running, you can mostly forget about it for months at a time.
 
-## 3. The Hardware Options
+## 3. The Hardware and OS Options
 
-Cheapest to most polished, roughly:
+Don't overthink this. Get something running. Improve it later.
 
-**Repurposed laptop or desktop.** If you have a spare machine, the cheapest setup is downloading [Bitcoin Core](https://bitcoincore.org) on Mac, Windows, or Linux. Free software, ~700 GB disk, runs in the background. Best for someone comfortable with software setup who already has hardware.
+**Three reasonable starting points for the hardware:**
 
-**Raspberry Pi 4 or 5 with an SSD.** $100-200 total. The classic Bitcoin node hardware. Energy-efficient, fits anywhere, runs 24/7.
+- **Raspberry Pi 5 with a 1 TB SSD.** ~$200 total. Low power, fits anywhere, runs 24/7. The classic Bitcoin node hardware.
+- **A refurbished mini PC (Intel NUC class or equivalent).** ~$150-300 used. More headroom than the Pi if you might add Lightning or other self-hosted services later.
+- **A repurposed laptop or desktop you already own.** Free, if the hardware is reasonable. Best for someone comfortable with software setup who doesn't want to buy anything new.
 
-**Pre-built node OS.** Operating systems designed specifically to run a Bitcoin node (plus Lightning, plus other self-hosted apps) on commodity hardware:
+**Three reasonable starting points for the node software:**
 
-- **Umbrel** - easy-on-ramp, big app store, hosted on Raspberry Pi or x86. Some controversy in the community about its licensing changes; verify current state before committing.
-- **Start9 (StartOS)** - sovereignty-focused, more rigorous, also runs on commodity hardware. Less polished UI but ideologically tighter.
-- **Nix Bitcoin** - for the NixOS-curious. Maximally reproducible, audited modules, harder learning curve.
-- **MyNode** - older but still respected; less actively developed than the above.
+- **Umbrel.** Easy on-ramp. Big app store on top of Bitcoin Core. Web UI. Best if you want one-click apps and a polished experience.
+- **Start9 (StartOS).** Sovereignty-focused. Web UI. Tighter defaults on privacy and Tor.
+- **[Bitcoin Core](https://bitcoincore.org) directly.** Skip the wrapper. Edit `bitcoin.conf` yourself. Best if you're comfortable with a shell and want zero abstraction.
 
-**A purpose-built bare-metal box.** For serious users: build your own using a small Linux server, install Bitcoin Core and your wallets directly. Maximum control, maximum complexity. Worth it once you've outgrown the pre-built node OSes.
-
-**Recommendation for most:** Raspberry Pi 5 + 1 TB SSD + Start9 or Umbrel. Total cost: ~$200. Setup time: an afternoon. Maintenance: occasional updates.
+> **Starting points, not gospel.** These work. Others exist. The self-hosting ecosystem moves. Pick something that fits and start - don't try to optimize before you have anything running.
 
 ## 4. The Setup Walkthrough
 
@@ -85,7 +83,7 @@ Don't try to perfect this on the first pass. Just get something running. Improve
 2. **Pick your OS.** Start9 or Umbrel for the pre-built path. Bitcoin Core directly if you're comfortable with shell.
 3. **Flash the OS** to the SSD or boot drive. The node OS providers give clear flash instructions. (Mac: balenaEtcher. Windows: Rufus. Linux: `dd`.)
 4. **Boot the node** and connect to it via web interface (Umbrel/Start9 give you a `.local` URL on your home network).
-5. **Wait for sync.** The initial download is the painful part - 700 GB to fetch and validate. On a Pi with a decent SSD, this takes 1-3 days. Don't worry about it; just leave it running.
+5. **Wait for sync.** The initial download is the painful part - several hundred GB to fetch and validate. On a Pi with a decent SSD, this takes a day or two. Don't worry about it; just leave it running.
 6. **While it syncs,** read the docs. Set up Tor (it's usually a checkbox in the node OS). Decide if you want Lightning (yes, eventually).
 7. **Once synced,** test it. Run a query: get the latest block height. Get a transaction by ID. Verify a balance.
 
@@ -93,16 +91,17 @@ You now have a Bitcoin node. Welcome.
 
 ## 5. Pointing Your Wallet at Your Node
 
-A node is only useful if your wallet talks to it instead of a third-party server. Different wallets handle this differently:
+A node is only useful if your wallet talks to it instead of a third-party server. Every modern wallet supports this; it is a one-time configuration.
 
-- **Sparrow Wallet** (desktop). The cleanest setup for connecting to your own node. Settings → Server → "Use Bitcoin Core" or "Connect to Electrum server" (pointing at your node's Electrum interface). Sparrow becomes a thin client over your own node.
-- **Specter Desktop**. Similar to Sparrow, also multisig-capable, talks to your own Core directly.
-- **BlueWallet** (mobile). Has an Electrum-server toggle in advanced settings. Point it at your node's Electrum endpoint (usually exposed via Tor for mobile use).
-- **Phoenix / Mutiny** (Lightning). Configure the node settings to point at your LN backend.
+Three reasonable starting points for a desktop wallet that pairs cleanly with your own node:
 
-The pattern: every modern wallet supports "use my own node." The setup is a one-time configuration. After it, your wallet asks your node, not a stranger's.
+- **Sparrow Wallet.** Cleanest UI for own-node pairing. Settings → Server → "Use Bitcoin Core" or "Connect to Electrum server." Sparrow becomes a thin client over your node.
+- **Specter Desktop.** Talks directly to your Bitcoin Core via RPC. Multisig-friendly. Slightly more advanced setup.
+- **Electrum.** The veteran light client. Long track record. Point it at the Electrum endpoint your node OS exposes.
 
-To verify it's working: shut down your home internet connection or DNS, and confirm your wallet can still see your own node and your balance (over the LAN). If yes, you're not depending on anything external.
+The pattern is the same in each case: a one-time server setting that tells the wallet to ask your node instead of a stranger's.
+
+To verify it's working: shut down your home internet connection or DNS, and confirm your wallet can still see your node and your balance over the LAN. If yes, you are not depending on anything external.
 
 ## 6. Multisig 101
 
@@ -121,11 +120,15 @@ Multisig isn't just for paranoid whales. The right setup for $20,000 of bitcoin 
 
 ## 7. Multisig in Practice
 
-A 2-of-3 multisig requires:
+A 2-of-3 multisig requires three things.
 
-- **Three hardware wallets, ideally from three different manufacturers.** Coldcard, Trezor, Foundation Passport, Ledger, Jade - pick any three. Different vendors means a hardware vulnerability in one model doesn't compromise all your keys.
-- **Three seed phrases**, each generated on its own hardware wallet, each backed up independently on metal in physically separate locations.
-- **A coordinator** - software that knows the public keys for all three and constructs transactions that any two can sign. **Sparrow Wallet** is the standard recommendation; **Specter Desktop** is also excellent. The coordinator does *not* hold your keys. It just knows what they are publicly and orchestrates signing.
+**Three hardware wallets, from three different manufacturers.** Vendor diversity is the rule, not specific brands. Three reasonable starting points: Coldcard, Foundation Passport, Trezor. Others exist; pick three from brands you trust and can verify. A hardware vulnerability in one model should not compromise more than one of your keys.
+
+**Three seed phrases**, each generated on its own hardware wallet, each backed up independently on metal in physically separate locations.
+
+**A coordinator** - software that knows the public keys for all three and constructs transactions that any two can sign. The coordinator does *not* hold your keys. It just knows what they are publicly and orchestrates signing.
+
+Three reasonable starting points for the coordinator: **Sparrow Wallet**, **Specter Desktop**, **Electrum**. All three handle 2-of-3 wallet creation, PSBT generation, and combining signatures from your hardware wallets.
 
 The flow:
 
