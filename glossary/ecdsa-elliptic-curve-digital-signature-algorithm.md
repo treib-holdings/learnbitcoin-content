@@ -11,6 +11,7 @@ sources: []
 relatedTerms:
   - adapter-signature
   - bip-66
+  - constant-time
   - elliptic-curve
   - musig
   - musig2
@@ -31,6 +32,8 @@ The mechanism is built on the [secp256k1 elliptic curve](/glossary/elliptic-curv
 1. A signer with private key `k` produces a signature `(r, s)` that depends on `k`, the message being signed, and a randomly-chosen nonce.
 2. Anyone with the corresponding [public key](/glossary/public-key) can verify the signature is mathematically consistent - meaning whoever signed must have known `k`.
 3. The verifier learns nothing about `k` in the process.
+
+Production ECDSA implementations also have to follow strict [constant-time](/glossary/constant-time) discipline: the modular multiplication step in signing leaks key bits through timing if implemented naively. Bitcoin Core's libsecp256k1 is one of the more carefully-engineered constant-time signers in production cryptography.
 
 ECDSA works, but it has some annoyances:
 

@@ -22,6 +22,7 @@ relatedTerms:
   - race-attack
   - replay-attack
   - stale-block
+  - transaction-finality
 liveWidget: ~
 ---
 
@@ -34,4 +35,4 @@ Two flavors:
 - **Shallow reorgs (1-2 blocks deep).** Routine. They happen multiple times per year and only affect transactions that were just barely confirmed. This is exactly why the 6-confirmation rule exists for high-value transfers - after six blocks, the probability of a reorg overturning your transaction is vanishingly small absent a massive coordinated attack.
 - **Deep reorgs (3+ blocks).** Rare and concerning. Most observed deep reorgs on Bitcoin's mainnet have been caused by software bugs, brief network partitions, or - on testnet - deliberate attacks for research purposes. A deep reorg on mainnet would be a serious event worth investigating.
 
-The economic implication: a transaction is only as final as the work that has been mined on top of it. One confirmation is "probably fine for small amounts." Six confirmations is "fine for almost everything." Hundreds is "permanent for all practical purposes." See [Double Spend](/glossary/double-spend) for the attack that reorgs make harder, and [Mining rabbit hole](/rabbit-hole/mining) for the economics.
+The economic implication: [transaction finality](/glossary/transaction-finality) on Bitcoin is probabilistic, not binary - a transaction is only as final as the work that has been mined on top of it. One confirmation is "probably fine for small amounts." Six confirmations is "fine for almost everything." Hundreds is "permanent for all practical purposes." See [Double Spend](/glossary/double-spend) for the attack that reorgs make harder, and [Mining rabbit hole](/rabbit-hole/mining) for the economics.

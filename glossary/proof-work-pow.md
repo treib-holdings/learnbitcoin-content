@@ -17,6 +17,7 @@ relatedTerms:
   - difficulty-retargeting
   - energy-fud
   - hash
+  - incentive-compatibility
   - nonce
   - nonce-exhaustion
   - poisson-process
@@ -39,4 +40,4 @@ Three properties make PoW load-bearing for Bitcoin's security model:
 
 The standard critique is energy use. The standard defense is that the energy isn't waste - it's the cost of [securing the entire chain against tampering](/rabbit-hole/mining/rabbit-hole), and the marginal mining operation runs on energy that has no other buyer (stranded renewables, flared natural gas, off-peak hydro). See the [Mining rabbit hole](/rabbit-hole/mining) for the long version of both arguments.
 
-PoW is the answer to the question Satoshi was trying to solve: how do you achieve trustless consensus over the internet without a central authority? Make agreement *expensive*. Make tampering *more* expensive. Let the cheapest path to revenue be honesty.
+PoW is the answer to the question Satoshi was trying to solve: how do you achieve trustless consensus over the internet without a central authority? Make agreement *expensive*. Make tampering *more* expensive. Let the cheapest path to revenue be honesty. This is the property cryptographers call [incentive compatibility](/glossary/incentive-compatibility) - and it's what lets Bitcoin run on rational self-interest instead of trust.
