@@ -13,6 +13,7 @@ ogImageAlt: "Final frame of the Bitcoin transaction lifecycle animation. Alice's
 sources:
   - { label: "mempool.space - live fee dashboard", url: "https://mempool.space" }
   - { label: "Bitcoin developer guide - transactions", url: "https://developer.bitcoin.org/devguide/transactions.html" }
+  - { label: "BIP 125 - Opt-in Full Replace-by-Fee Signaling", url: "https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki" }
   - { label: "Lightning Network whitepaper (Poon & Dryja, 2016)", url: "https://lightning.network/lightning-network-paper.pdf" }
   - { label: "ChainQuery - fee pressure dashboard", url: "https://chainquery.com/fee-pressure" }
 ---
@@ -108,9 +109,9 @@ There is no "right" fee. There is "the fee you need to pay to get into the next 
 
 Suppose you sent at 5 sat/vB and then a mempool surge raised the floor to 50 sat/vB. Your transaction will sit there, possibly for hours, possibly until the mempool drops back. Bitcoin doesn't time out transactions, but if you can't wait:
 
-**Replace-by-Fee (RBF)** lets you rebroadcast the same transaction with a higher fee. Miners prefer the higher-paying version; the original disappears from the mempool. Most modern wallets do this with one button - usually labeled "Boost," "Bump fee," or "Speed up."
+**Replace-by-Fee (RBF)** ([BIP-125](https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki)) lets you rebroadcast the same transaction with a higher fee. Miners prefer the higher-paying version; the original disappears from the mempool. Most modern wallets do this with one button - usually labeled "Boost," "Bump fee," or "Speed up."
 
-The mechanics: RBF requires the original transaction to have signaled "replaceable" (a flag in the transaction). Most wallets enable this by default. If yours didn't, you have another option called **Child Pays for Parent (CPFP)**, where you spend the *change output* of your stuck transaction with a higher fee, dragging the parent into a block alongside it.
+The mechanics: RBF requires the original transaction to have signaled "replaceable" (a flag in the transaction, per BIP-125). Most wallets enable this by default. If yours didn't, you have another option called **Child Pays for Parent (CPFP)**, where you spend the *change output* of your stuck transaction with a higher fee, dragging the parent into a block alongside it.
 
 Don't memorize the mechanics. Memorize the principle: **your transaction isn't stuck forever; it's just at the wrong fee level for current conditions.** Wait or bump. And if the fee is so low that it never confirms at all, the transaction eventually drops out of the mempool (typically after about two weeks at most nodes' default expiry) and the funds return to spendable in your wallet. You never lose bitcoin to a stuck transaction - the UTXOs are still yours, the broadcast just didn't take.
 
@@ -171,15 +172,10 @@ To send: paste an invoice, hit Pay, done. The payment completes in milliseconds.
 
 A heuristic that gets most cases right:
 
-| If your payment is... | Use... | Why |
-|---|---|---|
-| Under $50 | Lightning | Fees and speed both favor LN |
-| $50 to a few hundred | On-chain or LN | Personal preference |
-| A few hundred to a few thousand | On-chain or LN | LN works fine, on-chain is fine if you're not in a rush |
-| Over a few thousand | On-chain | LN channel capacity limits + settlement preference |
-| To someone who doesn't have LN | On-chain | They can't receive what they can't receive |
-| Repeated payments to the same party | Open an LN channel | Pay once, transact forever |
-| Long-term storage | Neither - just don't move it | Cold storage, see chapter 4 |
+<figure>
+  <img src="/diagrams/on-chain-vs-lightning.svg" alt="Three side-by-side cards showing the recommended Bitcoin layer by payment size. Small payments under $50 use Lightning - fees and speed both favor it. Medium payments $50 to a few thousand either works - personal preference. Large payments above a few thousand use on-chain - Lightning channel capacity limits plus settlement preference. Three special cases below: recipient without a Lightning wallet means on-chain; repeated payments to the same party means open a Lightning channel; long-term storage means do not move it at all. Tagline: most people use both; knowing which is which is most of the skill." />
+  <figcaption>Three payment-size lanes plus three special cases. Most real-world payments fit somewhere on this card.</figcaption>
+</figure>
 
 Most people use both. A Lightning wallet on the phone for daily stuff; an on-chain wallet (preferably on hardware) for holding.
 
