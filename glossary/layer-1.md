@@ -8,7 +8,15 @@ keyTakeaways:
   - "Constrained in throughput, leading to layer-2 expansions"
   - "Miners and full nodes collectively enforce consensus"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bitcoin-core
+  - block
+  - consensus-parameter
+  - full-node
+  - lightning-network
+  - off-chain
+  - proof-work-pow
+  - second-layer
 liveWidget: ~
 ---
 

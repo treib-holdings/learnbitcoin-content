@@ -8,7 +8,14 @@ keyTakeaways:
   - "Transactions are final and valuable, no free do-overs"
   - "Contrast with testnet, signet, or regtest for dev and testing"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bitcoin-core
+  - chain-split
+  - consensus-parameter
+  - full-node
+  - genesis-block
+  - signet
+  - testnet
 liveWidget: ~
 ---
 

@@ -8,7 +8,13 @@ keyTakeaways:
   - "Must contain valid signature/witness data"
   - "Multiple inputs can fund one transaction"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bitcoin-script
+  - coinbase-transaction
+  - output-transaction-output
+  - segwit-segregated-witness-bip-141
+  - transaction
+  - utxo-unspent-transaction-output
 liveWidget: ~
 ---
 

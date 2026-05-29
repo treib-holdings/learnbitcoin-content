@@ -9,7 +9,17 @@ keyTakeaways:
   - "Fee estimation and RBF rely heavily on mempool dynamics"
 sources:
   - { label: "Mempool rabbit hole", url: "https://www.learnbitcoin.com/rabbit-hole/mempool" }
-relatedTerms: []
+relatedTerms:
+  - double-spend
+  - fee-bumping
+  - fee-estimation
+  - full-rbf
+  - miner
+  - mining
+  - mining-pool
+  - replace-fee-rbf
+  - transaction
+  - transaction-fee
 liveWidget: ~
 ---
 

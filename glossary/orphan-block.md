@@ -8,7 +8,14 @@ keyTakeaways:
   - "Lose out to another valid block in the chain-building process"
   - "Miner of the orphan block doesn't receive the block reward"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - block
+  - block-propagation
+  - chain-split
+  - fork
+  - miner
+  - reorg-reorganization
+  - stale-block
 liveWidget: ~
 ---
 

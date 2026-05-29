@@ -8,7 +8,12 @@ keyTakeaways:
   - "Eases software testing with stable, low-spam conditions"
   - "Still distinct from mainnet; not for real BTC usage"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bitcoin-core
+  - consensus-parameter
+  - mainnet
+  - proof-work-pow
+  - testnet
 liveWidget: ~
 ---
 

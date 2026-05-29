@@ -8,7 +8,16 @@ keyTakeaways:
   - "Examples include LN channels and pegged sidechains"
   - "Requires eventual settlement or peg-out to reconcile final states"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - atomic-swap
+  - layer-1
+  - lightning-channel
+  - lightning-network
+  - liquid-network
+  - off-chain
+  - payment-channel
+  - sidechain
+  - state-channel
 liveWidget: ~
 ---
 

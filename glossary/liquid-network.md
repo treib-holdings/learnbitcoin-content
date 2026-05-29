@@ -8,7 +8,14 @@ keyTakeaways:
   - "Confidential Transactions hide amounts on L-BTC transfers"
   - "Faster settlements but relies on trusted functionaries"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bitcoin-bridge
+  - liquid-federation
+  - multisig
+  - peg
+  - peg-out
+  - second-layer
+  - sidechain
 liveWidget: ~
 ---
 

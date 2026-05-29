@@ -8,7 +8,13 @@ keyTakeaways:
   - "Requires a threshold of signers to release pegged BTC"
   - "Provides quicker block times and confidential features, but not fully trustless"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - liquid-network
+  - multisig
+  - peg
+  - peg-guard
+  - peg-out
+  - sidechain
 liveWidget: ~
 ---
 

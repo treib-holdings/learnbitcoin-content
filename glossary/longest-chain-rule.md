@@ -8,7 +8,13 @@ keyTakeaways:
   - "Deters attackers from rewriting the ledger without immense hash power"
   - "Ensures consistent ledger state across the decentralized network"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - block
+  - chain-split
+  - consensus-parameter
+  - fork
+  - proof-work-pow
+  - reorg-reorganization
 liveWidget: ~
 ---
 

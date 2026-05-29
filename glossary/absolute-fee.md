@@ -8,7 +8,14 @@ keyTakeaways:
   - "Can be convenient but risky if network conditions change"
   - "Useful when transaction size and timing are predictable"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - fee-bumping
+  - fee-estimation
+  - fee-rate-escalation
+  - full-rbf
+  - mempool
+  - replace-fee-rbf
+  - transaction-fee
 liveWidget: ~
 ---
 

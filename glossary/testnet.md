@@ -8,7 +8,13 @@ keyTakeaways:
   - "Testnet BTC is intentionally worthless to avoid speculation"
   - "Occasionally prone to disruptions since difficulty adjustments vary widely"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - bitcoin-core
+  - block-subsidy
+  - coinbase-transaction
+  - genesis-block
+  - mainnet
+  - signet
 liveWidget: ~
 ---
 
