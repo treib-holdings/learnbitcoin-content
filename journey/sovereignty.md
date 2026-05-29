@@ -189,6 +189,11 @@ The hardest part of self-custody is something the marketing doesn't talk about: 
 
 If you die with self-custodied bitcoin and no inheritance plan, your coins are likely lost forever. Your heirs may know you held bitcoin. They will not know your seed. They will not know your passphrase. They will not know which hardware wallet to look for. The bitcoin is on the chain, but unreachable.
 
+<figure>
+  <img src="/diagrams/inheritance-recovery.svg" alt="A left-to-right inheritance recovery diagram. An heir starts on the left, retrieves a sealed letter from the lawyer, follows the letter's instructions to three seed locations (Seed 1 at home, Seed 2 at the bank, Seed 3 at a relative). Two of the three seeds are collected (orange) and the third is grayed out (not needed). The two collected seeds feed into the coordinator, which combines signatures, and funds are recovered." />
+  <figcaption>With a plan, recovery is a path. Without one, the chain is unreachable even when the bitcoin is right there.</figcaption>
+</figure>
+
 A reasonable inheritance plan:
 
 1. **Document everything.** A sealed letter with: where the seed backups live, what wallet software to install, what to expect (number of UTXOs, approximate balance, approximate addresses), and step-by-step instructions for restoration. Update it annually.
