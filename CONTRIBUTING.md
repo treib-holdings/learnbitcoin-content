@@ -140,6 +140,43 @@ Each file has YAML frontmatter that the site renderer reads. Look at
 neighboring files for the exact schema; do not invent new fields
 without coordinating first.
 
+## Publishing dates
+
+Journey chapters and rabbit holes carry two ISO-date frontmatter
+fields. The build pipeline enforces the first; the second is
+opt-in.
+
+- **`published: "YYYY-MM-DD"`** - when the entry first became publicly
+  visible on the site. **Required on non-draft journey and rabbit-hole
+  entries.** The web repo's `check-published-dates` script runs in
+  every `predev` / `prebuild` / `prepreview` hook and fails the build
+  if this field is missing or malformed on a non-draft entry.
+
+  Wired into: RSS feed `pubDate` (newest-first sort) + schema.org
+  Article `datePublished` + `og:article:published_time`.
+
+- **`updated: "YYYY-MM-DD"`** - when the entry was last meaningfully
+  revised. **Optional. Bump on substantive rewrites, not typo fixes.**
+  Re-notifies RSS subscribers and signals freshness to search engines.
+
+  Wired into: RSS feed `<atom:updated>` + schema.org Article
+  `dateModified` (Google freshness signal) + `og:article:modified_time`.
+
+Glossary entries can also carry these fields but are not enforced
+(there are 440+ entries; fall back to launch day via
+`DEFAULT_PUBLISHED` if absent). Set them on glossary entries when
+accuracy matters for search-engine freshness on that specific entry.
+
+Example:
+
+```yaml
+published: "2026-06-15"
+updated: "2026-07-02"
+```
+
+Always quote the date string. Bare `YYYY-MM-DD` parses as a YAML date
+type and fails schema validation.
+
 ## Credit
 
 Substantive contributions get credited in the relevant commit and in
