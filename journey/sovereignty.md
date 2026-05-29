@@ -105,6 +105,21 @@ To verify it's working: shut down your home internet connection or DNS, and conf
 
 ## 6. Multisig 101
 
+<figure>
+  <video
+    src="/videos/multisig.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls
+    controlslist="nodownload noplaybackrate noremoteplayback"
+    preload="metadata"
+    aria-label="Animated walkthrough of a 2-of-3 multisig wallet. Three hardware keys appear in a row with a 'Threshold: 2 of 3' label and the caption 'Three different makers. A bug in one can't break the others.' A transaction signs with two keys and broadcasts. Loss scenario: Key B fades to gray with a 'lost' label; the other two keys still sign and the spend goes through. Theft scenario: a hooded figure grabs Key A, which turns green and is marked 'stolen'; the thief's attempt to sign alone halts at one of two signatures. Closing pillars: Multisig. Threshold-of-keys. Vendor-diverse."
+  ></video>
+  <figcaption>Three keys. Any two sign. Lose one and you still spend. Steal one and you still can't.</figcaption>
+</figure>
+
 A single seed phrase is a single point of failure. Lose it, all coins gone. Compromised, all coins gone. For larger amounts, single-sig isn't enough.
 
 **Multisig** (multi-signature) requires multiple keys to authorize a spend. The most common setup is **2-of-3**: three keys exist, any two can spend, no single key can.
@@ -180,6 +195,11 @@ A reasonable inheritance plan:
 Bitcoin inheritance is genuinely solvable. Most people don't solve it because most people don't plan. Be the exception.
 
 ## 10. The Threat Model
+
+<figure>
+  <img src="/diagrams/threat-triangle.svg" alt="A triangle with three corners labeled THEFT (someone finds your seed), LOSS (fire, flood, forgotten), and COERCION (wrench, warrant, kidnap). At the geometric center is a pill labeled YOUR SEED. The three threats every seed backup must plan against." />
+  <figcaption>Three threats. Defending one often weakens defense against another. The work of sovereignty is balancing all three.</figcaption>
+</figure>
 
 A note on paranoia: not all threats are equal, and treating them as such wastes your time.
 
