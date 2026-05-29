@@ -12,6 +12,7 @@ relatedTerms:
   - bip-22-getblocktemplate
   - bitcoin-client
   - bitcoin-core
+  - json-rpc-over-tor
   - rpc-whitelist
 liveWidget: ~
 ---
@@ -35,6 +36,6 @@ The RPC surface is enormous. Categories you'll see in practice:
 - **Mining helpers.** `getblocktemplate`, `submitblock`, `getmininginfo`.
 - **Diagnostic.** `getmemoryinfo`, `gettxoutsetinfo`, `validateaddress`.
 
-Security: the RPC is by default bound to localhost only. Exposing it to the network without TLS and strong authentication is a fast way to lose any wallet attached to the node. The `rpcwhitelist` setting in modern versions lets operators restrict each authenticated user to a specific subset of methods, which is the right pattern for multi-tenant setups (a block explorer doesn't need wallet RPC access; restrict accordingly).
+Security: the RPC is by default bound to localhost only. Exposing it to the network without TLS and strong authentication is a fast way to lose any wallet attached to the node. For remote management of a home node, the standard pattern is [JSON-RPC over Tor](/glossary/json-rpc-over-tor) - an unguessable `.onion` address, encrypted transport, no firewall holes. The `rpcwhitelist` setting in modern versions lets operators restrict each authenticated user to a specific subset of methods, which is the right pattern for multi-tenant setups (a block explorer doesn't need wallet RPC access; restrict accordingly).
 
 For users of Bitcoin-on-top services, the RPC is invisible plumbing. For anyone running infrastructure - exchanges, payment processors, Lightning routing nodes - it's the daily working surface of Bitcoin Core.

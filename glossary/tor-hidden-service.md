@@ -11,6 +11,7 @@ sources: []
 relatedTerms:
   - hidden-service-node
   - i2p-invisible-internet-project
+  - json-rpc-over-tor
   - lightning-node
   - onion-routing-lightning
 sameAs:
@@ -33,6 +34,6 @@ For a [Bitcoin node](/glossary/node), running as a Tor onion service provides:
 
 The cost is latency. Tor adds ~200-500ms of round-trip time over normal internet routes due to its three-hop relay structure. For Bitcoin's needs - block propagation every ~10 minutes, transactions that propagate over seconds - this latency is essentially invisible in practice. Block- and transaction-relay over Tor work fine.
 
-Bitcoin Core has shipped first-class Tor support since 2014. Running your node behind Tor is a single config-file change (`proxy=127.0.0.1:9050` plus a few related options). Many node-in-a-box products (Umbrel, Start9, RaspiBlitz) ship with Tor enabled by default.
+Bitcoin Core has shipped first-class Tor support since 2014. Running your node behind Tor is a single config-file change (`proxy=127.0.0.1:9050` plus a few related options). Many node-in-a-box products (Umbrel, Start9, RaspiBlitz) ship with Tor enabled by default. The same hidden-service pattern can also expose [RPC for remote management](/glossary/json-rpc-over-tor), letting you control your home node from anywhere without opening any firewall ports.
 
 For self-custody users running a [full node](/glossary/full-node), running over Tor is the single biggest privacy upgrade you can make at the network layer. Strongly recommended for anyone who cares about not having their on-chain activity correlated with their home IP.
