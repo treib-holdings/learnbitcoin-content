@@ -16,6 +16,7 @@ relatedTerms:
   - mining-colocation
   - pooled-mining
   - revenue-ths
+  - rug-pull
 liveWidget: ~
 ---
 
@@ -41,7 +42,7 @@ The aftermath:
 
 Why this matters as a glossary entry, not just a footnote:
 
-- **Cloud mining as a category is dominated by scams.** Hashlet is the canonical example, but it's far from the only one. HashOcean, BitClub Network, Mining Capital Coin, USI-Tech, and many others followed similar patterns through the late 2010s.
+- **Cloud mining as a category is dominated by scams.** Hashlet is the canonical Bitcoin-context version of what altcoin markets call a [rug pull](/glossary/rug-pull) - sell shares or tokens backed by something that doesn't exist, pay early investors with new funds, vanish when new investment slows. HashOcean, BitClub Network, Mining Capital Coin, USI-Tech, and many others followed similar patterns through the late 2010s.
 - **The pattern is consistent.** Promise yield on hash rate you can't independently verify. Pay early investors with new investor funds. Collapse when new investment slows.
 - **Legitimate cloud mining exists** (NiceHash hash-rate marketplace, some hosted-miner services), but it's a niche market, not the "passive income mining" pitched by scams.
 

@@ -16,6 +16,7 @@ relatedTerms:
   - bip-68-relative-locktime
   - segwit-segregated-witness-bip-141
   - bip-173-bech32
+  - bitcoin-governance
   - psbt
   - taproot
   - bip-342-tapscript
@@ -43,4 +44,4 @@ BIP types:
 - **Informational** - design guidelines or implementation notes, no consensus impact.
 - **Process** - changes to the BIP process itself.
 
-The BIP process is intentionally slow, conservative, and adversarial. A consensus-affecting change typically takes years from initial proposal to network activation - and many proposals never make it. This is a feature: a global monetary protocol with $1-2T in value should be very, very hard to change accidentally. See [SegWit](/glossary/segwit-segregated-witness-bip-141) and [Taproot](/glossary/taproot) for two BIPs that did make it all the way through.
+The BIP process is intentionally slow, conservative, and adversarial - the formal end of [Bitcoin governance](/glossary/bitcoin-governance), where developers, miners, node operators, users, and long-term holders each hold de facto veto power. A consensus-affecting change typically takes years from initial proposal to network activation - and many proposals never make it. This is a feature: a global monetary protocol with $1-2T in value should be very, very hard to change accidentally. See [SegWit](/glossary/segwit-segregated-witness-bip-141) and [Taproot](/glossary/taproot) for two BIPs that did make it all the way through.
