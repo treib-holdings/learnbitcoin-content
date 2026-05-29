@@ -24,6 +24,7 @@ on:
 # dispatch and doesn't touch the GITHUB_TOKEN at all. Lock GITHUB_TOKEN
 # to no scopes — leak surface is minimised even if a step is ever
 # compromised.
+# IndexNow key is a public proof-of-control token by design, not a secret.
 permissions: {}
 
 jobs:
@@ -51,7 +52,6 @@ jobs:
             -w "IndexNow: HTTP %{http_code}\n" \
             -d '{
               "host": "www.learnbitcoin.com",
-              # IndexNow key is a public proof-of-control token by design, not a secret.
               "key": "8586b7edc30249992186264cbb885886",
               "keyLocation": "https://www.learnbitcoin.com/8586b7edc30249992186264cbb885886.txt",
               "urlList": [
