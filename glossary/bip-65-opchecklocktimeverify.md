@@ -1,8 +1,8 @@
 ---
-title: "BIP 65 (OP_CHECKLOCKTIMEVERIFY)"
+title: "BIP 65 (OP_CHECKLOCKTIMEVERIFY) — Plain-English Explainer"
 slug: bip-65-opchecklocktimeverify
 draft: false
-shortDefinition: "Added a script opcode (CLTV) enabling funds to be locked until a certain block height or timestamp is reached."
+shortDefinition: "What CLTV does, why it was added in 2015, and how it enables payment channels and escrows — without the spec-speak."
 keyTakeaways:
   - "Implements time-based spending constraints"
   - "Enables contracts like payment channels, escrows"
