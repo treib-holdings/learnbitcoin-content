@@ -1,8 +1,10 @@
----title: "Sovereignty"
+---
+title: "Sovereignty"
 slug: sovereignty
 draft: false
 status: live
 published: "2026-05-15"
+updated: "2026-05-29"
 order: 6
 estimatedMinutes: 45
 tagline: "Run your own node. Use multisig. Lock down your op-sec. Graduation: you don't ask anyone for permission to use Bitcoin."
