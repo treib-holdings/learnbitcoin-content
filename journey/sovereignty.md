@@ -160,6 +160,11 @@ The first time you do this it takes a couple of hours. After that, spending feel
 
 Bitcoin is *pseudonymous*, not anonymous. Every on-chain transaction is public forever. Anyone with the time and the chain analysis tools can correlate addresses to identities. Your privacy is your responsibility.
 
+<figure>
+  <img src="/diagrams/privacy-leaks.svg" alt="A matrix mapping six common Bitcoin habits to five types of information leak. Rows: Use a public Electrum server, Reuse addresses, Merge KYC and non-KYC UTXOs, Skip Tor, Buy via KYC exchange, Discuss stack publicly. Columns: IP address, Identity link, Address graph, Balance, Transaction history. Orange dots mark cells where the habit leaks that fact; light gray dashes mark cells where it does not. Discussing publicly and using a public Electrum server are the heaviest leakers; Skip Tor and Buy via KYC each leak one specific thing." />
+  <figcaption>Most privacy leaks have one cause. Running your own node, using Tor, and not talking about your stack fix the majority of them in three habits.</figcaption>
+</figure>
+
 The basics, in order of effort:
 
 **1. Never reuse addresses.** Every receipt should be to a fresh address. Modern wallets do this by default. Don't override.
