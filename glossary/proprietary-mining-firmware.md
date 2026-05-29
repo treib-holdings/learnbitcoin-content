@@ -8,7 +8,11 @@ keyTakeaways:
   - "Common in large-scale mining farms to squeeze out more hash power"
   - "Risks: warranty void, potential hardware damage if misconfigured"
 sources: []
-relatedTerms: []
+relatedTerms:
+  - asic-application-specific-integrated-circuit
+  - asicboost
+  - mining-front-end
+  - mining-pool
 liveWidget: ~
 ---
 
@@ -36,4 +40,4 @@ The tradeoffs:
 - **Bricking risk.** Misconfigured firmware can damage chips (over-voltage, thermal runaway). Operators run small test batches before deploying across thousands of devices.
 - **Licensing cost.** Premium firmware charges a per-device or percentage-of-revenue fee. The efficiency gains typically justify the cost at industrial scale.
 
-For a hobbyist with one ASIC, stock firmware is fine. For an operator running a few hundred or more, proprietary firmware is essentially mandatory; the efficiency delta over time pays for itself many times over.
+For a hobbyist with one ASIC, stock firmware is fine. For an operator running a few hundred or more, proprietary firmware is essentially mandatory; the efficiency delta over time pays for itself many times over. At scale, firmware deployment, monitoring, and pool routing are all orchestrated through a [mining front-end](/glossary/mining-front-end) sitting above the per-device firmware layer.

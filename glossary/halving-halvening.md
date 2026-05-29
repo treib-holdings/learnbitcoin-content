@@ -22,6 +22,7 @@ relatedTerms:
   - hal-finneys-running-bitcoin
   - mining-subsidy
   - revenue-ths
+  - reward-era
 sameAs:
   - "https://en.wikipedia.org/wiki/Bitcoin_protocol"
   - "https://www.wikidata.org/wiki/Q17001427"
@@ -32,6 +33,8 @@ liveWidget: ~
 Every 210,000 blocks - about every 4 years - the block subsidy paid to Bitcoin miners is cut in half. The event is called a halving, or, in older meme form, the "halvening."
 
 The subsidy started at 50 BTC per block when the network launched in January 2009. After block 210,000 (November 2012) it dropped to 25. After 420,000 (July 2016), 12.5. After 630,000 (May 2020), 6.25. After 840,000 (April 2024), 3.125 - where we are now. The next halving will be at block 1,050,000, around April 2028, dropping the subsidy to 1.5625 BTC.
+
+Each interval between halvings - 210,000 blocks at a fixed subsidy - is called a [reward era](/glossary/reward-era) (or "epoch" by some analysts).
 
 The halving is the central mechanism of Bitcoin's monetary policy. It enforces the 21 million supply cap, halves the rate of new issuance every four years, and creates regular pressure on miner economics that the network has weathered five times so far.
 
