@@ -157,24 +157,19 @@ Tradeoffs:
 
 ## 8. What Each Hop Knows (Privacy)
 
-The privacy story on Lightning is "much better than the base layer, with caveats."
+The privacy story on Lightning is "much better than the base layer, with caveats." The matrix below summarizes who knows what along the route. Each row is a fact about the payment; each column is a position on the route. An orange dot means the position knows the fact; a dash means it does not.
 
-**An intermediate hop knows:**
-- The previous hop (the node that gave them the onion).
-- The next hop (the node they are forwarding to).
-- The amount being forwarded.
-- The amount of fee they are keeping.
-- The CLTV expiry of the HTLC.
+<figure>
+  <img src="/diagrams/lightning-hop-knowledge.svg" alt="A six-column matrix showing what each position on a Lightning route (Sender Alice, First Hop Bob, Middle Hops Carol and Fred, Last Hop Eve, Receiver Dave) knows about a payment. The top three rows (Previous hop, Next hop, Forwarded amount) are nearly solid orange, because every hop has to know its neighbors and the amount in order to forward. The bottom three rows (Original sender, Final receiver, Position in path) are mostly dashes in the middle, with orange clusters at the endpoints. The visual donut in the bottom half is the privacy story: middle hops are blind to who is at the ends." />
+  <figcaption>Top three rows: operational truths every hop needs in order to forward. Bottom three rows: the privacy story. Middle hops are blind to the endpoints.</figcaption>
+</figure>
 
-**An intermediate hop does NOT know:**
-- The original sender.
-- The final receiver.
-- Whether they are the first hop, last hop, or middle hop.
-- The total path length.
+The top three rows are operational. Every hop has to know its neighbors and the amount being forwarded, otherwise it cannot route the HTLC at all.
 
-**The first hop after the sender** knows the sender (it received the onion directly), but not the receiver.
+The bottom three rows are the privacy. The matrix shows two important asymmetries:
 
-**The last hop before the receiver** knows the receiver, but not the sender.
+- **The middle hops** are completely blind to the endpoints. They know their immediate neighbors and the amount they are forwarding, and that is it. They cannot tell whether they are the second hop or the fifth, the start of the route or near the end.
+- **The endpoints leak.** The first hop received the onion via a direct channel from the sender, so it can often infer who the sender is, especially if that sender does not also run a routing node. The last hop has to deliver the payment via a direct channel to the receiver, so it knows the recipient with certainty. Sphinx hides the path; it cannot hide who is sitting next to you.
 
 **Anyone watching multiple hops in sequence** can correlate timing and amount to potentially trace a payment. This is a real risk for large or unusual payments, especially if the adversary runs many nodes.
 
