@@ -9,7 +9,12 @@ keyTakeaways:
   - "Usually generated/managed by wallets behind the scenes"
 sources:
   - { label: "Key Space rabbit hole", url: "https://www.learnbitcoin.com/rabbit-hole/key-space" }
-relatedTerms: []
+relatedTerms:
+  - bip-39
+  - hierarchical-deterministic-wallet
+  - locked-memory
+  - public-key
+  - seed-phrase
 sameAs:
   - "https://en.wikipedia.org/wiki/Public-key_cryptography"
   - "https://www.wikidata.org/wiki/Q201339"
@@ -24,6 +29,7 @@ The implications are absolute and immediate:
 - **Lose your private key, lose your BTC.** There's no password reset, no account recovery, no support line. The protocol has no concept of "the rightful owner" beyond "whoever can produce a valid signature with the key."
 - **Reveal your private key, lose your BTC.** A photo of a backup card on social media, a key file synced to a compromised cloud drive, a phishing email that captures it - any of those is enough.
 - **Generate it poorly, lose your BTC.** A predictable random number generator can produce keys that are statistically more guessable than the 2^256 space implies. This has happened, and people have lost millions to it.
+- **Leak it to swap, lose your BTC.** Decent wallet software uses [locked memory](/glossary/locked-memory) to keep decrypted keys out of swap files and hibernation images. Sloppy implementations don't, and a forensic dump of an old swap file has yielded keys before.
 
 Modern wallets shield you from the raw 32-byte private key by working with a [seed phrase](/glossary/seed-phrase) (a [BIP-39](/glossary/bip-39) mnemonic) that deterministically generates thousands of private keys via a [hierarchical deterministic wallet](/glossary/hierarchical-deterministic-wallet) structure. You back up 12 or 24 words instead of 32 bytes. Functionally identical security; better human ergonomics.
 

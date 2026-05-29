@@ -12,6 +12,7 @@ relatedTerms:
   - bitcoin-client
   - bitcoin-core-rpc
   - bitcoin-knots
+  - lurking-wife-mode
   - node
   - node-autoban
   - node-operator
@@ -37,5 +38,7 @@ The codebase lives at **[github.com/bitcoin/bitcoin](https://github.com/bitcoin/
 The combination of open review and voluntary adoption is what makes Bitcoin's protocol genuinely hard to change. A hostile maintainer can't sneak in a change; reviewers will spot it. A hostile group can't fork the rules; nodes won't run their version. The system optimizes for *not making mistakes*, even at the cost of slow evolution.
 
 Bitcoin Core releases roughly every 6 months. Major versions have brought SegWit (2017), Taproot signaling (2021), and incremental improvements to mempool policy, networking, and validation performance. It's the most-reviewed cryptocurrency codebase in existence, and the de facto standard for "what Bitcoin actually is."
+
+The codebase has its quirks too. Sjors Provoost's 2015 [Lurking Wife Mode](/glossary/lurking-wife-mode) - a GUI toggle that masks all balance and amount displays - remains shipped, a small reminder that real humans write this software.
 
 See [Full Node](/glossary/full-node) for what running it means, and [Sovereignty Journey](/journey/sovereignty) for why you might want to.
