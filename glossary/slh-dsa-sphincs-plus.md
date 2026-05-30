@@ -1,7 +1,8 @@
 ---
 title: "SLH-DSA / SPHINCS+ (FIPS 205)"
 slug: slh-dsa-sphincs-plus
-draft: true
+draft: false
+published: "2026-05-30"
 shortDefinition: "The NIST-standardized hash-based post-quantum signature scheme - conservative fallback to ML-DSA, with stronger security assumptions but much larger signatures."
 keyTakeaways:
   - "NIST-standardized hash-based PQ signature scheme (FIPS 205, August 2024)"

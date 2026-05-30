@@ -1,7 +1,8 @@
 ---
 title: "Shor's Algorithm"
 slug: shors-algorithm
-draft: true
+draft: false
+published: "2026-05-30"
 shortDefinition: "The quantum algorithm that breaks elliptic-curve cryptography - and therefore Bitcoin's ECDSA and Schnorr signatures - given a sufficiently large quantum computer."
 keyTakeaways:
   - "Breaks elliptic-curve cryptography (and RSA) given enough error-corrected qubits"
