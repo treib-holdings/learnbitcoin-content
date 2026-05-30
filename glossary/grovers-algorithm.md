@@ -1,7 +1,8 @@
 ---
 title: "Grover's Algorithm"
 slug: grovers-algorithm
-draft: true
+draft: false
+published: "2026-05-30"
 shortDefinition: "The quantum algorithm that halves SHA-256's effective security - weakened, not broken - preserving Bitcoin's proof-of-work and hashed addresses at reduced margin."
 keyTakeaways:
   - "Quadratic speedup on unstructured search - meaningful but not catastrophic"

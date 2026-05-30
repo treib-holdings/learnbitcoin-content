@@ -1,7 +1,8 @@
 ---
 title: "ML-DSA / Dilithium (FIPS 204)"
 slug: ml-dsa-dilithium
-draft: true
+draft: false
+published: "2026-05-30"
 shortDefinition: "The NIST-standardized lattice-based post-quantum signature scheme - leading candidate for replacing Bitcoin's ECDSA/Schnorr signatures."
 keyTakeaways:
   - "NIST-standardized lattice-based PQ signature scheme (FIPS 204, August 2024)"

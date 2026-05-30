@@ -1,7 +1,8 @@
 ---
 title: "Post-Quantum Bitcoin"
 slug: post-quantum-bitcoin
-draft: true
+draft: false
+published: "2026-05-30"
 shortDefinition: "The set of protocol changes Bitcoin needs to stay secure against a sufficiently powerful quantum computer - concentrated in the signature schemes, not the hash function."
 keyTakeaways:
   - "Bitcoin's quantum exposure is in the signatures (ECDSA, Schnorr), not the hash function (SHA-256)"
