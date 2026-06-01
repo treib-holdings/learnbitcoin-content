@@ -12,6 +12,8 @@ relatedTerms:
   - address
   - b32-address
   - p2pk-pay-public-key
+  - post-quantum-bitcoin
+  - shors-algorithm
   - xpub-extended-public-key
 sameAs:
   - "https://en.wikipedia.org/wiki/Public-key_cryptography"
@@ -28,6 +30,6 @@ What public keys are used for:
 - **Verifying signatures.** When you spend BTC, your wallet signs the transaction with your private key. Anyone, including every node on the network, can verify that signature against your public key without learning your private key. That's how Bitcoin enforces "only the rightful owner can spend."
 - **Generating [addresses](/glossary/address).** Most Bitcoin address types are derived by hashing the public key (SHA-256 then RIPEMD-160, or just SHA-256 for newer formats). The hash is what's typically shared publicly; the public key itself is only revealed when you spend.
 
-Why hash the public key into an address instead of just sharing the public key? Two reasons. First, addresses are much shorter and easier to handle. Second, hashing adds a layer of defense: if elliptic curve cryptography is ever broken (e.g. by a sufficiently powerful quantum computer), funds at unspent addresses remain safe as long as the public key has never been revealed. Reused or already-spent addresses are more exposed.
+Why hash the public key into an address instead of just sharing the public key? Two reasons. First, addresses are much shorter and easier to handle. Second, hashing adds a layer of defense: if elliptic curve cryptography is ever broken (e.g. by a sufficiently powerful quantum computer running [Shor's algorithm](/glossary/shors-algorithm)), funds at unspent addresses remain safe as long as the public key has never been revealed. Reused or already-spent addresses are more exposed. See [Post-Quantum Bitcoin](/glossary/post-quantum-bitcoin) for the migration framework.
 
 The asymmetry between private and public keys - cheap one way, impossible the other - is the foundation of everything in Bitcoin that involves cryptographic ownership.

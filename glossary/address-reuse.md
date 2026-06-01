@@ -16,6 +16,7 @@ relatedTerms:
   - dust
   - dust-attack
   - fungibility
+  - post-quantum-bitcoin
   - security
 liveWidget: ~
 ---
@@ -35,3 +36,5 @@ Where reuse still happens in practice:
 If you can't avoid reusing one specific address, at least make it a clearly-public one - your donation address, your business receiving address - that's already understood to be linked to your identity. Don't reuse the same address for personal savings.
 
 The protocol allows reuse. The privacy model doesn't. Treat addresses as one-shot.
+
+Address reuse also has a [post-quantum dimension](/glossary/post-quantum-bitcoin). Spending from a P2PKH or P2WPKH address publishes the public key in the spending transaction. Every subsequent deposit to that same address inherits that exposure - and once a sufficiently powerful quantum computer exists, those balances become spendable by anyone. Reuse is therefore both a privacy mistake and a long-horizon security one.

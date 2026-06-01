@@ -9,6 +9,7 @@ keyTakeaways:
   - "Cryptographic property: small changes yield drastically different hashes"
 sources: []
 relatedTerms:
+  - grovers-algorithm
   - hash-puzzle
   - hash-rate
   - hash-rate-derivative
@@ -18,6 +19,7 @@ relatedTerms:
   - merkle-root
   - nonce
   - nonce-exhaustion
+  - post-quantum-bitcoin
   - proof-work-pow
 sameAs:
   - "https://en.wikipedia.org/wiki/Hash_function"
@@ -45,5 +47,7 @@ Bitcoin uses hashes everywhere:
 - **TXIDs are hashes** of serialized transactions.
 
 The bet Bitcoin makes is that SHA-256 stays one-way for the foreseeable future. If that ever breaks, Bitcoin breaks. So far, after 16 years of being one of the most attacked cryptographic systems on Earth, SHA-256 has held.
+
+The most plausible weakening, not break, is [Grover's algorithm](/glossary/grovers-algorithm) running on a quantum computer: it halves SHA-256's effective security from 256 bits to 128 bits via quadratic speedup on unstructured search. 128-bit symmetric security is still the standard floor for cryptography elsewhere - annoying for Bitcoin, not catastrophic. See [Post-Quantum Bitcoin](/glossary/post-quantum-bitcoin) for the broader picture.
 
 See the [Mining rabbit hole §2](/rabbit-hole/mining) for how the one-way property turns into security, and [Key Space rabbit hole](/rabbit-hole/key-space) for why 2^256 is bigger than your intuition wants it to be.

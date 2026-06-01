@@ -15,7 +15,9 @@ relatedTerms:
   - elliptic-curve
   - musig
   - musig2
+  - post-quantum-bitcoin
   - schnorr-signature
+  - shors-algorithm
   - signature-aggregation
   - signature-clipping
 sameAs:
@@ -42,3 +44,5 @@ ECDSA works, but it has some annoyances:
 - **Slightly awkward proofs.** Provable security results for ECDSA are messier than for Schnorr.
 
 [Schnorr signatures](/glossary/schnorr-signature), activated with [Taproot](/glossary/taproot) in November 2021, address all three issues. ECDSA is still used for legacy address types (P2PKH, P2SH, P2WPKH, P2WSH) and remains the most-tested signature scheme in production Bitcoin. New Taproot outputs use Schnorr by default.
+
+ECDSA's security rests on the elliptic-curve discrete logarithm problem being computationally hard. That assumption is broken by [Shor's algorithm](/glossary/shors-algorithm) on a sufficiently powerful quantum computer. See [Post-Quantum Bitcoin](/glossary/post-quantum-bitcoin) for the migration framework.

@@ -19,6 +19,7 @@ relatedTerms:
   - merkleized-abstract-syntax-tree-mast
   - musig
   - musig2
+  - post-quantum-bitcoin
   - schnorr-signature
   - segwit-segregated-witness-bip-141
   - signature-aggregation
@@ -64,5 +65,7 @@ The combination means complex contracts pay almost zero on-chain cost when they 
 ## Adoption
 
 Taproot adoption took a few years to ripple through wallet software, hardware wallets, and infrastructure. As of 2026 it is widely supported, most major wallets default to Taproot addresses for new receive operations, and a meaningful and growing share of new addresses are `bc1p...`.
+
+One structural property worth naming: Taproot outputs commit to the tweaked public key directly in the bech32m address - there is no hash layer in front. Every P2TR output is therefore "always-exposed" in [post-quantum](/glossary/post-quantum-bitcoin) terms: the pubkey is on chain from output creation, regardless of whether it is ever spent. The tradeoff buys key-path privacy and efficiency for complex contracts. The fix when post-quantum signatures arrive is a new output type, not abandoning Taproot.
 
 See [Schnorr Signature](/glossary/schnorr-signature) and [Signature Aggregation](/glossary/signature-aggregation) for the building blocks.

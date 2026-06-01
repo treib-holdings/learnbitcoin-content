@@ -15,6 +15,7 @@ relatedTerms:
   - p2wpkh-pay-witness-public-key-hash
   - p2wsh-pay-witness-script-hash
   - p2pk-pay-public-key
+  - post-quantum-bitcoin
   - utxo-unspent-transaction-output
 sameAs:
   - "https://en.bitcoin.it/wiki/Invoice_address"
@@ -28,7 +29,7 @@ The locking script is straightforward: "to spend this UTXO, provide a [public ke
 Two reasons P2PKH replaced the older [P2PK](/glossary/p2pk-pay-public-key) format around 2010:
 
 - **Shorter addresses.** A hash is 20 bytes vs a public key's 33 bytes. Easier to copy, share, and read aloud.
-- **Defense-in-depth.** If the underlying elliptic-curve cryptography were ever broken, funds at unspent P2PKH addresses would still be protected by the hash. Public keys only get exposed when the user spends.
+- **Defense-in-depth.** If the underlying elliptic-curve cryptography were ever broken (the [post-quantum scenario](/glossary/post-quantum-bitcoin)), funds at unspent P2PKH addresses would still be protected by the hash. Public keys only get exposed when the user spends. Reused addresses lose this protection on the first spend.
 
 P2PKH has been Bitcoin's workhorse for over a decade. It's still fully supported and fully secure, but it's more expensive in fees than newer formats. Modern wallets default to [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash) (SegWit, `bc1q...`) or [P2TR](/glossary/taproot) (Taproot, `bc1p...`) for new receives. Existing P2PKH UTXOs are commonly spent into newer-format change outputs, gradually migrating the supply.
 

@@ -17,7 +17,9 @@ relatedTerms:
   - mono-signature
   - musig
   - musig2
+  - post-quantum-bitcoin
   - psbt
+  - shors-algorithm
   - signature-aggregation
   - signature-clipping
 sameAs:
@@ -41,5 +43,7 @@ What Schnorr brings that ECDSA doesn't:
 Production Schnorr implementations - Bitcoin's libsecp256k1 chief among them - require strict [constant-time](/glossary/constant-time) discipline at the signing path to avoid leaking key material through timing or cache-access side channels. The math is clean; the engineering needed to defend it on real hardware is its own discipline.
 
 The reason Bitcoin didn't use Schnorr from day one: it was patented when Satoshi designed Bitcoin. The patent expired in 2008 (just after the whitepaper), and it took the community more than a decade to design, review, and deploy it well. The wait paid off; Schnorr is now considered one of the cleanest signature schemes in production cryptography.
+
+Schnorr inherits ECDSA's elliptic-curve discrete logarithm assumption, and therefore its quantum vulnerability. A sufficiently powerful quantum computer running [Shor's algorithm](/glossary/shors-algorithm) breaks both schemes. See [Post-Quantum Bitcoin](/glossary/post-quantum-bitcoin) for the migration framework.
 
 See [Signature Aggregation](/glossary/signature-aggregation) for what linearity buys, and [Taproot](/glossary/taproot) for the soft fork that brought Schnorr to Bitcoin.

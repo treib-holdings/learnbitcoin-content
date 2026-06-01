@@ -15,6 +15,7 @@ relatedTerms:
   - p2wsh-pay-witness-script-hash
   - p2pkh-pay-public-key-hash
   - p2pk-pay-public-key
+  - post-quantum-bitcoin
   - utxo-unspent-transaction-output
 sameAs:
   - "https://en.wikipedia.org/wiki/SegWit"
@@ -34,3 +35,5 @@ In SegWit, the unlocking data (the "witness") is separated from the main transac
 - **No transaction malleability.** The [txid](/glossary/transaction) is computed over the non-witness part only. The signature can't be tweaked after broadcast to change the txid. This is what made [Lightning](/glossary/lightning-network) practically deployable.
 
 P2WPKH was the dominant new-receive format from 2018 through ~2023. As of 2026, many wallets have shifted defaults again toward [P2TR](/glossary/taproot) (Taproot, `bc1p...`) for further fee savings and privacy. P2WPKH remains fully supported, cheaper than P2PKH/P2SH, and a perfectly good choice for everyday use.
+
+Like P2PKH, P2WPKH provides defense-in-depth against [post-quantum threats](/glossary/post-quantum-bitcoin): the public key is hashed in the address and only revealed at spend time. Single-use P2WPKH addresses are quantum-safe today; reused ones are not, because the spending witness contains the raw public key and every subsequent deposit inherits that exposure.

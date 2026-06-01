@@ -13,7 +13,9 @@ relatedTerms:
   - ecdsa-elliptic-curve-digital-signature-algorithm
   - musig
   - musig2
+  - post-quantum-bitcoin
   - schnorr-signature
+  - shors-algorithm
   - signature-aggregation
   - signature-clipping
 sameAs:
@@ -34,4 +36,4 @@ In practice:
 
 Different elliptic curves exist (ed25519, NIST P-256, others). Bitcoin sticks with secp256k1 for compatibility and because no serious vulnerability has been found in it after sixteen years of being one of the most-attacked cryptographic targets on Earth.
 
-The most plausible threat is a sufficiently powerful quantum computer running Shor's algorithm, which could in principle break elliptic curve discrete log. This is a real concern but not imminent. Address types that don't reveal public keys until spent ([P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash), [Taproot](/glossary/taproot)) already buy some defense-in-depth against that future. See the [Key Space rabbit hole](/rabbit-hole/key-space) for why 2^256 is so much bigger than your intuition wants it to be.
+The most plausible threat is a sufficiently powerful quantum computer running [Shor's algorithm](/glossary/shors-algorithm), which could in principle break elliptic curve discrete log. This is a real concern but not imminent. Address types that don't reveal public keys until spent ([P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash), [Taproot](/glossary/taproot)) already buy some defense-in-depth against that future, though Taproot is a partial exception (the bech32m address IS the tweaked pubkey, with no hash layer in front). See [Post-Quantum Bitcoin](/glossary/post-quantum-bitcoin) for the migration framework, and the [Key Space rabbit hole](/rabbit-hole/key-space) for why 2^256 is so much bigger than your intuition wants it to be.

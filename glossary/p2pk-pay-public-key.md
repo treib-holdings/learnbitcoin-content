@@ -15,6 +15,8 @@ relatedTerms:
   - p2wpkh-pay-witness-public-key-hash
   - p2wsh-pay-witness-script-hash
   - p2pkh-pay-public-key-hash
+  - post-quantum-bitcoin
+  - shors-algorithm
   - utxo-unspent-transaction-output
 liveWidget: ~
 ---
@@ -29,7 +31,7 @@ Notable history:
 
 What P2PK has against it:
 
-- **Public key visible on-chain immediately.** Defeats the quantum-defense-in-depth that hash-based addresses provide.
+- **Public key visible on-chain immediately.** Defeats the [quantum-defense-in-depth](/glossary/post-quantum-bitcoin) that hash-based addresses provide. The public key is on chain from output creation, meaning P2PK outputs are exposed to a future [Shor's-algorithm-capable](/glossary/shors-algorithm) quantum computer with no migration window.
 - **Bigger outputs.** A 33-byte compressed pubkey (or 65-byte uncompressed) is larger than a 20-byte hash.
 - **Address ergonomics never developed.** P2PK was usually displayed as raw hex, not a checksummed address format. Easy to fat-finger.
 

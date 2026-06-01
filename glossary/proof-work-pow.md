@@ -16,6 +16,7 @@ relatedTerms:
   - difficulty
   - difficulty-retargeting
   - energy-fud
+  - grovers-algorithm
   - hash
   - incentive-compatibility
   - nonce
