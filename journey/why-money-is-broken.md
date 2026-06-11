@@ -23,6 +23,7 @@ sources:
 <figure>
   <video
     src="/videos/purchasing-power.mp4"
+    poster="/videos/posters/purchasing-power.png"
     autoplay
     muted
     loop

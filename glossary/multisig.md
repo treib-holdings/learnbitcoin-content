@@ -33,6 +33,7 @@ ogImageAlt: "BITCOIN MULTISIG in large bold type, with the subtitle 'Threshold-o
 <figure>
   <video
     src="/videos/multisig.mp4"
+    poster="/videos/posters/multisig.png"
     autoplay
     muted
     loop

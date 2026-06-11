@@ -25,6 +25,7 @@ ogImageAlt: "A frame from LearnBitcoin's onion routing animation. Bob (highlight
 <figure>
   <video
     src="/videos/onion-routing.mp4"
+    poster="/videos/posters/onion-routing.png"
     autoplay
     muted
     loop

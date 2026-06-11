@@ -23,6 +23,7 @@ sources:
 <figure>
   <video
     src="/videos/bitcoin-lifecycle.mp4"
+    poster="/videos/posters/bitcoin-lifecycle.png"
     autoplay
     muted
     loop
@@ -69,6 +70,7 @@ Most wallets give you three suggested fee rates (e.g., 2 sat/vB, 5 sat/vB, 12 sa
 <figure>
   <video
     src="/videos/mempool.mp4"
+    poster="/videos/posters/mempool.png"
     autoplay
     muted
     loop
@@ -142,6 +144,7 @@ The whitepaper for Lightning ([Poon & Dryja, 2016](https://lightning.network/lig
 <figure>
   <video
     src="/videos/lightning-mesh.mp4"
+    poster="/videos/posters/lightning-mesh.png"
     autoplay
     muted
     loop

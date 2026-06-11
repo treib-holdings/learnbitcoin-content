@@ -65,6 +65,7 @@ Short data-driven animations rendered with manim CE and served as MP4 from `lear
 | **Threshold-of-keys.** | `multisig.mp4` | [glossary/multisig](glossary/multisig.md) — top-of-entry hook, 35-second walkthrough of 2-of-3 multisig: setup (three different makers), normal spend (two signatures), loss scenario (one key gone, two remain), theft scenario (thief halts at one signature), closing pillars (Multisig / Threshold-of-keys / Vendor-diverse). First animated glossary entry. **Also embedded in** [rabbit-holes/seed-backup-strategies §7](rabbit-holes/seed-backup-strategies.mdx) and [journey/sovereignty §6](journey/sovereignty.md) — same MP4 reused across all three. |
 | **The privacy is the peeling.** | `onion-routing.mp4` | [glossary/lightning-sphinx](glossary/lightning-sphinx.md) — top-of-entry hook, 39-second walkthrough of Sphinx onion routing with a 5-node route (Alice → Bob → Carol → Eve → Dave). Three wrapping layers around a preimage payload. Each route node flashes orange as Alice writes its layer; each hop peels its own layer with a privacy callout showing what it knows and what it cannot know. **Also embedded in** [glossary/onion-routing-lightning](glossary/onion-routing-lightning.md) and [rabbit-holes/lightning-routing §4](rabbit-holes/lightning-routing.mdx) — same MP4 reused across all three. OG card derived from the t=20s Bob-peel frame at `/diagrams/og/onion-routing.png`. |
 | **Send. Settle. Done.** | `bitcoin-lifecycle.mp4` | [journey/using-bitcoin](journey/using-bitcoin.md) — top-of-chapter hook (above-the-fold), 46-second walkthrough of an on-chain transaction lifecycle. Six beats: Title ("Send. Settle. Done."), Setup (Alice + Bob visible, intent banner "Alice -> Bob 0.1 BTC"), Build the TX (each wallet field's value pulses then physically zips to a labeled TRANSACTION builder; header pulses on each arrival), Mempool (Alice's 20 sat/vB slots into a sorted column, "waits for a miner"), Block (mempool fades, NEXT BLOCK forms with selected tx zip-in, white flash + held hash + orange shockwave ring on seal, snaps to chain with sequential heights 920,247 -> 920,251), Confirm (orange wave travels from Alice's chain block to Bob's wallet, receipt notification appears, chain grows 920,252/920,253 with counter ticks, chain-wide orange flash sweeps left-to-right on Final), End card (Public / Final / Yours + brand mark). The on-chain counterweight to the lightning-mesh hook at the top of the chapter. OG card derived from the t=40s "Three blocks deep. Effectively final." frame at `/diagrams/og/bitcoin-lifecycle.png`. |
+| **Quantum is real. Bitcoin is preparing.** | `quantum-timeline.mp4` | [quantum-and-bitcoin](rabbit-holes/quantum-and-bitcoin.mdx) — top-of-chapter hook, 44-second timeline across four states: Today (25% of supply at quantum-exposed addresses, 75% safe behind a hash), Bitcoin Prepares (post-quantum scheme activates, supply migrates to 82% PQ-safe, 18% residual stranded as lost keys), Quantum Arrives (the bar does not move — the threat meets a prepared network), closing manifesto ("Quantum is real. Bitcoin is preparing. Stop address reuse."). Pairs with the ChainQuery quantum-exposure report data on the page. |
 
 ### How to embed a video
 
@@ -72,6 +73,7 @@ Short data-driven animations rendered with manim CE and served as MP4 from `lear
 <figure>
   <video
     src="/videos/<name>.mp4"
+    poster="/videos/posters/<name>.png"
     autoplay
     muted
     loop
@@ -86,6 +88,24 @@ Short data-driven animations rendered with manim CE and served as MP4 from `lear
 ```
 
 `autoplay muted loop playsinline` is the loop-friendly default for decorative motion graphics. `controls` gives readers pause/play + scrubber on hover; `controlslist` suppresses download, playback rate, and cast buttons we don't need. Browsers honor `prefers-reduced-motion` and pause autoplay for users who request it.
+
+### Poster frame + VideoObject JSON-LD (required for every embed)
+
+Every embedded video ships with a poster frame and schema.org VideoObject structured data. Without the poster, slow connections show a blank box until autoplay starts; without the VideoObject, Google's video indexing falls back to an arbitrary page image for the thumbnail and reports the video as unindexable (both surfaced by GSC video inspection, June 2026).
+
+1. Extract a 1280×720 poster from the most representative moment (a data reveal, not a transition or blank fade):
+
+   ```bash
+   # from learnbitcoin-web/
+   ffmpeg -y -ss <seconds> -i public/videos/<name>.mp4 \
+     -frames:v 1 -vf "scale=1280:720" public/videos/posters/<name>.png
+   ```
+
+2. Reference it as `poster="/videos/posters/<name>.png"` on **every** `<video>` embed of that MP4 (see pattern above). Unlike `public/diagrams/og/*`, the posters directory is tracked normally — no `.gitignore` exception needed.
+
+3. Add one row to `learnbitcoin-web/src/lib/videos.ts` (name, description, poster, uploadDate, duration — `ffprobe -show_entries format=duration` gives the seconds; write it as ISO 8601, e.g. `PT44S`). The page templates scan the raw body for `/videos/*.mp4` embeds and emit one VideoObject per video from that registry, so a video without a registry row silently gets no structured data.
+
+The poster doubles as the VideoObject `thumbnailUrl`, so the frame choice decides how the video card looks in Google results. Current poster timestamps (re-extract at the same `t` after re-rendering a video): purchasing-power t=13.3, fixed-vs-infinite t=13.5, lightning-mesh t=22, inflation-bug t=7.9, mempool t=22, multisig t=14.1, onion-routing t=20, bitcoin-lifecycle t=40, quantum-timeline t=8.8.
 
 ### Authoring new videos
 
