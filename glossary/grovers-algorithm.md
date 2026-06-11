@@ -61,3 +61,5 @@ For Bitcoin's hashed address types, Grover's effectively halves the security par
 - The realistic attack scenario assumes [Shor's](/glossary/shors-algorithm) is already available against exposed pubkeys; Grover's would be the secondary tool for hashed-address attacks, not the primary threat.
 
 Grover's is the quantum threat that lets Bitcoin keep its hash function. Shor's is the one that forces the signature rewrite.
+
+See the [Quantum and Bitcoin rabbit hole](/rabbit-hole/quantum-and-bitcoin) for why the signature is the weak link, not the hash.

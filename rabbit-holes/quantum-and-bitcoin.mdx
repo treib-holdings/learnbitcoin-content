@@ -1,0 +1,237 @@
+---
+title: "Quantum and Bitcoin"
+slug: quantum-and-bitcoin
+draft: false
+published: "2026-06-11"
+status: live
+section: rabbit-hole
+tagline: "Quantum is the FUD claim that comes up most often after fiat-debasement and energy. The honest version: the threat is real, the timeline is slow, the fix is governance, and Bitcoin has agency."
+order: 11
+estimatedMinutes: 14
+sources:
+  - { label: "ChainQuery quantum-exposure report (snapshot 2026-06-07, block 952,694)", url: "https://chainquery.com/reports/quantum-exposure" }
+  - { label: "ChainQuery x LearnBitcoin Baseline 2026 Q2 PDF", url: "https://chainquery.com/reports/quantum-quarterly/baseline_2026.pdf" }
+  - { label: "BIP-360 - Pay-to-Merkle-Root (draft)", url: "https://github.com/bitcoin/bips/blob/master/bip-0360.mediawiki" }
+  - { label: "BIP-361 - Post-Quantum Migration (draft)", url: "https://github.com/bitcoin/bips/blob/master/bip-0361.mediawiki" }
+  - { label: "FIPS 204 - ML-DSA", url: "https://csrc.nist.gov/pubs/fips/204/final" }
+  - { label: "FIPS 205 - SLH-DSA", url: "https://csrc.nist.gov/pubs/fips/205/final" }
+  - { label: "NIST Post-Quantum Cryptography Project", url: "https://csrc.nist.gov/projects/post-quantum-cryptography" }
+  - { label: "Shor 1994 - Algorithms for quantum computation", url: "https://ieeexplore.ieee.org/document/365700" }
+  - { label: "Bitcoin governance glossary entry", url: "https://www.learnbitcoin.com/glossary/bitcoin-governance" }
+relatedTerms:
+  - post-quantum-bitcoin
+  - shors-algorithm
+  - grovers-algorithm
+  - crqc-cryptographically-relevant-quantum-computer
+  - ml-dsa-dilithium
+  - slh-dsa-sphincs-plus
+  - bitcoin-governance
+  - miner-signaling
+  - taproot
+  - p2pk-pay-public-key
+  - address-reuse
+---
+
+> **Where you're going:** Bitcoin's signatures rely on math a sufficiently large quantum computer could break. That computer does not exist yet. The math has been understood since 1994. This page walks through what is actually exposed, what is not, what Bitcoin can do about it, and why the answer is governance, not panic.
+
+<figure>
+  <video
+    src="/videos/quantum-timeline.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls
+    controlslist="nodownload noplaybackrate noremoteplayback"
+    preload="metadata"
+    aria-label="Forty-five-second animation across four states. Today: 25 percent of supply at quantum-exposed addresses (orange), 75 percent safe behind a hash (gray). Bitcoin Prepares: a post-quantum signature scheme activates, the bar morphs slowly, the residual orange grows in place to 18 percent stranded (lost keys, permanent), and the rest of the supply migrates to a deep ink color labeled PQ-safe at 82 percent. Quantum Arrives: the bar does not change - the threat meets a prepared network, the residual is labeled Lost keys, stranded permanently. Closing manifesto: Quantum is real. Bitcoin is preparing. Stop address reuse."
+  ></video>
+  <figcaption>Forty-five seconds. The bar moves when Bitcoin prepares. It stays still when quantum arrives. Preparation, not panic.</figcaption>
+</figure>
+
+Quantum is the FUD claim that comes up most often after fiat-debasement and energy. Most of the noise is either doom ("quantum breaks Bitcoin tomorrow") or dismissal ("decades away, ignore it"). Both are wrong. The honest version is more interesting and more useful: the threat is real, the timeline is slow, the fix is governance, and Bitcoin has agency. That last word matters. The system was designed to evolve under exactly this kind of constraint.
+
+## The number that lands
+
+5,071,264 BTC sits at quantum-exposed addresses today. That is **25.3 percent of circulating supply**. One bitcoin in four.
+
+These coins live at 12,749,047 addresses. Some are dormant. Most are not. The largest single bucket is not Satoshi - it is **1,896,840 BTC at modern segwit (P2WPKH) addresses that got reused at least once**. Real users, real wallets, real habits.
+
+Snapshot: 2026-06-07, block 952,694. The full breakdown:
+
+<figure>
+  <img src="/diagrams/quantum-exposure-stacked.svg" alt="Horizontal bar chart of the six Bitcoin script types holding quantum-exposed BTC. P2WPKH reuse-exposed leads at 1,896,840 BTC (37.4 percent of at-risk pool). P2PKH reuse-exposed 1,196,717 BTC. P2PK always-exposed 853,247 BTC. P2WSH reuse-exposed 675,992 BTC. P2SH reuse-exposed 238,709 BTC. P2TR always-exposed 209,759 BTC. Total 5,071,264 BTC across 12,749,047 addresses." />
+  <figcaption>Six buckets, ordered by BTC at risk. Always-exposed types (P2PK, bare multisig, P2TR) in deep orange. Reuse-exposed types in lighter orange. Snapshot 2026-06-07, base block 952,694. Source: ChainQuery.</figcaption>
+</figure>
+
+Source: [ChainQuery quantum-exposure report](https://chainquery.com/reports/quantum-exposure), bitcoind 28 node, weekly Sunday snapshots.
+
+This is not a crisis. It is a forcing function.
+
+## The honest version of the number
+
+BIP-361 cites "over 34 percent of all BTC" as quantum-exposed. ChainQuery's number is 25.3 percent. The gap is methodology.
+
+BIP-361 counts every P2SH and P2WSH address whose redeem script was ever revealed on chain. ChainQuery only counts the ones where the revealed script actually contains a pubkey followed by a CHECKSIG-family opcode. Timelock-only scripts get excluded. Hash-preimage scripts get excluded. They do not leak pubkeys on spend.
+
+**Real exposure sits between these two numbers.** ChainQuery is the rigorous lower bound. BIP-361 is the upper bound that informs the migration framework. We use ChainQuery because it is provable from chain data; we cite BIP-361 because it is what a proposed soft fork is being written against.
+
+A third independent measurement anchors the upper bound empirically. The [Wicked Smart Bitcoin quantum exposure dashboard](https://wickedsmartbitcoin.com/quantum_exposure) applies the conservative BIP-361-style counting rule directly to chain data and reports 34.55 percent at block 951,000 - matching BIP-361's analytic figure almost exactly. The 9-point gap between Wicked's number and ours is the universe of P2SH and P2WSH spends whose revealed scripts do not contain a pubkey-bearing opcode. Three measurements, transparent gap.
+
+Either way: at least a quarter of the supply, today.
+
+## What "quantum-exposed" actually means
+
+There are two classes of exposure. Order matters because the easier case explains the harder one.
+
+**Always-exposed.** The pubkey is on chain from the moment the output is created. No spend required.
+
+- **[P2PK](/glossary/p2pk-pay-public-key) (pay-to-public-key):** the output script literally contains the pubkey. Satoshi-era coinbase rewards use this. 853,247 BTC across 22,223 addresses. Most have not moved in over a decade. The bulk of this slice maps to the [Patoshi pattern](https://chainquery.com/stories/patoshi-pattern) - the ExtraNonce fingerprint of a single dominant early miner whose blocks account for roughly 22 percent of Bitcoin's first year.
+- **Bare multisig:** the script contains every signer's pubkey. Rare in modern use, still on chain from older deployments.
+- **[P2TR](/glossary/taproot) (Taproot, BIP-341):** the bech32m address IS the tweaked pubkey. There is no hash layer in front. **Every new taproot output is permanently exposed by design.** 209,759 BTC and growing every block.
+
+**Reuse-exposed.** The pubkey is hidden behind a hash on creation, but the spending witness contains the raw pubkey. After the first spend, every future deposit to that address is exposed.
+
+- **P2PKH:** the legacy "1..." address. 1,196,717 BTC at reused legacy addresses.
+- **P2WPKH:** native segwit "bc1q..." short form. 1,896,840 BTC - the largest single bucket. This is not Satoshi. This is people who upgraded their wallet and kept reusing addresses.
+- **P2WSH and P2SH:** segwit and legacy script-hash forms. Counted as exposed only when the revealed redeem script contains a pubkey push followed by a CHECKSIG-family opcode, or contains OP_CHECKMULTISIG / OP_CHECKMULTISIGVERIFY. The multisig variants matter: most 2-of-3 cold-storage P2SH and P2WSH spends look like that on chain. 675,992 BTC at P2WSH, 238,709 BTC at P2SH.
+
+The protocol does not protect you here. Best practices do.
+
+Cite: [BIP-143](/glossary/bip-143) (segwit witness structure - where the pubkey gets revealed), [BIP-341](/glossary/bip-341) (taproot uses the raw tweaked pubkey, no hash layer), [BIP-361](/glossary/bip-361) (the proposed migration framework).
+
+## Why we can't just fix this today
+
+A natural question: if reuse is the biggest bucket, why does this number not just shrink as users migrate to fresh addresses? It does, at the margin. But there are three reasons the 25.3 percent figure is sticky, and understanding them is the difference between sensible action and panic.
+
+**The reuse pool can drain. The always-exposed pool cannot.** Individual action works on the 4.01 million BTC in reuse-exposed addresses: move coins to a fresh address, never reuse it, and that BTC leaves the at-risk pool. Modern wallets default to this. The bleed today is from legacy custody (older exchanges, hardware wallets pre-2020, custom scripts) and from users who manually override the default to consolidate at a single public address.
+
+The always-exposed pool (1,063,006 BTC) is a different problem. P2PK coinbase rewards from 2009-2010 require the original private keys to move, and a large fraction of those keys are presumed lost forever. Bare multisig has the same lost-key problem at smaller scale. And [P2TR](/glossary/taproot) has no unreveal: the bech32m address IS the tweaked pubkey, so every new taproot output adds to always-exposed supply at creation time. You cannot migrate out of P2TR without a destination type that does not exist yet.
+
+**The act of migrating creates its own attack surface.** Every spend from a hashed-address type reveals the pubkey for the few minutes between broadcast and confirmation. Today no [CRQC (cryptographically-relevant quantum computer)](/glossary/crqc-cryptographically-relevant-quantum-computer) exists, so this window is theoretical. But if a CRQC did exist and was watching the mempool, an attacker could derive the private key in real time, broadcast a competing transaction with a higher fee, and steal the funds before the original transaction confirmed. The spend itself becomes the vector. This is the "in-flight" attack that any post-quantum migration framework has to contend with.
+
+<figure>
+  <img src="/diagrams/quantum-inflight-attack.svg" alt="A swimlane timeline showing the in-flight attack. Top lane: Alice signs a 10 BTC transaction to Bob; the signature and pubkey go visible in the witness while the tx waits in the mempool for about 10 minutes; her transaction is dropped at the block. Bottom lane: an attacker reads the now-public pubkey from the mempool, derives the private key via Shor's algorithm, and broadcasts a competing transaction with a higher fee that confirms first. Today this is theoretical because no CRQC exists; after a CRQC it would be routine." />
+  <figcaption>The mempool window is the attack surface. Today this is theoretical. In a CRQC era it is the single biggest migration risk, which is why mass-migrating at once concentrates the danger rather than diffusing it.</figcaption>
+</figure>
+
+**Mass migration is the worst possible response.** A panic in which every holder consolidates at once spikes fees, expands the in-flight attack surface across millions of UTXOs simultaneously, and gives an early CRQC the most target-rich environment it will ever see. The right response is the boring one: migrate deliberately, over a multi-year window, on a schedule that the protocol itself can defend.
+
+The framing that makes the rest of this chapter make sense: individual action helps individuals. It does not solve the systemic problem. The reuse pool can shrink through user behavior. The always-exposed floor can only shrink through protocol change. Both pools can only fully resolve when a post-quantum signature scheme ships and people migrate to PQ-native addresses. That is why the answer is governance, not panic. The fix has to be governance.
+
+## The actual threat is Shor, not Grover
+
+"Quantum breaks Bitcoin" is a sentence. The threat depends on which part of Bitcoin you mean.
+
+**[Shor's algorithm](/glossary/shors-algorithm)** breaks elliptic-curve cryptography. Given the public key on the secp256k1 curve, Shor's derives the private key in polynomial time on a sufficiently large quantum computer. This is what threatens Bitcoin's [ECDSA](/glossary/ecdsa-elliptic-curve-digital-signature-algorithm) and [Schnorr](/glossary/schnorr-signature) signatures. It is the existential exposure. It is why the 5.07 million BTC number matters.
+
+**[Grover's algorithm](/glossary/grovers-algorithm)** gives quadratic speedup on unstructured search. Applied to SHA-256, it halves effective security: 256-bit becomes 128-bit. Annoying. Not catastrophic. 128-bit symmetric security is still the standard floor for cryptography elsewhere. Bitcoin's [proof-of-work](/glossary/proof-work-pow) survives Grover's. Bitcoin's hashed addresses (P2PKH, P2WPKH that have never been spent) survive Grover's. The 21 million supply cap survives Grover's.
+
+The signature is the weak link, not the hash. That is the entire story of why "post-quantum Bitcoin" is about replacing signature schemes, not about replacing SHA-256.
+
+## The timeline, honest version
+
+No [cryptographically-relevant quantum computer (CRQC)](/glossary/crqc-cryptographically-relevant-quantum-computer) exists. A CRQC capable of running Shor's against secp256k1 needs millions of stable physical qubits arranged into thousands of logical qubits via error correction, with sustained coherence across millions of gate operations and gate fidelity high enough that the error-correction overhead does not blow up.
+
+State of the art today: hundreds of noisy physical qubits, demonstrated logical (error-corrected) qubit counts in the single digits. Multiple orders of magnitude separate today's systems from CRQC, on several axes (qubit count, error rates, coherence time).
+
+The progress curve is steady but it is not Moore's Law. Doubling logical qubits is much harder than doubling transistors because error correction overhead scales with system size. Most expert estimates put a CRQC capable of breaking 256-bit ECDSA somewhere in a 10-to-30-year window. BIP-361's authors cite academic roadmaps pointing at 2027 to 2030. Pessimistic accounts push to the 2040s or later.
+
+The discipline is to plan for the optimistic case while the optimistic case is still future tense. The optimistic case has been "as early as 2027" since 2017, and the threshold keeps moving forward as quantum hardware progress meets the engineering reality of error correction. The trend line is toward eventual capability. The honest answer is "before we are ready, and possibly suddenly."
+
+The right planning horizon is therefore "before that, with margin." Bitcoin's governance moves in years. That matches.
+
+## What Bitcoin can do, and is doing
+
+Three categories of response, in order of how disruptive they are to existing users.
+
+**1. Encourage best practices today.** Zero protocol change required.
+
+- Use modern hashed scripts (P2WPKH, P2PKH) and never reuse the address.
+- Avoid P2TR for cold storage that has to survive the migration window, because P2TR outputs are exposed at creation.
+- Spend old P2PK coins into modern scripts when it is safe to do so.
+
+This is free. It is also voluntary, which is the limit.
+
+**2. Soft-fork to deprecate vulnerable script types.** Disable spends from P2PK and other always-exposed scripts after a specified block height. Force migration before the threat lands. The contentious part: coins whose keys are lost (or whose owner is silent) become permanently locked. Whether that is a feature or a bug is the most charged question in the whole debate.
+
+**3. Soft-fork to add post-quantum signature schemes.** New output types that use ML-DSA or SLH-DSA signatures. Users move coins to PQ addresses over years. This is the likely path. Two BIPs already in draft frame the work: [BIP-360](/glossary/bip-360) proposes Pay-to-Merkle-Root (P2MR), a Taproot variant that removes the key path spend so the bech32m address no longer reveals a pubkey - fixing long-exposure quantum risk on tapscript outputs and providing the tapscript-capable platform a future PQ signature opcode would need. [BIP-361](/glossary/bip-361) defines the migration framework that sunsets ECDSA and Schnorr over a multi-year window. The specific cryptographic algorithm for full quantum resistance (ML-DSA vs SLH-DSA vs a hybrid) is deferred to a separate Post-Quantum Signature BIP that has not been assigned a number yet, because the choice is still pre-consensus.
+
+All three categories run through the same governance process. There is no fast governance. There is no central upgrade authority. The slowness is the feature, and it is also the constraint. See [Bitcoin governance](/glossary/bitcoin-governance) for the five-veto model that decides which soft forks actually activate.
+
+## The candidate replacements
+
+NIST finalized two post-quantum signature standards in August 2024. Both are on the table.
+
+<figure>
+  <img src="/diagrams/pq-signature-sizes.svg" alt="Horizontal bar chart comparing on-chain signature sizes. Schnorr is 64 bytes; ECDSA is roughly 71 bytes. ML-DSA-65 is about 3,293 bytes, 51 times larger than Schnorr. SLH-DSA-128s is about 7,856 bytes, 123 times larger. SLH-DSA-256f is about 49,856 bytes, 779 times larger. A 4-MB block fits roughly 4,500 spends today, around 1,000 ML-DSA-65 spends, and only about 80 SLH-DSA-256f spends." />
+  <figcaption>Block-space cost is where the migration is felt. The cryptographic choice between ML-DSA and SLH-DSA is also a fee-market decision.</figcaption>
+</figure>
+
+The two schemes side by side:
+
+| | [ML-DSA](/glossary/ml-dsa-dilithium) (Dilithium) | [SLH-DSA](/glossary/slh-dsa-sphincs-plus) (SPHINCS+) |
+|---|---|---|
+| Math | Lattice-based (MLWE, MSIS) | Hash-based (Merkle trees of one-time signatures) |
+| Security assumption | Lattice problems are hard for quantum and classical | SHA-256 family hash function security only |
+| Maturity | Newer math, less collective cryptanalysis | Conservative, well-understood primitives |
+| Signature size | ~2.5 - 4.5 KB | ~7 - 50 KB |
+| Verification speed | Fast | Slower |
+| Trade | Smaller and faster, less mature | Larger and slower, more conservative |
+| Spec | [FIPS 204](https://csrc.nist.gov/pubs/fips/204/final) | [FIPS 205](https://csrc.nist.gov/pubs/fips/205/final) |
+
+ML-DSA is the leading candidate on efficiency grounds. SLH-DSA is the conservative fallback when the lattice math is judged too novel. A hybrid scheme that combines a classical signature with a PQ signature during the transition window is also being discussed - belt and suspenders against the possibility that the PQ scheme itself is broken before the classical scheme falls.
+
+The final choice is downstream of consensus. There is no committee. There is the same governance process that produced [Taproot](/glossary/taproot) and [SegWit](/glossary/segwit-segregated-witness-bip-141), running on its native timescale.
+
+## What you can do today
+
+The actions that actually help.
+
+- **Audit your own UTXOs.** Any P2PK outputs in your stash? Move them to modern addresses. Any addresses you reused? Move those balances to fresh ones.
+- **Use modern hashed scripts.** P2WPKH and P2PKH are pubkey-hashed. The pubkey is not revealed until you spend. If you spend once and never reuse, your exposure window is the few minutes between broadcast and confirmation.
+- **Never reuse addresses.** Modern wallets default to this. Do not override the default.
+- **Be deliberate about Taproot for long-term cold storage.** P2TR is exposed at creation. The advantages of Taproot are real (privacy, efficiency for complex scripts) but for "park it for ten years and forget it" storage, hashed scripts have a smaller attack surface across the migration window.
+- **Do not panic-move coins.** The threat is not imminent. A poorly-considered consolidation tx is a bigger risk to your stack today than a CRQC is.
+- **Follow the BIP discussions.** The community needs informed nodes more than it needs anxious ones.
+
+## The honest uncertainty
+
+Things we do not know.
+
+- When a CRQC arrives. Estimates from 5 years to 50 years all exist. The honest answer is "before we are ready, and possibly suddenly."
+- Whether the first CRQC will be public. A state actor or a private lab could build one before anyone announces it.
+- Whether ML-DSA or SLH-DSA will hold up under future cryptanalysis. Lattice math is younger than RSA or ECDSA; the cryptographic community has less collective experience attacking it.
+- Whether Bitcoin's governance can ship a soft fork on the timeline that is needed. It has before. There is no guarantee it will again.
+
+These uncertainties do not change the answer. They sharpen it. **Bitcoin's preparation has to start before the threat is concrete, because once the threat is concrete it is too late.**
+
+That preparation is happening, in public, slowly, contentiously, exactly as the protocol was designed to evolve.
+
+## Closing
+
+Quantum is real. Bitcoin is preparing. The slow consensus that frustrates the urgent is the same slow consensus that protects against the panicked.
+
+Trust the mechanism. Watch it work.
+
+Move your coins to modern addresses.
+
+---
+
+**Sources and further reading**
+
+- ChainQuery quantum-exposure report: https://chainquery.com/reports/quantum-exposure (snapshot 2026-06-07, block 952,694)
+- BIP-361 - Post-Quantum Migration: https://github.com/bitcoin/bips/blob/master/bip-0361.mediawiki
+- NIST FIPS 204 (ML-DSA): https://csrc.nist.gov/pubs/fips/204/final
+- NIST FIPS 205 (SLH-DSA): https://csrc.nist.gov/pubs/fips/205/final
+- NIST Post-Quantum Cryptography Project: https://csrc.nist.gov/projects/post-quantum-cryptography
+- Shor 1994 - Algorithms for quantum computation
+
+Glossary cluster on this site:
+- [Post-Quantum Bitcoin](/glossary/post-quantum-bitcoin)
+- [Shor's Algorithm](/glossary/shors-algorithm)
+- [Grover's Algorithm](/glossary/grovers-algorithm)
+- [CRQC (cryptographically-relevant quantum computer)](/glossary/crqc-cryptographically-relevant-quantum-computer)
+- [ML-DSA (Dilithium)](/glossary/ml-dsa-dilithium)
+- [SLH-DSA (SPHINCS+)](/glossary/slh-dsa-sphincs-plus)
+- [Bitcoin Governance](/glossary/bitcoin-governance)

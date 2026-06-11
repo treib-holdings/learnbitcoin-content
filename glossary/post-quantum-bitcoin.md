@@ -69,4 +69,6 @@ Estimates for when a [cryptographically-relevant quantum computer (CRQC)](/gloss
 
 The discipline is to plan for the optimistic case. The optimistic case has been "as early as 2027" since 2017, and the threshold keeps moving forward as quantum advances meet the engineering reality of error correction. The trend line is toward eventual capability - when, not whether. The five-year migration window in BIP-361 isn't paranoia; it's roughly the time it actually takes to coordinate wallets, exchanges, and custodians on a new signature scheme.
 
+Go deeper in the [Quantum and Bitcoin rabbit hole](/rabbit-hole/quantum-and-bitcoin) - the full exposure measurement, what is and is not at risk, the honest timeline, and what to actually do today.
+
 Spec: [BIP-361](https://github.com/bitcoin/bips/blob/master/bip-0361.mediawiki). NIST landing: [Post-Quantum Cryptography Project](https://csrc.nist.gov/projects/post-quantum-cryptography).

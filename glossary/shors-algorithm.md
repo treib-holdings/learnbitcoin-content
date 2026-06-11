@@ -54,3 +54,5 @@ The short version: orders of magnitude separate today's quantum systems from "ha
 Shor's algorithm has been run experimentally to factor small numbers (15, 21, sometimes larger) on quantum hardware. These demonstrations are mathematically valid but trivially small. No public demonstration has come close to factoring or solving discrete log at cryptographically-relevant key sizes.
 
 The race is on the engineering side, not the algorithmic side. The algorithm exists and works in principle. Building the hardware to run it at scale is the open problem - and the basis for every [CRQC](/glossary/crqc-cryptographically-relevant-quantum-computer) timeline estimate.
+
+See the [Quantum and Bitcoin rabbit hole](/rabbit-hole/quantum-and-bitcoin) for what Shor's actually threatens on Bitcoin - the exposed-pubkey supply, measured.

@@ -68,4 +68,6 @@ SLH-DSA is the second NIST-standardized PQ signature scheme and the canonical ha
 
 [BIP-361's](/glossary/bip-361) "TBD Post Quantum Signature BIP" hasn't published yet, so the formal Bitcoin position on SLH-DSA is undetermined. The current discussion tends to assume ML-DSA as default with SLH-DSA as backup.
 
+See the [Quantum and Bitcoin rabbit hole](/rabbit-hole/quantum-and-bitcoin) for the block-space trade-offs between the candidate schemes.
+
 Spec: [FIPS 205](https://csrc.nist.gov/pubs/fips/205/final) (NIST CSRC).

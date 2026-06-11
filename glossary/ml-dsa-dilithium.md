@@ -69,4 +69,6 @@ BIP-361 - the active draft proposal for Bitcoin's post-quantum migration - is si
 
 The alternative candidates are part of the live discussion. Bitcoin's choice will weigh signature size against security-assumption diversity.
 
+See the [Quantum and Bitcoin rabbit hole](/rabbit-hole/quantum-and-bitcoin) for the block-space cost of the candidate schemes and how the choice gets made.
+
 Spec: [FIPS 204](https://csrc.nist.gov/pubs/fips/204/final) (NIST CSRC).

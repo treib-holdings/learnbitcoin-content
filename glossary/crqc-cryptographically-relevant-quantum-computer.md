@@ -62,3 +62,5 @@ The CRQC horizon has been "5-10 years out" for over a decade. The frustrating pa
 But the trend line is still forward. The question isn't whether CRQCs are buildable in principle - Shor's algorithm proves they are - it's whether the engineering progress curve will eventually meet the threshold. Most experts believe it will. The disagreement is *when*.
 
 For Bitcoin, the implication is that the migration must start well before CRQC arrival, because coordinating the network on a new signature scheme takes years. [BIP-361's](/glossary/bip-361) authors cite this directly: *"academic road-maps now estimate a cryptographically-relevant quantum computer as early as 2027-2030."*
+
+See the [Quantum and Bitcoin rabbit hole](/rabbit-hole/quantum-and-bitcoin) for the honest timeline and what the migration window means in practice.
