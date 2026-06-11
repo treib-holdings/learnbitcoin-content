@@ -110,6 +110,7 @@ To verify it's working: shut down your home internet connection or DNS, and conf
 <figure>
   <video
     src="/videos/multisig.mp4"
+    poster="/videos/posters/multisig.png"
     autoplay
     muted
     loop

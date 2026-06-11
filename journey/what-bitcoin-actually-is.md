@@ -22,6 +22,7 @@ sources:
 <figure>
   <video
     src="/videos/fixed-vs-infinite.mp4"
+    poster="/videos/posters/fixed-vs-infinite.png"
     autoplay
     muted
     loop
