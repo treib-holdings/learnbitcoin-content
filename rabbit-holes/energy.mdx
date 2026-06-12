@@ -1,0 +1,164 @@
+---
+title: "Bitcoin and Energy"
+slug: energy
+draft: true
+published: "2026-06-18"
+status: live
+section: rabbit-hole
+tagline: "Energy is the FUD claim that comes up most often, full stop. The honest version: the consumption is real, the comparisons are rhetorical, the demand profile is unique, and the fix for what is actually broken is already profitable."
+order: 12
+estimatedMinutes: 15
+sources:
+  - { label: "Cambridge Bitcoin Electricity Consumption Index (CBECI)", url: "https://ccaf.io/cbnsi/cbeci" }
+  - { label: "Cambridge Judge Business School - Bitcoin electricity consumption, an improved assessment", url: "https://www.jbs.cam.ac.uk/2023/bitcoin-electricity-consumption/" }
+  - { label: "Riot Platforms August 2023 production report (SEC filing - the $31.7M month)", url: "https://www.sec.gov/Archives/edgar/data/1167419/000155837023015517/riot-20230906xex99d1.htm" }
+  - { label: "CNBC - Texas paid bitcoin miner Riot $31.7 million to shut down during heat wave", url: "https://www.cnbc.com/2023/09/06/texas-paid-bitcoin-miner-riot-31point7-million-to-shut-down-in-august.html" }
+  - { label: "Earthjustice - Granbury residents sue local Bitcoin mine over noise", url: "https://earthjustice.org/press/2024/granbury-residents-sue-local-bitcoin-mine-over-health-threatening-noise-pollution" }
+  - { label: "Time - The Texas town where Bitcoin mining noise became a health story", url: "https://time.com/6590155/bitcoin-mining-noise-texas/" }
+  - { label: "Daniel Batten - Quantifying Bitcoin mining's potential impact on global methane emissions (advocacy research; author is a mining-sector investor)", url: "https://batcoinz.com/quantifying-the-potential-impact-of-bitcoin-mining-on-global-methane-emissions/" }
+  - { label: "Grist - These Finnish homes are being heated by Bitcoin", url: "https://grist.org/buildings/bitcoin-cryptocurrency-district-heat-finland/" }
+  - { label: "Canaan Nordic district heating project", url: "https://news.bitcoin.com/canaan-wins-nordic-heating-bid-turns-bitcoin-mining-waste-heat-into-residential-hot-water/" }
+  - { label: "HBR - How much energy does Bitcoin actually consume?", url: "https://hbr.org/2021/05/how-much-energy-does-bitcoin-actually-consume" }
+  - { label: "Nakamoto Institute - Bitcoin does not waste energy", url: "https://nakamotoinstitute.org/mempool/bitcoin-does-not-waste-energy/" }
+  - { label: "Mongabay - Bitcoin's intensifying environmental footprint (critical survey)", url: "https://news.mongabay.com/2025/06/bitcoin-boom-comes-with-huge-intensifying-environmental-footprint/" }
+relatedTerms:
+  - energy-fud
+  - proof-work-pow
+  - mining
+  - miner
+  - difficulty
+  - difficulty-retargeting
+  - block-subsidy
+  - halving-halvening
+  - fud-fear-uncertainty-doubt
+  - hash
+---
+
+{/* PRE-FLIP VERIFICATION TODOS:
+   1. Pull current CBECI number + sustainable-mix estimate directly from ccaf.io (prose uses roughly 175 TWh / 54-65% range from June 2026 secondary coverage)
+   2. de Vries water paper: add exact Cell Reports Sustainability citation + DOI to sources
+   3. Search for a 2024-2026 ERCOT/Riot receipt fresher than Aug 2023
+   4. e-waste section: cite the strongest published critique of the short-lifespan assumption
+   5. Hardware photos: Antminer + Spondoolies (section 3) - shoot, crop, exiftool per house workflow
+   6. On flip day: repoint energy-fud closing line + mining RH section 7 to this chapter */}
+
+> **Where you're going:** Bitcoin consumes a lot of electricity. That is true, measurable, and by design. This chapter walks through how much, where it comes from, what it buys, what the critics get right, and why "Bitcoin wastes energy" and "Bitcoin is an environmental free lunch" are both wrong.
+
+Energy is the objection that comes up first, with everyone. Before quantum, before "criminals use it," before volatility - the person across the table has heard that Bitcoin boils oceans, and they have heard it from people they trust. Most of what they have heard is somewhere between stale and rhetorically engineered. Some of it is correct. The honest version is more interesting than either camp wants it to be.
+
+## The number, and the comparison trick
+
+Bitcoin mining draws roughly 175 TWh of electricity per year as of early 2026 - roughly three quarters of one percent of global electricity. That is the headline number from the [Cambridge Bitcoin Electricity Consumption Index](https://ccaf.io/cbnsi/cbeci), the most methodologically careful public estimate. It is a lot of electricity.
+
+Now watch what happens to that number in the wild. "More electricity than Argentina" - true, and designed to alarm. "Less than the world's tumble dryers" - also roughly true, and designed to soothe. "Half of what gold mining uses" - true, and designed to flatter by comparison. "More than all of Google" - true, and meaningless without asking what each one produces for the energy.
+
+Every one of those comparisons is a choice of denominator, and the choice is doing the arguing. A country sounds outrageous because countries contain people. An appliance category sounds trivial because nobody moralizes about laundry. The comparison is not analysis. It is framing wearing analysis's clothes.
+
+The honest baseline: Bitcoin uses a measurable, material amount of the world's electricity - under one percent, more than small countries, less than many single industries nobody writes headlines about. Hold that number still and ask the real questions: what does it buy, where does it come from, and what would that energy be doing otherwise.
+
+## The energy is the security
+
+Start with what the electricity purchases, because it is not "transactions."
+
+Bitcoin's entire security model is that rewriting history costs more than anyone can profitably spend. [Proof-of-work](/glossary/proof-work-pow) converts electricity into exactly that: every block carries proof that real-world joules were burned to produce it, and an attacker who wants to rewrite the chain must outspend the entire honest network, in real electricity, for as long as the attack runs. The energy bill is not overhead on the security. The energy bill IS the security.
+
+This is why "make Bitcoin use less energy" is a different request than it sounds. Cut the energy and you cut the cost of attacking the ledger by the same proportion. A Bitcoin that was cheap to run would be a Bitcoin that was cheap to rewrite.
+
+The obvious follow-up - "then why not proof-of-stake, like everything else" - deserves one honest paragraph. Proof-of-stake replaces the external, physical cost with an internal, financial one: security is posted as locked capital instead of burned electricity. That is not free; it is a different trade, with different failure modes - wealth concentration compounding into control, and no physical anchor binding the ledger to the world outside its own token. Bitcoiners think the external anchor is the entire point. Reasonable people disagree about that trade. What is not reasonable is pretending it costs nothing.
+
+## What miners actually buy
+
+Here is the fact that generates most of this chapter, and most of the surprising things about Bitcoin's energy story:
+
+**A miner is the only industrial-scale electricity buyer that is location-agnostic, interruptible in seconds, and indifferent to when the power arrives.**
+
+A factory needs workers, roads, and customers. A data center needs low latency to users. An aluminum smelter can load-shift a little, but shutting it down cold is expensive and slow. A miner needs electricity and an internet connection. It can sit at a hydro dam in the back country, a flare stack in an oil field, or a wind farm at the end of a congested transmission line - wherever a megawatt is cheapest because nobody else can use it.
+
+That is why mining migrates to stranded power. Not because miners are environmentalists - because stranded electrons are the cheapest electrons on earth, and mining margins are thin. The incentive does the work; no virtue required.
+
+The same property runs in reverse, and that is where it gets interesting for everyone else.
+
+## The grid receipts
+
+In August 2023, during a Texas heat wave, Riot Platforms - one of the largest miners on the ERCOT grid - earned [$31.7 million in a single month](https://www.cnbc.com/2023/09/06/texas-paid-bitcoin-miner-riot-31point7-million-to-shut-down-in-august.html) mostly for NOT mining: $24.2 million selling its pre-purchased power back to the grid at crisis prices, and $7.4 million in demand-response credits. The bitcoin it mined that month was worth about $8.9 million. The filing is [public](https://www.sec.gov/Archives/edgar/data/1167419/000155837023015517/riot-20230906xex99d1.htm). During the worst hours, Riot curtailed more than 95 percent of its load - megawatts handed back to air conditioners in seconds.
+
+Three mechanisms, worth knowing because they are not the same thing:
+
+1. **Price response.** When power costs more than the bitcoin it would mine, the rational miner shuts off and resells. No agreement needed; arithmetic does it.
+2. **Ancillary services.** The grid operator pays the miner for the *option* to shed its load on command. The miner gets paid whether or not the call comes. The grid gets a dispatchable buffer the size of a small city.
+3. **Peak-avoidance programs.** Power down during the handful of annual system peaks, pay dramatically less for transmission all year.
+
+Now the criticism, because it is not stupid: environmental groups looked at that $31.7 million and called it [paying a polluter not to pollute](https://www.kvue.com/article/news/investigations/defenders/bitcoin-company-reimbursed-conservation-appeal/269-456160f1-f136-4da8-8d58-7724f048fbda) - a subsidy for a load that should never have been there. The honest answer is that grid operators pay many large loads and generators for flexibility, because options on demand are genuinely valuable to a grid that cannot store much; miners are simply the most flexible load ever connected. The honest concession inside the answer: a grid that builds around interruptible mining demand is making a bet about how that demand behaves in a crisis, and the bet is only as good as the contracts. Both things are true. That is the actual debate, and it is a better one than "subsidy bad."
+
+## Methane: the one place mining might be net-negative
+
+Methane is a far more potent greenhouse gas than CO2 over its first decades in the atmosphere. The world's landfills vent it continuously; oil fields flare it incompletely. Both are emissions with no business model attached - which is exactly the gap a location-agnostic, containerized electricity buyer can fill. Park generators and ASICs at the gas, combust it completely (turning methane into less-harmful CO2 plus electricity), and the mining revenue funds the capture.
+
+The strongest quantified version of this argument comes from [Daniel Batten's research](https://batcoinz.com/quantifying-the-potential-impact-of-bitcoin-mining-on-global-methane-emissions/), which estimates a surprisingly small amount of methane-fed mining would offset the network's entire footprint. Disclosure where it is due: Batten is an investor in this sector and an advocate, not a neutral academic. Treat his numbers as the well-argued bull case, not settled science.
+
+What is not in dispute: the projects exist, they are profitable without subsidies, and the gas they burn was being vented or flared anyway. The honest status: real, growing, and still a small slice of total hash rate. Promising is the right word. Proven-at-scale is not, yet.
+
+## Heat is not waste if someone is cold
+
+An ASIC converts nearly every watt it draws into heat. For most of Bitcoin's history that heat went out a fan into the sky. In cold places with district-heating infrastructure, it has started going somewhere better: in Finland, miners are [piped into municipal district-heating systems](https://grist.org/buildings/bitcoin-cryptocurrency-district-heat-finland/), warming homes in a town of eleven thousand; a Nordic project is [scaling toward heating roughly 2,800 homes](https://news.bitcoin.com/canaan-wins-nordic-heating-bid-turns-bitcoin-mining-waste-heat-into-residential-hot-water/) with hot water from hashboards; greenhouse pilots preheat boiler water in Canadian winters; and you can now buy a home miner that is, frankly, a space heater with a payout address.
+
+Keep the claim modest, because the honest version is modest: heat reuse fits cold climates with existing pipe infrastructure. It will not absorb the Texas summer hash rate. It is a real and growing channel where geography cooperates - the energy gets used twice, once for security and once for soup.
+
+## What the critics get right
+
+Our house rule applies to ourselves: name the receipts even when they are ours.
+
+**The local externalities are real, and they have a town's name on them.** In Granbury, Texas, residents living next to a large mining site [sued over constant, health-disrupting noise](https://earthjustice.org/press/2024/granbury-residents-sue-local-bitcoin-mine-over-health-threatening-noise-pollution) - documented by [national press](https://time.com/6590155/bitcoin-mining-noise-texas/) and entirely believable to anyone who has stood next to an air-cooled mining container. A 24/7 industrial fan wall is a bad neighbor. Mining companies that site carelessly deserve the lawsuits they get, and the industry's social license depends on the operators who site well.
+
+**Not all mining runs on stranded hydro.** The sustainable-mix estimates range from the mid-50s to the mid-60s percent depending on who is measuring and how - which also means a third or more of the network, on the less favorable estimates, runs on grids where the marginal electron is fossil. The mix is improving because the economics push that way, but "improving" and "clean" are different words.
+
+**The water and e-waste critiques deserve straight answers.** The water-footprint estimate published in a peer-reviewed sustainability journal is a legitimate piece of accounting (cooling and the water embedded in electricity generation), not FUD. The famous e-waste estimate - "as much as the Netherlands" - rests on an assumption that miners scrap ASICs in under a year and a half, which the resale market and the long tail of older rigs running on cheap power both contradict; but the strong form of the critique survives the weak math: ASICs are single-purpose hardware, and the industry's recycling story is thinner than its energy story.
+
+**And the aggregate is the aggregate.** Roughly 175 TWh is real consumption with a real footprint, whatever its mix. The honest case for it has to be that what it buys is worth it - not that the number is small.
+
+The discipline, same as our [energy-fud](/glossary/energy-fud) entry puts it: engage the strong forms of the critique. The strong forms have answers. The weak forms get called FUD because they don't.
+
+## The per-transaction fallacy
+
+One bad statistic deserves its own section, because you will see it everywhere: "each Bitcoin transaction uses as much energy as a household does in a month."
+
+This is a stock-and-flow error wearing a lab coat. Mining energy secures the *ledger* - all of it, every balance, the whole history - and its level is set by the bitcoin price and the [block subsidy](/glossary/block-subsidy), not by how many transactions flow through. Run twice the transactions and the energy draw does not double; run zero transactions for an hour and the miners do not power down. Dividing total energy by transaction count produces a number with the units of nonsense.
+
+It also misses where transactions actually happen. A single on-chain transaction can settle a batch of thousands of payments, close a Lightning channel that carried months of them, or move an exchange's entire internal ledger. Per-payment energy is unknowable and shrinking; per-ledger security is the thing being bought; the famous statistic measures neither.
+
+## The honest uncertainty
+
+Things we do not know, stated plainly:
+
+- **What secures the chain when the subsidy runs out.** Mining is paid mostly by new issuance, which [halves](/glossary/halving-halvening) every four years. Whether transaction fees alone will fund an adequate security budget decades from now is a real open question - arguably Bitcoin's deepest one - and energy spend is exactly where it will show up.
+- **Whether the mix numbers converge.** Self-reported industry surveys and academic models still disagree by ten points or more. Better disclosure is narrowing it; it has not closed.
+- **Whether methane mitigation scales** beyond the advocacy-stage projects, or stays a rounding error with great marketing.
+- **Whether the social license holds.** Granbury-style fights determine where mining can physically exist. An industry that wins grid arguments and loses zoning ones still loses.
+
+These uncertainties do not change the frame. They sharpen it: the energy story is a live negotiation between incentives that genuinely point somewhere good and an industry that does not get graded on intentions.
+
+## Closing
+
+Bitcoin spends energy on purpose. The spend is the security; the security is the product. The honest debate is whether what it buys - final settlement, neutral money, a ledger nobody can quietly rewrite - is worth a measurable slice of the world's electricity, and who gets to decide.
+
+Argue that question with real numbers. We just gave you ours.
+
+---
+
+**Sources and further reading**
+
+- Cambridge Bitcoin Electricity Consumption Index: https://ccaf.io/cbnsi/cbeci
+- Riot Platforms August 2023 production report (SEC filing): https://www.sec.gov/Archives/edgar/data/1167419/000155837023015517/riot-20230906xex99d1.htm
+- Earthjustice on the Granbury suit: https://earthjustice.org/press/2024/granbury-residents-sue-local-bitcoin-mine-over-health-threatening-noise-pollution
+- Daniel Batten's methane research (advocacy, disclosed): https://batcoinz.com/quantifying-the-potential-impact-of-bitcoin-mining-on-global-methane-emissions/
+- Grist on Finnish district heating: https://grist.org/buildings/bitcoin-cryptocurrency-district-heat-finland/
+- Nakamoto Institute, "Bitcoin Does Not Waste Energy": https://nakamotoinstitute.org/mempool/bitcoin-does-not-waste-energy/
+- Mongabay's critical survey (read the other side): https://news.mongabay.com/2025/06/bitcoin-boom-comes-with-huge-intensifying-environmental-footprint/
+
+Glossary cluster on this site:
+- [Energy FUD](/glossary/energy-fud)
+- [Proof-of-Work](/glossary/proof-work-pow)
+- [Mining](/glossary/mining)
+- [Difficulty](/glossary/difficulty)
+- [Block Subsidy](/glossary/block-subsidy)
+- [Halving](/glossary/halving-halvening)
