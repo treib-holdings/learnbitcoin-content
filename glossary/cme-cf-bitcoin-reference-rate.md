@@ -1,7 +1,8 @@
 ---
 title: "CME CF Bitcoin Reference Rate"
 slug: cme-cf-bitcoin-reference-rate
-draft: true
+draft: false
+published: "2026-06-15"
 shortDefinition: "The industry-standard daily reference price for Bitcoin, calculated from spot trades on a curated set of exchanges and published by CF Benchmarks. The number that US spot Bitcoin ETFs strike their NAV against."
 keyTakeaways:
   - "Strikes once daily at 4:00 PM London time over a one-hour observation window"
