@@ -1,7 +1,8 @@
 ---
 title: "Creation / Redemption (Cash vs In-Kind)"
 slug: creation-redemption
-draft: true
+draft: false
+published: "2026-06-15"
 shortDefinition: "The process by which ETF shares are minted (creation) or destroyed (redemption) through Authorized Participants, in exchange for either cash or the underlying asset. The core arbitrage mechanism that keeps ETFs tracking their NAV."
 keyTakeaways:
   - "Cash creation: AP delivers USD, issuer executes the BTC trade"

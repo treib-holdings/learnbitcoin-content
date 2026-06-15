@@ -1,7 +1,8 @@
 ---
 title: "Spot Bitcoin ETF"
 slug: spot-bitcoin-etf
-draft: true
+draft: false
+published: "2026-06-15"
 shortDefinition: "An exchange-traded fund that holds actual BTC at a regulated custodian and trades on a traditional stock exchange. Approved by the US SEC on January 10, 2024 after eleven years of rejections."
 keyTakeaways:
   - "Holds physical BTC, not futures contracts or other derivatives"

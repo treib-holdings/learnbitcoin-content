@@ -1,7 +1,8 @@
 ---
 title: "Authorized Participant"
 slug: authorized-participant
-draft: true
+draft: false
+published: "2026-06-15"
 shortDefinition: "A large broker-dealer with a contract to create and redeem ETF shares directly with the issuer. The arbitrage mechanism that keeps an ETF's market price aligned with its Net Asset Value."
 keyTakeaways:
   - "Only APs interact directly with the fund; retail trades on the open stock exchange"

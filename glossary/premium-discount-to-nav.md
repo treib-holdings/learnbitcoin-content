@@ -1,7 +1,8 @@
 ---
 title: "Premium / Discount (to NAV)"
 slug: premium-discount-to-nav
-draft: true
+draft: false
+published: "2026-06-15"
 shortDefinition: "The difference between an ETF's market price and its Net Asset Value per share, expressed as a percentage. Positive means premium, negative means discount."
 keyTakeaways:
   - "Open-end ETFs stay within basis points of NAV thanks to creation/redemption arbitrage"
