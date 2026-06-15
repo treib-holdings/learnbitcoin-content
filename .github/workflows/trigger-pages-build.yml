@@ -2,14 +2,16 @@ name: Notify on content push
 
 # When content lands on main, fan out two notifications:
 #   1. Trigger learnbitcoin-web's deploy workflow via repository_dispatch.
-#   2. IndexNow → tell Bing, Yandex, Naver, Seznam to re-crawl.
+#   2. IndexNow -> push the EXACT changed, live (non-draft) content URLs to
+#      Bing, Yandex, Naver, Seznam for instant per-URL re-crawl. Draft files
+#      are skipped so we never submit a 404/noindex URL. Homepage is always
+#      included as a baseline.
 #
 # Setup (one-time):
 #   1. Generate a GitHub fine-grained PAT scoped to
 #      treib-holdings/learnbitcoin-web with permission:
-#        Repository permissions → Contents → Read and write
-#      Create at https://github.com/settings/personal-access-tokens
-#   2. This repo → Settings → Secrets and variables → Actions →
+#        Repository permissions -> Contents -> Read and write
+#   2. This repo -> Settings -> Secrets and variables -> Actions ->
 #      add WEB_DEPLOY_PAT with the PAT as the value.
 #
 # The IndexNow key is a public proof-of-control value (the same key is
@@ -20,17 +22,21 @@ on:
     branches: [main]
   workflow_dispatch:
 
-# This workflow uses an external PAT (WEB_DEPLOY_PAT) for the cross-repo
-# dispatch and doesn't touch the GITHUB_TOKEN at all. Lock GITHUB_TOKEN
-# to no scopes — leak surface is minimised even if a step is ever
-# compromised.
-# IndexNow key is a public proof-of-control token by design, not a secret.
-permissions: {}
+# contents: read is the minimal scope needed to check out and diff this
+# (public) repo so we can compute which URLs changed. The cross-repo deploy
+# dispatch uses the external WEB_DEPLOY_PAT, never the GITHUB_TOKEN.
+permissions:
+  contents: read
 
 jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout (full history, for the changed-file diff)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Trigger learnbitcoin-web deploy
         env:
           GH_TOKEN: ${{ secrets.WEB_DEPLOY_PAT }}
@@ -45,17 +51,59 @@ jobs:
             -f event_type=content-updated
           echo "Dispatched content-updated event to learnbitcoin-web."
 
-      - name: Notify IndexNow (Bing, Yandex, Naver, Seznam)
+      - name: Notify IndexNow with changed live URLs
         run: |
+          set -uo pipefail
+          BASE="https://www.learnbitcoin.com"
+          KEY="8586b7edc30249992186264cbb885886"
+          BEFORE="${{ github.event.before }}"
+          AFTER="${{ github.sha }}"
+
+          # Pick the diff range. Fall back to the previous commit if `before`
+          # is missing/zeroed (manual run, first push, force-push); fall back
+          # to homepage-only if even that is unavailable.
+          RANGE=""
+          if [ -n "$BEFORE" ] && [ "$BEFORE" != "0000000000000000000000000000000000000000" ] && git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+            RANGE="$BEFORE $AFTER"
+          elif git rev-parse HEAD~1 >/dev/null 2>&1; then
+            RANGE="HEAD~1 HEAD"
+          fi
+
+          CHANGED=""
+          if [ -n "$RANGE" ]; then
+            CHANGED=$(git diff --name-only --diff-filter=ACMR $RANGE -- \
+              'glossary/*.md' 'rabbit-holes/*.mdx' 'rabbit-holes/*.md' \
+              'journey/*.md' 'journey/*.mdx' 2>/dev/null || true)
+          fi
+
+          # Homepage is always submitted; add each changed, non-draft file.
+          # The checkout is at AFTER, so the on-disk file is the post-push
+          # state - a launch-day draft:false flip is correctly included.
+          urls=("$BASE/")
+          while IFS= read -r f; do
+            [ -z "$f" ] && continue
+            [ -f "$f" ] || continue
+            if grep -Eq '^draft:[[:space:]]*true' "$f"; then
+              echo "skip (draft): $f"
+              continue
+            fi
+            slug=$(basename "$f"); slug="${slug%.md}"; slug="${slug%.mdx}"
+            case "$f" in
+              glossary/*)     urls+=("$BASE/glossary/$slug") ;;
+              rabbit-holes/*) urls+=("$BASE/rabbit-hole/$slug") ;;
+              journey/*)      urls+=("$BASE/journey/$slug") ;;
+            esac
+          done <<< "$CHANGED"
+
+          url_json=$(printf '%s\n' "${urls[@]}" | awk 'NF' | sort -u | jq -R . | jq -s .)
+          echo "Submitting to IndexNow:"; echo "$url_json"
+          payload=$(jq -nc \
+            --arg host "www.learnbitcoin.com" \
+            --arg key "$KEY" \
+            --arg keyloc "$BASE/$KEY.txt" \
+            --argjson urls "$url_json" \
+            '{host:$host, key:$key, keyLocation:$keyloc, urlList:$urls}')
           curl -fsSL -X POST https://api.indexnow.org/IndexNow \
             -H "Content-Type: application/json" \
             -w "IndexNow: HTTP %{http_code}\n" \
-            -d '{
-              "host": "www.learnbitcoin.com",
-              "key": "8586b7edc30249992186264cbb885886",
-              "keyLocation": "https://www.learnbitcoin.com/8586b7edc30249992186264cbb885886.txt",
-              "urlList": [
-                "https://www.learnbitcoin.com/",
-                "https://www.learnbitcoin.com/sitemap-index.xml"
-              ]
-            }'
+            -d "$payload" || echo "IndexNow submission failed (non-fatal)."
