@@ -36,4 +36,4 @@ The honest case for being concerned anyway:
 
 The Bitcoiner discipline: don't dismiss energy concerns wholesale. Engage with the strong forms of the critique. The strong forms have answers; the weak forms get called FUD because they don't.
 
-See [Mining](/glossary/mining) and the [Mining rabbit hole](/rabbit-hole/mining) for the longer treatment of Bitcoin's energy story.
+See the [Bitcoin and Energy rabbit hole](/rabbit-hole/energy) for the full treatment, including which forms of the critique have answers and which do not.

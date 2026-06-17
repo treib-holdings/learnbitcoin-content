@@ -1,7 +1,7 @@
 ---
 title: "Methane Mitigation Mining"
 slug: methane-mitigation-mining
-draft: true
+draft: false
 published: "2026-06-17"
 shortDefinition: "Bitcoin mining powered by methane that would otherwise be vented or flared - landfills and oil fields - combusting a potent greenhouse gas more completely while funding its capture. The one place mining may be net-negative for emissions."
 keyTakeaways:

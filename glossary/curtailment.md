@@ -1,7 +1,7 @@
 ---
 title: "Curtailment"
 slug: curtailment
-draft: true
+draft: false
 published: "2026-06-17"
 shortDefinition: "Deliberately reducing or stopping electricity use (or generation) to balance a grid. Bitcoin mining is a curtailable load that can vanish in seconds when the grid needs power elsewhere."
 keyTakeaways:
