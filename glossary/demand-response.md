@@ -1,7 +1,7 @@
 ---
 title: "Demand Response"
 slug: demand-response
-draft: true
+draft: false
 published: "2026-06-17"
 shortDefinition: "Grid programs that pay large electricity consumers to reduce or shut off load on command. Bitcoin miners are the most flexible demand-response participant ever connected to a grid."
 keyTakeaways:
