@@ -54,15 +54,15 @@ Quantum is the FUD claim that comes up most often after fiat-debasement and ener
 
 ## The number that lands
 
-5,071,264 BTC sits at quantum-exposed addresses today. That is **25.3 percent of circulating supply**. One bitcoin in four.
+About **30.5 percent of circulating supply** sits at quantum-exposed addresses today - close to one bitcoin in three. That figure carries a correction worth stating outright. The original Baseline 2026 Q2 measurement counted 5,071,264 BTC, or 25.3 percent. A later parser pass (methodology v1.1) folded in roughly another 1.04 million BTC of nested-segwit reuse the first walk had skipped, which brings the strict figure to about 30.5 percent.
 
-These coins live at 12,749,047 addresses. Some are dormant. Most are not. The largest single bucket is not Satoshi - it is **1,896,840 BTC at modern segwit (P2WPKH) addresses that got reused at least once**. Real users, real wallets, real habits.
+The breakdown below is that v1.0 baseline - 5,071,264 BTC across 12,749,047 addresses, before the nested-segwit coins were folded in. Some are dormant. Most are not. The largest single bucket is not Satoshi - it is **1,896,840 BTC at modern segwit (P2WPKH) addresses that got reused at least once**. Real users, real wallets, real habits.
 
-Snapshot: 2026-06-07, block 952,694. The full breakdown:
+Snapshot: 2026-06-07, block 952,694, methodology v1.0. The full breakdown:
 
 <figure>
   <img src="/diagrams/quantum-exposure-stacked.svg" alt="Horizontal bar chart of the six Bitcoin script types holding quantum-exposed BTC. P2WPKH reuse-exposed leads at 1,896,840 BTC (37.4 percent of at-risk pool). P2PKH reuse-exposed 1,196,717 BTC. P2PK always-exposed 853,247 BTC. P2WSH reuse-exposed 675,992 BTC. P2SH reuse-exposed 238,709 BTC. P2TR always-exposed 209,759 BTC. Total 5,071,264 BTC across 12,749,047 addresses." />
-  <figcaption>Six buckets, ordered by BTC at risk. Always-exposed types (P2PK, bare multisig, P2TR) in deep orange. Reuse-exposed types in lighter orange. Snapshot 2026-06-07, base block 952,694. Source: ChainQuery.</figcaption>
+  <figcaption>Six buckets, ordered by BTC at risk. Always-exposed types (P2PK, bare multisig, P2TR) in deep orange. Reuse-exposed types in lighter orange. This is the v1.0 Baseline 2026 Q2 breakdown (5,071,264 BTC); the v1.1 correction adds roughly 1.04M BTC of nested-segwit reuse on top. Snapshot 2026-06-07, base block 952,694. Source: ChainQuery.</figcaption>
 </figure>
 
 Source: [ChainQuery quantum-exposure report](https://chainquery.com/reports/quantum-exposure), bitcoind 28 node, weekly Sunday snapshots.
@@ -71,15 +71,15 @@ This is not a crisis. It is a forcing function.
 
 ## The honest version of the number
 
-BIP-361 cites "over 34 percent of all BTC" as quantum-exposed. ChainQuery's number is 25.3 percent. The gap is methodology.
+BIP-361 cites "over 34 percent of all BTC" as quantum-exposed. ChainQuery's strict number is about 30.5 percent. The gap is methodology.
 
 BIP-361 counts every P2SH and P2WSH address whose redeem script was ever revealed on chain. ChainQuery only counts the ones where the revealed script actually contains a pubkey followed by a CHECKSIG-family opcode. Timelock-only scripts get excluded. Hash-preimage scripts get excluded. They do not leak pubkeys on spend.
 
 **Real exposure sits between these two numbers.** ChainQuery is the rigorous lower bound. BIP-361 is the upper bound that informs the migration framework. We use ChainQuery because it is provable from chain data; we cite BIP-361 because it is what a proposed soft fork is being written against.
 
-A third independent measurement anchors the upper bound empirically. The [Wicked Smart Bitcoin quantum exposure dashboard](https://wickedsmartbitcoin.com/quantum_exposure) applies the conservative BIP-361-style counting rule directly to chain data and reports 34.55 percent at block 951,000 - matching BIP-361's analytic figure almost exactly. The 9-point gap between Wicked's number and ours is the universe of P2SH and P2WSH spends whose revealed scripts do not contain a pubkey-bearing opcode. Three measurements, transparent gap.
+A third independent measurement anchors the upper bound empirically. The [Wicked Smart Bitcoin quantum exposure dashboard](https://wickedsmartbitcoin.com/quantum_exposure) applies the conservative BIP-361-style counting rule directly to chain data and reports 34.55 percent at block 951,000 - matching BIP-361's analytic figure almost exactly. Methodology v1.1 closed most of the original gap: folding in the roughly 1.04 million BTC of nested-segwit reuse (P2SH-wrapped P2WPKH and P2WSH, whose pubkey is revealed in the witness) narrowed the distance to Wicked's number to about 4 points. The residual is small, and it is not explained by puzzle scripts - timelock-only, hash-preimage, and OP_RETURN-shaped redeems together hold only tens of BTC. Three measurements, transparent gap.
 
-Either way: at least a quarter of the supply, today.
+Either way: roughly a third of the supply, today.
 
 ## What "quantum-exposed" actually means
 
@@ -103,9 +103,9 @@ Cite: [BIP-143](/glossary/bip-143) (segwit witness structure - where the pubkey 
 
 ## Why we can't just fix this today
 
-A natural question: if reuse is the biggest bucket, why does this number not just shrink as users migrate to fresh addresses? It does, at the margin. But there are three reasons the 25.3 percent figure is sticky, and understanding them is the difference between sensible action and panic.
+A natural question: if reuse is the biggest bucket, why does this number not just shrink as users migrate to fresh addresses? It does, at the margin. But there are three reasons the figure is sticky, and understanding them is the difference between sensible action and panic.
 
-**The reuse pool can drain. The always-exposed pool cannot.** Individual action works on the 4.01 million BTC in reuse-exposed addresses: move coins to a fresh address, never reuse it, and that BTC leaves the at-risk pool. Modern wallets default to this. The bleed today is from legacy custody (older exchanges, hardware wallets pre-2020, custom scripts) and from users who manually override the default to consolidate at a single public address.
+**The reuse pool can drain. The always-exposed pool cannot.** Individual action works on the reuse-exposed pool - 4.01 million BTC in the v1.0 baseline, larger once the nested-segwit reuse is folded in: move coins to a fresh address, never reuse it, and that BTC leaves the at-risk pool. Modern wallets default to this. The bleed today is from legacy custody (older exchanges, hardware wallets pre-2020, custom scripts) and from users who manually override the default to consolidate at a single public address.
 
 The always-exposed pool (1,063,006 BTC) is a different problem. P2PK coinbase rewards from 2009-2010 require the original private keys to move, and a large fraction of those keys are presumed lost forever. Bare multisig has the same lost-key problem at smaller scale. And [P2TR](/glossary/taproot) has no unreveal: the bech32m address IS the tweaked pubkey, so every new taproot output adds to always-exposed supply at creation time. You cannot migrate out of P2TR without a destination type that does not exist yet.
 
@@ -124,7 +124,7 @@ The framing that makes the rest of this chapter make sense: individual action he
 
 "Quantum breaks Bitcoin" is a sentence. The threat depends on which part of Bitcoin you mean.
 
-**[Shor's algorithm](/glossary/shors-algorithm)** breaks elliptic-curve cryptography. Given the public key on the secp256k1 curve, Shor's derives the private key in polynomial time on a sufficiently large quantum computer. This is what threatens Bitcoin's [ECDSA](/glossary/ecdsa-elliptic-curve-digital-signature-algorithm) and [Schnorr](/glossary/schnorr-signature) signatures. It is the existential exposure. It is why the 5.07 million BTC number matters.
+**[Shor's algorithm](/glossary/shors-algorithm)** breaks elliptic-curve cryptography. Given the public key on the secp256k1 curve, Shor's derives the private key in polynomial time on a sufficiently large quantum computer. This is what threatens Bitcoin's [ECDSA](/glossary/ecdsa-elliptic-curve-digital-signature-algorithm) and [Schnorr](/glossary/schnorr-signature) signatures. It is the existential exposure. It is why the exposed-supply number - about 30.5 percent of all BTC - matters.
 
 **[Grover's algorithm](/glossary/grovers-algorithm)** gives quadratic speedup on unstructured search. Applied to SHA-256, it halves effective security: 256-bit becomes 128-bit. Annoying. Not catastrophic. 128-bit symmetric security is still the standard floor for cryptography elsewhere. Bitcoin's [proof-of-work](/glossary/proof-work-pow) survives Grover's. Bitcoin's hashed addresses (P2PKH, P2WPKH that have never been spent) survive Grover's. The 21 million supply cap survives Grover's.
 
