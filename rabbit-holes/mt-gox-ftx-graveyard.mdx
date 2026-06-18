@@ -1,0 +1,124 @@
+---
+title: "Mt. Gox to FTX: The Custody Graveyard"
+slug: mt-gox-ftx-graveyard
+draft: true
+published: "2026-06-25"
+status: live
+section: rabbit-hole
+tagline: "Not your keys, not your coins is not a slogan. It is the lesson written across a decade of exchange collapses, in names, dates, and dollar figures. Here is the graveyard - and the honest version of what it teaches."
+order: 13
+estimatedMinutes: 12
+sources:
+  - { label: "Mt. Gox Rehabilitation Trustee - repayment commencement announcement (2024)", url: "https://www.mtgox.com/img/pdf/20240705_01_announcement_en.pdf" }
+  - { label: "Ontario Securities Commission - QuadrigaCX investigation report (2020)", url: "https://www.osc.ca/quadrigacxreport/conclusion.html" }
+  - { label: "US DOJ - Samuel Bankman-Fried sentenced to 25 years (2024)", url: "https://www.justice.gov/archives/opa/pr/samuel-bankman-fried-sentenced-25-years-his-orchestration-multiple-fraudulent-schemes" }
+  - { label: "SEC - charges against Sam Bankman-Fried and FTX (2022)", url: "https://www.sec.gov/newsroom/press-releases/2022-219" }
+  - { label: "US DOJ - founder of Celsius sentenced to 12 years (2025)", url: "https://www.justice.gov/usao-sdny/pr/founder-celsius-sentenced-12-years-fraud-and-market-manipulation" }
+  - { label: "NY Attorney General - $2B settlement with Genesis (2024)", url: "https://ag.ny.gov/press-release/2024/attorney-general-james-secures-settlement-worth-2-billion-crypto-firm-genesis" }
+  - { label: "SEC - BlockFi to pay $100M over its unregistered lending product (2022)", url: "https://www.sec.gov/newsroom/press-releases/2022-26" }
+  - { label: "FTC - settlement with Voyager Digital over false FDIC-insurance claims (2023)", url: "https://www.ftc.gov/news-events/news/press-releases/2023/10/ftc-reaches-settlement-crypto-company-voyager-digital-charges-former-executive-falsely-claiming" }
+relatedTerms:
+  - mt-gox
+  - quadriga-cx
+  - ftx
+  - celsius-genesis-3ac-cluster
+  - blockfi
+  - voyager-digital
+  - not-your-keys-not-your-coins
+  - self-custody
+  - proof-of-reserves
+  - rehypothecation
+  - counterparty-risk
+  - centralized-exchange-cex
+  - seed-phrase
+---
+
+> **Where you're going:** Over about a decade, the biggest names in crypto custody - Mt. Gox, QuadrigaCX, Celsius, Voyager, BlockFi, Genesis, FTX - collapsed one after another and took customer money down with them. This chapter walks the graveyard, finds the pattern underneath, and explains why "not your keys, not your coins" is a description of how Bitcoin works rather than a slogan. It also gives custody its honest due, because self-custody is not free either.
+
+## A phrase everyone repeats and nobody believes until the withdrawals stop
+
+"Not your keys, not your coins." Every Bitcoiner has heard it, most repeat it, and far fewer act on it - because holding a balance on an exchange feels identical to holding bitcoin. You can see the number. You can log in and check it. It looks like yours, right up until the morning the withdrawal button stops working.
+
+That morning has come over and over. What follows is the receipts version of the argument. Not "trust us, self-custody is safer," but a decade of names, dates, and dollar figures showing exactly what "your" balance was doing while you weren't looking.
+
+## The graveyard at a glance
+
+<figure>
+  <img src="/diagrams/mt-gox-ftx-graveyard-timeline.svg" alt="Timeline of seven crypto-custodian collapses drawn as tombstones on a ground line, in date order. Mt. Gox, February 2014, about 850,000 BTC, stolen over years. QuadrigaCX, December 2018, about CAD 169 million, empty wallets. Then a bracketed 2022 contagion of five collapses in eight months: Celsius, June 2022, about 4.7 billion dollars, froze then bust; Voyager, July 2022, over 1.7 billion dollars, marketed as FDIC insured; FTX, November 2022, about 8 billion dollars, routed to Alameda; BlockFi, November 2022, Chapter 11, killed by FTX; Genesis, January 2023, about 3.5 billion dollars, lent to the hedge fund 3AC. Takeaway: every balance was an IOU, not your keys not your coins." />
+  <figcaption>Seven custodian collapses, 2014 to 2023 - two isolated failures, then the 2022 contagion: five in eight months. Every figure is sourced in the entries and the sources below.</figcaption>
+</figure>
+
+Seven failures. Different decades, different countries, different excuses. The shape underneath is the same, and it is worth seeing the cases before naming the pattern.
+
+## 2014: Mt. Gox, the original
+
+[Mt. Gox](/glossary/mt-gox) was, by 2013, handling around 70 percent of all Bitcoin trades on earth. On 7 February 2014 it halted withdrawals; on 28 February it filed for bankruptcy in Tokyo with roughly 850,000 BTC gone, about 750,000 of it customer coins. There was no single dramatic hack. The coins had bled out over years through poor controls and undetected theft, masked by faked balances. The trustee did not begin repaying creditors until July 2024, more than ten years later.
+
+The lesson people took at the time was narrow: that one exchange was badly run. The lesson that actually held up was broader. A balance on an exchange is an IOU, and its worth depends entirely on whether the issuer is solvent and honest - which you cannot confirm until the instant it is proven otherwise.
+
+## 2019: QuadrigaCX, the custody that wasn't
+
+[QuadrigaCX](/glossary/quadriga-cx) was Canada's largest exchange. In December 2018 its founder and CEO, Gerald Cotten, died while travelling in India. The company announced that Cotten alone held the keys to its cold wallets, and that roughly CAD 169 million of customer funds were now locked away forever. It was a tragedy with a tidy explanation.
+
+Then Ernst & Young, the court-appointed monitor, examined the wallets. They were empty, and had been since April 2018 - eight months before Cotten died. In 2020 the Ontario Securities Commission concluded that Quadriga had "operated like a Ponzi scheme": Cotten had faked trades under aliases, covered real withdrawals with new deposits, and spent client money on homes, travel, and a plane.
+
+Quadriga added a lesson to Mt. Gox's. With Mt. Gox you could at least picture outside thieves. With Quadriga there was nothing left to steal by the end - the custody itself was fiction. "The funds are in cold storage" is a sentence, not a proof, and the people saying it had every reason to keep you from checking.
+
+## 2022: the year the plumbing showed
+
+2014 and 2019 looked like isolated disasters. 2022 revealed they were a category. In a single year a chain of lenders and exchanges failed in sequence, and the wreckage exposed what had been happening to "deposited" crypto all along: it was being lent out, leveraged, and lent again.
+
+It began with a hedge fund. [Three Arrows Capital](/glossary/celsius-genesis-3ac-cluster) made enormous leveraged bets - including on the Terra/LUNA token, which collapsed to nearly nothing in May 2022 - funded by borrowing from almost every lender in the industry. When the bets failed, 3AC defaulted and was ordered into liquidation in late June 2022, with creditors claiming more than $3 billion.
+
+The default tore through the firms that had funded it with their customers' money. [Celsius](/glossary/celsius-genesis-3ac-cluster), which advertised yields on deposits the way a bank advertises a savings account, froze all withdrawals on 12 June 2022 and filed for bankruptcy owing about $4.7 billion to more than 600,000 users. [Voyager](/glossary/voyager-digital), which marketed its accounts as "FDIC insured," had lent 3AC more than $650 million; it froze and filed in July, owing customers over $1.7 billion. [Genesis](/glossary/celsius-genesis-3ac-cluster), the lending desk owned by Digital Currency Group, had lent 3AC about $2.36 billion and was left with a roughly $1.1 billion unsecured hole - which its parent papered over with a promissory note not due until the 2030s, while some 340,000 Gemini Earn depositors were told the desk was solvent. [BlockFi](/glossary/blockfi), already bruised by 3AC, was rescued mid-year by FTX, then destroyed when FTX itself went down.
+
+The "FDIC insured" line on Voyager deserves its own beat, because it is the cleanest example of how the comfort was manufactured. The insurance was real, and it covered the US dollars Voyager held at a partner bank, against that bank failing. It did not cover any crypto, and it did not cover Voyager going bankrupt - which is exactly what happened. The words were true and the impression they created was false.
+
+## November 2022: FTX, the most trusted name on the list
+
+And then the biggest one. [FTX](/glossary/ftx) was, that autumn, one of the most reputable exchanges in the world: stadium naming rights, Super Bowl ads, a founder who testified to Congress and posed with heads of state. None of that was custody.
+
+When CoinDesk reported that the balance sheet of FTX's sister hedge fund, Alameda Research, was propped up by FTX's own FTT token, confidence cracked. A competitor announced it would sell its FTT, customers stampeded for the exits - around $5 billion of withdrawal requests in days - and the money was not there. FTX had been routing customer deposits to Alameda through an effectively unlimited credit line. On 11 November 2022, FTX, Alameda, and roughly 130 affiliated companies filed for bankruptcy. The customer shortfall was about $8 billion. Sam Bankman-Fried was convicted on all seven fraud counts in 2023 and sentenced to 25 years in 2024.
+
+The repayment carries the sharpest lesson of all. FTX creditors are being made more than 100 percent whole - in dollars, valued on 11 November 2022, when bitcoin traded around $16,000. Bitcoin later ran well past $90,000. If you held bitcoin on FTX, you are being handed the dollar value of coins you no longer own, priced on the worst day. You did not own bitcoin. You owned a claim that happened to be denominated in it.
+
+## The pattern under the graveyard
+
+Seven failures, roughly eight years, one shape. A few things are true of nearly all of them.
+
+**Your deposit was never just sitting there.** "Earn interest on your crypto" and "your funds are safe with us" are the same operation described from two angles: your coins were lent into someone else's leverage. [Counterparty risk](/glossary/counterparty-risk) was not a footnote to the product - it was the product. (Celsius, Voyager, BlockFi, Genesis.)
+
+**You could not verify the custody.** "Cold storage," "fully reserved," "FDIC insured" - all of them were claims on a website, not proofs you could check. Quadriga's wallets were empty; Voyager's insurance protected the wrong thing; FTX's reserves were a credit line to a hedge fund.
+
+**The brand ran inverse to the safety.** The more trusted the name, the larger the crater. Mt. Gox was the market. FTX was the most respectable exchange in the world the week before it filed. Reputation is not collateral.
+
+**When it broke, you were an unsecured creditor.** Not a holder of coins - a line item in a bankruptcy, paid a fraction, years late, at a value the court fixes. Even in the "good" outcomes, that is what "your" balance turned out to be.
+
+## Why Bitcoin makes this avoidable
+
+Here is the part that is specific to Bitcoin, and the reason the slogan is literal rather than motivational. Bitcoin is a bearer asset. Whoever controls the private keys controls the coins - fully, finally, and without needing anyone's permission. Holding your own keys is not a power-user workaround bolted onto Bitcoin; it is the thing Bitcoin was built to make possible. When the keys are yours, there is no issuer to go insolvent, no balance that is secretly an IOU, and no withdrawal button for someone else to switch off.
+
+Every failure in this chapter happened on the layer that people add on top of Bitcoin - the exchange, the lender, the yield account - not to Bitcoin itself. The protocol kept working perfectly through all of it. The coins that were lost were lost because someone else held the keys.
+
+## The honest version: custody is not the villain, and self-custody is not free
+
+It would be easy to end there, and dishonest. The receipts argue against keeping your savings on a custodian. They do not argue that custodians are evil or that everyone should self-custody everything, and the strong version of the case has to say so.
+
+**You need exchanges.** Turning dollars into bitcoin almost always runs through a [centralized exchange](/glossary/centralized-exchange-cex). The lesson is not "never touch one," it is "do not use it as a vault." Buy, withdraw, repeat.
+
+**Self-custody moves the risk; it does not delete it.** When you hold your own keys, you also hold the entire failure surface. Lose your [seed phrase](/glossary/seed-phrase) and the coins are gone with a finality no bankruptcy court can soften - the Mt. Gox creditors at least got something back a decade later; a lost seed returns nothing, ever. Add a careless backup, a house fire, a forgotten passphrase, an heir who has no idea what a hardware wallet is, or a robber who knows you hold keys, and you have a fresh catalog of ways to lose everything. Self-custody trades counterparty risk for personal-responsibility risk. For many people that is a good trade. It is still a trade, and our [seed backup strategies](/rabbit-hole/seed-backup-strategies) chapter exists because this part is genuinely hard.
+
+**Custodians have legitimate uses.** A regulated, audited, insured custodian is a reasonable choice for an institution, a large holder who cannot guarantee their own key security, or a beginner who needs training wheels before taking the wheel. The problem in this chapter was not that custody exists. It was that these specific custodians were unaudited, unregulated, or actively lying, while marketing themselves as safe.
+
+**Proof of reserves helps a little.** After FTX, "proof of reserves" became a marketing line - a cryptographic attestation that an exchange holds certain coins. It is a real improvement and a partial signal. But proving reserves is not proving solvency: an exchange can show its assets while hiding its liabilities, and a snapshot can be staged for the day of the audit. Treat it as one input, not a guarantee.
+
+## What to actually do
+
+You do not have to choose between reckless trust and survivalist paranoia. There is a spectrum, and a sane default.
+
+- Treat an exchange like a cash register, not a savings account. Keep there only what you are actively trading, and only what you could afford to lose to a freeze.
+- Move long-term holdings into self-custody, and learn the one skill it requires: backing up a [seed phrase](/glossary/seed-phrase) properly. That is most of the game, and it is learnable in an afternoon.
+- Scale the setup to the stack. A single hardware wallet is a vast upgrade over an exchange balance; multisig is worth the effort once the amount would change your life.
+- If you do leave some with a custodian, prefer one that is regulated, audited, and insured - and remember that even then you are trusting a promise.
+
+The graveyard is not an argument that everyone running a custodian is a fraud. It is an argument that a custodial balance is a promise, and that Bitcoin is the first money in history where you do not need the promise. The exchanges asked you to trust that the coins were there. Bitcoin lets you simply hold them. Not your keys, not your coins - written, by now, in receipts.
