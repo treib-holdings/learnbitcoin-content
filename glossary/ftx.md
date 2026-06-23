@@ -23,12 +23,12 @@ sameAs:
 liveWidget: ~
 ---
 
-FTX was, by late 2022, one of the largest and most trusted cryptocurrency exchanges in the world - sponsoring stadiums, courting regulators, run by a founder the press treated as a wunderkind. It was also quietly lending its customers' deposits to a hedge fund.
+By late 2022 FTX was one of the largest and most trusted cryptocurrency exchanges anywhere. It sponsored stadiums, courted regulators, and was run by a founder the press treated as a genius. It was also quietly lending its customers' deposits to a hedge fund.
 
-Sam Bankman-Fried founded FTX in 2019, alongside Alameda Research, a trading firm he had started in 2017. FTX issued its own token, FTT, and Alameda held a huge pile of it. When CoinDesk reported in November 2022 that Alameda's balance sheet was propped up by that illiquid FTT, confidence cracked. A competitor announced it would sell its FTT, customers rushed for the exits - around $5 billion of withdrawal requests in days - and the exchange could not honor them. The money was not there. FTX had routed customer deposits to Alameda through an effectively unlimited credit line. On 11 November 2022, FTX, Alameda, and roughly 130 affiliated companies filed for bankruptcy.
+Sam Bankman-Fried founded FTX in 2019, alongside Alameda Research, a trading firm he had started in 2017. FTX issued its own token, FTT, and Alameda held a huge amount of it. In November 2022 CoinDesk reported that Alameda's balance sheet was propped up by that illiquid FTT. Confidence broke, a competitor said it would dump its FTT, and customers tried to withdraw around $5 billion in a few days. The exchange couldn't honor it, because the money wasn't there. FTX had been routing customer deposits to Alameda through a credit line with effectively no limit. On 11 November 2022, FTX, Alameda, and roughly 130 affiliated companies filed for bankruptcy.
 
-The customer shortfall was about $8 billion. Bankman-Fried was convicted on all seven fraud counts in November 2023 and sentenced to 25 years in March 2024; several lieutenants cooperated and were sentenced separately.
+The customer shortfall was about $8 billion. Bankman-Fried was convicted on all seven fraud counts in November 2023 and sentenced to 25 years in March 2024. Several of his lieutenants cooperated and were sentenced separately.
 
-The bankruptcy estate, run by John Ray III, is repaying creditors more than 100 percent - of what their claims were worth in dollars on 11 November 2022, when bitcoin was around $16,000. Bitcoin later traded well above $90,000. Customers were made "whole" in dollars and got back a fraction of their coins' value. That is the fine print on every custodian: you receive what they say you are owed, valued when they say, paid when they choose.
+The bankruptcy estate, run by John Ray III, is repaying creditors more than 100 percent of what their claims were worth in dollars on 11 November 2022, when bitcoin was around $16,000. Bitcoin later traded well above $90,000. So customers were made "whole" in dollars and got back only a fraction of what their coins would be worth now. With any custodian, you get back what they say you're owed, valued and paid on their terms rather than yours.
 
 See [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard) for the full decade of receipts.

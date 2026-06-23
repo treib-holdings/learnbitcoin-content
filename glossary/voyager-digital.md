@@ -22,12 +22,12 @@ sameAs:
 liveWidget: ~
 ---
 
-Voyager Digital was a publicly traded crypto brokerage that advertised high yields and told customers their money was about as safe as it would be in a bank. It was not.
+Voyager Digital was a publicly traded crypto brokerage that advertised high yields and told customers their money was about as safe as it would be in a bank. That wasn't true.
 
-Founded in 2018 and led by Stephen Ehrlich, Voyager took customer deposits and lent them out for yield. More than $650 million of that went to a single borrower: the hedge fund [Three Arrows Capital](/glossary/celsius-genesis-3ac-cluster). When 3AC defaulted in mid-2022, Voyager halted withdrawals and filed for Chapter 11 on 5 July 2022, owing customers more than $1.7 billion.
+Founded in 2018 and led by Stephen Ehrlich, Voyager took customer deposits and lent them out for yield. More than $650 million of that went to a single borrower, the hedge fund [Three Arrows Capital](/glossary/celsius-genesis-3ac-cluster). When 3AC defaulted in mid-2022, Voyager halted withdrawals and filed for Chapter 11 on 5 July 2022, owing customers more than $1.7 billion.
 
-The sharpest detail is the marketing. Voyager described its accounts as "FDIC insured." That insurance applied only to the US dollars held at its partner bank, and only against that bank failing - not to any crypto, and not against Voyager itself going under. Customers who saw "FDIC insured" and relaxed had misread what was actually being promised. Regulators later acted: Ehrlich settled with the FTC and the CFTC over the misrepresentations, paying a few million dollars and accepting a ban from crypto-related retail products.
+The marketing is the part worth remembering. Voyager described its accounts as "FDIC insured." That insurance only covered the US dollars held at its partner bank, and only if that bank failed. It did not cover crypto, and it did not cover Voyager going under, which is what happened. Plenty of customers saw "FDIC insured" and relaxed, having misread what was actually being promised. Regulators eventually acted: Ehrlich settled with the FTC and the CFTC over the misleading claims, paying a few million dollars and accepting a ban from crypto-related retail products.
 
-The rescue attempts read like a tour of this whole list. FTX won the auction for Voyager's assets in September 2022, then collapsed. A Binance.US deal followed and was abandoned under regulatory review in 2023. Voyager wound itself down, and customers recovered roughly 70 percent. "Insured" is a word with fine print. Read the fine print before you trust the word.
+The rescue attempts touched most of the other names here. FTX won the auction for Voyager's assets in September 2022 and then collapsed. A Binance.US deal followed and was abandoned under regulatory review in 2023. Voyager wound itself down, and customers recovered roughly 70 percent. The "FDIC insured" line was technically accurate and still left people badly misled, which is worth remembering the next time a custodian leans on the word.
 
 See [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard) for the rest of the graveyard.
