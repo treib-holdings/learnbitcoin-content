@@ -22,12 +22,12 @@ sameAs:
 liveWidget: ~
 ---
 
-BlockFi sold a simple-sounding product: deposit your crypto, earn interest. The interest came from lending that crypto to leveraged trading firms, and there was no FDIC or SIPC insurance behind any of it. Depositors were unsecured creditors who had been handed a yield number instead of a risk disclosure.
+BlockFi sold a simple-sounding product: deposit your crypto and earn interest. The interest came from lending that crypto to leveraged trading firms, and there was no FDIC or SIPC insurance behind any of it. Depositors were unsecured creditors who had been shown a yield number and not much about the risk.
 
-Founded in 2017 by Zac Prince and Flori Marquez, BlockFi was once valued around $3 billion. In February 2022 it agreed to a $100 million settlement - $50 million to the SEC and $50 million to state regulators - for offering its BlockFi Interest Accounts as unregistered securities. That was the warning shot, eight months early.
+Founded in 2017 by Zac Prince and Flori Marquez, BlockFi was once valued around $3 billion. In February 2022 it agreed to a $100 million settlement, half to the SEC and half to state regulators, for offering its BlockFi Interest Accounts as unregistered securities. That was a clear warning, eight months before the company actually failed.
 
-Then the dominoes of 2022 hit. BlockFi took a loss on its exposure to Three Arrows Capital, and was rescued mid-year by a roughly $400 million credit facility from [FTX](/glossary/ftx), which also took an option to buy the company outright. When FTX itself collapsed that November, the rescuer became the cause of death: BlockFi's exposure was now to a bankrupt FTX and Alameda. It paused withdrawals and filed for Chapter 11 on 28 November 2022.
+Then the 2022 collapses hit. BlockFi took a loss on its exposure to Three Arrows Capital and was rescued mid-year by a roughly $400 million credit facility from [FTX](/glossary/ftx), which also took an option to buy the company. When FTX itself collapsed that November, the rescue turned into the problem: BlockFi was now exposed to a bankrupt FTX and Alameda. It paused withdrawals and filed for Chapter 11 on 28 November 2022.
 
-Creditor recovery has been comparatively good - a settlement with the FTX estate funded distributions targeting close to 100 percent of eligible claims - but "comparatively good" still meant years of frozen funds and uncertainty for ordinary depositors. A yield you cannot explain is a risk you have already taken.
+Creditor recovery has been relatively good. A settlement with the FTX estate funded distributions aiming at close to 100 percent of eligible claims. Even so, that meant years of frozen funds and uncertainty for ordinary depositors, which is the real cost of a yield whose source you can't see.
 
 See [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard) for how BlockFi's collapse fits the 2022 cascade.
