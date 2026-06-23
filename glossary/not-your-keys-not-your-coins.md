@@ -24,3 +24,5 @@ liveWidget: ~
 The phrase is literal rather than motivational, because Bitcoin is a bearer asset. Control of the keys is control of the coins, completely and finally, without anyone's permission. A balance on an exchange feels identical to holding bitcoin - you can see the number, you can log in and check it - right up until the morning the withdrawal button stops working. At that point the difference between a coin and a claim becomes the only thing that matters.
 
 The slogan has receipts. A decade of custodian failures - [Mt. Gox](/glossary/mt-gox) in 2014, [QuadrigaCX](/glossary/quadriga-cx) in 2018, [FTX](/glossary/ftx) and the 2022 lenders - is a long line of people discovering, the hard way, that "their" coins were really an entry in someone else's database. The answer the phrase points to is [self-custody](/glossary/self-custody): hold the keys yourself, and there is no promise left for anyone to break.
+
+See [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard) for the receipts behind the maxim.

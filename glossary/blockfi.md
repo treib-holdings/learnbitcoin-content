@@ -29,3 +29,5 @@ Founded in 2017 by Zac Prince and Flori Marquez, BlockFi was once valued around 
 Then the dominoes of 2022 hit. BlockFi took a loss on its exposure to Three Arrows Capital, and was rescued mid-year by a roughly $400 million credit facility from [FTX](/glossary/ftx), which also took an option to buy the company outright. When FTX itself collapsed that November, the rescuer became the cause of death: BlockFi's exposure was now to a bankrupt FTX and Alameda. It paused withdrawals and filed for Chapter 11 on 28 November 2022.
 
 Creditor recovery has been comparatively good - a settlement with the FTX estate funded distributions targeting close to 100 percent of eligible claims - but "comparatively good" still meant years of frozen funds and uncertainty for ordinary depositors. A yield you cannot explain is a risk you have already taken.
+
+See [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard) for how BlockFi's collapse fits the 2022 cascade.

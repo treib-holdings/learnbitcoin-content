@@ -29,3 +29,5 @@ Founded in 2018 and led by Stephen Ehrlich, Voyager took customer deposits and l
 The sharpest detail is the marketing. Voyager described its accounts as "FDIC insured." That insurance applied only to the US dollars held at its partner bank, and only against that bank failing - not to any crypto, and not against Voyager itself going under. Customers who saw "FDIC insured" and relaxed had misread what was actually being promised. Regulators later acted: Ehrlich settled with the FTC and the CFTC over the misrepresentations, paying a few million dollars and accepting a ban from crypto-related retail products.
 
 The rescue attempts read like a tour of this whole list. FTX won the auction for Voyager's assets in September 2022, then collapsed. A Binance.US deal followed and was abandoned under regulatory review in 2023. Voyager wound itself down, and customers recovered roughly 70 percent. "Insured" is a word with fine print. Read the fine print before you trust the word.
+
+See [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard) for the rest of the graveyard.

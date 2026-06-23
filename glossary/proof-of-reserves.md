@@ -22,3 +22,5 @@ Proof of reserves is an attempt to let a custodian prove, with on-chain and cryp
 It became a standard demand the week [FTX](/glossary/ftx) collapsed, because FTX is exactly what proof of reserves is meant to catch: an exchange whose customer deposits had quietly been routed somewhere else. A custodian that can prove it controls the coins is harder to run the way FTX was run.
 
 Treat it as a partial signal, not a guarantee. Proving reserves is not proving solvency. An exchange can show its assets while hiding its liabilities, can borrow coins to pass an audit it knows is coming, and can present a snapshot staged for a single moment in time. Most published "proof of reserves" to date proves only the assets half of the equation. It is better than the marketing assurances it replaced, and it is not a substitute for [self-custody](/glossary/self-custody). The only reserve you never have to take on faith is the one whose keys you hold yourself.
+
+See [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard) for the failures that made it necessary.
