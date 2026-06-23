@@ -29,3 +29,5 @@ In December 2018 the founder and CEO, Gerald Cotten, died of complications from 
 Then the court-appointed monitor, Ernst & Young, examined the wallets. They were empty, and had been since April 2018 - eight months before Cotten died. There were no entombed coins. In June 2020 the Ontario Securities Commission published its findings: Quadriga "operated like a Ponzi scheme." Cotten had run fake trades under aliases, covered real withdrawals with new deposits, and spent client money on homes, travel, and a private plane.
 
 Around 76,000 clients were affected. Creditors who filed roughly CAD 303 million in claims have recovered about 13 percent. The "did Cotten fake his death" theory is popular and entirely unproven - and beside the point. The coins were gone long before the funeral. A custodian you cannot audit is a custodian you are trusting blind.
+
+See [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard) for where Quadriga sits in the pattern.
