@@ -72,4 +72,4 @@ It is helpful to be explicit about what Bitcoin governance is *not*:
 - It is **not controlled by Bitcoin Core developers.** They write code, but every line they write must be accepted by the people who run it.
 - It is **not absent.** The lack of formal governance does not mean no governance - it means an emergent process that has, so far, proven harder to capture than any formal mechanism that's been tried elsewhere in money.
 
-For a deeper look at how this plays out in practice, the histories of [SegWit activation](/glossary/segwit-segregated-witness-bip-141) and the [block size war](/glossary/bip-101-increase-block-size) are the canonical case studies.
+For a deeper look at how this plays out in practice, the histories of [SegWit activation](/glossary/segwit-segregated-witness-bip-141) and the [block size war](/rabbit-hole/block-size-war) are the canonical case studies.

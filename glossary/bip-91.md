@@ -38,3 +38,5 @@ What this actually achieved:
 - **The "SegWit2x" hard-fork half of the agreement was abandoned** later in 2017, when it became clear users had no appetite for the 2MB block-size hard fork that miners had wanted. The "2x" never happened.
 
 BIP-91 is a small technical document with outsized historical importance. It's the bridge between a stalemate and a successful upgrade, and the moment that established the modern "users hold the leverage, not miners" framing in Bitcoin governance.
+
+See [The Block Size War](/rabbit-hole/block-size-war) for the standoff BIP-91 defused.

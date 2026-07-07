@@ -1,0 +1,157 @@
+---
+title: "The Block Size War"
+slug: block-size-war
+draft: false
+published: "2026-07-07"
+status: live
+section: rabbit-hole
+tagline: "The 2015-2017 fight over Bitcoin's block size limit, from Bitcoin XT to the UASF to the forks that split away, and how it settled who actually controls the rules."
+order: 14
+estimatedMinutes: 13
+sources:
+  - { label: "Jonathan Bier - The Blocksize War: The Battle for Control Over Bitcoin's Protocol Rules (2021)", url: "https://www.goodreads.com/book/show/57429394-the-blocksize-war" }
+  - { label: "Bitcoin Magazine - Bitcoin Miners and Core Developers Release SegWit, Hard Fork Agreement (2016)", url: "https://bitcoinmagazine.com/technical/bitcoin-miners-and-core-developers-release-segwit-hard-fork-agreement-1457018394" }
+  - { label: "CoinDesk - Code Bug Exploit Sends Bitcoin Unlimited Nodes Offline (2017)", url: "https://www.coindesk.com/markets/2017/03/14/code-bug-exploit-sends-bitcoin-unlimited-nodes-offline" }
+  - { label: "Bitcoin Magazine - Breaking Down Bitcoin's AsicBoost Scandal (2017)", url: "https://bitcoinmagazine.com/technical/breaking-down-bitcoins-asicboost-scandal" }
+  - { label: "Bitcoin Wiki - New York Agreement", url: "https://en.bitcoin.it/wiki/New_York_Agreement" }
+  - { label: "BIP-148 specification (2017)", url: "https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki" }
+  - { label: "Bitcoin Magazine - BIP91: The SegWit Activation Kludge That Should Keep Bitcoin Whole (2017)", url: "https://bitcoinmagazine.com/technical/bip91-segwit-activation-kludge-should-keep-bitcoin-whole" }
+  - { label: "Bitcoin Magazine - Segregated Witness Activates on Bitcoin (2017)", url: "https://bitcoinmagazine.com/technical/segregated-witness-activates-bitcoin-what-expect" }
+  - { label: "CoinDesk - 2x Called Off: Bitcoin Hard Fork Suspended for Lack of Consensus (2017)", url: "https://www.coindesk.com/markets/2017/11/08/2x-called-off-bitcoin-hard-fork-suspended-for-lack-of-consensus" }
+relatedTerms:
+  - block-size-war
+  - block-size
+  - bip-101-increase-block-size
+  - segwit-segregated-witness-bip-141
+  - bip-148-uasf
+  - bip-91
+  - new-york-agreement-nya
+  - segwit2x
+  - bitcoin-cash
+  - bitcoin-sv-bsv
+  - asicboost
+  - miner-signaling
+  - bitcoin-governance
+  - soft-fork
+  - chain-split
+  - bitcoin-core
+---
+
+> **Where you're going:** For about two years Bitcoin tore itself apart over how big a block should be. The argument was nominally about a megabyte of block space, but the real fight was over who gets to change Bitcoin's rules: the miners, the big companies, or the ordinary people running nodes. This chapter walks through how the war started, the failed deals and the alternative software, the standoff over SegWit, the moment users forced the issue, and the two forks that broke off. The ending is the payoff, because it decided how Bitcoin has handled every upgrade since.
+
+## A fight about one megabyte
+
+Bitcoin blocks have a size limit. Satoshi added it quietly in 2010, capping each block at one megabyte. Blocks were nearly empty back then and cost almost nothing to fill, so the cap was a cheap defense against someone stuffing the chain with junk. At the time nobody treated it as a sacred number. It was a temporary guard rail.
+
+By 2015 the guard rail was starting to bind. Blocks were filling up during busy periods, transactions were waiting longer to confirm, and fees were creeping up. The question was obvious: do we raise the limit?
+
+Answering it turned out to be the hardest thing Bitcoin has ever done. The argument ran from roughly August 2015 to November 2017. It split companies, developers, miners, and online communities into hostile camps, and it ended with two permanent forks off the network. Jonathan Bier later wrote a whole book about it, *The Blocksize War*, and the title gets the tone right.
+
+## The two sides
+
+The dispute sorted people into two camps that disagreed about what Bitcoin is for.
+
+The **big-blockers** wanted to raise the limit, soon and substantially. Their reasoning was straightforward. Bitcoin should work as everyday electronic cash, fees should stay low, and if blocks are filling up then you make them bigger. Disk space and bandwidth are cheap and getting cheaper, so why accept artificial congestion? This camp included early heavyweights like Gavin Andresen, who Satoshi had handed the project to, the developer Mike Hearn, the entrepreneur Roger Ver, and the large Chinese mining operations led by Bitmain's Jihan Wu.
+
+The **small-blockers** wanted to keep blocks small and grow capacity other ways. For them the issue was decentralization. The whole point of running a [full node](/glossary/full-node) is that you verify the rules yourself instead of trusting someone else. The bigger blocks get, the more expensive it becomes to run a node, and the fewer people bother. Push that far enough and validation ends up concentrated in a handful of data centers, which is the kind of choke point Bitcoin exists to avoid. Better to keep the base layer lean, improve how efficiently it uses the space it has, and move everyday payment volume to systems built on top, like the [Lightning Network](/glossary/lightning-network). This camp included most of the [Bitcoin Core](/glossary/bitcoin-core) development group.
+
+It is worth being fair here, because the caricature from the time was that one side wanted Bitcoin to grow and the other wanted to strangle it. That is not what was going on. Both sides wanted Bitcoin to scale. They disagreed about how, and behind that, they disagreed about who should get to make the call. The second disagreement is the one the war ended up settling.
+
+## The alternative clients
+
+The big-block camp's first move was to route around Bitcoin Core by shipping rival software with a bigger limit baked in.
+
+**Bitcoin XT** came first, in August 2015, built by Mike Hearn and Gavin Andresen around [BIP-101](/glossary/bip-101-increase-block-size), which would have raised the cap to 8 MB and then kept doubling it. The idea was that if enough miners and users ran XT, its rules would simply become Bitcoin. It got a burst of attention, then faded.
+
+**Bitcoin Classic** followed in early 2016 with a more modest proposal, a straight bump to 2 MB. **Bitcoin Unlimited**, the most ambitious of the three, tried to remove the fixed limit altogether and replace it with something called "emergent consensus," where node operators and miners would each set their own preferred size and the network would supposedly converge on a number on its own. It had first appeared around the start of 2016, and by 2017 it had become the big-block camp's flagship.
+
+Bitcoin Unlimited is also where this approach hit a wall in the most embarrassing way possible. In March 2017 a bug in its code was exploited, and most of the Bitcoin Unlimited nodes on the network crashed at once. The count dropped from about 780 to around 250 before patched nodes came back online. The cause was a debugging check that the developers had left active in production software, which let a single malformed message knock a node offline. For a project whose entire pitch was that it should take over running Bitcoin, having roughly 70 percent of its nodes fall over to one crafted packet was not a good look, and it hardened the small-block camp's argument that this software was not ready to carry the network.
+
+None of the alternative clients ever got close to taking over. Miners flirted with them, the price of switching was high, and the nodes run by exchanges, businesses, and everyday users, the ones whose acceptance actually defines which chain is "Bitcoin," mostly stayed on Core. But the pressure was real and constant, and it set the backdrop for everything that followed.
+
+## SegWit, and why it stalled
+
+The small-block camp's answer to congestion was [SegWit](/glossary/segwit-segregated-witness-bip-141), short for Segregated Witness.
+
+SegWit was clever. It moved the witness data, the signatures that prove a transaction is authorized, out of the main block structure and into a separate section. That fixed a long-standing flaw called transaction malleability, a quirk that let a transaction's ID be altered before it confirmed, which had made it unsafe to build payment systems on top of Bitcoin. The fix cleared the path for Lightning. As a side effect SegWit also raised capacity, because the restructured blocks could hold more transaction data, up to a new effective ceiling of roughly double the old limit. And it did all this as a [soft fork](/glossary/soft-fork), a backward-compatible change that did not force everyone to upgrade at once.
+
+So SegWit gave the small-blockers more capacity and the second-layer groundwork they wanted, without a contentious hard fork. The catch was activation. SegWit was set to turn on only once miners signaled support for it in 95 percent of recent blocks, and the miners aligned with the big-block camp simply declined to signal. A change a large part of the ecosystem wanted sat frozen because a group of miners would not flip a bit.
+
+There had already been one attempt to break this kind of deadlock with a handshake. In February 2016 a group of Core developers and the major mining pools met in Hong Kong and, after more than eighteen hours of talks, announced the "Bitcoin Roundtable Consensus." The miners, who together produced over 80 percent of blocks, would run SegWit, and in exchange the developers present agreed to write code for a roughly 2 MB hard fork and propose it within a few months. It looked like a truce, but it did not hold. The developers had signed in a personal capacity and could not commit Core as a whole, the hard fork code never gained broad support, and the miners, feeling the deal had not been honored, were in no hurry to activate SegWit. Both halves of the bargain missed their deadlines. By early 2017 the two sides trusted each other less than before, and SegWit was still stuck.
+
+## The AsicBoost theory
+
+Why would miners block an upgrade most of the ecosystem wanted, even one that added the capacity their own customers were asking for? In April 2017 the Core developer Greg Maxwell offered an answer that poured gasoline on the fire.
+
+On the development mailing list, Maxwell pointed out that a mining optimization called [AsicBoost](/glossary/asicboost) let hardware mine more efficiently and earn more per chip. One common "covert" way of using it was incompatible with SegWit; if SegWit activated, that particular trick would stop working. He noted that a major manufacturer's chips appeared to support it. That manufacturer was Bitmain, the largest maker of mining hardware and a central player on the big-block side.
+
+If true, it meant some of the opposition to SegWit had less to do with block size philosophy than with protecting a private hardware advantage worth a lot of money. Bitmain responded that its chips did support AsicBoost, as some competitors' chips did, but said it had only tested the technique on a test network. The company denied using AsicBoost on the main chain and denied that it had anything to do with its opposition to SegWit.
+
+The truth of who used what, when, was never fully nailed down in public, and you do not have to take a side on it to see why it mattered. The accusation reframed the whole conflict for a lot of onlookers. It suggested the deadlock might be held in place by financial self-interest dressed up as principle, and it made the small-block camp far less willing to keep negotiating.
+
+## The New York Agreement
+
+In May 2017, with SegWit still stuck, a different group tried to force a settlement. At the Consensus conference in New York, a coalition of companies and miners signed what became known as the [New York Agreement](/glossary/new-york-agreement-nya).
+
+The deal was organized by Digital Currency Group, the venture firm run by Barry Silbert. Fifty-eight companies across 22 countries signed, and the signatories claimed to represent about 83 percent of the network's mining power. The plan, called [SegWit2x](/glossary/segwit2x), was a compromise with two parts. First, activate SegWit, which the small-blockers wanted. Second, a few months later, hard fork to 2 MB blocks, which the big-blockers wanted. Each side would get half.
+
+The problem was who was missing from the room. This was an agreement among exchanges, wallet companies, and mining pools. The developers who actually maintain Bitcoin Core were not part of it, and neither, in any meaningful sense, were the users who run nodes. To the small-block camp, that was the entire objection. A few dozen executives meeting at a conference cannot rewrite Bitcoin's rules by signing a document, because they are not the ones who enforce the rules. The people running nodes are, and the nodes reject any block that breaks the rules they choose to run, no matter who mined it or who signed what. (Our entry on [Bitcoin governance](/glossary/bitcoin-governance) lays out exactly where that veto sits and why.)
+
+Instead of ending the war, the agreement set up its final confrontation. On one side, an industry coalition with a coordinated plan, a supermajority of mining power, and most of the industry's biggest names. On the other, the users running nodes, who by then already had a deadline of their own.
+
+## The users set a deadline
+
+The users' weapon had been on the table since before the New York Agreement was signed. In February 2017, a pseudonymous coder going by shaolinfry had proposed something called a user-activated soft fork, or UASF.
+
+The idea, written up in March 2017 as [BIP-148](/glossary/bip-148-uasf), inverted the usual order. Instead of waiting for miners to signal SegWit, ordinary node operators would set a flag day, August 1, 2017, after which their nodes would reject any block that did not signal support for SegWit. It put the threat on the miners. Keep stalling and the nodes run by users and businesses will reject your blocks, and the bitcoin you mine on the wrong side of the split will not be the bitcoin the exchanges and users recognize.
+
+It was a genuinely risky play. If miners called the bluff, Bitcoin could have split into two chains on August 1 with no clear winner. But the movement caught on. "UASF" hats appeared, node operators advertised that they were running BIP-148, and businesses started drawing up contingency plans for a split. The users, who rarely act as an organized bloc, were now enforcing a deadline of their own. Part of the New York Agreement's urgency came from that same calendar; the industry wanted SegWit activated by agreement before the users forced the question on August 1.
+
+Faced with the flag day, the miners blinked. James Hilliard, an engineer at a mining-hardware firm, offered a face-saving exit with [BIP-91](/glossary/bip-91), a mechanism that let miners make SegWit signaling mandatory among themselves at a lower threshold, getting SegWit activated before August 1 and avoiding the BIP-148 split. BIP-91 went into force around July 20, 2017. SegWit followed, passing its final signaling threshold in early August and going live at block 481,824 on August 24, 2017. After two years, the upgrade the miners had stalled was live, and it was the users' deadline that forced it through.
+
+## August 1: Bitcoin Cash splits off
+
+SegWit activating did not mean everyone fell into line. The faction that had never wanted SegWit and wanted bigger blocks above all else was not going to accept the outcome. On August 1, 2017, the date the UASF had set as its line in the sand, they forked off onto their own chain: [Bitcoin Cash](/glossary/bitcoin-cash).
+
+Bitcoin Cash kept the transaction history up to the split, so everyone holding bitcoin also held an equal amount of the new coin. From there the new chain went its own way. It rejected SegWit, raised the block size limit straight to 8 MB, and later to 32 MB, and set out to be the cheap-payments chain the big-block camp had argued for all along. Both chains kept running. Both, by some definition, claimed to be the real Bitcoin. The market did not stay undecided for long: the original chain kept the overwhelming majority of the mining power, the price, the developers, and the name Bitcoin.
+
+The forking did not stop there. In November 2018 Bitcoin Cash itself split again, into Bitcoin Cash and [Bitcoin SV](/glossary/bitcoin-sv-bsv), in a bitter feud that included a so-called hash war, with each side pouring mining power into its own chain to prove dominance while Craig Wright's camp threatened outright attacks on the rival chain. Wright claims to be Satoshi Nakamoto; a UK court comprehensively rejected that claim in 2024 after finding he had forged documents to support it. Each fork down the chain had fewer users and less mining power than the one before it. That pattern is part of the lesson too. Forking off is cheap, but each new chain kept only a small share of the value, security, and users of the one it left.
+
+## November: the 2x half is called off
+
+There was still one piece of the New York Agreement left standing. SegWit had activated, but the second half, the 2 MB hard fork, was scheduled for around mid-November 2017.
+
+It never happened. As the date approached, support drained away. Signatory companies began withdrawing, the developer community was overwhelmingly opposed, and there was no clean technical way to force a change onto the users who would simply keep running the old rules. On November 8, 2017, a group of the plan's own organizers published a short message suspending it. They wrote that they had not built sufficient consensus for the upgrade, and that keeping the community together mattered more than getting it through.
+
+That suspension is usually marked as the end of the war. The big-block faction that wanted to leave had already left as Bitcoin Cash. The attempt to enlarge Bitcoin itself by industry agreement was now dead. Small blocks had won. More importantly, so had the people running nodes.
+
+## The war was never really about megabytes
+
+Step back from the dates and the acronyms and the underlying question is plain. The war was never really about one megabyte versus two, or eight, or thirty-two. The question was whether the powerful players in Bitcoin's economy can change the rules when they decide they want to.
+
+The answer the war produced was no, not on their own. A supermajority of miners could not do it. The largest companies in the industry, acting together with that mining power behind them, could not do it. What stopped them was the most unglamorous part of the whole system, the thousands of people independently running nodes that enforced the rules they chose and rejected everything else.
+
+That is the durable result. Changing Bitcoin's consensus rules requires rough agreement across all the groups that make up the network, and any one of them, including ordinary users, can refuse. The process is slow and messy, and from 2015 to 2017 it was genuinely ugly, but it works, and it is the reason the 21 million cap is credible in a way no corporate promise could ever be. If it took a two-year civil war just to fail to change a single anti-spam limit, nobody is quietly changing the supply schedule.
+
+You can see the proof in what came after. When Taproot, a far less controversial upgrade, activated in 2021, it followed a careful, deliberate path with broad buy-in and no drama. The lesson of the block size war was absorbed. Big changes now wait until the whole network is ready.
+
+## The receipts that outlasted the war
+
+A few artifacts of the conflict are still lying around if you know where to look.
+
+The media front was as fierce as the technical one. The two big online forums, the r/bitcoin subreddit and the bitcointalk forum, were heavily moderated by people on the small-block side, which pushed much of the big-block camp onto a rival subreddit, r/btc, and into a parallel media ecosystem. Each side accused the other of censorship, and each was partly right. Some of the domain bans from that era are still quietly enforced years later. ChainQuery.com, a site that analyzes Bitcoin's public ledger, was still automatically filtered from r/bitcoin as of 2026, a small live fossil of the war's media battles.
+
+The AsicBoost story got a quiet coda too. The optimization later became openly supported and widely used in a form compatible with SegWit, which drained most of the drama out of the original accusation without ever fully resolving who had been doing what in 2017.
+
+And the forks are still trading. Bitcoin Cash and Bitcoin SV both still exist, with their own communities and a tiny fraction of Bitcoin's value, security, and activity. The people who were sure that bigger blocks were Bitcoin's future were free to go build exactly that, and did, and the market has spent the years since deciding which vision it actually wanted.
+
+## What this buys us
+
+The thing to remember from this chapter is that Bitcoin's resistance to change is deliberate, and that the war is what proved it holds under pressure.
+
+- **Nobody is in charge, and that held up under maximum pressure.** The single largest coordinated attempt to change Bitcoin's rules failed, not by a vote, but because the users who run nodes declined to go along. That is what decentralization looks like when it is actually tested.
+- **The economic majority is the final check.** The last veto belongs to the people validating their own transactions, which is why running your own node is an act with real weight behind it.
+- **The hard-money promise is believable because of this.** A 21 million cap that a committee could revise would be worthless. The block size war shows that even a trivial-sounding change is nearly impossible to force through, which is why the important rules are safe.
+- **Forking is the pressure-release valve.** Anyone who disagrees can leave and start their own chain. Bitcoin Cash and Bitcoin SV did. What they could not take with them was the network's value, and that freedom to exit is part of what kept the original chain coherent.
+
+The war was exhausting and it was not pretty. But it answered a question that mattered more than any block size, and the answer is the reason the rules hold without depending on anyone in particular to keep them.

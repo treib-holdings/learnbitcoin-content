@@ -38,3 +38,5 @@ What actually happened:
 - **The chain didn't split (on Bitcoin's side).** The dispute did spawn Bitcoin Cash as a separate altcoin, but Bitcoin itself remained one chain.
 
 The lesson: **nodes - not miners - are the ultimate authority on Bitcoin's rules.** Miners can refuse to signal, but they can't force the network to accept blocks that the economic majority of nodes will reject. BIP-148 established this principle in practice. It's been referenced in every subsequent activation discussion.
+
+See [The Block Size War](/rabbit-hole/block-size-war) for the two years of deadlock that made a user revolt necessary.

@@ -32,3 +32,5 @@ The differences in 2026:
 The 2017 dispute was substantive: real disagreements about scaling, decentralization, and protocol direction, with reasonable engineers and economists on each side. The outcome is what it is. BTC retains the dominant position by hash rate, market cap, developer mindshare, and ecosystem depth.
 
 On this site, "Bitcoin" without qualification means BTC. Bitcoin Cash is a separate network with its own community and engineering choices; we cover it as relevant history rather than as a peer chain.
+
+See [The Block Size War](/rabbit-hole/block-size-war) for the full history of the conflict behind the split.
