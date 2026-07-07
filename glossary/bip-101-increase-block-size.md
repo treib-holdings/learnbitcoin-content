@@ -29,3 +29,5 @@ What actually shipped was [SegWit (BIP 141)](/glossary/segwit-segregated-witness
 BIP 101 reads now as a road not taken. The technical merits and the political dynamics were both real; reasonable people held positions in good faith on each side. The result was that Bitcoin chose conservative base-layer scaling plus aggressive second-layer development, and the alternative path ran in parallel as a separate chain. Almost a decade later, Bitcoin's block size is unchanged; the heavy lifting on throughput happens in Lightning.
 
 Spec: [BIP-101](https://github.com/bitcoin/bips/blob/master/bip-0101.mediawiki).
+
+See [The Block Size War](/rabbit-hole/block-size-war) for what happened after BIP-101 opened the fight.

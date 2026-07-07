@@ -38,3 +38,5 @@ What this isn't:
 - It's not a literal byte limit. The weight unit framing matters because it changes the economics of SegWit vs legacy transactions.
 
 The block-size question is settled for the foreseeable future. The substantive throughput debates have moved to Lightning channel design, payment-routing efficiency, and Taproot script optimization, not on-chain capacity.
+
+See [The Block Size War](/rabbit-hole/block-size-war) for how this limit became the center of a two-year governance fight.

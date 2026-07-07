@@ -56,3 +56,5 @@ The lesson: miner signaling is the official path, but it's structured against a 
 A Bitcoin learner sees miner signaling references constantly - in news about upgrades, in debates about active BIPs, in mempool.space block headers showing version bits. Understanding the mechanism makes those references legible.
 
 It also clarifies what "Bitcoin governance" actually is in practice: a multi-step coordination dance with no central decider, where miners get one structural role, node operators another, and users a third. No single group can force a change against the others.
+
+See [The Block Size War](/rabbit-hole/block-size-war) for the episode that established the limits of miner signaling.
