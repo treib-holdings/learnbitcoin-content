@@ -1,12 +1,12 @@
 ---
-title: "Volatility"
+title: "波动性"
 slug: volatility
 draft: false
-shortDefinition: "A measure of how quickly and widely BTC's price swings over time, often higher than many traditional assets."
+shortDefinition: "衡量 BTC 价格随时间波动速度和幅度的指标，通常高于许多传统资产。"
 keyTakeaways:
-  - "BTC frequently sees large price swings in short periods"
-  - "Reflects a nascent market with evolving liquidity and sentiment"
-  - "Can create high risk/high reward trading environments"
+  - "BTC 经常在短时间内出现大幅价格波动"
+  - "反映了一个流动性不断演变、情绪不断变化的新兴市场"
+  - "可能创造高风险/高回报的交易环境"
 sources: []
 relatedTerms:
   - bear-market
@@ -28,20 +28,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Volatility is the rate and magnitude at which Bitcoin's price changes over time. By any conventional measure, BTC is more volatile than the US dollar, gold, or major stock indices. By no conventional measure is this surprising, given Bitcoin is fifteen years into a global monetization process worth somewhere between zero and "replace gold as the dominant store of value."
+波动性是比特币价格随时间变化的速度和幅度。按任何传统指标衡量，BTC 比美元、黄金或主要股指波动性更大。考虑到比特币正处于一个全球货币化过程的第十五年——其价值在零到"取代黄金成为主导价值存储"之间——这并不令人意外。
 
-A few practical facts:
+几个实际事实：
 
-- **30-day annualized volatility** for BTC typically sits in the 40-80% range. The S&P 500 sits around 15-20%; gold around 12-18%. Bitcoin moves more.
-- **Long-term trend.** Volatility has been falling for years as the market depth and institutional participation have grown. Bitcoin's volatility in 2024-2026 is roughly half what it was in 2014-2017.
-- **Correlation with traditional assets fluctuates.** Sometimes BTC trades like a tech stock, sometimes like gold, sometimes uncorrelated. It depends on the macro regime.
+- **30 天年化波动率**通常在 40-80% 范围内。标普 500 约 15-20%；黄金约 12-18%。比特币波动更大。
+- **长期趋势。** 随着市场深度和机构参与的增长，波动性多年来一直在下降。2024-2026 年比特币的波动性大约是 2014-2017 年的一半。
+- **与传统资产的相关性波动。** BTC 有时像科技股一样交易，有时像黄金，有时不相关。取决于宏观体制。
 
-The honest framing: Bitcoin's price is a multi-decade information-discovery process. Markets are slowly figuring out what a fixed-supply, permissionless, neutral monetary asset is worth in a world that didn't have one before. That process is bumpy by definition. The bumps are not bugs. Some of the larger ones are [Minsky moments](/glossary/minsky-moment) - leverage cascades where futures positions and lending exposures liquidate together, producing 50-80% drawdowns that say more about Bitcoin's derivative ecosystem than about Bitcoin itself.
+诚实的框架：比特币价格是一个数十年的信息发现过程。市场正在慢慢搞清楚一个固定供应量、无需许可、中立的货币资产在一个以前没有过的世界中值多少钱。这个过程本质上是颠簸的。颠簸不是 bug。一些较大的颠簸是[明斯基时刻](/glossary/minsky-moment)——杠杆级联中期货头寸和借贷敞口一起清算，产生 50-80% 的回撤，这更多说明的是比特币衍生品生态系统而非比特币本身。
 
-For users, this means:
+对用户来说，这意味着：
 
-- **Don't trade if you can help it.** Most active traders underperform passive holders, on Bitcoin and everywhere else.
-- **[DCA](/glossary/dca-dollar-cost-averaging)** is the practical defense against trying to time the volatility. Buy on a schedule; ignore the price.
-- **Hold what you can afford to hold.** If volatility makes you sleep poorly, you have too much in BTC. Right-sizing the position to your tolerance is more important than predicting the next move.
+- **如果可以，不要交易。** 大多数活跃交易者的表现不如被动持有者——在比特币和其他任何地方都是如此。
+- **[DCA](/glossary/dca-dollar-cost-averaging)**是对冲试图择时波动性的实际防御。按计划买入；忽略价格。
+- **持有你承受得起的量。** 如果波动性让你睡不好觉，你的 BTC 持有太多了。将仓位调整到你的承受能力比预测下一步走势更重要。
 
-People who survived the 2018, 2022, and 2024 bear markets without selling are the ones who learned to ignore the volatility. The asset moves; the protocol doesn't. See [HODL](/glossary/hodl) for the cultural shorthand.
+在 2018、2022 和 2024 年熊市中没有卖出的人，是那些学会忽略波动性的人。资产在动；协议不动。参见 [HODL](/glossary/hodl)了解这一文化简写。

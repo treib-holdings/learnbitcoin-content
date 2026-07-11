@@ -1,12 +1,12 @@
 ---
-title: "Competitive Mining"
+title: "竞争性挖矿"
 slug: competitive-mining
 draft: false
-shortDefinition: "The open nature of Bitcoin mining, where anyone with ASIC hardware and power can try to discover valid blocks."
+shortDefinition: "比特币挖矿的开放性质，任何拥有 ASIC 硬件和电力的人都可以尝试发现有效区块。"
 keyTakeaways:
-  - "Anyone can mine BTC with proper equipment"
-  - "ASIC hardware and cheap electricity are competitive advantages"
-  - "Supports Bitcoin's security via proof-of-work"
+  - "任何拥有合适设备的人都可以挖 BTC"
+  - "ASIC 硬件和廉价电力是竞争优势"
+  - "通过工作量证明支持比特币的安全性"
 sources: []
 relatedTerms:
   - block-propagation
@@ -24,14 +24,14 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Competitive mining is the permissionless nature of Bitcoin's proof-of-work: no licensing, no minimum-stake gating, no protocol-level discrimination. Anyone who acquires ASIC hardware and electricity can hash, and the winner of each block is determined purely by who finds a valid nonce first.
+竞争性挖矿是比特币工作量证明的无许可性质：没有许可证，没有最低质押门槛，没有协议层面的歧视。任何获得 ASIC 硬件和电力的人都可以挖矿，每个区块的赢家纯粹由谁先找到有效的 nonce 决定。
 
-What the competition optimizes for:
+竞争优化的是什么：
 
-- **Hash rate per dollar.** New ASIC generations (Antminer S21, Whatsminer M60, Bitmain S21 XP, etc.) deliver more terahashes per watt. The fleet refresh cycle is fast; 2-3 year old ASICs are typically uneconomic at current difficulty.
-- **Electricity cost.** The dominant variable in mining economics. Profitable operations pay 3-5 cents per kWh; anything over 7-8 cents is marginal. This is why mining clusters around stranded hydro, flared natural gas, nuclear baseload, and underutilized grid capacity.
-- **Operational efficiency.** Cooling (immersion or hydro), facility uptime, firmware tuning, [proprietary firmware](/glossary/proprietary-mining-firmware), pool selection. Every percent matters at scale.
+- **每美元算力。** 新一代 ASIC（Antminer S21、Whatsminer M60、Bitmain S21 XP 等）提供更高的每瓦特哈希率。设备更新周期很快；2-3 年前的 ASIC 在当前难度下通常不经济。
+- **电力成本。** 挖矿经济学中的主导变量。盈利运营支付 3-5 美分/千瓦时；超过 7-8 美分就是边际的。这就是为什么挖矿聚集在水力发电过剩、天然气火炬燃烧、核电基载和未充分利用的电网容量附近。
+- **运营效率。** 散热（浸没式或水冷）、设施正常运行时间、固件调优、[专有固件](/glossary/proprietary-mining-firmware)、矿池选择。在规模上每个百分点都很重要。
 
-The decentralization story is mixed. Mining is permissionless in principle, but in practice the capital intensity (industrial-scale facilities, ASIC supply chains, cheap-power deals) concentrates mining among well-capitalized operators. The mining-pool layer further aggregates hash rate even when underlying miners are diverse. See [mining centralization](/glossary/mining-centralization) for the honest accounting.
+去中心化的故事是混合的。挖矿原则上是无许可的，但在实践中，资本密集度（工业规模设施、ASIC 供应链、廉价电力交易）将挖矿集中在资本充足的运营商中。即使底层矿工多样化，矿池层也进一步聚合了算力。诚实的核算参见[挖矿中心化](/glossary/mining-centralization)。
 
-Still, the structural property holds: the protocol doesn't pick winners. A new entrant with ASICs and cheap power can join, mine, get paid, and exit without anyone's permission. That's the floor of decentralization that competitive mining provides.
+尽管如此，结构属性仍然成立：协议不挑选赢家。拥有 ASIC 和廉价电力的新进入者可以加入、挖矿、获得报酬和退出，不需要任何人的许可。这就是竞争性挖矿提供的去中心化底线。

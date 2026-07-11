@@ -1,12 +1,12 @@
 ---
-title: "Coin Control"
+title: "币控制"
 slug: coin-control
 draft: false
-shortDefinition: "A wallet feature allowing users to manually select which UTXOs to spend, aiding privacy and fee optimization."
+shortDefinition: "一种钱包功能，允许用户手动选择花费哪些 UTXO，有助于隐私和手续费优化。"
 keyTakeaways:
-  - "Allows precise selection of specific UTXOs for transactions"
-  - "Improves privacy by limiting unnecessary input merging"
-  - "Can optimize fees and avoid dust buildup"
+  - "允许精确选择特定 UTXO 进行交易"
+  - "通过限制不必要的输入合并来改善隐私"
+  - "可以优化手续费并避免粉尘堆积"
 sources: []
 relatedTerms:
   - address-clustering
@@ -25,23 +25,23 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Coin control is the wallet feature that lets you manually choose which [UTXOs](/glossary/utxo-unspent-transaction-output) to spend when constructing a [transaction](/glossary/transaction), rather than letting the wallet auto-select them. It's the wallet equivalent of deliberately picking specific dollar bills out of your physical wallet for a transaction.
+币控制是让你在构建[交易](/glossary/transaction)时手动选择花费哪些 [UTXO](/glossary/utxo-unspent-transaction-output) 的钱包功能，而不是让钱包自动选择。这就像从你的物理钱包中刻意挑选特定的纸币来完成一笔交易。
 
-Why coin control matters:
+为什么币控制很重要：
 
-- **Privacy.** [Address clustering](/glossary/address-clustering) heuristics depend on the common-input assumption: all UTXOs spent in one transaction share an owner. By manually choosing which UTXOs to combine, you can avoid linking addresses that you'd rather keep separate.
-- **Fees.** Fewer inputs = smaller transaction = lower fees at any given sat/vB. If you have many small UTXOs and one large one, sometimes spending the large one alone is much cheaper.
-- **Dust management.** You can deliberately consolidate small UTXOs ([dust](/glossary/dust)) during low-fee periods, or avoid combining them with valuable UTXOs that you don't want linked to dust sources.
-- **Source-of-funds tagging.** If you've labeled UTXOs by source (KYC vs non-KYC, business vs personal), you can selectively spend from the appropriate bucket without crossing streams.
+- **隐私。** [地址聚类](/glossary/address-clustering)启发式依赖于共同输入假设：同一交易中花费的所有 UTXO 属于同一所有者。通过手动选择合并哪些 UTXO，你可以避免链接你宁愿保持独立的地址。
+- **手续费。** 更少的输入 = 更小的交易 = 在任何给定的 sat/vB 下更低的手续费。如果你有很多小 UTXO 和一个大 UTXO，有时只花费大的那个要便宜得多。
+- **粉尘管理。** 你可以在低手续费期间有意合并小 UTXO（[粉尘](/glossary/dust)），或避免将它们与你不想链接到粉尘来源的有价值 UTXO 合并。
+- **资金来源标记。** 如果你按来源标记了 UTXO（KYC 与非 KYC、商业与个人），你可以选择性地从适当的桶中花费而不交叉。
 
-The basic operation:
+基本操作：
 
-1. Wallet shows your UTXOs as individual line items with amounts, addresses, and (sometimes) labels.
-2. You manually select which ones to spend in the current transaction.
-3. The wallet uses only those for inputs.
+1. 钱包将你的 UTXO 显示为单独的行项，包含金额、地址和（有时）标签。
+2. 你手动选择在当前交易中花费哪些。
+3. 钱包只使用那些作为输入。
 
-Wallets that expose coin control well: Sparrow, Bitcoin Core, Electrum, Specter Desktop, Nunchuk. Most mobile wallets hide it by default to keep UX simple.
+很好地暴露币控制功能的钱包：Sparrow、Bitcoin Core、Electrum、Specter Desktop、Nunchuk。大多数移动钱包默认隐藏它以保持简单。
 
-The general guidance: if you care about privacy or fee optimization, learn coin control. If you're using Bitcoin as casual spending money, the auto-select default is fine. The control is there when you need it.
+一般建议：如果你关心隐私或手续费优化，学会使用币控制。如果你把比特币当作日常零花钱使用，自动选择默认值就好。当你需要时，控制功能就在那里。
 
-See [UTXO](/glossary/utxo-unspent-transaction-output) for the underlying concept and [Address Clustering](/glossary/address-clustering) for the privacy concern this addresses.
+底层概念参见 [UTXO](/glossary/utxo-unspent-transaction-output)，此功能解决的隐私问题参见[地址聚类](/glossary/address-clustering)。

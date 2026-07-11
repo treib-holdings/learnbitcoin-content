@@ -2,11 +2,11 @@
 title: "Ordinals"
 slug: ordinals
 draft: false
-shortDefinition: "A protocol that assigns unique sequential identity to individual satoshis, allowing them to be tracked across transactions and inscribed with arbitrary data."
+shortDefinition: "一种协议，为单个聪分配唯一序列身份，允许在交易中追踪它们并铭刻任意数据。"
 keyTakeaways:
-  - "Every satoshi gets a unique ordinal number based on the order it was mined"
-  - "Sat identity is tracked client-side; the Bitcoin protocol itself does not require changes"
-  - "Combined with inscriptions, ordinals create NFT-like objects native to Bitcoin"
+  - "每个聪根据被挖出的顺序获得唯一的序数编号"
+  - "聪身份在客户端追踪；比特币协议本身不需要更改"
+  - "与铭文结合，Ordinals 创建了比特币原生的类 NFT 对象"
 sources: []
 relatedTerms:
   - inscriptions
@@ -18,40 +18,40 @@ sameAs:
 liveWidget: ~
 ---
 
-*Ordinals* is a numbering scheme — and a protocol built around that scheme — that assigns a unique identifier to each [satoshi](/glossary/satoshi-unit) based on the order in which it was mined. Combined with [inscriptions](/glossary/inscriptions), the system enables Bitcoin-native digital collectibles, often informally called "Bitcoin NFTs."
+*Ordinals* 是一种编号方案——以及围绕该方案构建的协议——根据每个[聪](/glossary/satoshi-unit)被挖出的顺序为其分配唯一标识符。与[铭文](/glossary/inscriptions)结合，该系统使比特币原生的数字收藏品成为可能，通常非正式地称为"比特币 NFT"。
 
-The protocol was introduced by Casey Rodarmor in January 2023. It runs entirely client-side and does not require any change to Bitcoin's consensus rules.
+该协议由 Casey Rodarmor 于 2023 年 1 月引入。它完全在客户端运行，不需要对比特币共识规则做任何更改。
 
-## Ordinal theory
+## 序数理论
 
-The core idea is simple: number every satoshi in the order it comes into existence. The first satoshi ever mined (in the genesis block, January 2009) is ordinal 0. The second is 1. The 100-trillionth — the 2,099,999,997,690,000th — will be the last satoshi ever mined, sometime around the year 2140.
+核心思想很简单：按每个聪进入存在的顺序编号。有史以来挖出的第一个聪（在创世区块中，2009 年 1 月）是序数 0。第二个是 1。第 100 万亿个——第 2,099,999,997,690,000 个——将是最后一个被挖出的聪，大约在 2140 年左右。
 
-Each ordinal has a fixed identity. When two [UTXOs](/glossary/utxo-unspent-transaction-output) are combined as inputs to a new transaction, the protocol uses a simple first-in, first-out rule to track which output satoshis end up where. The Bitcoin protocol itself doesn't care — to a node, satoshis are fungible — but an ordinals-aware indexer can reconstruct the lineage of any particular sat.
+每个序数有固定身份。当两个 [UTXO](/glossary/utxo-unspent-transaction-output) 作为输入合并到新交易时，协议使用简单的先进先出规则追踪哪些输出聪最终在哪里。比特币协议本身不在乎——对节点来说聪是可互换的——但序数感知的索引器可以重建任何特定聪的谱系。
 
-This lets the community talk about "rare sats" using categories like:
+这让社区可以使用以下类别讨论"稀有聪"：
 
-- **Uncommon** — the first satoshi of every block
-- **Rare** — the first satoshi of every difficulty adjustment period
-- **Epic** — the first satoshi after each halving
-- **Legendary** — the first satoshi of each cycle (every four halvings)
-- **Mythic** — the very first satoshi of the genesis block (ordinal 0)
+- **不常见**——每个区块的第一个聪
+- **稀有**——每个难度调整周期的第一个聪
+- **史诗**——每次减半后的第一个聪
+- **传奇**——每个周期的第一个聪（每四次减半）
+- **神话**——创世区块的第一个聪（序数 0）
 
-These categories exist purely as a social/cultural convention layered on the protocol. The Bitcoin network has no notion of "rare" — it's a meaning humans assign on top.
+这些类别纯粹是叠加在协议之上的社会/文化约定。比特币网络没有"稀有"的概念——这是人类在顶层赋予的意义。
 
-## Combined with inscriptions
+## 与铭文结合
 
-The Ordinals protocol shipped with [inscriptions](/glossary/inscriptions) as a way to attach data to specific sats. An inscription is written into [Taproot](/glossary/taproot) witness data inside a transaction; ordinals theory then says the inscribed data is "on" the first satoshi of the first input of that transaction.
+Ordinals 协议附带[铭文](/glossary/inscriptions)作为将数据附加到特定聪的方式。铭文写入交易中的 [Taproot](/glossary/taproot) 见证数据；序数理论然后说铭刻数据"在"该交易第一个输入的第一个聪上。
 
-This combination created what most people call "ordinals" colloquially: a sat with data attached. A PNG inscribed on sat #12345 becomes a transferable, indivisible object — sell that sat, the PNG goes with it.
+这种组合创造了大多数人通俗所说的"ordinals"：一个附有数据的聪。铭刻在序数 #12345 上的 PNG 成为一个可转让的、不可分割的对象——卖出那个聪，PNG 就跟着走。
 
-The two concepts are conceptually separable. Ordinal theory is the numbering scheme. Inscriptions are the data-storage technique. In practice they're almost always used together.
+这两个概念在概念上是可分离的。序数理论是编号方案。铭文是数据存储技术。实践中它们几乎总是一起使用。
 
-## Why it matters
+## 为什么重要
 
-Ordinals matter to a Bitcoin learner because:
+Ordinals 对比特币学习者重要因为：
 
-1. **They reshaped on-chain activity.** Since 2023, ordinal/inscription transactions have been a meaningful share of block space and fee revenue.
-2. **They surface a definitional question.** Bitcoin minimalists argue Bitcoin is for money and ordinals are noise. Free-market Bitcoiners argue any paying use of block space is legitimate. The disagreement is real, internal to Bitcoin, and unlikely to resolve in either direction.
-3. **They're often confused with broader "crypto" NFTs.** Ordinals are different — they live natively on Bitcoin, do not require a separate token or smart-contract platform, and rely only on Bitcoin's existing consensus rules.
+1. **它们重塑了链上活动。** 自 2023 年以来，Ordinals/铭文交易一直是区块空间和手续费收入的有意义份额。
+2. **它们呈现了一个定义性问题。** 比特币极简主义者认为比特币是为货币服务的，Ordinals 是噪音。自由市场比特币者认为任何付费使用区块空间都是合法的。分歧是真实的、比特币内部的、不太可能向任一方向解决。
+3. **它们常与更广泛的"加密"NFT 混淆。** Ordinals 不同——它们原生于比特币，不需要单独的代币或智能合约平台，仅依赖比特币现有的共识规则。
 
-The Ordinals protocol is open source and the spec is maintained at [docs.ordinals.com](https://docs.ordinals.com). Bitcoin itself remains unchanged by their existence; ordinals are an interpretation layer that anyone can run or ignore.
+Ordinals 协议是开源的，规范维护在 [docs.ordinals.com](https://docs.ordinals.com)。比特币本身因其存在而不变；Ordinals 是任何人都可以运行或忽略的解释层。

@@ -1,12 +1,12 @@
 ---
-title: "Low-S Signatures — The Rule That Killed ECDSA Malleability"
+title: "低 S 签名——消除 ECDSA 签名可延展性的规则"
 slug: low-s-signatures
 draft: false
-shortDefinition: "For every valid ECDSA signature, a second valid one exists. Low-S kills that ambiguity — here's how it works and why it matters."
+shortDefinition: "对于每个有效的 ECDSA 签名，都存在另一个有效的签名。低 S 规则消除了这种歧义——以下是它如何工作以及为什么重要。"
 keyTakeaways:
-  - "Eliminates multiple valid encodings of a single ECDSA signature"
-  - "Curtails malleability by standardizing the S value"
-  - "Became standard in Bitcoin after BIP 66 and related updates"
+  - "消单一 ECDSA 签名的多种有效编码"
+  - "通过标准化 S 值遏制可延展性"
+  - "在 BIP 66 和相关更新后成为比特币的标准"
 sources: []
 relatedTerms:
   - bip-66
@@ -16,10 +16,10 @@ relatedTerms:
 liveWidget: ~
 ---
 
-ECDSA signatures have an inherent malleability: for any valid (r, s) pair, (r, n-s) where n is the secp256k1 curve order is also a valid signature on the same message. An attacker could grab your unconfirmed transaction, flip the S, and rebroadcast a signature with identical meaning but a different txid.
+ECDSA 签名有一种固有的可延展性：对于任何有效的 (r, s) 对，(r, n-s)（其中 n 是 secp256k1 曲线阶）也是同一消息的有效签名。攻击者可以抓取你未确认的交易，翻转 S，然后广播一个含义相同但 txid 不同的签名。
 
-The low-S rule pins down one canonical form. Require s less than or equal to n/2, and the higher half of possible S values becomes invalid. Now there's exactly one low-S signature per (key, message) pair.
+低 S 规则固定了一种规范形式。要求 s 小于等于 n/2，可能 S 值的高半部分就变为无效。现在每个（密钥，消息）对恰好有一个低 S 签名。
 
-History: proposed as part of BIP 62 (which never activated as a unified malleability fix), enforced as relay policy via BIP 146, and made consensus-mandatory for SegWit inputs via BIP 141. Pre-SegWit legacy inputs technically still accept high-S in consensus rules, but the relay policy makes high-S transactions non-standard so they don't propagate.
+历史：作为 BIP 62（从未作为统一的可延展性修复激活）的一部分提出，通过 BIP 146 作为中继策略执行，并通过 BIP 141 对 SegWit 输入成为共识强制。SegWit 之前的传统输入在共识规则上技术上仍接受高 S，但中继策略使高 S 交易非标准，因此不会传播。
 
-Combined with BIP 66 strict DER encoding and SegWit's separation of signature data from txid hashing, low-S effectively eliminated practical signature malleability on Bitcoin.
+结合 BIP 66 严格 DER 编码和 SegWit 将签名数据与 txid 哈希分离，低 S 有效地消除了比特币上实际的签名可延展性。

@@ -1,12 +1,12 @@
 ---
-title: "Pay-to-IP"
+title: "Pay-to-IP（支付到 IP）"
 slug: pay-ip
 draft: false
-shortDefinition: "An early Bitcoin feature sending BTC to a specific IP address directly, deprecated for privacy/security reasons."
+shortDefinition: "比特币早期的一项功能，直接向特定 IP 地址发送 BTC，因隐私和安全问题已被废弃。"
 keyTakeaways:
-  - "Sent transactions directly to a node's IP, bypassing typical address usage"
-  - "Abandoned due to privacy and network architecture issues"
-  - "An artifact of Bitcoin's experimental beginnings"
+  - "直接向节点 IP 发送交易，绕过常规地址使用"
+  - "因隐私和网络架构问题被放弃"
+  - "比特币实验性早期的一个遗迹"
 sources: []
 relatedTerms:
   - bolt-11
@@ -15,30 +15,30 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Pay-to-IP (sometimes called "IP-to-IP transaction") was an early Bitcoin feature, present in Satoshi's original 2009 client, that let you send coins directly to someone's IP address without exchanging a Bitcoin address first. The sender's client would connect directly to the recipient's running node, request a fresh receive address, and immediately broadcast the payment.
+Pay-to-IP（有时称为"IP-to-IP 交易"）是比特币早期的一项功能，存在于中本聪 2009 年的原始客户端中，允许你直接向某人的 IP 地址发送比特币，而无需先交换比特币地址。发送方客户端会直接连接到接收方正在运行的节点，请求一个新的收款地址，然后立即广播付款。
 
-How it worked:
+工作流程：
 
-1. Sender types the recipient's IP address (or hostname) into their Bitcoin client.
-2. Sender's client opens a TCP connection to the recipient's node.
-3. Recipient's node generates a fresh address on demand and returns it.
-4. Sender's client constructs and signs a transaction paying to that address.
-5. Transaction is broadcast to the network normally.
+1. 发送方在比特币客户端中输入接收方的 IP 地址（或主机名）。
+2. 发送方客户端向接收方节点打开 TCP 连接。
+3. 接收方节点按需生成一个新地址并返回。
+4. 发送方客户端构建并签署一笔支付到该地址的交易。
+5. 交易正常广播到网络。
 
-Why it was removed:
+为什么被移除：
 
-- **Privacy nightmare.** The sender's IP was exposed to the recipient. The recipient's IP was effectively a payment endpoint that anyone monitoring connections could associate with Bitcoin activity.
-- **Network architecture problems.** It required recipients' nodes to be reachable on the public internet. Behind NAT or firewall? Can't receive.
-- **Identity / impersonation risk.** Anyone running a node at a known IP could be impersonated by anyone who could BGP-hijack or DNS-spoof the connection.
-- **Doxing vector.** Tying Bitcoin payments to IP addresses defeated the pseudonymity of the address-based model.
-- **Functionally redundant.** Once Bitcoin addresses became the standard payment endpoint, Pay-to-IP was just a more dangerous way to do what addresses already did.
+- **隐私噩梦。** 发送方的 IP 暴露给了接收方。接收方的 IP 实际上成为支付端点，任何监控连接的人都可以将其与比特币活动关联。
+- **网络架构问题。** 要求接收方节点可在公共互联网上访问。在 NAT 或防火墙后面？无法接收。
+- **身份/冒充风险。** 任何在已知 IP 上运行节点的人都可能被任何能进行 BGP 劫持或 DNS 欺骗的人冒充。
+- **人肉搜索向量。** 将比特币支付与 IP 地址绑定破坏了基于地址模型的假名性。
+- **功能冗余。** 一旦比特币地址成为标准支付端点，Pay-to-IP 只是一种更危险的方式来做地址已经能做的事。
 
-Pay-to-IP was disabled by default in Bitcoin 0.5 (2011) and removed in Bitcoin 0.8 (2013). For a decade-plus now it has been a museum piece, occasionally referenced when explaining how early Bitcoin worked or as a counterexample to "what not to do for privacy."
+Pay-to-IP 在 Bitcoin 0.5（2011 年）中默认禁用，在 Bitcoin 0.8（2013 年）中完全移除。十多年来它一直是一个博物馆展品，偶尔在解释早期比特币如何工作时被提及，或作为"隐私方面不该做什么"的反面教材。
 
-Modern equivalents that actually work:
+实际可用的现代等价物：
 
-- **Standard Bitcoin addresses** with QR codes for in-person and BIP 21 URIs for digital sharing.
-- **Lightning invoices and BOLT 12 offers** for fast, recipient-anonymous payment endpoints.
-- **PayJoin / [BIP 78](https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki)** for sender-recipient interactive payment flows when needed, with proper privacy properties.
+- **标准比特币地址**配合 QR 码用于面对面场景，BIP 21 URI 用于数字分享。
+- **闪电网络发票和 BOLT 12 offers**用于快速、接收方匿名的支付端点。
+- **PayJoin / [BIP 78](https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki)**用于需要发送方-接收方交互式支付流程的场景，具有适当的隐私特性。
 
-The lesson: Bitcoin's mechanisms have generally evolved away from "trust the network connection" toward "trust the cryptographic identity." Pay-to-IP is what the former looks like at the design level. Modern Bitcoin is the latter, and the difference is real.
+教训：比特币的机制总体上已经从"信任网络连接"演进到"信任密码学身份"。Pay-to-IP 是前者在设计层面的样子。现代比特币是后者，两者的区别是真实的。

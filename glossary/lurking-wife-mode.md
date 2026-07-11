@@ -1,12 +1,12 @@
 ---
-title: "Lurking Wife Mode"
+title: "隐身模式"
 slug: lurking-wife-mode
 draft: false
-shortDefinition: "An unofficial Bitcoin Core GUI setting that hides wallet balance, as a playful inside joke/commit among developers."
+shortDefinition: "Bitcoin Core GUI 的一个非官方设置，隐藏钱包余额，是开发者之间的一个内部玩笑/提交。"
 keyTakeaways:
-  - "Reflects dev humor, not a mainstream or official feature"
-  - "Used to conceal balance from the GUI view"
-  - "An example of Bitcoin Core's open-source culture"
+  - "反映开发者幽默，不是主流或官方功能"
+  - "用于从 GUI 视图中隐藏余额"
+  - "Bitcoin Core 开源文化的一个例子"
 sources: []
 relatedTerms:
   - bitcoin-core
@@ -16,22 +16,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Lurking Wife Mode" is a real (and shipped) Bitcoin Core feature: a UI toggle in the Qt GUI that hides wallet balances and transaction amounts from view. The point is privacy from someone looking over your shoulder - the namesake "lurking wife," but in practice anyone who shouldn't see your account.
+"隐身模式"是 Bitcoin Core 的一个真实（且已发布）功能：Qt GUI 中的一个 UI 开关，隐藏钱包余额和交易金额。目的是防止背后偷看的人——名义上的"潜伏的妻子"，但实际上是任何不应该看到你账户的人。
 
-The feature was added by Sjors Provoost in 2015 (PR #6489). The original commit message and the GitHub discussion both lean into the humor: the name is a self-aware joke about the very specific real-world situation of "your spouse walked into the room while you were checking on your Bitcoin." Bitcoin Core's dev culture is otherwise quite serious about code; this is one of the entries where the human side shows through.
+该功能由 Sjors Provoost 于 2015 年添加（PR #6489）。原始提交消息和 GitHub 讨论都融入了幽默：名字是一个自嘲的笑话，关于"你配偶走进房间时你正在查看比特币"这个非常具体的现实场景。Bitcoin Core 的开发文化在代码方面其他时候相当严肃；这是人性面显露的条目之一。
 
-What it actually does in the current Bitcoin Core GUI:
+在当前 Bitcoin Core GUI 中它实际做的事：
 
-- Replaces all displayed BTC amounts (balance, individual transactions, fees) with a generic mask like `*****`.
-- Stays in effect for the current session until you toggle it off.
-- Doesn't change anything in the wallet's actual state; the amounts are simply not rendered.
+- 将所有显示的 BTC 金额（余额、单笔交易、手续费）替换为通用掩码如 `*****`。
+- 在当前会话中保持生效，直到你切换关闭。
+- 不改变钱包实际状态中的任何内容；金额只是不被渲染。
 
-Found under the Settings menu, often labeled "Hide values" or "Privacy mode" in modern Bitcoin Core versions (the explicit "Lurking Wife Mode" string has been softened in user-visible labels but the underlying feature and codename remain).
+在设置菜单下找到，在现代 Bitcoin Core 版本中通常标记为"隐藏数值"或"隐私模式"（明确的"Lurking Wife Mode"字符串在用户可见标签中已被柔化，但底层功能和代号保留）。
 
-Limitations:
+限制：
 
-- **Doesn't hide much from a sophisticated observer.** Anyone with access to your computer can still inspect the wallet file or look at the chain to derive balances.
-- **Doesn't substitute for actual privacy practices.** Address rotation, CoinJoin, separate wallets for different identities, hardware wallets, Tor connectivity - these are the real privacy tools. Lurking Wife Mode is a shoulder-surfer defense, nothing more.
-- **It's a Bitcoin Core GUI feature only.** Other wallets have their own version (often called "balance privacy" or "stealth mode" or just an icon-toggle), each with different scope.
+- **对精明的观察者隐藏不了太多。** 任何有你电脑访问权限的人仍可以检查钱包文件或查看链上来推导余额。
+- **不能替代实际的隐私实践。** 地址轮换、CoinJoin、不同身份的独立钱包、硬件钱包、Tor 连接——这些才是真正的隐私工具。隐身模式只是防偷看的防御。
+- **仅是 Bitcoin Core GUI 功能。** 其他钱包有自己的版本（通常称为"余额隐私"或"隐身模式"或只是一个图标切换），各有不同范围。
 
-The cultural footnote: the feature is sometimes cited as evidence that the protocol is built by humans who think about the lived reality of Bitcoin users. The straight-laced version of the same feature ("Hide Wallet Values") would have been just another menu item; the goofy name made it memorable and made the human story behind a privacy feature legible.
+文化脚注：该功能有时被引用作为协议由考虑比特币用户生活现实的人构建的证据。同一功能的正经版本（"隐藏钱包数值"）只会是另一个菜单项；搞笑的名字使它令人难忘，使隐私功能背后的人性故事可读。

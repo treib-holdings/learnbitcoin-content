@@ -1,12 +1,12 @@
 ---
-title: "Proprietary Mining Firmware"
+title: "专有挖矿固件（Proprietary Mining Firmware）"
 slug: proprietary-mining-firmware
 draft: false
-shortDefinition: "Custom ASIC firmware that optimizes performance or power efficiency beyond the manufacturer's default setup."
+shortDefinition: "替换 ASIC 制造商默认固件的定制固件，优化性能或能效。"
 keyTakeaways:
-  - "Replaces stock firmware for improved efficiency/performance"
-  - "Common in large-scale mining farms to squeeze out more hash power"
-  - "Risks: warranty void, potential hardware damage if misconfigured"
+  - "替换原厂固件以提升效率/性能"
+  - "在大型矿场中常见，用于挤出更多算力"
+  - "风险：失去保修、配置不当可能损坏硬件"
 sources: []
 relatedTerms:
   - asic-application-specific-integrated-circuit
@@ -16,28 +16,28 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Proprietary mining firmware is third-party firmware that replaces the ASIC manufacturer's stock firmware to deliver better performance, more granular control, or features the manufacturer didn't ship. It's a meaningful submarket in industrial Bitcoin mining.
+专有挖矿固件是替换 ASIC 制造商原厂固件的第三方固件，以提供更好的性能、更精细的控制或制造商未提供的功能。这是工业比特币挖矿中一个有意义的细分市场。
 
-Why operators install it:
+运营者安装它的原因：
 
-- **Better hash-per-watt efficiency.** Custom firmware can run the ASIC chips at non-default voltage / frequency combinations that the stock firmware doesn't expose. Efficiency gains of 10-20% over stock are common.
-- **Granular tuning.** Per-board, per-chip frequency and voltage controls instead of a single device-wide setting. Useful for compensating for natural silicon variance across chips in a fleet.
-- **Better telemetry.** Detailed monitoring of chip-level temperature, power consumption, and error rates. Stock firmware often hides this.
-- **Auto-tuning.** Firmware that automatically finds the optimal frequency/voltage combination per chip per cooling condition.
-- **Pool failover and Stratum V2 support.** Better connection handling, sometimes ahead of what stock firmware offers.
-- **Demand-response.** Some firmware integrates with ERCOT-style grid signals to dynamically curtail mining when electricity prices spike.
+- **更好的每瓦算力效率。** 定制固件可以在原厂固件不暴露的非默认电压/频率组合下运行 ASIC 芯片。比原厂效率提升 10-20% 很常见。
+- **精细调优。** 逐板、逐芯片的频率和电压控制，而非全设备单一设置。用于补偿芯片群中的自然硅差异。
+- **更好的遥测。** 芯片级温度、功耗和错误率的详细监控。原厂固件通常隐藏这些。
+- **自动调优。** 自动找到每个芯片在每个冷却条件下的最优频率/电压组合的固件。
+- **矿池故障切换和 Stratum V2 支持。** 更好的连接处理，有时领先于原厂固件。
+- **需求响应。** 一些固件与 ERCOT 式电网信号集成，在电价飙升时动态削减挖矿。
 
-The main vendors (as of 2026):
+主要供应商（截至 2026 年）：
 
-- **BraiinsOS / BraiinsOS+** (Braiins / Slush Pool). Open-source core, commercial premium tier. Strong reputation in the industry.
-- **VNish** (Vnish.online). Russian-developed firmware, popular for older Antminer generations. Closed-source.
-- **LuxOS** (Luxor Technology). Commercial firmware focused on operational tooling.
-- **Hiveon ASIC** (Hive OS). Cloud-managed alternative.
+- **BraiinsOS / BraiinsOS+**（Braiins / Slush Pool）。开源核心，商业高级版。行业声誉良好。
+- **VNish**（Vnish.online）。俄罗斯开发的固件，在旧款 Antminer 代中流行。闭源。
+- **LuxOS**（Luxor Technology）。商业固件，专注于运营工具。
+- **Hiveon ASIC**（Hive OS）。云管理的替代方案。
 
-The tradeoffs:
+权衡：
 
-- **Warranty void.** Manufacturers don't honor warranties on devices with non-stock firmware.
-- **Bricking risk.** Misconfigured firmware can damage chips (over-voltage, thermal runaway). Operators run small test batches before deploying across thousands of devices.
-- **Licensing cost.** Premium firmware charges a per-device or percentage-of-revenue fee. The efficiency gains typically justify the cost at industrial scale.
+- **失去保修。** 制造商不对使用非原厂固件的设备提供保修。
+- **变砖风险。** 配置不当的固件可能损坏芯片（过压、热失控）。运营者在全面部署前先小批量测试。
+- **许可成本。** 高级固件按设备或收入百分比收费。效率提升在工业规模下通常能覆盖成本。
 
-For a hobbyist with one ASIC, stock firmware is fine. For an operator running a few hundred or more, proprietary firmware is essentially mandatory; the efficiency delta over time pays for itself many times over. At scale, firmware deployment, monitoring, and pool routing are all orchestrated through a [mining front-end](/glossary/mining-front-end) sitting above the per-device firmware layer.
+对于拥有一台 ASIC 的爱好者，原厂固件就够了。对于运行数百台或更多的运营者，专有固件基本上是必须的；效率差异随时间推移会多次回本。在规模上，固件部署、监控和矿池路由都通过位于每设备固件层之上的[挖矿前端](/glossary/mining-front-end)编排。

@@ -2,11 +2,11 @@
 title: "HODL Waves"
 slug: hodl-waves
 draft: false
-shortDefinition: "Visualization of how long UTXOs remain inactive, showing the percentage of coins unmoved for set time intervals."
+shortDefinition: "可视化 UTXO 保持不活跃的时间长短，显示在设定时间区间内未移动的币的百分比。"
 keyTakeaways:
-  - "Breaks down BTC by age since last movement"
-  - "Highlights hodler conviction vs. active trading"
-  - "Offers a window into market psychology and supply distribution"
+  - "按自上次移动以来的时间细分 BTC"
+  - "突出持有者信念 vs 活跃交易"
+  - "提供市场心理和供应分布的窗口"
 sources: []
 relatedTerms:
   - coin-age
@@ -15,26 +15,26 @@ relatedTerms:
 liveWidget: ~
 ---
 
-HODL Waves is an on-chain visualization that breaks down Bitcoin's circulating supply by how long each UTXO has been sitting unmoved. The chart shows colored bands stacked from young coins (recently moved) at the bottom to old coins (untouched for years) at the top, with the bands' relative thickness shifting over time as coins age into older brackets or move and reset to "young."
+HODL Waves 是一种链上可视化，按每个 UTXO 未移动的时间长短分解比特币流通供应。图表显示从底部年轻币（最近移动）到顶部老币（数年未动）堆叠的彩色带，随着币老化进入更老区间或移动并重置为"年轻"，带的相对厚度随时间变化。
 
-Glassnode popularized the modern format. Their bands typically cover:
+Glassnode 推广了现代格式。其区间通常覆盖：
 
-- **< 1 month** - hot trading, recent purchases, exchange flows
-- **1-3 months** - newer holders, ICO-era buyers
-- **3-12 months** - medium-term holders
-- **1-2 years** - one halving cycle
-- **2-5 years** - multi-cycle holders
-- **5-10 years and 10y+** - the deep cold storage, Satoshi-era coins, lost coins, hardcore long-term holders
+- **< 1 个月**——活跃交易、近期购买、交易所流入
+- **1-3 个月**——较新持有者
+- **3-12 个月**——中期持有者
+- **1-2 年**——一个减半周期
+- **2-5 年**——跨周期持有者
+- **5-10 年和 10 年+**——深度冷存储、Satoshi 时代币、丢失币、硬核长期持有者
 
-What HODL Waves makes visible:
+HODL Waves 使什么可见：
 
-- **Coin age maturity.** During bull runs, old-age bands shrink as long-term holders sell into the rally. During bear markets and accumulation phases, the same bands expand as coins age in place.
-- **Supply held by long-term holders.** Glassnode's heuristic threshold is 155 days; coins held longer are considered "long-term holder" supply. As of 2026 this is consistently 60-70% of circulating supply, a metric often cited as evidence of holder conviction.
-- **"Lost coins" floor.** The 10-year+ band includes coins that haven't moved in over a decade. Some are intentional cold storage; many are lost. The band only grows over time (it never shrinks below its previous high).
+- **币龄成熟。** 牛市期间，老年龄段缩小因为长期持有者卖出。熊市和积累阶段，相同段扩大因为币在原地老化。
+- **长期持有者持有的供应。** Glassnode 的启发式阈值是 155 天；持有更久的币被视为"长期持有者"供应。2026 年这持续为流通供应的 60-70%，这一指标常被引用为持有者信念的证据。
+- **"丢失币"底线。** 10 年+段包括超过十年未动的币。一些是有意冷存储；许多已丢失。该段只随时间增长（永不缩小到之前高点以下）。
 
-What it doesn't tell you:
+它不告诉你什么：
 
-- **The aggregation reflects UTXOs, not wallets or owners.** Coin control practices (consolidation, change reuse) can make a single holder look like many or vice versa.
-- **No direct price signal.** HODL Waves contextualize what's happening in the holder base, not what the price will do.
+- **聚合反映 UTXO，不是钱包或所有者。** 币控制实践（合并、找零复用）可以使单个持有者看起来像多个或反之。
+- **无直接价格信号。** HODL Waves 语境化持有者基础中正在发生什么，而不是价格会做什么。
 
-For market analysts it's one of the most-cited charts in Bitcoin on-chain analysis. For casual observers it's a useful "is everyone selling or is everyone sitting tight" gauge.
+对于市场分析师，这是比特币链上分析中引用最多的图表之一。对于普通观察者，它是有用的"大家在卖还是大家都坐着不动"衡量。

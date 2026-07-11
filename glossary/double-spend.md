@@ -1,12 +1,12 @@
 ---
-title: "Double Spend"
+title: "双花"
 slug: double-spend
 draft: false
-shortDefinition: "Attempting to use the same UTXO more than once, which Bitcoin's consensus rules prevent once a transaction is confirmed."
+shortDefinition: "尝试多次使用同一个 UTXO，比特币的共识规则在交易确认后防止这种行为。"
 keyTakeaways:
-  - "Bitcoin's ledger logic invalidates previously spent outputs"
-  - "Conflicts are resolved by miners building on one valid chain"
-  - "Multiple confirmations drastically reduce double-spend risk"
+  - "比特币的账本逻辑使先前花费的输出无效"
+  - "冲突由矿工在一条有效链上构建来解决"
+  - "多次确认大幅降低双花风险"
 sources: []
 relatedTerms:
   - bip-30
@@ -23,12 +23,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A double spend is when someone tries to spend the same Bitcoin twice. It's the central problem Bitcoin was invented to solve.
+双花是有人尝试将同一比特币花费两次。这是比特币被发明来解决的核心问题。
 
-In a digital system without trusted intermediaries, there's no obvious reason you can't make two copies of a payment and broadcast both. Earlier digital cash projects (DigiCash, e-gold, others) handled this by routing every transaction through a central server that maintained a single authoritative ledger. The server prevented double spends; the server was also a single point of failure and trust.
+在没有可信中介的数字系统中，没有明显的理由不能制作两份支付副本并都广播出去。早期的数字现金项目（DigiCash、e-gold 等）通过将每笔交易路由到维护单一权威账本的中央服务器来处理这个问题。服务器防止双花；服务器也是单点故障和信任。
 
-Bitcoin's design eliminates the server. Instead, the global UTXO set is replicated across every full node, and every node enforces the rule: once a [UTXO](/glossary/utxo-unspent-transaction-output) has been spent, no other transaction can reference it. Try to spend the same UTXO twice and your second transaction is rejected by every honest node it reaches.
+比特币的设计消除了服务器。取而代之的是，全球 UTXO 集在每个全节点上复制，每个节点执行规则：一旦 [UTXO](/glossary/utxo-unspent-transaction-output) 被花费，没有其他交易可以引用它。尝试同一 UTXO 花费两次，你的第二笔交易会被它到达的每个诚实节点拒绝。
 
-The remaining edge case is what happens *before* a transaction confirms. While in the [mempool](/glossary/mempool), two conflicting transactions can race. Whichever gets mined first wins; the other becomes invalid the moment a block including its rival is found. This is why zero-confirmation transactions aren't truly final - and why the Bitcoin community uses the **6-confirmation rule** for large amounts. After six blocks (~60 minutes), reversing the transaction would require an attacker to secretly mine six replacement blocks faster than the entire honest network mines them. That requires more than half the global hash rate, sustained, and even then succeeds only probabilistically. This exponential decay is the practical shape of [transaction finality](/glossary/transaction-finality) on Bitcoin: never absolute, but each confirmation makes reversal exponentially harder.
+剩余的边缘情况是交易确认*之前*发生什么。在[内存池](/glossary/mempool)中时，两笔冲突交易可以竞赛。先被挖出的获胜；另一笔在包含其对手的区块被找到的瞬间变为无效。这就是零确认交易并非真正最终的原因——也是比特币社区对大额使用 **6 次确认规则**的原因。六个区块后（约 60 分钟），逆转交易需要攻击者比整个诚实网络更快地秘密挖出六个替代区块。这需要超过全球算力的一半，持续运行，即使如此也只是概率性成功。这种指数衰减是比特币上[交易最终性](/glossary/transaction-finality)的实际形状：永远不是绝对的，但每次确认使逆转呈指数级困难。
 
-Bitcoin's security against double spends is what proof-of-work *buys*. See the [Mining rabbit hole](/rabbit-hole/mining) for why the energy spent isn't waste - it's the cost of making the ledger forgery-resistant.
+比特币对双花的安全性是工作量证明*买到*的东西。参见[挖矿深入探讨](/rabbit-hole/mining)了解为什么花费的能源不是浪费——它是使账本抗伪造的成本。

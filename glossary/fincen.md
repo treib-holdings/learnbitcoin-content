@@ -2,11 +2,11 @@
 title: "FinCEN"
 slug: fincen
 draft: false
-shortDefinition: "The U.S. Financial Crimes Enforcement Network, responsible for setting AML/KYC rules that crypto businesses must follow."
+shortDefinition: "美国金融犯罪执法网络，负责制定加密企业必须遵守的 AML/KYC 规则。"
 keyTakeaways:
-  - "Oversees AML/KYC regulations for financial entities in the U.S."
-  - "Crypto exchanges must register and file reports with FinCEN"
-  - "Balancing compliance with user privacy remains a hot debate"
+  - "监督美国金融实体的 AML/KYC 法规"
+  - "加密交易所必须向 FinCEN 注册并提交报告"
+  - "合规与用户隐私之间的平衡仍是热门辩论"
 sources: []
 relatedTerms:
   - aml-anti-money-laundering
@@ -18,17 +18,17 @@ relatedTerms:
 liveWidget: ~
 ---
 
-FinCEN (Financial Crimes Enforcement Network) is a bureau of the US Department of the Treasury responsible for enforcing the Bank Secrecy Act and related anti-money-laundering statutes. It sets the federal rules that US-based crypto businesses must follow.
+FinCEN（金融犯罪执法网络）是美国财政部的一个局，负责执行《银行保密法》及相关反洗钱法规。它制定了美国加密企业必须遵守的联邦规则。
 
-FinCEN's 2013 guidance was a defining moment for Bitcoin in the US: it classified administrators and exchangers of virtual currency as Money Services Businesses (MSBs), bringing them under the same registration, recordkeeping, and reporting regime as remittance companies and check cashers. Major obligations include:
+FinCEN 2013 年的指导是美国比特币的决定性时刻：它将虚拟货币的管理员和交易所分类为货币服务业务（MSB），使其纳入与汇款公司和支票兑现公司相同的注册、记录保存和报告制度。主要义务包括：
 
-- **MSB registration** with FinCEN itself.
-- **State money-transmitter licensing** in each state the business serves (separate from federal, often more burdensome in aggregate).
-- **AML program** with appointed compliance officer, documented procedures, employee training, independent reviews.
-- **Customer identification** (KYC) at account opening above de minimis thresholds.
-- **Suspicious Activity Reports (SARs)** filed for transactions that look suspicious by FinCEN's published criteria.
-- **Currency Transaction Reports (CTRs)** for cash transactions above $10,000 (the threshold hasn't moved since 1970 despite decades of inflation).
+- **向 FinCEN 进行 MSB 注册。**
+- **在每个业务覆盖州进行州级汇款许可**（独立于联邦，总体上通常更繁重）。
+- **AML 计划**，配备合规官、书面程序、员工培训和独立审查。
+- **客户身份识别**（KYC），在超过最低门槛时开户。
+- **可疑活动报告（SAR）**，按 FinCEN 公布标准对可疑交易提交。
+- **现金交易报告（CTR）**，超过 10,000 美元的现金交易（该门槛自 1970 年以来未调整，尽管经历了数十年通胀）。
 
-What FinCEN's regime does *not* cover: self-hosted wallets, peer-to-peer transactions between individuals, the protocol itself. A 2020 proposal by the outgoing Trump administration tried to extend KYC obligations to "unhosted wallets" but was withdrawn after extensive industry pushback. The status quo: the protocol stays unregulated; the on-ramps and off-ramps carry the compliance burden.
+FinCEN 制度*不*涵盖的：自托管钱包、个人之间的点对点交易、协议本身。2020 年即将离任的特朗普政府一项提案试图将 KYC 义务扩展到"非托管钱包"，但在业界强烈反对后被撤回。现状：协议保持不受监管；入金和出金通道承担合规负担。
 
-For an individual Bitcoiner the practical effects are: any US-based exchange you use is filing reports with FinCEN about your activity; transactions above certain thresholds are reviewed; your KYC data is subpoenable. None of that touches your self-custodied coins, but it's the surveillance backdrop most US Bitcoiners operate against.
+对于个人比特币用户，实际影响是：你使用的每个美国交易所都在向 FinCEN 提交关于你活动的报告；超过某些门槛的交易会被审查；你的 KYC 数据可被传票调取。这些都不影响你自托管的币，但这是大多数美国比特币用户所处的监控背景。

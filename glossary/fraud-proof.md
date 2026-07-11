@@ -1,12 +1,12 @@
 ---
-title: "Fraud Proof"
+title: "欺诈证明"
 slug: fraud-proof
 draft: false
-shortDefinition: "A cryptographic proof in layer-2 or sidechain systems indicating a block/transaction is invalid, letting honest nodes reject it."
+shortDefinition: "二层或侧链系统中的密码证明，指示区块/交易无效，让诚实节点拒绝它。"
 keyTakeaways:
-  - "Prevents invalid states in layer-2 or sidechain designs"
-  - "Requires watchers to detect and prove fraudulent data"
-  - "Protects users without each having to validate every detail"
+  - "防止二层或侧链设计中的无效状态"
+  - "需要监控者检测并证明欺诈数据"
+  - "保护用户而无需每个用户验证每个细节"
 sources: []
 relatedTerms:
   - fraudulent-channel-close
@@ -18,15 +18,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A fraud proof is a compact cryptographic demonstration that a specific transaction or block violates a chain's consensus rules. The receiver of the proof can independently verify the violation without needing to download or validate everything else.
+欺诈证明是一种紧凑的密码证明，证明特定交易或区块违反了链的共识规则。证明的接收者可以独立验证违规，而无需下载或验证所有其他内容。
 
-The use cases:
+用例：
 
-- **SPV / light clients.** A full node could send a fraud proof to a light client showing "this block your trusted peer told you about contains an invalid transaction, here's the proof." The client gets full-validation-level security without running a full node. This was a key motivation in early SPV design but never fully shipped for Bitcoin's mainline P2P.
-- **Optimistic rollups (mostly other chains).** Rollups assume layer-2 state transitions are valid by default; anyone can challenge with a fraud proof during a contestation window. If no proof appears, the state is finalized. Used heavily on Ethereum L2s (Optimism, Arbitrum); proposed but not yet deployed for Bitcoin layer-2 designs.
-- **Drivechain proposals (BIP 300/301).** Sidechain withdrawals could be challenged via fraud proofs during the multi-month withdrawal period.
-- **BitVM and related Bitcoin-side-chain experiments.** Bridge constructions where one party posts a claim and the counterparty has time to disprove it with a fraud proof.
+- **SPV / 轻客户端。** 全节点可以向轻客户端发送欺诈证明，显示"你信任的对等方告诉你的这个区块包含无效交易，这是证明。"客户端获得全验证级别的安全性而无需运行全节点。这是早期 SPV 设计的关键动机，但从未完全为比特币主线 P2P 实现。
+- **乐观 rollup（主要在其他链上）。** Rollup 默认假设二层状态转移有效；任何人都可以在争议窗口内用欺诈证明挑战。如果没有证明出现，状态被最终确认。在 Ethereum L2 上大量使用（Optimism、Arbitrum）；为比特币二层设计提出但尚未部署。
+- **Drivechain 提案（BIP 300/301）。** 侧链提款可以在数月的提款期内通过欺诈证明挑战。
+- **BitVM 和相关比特币侧链实验。** 一方发布声明、对手方有时间用欺诈证明反驳的桥接构造。
 
-The pattern is always the same: an optimistic assumption ("the state is valid"), a challenge window, and a mechanism for any honest party to disprove a false claim. The trust assumption shifts from "every participant verifies everything" to "at least one honest participant is willing to challenge." That's a much weaker assumption to satisfy, which is what makes fraud-proof designs attractive for scaling.
+模式始终相同：乐观假设（"状态有效"）、挑战窗口和任何诚实方反驳虚假声明的机制。信任假设从"每个参与者验证一切"转移到"至少一个诚实参与者愿意挑战"。这是更容易满足的弱假设，也是欺诈证明设计吸引人的原因。
 
-The downside: someone has to actually be watching and willing to spend the resources to challenge. If the contestation window passes without a challenge, the false state finalizes. Reliable fraud-proof systems need either economic incentives for watchers or trusted committees willing to monitor.
+缺点：必须有人实际在观看并愿意花费资源挑战。如果争议窗口过去而没有挑战，虚假状态被最终确认。可靠的欺诈证明系统需要对监控者的经济激励或愿意监控的可信委员会。

@@ -1,12 +1,12 @@
 ---
-title: "Lightning Probe"
+title: "闪电探测"
 slug: lightning-probe
 draft: false
-shortDefinition: "A test payment that intentionally fails on the final hop, used to check LN route capacity or node responsiveness."
+shortDefinition: "一种在最后一跳故意失败的测试支付，用于检查闪电路由容量或节点响应性。"
 keyTakeaways:
-  - "Checks channel liquidity and node availability along a path"
-  - "Fails intentionally at the last hop, avoiding a real payment"
-  - "Used for LN reliability checks but can add minor network overhead"
+  - "检查沿路径的通道流动性和节点可用性"
+  - "在最后一跳故意失败，避免实际支付"
+  - "用于闪电网络可靠性检查但会增加轻微网络开销"
 sources: []
 relatedTerms:
   - custodial-lightning-wallet
@@ -18,29 +18,29 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Lightning probe is a test payment sent along a candidate [route](/glossary/lightning-routing) before committing a real payment. Probes deliberately fail at the final hop (typically by using a random payment hash the receiver can't resolve), letting the sender learn whether the route has enough liquidity without actually moving real funds.
+闪电探测是在提交真实支付之前沿候选[路由](/glossary/lightning-routing)发送的测试支付。探测在最后一跳故意失败（通常使用接收方无法解析的随机支付哈希），让发送方在不实际移动真实资金的情况下了解路由是否有足够流动性。
 
-Why probing exists: Lightning's gossip layer tells you channels exist and their *total* capacity, but not their *current balance distribution*. A 1 BTC channel might have all the liquidity on one side, making it useless for routing in the other direction. Probing is how you discover the hidden balance state.
+探测存在的原因：闪电的 gossip 层告诉你通道存在及其*总*容量，但不告诉你*当前*余额分布。1 BTC 的通道可能所有流动性都在一侧，使其在另一方向无法路由。探测就是你发现隐藏余额状态的方式。
 
-How probes work:
+探测工作原理：
 
-1. Sender picks a candidate route through the gossip graph.
-2. Sender sends an HTLC along that route with a random (un-revealable) payment hash.
-3. Each hop locks liquidity for the HTLC, then forwards.
-4. If the route has insufficient liquidity somewhere, the relevant hop returns a failure. The sender learns where the route broke.
-5. If the route has enough liquidity all the way to the final hop, the final hop tries to resolve the payment hash and fails (because the hash is random). The HTLC unwinds.
+1. 发送方通过 gossip 图选择候选路由。
+2. 发送方沿该路由发送带有随机（不可揭示）支付哈希的 HTLC。
+3. 每一跳为 HTLC 锁定流动性，然后转发。
+4. 如果路由某处流动性不足，相关跳返回失败。发送方知道路由在哪里断了。
+5. 如果路由一路到最终跳都有足够流动性，最终跳尝试解析支付哈希但失败（因为哈希是随机的）。HTLC 回退。
 
-What probing buys: knowledge about route viability without risking real funds. Useful for:
+探测带来的价值：在不冒真实资金风险的情况下了解路由可行性。适用于：
 
-- **Wallets testing large payment paths** before committing.
-- **Routing analytics services** mapping liquidity across the network.
-- **Routing node operators** assessing the health of their channel network.
+- **钱包在提交前测试大额支付路径。**
+- **路由分析服务**映射全网流动性。
+- **路由节点运营者**评估其通道网络健康状况。
 
-What probing costs:
+探测的代价：
 
-- **Time.** Each probe is a multi-hop round trip; not free.
-- **Network load.** Probes consume hops' channel slots temporarily.
-- **Privacy.** Heavy probing reveals what routes you're considering.
-- **Looks like jamming.** Excessive probing can trigger [jamming detectors](/glossary/jammed-htlc-detector) on the hops you're testing. Defensive nodes might throttle you.
+- **时间。** 每次探测是多跳往返；不是免费的。
+- **网络负载。** 探测临时消耗各跳的通道槽位。
+- **隐私。** 大量探测暴露你在考虑哪些路由。
+- **看起来像阻塞。** 过度探测可能触发你测试的各跳上的[阻塞检测器](/glossary/jammed-htlc-detector)。防御性节点可能限制你。
 
-Modern Lightning wallets use minimal automatic probing - typically just enough to validate the first candidate route before sending. Aggressive probing is mostly a research/analytics tool, not an everyday user behavior.
+现代闪电钱包使用最少的自动探测——通常刚好够在发送前验证第一个候选路由。激进探测主要是研究/分析工具，不是日常用户行为。

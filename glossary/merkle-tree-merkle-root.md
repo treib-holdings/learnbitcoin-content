@@ -1,12 +1,12 @@
 ---
-title: "Merkle Tree / Merkle Root"
+title: "默克尔树/默克尔根"
 slug: merkle-tree-merkle-root
 draft: false
-shortDefinition: "A binary hash tree summarizing all transactions in a block, culminating in a single root hash."
+shortDefinition: "一种二叉哈希树，汇总区块中的所有交易，最终产生一个根哈希。"
 keyTakeaways:
-  - "Organizes transactions into a compact, tamper-evident data structure"
-  - "Block header stores just the top-level Merkle root"
-  - "Enables partial verification of transactions via Merkle proofs"
+  - "将交易组织成紧凑的、防篡改的数据结构"
+  - "区块头只存储顶层默克尔根"
+  - "通过默克尔证明实现交易的部分验证"
 sources: []
 relatedTerms:
   - bip-37
@@ -24,16 +24,16 @@ sameAs:
 liveWidget: ~
 ---
 
-A Merkle tree is a binary hash tree: take a bunch of data items, [hash](/glossary/hash) them pairwise, then hash those hashes pairwise, then hash those, and so on, until one final hash remains at the top. That single top hash is the **Merkle root**, and it commits to every piece of data in the tree.
+默克尔树是一种二叉哈希树：取一堆数据项，两两[哈希](/glossary/hash)，然后将那些哈希两两哈希，再哈希那些，以此类推，直到顶部剩下一个最终哈希。那个单一的顶部哈希就是**默克尔根**，它提交了树中的每一条数据。
 
-In Bitcoin, every [block](/glossary/block) contains hundreds or thousands of [transactions](/glossary/transaction). The block organizes them into a Merkle tree, with transaction IDs (txids) at the leaves, and stores only the final Merkle root in the [block header](/glossary/block-header). Change any single transaction in the block and the tree's root hash changes - the alteration becomes immediately visible.
+在比特币中，每个[区块](/glossary/block)包含数百或数千笔[交易](/glossary/transaction)。区块将它们组织成默克尔树，交易 ID（txid）在叶子节点，只存储最终的默克尔根在[区块头](/glossary/block-header)中。改变区块中的任何一笔交易，树的根哈希就会改变——篡改立即可见。
 
-Why this design matters:
+为什么这个设计重要：
 
-- **Efficient verification.** A Merkle root is just 32 bytes, but it commits to every transaction below it. Block headers stay small (80 bytes) while still cryptographically anchoring all the block's transaction data.
-- **Proofs of inclusion.** Anyone with the Merkle root can verify that a specific transaction is in the block, given a "Merkle proof" of just `log2(N)` hashes - typically 10-20 hashes for a block with thousands of transactions. This is what makes [SPV (Simplified Payment Verification)](/glossary/spv-simplified-payment-verification) wallets possible. They download block headers (4 MB/year, total) and use Merkle proofs to verify their own transactions without downloading whole blocks.
-- **Tamper evidence.** Any change to a transaction propagates up the tree and changes the root. Once the root is in the header, and the header is part of a [proof-of-work](/glossary/proof-work-pow)-secured chain, the transactions are effectively immutable.
+- **高效验证。** 默克尔根只有 32 字节，但它提交了下面所有交易。区块头保持小（80 字节），同时仍然密码学地锚定所有区块的交易数据。
+- **包含证明。** 任何有默克尔根的人都可以验证特定交易在区块中，只需一个 `log2(N)` 个哈希的"默克尔证明"——对于有数千笔交易的区块通常 10-20 个哈希。这就是 [SPV（简化支付验证）](/glossary/spv-simplified-payment-verification)钱包可行的原因。它们下载区块头（每年总共 4 MB），使用默克尔证明验证自己的交易而无需下载整个区块。
+- **篡改证据。** 对交易的任何更改都会沿树传播并改变根。一旦根在区块头中，而区块头是[工作量证明](/glossary/proof-work-pow)保护链的一部分，交易实际上是不可变的。
 
-Merkle trees were invented by Ralph Merkle in 1979, decades before Bitcoin. They're used widely in cryptographic systems beyond Bitcoin (Git, ZFS, Certificate Transparency, many others). Bitcoin's specific design is the one you'll encounter most.
+默克尔树由 Ralph Merkle 于 1979 年发明，比比特币早了几十年。它们在比特币之外的密码学系统中广泛使用（Git、ZFS、Certificate Transparency 等许多）。比特币的特定设计是你最常遇到的。
 
-The term **Merkle root** is often used interchangeably with this entry; see [Merkle Root](/glossary/merkle-root) for the header-field specific view.
+术语**默克尔根**常与本条目互换使用；请参阅[默克尔根](/glossary/merkle-root)了解区块头字段特定的视角。

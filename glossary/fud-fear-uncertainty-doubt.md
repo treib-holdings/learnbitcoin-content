@@ -1,12 +1,12 @@
 ---
-title: "FUD (Fear, Uncertainty, Doubt)"
+title: "FUD（恐惧、不确定、怀疑）"
 slug: fud-fear-uncertainty-doubt
 draft: false
-shortDefinition: "A wave of negative sentiment-often unsubstantiated-causing community panic or suspicion about Bitcoin's future."
+shortDefinition: "一波通常无根据的负面情绪，引发社区对比特币未来的恐慌或怀疑。"
 keyTakeaways:
-  - "Can trigger sell-offs and market volatility"
-  - "Often fueled by rumors and incomplete info"
-  - "Long-term users focus on fundamentals amid swirling FUD"
+  - "可能引发抛售和市场波动"
+  - "常由谣言和不完整信息推动"
+  - "长期用户在 FUD 纷飞中关注基本面"
 sources: []
 relatedTerms:
   - altcoin
@@ -17,18 +17,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-FUD stands for **fear, uncertainty, and doubt** - a tactic of spreading negative or alarming claims to undermine confidence in something, often without solid evidence. Originally a sales term (IBM was accused of "FUD-spreading" against competitors in the 1970s-80s), it's now Bitcoin shorthand for any breathless negative narrative, whether sincere or manipulative.
+FUD 代表**恐惧、不确定和怀疑**——一种传播负面或恐慌性声明以破坏对某事物信心的策略，通常没有确凿证据。最初是销售术语（IBM 在 1970-80 年代被指控对竞争对手"传播 FUD"），现在成为比特币中对任何夸张负面叙事的简称，无论真诚还是操纵性的。
 
-The recurring greatest hits:
+反复出现的经典：
 
-- **"Bitcoin is banned in [country]!"** - Some specific jurisdiction restricts some specific Bitcoin activity. Headlines exaggerate; nothing fundamental changes. China has "banned" Bitcoin roughly 16 times since 2013.
-- **"Bitcoin uses more energy than [country]!"** - Cherry-picked comparisons, usually ignoring that Bitcoin's energy is increasingly stranded renewables and that the comparison country includes legitimate productive economic activity.
-- **"Quantum computers will break Bitcoin tomorrow!"** - Speculative; the timelines quoted are usually decades premature and ignore Bitcoin's ability to soft-fork to post-quantum signatures.
-- **"Satoshi will sell and crash the market!"** - The ~1.1M BTC mined by Satoshi has been visibly untouched for 16 years. No reason to expect that to change.
-- **"Bitcoin is dead!"** - Has been declared dead [over 470 times](https://99bitcoins.com/bitcoin-obituaries/) since 2010. Hasn't died yet.
+- **"比特币在[某国]被禁！"**——某个特定司法管辖区限制某些特定比特币活动。标题夸大；基本面没有变化。中国自 2013 年以来已"禁"比特币约 16 次。
+- **"比特币使用的能源比[某国]还多！"**——精心挑选的比较，通常忽略比特币能源越来越多地是搁浅可再生能源，且比较国家包含合法的生产经济活动。
+- **"量子计算机明天将破解比特币！"**——推测性的；引用的时间表通常提前数十年，且忽略比特币可以软分叉到后量子签名。
+- **"Satoshi 将卖出并崩盘市场！"**——Satoshi 挖出的约 110 万 BTC 已明显 16 年未动。没有理由预期这会改变。
+- **"比特币已死！"**——自 2010 年以来已被宣布死亡[超过 470 次](https://99bitcoins.com/bitcoin-obituaries/)。至今未死。
 
-Not all negativity is FUD. Legitimate criticisms exist - real custodial collapses, real privacy weaknesses, real regulatory uncertainties, real mining centralization concerns. The skill is distinguishing **substantive criticism** (specific, sourced, actionable) from **FUD** (vague, emotional, designed to provoke selling or fear).
+并非所有负面都是 FUD。合理的批评存在——真实的托管崩盘、真实的隐私弱点、真实的监管不确定性、真实的挖矿中心化担忧。技巧在于区分**实质性批评**（具体的、有来源的、可操作的）和 **FUD**（模糊的、情绪化的、旨在引发抛售或恐惧的）。
 
-The instinctive defense: when you see breathless claims about Bitcoin, ask: *Is this specific? Is it sourced? Can I verify it from on-chain data or a primary document?* If the answer to all three is no, you're probably looking at FUD.
+直觉防御：当你看到关于比特币的夸张声明时，问：*这是具体的吗？有来源吗？我能从链上数据或原始文件验证吗？* 如果三个答案都是否，你可能正在看 FUD。
 
-Bitcoiners use the term defensively (sometimes overly so). Sometimes the bad thing actually is bad, and "that's just FUD" becomes its own form of denial. Be skeptical of both directions.
+比特币用户有时过度防御性地使用这个术语。有时候坏事确实是坏事，"那只是 FUD"本身变成了一种否认形式。对两个方向都保持怀疑。

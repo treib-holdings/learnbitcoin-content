@@ -2,11 +2,11 @@
 title: "SIGHASH_ANYONECANPAY"
 slug: sighashanyonecanpay
 draft: false
-shortDefinition: "A signature flag letting other participants add inputs to a transaction without invalidating the existing signature."
+shortDefinition: "一种签名标志，允许其他参与者向交易添加输入而不使现有签名失效。"
 keyTakeaways:
-  - "Isolates a signature to the signer's own inputs"
-  - "Enables partial signing in multi-input transactions"
-  - "Useful for coinjoin-like flows or flexible transaction construction"
+  - "将签名隔离为仅签名者自己的输入"
+  - "在多输入交易中支持部分签名"
+  - "适用于 CoinJoin 式流程或灵活的交易构建"
 sources: []
 relatedTerms:
   - bitcoin-script
@@ -17,12 +17,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-`SIGHASH_ANYONECANPAY` is a modifier flag (OR'd into `SIGHASH_ALL`, `SIGHASH_NONE`, or `SIGHASH_SINGLE`) that tells the signer "commit only to this input, not the other inputs." Anyone can add more inputs to the transaction afterward without invalidating your signature.
+`SIGHASH_ANYONECANPAY` 是一个修饰标志（与 `SIGHASH_ALL`、`SIGHASH_NONE` 或 `SIGHASH_SINGLE` 进行 OR 运算），告诉签名者"只承诺此输入，不承诺其他输入"。任何人之后都可以向交易添加更多输入而不破坏你的签名。
 
-It enables patterns where multiple parties contribute to a shared transaction without trusting each other:
+它支持多方共同贡献一笔共享交易而不需要互相信任的模式：
 
-- Crowdfunding: a published partial transaction sets the recipient outputs; supporters each add an input signed with `SIGHASH_ALL | SIGHASH_ANYONECANPAY`. Once the inputs cover the outputs, anyone can broadcast.
-- PayJoin (BIP 78) style flows, where sender and receiver each contribute inputs and the result looks like an ordinary transaction to outside observers.
-- Fee-bumping in pre-Replace-by-Fee designs, though [Replace-by-Fee (RBF)](/glossary/replace-fee-rbf) and CPFP now handle this better.
+- 众筹：发布的部分交易设定了接收输出；支持者各自添加一个用 `SIGHASH_ALL | SIGHASH_ANYONECANPAY` 签名的输入。当输入总额覆盖输出时，任何人都可以广播。
+- PayJoin（BIP 78）式流程，发送方和接收方各自贡献输入，结果对外部观察者来说看起来就是一笔普通交易。
+- 在 Replace-by-Fee 之前的费用提升设计中的费用追加，不过现在 [RBF](/glossary/replace-fee-rbf) 和 CPFP 能更好地处理这个需求。
 
-It's a powerful flag with sharp edges. Sign with `SIGHASH_NONE | SIGHASH_ANYONECANPAY` and you've effectively signed "spend my UTXO however you want," which is rarely what anyone actually means. The safe default for ad-hoc construction is `SIGHASH_ALL | SIGHASH_ANYONECANPAY`: my input is committed, the outputs are fixed, the rest is open.
+它是一个功能强大但有锋利边缘的标志。用 `SIGHASH_NONE | SIGHASH_ANYONECANPAY` 签名等于签了"随便怎么花我的 UTXO"，这几乎不是任何人的本意。临时构建的安全默认是 `SIGHASH_ALL | SIGHASH_ANYONECANPAY`：我的输入已承诺，输出已固定，其余开放。

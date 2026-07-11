@@ -1,12 +1,12 @@
 ---
-title: "Block Header"
+title: "区块头"
 slug: block-header
 draft: false
-shortDefinition: "A compact ~80-byte summary of a block, containing version, previous block hash, Merkle root, timestamp, and nonce."
+shortDefinition: "区块的约 80 字节紧凑摘要，包含版本、前一个区块哈希、Merkle 根、时间戳和随机数。"
 keyTakeaways:
-  - "Contains the essential hashing elements for proof-of-work"
-  - "Links to previous block and summarizes transactions via the Merkle root"
-  - "Miners focus on finding a valid header hash to produce a new block"
+  - "包含工作量证明的关键哈希元素"
+  - "链接前一个区块并通过 Merkle 根汇总交易"
+  - "矿工专注于寻找有效的区块头哈希来产出新区块"
 sources: []
 relatedTerms:
   - bip-22-getblocktemplate
@@ -27,19 +27,19 @@ sameAs:
 liveWidget: ~
 ---
 
-The block header is the 80-byte summary at the top of every Bitcoin block. It's tiny, but it's everything that matters for [proof-of-work](/glossary/proof-work-pow).
+区块头是每个比特币区块顶部的 80 字节摘要。它很小，但包含了[工作量证明](/glossary/proof-work-pow)所需的一切。
 
-The six fields:
+六个字段：
 
-1. **Version** (4 bytes) - signals which protocol rules the block follows.
-2. **Previous block hash** (32 bytes) - the hash of the prior block's header. This is what makes Bitcoin a *chain*.
-3. **[Merkle root](/glossary/merkle-root)** (32 bytes) - a single hash that commits to every transaction in the block. Change any transaction and this changes.
-4. **Timestamp** (4 bytes) - the miner's claim of when the block was mined. Loosely constrained.
-5. **Bits** (4 bytes) - a compact encoding of the current difficulty target.
-6. **[Nonce](/glossary/nonce)** (4 bytes) - the field miners vary while searching for a valid hash.
+1. **版本**（4 字节）——信号区块遵循哪个协议规则。
+2. **前一个区块哈希**（32 字节）——前一个区块头的哈希。这就是使比特币成为*链*的东西。
+3. **[Merkle 根](/glossary/merkle-root)**（32 字节）——一个提交到区块中每笔交易的哈希。改变任何交易这就会变。
+4. **时间戳**（4 字节）——矿工声称的出块时间。宽松约束。
+5. **Bits**（4 字节）——当前难度目标的紧凑编码。
+6. **[随机数](/glossary/nonce)**（4 字节）——矿工在搜索有效哈希时变化的字段。
 
-To mine a block, you compute SHA-256(SHA-256(header)) and check whether the result is below the target encoded in *bits*. If not, change the nonce and try again. (When you exhaust all 4 billion nonce values, you tweak the coinbase transaction's extranonce, which changes the Merkle root, and start over.)
+要挖一个区块，你计算 SHA-256(SHA-256(header)) 并检查结果是否低于 *bits* 中编码的目标。如果不是，更改随机数再试。（当你穷尽所有 40 亿个随机数值时，你调整 coinbase 交易的 extranonce，这会改变 Merkle 根，然后重新开始。）
 
-The reason headers are only 80 bytes is so miners can broadcast and verify them cheaply. A miner finding a valid block sends out the header first, lets the network verify the proof-of-work, and propagates the full block in parallel. Lightweight clients (SPV wallets) can validate the chain by checking just the headers - 4 MB per year, total - without storing the gigabytes of full transaction data.
+区块头只有 80 字节的原因是让矿工可以廉价地广播和验证它们。矿工找到有效区块后先发出区块头，让网络验证工作量证明，并行传播完整区块。轻量客户端（SPV 钱包）可以仅通过检查区块头来验证链——每年总共约 4 MB——而无需存储数 GB 的完整交易数据。
 
-See [Mining rabbit hole](/rabbit-hole/mining) for the search process; [Block](/glossary/block) for what the header is summarizing.
+参见[挖矿 rabbit hole](/rabbit-hole/mining)了解搜索过程，[区块](/glossary/block)了解区块头摘要的内容。

@@ -1,41 +1,41 @@
 ---
-title: "Hash-Rate Derivative"
+title: "算力衍生品"
 slug: hash-rate-derivative
 draft: false
-shortDefinition: "A financial contract letting miners/investors speculate on or hedge against changes in Bitcoin's hash rate."
+shortDefinition: "让矿工/投资者对比特币算力变化进行投机或对冲的金融合约。"
 keyTakeaways:
-  - "Allows financial exposure to mining difficulty trends"
-  - "Miners hedge against fluctuating competition levels"
-  - "Still a niche market with relatively low liquidity"
+  - "允许对挖矿难度趋势的金融敞口"
+  - "矿工对冲竞争水平波动"
+  - "仍是流动性较低的利基市场"
 sources: []
 relatedTerms:
   - hash
   - hash-rate
   - hashlet
   - mining-algorithm
-  - mining-colocation
+  - mining-collocation
   - revenue-ths
 liveWidget: ~
 ---
 
-A hash-rate derivative is a financial contract whose payout is tied to Bitcoin's [network hash rate](/glossary/hash-rate) or [difficulty](/glossary/difficulty). Like commodity futures for natural gas or oil, these instruments let miners and investors take positions on what mining conditions will look like in the future.
+算力衍生品是一种金融合约，其支付与比特币[网络算力](/glossary/hash-rate)或[难度](/glossary/difficulty)挂钩。就像天然气或石油的商品期货一样，这些工具让矿工和投资者对未来挖矿条件持头寸。
 
-Why they exist:
+为什么存在：
 
-- **Miners face natural revenue volatility.** A miner's revenue per terahash falls when network hash rate rises (more competition for the same block reward) and rises when network hash rate falls. Hedging this volatility is a real business need.
-- **Hash-rate hedges let miners lock in revenue.** A miner expecting to bring 10 PH/s online over the next year can lock in expected revenue regardless of how the broader network's hash rate evolves.
-- **Investors get exposure to mining economics** without operating mining hardware themselves.
+- **矿工面临自然收入波动。** 当网络算力上升（同一区块奖励的竞争更多）时，矿工每 terahash 的收入下降；当网络算力下降时则上升。对冲这种波动是真实的商业需求。
+- **算力对冲让矿工锁定收入。** 预期明年上线 10 PH/s 的矿工可以锁定预期收入，无论更广泛网络的算力如何演变。
+- **投资者无需运营挖矿硬件即可获得挖矿经济学敞口。**
 
-How they work in practice:
+实践中的工作方式：
 
-- **Hash-rate futures.** Settle based on average hash rate over a defined period. Miners typically take the *short* side (hedging against hash-rate growth eroding their revenue); speculators take the *long* side.
-- **Difficulty-adjustment futures.** Similar but anchored to the [difficulty retargeting](/glossary/difficulty-retargeting) events specifically.
-- **Hashrate-linked tokens / pools** like Luxor's hashprice index, FRNT's hash futures, and others.
+- **算力期货。** 基于定义期间的平均算力结算。矿工通常持有*空方*（对冲算力增长侵蚀收入）；投机者持有多方。
+- **难度调整期货。** 类似但专门锚定[难度调整](/glossary/difficulty-retargeting)事件。
+- **算力挂钩代币/矿池**如 Luxor 的 hashprice 指数、FRNT 的算力期货等。
 
-Limitations:
+限制：
 
-- **Liquidity is still thin.** Hash-rate derivatives are niche compared to BTC spot/options markets.
-- **Index design matters.** Different products use different methodologies; comparing them requires reading the fine print.
-- **Mainly useful for serious miners.** For typical Bitcoin holders, hash-rate derivatives are mostly a curiosity.
+- **流动性仍然很薄。** 与 BTC 现货/期权市场相比，算力衍生品是利基。
+- **指数设计很重要。** 不同产品使用不同方法论；比较它们需要阅读细则。
+- **主要对严肃矿工有用。** 对于典型比特币持有者，算力衍生品主要是好奇心。
 
-For miners running operations measured in megawatts, hedging the hash-rate side of the equation alongside the BTC-price side is becoming standard risk management. The product category will likely grow as Bitcoin mining matures as an industrial sector.
+对于以兆瓦计运营的矿工，在 BTC 价格方面之外对冲算力方面正在成为标准风险管理。随着比特币挖矿作为工业部门成熟，这一产品类别可能会增长。

@@ -1,12 +1,12 @@
 ---
-title: "Coin Freeze"
+title: "币冻结"
 slug: coin-freeze
 draft: false
-shortDefinition: "A script-based technique that prevents UTXOs from being spent until a specified future date or block height."
+shortDefinition: "一种基于脚本的技术，阻止 UTXO 在指定的未来日期或区块高度之前被花费。"
 keyTakeaways:
-  - "Relies on locktime opcodes (CLTV/CSV)"
-  - "Ideal for time-delayed payments or savings"
-  - "Temporarily restricts on-chain liquidity"
+  - "依赖锁定时间操作码（CLTV/CSV）"
+  - "适用于延迟支付或储蓄"
+  - "暂时限制链上流动性"
 sources: []
 relatedTerms:
   - burn-address
@@ -18,25 +18,25 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A coin freeze is any Bitcoin script that prevents spending until a specific time or block height. The freeze is enforced by the protocol; no third party can release the funds early.
+币冻结是任何阻止在特定时间或区块高度之前花费的比特币脚本。冻结由协议执行；没有任何第三方可以提前释放资金。
 
-The two primitives:
+两个原语：
 
-- **OP_CHECKLOCKTIMEVERIFY (CLTV)**: spend allowed only after an absolute reference - a block height or a UNIX timestamp. Useful for "spendable on June 1, 2030."
-- **OP_CHECKSEQUENCEVERIFY (CSV)**: spend allowed only after a relative interval - N blocks (or N units of time) since the parent transaction was confirmed. Useful for "spendable 1 year after this output was created."
+- **OP_CHECKLOCKTIMEVERIFY（CLTV）**：仅在绝对参考——区块高度或 UNIX 时间戳——之后允许花费。适用于"2030 年 6 月 1 日起可花费。"
+- **OP_CHECKSEQUENCEVERIFY（CSV）**：仅在相对间隔——父交易确认后 N 个区块（或 N 个时间单位）——之后允许花费。适用于"此输出创建 1 年后可花费。"
 
-Common applications:
+常见应用：
 
-- **Self-imposed savings discipline.** Lock coins for 1-5 years to prevent yourself from spending them impulsively during volatility.
-- **Inheritance setups.** A spending path that becomes valid after 6 months without primary-key activity, designed to give heirs access if the primary holder dies or loses keys.
-- **[Vaults](/glossary/bitcoin-vault).** A clawback path that lets a cold key override a hot-key spend within a CSV window.
-- **Trustless escrow.** Buyer and seller agree on a deal; coins are released after a delay or by mutual consent before the delay expires.
-- **Lightning channels.** Every channel commitment uses CSV-locked outputs as part of the [delayed justice mechanism](/glossary/delayed-justice-transaction).
+- **自律储蓄。** 将币锁定 1-5 年，防止自己在波动期间冲动消费。
+- **遗产设置。** 一个在主密钥 6 个月不活动后生效的花费路径，旨在主持有者去世或丢失密钥时让继承人获得访问权。
+- **[金库](/glossary/bitcoin-vault)。** 一个回收路径，允许冷密钥在 CSV 窗口内覆盖热密钥花费。
+- **无信任托管。** 买卖双方达成交易；币在延迟后释放，或在延迟到期前双方同意释放。
+- **闪电通道。** 每个通道承诺都使用 CSV 锁定输出作为[延迟正义机制](/glossary/delayed-justice-transaction)的一部分。
 
-What a coin freeze isn't:
+币冻结不是什么：
 
-- **Reversible by anyone.** Once locked in script, no one - including the original sender - can unfreeze the coins early. The freeze is enforced by every full node.
-- **Confidential.** The lock script is on-chain. Anyone who can see the transaction can see when the funds become spendable.
-- **A perfect savings tool.** A frozen UTXO is illiquid; the holder gives up the option to spend during the freeze window. That's the point, but it's a real cost.
+- **任何人都可撤销。** 一旦锁定在脚本中，没有人——包括原始发送方——可以提前解冻。冻结由每个全节点执行。
+- **保密的。** 锁定脚本在链上。任何能看到交易的人都能看到资金何时可花费。
+- **完美的储蓄工具。** 冻结的 UTXO 是不流动的；持有者放弃了在冻结窗口期间花费的选择权。这就是目的，但这是真实的成本。
 
-Coin freezes are one of Bitcoin's underused primitives. Far more powerful than common wallet UX exposes, but increasingly accessible through tools like Sparrow's time-lock scripts, Liana's recovery-window wallets, and various vault implementations.
+币冻结是比特币中被低估的原语之一。远比常见钱包 UX 暴露的更强大，但通过 Sparrow 的时间锁脚本、Liana 的恢复窗口钱包和各种金库实现等工具越来越容易使用。

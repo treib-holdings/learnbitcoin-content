@@ -1,12 +1,12 @@
 ---
-title: "Mining Pool"
+title: "矿池"
 slug: mining-pool
 draft: false
-shortDefinition: "A collective of miners pooling their hash power and sharing rewards proportionally to contributed work."
+shortDefinition: "矿工聚集算力并按贡献比例分享奖励的集体。"
 keyTakeaways:
-  - "Combines resources for more consistent miner payouts"
-  - "Pool members receive shares of the block reward"
-  - "Can lead to centralization if few pools dominate"
+  - "整合资源使矿工获得更稳定的支付"
+  - "矿池成员获得区块奖励的份额"
+  - "少数矿池主导可能导致中心化"
 sources: []
 relatedTerms:
   - block-reward
@@ -32,14 +32,14 @@ sameAs:
 liveWidget: ~
 ---
 
-A mining pool is a group of [miners](/glossary/miner) who combine their hash rate to find blocks together and split the rewards proportionally.
+矿池是一群[矿工](/glossary/miner)联合算力一起找区块并按比例分配奖励的群体。
 
-Why pools exist: variance. A miner with 0.1% of global hash rate would, on average, find one block every ~70 days - but the variance around that average is enormous. Some months they'd find three; some months zero. With electricity bills due every month, "averaged over years" is not a viable cash flow. Pools fix this by aggregating many miners' hash power so blocks come more frequently (proportional to combined hash), and paying each contributor based on the "shares" of work they submit. Modern share schemes (PPLNS, FPPS) also defeat [pool hopping](/glossary/pool-hopping) - a historical exploit that gamed early-round shares to extract above-average rewards.
+矿池存在的原因：方差。拥有全球算力 0.1% 的矿工平均约 70 天找到一个区块——但围绕这个平均值的方差极大。有些月份找到三个；有些月份零个。电费每月都要付，"按年平均"不是可行的现金流。矿池通过聚合许多矿工的算力来解决这个问题，使区块更频繁地出现（与合并算力成正比），并根据每个贡献者提交的工作"份额"支付。现代份额方案（PPLNS、FPPS）也击败了[矿池跳换](/glossary/pool-hopping)——一种利用早期份额提取超额奖励的历史漏洞。
 
-The biggest pools today (Foundry USA, AntPool, ViaBTC, F2Pool, and a handful of others) collectively control well over half of global hash rate. This is the centralization concern that keeps Bitcoin developers up at night: if a few pool operators decide together to censor certain transactions, or to attempt a reorganization, they have the hash power to attempt it.
+今天最大的矿池（Foundry USA、AntPool、ViaBTC、F2Pool 等少数几个）合计控制全球算力的一半以上。这是让比特币开发者夜不能寐的中心化担忧：如果几个矿池运营者一致决定审查某些交易或尝试重组，他们有算力去尝试。
 
-The counterweight is that **pool operators are not miners**. The hash rate in a pool comes from individual miners who can switch pools at will. If a pool starts misbehaving, miners can - and do - migrate elsewhere within hours. There's also work happening to push power back to individual miners: **Stratum V2** is a protocol upgrade that lets miners (not pool operators) choose which transactions go into the blocks they're hashing on. It's been slow to deploy but is the structural fix.
+制衡是**矿池运营者不是矿工**。矿池中的算力来自可以随意切换矿池的个体矿工。如果矿池开始行为不当，矿工可以——而且确实会——在数小时内迁移到其他地方。还有工作正在进行将权力推回给个体矿工：**Stratum V2** 是一种协议升级，让矿工（而非矿池运营者）选择哪些交易进入他们正在哈希的区块。部署缓慢但是结构性修复。
 
-On the operator side, the layer that actually manages pool connections, work distribution, and per-ASIC monitoring is the [mining front-end](/glossary/mining-front-end) - just stock firmware for a hobbyist with one ASIC, a dedicated fleet-management stack for industrial operators running thousands.
+在运营者方面，实际管理矿池连接、工作分配和逐 ASIC 监控的层是[挖矿前端](/glossary/mining-front-end)——对于有一台 ASIC 的爱好者只是标准固件，对于运行数千台的工业运营者则是专用机队管理技术栈。
 
-The current state is uncomfortable but not catastrophic. See [Mining rabbit hole §8](/rabbit-hole/mining) for a longer look at mining centralization and how it's actually evolving.
+当前状态不舒适但非灾难性。请参阅[挖矿深入探讨 §8](/rabbit-hole/mining) 了解挖矿中心化及其实际演变的更长讨论。

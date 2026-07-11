@@ -2,11 +2,11 @@
 title: "BIP 34"
 slug: bip-34
 draft: false
-shortDefinition: "Mandates that coinbase transactions explicitly include the block height, standardizing block referencing."
+shortDefinition: "要求 coinbase 交易显式包含区块高度，标准化区块引用。"
 keyTakeaways:
-  - "Forces coinbase to declare block height"
-  - "Improves chain organization and validation"
-  - "Prevents ambiguous references to block position"
+  - "强制 coinbase 声明区块高度"
+  - "改善链组织和验证"
+  - "防止对区块位置的模糊引用"
 sources: []
 relatedTerms:
   - bip-bitcoin-improvement-proposal
@@ -19,20 +19,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-[BIP-34](https://github.com/bitcoin/bips/blob/master/bip-0034.mediawiki) requires every Bitcoin block's [coinbase transaction](/glossary/coinbase-transaction) to encode the [block height](/glossary/block-height) as the first push in its input script. Activated as a [soft fork](/glossary/soft-fork) in March 2013, it's a structural cleanup that solved several niggling issues at once.
+[BIP-34](https://github.com/bitcoin/bips/blob/master/bip-0034.mediawiki)要求每个比特币区块的 [coinbase 交易](/glossary/coinbase-transaction)在其输入脚本中首先推入[区块高度](/glossary/block-height)。2013 年 3 月作为[软分叉](/glossary/soft-fork)激活，这是一次结构性清理，同时解决了几个小问题。
 
-What the rule actually does:
+规则实际做什么：
 
 ```
-coinbase input script must begin with: <block_height_serialized>
+coinbase 输入脚本必须以：<区块高度序列化> 开头
 ```
 
-For block 800,000, the coinbase input starts with the byte sequence encoding the integer 800,000. Simple, mechanical, easy to verify.
+对于区块 800,000，coinbase 输入以编码整数 800,000 的字节序列开头。简单、机械、易于验证。
 
-What it buys:
+带来的好处：
 
-- **Uniqueness.** Every coinbase transaction now has a unique input that differs from every other block's coinbase, so two blocks can't accidentally produce the same coinbase txid. This is the structural fix that makes the [BIP-30](/glossary/bip-30) "no duplicate txids" rule trivially satisfiable forever.
-- **Self-referential blocks.** A block now explicitly states its own height. This made certain validation logic cleaner and provided a sanity-check anchor for nodes resyncing or recovering from corruption.
-- **Soft-fork activation precedent.** BIP-34 was one of the first non-trivial soft forks to use a clean miner-signaling activation method (predating the more formal [BIP-9](/glossary/bip-9-versionbits)). It established patterns that later activations refined.
+- **唯一性。**每个 coinbase 交易现在有一个不同于每个其他区块 coinbase 的唯一输入，所以两个区块不会意外产生相同的 coinbase txid。这是使 [BIP-30](/glossary/bip-30)"无重复 txid"规则永远平凡满足的结构性修复。
+- **自引用区块。**区块现在显式声明自己的高度。这使某些验证逻辑更干净，并为重新同步或从损坏中恢复的节点提供了完整性检查锚点。
+- **软分叉激活先例。**BIP-34 是最早使用干净矿工信号激活方法的非平凡软分叉之一（早于更正式的 [BIP-9](/glossary/bip-9-versionbits)）。它建立了后来激活改进的模式。
 
-You'll see BIP-34 referenced in node logs, in protocol documentation, and occasionally in mining-pool discussions, but most users never directly interact with it. It's part of the "things that just work because they were carefully designed in 2013" infrastructure of Bitcoin.
+你会在节点日志、协议文档中看到 BIP-34 引用，偶尔在矿池讨论中也会出现，但大多数用户从不直接与它交互。它是比特币"因为 2013 年的精心设计而正常工作"基础设施的一部分。

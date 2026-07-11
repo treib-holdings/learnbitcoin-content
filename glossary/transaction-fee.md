@@ -1,12 +1,12 @@
 ---
-title: "Transaction Fee"
+title: "交易手续费"
 slug: transaction-fee
 draft: false
-shortDefinition: "An amount included by the sender to reward miners for prioritizing transaction confirmation."
+shortDefinition: "发送方包含的金额，用于奖励矿工优先处理交易确认。"
 keyTakeaways:
-  - "Motivates miners to include your transaction in a block"
-  - "Calculated as input total minus output total"
-  - "Dynamic depending on network congestion and block space demand"
+  - "激励矿工将你的交易包含在区块中"
+  - "计算方式为输入总额减去输出总额"
+  - "根据网络拥堵和区块空间需求动态变化"
 sources: []
 relatedTerms:
   - absolute-fee
@@ -28,24 +28,24 @@ sameAs:
 liveWidget: ~
 ---
 
-A transaction fee is what you pay [miners](/glossary/miner) to include your [Bitcoin transaction](/glossary/transaction) in a block. Mechanically, it's the difference between the sum of input values and the sum of output values - whatever you don't explicitly send to an output, the miner who confirms the transaction collects.
+交易手续费是你付给[矿工](/glossary/miner)以将你的[比特币交易](/glossary/transaction)包含在区块中的费用。机制上，它是输入值之和与输出值之和的差额——你没有显式发送到某个输出的部分，由确认交易的矿工收集。
 
-Fees are quoted as a *rate*, not a total: **sats per virtual byte (sat/vB)**. A larger transaction costs more in fees at the same rate. Typical transaction sizes:
+手续费以*费率*而非总额报价：**每虚拟字节聪（sat/vB）**。同一费率下，更大的交易手续费更高。典型交易大小：
 
-- Simple [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash) (1 input, 2 outputs): ~140 vB
-- [Taproot](/glossary/taproot) (1 input, 2 outputs): ~110 vB
-- 2-of-3 multisig: ~250 vB
-- Consolidations with many inputs: 500+ vB
+- 简单 [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash)（1 输入，2 输出）：约 140 vB
+- [Taproot](/glossary/taproot)（1 输入，2 输出）：约 110 vB
+- 2-of-3 多签：约 250 vB
+- 多输入合并：500+ vB
 
-At 10 sat/vB, those would cost 1,400 / 1,100 / 2,500 / 5,000+ sats respectively. Real fees vary wildly depending on network congestion.
+在 10 sat/vB 下，分别需要 1,400 / 1,100 / 2,500 / 5,000+ 聪。实际手续费根据网络拥堵波动很大。
 
-The fee market dynamics:
+费率市场动态：
 
-- **Low-congestion periods.** Fees drop to 1-3 sat/vB. Most transactions confirm in the next block at that rate.
-- **High-congestion periods.** Fees spike. During the early-2024 Ordinals mint surge, next-block fees occasionally touched 500+ sat/vB.
-- **Estimator-driven defaults.** Your wallet uses [fee estimation](/glossary/fee-estimation) to pick a reasonable rate. Most wallets get this right; you can override if you understand the trade-off.
-- **Fee bumping** ([RBF](/glossary/replace-fee-rbf), [CPFP](/glossary/fee-bumping)) is available if you underpaid and got stuck.
+- **低拥堵期。** 费率降至 1-3 sat/vB。大多数交易在下一个区块确认。
+- **高拥堵期。** 费率飙升。2024 年初 Ordinals 铸币潮期间，下一区块费率偶尔触及 500+ sat/vB。
+- **估算器驱动的默认值。** 你的钱包使用[费用估算](/glossary/fee-estimation)选择合理费率。大多数钱包做得对；如果你理解权衡可以手动覆盖。
+- **费用提升**（[RBF](/glossary/replace-fee-rbf)、[CPFP](/glossary/fee-bumping)）在你付少了被卡住时可用。
 
-Long-term, transaction fees become *the* incentive for miners. Today they're ~3-10% of [block reward](/glossary/block-reward) revenue; as the [block subsidy](/glossary/block-subsidy) halves toward zero around 2140, fees become 100% of it. The fee market that exists today is a small preview of the fee market Bitcoin needs to sustain its security post-subsidy.
+长期来看，交易手续费会成为矿工*唯一*的激励。目前它们约占[区块奖励](/glossary/block-reward)收入的 3-10%；随着[区块补贴](/glossary/block-subsidy)在 2140 年左右减半至零，手续费将变为 100%。今天存在的费率市场是比特币需要在补贴后维持安全性的费率市场的小预览。
 
-See live mempool fee bands on the [Node page](/node/) or in the [Mining rabbit hole §6](/rabbit-hole/mining).
+参见[节点页面](/node/)上的实时内存池费率带，或[挖矿深度指南 §6](/rabbit-hole/mining)。

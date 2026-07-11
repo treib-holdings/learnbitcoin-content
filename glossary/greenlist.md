@@ -1,12 +1,12 @@
 ---
-title: "Greenlist"
+title: "绿色名单"
 slug: greenlist
 draft: false
-shortDefinition: "A contentious practice of labeling certain BTC addresses as 'approved,' conflicting with Bitcoin's permissionless nature."
+shortDefinition: "将某些 BTC 地址标记为'已批准'的有争议做法，与比特币的无需许可性质冲突。"
 keyTakeaways:
-  - "Approves certain addresses as 'safe' or 'compliant'"
-  - "Threatens Bitcoin's open-access design and fungibility"
-  - "Represents a regulatory approach to controlling transaction flows"
+  - "批准某些地址为'安全'或'合规'"
+  - "威胁比特币的开放准入设计和可替代性"
+  - "代表一种控制交易流的监管方法"
 sources: []
 relatedTerms:
   - address-reuse
@@ -17,24 +17,24 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A greenlist is the policy of permitting transactions only to or from a pre-approved set of addresses. It's the inverse of a blacklist (which forbids specific addresses while allowing everything else). In Bitcoin context, the term mostly comes up in regulatory discussions about KYC compliance.
+绿色名单是仅允许向/从预批准地址集合进行交易的政策。它是黑名单的逆反（黑名单禁止特定地址而允许其他一切）。在比特币背景下，该术语主要出现在 KYC 合规的监管讨论中。
 
-How greenlisting would work in practice:
+绿色名单在实践中如何运作：
 
-- A custodian builds a list of addresses it considers "clean" - addresses tied to other KYC-verified entities, addresses from known-legitimate sources, etc.
-- The custodian only allows withdrawals to greenlisted addresses, refusing requests to send to addresses without sufficient compliance pedigree.
-- Receiving from non-greenlisted addresses might trigger holds, additional verification, or rejection.
+- 托管人建立一个它认为"干净"的地址列表——与其他 KYC 验证实体的地址、来自已知合法来源的地址等。
+- 托管人只允许提取到绿色名单地址，拒绝发送到合规血统不足的地址。
+- 从非绿色名单地址接收可能触发持有、额外验证或拒绝。
 
-Why this matters as a debate:
+为什么这作为辩论很重要：
 
-- **Fungibility threat.** A foundational property of money is that every unit is interchangeable with every other unit. Greenlisting creates a structural difference between "good coins" (from approved addresses, smoothly accepted) and "bad coins" (from non-approved addresses, refused or held up). That's two-tier money.
-- **Censorship risk.** A coin whose acceptability depends on a custodian's policy is a coin the custodian can selectively reject. The censorship can be made arbitrary; the user has no recourse other than choosing a different custodian.
-- **Compliance pressure.** Regulators have pushed in this direction (FATF travel rule, EU AMLD provisions, US OFAC sanctions enforcement). Some custodians have implemented partial greenlisting voluntarily; others have resisted.
+- **可替代性威胁。** 货币的基础属性是每个单位与其他单位可互换。绿色名单创造了"好币"（来自批准地址，顺畅接受）和"坏币"（来自非批准地址，被拒绝或延迟）之间的结构性差异。那是两层货币。
+- **审查风险。** 其可接受性取决于托管人政策的币是托管人可以选择性拒绝的币。审查可以是任意的；用户除了选择其他托管人外没有追索权。
+- **合规压力。** 监管者已推动这一方向（FATF 旅行规则、EU AMLD 条款、美国 OFAC 制裁执行）。一些托管人自愿实施了部分绿色名单；其他则抵制。
 
-Real examples:
+真实例子：
 
-- **Coinbase**: scores incoming deposits via Chainalysis-driven risk analysis; high-risk deposits can be frozen.
-- **Various European exchanges** under MiCA increasingly restrict withdrawals to "verified beneficiary" addresses for amounts above thresholds.
-- **OFAC SDN list compliance** is universal among regulated custodians; sending to a listed address is functionally impossible from a major exchange.
+- **Coinbase**：通过 Chainalysis 驱动的风险分析对入金进行评分；高风险存款可被冻结。
+- **欧洲各交易所**在 MiCA 下越来越多地限制对"验证受益人"地址的提现，超过阈值时。
+- **OFAC SDN 名单合规**在受监管托管人中普遍存在；向列名地址发送在主要交易所实际上不可能。
 
-The honest framing for Bitcoiners: greenlisting at the custodian layer is real and growing. Bitcoin's base layer remains permissionless - the network doesn't know or care about a greenlist - but the on-ramps and off-ramps are increasingly gated. Self-custody plus peer-to-peer trading is the structural answer: greenlisting only constrains people who depend on custodians.
+对比特币用户的诚实表述：托管人层面的绿色名单是真实且增长的。比特币基础层仍然无需许可——网络不知道或不在乎绿色名单——但入金和出金通道日益门控。自托管加点对点交易是结构性答案：绿色名单仅约束依赖托管人的人。

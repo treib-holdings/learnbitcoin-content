@@ -1,13 +1,13 @@
 ---
-title: "CME CF Bitcoin Reference Rate"
+title: "CME CF 比特币参考利率"
 slug: cme-cf-bitcoin-reference-rate
 draft: false
 published: "2026-06-15"
-shortDefinition: "The industry-standard daily reference price for Bitcoin, calculated from spot trades on a curated set of exchanges and published by CF Benchmarks. The number that US spot Bitcoin ETFs strike their NAV against."
+shortDefinition: "行业标准的比特币每日参考价格，由 CF Benchmarks 从精选交易所的现货交易计算并发布。美国现货比特币 ETF 用其计算净资产值。"
 keyTakeaways:
-  - "Strikes once daily at 4:00 PM London time over a one-hour observation window"
-  - "Used by CME Bitcoin futures, spot Bitcoin ETFs, and institutional settlement"
-  - "Calculated from a constituent exchange list (currently Bitstamp, Coinbase, Gemini, itBit, Kraken, LMAX Digital)"
+  - "每天伦敦时间下午 4:00 在一小时的观察窗口内定价"
+  - "被 CME 比特币期货、现货比特币 ETF 和机构结算使用"
+  - "从成分交易所列表计算（目前为 Bitstamp、Coinbase、Gemini、itBit、Kraken、LMAX Digital）"
 sources: []
 relatedTerms:
   - spot-bitcoin-etf
@@ -20,22 +20,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The CME CF Bitcoin Reference Rate (BRR) is the single most important "official" Bitcoin price in regulated financial products. It is the daily reference rate that [spot Bitcoin ETFs](/glossary/spot-bitcoin-etf) use to strike their [Net Asset Value](/glossary/nav-net-asset-value), that CME-listed Bitcoin futures settle against, and that custodians and institutions use to mark BTC positions.
+CME CF 比特币参考利率（BRR）是受监管金融产品中最重要的"官方"比特币价格。它是[现货比特币 ETF](/glossary/spot-bitcoin-etf) 用来计算[净资产值](/glossary/nav-net-asset-value)的每日参考利率，是 CME 上市的比特币期货的结算价格，也是托管人和机构用来标记 BTC 头寸的参考。
 
-The basics:
+基本信息：
 
-- **Strike time.** 4:00 PM London time, daily.
-- **Observation window.** The one hour immediately preceding the strike (3:00 - 4:00 PM London).
-- **Methodology.** A trade-weighted price across a list of constituent exchanges, with the observation window broken into 12 partitions of 5 minutes each. Each partition's volume-weighted median price is calculated; the BRR is the equal-weighted mean of those 12 partition medians. The partitioned structure resists manipulation by short bursts of trading.
-- **Publisher.** CF Benchmarks, a UK-based benchmark administrator regulated under UK Benchmarks Regulation (BMR) by the FCA. Acquired by Kraken in August 2019.
+- **定价时间。** 伦敦时间每天下午 4:00。
+- **观察窗口。** 定价前一小时（伦敦时间下午 3:00-4:00）。
+- **方法论。** 在成分交易所列表上进行交易加权价格计算，观察窗口分为 12 个 5 分钟分区。计算每个分区的成交量加权中位数价格；BRR 是这 12 个分区中位数的等权重均值。分区结构抵御通过短暂大量交易来操纵的企图。
+- **发布方。** CF Benchmarks，一家英国基准管理机构，受 FCA 的英国基准法规（BMR）监管。2019 年 8 月被 Kraken 收购。
 
-History:
+历史：
 
-- **November 14, 2016.** BRR launched, alongside the BRTI (Real-Time Index).
-- **December 17, 2017.** CME launched cash-settled Bitcoin futures, using BRR for daily and final settlement. The reference rate predates the futures product, which was a deliberate design choice - having an established benchmark made the futures launch credible to institutional traders.
-- **January 10, 2024.** The eleven approved US spot Bitcoin ETFs nearly all use BRR (or a closely related CF Benchmarks rate) for NAV strike.
+- **2016 年 11 月 14 日。** BRR 推出，同时推出 BRTI（实时指数）。
+- **2017 年 12 月 17 日。** CME 推出现金结算的比特币期货，使用 BRR 进行每日和最终结算。参考利率先于期货产品推出，这是有意的设计选择——拥有成熟的基准使期货发布对机构交易者更具可信度。
+- **2024 年 1 月 10 日。** 十一只获批的美国现货比特币 ETF 几乎都使用 BRR（或密切相关的 CF Benchmarks 利率）来计算净资产值。
 
-Constituent exchanges (as of 2026):
+成分交易所（截至 2026 年）：
 
 - Bitstamp
 - Coinbase
@@ -44,22 +44,22 @@ Constituent exchanges (as of 2026):
 - Kraken
 - LMAX Digital
 
-CF Benchmarks reviews the constituent list periodically and can add or remove venues based on liquidity, regulation, and pricing data quality. Each constituent must meet criteria around trading volume, regulatory status, and price-formation integrity.
+CF Benchmarks 定期审查成分列表，可根据流动性、监管状况和定价数据质量添加或删除交易所。每个成分交易所必须满足交易量、监管地位和价格形成完整性方面的标准。
 
-BRR vs BRTI:
+BRR 与 BRTI：
 
-- **BRR (Reference Rate).** Daily, single price, calculated over the 4 PM London window. Used for settlement and NAV.
-- **BRTI (Real-Time Index).** Continuous, published every second, used for real-time marks and intraday risk management.
+- **BRR（参考利率）。** 每日，单一价格，在伦敦时间下午 4 点窗口内计算。用于结算和净资产值。
+- **BRTI（实时指数）。** 连续的，每秒发布，用于实时标记和日内风险管理。
 
-Why BRR matters for Bitcoin:
+为什么 BRR 对比特币很重要：
 
-- **Single point of truth.** Before institutional adoption, "the Bitcoin price" was whatever you saw on whichever exchange you used. BRR creates an auditable, repeatable reference number that regulated products can settle against.
-- **Manipulation resistance.** The partitioned methodology and constituent diversification make it harder to move BRR than to move any single exchange. The SEC explicitly cited BRR robustness in its 2024 spot ETF approval order.
-- **Price discovery weight.** The 4 PM London strike is one of the most-watched moments in Bitcoin trading. Significant volume routinely happens in the run-up to the strike as ETF [Authorized Participants](/glossary/authorized-participant) and other institutions trade against the expected mark.
+- **唯一的真相来源。** 在机构采用之前，"比特币价格"就是你在某个交易所看到的数字。BRR 创建了一个可审计、可重复的参考数字，受监管的产品可以用它来结算。
+- **抗操纵。** 分区方法论和成分多样化使得操纵 BRR 比操纵任何单一交易所都更难。SEC 在 2024 年现货 ETF 批准令中明确引用了 BRR 的稳健性。
+- **价格发现权重。** 伦敦时间下午 4 点的定价是比特币交易中最受关注的时刻之一。在定价前夕，ETF [授权参与者](/glossary/authorized-participant)和其他机构针对预期标记进行交易，因此常有大量成交量。
 
-What BRR is not:
+BRR 不是什么：
 
-- **Not "the" price of Bitcoin.** Spot exchanges around the world continuously trade BTC at slightly different prices. BRR is one constructed reference; arbitrage keeps the constructed reference close to the global mid, but small dislocations are normal.
-- **Not censorship-resistant.** BRR is a centrally administered benchmark, subject to UK regulation. CF Benchmarks (and Kraken as its parent) can change methodology, add/remove constituents, or pause publication. The benchmark is robust, not trustless.
+- **不是比特币的"真实"价格。** 全球现货交易所持续以略有不同的价格交易 BTC。BRR 是一个构建的参考；套利使构建的参考接近全球中间价，但小幅偏差是正常的。
+- **不是抗审查的。** BRR 是中央管理的基准，受英国法规约束。CF Benchmarks（及其母公司 Kraken）可以更改方法论、添加/删除成分或暂停发布。该基准是稳健的，不是无信任的。
 
-For ETF investors and institutional traders, BRR is the number that matters. For Bitcoiners running nodes and wallets, it is one input among many - useful, official, regulated, and entirely separate from how Bitcoin itself actually settles.
+对于 ETF 投资者和机构交易者来说，BRR 是重要的数字。对于运行节点和钱包的比特币用户来说，它只是众多输入之一——有用、官方、受监管，且完全独立于比特币本身的实际结算方式。

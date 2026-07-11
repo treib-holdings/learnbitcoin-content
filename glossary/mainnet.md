@@ -1,12 +1,12 @@
 ---
-title: "Mainnet"
+title: "主网"
 slug: mainnet
 draft: false
-shortDefinition: "The primary Bitcoin network where real BTC transactions occur and mining rewards have actual economic value."
+shortDefinition: "主要的比特币网络，真实 BTC 交易在其中发生，挖矿奖励具有实际经济价值。"
 keyTakeaways:
-  - "Houses the 'real' BTC economy"
-  - "Transactions are final and valuable, no free do-overs"
-  - "Contrast with testnet, signet, or regtest for dev and testing"
+  - "承载着'真实'的 BTC 经济"
+  - "交易是最终的且有价值的，没有免费重做"
+  - "与测试网、signet 或 regtest 形成对比，后者用于开发和测试"
 sources: []
 relatedTerms:
   - bitcoin-core
@@ -19,22 +19,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Mainnet is the Bitcoin network - the one where real BTC moves, where real value is at stake, and where every block is part of the chain stretching back to [genesis](/glossary/genesis-block) on January 3, 2009.
+主网就是比特币网络——真实 BTC 流动、真实价值处于风险中、每个区块都是从 2009 年 1 月 3 日[创世区块](/glossary/genesis-block)延伸的链的一部分。
 
-When you "use Bitcoin," you're using mainnet. When you "run a Bitcoin node," it's a mainnet node unless you explicitly configured it otherwise. When you read about hash rate, supply, fees, or any number on this site, it's about mainnet.
+当你"使用比特币"时，你在使用主网。当你"运行比特币节点"时，除非你明确配置为其他网络，否则就是主网节点。当你读到算力、供应量、手续费或本站上的任何数字时，都是关于主网的。
 
-What distinguishes mainnet from the alternatives:
+主网与替代网络的区别：
 
-- **Real economic value.** BTC on mainnet has market price. Bugs and mistakes here cost real money.
-- **Real proof-of-work.** Mainnet is secured by ~700 EH/s of hash power. The other Bitcoin networks have a tiny fraction of that, and are not meaningfully secured against attacker hash rate.
-- **Strict consensus rules.** Mainnet runs the full set of Bitcoin Core consensus rules, with no relaxations. Some test networks allow rule loosening for experimentation.
+- **真实经济价值。** 主网上的 BTC 有市场价格。这里的漏洞和错误会损失真金白银。
+- **真实工作量证明。** 主网由约 700 EH/s 的算力保护。其他比特币网络的算力只是其微小零头，在面对攻击者算力时没有有意义的保护。
+- **严格共识规则。** 主网运行全套 Bitcoin Core 共识规则，没有放宽。一些测试网络允许为实验放宽规则。
 
-The other Bitcoin-protocol networks exist for developers and experimentation:
+其他比特币协议网络的存在是为了开发和实验：
 
-- **[Testnet](/glossary/testnet)** - public dev network with valueless coins.
-- **[Signet](/glossary/signet)** - more stable test network with a signed block coordinator.
-- **Regtest** - private local network for testing, blocks mined on demand.
+- **[测试网](/glossary/testnet)**——无价值代币的公共开发网络。
+- **[Signet](/glossary/signet)**——更稳定的测试网络，有签名区块协调者。
+- **Regtest**——用于测试的私有本地网络，按需挖矿。
 
-None of these are mainnet. They all use different magic-number genesis blocks, so chains are not portable between them. A wallet configured for testnet cannot send to a mainnet address; the network IDs don't match.
+这些都不是主网。它们都使用不同的魔数创世区块，所以链之间不可移植。配置为测试网的钱包无法发送到主网地址；网络 ID 不匹配。
 
-If you're learning Bitcoin in 2026 and someone tells you to send real BTC to test something, you're on mainnet. Be careful.
+如果你在 2026 年学习比特币，有人告诉你发送真实 BTC 来测试某些东西，你就在主网上。小心。

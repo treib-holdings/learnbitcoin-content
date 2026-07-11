@@ -1,12 +1,12 @@
 ---
-title: "Oracle-based Betting"
+title: "基于预言机的投注"
 slug: oracle-based-betting
 draft: false
-shortDefinition: "Using external oracles in Discreet Log Contracts (DLCs) to settle bets on real-world outcomes, with oracles publishing the final result."
+shortDefinition: "在谨慎日志合约（DLC）中使用外部预言机结算对现实世界结果的投注，预言机发布最终结果。"
 keyTakeaways:
-  - "Leverages external data for real-world event outcomes"
-  - "Uses DLCs to ensure trust-minimized payouts based on oracle signatures"
-  - "Requires a reliably honest oracle to avoid false reporting"
+  - "利用外部数据获取现实世界事件结果"
+  - "使用 DLC 确保基于预言机签名的最小信任赔付"
+  - "需要可靠诚实的预言机以避免虚假报告"
 sources: []
 relatedTerms:
   - counterparty-risk
@@ -16,24 +16,24 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Oracle-based betting on Bitcoin uses **Discreet Log Contracts (DLCs)** to settle wagers on real-world outcomes without requiring trust between the bettors. The trust is shifted to an **oracle** - an external party that publishes a cryptographic signature attesting to the outcome.
+比特币上基于预言机的投注使用**谨慎日志合约（DLC）**来结算对现实世界结果的投注，无需投注者之间相互信任。信任被转移到**预言机**——一个发布证明结果密码学签名的外部方。
 
-How a DLC bet works at a high level:
+DLC 投注在高层面的工作方式：
 
-1. **The oracle publicly commits in advance** to a public key and a set of possible outcome announcements. ("On election day, I'll sign one of these specific messages: 'Outcome A' or 'Outcome B'.")
-2. **The bettors construct a multi-signature contract** that uses the oracle's commitment. The contract has different payout branches for each possible oracle signature.
-3. **Funds are locked in the contract** by both bettors.
-4. **The event happens.** The oracle publishes their signature on the actual outcome.
-5. **Either bettor can use that signature** to claim the appropriate payout, settling the contract automatically.
+1. **预言机提前公开承诺**一个公钥和一组可能的结果公告。（"在选举日，我会签署这些特定消息之一：'结果 A'或'结果 B'。"）
+2. **投注者构建一个多签合约**，使用预言机的承诺。合约对每个可能的预言机签名有不同的赔付分支。
+3. **资金被锁定在合约中**，由双方共同锁定。
+4. **事件发生。** 预言机在实际结果上发布签名。
+5. **任一投注者可以使用该签名**认领适当的赔付，自动结算合约。
 
-Why this is interesting:
+为什么有趣：
 
-- **The oracle doesn't need to know about the contract.** They just need to publicly commit to signing on event outcomes. Multiple unrelated bets can use the same oracle attestation. The oracle never sees the parties or amounts.
-- **The oracle can't unilaterally steal funds.** They can only influence the outcome distribution - and the bettors choose which oracle they trust.
-- **Settlement happens on Bitcoin's main chain** without any custodial intermediary or specialized infrastructure beyond the oracle's signature.
+- **预言机不需要知道合约的存在。** 他们只需公开承诺对事件结果签名。多个不相关的投注可以使用同一预言机证明。预言机永远看不到当事方或金额。
+- **预言机不能单方面盗取资金。** 他们只能影响结果分布——投注者选择他们信任哪个预言机。
+- **结算在比特币主链上发生**，无需任何托管中介或除预言机签名之外的专门基础设施。
 
-Real-world DLC oracles in 2026: a small but growing ecosystem. **Suredbits** runs the most-established oracle infrastructure (including the Krystal Bull oracle tool and a public oracle explorer). **Lava Protocol** uses DLCs for Bitcoin-collateralized stablecoin loans, with their own Pythia oracle. **DLC.Link** has been building DLC-Chainlink bridge infrastructure. Various smaller sports and election oracles operate publicly. Most DLC activity is still niche relative to traditional betting markets, but the underlying technology is production-ready.
+2026 年的现实世界 DLC 预言机：一个小但增长的生态系统。**Suredbits** 运营最成熟的预言机基础设施（包括 Krystal Bull 预言机工具和公共预言机浏览器）。**Lava Protocol** 使用 DLC 进行比特币抵押稳定币贷款，有自己的 Pythia 预言机。**DLC.Link** 一直在构建 DLC-Chainlink 桥接基础设施。各种较小的体育和选举预言机公开运营。相对于传统投注市场，大多数 DLC 活动仍是小众的，但底层技术已可用于生产。
 
-The privacy advantage is real: from the chain's perspective, a DLC settlement looks like an ordinary [Taproot](/glossary/taproot) spend, indistinguishable from a regular cooperative spend. Bets, sports outcomes, election predictions - all settling on-chain without revealing what they are.
+隐私优势是真实的：从链的角度看，DLC 结算看起来像普通的 [Taproot](/glossary/taproot) 花费，与常规协作花费无法区分。投注、体育结果、选举预测——全部在链上结算而不揭示它们是什么。
 
-See [Scriptless Scripts](/glossary/scriptless-scripts) for the cryptographic primitive DLCs are built on.
+请参阅[无脚本脚本](/glossary/scriptless-scripts)了解 DLC 构建的密码学原语。

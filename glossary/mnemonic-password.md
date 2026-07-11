@@ -1,12 +1,12 @@
 ---
-title: "Mnemonic Password"
+title: "助记词密码"
 slug: mnemonic-password
 draft: false
-shortDefinition: "An optional passphrase appended to a BIP 39 seed, acting like a '25th word' for extra protection."
+shortDefinition: "附加到 BIP 39 种子的可选密码短语，类似于"第 25 个词"提供额外保护。"
 keyTakeaways:
-  - "Enhances security beyond the base seed phrase"
-  - "A second factor that must be remembered or backed up securely"
-  - "If lost, the wallet becomes impossible to recover"
+  - "在基础助记词之外增强安全性"
+  - "第二个因素，必须安全记忆或备份"
+  - "如果丢失，钱包将无法恢复"
 sources: []
 relatedTerms:
   - bip-39
@@ -17,18 +17,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The BIP 39 passphrase, sometimes called the "25th word," is an optional string mixed in during seed derivation. Same 12 or 24 words plus a different passphrase yields a completely different wallet. The math is straightforward: BIP 39 derives the master seed via PBKDF2(mnemonic, "mnemonic" + passphrase), so any change to the passphrase changes everything downstream.
+BIP 39 密码短语，有时称为"第 25 个词"，是在种子派生过程中混入的可选字符串。相同的 12 或 24 个词加上不同的密码短语产生完全不同的钱包。数学很简单：BIP 39 通过 PBKDF2(mnemonic, "mnemonic" + passphrase) 派生主种子，所以密码短语的任何改变都会改变下游一切。
 
-What it buys you:
+它带来的好处：
 
-- Defense against seed theft. If someone finds your written mnemonic, they get nothing without the passphrase. The 12 words alone derive a (possibly empty) decoy wallet.
-- Plausible deniability. The decoy wallet at passphrase = "" can hold a small amount; the real wallet behind a non-trivial passphrase holds the rest. Coercion targets see only the decoy.
-- An extra "factor" if you treat the passphrase as something you memorize while the seed is written on metal.
+- 防御种子被盗。如果有人找到你写的助记词，没有密码短语他们什么也得不到。仅 12 个词派生一个（可能为空的）诱饵钱包。
+- 合理否认。密码短语 = "" 的诱饵钱包可以持有少量资金；非平凡密码短语背后的真正钱包持有其余。被胁迫的目标只看到诱饵。
+- 额外的"因素"，如果你将密码短语视为记忆的东西而种子写在金属上。
 
-What it costs you:
+它的代价：
 
-- Lose the passphrase, lose the wallet. There is no recovery path. The seed words alone are useless. People have permanently locked themselves out of significant balances by forgetting a passphrase or by writing it down somewhere that later got lost or destroyed.
-- Operational complexity. The passphrase must be backed up separately from the seed (otherwise both are lost in the same fire), backed up reliably (otherwise it's lost), and recoverable to your heirs if inheritance matters (otherwise the wallet dies with you).
-- Footguns: a typo in the passphrase derives a silent alternative wallet. The wallet doesn't tell you the passphrase is "wrong"; it just opens a different empty wallet.
+- 丢失密码短语，丢失钱包。没有恢复路径。仅种子词无用。人们因忘记密码短语或将其写在后来丢失或被毁的地方而永久锁定了大量余额。
+- 运营复杂性。密码短语必须与种子分开备份（否则两者在同一场火灾中丢失），可靠备份（否则就丢了），并且对你的继承人可恢复（如果遗产重要）。
+- 自伤：密码短语中的拼写错误派生一个静默的替代钱包。钱包不会告诉你密码短语"错了"；它只是打开一个不同的空钱包。
 
-For most users, a properly stored seed without a passphrase is more secure than a seed with a passphrase that they're at non-trivial risk of mishandling. Add the passphrase only if you've thought carefully about how it gets backed up, recovered, and inherited.
+对于大多数用户，正确存储的没有密码短语的种子比有密码短语但非微风险处理不当的种子更安全。只有在仔细考虑了密码短语的备份、恢复和继承方式后才添加。

@@ -1,12 +1,12 @@
 ---
-title: "SegWit (Segregated Witness, BIP 141)"
+title: "SegWit（隔离见证，BIP 141）"
 slug: segwit-segregated-witness-bip-141
 draft: false
-shortDefinition: "The main BIP for Segregated Witness, which separates witness data, fixes malleability, and effectively boosts block capacity."
+shortDefinition: "隔离见证的主要 BIP，将见证数据分离出来，修复了延展性问题，并有效提升了区块容量。"
 keyTakeaways:
-  - "Separates witness data from the main block"
-  - "Resolves malleability, boosts capacity"
-  - "Enables layer-2 solutions like Lightning"
+  - "将见证数据从主区块中分离出来"
+  - "解决延展性问题，提升容量"
+  - "为闪电网络等二层方案铺平道路"
 sources: []
 relatedTerms:
   - bech32m
@@ -32,18 +32,18 @@ liveWidget: ~
 legacyTitle: "BIP 141 (SegWit)"
 ---
 
-SegWit (**Seg**regated **Wit**ness) is the soft fork that activated on Bitcoin in August 2017, defined in [BIP-141](https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki). It restructured how Bitcoin [transactions](/glossary/transaction) store signature data, solving multiple problems at once.
+SegWit（**Seg**regated **Wit**ness，隔离见证）是 2017 年 8 月在比特币上激活的软分叉，定义于 [BIP-141](https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki)。它重构了比特币[交易](/glossary/transaction)存储签名数据的方式，一次性解决了多个问题。
 
-The core change: signature data ("witness data") was moved out of the main transaction body into a separate structure that's still in the block but doesn't count against the original 1 MB block-size limit. Instead, blocks were redefined in terms of **weight units**, with a maximum of 4 million weight units per block. Witness data costs 1 weight unit per byte; non-witness data costs 4. This effectively roughly doubled capacity without a hard fork.
+核心变化：签名数据（"见证数据"）被从交易主体中移出，放入一个单独的结构中。该结构仍在区块内，但不计入原始的 1 MB 区块大小限制。取而代之的是，区块以**权重单位**重新定义，每个区块最多 400 万权重单位。见证数据每字节 1 权重单位；非见证数据每字节 4 权重单位。这在不硬分叉的情况下 effectively 将容量大约翻了一倍。
 
-What SegWit fixed:
+SegWit 修复了什么：
 
-- **Transaction malleability.** Pre-SegWit, the [txid](/glossary/transaction) was computed over the full transaction including signatures, which were malleable. Third parties could change a tx's appearance (and its txid) without invalidating it. This broke unconfirmed-transaction chains and made layer-2 protocols nearly impossible to build safely. SegWit excludes witness data from the txid computation, so the txid is now stable from the moment a tx is signed.
-- **Block capacity.** Effective block size went from ~1 MB to up to ~4 MB (~2 MB in typical usage with mixed transaction types).
-- **Future upgrades.** SegWit introduced a versioning scheme for witness data that allowed [Taproot](/glossary/taproot) (witness version 1) to be added later as a clean soft fork.
+- **交易延展性。** SegWit 之前，[txid](/glossary/transaction) 是对包含签名的完整交易计算的，而签名是可延展的。第三方可以在不使交易无效的情况下改变交易的外观（及其 txid）。这破坏了未确认交易链，使得二层协议几乎无法安全构建。SegWit 将见证数据排除在 txid 计算之外，因此 txid 从交易签名那一刻起就是稳定的。
+- **区块容量。** 有效区块大小从约 1 MB 增加到最高约 4 MB（混合交易类型的典型使用下约 2 MB）。
+- **未来升级。** SegWit 引入了见证数据的版本化方案，使 [Taproot](/glossary/taproot)（见证版本 1）后来能以干净的软分叉方式添加。
 
-The 2017 activation was politically explosive - it came out of the multi-year "scaling wars" between people who wanted bigger raw block size and people who wanted layer-2 scaling. The bigger-block side eventually forked off as Bitcoin Cash. The remaining Bitcoin community kept SegWit and the layered-scaling roadmap, and the [Lightning Network](/glossary/lightning-network) - which depends on stable txids - became viable shortly afterward.
+2017 年的激活在政治上极为爆炸性——它出自持续多年的"扩容战争"，一方想要更大的原始区块大小，另一方想要二层扩容。大区块方最终分叉为比特币现金。剩下的比特币社区保留了 SegWit 和分层扩容路线图，而依赖稳定 txid 的[闪电网络](/glossary/lightning-network)在此后不久变得可行。
 
-Initial adoption was eased by P2SH-wrapped variants - [P2SH-P2WPKH and P2SH-P2WSH](/glossary/p2sh-p2wsh-nested-segwit) - that let receivers collect SegWit benefits behind a familiar `3...` address senders already knew how to handle. By 2019-2020 most wallets had migrated to [native SegWit](/glossary/native-segwit) (`bc1q...`), and the wrapped variants became legacy.
+初期采用通过 P2SH 包装变体得以推进——[P2SH-P2WPKH 和 P2SH-P2WSH](/glossary/p2sh-p2wsh-nested-segwit)——让接收方在发送方已经熟悉的 `3...` 地址背后收集 SegWit 的好处。到 2019-2020 年，大多数钱包已迁移到[原生 SegWit](/glossary/native-segwit)（`bc1q...`），包装变体成为遗留方案。
 
-By 2026, the large majority of new Bitcoin outputs are SegWit or Taproot. Pre-SegWit legacy outputs still exist but are gradually being spent.
+到 2026 年，绝大多数新的比特币输出是 SegWit 或 Taproot。SegWit 之前的遗留输出仍然存在，但正在被逐步花费。

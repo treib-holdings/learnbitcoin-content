@@ -2,11 +2,11 @@
 title: "Eltoo"
 slug: eltoo
 draft: false
-shortDefinition: "A proposed LN channel update mechanism (requiring ANYPREVOUT) eliminating the need for penalty transactions."
+shortDefinition: "一种提议的闪电网络通道更新机制（需要 ANYPREVOUT），消除惩罚交易的需求。"
 keyTakeaways:
-  - "Removes the penalty-based approach to outdated states"
-  - "Relies on ANYPREVOUT to reference the latest valid transaction"
-  - "Simplifies LN's dispute mechanics for safer channel updates"
+  - "移除基于惩罚的过期状态处理方式"
+  - "依赖 ANYPREVOUT 来引用最新的有效交易"
+  - "简化闪电网络的争议机制以实现更安全的通道更新"
 sources: []
 relatedTerms:
   - anyprevout
@@ -19,23 +19,23 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Eltoo (sometimes written L2 or "Eltoo channels") is a proposed alternative design for [Lightning](/glossary/lightning-network) channels that would significantly simplify their security model. Designed by Christian Decker, Rusty Russell, and Olaoluwa Osuntokun, it requires a Bitcoin soft fork that hasn't yet activated.
+Eltoo（有时写作 L2 或"Eltoo 通道"）是[闪电网络](/glossary/lightning-network)通道的替代设计方案，将显著简化其安全模型。由 Christian Decker、Rusty Russell 和 Olaoluwa Osuntokun 设计，需要尚未激活的比特币软分叉。
 
-The problem Eltoo addresses: current Lightning channels use a **penalty-based** dispute mechanism. If you broadcast an old channel state (claiming to be richer than you actually are), your counterparty can take *all* the channel's funds as punishment. This works but has costs:
+Eltoo 解决的问题：当前闪电通道使用**基于惩罚**的争议机制。如果你广播旧通道状态（声称比你实际更富有），你的对手方可以拿走*所有*通道资金作为惩罚。这有效但有代价：
 
-- **Asymmetric channel state.** Each party holds a different version of the commitment transaction, complicating channel logic.
-- **Operational pressure.** If you accidentally publish an old state from a backup, you lose all your channel funds. Backup management has to be very careful.
-- **Watchtower complexity.** You need a third party watching the chain on your behalf when you're offline, ready to publish a punishment if your counterparty cheats.
+- **不对称通道状态。** 每方持有不同版本的承诺交易，使通道逻辑复杂化。
+- **运营压力。** 如果你意外从备份发布旧状态，你会丢失所有通道资金。备份管理必须非常小心。
+- **瞭望塔复杂性。** 你离线时需要第三方代你监控链上，准备好在对手方作弊时发布惩罚。
 
-Eltoo's approach: instead of punishing cheaters, **let any party invalidate an old state by publishing the latest one**. The newest signed state simply overrides any earlier state, no matter who tries to broadcast what. No penalty needed.
+Eltoo 的方法：不是惩罚作弊者，**让任何一方通过发布最新状态来使旧状态失效**。最新签名的状态简单地覆盖任何早期状态，无论谁尝试广播什么。不需要惩罚。
 
-What this enables:
+这实现了什么：
 
-- **Symmetric channels.** Both parties hold the same commitment state, simplifying logic.
-- **Easier backups.** Re-publishing an old state can't cost you anything; it just gets overridden.
-- **Simpler watchtowers.** Watch logic becomes "publish the latest known state" rather than "detect and punish cheating."
-- **Better multi-party constructions.** Channel factories, multi-party channels, and other advanced layer-2 designs become much more practical.
+- **对称通道。** 双方持有相同的承诺状态，简化逻辑。
+- **更容易的备份。** 重新发布旧状态不会让你损失任何东西；它只是被覆盖。
+- **更简单的瞭望塔。** 监控逻辑变为"发布最新已知状态"而非"检测并惩罚作弊"。
+- **更好的多方构造。** 通道工厂、多方通道和其他高级二层设计变得更实际。
 
-What it needs: **ANYPREVOUT**, a new SIGHASH variant that lets a signed transaction be applied to any prior commitment transaction in a chain. ANYPREVOUT is documented in [BIP-118](https://github.com/bitcoin/bips/blob/master/bip-0118.mediawiki). It's a proposed [soft fork](/glossary/soft-fork) but, like other covenant-adjacent proposals, hasn't yet built broad enough consensus to activate.
+它需要什么：**ANYPREVOUT**，一种新的 SIGHASH 变体，允许签名交易应用于链中任何先前的承诺交易。ANYPREVOUT 记录在 [BIP-118](https://github.com/bitcoin/bips/blob/master/bip-0118.mediawiki) 中。它是一个提议的[软分叉](/glossary/soft-fork)但像其他契约相关提案一样，尚未建立足够广泛的共识来激活。
 
-If ANYPREVOUT activates, Eltoo channels become practical to deploy alongside (eventually replacing) the current Lightning channel design. Until then, Eltoo is one of the more compelling reasons people give for wanting more script flexibility in Bitcoin.
+如果 ANYPREVOUT 激活，Eltoo 通道将可以在当前闪电通道设计旁边部署（最终取代）。在此之前，Eltoo 是人们想要比特币脚本更灵活的最有说服力的理由之一。

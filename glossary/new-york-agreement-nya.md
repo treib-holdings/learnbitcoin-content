@@ -1,14 +1,14 @@
 ---
-title: "New York Agreement (NYA)"
+title: "纽约协议（NYA）"
 slug: new-york-agreement-nya
 draft: false
 published: "2026-06-29"
 updated: "2026-07-07"
-shortDefinition: "A May 2017 deal among Bitcoin companies and miners to activate SegWit and then hard fork to 2 MB blocks. Signed by parties representing about 83 percent of mining power but no Bitcoin Core developers. The plan was called SegWit2x."
+shortDefinition: "2017 年 5 月比特币公司和矿工之间达成的协议，激活 SegWit 然后硬分叉至 2MB 区块。签署方代表约 83% 的挖矿算力，但没有 Bitcoin Core 开发者。计划称为 SegWit2x。"
 keyTakeaways:
-  - "Signed at the Consensus 2017 conference in New York on May 23, 2017, organized by Digital Currency Group; signatories were 58 companies representing roughly 83 percent of hash power"
-  - "The deal bundled SegWit activation with a later 2 MB hard fork - the '2x' half - to give both sides of the block size war part of what they wanted"
-  - "It was negotiated without the Core developers who maintain Bitcoin and the users who run nodes, which is why critics treated it as an attempt to change Bitcoin by corporate agreement rather than by consensus"
+  - "2017 年 5 月 23 日在纽约 Consensus 2017 会议上签署，由 Digital Currency Group 组织；签署方为 58 家公司，代表约 83% 的算力"
+  - "协议将 SegWit 激活与后来的 2MB 硬分叉捆绑——'2x' 部分——给区块大小战争双方各自想要的一部分"
+  - "在没有维护比特币的 Core 开发者和运行节点的用户参与下谈判的，这就是批评者将其视为企业协议而非共识尝试改变比特币的原因"
 sources:
   - { label: "Bitcoin Wiki - New York Agreement", url: "https://en.bitcoin.it/wiki/New_York_Agreement" }
   - { label: "CoinDesk - 2x Called Off: Bitcoin Hard Fork Suspended for Lack of Consensus (2017)", url: "https://www.coindesk.com/markets/2017/11/08/2x-called-off-bitcoin-hard-fork-suspended-for-lack-of-consensus" }
@@ -24,12 +24,12 @@ sameAs:
 liveWidget: ~
 ---
 
-The New York Agreement was a deal struck on May 23, 2017, at the Consensus conference in New York, meant to end the [block size war](/glossary/block-size-war). It was organized by Digital Currency Group, the venture firm run by Barry Silbert, and signed by 58 companies across 22 countries. The signatories claimed to represent about 83 percent of Bitcoin's mining power, 20.5 million wallets, and billions of dollars in monthly volume.
+纽约协议是 2017 年 5 月 23 日在纽约 Consensus 会议上达成的交易，旨在结束[区块大小战争](/glossary/block-size-war)。由 Digital Currency Group（Barry Silbert 运营的风险投资公司）组织，58 家跨 22 个国家的公司签署。签署方声称代表约 83% 的比特币挖矿算力、2050 万钱包和每月数十亿美元的交易量。
 
-The plan, known as [SegWit2x](/glossary/segwit2x), had two parts. First, activate [SegWit](/glossary/segwit-segregated-witness-bip-141), the upgrade the small-block camp wanted. Second, hard fork to a 2 MB block size about three months later, the increase the big-block camp wanted. Each side was supposed to get half of what it had been fighting over.
+计划称为 [SegWit2x](/glossary/segwit2x)，有两部分。首先，激活 [SegWit](/glossary/segwit-segregated-witness-bip-141)，小区块阵营想要的升级。其次，约三个月后硬分叉至 2MB 区块大小，大区块阵营想要的扩容。每方应该得到它一直在争取的一半。
 
-The trouble was who was left off the signature page. The agreement was a pact among exchanges, wallet companies, and mining pools. The developers who maintain [Bitcoin Core](/glossary/bitcoin-core) were not part of it, and neither were the users running [full nodes](/glossary/full-node). That was the small-block camp's entire objection. A group of businesses meeting in a hotel cannot set Bitcoin's rules, because they do not run the nodes that enforce them. [Bitcoin governance](/glossary/bitcoin-governance) explains why that veto sits with node operators rather than with miners or companies.
+问题在于签名页上遗漏了谁。协议是交易所、钱包公司和矿池之间的协议。维护 [Bitcoin Core](/glossary/bitcoin-core) 的开发者没有参与，运行[全节点](/glossary/full-node)的用户也没有。这正是小区块阵营的全部反对意见。一群在酒店开会的企业不能制定比特币的规则，因为它们不运行执行规则的节点。[比特币治理](/glossary/bitcoin-governance)解释了为什么否决权在于节点运营者而非矿工或公司。
 
-SegWit, the first half of the deal, activated in August 2017, pushed along by the separate pressure of [BIP-148](/glossary/bip-148-uasf), which had set its August 1 deadline before the agreement was even signed. The 2 MB hard fork never happened. Signatories began withdrawing over the following months, and on November 8, 2017 the organizers called off the fork for lack of consensus. In the end the agreement demonstrated the opposite of what it set out to prove. An alliance of miners and companies, however large, could not force a contentious change onto a network whose users declined to follow.
+SegWit，协议的前半部分，于 2017 年 8 月激活，受到 [BIP-148](/glossary/bip-148-uasf) 单独压力的推动，后者在协议签署前就设定了 8 月 1 日的截止日期。2MB 硬分叉从未发生。签署方在随后几个月中陆续退出，2017 年 11 月 8 日组织者因缺乏共识而取消了分叉。最终协议证明了它想要证明的反而面。矿工和公司的联盟，无论多大，都不能强行将一个有争议的变更加到用户不愿跟随的网络上。
 
-See [The Block Size War](/rabbit-hole/block-size-war) for where the agreement sits in the wider conflict.
+请参阅[区块大小战争](/rabbit-hole/block-size-war)了解协议在更广泛冲突中的位置。

@@ -1,12 +1,12 @@
 ---
-title: "Chain Analysis"
+title: "链上分析"
 slug: chain-analysis
 draft: false
-shortDefinition: "Examining on-chain transactions, addresses, and patterns to identify or link user activity."
+shortDefinition: "通过检查链上交易、地址和模式来识别或关联用户活动。"
 keyTakeaways:
-  - "Leverages the open ledger to track fund flows"
-  - "Used by companies and law enforcement"
-  - "Drives privacy-focused solutions to avoid address clustering"
+  - "利用公开账本追踪资金流向"
+  - "被公司和执法部门使用"
+  - "推动了隐私保护方案的发展以避免地址聚类"
 sources: []
 relatedTerms:
   - address-clustering
@@ -21,28 +21,28 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Chain analysis is the industry and craft of extracting information about real-world identities and behaviors from the public Bitcoin blockchain. Specialized firms (Chainalysis, Elliptic, CipherTrace, TRM Labs, others) sell this analysis to exchanges, law enforcement, governments, and compliance teams.
+链上分析是一门行业和技艺，旨在从公开的比特币区块链中提取关于真实身份和行为的信息。专业公司（Chainalysis、Elliptic、CipherTrace、TRM Labs 等）将这种分析出售给交易所、执法部门、政府和合规团队。
 
-The methods rely on the fact that Bitcoin's chain is fully public and never forgets. Common techniques:
+其方法依赖于比特币区块链完全公开且永不遗忘这一事实。常见技术：
 
-- **[Address clustering](/glossary/address-clustering).** Use transaction patterns (common inputs, change-output heuristics, timing correlations) to group addresses that probably share an owner.
-- **Exchange / KYC anchoring.** Match clustered addresses to known on-ramps (Coinbase, Kraken, etc.) and demand customer records when needed.
-- **OFAC / sanctions tagging.** Flag specific addresses tied to ransomware, sanctioned entities, or stolen-funds investigations.
-- **Behavioral profiles.** Identify mixing patterns, [CoinJoin](/glossary/coinjoin) participation, exchange-to-cold-storage flows, and so on.
-- **Network-layer correlation.** Combine on-chain analysis with [eavesdropping](/glossary/eavesdropping-attack) on the peer-to-peer network to link broadcasts to IPs.
+- **[地址聚类](/glossary/address-clustering)。** 利用交易模式（共同输入、找零地址启发式、时间相关性）将可能属于同一所有者的地址分组。
+- **交易所/KYC 锚定。** 将聚类地址与已知的入金平台（Coinbase、Kraken 等）匹配，并在需要时要求提供客户记录。
+- **OFAC/制裁标记。** 标记与勒索软件、受制裁实体或被盗资金调查相关的特定地址。
+- **行为画像。** 识别混币模式、[CoinJoin](/glossary/coinjoin) 参与情况、交易所到冷存储的资金流等。
+- **网络层关联。** 将链上分析与对等网络的[窃听](/glossary/eavesdropping-attack)结合，将广播与 IP 地址关联。
 
-What chain analysis is *good* for:
+链上分析*擅长*什么：
 
-- Tracing stolen funds back to exchanges that can freeze them.
-- Identifying ransomware payouts and the wallets behind them.
-- Compliance: exchanges checking incoming deposits against sanctions lists.
+- 追踪被盗资金到可以冻结它们的交易所。
+- 识别勒索软件支付及其背后的钱包。
+- 合规：交易所检查入金是否在制裁名单上。
 
-What chain analysis is *also* used for:
+链上分析*还被用于*什么：
 
-- Mass surveillance of ordinary users' financial activity.
-- "Tainted coin" determinations that erode [fungibility](/glossary/fungibility) and create two-tier markets.
-- Targeting and deanonymization of activists, journalists, and dissidents in repressive jurisdictions.
+- 对普通用户金融活动的大规模监控。
+- "污染币"判定，侵蚀[可替代性](/glossary/fungibility)并造成分层市场。
+- 在压制性地区针对活动人士、记者和异见人士进行去匿名化。
 
-The defenses are the privacy techniques covered elsewhere in this glossary: [avoid address reuse](/glossary/address-reuse), use [CoinJoin](/glossary/coinjoin) or [PayJoin](/glossary/payjoin) where applicable, prefer [Lightning](/glossary/lightning-network) for payments, run your node over [Tor](/glossary/tor-hidden-service), avoid KYC choke points where possible.
+防御手段是本词汇表中其他地方介绍的隐私技术：[避免地址复用](/glossary/address-reuse)、在适用时使用 [CoinJoin](/glossary/coinjoin) 或 [PayJoin](/glossary/payjoin)、支付时优先使用[闪电网络](/glossary/lightning-network)、通过 [Tor](/glossary/tor-hidden-service) 运行节点、尽可能避免 KYC 瓶颈。
 
-Chain analysis isn't going away. Privacy-preserving Bitcoin use is a discipline, not a default.
+链上分析不会消失。保护隐私的比特币使用是一种纪律，而不是默认状态。

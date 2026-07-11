@@ -2,11 +2,11 @@
 title: "Bitcoin Core"
 slug: bitcoin-core
 draft: false
-shortDefinition: "The reference implementation of the Bitcoin protocol, originally started by Satoshi Nakamoto, now maintained by community developers."
+shortDefinition: "比特币协议的参考实现，最初由中本聪创建，现由社区开发者维护。"
 keyTakeaways:
-  - "Sets the standard for Bitcoin's rule enforcement"
-  - "Maintained by a decentralized group of developers"
-  - "Offers the most thorough blockchain validation"
+  - "设定比特币规则执行的标准"
+  - "由去中心化的开发者群体维护"
+  - "提供最彻底的区块链验证"
 sources: []
 relatedTerms:
   - bitcoin-client
@@ -25,20 +25,20 @@ sameAs:
 liveWidget: ~
 ---
 
-Bitcoin Core is the reference implementation of the Bitcoin protocol. It's the codebase [Satoshi](/glossary/satoshi-nakamoto) originally wrote in 2008 (under the name "Bitcoin"), renamed in 2014 when Bitcoin-the-software needed to be distinguished from Bitcoin-the-network. It powers the large majority of publicly reachable [full nodes](/glossary/full-node) and is what most other wallets and libraries quietly defer to.
+Bitcoin Core 是比特币协议的参考实现。它是[中本聪](/glossary/satoshi-nakamoto)2008 年最初编写的代码库（名为"Bitcoin"），2014 年当比特币软件需要与比特币网络区分时更名。它驱动了绝大多数公开可达的[全节点](/glossary/full-node)，大多数其他钱包和库都默默遵从它。
 
-The codebase lives at **[github.com/bitcoin/bitcoin](https://github.com/bitcoin/bitcoin)**, maintained by a rotating cast of contributors with no formal governance structure. Changes go through:
+代码库位于 **[github.com/bitcoin/bitcoin](https://github.com/bitcoin/bitcoin)**，由轮换的贡献者团队维护，无正式治理结构。变更经过：
 
-1. A **Bitcoin Improvement Proposal (BIP)** spec for anything user-facing or consensus-affecting.
-2. A pull request to the codebase, reviewed by anyone who wants to (and many serious reviewers do).
-3. Integration by maintainers - a small group with merge access. They don't set the rules; they merge what passes review.
-4. A release tagged by the release manager, signed by multiple key holders.
-5. **Adoption is voluntary.** Every node operator chooses whether to upgrade. A change ships only when enough operators run the new version that the network has effectively migrated.
+1. 对任何面向用户或影响共识的内容提交 **BIP** 规范。
+2. 向代码库提交 pull request，由任何愿意的人审查（许多严肃的审查者确实会审查）。
+3. 由维护者集成——一小群有合并权限的人。他们不制定规则；他们合并通过审查的内容。
+4. 由发布经理标记发布版本，由多个密钥持有者签名。
+5. **采用是自愿的。**每个节点运营商选择是否升级。变更只有在足够多的运营商运行新版本使网络有效迁移后才真正上线。
 
-The combination of open review and voluntary adoption is what makes Bitcoin's protocol genuinely hard to change. A hostile maintainer can't sneak in a change; reviewers will spot it. A hostile group can't fork the rules; nodes won't run their version. The system optimizes for *not making mistakes*, even at the cost of slow evolution.
+开放审查与自愿采用的组合使比特币协议真正难以变更。恶意的维护者无法偷塞变更；审查者会发现。恶意的团体无法分叉规则；节点不会运行他们的版本。系统优化为*不犯错误*，即使以缓慢演进为代价。
 
-Bitcoin Core releases roughly every 6 months. Major versions have brought SegWit (2017), Taproot signaling (2021), and incremental improvements to mempool policy, networking, and validation performance. It's the most-reviewed cryptocurrency codebase in existence, and the de facto standard for "what Bitcoin actually is."
+Bitcoin Core 大约每 6 个月发布一次。主要版本带来了 SegWit（2017 年）、Taproot 信号（2021 年），以及内存池策略、网络和验证性能的增量改进。它是存在中审查最严格的加密货币代码库，也是"比特币实际上是什么"的事实标准。
 
-The codebase has its quirks too. Sjors Provoost's 2015 [Lurking Wife Mode](/glossary/lurking-wife-mode) - a GUI toggle that masks all balance and amount displays - remains shipped, a small reminder that real humans write this software.
+代码库也有自己的怪癖。Sjors Provoost 2015 年的 [Lurking Wife Mode](/glossary/lurking-wife-mode)——一个掩盖所有余额和金额显示的 GUI 开关——仍然随版本发布，提醒你真实的人类在编写这个软件。
 
-See [Full Node](/glossary/full-node) for what running it means, and [Sovereignty Journey](/journey/sovereignty) for why you might want to.
+参见[全节点](/glossary/full-node)了解运行它意味着什么，[主权之旅](/journey/sovereignty)了解你可能想要的原因。

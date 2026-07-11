@@ -1,12 +1,12 @@
 ---
-title: "MTP (Median Time Past) — How Bitcoin Tracks Network Time"
+title: "MTP（过去中位时间）——比特币如何追踪网络时间"
 slug: mtp-median-time-past
 draft: false
-shortDefinition: "Bitcoin uses the median of the last 11 block timestamps as 'network time.' Here's why — and how it stops miners from gaming time-locked transactions."
+shortDefinition: "比特币使用最近 11 个区块时间戳的中位数作为'网络时间'。以下是原因——以及它如何阻止矿工操纵时间锁定交易。"
 keyTakeaways:
-  - "Prevents outlier timestamps from messing with time-based rules"
-  - "Ensures consistent locktime functionality and consensus enforcement"
-  - "A rolling median of 11 blocks for robust approximation of real time"
+  - "防止异常时间戳干扰基于时间的规则"
+  - "确保一致的锁定时间功能和共识执行"
+  - "11 个区块的滚动中位数，稳健地近似真实时间"
 sources: []
 relatedTerms:
   - absolute-locktime
@@ -14,22 +14,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-**Median Time Past (MTP)** is the median of the previous 11 [block headers'](/glossary/block-header) timestamps. It's used as the "current network time" reference for time-based consensus rules in Bitcoin, replacing the more easily-manipulated per-block timestamp.
+**过去中位时间（MTP）**是前 11 个[区块头](/glossary/block-header)时间戳的中位数。它被用作比特币中基于时间的共识规则的"当前网络时间"参考，取代了更容易被操纵的逐区块时间戳。
 
-The problem MTP solves: [miners](/glossary/miner) have limited but real discretion over block timestamps. The protocol allows a block's timestamp to be off by up to a couple of hours from real time, within bounds set by previous blocks. A single miner could push their timestamp forward to manipulate time-based logic - like making time-locked outputs spendable earlier than the depositor intended.
+MTP 解决的问题：[矿工](/glossary/miner)对区块时间戳有有限但真实的裁量权。协议允许区块时间戳偏离真实时间最多几小时，在先前区块设定的范围内。单个矿工可以将时间戳推前以操纵基于时间的逻辑——比如让时间锁定输出比存款人预期更早可花费。
 
-How MTP fixes it: by taking the median of the *previous* 11 blocks' timestamps, the network gets a value that:
+MTP 如何修复：通过取*前* 11 个区块时间戳的中位数，网络获得一个值：
 
-- **Resists single-miner manipulation.** One miner setting a wildly skewed timestamp doesn't move the median significantly.
-- **Stays close to real time.** The median of 11 honest miners' timestamps approximates real time well, within a small bias.
-- **Increases monotonically.** As new blocks arrive, MTP can only move forward, providing a stable monotonic clock.
+- **抵抗单个矿工操纵。** 一个矿工设置疯狂偏斜的时间戳不会显著移动中位数。
+- **接近真实时间。** 11 个诚实矿工时间戳的中位数很好地近似真实时间，偏差很小。
+- **单调递增。** 随着新区块到来，MTP 只能向前移动，提供稳定的单调时钟。
 
-Where MTP is used:
+MTP 使用的地方：
 
-- **[BIP-113](/glossary/bip-113) locktimes.** Time-based [`nLockTime`](/glossary/nlocktime) and [CLTV](/glossary/checklocktimeverify-cltv) evaluations use MTP as the reference, not the current block's timestamp.
-- **[BIP-68](/glossary/bip-68-relative-locktime) relative locktimes** and [CSV](/glossary/checksequenceverify-csv).
-- **Various other time-sensitive consensus rules.**
+- **[BIP-113](/glossary/bip-113) 锁定时间。** 基于时间的 [`nLockTime`](/glossary/nlocktime) 和 [CLTV](/glossary/checklocktimeverify-cltv) 评估使用 MTP 作为参考，而非当前区块的时间戳。
+- **[BIP-68](/glossary/bip-68-relative-locktime) 相对锁定时间**和 [CSV](/glossary/checksequenceverify-csv)。
+- **各种其他时间敏感的共识规则。**
 
-For most users, MTP is invisible. For protocol designers building time-locked constructions, it's the precise notion of "time" Bitcoin actually uses internally. Treating block timestamps as raw real-time gives wrong answers; treating MTP as real-time gives essentially correct ones.
+对于大多数用户，MTP 是不可见的。对于构建时间锁定构造的协议设计者，它是比特币内部实际使用的精确"时间"概念。将区块时间戳当作原始真实时间会得到错误答案；将 MTP 当作真实时间则基本正确。
 
-The 11-block window is a sweet spot: large enough to resist manipulation, small enough to stay close to real time. Average lag from real time is around 60 minutes (half the window).
+11 区块窗口是甜蜜点：足够大以抵抗操纵，足够小以接近真实时间。与真实时间的平均滞后约 60 分钟（窗口的一半）。

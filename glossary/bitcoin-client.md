@@ -1,12 +1,12 @@
 ---
-title: "Bitcoin Client"
+title: "比特币客户端"
 slug: bitcoin-client
 draft: false
-shortDefinition: "Software that implements the Bitcoin protocol, such as Bitcoin Core, enabling nodes to validate and broadcast transactions."
+shortDefinition: "实现比特币协议的软件，如 Bitcoin Core，使节点能验证和广播交易。"
 keyTakeaways:
-  - "Implements consensus rules for validating transactions"
-  - "Options include full nodes, SPV wallets, or specialized versions"
-  - "Ensures your transactions comply with Bitcoin's protocol"
+  - "实现验证交易的共识规则"
+  - "选项包括全节点、SPV 钱包或特殊版本"
+  - "确保你的交易符合比特币协议"
 sources: []
 relatedTerms:
   - bitcoin-core
@@ -19,25 +19,25 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Bitcoin client is any software that implements the Bitcoin protocol - speaks the P2P protocol, validates blocks and transactions, and (usually) manages a wallet. "Client" is the broad umbrella; specific implementations have names.
+比特币客户端是任何实现比特币协议的软件——说 P2P 协议、验证区块和交易、（通常）管理钱包。"客户端"是宽泛的总称；具体实现有各自的名字。
 
-The major implementations as of 2026:
+2026 年的主要实现：
 
-- **Bitcoin Core.** The reference implementation, maintained by a distributed team of developers, and run by the vast majority of nodes on the network. C++ codebase derived from Satoshi's original. The de-facto standard for what "valid Bitcoin" means.
-- **Bitcoin Knots.** A maintained fork of Bitcoin Core by Luke Dashjr, with additional policy options and a slightly different default configuration. Bitcoin-consensus compatible with Core. Small but non-trivial user base.
-- **btcd.** A Go-language reimplementation by Conformal Systems / Decred-affiliated developers. Used as a backend by some Lightning implementations and as an alternative full-node implementation for diversity.
-- **Libbitcoin.** A C++ library + node implementation by Eric Voskuil and team. Less commonly used in production but valuable for diversity and academic work.
-- **Various SPV clients**: Lightning Dev Kit (LDK), Neutrino-based clients, mobile wallet bundled clients. Not full validators; trust headers and use cryptographic shortcuts for transactions of interest.
+- **Bitcoin Core。**参考实现，由分布式开发者团队维护，网络上绝大多数节点运行它。C++ 代码库源自中本聪的原始代码。"有效比特币"的事实标准。
+- **Bitcoin Knots。**Luke Dashjr 维护的 Bitcoin Core 分叉，有额外的策略选项和略有不同的默认配置。与 Core 比特币共识兼容。用户基数小但不可忽视。
+- **btcd。**Conformal Systems / Decred 相关开发者用 Go 语言重新实现。被一些闪电网络实现用作后端，也作为多样性替代全节点实现。
+- **Libbitcoin。**Eric Voskuil 及团队的 C++ 库 + 节点实现。生产中使用较少但对多样性和学术工作有价值。
+- **各种 SPV 客户端**：Lightning Dev Kit (LDK)、基于 Neutrino 的客户端、移动钱包内置客户端。非全验证者；信任头部并使用密码学快捷方式处理关注的交易。
 
-Why implementation diversity matters:
+为什么实现多样性重要：
 
-- **Bug resilience.** A bug in one client's validation that lets an invalid transaction through gets caught by other implementations that don't share the bug. The 2018 inflation-bug-style incidents are at least partially detectable by cross-implementation comparison ([fork watcher](/glossary/fork-watcher) infrastructure relies on this).
-- **Decentralization of development.** Multiple independent teams reduces the risk of any single party being a chokepoint for the protocol.
-- **Resistance to monoculture vulnerabilities.** A 0-day vulnerability in Core wouldn't immediately compromise the entire network if alternative implementations exist.
+- **Bug 弹性。**一个客户端验证中的 bug 让无效交易通过会被其他不共享 bug 的实现捕获。2018 年通胀 bug 式事件至少部分可通过跨实现比较检测（[fork watcher](/glossary/fork-watcher)基础设施依赖于此）。
+- **开发去中心化。**多个独立团队降低了任何单一方成为协议瓶颈的风险。
+- **抗单文化漏洞。**如果存在替代实现，Core 中的 0-day 漏洞不会立即危及整个网络。
 
-Why monoculture persists anyway:
+为什么单文化仍然持续：
 
-- **Network effects.** Bitcoin Core has the broadest testing, the most security audits, and the most thoroughly-exercised consensus code. Alternative implementations have a higher trust burden to justify their adoption.
-- **Consensus risk.** A subtle consensus difference in an alternative implementation could fork its users off the chain. That's a real risk even with extensive testing.
+- **网络效应。**Bitcoin Core 拥有最广泛的测试、最多的安全审计和最彻底的共识代码演练。替代实现需要更高的信任负担来证明其采用。
+- **共识风险。**替代实现中的微妙共识差异可能将其用户分叉出链。即使有广泛测试这也是真实风险。
 
-For most users, "the Bitcoin client" effectively means Bitcoin Core. For the protocol's long-term health, more implementations being viable is a structural good.
+对大多数用户来说，"比特币客户端"实际上就是 Bitcoin Core。对协议的长期健康来说，更多实现可行是结构性好事。

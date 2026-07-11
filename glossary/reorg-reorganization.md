@@ -1,12 +1,12 @@
 ---
-title: "Reorg (Reorganization)"
+title: "重组（Reorg，Reorganization）"
 slug: reorg-reorganization
 draft: false
-shortDefinition: "When a longer or heavier chain appears, nodes switch from the current tip to the new chain, invalidating blocks at the old tip."
+shortDefinition: "当一条更长或更重的链出现时，节点从当前链尖切换到新链，使旧链尖上的区块失效。"
 keyTakeaways:
-  - "Occurs if a previously behind chain overtakes the main chain's proof-of-work"
-  - "Can reverse recent transactions included in blocks on the shorter chain"
-  - "Short reorgs are normal; deep reorgs signal potential attacks or chain splits"
+  - "当之前落后的链在累积工作量上超过主链时发生"
+  - "可能逆转较短链上已包含区块中的近期交易"
+  - "浅重组是正常的；深重组暗示潜在攻击或链分裂"
 sources: []
 relatedTerms:
   - block-propagation
@@ -26,13 +26,13 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A reorg - chain **reorganization** - is what happens when a [Bitcoin node](/glossary/node) learns about a longer chain than the one it was currently following, and switches to it. The blocks it had at the previous tip become [stale](/glossary/stale-block); the transactions they contained are returned to the [mempool](/glossary/mempool) unless they're also present in the new chain.
+重组——链**重组**——是当[比特币节点](/glossary/node)了解到一条比它当前遵循的链更长的链，并切换到它时发生的情况。之前链尖上的区块变为[陈旧区块](/glossary/stale-block)；其中包含的交易被退回[内存池](/glossary/mempool)，除非它们也存在于新链中。
 
-The rule that drives reorgs is "longest valid chain wins" - more precisely, the chain with the most accumulated [proof-of-work](/glossary/proof-work-pow). When two miners find blocks at nearly the same height, the network temporarily splits. As soon as the next block is mined on one side, that side has more cumulative work, and nodes that were on the other side reorg to it.
+驱动重组的规则是"最长有效链获胜"——更准确地说是累积[工作量证明](/glossary/proof-work-pow)最多的链。当两个矿工几乎同时找到同一高度的区块时，网络暂时分裂。一旦下一个区块在其中一方被挖出，那一方就有更多累积工作量，在另一方的节点就会重组到它。
 
-Two flavors:
+两种形式：
 
-- **Shallow reorgs (1-2 blocks deep).** Routine. They happen multiple times per year and only affect transactions that were just barely confirmed. This is exactly why the 6-confirmation rule exists for high-value transfers - after six blocks, the probability of a reorg overturning your transaction is vanishingly small absent a massive coordinated attack.
-- **Deep reorgs (3+ blocks).** Rare and concerning. Most observed deep reorgs on Bitcoin's mainnet have been caused by software bugs, brief network partitions, or - on testnet - deliberate attacks for research purposes. A deep reorg on mainnet would be a serious event worth investigating.
+- **浅重组（1-2 个区块深）。** 日常事件。每年发生多次，只影响刚刚确认的交易。这正是大额转账需要 6 确认规则的原因——六个区块后，重组推翻你交易的概率在没有大规模协调攻击的情况下微乎其微。
+- **深重组（3 个区块以上）。** 罕见且令人担忧。比特币主网上观察到的大多数深重组是由软件漏洞、短暂网络分区或在测试网上的研究性攻击造成的。主网上的深重组是需要调查的严重事件。
 
-The economic implication: [transaction finality](/glossary/transaction-finality) on Bitcoin is probabilistic, not binary - a transaction is only as final as the work that has been mined on top of it. One confirmation is "probably fine for small amounts." Six confirmations is "fine for almost everything." Hundreds is "permanent for all practical purposes." See [Double Spend](/glossary/double-spend) for the attack that reorgs make harder, and [Mining rabbit hole](/rabbit-hole/mining) for the economics.
+经济影响：比特币上的[交易最终性](/glossary/transaction-finality)是概率性的，不是二元的——一笔交易的最终性取决于其上面积累了多少工作量。一个确认"小金额可能没问题"。六个确认"几乎所有情况都行"。数百个确认"实际意义上永久"。参见 [Double Spend](/glossary/double-spend) 了解重组使攻击变难的机制，[Mining rabbit hole](/rabbit-hole/mining) 了解经济学。

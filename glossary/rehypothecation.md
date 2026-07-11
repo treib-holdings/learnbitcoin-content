@@ -1,13 +1,13 @@
 ---
-title: "Rehypothecation"
+title: "再质押（Rehypothecation）"
 slug: rehypothecation
 draft: false
 published: "2026-06-18"
-shortDefinition: "Reusing assets that customers pledged or deposited as if they were the firm's own - lending them out, posting them as collateral, stacking claims on the same coins. The hidden mechanism under the 2022 crypto-lender collapses."
+shortDefinition: "将客户质押或存入的资产当作自己的资产重新使用——借出、作为抵押品、在同一批币上叠加多层索取权。2022 年加密借贷崩塌背后的隐藏机制。"
 keyTakeaways:
-  - "Rehypothecation is a firm reusing customer-pledged assets for its own borrowing or lending"
-  - "Crypto lenders took deposits marketed as safe and lent them into leverage, sometimes several claims deep on the same coins"
-  - "When the underlying bet failed, depositors discovered they were unsecured creditors of a chain of reuse they never saw"
+  - "再质押是公司将客户质押的资产用于自身借贷或放贷"
+  - "加密借贷平台将宣传为安全的存款借出用于杠杆，有时同一批币上有数层索取权"
+  - "当底层赌注失败时，存款人发现自己是看不见的再利用链条上的无担保债权人"
 sources: []
 relatedTerms:
   - celsius-genesis-3ac-cluster
@@ -17,10 +17,10 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Rehypothecation is a term from traditional finance. A firm takes an asset that a customer has pledged or deposited and reuses it for its own purposes: lending it out, posting it as collateral, or pledging it again to someone else. With clear limits and disclosure, it's a normal part of how banks and brokerages work. Without those limits, and out of sight, it's how a single coin can end up backing several different claims at the same time.
+再质押是传统金融中的术语。公司拿走客户质押或存入的资产，将其用于自身目的：借出、作为抵押品、或再次质押给其他人。在有明确限制和披露的情况下，这是银行和券商正常运作方式的一部分。没有这些限制、在视线之外，这就是一枚币如何最终同时支撑多笔索取权的方式。
 
-This is the mechanism underneath the [2022 crypto-lending collapse](/glossary/celsius-genesis-3ac-cluster). "Earn interest on your crypto" and "your funds are safe with us" were describing the same thing: deposits that were marketed like a savings account but were actually lent into leverage, sometimes reused several times over. [BlockFi](/glossary/blockfi), Celsius, and the lenders around them paid their yields by relending customer coins to trading firms, which leveraged them again.
+这是 [2022 年加密借贷崩塌](/glossary/celsius-genesis-3ac-cluster)背后的机制。"用你的加密货币赚取利息"和"你的资金在我们这里很安全"描述的是同一件事：被宣传得像储蓄账户的存款实际上被借出用于杠杆，有时被再利用了好几层。[BlockFi](/glossary/blockfi)、Celsius 和它们周围的借贷方通过将客户币重新借给交易公司来支付收益，交易公司再将其杠杆化。
 
-The problem isn't reuse on its own. It's reuse that's hidden and uncapped. When the chain is invisible, you can't see how many claims are stacked on top of your coins, or that your "deposit" has become the bottom of a leverage tower. When the top of that tower falls, the losses come all the way down to you, and nobody told you that you were the one carrying the risk. This is the clearest reason to hold your own keys with [self-custody](/glossary/self-custody): coins you control can't be reused by anyone else.
+问题不在于再利用本身。在于隐藏的、不受限制的再利用。当链条不可见时，你无法看到你的币上面叠了多少层索取权，也不知道你的"存款"已经变成杠杆塔的底层。当塔顶倒塌时，损失一路传导到你身上，而没有人告诉过你你是承担风险的那个。这是持有自己密钥进行[自托管](/glossary/self-custody)的最清晰理由：你控制的币不能被任何人再利用。
 
-See [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard) for the collapses this mechanism caused.
+参见 [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard) 了解这一机制导致的崩塌。

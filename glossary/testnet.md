@@ -1,12 +1,12 @@
 ---
-title: "Testnet"
+title: "测试网"
 slug: testnet
 draft: false
-shortDefinition: "A Bitcoin network clone with valueless coins, used by developers to test code without risking real BTC."
+shortDefinition: "一个使用无价值币的比特币网络克隆，供开发者在不冒险真实 BTC 的情况下测试代码。"
 keyTakeaways:
-  - "Public environment for safe experimentation with new features"
-  - "Testnet BTC is intentionally worthless to avoid speculation"
-  - "Occasionally prone to disruptions since difficulty adjustments vary widely"
+  - "用于安全实验新功能的公共环境"
+  - "测试网 BTC 故意没有价值，以避免投机"
+  - "因难度调整波动大，偶尔会出现干扰"
 sources: []
 relatedTerms:
   - bitcoin-core
@@ -18,18 +18,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Testnet is a public Bitcoin-protocol network that runs Bitcoin's consensus rules with intentionally worthless coins. It exists for developers and operators to test wallets, transactions, and node configurations without risking real [mainnet](/glossary/mainnet) BTC.
+测试网是一个运行比特币共识规则但币故意没有价值的公共比特币协议网络。它为开发者和运营者提供测试钱包、交易和节点配置的环境，无需冒真实[主网](/glossary/mainnet) BTC 的风险。
 
-Testnet currently runs as **testnet4** (the third reset, activated 2024). Earlier versions (testnet, testnet3) accumulated enough abandoned hash power and abuse that they were periodically retired and replaced with fresh chains. The current testnet4 has:
+测试网目前运行的是 **testnet4**（第三次重置，2024 年激活）。早期版本（testnet、testnet3）积累了太多被遗弃的算力和滥用，被定期退役并替换为全新的链。当前的 testnet4 有：
 
-- **Free coins from faucets.** Various sites give out small amounts of testnet BTC to anyone who asks. They're effectively worthless.
-- **A separate magic genesis block.** Testnet chains are not the same as mainnet; transactions and addresses are not interoperable.
-- **A modified difficulty rule.** If 20 minutes pass without a block, difficulty drops to the minimum so the chain doesn't stall during low-activity periods. Mainnet has no such escape hatch.
+- **从水龙头免费取币。** 各种网站向任何请求者发放少量测试网 BTC。它们实际上没有价值。
+- **独立的魔术创世块。** 测试网链与主网不同；交易和地址不互通。
+- **修改过的难度规则。** 如果 20 分钟没有出块，难度降到最低，以免链在低活动期停滞。主网没有这种逃生阀。
 
-The drawbacks of testnet:
+测试网的缺点：
 
-- **It's chaotic.** Difficulty swings wildly, blocks can come in bursts or droughts, abusive actors spam it. You can't rely on testnet behavior to predict mainnet behavior.
-- **Test BTC has occasionally become traded.** Despite being officially worthless, scammers periodically try to sell testnet BTC to confused buyers, or use it for proof-of-funds scams.
-- **Not appropriate for security-sensitive testing.** If you want to test a high-stakes upgrade under realistic adversarial conditions, [Signet](/glossary/signet) is usually a better choice.
+- **很混乱。** 难度剧烈波动，区块可能成串出现或长时间不来，恶意行为者会发送垃圾信息。你不能依赖测试网行为来预测主网行为。
+- **测试网 BTC 偶尔会被交易。** 尽管官方无价值，骗子偶尔会尝试向困惑的买家出售测试网 BTC，或用于虚假资金证明诈骗。
+- **不适合安全敏感测试。** 如果你想在现实的对抗条件下测试高风险升级，[Signet](/glossary/signet) 通常是更好的选择。
 
-For most casual development - "does my wallet work, can I broadcast a transaction, what does fee handling look like" - testnet is fine. For anything more serious, look at Signet or a private regtest network.
+对大多数日常开发——"我的钱包能工作吗，能广播交易吗，费用处理看起来怎样"——测试网就够了。对更严肃的场景，看 Signet 或私有 regtest 网络。

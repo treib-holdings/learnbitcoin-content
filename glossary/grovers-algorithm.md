@@ -1,13 +1,13 @@
 ---
-title: "Grover's Algorithm"
+title: "Grover 算法"
 slug: grovers-algorithm
 draft: false
 published: "2026-06-01"
-shortDefinition: "The quantum algorithm that halves SHA-256's effective security - weakened, not broken - preserving Bitcoin's proof-of-work and hashed addresses at reduced margin."
+shortDefinition: "将 SHA-256 的有效安全性减半的量子算法——削弱而非破解——以降低的余量保留比特币的工作量证明和哈希地址。"
 keyTakeaways:
-  - "Quadratic speedup on unstructured search - meaningful but not catastrophic"
-  - "Halves SHA-256's effective security from 256-bit to 128-bit (still very strong)"
-  - "Bitcoin's existential quantum threat is Shor's on signatures, not Grover's on hashes"
+  - "非结构化搜索的二次加速——有意义但非灾难性"
+  - "将 SHA-256 的有效安全性从 256 位减半到 128 位（仍然很强）"
+  - "比特币的生存量子威胁是签名上的 Shor 算法，而非哈希上的 Grover 算法"
 sources: []
 relatedTerms:
   - post-quantum-bitcoin
@@ -21,45 +21,45 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Grover's algorithm, published by Lov Grover in 1996, provides quadratic speedup on unstructured search problems. Applied to Bitcoin, it weakens [SHA-256](/glossary/hash) and mildly speeds up mining, but doesn't break either. It's the lesser of Bitcoin's two quantum-threat exposures - and the one that doesn't cause existential risk.
+Grover 算法由 Lov Grover 于 1996 年发表，为非结构化搜索问题提供二次加速。应用于比特币，它削弱 [SHA-256](/glossary/hash) 并略微加速挖矿，但不会破坏两者。它是比特币两个量子威胁暴露中较轻的一个——不会造成生存风险的那个。
 
-## What it does
+## 它做什么
 
-Classical search through an unstructured space of N possibilities takes O(N) time on average. Grover's reduces this to O(sqrt(N)) on a quantum computer.
+经典搜索通过 N 个可能性的非结构化空间平均需要 O(N) 时间。Grover 将此减少到 O(sqrt(N))。
 
-For Bitcoin:
+对于比特币：
 
-- Brute-forcing a 256-bit hash classically takes ~2^256 operations. Practically impossible.
-- Under Grover's, the same task takes ~2^128 operations. Still very large - beyond practical attack range.
+- 经典暴力破解 256 位哈希约需 2^256 次操作。实际上不可能。
+- 在 Grover 下，相同任务约需 2^128 次操作。仍然非常大——超出实际攻击范围。
 
-Effective security halves in the exponent: 256-bit becomes 128-bit. This is a haircut, not a guillotine. 128-bit symmetric security is the standard floor for cryptographic systems and remains well outside practical attack range.
+有效安全性在指数上减半：256 位变为 128 位。这是理发而非断头。128 位对称安全是密码系统的标准底线，仍然远超实际攻击范围。
 
-## Why this isn't existential
+## 为什么这不是生存性的
 
-Bitcoin's two main uses of SHA-256:
+比特币对 SHA-256 的两个主要用途：
 
-- **[Proof-of-work mining](/glossary/proof-work-pow).** Miners search for nonces that hash below a target. Grover's gives a sqrt(N) speedup, meaning quantum miners could find blocks faster than classical ones by a factor that depends on the difficulty.
-- **Address derivation** (with RIPEMD-160). [P2PKH](/glossary/p2pkh-pay-public-key-hash) and [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash) addresses are hashes of the public key. Inverting the hash to recover the pubkey would require Grover's-level work - still ~2^128 effective security.
+- **[工作量证明挖矿](/glossary/proof-work-pow)。** 矿工搜索哈希低于目标的 nonce。Grover 提供 sqrt(N) 加速，意味着量子矿工可以比经典矿工快一个取决于难度的倍数找到区块。
+- **地址派生**（与 RIPEMD-160）。[P2PKH](/glossary/p2pkh-pay-public-key-hash) 和 [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash) 地址是公钥的哈希。反转哈希以恢复公钥需要 Grover 级别的工作——仍然约 2^128 有效安全性。
 
-Crucially, Grover's doesn't break the 21M supply cap, doesn't enable double-spends, doesn't break proof-of-work as a consensus mechanism. Mining economics shift if quantum hardware ever becomes competitive, but the system continues to function.
+关键的是，Grover 不破坏 2100 万供应上限，不启用双花，不破坏工作量证明作为共识机制。如果量子硬件变得有竞争力，挖矿经济学会转变，但系统继续运行。
 
-## Effect on mining
+## 对挖矿的影响
 
-Aggarwal et al. (2017) analyzed quantum speedup on Bitcoin mining and concluded proof-of-work is *"relatively resistant to substantial speedup by quantum computers"* over a multi-decade horizon. The reasons:
+Aggarwal 等人（2017 年）分析了量子加速对比特币挖矿的影响，得出工作量证明*"相对抵抗量子计算机的实质性加速"*，在多十年时间范围内。原因：
 
-- Grover's speedup is square-root, not exponential. Quantum miners gain a meaningful but not dominating advantage.
-- Mining is iterative and bandwidth-limited. Quantum hardware optimized for Grover's wouldn't run at the clock speeds modern ASICs achieve.
-- Hardware specialization is a moving target. Classical ASIC progress and quantum-hardware development both matter.
+- Grover 加速是平方根的，不是指数的。量子矿工获得有意义但非主导的优势。
+- 挖矿是迭代和带宽受限的。为 Grover 优化的量子硬件不会达到现代 ASIC 的时钟速度。
+- 硬件专业化是移动目标。经典 ASIC 进展和量子硬件开发都重要。
 
-Likely long-term outcome: if quantum mining becomes practical, [difficulty](/glossary/difficulty) adjusts upward to compensate. The system reaches a new equilibrium without breaking.
+可能的长期结果：如果量子挖矿变得实际，[难度](/glossary/difficulty)上调以补偿。系统达到新平衡而不被破坏。
 
-## Effect on addresses
+## 对地址的影响
 
-For Bitcoin's hashed address types, Grover's effectively halves the security parameter against preimage attacks:
+对于比特币的哈希地址类型，Grover 有效将抗原像攻击的安全参数减半：
 
-- P2PKH / P2WPKH: ~160-bit hash output (after RIPEMD-160). Grover's reduces effective preimage security to ~80 bits - still outside practical attack range today, but no longer trivially large.
-- The realistic attack scenario assumes [Shor's](/glossary/shors-algorithm) is already available against exposed pubkeys; Grover's would be the secondary tool for hashed-address attacks, not the primary threat.
+- P2PKH / P2WPKH：约 160 位哈希输出（RIPEMD-160 后）。Grover 将有效原像安全性降至约 80 位——今天仍超出实际攻击范围，但不再是轻松地大。
+- 现实攻击场景假设 [Shor 算法](/glossary/shors-algorithm)已可用于暴露的公钥；Grover 将是哈希地址攻击的辅助工具，而非主要威胁。
 
-Grover's is the quantum threat that lets Bitcoin keep its hash function. Shor's is the one that forces the signature rewrite.
+Grover 是让比特币保留哈希函数的量子威胁。Shor 是迫使签名重写的那个。
 
-See the [Quantum and Bitcoin rabbit hole](/rabbit-hole/quantum-and-bitcoin) for why the signature is the weak link, not the hash.
+为什么签名是弱链接而非哈希参见[量子与比特币深入探讨](/rabbit-hole/quantum-and-bitcoin)。

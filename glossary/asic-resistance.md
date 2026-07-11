@@ -1,12 +1,12 @@
 ---
-title: "ASIC Resistance"
+title: "抗 ASIC"
 slug: asic-resistance
 draft: false
-shortDefinition: "The concept of designing proof-of-work algorithms that are harder or less worthwhile to optimize with ASICs, not a priority in Bitcoin."
+shortDefinition: "设计让 ASIC 难以优化或不太值得优化的工作量证明算法的概念，比特币并不追求这一目标。"
 keyTakeaways:
-  - "Attempts to prevent specialized mining hardware"
-  - "Often relies on frequently changing or complex algorithms"
-  - "Not a design goal for Bitcoin's SHA-256 PoW"
+  - "试图阻止专用挖矿硬件"
+  - "通常依赖频繁变更或复杂算法"
+  - "不是比特币 SHA-256 PoW 的设计目标"
 sources: []
 relatedTerms:
   - asic-application-specific-integrated-circuit
@@ -17,21 +17,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"ASIC resistance" is the (mostly failed) effort by some cryptocurrencies to design proof-of-work algorithms that don't benefit from specialized hardware. The idea is that if everyone mines with general-purpose CPUs or GPUs, mining stays decentralized among hobbyists rather than concentrated in industrial farms.
+"抗 ASIC"是一些加密货币（大多已失败）试图设计不受益于专用硬件的工作量证明算法的努力。想法是如果每个人都用通用 CPU 或 GPU 挖矿，挖矿就保持在家矿工中去中心化，而不是集中在工业矿场。
 
-The history of ASIC resistance is essentially "every attempt eventually gets ASICs anyway":
+抗 ASIC 的历史本质上是"每次尝试最终都会出现 ASIC"：
 
-- **Scrypt** (Litecoin, 2011). Designed to require more memory than CPUs/GPUs could spare. ASICs arrived in 2014.
-- **Ethash** (Ethereum, 2015). Memory-hard, with growing DAG. ASICs arrived by 2018.
-- **RandomX** (Monero, 2019). Heavy use of random code execution to discourage hardware optimization. Holding up better than predecessors, but pressure exists.
-- **ProgPoW** (proposed but never deployed). Would have changed the algorithm regularly to disrupt ASIC manufacturers' multi-year amortization.
+- **Scrypt**（Litecoin，2011 年）。设计为需要比 CPU/GPU 能提供的更多内存。ASIC 于 2014 年到来。
+- **Ethash**（Ethereum，2015 年）。内存硬，DAG 不断增长。ASIC 于 2018 年到来。
+- **RandomX**（Monero，2019 年）。大量使用随机代码执行来阻止硬件优化。比前辈表现更好，但压力仍在。
+- **ProgPoW**（提出但从未部署）。会定期更改算法以打乱 ASIC 制造商的多年摊销计划。
 
-**Bitcoin explicitly doesn't pursue ASIC resistance.** The reasoning:
+**比特币明确不追求抗 ASIC。** 原因：
 
-- **ASIC resistance is temporary at best.** Any sufficiently profitable algorithm attracts specialized hardware eventually. The result is just a churn of mining hardware obsolescence.
-- **Specialization is actually a security feature.** Bitcoin ASICs are useless except for SHA-256 mining. That means the global mining industry has *sunk* billions into hardware that can only be used to secure Bitcoin. Repurposing that hardware to attack the network would destroy its own value. This is a strong commitment device.
-- **Stable algorithms enable stable mining infrastructure.** Predictable hardware lifecycles let miners build long-term operations.
+- **抗 ASIC 充其量是暂时的。** 任何足够有利可图的算法最终都会吸引专用硬件。结果只是挖矿硬件不断淘汰的循环。
+- **专业化实际上是安全特性。** 比特币 ASIC 除了 SHA-256 挖矿外毫无用处。这意味着全球挖矿产业已经*沉没*数十亿美元到只能用于保护比特币的硬件中。将那些硬件转用于攻击网络会摧毁其自身价值。这是一个强有力的承诺机制。
+- **稳定的算法 enabling 稳定的挖矿基础设施。** 可预测的硬件生命周期让矿工建立长期运营。
 
-Bitcoin's bet: better to accept specialization, build a deep ASIC ecosystem, and rely on competition between manufacturers and miners to maintain healthy decentralization. The bet has worked imperfectly - manufacturer concentration is real - but the alternative of perpetual algorithm churn has worse failure modes.
+比特币的押注：接受专业化，建立深厚的 ASIC 生态系统，依靠制造商和矿工之间的竞争来维持健康的去中心化。这个押注并不完美——制造商集中是真实的——但不断更换算法的替代方案有更糟糕的失败模式。
 
-See [ASIC](/glossary/asic-application-specific-integrated-circuit) for the hardware itself and [Mining Centralization](/glossary/mining-centralization) for the real concerns about industry concentration.
+参见 [ASIC](/glossary/asic-application-specific-integrated-circuit)了解硬件本身，[挖矿中心化](/glossary/mining-centralization)了解行业集中的真实担忧。

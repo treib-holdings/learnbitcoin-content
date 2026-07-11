@@ -1,12 +1,12 @@
 ---
-title: "GUI Miner"
+title: "GUI 矿工"
 slug: gui-miner
 draft: false
-shortDefinition: "An older front-end application for CPU/GPU mining in Bitcoin's early era, now obsolete with ASICs dominant."
+shortDefinition: "比特币早期 CPU/GPU 挖矿的前端图形界面应用，在 ASIC 主导后已过时。"
 keyTakeaways:
-  - "Once provided a simple interface for CPU/GPU mining"
-  - "Became defunct as ASICs took over the mining scene"
-  - "Represents the hobbyist-friendly era of early Bitcoin mining"
+  - "曾为 CPU/GPU 挖矿提供简单界面"
+  - "随着 ASIC 接管挖矿场景而废弃"
+  - "代表早期比特币挖矿的爱好者友好时代"
 sources: []
 relatedTerms:
   - asic-application-specific-integrated-circuit
@@ -15,25 +15,25 @@ relatedTerms:
   - miner
   - mining
   - mining-algorithm
-  - mining-colocation
+  - mining-collocation
   - mining-rig
   - mining-software
   - retail-mining
 liveWidget: ~
 ---
 
-GUI Miner is a historical category of consumer Bitcoin mining software with a graphical interface, popular during the 2011-2013 GPU mining era. The specific program "GUIMiner" (puddinpop / Chris Moore, 2010-2012) wrapped command-line mining tools like cgminer, bfgminer, and Phoenix in a clickable interface so users could connect to a pool, point at their graphics card, and start hashing.
+GUI 矿工是一个历史性的消费级比特币挖矿软件类别，带有图形界面，在 2011-2013 年 GPU 挖矿时代流行。具体程序"GUIMiner"（puddinpop / Chris Moore，2010-2012）将 cgminer、bfgminer 和 Phoenix 等命令行挖矿工具包装在可点击界面中，用户可以连接矿池、指向显卡并开始挖矿。
 
-Why this category effectively died:
+为什么这个类别实际上消亡了：
 
-- **ASIC dominance starting 2013.** Bitcoin's hash rate jumped from GH/s to TH/s as Avalon and Butterfly Labs shipped the first ASICs. GPUs became uncompetitive within months. By 2014, GPU mining of Bitcoin was permanently unprofitable.
-- **ASIC management is different.** ASICs run their own embedded firmware (Antminer Linux, Stock or proprietary), connect to pools via Stratum, and are managed via web interfaces on the device itself or via fleet-management software. They don't need a desktop GUI on a separate computer.
-- **The market moved.** What was a hobbyist activity became an industrial one. The software ecosystem followed: tools like Awesome Miner, Braiins Farm Proxy, and Hive OS replaced GUI Miner-style consumer tools.
+- **2013 年起 ASIC 主导。** 随着 Avalon 和 Butterfly Labs 发出首批 ASIC，比特币算力从 GH/s 跳升到 TH/s。GPU 在几个月内变得不具竞争力。到 2014 年，GPU 挖比特币永久不盈利。
+- **ASIC 管理不同。** ASIC 运行自己的嵌入式固件（Antminer Linux、Stock 或专有），通过 Stratum 连接矿池，通过设备本身的 Web 界面或机队管理软件管理。它们不需要单独电脑上的桌面 GUI。
+- **市场转移。** 曾经是爱好者活动的变成了工业活动。软件生态系统跟随：Awesome Miner、Braiins Farm Proxy 和 Hive OS 等工具取代了 GUI Miner 式的消费工具。
 
-What still exists today in this category:
+今天该类别中仍存在的：
 
-- **Pool dashboards.** Web interfaces on pool websites (Foundry, AntPool, F2Pool, ViaBTC) where miners see their hash contributions and earnings.
-- **ASIC web UIs.** Each ASIC has a built-in web interface for configuration, accessible over LAN.
-- **Fleet-management software** like Awesome Miner, Braiins Farm Manager, or Foreman for operators running tens to thousands of ASICs.
+- **矿池仪表板。** 矿池网站上的 Web 界面（Foundry、AntPool、F2Pool、ViaBTC），矿工看到自己的算力贡献和收益。
+- **ASIC Web UI。** 每个 ASIC 有内置 Web 界面用于配置，可通过局域网访问。
+- **机队管理软件**如 Awesome Miner、Braiins Farm Manager 或 Foreman，用于运行数十到数千台 ASIC 的运营者。
 
-GUI Miner itself is a museum piece. If you find an old guide recommending it for Bitcoin mining, that guide is more than a decade out of date.
+GUI Miner 本身是博物馆展品。如果你发现一份推荐它用于比特币挖矿的旧指南，那份指南已过时十多年。

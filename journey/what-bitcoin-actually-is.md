@@ -1,11 +1,12 @@
----title: "What Bitcoin Actually Is"
+---
+title: "比特币到底是什么"
 slug: what-bitcoin-actually-is
 draft: false
 status: live
 published: "2026-05-15"
 order: 2
 estimatedMinutes: 25
-tagline: "Not a stock. Not a company. Not a payment app. Bitcoin is a new kind of money - and the difference matters."
+tagline: "不是股票。不是公司。不是支付应用。比特币是一种新型货币——区别很重要。"
 prerequisites: ["why-money-is-broken"]
 relatedTerms: ["satoshi-nakamoto", "whitepaper", "proof-work-pow", "decentralization", "halving-halvening", "genesis-block", "block-subsidy", "hash"]
 ogImage: "/diagrams/og/network-topology.png"
@@ -17,7 +18,7 @@ sources:
   - { label: "Satoshi Nakamoto Institute - Bitcoin emails", url: "https://satoshi.nakamotoinstitute.org/emails/" }
 ---
 
-> **Where you're going:** You'll be able to describe Bitcoin from first principles - not as a "coin" or "investment," but as a network, a protocol, and a fixed supply of monetary units governed by rules no one can change unilaterally. By the end you'll know who made it, what it actually does, and what trade-offs it asks of you.
+> **你将走向何方:** 你将能从第一性原理描述比特币——不是当作一种"币"或"投资",而是当作一个网络、一个协议、一种由规则治理的固定供应货币单位,没有人能单方面改变这些规则。读完之后,你会知道谁创造了它,它实际做了什么,以及它需要你接受什么取舍。
 
 <figure>
   <video
@@ -32,176 +33,176 @@ sources:
     preload="metadata"
     aria-label="Side-by-side animated chart: the US Dollar M2 supply growing past a 'Glass ceiling' to over $22 trillion, while Bitcoin supply rises with halving steps and plateaus below its 21 million cap. The end-card spells out the difference in zeros: 22,000,000,000,000 versus 21,000,000."
   ></video>
-  <figcaption>Two supply schedules, side by side. USD: $22T and climbing. BTC: 21M, locked.</figcaption>
+  <figcaption>两种供应曲线,并排对比。美元:22 万亿且还在涨。比特币:2100 万,锁死。</figcaption>
 </figure>
 
-## 1. A Strange Email
+## 1. 一封奇怪的邮件
 
-On Friday, October 31, 2008 - Halloween - at 2:10pm Eastern, an email landed on the cypherpunks mailing list. The sender was someone calling themselves Satoshi Nakamoto. The subject line was unremarkable: *"Bitcoin P2P e-cash paper."* The body was nine sentences.
+2008 年 10 月 31 日,星期五——万圣节——美国东部时间下午 2:10,一封邮件出现在密码朋克(cypherpunks)邮件列表上。发件人自称中本聪(Satoshi Nakamoto)。标题平平无奇:*"Bitcoin P2P e-cash paper."* 正文只有九句话。
 
-It linked to an attached PDF: [*Bitcoin: A Peer-to-Peer Electronic Cash System*](/bitcoin.pdf). Nine pages. Eight references. No marketing.
+它链接了一个附带的 PDF:[*Bitcoin: A Peer-to-Peer Electronic Cash System*](/bitcoin.pdf)。九页。八条引用。零营销。
 
-The context matters. Lehman Brothers had collapsed six weeks earlier. The financial crisis was at full boil. The US government had just signed a $700 billion bank bailout. Every major economy was scrambling to keep its banking system from imploding. The Federal Reserve had begun the largest monetary expansion in history.
+背景很重要。六周前雷曼兄弟倒闭了。金融危机正烧得最旺。美国政府刚签了一笔 7000 亿美元的银行救助。每个主要经济体都在手忙脚乱地防止银行系统崩溃。美联储已经开始史上最大规模的货币扩张。
 
-Satoshi's email was, in retrospect, the polite version of *"Maybe try this instead."*
+中本聪的邮件,事后看来,就是客气版的*"也许试试这个。"*
 
-Sixty-eight days later, on January 3, 2009, Satoshi mined the first block of the Bitcoin network. Embedded in that block - permanently, unforgeably - was a string of text:
+六十八天后,2009 年 1 月 3 日,中本聪挖出了比特币网络的第一个区块。那个区块里——永久地、不可伪造地——嵌入了一段文字:
 
 > *"The Times 03/Jan/2009 Chancellor on brink of second bailout for banks."*
 
-It was the front-page headline of the London *Times* that morning. It is still there, fifteen years later, in every full copy of the Bitcoin blockchain on Earth.
+那是当天伦敦《泰晤士报》的头版标题。十五年过去了,它还在那里——在地球上每一个完整的比特币区块链副本里。
 
-This chapter is about what that strange email pointed at.
+这一章就是关于那封奇怪的邮件指向的东西。
 
-## 2. What Bitcoin Is (and Isn't)
+## 2. 比特币是什么(以及不是什么)
 
-Most people meet Bitcoin through its price. That's the wrong door. Let's reset.
+大多数人通过价格认识比特币。那扇门走错了。让我们重新来。
 
-**Bitcoin is, at the same time, three things:**
+**比特币同时是三样东西:**
 
-- **A network** - thousands of computers around the world running compatible software, talking to each other, keeping a shared ledger
-- **A protocol** - the precise rules every one of those computers follows: what's a valid transaction, what's a valid block, how new units are issued, what wins ties
-- **A unit of account** - the 21-million-supply asset whose movements that network tracks
+- **一个网络**——全世界数千台电脑运行着兼容的软件,互相通信,维护一个共享账本
+- **一个协议**——每台电脑都遵守的精确规则:什么是有效交易,什么是有效区块,新单位怎么发行,冲突怎么裁决
+- **一种计价单位**——总量 2100 万的资产,那个网络追踪的就是它的流动
 
-Crucially, **Bitcoin is not:**
+关键的是,**比特币不是:**
 
-- A stock - there's no company behind it
-- A token - it's not built on top of another network
-- A payment app - it's the layer underneath payment apps
-- "Crypto" - that's a marketing umbrella that mostly refers to other things
+- 一只股票——背后没有公司
+- 一个代币(token)——它不是建在另一个网络之上的
+- 一个支付应用——它是支付应用下面的那一层
+- "加密货币"——那是一个营销伞,主要指的是别的东西
 
-Bitcoin has no CEO. No board. No headquarters. No legal entity. No marketing budget. No customer service. If you have a question, you read the code. If you want to use it, you run software. If you want to change it, you'll need to convince every other participant to change too - which has been attempted, and which we'll get to.
+比特币没有 CEO。没有董事会。没有总部。没有法人实体。没有营销预算。没有客服。有问题,你读代码。想用,你跑软件。想改,你得说服其他所有参与者也一起改——这事儿有人试过,我们后面会讲。
 
-This is *deeply* unlike everything else in the modern financial system. It's also the only design that produces the properties we listed at the end of chapter 1.
+这与现代金融体系里的其他一切*截然不同*。这也是唯一能产生我们在第一章末尾列出的那些属性的设计。
 
-## 3. The Whitepaper in Five Minutes
+## 3. 五分钟读懂白皮书
 
-The whitepaper is nine pages and you can read it in an hour. The argument runs like this:
+白皮书九页,你一个小时就能读完。论证是这样的:
 
-**The problem.** Online commerce relies on trusted third parties - banks, payment processors - to settle transactions. Those intermediaries can reverse payments, freeze funds, deny service, and require identification. They also add cost and friction. Cash works without trusted third parties. Online cash, until now, did not.
+**问题。** 在线商务依赖可信第三方——银行、支付处理商——来结算交易。这些中间方可以撤销支付、冻结资金、拒绝服务、要求身份验证。它们还增加了成本和摩擦。现金不需要可信第三方。但到此为止,线上现金做不到。
 
-**The proposal.** A digital cash system in which transactions are broadcast to a network, batched into blocks, and ordered by a competitive computation called proof-of-work. The longest chain of these blocks is the truth.
+**方案。** 一个数字现金系统:交易广播到网络,打包成区块,通过一种叫工作量证明(Proof of Work)的竞争性计算来排序。最长的区块连成的链就是真相。
 
-**The key insight.** The network reaches agreement on transaction order *without* anyone in charge - because reorganizing past blocks gets exponentially harder the deeper you go. The system has no off-switch and no editor.
+**关键洞见。** 网络在*没有人负责*的情况下就交易顺序达成共识——因为重组过去的区块,越深越难,难度呈指数级增长。系统没有关机键,也没有编辑器。
 
-**The economics.** Participants who add new blocks ("miners") are paid in newly-issued bitcoin. New issuance shrinks on a fixed schedule, so total supply asymptotes to a hard cap. There will never be more than approximately 21 million bitcoin.
+**经济学。** 添加新区块的参与者("矿工")以新发行的比特币获得报酬。新发行按固定时间表递减,总供应量渐近一个硬性上限。永远不会有超过约 2100 万枚比特币。
 
-That's it. That's the whitepaper. The rest is engineering.
+就这样。这就是白皮书。剩下的是工程。
 
-## 4. The 21 Million Cap
+## 4. 2100 万的上限
 
-Where does 21 million come from?
+2100 万这个数从哪来的?
 
-Bitcoin issues new units as a reward for mining each block. A block happens roughly every 10 minutes. The reward started at 50 BTC and halves every 210,000 blocks - about every four years.
+比特币以挖矿奖励的形式发行新单位。大约每 10 分钟一个区块。奖励从 50 BTC 开始,每 210,000 个区块减半——大约每四年一次。
 
-Here's the math:
+数学是这样的:
 
 ```
 50 + 25 + 12.5 + 6.25 + 3.125 + ... = 100 BTC per halving cycle
 210,000 blocks × 100 BTC = 21,000,000 BTC (rounded; actual: 20,999,999.9769)
 ```
 
-The supply is a geometric series that converges. New issuance approaches zero asymptotically. The last fractional satoshi will be mined around the year 2140.
+供应量是一个收敛的等比数列。新发行渐近于零。最后一个分数聪(sat)大约会在 2140 年左右被挖出。
 
-The cap is enforced by every full node on the network. If a miner tried to issue more than the schedule allows, every other node would reject the block as invalid. The cap isn't a promise. It's not legislation. It's not a guideline. It is a property of the software that every participant runs.
+这个上限由网络上每个全节点共同执行。如果某个矿工试图发行超过时间表允许的数量,其他所有节点都会拒绝这个区块,视为无效。上限不是一个承诺,不是立法,不是指导方针。它是每个参与者运行的软件的一个属性。
 
-To change the 21M cap, you would have to convince virtually every node operator on Earth to run different software. The political cost of doing that is the social contract that makes Bitcoin valuable in the first place - break it, and you break what you were trying to inherit.
+要改变 2100 万上限,你得说服地球上几乎每个节点运营者运行不同的软件。这样做的政治代价,恰恰是让比特币有价值的社会契约本身——打破它,你也就打破了你试图继承的东西。
 
-This is what "sound money" means, technically. Not "we promise to be careful." But "the rules are the rules and you can verify them yourself."
+这就是"健全货币"(sound money)在技术上的含义。不是"我们保证小心",而是"规则就是规则,你自己可以验证"。
 
-## 5. Proof-of-Work as the World's Loudest Clock
+## 5. 工作量证明:全世界最响亮的时钟
 
-Mining is the part most people get wrong. Let's get it right.
+挖矿是大多数人理解错了的部分。让我们搞对。
 
-A Bitcoin block is just a list of transactions plus a header. To "mine" a block, a computer tries to find a number (a "nonce") such that the cryptographic hash of the header is below a certain target. Most numbers don't work. You guess, you check, you guess, you check. Trillions of times per second.
+一个比特币区块就是一串交易加一个区块头。要"挖"一个区块,电脑要尝试找到一个数字("nonce"),使得区块头的加密哈希值低于某个目标值。大多数数字都不行。你猜,你算,你猜,你算。每秒万亿次。
 
-When someone finds a valid nonce, they broadcast the block to the network. Everyone checks the work (cheap - just one hash) and adds it to their copy of the chain.
+当有人找到一个有效的 nonce,就把区块广播到网络。所有人验证这个工作(很便宜——只需算一次哈希),然后把它加到自己链的副本上。
 
-Why bother? Two reasons.
+为什么要费这个劲?两个原因。
 
-**One: it's the network's clock.** Roughly every 10 minutes, a block appears. That cadence anchors the entire system. Without proof-of-work, there's no objective way for participants spread across the world to agree on what happened first.
+**第一:它是网络的时钟。** 大约每 10 分钟出现一个区块。这个节奏锚定了整个系统。没有工作量证明,分散在全球的参与者就没有客观方式就"什么先发生"达成一致。
 
-**Two: it makes rewriting history expensive.** To reorganize old blocks, an attacker would need to redo all the proof-of-work that has accumulated since - outpacing the rest of the world's mining at the same time. The deeper the block, the more astronomical the cost. After six blocks (about an hour), it's effectively impossible.
+**第二:它让篡改历史变得极其昂贵。** 要重组旧区块,攻击者必须重做从那以后积累的所有工作量——同时还要跑赢全世界其他矿工。区块越深,代价越天文。六个区块(大约一小时)之后,实际上就不可能了。
 
-The energy use is the feature. It's what converts physical reality (electricity, hardware, time) into the security that protects every Bitcoin in existence. Gold gets its monetary properties from being hard to dig out of the ground. Bitcoin gets its monetary properties from being hard to add blocks to. The mechanism is different. The role is the same.
+能耗是特性,不是 bug。它把物理现实(电力、硬件、时间)转化为保护每一枚比特币的安全性。黄金的货币属性来自很难从地下挖出来。比特币的货币属性来自很难往链上加区块。机制不同,角色一样。
 
-## 6. The Halving Schedule
+## 6. 减半时间表
 
-Every 210,000 blocks, the block reward halves. This is not an opinion poll. It is a line of code that every node enforces.
+每 210,000 个区块,区块奖励减半。这不是民意调查,这是每个节点执行的一行代码。
 
-| Halving | Block height | Approx. date | New reward |
+| 减半 | 区块高度 | 大约日期 | 新奖励 |
 |---|---|---|---|
-| Genesis | 0 | Jan 3, 2009 | 50 BTC |
-| First | 210,000 | Nov 28, 2012 | 25 BTC |
-| Second | 420,000 | Jul 9, 2016 | 12.5 BTC |
-| Third | 630,000 | May 11, 2020 | 6.25 BTC |
-| Fourth | 840,000 | Apr 19, 2024 | 3.125 BTC |
-| Fifth | 1,050,000 | ~2028 | 1.5625 BTC |
+| 创世 | 0 | 2009 年 1 月 3 日 | 50 BTC |
+| 第一次 | 210,000 | 2012 年 11 月 28 日 | 25 BTC |
+| 第二次 | 420,000 | 2016 年 7 月 9 日 | 12.5 BTC |
+| 第三次 | 630,000 | 2020 年 5 月 11 日 | 6.25 BTC |
+| 第四次 | 840,000 | 2024 年 4 月 19 日 | 3.125 BTC |
+| 第五次 | 1,050,000 | ~2028 年 | 1.5625 BTC |
 
-The annual issuance rate of new bitcoin, once high, is now lower than the rate at which new gold is mined out of the ground. After the next halving it will be lower again. The asymptote is zero.
+新比特币的年发行率,曾经很高,现在已经低于新黄金从地下被挖出来的速率。下一次减半后会更低。渐近线是零。
 
-Compare that to fiat. The US M2 money supply roughly tripled from 2008 to 2022, a 14-year span across which Bitcoin's supply expanded on its predetermined geometric path, regardless of who was in office.
+对比一下法定货币。美国 M2 货币供应量从 2008 年到 2022 年大约翻了三倍——在这 14 年里,比特币的供应量按预定等比路径扩张,不管谁在台上。
 
-This is what scarcity looks like when it's encoded in math instead of policy.
+这就是当稀缺性被编码在数学里而不是政策里时的样子。
 
-## 7. The Question of Who's in Charge
+## 7. 谁说了算的问题
 
-A lot of people, hearing "no CEO, no company," assume Bitcoin must therefore be a free-for-all. It isn't.
+很多人听到"没有 CEO、没有公司",就以为比特币是一片混乱。不是的。
 
-There are three groups of participants, and they keep each other honest:
+有三类参与者,他们互相制衡:
 
-- **Node operators** - anyone running Bitcoin software that validates every transaction and every block. Their copy of the rules is what counts as Bitcoin. There are tens of thousands.
-- **Miners** - specialized computers competing to add the next block in exchange for the reward. They produce blocks but they don't *make the rules*; if they produce an invalid block, nodes reject it and the work is wasted.
-- **Developers** - people who write the software. There are several independent implementations; the dominant one is called Bitcoin Core. Developers can propose changes, but they cannot impose them; nodes choose what software to run.
+- **节点运营者**——运行比特币软件、验证每笔交易和每个区块的任何人。他们运行的规则副本就是"比特币"的定义。有数万个。
+- **矿工**——争夺添加下一个区块以获取奖励的专业计算机。他们生产区块,但不*制定规则*;如果他们生产了无效区块,节点会拒绝它,算力白费。
+- **开发者**——编写软件的人。有几个独立的实现,主导的叫 Bitcoin Core。开发者可以提议更改,但不能强制推行;节点选择运行什么软件。
 
 <figure>
   <img src="/diagrams/network-topology.svg" alt="Two network topologies side by side. On the left, a central bank: a single institutional hub standing alone. On the right, the Bitcoin network: roughly thirty-five peer nodes scattered across the panel and connected to their neighbors in an organic mesh, with no central node." />
-  <figcaption>One central bank, versus tens of thousands of Bitcoin nodes. No center, no headquarters, no off switch.</figcaption>
+  <figcaption>一个央行,对比数万个比特币节点。没有中心,没有总部,没有关机键。</figcaption>
 </figure>
 
-This is the genuinely radical part. **No one is in charge.** Not the largest miner. Not the most prolific developer. Not the wealthiest holder. The rules are upheld by everyone running a node, and changes to the rules require near-universal agreement. There have been attempted "takeovers" - chiefly in 2017, by a coalition of large miners and businesses - and the network defeated them by simply continuing to enforce the existing rules. The fork that resulted is now a footnote.
+这才是真正激进的部分。**没有人说了算。** 不是最大的矿工,不是最多产的开发者,也不是最有钱的持有者。规则由每个运行节点的人共同维护,修改规则需要近乎全体一致。曾经有过"夺权"尝试——主要是 2017 年,由大型矿工和企业组成的联盟——网络通过继续执行现有规则就击败了他们。分裂出去的叉现在只是个脚注。
 
-**About Satoshi.** The person or people who created Bitcoin disappeared in 2010. They left no will, no trademark, no foundation, no chosen successor. Their early mined coins have never moved. We don't know who they were. We probably never will. This is a feature: there is no founder to capture, coerce, or compromise. Bitcoin has been ownerless for nearly its entire existence. That is part of what makes it durable.
+**关于中本聪。** 创造比特币的人(或人群)在 2010 年消失了。没有遗嘱,没有商标,没有基金会,没有指定的继承人。他们早期挖出的币从未动过。我们不知道他们是谁。可能永远不知道。这是一个特性:没有创始人可以被俘获、胁迫或妥协。比特币在有生之年几乎一直是无主的。这是它耐用性的重要部分。
 
-If you want to go deeper on this - what "decentralized" actually means, where Bitcoin lands on the spectrum, and how the 2017 takeover attempt was defeated - see the [Decentralization rabbit hole](/rabbit-hole/decentralization).
+如果你想更深入了解——"去中心化"到底意味着什么,比特币在光谱上的位置,以及 2017 年的夺权是怎么被击败的——参见[去中心化深坑](/rabbit-hole/decentralization)。
 
-## 8. The Properties, Re-Examined
+## 8. 重新审视那些属性
 
-Chapter 1 ended with a list of six properties we'd want from sound money. Let's check Bitcoin against each:
+第一章结尾列出了健全货币应有的六个属性。让我们逐个对照比特币:
 
-- **Portable** - bitcoin moves at the speed of an internet packet. A billion dollars can cross any border in minutes.
-- **Divisible** - one bitcoin divides into 100 million satoshis. (See the [Bitcoin Units rabbit hole](/rabbit-hole/bitcoin-units) for the full scale.)
-- **Durable** - the network has run continuously since January 2009 with one known outage in its first eight months and zero since. Your coins exist as long as the network exists.
-- **Verifiable** - you can run a node on a laptop and personally verify the entire history. No trust required.
-- **Scarce** - capped at 21 million by code that every node enforces. The cap has never been raised. It almost certainly never will be.
-- **Sovereign** - no government, no company, no individual can issue, freeze, seize, or invalidate your bitcoin without your private key.
+- **便携的**——比特币以互联网数据包的速度移动。十亿美元几分钟内可以穿越任何边境。
+- **可分的**——一枚比特币可以分成一亿聪(sat)。(完整尺度见[比特币单位深坑](/rabbit-hole/bitcoin-units)。)
+- **耐用的**——网络自 2009 年 1 月持续运行至今,头八个月有过一次已知宕机,此后零宕机。你的币在网络存在时就存在。
+- **可验证的**——你可以在笔记本电脑上运行节点,亲自验证整个历史。无需信任。
+- **稀缺的**——2100 万枚上限,由每个节点执行的代码保障。上限从未提高过。几乎可以肯定永远不会。
+- **主权的**——没有政府、公司或个人能发行、冻结、没收或使你的比特币无效,只要他们没有你的私钥。
 
-Gold satisfies most of these too - and was, for thousands of years, the world's best money. Bitcoin's claim is that it satisfies all six *and* removes gold's downsides (custodianship, divisibility at small scales, settlement speed). Whether that claim holds is something you'll decide for yourself by chapter 6.
+黄金也满足其中大部分——几千年来一直是世界上最好的货币。比特币的主张是它满足全部六个,*而且*去掉了黄金的缺点(托管、小尺度可分性、结算速度)。这个主张是否成立,到第六章你自己会判断。
 
-## 9. The Honest Trade-offs
+## 9. 诚实的取舍
 
-"Bitcoin only. No bullshit." applies to the bull case too.
+"只有比特币,不扯淡。"对正面论据也一样适用。
 
-**Volatility.** Bitcoin's price is volatile in fiat terms. This is partly because monetization is a process, not an event; partly because the asset is still small relative to global wealth. The volatility decreases over time but is real today.
+**波动性。** 比特币以法币计价的价格是波动的。一部分是因为货币化是一个过程,不是一个事件;一部分是因为这个资产相对于全球财富来说还很小。波动性随时间递减,但今天确实存在。
 
-**On-chain settlement speed.** A Bitcoin transaction takes roughly 10 minutes to confirm and an hour to be considered fully settled. This is a deliberate trade-off - slower settlement makes the system harder to attack - but it means on-chain isn't ideal for buying coffee. (The Lightning Network solves this, mostly; chapter 5.)
+**链上结算速度。** 一笔比特币交易大约 10 分钟确认,一小时才被认为完全结算。这是一个有意的取舍——结算越慢,系统越难被攻击——但这意味着链上不适合买咖啡。(闪电网络(Lightning Network)基本解决了这个,见第五章。)
 
-**Learning curve.** The user experience has improved enormously but is still not as smooth as your banking app. Self-custody requires you to take responsibility for your keys. Losing them means losing your coins. There's no helpdesk.
+**学习曲线。** 用户体验已经大大改善,但仍然不如你的银行 App 流畅。自托管要求你自己对私钥负责。弄丢了就丢了。没有客服。
 
-**Energy use.** Bitcoin's mining network uses significant electricity - roughly 0.5% of global consumption, varying by season. That energy isn't wasted (it secures the network and increasingly comes from stranded renewables) but it isn't free. Whether that cost is worth what it buys is a values question.
+**能耗。** 比特币的挖矿网络消耗可观电力——大约全球用电量的 0.5%,随季节波动。这些能量不是浪费(它保障网络安全,且越来越多地来自搁浅可再生能源),但也不是免费的。这个代价是否值得它买到的东西,是一个价值观问题。
 
-**Custody risk.** If you self-custody, you carry the risk. If you don't self-custody, you've reintroduced exactly the trusted third parties Bitcoin was designed to eliminate. Both have failure modes.
+**托管风险。** 如果你自托管,你承担风险。如果你不自托管,你就重新引入了比特币被设计来消除的可信第三方。两种方式都有失败的可能。
 
-None of these trade-offs are fatal. None are hidden. They're the price of admission.
+这些取舍没有一个是致命的。没有一个是隐藏的。它们就是入场的代价。
 
-## 10. Where We Go From Here
+## 10. 接下来去哪
 
-You've now met Bitcoin at the conceptual level. You know what it is, who made it, why it has the properties it has, and what it costs to use.
+你已经在概念层面认识了比特币。你知道它是什么,谁创造了它,为什么它有这些属性,使用它的代价是什么。
 
-Chapter 3 is *how it works under the hood* - the machinery. Blocks, transactions, mempool, fees, UTXOs. The model that lets you reason about Bitcoin instead of just believing in it.
+第三章是*引擎盖下面怎么运作*——区块、交易、内存池、手续费、UTXO。那个让你能推理比特币而不只是信仰它的模型。
 
-Chapter 4 is *owning it for real*. Seed phrases, hardware wallets, self-custody. You'll do it, not just read about it.
+第四章是*真正拥有它*。助记词、硬件钱包、自托管。你亲手做,不只是读。
 
-For now, sit with the thing you just learned. **Money got broken in 1971. Sixty-eight days after the 2008 financial crisis peaked, someone proposed an alternative. Fifteen years later, it's still running, the supply schedule is still on track, and the rules haven't changed.** That's the basic fact of the matter. Everything else is detail.
+现在,先消化你刚学到的东西。**货币在 1971 年出了问题。2008 年金融危机达到高峰后的六十八天,有人提出了一个替代方案。十五年后,它还在运行,供应时间表还在正轨上,规则没有变过。** 这就是基本事实。其他都是细节。
 
-> **Pro tip:** If you want to verify *any* claim in this chapter, the [whitepaper](/bitcoin.pdf) is nine pages and unchanged since 2009. The [genesis block](https://chainquery.com/rpc/getblock) is still there (run `getblock` on any live node with hash `000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f`), with the *Times* headline embedded in it. The network has been running, with public source code, for sixteen years. Verify, don't trust.
+> **提示:** 如果你想验证本章的*任何*说法,[白皮书](/bitcoin.pdf)九页,2009 年以来未改过一个字。[创世区块](https://chainquery.com/rpc/getblock)还在那里(在任何活节点上运行 `getblock`,哈希为 `000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f`),里面嵌着《泰晤士报》的标题。网络已经带着公开源代码运行了十六年。验证,不要信任。

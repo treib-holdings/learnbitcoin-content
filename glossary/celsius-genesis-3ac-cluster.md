@@ -1,13 +1,13 @@
 ---
-title: "Celsius, Genesis, and 3AC (the 2022 Contagion)"
+title: "Celsius、Genesis 和 3AC（2022 年传染）"
 slug: celsius-genesis-3ac-cluster
 draft: false
 published: "2026-06-18"
-shortDefinition: "The interconnected 2022 collapse of crypto lenders and a hedge fund - Three Arrows Capital, Celsius, and Genesis - where one borrower's default cascaded through firms that had quietly lent out their customers' deposits."
+shortDefinition: "2022 年加密借贷公司和对冲基金的互联崩溃——Three Arrows Capital、Celsius 和 Genesis——一个借款人的违约在悄悄贷出客户存款的公司中连锁反应。"
 keyTakeaways:
-  - "Three Arrows Capital (3AC), a hedge fund, blew up on leveraged bets after the Terra/LUNA crash and defaulted on loans across the industry in mid-2022"
-  - "Its default cascaded into lenders that had funded it with customer money: Celsius (froze June 2022, about $4.7B owed to users), Genesis, Voyager, and BlockFi"
-  - "Genesis had lent 3AC about $2.36B; its parent DCG papered over the roughly $1.1B unsecured hole with a promissory note not due until the 2030s. Celsius founder Alex Mashinsky was sentenced to 12 years in 2025"
+  - "对冲基金 Three Arrows Capital (3AC) 在 Terra/LUNA 崩溃后因杠杆赌注爆仓，2022 年中全行业违约"
+  - "其违约连锁到用客户资金资助它的贷方：Celsius（2022 年 6 月冻结，欠用户约 47 亿美元）、Genesis、Voyager 和 BlockFi"
+  - "Genesis 借给 3AC 约 23.6 亿美元；其母公司 DCG 用一张 2030 年代才到期的本票掩盖了约 11 亿美元的无担保窟窿。Celsius 创始人 Alex Mashinsky 2025 年被判 12 年"
 sources:
   - { label: "NY Attorney General - $2B settlement with crypto firm Genesis (2024)", url: "https://ag.ny.gov/press-release/2024/attorney-general-james-secures-settlement-worth-2-billion-crypto-firm-genesis" }
   - { label: "US DOJ - founder of Celsius sentenced to 12 years (2025)", url: "https://www.justice.gov/usao-sdny/pr/founder-celsius-sentenced-12-years-fraud-and-market-manipulation" }
@@ -23,12 +23,12 @@ sameAs:
 liveWidget: ~
 ---
 
-The 2022 contagion shows what was really happening to deposits that customers thought were just sitting there. The money was getting lent out, used as collateral, and lent again.
+2022 年的传染展示了客户以为只是放在那里的存款实际发生了什么。钱被借出、用作抵押、再借出。
 
-Three Arrows Capital (3AC) was a crypto hedge fund run by Su Zhu and Kyle Davies. It made enormous leveraged bets, including a large position in Terra/LUNA, which collapsed to nearly zero in May 2022. It funded those bets by borrowing from almost every lender in the industry. When the bets failed, 3AC defaulted and was ordered into liquidation in late June 2022, with creditors claiming more than $3 billion.
+Three Arrows Capital (3AC) 是由 Su Zhu 和 Kyle Davies 运营的加密对冲基金。它进行了巨大的杠杆赌注，包括大量 Terra/LUNA 头寸，后者在 2022 年 5 月崩溃至接近零。它通过从行业几乎每个贷方借款来资助这些赌注。赌注失败后，3AC 违约并于 2022 年 6 月下旬被命令清算，债权人声称超过 30 亿美元。
 
-The firms that had lent 3AC their customers' money went down one after another. Celsius, a lender advertising high yields on deposited crypto, froze every withdrawal on 12 June 2022 and filed for bankruptcy owing roughly $4.7 billion to more than 600,000 users. Genesis, the lending desk owned by Digital Currency Group, had lent 3AC about $2.36 billion. When that money was gone, its parent covered the roughly $1.1 billion hole on paper with a promissory note not due until the 2030s, while about 340,000 Gemini Earn depositors were told the operation was solvent. Genesis filed for bankruptcy in January 2023. [Voyager](/glossary/voyager-digital) and [BlockFi](/glossary/blockfi) went down the same way.
+借给 3AC 客户资金的公司一个接一个倒下。Celsius 是一家宣传存入加密资产高收益的贷方，于 2022 年 6 月 12 日冻结所有提款并申请破产，欠超过 60 万用户约 47 亿美元。Genesis 是 Digital Currency Group 旗下的借贷台，借给 3AC 约 23.6 亿美元。钱没了后，其母公司用一张 2030 年代才到期的本票在纸面上掩盖了约 11 亿美元的窟窿，而约 34 万 Gemini Earn 存款人被告知运营是偿付能力的。Genesis 于 2023 年 1 月申请破产。[Voyager](/glossary/voyager-digital)和 [BlockFi](/glossary/blockfi)以同样方式倒下。
 
-Celsius founder Alex Mashinsky pleaded guilty to fraud and was sentenced to 12 years in 2025. None of this needs cartoon villains. It is just what "earn interest on your crypto" actually means: your crypto gets lent into someone else's leverage, and you quietly become a creditor of a trade you never agreed to.
+Celsius 创始人 Alex Mashinsky 认罪欺诈并于 2025 年被判 12 年。这不需要卡通反派。这就是"用你的加密资产赚利息"实际意味着什么：你的加密资产被借入别人的杠杆中，你悄悄成为一个你从未同意的交易的债权人。
 
-See [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard) for how the 2022 contagion fits the longer story.
+参见 [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard)了解 2022 年传染如何融入更长故事。

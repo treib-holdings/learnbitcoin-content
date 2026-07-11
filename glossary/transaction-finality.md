@@ -1,12 +1,12 @@
 ---
-title: "Transaction Finality"
+title: "交易最终性"
 slug: transaction-finality
 draft: false
-shortDefinition: "After several confirmations, reversing a transaction by reorg becomes highly improbable, ensuring practical finality."
+shortDefinition: "经过多次确认后，通过重组来逆转交易变得极其不可能，确保实际最终性。"
 keyTakeaways:
-  - "Every new block reduces the chance of a successful reorg attack"
-  - "No absolute guarantee, but risk diminishes rapidly"
-  - "Higher-value transactions typically wait more confirmations"
+  - "每个新区块都降低成功重组攻击的概率"
+  - "没有绝对保证，但风险迅速递减"
+  - "更高价值的交易通常等待更多确认"
 sources: []
 relatedTerms:
   - double-spend
@@ -16,19 +16,19 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Bitcoin transactions don't have absolute finality. Probability of reversal drops sharply with each confirmation, but never reaches zero. The right number of confirmations to wait depends on the value at stake and the threat model.
+比特币交易没有绝对的最终性。逆转概率随每次确认急剧下降，但永远不会到零。等待多少次确认合适取决于价值金额和威胁模型。
 
-How the math works. To reverse a transaction with N confirmations, an attacker needs to mine a competing chain N+1 blocks long and have other nodes accept it as the canonical chain. The cost grows exponentially with N because each block requires proof of work equal to roughly the network's average hash rate for ~10 minutes. The probability of an attacker with fraction `q` of network hash rate succeeding falls off as roughly `q^N` for `q < 0.5`. For any honest-majority assumption, deep confirmations are effectively final.
+数学原理。要逆转有 N 次确认的交易，攻击者需要挖出一条 N+1 个区块的竞争链，并让其他节点接受它为规范链。成本随 N 指数增长，因为每个区块需要约等于网络平均算力 10 分钟的工作量证明。攻击者拥有网络算力份额 `q`（`q < 0.5`）的成功概率大约以 `q^N` 衰减。对任何诚实多数假设来说，深度确认实际上是最终的。
 
-Practical confirmation conventions:
+实际确认惯例：
 
-- **0 conf (mempool).** Not final at all. Can be replaced (with RBF) or double-spent (race attack). Acceptable for sub-$10 retail in some workflows, increasingly migrated to Lightning instead.
-- **1 confirmation (~10 min average).** Final for everyday consumer use. Coffee, retail, payroll. Reorgs of 1 block happen a few times a year but the probability of any specific 1-conf transaction being reversed is small.
-- **3 confirmations (~30 min).** Common exchange deposit threshold for small accounts.
-- **6 confirmations (~1 hour).** The Satoshi-era default. Exchange deposit threshold for larger amounts; quoted in most beginner Bitcoin material.
-- **100 confirmations (~17 hours).** Coinbase transaction maturity: newly-mined block rewards can't be spent until 100 blocks pass. Hard rule, encoded in consensus, not a wait-time convention.
-- **N >> 6.** For nation-state-attacker threat models or extremely high-value transfers, wait days. The exponential decay makes a sufficiently old transaction effectively unreversible.
+- **0 确认（内存池）。** 完全不最终。可被替换（RBF）或双花（竞争攻击）。在某些工作流中适用于 10 美元以下的零售，越来越多地迁移到闪电网络。
+- **1 次确认（平均约 10 分钟）。** 对日常消费使用是最终的。咖啡、零售、工资。1 区块重组每年发生几次，但任何特定 1 确认交易被逆转的概率很小。
+- **3 次确认（约 30 分钟）。** 交易所小额充值的常见阈值。
+- **6 次确认（约 1 小时）。** 中本聪时代的默认值。交易所大额充值阈值；大多数入门比特币材料中引用的数字。
+- **100 次确认（约 17 小时）。** Coinbase 交易成熟期：新挖出的区块奖励在 100 个区块过去之前不能花费。硬规则，编码在共识中，不是等待时间惯例。
+- **N >> 6。** 对国家级攻击者威胁模型或极高价值转账，等待数天。指数衰减使足够旧的交易实际上不可逆。
 
-Reorg history in practice. Bitcoin has experienced reorgs of 1-2 blocks routinely (a few times a year), 3-block reorgs occasionally, and only a handful of 4+-block reorgs in its history (most famously the March 2013 chain split documented in [BIP 50](/glossary/bip-50)). No reorg has ever overturned a transaction with 6+ confirmations in normal network operation.
+实践中的重组历史。比特币经常经历 1-2 区块重组（每年几次），偶尔 3 区块重组，历史上只有少数 4+ 区块重组（最著名的是 [BIP 50](/glossary/bip-50) 中记录的 2013 年 3 月链分裂）。正常网络运行中从未有重组推翻过 6+ 确认的交易。
 
-Lightning Network offers near-instant settlement within a channel; the underlying channel state still ultimately settles on the base chain, inheriting whatever finality the base layer provides. For the user, a Lightning payment is final the moment it settles; for the channel's funds, the on-chain anchor is what matters in the long run.
+闪电网络在通道内提供近乎即时的结算；底层通道状态最终仍在基础链上结算，继承基础层提供的最终性。对用户来说，闪电支付在结算那一刻就是最终的；对通道的资金来说，链上锚点在长期才是关键。

@@ -1,11 +1,11 @@
 ---
-title: "Bitcoin and Energy"
+title: "比特币与能源"
 slug: energy
 draft: false
 published: "2026-06-17"
 status: live
 section: rabbit-hole
-tagline: "Energy is the FUD claim that comes up most often, full stop. The honest version: the consumption is real, the comparisons are rhetorical, the demand profile is unique, and the fix for what is actually broken is already profitable."
+tagline: "能源是出现最多的 FUD 指控，没有之一。诚实的版本：消耗是真实的，比较是修辞手段，需求特征是独特的，而真正问题的修复方案已经有利可图。"
 order: 12
 estimatedMinutes: 15
 sources:
@@ -41,7 +41,7 @@ relatedTerms:
    3. OPTIONAL hardware photos: Antminer + Spondoolies generations shot (section 1 or 6) - nice-to-have, NOT a blocker; chapter is complete with the two SVGs
    4. On flip day: repoint energy-fud closing line + mining RH section 7 to this chapter; add ASSETS.md rows for the 2 new diagrams */}
 
-> **Where you're going:** Bitcoin consumes a lot of electricity. That is true, measurable, and by design. This chapter walks through how much, where it comes from, what it buys, what the critics get right, and why "Bitcoin wastes energy" and "Bitcoin is an environmental free lunch" are both wrong.
+> **你将了解：** 比特币消耗大量电力。这是真实的、可衡量的、而且是设计如此。本章会走一遍消耗了多少、电力从哪来、买到了什么、批评者哪些说得对、以及为什么"比特币浪费能源"和"比特币是环境的免费午餐"都是错的。
 
 <figure>
   <video
@@ -56,121 +56,121 @@ relatedTerms:
     preload="metadata"
     aria-label="Thirty-second animation. A grid-capacity bar fills over one heat-wave day as air conditioners switch on and demand climbs. The Bitcoin miner, shown in orange, is the marginal load on top of everything else; at the peak it pushes total demand past a red grid-capacity line. Then the miner powers down in seconds, the orange drains away, and total load falls back under capacity while the grid holds. Closing receipt: Riot Platforms earned 31.7 million dollars to power down on the Texas grid in August 2023, versus 8.9 million dollars of bitcoin mined that month. The only industrial load that vanishes in seconds."
   ></video>
-  <figcaption>Thirty seconds. When the grid hits its limit, the miner is the load that disappears - in seconds, by choice. The receipt is real: Riot, ERCOT, August 2023.</figcaption>
+  <figcaption>三十秒。当电网达到极限时，矿工就是在几秒内消失的负载。Riot 2023 年 8 月的 ERCOT 月度账单就是证据。</figcaption>
 </figure>
 
-Energy is the objection that comes up first, with everyone. Before [quantum](/rabbit-hole/quantum-and-bitcoin), before "criminals use it," before volatility, the person across the table has heard that Bitcoin boils oceans, and they have heard it from people they trust. Most of what they have heard is somewhere between stale and rhetorically engineered. Some of it is correct. The honest version is more interesting than either camp wants it to be.
+能源是每个人最先提出的反对意见，排在[量子](/rabbit-hole/quantum-and-bitcoin)、"犯罪分子用它"、波动性之前。对面那个人听说比特币煮沸海洋了，而且是从他信任的人那里听说的。他听到的大部分内容介于过时和修辞工程之间。有些是对的。诚实的版本比任何一派想承认的都更有趣。
 
-## The number, and the comparison trick
+## 数字，以及比较的把戏
 
-Bitcoin mining draws about 173 TWh of electricity per year, roughly three quarters of one percent of global electricity (2025 figures). That is the headline number from the [Cambridge Bitcoin Electricity Consumption Index](https://ccaf.io/cbnsi/cbeci), the most methodologically careful public estimate. It is a lot of electricity.
+比特币挖矿每年消耗约 173 TWh 电力，大约占全球电力的百分之零点七八（2025 年数据）。这是来自[剑桥比特币电力消费指数](https://ccaf.io/cbnsi/cbeci)的头条数字，它是方法论最审慎的公开估计。确实不少。
 
-Now watch what happens to that number in the wild. "More electricity than Argentina": true, and designed to alarm. "Less than the world's tumble dryers": also roughly true, and designed to soothe. "Half of what gold mining uses": true, and designed to flatter. "More than all of Google": true, and meaningless without asking what each one produces for the energy.
+现在看看这个数字在野外怎么被使用。"比阿根廷还多"：是对的，而且是设计来吓人的。"比全球所有烘干机还少"：也大致对，设计来安抚人的。"是黄金开采用量的一半"：对的，设计来讨好的。"比整个谷歌还多"：对的，但不问每一个消耗能源换来什么就毫无意义。
 
-Every one of those comparisons is a choice of denominator, and the choice is doing the arguing. A country sounds outrageous because countries contain people. An appliance category sounds trivial because nobody moralizes about laundry. The comparison is not analysis. It is framing wearing analysis's clothes.
+每一个比较都是分母的选择，而选择本身在论证。"一个国家"听起来很离谱因为国家有人。"一种家电"听起来微不足道因为没人对洗衣做道德评判。比较不是分析。它是穿着分析衣服的框架操作。
 
-The honest baseline: Bitcoin uses a measurable, material amount of the world's electricity. Under one percent of the global total, more than small countries, less than many single industries nobody writes headlines about. Hold that number still and ask the real questions: what does it buy, where does it come from, and what would that energy be doing otherwise.
+诚实的基线：比特币使用了世界上可衡量的、相当数量的电力。不到全球总量的百分之一，多于小国，少于许多没人写头条新闻的单一行业。稳住这个数字，然后问真正的问题：它买到了什么，电力从哪来，那些能源不做挖矿的话会做什么。
 
 <figure>
   <img src="/diagrams/energy-consumption-context.svg" alt="Horizontal bar chart of estimated annual electricity use in terawatt-hours. Global data centers excluding crypto roughly 415 TWh. Gold mining a range of 132 to 265 TWh depending on scope. Bitcoin mining about 173 TWh, which falls inside the gold range. Argentina, an entire country, about 130 TWh." />
-  <figcaption>Estimated annual electricity, TWh. Bitcoin sits inside the gold-mining range and below global data centers. Which comparison you reach for is the argument you are making. Sources: CBECI (Bitcoin), IEA (data centers), industry estimates (gold).</figcaption>
+  <figcaption>估计年电力消费，TWh。比特币在黄金开采的范围内，低于全球数据中心。你选择哪个比较就是你在做的论证。来源：CBECI（比特币）、IEA（数据中心）、行业估计（黄金）。</figcaption>
 </figure>
 
-## The energy is the security
+## 能源就是安全
 
-Start with what the electricity purchases, because it is not "transactions."
+先说电力买到了什么，因为不是"交易"。
 
-Bitcoin's entire security model is that rewriting history costs more than anyone can profitably spend. [Proof-of-work](/glossary/proof-work-pow) converts electricity into exactly that: every block carries proof that real-world joules were burned to produce it, and an attacker who wants to rewrite the chain must outspend the entire honest network, in real electricity, for as long as the attack runs. The energy bill is not overhead on the security. The energy bill IS the security.
+比特币的整个安全模型就是：重写历史的花费比任何人能有利可图地支出的都要多。[工作量证明](/glossary/proof-work-pow)把电力转化为恰好那个东西：每个区块携带了真实世界焦耳被消耗来产生它的证明，想重写链的攻击者必须在真实电力中超过整个诚实网络，攻击持续多久就超过多久。能源账单不是安全性的间接费用。能源账单就是安全性本身。
 
-This is why "make Bitcoin use less energy" is a different request than it sounds. Cut the energy and you cut the cost of attacking the ledger by the same proportion. A Bitcoin that was cheap to run would be a Bitcoin that was cheap to rewrite.
+这就是为什么"让比特币用更少能源"是一个听起来不一样实际不同的请求。削减能源你就按比例削减了攻击账本的成本。一个运行成本低的比特币就是一个重写成本低的比特币。
 
-The obvious follow-up, "then why not proof-of-stake, like everything else," deserves one honest paragraph. Proof-of-stake replaces the external, physical cost with an internal, financial one: security is posted as locked capital instead of burned electricity. That is not free; it is a different trade, with different failure modes: wealth concentration compounding into control, and no physical anchor binding the ledger to the world outside its own token. Bitcoiners think the external anchor is the entire point. Reasonable people disagree about that trade. What is not reasonable is pretending it costs nothing.
+显而易见的追问，"那就用权益证明，像其他所有东西一样"，值得一段诚实的话。权益证明用内部的、金融的成本替代外部的、物理的成本：安全以锁定资本而非消耗电力的方式提供。这不是免费的；它是一种不同的交易，有不同的失败模式：财富集中复合为控制，没有物理锚将账本绑定到其自身代币之外的世界。比特币人认为外部锚是全部意义所在。理性的人对这个交易有不同看法。不合理的是假装它不花任何代价。
 
-## What miners actually buy
+## 矿工实际上买什么
 
-Almost everything surprising about Bitcoin's energy traces back to a single fact:
+关于比特币能源几乎所有令人惊讶的事都追溯到一个事实：
 
-**A miner is the only industrial-scale electricity buyer that is location-agnostic, interruptible in seconds, and indifferent to when the power arrives.**
+**矿工是唯一的工业规模电力买家，它位置无关、可在几秒内中断、对电力何时到来无所谓。**
 
-A factory needs workers, roads, and customers. A data center needs low latency to users. An aluminum smelter can load-shift a little, but shutting it down cold is expensive and slow. A miner needs electricity and an internet connection. It can sit at a hydro dam in the back country, a flare stack in an oil field, or a wind farm at the end of a congested transmission line, wherever a megawatt is cheapest because nobody else can use it.
+工厂需要工人、道路和客户。数据中心需要到用户的低延迟。铝冶炼厂可以稍微负荷转移，但冷关停昂贵且缓慢。矿工需要电力和互联网连接。它可以放在偏远的水电站、油田的燃烧塔、或拥挤输电线路末端的风电场，只要一兆瓦最便宜因为没人能用，矿工就在那。
 
-That is why mining migrates to stranded power. Not because miners are environmentalists, but because stranded electrons are the cheapest electrons on earth, and mining margins are thin. The incentive does the work; no virtue required.
+这就是为什么挖矿迁移到困置电力。不是因为矿工是环保主义者，而是因为困置电子是地球上最便宜的电子，挖矿利润率薄。激励做了工作；不需要美德。
 
-The same property runs in reverse, and that is where it gets interesting for everyone else.
+同一特性反过来也成立，这就是对所有其他人都变得有趣的地方。
 
-## The grid receipts
+## 电网收据
 
-In August 2023, during a Texas heat wave, Riot Platforms (one of the largest miners on the ERCOT grid) earned [$31.7 million in a single month](https://www.cnbc.com/2023/09/06/texas-paid-bitcoin-miner-riot-31point7-million-to-shut-down-in-august.html) mostly for NOT mining: $24.2 million selling its pre-purchased power back to the grid at crisis prices, and $7.4 million in demand-response credits. The bitcoin it mined that month was worth about $8.9 million. The filing is [public](https://www.sec.gov/Archives/edgar/data/1167419/000155837023015517/riot-20230906xex99d1.htm). During the worst hours, Riot curtailed more than 95 percent of its load, handing those megawatts back to air conditioners in seconds.
+2023 年 8 月，在德克萨斯州热浪期间，Riot Platforms（ERCOT 电网上最大的矿工之一）在一个月内主要因*不挖矿*赚了[3170 万美元](https://www.cnbc.com/2023/09/06/texas-paid-bitcoin-miner-riot-31point7-million-to-shut-down-in-august.html)：2420 万美元以危机价格将预购电力卖回给电网，740 万美元需求响应额度。当月挖出的比特币价值约 890 万美元。文件是[公开的](https://www.sec.gov/Archives/edgar/data/1167419/000155837023015517/riot-20230906xex99d1.htm)。在最严重的小时里，Riot 削减了超过 95% 的负载，在几秒内将那些兆瓦还给了空调。
 
 <figure>
   <img src="/diagrams/energy-demand-response.svg" alt="Line chart over one heat-wave day. Grid demand rises to a sharp late-afternoon peak while miner load runs flat at full capacity then plunges to near zero exactly at that peak, returning power to the grid, before recovering in the evening. The two curves move in opposite directions." />
-  <figcaption>The inverse is the whole point: when the grid is most stressed, the miner is the load that disappears. Riot's August 2023 ERCOT month is the receipt. Source: Riot Platforms SEC filing.</figcaption>
+  <figcaption>反向就是全部意义：当电网最紧张时，矿工是消失的负载。Riot 2023 年 8 月的 ERCOT 月度就是收据。来源：Riot Platforms SEC 文件。</figcaption>
 </figure>
 
-Three mechanisms, worth knowing because they are not the same thing:
+三种机制，值得了解因为它们不是同一回事：
 
-1. **Price response.** When power costs more than the bitcoin it would mine, the rational miner shuts off and resells. No agreement needed; arithmetic does it.
-2. **Ancillary services.** The grid operator pays the miner for the *option* to shed its load on command. The miner gets paid whether or not the call comes. The grid gets a dispatchable buffer the size of a small city.
-3. **Peak-avoidance programs.** Power down during the handful of annual system peaks, pay dramatically less for transmission all year.
+1. **价格响应。** 当电力成本高于它能挖出的比特币时，理性矿工关机并转售。不需要协议；算术做。
+2. **辅助服务。** 电网操作者向矿工支付*期权*费以备按命令削减负荷。不管是否被调用，矿工都能拿到钱。电网获得一个相当于一个小城市大小的可调度缓冲。
+3. **高峰回避计划。** 在年度系统高峰时段关机，全年输电费用大幅降低。
 
-Now the criticism, because it is not stupid: environmental groups looked at that $31.7 million and called it [paying a polluter not to pollute](https://www.kvue.com/article/news/investigations/defenders/bitcoin-company-reimbursed-conservation-appeal/269-456160f1-f136-4da8-8d58-7724f048fbda), a subsidy for a load that should never have been there. The honest answer is that grid operators pay many large loads and generators for flexibility, because options on demand are genuinely valuable to a grid that cannot store much; miners are simply the most flexible load ever connected. The honest concession inside the answer: a grid that builds around interruptible mining demand is making a bet about how that demand behaves in a crisis, and the bet is only as good as the contracts. Both things are true. That is the actual debate, and it is a better one than "subsidy bad."
+现在来看批评，因为它不愚蠢：环保团体看了那 3170 万美元，称之为[付钱给污染者不污染](https://www.kvue.com/article/news/investigations/defenders/bitcoin-company-reimbursed-conservation-appeal/269-456160f1-f136-4da8-8d58-7724f048fbda)，一种对本不该存在的负载的补贴。诚实的回答是电网操作者向许多大型负载和发电商付费购买灵活性，因为对不能存储太多电力的电网来说需求期权是真正有价值的；矿工只是连接过的最灵活的负载。诚实回答中的让步：围绕可中断挖矿需求建设的电网在押注那个需求在危机中的表现，而赌注只有合同那么好。两件事都是对的。那才是真正的辩论，比"补贴不好"好得多。
 
-## Methane: the one place mining might be net-negative
+## 甲烷：挖矿可能是净负排放的一个地方
 
-Methane is a far more potent greenhouse gas than CO2 over its first decades in the atmosphere. The world's landfills vent it continuously; oil fields flare it incompletely. Both are emissions with no business model attached, which is exactly the gap a location-agnostic, containerized electricity buyer can fill. Park generators and ASICs at the gas, combust it completely (turning methane into less-harmful CO2 plus electricity), and the mining revenue funds the capture.
+甲烷在前几十年里是比 CO2 强得多的温室气体。世界的垃圾填埋场持续排放它；油田不充分地燃烧它。两者都是没有商业模式的排放，恰好是位置无关、可集装箱化的电力买家可以填补的空隙。在气体旁放发电机和 ASIC，完全燃烧它（将甲烷转化为危害较小的 CO2 加电力），挖矿收入就资助了捕获。
 
-The strongest quantified version of this argument comes from [Daniel Batten's research](https://batcoinz.com/quantifying-the-potential-impact-of-bitcoin-mining-on-global-methane-emissions/), which estimates a surprisingly small amount of methane-fed mining would offset the network's entire footprint. Disclosure where it is due: Batten is an investor in this sector and an advocate, not a neutral academic. Treat his numbers as the well-argued bull case, not settled science.
+这个论点最强的量化版本来自 [Daniel Batten 的研究](https://batcoinz.com/quantifying-the-potential-impact-of-bitcoin-mining-on-global-methane-emissions/)，估计惊人少量的甲烷挖矿就能抵消整个网络的碳足迹。该说的说清楚：Batten 是这个领域的投资者和倡导者，不是中立学者。把他的数字当作论证充分的看多案例，不是定论科学。
 
-What is not in dispute: the projects exist, they are profitable without subsidies, and the gas they burn was being vented or flared anyway. The honest status: real, growing, and still a small slice of total hash rate. Promising is the right word. Proven-at-scale is not, yet.
+没有争议的是：这些项目存在，它们无补贴也盈利，它们燃烧的气体本来就在排放或燃烧。诚实的状态：真实的、增长的、但仍是总算力的一小部分。有前景是正确的词。大规模验证还不是，目前不是。
 
-## Heat is not waste if someone is cold
+## 热量如果不是浪费的，如果有人冷的话
 
-An ASIC converts nearly every watt it draws into heat. For most of Bitcoin's history that heat went out a fan into the sky. In cold places with district-heating infrastructure, it has started going somewhere better: in Finland, miners are [piped into municipal district-heating systems](https://grist.org/buildings/bitcoin-cryptocurrency-district-heat-finland/), warming homes in a town of eleven thousand; a Nordic project is [scaling toward heating roughly 2,800 homes](https://news.bitcoin.com/canaan-wins-nordic-heating-bid-turns-bitcoin-mining-waste-heat-into-residential-hot-water/) with hot water from hashboards; greenhouse pilots preheat boiler water in Canadian winters; and you can now buy a home miner that is, frankly, a space heater with a payout address.
+一台 ASIC 将它消耗的几乎每瓦转化为热量。在比特币大部分历史中，热量通过风扇排到天空。在寒冷的有集中供暖基础设施的地方，它开始去了更好的地方：在芬兰，矿工被[接入市政集中供暖系统](https://grist.org/buildings/bitcoin-cryptocurrency-district-heat-finland/)，为一个一万一千人的小镇供暖；一个北欧项目正在[扩大到用热板热水为约 2,800 户供暖](https://news.bitcoin.com/canaan-wins-nordic-heating-bid-turns-bitcoin-mining-waste-heat-into-residential-hot-water/)；温室试点在加拿大冬天预热锅炉水；你现在可以买一台家用矿机，坦白说就是一个带收款地址的取暖器。
 
-This is a modest claim, and it should stay modest. Heat reuse fits cold climates with existing pipe infrastructure; it will not absorb the Texas summer hash rate. It is a real and growing channel where geography cooperates, and the energy gets used twice: once for security, once for soup.
+这是一个谦虚的说法，应该保持谦虚。热量再利用适合寒冷气候和现有管道基础设施；它不会吸收德州夏天的算力。它是一个地理条件配合时真实且增长的渠道，能源被用两次：一次为安全，一次为汤。
 
-## What the critics get right
+## 批评者说得对的地方
 
-The strongest forms of the critique are real, and they deserve to be stated as plainly as the defense. Here they are.
+最强形式的批评是真实的，应该和辩护一样直白地说。以下是。
 
-**The local externalities are real, and they have a town's name on them.** In Granbury, Texas, residents living next to Marathon's (MARA) mining site at the Wolf Hollow gas plant [sued over constant, health-disrupting noise](https://earthjustice.org/press/2024/granbury-residents-sue-local-bitcoin-mine-over-health-threatening-noise-pollution), documented by [national press](https://time.com/6590155/bitcoin-mining-noise-texas/) and entirely believable to anyone who has stood next to an air-cooled mining container. A 24/7 industrial fan wall is a bad neighbor. Mining companies that site carelessly deserve the lawsuits they get, and the industry's social license depends on the operators who site well.
+**本地外部性是真实的，它们有一个小镇的名字。** 在德克萨斯州 Granbury，住在 Marathon（MARA）Wolf Hollow 燃气电厂旁矿场的居民[因持续的健康损害性噪音而起诉](https://earthjustice.org/press/2024/granbury-residents-sue-local-bitcoin-mine-over-health-threatening-noise-pollution)，被[全国媒体](https://time.com/6590155/bitcoin-mining-noise-texas/)报道，对任何站在风冷挖矿集装箱旁的人来说都完全可信。一堵 24/7 运转的工业风扇墙是个坏邻居。选址不当的挖矿公司活该被起诉，行业的社会许可取决于那些选址得当的操作者。
 
-**Not all mining runs on stranded hydro.** The sustainable-mix estimates range from the mid-50s to the mid-60s percent depending on who is measuring and how. That also means a third or more of the network, on the less favorable estimates, runs on grids where the extra demand is met by burning coal or natural gas. The mix is improving because the economics push that way, but "improving" and "clean" are different words.
+**不是所有挖矿都靠困置水电。** 可持续能源比例估计从中间五十多到中间六十多不等，取决于谁在测量和怎么测。这也意味着在不太乐观的估计下，三分之一的网络运行在额外需求由燃煤或天然气满足的电网上。组合在改善因为经济推动那个方向，但"在改善"和"干净"是不同的词。
 
-**The water and e-waste critiques deserve straight answers.** The water-footprint estimate published in a peer-reviewed sustainability journal is a legitimate piece of accounting (cooling, plus the water embedded in electricity generation), not FUD. The famous e-waste estimate, "as much as the Netherlands," rests on an assumption that miners scrap ASICs in under a year and a half, which the resale market and the long tail of older rigs running on cheap power both contradict. But the strong form of the critique survives the weak math: ASICs are single-purpose hardware, and the industry's recycling story is thinner than its energy story.
+**水和电子垃圾的批评值得正面回答。** 发表在同行评审可持续发展期刊上的水足迹估计是合理的会计（冷却，加上电力生产中嵌入的水），不是 FUD。那个著名的电子垃圾估计，"和荷兰一样多"，建立在一个假设上：矿工在不到一年半内报废 ASIC，而二手市场和在便宜电力上跑旧机器的长尾都与此矛盾。但批评的强形式在弱数学之外仍然成立：ASIC 是专用硬件，行业的回收故事比能源故事薄。
 
-**And the aggregate is the aggregate.** Roughly 173 TWh is real consumption with a real footprint, whatever its mix. The honest case for it has to be that what it buys is worth it, not that the number is small.
+**总量就是总量。** 大约 173 TWh 是真实消费有真实足迹，不管组合如何。对它的诚实辩护必须是它买到的东西值得，而不是数字小。
 
-The discipline, same as our [energy-fud](/glossary/energy-fud) entry puts it: engage the strong forms of the critique. The strong forms have answers. The weak forms get called FUD because they don't.
+纪律，和我们的 [energy-fud](/glossary/energy-fud) 词条一样：应对批评的强形式。强形式有答案。弱形式被称为 FUD 因为它们不。
 
-## The per-transaction fallacy
+## 每笔交易能耗的谬误
 
-One bad statistic deserves its own section, because you will see it everywhere: "each Bitcoin transaction uses as much energy as a household does in a month."
+一个糟糕的统计值得单独一节，因为你到处会看到它："每笔比特币交易消耗的能源相当于一户家庭一个月的用量。"
 
-This is a stock-and-flow error wearing a lab coat. Mining energy secures the *ledger* (all of it, every balance, the whole history), and its level is set by the bitcoin price and the [block subsidy](/glossary/block-subsidy), not by how many transactions flow through. Run twice the transactions and the energy draw does not double; run zero transactions for an hour and the miners do not power down. Dividing total energy by transaction count produces a number with the units of nonsense.
+这是一个穿着白大褂的存量-流量错误。挖矿能源保护的是*账本*（全部，每个余额，整个历史），其水平由比特币价格和[区块补贴](/glossary/block-subsidy)设定，而不是通过多少笔交易。交易翻倍能源消耗不会翻倍；一小时不做交易矿工也不会关机。总能源除以交易数产生一个单位的废话数字。
 
-It also misses where transactions actually happen. A single on-chain transaction can settle a batch of thousands of payments, close a Lightning channel that carried months of them, or move an exchange's entire internal ledger. Per-payment energy is unknowable and shrinking; per-ledger security is the thing being bought; the famous statistic measures neither.
+它还忽略了交易实际发生的地方。一笔链上交易可以结算数千笔付款的批次，关闭一个承载了数月交易的闪电通道，或移动交易所整个内部账本。每笔付款的能源消耗不可知且在缩小；每账本安全才是被买到的东西；那个著名统计两者都没衡量。
 
-## The honest uncertainty
+## 诚实的不确定性
 
-Things we do not know, stated plainly:
+我们不知道的事情，直说：
 
-- **What secures the chain when the subsidy runs out.** Mining is paid mostly by new issuance, which [halves](/glossary/halving-halvening) every four years. Whether transaction fees alone will fund an adequate security budget decades from now is a real open question, arguably Bitcoin's deepest, and energy spend is exactly where it will show up.
-- **Whether the mix numbers converge.** Self-reported industry surveys and academic models still disagree by ten points or more. Better disclosure is narrowing it; it has not closed.
-- **Whether methane mitigation scales** beyond the advocacy-stage projects, or stays a rounding error with great marketing.
-- **Whether the social license holds.** Granbury-style fights determine where mining can physically exist. An industry that wins grid arguments and loses zoning ones still loses.
+- **补贴耗尽后什么保证链的安全。** 挖矿主要由新发行支付，每四年[减半](/glossary/halving-halvening)。几十年后仅交易手续费是否足以资助足够的安全预算是一个真正的开放问题，可以说是比特币最深的，而能源支出正是它将显现的地方。
+- **能源组合数字是否收敛。** 自报行业调查和学术模型仍相差十个百分点或更多。更好的披露在缩小差距；尚未关闭。
+- **甲烷减排是否规模化** 超过倡导阶段项目，还是停留在有很好营销的舍入误差。
+- **社会许可是否维持。** Granbury 式的争斗决定了挖矿能在哪里物理存在。一个赢得了电网辩论但输了区划辩论的行业仍然输了。
 
-These uncertainties do not change the frame. They sharpen it: the energy story is a live negotiation between incentives that genuinely point somewhere good and an industry that does not get graded on intentions.
+这些不确定性不改变框架。它们使之更尖锐：能源故事是激励真正指向好方向和不被打分的行业之间的活跃谈判。
 
-## Closing
+## 结语
 
-Bitcoin spends energy on purpose. The spend is the security; the security is the product. The honest debate is whether what it buys (final settlement, neutral money, a ledger nobody can quietly rewrite) is worth a measurable slice of the world's electricity, and who gets to decide.
+比特币有意消耗能源。消耗就是安全；安全就是产品。诚实的辩论是它买到的东西（最终结算、中性货币、一个没人能悄悄重写的账本）是否值得世界上可衡量的电力切片，以及谁有权决定。
 
-Argue that question with real numbers. We just gave you ours.
+用真实数字争论那个问题。我们刚给了你我们的。
 
 ---
 
-**Sources and further reading**
+**来源和延伸阅读**
 
 - Cambridge Bitcoin Electricity Consumption Index: https://ccaf.io/cbnsi/cbeci
 - Riot Platforms August 2023 production report (SEC filing): https://www.sec.gov/Archives/edgar/data/1167419/000155837023015517/riot-20230906xex99d1.htm

@@ -1,12 +1,12 @@
 ---
-title: "Bitcoin Vault"
+title: "比特币金库"
 slug: bitcoin-vault
 draft: false
-shortDefinition: "A security-focused wallet setup, often using special scripts or multisig to introduce a delay or multiple steps before spending."
+shortDefinition: "一种注重安全的钱包设置，通常使用特殊脚本或多签在花费前引入延迟或多个步骤。"
 keyTakeaways:
-  - "Introduces delays or extra checks before spending"
-  - "Often uses time locks or multiple sigs for added security"
-  - "Minimizes damage from compromised keys or theft"
+  - "在花费前引入延迟或额外检查"
+  - "通常使用时间锁或多签增加安全性"
+  - "最小化密钥泄露或被盗的损害"
 sources: []
 relatedTerms:
   - bitcoin-inheritance-planning
@@ -24,23 +24,23 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Bitcoin vault is a self-custody construction that uses script-level constraints to force withdrawals through a multi-step, delayed process - giving the owner time to detect and cancel unauthorized withdrawals before the funds actually move.
+比特币金库是一种自托管构造，使用脚本级约束强制提币通过多步、延迟流程——给所有者时间在资金实际移动前检测和取消未授权提款。
 
-The basic pattern:
+基本模式：
 
-1. **Funds are locked in a vault address** that requires a specific multi-step spending flow.
-2. **To withdraw, the owner broadcasts an "unvaulting" transaction** that doesn't immediately send funds out - it just starts a [CSV-locked](/glossary/checksequenceverify-csv) delay window (typically hours to days).
-3. **During the delay window**, the owner monitors. If the unvaulting was legitimate, it completes after the delay. If it was an attacker who somehow obtained the spending key, the owner uses an emergency recovery key to redirect the funds (typically to cold storage or a different vault).
-4. **At the end of the delay**, if no recovery was triggered, the funds go to the specified destination.
+1. **资金锁定在金库地址**，该地址要求特定的多步花费流程。
+2. **要提款，所有者广播一笔"解除金库"交易**，该交易不立即发出资金——它只是启动一个 [CSV 锁定](/glossary/checksequenceverify-csv)延迟窗口（通常数小时到数天）。
+3. **在延迟窗口期间**，所有者监控。如果解除金库是合法的，延迟后完成。如果是攻击者不知何故获得了花费密钥，所有者使用紧急恢复密钥将资金重定向（通常到冷存储或不同金库）。
+4. **在延迟结束时**，如果未触发恢复，资金到达指定目的地。
 
-What this buys: protection against catastrophic key compromise. Even if an attacker gets your hot signing key, they can't just immediately drain the wallet - they have to broadcast an unvaulting transaction that's visible on-chain, and you have time to respond with the recovery key.
+这带来的好处：防护灾难性密钥泄露。即使攻击者获得了你的热签名密钥，他们也不能立即清空钱包——他们必须广播一笔链上可见的解除金库交易，你有时间用恢复密钥响应。
 
-Vault constructions in 2026:
+2026 年的金库构造：
 
-- **Multisig-based vaults** are the most practical today. Setups like 2-of-3 with one key in cold storage and a CSV delay on the hot-side flow approximate vault behavior with existing Bitcoin script.
-- **Native vault opcodes** like OP_VAULT (a [covenant](/glossary/covenants) proposal by James O'Beirne) would make vaults much cleaner to construct, but no covenant opcode has activated yet.
-- **Commercial offerings** like Casa, Unchained, and others offer vault-like products that combine on-chain script delays with custodial recovery services.
+- **基于多签的金库**是当前最实用的。如 2-of-3 设置，一把密钥在冷存储，热端流程有 CSV 延迟，用现有比特币脚本近似金库行为。
+- **原生金库操作码**如 OP_VAULT（James O'Beirne 的[契约](/glossary/covenants)提案）将使金库构造更干净，但尚未有契约操作码激活。
+- **商业产品**如 Casa、Unchained 等提供类似金库的产品，结合链上脚本延迟和托管恢复服务。
 
-Vaults are most appropriate for **large, infrequently-spent holdings** - a serious savings stack rather than daily spending money. For day-to-day Bitcoin use, the operational complexity isn't worth it. For long-term cold storage, the catastrophic-failure protection is meaningful.
+金库最适合**大额、不常花费的持仓**——认真的储蓄而非日常消费。对于日常比特币使用，操作复杂性不值得。对于长期冷存储，灾难性故障保护是有意义的。
 
-See [Hierarchical Multisig](/glossary/hierarchical-multisig) for the multisig patterns vaults often build on and [Covenants](/glossary/covenants) for the proposed opcodes that would make vaults more powerful.
+参见[分层多签](/glossary/hierarchical-multisig)了解金库常基于的多签模式，[契约](/glossary/covenants)了解将使金库更强大的提议操作码。

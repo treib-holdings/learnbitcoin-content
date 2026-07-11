@@ -2,11 +2,11 @@
 title: "Full RBF"
 slug: full-rbf
 draft: false
-shortDefinition: "A proposal to make all unconfirmed transactions replaceable by default, easing fee bumps in a congested mempool."
+shortDefinition: "使所有未确认交易默认可替换的提案，在拥堵内存池中简化手续费加价。"
 keyTakeaways:
-  - "Makes fee updates simpler and more universal"
-  - "Discourages reliance on zero-confirmation transactions"
-  - "Hotly debated among merchants and node operators"
+  - "使手续费更新更简单和普遍"
+  - "阻止对零确认交易的依赖"
+  - "在商户和节点运营者中热烈辩论"
 sources: []
 relatedTerms:
   - absolute-fee
@@ -24,21 +24,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Full RBF means a [node](/glossary/node) accepts any fee-bump replacement of an unconfirmed [transaction](/glossary/transaction) - regardless of whether the original signaled [BIP-125 opt-in RBF](/glossary/replace-fee-rbf). In other words, *all* unconfirmed transactions are treated as replaceable.
+Full RBF 意味着[节点](/glossary/node)接受未确认[交易](/glossary/transaction)的任何手续费加价替换——无论原始交易是否标记了 [BIP-125 可选 RBF](/glossary/replace-fee-rbf)。换言之，*所有*未确认交易都被视为可替换。
 
-Bitcoin Core enabled full RBF behavior optionally starting in v24 (late 2022) and made it the default in v26 (late 2023). By 2026, a substantial portion of the node network runs full RBF, meaning the practical guarantee that "an unsignaled transaction won't be replaced" no longer holds.
+Bitcoin Core 从 v24（2022 年底）开始可选启用 full RBF 行为，在 v26（2023 年底）设为默认。到 2026 年，大部分节点网络运行 full RBF，意味着"未标记交易不会被替换"的实际保证不再成立。
 
-The argument **for** full RBF:
+**支持** full RBF 的论点：
 
-- It simplifies fee policy. Wallet implementations no longer need to track or care about the RBF-signaling bit.
-- It reflects the underlying reality. Miners always *could* mine whichever conflicting transaction paid them more; opt-in RBF was a relay-layer politeness, not a consensus rule.
-- It improves user experience for senders who need to bump fees.
+- 简化手续费策略。钱包实现不再需要跟踪或关心 RBF 标记位。
+- 反映底层现实。矿工总是*可以*挖出支付更多的冲突交易；可选 RBF 是中继层的礼貌，不是共识规则。
+- 改善需要加费的发送方用户体验。
 
-The argument **against**:
+**反对**论点：
 
-- It further erodes [zero-confirmation](/glossary/double-spend) payments. Merchants relying on "I saw it in the mempool" for instant settlement have to either wait for one confirmation or accept the risk of a replacement attempt.
-- It shifts the burden of "is this safe to act on?" onto merchants and exchanges, who must wait for confirmations.
+- 进一步侵蚀[零确认](/glossary/double-spend)支付。依赖"我在内存池中看到了"进行即时结算的商户必须等待一次确认或接受替换尝试的风险。
+- 将"这是否安全？"的负担转移到商户和交易所，他们必须等待确认。
 
-The pragmatic landscape in 2026: zero-conf was always weakly secure; full RBF just made the weakness obvious. The practical answer for instant payments is [Lightning](/glossary/lightning-network), which is genuinely instant and final. For on-chain, wait one confirmation. The era of "I'll trust an unconfirmed transaction because most people don't RBF" is ending.
+2026 年的务实格局：零确认一直安全性弱；full RBF 只是使弱点明显化了。即时支付的实践答案是[闪电网络](/glossary/lightning-network)，它是真正即时和最终的。对于链上，等待一次确认。基于"大多数人不会 RBF 所以我信任未确认交易"的时代正在终结。
 
-See [Replace-by-Fee (RBF)](/glossary/replace-fee-rbf) for the opt-in flavor full RBF extends.
+可选 RBF 参见[Replace-by-Fee（RBF）](/glossary/replace-fee-rbf)。

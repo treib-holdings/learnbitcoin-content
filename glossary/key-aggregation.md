@@ -1,12 +1,12 @@
 ---
-title: "Key Aggregation"
+title: "密钥聚合"
 slug: key-aggregation
 draft: false
-shortDefinition: "Combining multiple public keys into one aggregated key (e.g., MuSig/Schnorr) to reduce on-chain data and increase privacy."
+shortDefinition: "将多个公钥组合成一个聚合密钥（如 MuSig/Schnorr），以减少链上数据并提升隐私。"
 keyTakeaways:
-  - "Consolidates multiple pubkeys into a single on-chain entity"
-  - "Saves block space, lowering transaction fees"
-  - "Obscures multisig usage, enhancing privacy"
+  - "将多个公钥合并为单一的链上实体"
+  - "节省区块空间，降低交易手续费"
+  - "隐藏多签使用，增强隐私"
 sources: []
 relatedTerms:
   - musig
@@ -17,15 +17,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Key aggregation combines multiple public keys into a single public key that requires all (or a threshold) of the original key holders to sign. To outside observers, the aggregated key and the resulting signature are indistinguishable from a single-sig wallet.
+密钥聚合将多个公钥组合成一个单一公钥，需要所有（或阈值数量的）原始密钥持有者签名。对外部观察者来说，聚合密钥和生成的签名与单签钱包无法区分。
 
-This is a Schnorr property, not an ECDSA one. ECDSA composition doesn't work cleanly; Schnorr's linearity is what makes aggregation possible. Taproot (BIP 340 / 341, activated November 2021) unlocked it on Bitcoin.
+这是 Schnorr 的属性，而非 ECDSA 的。ECDSA 的组合不能干净地工作；Schnorr 的线性性使聚合成为可能。Taproot（BIP 340 / 341，2021 年 11 月激活）在比特币上解锁了这一功能。
 
-The main protocols:
+主要协议：
 
-- MuSig and MuSig2: interactive n-of-n key aggregation. All cosigners must participate to produce a signature. MuSig2 needs two rounds of communication; the original MuSig needed three.
-- FROST (Flexible Round-Optimized Schnorr Threshold): m-of-n threshold aggregation. Any m of n signers can produce a single aggregated signature; the remaining n-m sit out.
+- MuSig 和 MuSig2：交互式 n-of-n 密钥聚合。所有共签者必须参与产生签名。MuSig2 需要两轮通信；原始 MuSig 需要三轮。
+- FROST（Flexible Round-Optimized Schnorr Threshold）：m-of-n 阈值聚合。n 个签名者中的任意 m 个可以产生一个聚合签名；其余 n-m 个不参与。
 
-Why it matters: a 3-of-3 MuSig2 wallet looks on-chain like a regular Taproot single-sig output. A federation using FROST looks identical to any Taproot single-sig spend. Multisig users get the privacy and fee profile of regular users, instead of broadcasting their security model on-chain.
+为什么重要：3-of-3 MuSig2 钱包在链上看起来就像普通的 Taproot 单签输出。使用 FROST 的联邦在链上看起来与任何 Taproot 单签花费完全相同。多签用户获得了普通用户的隐私和费用特征，而不是在链上广播他们的安全模型。
 
-The tradeoff is interactivity. Pre-Taproot multisig (P2WSH) doesn't require cosigners to be online at signing time; aggregated schemes do. Most current production multisig (cold storage, hardware-wallet quorums) is still classical for that reason. Aggregated schemes are growing fastest in Lightning channels and protocol-level constructions where interactivity is already required.
+权衡是交互性。Taproot 之前的多签（P2WSH）不需要共签者在签名时在线；聚合方案需要。目前大多数生产多签（冷存储、硬件钱包仲裁）仍使用经典多签正是出于这个原因。聚合方案在闪电通道和协议级构造中增长最快，因为这些场景本身就已经需要交互性。

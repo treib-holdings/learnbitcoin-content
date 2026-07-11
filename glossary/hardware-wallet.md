@@ -1,12 +1,12 @@
 ---
-title: "Hardware Wallet"
+title: "硬件钱包"
 slug: hardware-wallet
 draft: false
-shortDefinition: "A physical device (e.g., Ledger, Trezor) storing private keys offline, signing transactions in a secure environment."
+shortDefinition: "离线存储私钥并在安全环境中签名交易的物理设备（如 Ledger、Trezor）。"
 keyTakeaways:
-  - "Offline key storage prevents software-based theft"
-  - "User verifies transaction details on a secure screen"
-  - "A middle ground between pure paper wallets and online wallets"
+  - "离线密钥存储防止软件窃取"
+  - "用户在安全屏幕上验证交易详情"
+  - "纯纸钱包和在线钱包之间的中间方案"
 sources: []
 relatedTerms:
   - air-gapped
@@ -31,19 +31,19 @@ sameAs:
 liveWidget: ~
 ---
 
-A hardware wallet is a small, dedicated device whose only job is to store [private keys](/glossary/private-key) and sign [transactions](/glossary/transaction). The keys are generated inside the device and never leave it. When you want to spend, the unsigned transaction is sent in, you verify the destination and amount on the device's built-in screen, you confirm, and a signed transaction comes back out. Your laptop never sees the key.
+硬件钱包是一种小型专用设备，其唯一工作是存储[私钥](/glossary/private-key)和签署[交易](/glossary/transaction)。密钥在设备内部生成且永不离开。当你想花费时，未签名交易被送入，你在设备内置屏幕上验证目的地和金额，你确认，签名交易出来。你的笔记本电脑永远看不到密钥。
 
-The threat model this defends against: a fully compromised PC. If your computer is running malware that watches every keystroke and reads every file, a hot wallet's keys are toast - the attacker can just sign transactions to themselves at will. With a hardware wallet, the malware can show you a fake "Send to your friend" screen on the PC, but when the actual transaction goes to the hardware device, the device shows you the *real* destination address and amount on its trusted screen. You see the malware's substituted address, you reject the transaction, you're safe.
+它防御的威胁模型：完全被入侵的电脑。如果你的电脑运行着监控每次按键和读取每个文件的恶意软件，热钱包的密钥就完蛋了——攻击者可以随意向自己签名交易。使用硬件钱包，恶意软件可以在电脑上显示假的"发送给你朋友"屏幕，但当实际交易发送到硬件设备时，设备在其可信屏幕上显示*真实*的目标地址和金额。你看到恶意软件替换的地址，你拒绝交易，你就安全了。
 
-What to look for when picking one:
+选择时要注意：
 
-- **Open-source firmware.** Closed-source signing devices ask you to trust the manufacturer's word that the device does what it claims. Open firmware lets the broader community audit the code that runs on the chip. Several mature open-source signing devices are widely available; the Bitcoin community generally recommends these over closed-source alternatives.
-- **Bitcoin-only firmware, if offered.** Multicoin firmware adds attack surface for support you'll never use. A simpler codebase is an easier-to-audit codebase.
-- **An air-gapped workflow, ideally.** Devices that sign via QR code or microSD card never connect to a computer at all - even via USB - which closes off another category of attacks.
-- **Active development and a credible security history.** Hardware-wallet vulnerabilities are routinely discovered and patched; you want a vendor that ships fixes promptly and publicly.
+- **开源固件。** 闭源签名设备要求你信任制造商的声称。开放固件让更广泛的社区审计在芯片上运行的代码。几个成熟的开源签名设备广泛可用；比特币社区通常推荐这些而非闭源替代品。
+- **仅比特币固件（如果提供）。** 多币种固件为你永远不会使用的支持增加了攻击面。更简单的代码库是更容易审计的代码库。
+- **气隙工作流程，理想情况下。** 通过二维码或 microSD 卡签名的设备完全不连接电脑——甚至通过 USB——关闭了另一类攻击。
+- **活跃开发和可信的安全历史。** 硬件钱包漏洞经常被发现和修补；你需要一个及时发布修复并公开的供应商。
 
-Recommendations rot fast. Rather than name specific products here, search "open-source bitcoin hardware wallet" or check what experienced self-custody-focused Bitcoiners are currently endorsing.
+推荐很快过时。与其在这里点名具体产品，不如搜索"开源比特币硬件钱包"或查看经验丰富的自托管比特币用户目前推荐什么。
 
-A hardware wallet is not magic. The [seed phrase](/glossary/seed-phrase) it generates is still the master backup; if someone gets that phrase, they don't need the device. The device's job is to keep the keys offline during day-to-day use, not to replace good phrase hygiene.
+硬件钱包不是魔法。它生成的[助记词](/glossary/seed-phrase)仍然是主备份；如果有人拿到了那个词组，他们不需要设备。设备的工作是在日常使用中保持密钥离线，而不是取代良好的词组卫生。
 
-For amounts above casual-spending size, a hardware wallet is the floor. Multisig with multiple hardware devices is the next level up. See [Journey: Be Your Own Bank](/journey/be-your-own-bank) for the walkthrough.
+对于超过日常花费规模的金额，硬件钱包是底线。多硬件设备的多签是更高一级。完整指南参见[旅程：做自己的银行](/journey/be-your-own-bank)。

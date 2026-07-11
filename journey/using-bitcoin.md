@@ -1,15 +1,16 @@
----title: "Using Bitcoin"
+---
+title: "使用比特币"
 slug: using-bitcoin
 draft: false
 status: live
 published: "2026-05-15"
 order: 5
 estimatedMinutes: 30
-tagline: "On-chain transactions, fees in practice, Lightning basics. Now that you have it, here's how to actually use it."
+tagline: "链上交易、手续费实战、闪电网络基础。既然你有了比特币，下面教你实际怎么用。"
 prerequisites: ["be-your-own-bank"]
 relatedTerms: ["lightning-network", "transaction-fee", "fee-estimation", "lightning-channel", "payment-channel", "bolt-11", "htlc-hashed-time-locked-contract", "replace-fee-rbf", "fee-bumping"]
 ogImage: "/diagrams/og/bitcoin-lifecycle.png"
-ogImageAlt: "Final frame of the Bitcoin transaction lifecycle animation. Alice's wallet on the left shows the transaction she sent (To bc1q...x4z, Amount 0.1 BTC, Fee 20 sat/vB, SEND button). Bob's wallet on the right shows the receipt (+0.1 BTC) with the confirmations counter at Final in orange. The blockchain strip across the bottom shows seven sequential blocks 920,247 through 920,253; Alice's block at 920,251 is highlighted orange. Caption: Three blocks deep. Effectively final."
+ogImageAlt: "比特币交易生命周期的最终画面。左侧 Alice 的钱包显示了她发送的交易（To bc1q...x4z, Amount 0.1 BTC, Fee 20 sat/vB, SEND 按钮）。右侧 Bob 的钱包显示收到（+0.1 BTC），确认计数器显示橙色的 Final。底部的区块链条显示了 920,247 到 920,253 的七个连续区块；Alice 的区块 920,251 以橙色高亮。标题：三个区块深度。实质上已最终确定。"
 sources:
   - { label: "mempool.space - live fee dashboard", url: "https://mempool.space" }
   - { label: "Bitcoin developer guide - transactions", url: "https://developer.bitcoin.org/devguide/transactions.html" }
@@ -18,7 +19,7 @@ sources:
   - { label: "ChainQuery - fee pressure dashboard", url: "https://chainquery.com/fee-pressure" }
 ---
 
-> **Where you're going:** You'll send an on-chain transaction with a fee you chose deliberately, generate a Lightning invoice, and receive a Lightning payment. Both should feel different. Both should leave you with a working mental model of when to use which.
+> **你要去哪里：** 你将发送一笔自己选定手续费的链上交易，生成一张闪电网络发票，并收到一笔闪电网络支付。两种体验应该感觉不同。两种都应该让你建立一个可用的心智模型，知道什么时候用哪个。
 
 <figure>
   <video
@@ -31,41 +32,41 @@ sources:
     controls
     controlslist="nodownload noplaybackrate noremoteplayback"
     preload="metadata"
-    aria-label="Animated walkthrough of an on-chain Bitcoin transaction lifecycle. Alice's wallet shows three fields - destination address, amount, fee rate - and a SEND button. A transaction packet leaves her wallet and joins the mempool, a fee-sorted queue of unconfirmed transactions. Alice's transaction slots into its fee tier. A miner selects the top of the mempool; the chosen transactions including Alice's zip into a forming block. The block is sealed and snaps onto the end of the chain. Bob's wallet receives a notification of plus 0.1 BTC. A confirmation counter ticks from 1 to 2 to 3 to Final. Closing pillars: Public. Final. Yours."
+    aria-label="链上比特币交易生命周期的动画演示。Alice 的钱包显示三个字段——目标地址、金额、费率——以及一个 SEND 按钮。一个交易数据包离开她的钱包进入内存池，一个按手续费排序的未确认交易队列。Alice 的交易插入到对应的费率层级。一个矿工从内存池顶部选取；包括 Alice 的在内的被选中的交易被打入正在形成的区块。区块被封口并 snap 到链的末端。Bob 的钱包收到 +0.1 BTC 的通知。确认计数器从 1 跳到 2 到 3 再到 Final。收尾字幕：Public. Final. Yours."
   ></video>
-  <figcaption>Send. Sit in the mempool sorted by fee. Sealed into a block. Snapped onto the chain. Confirmed at the recipient. No intermediary anywhere in the loop.</figcaption>
+  <figcaption>发送。在内存池中按手续费排队。被封入区块。snap 到链上。在接收方确认。整个环路中没有任何中间人。</figcaption>
 </figure>
 
-## 1. You Hold Some. Now What?
+## 1. 你有了一些币。然后呢？
 
-Self-custody is the foundation. *Use* is what gives it a point.
+自托管是基础。*使用*才是它的意义所在。
 
-Most people, once they self-custody, treat their bitcoin like a savings bond they're afraid to touch. That's fine - bitcoin is genuinely excellent as a savings instrument, and *not selling* is a real strategy. But Bitcoin is also money, and money that never circulates isn't really money. This chapter is how to use it.
+大多数人自托管之后，把比特币当成不敢碰的储蓄债券。这没问题——比特币作为储蓄工具确实出色，*不卖*本身就是一种策略。但比特币也是钱，而从不流通的钱不算真正的钱。这一章讲怎么用它。
 
-The two layers we care about:
+我们关心的两层：
 
-- **On-chain.** Transactions that settle in a Bitcoin block. Final, global, slower, fee-bearing. Best for: large amounts, infrequent payments, anything you want recorded permanently.
-- **Lightning.** Payments that move through a network of bidirectional payment channels built on top of Bitcoin. Instant, near-free, smaller amounts. Best for: coffee, tips, podcast subscriptions, micropayments, day-to-day.
+- **链上。** 在比特币区块中结算的交易。最终、全球性、较慢、有手续费。适合：大额、不频繁的支付、任何你想永久记录的事情。
+- **闪电网络。** 通过构建在比特币之上的双向支付通道网络移动的支付。即时、几乎免费、小额。适合：咖啡、打赏、播客订阅、小额支付、日常。
 
-You'll use both. Knowing which is which is most of the skill.
+两层你都会用。知道什么时候用哪个，就是大部分技能所在。
 
-## 2. The Anatomy of Sending On-Chain
+## 2. 链上发送的解剖
 
-Open your wallet. Tap Send. You'll be asked for three things:
+打开你的钱包。点击发送。你会被要求三样东西：
 
-- **A destination address.** A long string starting with `bc1` (modern format) or `3` or `1` (older formats). Always paste from a trusted source. Always double-check the first and last several characters. Treat addresses like account numbers, not URLs.
-- **An amount.** In BTC or sats, your call. Modern wallets let you toggle.
-- **A fee rate.** Usually in **sat/vB** (satoshis per virtual byte) - how much you'll pay per byte of transaction data.
+- **目标地址。** 一长串以 `bc1`（现代格式）或 `3` 或 `1`（旧格式）开头的字符。始终从可信来源粘贴。始终再次检查开头和结尾的几个字符。把地址当成账号，不是 URL。
+- **金额。** 以 BTC 或聪为单位，随你选。现代钱包可以切换。
+- **费率。** 通常以 **sat/vB**（聪/虚拟字节）为单位——你为每字节的交易数据付多少钱。
 
-A few things to internalize:
+几点需要内化：
 
-- **Fees are not a percentage of the amount.** Sending 1 BTC costs the same fee as sending 0.001 BTC (assuming both transactions use the same number of inputs and outputs). The fee is paying for *block space*, not for moving value. This is why Bitcoin is cheaper for large transfers and proportionally expensive for tiny ones - and why Lightning exists.
-- **Always send a tiny test first** when you're using a new address for any serious amount. A few thousand sats. Confirm it arrived. Then send the rest.
-- **Address checking is your job.** No central authority can reverse a misdirected transaction. Bitcoin works exactly like Bitcoin says it works.
+- **手续费不是金额的百分比。** 发 1 BTC 和发 0.001 BTC 的手续费一样（假设两笔交易使用相同数量的输入和输出）。手续费是为*区块空间*付费，不是为转移价值付费。这就是为什么比特币对大额转账更便宜，对小额转账按比例更贵——也是闪电网络存在的原因。
+- **使用新地址发大额时，先发一小笔测试。** 几千聪。确认到了。再发其余的。
+- **检查地址是你的事。** 没有中央机构能撤销发错的交易。比特币就是按比特币说的那样工作的。
 
-Most wallets give you three suggested fee rates (e.g., 2 sat/vB, 5 sat/vB, 12 sat/vB) corresponding to "next several blocks," "within an hour," "next block." These are estimates based on the current state of the mempool.
+大多数钱包给你三个建议费率（例如 2 sat/vB、5 sat/vB、12 sat/vB），分别对应"接下来几个区块"、"一小时内"、"下一个区块"。这些是根据内存池当前状态给出的估算。
 
-## 3. Reading the Mempool
+## 3. 读懂内存池
 
 <figure>
   <video
@@ -78,68 +79,68 @@ Most wallets give you three suggested fee rates (e.g., 2 sat/vB, 5 sat/vB, 12 sa
     controls
     controlslist="nodownload noplaybackrate noremoteplayback"
     preload="metadata"
-    aria-label="Animated mempool lifecycle. A transaction is broadcast and propagates across four nodes, each of which adds it to their local mempool. Transactions are sorted by fee rate into bands - 50 plus sat per virtual byte at the top, scaling down to 1-5 sat per virtual byte at the bottom. Alice broadcasts at a low fee rate early; Bob broadcasts later at a high fee rate. A miner mines the next block by scooping the top fee band. Bob confirms in that block. Time passes; subsequent blocks drain the mempool further; eventually Alice's low-fee transaction confirms several blocks later. Closing tagline: Pay the rate. Or wait."
+    aria-label="内存池生命周期的动画。一笔交易被广播并传播到四个节点，每个节点将其加入本地内存池。交易按费率排序成带——顶部是 50+ 聪/虚拟字节，往下递减到底部的 1-5 聪/虚拟字节。Alice 在早期以低费率广播；Bob 后来以高费率广播。矿工挖下一个区块时从顶部费率带捞取。Bob 在那个区块中确认。时间推移；后续区块进一步排空内存池；最终 Alice 的低费率交易在几个区块后确认。收尾字幕：Pay the rate. Or wait."
   ></video>
-  <figcaption>The mempool is a fee-rate-sorted queue. Higher fees confirm first. Lower fees wait, or eventually drop out and have to be rebroadcast.</figcaption>
+  <figcaption>内存池是一个按费率排序的队列。手续费高的先确认。手续费低的等着，或者最终被淘汰后需要重新广播。</figcaption>
 </figure>
 
-The mempool is the queue of unconfirmed transactions, sorted by fee rate. Every node has its own copy; they're nearly identical (see chapter 3).
+内存池（mempool）是未确认交易的队列，按费率排序。每个节点都有自己的副本；它们几乎完全一致（见第 3 章）。
 
-When the mempool is empty (mining capacity exceeds demand), almost any fee gets in next block. When it's congested (demand exceeds capacity), the fee market gets real. During sustained demand for block space, fee rates can spike from 1 sat/vB to 500+ sat/vB for a few hours.
+当内存池空闲时（挖矿产能超过需求），几乎任何手续费都能进下一个区块。当拥堵时（需求超过产能），费率市场就来真的了。在对区块空间的持续需求下，费率可以在几个小时内从 1 sat/vB 飙升到 500+ sat/vB。
 
-**Tools that show you the live state:**
+**显示实时状态的工具：**
 
-- [**mempool.space**](https://mempool.space) - the standard. Live mempool visualization, fee estimates, block timing.
-- [**ChainQuery's fee pressure dashboard**](https://chainquery.com/fee-pressure) - live read on what's clearing right now, served from a real Bitcoin node.
-- Your own node's [`estimatesmartfee`](https://chainquery.com/rpc/estimatesmartfee) - if you run one.
+- [**mempool.space**](https://mempool.space)——标准工具。实时内存池可视化、费率估算、出块时间。
+- [**ChainQuery 的费率压力看板**](https://chainquery.com/fee-pressure)——实时读取当前什么在被打包，来自一个真实的比特币节点。
+- 你自己节点的 [`estimatesmartfee`](https://chainquery.com/rpc/estimatesmartfee)——如果你运行了的话。
 
-A sensible workflow:
+一个合理的工作流：
 
-1. Check current fee estimates before composing a transaction
-2. Pick a fee rate based on how soon you need it confirmed
-3. If you're not in a hurry, pick a low rate; mempool conditions usually clear within hours
-4. If you are in a hurry, pay more
+1. 组装交易前先查看当前费率估算
+2. 根据你需要多快确认来选择费率
+3. 如果不急，选低费率；内存池状况通常几小时内就会缓解
+4. 如果急，多付一点
 
-There is no "right" fee. There is "the fee you need to pay to get into the next *N* blocks." Pick *N* based on your patience.
+没有"正确"的手续费。只有"你需要付多少才能在接下来 *N* 个区块内被打包"。根据你的耐心选 *N*。
 
-## 4. Replace-by-Fee (RBF) - When Your Tx Gets Stuck
+## 4. 替换手续费（RBF）——当你的交易卡住了
 
 <figure>
-  <img src="/diagrams/bumping-stuck-tx.svg" alt="Two-row diagram of the two mechanisms for unsticking a Bitcoin transaction. Top row, RBF: a stuck transaction at 5 sat per virtual byte (gray) is replaced by the same transaction at 50 sat per virtual byte (orange), which confirms in the next block while the original disappears. Bottom row, CPFP: a stuck parent at 5 sat per virtual byte (gray) has its change output spent by a new child transaction at 50 sat per virtual byte (orange); both parent and child end up in the next block because the miner sees the combined fee. Tagline: Your transaction is not stuck forever. It is at the wrong fee level for current conditions." />
-  <figcaption>Two mechanisms, same outcome: a stuck transaction gets into the next block. RBF replaces the original. CPFP rescues it via a high-fee child.</figcaption>
+  <img src="/diagrams/bumping-stuck-tx.svg" alt="两行图，展示两种解卡比特币交易的机制。上面一行 RBF：一笔卡在 5 聪/虚拟字节的交易（灰色）被同一笔交易在 50 聪/虚拟字节的版本（橙色）替换，后者在下一个区块中确认，原始版本从内存池消失。下面一行 CPFP：一笔卡住的父交易在 5 聪/虚拟字节（灰色），其找零输出被一笔新的子交易以 50 聪/虚拟字节（橙色）花费；父子俩都进入了下一个区块，因为矿工看到了合并手续费。标语：你的交易不是永远卡住了。它只是在当前条件下费率不对。" />
+  <figcaption>两种机制，同一个结果：卡住的交易进入了下一个区块。RBF 替换原始交易。CPFP 通过高费率子交易来救援。</figcaption>
 </figure>
 
-Suppose you sent at 5 sat/vB and then a mempool surge raised the floor to 50 sat/vB. Your transaction will sit there, possibly for hours, possibly until the mempool drops back. Bitcoin doesn't time out transactions, but if you can't wait:
+假设你以 5 sat/vB 发了一笔交易，然后内存池飙升，门槛涨到 50 sat/vB。你的交易会卡在那里，可能几小时，可能等内存池回落。比特币不会让交易超时，但如果你等不了：
 
-**Replace-by-Fee (RBF)** ([BIP-125](https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki)) lets you rebroadcast the same transaction with a higher fee. Miners prefer the higher-paying version; the original disappears from the mempool. Most modern wallets do this with one button - usually labeled "Boost," "Bump fee," or "Speed up."
+**替换手续费（Replace-by-Fee，RBF）**（[BIP-125](https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki)）允许你以更高手续费重新广播同一笔交易。矿工更喜欢付费更高的版本；原始交易从内存池消失。大多数现代钱包一个按钮就能做这件事——通常叫"加速"、"提升费率"或"加快"。
 
-The mechanics: RBF requires the original transaction to have signaled "replaceable" (a flag in the transaction, per BIP-125). Most wallets enable this by default. If yours didn't, you have another option called **Child Pays for Parent (CPFP)**, where you spend the *change output* of your stuck transaction with a higher fee, dragging the parent into a block alongside it.
+机制：RBF 要求原始交易标记了"可替换"（交易中的一个标志，按 BIP-125 定义）。大多数钱包默认开启。如果你的钱包没开启，你还有另一个选择叫 **子为父付（Child Pays for Parent，CPFP）**，你用更高费率花费卡住交易的*找零输出*，把父交易一起拖进区块。
 
-Don't memorize the mechanics. Memorize the principle: **your transaction isn't stuck forever; it's just at the wrong fee level for current conditions.** Wait or bump. And if the fee is so low that it never confirms at all, the transaction eventually drops out of the mempool (typically after about two weeks at most nodes' default expiry) and the funds return to spendable in your wallet. You never lose bitcoin to a stuck transaction - the UTXOs are still yours, the broadcast just didn't take.
+不用记住机制。记住原则：**你的交易不是永远卡住了，它只是在当前条件下费率不对。** 等或者加速。如果费率低到根本不可能确认，交易最终会从内存池中掉出（大多数节点默认过期时间约两周），资金会回到你钱包中可花费的状态。你永远不会因为交易卡住而丢失比特币——UTXO 还是你的，只是广播没成功。
 
-## 5. The Lightning Network: An Overview
+## 5. 闪电网络：概述
 
-On-chain Bitcoin is excellent at high-value, low-frequency settlement. It is *not* the right layer for buying a $4 coffee. The economics don't work - you'd pay $1 in fees, your coffee would take an hour to confirm, and the block space cost would outweigh the value of the transaction.
+链上比特币擅长高价值、低频率的结算。它*不*适合买一杯 4 美元的咖啡。经济上不成立——你要付 1 美元手续费，咖啡要等一小时确认，区块空间成本远超交易价值。
 
-The Lightning Network solves this by moving small, frequent payments **off-chain**, while keeping Bitcoin's settlement guarantees.
+闪电网络（Lightning Network）通过将小额、频繁的支付移到**链下**来解决这个问题，同时保持比特币的结算保证。
 
-The mechanics, simplified:
+机制简化版：
 
-1. **Open a channel.** Two parties (you and another node) commit some bitcoin to a 2-of-2 multisig address via an on-chain transaction. That's the only on-chain transaction you'll need for thousands of subsequent payments between you.
-2. **Update the balance.** Inside the channel, you and the other party can update the relative balance as many times as you want, near-instantly, with cryptographic guarantees. Each update is a signed message; the latest one is the "current truth."
-3. **Route payments.** If you don't have a direct channel with the person you want to pay, the network finds a path through other people's channels - A pays B, who pays C, who pays your destination - using a clever mechanism called HTLCs that makes each hop atomic.
-4. **Close the channel.** Either party can close at any time by broadcasting the latest channel state on-chain. The final balances settle on Bitcoin's main chain. You're back to layer 1.
+1. **开通道。** 两方（你和另一个节点）通过一笔链上交易将一些比特币锁定到一个 2-of-2 多签地址。这是你们之间后续成千上万笔支付唯一需要的链上交易。
+2. **更新余额。** 在通道内，你和对方可以随意更新相对余额，近乎即时，有密码学保证。每次更新都是一条签名消息；最新的一条是"当前真相"。
+3. **路由支付。** 如果你和要付款的人没有直接通道，网络会通过其他人的通道找到一条路径——A 付给 B，B 付给 C，C 付给你的目标——使用一种叫 HTLC（哈希时间锁定合约）的巧妙机制让每一跳都是原子性的。
+4. **关通道。** 任何一方都可以随时通过在链上广播最新通道状态来关闭通道。最终余额在比特币主链上结算。你回到了第 1 层。
 
 <figure>
-  <img src="/diagrams/lightning-channel.svg" alt="A Lightning channel between Alice and Bob. On Bitcoin Mainnet, an OPEN block locks BTC into a 2-of-2 multisig; later, a CLOSE block settles the final balances back to mainnet. Between the two on-chain anchors, the channel runs off-chain with many back-and-forth payments. Alice and Bob each have dashed channel lines to additional ghost nodes, indicating they also have channels into the wider Lightning network." />
-  <figcaption>One channel between Alice and Bob: open once on-chain, transact freely off-chain, close on-chain if ever. Each side has other channels to the wider network.</figcaption>
+  <img src="/diagrams/lightning-channel.svg" alt="Alice 和 Bob 之间的闪电通道。在比特币主网上，一个 OPEN 区块将 BTC 锁定在 2-of-2 多签中；之后，一个 CLOSE 区块将最终余额结算回主网。在两个链上锚点之间，通道在链下运行，有大量来回支付。Alice 和 Bob 各自有一条虚线通道连接到额外的幽灵节点，表示他们也有通向更广阔闪电网络的通道。" />
+  <figcaption>Alice 和 Bob 之间的一个通道：链上开一次，链下自由交易，需要时链上关闭。每侧都有其他通道连接到更广阔的网络。</figcaption>
 </figure>
 
-Routing payments through Lightning takes milliseconds. The fees are typically a few sats - orders of magnitude smaller than on-chain fees. The settlement is final the moment the recipient sees the payment.
+通过闪电网络路由支付只需几毫秒。手续费通常是几聪——比链上手续费低几个数量级。收款方看到支付的那一刻，结算就是最终的。
 
-The whitepaper for Lightning ([Poon & Dryja, 2016](https://lightning.network/lightning-network-paper.pdf)) is dense but readable. You don't need to read it to use Lightning, but you should know it exists.
+闪电网络的白皮书（[Poon & Dryja, 2016](https://lightning.network/lightning-network-paper.pdf)）内容密集但可读。你不需要读它就能用闪电网络，但你应该知道它存在。
 
-## 6. Lightning in Practice
+## 6. 闪电网络实战
 
 <figure>
   <video
@@ -152,71 +153,71 @@ The whitepaper for Lightning ([Poon & Dryja, 2016](https://lightning.network/lig
     controls
     controlslist="nodownload noplaybackrate noremoteplayback"
     preload="metadata"
-    aria-label="Animated Lightning Network mesh. Alice has a single channel to Bob. She uses that same channel to pay Bob directly, then to route payments to Carol, Frank, and Ivy through the network. The animation then reverses to show payments flowing back to Alice through the same one channel. The bidirectional flow is the lesson: one channel, many destinations, both directions."
+    aria-label="闪电网络网格动画。Alice 和 Bob 之间有一个通道。她用同一通道直接付给 Bob，然后通过网络路由支付给 Carol、Frank 和 Ivy。动画然后反转，展示支付通过同一通道流回 Alice。双向流动就是课程：一个通道，多个目的地，两个方向。"
   ></video>
-  <figcaption>Alice opens one channel - to Bob. Same channel routes payments to anyone reachable in the network, in either direction.</figcaption>
+  <figcaption>Alice 开了一个通道——连到 Bob。同一通道路由支付给网络中任何可达的人，双向都行。</figcaption>
 </figure>
 
-Three categories of Lightning wallets, ordered by sovereignty. The category matters more than the specific app.
+三类闪电钱包，按主权程度排序。类型比具体应用更重要。
 
-**Custodial.** Someone else runs the Lightning node; you have an account. Easiest setup, almost no operational complexity. You have reintroduced a trusted third party. Fine for tiny working balances, the same way a coffee-money wallet on your phone is fine. *Not where you store anything serious.*
+**托管型。** 别人运行闪电节点；你有一个账户。最容易设置，几乎没有运维复杂度。你重新引入了一个信任的第三方。适合极小的工作余额，就像你手机上的咖啡钱包一样。*不是存放正经金额的地方。*
 
-**Non-custodial, managed.** You run a Lightning node *inside the app*, on your phone, with channel management abstracted. The keys are yours; the operational complexity is handled. The sweet spot for most users post-chapter-4.
+**非托管、托管式管理。** 你在应用*内*运行一个闪电节点，在手机上，通道管理被抽象掉了。密钥是你的；运维复杂度被处理了。大多数第 4 章之后的用户的最佳选择。
 
-**Fully sovereign.** You run a Lightning node on your own hardware. Maximum control, maximum complexity. Best paired with the node setup in [chapter 6 (Sovereignty)](/journey/sovereignty).
+**完全主权。** 你在自己的硬件上运行闪电节点。最大控制权，最大复杂度。最好配合[第 6 章（主权）](/journey/sovereignty)的节点设置一起用。
 
-> **Starting points, not gospel.** The Lightning wallet ecosystem moves quickly. Specific apps come and go; the categories are stable. Pick the simplest option in the category that fits your trust model, verify it is currently maintained, and start.
+> **起点，不是圣经。** 闪电钱包生态变化很快。具体应用来来去去；类别是稳定的。在你的信任模型适合的类别中选最简单的选项，确认它目前还在维护，然后开始。
 
-To receive a Lightning payment: in your wallet, tap "Receive," optionally enter an amount, and you'll get a long string starting with `lnbc...` (a [BOLT-11 invoice](/glossary/bolt-11)) plus a QR code. Anyone with a Lightning wallet can pay it.
+要接收闪电支付：在钱包里点击"接收"，可选输入金额，你会得到一串以 `lnbc...` 开头的长字符串（一张 [BOLT-11 发票](/glossary/bolt-11)）加一个 QR 码。任何有闪电钱包的人都可以付它。
 
-To send: paste an invoice, hit Pay, done. The payment completes in milliseconds.
+要发送：粘贴发票，点击支付，完成。支付在毫秒内完成。
 
-## 7. When to Use On-Chain vs Lightning
+## 7. 什么时候用链上 vs 闪电网络
 
-A heuristic that gets most cases right:
+一个能搞定大多数情况的经验法则：
 
 <figure>
-  <img src="/diagrams/on-chain-vs-lightning.svg" alt="Three side-by-side cards showing the recommended Bitcoin layer by payment size. Small payments under $50 use Lightning - fees and speed both favor it. Medium payments $50 to a few thousand either works - personal preference. Large payments above a few thousand use on-chain - Lightning channel capacity limits plus settlement preference. Three special cases below: recipient without a Lightning wallet means on-chain; repeated payments to the same party means open a Lightning channel; long-term storage means do not move it at all. Tagline: most people use both; knowing which is which is most of the skill." />
-  <figcaption>Three payment-size lanes plus three special cases. Most real-world payments fit somewhere on this card.</figcaption>
+  <img src="/diagrams/on-chain-vs-lightning.svg" alt="三张并排的卡片，按支付大小显示推荐的比特币层级。50 美元以下的小额支付用闪电网络——手续费和速度都占优。50 到几千美元的中等支付两者都行——看个人偏好。几千美元以上的大额支付用链上——闪电通道容量限制加上结算偏好。下方三个特殊情况：接收方没有闪电钱包意味着用链上；对同一方的重复支付意味着开一个闪电通道；长期存储意味着根本不要动。标语：大多数人两层都用；知道什么时候用哪个就是大部分技能。" />
+  <figcaption>三种支付金额档位加三种特殊情况。大多数现实世界的支付都能在这张卡片上找到位置。</figcaption>
 </figure>
 
-Most people use both. A Lightning wallet on the phone for daily stuff; an on-chain wallet (preferably on hardware) for holding.
+大多数人两层都用。手机上放一个闪电钱包用于日常；链上钱包（最好在硬件设备上）用于持有。
 
-## 8. Receiving Payments
+## 8. 接收支付
 
-The flip side of sending: how to *get* paid.
+发送的反面：怎么*收*钱。
 
-**On-chain:**
-- Generate a fresh address each time. Modern wallets do this automatically.
-- Avoid address reuse. It's a privacy leak - anyone who sees the address can later see all subsequent receipts to it. (Newer wallets default to never showing the same address twice.)
-- Share the address as a string or a QR code. The sender pays at whatever fee rate they pick; you have no control over the fee.
+**链上：**
+- 每次生成新地址。现代钱包自动这样做。
+- 避免地址复用。这是隐私泄露——任何看到地址的人后来都可以看到之后所有收到这个地址的款项。（较新的钱包默认不会两次显示同一地址。）
+- 以字符串或 QR 码分享地址。发送方按他们选的费率付费；你无法控制手续费。
 
-**Lightning:**
-- Generate an invoice. You can specify an amount (e.g., "pay me 5,000 sats") or leave it open ("pay me any amount").
-- Invoices are time-limited - usually one hour. After they expire, you generate a new one.
-- The sender pays your invoice; the payment arrives in milliseconds; the invoice is consumed.
+**闪电网络：**
+- 生成一张发票。你可以指定金额（例如"付我 5,000 聪"）或留空（"付我任意金额"）。
+- 发票有时效——通常一小时。过期后，生成新的。
+- 发送方付你的发票；支付在毫秒内到达；发票被消费。
 
-There's an emerging standard called **Lightning Address** (looks like an email: `you@yourdomain.com`) that lets people pay you without generating a new invoice each time. Convenient, but requires running a small server or using a service that does. Optional for most users, useful if you do public-facing work that takes tips.
+有一种新兴标准叫 **闪电地址**（Lightning Address，看起来像邮箱：`you@yourdomain.com`），让人不用每次生成新发票就能付你。很方便，但需要运行一个小服务器或使用提供此服务的平台。对大多数用户是可选的，如果你做面向公众的收打赏工作则有用。
 
-## 9. The Sovereignty Side-Effects
+## 9. 主权的副作用
 
-Once you're using Bitcoin for real, a few things become tangible that were previously abstract:
+一旦你真正开始用比特币，一些之前抽象的东西变得具体了：
 
-- **You can pay anyone, anywhere, anytime.** No bank hours. No correspondent banking. No "we can't send to that country." A wallet on a phone with internet is a global financial terminal.
-- **Privacy is your job.** Every on-chain transaction is public forever. Avoid address reuse. Consider coin control if you're handling sensitive amounts. We have a [Privacy Best Practices](/downloads/bitcoin-privacy-best-practices.pdf) PDF on this site; read it before serious use.
-- **Mistakes are permanent.** Wrong address, wrong amount, wrong network - there's no helpdesk. Always test small first. Always verify before sending.
-- **You're a target.** Anyone who knows you hold real bitcoin is, statistically, a slightly elevated security risk. Don't talk publicly about how much you hold. Don't put a sign outside your house that says "I HODL." The threat is low for most people but nonzero.
+- **你可以付给任何人、在任何地方、在任何时间。** 没有银行营业时间。没有代理行。没有"我们无法汇到那个国家"。一个有互联网的手机就是一个全球金融终端。
+- **隐私是你的事。** 每笔链上交易永远公开。避免地址复用。如果你处理敏感金额，考虑币控（coin control）。本站有一份[隐私最佳实践](/downloads/bitcoin-privacy-best-practices.pdf) PDF；认真使用前读一读。
+- **错误是永久的。** 错误地址、错误金额、错误网络——没有客服台。始终先小额测试。发送前始终验证。
+- **你是一个目标。** 任何知道你持有真实比特币的人，在统计上都是一个略微升高的安全风险。不要公开谈论你持有多大金额。不要在房子外面贴个牌子写着"I HODL"。对大多数人来说威胁很低，但不是零。
 
-These aren't reasons to avoid Bitcoin. They're the operational consequences of opting out of the trusted-third-party world. Worth it. Just real.
+这些不是回避比特币的理由。它们是退出信任第三方世界的操作后果。值得。只是真实的。
 
-## 10. Your Milestone
+## 10. 你的里程碑
 
-Before chapter 6 (Sovereignty - running a node, multisig, op-sec), do these three things:
+在第 6 章（主权——运行节点、多签、运维安全）之前，做这三件事：
 
-- [ ] Send a deliberate on-chain transaction - pick the fee rate yourself, watch it confirm
-- [ ] Open a Lightning channel or fund a self-custodial LN wallet (the non-custodial managed category in §6 is the easy path)
-- [ ] Send and receive a Lightning payment - it should take seconds
+- [ ] 发一笔认真的链上交易——自己选费率，看它确认
+- [ ] 开一个闪电通道或给一个非托管闪电钱包充值（第 6 节中的非托管托管式管理类别是最简单的路径）
+- [ ] 发送和接收一笔闪电支付——应该几秒就搞定
 
-That's it. You're using Bitcoin, not just holding it. Welcome to actually living in the new monetary system.
+就这样。你不再只是持有比特币，而是在使用它。欢迎真正生活在新的货币体系中。
 
-> **Pro tip:** People who say "Bitcoin is too slow for payments" are usually thinking about on-chain only. People who say "Lightning is the future of payments" sometimes forget on-chain exists. Both layers are real, both have jobs, and using Bitcoin well means knowing which is which. The system was designed to be flexible. Use the flexibility.
+> **专业提示：** 说"比特币太慢不适合支付"的人通常只想到链上。说"闪电网络是支付的未来"的人有时忘了链上的存在。两层都是真实的，两层都有各自的用途，用好比特币意味着知道什么时候用哪个。系统被设计为灵活的。用它的灵活性。

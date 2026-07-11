@@ -1,12 +1,12 @@
 ---
-title: "Hash Puzzle"
+title: "哈希谜题"
 slug: hash-puzzle
 draft: false
-shortDefinition: "The challenge in LN's HTLCs: reveal a secret (preimage) to claim funds, else they revert after a time lock."
+shortDefinition: "闪电网络 HTLC 中的挑战：揭示一个秘密（原像）以认领资金，否则在时间锁后退还。"
 keyTakeaways:
-  - "Central to LN's trustless routing of payments"
-  - "Preimage revelation is key to finalizing transfers"
-  - "Ensures funds revert if the receiver doesn't claim them in time"
+  - "闪电网络无信任支付路由的核心"
+  - "原像揭示是完成转账的关键"
+  - "确保接收方不在时间内认领时资金退还"
 sources: []
 relatedTerms:
   - hash
@@ -15,21 +15,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A hash puzzle is the cryptographic challenge inside an [HTLC](/glossary/htlc-hashed-time-locked-contract): "to claim these funds, reveal a value whose [hash](/glossary/hash) equals this known commitment."
+哈希谜题是 [HTLC](/glossary/htlc-hashed-time-locked-contract) 内的密码挑战："要认领这些资金，揭示一个[哈希](/glossary/hash)等于此已知承诺的值。"
 
-The mechanics:
+机制：
 
-1. The receiver picks a random secret `s` (the **preimage**) and computes `hash(s)`, called the **payment hash**.
-2. The receiver shares only the payment hash with the sender (encoded in a [Lightning invoice](/glossary/lightning-invoice)).
-3. The sender constructs a payment with a hash puzzle: "anyone who provides a value v such that hash(v) = payment_hash can claim these funds."
-4. The receiver, knowing `s`, reveals it to claim the payment.
-5. The reveal happens on every routing hop simultaneously, cascading backward through the path.
+1. 接收方选择一个随机秘密 `s`（**原像**）并计算 `hash(s)`，称为**支付哈希**。
+2. 接收方仅与发送方共享支付哈希（编码在[闪电发票](/glossary/lightning-invoice)中）。
+3. 发送方构建一个带哈希谜题的支付："任何提供值 v 使得 hash(v) = payment_hash 的人可以认领这些资金。"
+4. 接收方知道 `s`，揭示它以认领支付。
+5. 揭示在每一路由跳同时发生，沿路径反向级联。
 
-The two cryptographic properties that make this work:
+使这奏效的两个密码属性：
 
-- **Hash preimage resistance.** Given the payment hash, no one but the receiver can find a value that produces it. The receiver doesn't even need to share `s` with anyone until they're claiming.
-- **Atomic propagation.** Once `s` is revealed at any hop, every earlier hop in the chain can see it (by watching the resolution) and claim from their own predecessor. The payment either fully completes (because `s` gets revealed) or fully unwinds at the timeouts.
+- **哈希抗原像抗性。** 给定支付哈希，除了接收方没有人能找到产生它的值。接收方甚至不需要在认领之前与任何人分享 `s`。
+- **原子传播。** 一旦 `s` 在任何跳被揭示，前面每跳都能看到它（通过观察结算）并从自己的前驱认领。支付要么完全完成（因为 `s` 被揭示），要么在超时处完全回滚。
 
-Hash puzzles are the trust primitive that makes [Lightning routing](/glossary/lightning-routing) work without requiring intermediate nodes to be honest. They're also the building block of [atomic swaps](/glossary/atomic-swap), [submarine swaps](/glossary/submarine-swap), and most other multi-party Bitcoin protocols.
+哈希谜题是使[闪电网络路由](/glossary/lightning-routing)无需中间节点诚实即可工作的信任原语。它们也是[原子交换](/glossary/atomic-swap)、[潜艇交换](/glossary/submarine-swap)和大多数其他多方比特币协议的构建块。
 
-See [HTLC](/glossary/htlc-hashed-time-locked-contract) for the full hashed-time-locked-contract structure that wraps the hash puzzle in a timeout fallback.
+完整的哈希时间锁合约结构（将哈希谜题包装在超时后备中）参见 [HTLC](/glossary/htlc-hashed-time-locked-contract)。

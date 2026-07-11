@@ -1,12 +1,12 @@
 ---
-title: "Mempool"
+title: "内存池"
 slug: mempool
 draft: false
-shortDefinition: "A node's local 'waiting room' for unconfirmed transactions, which miners draw from when creating new blocks."
+shortDefinition: "节点的本地'候车室'，存放未确认交易，矿工从中选取创建新区块。"
 keyTakeaways:
-  - "Holds pending transactions awaiting confirmation"
-  - "Policies differ, so not all nodes have identical mempools"
-  - "Fee estimation and RBF rely heavily on mempool dynamics"
+  - "存放等待确认的待处理交易"
+  - "各节点策略不同，因此内存池内容不完全相同"
+  - "手续费估算和 RBF 严重依赖内存池动态"
 sources:
   - { label: "Mempool rabbit hole", url: "https://www.learnbitcoin.com/rabbit-hole/mempool" }
 relatedTerms:
@@ -23,15 +23,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The mempool - short for **mem**ory **pool** - is a Bitcoin node's local list of unconfirmed transactions: ones it has heard about but hasn't yet seen in a block. When you broadcast a [transaction](/glossary/transaction), it propagates from node to node, each one validating it and adding it to its own mempool.
+内存池——全称 **mem**ory **pool**——是比特币节点的未确认交易本地列表：节点已听说但尚未在区块中看到的交易。当你广播一笔[交易](/glossary/transaction)时，它从节点传播到节点，每个节点验证它并将其添加到自己的内存池中。
 
-There is no single global mempool. Every node maintains its own. Most are similar, but they differ in two ways:
+没有单一的全局内存池。每个节点维护自己的。大多数相似，但在两方面不同：
 
-- **Policy.** Each node sets local rules about what it will accept and relay: minimum fee rates, [dust](/glossary/dust) thresholds, max size, max ancestor/descendant chains, and so on.
-- **Propagation lag.** A new transaction takes a second or two to reach every reachable node on Earth. During that window, mempools temporarily disagree about what's pending.
+- **策略。** 每个节点设置关于接受和中继的本地规则：最低费率、[粉尘](/glossary/dust)阈值、最大尺寸、最大祖先/后代链等。
+- **传播延迟。** 新交易需要一两秒到达地球上每个可达节点。在此窗口内，各内存池暂时对待处理内容存在分歧。
 
-[Miners](/glossary/miner) build candidate blocks from their own mempool, prioritizing transactions with the highest fee rate (sats per virtual byte) to maximize block-reward revenue. So when you "set a fee" on a transaction, what you're really doing is bidding for inclusion against everyone else currently in mempools around the world. See [Fee Estimation](/glossary/fee-estimation) for how wallets guess the right bid.
+[矿工](/glossary/miner)从自己的内存池构建候选区块，优先打包费率最高的交易（每虚拟字节的聪数）以最大化区块奖励收入。所以当你为交易"设置手续费"时，你实际上是在与全球各地内存池中的其他所有人竞价争夺打包位置。请参阅[手续费估算](/glossary/fee-estimation)了解钱包如何猜测正确的出价。
 
-When a transaction gets included in a block, every node sees that block, validates it, and removes the included transactions from their mempools. Transactions that have been waiting can also be evicted under memory pressure or replaced via [fee bumping](/glossary/fee-bumping).
+当交易被包含在区块中时，每个节点看到该区块、验证它，并从内存池中移除已打包的交易。等待中的交易也可能在内存压力下被驱逐或通过[费用提升](/glossary/fee-bumping)被替换。
 
-Go deeper in the [Mempool rabbit hole](/rabbit-hole/mempool) - fee markets, eviction rules, RBF, and what a "stuck" transaction actually looks like at the protocol level. Watch the live mempool state on the [Node Status page](/node/) or in the [Mining rabbit hole §6](/rabbit-hole/mining).
+请在[内存池深入探讨](/rabbit-hole/mempool)中了解更多——手续费市场、驱逐规则、RBF，以及"卡住"的交易在协议层面实际是什么样子。在[节点状态页面](/node/)或[挖矿深入探讨 §6](/rabbit-hole/mining)中观看实时内存池状态。

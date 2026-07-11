@@ -1,12 +1,12 @@
 ---
-title: "Market Capitalization"
+title: "市值"
 slug: market-capitalization
 draft: false
-shortDefinition: "A metric for a crypto asset's total value, calculated as price per coin × circulating supply."
+shortDefinition: "加密资产总价值的指标，计算方式为单币价格 × 流通供应量。"
 keyTakeaways:
-  - "Price × circulating supply = rough total valuation"
-  - "Headline-friendly but may overstate actual 'money at risk'"
-  - "Commonly used to compare crypto assets' relative scale"
+  - "价格 × 流通供应量 = 粗略总估值"
+  - "标题友好但可能夸大实际的'风险资金'"
+  - "常用于比较加密资产的相对规模"
 sources: []
 relatedTerms:
   - alt-season
@@ -22,20 +22,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Market capitalization (or "market cap") is the spot price of an asset multiplied by the number of units in circulation. For Bitcoin: BTC/USD price × circulating supply (currently ~20 million BTC).
+市值（或"market cap"）是资产的现货价格乘以流通中的单位数量。对于比特币：BTC/USD 价格 × 流通供应量（目前约 2000 万枚 BTC）。
 
-The number is useful as a *rough* gauge of an asset's scale, especially for comparison: at any given time, BTC's market cap can be compared to gold's ($15-20T as of 2026), Apple's market cap (~$3.5T), or the entire S&P 500's total value (~$50T).
+这个数字作为资产规模的*粗略*衡量有用，特别是用于比较：在任何时候，BTC 的市值可以与黄金（截至 2026 年约 15-20 万亿美元）、苹果公司市值（约 3.5 万亿美元）或整个标普 500 指数的总价值（约 50 万亿美元）相比较。
 
-What market cap is **not**:
+市值**不是**什么：
 
-- **It's not "the amount of money that has flowed into Bitcoin."** That figure - sometimes called *realized cap* - is much smaller, because most BTC has been held through long-stretches of price appreciation without changing hands.
-- **It's not "the amount you'd get if you sold all the Bitcoin."** Selling 20M BTC at once would crater the price; the actual liquid market depth at any given price level is a tiny fraction of total supply.
-- **It's not strictly comparable between Bitcoin and "cryptos" in general.** Many altcoins have huge insider allocations, opaque circulating supplies, or near-zero liquidity. Their "market cap" is often a fictional number used in marketing.
+- **不是"流入比特币的资金量"。** 那个数字——有时称为*已实现市值*——要小得多，因为大多数 BTC 在价格升值的漫长期间内持有未转手。
+- **不是"如果你卖出所有比特币能得到的金额"。** 一次性卖出 2000 万枚 BTC 会砸垮价格；任何给定价格水平的实际流动市场深度只是总供应量的微小零头。
+- **在比特币和一般"加密货币"之间不严格可比。** 许多山寨币有大量内部人分配、不透明的流通供应量或接近零的流动性。它们的"市值"往往是营销中使用的虚构数字。
 
-More informative alternatives Bitcoiners sometimes cite:
+比特币持有者有时引用的更有信息量的替代指标：
 
-- **Realized cap** - sum of every UTXO valued at the price it was last moved. A truer measure of cost basis in aggregate.
-- **MVRV ratio** (market value / realized value) - how stretched current price is vs realized cap.
-- **Volume-adjusted metrics** - actual trading volume, on-chain transaction value, etc.
+- **已实现市值**——每个 UTXO 按其最后移动时的价格估值。更真实的聚合成本基础衡量。
+- **MVRV 比率**（市值/已实现市值）——当前价格相对已实现市值的拉伸程度。
+- **交易量调整指标**——实际交易量、链上交易价值等。
 
-For headline use, market cap is fine. For analysis, look deeper. Bitcoin's price tells you what the last marginal buyer paid; the market cap is that number multiplied by every BTC anyone holds, whether or not they're selling.
+作为标题使用，市值没问题。用于分析，需要更深入。比特币的价格告诉你最后一个边际买家付了多少；市值是那个数字乘以每个持有的 BTC，无论他们是否在卖。

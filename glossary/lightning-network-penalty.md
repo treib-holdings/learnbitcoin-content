@@ -1,12 +1,12 @@
 ---
-title: "Lightning Network Penalty"
+title: "闪电网络惩罚"
 slug: lightning-network-penalty
 draft: false
-shortDefinition: "A punishment mechanism giving the honest peer the cheater's channel balance if an outdated state is broadcast."
+shortDefinition: "一种惩罚机制，如果过时状态被广播，诚实方可以获得作弊者的通道余额。"
 keyTakeaways:
-  - "Deters channel participants from using old commitment states"
-  - "Transfers the cheating party's funds to the honest peer"
-  - "Ensures strong incentives for correct channel state updates"
+  - "阻止通道参与者使用旧承诺状态"
+  - "将作弊方的资金转移给诚实方"
+  - "确保通道状态更新的强激励"
 sources: []
 relatedTerms:
   - fraudulent-channel-close
@@ -17,29 +17,29 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The Lightning Network penalty mechanism is what makes Lightning channels trustless: if a channel counterparty tries to cheat by broadcasting an outdated channel state (one that allocated more BTC to them), the honest party can claim the *entire* channel balance as a penalty.
+闪电网络惩罚机制是使闪电通道无需信任的关键：如果通道对手方试图通过广播过时通道状态（对自己分配更多 BTC 的状态）来作弊，诚实方可以认领*整个*通道余额作为惩罚。
 
-How it works mechanically:
+机械运作方式：
 
-1. **Every channel state has a unique revocation key**, derived from a per-state secret.
-2. **When a new state is signed**, both parties exchange their revocation secrets for the *previous* state. The old state can still be broadcast, but doing so reveals the revocation secret to the counterparty.
-3. **Commitments include a CSV-locked output** for the broadcasting party. They can spend their share, but only after a delay (typically 144-1008 blocks).
-4. **During that delay window**, the counterparty can broadcast a **penalty transaction** signed with the revocation key, claiming *all* funds in the channel - the broadcaster's share *and* their own.
+1. **每个通道状态都有唯一的撤销密钥**，由每个状态的秘密派生。
+2. **当新状态被签名时**，双方交换*前一个*状态的撤销密钥。旧状态仍可被广播，但这样做会向对手方揭示撤销密钥。
+3. **承诺包含广播方的 CSV 时间锁输出。** 他们可以花费自己的份额，但只能在延迟后（通常 144-1008 个区块）。
+4. **在延迟窗口期间**，对手方可以广播**惩罚交易**，用撤销密钥签名，认领通道中的*所有*资金——包括广播方的份额*和*自己的份额。
 
-The mathematical asymmetry: a cheater who broadcasts an old state tries to steal, say, 0.3 BTC of difference. If caught, they lose the *entire* 1 BTC channel balance. Expected value is strongly negative for cheating, given any reasonable probability the counterparty will be online during the dispute window.
+数学上的不对称性：广播旧状态的作弊者试图窃取比如 0.3 BTC 的差额。如果被抓住，他们损失*整个* 1 BTC 的通道余额。考虑到对手方在争议窗口内在线的合理概率，作弊的期望值强烈为负。
 
-In practice this works because:
+这在实践中有效因为：
 
-- **The honest party has hours to days** (the CSV window) to detect and punish.
-- **Watchtowers** can monitor on behalf of users who can't be online 24/7.
-- **The penalty is total**, not equal - mass disincentive.
+- **诚实方有数小时到数天**（CSV 窗口）来检测和惩罚。
+- **瞭望塔**可以代表无法 24/7 在线的用户进行监控。
+- **惩罚是全额的**，不是等额的——大规模威慑。
 
-What can still go wrong:
+仍可能出错的情况：
 
-- **Accidental old-state broadcast** (from a wallet backup restore, for example) is treated identically to malicious cheating. The penalty applies regardless of intent.
-- **Watchtower failures** can leave you vulnerable during long offline periods.
-- **Extreme network congestion** could in principle prevent the penalty from confirming within the CSV window - rare but real edge case.
+- **意外广播旧状态**（例如从钱包备份恢复）与恶意作弊被同等对待。惩罚不论意图都适用。
+- **瞭望塔故障**可能在长期离线期间使你暴露。
+- **极端网络拥堵**原则上可能阻止惩罚在 CSV 窗口内确认——罕见但真实的边缘情况。
 
-[Eltoo](/glossary/eltoo) would replace the penalty model with a simpler "newer states override older states" mechanism, eliminating the catastrophic-failure-on-mistake risk. Until [ANYPREVOUT](/glossary/anyprevout) activates, the penalty model is what Lightning channels use, and the operational discipline around state management matters.
+[Eltoo](/glossary/eltoo) 将用更简单的"新状态覆盖旧状态"机制取代惩罚模型，消除因错误导致的灾难性失败风险。在 [ANYPREVOUT](/glossary/anyprevout) 激活之前，惩罚模型是闪电通道使用的机制，围绕状态管理的运营纪律很重要。
 
-See [Fraudulent Channel Close](/glossary/fraudulent-channel-close) for the attack the penalty defends against.
+请参阅[欺诈性通道关闭](/glossary/fraudulent-channel-close)了解惩罚防御的攻击。

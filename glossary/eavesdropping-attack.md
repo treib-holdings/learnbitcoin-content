@@ -1,12 +1,12 @@
 ---
-title: "Eavesdropping Attack"
+title: "窃听攻击"
 slug: eavesdropping-attack
 draft: false
-shortDefinition: "A network-level attack monitoring node traffic, potentially correlating IPs with transactions or identifying transaction origins."
+shortDefinition: "网络层攻击，监控节点流量，可能将 IP 与交易关联或识别交易来源。"
 keyTakeaways:
-  - "Focuses on correlating TX announcements with IP addresses"
-  - "Reduced by Tor, VPN, or specialized broadcast methods"
-  - "Exploits the open, real-time data flow of peer-to-peer relays"
+  - "专注于将交易公告与 IP 地址关联"
+  - "通过 Tor、VPN 或专用广播方法减少"
+  - "利用对等中继的开放实时数据流"
 sources: []
 relatedTerms:
   - i2p-invisible-internet-project
@@ -19,21 +19,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-An eavesdropping attack on Bitcoin's peer-to-peer network involves passively observing node-to-node communications to learn things about transactions before they're confirmed. It doesn't break cryptography; it just exploits the fact that Bitcoin's gossip layer broadcasts data in real time.
+对比特币点对点网络的窃听攻击涉及被动观察节点间通信，以在交易被确认之前了解其信息。它不破坏密码学；只是利用比特币的 gossip 层实时广播数据这一事实。
 
-What an attacker can learn from eavesdropping:
+窃听者可以了解到什么：
 
-- **Transaction origin.** If a single node is consistently first to relay a particular transaction, that node likely originated it. Operators with many surveillance peers can identify the source of broadcasts with high probability.
-- **IP-to-transaction correlation.** Pair the originating node's IP with that transaction, and you've linked an on-chain activity to a network location - and potentially to a real-world identity if the IP can be deanonymized.
-- **Network topology.** Repeated observation reveals which nodes connect to which, building a map of the gossip graph.
+- **交易来源。** 如果一个节点始终最先中继特定交易，该节点很可能发起了它。拥有许多监控对等方的运营商可以高概率识别广播来源。
+- **IP 到交易的关联。** 将发起节点的 IP 与该交易配对，你就将链上活动链接到网络位置——如果 IP 可以去匿名化，还可能链接到真实身份。
+- **网络拓扑。** 重复观察揭示哪些节点连接到哪些，构建 gossip 图的地图。
 
-Real-world adversaries running eavesdropping attacks include: chainalysis firms with extensive node fleets, ISP-level observers, and well-resourced government surveillance projects. The attacks are practical and have been demonstrated.
+运行窃听攻击的现实对手包括：拥有大量节点舰队的链上分析公司、ISP 级观察者和资源充足的政府监控项目。这些攻击是实用的且已被演示。
 
-Defenses, roughly in order of effectiveness:
+防御措施，大致按有效性排序：
 
-- **Run your node over [Tor](/glossary/tor-hidden-service).** Your transactions get broadcast from random Tor exit points, not your real IP. Most credible defense for a self-custody user.
-- **Use Lightning for actual payments** wherever possible. Lightning payments aren't broadcast publicly; they hop directly to the receiver through encrypted channels.
-- **Limit inbound connections** on your node to trusted peers if possible.
-- **Use Dandelion++** (a transaction-relay improvement implemented in some clients) to make the originating node harder to identify.
+- **通过 [Tor](/glossary/tor-hidden-service) 运行节点。** 你的交易从随机 Tor 出口节点广播，而非你的真实 IP。对自托管用户来说是最可信的防御。
+- **尽可能使用闪电网络进行实际支付。** 闪电支付不公开广播；它们通过加密通道直接跳到接收者。
+- **如果可能，限制节点入站连接**为可信对等方。
+- **使用 Dandelion++**（一些客户端实现的交易中继改进）使发起节点更难被识别。
 
-Eavesdropping is one of the realities that distinguishes Bitcoin's *pseudonymity* from actual *anonymity*. The cryptographic layer is strong; the network layer leaks. Mitigations exist; not everyone uses them.
+窃听是区分比特币的*假名性*与真正*匿名性*的现实之一。密码层很强；网络层泄露。缓解措施存在；不是每个人都使用。

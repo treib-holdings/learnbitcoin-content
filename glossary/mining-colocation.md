@@ -1,12 +1,12 @@
 ---
-title: "Mining Colocation"
+title: "挖矿托管"
 slug: mining-colocation
 draft: false
-shortDefinition: "Operating ASICs in specialized data centers or near cheap power sources for cost-effective, efficient Bitcoin mining."
+shortDefinition: "在专用数据中心或廉价电力源附近运营 ASIC，以实现经济高效的比特币挖矿。"
 keyTakeaways:
-  - "Hosts mining hardware in specialized centers to optimize reliability"
-  - "Seeks cheap, stable energy and strong networking environments"
-  - "Can lead to centralization if a few large facilities dominate"
+  - "在专用中心托管挖矿硬件以优化可靠性"
+  - "寻求廉价、稳定的能源和强大的网络环境"
+  - "如果少数大型设施主导可能导致中心化"
 sources: []
 relatedTerms:
   - asic-application-specific-integrated-circuit
@@ -36,24 +36,24 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Mining colocation is the practice of running [Bitcoin mining hardware](/glossary/mining-rig) in dedicated industrial facilities, rather than at home or in office space. It's how essentially all serious Bitcoin mining happens in 2026.
+挖矿托管是在专用工业设施中运行[比特币挖矿硬件](/glossary/mining-rig)而非在家或办公室的做法。这是 2026 年几乎所有严肃比特币挖矿的运作方式。
 
-What colocation facilities provide:
+托管设施提供的：
 
-- **Cheap power, usually under fixed-rate contracts.** The single biggest cost determinant in mining. Facilities sited near stranded energy (West Texas wind, Quebec hydro, Iceland geothermal, flared natural gas in shale basins) offer rates of $0.03-0.06/kWh - vs $0.10-0.30/kWh for residential power.
-- **Industrial cooling.** Air-cooled rooms, immersion cooling, hydro cooling, depending on facility design. Heat dissipation at 100 kW+ per square meter is non-trivial.
-- **Network infrastructure.** Reliable, low-latency internet connections for pool communication. Block-propagation latency directly affects miner revenue (slow blocks are stale blocks).
-- **Physical security and uptime.** 24/7 staff, redundant power, redundant cooling. Mining operations don't tolerate downtime - every hour offline is irrecoverable revenue.
-- **Operational simplicity for the customer.** A miner who ships hardware to a colocation facility pays a hosting fee and doesn't worry about the rest.
+- **廉价电力，通常在固定费率合同下。** 挖矿中最大的成本决定因素。位于搁浅能源附近的设施（西德克萨斯风能、魁北克水电、冰岛地热、页岩盆地燃烧天然气）提供 $0.03-0.06/kWh 的费率——而住宅电力为 $0.10-0.30/kWh。
+- **工业散热。** 风冷房间、浸没冷却、水冷，取决于设施设计。每平方米 100 kW+ 的散热不简单。
+- **网络基础设施。** 可靠、低延迟的互联网连接用于矿池通信。区块传播延迟直接影响矿工收入（慢的区块是陈旧区块）。
+- **物理安全和正常运行时间。** 24/7 人员、冗余电力、冗余冷却。挖矿运营不容忍停机——每离线一小时都是不可恢复的收入。
+- **对客户的运营简便性。** 将硬件运到托管设施的矿工支付托管费，其余不用操心。
 
-The geographic distribution as of 2026:
+截至 2026 年的地理分布：
 
-- **United States** is the largest mining jurisdiction by share, driven by ERCOT (Texas) wind/solar, Bitmain Bitdeer's data centers, and many smaller operators.
-- **Russia, Kazakhstan, and post-Soviet states** continue substantial operations on cheap fossil-fuel power.
-- **Iceland, Norway, and other Nordic countries** for hydro and geothermal.
-- **Latin America** is growing - Paraguay (Itaipu hydro), some Brazilian operations.
-- **Africa** is emerging - solar in Ethiopia, hydro in DRC, methane flaring in Nigeria.
+- **美国**是按份额计算最大的挖矿管辖区，由 ERCOT（德克萨斯）风能/太阳能、Bitmain Bitdeer 的数据中心和许多较小运营者驱动。
+- **俄罗斯、哈萨克斯坦和前苏联国家**继续在廉价化石燃料电力上维持大量运营。
+- **冰岛、挪威和其他北欧国家**利用水电和地热。
+- **拉丁美洲**在增长——巴拉圭（伊泰普水电）、一些巴西运营。
+- **非洲**正在兴起——埃塞俄比亚的太阳能、刚果民主共和国的水电、尼日利亚的甲烷燃烧。
 
-The concentration concern is real: a meaningful share of global hash rate is in a relatively small number of large facilities. Geopolitically, this creates pressure points (China's 2021 ban being the dramatic example). The trend is toward more geographic diversification over time, partly driven by miners deliberately seeking jurisdictional resilience after observing China.
+集中担忧是真实的：全球算力的有意义份额在相对较少的大型设施中。在地缘政治上，这创造了压力点（中国 2021 年禁令是戏剧性例子）。趋势是随时间走向更多地理多元化，部分原因是矿工在观察中国后刻意寻求司法管辖区韧性。
 
-See [Mining Centralization](/glossary/mining-centralization) for the structural concern this feeds into.
+请参阅[挖矿中心化](/glossary/mining-centralization)了解这如何影响结构性担忧。

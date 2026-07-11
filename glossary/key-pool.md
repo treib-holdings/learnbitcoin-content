@@ -1,12 +1,12 @@
 ---
-title: "Key Pool"
+title: "密钥池"
 slug: key-pool
 draft: false
-shortDefinition: "A cache of pre-generated addresses (and keys) in Bitcoin Core wallets to avoid address reuse and speed new address creation."
+shortDefinition: "Bitcoin Core 钱包中预生成的地址（和密钥）缓存，以避免地址重复使用并加速新地址创建。"
 keyTakeaways:
-  - "Ensures unique addresses without generating them on demand"
-  - "Prevents inadvertent address reuse affecting privacy"
-  - "Part of older or internal wallet logic, now usually hidden by HD frameworks"
+  - "确保唯一地址而无需按需生成"
+  - "防止因地址重复使用影响隐私"
+  - "属于较旧或内部钱包逻辑，现在通常被 HD 框架隐藏"
 sources: []
 relatedTerms:
   - bitcoin-core
@@ -16,10 +16,10 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The key pool is a Bitcoin Core wallet implementation detail: a cache of pre-generated keys (and addresses) so that fresh addresses are instantly available without on-demand key generation, and so backups remain valid across some window of address creation.
+密钥池是 Bitcoin Core 钱包的一个实现细节：一个预生成密钥（和地址）的缓存，使新地址可以即时可用而无需按需生成，同时确保备份在地址创建的某个窗口内仍然有效。
 
-In the original legacy (non-HD) wallets, the key pool was load-bearing. Each generated key was independent random data; if the user requested addresses faster than the wallet backed itself up, the backup could become stale and addresses created after the backup wouldn't be recoverable. The pool (default 100 keys) was a buffer: as long as you backed up after the pool was generated, you were covered for the next 100 addresses.
+在原始的传统（非 HD）钱包中，密钥池是承重组件。每个生成的密钥是独立的随机数据；如果用户请求地址的速度超过钱包备份的速度，备份可能变得过时，备份后创建的地址将无法恢复。密钥池（默认 100 个密钥）是一个缓冲：只要你在密钥池生成后备份，你就被覆盖了接下来的 100 个地址。
 
-After HD wallet support landed in Bitcoin Core 0.13 (2016), the keypool concept became less load-bearing. HD derivation lets the wallet generate any future address deterministically from the seed, so backup is just "back up the seed." But the keypool is still maintained internally so addresses are pre-generated and so the wallet keeps a derivation window for gap-limit scanning (the standard convention is that addresses beyond 20 unused derivations don't get scanned).
+在 Bitcoin Core 0.13（2016 年）引入 HD 钱包支持后，密钥池概念不再那么承重。HD 派生让钱包可以从种子确定性地生成任何未来地址，所以备份就是"备份种子"。但密钥池仍在内部维护，以便地址被预生成，以及钱包保持一个派生窗口用于间隙限制扫描（标准约定是超过 20 个未使用的派生地址不再被扫描）。
 
-In 2026, Bitcoin Core's descriptor wallets handle this through descriptor ranges instead of an opaque "keypool," but the underlying idea is the same. For users, it's invisible. Wallets just produce fresh addresses on demand, and backup is one seed phrase. The keypool plumbing is one of those things that makes "just use the wallet" work.
+在 2026 年，Bitcoin Core 的描述符钱包通过描述符范围而非不透明的"密钥池"来处理这个问题，但底层理念相同。对用户来说，这是不可见的。钱包只是按需产生新地址，备份就是一个助记词。密钥池管道是让"直接用钱包就行"得以运作的那些幕后机制之一。

@@ -1,12 +1,12 @@
 ---
-title: "Penalty Transaction"
+title: "惩罚交易（Penalty Transaction）"
 slug: penalty-transaction
 draft: false
-shortDefinition: "In LN, a transaction that punishes a dishonest channel partner who broadcasts an outdated commitment, awarding their funds to the honest party."
+shortDefinition: "在闪电网络中，当不诚实的通道对手广播过时状态时，将其资金判给诚实方的惩罚交易。"
 keyTakeaways:
-  - "Deters LN participants from broadcasting outdated channel states"
-  - "Transfers cheater's stake to honest peer if caught cheating"
-  - "Integral to LN's trustless design in current channel implementations"
+  - "阻止 LN 参与者广播过时的通道状态"
+  - "如果作弊被抓，作弊者的资金归诚实方"
+  - "当前通道实现中 LN 无信任设计的核心组成部分"
 sources: []
 relatedTerms:
   - eltoo
@@ -17,26 +17,26 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The penalty transaction (also called the "justice transaction") is Lightning's defense against a counterparty broadcasting an outdated channel state. If you cheat, the other side gets everything. All of it. Your balance, their balance, the whole channel.
+惩罚交易（也叫"正义交易"）是闪电网络对对手方广播过时通道状态的防御手段。如果你作弊，对方拿走一切。全部。你的余额、他们的余额、整个通道。
 
-How it works mechanically. Every Lightning channel commitment is asymmetric. Each side has their own version of the current commitment transaction, and each version includes:
+机制原理。每个闪电通道承诺都是非对称的。每方都有自己的当前承诺交易版本，每个版本包含：
 
-- The other side's balance, immediately spendable by them.
-- Your own balance, locked behind a `OP_CHECKSEQUENCEVERIFY` delay (typically 144 blocks, about a day).
-- A "revocation path" that lets the other side claim your entire balance if they know a secret that you reveal to them when you both agree the state is replaced.
+- 对方的余额，对方可以立即花费。
+- 你自己的余额，被 `OP_CHECKSEQUENCEVERIFY` 延迟锁定（通常 144 个区块，约一天）。
+- 一条"撤销路径"，如果你向对方揭示了某个秘密（在双方同意替换状态时揭示），对方可以用这个秘密领取你的全部余额。
 
-When you update the channel state, you reveal the revocation secret for the old commitment to the other side. Now if you ever broadcast that old commitment, your counterparty:
+当你更新通道状态时，你向对方揭示旧承诺的撤销秘密。现在如果你广播那个旧承诺，你的对手方：
 
-1. Sees the broadcast on-chain.
-2. Before your CSV delay expires, broadcasts the penalty transaction using the revocation secret.
-3. Claims both sides of the channel.
+1. 在链上看到广播。
+2. 在你的 CSV 延迟到期之前，使用撤销秘密广播惩罚交易。
+3. 领取通道双方的资金。
 
-The CSV delay is what makes this work. It gives the honest party a window (in blocks) to broadcast the penalty before the cheater can sweep their own balance.
+CSV 延迟是实现这一点的关键。它给诚实方一个窗口（以区块计）在作弊者可以扫走自己的余额之前广播惩罚。
 
-Operational implications:
+运营影响：
 
-- Your Lightning node must be online during the CSV window to broadcast the penalty if needed. An offline node can't respond to cheating, so you lose by default.
-- [Watchtowers](/glossary/lightning-network-penalty) exist precisely to monitor your channels while you're offline, broadcasting penalties on your behalf.
-- Force-closing your own channel (broadcasting your *current* state unilaterally, not an old one) is fine and doesn't trigger a penalty. The penalty mechanism only triggers when an *outdated* state hits the chain.
+- 你的闪电节点必须在 CSV 窗口内在线以广播惩罚（如果需要）。离线节点无法响应作弊，因此默认情况下你会输。
+- [瞭望塔](/glossary/lightning-network-penalty)的存在正是为了在你离线时监控你的通道，代表你广播惩罚。
+- 强制关闭自己的通道（单方面广播你的*当前*状态，而非旧状态）是安全的，不会触发惩罚。惩罚机制仅在*过时*状态上链时触发。
 
-[Eltoo](/glossary/eltoo) is a proposed alternative where outdated states are automatically invalidated by newer ones without needing a punishment mechanism. It would simplify the watchtower story considerably but requires a soft fork (SIGHASH_ANYPREVOUT) that hasn't activated. The penalty model is what's in production today.
+[Eltoo](/glossary/eltoo) 是一个提案替代方案，其中旧状态会被新状态自动失效，无需惩罚机制。它将大大简化瞭望塔的故事，但需要尚未激活的软分叉（SIGHASH_ANYPREVOUT）。惩罚模型是当前生产中的方案。

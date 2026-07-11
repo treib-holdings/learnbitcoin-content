@@ -1,12 +1,12 @@
 ---
-title: "Seed Entropy Mixer"
+title: "种子熵混合器"
 slug: seed-entropy-mixer
 draft: false
-shortDefinition: "A collaborative process where multiple random seeds are combined into one final cryptographic seed."
+shortDefinition: "将多个随机种子组合成一个最终密码学种子的协作流程。"
 keyTakeaways:
-  - "Prevents a single point of failure in seed generation"
-  - "Requires trust that at least one party's randomness is genuine"
-  - "Used in high-security setups or multi-party ceremonies"
+  - "防止种子生成中的单点故障"
+  - "需要信任至少一方的随机性是真实的"
+  - "用于高安全级别设置或多方仪式"
 sources: []
 relatedTerms:
   - deterministic-wallet
@@ -18,22 +18,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A seed entropy mixer combines randomness from multiple independent sources to produce a single wallet seed that no individual participant could have predicted. The math is straightforward: XOR (or hash) the contributions together; the result is unpredictable as long as at least one input was actually random.
+种子熵混合器将来自多个独立来源的随机性组合起来，生成一个没有任何单个参与者能预测的钱包种子。数学上很简单：将各方的贡献进行异或（XOR）或哈希运算；只要至少一个输入是真正随机的，结果就是不可预测的。
 
-Typical workflow:
+典型流程：
 
-1. Each participant generates their own entropy independently. Common methods: a hundred dice rolls, a hardware RNG output, the SHA-256 of some carefully-collected randomness.
-2. Each participant commits to their value (a hash of it) before anyone reveals.
-3. After all commits are received, participants reveal their entropy values.
-4. The values get XORed (or hashed) together. The result is the final seed entropy.
-5. The seed is converted to BIP 39 words.
+1. 每个参与者独立生成自己的熵。常见方法：掷骰子一百次、硬件随机数生成器输出、精心收集的随机数据的 SHA-256 哈希。
+2. 每个参与者在任何人揭示之前先提交自己的值（提交其哈希）。
+3. 收到所有提交后，参与者揭示各自的熵值。
+4. 将所有值异或（或哈希）在一起，结果就是最终的种子熵。
+5. 将种子转换为 BIP 39 助记词。
 
-The commit-then-reveal step is important. Without it, the last participant to share could see everyone else's contribution and adversarially pick their own to bias the result. Commit-then-reveal forces each participant to pick their entropy blind to everyone else's.
+先提交后揭示这一步很重要。没有它，最后一个分享的人可以看到其他所有人的贡献，然后恶意选择自己的值来偏移结果。先提交后揭示迫使每个参与者在看不到其他人贡献的情况下选择自己的熵。
 
-Where this is used:
+使用场景：
 
-- **High-stakes key generation ceremonies.** Hardware wallet manufacturer signing keys, federation key sets (Liquid functionaries, Fedimint guardians), institutional cold-storage roots.
-- **Distributed key generation for threshold schemes.** FROST and similar protocols use cryptographically richer versions of this idea, where the "shared entropy" is built up in a way that produces individually-useful key shares rather than just a combined secret.
-- **Paranoid personal setups.** A small minority of self-custody users generate their seeds this way as defense against a compromised hardware RNG.
+- **高风险密钥生成仪式。** 硬件钱包制造商的签名密钥、联邦密钥集（Liquid 职能节点、Fedimint 守护者）、机构冷存储根密钥。
+- **阈值方案的分布式密钥生成。** FROST 及类似协议使用了这个想法的密码学增强版本，其中"共享熵"以产生单独可用的密钥份额而不仅仅是组合秘密的方式构建。
+- **偏执的个人设置。** 少数自托管用户以此方式生成种子，作为对受损硬件随机数生成器的防御。
 
-The tradeoff is operational: every participant needs to be present (or trusted to commit and reveal correctly), all contributions need to happen on air-gapped equipment, and any one corrupted participant can DoS the ceremony (refuse to reveal, etc.). For most users, trusting a well-audited hardware wallet's RNG is dramatically more practical and only marginally less secure.
+权衡在于操作层面：每个参与者都需要在场（或被信任会正确提交和揭示），所有贡献都需要在气隙设备上完成，任何一个被腐蚀的参与者都可以拒绝服务（拒绝揭示等）。对大多数用户来说，信任经过审计的硬件钱包的随机数生成器要实际得多，安全性也只是略微降低。

@@ -1,12 +1,12 @@
 ---
-title: "Lockup Period (Lightning)"
+title: "锁定期（闪电网络）"
 slug: lockup-period-lightning
 draft: false
-shortDefinition: "The time BTC remains committed to a payment channel, unavailable for on-chain use until the channel closes or settles."
+shortDefinition: "BTC 保持承诺在支付通道中的时间，在通道关闭或结算前无法用于链上操作。"
 keyTakeaways:
-  - "BTC is committed to an off-chain payment channel"
-  - "Funds remain off-limits for direct on-chain spending"
-  - "Channels close at any time, returning funds to on-chain addresses"
+  - "BTC 被承诺到链下支付通道中"
+  - "资金在通道关闭前不可用于直接链上花费"
+  - "通道可随时关闭，资金返回到链上地址"
 sources: []
 relatedTerms:
   - absolute-locktime
@@ -17,28 +17,28 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The lockup period of a Lightning channel is the duration that funds remain committed to the channel's 2-of-2 multisig output, unavailable for on-chain spending until the channel closes.
+闪电通道的锁定期是资金保持承诺在通道的 2-of-2 多签输出中的持续时间，在通道关闭前无法用于链上花费。
 
-The mechanics:
+机制：
 
-- **Opening a channel** publishes a funding transaction to the blockchain that locks BTC in a 2-of-2 multisig between you and your channel partner.
-- **For the duration** that the channel is open, those funds are not directly spendable on-chain. They can only be transferred off-chain between you and your partner via channel state updates.
-- **Closing the channel** broadcasts a settlement transaction that unlocks the funds back to each party's on-chain wallet according to the current channel balance.
+- **开启通道**向区块链发布一笔注资交易，将 BTC 锁定在你和通道伙伴之间的 2-of-2 多签中。
+- **在通道开放期间**，这些资金不可直接在链上花费。它们只能通过通道状态更新在链下在你和伙伴之间转移。
+- **关闭通道**广播一笔结算交易，根据当前通道余额将资金解锁回各自的链上钱包。
 
-The lockup period is open-ended. A channel can stay open for hours or for years; the only requirement is that both parties remain connected periodically (or use [watchtowers](/glossary/lightning-network-penalty)) to detect and respond to any unilateral close attempts.
+锁定期是开放式的。通道可以开几小时或几年；唯一要求是双方定期保持连接（或使用[瞭望塔](/glossary/lightning-network-penalty)）来检测和响应任何单方面关闭尝试。
 
-What you give up during the lockup:
+锁定期内你放弃的：
 
-- **On-chain liquidity.** The locked BTC isn't directly accessible. Need to spend on-chain? Either close the channel (with its on-chain fee cost) or use submarine swaps to move balance between Lightning and on-chain without closing.
-- **Channel partner dependency.** Your funds are co-controlled with your partner. If they go offline permanently, you can force-close (recovering after a CSV-locked window), but the process is more involved than spending an on-chain UTXO.
-- **Static-channel-backup risk.** If you lose your Lightning node state without an [SCB](/glossary/static-channel-backup-scb), recovery requires force-closing channels with their last-known state, which might be older than current.
+- **链上流动性。** 锁定的 BTC 不可直接访问。需要在链上花费？要么关闭通道（有链上手续费成本），要么使用潜艇互换在不开通道的情况下在闪电和链上之间转移余额。
+- **通道伙伴依赖。** 你的资金与伙伴共同控制。如果他们永久离线，你可以强制关闭（在 CSV 锁定窗口后恢复），但过程比花费链上 UTXO 更复杂。
+- **静态通道备份风险。** 如果你在没有 [SCB](/glossary/static-channel-backup-scb) 的情况下丢失闪电节点状态，恢复需要以最后已知状态强制关闭通道，可能比当前状态更旧。
 
-What you gain:
+你获得的：
 
-- **Near-instant Lightning payments.** Sub-second settlement on payments within the channel network.
-- **Near-zero fees** for in-channel and routed payments.
-- **Significant privacy.** Routed Lightning payments don't leave a permanent on-chain trail.
+- **近乎即时的闪电支付。** 通道网络内的亚秒级结算。
+- **近零费用**的通道内和路由支付。
+- **显著的隐私。** 路由的闪电支付不留下永久的链上痕迹。
 
-Operationally, the right balance is usually to keep enough on-chain BTC for non-Lightning needs and commit the rest to channels sized for actual use. For active routing nodes, channels stay open for months to years. For consumer wallets, channels can be more transient depending on liquidity needs.
+在运营上，正确的平衡通常是保持足够的链上 BTC 供非闪电需求使用，其余按实际使用规模提交到通道。对于活跃的路由节点，通道保持开放数月到数年。对于消费钱包，通道可以根据流动性需求更加短暂。
 
-The "lockup period" framing is a useful mental model for understanding the tradeoff: you give up immediate on-chain access in exchange for fast, cheap, private off-chain payments while the channel is open.
+"锁定期"这个框架是理解权衡的有用心智模型：你放弃即时的链上访问，换取在通道开放期间快速、廉价、私密的链下支付。

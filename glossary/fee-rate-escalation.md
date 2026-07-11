@@ -1,12 +1,12 @@
 ---
-title: "Fee Rate Escalation"
+title: "手续费率升级"
 slug: fee-rate-escalation
 draft: false
-shortDefinition: "A surge in transaction fees due to heavy mempool congestion, leading to bidding wars for block space."
+shortDefinition: "因内存池严重拥堵导致的交易手续费飙升，引发对区块空间的竞价战。"
 keyTakeaways:
-  - "Occurs during sudden transaction surges or mempool spikes"
-  - "Encourages users to delay low-priority transactions or use LN"
-  - "Bidding wars can push fees to very high levels briefly"
+  - "在突发交易激增或内存池峰值期间发生"
+  - "鼓励用户延迟低优先级交易或使用闪电网络"
+  - "竞价战可能短暂将手续费推到很高水平"
 sources: []
 relatedTerms:
   - absolute-fee
@@ -23,23 +23,23 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Fee rate escalation is what happens when demand for block space exceeds supply. The mempool fills with unconfirmed transactions; miners pick the highest-fee-per-vbyte; everyone bids up to get in.
+手续费率升级是区块空间需求超过供应时发生的情况。内存池充满未确认交易；矿工选每 vByte 手续费最高的；所有人竞价以求进入。
 
-Bitcoin produces one block roughly every 10 minutes, with an effective ceiling of around 4 million weight units per block (~1.5-2 MB of typical transaction data). That ceiling is fixed by consensus and doesn't expand under load. When transaction submission rate exceeds the rate of block production, the mempool grows, and the fee floor to confirm in the next block (or the next few blocks) climbs.
+比特币大约每 10 分钟产出一个区块，每个区块有效上限约 400 万重量单位（约 1.5-2 MB 的典型交易数据）。该上限由共识固定，不在负载下扩展。当交易提交率超过区块产出率时，内存池增长，下一区块（或接下来几个区块）确认的手续费底线攀升。
 
-Historical fee spikes:
+历史手续费飙升：
 
-- December 2017 bull market: fees briefly hit $50+ per transaction.
-- April-May 2021 bull run: sustained 100+ sat/vbyte for weeks.
-- December 2022 through 2024 Ordinals / inscription era: persistent baseline congestion from inscription minting; periodic spikes to hundreds of sats/vbyte.
-- Post-halving periods (notably May 2020 and April 2024): brief escalation as miners' subsidy income dropped and the network adjusted.
+- 2017 年 12 月牛市：手续费短暂突破每笔交易 50 美元以上。
+- 2021 年 4-5 月牛市：持续数周 100+ sat/vbyte。
+- 2022 年 12 月至 2024 年 Ordinals/铭文时代：铭文铸造造成的持续基线拥堵；周期性飙升至数百 sat/vbyte。
+- 减半后时期（特别是 2020 年 5 月和 2024 年 4 月）：矿工补贴收入下降、网络调整时的短暂升级。
 
-What you can do during fee escalation:
+手续费升级期间你可以做什么：
 
-- Wait. Fee escalation is usually self-correcting. As fees climb, the marginal user drops out, and the mempool clears within hours or days.
-- Use Lightning. Off-chain payments aren't bidding for the same block space.
-- Use [Replace-by-Fee](/glossary/replace-fee-rbf) to bump a stuck transaction.
-- Batch. Multiple recipients in one transaction amortize the fee overhead.
-- Use Taproot. Schnorr signatures and key-path Taproot spends are slightly smaller than ECDSA-based equivalents.
+- 等待。手续费升级通常是自我修正的。随着手续费攀升，边际用户退出，内存池在几小时或几天内清空。
+- 使用闪电网络。链下支付不竞争相同的区块空间。
+- 使用 [Replace-by-Fee](/glossary/replace-fee-rbf) 加价卡住的交易。
+- 批量。一笔交易多个接收者摊销手续费开销。
+- 使用 Taproot。Schnorr 签名和密钥路径 Taproot 花费比基于 ECDSA 的等价物略小。
 
-The base layer prioritizing fees over throughput is a feature. It's what makes Bitcoin's block size cap politically tractable and gives Lightning room to be the actual high-volume payment rail.
+基础层优先考虑手续费而非吞吐量是一种特性。这使比特币的区块大小上限在政治上可行，并给闪电网络空间成为真正的高量支付轨道。

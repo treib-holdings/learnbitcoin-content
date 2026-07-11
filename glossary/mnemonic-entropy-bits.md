@@ -1,12 +1,12 @@
 ---
-title: "Mnemonic Entropy Bits"
+title: "助记词熵位数"
 slug: mnemonic-entropy-bits
 draft: false
-shortDefinition: "The underlying binary randomness used to generate BIP 39 seed words (commonly 128, 192, or 256 bits)."
+shortDefinition: "用于生成 BIP 39 助记词的底层二进制随机性（通常 128、192 或 256 位）。"
 keyTakeaways:
-  - "128 bits → 12 words, 256 bits → 24 words, etc."
-  - "Higher entropy means stronger cryptographic security"
-  - "Checksum ensures small mistakes don't create an invalid seed"
+  - "128 位 → 12 个词，256 位 → 24 个词等"
+  - "更高的熵意味着更强的密码学安全性"
+  - "校验和确保小错误不会创建无效种子"
 sources: []
 relatedTerms:
   - bip-39
@@ -17,18 +17,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A BIP 39 mnemonic is a human-friendly encoding of raw random bits. The wallet generates entropy, appends a small checksum, then maps the result to words from the BIP 39 wordlist (2048 words, each carrying 11 bits of information).
+BIP 39 助记词是原始随机位的人类友好编码。钱包生成熵，附加小校验和，然后将结果映射到 BIP 39 词表中的词（2048 个词，每个携带 11 位信息）。
 
-The mapping is fixed:
+映射是固定的：
 
-- 128 bits + 4 checksum bits → 12 words
-- 160 bits + 5 checksum bits → 15 words
-- 192 bits + 6 checksum bits → 18 words
-- 224 bits + 7 checksum bits → 21 words
-- 256 bits + 8 checksum bits → 24 words
+- 128 位 + 4 校验位 → 12 个词
+- 160 位 + 5 校验位 → 15 个词
+- 192 位 + 6 校验位 → 18 个词
+- 224 位 + 7 校验位 → 21 个词
+- 256 位 + 8 校验位 → 24 个词
 
-128 bits is the practical security floor. Brute-forcing 2^128 operations is computationally infeasible by any known method, classical or quantum (Grover's algorithm halves the bit-strength against quantum search, so 128-bit entropy becomes ~64-bit quantum security, which is the edge of "expensive but doable" if large-scale quantum computers existed; this is one reason a paranoid setup uses 24 words instead of 12).
+128 位是实际安全下限。暴力破解 2^128 次运算在任何已知方法下都是计算上不可行的，无论是经典还是量子（Grover 算法将量子搜索的位强度减半，所以 128 位熵变成约 64 位量子安全，如果大规模量子计算机存在，这在"昂贵但可行"的边缘；这是偏执设置使用 24 个词而非 12 个词的原因之一）。
 
-In practice almost any modern wallet defaults to either 12 or 24 words. 12 is enough for any threat model that doesn't include a working cryptographically-relevant quantum computer; 24 is the choice when "future-proof against speculative cryptographic breakthroughs" matters to you. Both are massively more secure than the password you actually use for your email.
+实践中几乎所有现代钱包默认使用 12 或 24 个词。12 个词对不包含可用密码学相关量子计算机的任何威胁模型都足够了；24 个词是当"对未来推测性密码学突破的防御"对你重要时的选择。两者都比你实际用于电子邮件的密码安全得多。
 
-The checksum bits matter operationally: if you transcribe one word wrong, the checksum almost certainly fails and the wallet rejects the seed at load time instead of silently producing a different wallet. It's a small but real safety net against transcription errors.
+校验位在操作上很重要：如果你抄错一个词，校验和几乎肯定会失败，钱包在加载时拒绝种子，而不是静默产生一个不同的钱包。这是对抗转录错误的小而真实的安全网。

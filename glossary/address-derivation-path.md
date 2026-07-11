@@ -1,12 +1,12 @@
 ---
-title: "Address Derivation Path"
+title: "地址派生路径"
 slug: address-derivation-path
 draft: false
-shortDefinition: "A structured route in hierarchical deterministic (HD) wallets (e.g., m/44'/0'/0'/0/0) to generate a sequence of keys and addresses."
+shortDefinition: "在分层确定性（HD）钱包中生成一系列密钥和地址的结构化路径（如 m/44'/0'/0'/0/0）。"
 keyTakeaways:
-  - "Structures how HD wallets generate multiple addresses"
-  - "Specified in BIPs like BIP-32 and BIP-44"
-  - "Ensures wallet interoperability and organization"
+  - "结构化定义 HD 钱包如何生成多个地址"
+  - "在 BIP-32 和 BIP-44 等提案中规范"
+  - "确保钱包的互操作性和组织性"
 sources: []
 relatedTerms:
   - address
@@ -20,30 +20,30 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A derivation path is the slash-separated address into a [BIP 32](/glossary/bip-32) HD wallet tree, telling the wallet exactly which key to derive from the master seed. The format is:
+派生路径是用斜杠分隔的路径，指向 [BIP 32](/glossary/bip-32) HD 钱包树中的具体位置，告诉钱包从主种子中派生哪个密钥。格式为：
 
 ```
 m / purpose' / coin_type' / account' / change / address_index
 ```
 
-The apostrophe (often written `h` instead) marks a hardened derivation level. The first three levels are conventionally hardened so that leaking one branch's keys doesn't expose siblings.
+撇号（也常写成 `h`）标记硬化派生层级。前三个层级按惯例使用硬化派生，这样即使泄露了某个分支的密钥也不会暴露同级分支。
 
-The purpose-level conventions in practice:
+实际使用中的 purpose 层级约定：
 
-- **BIP 44** (`m/44h/0h/0h/0/0`) - the original multi-account convention. Legacy P2PKH `1...` addresses.
-- **BIP 49** (`m/49h/0h/0h/0/0`) - P2SH-wrapped SegWit (`3...` addresses).
-- **BIP 84** (`m/84h/0h/0h/0/0`) - native SegWit (`bc1q...` addresses). The 2026 default for non-Taproot wallets.
-- **BIP 86** (`m/86h/0h/0h/0/0`) - Taproot (`bc1p...` addresses).
-- **BIP 48** (`m/48h/0h/0h/<script>h/0/0`) - the multisig convention.
+- **BIP 44**（`m/44h/0h/0h/0/0`）——最初的多账户约定。传统 P2PKH `1...` 地址。
+- **BIP 49**（`m/49h/0h/0h/0/0`）——P2SH 包装的 SegWit（`3...` 地址）。
+- **BIP 84**（`m/84h/0h/0h/0/0`）——原生 SegWit（`bc1q...` 地址）。2026 年非 Taproot 钱包的默认选择。
+- **BIP 86**（`m/86h/0h/0h/0/0`）——Taproot（`bc1p...` 地址）。
+- **BIP 48**（`m/48h/0h/0h/<script>h/0/0`）——多签约定。
 
-Reading the parts:
+各部分含义：
 
-- `purpose` - which spec governs the address format below this level.
-- `coin_type` - registered chain ID. Bitcoin is 0; testnet is 1; other chains have their own.
-- `account` - independent account index. Account 0 is conventional default; users with multiple wallets use 1, 2, etc.
-- `change` - 0 for receive addresses, 1 for change addresses. (Some wallets reserve 2 for "internal change.")
-- `address_index` - the sequential counter for individual addresses.
+- `purpose`——指定此层级以下的地址格式遵循哪个规范。
+- `coin_type`——注册的链 ID。比特币是 0；测试网是 1；其他链有自己的 ID。
+- `account`——独立的账户索引。账户 0 是惯例默认值；使用多个钱包的用户用 1、2 等。
+- `change`——0 表示接收地址，1 表示找零地址。（某些钱包保留 2 表示"内部找零"。）
+- `address_index`——单个地址的顺序计数器。
 
-The same seed plus the same derivation path always produces the same private key, on any wallet that follows the convention. That's why a BIP 39 seed phrase is portable: import it into any wallet that uses BIP 84 (or 86, or 44, or whatever convention generated the addresses) and you get back the same keys.
+相同的种子加相同的派生路径总是产生相同的私钥，在任何遵循约定的钱包中都是如此。这就是 BIP 39 助记词可移植的原因：将它导入任何使用 BIP 84（或 86、44 等约定）的钱包，你就能得到相同的密钥。
 
-Mismatched derivation paths are the canonical "I restored my wallet and don't see my balance" failure: the seed is right but the wallet is looking at a different branch of the tree. Modern wallets usually try the common paths automatically; older or specialty wallets sometimes need the path entered manually.
+派生路径不匹配是"我恢复了钱包但看不到余额"这一经典故障的原因：种子是对的，但钱包在看树的不同分支。现代钱包通常会自动尝试常见路径；较老或特殊钱包有时需要手动输入路径。

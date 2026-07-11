@@ -1,12 +1,12 @@
 ---
-title: "Node"
+title: "节点"
 slug: node
 draft: false
-shortDefinition: "A computer running Bitcoin software to validate and relay blocks/transactions, enforcing network consensus rules."
+shortDefinition: "运行比特币软件的计算机，验证和中继区块/交易，执行网络共识规则。"
 keyTakeaways:
-  - "Validates transactions/blocks according to consensus"
-  - "Can be full (entire chain) or SPV (partial verification)"
-  - "Key to Bitcoin's decentralized security model"
+  - "根据共识验证交易/区块"
+  - "可以是全节点（完整链）或 SPV（部分验证）"
+  - "比特币去中心化安全模型的关键"
 sources: []
 relatedTerms:
   - bitcoin-client
@@ -31,15 +31,11 @@ sameAs:
 liveWidget: ~
 ---
 
-A Bitcoin node is a computer running Bitcoin software that participates in the peer-to-peer network. It receives [transactions](/glossary/transaction) and [blocks](/glossary/block), validates them against the consensus rules, and relays valid ones to its peers.
+比特币节点是参与点对点网络的运行比特币软件的计算机。它接收[交易](/glossary/transaction)和[区块](/glossary/block)，根据共识规则验证它们，并将有效的中继给对等方。
 
-Nodes come in two practical flavors:
+节点有两种实际类型：
 
-- **[Full nodes](/glossary/full-node)** download and validate every block from the [genesis block](/glossary/genesis-block) onward, maintaining the complete UTXO set and enforcing every consensus rule independently. This is the gold standard of trustlessness.
-- **SPV (Simplified Payment Verification) nodes** download only block headers and rely on full nodes to confirm transaction inclusion via Merkle proofs. They're much lighter (a few megabytes vs hundreds of gigabytes) but trade away some verification guarantees.
+- **[全节点](/glossary/full-node)**从[创世区块](/glossary/genesis-block)开始下载并验证每个区块，维护完整的 UTXO 集并独立执行每条共识规则。这是无信任的黄金标准。
+- **SPV 节点**（[简化支付验证](/glossary/spv-simplified-payment-verification)）只下载区块头并使用默克尔证明来检查特定交易。更轻、更快，但信任矿工执行共识规则而非自己验证一切。
 
-Nodes are how Bitcoin enforces its rules. Miners propose blocks; nodes accept or reject them. A miner that produces an invalid block - too much subsidy, an invalid signature, a malformed transaction - sees their block ignored by every honest node on the network. This is why the famous claim "Bitcoin is governed by nodes, not miners" is true. The hash rate decides which valid history wins; the nodes decide what *valid* means.
-
-The network currently has roughly 15,000-20,000 publicly reachable full nodes, plus an unknown larger number of non-listening nodes (running behind NAT, on Tor, etc). That distributed enforcement is the real backbone of Bitcoin's security model.
-
-See [Full Node](/glossary/full-node) for what running one looks like in practice, and [Journey: Sovereignty](/journey/sovereignty) for why you might want to.
+全节点是比特币安全模型的基础。网络的去中心化来自数万个独立运营者各自验证一切——没有任何中心化权威决定规则是什么或交易是否有效。

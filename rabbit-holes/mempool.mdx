@@ -1,10 +1,11 @@
----title: "The Mempool"
+---
+title: "内存池"
 slug: mempool
 draft: false
 status: live
 published: "2026-05-15"
 section: rabbit-hole
-tagline: "Where transactions wait before they are real. The auction-house buffer between you and a block."
+tagline: "交易在变成"真正"的之前的等候室。你与区块之间的拍卖缓冲区。"
 order: 7
 estimatedMinutes: 11
 ogImage: "/diagrams/og/mempool.png"
@@ -20,7 +21,7 @@ hasInteractive: ["mempoolHistogram"]
 
 import MempoolHistogram from '@components/mining/MempoolHistogram.svelte';
 
-> **Where you're going:** The most misunderstood piece of Bitcoin's plumbing. There is no "the" mempool — every node has its own, transactions sort by sat/vB, and fee rate is the only number that matters. Here is how it actually works.
+> **你将了解：** 比特币管道中被误解最多的一环。没有"那个"内存池 - 每个节点都有自己的，交易按 sat/vByte 排序，费率是唯一重要的数字。以下是它实际如何工作的。
 
 <figure>
   <video
@@ -35,132 +36,132 @@ import MempoolHistogram from '@components/mining/MempoolHistogram.svelte';
     preload="metadata"
     aria-label="Animated walkthrough of the Bitcoin mempool. Alice broadcasts a transaction at 3 sat/vB and lands at the bottom fee tier. Bob broadcasts later at 50 sat/vB and jumps to the top. A block scoops the top tier and Bob confirms. Over more blocks the mempool drains and Alice eventually mines. Leftover low-fee transactions evict after two weeks and the value returns to the sender's wallet, where it can be rebroadcast at a higher rate."
   ></video>
-  <figcaption>Broadcast, propagation, fee-rate sorting, mining, eviction, rebroadcast — the full mempool lifecycle in under a minute.</figcaption>
+  <figcaption>广播、传播、费率排序、挖矿、驱逐、重新广播 - 不到一分钟的完整内存池生命周期。</figcaption>
 </figure>
 
-## 1. The Mempool, In One Line
+## 1. 一句话说清内存池
 
-The mempool is the holding area for transactions that have been broadcast but not yet included in a [block](/glossary/block).
+内存池是已广播但尚未被打包进[区块](/glossary/block)的交易的等候区。
 
-When you send a Bitcoin transaction, it does not go straight into the [blockchain](/glossary/blockchain). It goes into the mempool of whichever [node](/glossary/node) received it first, gets relayed to that node's peers, gets relayed to *their* peers, and propagates across the global network within seconds. From there, it sits and waits.
+当你发送一笔比特币交易时，它不会直接进入[区块链](/glossary/blockchain)。它先进入最先收到它的[节点](/glossary/node)的内存池，被中继给该节点的对等节点，再被中继给对等节点的对等节点，在几秒内传遍全球网络。然后它就在那里等待。
 
-Until a [miner](/glossary/miner) picks it up and includes it in a block, your transaction is *unconfirmed*. It exists, it is valid, but it is not yet permanent.
+在一个[矿工](/glossary/miner)将其打包进区块之前，你的交易是*未确认的*。它存在，它是有效的，但它还不是永久的。
 
-## 2. There Is No "The" Mempool
+## 2. 没有"那个"内存池
 
-A common mistake: treating the mempool as a single global object.
+一个常见错误：把内存池当作单一的全局对象。
 
-It is not. **Every full node maintains its own mempool.** They mostly converge because they all relay transactions and apply similar policies, but they are not identical.
+它不是。**每个全节点维护自己的内存池。** 它们大多会趋同，因为它们都中继交易并应用类似的政策，但它们不是完全相同的。
 
-When you check "the mempool" on a website like mempool.space, you are looking at *that website's node's* mempool. A different node, particularly one with a different policy configuration, might see a slightly different set of transactions.
+当你在 mempool.space 这样的网站上查看"内存池"时，你看到的是*那个网站的节点的*内存池。另一个节点，尤其是政策配置不同的节点，可能会看到略有不同的交易集合。
 
-This matters in a few practical cases:
+这在几种实际情况中很重要：
 
-- **Network partitions** (rare but real) can cause mempools to diverge for minutes.
-- **Bitcoin Knots vs [Bitcoin Core](/glossary/bitcoin-core)** apply different relay policies. Knots is more restrictive about inscription-style transactions and will not relay some that Core will.
-- **Miners' private mempools.** Mining pools sometimes accept transactions out-of-band that are not in any public mempool, then include them in blocks they mine.
+- **网络分区**（罕见但真实）可能导致内存池在几分钟内出现差异。
+- **Bitcoin Knots vs [Bitcoin Core](/glossary/bitcoin-core)** 应用不同的中继政策。Knots 对铭文类交易更严格，不会中继一些 Core 会中继的交易。
+- **矿工的私有内存池。** 矿池有时通过带外方式接收不在任何公共内存池中的交易，然后将它们打包进自己挖的区块。
 
-For most users, "the mempool" is a useful approximation. For anyone debugging a stuck transaction, knowing the abstraction is leaky is essential.
+对大多数用户来说，"内存池"是一个有用的近似。对任何调试卡住的交易的人来说，知道这个抽象是有漏洞的就至关重要。
 
-## 3. How Transactions Enter
+## 3. 交易如何进入
 
-When you broadcast a transaction:
+当你广播一笔交易时：
 
-1. Your wallet sends it to a Bitcoin node (yours, your wallet provider's, or via a public broadcast service).
-2. That node validates it. Signatures correct? Inputs exist and unspent? Fee meets relay minimum? Script policy ok?
-3. If valid, the node adds it to its mempool and relays it to peers via the `inv` → `getdata` → `tx` message sequence.
-4. Each receiving peer repeats steps 2 and 3.
+1. 你的钱包将其发送到一个比特币节点（你自己的、你的钱包提供商的、或通过公共广播服务）。
+2. 该节点验证它。签名正确？输入存在且未花费？手续费达到中继最低值？脚本策略没问题？
+3. 如果有效，节点将其加入自己的内存池，并通过 `inv` → `getdata` → `tx` 消息序列中继给对等节点。
+4. 每个接收对等节点重复步骤 2 和 3。
 
-Within roughly 5 to 10 seconds, the transaction is in most mempools globally.
+大约 5 到 10 秒内，交易就在全球大多数内存池中了。
 
-The validation in step 2 is **node policy**, not consensus. A transaction can be valid by consensus rules (it would be accepted in a block) but rejected by relay policy (the node will not pass it on). This is why some transactions sit in zero public mempools but still get mined - they are submitted directly to a miner.
+步骤 2 中的验证是**节点政策**，不是共识。一笔交易可能按共识规则有效（它会在区块中被接受）但被中继政策拒绝（节点不会传递它）。这就是为什么有些交易在零个公共内存池中待着但仍然被打包 - 它们被直接提交给了矿工。
 
-## 4. How Transactions Leave
+## 4. 交易如何离开
 
-A transaction in the mempool has four possible exits:
+内存池中的交易有四种可能的出口：
 
-- **Confirmed.** A miner included it in a block. The block was relayed, accepted, and added to the chain. The transaction is now part of consensus. This is the goal.
-- **Evicted.** The mempool has size limits (default 300 MB in Bitcoin Core). When the mempool fills up, transactions with the lowest fee rates get dropped. The UTXOs the dropped transaction was trying to spend stay unspent on the chain; your keys still control them, and the transaction can be rebroadcast at a higher fee. Most wallets do not automate this.
-- **Replaced.** If the transaction signaled RBF (or the node uses full-RBF policy), a higher-fee version replaces it in the mempool. The original is forgotten.
-- **Conflicted.** If a different transaction spends one of the same UTXOs and gets mined first, your transaction becomes invalid (the UTXO no longer exists) and gets dropped.
+- **确认。** 一个矿工将其打包进区块。区块被中继、接受并添加到链上。交易现在成为共识的一部分。这是目标。
+- **驱逐。** 内存池有大小限制（Bitcoin Core 默认 300 MB）。当内存池满了，最低费率的交易被丢弃。被丢弃的交易试图花费的 UTXO 在链上仍然未花费；你的密钥仍然控制着它们，交易可以用更高手续费重新广播。大多数钱包不会自动做这件事。
+- **替换。** 如果交易标记了 RBF（或节点使用 full-RBF 政策），一个更高手续费的版本会替换它在内存池中的位置。原始交易被遗忘。
+- **冲突。** 如果一笔不同的交易花费了相同的 UTXO 且先被打包，你的交易就变得无效（UTXO 不再存在）并被丢弃。
 
-By default, Bitcoin Core's mempool keeps unconfirmed transactions for up to **two weeks** before eviction. This is the `-mempoolexpiry` configuration value (336 hours by default); node operators can shorten or extend it.
+默认情况下，Bitcoin Core 的内存池保留未确认交易最多**两周**后驱逐。这是 `-mempoolexpiry` 配置值（默认 336 小时）；节点操作者可以缩短或延长。
 
-## 5. Fee Rate, Not Absolute Fee
+## 5. 费率，不是绝对手续费
 
-This is the single most important thing to understand about the mempool:
+关于内存池你需要理解的唯一最重要的事：
 
-**Miners care about fee rate, not absolute fee.**
+**矿工关心的是费率，不是绝对手续费。**
 
-Fee rate is the [transaction fee](/glossary/transaction-fee) divided by the transaction's size, expressed in satoshis per virtual byte (**sat/vB**). A 250-byte transaction with a 2,500 sat fee has the same fee rate (10 sat/vB) as a 1,000-byte transaction with a 10,000 sat fee.
+费率是[交易手续费](/glossary/transaction-fee)除以交易大小，以每虚拟字节聪（**sat/vB**）表示。一笔 250 字节的交易带 2,500 聪手续费和一笔 1,000 字节的交易带 10,000 聪手续费有相同的费率（10 sat/vB）。
 
-Why? Because block space is the scarce resource. A miner with a fixed roughly 4 million weight units of space maximizes revenue by including the highest-fee-per-byte transactions first.
+为什么？因为区块空间是稀缺资源。一个拥有固定约 400 万重量单位空间的矿工，通过先打包每字节手续费最高的交易来最大化收入。
 
-This means:
+这意味着：
 
-- A small transaction paying a tiny absolute fee can confirm faster than a large transaction paying a huge absolute fee, if the small one's *fee rate* is higher.
-- "I paid $20 in fees" is meaningless unless you also know how big the transaction was.
+- 一笔小额交易支付微小绝对手续费可以比一笔大额交易支付巨大绝对手续费确认更快，如果小额交易的*费率*更高。
+- "我付了 20 美元手续费"是没意义的，除非你还知道交易有多大。
 
-The UTXOs you choose to spend (see [UTXOs](/rabbit-hole/utxos)) directly determine your transaction size, which directly determines what fee rate buys you a given confirmation time. The two are inseparable.
+你选择花费的 UTXO（参见 [UTXO](/rabbit-hole/utxos)）直接决定你的交易大小，直接决定什么费率能买到给定的确认时间。两者不可分割。
 
-> **Pro tip (h/t u/BlyG from the r/Bitcoin launch thread):** Think of the mempool as the DMV waiting room. Everyone is waiting for the same clerks (block space), but there is no take-a-number system - there is a VIP line, and your fee rate is how far up it you stand. Pay a higher rate and you get called sooner. Pay a low rate on a busy day and you can sit there all afternoon watching people who arrived after you walk straight past.
+> **实用提示（来自 r/Bitcoin 发布帖的 u/BlyG）：** 把内存池想象成车管所（DMV）的等候室。每个人都在等同一批窗口（区块空间），但没有取号系统 - 只有一条 VIP 队伍，你的费率就是你的位置。付更高费率，你会更快被叫到。在忙碌的日子付低费率，你可以在那里坐一下午，看着后到的人直接从你旁边走过。
 
-## 6. The Histogram
+## 6. 直方图
 
-Here is the current state of the mempool, ordered highest-fee-rate first:
+这是内存池的当前状态，按费率从高到低排序：
 
 <MempoolHistogram client:visible />
 
-The bands are sorted with the highest sat/vB at the top, matching miner priority - top is what gets into the next block first. Each band shows how much pending volume sits at that fee-rate level.
+各条带按 sat/vB 从高到低排列，匹配矿工优先级 - 顶部的是下一个进入区块的。每条带显示该费率级别有多少待处理交易量。
 
-When the mempool is empty, almost any fee rate gets you confirmed in the next block. When the mempool is full (typical during high-volume periods), you need to outbid the transactions ahead of you.
+当内存池空时，几乎任何费率都能让你在下一个区块中确认。当内存池满时（高交易量时段的典型情况），你需要出价高于排在你前面的交易。
 
-## 7. RBF and CPFP: What to Do When Stuck
+## 7. RBF 和 CPFP：卡住了怎么办
 
-If you broadcast a transaction with too low a fee rate, it can sit in the mempool indefinitely. Two tools exist to unstick it:
+如果你广播了一笔费率太低的交易，它可能在内存池里无限期地待着。有两种工具可以解套：
 
-**Replace-By-Fee (RBF):** broadcast a replacement transaction with a higher fee. If the original signaled RBF (per [BIP 125](/glossary/bip-125-replace-fee)), nodes that follow the standard will replace it. Bitcoin Core 28.0 (October 2024) made full-RBF the default, so even non-signaling transactions can now be replaced on most of the network. This is the cleanest fix; you need RBF support in your wallet.
+**替换手续费（RBF，Replace-By-Fee）：** 广播一笔更高手续费的替换交易。如果原始交易标记了 RBF（根据 [BIP 125](/glossary/bip-125-replace-fee)），遵循标准的节点会替换它。Bitcoin Core 28.0（2024 年 10 月）将 full-RBF 设为默认，所以即使是未标记的交易现在也能在大多数网络上被替换。这是最干净的修复方式；你需要钱包支持 RBF。
 
-**Child-Pays-For-Parent (CPFP):** if you cannot replace the original (you did not send it, or it came from a non-RBF wallet), you can spend the output of the stuck transaction in a *new* transaction that pays a high fee. Miners include transactions as packages; the high fee on the child incentivizes them to also include the parent. CPFP requires the recipient to participate (since they control the unconfirmed UTXO).
+**子付父费（CPFP，Child-Pays-For-Parent）：** 如果你无法替换原始交易（不是你发的，或来自不支持 RBF 的钱包），你可以在一笔*新*交易中花费那笔卡住交易的输出，并支付高额手续费。矿工将交易作为包来打包；子交易的高额手续费激励他们也打包父交易。CPFP 需要接收方参与（因为接收方控制着未确认的 UTXO）。
 
-If neither works, you wait. Either the mempool clears enough that your low-fee transaction makes it in, or after two weeks it gets evicted and you can try again.
+如果两者都不行，你就等。要么内存池清空到你的低费率交易能被打包，要么两周后被驱逐，你可以再试。
 
-## 8. Mempool Policy Is Not Consensus
+## 8. 内存池政策不是共识
 
-A subtle but important distinction:
+一个微妙但重要的区分：
 
-- **Consensus rules** define what is valid in a block. These are enforced by every node and are very slow to change. They require a [soft fork](/glossary/soft-fork) or hard fork.
-- **Mempool / relay policy** defines what individual nodes choose to accept and relay. These are local, opinion-based, and can vary between node implementations.
+- **共识规则**定义了在区块中什么是有效的。这些由每个节点强制执行，改变非常慢。需要[软分叉](/glossary/soft-fork)或硬分叉。
+- **内存池/中继政策**定义了单个节点选择接受和中继什么。这些是本地的、基于观点的，不同节点实现之间可以不同。
 
-A transaction can be valid by consensus but rejected by relay policy. Examples:
+一笔交易可以按共识有效但被中继政策拒绝。例子：
 
-- A transaction with a non-standard script (technically valid, but no node will relay it). To get it mined, you submit directly to a miner.
-- A very large or very low-fee transaction (relay policy might drop it).
-- Inscription-bearing transactions (Bitcoin Core relays them; Bitcoin Knots, by default, does not).
+- 一笔带非标准脚本的交易（技术上有效，但没有节点会中继它）。要让它被打包，你直接提交给矿工。
+- 一笔非常大或非常低手续费的交易（中继政策可能会丢弃它）。
+- 带铭文的交易（Bitcoin Core 中继它们；Bitcoin Knots 默认不中继）。
 
-This matters because *policy* is what gets debated. When you hear "should Bitcoin Core filter inscriptions?" the question is whether to change relay policy. It is not a consensus change; it is a question of what individual nodes choose to do.
+这很重要因为*政策*才是被讨论的东西。当你听到"Bitcoin Core 应该过滤铭文吗？"这个问题时，它是在问是否改变中继政策。这不是共识变化；这是个别节点选择做什么的问题。
 
-## 9. The Mempool During Inscriptions
+## 9. 铭文期间的内存池
 
-Starting in early 2023, **inscriptions** (arbitrary data encoded into transaction witness data) caused sustained mempool congestion for the first time in years. Effects:
+从 2023 年初开始，**铭文**（编码到交易见证数据中的任意数据）多年来首次导致内存池持续拥堵。影响：
 
-- **Fee rates spiked** from typical 1 to 5 sat/vB to 50 to 300+ sat/vB during peak periods.
-- **The mempool grew** from typically 1 to 50 MB to consistently 100 to 500 MB.
-- **Wallets without RBF stranded.** Users could not bump fees on stuck transactions.
-- **Bitcoin Knots saw adoption growth.** Some operators want to filter inscriptions; Knots provides that policy by default.
+- **费率飙升**，从典型的 1 到 5 sat/vB 飙升到高峰期的 50 到 300+ sat/vB。
+- **内存池增长**，从通常的 1 到 50 MB 持续膨胀到 100 到 500 MB。
+- **不支持 RBF 的钱包被困住。** 用户无法提高卡住交易的手续费。
+- **Bitcoin Knots 获得更多采用。** 一些操作者想过滤铭文；Knots 默认提供这个政策。
 
-The debate about whether inscriptions are "spam" is real and ongoing. The technical reality is: they are valid Bitcoin transactions, they pay fees like any other, and the mempool sorts them by fee rate like any other. Whether a node operator chooses to relay them is up to that operator.
+关于铭文是否是"垃圾"的争论是真实且持续的。技术现实是：它们是有效的比特币交易，像其他任何交易一样支付手续费，内存池像其他任何交易一样按费率排序它们。节点操作者是否选择中继它们取决于那个操作者。
 
-## 10. What This Buys Us
+## 10. 这给我们带来了什么
 
-The mempool's role in Bitcoin is **price discovery for block space.**
+内存池在比特币中的角色是**区块空间的价格发现。**
 
-Block space is the scarce, valuable resource. The mempool is the live auction. Every block is a sealed-bid first-price auction where the miner picks the highest-bidding transactions to fill the roughly 4 million weight units of space available.
+区块空间是稀缺的、有价值的资源。内存池是实时拍卖。每个区块都是一个密封出价的首价拍卖，矿工选择出价最高的交易来填充约 400 万重量单位的空间。
 
-Without the mempool: no fee market, no fee signaling, no graceful congestion handling. The chain would just drop transactions that arrived faster than they could be mined.
+没有内存池：没有手续费市场，没有手续费信号，没有优雅的拥堵处理。链只会丢弃到达速度快于打包速度的交易。
 
-With the mempool: a transparent, adversarial, real-time market that prices block space from second to second. The system that lets miners earn fees, lets users signal urgency, and lets the network handle 10x demand spikes without falling over.
+有了内存池：一个透明的、对抗性的、实时市场，从秒到秒为区块空间定价。这个系统让矿工赚取手续费，让用户表达紧迫程度，让网络应对 10 倍需求尖峰而不崩溃。
 
-It is not pretty. It is, however, the right design.
+它不漂亮。但它是正确的设计。
 
-> **Pro tip:** Before sending a non-trivial Bitcoin transaction, glance at the current mempool fee histogram. Three minutes of attention to fee rates can save you hours of waiting or dollars of overpaying.
+> **实用提示：** 发送非小额比特币交易前，看一眼当前内存池手续费直方图。三分钟关注费率可以省掉你几个小时的等待或多付的美元。

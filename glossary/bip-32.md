@@ -1,12 +1,12 @@
 ---
-title: "BIP 32 (HD Wallets)"
+title: "BIP 32（HD 钱包）"
 slug: bip-32
 draft: false
-shortDefinition: "Pieter Wuille's 2012 standard for deterministic key derivation: one seed becomes a tree of keys, all reproducible from a single backup."
+shortDefinition: "Pieter Wuille 2012 年的确定性密钥派生标准：一个种子变为一棵密钥树，全部可从单次备份重现。"
 keyTakeaways:
-  - "Defines extended keys (xpub / xprv) and child-key derivation via HMAC-SHA512"
-  - "Hardened derivation (index >= 2^31) closes the parent-key recovery attack"
-  - "Universally adopted; every modern Bitcoin wallet builds on BIP 32"
+  - "定义扩展密钥（xpub / xprv）和通过 HMAC-SHA512 的子密钥派生"
+  - "硬化派生（索引 >= 2^31）关闭父密钥恢复攻击"
+  - "被普遍采用；每个现代比特币钱包都基于 BIP 32"
 sources: []
 relatedTerms:
   - bip-39
@@ -25,22 +25,22 @@ sameAs:
 liveWidget: ~
 ---
 
-BIP 32, authored by Pieter Wuille in February 2012, is the foundational standard for hierarchical deterministic (HD) Bitcoin wallets. One 512-bit seed produces a tree of keys, all reproducible from that single seed. Back up the seed, and you've backed up every key your wallet will ever derive.
+BIP 32 由 Pieter Wuille 于 2012 年 2 月撰写，是分层确定性（HD）比特币钱包的基础标准。一个 512 位种子产生一棵密钥树，全部可从该单一种子重现。备份种子，就备份了钱包将永远派生的每个密钥。
 
-The construction is straightforward. The seed is split into a 256-bit master private key and a 256-bit [chaincode](/glossary/chaincode), bundled together as an extended private key (`xprv`). To derive a child key, HMAC-SHA512 is computed over the parent key, the chaincode, and the child index. The output gives the child's key and a new chaincode. Repeat at each level to walk the tree.
+构造很直接。种子被分为 256 位主私钥和 256 位[链码](/glossary/chaincode)，捆绑为扩展私钥（`xprv`）。要派生子密钥，对父密钥、链码和子索引计算 HMAC-SHA512。输出给出子密钥和新的链码。在每个层级重复以遍历树。
 
-Two derivation modes matter:
+两种派生模式：
 
-- **Non-hardened** (child index < 2^31). The child public key can be derived from the parent public key plus the chaincode. This is what makes [xpub](/glossary/xpub-extended-public-key) useful: hand someone the xpub and they can derive every receive address without ever seeing the private side.
-- **Hardened** (child index >= 2^31). The derivation requires the parent private key. An attacker who learns one hardened child private key cannot reconstruct the parent or its siblings. This closes a famous attack on non-hardened derivation. BIP 44 conventionally uses hardened derivation for account-level paths so a leaked account key doesn't compromise other accounts.
+- **非硬化**（子索引 < 2^31）。子公钥可以从父公钥加链码派生。这就是 [xpub](/glossary/xpub-extended-public-key) 有用的原因：把 xpub 给某人，他们可以派生每个接收地址而永远看不到私钥。
+- **硬化**（子索引 >= 2^31）。派生需要父私钥。知道一个硬化子私钥的攻击者无法重建父密钥或其同级。这关闭了非硬化派生的著名攻击。BIP 44 通常在账户层级使用硬化派生，这样泄露的账户密钥不会危及其他账户。
 
-Why this matters in practice:
+在实践中为什么重要：
 
-- **One backup, infinite addresses.** Generate a fresh address for every transaction without making more backups.
-- **Watch-only wallets.** Import an xpub into a phone app to monitor a hardware wallet's balance without exposing any private key.
-- **Multi-account separation.** [BIP 44](/glossary/bip-44) uses hardened account-level paths so an exposed account doesn't bleed into siblings.
-- **Cross-wallet portability.** Restore a BIP 32 seed in any standard wallet and get the same addresses. The seed is the asset; the software is replaceable.
+- **一次备份，无限地址。**每笔交易生成新地址而不需要更多备份。
+- **只读钱包。**将 xpub 导入手机应用以监控硬件钱包余额而不暴露任何私钥。
+- **多账户分离。**[BIP 44](/glossary/bip-44)使用硬化账户层级路径，使暴露的账户不会泄露到同级。
+- **跨钱包可移植性。**在任何标准钱包中恢复 BIP 32 种子得到相同地址。种子是资产；软件是可替换的。
 
-BIP 32 alone doesn't specify how the seed is created or backed up. That's [BIP 39](/glossary/bip-39): mnemonic seed phrases. Together they're the foundation of modern Bitcoin self-custody.
+BIP 32 本身不指定种子的创建或备份方式。那是 [BIP 39](/glossary/bip-39)：助记词。两者共同构成现代比特币自托管的基础。
 
-Spec: [BIP-32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki).
+规范：[BIP-32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)。

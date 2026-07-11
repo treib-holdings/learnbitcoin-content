@@ -1,12 +1,12 @@
 ---
-title: "Bitcoin ATM"
+title: "比特币 ATM"
 slug: bitcoin-atm
 draft: false
-shortDefinition: "A physical kiosk enabling users to buy (and sometimes sell) Bitcoin with cash or cards, typically requiring KYC."
+shortDefinition: "一种实体自助终端，允许用户用现金或银行卡购买（有时也出售）比特币，通常需要 KYC。"
 keyTakeaways:
-  - "Facilitates direct cash-to-BTC conversions"
-  - "Often charges higher fees for convenience"
-  - "May require identification due to regulations"
+  - "支持直接的现金兑换 BTC"
+  - "为便利通常收取较高费用"
+  - "因法规可能需要身份验证"
 sources: []
 relatedTerms:
   - address
@@ -19,21 +19,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Bitcoin ATM is a physical kiosk that lets you trade cash for Bitcoin (and sometimes vice versa). You scan a [receive address](/glossary/address) from your own [wallet](/glossary/wallet) on your phone, insert cash, and the operator sends BTC on-chain to that address.
+比特币 ATM 是一种实体自助终端，让你用现金交易比特币（有时也支持反向）。你从手机上的[钱包](/glossary/wallet)扫描一个[接收地址](/glossary/address)，插入现金，运营商就会向该地址发送链上 BTC。
 
-Pros:
+优点：
 
-- **Cash on-ramp without a bank.** You can convert physical money to BTC without first depositing into a brokerage account.
-- **Speed.** A typical Bitcoin ATM transaction completes in minutes (faster on Lightning-enabled machines).
-- **Available in places without strong banking.** In countries with capital controls or hostile banking environments, Bitcoin ATMs sometimes fill a real gap.
+- **无需银行的现金入口。**你可以将实体货币转为 BTC 而无需先存入经纪账户。
+- **速度。**一笔典型的比特币 ATM 交易在几分钟内完成（支持闪电网络的机器更快）。
+- **在银行服务薄弱的地方可用。**在资本管制或敌对银行环境下，比特币 ATM 有时填补了真实空白。
 
-Cons:
+缺点：
 
-- **Fees are high.** 5-15% is common; some operators charge more. The convenience markup is real.
-- **KYC is increasingly mandatory.** Most US Bitcoin ATMs now require ID verification above small amounts. Compliance with FinCEN and state-level money-transmission rules has tightened significantly since 2020.
-- **Operator risk.** You're trusting the operator to actually send the BTC after you put cash in. Most do; some scams exist. Stick to reputable operators in well-lit public locations.
-- **Privacy is limited.** Even when KYC isn't required, the machine has cameras and the operator records transactions. This is not an anonymous on-ramp in any meaningful sense.
+- **费率高。**5-15% 很常见；一些运营商收费更高。便利性溢价是真实的。
+- **KYC 越来越强制。**大多数美国比特币 ATM 现在对超过小额的金额要求身份验证。FinCEN 和州级汇款规则的合规自 2020 年以来显著收紧。
+- **运营商风险。**你信任运营商在你放入现金后实际发送 BTC。大多数会；存在一些骗局。坚持使用信誉良好的运营商和明亮的公共场所。
+- **隐私有限。**即使不要求 KYC，机器有摄像头，运营商记录交易。这意义上不是匿名入口。
 
-In 2026, Bitcoin ATMs are useful in two specific cases: when you genuinely need a cash on-ramp without a bank account, and when you want to introduce someone in person to buying BTC for the first time. For everything else, regular exchange withdrawals to your own wallet are usually cheaper.
+2026 年，比特币 ATM 在两个特定情况下有用：当你确实需要没有银行账户的现金入口时，以及当你想亲自介绍某人第一次购买 BTC 时。其他一切情况下，常规交易所提币到自己的钱包通常更便宜。
 
-For Bitcoiners who want to keep cash-to-BTC entirely peer-to-peer, look at services like Robosats or peer-to-peer trading networks. They're more friction but avoid the ATM operator's markup and KYC.
+对于想要完全点对点现金兑换 BTC 的比特币用户，看看 Robosats 等服务或点对点交易网络。摩擦更多但避免了 ATM 运营商的溢价和 KYC。

@@ -1,12 +1,12 @@
 ---
-title: "Deployment Threshold (Soft Fork)"
+title: "部署阈值（软分叉）"
 slug: deployment-threshold-soft-fork
 draft: false
-shortDefinition: "A required percentage of blocks signaling support for a soft fork before it locks in and activates (e.g., 95%)."
+shortDefinition: "软分叉锁定和激活前，要求区块信号支持达到的百分比（如 95%）。"
 keyTakeaways:
-  - "Sets a block signaling target for soft-fork readiness"
-  - "Ensures upgrades only activate with high miner support"
-  - "Sometimes criticized for giving miners disproportionate influence"
+  - "设定软分叉就绪的区块信号目标"
+  - "确保升级仅在矿工高度支持时激活"
+  - "有时被批评为给矿工过大影响力"
 sources: []
 relatedTerms:
   - bip-9-versionbits
@@ -21,14 +21,14 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The deployment threshold is the percentage of recent blocks that must signal support for a proposed soft fork before it activates. Under BIP 9 (versionbits), the standard threshold was 95% of blocks in a 2016-block retarget period setting a designated version bit.
+部署阈值是提议的软分叉激活前，近期区块必须信号支持的百分比。在 BIP 9（versionbits）下，标准阈值是在 2016 个区块的重定向周期中 95% 的区块设置指定的版本位。
 
-This worked fine for technical upgrades the mining community was uniformly behind. It worked badly for upgrades miners had economic or political reasons to slow down.
+这对于矿工社区一致支持的技术升级效果很好。对于矿工有经济或政治理由推迟的升级则效果很差。
 
-The SegWit deployment (2016-2017) is the canonical case study. SegWit was a clean improvement; most users wanted it; large portions of the mining hashrate stalled signaling for months for various reasons (some legitimate concerns about implementation details, some commercial: ASICBoost was incompatible with SegWit and some miners preferred not to deprecate that revenue stream). The 95% threshold gave a minority of miners de-facto veto power.
+SegWit 部署（2016-2017 年）是典型案例。SegWit 是一个干净的改进；大多数用户想要它；大部分挖矿算力因各种原因拖延信号数月（一些是关于实现细节的合理担忧，一些是商业的：ASICBoost 与 SegWit 不兼容，一些矿工不想放弃该收入流）。95% 阈值给了少数矿工事实上的否决权。
 
-The resolution was multi-pronged: BIP 91 lowered the SegWit signaling threshold to 80% with a forced lock-in, BIP 148 was a User-Activated Soft Fork (UASF) showing that economically significant nodes could enforce SegWit rules even without miner signaling, and the combined pressure got miners to signal.
+解决方案是多管齐下的：BIP 91 将 SegWit 信号阈值降至 80% 并强制锁定，BIP 148 是用户激活软分叉（UASF），表明经济上重要的节点甚至在没有矿工信号的情况下也能执行 SegWit 规则，综合压力使矿工开始信号。
 
-Lesson learned: pure miner-threshold activation makes upgrades hostage to mining politics. Taproot's activation used "Speedy Trial" - BIP 9 signaling with a hard minimum activation height, so the upgrade activates either at threshold or at the height, whichever comes first. No more indefinite stuck deployments.
+吸取的教训：纯矿工阈值激活使升级被挖矿政治挟持。Taproot 的激活使用了"快速试验"（Speedy Trial）——BIP 9 信号加上硬性最低激活高度，因此升级在阈值或高度处激活，以先到者为准。不再有无限期卡住的部署。
 
-The deployment threshold remains useful as a coordination signal, but the days when it was treated as the final arbiter of activation are over.
+部署阈值作为协调信号仍然有用，但将其视为激活最终仲裁者的日子已经过去了。

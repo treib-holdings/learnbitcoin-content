@@ -1,12 +1,12 @@
 ---
-title: "Interactive Multi-Sig"
+title: "交互式多签"
 slug: interactive-multi-sig
 draft: false
-shortDefinition: "A signing model requiring all cosigners to collaborate in real time before producing a valid multi-signature transaction."
+shortDefinition: "一种签名模型，要求所有共签者在生成有效的多签交易之前实时协作。"
 keyTakeaways:
-  - "Requires simultaneous or sequential online presence of cosigners"
-  - "Potentially reduces signature footprint (e.g., via aggregated signatures)"
-  - "More complex to implement but can enhance efficiency or privacy"
+  - "要求共签者同时或顺序在线"
+  - "可能减少签名占用（例如通过聚合签名）"
+  - "实现更复杂但可提升效率或隐私"
 sources: []
 relatedTerms:
   - hierarchical-multisig
@@ -19,28 +19,28 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Interactive multi-sig is the class of multi-signature schemes where cosigners must actively communicate with each other during signing, rather than signing independently and combining the results offline.
+交互式多签是一类多签方案，共签者在签名过程中必须积极相互通信，而不是各自独立签名后再离线组合结果。
 
-The contrast:
+对比：
 
-- **Non-interactive multisig** (classical `OP_CHECKMULTISIG`, P2SH, P2WSH). Each cosigner signs the transaction independently using their own private key. The script combines the resulting signatures on-chain. Cosigners never need to talk to each other beyond passing the partial transaction around (typically via PSBT).
-- **Interactive multisig** (MuSig2, FROST). Cosigners participate in a multi-round protocol where each contributes randomness and partial signatures that must be combined in a specific cryptographic way to produce a single valid Schnorr signature.
+- **非交互式多签**（经典 `OP_CHECKMULTISIG`、P2SH、P2WSH）。每个共签者使用自己的私钥独立签署交易。脚本在链上组合生成的签名。共签者除了传递部分签名交易（通常通过 PSBT）之外，不需要相互通信。
+- **交互式多签**（MuSig2、FROST）。共签者参与多轮协议，每个人都贡献随机数和部分签名，必须以特定的密码学方式组合才能产生一个有效的 Schnorr 签名。
 
-Why interactive is sometimes worth the complexity:
+为什么交互式有时值得其复杂性：
 
-- **Aggregated signature on-chain.** The output of a MuSig2 or FROST signing session is one 64-byte Schnorr signature that looks identical to a single-sig spend. Significant privacy and fee savings vs. classical N-of-M multisig where N signatures appear on-chain.
-- **Threshold flexibility.** FROST supports m-of-n thresholds where any m signers can produce the signature - no rigid 1-of-1 or n-of-n. Classical multisig is rigid; aggregated thresholds are mathematically richer.
+- **链上聚合签名。** MuSig2 或 FROST 签名会话的输出是一个 64 字节的 Schnorr 签名，看起来与单签花费完全相同。相比经典 N-of-M 多签在链上暴露 N 个签名，这在隐私和手续费方面有显著节省。
+- **阈值灵活性。** FROST 支持 m-of-n 阈值，任意 m 个签名者可以产生签名——不局限于固定的 1-of-1 或 n-of-n。经典多签是刚性的；聚合阈值在数学上更丰富。
 
-What interactive multisig costs:
+交互式多签的代价：
 
-- **Coordination overhead.** Cosigners need to be online simultaneously (or at least in coordinated communication rounds). For multi-time-zone teams or human signers, this is operational friction.
-- **State management.** Aggregated signing protocols are stateful. Cosigners must track nonces across rounds carefully. State loss can break the signing session or, in the worst case, leak keys.
-- **Higher implementation complexity.** Classical multisig is mature and battle-tested. MuSig2 is newer (BIP 327 standardized 2023) and the implementation surface is more sensitive to bugs.
+- **协调开销。** 共签者需要同时在线（或至少在协调的通信轮次中）。对于跨时区的团队或人类签名者，这是运营摩擦。
+- **状态管理。** 聚合签名协议是有状态的。共签者必须仔细跟踪各轮之间的随机数。状态丢失可能破坏签名会话，或在最坏情况下泄露密钥。
+- **更高的实现复杂性。** 经典多签成熟且经过实战检验。MuSig2 较新（BIP 327 于 2023 年标准化），实现面更容易受到漏洞影响。
 
-Production status as of 2026:
+截至 2026 年的生产状态：
 
-- **Lightning channel construction** is increasingly using interactive multisig (2-of-2 MuSig2 for cooperative channel state, instead of classical 2-of-2).
-- **Federation setups** (Fedimint, Liquid functionaries) experiment with FROST.
-- **Mainstream personal multisig** (Sparrow + hardware wallets) still uses classical multisig for operational reasons; non-interactive signing fits human workflow better.
+- **闪电通道构建**越来越多地使用交互式多签（用 2-of-2 MuSig2 替代经典 2-of-2 协作通道状态）。
+- **联邦设置**（Fedimint、Liquid 功能节点）正在试验 FROST。
+- **主流个人多签**（Sparrow + 硬件钱包）仍使用经典多签，出于运营原因——非交互式签名更符合人类工作流程。
 
-The general direction is toward more aggregated / interactive multisig adoption, but the migration is gradual. Both forms will coexist for years.
+总体趋势是向更多聚合/交互式多签采用的方向发展，但迁移是渐进的。两种形式将共存多年。

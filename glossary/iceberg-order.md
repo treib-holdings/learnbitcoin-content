@@ -1,12 +1,12 @@
 ---
-title: "Iceberg Order"
+title: "冰山订单"
 slug: iceberg-order
 draft: false
-shortDefinition: "A trading strategy that breaks a large order into smaller, sequential chunks to mask its total size."
+shortDefinition: "一种交易策略，将大额订单拆分成较小的、按顺序执行的片段，以隐藏其真实总量。"
 keyTakeaways:
-  - "Masks the true size of large trades by partial display"
-  - "Helps traders avoid sudden price swings from big orders"
-  - "Widely employed by institutions or large holders"
+  - "通过部分显示来掩盖大额交易的真实规模"
+  - "帮助交易者避免大额订单引起的突然价格波动"
+  - "被机构或大额持有者广泛采用"
 sources: []
 relatedTerms:
   - exchange
@@ -16,31 +16,31 @@ relatedTerms:
 liveWidget: ~
 ---
 
-An iceberg order is an order type where only a small portion is publicly visible on the exchange's order book at any given time, with the bulk of the order hidden. As the visible portion fills, the next chunk is automatically revealed.
+冰山订单是一种订单类型，在任何时候只有一小部分公开展示在交易所的订单簿上，而订单的大部分被隐藏。当可见部分成交后，下一个片段会自动显示出来。
 
-How it works:
+运作方式：
 
-1. Trader places an iceberg order for, say, 100 BTC at $X with a visible size of 5 BTC.
-2. The order book displays only the 5 BTC slice.
-3. As that 5 BTC fills, the exchange's matching engine automatically posts the next 5 BTC chunk at the same price.
-4. Continues until the full 100 BTC is filled (or the trader cancels).
+1. 交易者下了一个冰山订单，比如以价格 X 美元买入 100 BTC，可见数量设为 5 BTC。
+2. 订单簿上只显示 5 BTC 这一片段。
+3. 当这 5 BTC 成交后，交易所的撮合引擎会自动在相同价格挂出下一个 5 BTC 的片段。
+4. 如此循环，直到全部 100 BTC 成交（或交易者取消订单）。
 
-Why traders use them:
+交易者为什么使用冰山订单：
 
-- **Reduce market impact.** A visible 100 BTC bid would signal large buy intent and likely move the market against the trader (sellers raise prices, other buyers front-run). The iceberg structure hides total size.
-- **Hide identity.** Whale orders are watched. Breaking a big order into smaller visible chunks makes it harder to identify who's behind the trade.
-- **Improve execution quality.** Better average fill price than a market order that would chew through multiple price levels.
+- **减少市场冲击。** 一个可见的 100 BTC 买单会释放出强烈的买入信号，很可能导致市场对交易者不利（卖家提高价格，其他买家抢先交易）。冰山结构隐藏了总量。
+- **隐藏身份。** 巨鲸订单会被关注。将大额订单拆分成较小的可见片段，使外界更难识别交易背后的主体。
+- **提高执行质量。** 相比市价单会吃掉多个价格层级，冰山订单能获得更好的平均成交价。
 
-Where they're available:
+哪里可以使用：
 
-- **Centralized exchanges**: Coinbase Pro, Kraken, Binance, Bitfinex, OKX, and most major venues offer iceberg or "hidden quantity" orders. Sometimes called "reserve orders."
-- **Derivatives venues** (CME, Bakkt): iceberg orders are standard institutional order types.
-- **Some DEXs**: limited support; the on-chain mechanics make truly hidden orders hard.
+- **中心化交易所**：Coinbase Pro、Kraken、Binance、Bitfinex、OKX 等大多数主要交易所都提供冰山订单或"隐藏数量"订单功能。有时被称为"储备订单"。
+- **衍生品平台**（CME、Bakkt）：冰山订单是标准的机构订单类型。
+- **部分去中心化交易所**：支持有限；链上机制使真正隐藏的订单难以实现。
 
-Tradeoffs:
+权衡：
 
-- **Worse priority.** Most exchanges put hidden orders behind visible orders at the same price level in the queue. You may fill slower than fully-visible orders.
-- **Detectable patterns.** Sophisticated market makers can sometimes detect iceberg structure from repeated identical-size refills at the same price. The hiding isn't perfect.
-- **Counter-strategy by others.** Other large traders may try to detect and trade against iceberg flow. The cat-and-mouse continues.
+- **优先级较低。** 大多数交易所会将隐藏订单排在相同价格的可见订单之后。你的成交速度可能比完全可见的订单慢。
+- **模式可被检测。** 精明的做市商有时能从同一价格上反复出现的相同数量补充中检测出冰山结构。隐藏并不完美。
+- **他人的反制策略。** 其他大额交易者可能会尝试检测冰山订单流并据此交易。猫鼠游戏仍在继续。
 
-For ordinary traders, iceberg orders aren't relevant - your transactions don't move markets. For institutional flow (over-the-counter desks, large funds, market-making operations), they're a standard tool for executing without telegraphing the full position.
+对于普通交易者来说，冰山订单并不相关——你的交易不会推动市场。对于机构资金流（场外交易台、大型基金、做市业务），它们是在不暴露全部仓位的情况下执行交易的标准工具。

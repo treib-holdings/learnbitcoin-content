@@ -1,12 +1,12 @@
 ---
-title: "Signature Clipping"
+title: "签名裁剪"
 slug: signature-clipping
 draft: false
-shortDefinition: "A malleability or forging technique in certain signature schemes. Strict sighash rules in Bitcoin mitigate these vulnerabilities."
+shortDefinition: "某些签名方案中的延展性或伪造技术。比特币中的严格 sighash 规则缓解了这些漏洞。"
 keyTakeaways:
-  - "Refers to maliciously tweaking valid signatures to alter TX IDs"
-  - "Strict DER rules (BIP 66) and SegWit corrected most malleability flaws"
-  - "Illustrates early vulnerabilities in ECDSA usage"
+  - "指恶意篡改有效签名以改变交易 ID"
+  - "严格 DER 规则（BIP 66）和 SegWit 修正了大部分延展性缺陷"
+  - "说明了 ECDSA 使用中的早期漏洞"
 sources: []
 relatedTerms:
   - elliptic-curve
@@ -19,13 +19,13 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Signature clipping" isn't a widely-used term of art in Bitcoin. It's a catchall for ECDSA signature malleability: ways to take a valid signature and produce a different valid signature for the same transaction, which changes the txid without changing the meaning.
+"签名裁剪"在比特币中不是一个广泛使用的术语。它是 ECDSA 签名延展性的统称：取一个有效签名，为同一笔交易产生一个不同的有效签名，从而在不改变交易含义的情况下改变 txid。
 
-There were two practical vectors:
+曾有两个实际的攻击向量：
 
-- DER encoding variability. ECDSA signatures are wrapped in DER, and the DER spec allowed multiple encodings of the same numbers (extra padding bytes, alternate integer-length representations). [BIP 66](/glossary/bip-66) (2015) enforced strict DER and made non-canonical encodings non-standard.
-- Inherent S-malleability. For any valid (r, s) ECDSA signature, (r, n-s) is also valid for the same message. The [low-S rule](/glossary/low-s-signatures) (BIP 62 proposal, BIP 146 relay policy, BIP 141 consensus for SegWit) requires s less than half the curve order, picking one canonical form.
+- DER 编码可变性。ECDSA 签名用 DER 封装，而 DER 规范允许同一数字的多种编码（额外的填充字节、替代的整数长度表示）。[BIP 66](/glossary/bip-66)（2015）强制执行严格 DER，使非规范编码成为非标准。
+- 固有 S 延展性。对于任何有效 (r, s) ECDSA 签名，(r, n-s) 对同一消息也有效。[低 S 规则](/glossary/low-s-signatures)（BIP 62 提案、BIP 146 中继策略、BIP 141 对 SegWit 的共识规则）要求 s 小于曲线阶数的一半，选择一种规范形式。
 
-SegWit (BIP 141) closed the issue at the protocol level by moving signature data out of the txid calculation entirely. For SegWit and Taproot inputs, signature tweaks don't change the txid no matter what an attacker does.
+SegWit（BIP 141）在协议层面彻底解决了这个问题，将签名数据移出 txid 计算。对于 SegWit 和 Taproot 输入，无论攻击者怎么操作，签名微调都不会改变 txid。
 
-In modern Bitcoin, signature malleability is a solved problem for new transactions. Legacy P2PKH inherits ECDSA's mathematical properties, but with strict DER plus low-S enforced at the relay layer, the practical attack surface is gone.
+在现代比特币中，签名延展性对新交易来说是一个已解决的问题。传统 P2PKH 继承了 ECDSA 的数学特性，但在中继层强制执行严格 DER 加低 S 后，实际攻击面已经消失。

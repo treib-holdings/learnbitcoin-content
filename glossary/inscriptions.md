@@ -1,12 +1,12 @@
 ---
-title: "Inscriptions"
+title: "铭文"
 slug: inscriptions
 draft: false
-shortDefinition: "A technique for embedding arbitrary data — text, images, code — inside Bitcoin transactions by writing into Taproot witness data."
+shortDefinition: "一种将任意数据——文本、图片、代码——嵌入比特币交易中的技术，通过写入 Taproot 见证数据实现。"
 keyTakeaways:
-  - "Data is wrapped in an OP_FALSE OP_IF tapscript envelope and stored as witness data"
-  - "Witness data is fee-discounted, which is what makes large inscriptions economically practical"
-  - "The technique was popularized by the Ordinals protocol in January 2023 and has driven major fee-market activity since"
+  - "数据被包裹在 OP_FALSE OP_IF tapscript 信封中，作为见证数据存储"
+  - "见证数据享受手续费折扣，这使得大额铭文在经济上可行"
+  - "该技术于 2023 年 1 月由 Ordinals 协议推广，此后推动了重大手续费市场活动"
 sources: []
 relatedTerms:
   - ordinals
@@ -20,46 +20,46 @@ sameAs:
 liveWidget: ~
 ---
 
-An *inscription* is a chunk of arbitrary data — a string of text, a PNG, a piece of code, anything — written into a Bitcoin transaction's witness data using a specific [Tapscript](/glossary/bip-342-tapscript) pattern. Once inscribed, the data lives in the blockchain permanently, just like any other transaction history.
+*铭文*是一段任意数据——一串文本、一张 PNG 图片、一段代码或任何东西——使用特定的 [Tapscript](/glossary/bip-342-tapscript) 模式写入比特币交易的见证数据中。一旦铭刻，数据就永久存在于区块链中，就像任何其他交易历史一样。
 
-The technique was introduced by Casey Rodarmor in January 2023 as part of the [Ordinals](/glossary/ordinals) protocol. It does not require any change to Bitcoin's consensus rules — it works within existing [Taproot](/glossary/taproot) functionality activated in 2021.
+该技术由 Casey Rodarmor 于 2023 年 1 月作为 [Ordinals](/glossary/ordinals) 协议的一部分引入。它不需要对比特币共识规则做任何更改——它在 2021 年激活的现有 [Taproot](/glossary/taproot) 功能内运作。
 
-## How it works
+## 工作原理
 
-The inscription is encoded inside a Taproot script using a pattern that looks roughly like:
+铭文被编码在 Taproot 脚本中，使用的模式大致如下：
 
 ```text
 OP_FALSE
 OP_IF
-  "ord"           // protocol identifier
-  OP_1            // content-type field marker
-  "image/png"     // MIME type
-  OP_0            // data field marker
-  <bytes>         // the actual data
+  "ord"           // 协议标识符
+  OP_1            // 内容类型字段标记
+  "image/png"     // MIME 类型
+  OP_0            // 数据字段标记
+  <bytes>         // 实际数据
 OP_ENDIF
 ```
 
-Because `OP_FALSE OP_IF ... OP_ENDIF` is always skipped at execution time, the data inside is never evaluated as script — it just sits in the witness. This pattern is sometimes called the *envelope*.
+因为 `OP_FALSE OP_IF ... OP_ENDIF` 在执行时总是被跳过，里面的数据永远不会作为脚本被执行——它只是存在于见证中。这个模式有时被称为*信封*。
 
-The crucial property is *where* this data lives: in the witness, not in the transaction's main body. Under [SegWit](/glossary/segwit-segregated-witness-bip-141) weight rules, witness data counts at one-quarter the weight of base data, so a 1 MB inscription occupies far less than 1 MB of "block-space cost" than the raw size would suggest. Without that discount, inscriptions would be too expensive to be common.
+关键属性在于这些数据存储的*位置*：在见证中，而不是在交易的主体中。根据 [SegWit](/glossary/segwit-segregated-witness-bip-141) 的重量规则，见证数据的重量只按基础数据的四分之一计算，所以 1 MB 的铭文占用的"区块空间成本"远小于原始大小所暗示的。如果没有那个折扣，铭文将昂贵到无法普及。
 
-## The community debate
+## 社区辩论
 
-Inscriptions are one of the most contested phenomena in modern Bitcoin culture. The fault line is roughly:
+铭文是现代比特币文化中最具争议的现象之一。分歧线大致如下：
 
-- **Critics** argue inscriptions are blockchain spam — they bloat the UTXO set and block weight with non-monetary data, increase storage and bandwidth requirements for node operators, and push transaction fees up for people trying to use Bitcoin as money.
-- **Proponents** argue that inscriptions are paying-customer use of block space, that miners are free to mine what users pay for, and that any attempt to restrict valid transactions amounts to censorship of the protocol's neutrality.
+- **批评者**认为铭文是区块链垃圾——它们用非货币数据膨胀了 UTXO 集和区块重量，增加了节点运营者的存储和带宽需求，并推高了试图将比特币作为货币使用的人的交易手续费。
+- **支持者**认为铭文是付费客户对区块空间的使用，矿工可以自由挖取用户付费的内容，任何限制有效交易的尝试都构成对协议中立性的审查。
 
-Both positions are internally consistent. The disagreement is over what Bitcoin is *for*.
+两种立场在内部都是自洽的。分歧在于比特币是*用来做什么的*。
 
-The debate produced [BIP-110 (RDTS)](https://bip110.org/) — a proposed temporary soft fork that would limit data sizes and disable parts of Tapscript to restrict inscription activity. As of early 2026, BIP-110 had minimal miner signaling and was the subject of significant disagreement among long-time contributors. Whatever its outcome, the debate it represents is unlikely to fully resolve.
+这场辩论催生了 [BIP-110 (RDTS)](https://bip110.org/)——一个提议的临时软分叉，将限制数据大小并禁用 Tapscript 的部分功能以限制铭文活动。截至 2026 年初，BIP-110 几乎没有矿工信号，且在资深贡献者中存在重大分歧。无论结果如何，它所代表的辩论不太可能完全解决。
 
-## Why it matters
+## 为什么重要
 
-For a Bitcoin learner, inscriptions matter for three reasons:
+对于比特币学习者来说，铭文之所以重要有三个原因：
 
-1. **They're a real change in how the blockchain is used.** Whether you welcome the change or oppose it, ignoring it leaves you unable to read fee charts or recent block contents.
-2. **They surface a deep question about Bitcoin's purpose.** "Monetary network only" versus "credibly neutral platform" is a live disagreement among serious Bitcoiners.
-3. **They've reshaped the fee market.** Inscription-driven block space demand has been a major driver of fee levels since 2023.
+1. **它们改变了区块链的使用方式。** 无论你欢迎还是反对这一变化，忽视它将使你无法读懂手续费图表或最近的区块内容。
+2. **它们揭示了关于比特币目的的深层问题。** "仅货币网络"还是"可信中立平台"是严肃的比特币持有者之间的真实分歧。
+3. **它们重塑了手续费市场。** 自 2023 年以来，铭文驱动的区块空间需求一直是手续费水平的主要驱动力。
 
-The technique itself is permanent — Taproot is unlikely to be rolled back, and the envelope pattern works in any Bitcoin implementation that follows the consensus rules. What can change is the *limits* placed on what inscriptions are allowed, and that's the live debate.
+技术本身是永久的——Taproot 不太可能被回退，信封模式在任何遵循共识规则的比特币实现中都能运作。可以改变的是对铭文允许内容的*限制*，这才是当前辩论的焦点。

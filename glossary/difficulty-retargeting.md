@@ -1,12 +1,12 @@
 ---
-title: "Difficulty Retargeting"
+title: "难度调整"
 slug: difficulty-retargeting
 draft: false
-shortDefinition: "The automatic recalibration of Bitcoin's mining difficulty every 2016 blocks to sustain a 10-minute block interval."
+shortDefinition: "比特币每 2016 个区块自动重新校准挖矿难度，以维持 10 分钟的区块间隔。"
 keyTakeaways:
-  - "Conducted roughly every two weeks (2016 blocks)"
-  - "Ensures consistent block intervals despite hash rate changes"
-  - "Key to Bitcoin's self-regulating proof-of-work design"
+  - "大约每两周进行一次（2016 个区块）"
+  - "确保尽管算力变化，区块间隔保持一致"
+  - "比特币自调节工作量证明设计的关键"
 sources: []
 relatedTerms:
   - block-height
@@ -27,19 +27,19 @@ sameAs:
 liveWidget: ~
 ---
 
-Difficulty retargeting is the mechanism by which Bitcoin keeps its average [block time](/glossary/block-time) at ~10 minutes regardless of how much [hash rate](/glossary/hash-rate) is on the network.
+难度调整是比特币无论网络上有多少[算力](/glossary/hash-rate)，都将平均[区块时间](/glossary/block-time)保持在约 10 分钟的机制。
 
-The rule is mechanical:
+规则是机械性的：
 
-- Every **2,016 blocks** (roughly two weeks), every node computes how long that 2,016-block "epoch" actually took.
-- If it took **less than two weeks**, blocks were too fast: [difficulty](/glossary/difficulty) goes **up**.
-- If it took **more than two weeks**, blocks were too slow: difficulty goes **down**.
-- The adjustment ratio is proportional, **clamped at ±300%** to prevent extreme swings.
+- 每 **2,016 个区块**（大约两周），每个节点计算这 2,016 个区块"纪元"实际花了多长时间。
+- 如果**少于两周**，区块太快：[难度](/glossary/difficulty)**上升**。
+- 如果**超过两周**，区块太慢：难度**下降**。
+- 调整比率是成比例的，**限制在 ±300%** 以防止极端波动。
 
-The adjustment kicks in instantly at the start of the next epoch. The new difficulty is then in force for the next 2,016 blocks, when the cycle repeats.
+调整在下一个纪元开始时立即生效。新难度随后在接下来的 2,016 个区块中有效，循环重复。
 
-This is one of the most consequential and underappreciated pieces of mechanism design in Bitcoin. There is no committee. There is no Federal Reserve raising rates. The network observes its own conditions and corrects, on a fixed schedule, forever. A miner with 80 MW of hash power coming online doesn't change Bitcoin's issuance schedule; they just trigger a higher difficulty at the next retarget.
+这是比特币中最重要且最被低估的机制设计之一。没有委员会。没有美联储加息。网络观察自身条件并按固定时间表纠正，永远。一个拥有 80 MW 算力的矿工上线不会改变比特币的发行计划；他们只是在下次调整时触发更高的难度。
 
-The mechanism has held through enormous events: China's 2021 mining ban (hash rate dropped ~50% in weeks; difficulty corrected down 28% in the next retarget), the 2022 bear market miner exodus, and four halvings. Every time, the network rebalances and returns to its 10-minute average within an epoch or two.
+该机制在重大事件中经受住了考验：中国 2021 年的挖矿禁令（算力在几周内下降约 50%；难度在下次调整中下降了 28%），2022 年熊市矿工外流，以及四次减半。每次，网络都重新平衡并在一两个纪元内回归 10 分钟平均值。
 
-See the live current epoch progress and next-adjustment estimate in the [Mining rabbit hole §4](/rabbit-hole/mining) or on the [Node page](/node/).
+实时当前纪元进度和下次调整估计参见[挖矿深入探讨 §4](/rabbit-hole/mining)或[节点页面](/node/)。

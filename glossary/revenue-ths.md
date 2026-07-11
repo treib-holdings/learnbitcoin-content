@@ -1,12 +1,12 @@
 ---
-title: "Revenue per TH/s"
+title: "每 TH/s 收入（Revenue per TH/s）"
 slug: revenue-ths
 draft: false
-shortDefinition: "A metric showing how much BTC/USD a miner earns for each terahash per second of hashing power, indicating profitability."
+shortDefinition: "一个指标，显示矿工每 terahash/s 算力赚取多少 BTC/USD，用于评估盈利能力。"
 keyTakeaways:
-  - "Crucial for evaluating mining returns relative to hardware capacity"
-  - "Fluctuates with BTC price, difficulty adjustments, and network hash rate"
-  - "Used by miners for ROI calculations on hardware/electricity"
+  - "评估挖矿回报相对于硬件能力的关键指标"
+  - "随 BTC 价格、难度调整和网络算力波动"
+  - "矿工用于硬件/电力投资回报计算"
 sources: []
 relatedTerms:
   - difficulty
@@ -26,27 +26,27 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Revenue per TH/s (also called "hashprice") is the daily revenue a miner earns per terahash per second of hash rate. It's the headline economic indicator for Bitcoin mining: a single number that tells you whether mining is currently profitable for typical hardware and electricity costs.
+每 TH/s 收入（也叫"hashprice"）是矿工每 terahash/s 算力每天赚取的收入。它是比特币挖矿的头号经济指标：一个数字告诉你当前对典型硬件和电价来说挖矿是否盈利。
 
-The formula:
+公式：
 
 ```
-revenue per TH/s per day = (subsidy + fees per block) * blocks per day / network hash rate in TH/s
+每 TH/s 每日收入 = (每区块补贴 + 手续费) * 每日区块数 / 网络算力(TH/s)
 ```
 
-As of 2026 the math roughly works out to:
+2026 年的数学大致如下：
 
-- Subsidy + fees: ~3.125 BTC + ~0.3 BTC = ~3.4 BTC per block
-- Blocks per day: ~144
-- Network hash rate: ~700 EH/s = 700,000,000 TH/s
+- 补贴 + 手续费：约 3.125 BTC + 约 0.3 BTC = 约 3.4 BTC 每区块
+- 每日区块数：约 144
+- 网络算力：约 700 EH/s = 700,000,000 TH/s
 
-So daily revenue per TH/s is roughly 3.4 * 144 / 700,000,000 = ~7 * 10^-7 BTC per TH/s per day, or about $0.04-0.06 per TH/s per day at recent BTC prices.
+因此每 TH/s 每日收入约为 3.4 * 144 / 700,000,000 = 约 7 * 10^-7 BTC 每 TH/s 每天，按近期 BTC 价格约合 $0.04-0.06 每 TH/s 每天。
 
-What miners actually look at:
+矿工实际关注的：
 
-- **Hashprice trend.** Tracked daily on Hashrate Index, Luxor, Compass Mining and similar dashboards.
-- **Break-even electricity cost.** A modern S21 ASIC at ~15 J/TH consuming ~24 hours of electricity at $0.05/kWh costs ~$0.029/day to run. At $0.05 hashprice that's a positive margin; at $0.03 hashprice it's losing money.
-- **Halving impact.** Each halving cuts the subsidy in half, immediately halving hashprice unless fees rise to compensate. The post-April-2024 halving compressed margins significantly; post-2028 will compress them further.
-- **Fee-share trend.** As subsidy declines, fees become a larger proportion of revenue. Hashprice in the 2030s will increasingly depend on fee-market conditions rather than the predictable subsidy schedule.
+- **Hashprice 趋势。** 每日在 Hashrate Index、Luxor、Compass Mining 等仪表盘上追踪。
+- **盈亏平衡电价。** 一台现代 S21 ASIC 约 15 J/TH，在 $0.05/kWh 电价下运行 24 小时电费约 $0.029/天。$0.05 hashprice 时有正利润；$0.03 hashprice 时亏钱。
+- **减半影响。** 每次减半将补贴减半，除非手续费补偿否则立即将 hashprice 减半。2024 年 4 月减半后大幅压缩了利润率；2028 年后将进一步压缩。
+- **手续费占比趋势。** 随着补贴减少，手续费在收入中占比越来越大。2030 年代的 hashprice 将越来越多地取决于手续费市场状况而非可预测的补贴计划。
 
-The metric is most useful for break-even analysis and timing hardware upgrades. A modern efficient ASIC stays profitable at lower hashprice than an older inefficient one; the ratio between current hashprice and a given ASIC's break-even hashprice tells you whether to keep mining or power down.
+这个指标最适合用于盈亏平衡分析和硬件升级时机判断。现代高效 ASIC 在更低 hashprice 下仍能盈利，而旧的低效 ASIC 不能；当前 hashprice 与给定 ASIC 盈亏平衡 hashprice 之比告诉你是否应该继续挖矿还是关机。

@@ -2,11 +2,11 @@
 title: "ANYPREVOUT"
 slug: anyprevout
 draft: false
-shortDefinition: "A proposed SIGHASH flag (BIP-118) enabling partially signed transactions without strictly binding to specific inputs, unlocking advanced Layer-2 protocols."
+shortDefinition: "一种提议的 SIGHASH 标志（BIP-118），允许部分签名交易不严格绑定到特定输入，解锁高级二层协议。"
 keyTakeaways:
-  - "New SIGHASH type that loosens input binding"
-  - "Key for advanced Layer-2 designs (e.g., Eltoo)"
-  - "Still under active development and review"
+  - "新的 SIGHASH 类型，放宽输入绑定"
+  - "高级二层设计（如 Eltoo）的关键"
+  - "仍在积极开发和审查中"
 sources: []
 relatedTerms:
   - eltoo
@@ -17,19 +17,19 @@ relatedTerms:
 liveWidget: ~
 ---
 
-**ANYPREVOUT** (specifically `SIGHASH_ANYPREVOUT` and its variant `SIGHASH_ANYPREVOUTANYSCRIPT`) is a proposed [Bitcoin Script](/glossary/bitcoin-script) signature-hashing mode that would let a signed transaction be applied against *any* matching prior output rather than committing to one specific input. Specified in [BIP-118](https://github.com/bitcoin/bips/blob/master/bip-0118.mediawiki), it's the key cryptographic primitive needed for [Eltoo](/glossary/eltoo)-style channels and various advanced protocols.
+**ANYPREVOUT**（具体来说是 `SIGHASH_ANYPREVOUT` 及其变体 `SIGHASH_ANYPREVOUTANYSCRIPT`）是一种提议的 [Bitcoin Script](/glossary/bitcoin-script) 签名哈希模式，允许已签名的交易应用于*任何*匹配的前置输出，而不是绑定到一个特定输入。在 [BIP-118](https://github.com/bitcoin/bips/blob/master/bip-0118.mediawiki) 中定义，它是 [Eltoo](/glossary/eltoo) 式通道和各种高级协议所需的关键密码学原语。
 
-The technical change in plain terms:
+通俗地说，技术变化是：
 
-- **Today**, when you sign a Bitcoin transaction, the signature commits to specific input txids - "I'm signing a transaction that spends UTXO X." If those input UTXOs change for any reason (e.g., a different transaction emerges that spends them under different terms), your signature is invalid.
-- **With ANYPREVOUT**, you can sign in a way that says "I'm signing a transaction that *would* spend whichever UTXO matches a certain script template." If the actual input is changed before broadcast, the signature still applies as long as the script template matches.
+- **目前**，当你签名一笔比特币交易时，签名会提交到特定的输入 txid——"我正在签名一笔花费 UTXO X 的交易。"如果这些输入 UTXO 因任何原因发生了变化（例如，出现了另一笔以不同条款花费它们的交易），你的签名就无效了。
+- **有了 ANYPREVOUT**，你可以以一种"我正在签名一笔*会*花费任何匹配某个脚本模板的 UTXO 的交易"的方式签名。如果实际输入在广播前被更改，只要脚本模板匹配，签名仍然适用。
 
-What this enables:
+这解锁了：
 
-- **[Eltoo channels](/glossary/eltoo).** The proposed simpler alternative to current Lightning channel design. Every new channel state is signed in a way that lets it apply against any prior commitment, replacing the punishment-based mechanism with a simpler "newer states override older states" model.
-- **Lightning Network protocol cleanups.** Various advanced Lightning constructions (multi-party channels, channel factories, simplified routing) become more practical.
-- **Simpler vault designs.** Some vault constructions become easier with ANYPREVOUT.
+- **[Eltoo 通道](/glossary/eltoo)。**提议的更简单的闪电通道设计替代方案。每个新的通道状态以一种可以应用于任何先前承诺的方式签名，用更简单的"新状态覆盖旧状态"模型取代基于惩罚的机制。
+- **闪电网络协议清理。**各种高级闪电构造（多方通道、通道工厂、简化路由）变得更加可行。
+- **更简单的金库设计。**某些金库构造在 ANYPREVOUT 下变得更容易。
 
-ANYPREVOUT has been proposed for years. As of 2026, it has not activated. The technical implementation is well-understood; the holdup is the same as for other proposed [soft forks](/glossary/soft-fork) - building broad enough community consensus to activate. It's discussed in roughly the same activation conversations as [BIP-119 (CTV)](/glossary/bip-119-ctv) and other covenant-adjacent proposals, with similar arguments for and against expanding Bitcoin's scripting flexibility.
+ANYPREVOUT 已被提议多年。截至 2026 年，它尚未激活。技术实现已被充分理解；阻碍与其他提议的[软分叉](/glossary/soft-fork)一样——需要建立足够广泛的社区共识才能激活。它在与 [BIP-119 (CTV)](/glossary/bip-119-ctv) 和其他契约相关提案大致相同的激活讨论中被提及，关于扩展比特币脚本灵活性的论据类似。
 
-See [Eltoo](/glossary/eltoo) for the flagship use case and [Covenants](/glossary/covenants) for the broader expansion debate.
+参见 [Eltoo](/glossary/eltoo) 了解旗舰用例，[Covenants](/glossary/covenants) 了解更广泛的扩展辩论。

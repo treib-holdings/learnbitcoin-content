@@ -1,12 +1,12 @@
 ---
-title: "CBDC (Central Bank Digital Currency)"
+title: "CBDC（央行数字货币）"
 slug: cbdc-central-bank-digital-currency
 draft: false
-shortDefinition: "A state-issued digital currency managed by a central authority-contrasting Bitcoin's decentralized model."
+shortDefinition: "由国家中央权威管理的国家发行数字货币——与比特币去中心化模式形成对比。"
 keyTakeaways:
-  - "Operated by central banks, not trustless or permissionless"
-  - "Can offer new monetary tools but raises privacy concerns"
-  - "Represents the antithesis of Bitcoin's decentralized ethos"
+  - "由央行运营，非无信任或无许可"
+  - "可提供新货币工具但引发隐私担忧"
+  - "代表比特币去中心化理念的对立面"
 sources: []
 relatedTerms:
   - bitcoin-bond
@@ -17,26 +17,26 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Central Bank Digital Currency is a state-issued digital form of fiat money, recorded on infrastructure controlled by the issuing central bank (or its designees). The unit of account is the existing national currency; what's new is the digital settlement layer, the per-account state, and what the issuer can do with it.
+央行数字货币是国家发行的法币数字形式，记录在发行央行（或其指定方）控制的基础设施上。记账单位是现有国家货币；新的是数字结算层、每账户状态以及发行方可以用它做什么。
 
-CBDCs are architecturally the opposite of Bitcoin in almost every dimension:
+CBDC 在几乎所有维度上都是比特币的架构对立面：
 
-- **Centralized issuance.** The central bank creates and destroys units at will. There's no fixed supply, no halving schedule, no asymptote.
-- **Centralized ledger.** Whatever underlying tech is used (blockchain-inspired or otherwise), the authoritative state lives with the central bank.
-- **Permissioned access.** Accounts are tied to verified identities. Anonymous or pseudonymous holdings are explicitly not part of the design.
-- **Programmability.** The architecture typically allows the issuer to enforce conditions on how money is spent: expiration dates, geographic restrictions, category-of-purchase rules, account freezing.
+- **集中发行。**央行随意创造和销毁单位。没有固定供应量、没有减半时间表、没有渐近线。
+- **集中账本。**无论使用什么底层技术（区块链启发或其他），权威状态存在于央行。
+- **许可访问。**账户与已验证身份绑定。匿名或假名持有明确不是设计的一部分。
+- **可编程性。**架构通常允许发行方对货币使用方式执行条件：过期日期、地理限制、消费类别规则、账户冻结。
 
-Real CBDC deployments as of 2026:
+截至 2026 年的真实 CBDC 部署：
 
-- **e-CNY (China)** is the most advanced large-scale rollout, integrated into major payment apps and used for some government disbursements.
-- **Sand Dollar (Bahamas)**, launched 2020, was the first formally-issued retail CBDC. Adoption has been modest.
-- **eNaira (Nigeria)** had a rough rollout, low adoption, and was largely outpaced by stablecoin and BTC peer-to-peer activity in the same country.
-- **Digital Euro, Digital Pound, Digital Dollar** are in various stages of design and consultation; none have launched as retail products.
+- **e-CNY（中国）**是最大规模的部署，集成到主要支付应用中，用于一些政府发放。
+- **Sand Dollar（巴哈马）**，2020 年推出，是第一个正式发行的零售 CBDC。采用程度一般。
+- **eNaira（尼日利亚）**推行不顺，采用率低，很大程度上被同一国家的稳定币和 BTC 点对点活动超越。
+- **数字欧元、数字英镑、数字美元**处于不同阶段的设计和咨询中；均未作为零售产品推出。
 
-Honest concerns from a Bitcoin perspective:
+从比特币视角的诚实担忧：
 
-- **Surveillance.** Every transaction is visible to the issuer by design. There's no equivalent of cash anonymity.
-- **Control.** Programmable money is dual-use. Helpful for stimulus distribution; also useful for "this money expires in 30 days if not spent" or "you cannot buy fuel without a low-emissions credit."
-- **Run risk for commercial banks.** A CBDC competes directly with bank deposits. In a crisis, retail money flees deposits for the central bank's perfectly-safe alternative, accelerating bank runs.
+- **监控。**每笔交易按设计对发行方可见。没有现金匿名性的等价物。
+- **控制。**可编程货币是双刃剑。有利于刺激发放；也有利于"这笔钱如果 30 天内不花就过期"或"没有低排放信用就不能买燃料"。
+- **商业银行挤兑风险。**CBDC 直接与银行存款竞争。在危机中，零售资金从存款逃向央行完美安全的替代品，加速银行挤兑。
 
-CBDC proponents argue these are design choices, not inevitable consequences, and the privacy / control settings can be tuned. The track record so far suggests issuers settle on more surveillance and more control, not less. Bitcoin is the structural answer to the CBDC architecture: money the issuer can't surveil, can't freeze, can't expire.
+CBDC 支持者论辩这些是设计选择，非不可避免的后果，隐私/控制设置可以调整。到目前为止的记录表明发行方倾向于更多监控和控制，而非更少。比特币是 CBDC 架构的结构性答案：发行方无法监控、无法冻结、无法过期的货币。

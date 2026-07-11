@@ -1,12 +1,12 @@
 ---
-title: "Fraudulent Channel Close"
+title: "欺诈性通道关闭"
 slug: fraudulent-channel-close
 draft: false
-shortDefinition: "Attempting to close a Lightning channel using a prior channel state to steal funds, punished by a penalty transaction."
+shortDefinition: "尝试使用先前通道状态关闭闪电通道以窃取资金，由惩罚交易处罚。"
 keyTakeaways:
-  - "Cheater tries using an old channel snapshot for personal gain"
-  - "Currently penalized by seizing the cheater's LN funds"
-  - "Provides a strong deterrent against fraudulent closes"
+  - "作弊者尝试使用旧通道快照获取个人利益"
+  - "目前通过扣押作弊者的闪电资金来惩罚"
+  - "对欺诈性关闭提供强有力威慑"
 sources: []
 relatedTerms:
   - fraud-proof
@@ -20,26 +20,26 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A fraudulent channel close is when a [Lightning](/glossary/lightning-network) participant tries to broadcast an outdated channel state to mainnet - one that allocates more funds to themselves than the current actual state allows. It's the "cheating" pattern Lightning's penalty mechanism is specifically designed to deter.
+欺诈性通道关闭是[闪电网络](/glossary/lightning-network)参与者尝试向主网广播过时通道状态——一个给自己分配比当前实际状态更多资金的状态。这是闪电网络惩罚机制专门设计来威慑的"作弊"模式。
 
-How it works (and why it usually fails):
+如何运作（以及为什么通常失败）：
 
-1. **The cheater holds an old [commitment transaction](/glossary/lightning-channel)** that gave them more BTC than they currently deserve. (E.g., the channel started 50/50, they later paid the counterparty 0.3 BTC, but they still have the old 50/50 commitment transaction signed and ready to broadcast.)
-2. **They broadcast the old commitment** during a moment when they think the counterparty might be offline.
-3. **The honest counterparty's [watchtower](/glossary/lightning-network-penalty)** (or their own monitoring) detects the broadcast.
-4. **The counterparty broadcasts a [penalty transaction](/glossary/penalty-transaction)** using their stored revocation key, which claims the *entire* channel balance - including what the cheater thought they'd just stolen.
-5. **The cheater loses everything in the channel.** Net effect: they tried to steal 0.3 BTC and lost 1 BTC (the whole channel).
+1. **作弊者持有一个旧的[承诺交易](/glossary/lightning-channel)**，给予他们比当前应得更多的 BTC。（例如，通道开始 50/50，他们后来向对手方支付了 0.3 BTC，但仍持有旧的 50/50 承诺交易已签名并准备好广播。）
+2. **他们在认为对手方可能离线的时刻广播旧承诺。**
+3. **诚实对手方的[瞭望塔](/glossary/lightning-network-penalty)**（或其自身监控）检测到广播。
+4. **对手方广播[惩罚交易](/glossary/penalty-transaction)**，使用其存储的撤销密钥，认领*整个*通道余额——包括作弊者认为刚偷到的部分。
+5. **作弊者失去通道中的一切。** 净效果：他们试图偷 0.3 BTC 却失去了 1 BTC（整个通道）。
 
-Why the deterrent works:
+为什么威慑有效：
 
-- **The penalty is total**, not equal. The cheater doesn't lose just the amount they tried to steal; they lose *all* their channel funds.
-- **The detection window is generous.** Channel close transactions have a CSV-locked delay (typically 144-1008 blocks) before the closing party can spend their funds. The counterparty has that window to publish the penalty.
-- **Watchtowers exist** to monitor on behalf of users who can't be online 24/7.
+- **惩罚是全部的**，不是对等的。作弊者不只是失去他们试图偷的金额；他们失去*所有*通道资金。
+- **检测窗口宽裕。** 通道关闭交易有 CSV 锁定延迟（通常 144-1008 个区块），关闭方在此之前不能花费资金。对手方有该窗口发布惩罚。
+- **瞭望塔存在**以代表不能 24/7 在线的用户监控。
 
-What can still go wrong:
+仍然可能出错的情况：
 
-- **If your counterparty is offline for the entire CSV delay window**, the cheater succeeds.
-- **If your watchtower is malicious or compromised**, you're vulnerable.
-- **If the cheater accidentally broadcasts an old state** (from a backup restore, for example), they lose their own funds even though they weren't trying to cheat.
+- **如果对手方在整个 CSV 延迟窗口期间离线**，作弊者成功。
+- **如果瞭望塔恶意或被入侵**，你有漏洞。
+- **如果作弊者意外广播旧状态**（例如从备份恢复），他们会失去自己的资金，即使他们并未试图作弊。
 
-The penalty model is harsh but effective. [Eltoo](/glossary/eltoo), if it ever activates, would replace this with a more forgiving "old states are simply invalidated" model. Until then, Lightning users carry the operational burden of careful state management - one wrong move with old backups can destroy a channel's worth of funds.
+惩罚模型严厉但有效。[Eltoo](/glossary/eltoo) 如果激活，将用更宽容的"旧状态简单地被失效"模型取代此模型。在那之前，闪电网络用户承担谨慎状态管理的运营负担——对旧备份的一个错误操作可以摧毁一个通道价值的资金。

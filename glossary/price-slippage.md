@@ -1,12 +1,12 @@
 ---
-title: "Price Slippage"
+title: "价格滑点（Price Slippage）"
 slug: price-slippage
 draft: false
-shortDefinition: "The gap between an expected trade price and actual execution due to insufficient liquidity or large order size."
+shortDefinition: "因流动性不足或订单过大，预期交易价格与实际执行价格之间的差距。"
 keyTakeaways:
-  - "Occurs when order volume exceeds available orders at a desired price"
-  - "Influenced by market liquidity and order book depth"
-  - "A key factor in trading strategies, especially for large investors"
+  - "当订单量超过目标价格上的可用订单时发生"
+  - "受市场流动性和订单簿深度影响"
+  - "交易策略中的关键因素，尤其对大额投资者"
 sources: []
 relatedTerms:
   - bull-market
@@ -24,30 +24,30 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Slippage is the difference between the expected price of a trade and the actual average execution price. It happens because a large enough order consumes multiple levels of the order book; the first portion fills at the best price, but subsequent portions fill at progressively worse prices.
+滑点是预期交易价格与实际平均执行价格之间的差异。发生原因是一个足够大的订单消耗了订单簿的多个层级；第一部分以最优价格成交，但后续部分以越来越差的价格成交。
 
-A concrete example:
+一个具体例子：
 
-- BTC/USD order book shows: 0.5 BTC bid at $100,000; 1.0 BTC bid at $99,950; 2.0 BTC bid at $99,900; further down...
-- You sell 3 BTC as a market order.
-- The first 0.5 BTC fills at $100,000.
-- The next 1.0 BTC fills at $99,950.
-- The next 1.5 BTC fills at $99,900.
-- Your average execution: ~$99,933 vs. the "headline" top-of-book of $100,000.
-- Slippage: ~$67 per BTC, or about 0.07%.
+- BTC/USD 订单簿显示：0.5 BTC 买单在 $100,000；1.0 BTC 买单在 $99,950；2.0 BTC 买单在 $99,900；更往下...
+- 你卖 3 BTC 市价单。
+- 前 0.5 BTC 以 $100,000 成交。
+- 接下来 1.0 BTC 以 $99,950 成交。
+- 接下来 1.5 BTC 以 $99,900 成交。
+- 你的平均执行价：约 $99,933 vs. "标题"最优价 $100,000。
+- 滑点：约每 BTC $67，约 0.07%。
 
-What drives slippage:
+影响滑点的因素：
 
-- **Order book depth at each price level.** Deep books absorb large orders with minimal slippage; thin books slip significantly even on modest size.
-- **Order size relative to typical volume.** A 1 BTC order on Binance or Coinbase is trivially absorbed. A 1,000 BTC market order anywhere will move the market.
-- **Time of day / liquidity windows.** Crypto markets have liquidity cycles; weekend or off-hours trading sees worse slippage.
-- **Exchange-specific liquidity.** Coinbase and Binance offer deep liquidity for BTC/USD and BTC/USDT. Smaller exchanges and exotic pairs have shallower books.
+- **每个价格层级的订单簿深度。** 深订单簿以最小滑点吸收大单；薄订单簿即使中等规模也会显著滑点。
+- **订单规模相对于典型交易量。** 1 BTC 的订单在 Binance 或 Coinbase 上轻松被吸收。1,000 BTC 的市价单在任何地方都会推动市场。
+- **时段/流动性窗口。** 加密市场有流动性周期；周末或非高峰时段交易滑点更严重。
+- **交易所特定流动性。** Coinbase 和 Binance 为 BTC/USD 和 BTC/USDT 提供深度流动性。较小的交易所和冷门交易对订单簿更浅。
 
-Defenses against slippage:
+防范滑点的方法：
 
-- **Limit orders.** Set a maximum acceptable execution price; the order rests on the book and only fills if the market comes to it. Trade execution time for slippage protection.
-- **TWAP (time-weighted average price) algorithms.** Break a large order into smaller pieces executed over hours, getting an average price close to the period's VWAP.
-- **Iceberg orders.** Hide the full order size to avoid signaling intent and triggering front-running.
-- **OTC desks** for large size. Negotiate a single price for the full order, avoiding the public order book entirely.
+- **限价单。** 设定最高可接受执行价格；订单挂在订单簿上，只有市场来到该价格时才成交。用执行时间换取滑点保护。
+- **TWAP（时间加权平均价格）算法。** 将大单拆分为较小部分在数小时内执行，获得接近该时段 VWAP 的平均价格。
+- **冰山订单。** 隐藏全部订单规模以避免信号意图和触发前跑。
+- **OTC 桌台**用于大额。为全单协商单一价格，完全避免公共订单簿。
 
-For ordinary users buying or selling under $10K worth of BTC at a time, slippage is typically negligible (under 0.05%). For larger size, slippage becomes a meaningful cost component. For very large trades (multi-million USD), slippage management is a substantial portion of execution strategy.
+对于一次买卖不到 $10K BTC 的普通用户，滑点通常可以忽略（0.05% 以下）。对于更大金额，滑点成为有意义的成本组成部分。对于非常大的交易（数百万美元），滑点管理是执行策略的很大一部分。

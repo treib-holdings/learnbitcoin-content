@@ -1,12 +1,12 @@
 ---
-title: "Sidechain"
+title: "侧链"
 slug: sidechain
 draft: false
-shortDefinition: "An external blockchain interoperable with Bitcoin via pegging (e.g., Liquid), enabling new features or faster transactions."
+shortDefinition: "通过锚定机制与比特币互操作的外部区块链（如 Liquid），可实现新功能或更快的交易。"
 keyTakeaways:
-  - "Brings extra functionality while maintaining BTC's monetary unit"
-  - "Requires a bridging mechanism (federated or otherwise) to lock/unlock BTC"
-  - "Allows experimentation without risking mainnet consensus"
+  - "在保持 BTC 货币单位的同时带来额外功能"
+  - "需要桥接机制（联邦或其他）来锁定/解锁 BTC"
+  - "允许在不危及主网共识的情况下进行实验"
 sources: []
 relatedTerms:
   - off-chain
@@ -14,20 +14,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A sidechain is a separate blockchain that's interoperable with Bitcoin via a **two-way peg** - you lock BTC on the main chain, an equivalent token is issued on the sidechain, and at any time you can reverse the process to redeem your BTC back.
+侧链是一条独立的区块链，通过**双向锚定**与比特币互操作——你在主链上锁定 BTC，侧链上发行等量代币；任何时候你可以反向操作，赎回你的 BTC。
 
-The sidechain runs its own consensus, its own block production, often its own scripting environment, and its own [block time](/glossary/block-time). Users can transact freely on the sidechain (often with features Bitcoin's base layer doesn't have - faster blocks, confidential transactions, smart contracts) while the BTC remains locked on mainnet.
+侧链运行自己的共识、自己的出块机制，通常还有自己的脚本环境以及自己的[出块时间](/glossary/block-time)。用户可以在侧链上自由交易（通常具备比特币基础层没有的功能——更快的区块、保密交易、智能合约），而 BTC 仍然锁定在主网上。
 
-The peg mechanism is the central trust question. The strongest existing approaches:
+锚定机制是核心信任问题。现有的最强方案：
 
-- **Federated peg.** A multisignature committee of operators holds the locked BTC. They issue/redeem sidechain tokens based on signed deposits/withdrawals. Trust is in the federation: if 51% (or whatever threshold) collude or get compromised, peg breaks. Used by **Liquid** (Blockstream).
-- **Drivechain ([BIP-300/301](/glossary/bip-300-drivechains))** - a proposed Bitcoin upgrade where miners enforce the peg via voting on withdrawal requests. Not yet activated; debated.
-- **Spacechains / Statechains / Ark** - more recent designs with various trust models, some genuinely sovereign for the user, some still dependent on coordinators.
+- **联邦锚定。** 由运营方组成的多签委员会持有锁定的 BTC。他们根据签名的存取款请求发行/赎回侧链代币。信任在于联邦：如果 51%（或其他阈值）串谋或被攻破，锚定就会失效。**Liquid**（Blockstream）使用此方案。
+- **Drivechain（[BIP-300/301](/glossary/bip-300-drivechains)）**——一个比特币升级提案，由矿工对提款请求投票来执行锚定。尚未激活；仍在讨论中。
+- **Spacechain / Statechain / Ark**——更新的设计，信任模型各异，有些对用户来说真正自主，有些仍依赖协调者。
 
-Notable Bitcoin sidechains in 2026:
+2026 年值得关注的比特币侧链：
 
-- **Liquid Network** (Blockstream) - federated, supports confidential transactions and issued assets. Used for institutional inter-exchange settlement, security tokens, and some Tether USD.
-- **RSK (Rootstock)** - federated, EVM-compatible smart contracts.
-- **Statechains / Mercury Layer** - newer, smaller user base; off-chain transfers of UTXO control without on-chain transactions.
+- **Liquid Network**（Blockstream）——联邦制，支持保密交易和资产发行。用于机构间交易所结算、证券型代币和部分 USDT。
+- **RSK（Rootstock）**——联邦制，兼容 EVM 的智能合约。
+- **Statechain / Mercury Layer**——较新，用户群较小；无需链上交易即可链下转移 UTXO 控制权。
 
-The general framing: sidechains let you experiment with features Bitcoin can't safely adopt on its base layer. The trade-off is some additional trust assumption (typically a federation). Different users will value that trade differently. Sidechains are one species of the broader [off-chain](/glossary/off-chain) category; see also [Second Layer](/glossary/second-layer) for the constructions that anchor to Bitcoin without running a separate chain.
+总体框架：侧链让你实验比特币基础层无法安全采用的功能。代价是额外的信任假设（通常是联邦）。不同的用户对这个权衡有不同的评价。侧链是更广泛的[链下](/glossary/off-chain)类别的一种；另见[第二层](/glossary/second-layer)了解那些锚定到比特币但不运行独立链的方案。

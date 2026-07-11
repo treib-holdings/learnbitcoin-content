@@ -1,12 +1,12 @@
 ---
-title: "Absolute Fee"
+title: "绝对手续费"
 slug: absolute-fee
 draft: false
-shortDefinition: "A transaction fee set as a specific amount in satoshis or BTC, rather than a fee rate based on transaction size."
+shortDefinition: "以聪或 BTC 的具体金额设定的交易手续费，而不是基于交易大小的费率。"
 keyTakeaways:
-  - "Flat amount paid regardless of transaction size"
-  - "Can be convenient but risky if network conditions change"
-  - "Useful when transaction size and timing are predictable"
+  - "固定金额，与交易大小无关"
+  - "使用方便，但网络状况变化时有风险"
+  - "在交易大小和时间可预测时有用"
 sources: []
 relatedTerms:
   - fee-bumping
@@ -19,20 +19,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-An absolute fee is a transaction fee expressed as a fixed amount (e.g., 5,000 sats) rather than a feerate (e.g., 30 sats/vB). Some wallets let users set fees this way; some expert-mode flows require it.
+绝对手续费是以固定金额表示的交易手续费（例如 5,000 聪），而非费率（例如 30 sats/vB）。一些钱包允许用户以这种方式设置手续费；某些专家模式流程也需要它。
 
-What miners actually optimize for is feerate (fee per virtual byte), because block space is the scarce resource and they want to maximize total fees per block. A 5,000-sat absolute fee on a 100-vbyte transaction is 50 sats/vB (likely fine); the same absolute fee on a 500-vbyte transaction is 10 sats/vB (likely stuck during congestion). The absolute number is meaningless without the size context.
+矿工实际优化的是费率（每虚拟字节的手续费），因为区块空间是稀缺资源，他们希望最大化每个区块的总手续费。一笔 100 vbyte 的交易上 5,000 聪的绝对手续费是 50 sats/vB（可能没问题）；同样 5,000 聪的绝对手续费在 500 vbyte 的交易上只有 10 sats/vB（拥堵时很可能卡住）。脱离交易大小谈绝对数字是没有意义的。
 
-Where absolute fee setting still makes sense:
+绝对手续费仍然适用的场景：
 
-- **Single-input single-output spends** with predictable size. If you know exactly how big the transaction will be, the absolute-fee number maps directly to a known feerate.
-- **PSBT workflows.** Some PSBT signing flows require committing to a specific fee total before the final transaction size is known; absolute fee is the natural unit.
-- **Educational demonstrations.** Explaining "this transaction paid X sats" is more concrete than "this transaction paid Y sats/vB."
+- **单输入单输出支出**，大小可预测。如果你确切知道交易会有多大，绝对手续费就能直接映射到一个已知费率。
+- **PSBT 工作流。** 某些 PSBT 签名流程需要在最终交易大小确定之前承诺一个具体的手续费总额；绝对手续费是自然的单位。
+- **教学演示。** 解释"这笔交易支付了 X 聪"比"这笔交易支付了 Y sats/vB"更直观。
 
-Where it's a footgun:
+容易踩坑的场景：
 
-- **Variable-size transactions.** A wallet building a transaction with multiple inputs and outputs of varying script types may not know the exact size until signing is done. Setting an absolute fee can either overpay (size came in smaller than expected) or underpay (size came in larger).
-- **Fee-bumping.** RBF replacements need to clear specific feerate thresholds. Thinking in absolute terms makes it easy to under-bump.
-- **During fee-rate escalation.** When the mempool clears at, say, 200 sats/vB, an absolute fee chosen based on yesterday's normal feerate will be wildly under-priced and the transaction will sit indefinitely.
+- **大小可变的交易。** 钱包构建一笔包含多个不同脚本类型输入和输出的交易时，可能直到签名完成才知道确切大小。设置绝对手续费可能导致多付（实际大小比预期小）或少付（实际大小比预期大）。
+- **手续费提升（fee-bumping）。** RBF 替换需要达到特定的费率门槛。用绝对金额思考容易导致提升不足。
+- **费率飙升期间。** 当内存池以比如 200 sats/vB 清空时，基于昨天正常费率选择的绝对手续费将严重低估，交易会无限期搁置。
 
-Modern wallets default to feerate-based fee selection for a reason: it produces sensible behavior in variable network conditions. Absolute fee mode is a power-user tool, not a general default.
+现代钱包默认使用基于费率的手续费选择是有原因的：它在多变的网络条件下能产生合理的行为。绝对手续费模式是高级用户工具，不是通用默认选项。

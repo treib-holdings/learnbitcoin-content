@@ -1,12 +1,12 @@
 ---
-title: "BIP 152 (Compact Blocks)"
+title: "BIP 152（紧凑区块）"
 slug: bip-152-compact-blocks
 draft: false
-shortDefinition: "A method allowing nodes to propagate newly mined blocks using short transaction IDs, reducing bandwidth use."
+shortDefinition: "一种允许节点使用短交易 ID 传播新区块的方法，减少带宽使用。"
 keyTakeaways:
-  - "Minimizes redundant transaction data during block relay"
-  - "Speeds up network convergence on new blocks"
-  - "Reduces bandwidth usage for full nodes"
+  - "减少区块中继过程中的冗余交易数据"
+  - "加速网络对新区块的收敛"
+  - "减少全节点的带宽使用"
 sources: []
 relatedTerms:
   - bip-bitcoin-improvement-proposal
@@ -24,18 +24,18 @@ sameAs:
 liveWidget: ~
 ---
 
-[BIP-152](https://github.com/bitcoin/bips/blob/master/bip-0152.mediawiki) defines **compact block relay**, the protocol Bitcoin nodes use to propagate newly-mined blocks efficiently. Activated in Bitcoin Core in 2016, it dramatically reduced the bandwidth and latency of block propagation.
+[BIP-152](https://github.com/bitcoin/bips/blob/master/bip-0152.mediawiki)定义了**紧凑区块中继**，即比特币节点用来高效传播新挖出区块的协议。2016 年在 Bitcoin Core 中激活，大幅减少了区块传播的带宽和延迟。
 
-The problem it solves: when a new block is found, every node on the network needs to receive it as quickly as possible. Slow propagation means stale-block rates go up, which hurts miners and makes the network less efficient overall. Naively sending the full block to every peer is wasteful - if those peers already have most of the transactions in their [mempools](/glossary/mempool), you'd be sending data they already have.
+它解决的问题：当新区块被发现时，网络上的每个节点需要尽快收到它。传播慢意味着陈旧区块率上升，这损害矿工利益并降低网络整体效率。天真地将完整区块发送给每个对等节点是浪费的——如果那些对等节点的[内存池](/glossary/mempool)中已经有了大部分交易，你就在发送他们已有的数据。
 
-How compact blocks work:
+紧凑区块的工作方式：
 
-1. **New block arrives.** A miner publishes a new block.
-2. **The relay sends a compact summary first.** Instead of the full block, peers receive the block header plus a list of short transaction IDs (6-byte hashes) of every transaction in the block.
-3. **Each peer checks its mempool.** For every short ID, it tries to find the matching transaction in its own mempool. Hits are filled in locally.
-4. **Peer requests the misses.** Any transactions the peer didn't already have are requested explicitly.
-5. **Block reconstruction.** With most transactions already in mempool and the few missing ones now fetched, the peer reconstructs the full block and validates it.
+1. **新区块到达。**矿工发布一个新区块。
+2. **中继先发送紧凑摘要。**对等节点收到区块头加上区块中每笔交易的短 ID（6 字节哈希）列表，而非完整区块。
+3. **每个对等节点检查其内存池。**对于每个短 ID，它尝试在自己的内存池中找到匹配的交易。命中的在本地填充。
+4. **对等节点请求缺失的。**对等节点没有的任何交易被显式请求。
+5. **区块重建。**大多数交易已在内存池中，少数缺失的现已获取，对等节点重建完整区块并验证。
 
-Typical bandwidth savings: ~90%+ for well-connected nodes whose mempools are mostly synced with the network's. The block-propagation time drops from seconds to hundreds of milliseconds, which keeps stale block rates low and the network healthy.
+典型带宽节省：对于内存池与网络基本同步的连接良好的节点，超过 90%。区块传播时间从秒级降至百毫秒级，保持低陈旧区块率和健康的网络。
 
-Compact block relay is silently load-bearing for Bitcoin's network performance. Most users never know it exists.
+紧凑区块中继默默承载着比特币的网络性能。大多数用户从不知道它的存在。

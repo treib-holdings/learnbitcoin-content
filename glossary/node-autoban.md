@@ -1,12 +1,12 @@
 ---
-title: "Node Autoban"
+title: "节点自动封禁"
 slug: node-autoban
 draft: false
-shortDefinition: "Automatic banning of peers that send invalid or spam data, enforcing network health and reducing resource abuse."
+shortDefinition: "自动封禁发送无效或垃圾数据的对等方，维护网络健康并减少资源滥用。"
 keyTakeaways:
-  - "Prevents repeated invalid or spammy data from a single source"
-  - "Common technique to mitigate DoS and preserve node resources"
-  - "Ban durations are typically temporary but can be extended if abuse persists"
+  - "防止单一来源反复发送无效或垃圾数据"
+  - "缓解 DoS 和保护节点资源的常用技术"
+  - "封禁持续时间通常是临时的，但持续滥用可延长"
 sources: []
 relatedTerms:
   - bitcoin-satellite
@@ -21,16 +21,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Node autoban is Bitcoin Core's misbehavior tracking. The node assigns each peer a running misbehavior score; certain offenses bump it; once the score crosses a threshold (default 100), the peer is disconnected and its IP is banned for 24 hours.
+节点自动封禁是 Bitcoin Core 的不当行为追踪。节点为每个对等方分配一个累计不当行为分数；某些违规增加分数；一旦分数超过阈值（默认 100），对等方被断开连接且其 IP 被封禁 24 小时。
 
-What earns points:
+什么行为得分：
 
-- Invalid blocks (often an immediate ban-class offense: large score in one shot).
-- Invalid transactions that violate consensus rules (smaller score, additive).
-- Malformed P2P messages, oversized payloads, protocol violations.
-- Repeated requests for data the peer should already have.
-- DoS-style behavior: spamming `INV`, requesting nonexistent data, flooding with garbage.
+- 无效区块（通常是即时封禁级别的违规：一次大额加分）。
+- 违反共识规则的无效交易（较小分数，累加）。
+- 格式错误的 P2P 消息、超大载荷、协议违规。
+- 反复请求对等方应该已有的数据。
+- DoS 式行为：垃圾 `INV`、请求不存在的数据、垃圾信息轰炸。
 
-Honest peers basically never get banned. Almost every points-accumulating behavior requires either a bug in the peer's software or active malice. The system exists to make it expensive for an attacker to keep spending your bandwidth and CPU on garbage.
+诚实对等方基本不会被封禁。几乎每个累积分数的行为都需要对等方软件中的 bug 或主动恶意。系统存在的目的是让攻击者持续消耗你的带宽和 CPU 处理垃圾变得昂贵。
 
-The ban list is local to each node. There's no global "bad peer" registry, and there shouldn't be: a network-wide peer-banning consensus would itself be a centralization vector. Each node decides for itself. You can inspect and edit your own ban list with `listbanned` / `setban` via RPC.
+封禁列表对每个节点是本地的。没有全局"不良对等方"注册表，也不应该有：全网对等封禁共识本身就是一个中心化向量。每个节点自行决定。你可以通过 RPC 用 `listbanned` / `setban` 检查和编辑自己的封禁列表。

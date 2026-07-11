@@ -1,10 +1,11 @@
----title: "Bitcoin Units"
+---
+title: "比特币单位"
 slug: bitcoin-units
 draft: false
 status: live
 published: "2026-05-15"
 section: rabbit-hole
-tagline: "BTC, sats, mBTC, µBTC, Finney. Which unit to use, when, and why there are so many of them."
+tagline: "BTC、聪、mBTC、µBTC、Finney。用哪个单位、什么时候用、为什么有这么多。"
 order: 1
 estimatedMinutes: 9
 sources:
@@ -22,163 +23,163 @@ downloads:
 import UnitsConverter from '@components/units/UnitsConverter.svelte';
 import UnitsVisualization from '@components/units/UnitsVisualization.svelte';
 
-> **Where you're going:** Bitcoin is divisible to eight decimal places. That gives you nine possible units between "one BTC" and "one satoshi," and people have named most of them. By the end of this rabbit hole you'll know which units matter in practice, which exist for historical reasons, and how to think in any of them without doing decimal math in your head.
+> **你将了解：** 比特币可以精确到小数点后八位。这就在"一个 BTC"和"一聪"之间给出了九个可能的单位，其中大部分都被人起了名字。读完这篇深度科普，你会知道哪些单位在现实中真正有用、哪些只是历史遗存，以及怎样在不脑算小数的情况下自如地在不同单位间切换。
 
-## 1. Why There Are So Many Units
+## 1. 为什么有这么多单位
 
-Bitcoin's protocol tracks balances in satoshis. One satoshi is the smallest possible amount; one bitcoin equals 100,000,000 satoshis. Everything between those two scales is a label humans invented because the numbers got awkward.
+比特币协议用聪（sat，satoshis）来记录余额。一聪是最小可能金额；一个比特币等于 100,000,000 聪。这两个刻度之间的所有东西，都是人类因为数字太尴尬而发明的标签。
 
-When 1 BTC was worth $0.10 (in 2010), nobody needed smaller units. As the price climbed, "0.0001 BTC for a cup of coffee" became a typical amount, and the trailing zeros got annoying. Communities started using mBTC, then µBTC, then sats. Lightning Network operators needed even finer precision and added millisats (1/1000 of a satoshi).
+2010 年 1 BTC 价值 0.10 美元时，没人需要更小的单位。随着价格上涨，"0.0001 BTC 买杯咖啡"成了常见金额，尾部零的让人头疼。社区开始使用 mBTC，然后是 µBTC，再后来是聪。闪电网络（Lightning Network）的操作者需要更精细的精度，于是加入了毫聪（millisat，1/1000 聪）。
 
-The result: a forest of unit names, most of which you'll never use, and a few you'll use constantly. This rabbit hole sorts the useful from the historical.
+结果就是：一片单位名称的丛林，其中大部分你永远不会用到，只有几个你会经常用。这篇深度科普就是把有用的从历史遗存中筛选出来。
 
-## 2. The Three That Matter
+## 2. 三个真正重要的单位
 
-If you ignore everything else, you can get through 95% of Bitcoin life with three units:
+如果你忽略其他所有单位，只用三个就能应付 95% 的比特币生活：
 
-- **BTC** - the whole unit. Used for large amounts, quoting market prices, savings discussions.
-- **sat** (satoshi) - the smallest unit. Used for fees, tips, microtransactions, fee rates (sat/vByte).
-- **msat** (millisat) - one thousandth of a sat. Used inside the [Lightning Network](/glossary/lightning-network) for fine routing fee precision. You'll rarely see msat directly in a wallet UI.
+- **BTC** - 整数单位。用于大额金额、市场价格报价、储蓄讨论。
+- **聪（sat，satoshi）** - 最小单位。用于手续费、小费、微交易、费率（sat/vByte）。
+- **毫聪（msat，millisat）** - 一聪的千分之一。用于[闪电网络](/glossary/lightning-network)内部精细的路由手续费精度。你在钱包界面里很少直接看到毫聪。
 
-The other units (mBTC, µBTC, Finney) are mostly historical or community-specific. If you're learning Bitcoin in 2026, learning BTC and sats is sufficient.
+其他单位（mBTC、µBTC、Finney）主要是历史性的或特定社区使用的。如果你在 2026 年学习比特币，学好 BTC 和聪就够了。
 
-## 3. The Full Scale
+## 3. 完整刻度
 
-Bitcoin has eight decimal places. That means there are nine "positions" from BTC down to sat. The visualization below shows what each position represents - orange circles are the unit at that decimal place and everything finer; outlined circles are the higher-magnitude positions above it.
+比特币有八位小数。这意味着从 BTC 到聪之间有九个"位置"。下面的可视化展示了每个位置代表的数量 - 橙色圆圈表示该小数位及更精细的单位；空心圆圈表示更高量级的单位。
 
 <UnitsVisualization client:visible unit="finney" />
 
-The "Finney" example shows position 4 (0.0001 BTC = 10,000 sats). The four outlined circles to the left represent BTC, dBTC, cBTC, mBTC - all coarser denominations not part of this unit. The five filled circles starting at the Finney position represent the unit and everything below it down to the satoshi.
+"Finney"示例展示的是第 4 位（0.0001 BTC = 10,000 聪）。左边四个空心圆圈代表 BTC、dBTC、cBTC、mBTC - 都是不属于这个单位的更大量级。从 Finney 位置开始的五个实心圆圈代表该单位及以下直到聪的所有单位。
 
-## 4. Every Unit, With Its Reason for Existing
+## 4. 每个单位及其存在理由
 
-Working from biggest to smallest:
+从大到小排列：
 
-### BTC (Bitcoin) - the whole coin
+### BTC（比特币） - 整币
 
 <UnitsVisualization client:visible unit="btc" showLabel={false} />
 
-The base unit. Equals 100,000,000 satoshis. Used for market prices ("BTC is at $87,000"), large transfers ("I bought 0.5 BTC"), and any discussion where the amount is bigger than a few hundred dollars. There will never be more than 21 million of these in existence (see [the Supply Schedule rabbit hole](/rabbit-hole/supply)).
+基本单位。等于 100,000,000 聪。用于市场价格（"BTC 价格 87,000 美元"）、大额转账（"我买了 0.5 BTC"），以及任何金额超过几百美元的讨论。永远不会超过 2100 万个（参见[供应量时间表深度科普](/rabbit-hole/supply)）。
 
-### dBTC (deci-Bitcoin) - mostly unused
+### dBTC（分比特币） - 基本不用
 
 <UnitsVisualization client:visible unit="dbtc" showLabel={false} />
 
-One-tenth of a BTC. Has a name in theory; nobody uses it in practice. If you see it, it's usually in academic contexts or completeness-driven documentation.
+BTC 的十分之一。理论上有名字；实际上没人用。如果你看到它，通常在学术文献或追求完整性的文档中。
 
-### cBTC (centi-Bitcoin) - also mostly unused
+### cBTC（厘比特币） - 同样基本不用
 
 <UnitsVisualization client:visible unit="cbtc" showLabel={false} />
 
-One-hundredth of a BTC, or 1,000,000 sats. Theoretically the "cent" of Bitcoin. In practice, also unused. People who want this magnitude tend to just write 0.01 BTC.
+BTC 的百分之一，即 1,000,000 聪。理论上是比特币的"分"。实际上也没人用。想要这个量级的人通常直接写 0.01 BTC。
 
-### mBTC (Millibitcoin)
+### mBTC（毫比特币）
 
 <UnitsVisualization client:visible unit="mbtc" showLabel={false} />
 
-One-thousandth of a BTC, or 100,000 sats. Has some adoption: at typical Bitcoin prices, 1 mBTC is in the range of a meal or a small purchase, which makes it a reasonable display unit. Some wallets and merchants prefer mBTC over BTC to avoid showing leading zeros.
+BTC 的千分之一，即 100,000 聪。有一定采用度：在典型比特币价格下，1 mBTC 的范围大约是一顿饭或一次小额购买，这使它成为一个合理的显示单位。一些钱包和商家更喜欢用 mBTC 而不是 BTC，以避免显示前导零。
 
 ### Finney
 
 <UnitsVisualization client:visible unit="finney" showLabel={false} />
 
-One ten-thousandth of a BTC, or 10,000 sats. Named after Hal Finney, the cryptographer who received the first Bitcoin transaction from Satoshi in January 2009 and was probably the second person to ever run Bitcoin software. The name is community-honorary; you won't see it in many wallets. Worth knowing about because of who Hal was.
+BTC 的万分之一，即 10,000 聪。以 Hal Finney 的名字命名，他是密码学家，在 2009 年 1 月收到了中本聪（Satoshi Nakamoto）发送的第一笔比特币交易，可能是第二个运行比特币软件的人。这个名字是社区致敬性的；你不会在太多钱包中看到它。值得了解是因为 Hal 是谁。
 
-### Unnamed (10^-5 BTC)
+### 未命名（10^-5 BTC）
 
 <UnitsVisualization client:visible unit="p5" showLabel={false} />
 
-One hundred-thousandth of a BTC, or 1,000 sats. Has no widely-used name. The decimal slot exists; the social convention doesn't.
+BTC 的十万分之一，即 1,000 聪。没有广泛使用的名称。小数位置存在；社会约定不存在。
 
-### µBTC (Microbitcoin) - aka "bits"
+### µBTC（微比特币） - 又称"bits"
 
 <UnitsVisualization client:visible unit="ubtc" showLabel={false} />
 
-One-millionth of a BTC, or 100 sats. [BIP 176](https://github.com/bitcoin/bips/blob/master/bip-0176.mediawiki) proposed calling these "bits" - a shorter, more memorable name. The proposal had genuine adoption in some wallets (and on Coinbase for a while) but largely lost out to "sats" as the preferred small-amount unit.
+BTC 的百万分之一，即 100 聪。[BIP 176](https://github.com/bitcoin/bips/blob/master/bip-0176.mediawiki) 提议将它们称为"bits" - 一个更短、更好记的名字。这个提议在一些钱包中得到过真正的采用（Coinbase 也曾短暂使用过），但基本上输给了"聪"作为首选小额单位的地位。
 
-### Unnamed (10^-7 BTC)
+### 未命名（10^-7 BTC）
 
 <UnitsVisualization client:visible unit="p7" showLabel={false} />
 
-One ten-millionth of a BTC, or 10 sats. Like the 10^-5 slot, this one exists but has no name. Most wallets won't even let you specify amounts at this resolution without rounding.
+BTC 的千万分之一，即 10 聪。和 10^-5 位置一样，存在但没有名字。大多数钱包甚至不会让你在这个精度下指定金额而不四舍五入。
 
-### Satoshis (sats) - the smallest unit
+### 聪（sat，satoshis） - 最小单位
 
 <UnitsVisualization client:visible unit="sat" showLabel={false} />
 
-One hundred-millionth of a BTC. The atomic unit; you cannot transact in less on the main chain. Named after Satoshi Nakamoto.
+BTC 的一亿分之一。原子单位；在主链上你无法进行更小的交易。以中本聪（Satoshi Nakamoto）命名。
 
-Sats have become the de-facto standard small unit in 2020s Bitcoin culture. "Stacking sats" is the common phrase for accumulating Bitcoin. Fees are typically quoted in sat/vByte. Lightning balances are often shown in sats. If BTC keeps appreciating, eventually most user-facing displays will probably default to sats.
+聪已经成为 2020 年代比特币文化中事实上的标准小单位。"囤聪"（stacking sats）是积累比特币的常见说法。手续费通常以 sat/vByte 报价。闪电网络余额经常以聪显示。如果 BTC 继续升值，最终大多数面向用户的界面可能会默认显示聪。
 
-## 5. The Units Table
+## 5. 单位对照表
 
-When 1 BTC equals $1,000,000 (a milestone many expect within the next decade or two), the smaller units start to be more like familiar everyday amounts. Here's the alignment:
+当 1 BTC 等于 1,000,000 美元时（许多人预计在未来一二十年内会达到的里程碑），较小的单位开始更接近日常熟悉的金额。这是对照关系：
 
-| Name | Symbol | Fraction of BTC | Value at $1M/BTC |
+| 名称 | 符号 | BTC 分数 | $1M/BTC 时的价值 |
 |---|---|---|---|
-| Bitcoin | BTC | 1 | $1,000,000.00 |
-| (unnamed) | - | 0.1 | $100,000.00 |
-| Centi-Bitcoin | cBTC | 0.01 | $10,000.00 |
-| Milli-Bitcoin | mBTC | 0.001 | $1,000.00 |
+| 比特币 | BTC | 1 | $1,000,000.00 |
+| （未命名） | - | 0.1 | $100,000.00 |
+| 厘比特币 | cBTC | 0.01 | $10,000.00 |
+| 毫比特币 | mBTC | 0.001 | $1,000.00 |
 | Finney | - | 0.0001 | $100.00 |
-| (unnamed) | - | 0.00001 | $10.00 |
-| Micro-Bitcoin | µBTC (bit) | 0.000001 | $1.00 |
-| (unnamed) | - | 0.0000001 | $0.10 |
-| Satoshi | sat | 0.00000001 | $0.01 |
+| （未命名） | - | 0.00001 | $10.00 |
+| 微比特币 | µBTC (bit) | 0.000001 | $1.00 |
+| （未命名） | - | 0.0000001 | $0.10 |
+| 聪 | sat | 0.00000001 | $0.01 |
 
-At that price point: 1 sat = 1 cent, 1 bit = 1 dollar, 1 mBTC = 1,000 dollars. The naming starts to feel intuitive in a way it doesn't today. Some people argue this is when "the world will start pricing in sats" - which is plausible but not predictable.
+在这个价格点上：1 聪 = 1 分，1 bit = 1 美元，1 mBTC = 1,000 美元。命名开始变得直觉化，而今天并不是这样。有些人认为这就是"世界将开始用聪定价"的时候 - 这听起来合理但不可预测。
 
-## 6. Why 8 Decimals?
+## 6. 为什么是 8 位小数？
 
-Satoshi Nakamoto picked eight decimal places when designing Bitcoin. There's no public record of *why* exactly eight. The conventional wisdom, repeated in many places, is that it was a guess: precise enough for microtransactions, broad enough to handle a long volatility curve.
+中本聪在设计比特币时选择了八位小数。没有公开记录说明*为什么*恰好是八位。普遍的说法（在很多地方被重复）是这是一个猜测：足够精确以支持微交易，又足够宽以应对长期波动曲线。
 
-At 8 decimals, Bitcoin can represent values from $1M+ (1 BTC) down to $0.01 (1 sat) - even if the dollar-per-BTC price reaches a million. That's the rough envelope the choice covers.
+在 8 位小数下，比特币可以表示从 $1M+（1 BTC）到 $0.01（1 聪）的值 - 即使每 BTC 价格达到百万美元。这就是这个选择覆盖的大致范围。
 
-In some modern uses, 8 decimals is brushing up against the limit. The [Lightning Network](/glossary/lightning-network) needs finer precision for routing fees, which is why it operates internally in **millisatoshis** (1/1000 of a sat, 11 decimals total). On-chain Bitcoin is still 8 decimals, but second-layer protocols have extended the resolution off-chain.
+在某些现代用途中，8 位小数已经接近极限。[闪电网络](/glossary/lightning-network)需要更精细的路由手续费精度，这就是为什么它内部以**毫聪**（millisatoshis，1/1000 聪，总共 11 位小数）运行。链上比特币仍然是 8 位小数，但二层协议已经在链下扩展了精度。
 
-Could the protocol go to 10 or 12 decimals? Technically yes, but it would require a network-wide soft fork to redefine the smallest unit. No serious proposal has been made. The current scope works for the foreseeable future.
+协议能改为 10 或 12 位小数吗？技术上可以，但需要全网软分叉（soft fork）来重新定义最小单位。目前没有认真提议。当前范围在可预见的未来是够用的。
 
-## 7. The Converter
+## 7. 换算器
 
-Try it. Type any amount in any unit and watch the others update:
+试试看。在任何单位中输入任何金额，其他单位会自动更新：
 
 <UnitsConverter client:load />
 
-> **Pro tip:** Double-check decimals before sending. The difference between 10,000 sats and 100,000 sats might look like a typo, but it's a 10x difference in actual value. Reputable wallets show fee rates and amounts in monospace fonts specifically to keep the decimals aligned. Use that affordance.
+> **实用提示：** 发送前务必核对小数。10,000 聪和 100,000 聪看起来可能只是打字错误，但实际价值差了 10 倍。可信的钱包用等宽字体显示费率和金额，就是为了保持小数对齐。利用这个设计。
 
-## 8. What People Actually Use
+## 8. 人们实际用什么
 
-In practice, here's the breakdown of which units you'll encounter most:
+在实践中，以下是你最常遇到的单位分布：
 
-**You'll see BTC in:**
-- Market prices and exchange interfaces
-- Large transfers and savings discussions
-- Whitepapers and academic writing
+**你会在这些场景看到 BTC：**
+- 市场价格和交易所界面
+- 大额转账和储蓄讨论
+- 白皮书和学术文章
 
-**You'll see sats in:**
-- Wallet balances (especially Lightning wallets)
-- Tipping and microtransactions
-- Fee rates (always expressed as sat/vByte)
-- Stacker culture ("stacking sats")
-- Nostr zaps and similar
+**你会在这些场景看到聪：**
+- 钱包余额（尤其是闪电网络钱包）
+- 小费和微交易
+- 费率（总是以 sat/vByte 表示）
+- 囤币文化（"囤聪"）
+- Nostr 打赏（zaps）等
 
-**You'll see mBTC in:**
-- A minority of merchant interfaces, especially European ones
-- Some hardware wallet displays
+**你会在这些场景看到 mBTC：**
+- 少数商家界面，尤其是欧洲的
+- 一些硬件钱包的显示
 
-**You'll see µBTC ("bits") in:**
-- A few wallets that adopted BIP 176
-- Older Coinbase interfaces (mostly retired now)
+**你会在这些场景看到 µBTC（"bits"）：**
+- 少数采纳了 BIP 176 的钱包
+- 早期的 Coinbase 界面（现在基本已弃用）
 
-**You'll basically never see:**
-- dBTC, cBTC, Finney, or the unnamed positions, except in this kind of comprehensive list
+**你基本上永远不会看到：**
+- dBTC、cBTC、Finney 或未命名的位置，除非在这种全面列表中
 
-The natural reading-and-writing convention now is:
+现在自然的读写约定是：
 
-- **Amounts under 0.01 BTC**: use sats
-- **Amounts from 0.01 to 0.5 BTC**: either, your call
-- **Amounts over 0.5 BTC**: use BTC
+- **0.01 BTC 以下**：用聪
+- **0.01 到 0.5 BTC**：两者皆可，随你
+- **0.5 BTC 以上**：用 BTC
 
-That's it. Two units handle everything. The rest of this rabbit hole is for completeness and historical context.
+就这样。两个单位搞定一切。这篇深度科普的其余部分是为了完整性和历史背景。
 
-> **Pro tip:** When chatting with another Bitcoiner about a payment, confirm the unit before you send. "10k sats" and "0.0001 BTC" are the same amount; "10,000 sats" and "0.001 BTC" differ by 10x. The shared cultural language has converged on sats for small and BTC for large, but mismatches happen. Always verify.
+> **实用提示：** 和另一个比特币用户讨论付款时，发送前确认单位。"1 万聪"和"0.0001 BTC"是同一个金额；"10,000 聪"和"0.001 BTC"差了 10 倍。共同的文化语言已经收敛到小额用聪、大额用 BTC，但不匹配仍然发生。务必核实。

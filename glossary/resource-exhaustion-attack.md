@@ -1,12 +1,12 @@
 ---
-title: "Resource Exhaustion Attack"
+title: "资源耗尽攻击（Resource Exhaustion Attack）"
 slug: resource-exhaustion-attack
 draft: false
-shortDefinition: "A denial-of-service tactic flooding a node's CPU, memory, or bandwidth with spam or malformed data."
+shortDefinition: "一种拒绝服务策略，用垃圾信息或畸形数据淹没节点的 CPU、内存或带宽。"
 keyTakeaways:
-  - "Targets node capacity with spammy or malformed data"
-  - "Nodes use auto-ban, mempool limits, or advanced relay to defend"
-  - "Ongoing threat requiring performance and policy refinements"
+  - "用垃圾或畸形数据攻击节点容量"
+  - "节点使用自动封禁、内存池限制或高级转发来防御"
+  - "持续威胁，需要性能和策略改进"
 sources: []
 relatedTerms:
   - eclipse-attack
@@ -15,22 +15,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A resource exhaustion attack is the broad category of denial-of-service attacks where the attacker tries to use up a target node's CPU, memory, disk, or bandwidth so the node fails or becomes useless.
+资源耗尽攻击是拒绝服务攻击的广泛类别，攻击者试图耗尽目标节点的 CPU、内存、磁盘或带宽，使节点失败或变得无用。
 
-The shapes a resource exhaustion attack can take against Bitcoin nodes:
+资源耗尽攻击对比特币节点的形式：
 
-- **Mempool spam.** Flood the network with low-fee transactions to fill up mempool memory. Mitigated by the [discard threshold](/glossary/discard-threshold) - low-fee transactions get evicted when memory is full, so the spam has to actually pay competitive fees, which gets expensive.
-- **CPU exhaustion via expensive scripts.** Pre-SegWit, certain script patterns required quadratic-time hashing for signature verification. An attacker could construct a transaction that took seconds of CPU to verify. SegWit's [BIP 143](/glossary/segwit-segregated-witness-bip-141) sighash fixed this.
-- **Bandwidth flooding.** Send many `INV` messages, request many blocks, force the node to use upstream bandwidth on garbage. Mitigated by per-peer rate limits and [node autoban](/glossary/node-autoban) for repeat offenders.
-- **Connection slot exhaustion.** Open many incoming connections to fill the node's inbound slot limit. Mitigated by maxconnections and by reserving slots for outbound and "feeler" connections.
-- **Disk exhaustion.** Push the node to fill its disk with logs or unconfirmed transaction data. Less of a problem with modern node software but historically a concern.
-- **CVE-class attacks.** Targeted exploits of specific implementation bugs. The 2018 inflation bug (CVE-2018-17144) had a denial-of-service side effect as well as the inflation primary risk; certain crash bugs in early Bitcoin Core versions could be triggered by malformed P2P messages.
+- **内存池垃圾。** 用低手续费交易淹没网络以填满内存池内存。通过[丢弃阈值](/glossary/discard-threshold)缓解——内存满时低手续费交易被驱逐，因此垃圾信息必须实际支付有竞争力的手续费，成本很高。
+- **通过昂贵脚本耗尽 CPU。** SegWit 之前，某些脚本模式需要二次时间哈希来验证签名。攻击者可以构造一笔需要数秒 CPU 验证的交易。SegWit 的 [BIP 143](/glossary/segwit-segregated-witness-bip-141) sighash 修复了这个问题。
+- **带宽洪泛。** 发送大量 `INV` 消息、请求大量区块、迫使节点在上游带宽上处理垃圾。通过每节点速率限制和重复违规者的[节点自动封禁](/glossary/node-autoban)缓解。
+- **连接槽耗尽。** 打开大量入站连接填满节点的入站槽位限制。通过 maxconnections 和为出站及"探索"连接保留槽位缓解。
+- **磁盘耗尽。** 推动节点用日志或未确认交易数据填满磁盘。现代节点软件中问题较小但历史上是隐患。
+- **CVE 类攻击。** 针对特定实现漏洞的定向利用。2018 年通胀漏洞（CVE-2018-17144）有拒绝服务副作用和通胀主要风险；早期 Bitcoin Core 版本中的某些崩溃漏洞可以通过畸形 P2P 消息触发。
 
-The defense layers:
+防御层：
 
-- **Protocol-level mitigations.** SegWit's sighash fix, weight limits, script size limits, per-tx ancestor/descendant chain limits.
-- **Bitcoin Core's policy layer.** Rate limits, ban scoring, mempool eviction, connection slot management.
-- **Per-peer reputation.** A peer that misbehaves gets penalized; sustained misbehavior gets it disconnected and banned.
-- **The economic floor.** Spam costs the spammer real fees, so sustained attacks are expensive.
+- **协议级缓解。** SegWit 的 sighash 修复、权重限制、脚本大小限制、每笔交易的祖先/后代链限制。
+- **Bitcoin Core 策略层。** 速率限制、封禁评分、内存池驱逐、连接槽位管理。
+- **每节点声誉。** 不当行为的节点被扣分；持续不当行为被断开和封禁。
+- **经济底线。** 垃圾信息花费攻击者真实手续费，因此持续攻击很昂贵。
 
-The system holds up well in practice. Bitcoin's P2P network has been continuously attacked at low intensity by various actors for over a decade and has remained functional. Industrial-scale attacks would degrade performance for a while; they've never structurally broken the network.
+系统在实践中表现良好。比特币的 P2P 网络已被各种行为者持续低强度攻击了十多年，并保持了功能。工业规模攻击会在一段时间内降低性能；但从未在结构上打破网络。

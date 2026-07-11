@@ -1,12 +1,12 @@
 ---
-title: "Fork Detection"
+title: "分叉检测"
 slug: fork-detection
 draft: false
-shortDefinition: "Monitoring one's node or network for any unexpected chain splits or contentious forks to stay on the desired chain."
+shortDefinition: "监控节点或网络以发现意外的链分叉或争议性分叉，以保持在期望的链上。"
 keyTakeaways:
-  - "Alerts you if the chain diverges into separate forks"
-  - "Helps miners and users ensure they track the main chain"
-  - "Critical in periods of contentious upgrades or accidental splits"
+  - "在链分叉为独立分支时发出警报"
+  - "帮助矿工和用户确保跟踪主链"
+  - "在争议性升级或意外分裂期间至关重要"
 sources: []
 relatedTerms:
   - airdrop-btc-fork
@@ -20,25 +20,25 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Fork detection is the practice of monitoring for unexpected chain splits - times when the network produces two or more competing chains, intentionally or not.
+分叉检测是监控意外链分叉的做法——网络有意或无意产生两条或多条竞争链的时期。
 
-The kinds of forks that get detected:
+被检测的分叉类型：
 
-- **Routine 1-2 block reorgs.** Happen a few times a year from near-simultaneous block finds. Resolved automatically within a block or two; no operator intervention needed.
-- **Software-bug forks.** A bug in node software accepts an invalid block; nodes running the buggy version follow a different chain than nodes running the correct one. Rare, but [BIP 50](/glossary/bip-50) is the canonical 2013 example.
-- **Activation forks.** A soft-fork or hard-fork rule change activates, and not all nodes upgrade. Intentional but managed via signaling thresholds and warning periods.
-- **Contentious hard forks.** A faction deliberately changes consensus rules. The 2017 Bitcoin Cash split is the example.
+- **常规 1-2 区块重组。** 每年发生几次，由近乎同时的区块发现引起。在一两个区块内自动解决；无需运营者干预。
+- **软件 bug 分叉。** 节点软件 bug 接受了无效区块；运行有 bug 版本的节点遵循了与运行正确版本节点不同的链。罕见，但 [BIP 50](/glossary/bip-50) 是 2013 年的经典案例。
+- **激活分叉。** 软分叉或硬分叉规则变更激活，并非所有节点都升级。有意为之但通过信号阈值和警告期管理。
+- **争议性硬分叉。** 派系故意更改共识规则。2017 年 Bitcoin Cash 分叉是典型案例。
 
-How fork detection works in practice:
+分叉检测在实践中的工作方式：
 
-- **Bitcoin Core's built-in warnings.** `getblockchaininfo` exposes a `warnings` field that surfaces unusual chain conditions: unexpected high-difficulty competing chains, unknown soft-fork bits set in many recent blocks, etc.
-- **Cross-source comparison.** Compare your node's tip hash to multiple block explorers (mempool.space, blockstream.info, Bitaroo, etc.) plus a few trusted peers. If they disagree at any depth, investigate.
-- **Forkmonitor.info.** A dedicated public service that runs many Bitcoin node implementations side-by-side and alerts on divergence. The canonical fork-watcher service.
+- **Bitcoin Core 内置警告。** `getblockchaininfo` 暴露 `warnings` 字段，显示异常链条件：意外的高难度竞争链、近期许多区块中设置未知软分叉位等。
+- **跨来源比较。** 将你的节点尖哈希与多个区块浏览器（mempool.space、blockstream.info、Bitaroo 等）以及几个可信对等方比较。如果它们在任何深度不一致，调查。
+- **Forkmonitor.info。** 专用公共服务，并行运行多种比特币节点实现并在分歧时发出警报。经典分叉监控服务。
 
-Who needs this:
+谁需要这个：
 
-- **Exchanges, custodians, payment processors.** Confirmation logic depends on being on the correct chain. Freeze deposits or withdrawals if the chain forks.
-- **Miners.** Mining on a minority fork wastes hashing power.
-- **Large on-chain transactions.** Wait for deeper confirmations during any suspected fork event.
+- **交易所、托管人、支付处理器。** 确认逻辑依赖于在正确的链上。如果链分叉则冻结充提。
+- **矿工。** 在少数派分叉上挖矿浪费算力。
+- **大额链上交易。** 在任何疑似分叉事件期间等待更深确认。
 
-Most users never see this in practice. Bitcoin Core handles routine reorgs transparently. The discipline matters for operators of high-value systems where "the wrong chain" would be expensive.
+大多数用户在实践中永远不会遇到。Bitcoin Core 透明地处理常规重组。对于"错误的链"代价高昂的高价值系统运营者，这门纪律很重要。

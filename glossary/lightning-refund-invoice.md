@@ -1,12 +1,12 @@
 ---
-title: "Lightning Refund Invoice"
+title: "闪电退款发票"
 slug: lightning-refund-invoice
 draft: false
-shortDefinition: "An invoice that returns funds to the original payer if a payment route fails or is canceled, used in LN workflows."
+shortDefinition: "如果支付路由失败或被取消，将资金退还给原始付款方的发票，用于闪电网络工作流。"
 keyTakeaways:
-  - "Provides a plan B if an LN payment fails or can't route"
-  - "Requires cooperation between sender and receiver to issue the refund invoice"
-  - "Enhances reliability in complex LN scenarios"
+  - "在闪电支付失败或无法路由时提供退路"
+  - "需要发送方和接收方合作发行退款发票"
+  - "在复杂闪电场景中增强可靠性"
 sources: []
 relatedTerms:
   - bolt-11
@@ -20,21 +20,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Lightning refund invoice is a payment request that goes the *other* direction from a failed or canceled payment - returning funds from the original receiver back to the payer. It's not a core part of the Lightning protocol itself, but a wallet-level convention used in specific workflows.
+闪电退款发票是从失败或取消的支付*反方向*返回资金的支付请求——从原始接收方退回给付款方。它不是闪电协议本身的核心部分，而是特定工作流中钱包层面的约定。
 
-The contexts where refund invoices come up:
+退款发票出现的场景：
 
-- **Merchant order cancellations.** A customer pays for something, then cancels before the merchant ships. The merchant generates a refund invoice; the customer's wallet pays it.
-- **Failed product/service delivery.** A service that takes Lightning payments and later determines it can't fulfill issues a refund invoice.
-- **Overpayments.** Rare in Lightning (payments are amount-locked), but possible in some workflows.
-- **Subscription cancellations.** Pro-rated refunds via refund invoice.
+- **商家订单取消。** 客户支付了某物，然后在商家发货前取消。商家生成退款发票；客户钱包支付它。
+- **产品/服务交付失败。** 接受闪电支付的服务后来确定无法履行，发行退款发票。
+- **多付。** 在闪电网络中罕见（支付金额锁定），但在某些工作流中可能。
+- **订阅取消。** 通过退款发票按比例退款。
 
-The technical reality: a Lightning refund is just a regular Lightning payment in the reverse direction. It uses a [BOLT-11](/glossary/bolt-11) invoice (or [BOLT-12 offer](/glossary/lightning-invoice)), gets routed through the network normally, and settles normally. There's no protocol-level "refund" primitive - it's just two payments going opposite ways.
+技术现实：闪电退款就是反方向的常规闪电支付。它使用 [BOLT-11](/glossary/bolt-11) 发票（或 [BOLT-12 offer](/glossary/lightning-invoice)），正常通过网络路由，正常结算。没有协议级的"退款"原语——只是两笔反方向的支付。
 
-What can make refunds awkward in practice:
+实际中退款可能尴尬的原因：
 
-- **The original payer might not be online.** Lightning payments require both parties' wallets to be reachable when the payment routes. A merchant can issue a refund invoice but can't *push* a payment to a customer who's not running a node.
-- **No native refund tracking.** Wallets typically don't link the refund to the original payment, so the bookkeeping is on you.
-- **BOLT-12 helps slightly.** BOLT-12 "offers" support a "request refund" workflow more cleanly than BOLT-11's static invoices.
+- **原始付款方可能不在线。** 闪电支付要求双方钱包在支付路由时可达。商家可以发行退款发票但无法向一个没有运行节点的客户*推送*支付。
+- **没有原生退款追踪。** 钱包通常不会将退款与原始支付关联，所以记账靠自己。
+- **BOLT-12 略有帮助。** BOLT-12 "offers"比 BOLT-11 的静态发票更干净地支持"请求退款"工作流。
 
-Most users will encounter Lightning refunds rarely. When they do, the experience is roughly: receive a refund invoice URL or QR code, pay it like any other invoice. The underlying mechanics are unremarkable.
+大多数用户很少遇到闪电退款。遇到时，体验大致是：收到退款发票 URL 或二维码，像任何其他发票一样支付它。底层机制平淡无奇。

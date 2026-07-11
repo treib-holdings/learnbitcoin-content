@@ -1,12 +1,12 @@
 ---
-title: "Audiobook Model (Lightning)"
+title: "有声书模式（闪电网络）"
 slug: audiobook-model-lightning
 draft: false
-shortDefinition: "A micropayment approach where Lightning payments stream by the minute (or second) for audio content."
+shortDefinition: "一种微支付方式，通过闪电网络按分钟（或秒）流式支付音频内容费用。"
 keyTakeaways:
-  - "Enables pay-per-minute streaming for audio content"
-  - "Leverages LN's low-fee micropayment capability"
-  - "Could replace subscription or ad-based monetization"
+  - "实现按分钟流式支付音频内容"
+  - "利用闪电网络的低费率微支付能力"
+  - "可能替代订阅或广告模式"
 sources: []
 relatedTerms:
   - atomic-multi-path-payment-amp
@@ -19,25 +19,25 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The "audiobook model" is a [Lightning](/glossary/lightning-network) micropayment pattern where content is paid for in tiny increments as it's consumed, rather than via subscription or upfront purchase. Audio content was the early canonical example - "pay per minute of audiobook listened" - but the model applies to anything time-streamed.
+"有声书模式"是一种[闪电网络](/glossary/lightning-network)微支付模式，内容在消费时以微小增量付费，而非通过订阅或预购。音频内容是最初的典型例子——"按听书分钟数付费"——但该模式适用于任何时间流内容。
 
-How it works in practice:
+实际中的工作方式：
 
-1. **Content is gated** by a Lightning paywall (often via a Lightning-aware podcast host or content platform).
-2. **The consumer's wallet streams payments** at a configured rate - say, 100 sats per minute - as long as they're consuming.
-3. **If they pause or stop**, the stream stops. If they listen for 30 minutes, they pay 3,000 sats total. If they stop after 5 minutes, they pay 500.
-4. **The creator receives payment in real time**, in proportion to actual consumption.
+1. **内容由闪电支付墙保护**（通常通过闪电感知的播客托管或内容平台）。
+2. **消费者钱包以配置的速率流式支付**——比如每分钟 100 聪——只要在消费就持续支付。
+3. **如果暂停或停止**，流就停止。听了 30 分钟就总共支付 3,000 聪。5 分钟后停止就支付 500。
+4. **创作者实时收到付款**，与实际消费量成正比。
 
-Real-world implementations in 2026:
+2026 年的实际实现：
 
-- **Podcasting 2.0 / Value4Value.** Podcast players like Fountain, Podverse, and Castamatic let listeners stream sats to podcast hosts during episodes. The "value blocks" tag in RSS feeds is how podcasters opt in. Roughly 5-10 cents per episode is common voluntary value.
-- **Lightning-paywalled content sites** offer pay-per-time-unit access to long-form articles, video, or audio.
-- **Nostr zaps** are adjacent - voluntary micropayments to creators rather than time-streamed but conceptually similar.
+- **Podcasting 2.0 / Value4Value。** Fountain、Podverse、Castamatic 等播客播放器让听众在节目播放期间向播客主播流式发送聪。RSS 源中的"value blocks"标签是播客主播选择加入的方式。每集大约 5-10 美分的自愿打赏是常见的。
+- **闪电支付墙内容网站**提供按时间单位付费的长文、视频或音频访问。
+- **Nostr zaps**是相关概念——向创作者自愿微支付，而非时间流式，但概念上类似。
 
-What makes the audiobook model viable:
+使有声书模式可行的原因：
 
-- **Lightning's near-zero fees.** Streaming 100 sats every 10 seconds requires fees that don't dominate the payment. On-chain Bitcoin couldn't do this; Lightning can.
-- **Sat-denominated quantities are small enough.** "100 sats per minute" feels reasonable; "$0.0035 per minute" feels strange but the math is the same.
-- **Pause/stop = no payment.** Aligns the payer's interest with continued value delivery, unlike Netflix-style subscriptions where you pay whether you watch or not.
+- **闪电网络近零费率。**每 10 秒流式发送 100 聪需要手续费不占主导。链上比特币做不到这点；闪电网络可以。
+- **以聪为单位的金额足够小。**"每分钟 100 聪"感觉合理；"每分钟 0.0035 美元"感觉奇怪但数学是一样的。
+- **暂停/停止 = 不付费。**与 Netflix 式订阅不同，这使付费者的利益与持续价值传递对齐。
 
-This is one of the genuinely new business models Bitcoin's micropayment capability enables. Whether it scales to displace subscriptions and ads is an open commercial question. The technical infrastructure for it is real and working in 2026.
+这是比特币微支付能力使成为可能的真正新商业模式之一。它是否能扩大规模取代订阅和广告是一个开放的商业问题。技术基础设施在 2026 年是真实运作的。

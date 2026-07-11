@@ -1,12 +1,12 @@
 ---
-title: "Hidden Service Node"
+title: "隐藏服务节点"
 slug: hidden-service-node
 draft: false
-shortDefinition: "A Bitcoin node accessible exclusively via Tor hidden services, obscuring its real IP address."
+shortDefinition: "仅通过 Tor 隐藏服务访问的比特币节点，隐藏其真实 IP 地址。"
 keyTakeaways:
-  - "Uses a .onion address to route traffic through the Tor network"
-  - "Improves node operator anonymity and resists IP blocking"
-  - "Can reduce performance compared to clearnet nodes"
+  - "使用 .onion 地址通过 Tor 网络路由流量"
+  - "提高节点运营者匿名性并抵抗 IP 封锁"
+  - "与明网节点相比可能降低性能"
 sources: []
 relatedTerms:
   - headless-node
@@ -21,17 +21,17 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A hidden service node runs Bitcoin Core behind a Tor v3 onion address (56 characters, ed25519-keyed) instead of, or in addition to, a clearnet IP. Other Tor-enabled peers connect via `.onion`; clearnet-only peers don't see the node at all.
+隐藏服务节点在 Tor v3 onion 地址（56 字符，ed25519 密钥）后运行 Bitcoin Core，而非明网 IP（或在其之外）。其他支持 Tor 的对等方通过 `.onion` 连接；仅明网对等方完全看不到该节点。
 
-What you gain:
+你获得的：
 
-- The operator's IP is not visible to peers. Useful if you'd rather not advertise to neighbors, ISPs, or chain analysts that you run a Bitcoin node.
-- The node accepts inbound connections without port forwarding or a public IPv4 address. Behind NAT? Doesn't matter.
-- Censorship resistance. Tor's relay model makes blanket "block all Bitcoin peers" rules much harder to enforce than a clearnet block list.
+- 运营者 IP 对对等方不可见。如果你不想向邻居、ISP 或链上分析者宣传你运行比特币节点，这很有用。
+- 节点接受入站连接而无需端口转发或公共 IPv4 地址。在 NAT 后？没关系。
+- 抗审查。Tor 的中继模型使"封锁所有比特币对等方"规则比明网封锁列表难以实施得多。
 
-What you give up:
+你放弃的：
 
-- Some latency. Tor adds hops, so block and transaction propagation is a few seconds slower than clearnet.
-- Some peer diversity. The node only sees other onion-reachable peers unless you also enable clearnet outbound (the typical config does both).
+- 一些延迟。Tor 添加跳数，所以区块和交易传播比明网慢几秒。
+- 一些对等方多样性。节点只看到其他 onion 可达对等方，除非你也启用明网出站（典型配置两者都启用）。
 
-BIP 155 (addrv2, deployed 2021) gave Bitcoin proper P2P support for advertising Tor v3, I2P, and CJDNS addresses through address gossip. Before that, hidden service nodes were second-class citizens in peer discovery. Today, running Bitcoin Core on a host with Tor installed automatically enables hidden service mode, and a meaningful fraction of the network is reachable only via Tor.
+BIP 155（addrv2，2021 年部署）给了比特币适当的 P2P 支持来通过地址 gossip 广告 Tor v3、I2P 和 CJDNS 地址。在此之前，隐藏服务节点在对等发现中是二等公民。今天，在安装了 Tor 的主机上运行 Bitcoin Core 自动启用隐藏服务模式，网络中有意义的一部分仅通过 Tor 可达。

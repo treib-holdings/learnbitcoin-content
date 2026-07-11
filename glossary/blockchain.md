@@ -1,12 +1,12 @@
 ---
-title: "Blockchain"
+title: "区块链"
 slug: blockchain
 draft: false
-shortDefinition: "A distributed ledger linking transaction batches (blocks) via cryptographic hashes, ensuring tamper-evident data history."
+shortDefinition: "通过密码学哈希将交易批次（区块）链接起来的分布式账本，确保防篡改的数据历史。"
 keyTakeaways:
-  - "Each block cryptographically links to its predecessor"
-  - "Forms a chronological, tamper-evident transaction record"
-  - "Underpins Bitcoin's decentralized trust model"
+  - "每个区块通过密码学链接到前一个"
+  - "形成按时间排序的防篡改交易记录"
+  - "支撑比特币去中心化信任模型"
 sources: []
 relatedTerms:
   - bip-152-compact-blocks
@@ -28,12 +28,12 @@ sameAs:
 liveWidget: ~
 ---
 
-The blockchain is the public ledger of every Bitcoin transaction, organized as a sequence of [blocks](/glossary/block), each one cryptographically tied to the one before it. It's the data structure that makes Bitcoin work.
+区块链是每笔比特币交易的公开账本，组织为一系列[区块](/glossary/block)，每个区块通过密码学与前一个绑定。它是使比特币工作的数据结构。
 
-The construction is simple. Every block contains the SHA-256 [hash](/glossary/hash) of the previous block's header in its own header. So block 800,000 references block 799,999 by hash; block 799,999 references 799,998; and so on back to the [genesis block](/glossary/genesis-block). If you change a single byte of any historical block, its hash changes, which means every block after it now references the wrong predecessor, which means every subsequent block needs to be re-mined. With Bitcoin's [proof-of-work](/glossary/proof-work-pow) burden, that gets impossibly expensive fast.
+构造很简单。每个区块在其头中包含前一个区块头的 SHA-256 [哈希](/glossary/hash)。所以区块 800,000 通过哈希引用区块 799,999；区块 799,999 引用 799,998；一直追溯到[创世区块](/glossary/genesis-block)。如果你改变任何历史区块的一个字节，其哈希改变，意味着之后的每个区块现在引用了错误的前任，意味着每个后续区块需要重新挖。以比特币的[工作量证明](/glossary/proof-work-pow)负担，这很快变得不可能负担。
 
-Every full Bitcoin node stores the entire chain - currently ~600 GB and growing by ~150 GB/year - and independently validates every block against every consensus rule. There is no master ledger; there are tens of thousands of identical copies, each verified against the others. To rewrite Bitcoin's history, you'd have to convince a majority of those nodes to accept your fake version. They won't.
+每个比特币全节点存储整个链——目前约 600 GB，每年增长约 150 GB——并独立验证每个区块是否符合每条共识规则。没有主账本；有数万份相同副本，每份都与其他副本验证。要重写比特币的历史，你需要说服这些节点的多数接受你的假版本。他们不会。
 
-The word "blockchain" has been generalized to mean any append-only hash-linked data structure, and the technology has been bolted onto countless projects of varying credibility. Bitcoin's blockchain is the one that matters: the first, the largest, the most secure, and the only one that actually solves the problem it was designed for.
+"区块链"一词已被泛化为指任何只追加的哈希链接数据结构，该技术被嫁接到无数可信度各异的项目上。比特币的区块链是重要的那条：第一条、最大的、最安全的，也是唯一真正解决其设计问题的那条。
 
-See the [Mining rabbit hole](/rabbit-hole/mining) for why the chain is so hard to rewrite, and [Block](/glossary/block) for what's inside each link.
+参见[挖矿 rabbit hole](/rabbit-hole/mining)了解为什么链如此难以重写，[区块](/glossary/block)了解每个链接内部的内容。

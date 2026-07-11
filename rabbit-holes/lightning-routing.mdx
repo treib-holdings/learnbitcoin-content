@@ -1,11 +1,11 @@
 ---
-title: "Lightning Routing"
+title: "闪电网络路由"
 slug: lightning-routing
 draft: false
 status: live
 published: "2026-06-04"
 section: rabbit-hole
-tagline: "The Lightning Network is a graph. Sending a payment is finding a path through it. Here is how routing actually works."
+tagline: "闪电网络是一张图。发送付款就是找到穿过它的一条路径。路由实际是这样工作的。"
 order: 10
 estimatedMinutes: 13
 sources:
@@ -19,7 +19,7 @@ ogImage: "/diagrams/og/lightning-routing.png"
 ogImageAlt: "A Lightning Network mesh diagram with ten labeled nodes (Alice, Bob, Carol, Dave, Eve, Frank, Grace, Hank, Ivy, Jack) and a multi-hop payment route lit up in orange from Alice through Bob, Eve, and Grace to Ivy. The frame title reads 'Open once. Pay many. And receive.' Visualizes the central premise of Lightning routing: payments hop through intermediaries across a graph."
 ---
 
-> **Where you're going:** Lightning is often described as a "second layer" or a "scaling solution." Both are true and both miss what it actually is: a graph of channels through which routed payments hop, using onion encryption that keeps each hop blind to the full path. You will learn how nodes find routes, why payments fail, what privacy guarantees you actually get, and why none of this looks like the base layer.
+> **你将了解：** 闪电网络常被描述为"二层"或"扩容方案"。两个都对，但都遗漏了它实际是什么：一张通道图，支付通过它跳转，使用洋葱加密使每个跳转点对完整路径一无所知。你会了解节点如何找到路由、支付为什么失败、你实际获得什么隐私保证、以及为什么这一切看起来不像基础层。
 
 <figure>
   <video
@@ -34,54 +34,54 @@ ogImageAlt: "A Lightning Network mesh diagram with ten labeled nodes (Alice, Bob
     preload="metadata"
     aria-label="Animated walkthrough of the Lightning Network as a mesh of channels. Alice opens a single channel to Bob. Through that channel, she can route payments to anyone else on the network. Multi-hop routes light up across the graph: Alice to Bob to Eve to Grace to Ivy. Other nodes can also pay Alice through the same channel. Closes with the takeaway 'Instant. Low fees. Settles on-chain.'"
   ></video>
-  <figcaption>Lightning is a graph. One open channel reaches the whole network through routed multi-hop payments.</figcaption>
+  <figcaption>闪电网络是一张图。一条开通的通道通过路由多跳支付就能触达整个网络。</figcaption>
 </figure>
 
-## 1. The Shape of the Problem
+## 1. 问题的形状
 
-Bitcoin's base layer is a chain. Every transaction is appended sequentially, broadcast globally, validated by every node, and stored forever.
+比特币基础层是一条链。每笔交易被顺序追加、全球广播、每个节点验证、永久存储。
 
-[Lightning](/glossary/lightning-network) is not a chain. It is a **graph.** Nodes have **channels** to other nodes. Channels can route payments. A payment from Alice to Carol can hop Alice → Bob → Carol if Alice and Bob share a channel, and Bob and Carol share another channel.
+[闪电网络](/glossary/lightning-network)不是链。它是一张**图。** 节点对其他节点有**通道**。通道可以路由支付。从 Alice 到 Carol 的支付可以跳 Alice → Bob → Carol，如果 Alice 和 Bob 共享一条通道，且 Bob 和 Carol 共享另一条。
 
-This is the entire premise. Off the chain, in a separate network, with payments that route through intermediaries who do not need to trust each other.
+这是全部前提。离开链，在一个独立网络中，支付通过不需要互相信任的中介来路由。
 
-The hard problems are:
-- How does Alice find a path to Carol?
-- What does each intermediary node learn?
-- What happens when the path does not work?
-- What does Alice pay for the privilege?
+难题是：
+- Alice 如何找到到 Carol 的路径？
+- 每个中介节点知道什么？
+- 路径不通时会发生什么？
+- Alice 为此付什么？
 
-This rabbit hole walks through each.
+这篇深度科普逐一讲解。
 
-## 2. Channels Are Edges in a Graph
+## 2. 通道是图中的边
 
-A Lightning channel is a 2-of-2 multisig output on the Bitcoin base layer with two parties (the channel partners) holding the keys. The channel has a fixed [capacity](/glossary/lightning-channel-capacity) (the amount of bitcoin locked in the multisig) and a [balance](/glossary/liquidity) (how much is on each side at any moment).
+一条闪电通道是比特币基础层上的一个 2-of-2 多签输出，两方（通道伙伴）各持密钥。通道有固定的[容量](/glossary/lightning-channel-capacity)（锁定在多签中的比特币数量）和[余额](/glossary/liquidity)（任何时刻各方有多少）。
 
 <figure>
   <img src="/diagrams/lightning-channel.svg" alt="A Lightning channel between Alice and Bob. On Bitcoin Mainnet, an OPEN block locks BTC into a 2-of-2 multisig; later, a CLOSE block settles the final balances back to mainnet. Between the two on-chain anchors, the channel runs off-chain with many back-and-forth payments. Alice and Bob each have dashed channel lines to additional ghost nodes, indicating they also have channels into the wider Lightning network." />
-  <figcaption>One channel is one edge in the Lightning graph: opened on Bitcoin, used off-chain, closed back to Bitcoin if ever. Each end has other channels to the wider network. That is what makes routing possible.</figcaption>
+  <figcaption>一条通道就是闪电图中的一条边：在比特币上开通、链下使用、关闭时回到比特币。每端还有到更广网络的通道。这就是路由可能的基础。</figcaption>
 </figure>
 
-When Alice opens a channel with Bob and funds it with 0.1 BTC, the channel starts with balance 0.1 BTC on Alice's side, 0 BTC on Bob's. Alice can route up to 0.1 BTC outbound through Bob. Bob, until he receives some funds from Alice, can route 0 outbound through Alice.
+当 Alice 和 Bob 开通一条通道并存入 0.1 BTC 时，通道以 Alice 侧 0.1 BTC、Bob 侧 0 BTC 开始。Alice 可以通过 Bob 向外路由最多 0.1 BTC。Bob，直到从 Alice 那收到一些资金前，可以通过 Alice 向外路由 0。
 
-Capacity is symmetric (the channel has 0.1 BTC total). Balance is asymmetric (it shifts as payments flow). This asymmetry is the source of nearly every Lightning routing failure. The closer to a [balanced channel](/glossary/balanced-channel-lightning) - capacity split roughly 50/50 between both sides - the more reliable that channel is for routing in either direction.
+容量是对称的（通道总共 0.1 BTC）。余额是非对称的（随支付流动而变化）。这种非对称性是几乎所有闪电路由失败的根源。越接近[平衡通道](/glossary/balanced-channel-lightning) - 容量大约 50/50 分在两侧 - 通道在任一方向的路由都越可靠。
 
-## 3. Gossip: How Nodes Learn the Graph
+## 3. Gossip：节点如何了解图
 
-[BOLT 7](https://github.com/lightning/bolts/blob/master/07-routing-gossip.md) defines how Lightning nodes broadcast information about themselves and their channels. The protocol has two main message types:
+[BOLT 7](https://github.com/lightning/bolts/blob/master/07-routing-gossip.md) 定义了闪电节点如何广播关于自身和通道的信息。协议有两种主要消息类型：
 
-- **`channel_announcement`** - "I have a channel to node X with capacity Y." Broadcast when the funding transaction confirms.
-- **`channel_update`** - "My current routing fee is Z, my minimum HTLC is M, here is my CLTV expiry delta." Broadcast whenever a node updates its policy.
+- **`channel_announcement`** - "我和节点 X 有一条容量为 Y 的通道。" 当资金交易确认时广播。
+- **`channel_update`** - "我当前的路由手续费是 Z，我的最小 HTLC 是 M，这是我的 CLTV 过期增量。" 每当节点更新其政策时广播。
 
-Every node receives these messages and builds a local view of the entire public graph. A node's "channel graph" is its understanding of who has channels with whom and at what fees.
+每个节点接收这些消息并构建整个公共图的本地视图。节点的"通道图"是它对谁和谁有通道、各自收费什么的理解。
 
-Two important caveats:
+两个重要注意：
 
-**Capacity is public; balance is private.** You can see Alice and Bob share a channel of capacity 0.1 BTC. You cannot see whether the balance is 0.1 / 0 or 0.05 / 0.05 or 0 / 0.1. This is why probing for routes can fail repeatedly: the graph says "this channel exists," but the actual balance at that moment may make the payment impossible.
+**容量是公开的；余额是私密的。** 你可以看到 Alice 和 Bob 共享一条容量 0.1 BTC 的通道。你无法看到余额是 0.1/0 还是 0.05/0.05 还是 0/0.1。这就是为什么探测路由可能反复失败：图说"这条通道存在"，但实际此刻的余额可能使支付不可能。
 
-**Not all channels are public.** A node can open a **private channel** (or "unannounced" channel) that does not broadcast to the gossip layer. Private channels are useful for end users who do not want to route for others; they can still receive payments via route hints in the [BOLT 11](/glossary/bolt-11) invoice.
+**不是所有通道都是公开的。** 一个节点可以开一条**私有通道**（或"未公告"通道）不向 gossip 层广播。私有通道对不想为他人路由的终端用户有用；它们仍然可以通过 [BOLT 11](/glossary/bolt-11) 发票中的路由提示接收支付。
 
-## 4. Onion Routing (Sphinx)
+## 4. 洋葱路由（Sphinx）
 
 <figure>
   <video
@@ -96,118 +96,118 @@ Two important caveats:
     preload="metadata"
     aria-label="Animated walkthrough of Lightning's Sphinx onion routing protocol. Alice constructs a four-layer onion inside out: an orange preimage payload for Dave at the center, then a wrap for Eve, a wrap for Carol, and an outermost wrap for Bob. Each route node flashes orange as Alice writes its layer. The onion travels Alice to Bob; Bob peels his outer layer with a callout 'knows: prev = Alice, next = Carol, nothing else.' Then Carol peels, then Eve peels, each with their own privacy callout showing what they can and cannot see. Dave receives just the payload and reveals the preimage. Closes with the pillars 'Onion routing. The privacy is the peeling.'"
   ></video>
-  <figcaption>Alice builds the onion inside out. Each hop peels only its own layer.</figcaption>
+  <figcaption>Alice 从内到外构建洋葱。每一跳只剥自己那一层。</figcaption>
 </figure>
 
-Lightning uses onion routing - specifically a construction called [Sphinx](/glossary/lightning-sphinx) - so each hop in the route learns only what it needs to forward the payment, nothing more.
+闪电网络使用洋葱路由 - 具体叫 [Sphinx](/glossary/lightning-sphinx) - 使路由中每一跳只知道转发支付所需的信息，别无其他。
 
-When Alice wants to pay Carol via Bob, her node:
+当 Alice 想通过 Bob 付款给 Carol 时，她的节点：
 
-1. Constructs the route: Alice → Bob → Carol.
-2. Builds an "onion" with layered encryption: outermost layer for Bob, inner layer for Carol.
-3. Sends the onion to Bob.
-4. Bob decrypts his layer. He sees: "forward this onion to Carol, with this amount, this fee, this expiry."
-5. Bob forwards. Carol decrypts the innermost layer. She sees: "this payment is for you, here is the preimage to claim it."
+1. 构建路由：Alice → Bob → Carol。
+2. 构建"洋葱"分层加密：最外层给 Bob，内层给 Carol。
+3. 将洋葱发给 Bob。
+4. Bob 解密他的层。他看到："将这个洋葱转发给 Carol，附这个金额、这个手续费、这个过期时间。"
+5. Bob 转发。Carol 解密最内层。她看到："这笔支付是给你的，这是领取它的原像。"
 
-Crucially:
+关键点：
 
-- **Bob does not know Carol is the final destination.** He only knows the next hop.
-- **Bob does not know Alice is the original source.** He only knows the previous hop (which gave him the onion).
-- **Bob does not know the full route length.** Padding is added to keep onions a constant size regardless of hops.
+- **Bob 不知道 Carol 是最终目的地。** 他只知道下一跳。
+- **Bob 不知道 Alice 是原始来源。** 他只知道上一跳（给他洋葱的那方）。
+- **Bob 不知道完整路由长度。** 填充使洋葱不管多少跳都保持恒定大小。
 
-This is the same construction Tor uses. The privacy guarantees are real but bounded: with enough hops along the path observed, traffic analysis can sometimes correlate.
+这和 Tor 用的构造相同。隐私保证是真实的但有限的：如果路径上有足够多的跳被观察，流量分析有时可以关联。
 
-## 5. Source Routing vs. Trampoline
+## 5. 源路由 vs. 蹦床路由
 
-In standard Lightning, **the sender computes the entire route.** Alice's node looks at the gossip graph, runs a pathfinding algorithm (typically Dijkstra-style with weighted edges), and produces the complete onion before sending.
+在标准闪电网络中，**发送方计算整个路由。** Alice 的节点查看 gossip 图，运行路径查找算法（通常是带权边的 Dijkstra 风格），在发送前生成完整的洋葱。
 
-This is called **source routing.** It puts the burden on the sender to maintain an accurate, complete graph. For a mobile wallet on a phone, this can be expensive: the public Lightning graph has hundreds of thousands of channels.
+这叫**源路由**（source routing）。它把维护准确、完整图的重担放在发送方。对手机钱包来说可能很重：公共闪电图有数十万条通道。
 
-**Trampoline routing** delegates the routing decision to a trusted intermediary. Alice sends a partially-routed onion to a "trampoline node," which figures out the rest of the path and forwards it. Alice's node does not need the full graph.
+**蹦床路由**（trampoline routing）将路由决策委托给一个可信中介。Alice 将一个部分路由的洋葱发给"蹦床节点"，蹦床节点算出剩余路径并转发。Alice 的节点不需要完整图。
 
-Tradeoff: trampoline simplifies the sender but introduces some trust in the trampoline node. The trampoline knows more than a standard hop would, including potentially the final destination if the structure leaks. As of 2026, trampoline is supported by some implementations (notably Eclair) and unevenly adopted.
+权衡：蹦床简化了发送方但引入了对蹦床节点的一些信任。蹦床节点比标准跳知道更多，包括如果结构泄漏可能知道最终目的地。截至 2026 年，蹦床被一些实现支持（ notably Eclair）但采用不均匀。
 
-## 6. Why Payments Fail
+## 6. 支付为什么失败
 
-Lightning payments fail more often than base-layer payments, and they fail for reasons that surprise newcomers. The common failure modes:
+闪电支付比基础层支付更常失败，失败原因令新手意外。常见失败模式：
 
-**Insufficient liquidity.** A hop in the chosen route does not have enough balance on the outbound side. The graph said the channel had 0.5 BTC capacity; in reality, only 0.001 BTC was on the right side.
+**流动性不足。** 所选路由中某一跳在出站侧没有足够余额。图说通道有 0.5 BTC 容量；实际上只有 0.001 BTC 在对的那侧。
 
-**Channel offline.** A node on the route is offline. The HTLC cannot be forwarded. The payment fails and the sender retries with a different route.
+**通道离线。** 路由上一个节点离线。HTLC 无法转发。支付失败，发送方换一条路由重试。
 
-**Fee too low.** A hop's routing policy requires higher fees than the sender offered. The sender retries.
+**手续费太低。** 某跳的路由政策要求比发送方出的更高手续费。发送方重试。
 
-**HTLC limit.** Nodes set maximum-HTLC sizes for protection. A large payment may not fit through narrow channels.
+**HTLC 限额。** 节点为保护设置最大 HTLC 大小。大额支付可能过不了窄通道。
 
-**Timeout.** HTLCs have CLTV expiry deltas. If a payment cannot complete before the relevant timeout, it fails and the sender's funds are returned.
+**超时。** HTLC 有 CLTV 过期增量。如果支付不能在相关超时前完成，它就失败，发送方的资金被退回。
 
-The user-visible result: the wallet says "trying route 1, trying route 2, trying route 3, succeeded." Modern wallets try dozens of routes transparently. Most failures are invisible to the user.
+用户可见的结果：钱包说"试路由 1，试路由 2，试路由 3，成功了。"现代钱包透明地尝试数十条路由。大多数失败对用户不可见。
 
-This is fundamentally different from base-layer Bitcoin, where a transaction either gets included in a block or does not. On Lightning, payment success is a property of the *network state*, not just the transaction.
+这与基础层比特币根本不同，基础层要么被打包要么不打包。在闪电网络上，支付成功是*网络状态*的属性，不只是交易的属性。
 
-## 7. Multi-Part Payments
+## 7. 多部分支付
 
-When no single route has enough liquidity, the sender can split the payment across multiple routes simultaneously. This is **Multi-Part Payments** (MPP) or its more flexible variant, [Atomic Multi-Path Payments](/glossary/atomic-multi-path-payment-amp) (AMP).
+当没有单条路由有足够流动性时，发送方可以同时将支付拆分到多条路由。这就是**多部分支付**（Multi-Part Payments，MPP）或其更灵活的变体[原子多路径支付](/glossary/atomic-multi-path-payment-amp)（AMP）。
 
 <figure>
   <img src="/diagrams/lightning-mpp.svg" alt="Alice sends 1 BTC to Dave via three parallel routes. The payment is split into three chunks of 0.4, 0.3, and 0.3 BTC, each labeled on a small pill on its route just after leaving Alice. The top route runs through three middle hops (Bob, Jack, Grace), the middle route through two (Carol, Hank), the bottom route through two (Frank, Ivy). Paths can have different numbers of hops. All three routes leave Alice's right edge through a tight branching curve and converge at Dave's left edge through the mirror-image curve." />
-  <figcaption>One payment splits into chunks across different paths. Path lengths can vary. All chunks succeed, or all return.</figcaption>
+  <figcaption>一笔支付拆分成多个块走不同路径。路径长度可以不同。所有块成功，或全部退回。</figcaption>
 </figure>
 
-A 1 BTC payment can be split into ten 0.1 BTC chunks, each routed through a different path. The recipient collects all ten and reveals the preimage to claim the full payment. If any chunk fails, all chunks are returned.
+一笔 1 BTC 支付可以拆成十个 0.1 BTC 块，每块走不同路径。接收方收集全部十个并揭示原像来领取完整支付。如果任何一块失败，所有块退回。
 
-MPP dramatically expands what Lightning can route. In 2018, a 1 BTC Lightning payment was nearly impossible (no single channel had enough). In 2026, with MPP, it is routine.
+MPP 大大扩展了闪电网络能路由什么。2018 年，1 BTC 闪电支付几乎不可能（没有单条通道足够）。2026 年，有了 MPP，它是常规操作。
 
-Tradeoffs:
-- **More overhead.** Each chunk pays its own fee. Total fees can be higher than a single-path payment.
-- **More failure modes.** Any one chunk failing means the whole thing retries.
-- **Privacy.** The sender's node sees more of the graph; intermediaries see chunks of payments rather than full ones, which is its own kind of leakage.
+权衡：
+- **更多开销。** 每块付自己的手续费。总手续费可能比单路径高。
+- **更多失败模式。** 任何一块失败意味着整体重试。
+- **隐私。** 发送方节点看到更多图；中介看到支付块而不是完整的，这本身是一种泄漏。
 
-## 8. What Each Hop Knows (Privacy)
+## 8. 每跳知道什么（隐私）
 
-The privacy story on Lightning is "much better than the base layer, with caveats." The matrix below summarizes who knows what along the route. Each row is a fact about the payment; each column is a position on the route. An orange dot means the position knows the fact; a dash means it does not.
+闪电网络上的隐私故事是"比基础层好得多，但有注意事项"。下面的矩阵总结了路由上每个位置知道什么。每行是关于支付的一个事实；每列是路由上的一个位置。橙点表示该位置知道该事实；短横表示不知道。
 
 <figure>
   <img src="/diagrams/lightning-hop-knowledge.svg" alt="A six-column matrix showing what each position on a Lightning route (Sender Alice, First Hop Bob, Middle Hops Carol and Fred, Last Hop Eve, Receiver Dave) knows about a payment. The top three rows (Original sender, Final receiver, Position in path) are mostly dashes in the middle, with orange clusters at the endpoints. The visual donut in the top half is the privacy story: middle hops are blind to who is at the ends. The bottom three rows (Previous hop, Next hop, Forwarded amount) are nearly solid orange, because every hop has to know its neighbors and the amount in order to forward." />
-  <figcaption>Top three rows: the privacy story. Middle hops are blind to the endpoints. Bottom three rows: operational truths every hop needs in order to forward.</figcaption>
+  <figcaption>前三行：隐私故事。中间跳对端点一无所知。下三行：每跳为转发必须知道的运营真相。</figcaption>
 </figure>
 
-The top three rows are the privacy. The matrix shows two important asymmetries:
+前三行是隐私。矩阵显示两个重要的非对称性：
 
-- **The middle hops** are completely blind to the endpoints. They know their immediate neighbors and the amount they are forwarding, and that is it. They cannot tell whether they are the second hop or the fifth, the start of the route or near the end.
-- **The endpoints leak.** The first hop received the onion via a direct channel from the sender, so it can often infer who the sender is, especially if that sender does not also run a routing node. The last hop has to deliver the payment via a direct channel to the receiver, so it knows the recipient with certainty. Sphinx hides the path; it cannot hide who is sitting next to you.
+- **中间跳完全对端点一无所知。** 它们只知道自己的直接邻居和正在转发的金额。它们无法判断自己是第二跳还是第五跳，是路由的开头还是接近结尾。
+- **端点会泄漏。** 第一跳通过直接通道从发送方收到洋葱，所以它通常能推断出发送方是谁，尤其是如果发送方也不运行路由节点。最后一跳必须通过直接通道将支付交付给接收方，所以它确切知道接收方是谁。Sphinx 隐藏路径；它无法隐藏谁在你旁边。
 
-The bottom three rows are the floor: every hop must know its immediate neighbors and the forwarded amount, or no payment moves. Sphinx privacy is everything beyond that minimum that the protocol refuses to reveal.
+下三行是底线：每跳必须知道其直接邻居和转发金额，否则支付不动。Sphinx 隐私就是超出该最低限度、协议拒绝透露的一切。
 
-**Anyone watching multiple hops in sequence** can correlate timing and amount to potentially trace a payment. This is a real risk for large or unusual payments, especially if the adversary runs many nodes.
+**任何观察多跳连续的人**可以关联时间和金额来可能追踪一笔支付。这对大额或不寻常的支付是真实风险，尤其如果对手运行很多节点。
 
-Compared to the base layer, where every transaction is fully public and pseudonymous addresses cluster easily (see [UTXOs](/rabbit-hole/utxos)), Lightning is a substantial privacy improvement. Compared to ideal privacy, it has gaps.
+与基础层相比 - 基础层每笔交易完全公开且假名地址容易聚类（参见 [UTXO](/rabbit-hole/utxos)）- 闪电网络是实质性的隐私改善。与理想隐私相比，它有差距。
 
-## 9. The Fee Market for Routing
+## 9. 路由的费市场
 
-Lightning routing is not free. Each hop charges a fee for forwarding, expressed as `base_fee_msat + proportional_fee_msat_per_million * amount`.
+闪电网络路由不是免费的。每跳收取转发手续费，表示为 `base_fee_msat + proportional_fee_msat_per_million * amount`。
 
-A typical [routing node](/glossary/routing-node) might charge `1,000 msat base + 100 ppm`. Routing 0.01 BTC (1,000,000 sats = 1,000,000,000 msat) costs: 1,000 + (100 x 1,000) = 101,000 msat, or roughly 101 sats total fee.
+一个典型的[路由节点](/glossary/routing-node)可能收 `1,000 msat base + 100 ppm`。路由 0.01 BTC（1,000,000 聪 = 1,000,000,000 msat）花费：1,000 + (100 × 1,000) = 101,000 msat，约 101 聪总手续费。
 
-For a multi-hop payment, fees from each hop sum.
+多跳支付的手续费从每跳累加。
 
-The fee market dynamics:
-- **Well-connected nodes can charge higher fees.** Liquidity in central hubs is more valuable.
-- **Newer routing nodes undercut.** A node trying to attract routing traffic offers lower fees.
-- **Fees are extremely competitive.** Lightning routing fees on most payments are negligible compared to base-layer fees.
+费市场动态：
+- **连接好的节点可以收更高手续费。** 中心枢纽的流动性更有价值。
+- **新路由节点压价。** 想吸引路由流量的节点提供更低手续费。
+- **手续费竞争极激烈。** 闪电网络路由手续费在大多数支付上与基础层手续费相比可忽略。
 
-There is no equivalent of mempool fee competition. Each hop sets its own price; the sender picks routes that minimize cost subject to liquidity and reliability constraints.
+没有内存池费竞争的等价物。每跳定价；发送方选择在流动性和可靠性约束下最小化成本的路由。
 
-## 10. What This Buys Us
+## 10. 这给我们带来了什么
 
-Lightning routing solves a problem the base layer can not: high-volume, low-latency Bitcoin payments at micro-fee scale.
+闪电路由解决了基础层不能的问题：微手续费规模的高量、低延迟比特币支付。
 
-Trade the base layer's guarantees (global verification, persistent recording) for Lightning's properties (instant settlement, fractions of a satoshi in fees, off-chain capacity). For the right use cases - tipping, point-of-sale, microtransactions, machine-to-machine payments - this trade is enormous.
+用基础层的保证（全球验证、永久记录）换闪电网络的属性（即时结算、不到一聪的手续费、链下容量）。对正确的用例 - 小费、POS、微交易、机器对机器支付 - 这个交易是巨大的。
 
-Routing is what makes the whole thing work. Without it, Lightning would be a network of disconnected payment channels, useful only between direct counterparties. With it, Lightning is an actual *network*: a graph through which value flows, with no central operator, no permissioned ledger, no payment processor.
+路由使一切工作。没有它，闪电网络只是一个不相连的支付通道网络，只在直接对手方之间有用。有了它，闪电网络是一个真正的*网络*：一张价值流过的图，没有中心操作者、没有许可账本、没有支付处理商。
 
-The privacy story is genuine but partial. The reliability story is dramatically improved since 2018. The fee story is essentially "free" for typical payments. The capacity story keeps growing as more nodes open more channels.
+隐私故事是真实的但不完整。可靠性故事自 2018 年以来大幅改善。手续费故事对典型支付基本"免费"。容量故事随着更多节点开更多通道持续增长。
 
-It is, like Bitcoin itself, not theoretically perfect. It is, like Bitcoin itself, the best thing of its kind that has ever existed in production.
+它和比特币本身一样，不是理论上完美的。它和比特币本身一样，是同类型中有史以来最好的、在生产中运行的东西。
 
-> **Pro tip:** If you want to understand Lightning at a deeper level than this rabbit hole goes, run your own routing node for a month. The dashboards alone - liquidity in vs. out, channel utilization, fee earnings, failure logs - teach more about the network's actual shape than any document.
+> **实用提示：** 如果你想比这篇深度科普更深地了解闪电网络，自己运行一个路由节点一个月。仪表板 - 流入 vs 流出、通道利用率、手续费收入、失败日志 - 教给你的关于网络实际形状的东西比任何文档都多。

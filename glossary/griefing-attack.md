@@ -1,12 +1,12 @@
 ---
-title: "Griefing Attack"
+title: "恶意干扰攻击"
 slug: griefing-attack
 draft: false
-shortDefinition: "In the Lightning Network, a malicious node that routes payments but never finalizes them, locking up capacity and frustrating senders."
+shortDefinition: "在闪电网络中，恶意节点路由支付但从不完成，锁定容量并困扰发送方。"
 keyTakeaways:
-  - "Locks channel capacity without providing a preimage"
-  - "Doesn't yield direct profit but disrupts network liquidity"
-  - "Workarounds include smaller HTLCs and payment splitting strategies"
+  - "锁定通道容量而不提供原像"
+  - "不产生直接利润但破坏网络流动性"
+  - "变通方法包括更小的 HTLC 和支付拆分策略"
 sources: []
 relatedTerms:
   - eavesdropping-attack
@@ -20,29 +20,29 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A griefing attack is a Lightning Network attack where the attacker locks up channel capacity without profit, just to deny service to others. The attacker doesn't gain anything; the target loses operational capacity for the duration of the attack.
+恶意干扰攻击是一种闪电网络攻击，攻击者锁定通道容量而不获利，只是为了拒绝向他人服务。攻击者不获得任何东西；目标在攻击期间失去运营能力。
 
-The mechanism is HTLC stalling. Lightning payments traverse multiple hops; each hop locks its outgoing channel's HTLC value (the payment amount plus a routing buffer) until the payment either completes (preimage revealed) or times out (CSV expiry).
+机制是 HTLC 停滞。闪电支付穿越多个跳；每跳锁定其外出通道的 HTLC 价值（支付金额加路由缓冲），直到支付完成（原像揭示）或超时（CSV 到期）。
 
-The attacker's playbook:
+攻击者的剧本：
 
-1. Initiate a payment through the target's channels. The target's outbound liquidity gets locked in the HTLC.
-2. Just before the timeout, fail to reveal the preimage (or simply let the payment time out).
-3. The target's capacity was locked for the full HTLC window (typically 40-2016 blocks, hours to weeks) with no fee earned.
-4. Repeat across many channels and many attackers, with the right routing, you can tie up significant network liquidity.
+1. 通过目标的通道发起支付。目标的出站流动性被锁定在 HTLC 中。
+2. 在超时前，不揭示原像（或干脆让支付超时）。
+3. 目标的容量在整个 HTLC 窗口（通常 40-2016 个区块，数小时到数周）内被锁定，未赚取手续费。
+4. 跨许多通道和许多攻击者重复，配合正确的路由，可以锁定大量网络流动性。
 
-The variants:
+变体：
 
-- **Loop attack.** Send a payment to yourself through the longest possible route, tying up many hops' liquidity. The attacker pays no fees (the payment fails), but every hop holds the HTLC for the timeout window.
-- **Jamming attack (BIP 119 territory).** A more sophisticated version where the attacker sends many simultaneous in-flight payments to fill up routing capacity.
-- **Slow HTLC release.** Sit on the preimage just long enough to be maximally disruptive without timing out.
+- **循环攻击。** 通过尽可能长的路由向自己发送支付，锁定多跳的流动性。攻击者不付手续费（支付失败），但每跳在整个超时窗口内持有 HTLC。
+- **干扰攻击（BIP 119 领域）。** 更复杂的版本，攻击者发送许多同时进行的在途支付以填满路由容量。
+- **缓慢 HTLC 释放。** 恰好坐在原像上足够长时间以最大化干扰但不超时。
 
-Mitigations the Lightning community has explored:
+闪电网络社区探索的缓解措施：
 
-- **Reputation systems.** Penalize peers who repeatedly take long to release HTLCs.
-- **Up-front fees / forwarding deposits.** Require a small fee to be paid up-front to discourage griefing economics.
-- **Channel jamming detection.** Heuristics to identify and disconnect from griefing peers.
-- **Smaller HTLC timeouts** with more granular routing decisions.
-- **PTLCs.** Point Time-Locked Contracts replace HTLCs and have some properties that make griefing harder.
+- **声誉系统。** 惩罚反复花费很长时间释放 HTLC 的对等方。
+- **预付费/转发保证金。** 要求预付少量费用以抑制恶意干扰经济学。
+- **通道干扰检测。** 识别并断开恶意干扰对等方的启发式。
+- **更小的 HTLC 超时**和更细粒度的路由决策。
+- **PTLC。** 点时间锁合约替代 HTLC，具有一些使恶意干扰更难的属性。
 
-Griefing is a real but limited problem in 2026 Lightning. Active griefing campaigns happen periodically but don't fundamentally break the network. The defenses listed are incremental; no single fix has fully closed the attack vector.
+恶意干扰在 2026 年的闪电网络中是真实但有限的问题。活跃的恶意干扰活动周期性发生但不会从根本上破坏网络。上述防御是渐进的；没有单一修复完全关闭了攻击向量。

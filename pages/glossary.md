@@ -1,11 +1,11 @@
 ---
-title: "Bitcoin Glossary - The Honest Edition"
-heading: "The Bitcoin dictionary, honest edition."
-description: "Bitcoin terms explained honestly. Every entry is sourced. Every on-chain number is verified against a full Bitcoin node, via ChainQuery."
+title: "比特币术语表 - 诚实版"
+heading: "比特币词典，诚实版。"
+description: "比特币术语，老老实实地讲。每条都有出处。每个链上数据都用全节点通过 ChainQuery 验证过。"
 ---
 
-Bitcoin in plain language. Every term that matters - from the addresses you send coins to, to the BIPs that govern how the protocol evolves - explained without the marketing and without the hype.
+用大白话讲比特币。每个重要术语——从你发币用的地址，到决定协议怎么演进的 BIP——都没有营销包装，没有炒作吹嘘。
 
-This is the dictionary I wish someone had handed me my first week. Each entry leads with a one-sentence definition. Then it goes deeper: what it is mechanically, what it is *for*, what the tradeoffs are, and where it sits next to other concepts. Every on-chain number you read here was checked against a real Bitcoin node. Every source links out so you can verify it yourself.
+这是我希望自己第一周就能有人递给我的那本词典。每个词条先用一句话给出定义，然后再深入：它的机制是什么，它是干嘛用的，有什么取舍，跟其他概念是什么关系。你在这里看到的每个链上数据，都是用真实比特币节点验证过的。每个出处都附了链接，你可以自己去核实。
 
-Use the search below to jump to a term you have heard but never quite understood. Browse the featured cards if you do not yet know what you do not know. Jump to a letter if you came here for one specific definition.
+用下面的搜索框跳到你听过但一直没搞懂的术语。如果你还不知道自己不知道什么，那就逛逛精选卡片。如果你就是冲着某个定义来的，按字母索引直接跳过去。

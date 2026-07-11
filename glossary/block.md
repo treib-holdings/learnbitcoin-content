@@ -1,12 +1,12 @@
 ---
-title: "Block"
+title: "区块"
 slug: block
 draft: false
-shortDefinition: "A data structure grouping transactions, referencing the previous block hash to form the Bitcoin blockchain."
+shortDefinition: "将交易分组的数据结构，引用前一个区块的哈希以形成比特币区块链。"
 keyTakeaways:
-  - "Groups valid transactions in a structured data format"
-  - "Each block references the previous block's hash"
-  - "Proof-of-work secures the chain and prevents tampering"
+  - "以结构化数据格式分组有效交易"
+  - "每个区块引用前一个区块的哈希"
+  - "工作量证明保护链并防止篡改"
 sources: []
 relatedTerms:
   - bip-22-getblocktemplate
@@ -30,10 +30,10 @@ sameAs:
 liveWidget: liveBlockHeight
 ---
 
-A block is a batch of Bitcoin transactions that have been verified together, sealed by proof-of-work, and timestamped about every 10 minutes. Think of it as a page in a ledger that everyone in the world has a copy of - and that everyone is checking against everyone else's copy.
+区块是一批经过验证、由工作量证明密封、大约每 10 分钟打上时间戳的比特币交易。把它想象成世界上每个人都有一份副本的账本中的一页——每个人都在与彼此的副本对照检查。
 
-Every block contains the hash of the previous block in its header. That's what makes it a *chain*: tamper with block 800,000, and every block after it points to the wrong hash. Your forgery is obvious to every node on Earth within milliseconds.
+每个区块在其头中包含前一个区块的哈希。这就是使它成为*链*的原因：篡改区块 800,000，它之后的每个区块都指向错误的哈希。你的伪造在毫秒内对地球上每个节点都显而易见。
 
-[Miners](/glossary/miner) compete to find a valid proof-of-work for the next block. The first one to succeed gets a fresh [block subsidy](/glossary/block-subsidy) (currently 3.125 BTC, halved every 210,000 blocks) plus the fees from every transaction they pack in. That's the entire incentive structure keeping the chain growing. For the mechanism in detail, see the [Mining rabbit hole](/rabbit-hole/mining).
+[矿工](/glossary/miner)竞争找到下一个区块的有效工作量证明。第一个成功者获得新的[区块奖励](/glossary/block-subsidy)（目前 3.125 BTC，每 210,000 个区块减半）加上其打包的每笔交易的手续费。这就是保持链增长的整个激励结构。详细机制见[挖矿 rabbit hole](/rabbit-hole/mining)。
 
-Above is the latest block accepted by the Bitcoin node powering [ChainQuery](https://chainquery.com). Refresh this page in about 10 minutes and the number should change.
+上方是 [ChainQuery](https://chainquery.com) 驱动的比特币节点接受的最新区块。大约 10 分钟后刷新此页面，数字应该会变。

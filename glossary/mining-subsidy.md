@@ -1,12 +1,12 @@
 ---
-title: "Mining Subsidy"
+title: "挖矿补贴"
 slug: mining-subsidy
 draft: false
-shortDefinition: "Equivalent to the block subsidy-the newly generated BTC portion of the block reward."
+shortDefinition: "等同于区块补贴——区块奖励中新铸造的 BTC 部分。"
 keyTakeaways:
-  - "Part of each block reward, halving every 210,000 blocks"
-  - "Drives new BTC issuance until the 21M cap is reached"
-  - "Eventually diminishes, with fees expected to sustain miners"
+  - "每个区块奖励的一部分，每 210,000 个区块减半"
+  - "驱动新 BTC 发行直到 2100 万上限达到"
+  - "最终减少，手续费预期维持矿工"
 sources: []
 relatedTerms:
   - block-reward
@@ -15,27 +15,27 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The mining subsidy is the freshly-minted BTC portion of each block's reward. It's distinct from the transaction fees in the block; together, subsidy plus fees make up the block reward that the miner who found the block claims.
+挖矿补贴是每个区块奖励中新铸造的 BTC 部分。它与区块中的交易手续费不同；补贴加手续费一起构成找到该区块的矿工所认领的区块奖励。
 
-The schedule is deterministic and built into the protocol:
+时间表是确定性的，内置于协议中：
 
-| Era | Block range | Subsidy per block |
+| 时代 | 区块范围 | 每区块补贴 |
 |---|---|---|
-| Era 1 | 0 - 209,999 | 50 BTC |
-| Era 2 | 210,000 - 419,999 | 25 BTC |
-| Era 3 | 420,000 - 629,999 | 12.5 BTC |
-| Era 4 | 630,000 - 839,999 | 6.25 BTC |
-| Era 5 | 840,000 - 1,049,999 | 3.125 BTC (current as of 2026) |
-| Era 6 | 1,050,000 - 1,259,999 | 1.5625 BTC (next halving ~April 2028) |
+| 第 1 时代 | 0 - 209,999 | 50 BTC |
+| 第 2 时代 | 210,000 - 419,999 | 25 BTC |
+| 第 3 时代 | 420,000 - 629,999 | 12.5 BTC |
+| 第 4 时代 | 630,000 - 839,999 | 6.25 BTC |
+| 第 5 时代 | 840,000 - 1,049,999 | 3.125 BTC（2026 年当前） |
+| 第 6 时代 | 1,050,000 - 1,259,999 | 1.5625 BTC（下一次减半约 2028 年 4 月） |
 | ... | ... | ... |
-| Era 33+ | block ~6,930,000+ | 0 (full reduction to zero satoshis) |
+| 第 33+ 时代 | 区块约 6,930,000+ | 0（完全减至零聪） |
 
-Each era halves the subsidy, hence "halving" or "halvening" (block 210,000 in November 2012 was the first). The integer-truncation arithmetic means the total ever issued is exactly 20,999,999.9769 BTC, slightly under the round-number 21 million (see [asymptote](/glossary/asymptote)).
+每个时代将补贴减半，因此称为"halving"或"halvening"（2012 年 11 月区块 210,000 是第一次）。整数截断算术意味着总共发行的总量恰好是 20,999,999.9769 BTC，略低于整数 2100 万（请参阅[渐近线](/glossary/asymptote)）。
 
-What this means for the long-term economics:
+这对长期经济学的意义：
 
-- **Today (2026)**, the subsidy is 3.125 BTC per block. At ~144 blocks per day, that's ~450 BTC of new supply daily, ~164,250 BTC per year, ~0.83% annual inflation against the ~19.7M circulating.
-- **After April 2028's halving**, subsidy drops to 1.5625 BTC; inflation halves to ~0.4%.
-- **Around 2140**, the subsidy rounds to zero. Miners earn only transaction fees from that point onward.
+- **今天（2026 年）**，补贴为每区块 3.125 BTC。按每天约 144 个区块计算，每日新增供应约 450 BTC，每年约 164,250 BTC，对约 1970 万流通量的年通胀率约 0.83%。
+- **2028 年 4 月减半后**，补贴降至 1.5625 BTC；通胀减半至约 0.4%。
+- **约 2140 年**，补贴归零。矿工从那时起仅赚取交易手续费。
 
-The subsidy is what bootstrapped Bitcoin's security: high enough rewards to attract massive hash power even before fees became meaningful. The transition from subsidy-dominated revenue to fee-dominated revenue is one of the most discussed open questions in Bitcoin economics, but the math is fixed and not subject to debate.
+补贴是引导比特币安全的机制：足够高的奖励吸引大量算力，即使手续费变得有意义之前。从补贴主导收入到手续费主导收入的过渡是比特币经济学中讨论最多的开放问题之一，但数学是固定的，不容争论。

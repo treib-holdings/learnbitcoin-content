@@ -2,11 +2,11 @@
 title: "Nonce"
 slug: nonce
 draft: false
-shortDefinition: "A 32-bit field in the block header that miners vary to find a hash below the network's difficulty target."
+shortDefinition: "区块头中的 32 位字段，矿工变化它以找到低于网络难度目标的哈希。"
 keyTakeaways:
-  - "Central to the proof-of-work process in block hashing"
-  - "Only 4 bytes, so miners also tweak extranonce/other fields"
-  - "Finding a valid nonce verifies the block meets difficulty"
+  - "区块哈希工作量证明过程的核心"
+  - "仅 4 字节，因此矿工还调整 extranonce/其他字段"
+  - "找到有效 nonce 验证区块满足难度"
 sources: []
 relatedTerms:
   - consensus-parameter
@@ -22,9 +22,9 @@ sameAs:
 liveWidget: ~
 ---
 
-The nonce is a 32-bit field in the [block header](/glossary/block-header) that miners change while searching for a valid block. "Nonce" is short for "number used once."
+Nonce 是[区块头](/glossary/block-header)中的 32 位字段，矿工在搜索有效区块时改变它。"Nonce"是"number used once"的缩写。
 
-[Mining](/glossary/mining) at the lowest level looks like this:
+[挖矿](/glossary/mining)在最低层面看起来像这样：
 
 ```
 loop:
@@ -34,8 +34,6 @@ loop:
   else: try again
 ```
 
-That's it. There's no shortcut, no algebra, no clever derivation. You just compute hashes until one happens to fall below the target. Modern ASICs do this around 100 trillion times per second per chip.
+就是这样。没有捷径、没有代数、没有聪明的推导。你只是计算哈希直到一个恰好低于目标。现代 ASIC 每秒每芯片做大约 100 万亿次。
 
-The 32-bit nonce only has 2^32 = ~4.3 billion possible values, which a serious mining operation burns through in a fraction of a second. When it runs out, the miner changes another part of the block (typically the *extranonce* inside the coinbase transaction), which changes the [Merkle root](/glossary/merkle-root) in the header, which gives them a fresh 4.3-billion-value nonce space to search. Repeat until something works.
-
-The nonce is the most boring 4 bytes in Bitcoin and also the entire mechanism by which proof-of-work happens. See [Hash](/glossary/hash) for what's being computed, and the [Mining rabbit hole](/rabbit-hole/mining) for why finding a good one matters.
+Nonce 字段只有 32 位（约 43 亿个值）。现代 ASIC 在不到一秒内耗尽这个空间。当它耗尽时，矿工调整 coinbase 交易中的"extranonce"——一个更大的空间——这会改变默克尔根，从而改变区块头，给出一个全新的 nonce 空间来搜索。

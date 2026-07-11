@@ -1,13 +1,13 @@
 ---
-title: "Spot Bitcoin ETF"
+title: "现货比特币 ETF"
 slug: spot-bitcoin-etf
 draft: false
 published: "2026-06-15"
-shortDefinition: "An exchange-traded fund that holds actual BTC at a regulated custodian and trades on a traditional stock exchange. Approved by the US SEC on January 10, 2024 after eleven years of rejections."
+shortDefinition: "一种在受监管托管方持有真实 BTC 并在传统证券交易所交易的交易所交易基金。经美国 SEC 于 2024 年 1 月 10 日批准，此前经历了十一年的拒绝。"
 keyTakeaways:
-  - "Holds physical BTC, not futures contracts or other derivatives"
-  - "Eleven US spot Bitcoin ETFs were approved simultaneously on Jan 10, 2024"
-  - "A regulated wrapper around BTC, not BTC itself - the keys belong to the custodian"
+  - "持有实物 BTC，不是期货合约或其他衍生品"
+  - "十一只美国现货比特币 ETF 于 2024 年 1 月 10 日同时获批"
+  - "是 BTC 的受监管包装，不是 BTC 本身——密钥在托管方手里"
 sources: []
 relatedTerms:
   - etf-exchange-traded-fund
@@ -23,44 +23,44 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A spot Bitcoin ETF is an [exchange-traded fund](/glossary/etf-exchange-traded-fund) that holds actual BTC at a regulated custodian. Each share represents a fractional claim on the BTC held by the fund. The shares trade on a stock exchange (NYSE Arca, Cboe BZX, Nasdaq) with normal tickers, market hours, and clearing.
+现货比特币 ETF 是一种[交易所交易基金](/glossary/etf-exchange-traded-fund)，在受监管的托管方持有真实 BTC。每份份额代表对基金所持 BTC 的部分索取权。份额在证券交易所（NYSE Arca、Cboe BZX、Nasdaq）以正常的代码、交易时间和清算机制交易。
 
-The eleven-year fight:
+十一年的抗争：
 
-- **2013** - Cameron and Tyler Winklevoss filed the first US Bitcoin ETF application. Rejected.
-- **2017-2023** - Dozens of filings from Bitwise, VanEck, SolidX, Wilshire Phoenix, ARK, Valkyrie, others. All rejected. The SEC repeatedly cited "manipulation in the underlying market" as the basis for denial.
-- **October 2021** - The SEC approved futures-based BTC ETFs (ProShares BITO, then others). These held CME [futures](/glossary/futures), not spot BTC.
-- **August 2023** - Grayscale won a unanimous DC Circuit Court ruling that the SEC's denial of GBTC's conversion to a spot ETF was "arbitrary and capricious," given that futures-based ETFs had already been approved.
-- **January 10, 2024** - Eleven spot Bitcoin ETFs approved together.
+- **2013 年**——Cameron 和 Tyler Winklevoss 提交了第一份美国比特币 ETF 申请。被拒。
+- **2017-2023 年**——来自 Bitwise、VanEck、SolidX、Wilshire Phoenix、ARK、Valkyrie 等的数十份申请。全部被拒。SEC 反复引用"底层市场的操纵"作为拒绝理由。
+- **2021 年 10 月**——SEC 批准了基于期货的 BTC ETF（ProShares BITO 等）。这些持有 CME [期货](/glossary/futures)，不是现货 BTC。
+- **2023 年 8 月**——Grayscale 在 DC 巡回法院赢得一致裁定，认定 SEC 拒绝 GBTC 转换为现货 ETF 是"任意且武断的"，因为基于期货的 ETF 已经获批。
+- **2024 年 1 月 10 日**——十一只现货比特币 ETF 同时获批。
 
-The eleven products that launched on day one:
+首日上市的十一只产品：
 
-- **BlackRock iShares Bitcoin Trust (IBIT)** - Coinbase Custody
-- **Fidelity Wise Origin Bitcoin Fund (FBTC)** - Fidelity Digital Assets, self-custodied
-- **Bitwise Bitcoin ETF (BITB)** - Coinbase Custody
-- **Ark 21Shares Bitcoin ETF (ARKB)** - Coinbase Custody
-- **Grayscale Bitcoin Trust (GBTC)** - Coinbase Custody, converted from the legacy closed-end trust
-- **VanEck Bitcoin Trust (HODL)** - Gemini Trust
-- **Valkyrie Bitcoin Fund (BRRR)** - Coinbase Custody
-- **Franklin Bitcoin ETF (EZBC)** - Coinbase Custody
-- **WisdomTree Bitcoin Fund (BTCW)** - Coinbase Custody
-- **Invesco Galaxy Bitcoin ETF (BTCO)** - Coinbase Custody
-- **Hashdex Bitcoin ETF (DEFI)** - BitGo, converted from the futures-based product
+- **BlackRock iShares Bitcoin Trust（IBIT）**——Coinbase Custody
+- **Fidelity Wise Origin Bitcoin Fund（FBTC）**——Fidelity Digital Assets，自托管
+- **Bitwise Bitcoin ETF（BITB）**——Coinbase Custody
+- **Ark 21Shares Bitcoin ETF（ARKB）**——Coinbase Custody
+- **Grayscale Bitcoin Trust（GBTC）**——Coinbase Custody，从遗留封闭式信托转换而来
+- **VanEck Bitcoin Trust（HODL）**——Gemini Trust
+- **Valkyrie Bitcoin Fund（BRRR）**——Coinbase Custody
+- **Franklin Bitcoin ETF（EZBC）**——Coinbase Custody
+- **WisdomTree Bitcoin Fund（BTCW）**——Coinbase Custody
+- **Invesco Galaxy Bitcoin ETF（BTCO）**——Coinbase Custody
+- **Hashdex Bitcoin ETF（DEFI）**——BitGo，从期货产品转换而来
 
-Eight of eleven custody at Coinbase Custody, which makes Coinbase Custody one of the largest concentrations of corporately-held BTC in the world. This concentration risk has been discussed publicly but not structurally addressed.
+十一只中有八只在 Coinbase Custody 托管，这使得 Coinbase Custody 成为世界上最大的企业持有 BTC 集中地之一。这一集中风险已被公开讨论，但在结构上尚未解决。
 
-How the wrapper actually works:
+包装器的实际运作方式：
 
-- **NAV strikes daily** against the [CME CF Bitcoin Reference Rate](/glossary/cme-cf-bitcoin-reference-rate) at 4:00 PM London time.
-- **[Authorized Participants](/glossary/authorized-participant)** create and redeem shares in large blocks. The mechanism keeps the market price within basis points of [NAV](/glossary/nav-net-asset-value).
-- **[Creation/redemption](/glossary/creation-redemption)** was initially cash-only at SEC insistence; in-kind was approved July 29, 2025 under SEC Chair Paul Atkins.
-- **Expense ratios** cluster at 0.19% to 0.25% for the major products, with WisdomTree BTCW at 0.50% and GBTC at 1.50% (legacy fee from its closed-end days). Grayscale's Bitcoin Mini Trust (BTC, launched 2024) is the cheapest at 0.15%.
+- **NAV 每日定价**，基于 [CME CF 比特币参考利率](/glossary/cme-cf-bitcoin-reference-rate)，伦敦时间下午 4:00。
+- **[授权参与方](/glossary/authorized-participant)**以大块为单位创建和赎回份额。该机制使市场价格保持在 [NAV](/glossary/nav-net-asset-value)的几个基点以内。
+- **[创建/赎回](/glossary/creation-redemption)**最初在 SEC 坚持下只能用现金；实物创建于 2025 年 7 月 29 日在 SEC 主席 Paul Atkins 任内获批。
+- **费率**集中在 0.19% 到 0.25% 之间，WisdomTree BTCW 为 0.50%，GBTC 为 1.50%（封闭式时代的遗留费率）。Grayscale 的 Bitcoin Mini Trust（BTC，2024 年推出）最便宜，为 0.15%。
 
-What spot ETFs changed:
+现货 ETF 改变了什么：
 
-- **Brokerage and IRA access.** A retirement account that cannot hold BTC directly can hold IBIT or FBTC. This unlocked structural demand from RIAs, pension funds, endowments, and 401(k)-style accounts.
-- **Price discovery.** Daily creation flows became a meaningful input to [price discovery](/glossary/price-discovery). The 4 PM London NAV strike is one of the most-watched moments in Bitcoin trading.
-- **The basis trade.** Hedge funds run the spread between spot ETFs and CME futures as a yield strategy. Tight, real, and a major contributor to derivatives liquidity.
-- **Legitimization.** "Bitcoin is an asset class" became defensible inside compliance departments that had previously banned it.
+- **经纪和 IRA 渠道。** 不能直接持有 BTC 的退休账户可以持有 IBIT 或 FBTC。这为 RIA、养老基金、捐赠基金和 401(k) 式账户释放了结构性需求。
+- **价格发现。** 每日创建流成为[价格发现](/glossary/price-discovery)的重要输入。下午 4 点伦敦 NAV 定价是比特币交易中最受关注的时刻之一。
+- **基差交易。** 对冲基金利用现货 ETF 和 CME 期货之间的价差作为收益策略。紧密、真实，是衍生品流动性的主要贡献者。
+- **合法化。** "比特币是一种资产类别"在之前禁止它的合规部门中变得可以辩护了。
 
-Editorial: spot ETFs were a structural win for Bitcoin's monetary thesis - regulated demand at scale, daily marks against a credible reference rate, and access from accounts that can never hold the asset directly. They are also not Bitcoin. The keys live at Coinbase Custody. The shares are an IOU on someone else's custody arrangement. The whole pitch of Bitcoin - censorship-resistant, bearer, verifiable - is exactly what the ETF wrapper removes. Use the ETF when the use case demands it. For long-term holders who can self-custody, owning the keys is the point.
+编辑观点：现货 ETF 对比特币的货币论点是结构性胜利——大规模的受监管需求、可信参考利率的每日定价，以及从永远不能直接持有资产的账户中获得的渠道。它也不是比特币。密钥在 Coinbase Custody。份额是对别人托管安排的借条。比特币的全部卖点——抗审查、不记名、可验证——正是 ETF 包装器移除的东西。当使用场景需要时使用 ETF。对于可以自托管的长期持有者来说，拥有密钥才是重点。

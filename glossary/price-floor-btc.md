@@ -1,12 +1,12 @@
 ---
-title: "Price Floor (BTC)"
+title: "价格底线（Price Floor）"
 slug: price-floor-btc
 draft: false
-shortDefinition: "A debated concept that BTC's price won't drop below miners' breakeven costs, though history shows no guaranteed floor."
+shortDefinition: "一个有争议的概念，认为 BTC 价格不会跌破矿工盈亏平衡成本，尽管历史表明没有硬性底线。"
 keyTakeaways:
-  - "Some consider miner breakeven costs as a market support level"
-  - "Historically, BTC price can breach these levels briefly or for extended periods"
-  - "Not a hard floor due to complex market and economic factors"
+  - "有人将矿工盈亏平衡成本视为市场支撑位"
+  - "历史上，BTC 价格可以短暂或长期突破这些水平"
+  - "由于复杂的市场和经济因素，并非硬性底线"
 sources: []
 relatedTerms:
   - bull-market
@@ -19,26 +19,26 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Price floor" is a debated concept that Bitcoin's price won't drop below the marginal miner's breakeven cost for long, because miners shut down below breakeven, hash rate falls, difficulty adjusts down, and surviving miners' costs drop until the new equilibrium is reached.
+"价格底线"是一个有争议的概念：比特币价格不会长期低于边际矿工的盈亏平衡成本，因为矿工在盈亏平衡线以下会关机，算力下降，难度下调，存活矿工的成本降低，直到新均衡达成。
 
-The theory:
+理论：
 
-- Mining requires electricity. The least-efficient miners (oldest ASICs, highest electricity costs) operate near zero margin during stable periods.
-- If BTC price falls below their breakeven, they shut down to stop losing money.
-- Reduced hash rate causes the network's difficulty adjustment to reduce mining difficulty, lowering the electricity cost per coin for surviving miners.
-- The new floor is the breakeven for the marginally-most-efficient mining operation at the post-adjustment difficulty.
+- 挖矿需要电力。效率最低的矿工（最老的 ASIC、最高电费）在稳定时期接近零利润运营。
+- 如果 BTC 价格跌破他们的盈亏平衡点，他们关机止损。
+- 算力降低导致网络难度调整降低挖矿难度，降低存活矿工每枚币的电费成本。
+- 新底线是调整后难度下边际最高效挖矿操作的盈亏平衡点。
 
-In practice this gets messy:
+实践中这很复杂：
 
-- **The floor isn't a single number.** It varies by miner. Miner X with new-generation S21 ASICs and $0.03/kWh power has a much lower breakeven than Miner Y with older S19s and $0.06/kWh power. The "floor" exits the oldest miners first.
-- **Difficulty adjustment is slow.** Adjusts every 2,016 blocks (~2 weeks). Prices can stay below breakeven for that window before adjustment kicks in. Severe price drops have historically produced 2-3 adjustment cycles of cratering hash rate.
-- **Mining isn't the marginal buyer or seller of BTC.** Miners are sellers (selling subsidy to pay operations); ordinary buyers are the marginal buyers. Spot price can stay below mining cost for extended periods if buy-side demand is weak.
-- **Strategic miner behavior matters.** Public miners with treasury BTC may hold rather than sell during low prices, hoping to avoid forced selling during the trough. Private miners with venture funding can run at losses for months. The "miners shut down at breakeven" story is cleaner than reality.
+- **底线不是单一数字。** 因矿工而异。矿工 X 用新一代 S21 ASIC 和 $0.03/kWh 电费，盈亏平衡点远低于矿工 Y 用旧 S19 和 $0.06/kWh 电费。"底线"首先淘汰最老的矿工。
+- **难度调整是缓慢的。** 每 2,016 个区块（约 2 周）调整一次。价格可以在调整生效前保持低于盈亏平衡点。严重价格下跌历史上产生了 2-3 个调整周期的算力暴跌。
+- **矿工不是 BTC 的边际买方或卖方。** 矿工是卖方（卖补贴支付运营）；普通买方是边际买方。如果买方需求弱，现货价格可以长期低于挖矿成本。
+- **矿工策略行为很重要。** 上市矿工可能持有国库中的 BTC 而非在低价时卖出，希望避免在低谷时被迫抛售。有风投资金的私有矿工可以亏损运营数月。"矿工在盈亏平衡线关机"的故事比现实更干净。
 
-Historical record:
+历史记录：
 
-- **2018-2019 bear market.** BTC fell to ~$3,200, well below estimated marginal miner cost. Hash rate dropped from ~60 to ~30 EH/s. Price stayed below breakeven for months before recovering.
-- **2022 bear market.** BTC fell to ~$15,500. Hash rate held remarkably well (around 200-250 EH/s) thanks to new generations of more efficient ASICs and miner balance-sheet resilience.
-- **2024 post-halving.** Halving immediately doubled the marginal cost per BTC mined. Hash rate growth slowed, some miners shut down; price didn't crash because spot demand had structural ETF support.
+- **2018-2019 熊市。** BTC 跌至约 $3,200，远低于估计的边际矿工成本。算力从约 60 EH/s 降至约 30 EH/s。价格在盈亏平衡线以下持续数月后恢复。
+- **2022 熊市。** BTC 跌至约 $15,500。由于新一代更高效 ASIC 和矿工资产负债表的韧性，算力保持得相当好（约 200-250 EH/s）。
+- **2024 减半后。** 减半立即使每枚 BTC 的边际挖矿成本翻倍。算力增长放缓，一些矿工关机；价格没有崩盘因为现货需求有 ETF 的结构性支撑。
 
-The honest framing: there's a relationship between marginal mining cost and price floor, but it's not a hard guarantee and the floor itself moves with hardware efficiency and electricity costs. Long-term holders shouldn't bet on a precise price floor; the realistic version is "Bitcoin tends to find support somewhere related to mining costs, but the exact level shifts cycle to cycle."
+诚实的表述：边际挖矿成本与价格底线之间存在关系，但这不是硬性保证，底线本身随硬件效率和电费成本变动。长期持有者不应押注精确的价格底线；现实版本是"比特币倾向于在与挖矿成本相关的某个位置找到支撑，但确切水平每个周期都在变化。"

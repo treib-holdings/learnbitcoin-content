@@ -1,11 +1,11 @@
 ---
-title: "Halvings"
+title: "减半"
 slug: halvings
 draft: false
 status: live
 published: "2026-05-15"
 section: rabbit-hole
-tagline: "Every 210,000 blocks, the new-Bitcoin tap halves. Why, when, and what happens after."
+tagline: "每 210,000 个区块，新增比特币的水龙头就会减半。为什么、什么时候、之后会发生什么。"
 order: 3
 estimatedMinutes: 9
 sources:
@@ -18,155 +18,155 @@ hasInteractive: ["halvingCountdown"]
 
 import HalvingCountdown from '@components/halving/HalvingCountdown.svelte';
 
-> **Where you're going:** A halving is just a number cut in half, but it's the most important number in Bitcoin's monetary policy. You'll learn what one is, why the schedule exists, what's happened at each of the five so far, and what changes for miners and holders when the next one hits.
+> **你将了解：** 减半只是一个数字减半，但它是比特币货币政策中最重要的数字。你会了解什么是减半、为什么存在这个时间表、迄今为止五次减半各发生了什么，以及下一次减半对矿工和持有者意味着什么。
 
-## 1. What a Halving Is
+## 1. 减半是什么
 
-Every 210,000 blocks, the amount of new bitcoin paid to miners for finding the next block gets cut in half.
+每 210,000 个区块，矿工找到下一个区块所获得的新增比特币数量就会减半。
 
-That's it. That's the whole event.
+就这样。这就是整个事件。
 
-The block reward started at **50 BTC** when the network launched in January 2009. After block 210,000 (November 2012), it dropped to 25. After block 420,000 (July 2016), 12.5. After 630,000 (May 2020), 6.25. After 840,000 (April 2024), 3.125. That's where we are now.
+区块奖励在 2009 年 1 月网络启动时为 **50 BTC**。在第 210,000 个区块（2012 年 11 月）后，降为 25。第 420,000 个区块（2016 年 7 月）后，12.5。第 630,000 个区块（2020 年 5 月）后，6.25。第 840,000 个区块（2024 年 4 月）后，3.125。这就是我们现在所在的位置。
 
-The next halving will be at block 1,050,000, sometime around April 2028. The reward will drop to 1.5625 BTC.
+下一次减半将在第 1,050,000 个区块发生，大约在 2028 年 4 月左右。奖励将降至 1.5625 BTC。
 
 <HalvingCountdown client:visible />
 
-## 2. The Why: Disinflation by Design
+## 2. 为什么：设计中的反通胀
 
-Halvings are not a quirk. They are the central mechanism of Bitcoin's monetary policy.
+减半不是偶然。它是比特币货币政策的核心机制。
 
-The goal is to mimic a commodity like gold: front-loaded issuance during the early "easy to mine" years, then progressively harder and lower-yield extraction over time. With gold, this happened naturally as the easiest deposits got mined out. With Bitcoin, it's enforced by code on a deterministic schedule.
+目标是模仿黄金等大宗商品：在早期"容易开采"的年份大量发行，然后随时间推移逐步增加难度、降低产量。黄金的这种情况是自然发生的 - 最容易开采的矿床先被挖完。比特币则由代码在确定性时间表上强制执行。
 
-The result is a **disinflationary asset**: not just stable in supply, but with a *decreasing* rate of new issuance. Each halving reduces Bitcoin's annual inflation rate (see [the Supply Schedule rabbit hole](/rabbit-hole/supply)). After the next one, Bitcoin's inflation rate will be roughly 0.4% per year - lower than gold, dramatically lower than any major fiat currency.
+结果就是一个**反通胀资产**（disinflationary asset）：不仅仅是供应量稳定，而是新发行率*不断降低*。每次减半都会降低比特币的年通胀率（参见[供应量时间表深度科普](/rabbit-hole/supply)）。下一次减半后，比特币的年通胀率将约为 0.4% - 低于黄金，远低于任何主要法定货币。
 
-This wasn't accidental. From the [whitepaper](/bitcoin.pdf):
+这不是意外。来自[白皮书](/bitcoin.pdf)：
 
 > "The steady addition of a constant of amount of new coins is analogous to gold miners expending resources to add gold to circulation. In our case, it is CPU time and electricity that is expended."
 
-Satoshi was modeling a commodity, not a payment app.
+中本聪建模的是一种商品，不是一个支付应用。
 
-## 3. The Schedule
+## 3. 时间表
 
-The halving schedule in full, projecting forward. Each interval is a [reward era](/glossary/reward-era) - the 210,000-block period during which a fixed subsidy applies:
+完整的减半时间表，向前推算。每个区间是一个[奖励纪元](/glossary/reward-era) - 固定补贴适用的 210,000 个区块周期：
 
-| # | Block | Approx. date | New reward | % of total mined |
+| # | 区块 | 大约日期 | 新奖励 | 已开采占比 |
 |---|---|---|---|---|
-| Genesis | 0 | Jan 3, 2009 | 50 BTC | 0% |
-| 1 | 210,000 | Nov 28, 2012 | 25 BTC | 50% |
-| 2 | 420,000 | Jul 9, 2016 | 12.5 BTC | 75% |
-| 3 | 630,000 | May 11, 2020 | 6.25 BTC | 87.5% |
-| 4 | 840,000 | Apr 19, 2024 | 3.125 BTC | 93.75% |
-| **5** | **1,050,000** | **~Apr 2028** | **1.5625 BTC** | **96.875%** |
+| 创世 | 0 | 2009年1月3日 | 50 BTC | 0% |
+| 1 | 210,000 | 2012年11月28日 | 25 BTC | 50% |
+| 2 | 420,000 | 2016年7月9日 | 12.5 BTC | 75% |
+| 3 | 630,000 | 2020年5月11日 | 6.25 BTC | 87.5% |
+| 4 | 840,000 | 2024年4月19日 | 3.125 BTC | 93.75% |
+| **5** | **1,050,000** | **~2028年4月** | **1.5625 BTC** | **96.875%** |
 | 6 | 1,260,000 | ~2032 | 0.78125 BTC | 98.4375% |
 | 7 | 1,470,000 | ~2036 | 0.390625 BTC | 99.22% |
 | ... | ... | ... | ... | ... |
-| 33 | ~6,930,000 | ~2140 | 0 (rounds down) | 100% |
+| 33 | ~6,930,000 | ~2140 | 0（向下取整） | 100% |
 
-Each halving doubles the percentage of "supply remaining" that's been mined. After halving 1, half of all Bitcoin had been issued. After halving 2, three-quarters. After halving 4 (where we are now), more than 93%.
+每次减半都会使"已开采的剩余供应量"百分比翻倍。第 1 次减半后，一半的比特币已发行。第 2 次后，四分之三。第 4 次后（也就是现在），超过 93%。
 
-The asymptote is set: by 2140 the last fractional satoshi will be issued, after which miners earn revenue exclusively from transaction fees.
+渐近线已设定：到 2140 年，最后一个不到一聪的部分将被发行，之后矿工的收入将完全来自交易手续费。
 
-## 4. The Five That Have Happened
+## 4. 已经发生的五次
 
-A halving is more than an arithmetic event. It's a moment of structural change for the mining industry, with downstream effects on price, narrative, and network security. Here's what each looked like:
+减半不仅仅是一个算术事件。它对挖矿产业来说是结构性变化时刻，对价格、叙事和网络安全都有后续影响。以下是每次的情况：
 
-### 1st Halving - November 28, 2012
-- **Block 210,000.** Reward dropped from 50 to 25 BTC.
-- **Mining still mostly CPU/GPU** at this point. Some early ASICs were just coming online.
-- **Price** at the halving: ~$12. Twelve months later: ~$700.
-- **Aftermath:** First proof that the halving schedule actually executes as designed. Sounds obvious; was novel.
+### 第 1 次减半 - 2012 年 11 月 28 日
+- **第 210,000 个区块。** 奖励从 50 降至 25 BTC。
+- **挖矿仍以 CPU/GPU 为主。** 一些早期 ASIC 刚刚开始上线。
+- **价格**在减半时：约 $12。十二个月后：约 $700。
+- **后续：** 首次证明减半时间表确实按设计执行。听起来理所当然；当时很新鲜。
 
-### 2nd Halving - July 9, 2016
-- **Block 420,000.** Reward dropped from 25 to 12.5 BTC.
-- **ASIC era** in full swing. China dominated mining hash share.
-- **Price** at the halving: ~$650. Twelve months later: ~$2,500.
-- **Aftermath:** Began the run-up to the 2017 bull market and SegWit activation. Bitcoin's first taste of mainstream attention.
+### 第 2 次减半 - 2016 年 7 月 9 日
+- **第 420,000 个区块。** 奖励从 25 降至 12.5 BTC。
+- **ASIC 时代**全面展开。中国主导了挖矿算力份额。
+- **价格**在减半时：约 $650。十二个月后：约 $2,500。
+- **后续：** 开启了 2017 年牛市和 SegWit 激活的涨势。比特币首次进入主流视野。
 
-### 3rd Halving - May 11, 2020
-- **Block 630,000.** Reward dropped from 12.5 to 6.25 BTC.
-- Happened **two months after the COVID crash and the largest Fed money printing in history.** Strange juxtaposition.
-- **Price** at the halving: ~$8,500. Twelve months later: ~$50,000.
-- **Aftermath:** Massive institutional adoption wave, MicroStrategy bought, Tesla bought, El Salvador adopted.
+### 第 3 次减半 - 2020 年 5 月 11 日
+- **第 630,000 个区块。** 奖励从 12.5 降至 6.25 BTC。
+- 发生在**COVID 暴跌和美联储史上最大规模印钞两个月后。** 奇妙的巧合。
+- **价格**在减半时：约 $8,500。十二个月后：约 $50,000。
+- **后续：** 大规模机构采用浪潮，MicroStrategy 买入，Tesla 买入，El Salvador 采用比特币为法定货币。
 
-### 4th Halving - April 19, 2024
-- **Block 840,000.** Reward dropped from 6.25 to 3.125 BTC.
-- **First halving with significant fee revenue from ordinals/inscriptions** - the block had record-high fee revenue (37.6 BTC in fees vs. 3.125 BTC subsidy).
-- **Price** at the halving: ~$64,000. Twelve months later: varies, generally higher.
-- **Aftermath:** Spot Bitcoin ETFs launched the same year. Bitcoin entered mainstream financial infrastructure.
+### 第 4 次减半 - 2024 年 4 月 19 日
+- **第 840,000 个区块。** 奖励从 6.25 降至 3.125 BTC。
+- **首次出现来自 ordinals/铭文的重要手续费收入** - 该区块创下了手续费记录（37.6 BTC 手续费对比 3.125 BTC 补贴）。
+- **价格**在减半时：约 $64,000。十二个月后：有所不同，总体更高。
+- **后续：** 同年现货比特币 ETF 上市。比特币进入主流金融基础设施。
 
-The pattern: each halving has been followed, within 12-24 months, by a significant bull market. We'll come back to whether this is causation, correlation, or coincidence.
+规律：每次减半后的 12-24 个月内都出现了显著牛市。我们后面会讨论这是因果、相关还是巧合。
 
-## 5. The Mining Economics of a Halving
+## 5. 减半的挖矿经济学
 
-A halving cuts miner revenue in half overnight. (Or, more precisely, it cuts the *subsidy* portion of revenue in half; fees are unaffected.)
+减半一夜之间将矿工收入减半。（更准确地说，是将收入的*补贴*部分减半；手续费不受影响。）
 
-What this looks like in practice:
+实际中是什么样的：
 
-**Before halving 4** (block 839,999): a miner that found a block received 6.25 BTC + accumulated fees (typically 0.1-0.5 BTC). Total ≈ 6.35-6.75 BTC.
+**第 4 次减半前**（第 839,999 个区块）：一个找到区块的矿工获得 6.25 BTC + 累计手续费（通常 0.1-0.5 BTC）。总计约 6.35-6.75 BTC。
 
-**After halving 4** (block 840,000): same miner finds a block, gets 3.125 BTC + same accumulated fees. Total ≈ 3.225-3.625 BTC.
+**第 4 次减半后**（第 840,000 个区块）：同一个矿工找到区块，获得 3.125 BTC + 同样的累计手续费。总计约 3.225-3.625 BTC。
 
-The hardware cost, the electricity cost, and the difficulty are all the same the day before and the day after. Revenue, in BTC terms, drops by ~45%.
+硬件成本、电力成本和难度在前一天和后一天都一样。以 BTC 计的收入下降了约 45%。
 
-This puts pressure on miners. Specifically:
+这给矿工带来了压力。具体来说：
 
-- **Inefficient miners get pushed out.** If your power cost was breakeven at the old reward, you're losing money at the new one. You either upgrade hardware, find cheaper power, or shut down.
-- **Hash rate drops temporarily.** Marginal miners going offline reduces total network hash rate.
-- **Difficulty adjusts down.** After 2016 blocks of below-target performance, difficulty recalibrates, making mining easier and more profitable for the survivors.
-- **Equilibrium is reached.** Usually within 2-3 months, the network stabilizes with stronger miners on more efficient hardware.
+- **低效矿工被淘汰。** 如果你的电力成本在旧奖励下刚好保本，新奖励下你就在亏钱。你要么升级硬件，要么找更便宜的电力，要么关机。
+- **算力暂时下降。** 边际矿工下线减少了全网算力。
+- **难度下调。** 经过 2016 个区块的低于目标表现后，难度重新校准，使挖矿更容易，幸存者更有利可图。
+- **达到新平衡。** 通常 2-3 个月内，网络在更强矿工和更高效硬件上稳定下来。
 
-If Bitcoin's price doesn't rise to compensate, the halving is a major test of network security. So far, it has always risen sufficiently within months. The fee market also takes up some slack - on halving 4, ordinals activity sent fees to record highs, partially offsetting the subsidy drop.
+如果比特币价格没有上涨来补偿，减半就是对网络安全的重大考验。到目前为止，价格总是在几个月内充分上涨。手续费市场也承担了一部分 - 在第 4 次减半时，ordinals 活动将手续费推至历史新高，部分抵消了补贴的下降。
 
-## 6. The Price Mythology (and What's Actually True)
+## 6. 价格神话（以及什么是真实的）
 
-You will hear, often, that "halvings cause bull markets." This is the most commonly repeated and most superficially analyzed claim in Bitcoin.
+你会经常听到"减半导致牛市"。这是比特币中最常被重复、也最被表面分析的说法。
 
-Here's what is *actually* true:
+以下是*实际*真实的情况：
 
-**The first-order effect.** A halving cuts the *flow* of new bitcoin entering the market in half. If demand stays constant, this is a supply-side shock that should, all else equal, push prices up. The math is straightforward.
+**一阶效应。** 减半将进入市场的新比特币*流量*减半。如果需求不变，这是一个供给侧冲击，在其他条件不变的情况下应该推高价格。数学很简单。
 
-**The complication.** "All else equal" never holds. The 2020 halving coincided with COVID money printing. The 2024 halving coincided with US Bitcoin ETF approvals. Attributing the subsequent price action *exclusively* to the halving is bad statistics.
+**复杂之处。** "其他条件不变"从不成立。2020 年减半恰逢 COVID 印钞。2024 年减半恰逢美国比特币 ETF 获批。将随后的价格走势*完全*归因于减半是糟糕的统计。
 
-**The honest take.** Halvings are a *factor* in Bitcoin's price dynamics, alongside macroeconomic conditions, regulatory developments, narrative cycles, and adoption growth. They are not magical. The 4-year cycle is a real pattern; it's also been only 3 cycles, which is not enough data to call it law.
+**诚实的看法。** 减半是比特币价格动态的一个*因素*，与宏观经济状况、监管发展、叙事周期和采用增长并列。它不是魔法。4 年周期是真实存在的模式；但也只有 3 个周期，不足以称之为规律。
 
-Anyone who tells you with high confidence what the price will be 18 months after the next halving is selling you something. The structural argument for Bitcoin's value isn't "halvings pump price." It's "the supply is fixed, demand is growing, and the math will work it out across decades."
+任何高置信度告诉你下一次减半后 18 个月价格会怎样的人，都在向你推销东西。比特币价值的结构性论据不是"减半拉升价格"。而是"供应量固定，需求在增长，数学会在几十年里慢慢发挥作用"。
 
-## 7. The Long Tail
+## 7. 长尾
 
-After halving 32 (around block ~6,720,000, ~2136), the subsidy will drop to roughly 1 satoshi per block. After halving 33 (~6,930,000, ~2140), integer rounding takes the subsidy to zero. From that point forward, miners earn nothing from new issuance.
+第 32 次减半后（大约第 6,720,000 个区块，约 2136 年），补贴将降至大约每区块 1 聪。第 33 次减半后（约第 6,930,000 个区块，约 2140 年），整数取整将补贴降为零。从那时起，矿工不再从新增发行中获得任何收入。
 
-This is sometimes posed as a worry: *how will the network be secured when miners aren't paid?*
+这有时被提为一个担忧：*矿工不再获得补贴时，网络如何保证安全？*
 
-The answer is: they will be paid - in fees. Already today, on heavy-volume blocks, fees can match or exceed the subsidy. As the subsidy diminishes (each halving cuts it again), fees naturally become a larger share of total miner revenue.
+答案是：他们会获得收入 - 来自手续费。即使在今天，在交易量大的区块上，手续费可以匹配甚至超过补贴。随着补贴减少（每次减半都会再次削减），手续费自然成为矿工总收入中更大的份额。
 
-What this transition looks like:
+这个转变是什么样的：
 
-- **2024:** Subsidy 3.125 BTC, average fees ~0.1-0.3 BTC. Fees = 3-10% of revenue.
-- **2028:** Subsidy 1.5625 BTC, average fees probably 0.2-0.5 BTC. Fees = 15-25%.
-- **2032:** Subsidy 0.78 BTC, fees probably 0.3-0.7 BTC. Fees = 30-50%.
-- **2040s:** Subsidy approaches zero, fees become the dominant revenue source.
-- **2140:** Subsidy is zero. Fees are 100% of miner revenue.
+- **2024 年：** 补贴 3.125 BTC，平均手续费约 0.1-0.3 BTC。手续费 = 收入的 3-10%。
+- **2028 年：** 补贴 1.5625 BTC，平均手续费可能 0.2-0.5 BTC。手续费 = 15-25%。
+- **2032 年：** 补贴 0.78 BTC，手续费可能 0.3-0.7 BTC。手续费 = 30-50%。
+- **2040 年代：** 补贴接近零，手续费成为主要收入来源。
+- **2140 年：** 补贴为零。手续费 = 矿工收入的 100%。
 
-This is the design. It assumes Bitcoin will be used heavily enough by 2140 that the fee market alone secures the chain. So far, the trend is consistent with that assumption.
+这就是设计。它假设到 2140 年比特币的使用量足以让手续费市场单独保证链的安全。到目前为止，趋势与这个假设一致。
 
-## 8. The Next One
+## 8. 下一次
 
-Halving 5 will happen at block 1,050,000. Current estimate: somewhere around April 2028.
+第 5 次减半将在第 1,050,000 个区块发生。当前估计：大约 2028 年 4 月左右。
 
-What you can expect:
+你可以预期：
 
-- **Subsidy drops from 3.125 to 1.5625 BTC.**
-- **Annual issuance drops from ~164,250 BTC to ~82,125 BTC.**
-- **Bitcoin's inflation rate halves**, from ~0.83% to ~0.4%. That's lower than every major commodity.
-- **A miner consolidation event.** Marginal operations close, efficient ones survive.
-- **A media moment.** Halvings get covered. Each one slightly less novel than the last.
-- **Possibly a bull market.** Three for three so far, but n=3 isn't statistically meaningful.
+- **补贴从 3.125 降至 1.5625 BTC。**
+- **年发行量从约 164,250 BTC 降至约 82,125 BTC。**
+- **比特币的通胀率减半**，从约 0.83% 降至约 0.4%。低于每一种主要大宗商品。
+- **矿工整合事件。** 边际运营关闭，高效者幸存。
+- **媒体时刻。** 减半会被报道。每一次都比上一次稍不那么新鲜。
+- **可能出现牛市。** 目前三次减半后都出现了，但 n=3 在统计上不具意义。
 
-What you don't need to worry about:
+你不需要担心的：
 
-- The halving "not happening." It happens at block 1,050,000, deterministically, no matter what.
-- The schedule "being changed." It can't be, for the reasons covered in [the Supply Schedule rabbit hole](/rabbit-hole/supply).
-- The network "breaking." Networks don't break on halvings. They sometimes wobble, then re-equilibrate.
+- 减半"不会发生"。它在第 1,050,000 个区块发生，确定性的，无论发生什么。
+- 时间表"被改变"。不可能，原因见[供应量时间表深度科普](/rabbit-hole/supply)。
+- 网络"崩溃"。网络不会在减半时崩溃。有时会摇晃，然后重新平衡。
 
-> **Pro tip:** Halvings are a great moment to explain Bitcoin to people who haven't paid attention. The narrative is concrete (number goes down), the date is announced years in advance, and the structural claim is verifiable. Use the moment. Just don't promise anyone what comes after.
+> **实用提示：** 减半是向没关注比特币的人解释它的好时机。叙事很具体（数字减半），日期提前几年就公布了，结构性主张可以验证。利用这个时刻。只是别向任何人承诺之后会发生什么。

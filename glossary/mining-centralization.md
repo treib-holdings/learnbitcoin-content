@@ -1,12 +1,12 @@
 ---
-title: "Mining Centralization"
+title: "挖矿中心化"
 slug: mining-centralization
 draft: false
-shortDefinition: "A concern that much of Bitcoin's hash rate may concentrate in a few large pools, posing a 51% threat."
+shortDefinition: "对比特币大部分算力可能集中在少数大型矿池中的担忧，构成 51% 威胁。"
 keyTakeaways:
-  - "Large pools might exceed 50% of network hash rate if not monitored"
-  - "Dangers include double-spend, censorship, or broken trust"
-  - "Solutions: user vigilance, pool switching, or decentralized pool protocols"
+  - "大型矿池如果不受监控可能超过网络算力的 50%"
+  - "危险包括双花、审查或信任破裂"
+  - "解决方案：用户警惕、矿池切换或去中心化矿池协议"
 sources: []
 relatedTerms:
   - competitive-block-propagation
@@ -24,24 +24,24 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Mining centralization is the concern that Bitcoin's [hash rate](/glossary/hash-rate) is concentrated in too few hands, undermining the [decentralization](/glossary/decentralization) property Bitcoin depends on.
+挖矿中心化是对比特币[算力](/glossary/hash-rate)集中在太少人手中的担忧，这可能破坏比特币依赖的[去中心化](/glossary/decentralization)属性。
 
-The structural reality in 2026:
+2026 年的结构现实：
 
-- **A few [mining pools](/glossary/mining-pool) coordinate most of the hash rate.** Foundry USA, AntPool, ViaBTC, F2Pool, and a few others collectively command well over half of global hash.
-- **A few [ASIC](/glossary/asic-application-specific-integrated-circuit) manufacturers supply most of the hardware.** Bitmain, MicroBT, Canaan, and a small number of others.
-- **A few jurisdictions host most of the mining.** The US is the largest, followed by various others depending on the year. China's 2021 ban shifted geography substantially.
+- **少数[矿池](/glossary/mining-pool)协调大部分算力。** Foundry USA、AntPool、ViaBTC、F2Pool 等几个合计控制全球算力的一半以上。
+- **少数 [ASIC](/glossary/asic-application-specific-integrated-circuit) 制造商供应大部分硬件。** Bitmain、MicroBT、Canaan 等少数几家。
+- **少数司法管辖区托管大部分挖矿。** 美国是最大的，其次是其他国家，取决于年份。中国 2021 年的禁令大幅改变了地理分布。
 
-What this means in practice:
+实践中的含义：
 
-- **A coordinated attack is theoretically possible.** Pools collectively controlling >50% of hash rate could attempt to reorg recent blocks, censor specific transactions, or double-spend their own outputs. None of this has happened at scale on Bitcoin, but the capability exists.
-- **A single point of pressure exists.** Governments wanting to censor Bitcoin transactions could in principle pressure mining pool operators in their jurisdictions to comply. This has been observed in milder forms (some pools have voluntarily filtered OFAC-sanctioned addresses).
+- **协调攻击在理论上是可能的。** 集体控制 >50% 算力的矿池可以尝试重组最近的区块、审查特定交易或双花自己的输出。这些在大规模上尚未在比特币上发生过，但能力存在。
+- **存在单一施压点。** 想要审查比特币交易的政府原则上可以施压其管辖范围内的矿池运营者使其合规。这已在较温和的形式中被观察到（一些矿池自愿过滤了 OFAC 制裁地址）。
 
-What counterbalances it:
+制衡因素：
 
-- **Pools aren't miners.** The hash rate inside a pool comes from individual miners who can switch pools within hours. A misbehaving pool tends to bleed hash rate fast.
-- **Stratum V2 progress.** The new pool-miner protocol shifts transaction selection from pool operators to individual miners. Adoption is gradual but moving in the right direction.
-- **Geographic dispersion has improved.** Compared to 2018-2020 when ~65% of hash was in China, the network is now spread across many more countries.
-- **Mining hardware is fungible.** Miners can and do route their hash rate through different pools, in different jurisdictions, on short notice.
+- **矿池不是矿工。** 矿池内的算力来自可以在数小时内切换矿池的个体矿工。行为不当的矿池往往会快速流失算力。
+- **Stratum V2 进展。** 新的矿池-矿工协议将交易选择从矿池运营者转移到个体矿工。采用是渐进的但方向正确。
+- **地理分散性已改善。** 与 2018-2020 年约 65% 算力在中国相比，网络现在分布在更多国家。
+- **挖矿硬件是可替换的。** 矿工可以且确实在短期内通过不同矿池、不同司法管辖区路由算力。
 
-The honest assessment: mining centralization is a real concern with real failure modes, but the structural counterweights are also real. It's an area worth watching, worth pushing back on with Stratum V2 adoption and pool-operator scrutiny, and worth not panicking about. See [Mining rabbit hole §8](/rabbit-hole/mining) for a longer look.
+诚实评估：挖矿中心化是一个有真实失败模式的真实担忧，但结构性制衡也是真实的。这是一个值得关注的领域，值得通过 Stratum V2 采用和矿池运营者审查来推进，也值得不必恐慌。请参阅[挖矿深入探讨 §8](/rabbit-hole/mining)了解更多。

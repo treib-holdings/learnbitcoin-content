@@ -1,12 +1,12 @@
 ---
-title: "JSON-RPC over Tor"
+title: "通过 Tor 的 JSON-RPC"
 slug: json-rpc-over-tor
 draft: false
-shortDefinition: "Running a remote Bitcoin Core node's RPC interface behind Tor, adding anonymity and censorship resistance to node control."
+shortDefinition: "在 Tor 隐藏服务后面运行远程 Bitcoin Core 节点的 RPC 接口，为节点控制增加匿名性和抗审查性。"
 keyTakeaways:
-  - "Protects node control interface via Tor's anonymity"
-  - "Prevents direct IP exposure for remote RPC usage"
-  - "Requires extra configuration but significantly boosts privacy"
+  - "通过 Tor 的匿名性保护节点控制接口"
+  - "防止远程 RPC 使用时直接暴露 IP"
+  - "需要额外配置但显著提升隐私"
 sources: []
 relatedTerms:
   - bitcoin-core
@@ -17,25 +17,25 @@ relatedTerms:
 liveWidget: ~
 ---
 
-JSON-RPC over Tor is the practice of exposing a Bitcoin Core node's RPC interface via a Tor hidden service (`.onion` address) instead of (or in addition to) a clearnet IP. It lets you manage a remote node from anywhere without revealing the node's IP or your own.
+通过 Tor 的 JSON-RPC 是指通过 Tor 隐藏服务（.onion 地址）而非（或除了）明网 IP 来暴露 Bitcoin Core 节点的 RPC 接口。它让你可以从任何地方管理远程节点，而不暴露节点的 IP 或你自己的 IP。
 
-Why this matters:
+为什么这很重要：
 
-- **Bitcoin Core's RPC port (8332) should never be exposed to the public internet.** Anyone who reaches it with the right credentials can sign transactions, drain the wallet, or stop the node. Standard advice: bind to localhost only.
-- **Self-hosted nodes at home behind NAT** typically can't be reached from a phone or laptop on the road unless you punch holes in the firewall (bad) or use a VPN (workable but extra layer to maintain).
-- **A hidden service flips this**: bind RPC to a Tor v3 onion address. The address is unguessable, only reachable via Tor, and you don't need any firewall changes. The phone or laptop runs Tor and connects to the onion.
+- **Bitcoin Core 的 RPC 端口（8332）永远不应暴露在公共互联网上。** 任何拥有正确凭证的人都可以签署交易、掏空钱包或停止节点。标准建议：仅绑定到 localhost。
+- **家庭 NAT 后面的自托管节点**通常无法从旅行中的手机或笔记本电脑访问，除非你在防火墙上打洞（糟糕）或使用 VPN（可行但多了一层维护）。
+- **隐藏服务翻转了这个模式**：将 RPC 绑定到 Tor v3 onion 地址。该地址不可猜测，只能通过 Tor 访问，你不需要任何防火墙更改。手机或笔记本电脑运行 Tor 并连接到 onion 地址。
 
-The setup is roughly:
+设置大致如下：
 
-1. Install Tor on the same machine as Bitcoin Core.
-2. Configure a HiddenServiceDir and HiddenServicePort 8332 pointing at Bitcoin Core's RPC port.
-3. Set Bitcoin Core's `-rpcbind=127.0.0.1` and `-rpcallowip` for the Tor SocksPort.
-4. Use the resulting `.onion` URL with your wallet client (Sparrow, BlueWallet's connect-your-own-node feature, etc.).
+1. 在与 Bitcoin Core 相同的机器上安装 Tor。
+2. 配置 HiddenServiceDir 和 HiddenServicePort 8332 指向 Bitcoin Core 的 RPC 端口。
+3. 设置 Bitcoin Core 的 `-rpcbind=127.0.0.1` 和 `-rpcallowip` 为 Tor SocksPort。
+4. 将生成的 .onion URL 用于你的钱包客户端（Sparrow、BlueWallet 的连接自己的节点功能等）。
 
-Security stays solid because:
+安全性保持稳固，因为：
 
-- The onion address is only known to people you share it with.
-- RPC auth (rpcauth in bitcoin.conf, or the cookie file) still applies on top of the onion.
-- Tor adds anonymity: even an adversary who knows the .onion can't see your IP.
+- onion 地址只与你分享的人知道。
+- RPC 认证（bitcoin.conf 中的 rpcauth 或 cookie 文件）在 onion 之上仍然适用。
+- Tor 增加了匿名性：即使知道 .onion 的对手也看不到你的 IP。
 
-It's not the easiest setup. But for self-sovereign Bitcoin operators who want their own infrastructure without exposing it, it's the right pattern. Tools like Umbrel, Start9, and RaspiBlitz automate most of the configuration.
+这不是最简单的设置。但对于想要自有基础设施而不暴露它的比特币自主运营者来说，这是正确的模式。Umbrel、Start9 和 RaspiBlitz 等工具自动化了大部分配置。

@@ -1,12 +1,12 @@
 ---
-title: "BIP 119 (CTV)"
+title: "BIP 119（CTV）"
 slug: bip-119-ctv
 draft: false
-shortDefinition: "Proposes a new opcode CHECKTEMPLATEVERIFY for covenant-like controls on how funds can be spent in the future."
+shortDefinition: "提议新增 CHECKTEMPLATEVERIFY 操作码，实现对资金未来花费方式的契约式控制。"
 keyTakeaways:
-  - "Adds templated spending conditions (covenants)"
-  - "Could improve channel factories, vault designs"
-  - "Debated for possible impact on fungibility and policy"
+  - "添加模板化花费条件（契约）"
+  - "可改善通道工厂、金库设计"
+  - "因对可替代性和政策的潜在影响而存在争议"
 sources: []
 relatedTerms:
   - bip-bitcoin-improvement-proposal
@@ -26,20 +26,20 @@ sameAs:
 liveWidget: ~
 ---
 
-[BIP-119](https://github.com/bitcoin/bips/blob/master/bip-0119.mediawiki) is a draft Bitcoin Improvement Proposal by Jeremy Rubin that proposes adding the [`OP_CHECKTEMPLATEVERIFY`](/glossary/checktemplateverify-ctv) (CTV) opcode. It's the most-discussed "covenant" proposal of the post-Taproot era, and as of 2026 it remains a draft - not activated, not rejected, ongoing.
+[BIP-119](https://github.com/bitcoin/bips/blob/master/bip-0119.mediawiki)是 Jeremy Rubin 起草的比特币改进提案，提议新增 [`OP_CHECKTEMPLATEVERIFY`](/glossary/checktemplateverify-ctv)（CTV）操作码。它是后 Taproot 时代讨论最多的"契约"提案，截至 2026 年仍为草案状态——未激活，未被拒绝，持续讨论中。
 
-What the proposal does at a technical level: CTV would let a [Bitcoin Script](/glossary/bitcoin-script) commit to the *shape* of any transaction that's allowed to spend an output - the number of inputs and outputs, their amounts, the script types involved, etc. This is a [covenant](/glossary/covenants): a restriction on how the coins can move in the future, not just who can move them.
+技术层面的提案内容：CTV 将允许 [Bitcoin Script](/glossary/bitcoin-script)提交到任何被允许花费输出的交易的*形状*——输入和输出的数量、金额、涉及的脚本类型等。这是一种[契约](/glossary/covenants)：对币未来如何移动的限制，而不仅仅是谁能移动它们。
 
-Use cases the proposal targets:
+提案针对的用例：
 
-- **Vaults.** A withdrawal from cold storage that's forced to go through a pre-committed two-step process, with a delay where the user can cancel if it wasn't them.
-- **Channel factories.** Open a single on-chain transaction that commits to opening many Lightning channels later, deferring most of the fee cost.
-- **Discrete log contracts and similar advanced primitives.**
-- **Batch payments to many recipients with one on-chain transaction.**
+- **金库。**从冷存储提币被迫通过预提交的两步流程，在延迟期间用户可以取消非授权操作。
+- **通道工厂。**一笔链上交易提交到稍后开启多个闪电通道，推迟大部分手续费成本。
+- **离散对数合约和类似高级原语。**
+- **一笔链上交易批量支付给多个收款方。**
 
-Where the debate sits:
+辩论的位置：
 
-- **Pro:** CTV is the smallest, simplest covenant primitive proposed. It would unlock useful structures while leaving the door open to more advanced covenant ideas later.
-- **Con:** Adding *any* covenant opcode is irreversible. Some Bitcoin developers worry about subtle interactions with future protocol changes, or about the precedent of opening the covenant door at all. Other covenant proposals (like OP_VAULT, OP_CTV+CSFS, and various Taproot-based alternatives) have different tradeoffs.
+- **支持：**CTV 是提议的最小、最简单的契约原语。它将解锁有用的结构，同时为将来更高级的契约想法留门。
+- **反对：**添加*任何*契约操作码是不可逆的。一些比特币开发者担心与未来协议变更的微妙交互，或开启契约大门的先例。其他契约提案（如 OP_VAULT、OP_CTV+CSFS 和各种基于 Taproot 的替代方案）有不同的权衡。
 
-BIP-119 has been technically ready for years. Whether it activates depends on community consensus that hasn't yet formed. See [Covenants](/glossary/covenants) for the broader concept and [CTV](/glossary/checktemplateverify-ctv) for the opcode-level mechanic.
+BIP-119 在技术上已准备好多年。是否激活取决于尚未形成的社区共识。参见[契约](/glossary/covenants)了解更广泛的概念，[CTV](/glossary/checktemplateverify-ctv)了解操作码层面的机制。

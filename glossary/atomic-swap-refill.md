@@ -1,12 +1,12 @@
 ---
-title: "Atomic Swap Refill"
+title: "原子互换再填充"
 slug: atomic-swap-refill
 draft: false
-shortDefinition: "Using atomic swaps off-chain or across sidechains to rebalance liquidity or re-peg assets without relying on centralized services."
+shortDefinition: "使用链下或跨侧链的原子互换来重新平衡流动性或重新锚定资产，无需依赖中心化服务。"
 keyTakeaways:
-  - "Rebalances off-chain liquidity via trustless swaps"
-  - "Works for sidechains and Lightning channels"
-  - "Minimizes on-chain transactions while shifting capacity"
+  - "通过无信任互换重新平衡链下流动性"
+  - "适用于侧链和闪电通道"
+  - "在转移容量的同时最小化链上交易"
 sources: []
 relatedTerms:
   - atomic-multi-path-payment-amp
@@ -16,16 +16,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Atomic swap refill is the technique of using atomic swaps (HTLC-based trustless exchanges) to rebalance liquidity, most commonly in Lightning channels. Instead of closing a channel and opening a new one on-chain (expensive, slow, public), you swap out-of-channel balance for in-channel balance, or shift balance between two channels you participate in.
+原子互换再填充是使用原子互换（基于 HTLC 的无信任交换）来重新平衡流动性的技术，最常见于闪电通道。不需要关闭通道并在链上开新通道（昂贵、缓慢、公开），你可以将通道外余额换成通道内余额，或在参与的两个通道之间转移余额。
 
-The canonical Lightning use case: a routing node sees that one of its channels is "dry" (no outbound capacity) while another is "full" (all funds on its side). On-chain rebalancing means burning fees and waiting for confirmations. Atomic swap refill lets the node trade Bitcoin balance across the two channels via a swap with another node, restoring routing capacity without an on-chain transaction.
+典型的闪电网络用例：一个路由节点发现它的一个通道"干了"（没有出站容量），而另一个"满了"（所有资金都在它这边）。链上再平衡意味着消耗手续费并等待确认。原子互换再填充让节点通过与其他节点的互换来交易两个通道间的比特币余额，无需链上交易即可恢复路由容量。
 
-Practical implementations:
+实际实现：
 
-- Submarine swaps: trade Lightning balance for on-chain BTC or vice versa. Used both for rebalancing and for "fund my Lightning wallet from on-chain" without opening a new channel.
-- Loop and Loop Out (Lightning Labs' service): commercial submarine swap service for inbound / outbound liquidity.
-- PeerSwap: peer-to-peer rebalancing protocol between two Lightning nodes that share a channel.
+- 潜艇互换（Submarine swaps）：将闪电余额换为链上 BTC 或反之。既用于再平衡，也用于"从链上给我的闪电钱包充值"而无需开新通道。
+- Loop 和 Loop Out（Lightning Labs 的服务）：用于入站/出站流动性的商业潜艇互换服务。
+- PeerSwap：两个共享通道的闪电节点之间的点对点再平衡协议。
 
-The shared trick is the atomicity. Either both legs of the swap happen or neither does, with no trusted intermediary holding funds at any point. The cryptography is the same hash-locked contract pattern Lightning itself uses for routing.
+共同的技巧是原子性。互换的两条腿要么都发生，要么都不发生，任何时刻都没有受信任的中间人持有资金。密码学与闪电网络本身用于路由的哈希锁定合约模式相同。
 
-Niche but increasingly important as Lightning routing matures. Channel capacity management is the operational reality of running a routing node, and atomic-swap-based rebalancing is the cheap way to do it.
+随着闪电路由成熟，这虽然小众但越来越重要。通道容量管理是运行路由节点的运营现实，而基于原子互换的再平衡是低成本的实现方式。

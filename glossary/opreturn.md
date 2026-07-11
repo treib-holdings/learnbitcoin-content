@@ -2,11 +2,11 @@
 title: "OP_RETURN"
 slug: opreturn
 draft: false
-shortDefinition: "A script opcode allowing arbitrary data in a transaction output, effectively making the output unspendable."
+shortDefinition: "一种脚本操作码，允许在交易输出中包含任意数据，实际上使该输出不可花费。"
 keyTakeaways:
-  - "Enables data embedding without making coins spendable"
-  - "Typically capped at ~80 bytes for chain resource reasons"
-  - "Used for notary, proof-of-existence, or limited 'colored coins' data"
+  - "允许嵌入数据而不使代币可花费"
+  - "通常限制在约 80 字节以节约链资源"
+  - "用于公证、存在证明或有限的'染色币'数据"
 sources: []
 relatedTerms:
   - bitcoin-script
@@ -17,22 +17,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-**OP_RETURN** is a [Bitcoin Script](/glossary/bitcoin-script) opcode that makes its output deliberately unspendable. The "spending" path is a guaranteed-fail, so any output starting with OP_RETURN is removed from the UTXO set immediately - giving you a way to embed arbitrary data into a Bitcoin transaction without bloating the unspent-output database.
+**OP_RETURN** 是一种[比特币脚本](/glossary/bitcoin-script)操作码，使其输出故意不可花费。"花费"路径是保证失败的，所以任何以 OP_RETURN 开头的输出立即从 UTXO 集中移除——给你一种在比特币交易中嵌入任意数据而不膨胀未花费输出数据库的方式。
 
-The basic structure: `OP_RETURN <data>` where `<data>` is up to 80 bytes (the standardness limit). The output's value is typically zero or near-zero satoshis (creating a small dust output). The data sits in the chain history forever but doesn't burden the UTXO set.
+基本结构：`OP_RETURN <data>`，其中 `<data>` 最多 80 字节（标准性限制）。输出的值通常为零或接近零聪。数据永远留在链历史中但不给 UTXO 集增加负担。
 
-What OP_RETURN is used for:
+OP_RETURN 的用途：
 
-- **Proof-of-existence / timestamping.** Hash a document, embed the hash, prove later that the document existed before that block height. Used by OpenTimestamps and similar services.
-- **Cross-chain commitments.** Sidechains like [Liquid](/glossary/liquid-network) and protocols like Counterparty embed cross-system metadata in OP_RETURN outputs.
-- **Layer-2 anchoring.** Some second-layer protocols anchor state commitments via OP_RETURN.
-- **[Ordinals / inscriptions](/glossary/opreturn-based-tokens) (sort of).** Inscriptions technically use Taproot witness scripts rather than OP_RETURN per se, but the data-embedding question is structurally the same and OP_RETURN gets caught up in the debate.
+- **存在证明/时间戳。** 哈希文档、嵌入哈希、之后证明文档在该区块高度之前存在。被 OpenTimestamps 等服务使用。
+- **跨链承诺。** [Liquid](/glossary/liquid-network) 等侧链和 Counterparty 等协议在 OP_RETURN 输出中嵌入跨系统元数据。
+- **第二层锚定。** 一些第二层协议通过 OP_RETURN 锚定状态承诺。
+- **[Ordinals/铭文](/glossary/opreturn-based-tokens)（某种程度）。** 铭文技术上使用 Taproot 见证脚本而非 OP_RETURN，但数据嵌入问题在结构上相同，OP_RETURN 也被卷入辩论。
 
-The community debate around OP_RETURN:
+围绕 OP_RETURN 的社区辩论：
 
-- **Pro-data view:** the chain is for whatever its users want to pay fees for. Embedding data has legitimate uses (timestamping, sidechain commitments, etc.) and the fee market handles abuse.
-- **Anti-data view:** Bitcoin's primary purpose is monetary; non-monetary data uses inflate fees for everyone, push out legitimate financial transactions, and shouldn't be relayed or mined. Some nodes ([Bitcoin Knots](/glossary/bitcoin-knots)) deliberately filter such transactions from their mempools.
+- **支持数据观点：** 链是为用户愿意付费的任何东西服务的。嵌入数据有合法用途（时间戳、侧链承诺等），费率市场处理滥用。
+- **反对数据观点：** 比特币的主要目的是货币；非货币数据为所有人膨胀手续费、挤出合法金融交易，不应被中继或挖矿。一些节点（[Bitcoin Knots](/glossary/bitcoin-knots)）刻意从内存池中过滤此类交易。
 
-Both positions are defensible; the live argument in 2024-2026 is *which* node relay policy is appropriate. The protocol itself accepts OP_RETURN; node-level policy is where the contest happens.
+两种立场都站得住脚；2024-2026 年的实时争论是*哪种*节点中继策略合适。协议本身接受 OP_RETURN；节点层面策略才是争论发生的地方。
 
-See [OP_RETURN-based Tokens](/glossary/opreturn-based-tokens) for the early token-experiment use case.
+请参阅[基于 OP_RETURN 的代币](/glossary/opreturn-based-tokens)了解早期代币实验用例。

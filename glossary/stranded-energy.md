@@ -1,13 +1,13 @@
 ---
-title: "Stranded Energy"
+title: "搁浅能源"
 slug: stranded-energy
 draft: false
 published: "2026-06-17"
-shortDefinition: "Electricity that is produced or could be produced but has no economical buyer - too remote, too intermittent, or too far from demand. The cheapest energy on earth, and what Bitcoin mining migrates toward."
+shortDefinition: "已经生产或可以生产但没有经济买家的电力——太偏远、太间歇、或离需求太远。地球上最便宜的能源，也是比特币挖矿迁移的方向。"
 keyTakeaways:
-  - "Energy is stranded when it cannot reach a market: remote hydro, flared gas, curtailed wind, off-peak generation"
-  - "Stranded electrons are the cheapest electrons because no one else is bidding for them"
-  - "A location-agnostic, interruptible miner is uniquely able to monetize stranded energy - the incentive needs no virtue"
+  - "能源在无法到达市场时被搁浅：偏远水电、火炬气、弃风弃光、低谷发电"
+  - "搁浅的电子是最便宜的电子，因为没有其他人在竞价"
+  - "位置无关、可中断的矿工能独特地变现搁浅能源——激励无需美德"
 sources: []
 relatedTerms:
   - curtailment
@@ -18,19 +18,19 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Stranded energy is electricity that exists, or could be produced, but has no economical way to reach a buyer. The power is real; the market for it is not. Common forms:
+搁浅能源是已经存在、或可以生产、但没有经济方式到达买家的电力。电力是真实的；市场不是。常见形式：
 
-- **Remote generation** - a hydro dam or geothermal field far from any city, with no transmission line big enough to carry the power to demand.
-- **Curtailed renewables** - wind or solar [curtailed](/glossary/curtailment) because generation outran local demand or transmission capacity.
-- **Flared and vented gas** - methane at oil wells with no pipeline, burned off (or released) as waste. See [methane mitigation mining](/glossary/methane-mitigation-mining).
-- **Off-peak baseload** - nuclear or other plants that cannot ramp down cheaply, producing power overnight that nobody is awake to use.
+- **偏远发电**——远离任何城市的水电站或地热田，没有足够大的输电线路将电力送到需求端。
+- **弃风弃光**——因发电超过本地需求或输电容量的[弃电](/glossary/curtailment)。
+- **火炬气和排放气**——油井旁没有管道的甲烷，被燃烧（或排放）为废物。参见[甲烷减排挖矿](/glossary/methane-mitigation-mining)。
+- **低谷基荷**——核电站或其他无法廉价降负荷的电厂，在夜间生产没人醒着用的电力。
 
-In every case the defining feature is the same: nobody is bidding for the energy, so it is nearly free, and often it is simply wasted.
+每种情况的定义特征相同：没有人在竞价买这些能源，所以几乎免费，而且常常被直接浪费。
 
-## Why this is the center of Bitcoin's energy story
+## 为什么这是比特币能源故事的核心
 
-A [Bitcoin miner](/glossary/mining) is the only large electricity buyer that is simultaneously location-agnostic (it needs power and an internet connection, nothing else), interruptible in seconds, and indifferent to when the power arrives. Those three properties make it the natural buyer for stranded energy - it can set up at the dam, the flare stack, or the end of the congested transmission line, and run on electrons no one else can use.
+[比特币矿工](/glossary/mining)是唯一一个同时具备位置无关性（只需电力和互联网连接，不需要其他）、可在几秒内中断、且对电力到达时间不敏感的大型电力买家。这三个特性使其成为搁浅能源的天然买家——可以在水坝旁、火炬架旁、或拥堵输电线的末端设点，用别人用不了的电子运行。
 
-This is not because miners are environmentalists. Stranded electrons are the cheapest electrons on earth, and mining margins are thin, so the incentive points straight at wasted power with no virtue required. It is also the honest core of the "Bitcoin uses wasted energy" claim - true at the margin, though not true of every operation, and worth stating precisely rather than as a blanket defense.
+这不是因为矿工是环保主义者。搁浅的电子是地球上最便宜的电子，而挖矿利润率薄，所以激励直指被浪费的电力，不需要任何美德。这也是"比特币使用浪费能源"说法的诚实核心——在边际上是对的，虽然不是对每个操作都成立，值得精确陈述而非作为一刀切的辩护。
 
-See the [Bitcoin and Energy rabbit hole](/rabbit-hole/energy) for the full treatment, including where the claim holds and where it does not.
+参见[比特币与能源深度指南](/rabbit-hole/energy)了解完整论述，包括这一说法成立的地方和不成立的地方。

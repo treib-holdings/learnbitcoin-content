@@ -1,12 +1,12 @@
 ---
-title: "Payment Codes (BIP 47)"
+title: "支付码（Payment Codes，BIP 47）"
 slug: payment-codes-bip-47
 draft: false
-shortDefinition: "Reusable identifiers enabling private payments without exposing static addresses, avoiding address reuse."
+shortDefinition: "可重复使用的标识符，支持隐私支付而无需暴露静态地址，避免地址重复使用。"
 keyTakeaways:
-  - "One code produces new addresses for each payment"
-  - "Prevents the privacy leaks of address reuse"
-  - "Requires a notification TX to synchronize the code between parties"
+  - "一个支付码为每笔支付生成新地址"
+  - "防止地址重复使用导致的隐私泄露"
+  - "需要一笔通知交易在双方之间同步支付码"
 sources: []
 relatedTerms:
   - address-reuse
@@ -17,18 +17,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Payment codes are reusable receiver identifiers defined in [BIP-47](/glossary/bip-47-payment-codes). A user publishes one long-term payment code (e.g. `PM8T...`); senders combine it with their own keys via ECDH to derive a unique on-chain [address](/glossary/address) per payment. The receiver scans for these derived addresses; the sender knows the address from their own derivation.
+支付码是 [BIP-47](/glossary/bip-47-payment-codes) 中定义的可重复使用收款标识符。用户发布一个长期使用的支付码（例如 `PM8T...`）；发送方通过 ECDH 将其与自己的密钥组合，为每笔支付派生一个唯一的链上[地址](/glossary/address)。接收方扫描这些派生地址；发送方从自己的派生过程中知道地址。
 
-The privacy goal: avoid [address reuse](/glossary/address-reuse) without forcing users to share a fresh address every time they want to be paid.
+隐私目标：避免[地址重复使用](/glossary/address-reuse)，同时不强迫用户每次收款时都分享一个新地址。
 
-The catch that limited BIP-47 adoption: each new sender-receiver pair must publish a one-time **notification transaction** on-chain. This notification is an actual Bitcoin transaction that "introduces" the sender to the receiver and exchanges the cryptographic context for future ECDH derivation. Once that notification exists, subsequent payments between the same two parties happen at unique addresses with no further on-chain handshake. But the notification *itself* is a privacy leak - it publicly tells observers "these two parties have begun a payment-code relationship."
+限制 BIP-47 采用的难点：每对新的发送方-接收方都必须在链上发布一次**通知交易**。这笔通知是一笔实际的比特币交易，"介绍"发送方向接收方，并交换未来 ECDH 派生所需的密码学上下文。一旦通知存在，同一双方之间的后续支付发生在唯一地址上，无需进一步的链上握手。但通知*本身*是一种隐私泄露——它公开告诉观察者"这两方已建立了支付码关系。"
 
-Where this leaves BIP-47:
+BIP-47 的现状：
 
-- **Samourai Wallet** championed it as their main privacy receive-flow until the team's 2024 indictment and platform shutdown.
-- **A few other wallets** maintain support for legacy compatibility.
-- **The modern successor [Silent Payments](/glossary/silent-payments) (BIP-352)** achieves the same "one code, many addresses" goal without any notification transaction - publishing only the silent-payment address and using a clever Taproot-based derivation that requires no handshake.
+- **Samourai Wallet** 将其作为主要的隐私收款流程，直到 2024 年团队被起诉和平台关闭。
+- **少数其他钱包**出于向后兼容性保留支持。
+- **现代继任者 [Silent Payments](/glossary/silent-payments)（BIP-352）**实现了相同的"一个码，多个地址"目标，无需任何通知交易——只发布静默支付地址，使用基于 Taproot 的巧妙派生，不需要握手。
 
-BIP-47 is now best understood as a historical proof-of-concept: useful in demonstrating the design space, technically functional, and largely superseded by better successors. New users looking for reusable private receive addresses should look at Silent Payments. See [Silent Payments](/glossary/silent-payments) for the modern equivalent.
+BIP-47 现在最好被理解为历史概念验证：在设计空间中有用，技术上可行，但基本上已被更好的继任者取代。寻找可重复使用隐私收款地址的新用户应该关注 Silent Payments。参见 [Silent Payments](/glossary/silent-payments) 了解现代等价方案。
 
-Note: this entry partially overlaps with [BIP-47 (Payment Codes)](/glossary/bip-47-payment-codes). They cover the same concept from slightly different angles.
+注意：本条目与 [BIP-47（Payment Codes）](/glossary/bip-47-payment-codes)部分重叠。它们从略有不同的角度涵盖同一概念。

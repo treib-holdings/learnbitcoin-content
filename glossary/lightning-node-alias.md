@@ -1,12 +1,12 @@
 ---
-title: "Lightning Node Alias"
+title: "闪电节点别名"
 slug: lightning-node-alias
 draft: false
-shortDefinition: "A nickname a Lightning node broadcasts in the gossip protocol, not a trusted identity but a user-friendly label."
+shortDefinition: "闪电节点在 gossip 协议中广播的昵称，不是可信身份而是用户友好的标签。"
 keyTakeaways:
-  - "Adds a friendly label for LN nodes but can be spoofed"
-  - "Helps human users differentiate nodes in gossip data"
-  - "Public key remains the true unique identifier for LN routes"
+  - "为闪电节点添加友好标签但可被冒充"
+  - "帮助人类用户在 gossip 数据中区分节点"
+  - "公钥仍是闪电路由的唯一真实标识符"
 sources: []
 relatedTerms:
   - bolt
@@ -16,23 +16,23 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Lightning node alias is a human-readable nickname a [Lightning node](/glossary/lightning-node) advertises via the [gossip protocol](/glossary/gossip-protocol-lightning) as part of its `node_announcement` message. It's a label, not an identity.
+闪电节点别名是[闪电节点](/glossary/lightning-node)通过[gossip 协议](/glossary/gossip-protocol-lightning)作为 `node_announcement` 消息一部分广播的人类可读昵称。它是一个标签，不是身份。
 
-Examples: "ACINQ", "WalletOfSatoshi.com", "Bitfinex", "Satoshi's Coffee Shop", "🌩️ Lightning Bot 🌩️". Aliases are whatever the operator chooses, plus a 24-bit color value for UI rendering.
+示例："ACINQ"、"WalletOfSatoshi.com"、"Bitfinex"、"Satoshi 的咖啡店"、"🌩️ Lightning Bot 🌩️"。别名由运营者自选，外加一个 24 位颜色值用于 UI 渲染。
 
-The important caveat: **aliases are not authenticated**. Anyone can advertise any alias. Multiple nodes can claim the same alias. Aliases can be impersonations of well-known nodes. The cryptographic identity of a Lightning node is its **public key** (33-byte secp256k1 pubkey); the alias is just a UX convenience.
+重要警告：**别名不经认证**。任何人都可以广播任何别名。多个节点可以声明相同的别名。别名可能是知名节点的冒充。闪电节点的密码学身份是其**公钥**（33 字节 secp256k1 公钥）；别名只是 UX 便利。
 
-What aliases are good for:
+别名的用途：
 
-- **Lightning explorer displays.** When you see a routing graph visualization, aliases make it readable.
-- **Node-list UIs in wallets.** "Connect to which peer?" is easier to answer if peers have meaningful aliases.
-- **Casual identification.** "I opened a channel with WalletOfSatoshi" is shorter than the corresponding pubkey.
-- **Operator branding.** Lightning node operators with public infrastructure (custodial wallets, exchanges, businesses) use aliases as part of their public-facing identity.
+- **闪电浏览器展示。** 当你看到路由图可视化时，别名使其可读。
+- **钱包中的节点列表 UI。** "连接到哪个对等方？"如果对等方有有意义的别名就更容易回答。
+- **非正式识别。** "我和 WalletOfSatoshi 开了一个通道"比对应的公钥更简洁。
+- **运营者品牌。** 拥有公共基础设施（托管钱包、交易所、企业）的闪电节点运营者将别名作为其面向公众身份的一部分。
 
-What aliases are not good for:
+别名不适合的用途：
 
-- **Trust decisions.** Never trust a node based on its alias alone. The pubkey is what matters cryptographically.
-- **Routing safety.** A scam node calling itself "Coinbase" can't actually intercept Coinbase's payments because routing uses pubkeys.
-- **Long-term identity.** Operators sometimes change aliases; aliases by themselves carry no historical accountability.
+- **信任决策。** 永远不要仅凭别名信任一个节点。公钥才是密码学上重要的。
+- **路由安全。** 自称"Coinbase"的骗局节点无法真正拦截 Coinbase 的支付，因为路由使用公钥。
+- **长期身份。** 运营者有时会更改别名；别名本身不带有历史问责性。
 
-Treat aliases like Twitter display names: useful for human communication, but the underlying handle (public key) is the actual identity.
+把别名当作 Twitter 显示名：对人类交流有用，但底层句柄（公钥）才是实际身份。

@@ -1,12 +1,12 @@
 ---
-title: "Xpub (Extended Public Key)"
+title: "Xpub（扩展公钥）"
 slug: xpub-extended-public-key
 draft: false
-shortDefinition: "A BIP 32 feature allowing derivation of child public keys without exposing the master private key."
+shortDefinition: "BIP 32 的功能，允许在不暴露主私钥的情况下派生子公钥。"
 keyTakeaways:
-  - "Enables derivation of multiple child addresses from a single root"
-  - "Retains spending security if the master private key is safely hidden"
-  - "Used for watch-only wallets, accounting, and multi-sig coordination"
+  - "从单个根派生多个子地址"
+  - "主私钥安全隐藏时保持花费安全"
+  - "用于只读钱包、会计和多签协调"
 sources: []
 relatedTerms:
   - bip-44
@@ -22,26 +22,26 @@ sameAs:
 liveWidget: ~
 ---
 
-An xpub is a [BIP 32](/glossary/bip-32) extended public key: a parent public key bundled together with its [chaincode](/glossary/chaincode). With both pieces, anyone can derive all non-hardened child public keys (and therefore all addresses) under that branch of the wallet tree, without ever seeing a private key.
+xpub 是 [BIP 32](/glossary/bip-32) 的扩展公钥：一个父公钥与其[链码](/glossary/chaincode)捆绑在一起。有了这两部分，任何人都可以派生该钱包树分支下的所有非强化子公钥（以及因此所有地址），而永远不需要看到私钥。
 
-What you can do with someone's xpub:
+有了某人的 xpub 你可以做什么：
 
-- **Watch their wallet.** Import the xpub into Sparrow, Specter, BlueWallet, etc., and you'll see every receive address, every spend, every balance change in real time. No private key needed.
-- **Generate fresh receive addresses for them.** A merchant server can hand out new addresses for each customer without holding any spending capability.
-- **Participate as a watch-only cosigner.** Combine an xpub from each cosigner to build a multisig watching wallet.
+- **监控其钱包。** 将 xpub 导入 Sparrow、Specter、BlueWallet 等，你会实时看到每个接收地址、每笔花费、每次余额变化。不需要私钥。
+- **为其生成新的接收地址。** 商户服务器可以为每个客户生成新地址而不持有任何花费能力。
+- **作为只读共同签名者参与。** 组合每个共同签名者的 xpub 来构建多签监控钱包。
 
-What you give up by leaking an xpub:
+泄露 xpub 你放弃什么：
 
-- **Privacy.** Every present and future address in that branch is now visible to whoever has the xpub. The chain-analysis story collapses; the holder of the xpub sees the entire balance and transaction graph.
-- **Forward secrecy on activity.** Even if you never share the xpub again, the holder can derive your next 1000 addresses just by walking the tree.
+- **隐私。** 该分支下的每个现有和未来地址现在对拥有 xpub 的人可见。链上分析故事崩塌；xpub 持有者看到完整的余额和交易图。
+- **活动的前向保密。** 即使你再也不分享 xpub，持有者也可以通过遍历树派生你接下来 1000 个地址。
 
-Treat an xpub like a balance sheet, not like an address.
+将 xpub 当作资产负债表对待，而非地址。
 
-Format variants you'll see in older wallets:
+旧钱包中你会看到的格式变体：
 
-- `xpub...` - the original BIP 32 form, conventionally tied to legacy P2PKH derivations.
-- `ypub...` - P2SH-wrapped SegWit (BIP 49).
-- `zpub...` - native P2WPKH (BIP 84).
-- `Ypub` / `Zpub` - multisig variants.
+- `xpub...`——原始 BIP 32 形式，通常关联传统 P2PKH 派生。
+- `ypub...`——P2SH 包装的 SegWit（BIP 49）。
+- `zpub...`——原生 P2WPKH（BIP 84）。
+- `Ypub` / `Zpub`——多签变体。
 
-In 2026, the prefix variants are mostly historical: modern [descriptor wallets](/glossary/output-descriptor) carry the script-type information explicitly, so a single `xpub` plus a descriptor template covers everything cleanly.
+2026 年，前缀变体主要是历史遗留：现代[描述符钱包](/glossary/output-descriptor)显式携带脚本类型信息，所以单个 `xpub` 加描述符模板就能干净地覆盖一切。

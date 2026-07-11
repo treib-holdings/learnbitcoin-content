@@ -1,12 +1,12 @@
 ---
-title: "Transaction"
+title: "交易"
 slug: transaction
 draft: false
-shortDefinition: "A data structure moving BTC from inputs (referencing UTXOs) to outputs (locking scripts). Signed by private keys."
+shortDefinition: "将 BTC 从输入（引用 UTXO）转移到输出（锁定脚本）的数据结构。由私钥签名。"
 keyTakeaways:
-  - "Consists of inputs, outputs, signatures, and optional scripts/data"
-  - "Consumes existing UTXOs and creates new ones, forming the ledger's flow"
-  - "Valid transactions must satisfy script constraints for each input"
+  - "由输入、输出、签名和可选脚本/数据组成"
+  - "消耗现有 UTXO 并创建新的，形成账本的流转"
+  - "有效交易必须满足每个输入的脚本约束"
 sources: []
 relatedTerms:
   - absolute-fee
@@ -41,12 +41,12 @@ sameAs:
 liveWidget: ~
 ---
 
-A Bitcoin transaction is a data structure that moves BTC from one set of owners to another. It does this by consuming existing [unspent outputs](/glossary/utxo-unspent-transaction-output) (UTXOs) as **inputs** and creating new [**outputs**](/glossary/output-transaction-output) that lock the funds to new spending conditions.
+比特币交易是一种数据结构，将 BTC 从一组所有者转移到另一组。它通过消耗现有的[未花费输出](/glossary/utxo-unspent-transaction-output)（UTXO）作为**输入**，创建新的[**输出**](/glossary/output-transaction-output)，将资金锁定到新的花费条件下来实现这一点。
 
-The structure is atomic: a transaction either succeeds entirely or fails entirely. Every input must produce a valid signature (or script witness) proving the spender controls the UTXO being consumed. If even one input fails, the whole transaction is invalid. The sum of input values must be at least the sum of output values; the difference is the [transaction fee](/glossary/fee-estimation) paid to the miner.
+结构是原子的：一笔交易要么完全成功，要么完全失败。每个输入必须产生有效签名（或脚本见证），证明花费者控制被消耗的 UTXO。即使一个输入失败，整笔交易就无效。输入值之和必须至少等于输出值之和；差额是支付给矿工的[交易手续费](/glossary/fee-estimation)。
 
-A typical send works like this: your wallet picks one or more of your UTXOs whose value adds up to at least what you want to send, signs them as inputs, creates an output paying the recipient, and creates a *change* output paying any remainder back to yourself. The whole package gets broadcast to the peer-to-peer network, where it sits in [mempools](/glossary/mempool) until a miner includes it in a block.
+典型的发送流程：你的钱包选择一个或多个 UTXO，其价值总和至少等于你要发送的金额，将它们签名为输入，创建一个支付给接收方的输出，并创建一个*找零*输出将余额付回给自己。整个包广播到点对点网络，在[内存池](/glossary/mempool)中等待，直到矿工将其包含在区块中。
 
-Once confirmed, the transaction is identified forever by its **txid** - the double-SHA256 hash of its serialized form. The outputs it created become new UTXOs in the global set, available to be spent in future transactions, and the inputs it consumed are gone for good.
+一旦确认，交易就永远由其 **txid** 标识——其序列化形式的双重 SHA-256 哈希。它创建的输出成为全局 UTXO 集中的新 UTXO，可在未来交易中被花费，而它消耗的输入则永远消失。
 
-See the [Mining rabbit hole §6](/rabbit-hole/mining) for how miners decide which transactions to pack into a block, and [UTXO](/glossary/utxo-unspent-transaction-output) for the "coin object" model that underlies Bitcoin's accounting.
+参见[挖矿深度指南 §6](/rabbit-hole/mining)了解矿工如何决定将哪些交易打包进区块，以及 [UTXO](/glossary/utxo-unspent-transaction-output)了解比特币会计的"硬币对象"模型。

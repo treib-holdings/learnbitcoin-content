@@ -1,10 +1,11 @@
----title: "Decentralization"
+---
+title: "去中心化"
 slug: decentralization
 draft: false
 status: live
 published: "2026-05-18"
 section: rabbit-hole
-tagline: "What 'decentralized' actually means, where Bitcoin sits on the spectrum, and how the network has defeated takeover attempts without anyone in charge."
+tagline: ""去中心化"到底意味着什么，比特币在光谱上的位置，以及没有人负责的网络如何击退接管企图。"
 order: 11
 estimatedMinutes: 9
 sources:
@@ -18,116 +19,116 @@ ogImage: "/diagrams/og/network-topology.png"
 ogImageAlt: "Two network topologies side by side. On the left, a single central bank hub stands alone. On the right, Bitcoin as roughly thirty-five peer nodes connected in an organic mesh with no center. One central bank, versus tens of thousands of Bitcoin nodes."
 ---
 
-> **Where you're going:** A clear-eyed look at what "decentralized" actually means, where Bitcoin lands on the spectrum, and why a network with no one in charge can still defend itself against takeover.
+> **你将了解：** 对"去中心化"到底意味着什么的清醒审视，比特币在光谱上的位置，以及为什么一个没有人负责的网络仍能抵御接管。
 
 <figure>
   <img src="/diagrams/network-topology.svg" alt="Two network topologies side by side. On the left, a central bank: a single institutional hub standing alone. On the right, the Bitcoin network: roughly thirty-five peer nodes scattered across the panel and connected to their neighbors in an organic mesh, with no central node." />
-  <figcaption>One central bank, versus tens of thousands of Bitcoin nodes. No center, no headquarters, no off switch.</figcaption>
+  <figcaption>一个中央银行，对比数万个比特币节点。没有中心，没有总部，没有关闭开关。</figcaption>
 </figure>
 
-## 1. Three Network Shapes
+## 1. 三种网络形态
 
-In the early 1960s, an engineer at RAND named Paul Baran was trying to design a communications network that could survive a nuclear strike. He sketched three shapes:
+在 1960 年代初，RAND 的一位工程师 Paul Baran 试图设计一种能在核打击中存活的通信网络。他画了三种形态：
 
-- **Centralized.** One hub. Every node talks to the hub. Lose the hub, lose the network. The most efficient design, and the most fragile.
-- **Decentralized.** Several hubs, each with their own clusters of nodes. Lose one hub and one cluster goes dark, but the rest survive. Still has hubs, just more of them.
-- **Distributed.** No hubs. Every node connects to several neighbors directly. The network can lose huge swaths of itself and the survivors keep talking.
+- **中心化。** 一个枢纽。每个节点都连到枢纽。失去枢纽，失去网络。最高效的设计，也最脆弱。
+- **分散式。** 几个枢纽，各有自己的节点簇。失去一个枢纽，一个簇熄灭，其余存活。仍然有枢纽，只是更多了。
+- **分布式。** 没有枢纽。每个节点直接连接几个邻居。网络可以失去大片自身，幸存者继续通信。
 
-Most things we casually call "decentralized" are actually the middle option, a federation. Real distribution is rarer than the word suggests. Bitcoin's claim is the third shape: distributed, in the strong sense.
+我们随意称之为"去中心化"的大多数东西实际上是中间选项 - 一个联邦。真正的分布比这个词暗示的要少得多。比特币声称的是第三种形态：分布式，在强意义上。
 
-## 2. What "Decentralized" Doesn't Mean
+## 2. "去中心化"不意味着什么
 
-The word has been abused. Some examples of things called "decentralized" that are not:
+这个词被滥用了。一些被称为"去中心化"但实际并非如此的例子：
 
-- **"It's on a blockchain, so it's decentralized."** Most blockchains have a small number of validators, sometimes literally a handful. Putting a database on a blockchain doesn't decentralize the database. It just makes it slower.
-- **"Multiple companies run it."** Federation isn't distribution. Visa, Mastercard, and SWIFT are all "federated" with many member institutions, but if a few of them coordinate, they control the network. That's not what Bitcoin offers.
-- **"It's open source."** Open code is necessary for decentralization but doesn't produce it. Plenty of open-source projects are controlled by one company or one foundation.
-- **"It's governed by token holders."** Voting weighted by holdings is just plutocracy with extra steps. A handful of large holders effectively decide outcomes.
+- **"它在区块链上，所以是去中心化的。"** 大多数区块链只有少量验证者，有时真的只有几个。把数据库放到区块链上不会使数据库去中心化。只是让它更慢。
+- **"多家公司运营。"** 联邦不是分布。Visa、Mastercard 和 SWIFT 都是"联邦制"的，有很多成员机构，但如果其中几个协调行动，它们就控制了网络。这不是比特币提供的。
+- **"开源。"** 开放代码是去中心化的必要条件但不产生去中心化。很多开源项目由一家公司或一个基金会控制。
+- **"由代币持有者治理。"** 按持有量加权的投票只是加了几个步骤的财阀统治。少数大持有者实际上决定结果。
 
-What decentralization *actually* means, in the Bitcoin sense: **no single party - or coordinated small group of parties - can force changes, censor users, or shut the network down.** The test isn't who's on the cap table. It's who can be coerced.
+去中心化*实际上*意味着什么，在比特币的意义上：**没有单一方面 - 或协调的小团体 - 能强制改变规则、审查用户或关闭网络。** 测试不是谁在股权表上。是谁可以被胁迫。
 
-## 3. Where Bitcoin Sits
+## 3. 比特币在什么位置
 
-Bitcoin is the most decentralized monetary system humans have ever built. Three categories of participant, each plays a different role, each constrains the others.
+比特币是人类有史以来最去中心化的货币系统。三类参与者，各扮演不同角色，互相制衡。
 
-**Node operators.** Around 17,000 to 22,000 reachable Bitcoin nodes are live at any moment, with estimates of 50,000 to 100,000+ when you count non-reachable nodes behind firewalls. Anyone running Bitcoin software that validates every transaction and block. The rules each node enforces define what Bitcoin *is* on that node's copy of the chain. If you don't like a proposed change, you don't run the new software, and your node continues operating on the old rules. A node runs on a laptop, a Raspberry Pi, or any cheap computer with disk space. No permission required. Live count: [bitnodes.io](https://bitnodes.io).
+**节点操作者。** 任何时刻大约有 17,000 到 22,000 个可达的比特币节点在线，算上防火墙后不可达的节点估计有 50,000 到 100,000+ 个。任何人运行验证每笔交易和区块的比特币软件。每个节点执行的规则定义了在那个节点的链副本上比特币*是什么*。如果你不喜欢一个提议的改变，你不运行新软件，你的节点继续按旧规则运行。一个节点可以在笔记本电脑、树莓派或任何有磁盘空间的廉价电脑上运行。无需许可。实时计数：[bitnodes.io](https://bitnodes.io)。
 
-**Miners.** Specialized hardware competing to add blocks for the reward. Geographically distributed across the US, Russia, Kazakhstan, Canada, Western Europe, and others. They produce blocks, but they don't make the rules. If miners produce a block that violates consensus, every node rejects it and the miner's electricity is wasted. **Miners follow nodes, not the other way around.**
+**矿工。** 竞争添加区块以获取奖励的专用硬件。地理分布在 美国、俄罗斯、哈萨克斯坦、加拿大、西欧和其他地方。他们产出区块，但不制定规则。如果矿工产出一个违反共识的区块，每个节点都会拒绝它，矿工的电力就浪费了。**矿工跟随节点，而不是反过来。**
 
-**Developers.** People who write the software. [Bitcoin Core](/glossary/bitcoin-core) is the dominant implementation, but Bitcoin Knots, btcd, and Libbitcoin are independent implementations of the same protocol. Developers can propose changes; they can't impose them. A pull request to Bitcoin Core has to convince thousands of node operators to actually run the new code. Across 16 years, Bitcoin Core has had over a thousand contributors and no single contributor's commits represent more than a few percent of the code.
+**开发者。** 编写软件的人。[Bitcoin Core](/glossary/bitcoin-core) 是主导实现，但 Bitcoin Knots、btcd 和 Libbitcoin 是同一协议的独立实现。开发者可以提议改变；他们不能强加改变。一个提交到 Bitcoin Core 的 pull request 需要说服数以千计的节点操作者去实际运行新代码。十六年来，Bitcoin Core 有超过一千名贡献者，没有任何单一贡献者的提交超过代码的百分之几。
 
-**Concentration concerns, and the structural answer.**
+**集中度隐忧，以及结构性回应。**
 
-Mining pool concentration: the top few pools control the majority of global hashrate. That sounds alarming until you realize **pools don't own the hashrate**. Individual miners (often thousands per pool) point their hardware at whichever pool gives them the best terms. If a pool tried to attack the network, the miners would leave within days. We saw exactly this in 2014 when [GHash.io](https://en.bitcoin.it/wiki/GHash.IO) approached 51%, and miners voluntarily migrated out within weeks.
+矿池集中度：前几大矿池控制了全球算力的大部分。这听起来令人担忧，直到你意识到**矿池不拥有算力**。个别矿工（每个矿池通常有数千人）把硬件指向给他们最好条件的矿池。如果一个矿池试图攻击网络，矿工会在几天内离开。2014 年 [GHash.io](https://en.bitcoin.it/wiki/GHash.IO) 接近 51% 时我们正是看到了这一点，矿工在几周内自愿迁移出去。
 
-Implementation concentration: Bitcoin Core dominates by node count. This is a real risk if Core developers were ever captured. The mitigation is the existence of alternative implementations (which can be promoted quickly if needed) and the fact that Core's review process involves dozens of independent contributors with the power to refuse merges.
+实现集中度：Bitcoin Core 按节点数占主导。如果 Core 开发者被俘获，这是真实风险。缓解措施是替代实现的存在（需要时可以迅速推广）以及 Core 的审查过程涉及数十名有拒绝合并权力的独立贡献者。
 
-These aren't perfect protections. They're better than every other system humans have tried to use as money.
+这些不是完美的保护。它们比人类尝试过的任何其他货币系统都要好。
 
-## 4. The 2017 Takeover Attempt
+## 4. 2017 年的接管企图
 
-The clearest stress test of Bitcoin's decentralization happened in 2017.
+比特币去中心化最清晰的压力测试发生在 2017 年。
 
-A coalition of large mining pools, exchanges, and Bitcoin companies signed the **New York Agreement** (NYA). The plan: activate [SegWit](/glossary/segwit-segregated-witness-bip-141) *plus* hard-fork the chain to double the block size, in a package called SegWit2x or simply "2x." The signers represented something like 80% of mining hashrate and most major businesses in the space.
+一个由大型矿池、交易所和比特币公司组成的联盟签署了**纽约协议**（New York Agreement，NYA）。计划：激活 [SegWit](/glossary/segwit-segregated-witness-bip-141) *外加*硬分叉将区块大小翻倍，打包成称为 SegWit2x 或简称"2x"的方案。签署方代表了大约 80% 的挖矿算力和行业中的大多数主要企业。
 
-This looked like an overwhelming consensus. It wasn't.
+这看起来像压倒性的共识。它不是。
 
-A grassroots movement called **UASF** (User-Activated Soft Fork, organized around [BIP 148](https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki)) ran in parallel. Thousands of node operators committed to enforce SegWit by August 1, 2017 *regardless* of miner approval, and to reject blocks from miners who didn't signal SegWit support. UASF supporters wore yellow hats and changed their Twitter avatars. The marketing was silly. The coordinated network position was not.
+一个叫做 **UASF**（用户激活软分叉，围绕 [BIP 148](https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki) 组织的草根运动）并行运行。数千名节点操作者承诺在 2017 年 8 月 1 日之前强制执行 SegWit，*不管*矿工是否同意，并拒绝不支持 SegWit 的矿工产出的区块。UASF 支持者戴着黄色帽子，更换 Twitter 头像。营销是有点傻。协调的网络立场不是。
 
-What actually happened:
+实际发生了什么：
 
-- SegWit activated cleanly on August 23, 2017. The mining majority caved when faced with the potential chain split UASF threatened.
-- The 2x hard fork was scheduled for November 2017, and was **cancelled three days before the planned activation**. Once node operators made it clear they would not run the new software, the agreement collapsed. The signers had hashrate; they had money; their nodes still ran old rules. They couldn't actually force the change.
-- Earlier in 2017, on August 1, a different group had forked off and created Bitcoin Cash with bigger blocks. It's now a separate network worth a small fraction of Bitcoin's market value.
+- SegWit 于 2017 年 8 月 23 日顺利激活。面对 UASF 威胁的潜在链分裂，挖矿多数让步了。
+- 2x 硬分叉定于 2017 年 11 月，在计划激活前三天被**取消**。一旦节点操作者明确表示他们不会运行新软件，协议就崩溃了。签署方有算力；有钱；他们的节点仍然运行旧规则。他们无法实际强制改变。
+- 2017 年早些时候的 8 月 1 日，另一组分叉出去创建了比特币现金（Bitcoin Cash），区块更大。它现在是一个独立网络，市值只是比特币的一小部分。
 
-**The lesson is in the mechanics.** Miners had hashrate. Businesses had money. Developers had attention. None of those groups were the deciders. The deciders were the thousands of node operators who chose what software to run. The same people who run a node on a laptop are the same people whose collective choices determine what Bitcoin is.
+**教训在机制上。** 矿工有算力。企业有钱。开发者有注意力。这些群体中没有一个能决定。决定者是数千名选择运行什么软件的节点操作者。在笔记本电脑上运行节点的同一个人，就是其集体选择决定比特币是什么的同一批人。
 
-That's what "no one is in charge" looks like in practice. Not no rules. The rules are extremely strict. Just no central party who can change them.
+这就是"没有人在负责"在实践中的样子。不是没有规则。规则极其严格。只是没有可以改变规则的中央方。
 
-## 5. How to Measure It
+## 5. 如何衡量
 
-Decentralization is hard to quantify. Several imperfect metrics, taken together, paint a picture:
+去中心化很难量化。几个不完美的指标，放在一起，构成了一幅图景：
 
-| Metric | Bitcoin | What it tells you |
+| 指标 | 比特币 | 它告诉你什么 |
 |---|---|---|
-| Reachable nodes | 17,000-22,000 | Lower bound on participants enforcing rules |
-| Estimated total nodes | 50,000-100,000+ | Real population including non-reachable |
-| Mining hash rate, top pool | varies, ~25-35% | Largest single coordinator of block production |
-| Mining hash rate, top 5 pools | varies, ~80-90% | Concentration vulnerability (mitigated by miner mobility) |
-| Geographic mining distribution | 8+ countries with significant share | Jurisdictional spread |
-| Independent client implementations | 4+ (Core, Knots, btcd, Libbitcoin) | Diversity at the code layer |
-| Bitcoin Core contributors | 1,000+ over 16 years | No single point of failure in dev |
+| 可达节点 | 17,000-22,000 | 执行规则的参与者下限 |
+| 估计总节点 | 50,000-100,000+ | 包括不可达的真实数量 |
+| 挖矿算力，第一大矿池 | 变化，约 25-35% | 最大的单一出块协调者 |
+| 挖矿算力，前五大矿池 | 变化，约 80-90% | 集中度脆弱性（被矿工流动性缓解） |
+| 挖矿地理分布 | 8+ 个国家有重要份额 | 司法管辖区分布 |
+| 独立客户端实现 | 4+（Core、Knots、btcd、Libbitcoin） | 代码层的多样性 |
+| Bitcoin Core 贡献者 | 16 年来 1,000+ | 开发中没有单点故障 |
 
-By comparison, most "decentralized" chains have between 10 and 200 validators, run a single client, and have a foundation or team that effectively controls roadmap.
+相比之下，大多数"去中心化"链有 10 到 200 个验证者，运行单一客户端，有一个有效控制路线图的基金会或团队。
 
-These metrics aren't dispositive. Together, they paint a picture: Bitcoin is the most distributed monetary system that has ever existed, by a wide margin, with real concentration risks at specific layers that the community actively works to manage.
+这些指标不是决定性的。放在一起，它们描绘了一幅图景：比特币是有史以来最分布式的货币系统，遥遥领先，在特定层面有真实的集中度风险，社区积极努力管理。
 
-## 6. Decentralization Theater
+## 6. 去中心化表演
 
-A lot of projects claim "decentralization" while running on something between a database and an oligarchy. The critique is fair, and important to apply consistently, including to Bitcoin.
+很多项目声称"去中心化"，同时运行在介于数据库和寡头之间的东西上。这个批评是公平的，一致地应用也很重要，包括对比特币。
 
-Some common patterns of decentralization theater:
+一些常见的去中心化表演模式：
 
-- **"It's permissionless."** Anyone can join, but a small group writes all the upgrades.
-- **"It's governed by token holders."** A small set of large holders effectively control governance votes.
-- **"The validator set is open."** It's open *if you stake $X million* and run specific hardware in a specific data center.
-- **"The code is on GitHub."** Yes, but pull requests are reviewed and merged exclusively by one foundation's employees.
-- **"It's L2 on Bitcoin."** Sometimes true, sometimes a federation calling itself Bitcoin-adjacent.
+- **"无需许可。"** 任何人都可以加入，但一小群人写了所有升级。
+- **"由代币持有者治理。"** 一小撮大持有者实际上控制了治理投票。
+- **"验证者集合是开放的。"** 开放的前提是你质押 $X 百万并在特定数据中心运行特定硬件。
+- **"代码在 GitHub 上。"** 是的，但 pull request 只由一个基金会的员工审查和合并。
+- **"这是比特币的 L2。"** 有时是真的，有时是一个自称比特币关联的联邦。
 
-These can all be features of useful systems. They're not what Bitcoin's design is aiming at, and they don't survive the "who can be coerced" test.
+这些都可以是有用系统的特性。它们不是比特币设计所追求的，它们通不过"谁可以被胁迫"测试。
 
-Bitcoin's claim is testable: any node operator on any device can verify the chain themselves, run their own software, and refuse to accept changes they disagree with. The bar is "no permission required, no coordination required, just the math and the software you choose to run."
+比特币的主张是可测试的：任何设备上的任何节点操作者都可以自己验证链，运行自己的软件，拒绝不接受的改变。标准是"无需许可、无需协调，只有数学和你选择运行的软件。"
 
-That's the standard. It's the right one for sound money. Anything weaker is not a substitute. It's just a different product.
+这就是标准。对于稳健货币这是正确的标准。更弱的不是替代品。只是不同的产品。
 
-## 7. Why It's Hard to Replace
+## 7. 为什么难以取代
 
-Decentralization is expensive. It costs throughput, it costs energy, it costs developer convenience, it costs UX. Most blockchains compromise on it to gain speed and features.
+去中心化是昂贵的。它牺牲了吞吐量、能源、开发便利性和用户体验。大多数区块链在它上面妥协以获取速度和功能。
 
-That's a defensible trade-off for many use cases. It's a fatal trade-off for *sound money*, because sound money's whole job is to be a monetary store that no one can devalue, freeze, seize, or unilaterally upgrade. The moment a single party can change the rules, the money is no longer sound.
+对许多用例来说这是合理的权衡。对*稳健货币*来说这是致命的权衡，因为稳健货币的全部工作是成为一个没有人可以贬值、冻结、没收或单方面升级的货币存储。一旦某一方面可以改变规则，货币就不再稳健。
 
-If you accept that money is uniquely worth defending against capture, you accept the cost of decentralization to defend it. Bitcoin is the implementation of that choice.
+如果你接受货币独特地值得防御俘获，你就接受去中心化的成本来防御它。比特币就是这个选择的实现。
 
-The price is real, and the price is the product.
+代价是真实的，代价就是产品。
 
-> **Pro tip:** When someone tells you a project is decentralized, ask: "If ten specific people coordinated, could they change the rules, freeze funds, or shut it down?" For most things called blockchains, the honest answer is yes. For Bitcoin, after sixteen years of stress tests, the answer is still no. That's the entire product.
+> **实用提示：** 当有人告诉你一个项目是去中心化的，问："如果十个特定的人协调行动，他们能改变规则、冻结资金或关闭它吗？"对大多数被称为区块链的东西，诚实答案是能。对比特币，经过十六年的压力测试后，答案仍然是不能。这就是整个产品。

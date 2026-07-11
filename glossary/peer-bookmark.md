@@ -1,12 +1,12 @@
 ---
-title: "Peer Bookmark"
+title: "节点书签（Peer Bookmark）"
 slug: peer-bookmark
 draft: false
-shortDefinition: "A node-optional feature saving specific peers' IP or onion addresses for reconnection or whitelisting."
+shortDefinition: "节点可选功能，保存特定节点的 IP 或 onion 地址以便重新连接或白名单。"
 keyTakeaways:
-  - "Ensures a node regularly reconnects to certain peers or onions"
-  - "Aids stable networks or private usage where specific connections matter"
-  - "Pairs with whitelisting to avoid default policy throttles"
+  - "确保节点定期重新连接到特定节点或 onion"
+  - "有助于需要特定连接的稳定网络或私人使用场景"
+  - "配合白名单使用以避免默认策略限流"
 sources: []
 relatedTerms:
   - bitcoin-core
@@ -16,15 +16,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Peer bookmark" is informal naming for Bitcoin Core's persistent-peer config options:
+"节点书签"是 Bitcoin Core 持久化节点配置选项的非正式叫法：
 
-- `-addnode=<ip>` keeps trying to connect to a specific peer in addition to the usual peer-discovery slots. If the connection drops, the node retries on its own.
-- `-connect=<ip>` only connects to specified peers and disables DNS seed lookup entirely. Use this for a fully controlled topology, like a private net, a lab setup, or a paranoid production configuration.
+- `-addnode=<ip>` 在通常的节点发现槽位之外，持续尝试连接到特定节点。如果连接断开，节点会自动重试。
+- `-connect=<ip>` 仅连接到指定节点，并完全禁用 DNS 种子查找。用于完全受控的拓扑，比如私有网络、实验室设置或偏执的生产配置。
 
-Typical use cases:
+典型用例：
 
-- A merchant's payment-processing node maintains a direct link to its own backup node in a different datacenter so blocks and transactions propagate between them with minimum latency.
-- A hobbyist whose home node connects to a friend's node so blocks travel between them faster than through random peer discovery.
-- A "watchtower" or monitoring setup where one node is the authoritative source and others mirror it.
+- 商户的支付处理节点与其不同数据中心的备份节点保持直接链接，以便区块和交易在它们之间以最低延迟传播。
+- 家庭节点爱好者的节点连接到朋友的节点，使区块在它们之间的传播比通过随机节点发现更快。
+- "瞭望塔"或监控设置，其中一个节点是权威来源，其他节点镜像它。
 
-Combine with the `-whitelist` setting to exempt those peers from rate limits and ban scoring. Most public nodes don't need any of this. The default peer discovery via DNS seeds and address gossip works fine and is the right choice for almost everyone.
+结合 `-whitelist` 设置可以豁免这些节点的速率限制和封禁评分。大多数公共节点不需要这些。通过 DNS 种子和地址传播的默认节点发现运行良好，对几乎所有人来说都是正确选择。

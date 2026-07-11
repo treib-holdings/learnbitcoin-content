@@ -1,5 +1,5 @@
 ---
-title: "Sovereignty"
+title: "主权"
 slug: sovereignty
 draft: false
 status: live
@@ -7,12 +7,12 @@ published: "2026-05-15"
 updated: "2026-05-29"
 order: 6
 estimatedMinutes: 45
-tagline: "Run your own node. Use multisig. Lock down your op-sec. Graduation: you don't ask anyone for permission to use Bitcoin."
+tagline: "运行你自己的节点。使用多签。锁定你的运维安全。毕业：你不需要任何人的许可就能使用比特币。"
 prerequisites: ["using-bitcoin"]
 relatedTerms: ["full-node", "node", "hierarchical-multisig", "hardware-security-module-hsm", "tor-hidden-service", "bitcoin-knots", "bitcoin-core", "bitcoin-inheritance-planning", "coin-control", "address-reuse"]
 legacyUrls: ["/run-your-own-node"]
 ogImage: "/diagrams/og/verify-dont-trust.png"
-ogImageAlt: "Verify, don't trust: a side-by-side comparison showing a wallet talking to your own node (which verifies every block and rule, giving a definite answer) versus the same wallet talking to a third-party server (which only claims an answer you cannot independently audit)."
+ogImageAlt: "验证而非信任：并排对比展示一个钱包连接你自己的节点（验证每个区块和规则，给出确定的答案）与同一个钱包连接第三方服务器（只是声称一个你无法独立审计的答案）。"
 sources:
   - { label: "Bitcoin Core - official downloads and source", url: "https://bitcoincore.org" }
   - { label: "BIP 174 - Partially Signed Bitcoin Transaction (PSBT)", url: "https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki" }
@@ -21,91 +21,91 @@ sources:
   - { label: "Privacy Best Practices PDF (this site)", url: "/downloads/bitcoin-privacy-best-practices.pdf" }
 ---
 
-> **Where you're going:** Your own Bitcoin node, validating every transaction. A multisig wallet that protects against single-point-of-failure. An op-sec posture that lets you hold Bitcoin without becoming a target. This is the graduation chapter. By the end of it, you will not need anyone's permission to use Bitcoin.
+> **你要去哪里：** 你自己的比特币节点，验证每一笔交易。一个防止单点故障的多签钱包。一个让你持有比特币而不成为目标的运维安全姿态。这是毕业章。读完它，你将不需要任何人的许可来使用比特币。
 
-## 1. The Graduation
+## 1. 毕业
 
-This is the graduation chapter. The one that turns Bitcoin from "I own some" into "I am a participant."
+这是毕业章。把比特币从"我有一些"变成"我是一个参与者"的那一章。
 
-Up to this point, even with self-custody, you've been *consuming* Bitcoin - relying on someone else's node for transaction data, someone else's hardware for signing, someone else's recommendation for security. That's fine. Most people stop there forever. The system works for them.
+到目前为止，即使自托管了，你仍然在*消费*比特币——依赖别人的节点获取交易数据，依赖别人的硬件签名，依赖别人的安全建议。这没问题。大多数人永远停在这里。系统为他们服务。
 
-This chapter is for people who don't want to stop there. By the end you will:
+这一章是给不想停在那里的人。读完之后你将：
 
-- Run your own Bitcoin node, validating every rule of the system from scratch
-- Use a multisig wallet that makes single-key compromise non-fatal
-- Have an op-sec posture that protects you without being paranoid
-- Have a plan for what happens to your coins after you're gone
+- 运行你自己的比特币节点，从零开始验证系统的每一条规则
+- 使用一个让单密钥泄露不再致命的多签钱包
+- 拥有一个保护你但不偏执的运维安全姿态
+- 对你走后你的币怎么办有一个计划
 
-Pick what's useful. Skip what isn't. The point is sovereignty, not a checklist.
+挑有用的。跳过没用的。重点是主权，不是清单。
 
-## 2. Why Run Your Own Node
+## 2. 为什么要运行你自己的节点
 
-You can use Bitcoin without running a node. You're using Bitcoin right now without running one, if you're holding from chapter 4. So why?
+你可以不运行节点就使用比特币。如果你从第 4 章开始持有，你现在就在不运行节点的情况下使用比特币。那为什么还要运行？
 
-**Verification.** Bitcoin's claim - "you don't have to trust anyone" - is only true if you *verify*. A wallet that connects to someone else's server is trusting that server to tell the truth about your balance and the chain's state. The third party probably tells the truth. But probably is not the same as definitely. Your own node tells you definitely.
+**验证。** 比特币的主张——"你不需要信任任何人"——只有在你*验证*时才成立。一个连接到别人服务器的钱包是在信任那个服务器告诉你关于余额和链状态的真相。第三方可能是诚实的。但"可能"不等于"一定"。你自己的节点告诉你"一定"。
 
 <figure>
-  <img src="/diagrams/verify-dont-trust.svg" alt="Verify, don't trust: a side-by-side comparison showing a wallet talking to your own node (which verifies every block and rule, giving a definite answer) versus the same wallet talking to a third-party server (which only claims an answer you cannot independently audit)." />
-  <figcaption>Your node tells you definitely. Their server tells you probably. Probably is not the same as definitely.</figcaption>
+  <img src="/diagrams/verify-dont-trust.svg" alt="验证而非信任：并排对比展示一个钱包连接你自己的节点（验证每个区块和规则，给出确定的答案）与同一个钱包连接第三方服务器（只是声称一个你无法独立审计的答案）。" />
+  <figcaption>你的节点告诉你"一定"。他们的服务器告诉你"可能"。"可能"不等于"一定"。</figcaption>
 </figure>
 
-**Privacy.** When you use a public Electrum server (the default for most light wallets), that server sees every address in your wallet, every balance, every transaction you query. Running your own node means none of that leaks to anyone.
+**隐私。** 当你使用公共 Electrum 服务器（大多数轻钱包的默认选择）时，那个服务器能看到你钱包里的每个地址、每个余额、你查询的每笔交易。运行你自己的节点意味着这些信息不会泄露给任何人。
 
-**Censorship resistance.** A wallet relying on a service can be cut off from that service. A wallet talking to your own node cannot be - your node is yours.
+**抗审查。** 依赖某个服务的钱包可以被切断与该服务的连接。与你自己的节点通信的钱包不行——你的节点是你的。
 
-**Supporting the network.** Each additional full node strengthens the network's [decentralization](/rabbit-hole/decentralization). There are tens of thousands of nodes globally; adding one is a meaningful contribution. (Not a financial one - running a node doesn't earn you anything. The reward is the system itself.)
+**支持网络。** 每增加一个全节点都增强网络的[去中心化](/rabbit-hole/decentralization)。全球有数以万计的节点；增加一个是有意义的贡献。（不是财务上的——运行节点不赚取任何东西。回报就是系统本身。）
 
-**Fee data, mempool data, address data on demand.** With your own node, you have direct access to everything the network knows. Want to monitor an address? Query your node. Want to know the current fee market? Query your node. Want a custom data feed? Query your node.
+**手续费数据、内存池数据、地址数据随取随用。** 有了你自己的节点，你可以直接访问网络知道的一切。想监控一个地址？查你的节点。想知道当前的费率市场？查你的节点。想要自定义数据源？查你的节点。
 
-A full node uses a few hundred MB of RAM and disk space equal to the full blockchain - about 700 GB as of 2026, growing by roughly 50 GB per year. It runs on any modern hardware. Once it's running, you can mostly forget about it for months at a time.
+一个全节点使用几百 MB 的内存和等于完整区块链大小的磁盘空间——截至 2026 年约 700 GB，每年增长约 50 GB。它可以在任何现代硬件上运行。一旦跑起来，你基本上可以几个月不管它。
 
-## 3. The Hardware and OS Options
+## 3. 硬件和操作系统选择
 
-Don't overthink this. Get something running. Improve it later.
+别想太多。先跑起来。以后再优化。
 
-**Three reasonable starting points for the hardware:**
+**三个合理的硬件起点：**
 
-- **Raspberry Pi 5 with a 1 TB SSD.** ~$200 total. Low power, fits anywhere, runs 24/7. The classic Bitcoin node hardware.
-- **A refurbished mini PC (Intel NUC class or equivalent).** ~$150-300 used. More headroom than the Pi if you might add Lightning or other self-hosted services later.
-- **A repurposed laptop or desktop you already own.** Free, if the hardware is reasonable. Best for someone comfortable with software setup who doesn't want to buy anything new.
+- **树莓派 5 加 1 TB SSD。** 总共约 200 美元。低功耗，随便放，24/7 运行。经典的比特币节点硬件。
+- **翻新迷你 PC（Intel NUC 级别或同等）。** 二手约 150-300 美元。比树莓派更有余量，如果你以后可能加闪电网络或其他自托管服务。
+- **你已有的旧笔记本电脑或台式机。** 免费，如果硬件还过得去。适合不想买新东西、对软件设置比较熟的人。
 
-**Three reasonable starting points for the node software:**
+**三个合理的节点软件起点：**
 
-- **Umbrel.** Easy on-ramp. Big app store on top of Bitcoin Core. Web UI. Best if you want one-click apps and a polished experience.
-- **Start9 (StartOS).** Sovereignty-focused. Web UI. Tighter defaults on privacy and Tor.
-- **[Bitcoin Core](https://bitcoincore.org) directly.** Skip the wrapper. Edit `bitcoin.conf` yourself. Best if you're comfortable with a shell and want zero abstraction.
+- **Umbrel。** 简单上手。在 Bitcoin Core 之上有大型应用商店。Web 界面。最适合想要一键应用和精致体验的人。
+- **Start9（StartOS）。** 主权导向。Web 界面。隐私和 Tor 的默认设置更紧。
+- **[Bitcoin Core](https://bitcoincore.org) 直接安装。** 跳过封装层。自己编辑 `bitcoin.conf`。最适合熟悉命令行、想要零抽象的人。
 
-> **Starting points, not gospel.** These work. Others exist. The self-hosting ecosystem moves. Pick something that fits and start - don't try to optimize before you have anything running.
+> **起点，不是圣经。** 这些可行。还有其他的。自托管生态在发展。选一个适合你的开始——不要在什么都没跑起来之前就试图优化。
 
-## 4. The Setup Walkthrough
+## 4. 安装步骤
 
-Don't try to perfect this on the first pass. Just get something running. Improve it later.
+别想在第一次就做到完美。先跑起来。以后再改进。
 
-1. **Pick your hardware.** Pi 5 + SSD if buying fresh. Spare laptop if you have one.
-2. **Pick your OS.** Start9 or Umbrel for the pre-built path. Bitcoin Core directly if you're comfortable with shell.
-3. **Flash the OS** to the SSD or boot drive. The node OS providers give clear flash instructions. (Mac: balenaEtcher. Windows: Rufus. Linux: `dd`.)
-4. **Boot the node** and connect to it via web interface (Umbrel/Start9 give you a `.local` URL on your home network).
-5. **Wait for sync.** The initial download is the painful part - several hundred GB to fetch and validate. On a Pi with a decent SSD, this takes a day or two. Don't worry about it; just leave it running.
-6. **While it syncs,** read the docs. Set up Tor (it's usually a checkbox in the node OS). Decide if you want Lightning (yes, eventually).
-7. **Once synced,** test it. Run a query: get the latest block height. Get a transaction by ID. Verify a balance.
+1. **选你的硬件。** 买新的话选树莓派 5 + SSD。有的话用旧笔记本。
+2. **选你的操作系统。** 预装路径选 Start9 或 Umbrel。熟悉命令行的话直接用 Bitcoin Core。
+3. **刷系统**到 SSD 或启动盘。节点系统提供者会给出清晰的刷机说明。（Mac：balenaEtcher。Windows：Rufus。Linux：`dd`。）
+4. **启动节点**并通过 Web 界面连接（Umbrel/Start9 会给你一个局域网 `.local` 地址）。
+5. **等待同步。** 初始下载是最痛苦的部分——要获取和验证几百 GB 的数据。在树莓派配一块不错的 SSD 上，需要一两天。别担心，让它跑着就行。
+6. **同步期间，**读文档。设置 Tor（通常是节点系统里的一个复选框）。决定是否要闪电网络（是的，最终要）。
+7. **同步完成后，**测试一下。运行一个查询：获取最新区块高度。按 ID 获取一笔交易。验证一个余额。
 
-You now have a Bitcoin node. Welcome.
+你现在有一个比特币节点了。欢迎。
 
-## 5. Pointing Your Wallet at Your Node
+## 5. 把你的钱包指向你的节点
 
-A node is only useful if your wallet talks to it instead of a third-party server. Every modern wallet supports this; it is a one-time configuration.
+节点只有在你的钱包与它而非第三方服务器通信时才有用。每个现代钱包都支持这一点；这是一次性配置。
 
-Three reasonable starting points for a desktop wallet that pairs cleanly with your own node:
+三个合理的桌面钱包起点，可以干净地与你自己的节点配对：
 
-- **Sparrow Wallet.** Cleanest UI for own-node pairing. Settings → Server → "Use Bitcoin Core" or "Connect to Electrum server." Sparrow becomes a thin client over your node.
-- **Specter Desktop.** Talks directly to your Bitcoin Core via RPC. Multisig-friendly. Slightly more advanced setup.
-- **Electrum.** The veteran light client. Long track record. Point it at the Electrum endpoint your node OS exposes.
+- **Sparrow Wallet。** 最干净的自有节点配对界面。设置 → 服务器 → "Use Bitcoin Core" 或 "Connect to Electrum server"。Sparrow 变成你节点上的一个瘦客户端。
+- **Specter Desktop。** 通过 RPC 直接与你的 Bitcoin Core 通信。多签友好。设置稍微高级一些。
+- **Electrum。** 老牌轻客户端。长期记录良好。将它指向你节点系统暴露的 Electrum 端点。
 
-The pattern is the same in each case: a one-time server setting that tells the wallet to ask your node instead of a stranger's.
+每种情况的模式都一样：一个一次性的服务器设置，告诉钱包问你的节点而不是陌生人的。
 
-To verify it's working: shut down your home internet connection or DNS, and confirm your wallet can still see your node and your balance over the LAN. If yes, you are not depending on anything external.
+验证它是否工作：关掉你的家庭互联网连接或 DNS，确认你的钱包仍然能在局域网上看到你的节点和余额。如果可以，你不依赖任何外部东西。
 
-## 6. Multisig 101
+## 6. 多签入门
 
 <figure>
   <video
@@ -118,129 +118,129 @@ To verify it's working: shut down your home internet connection or DNS, and conf
     controls
     controlslist="nodownload noplaybackrate noremoteplayback"
     preload="metadata"
-    aria-label="Animated walkthrough of a 2-of-3 multisig wallet. Three hardware keys appear in a row with a 'Threshold: 2 of 3' label and the caption 'Three different makers. A bug in one can't break the others.' A transaction signs with two keys and broadcasts. Loss scenario: Key B fades to gray with a 'lost' label; the other two keys still sign and the spend goes through. Theft scenario: a hooded figure grabs Key A, which turns green and is marked 'stolen'; the thief's attempt to sign alone halts at one of two signatures. Closing pillars: Multisig. Threshold-of-keys. Vendor-diverse."
+    aria-label="2-of-3 多签钱包的动画演示。三个硬件密钥排成一行，上方有 'Threshold: 2 of 3' 标签和说明 '三个不同厂商。一个有 bug 不会破坏其他的。' 一笔交易用两个密钥签名并广播。丢失场景：密钥 B 变灰并标记 'lost'；另外两个密钥仍然可以签名，支付成功。被盗场景：一个戴帽子的家伙拿走了密钥 A，密钥 A 变绿并标记 'stolen'；小偷试图单独签名在两签中只拿到一签，被阻止。收尾支柱：Multisig. Threshold-of-keys. Vendor-diverse."
   ></video>
-  <figcaption>Three keys. Any two sign. Lose one and you still spend. Steal one and you still can't.</figcaption>
+  <figcaption>三把密钥。任意两把签名。丢一把你还能花。被盗一把也还是安全。</figcaption>
 </figure>
 
-A single seed phrase is a single point of failure. Lose it, all coins gone. Compromised, all coins gone. For larger amounts, single-sig isn't enough.
+单一助记词是单点故障。丢了，所有币没了。被泄露了，所有币没了。对于较大金额，单签不够。
 
-**Multisig** (multi-signature) requires multiple keys to authorize a spend. The most common setup is **2-of-3**: three keys exist, any two can spend, no single key can.
+**多签**（multi-signature）需要多个密钥来授权花费。最常见的设置是 **2-of-3**：存在三把密钥，任意两把可以花费，没有单独一把可以。
 
-Why this matters:
+为什么这很重要：
 
-- Lose one key - coins are still safe and recoverable (any 2 of the remaining 2)
-- One key is compromised - coins are still safe (attacker needs another key)
-- A bad actor gets your house - they might find one key, not all three
-- Inheritance becomes manageable - heirs need help from multiple parties, not just a recovered hard drive
+- 丢一把密钥——币仍然安全且可恢复（剩下的 2 把中的任意 2 把）
+- 一把密钥被泄露——币仍然安全（攻击者还需要另一把密钥）
+- 坏人闯入你家——他们可能找到一把密钥，不是全部三把
+- 继承变得可管理——继承人需要多方协助，而不只是找回一个硬盘
 
-Multisig isn't just for paranoid whales. The right setup for $20,000 of bitcoin is roughly the same as for $200,000. If you have any meaningful balance, 2-of-3 is reasonable.
+多签不只是给偏执的大户用的。2 万美元比特币的正确设置和 20 万美元的差不多。如果你有任何有意义的余额，2-of-3 是合理的。
 
-## 7. Multisig in Practice
+## 7. 多签实战
 
-A 2-of-3 multisig requires three things.
+2-of-3 多签需要三样东西。
 
-**Three hardware wallets, from three different manufacturers.** Vendor diversity is the rule, not specific brands. Three reasonable starting points: Coldcard, Foundation Passport, Trezor. Others exist; pick three from brands you trust and can verify. A hardware vulnerability in one model should not compromise more than one of your keys.
+**三个硬件钱包，来自三个不同的厂商。** 厂商多样性是原则，不是特定品牌。三个合理的起点：Coldcard、Foundation Passport、Trezor。还有其他的；选三个你信任且能验证的品牌。一个型号的硬件漏洞不应危及超过一把密钥。
 
-**Three seed phrases**, each generated on its own hardware wallet, each backed up independently on metal in physically separate locations.
+**三组助记词**，每组在自己的硬件钱包上生成，每组独立备份在金属上，存放在物理上分离的地点。
 
-**A coordinator** - software that knows the public keys for all three and constructs transactions that any two can sign. The coordinator does *not* hold your keys. It just knows what they are publicly and orchestrates signing.
+**一个协调器**——知道所有三个公钥并构造可被任意两把签名的交易的软件。协调器*不*持有你的密钥。它只是公开地知道它们是什么并编排签名。
 
-Three reasonable starting points for the coordinator: **Sparrow Wallet**, **Specter Desktop**, **Electrum**. All three handle 2-of-3 wallet creation, PSBT generation, and combining signatures from your hardware wallets.
+三个合理的协调器起点：**Sparrow Wallet**、**Specter Desktop**、**Electrum**。三个都能处理 2-of-3 钱包创建、PSBT 生成和合并来自你硬件钱包的签名。
 
-The flow:
+流程：
 
-1. Generate three hardware wallets, each with its own seed. Back up each seed on steel, in three different locations.
-2. Export each wallet's *public* key (the xpub or descriptor) and import it into the coordinator.
-3. The coordinator generates multisig addresses from all three xpubs. Receive bitcoin to these.
-4. To spend: the coordinator builds a transaction, you sign it with any two of your three hardware wallets (in sequence), the coordinator combines the signatures, broadcasts.
+1. 生成三个硬件钱包，每个有自己的助记词。将每个助记词备份在钢板上，存放在三个不同地点。
+2. 导出每个钱包的*公*钥（xpub 或描述符）并导入协调器。
+3. 协调器从所有三个 xpub 生成多签地址。向这些地址接收比特币。
+4. 花费时：协调器构建一笔交易，你用三个硬件钱包中的任意两个依次签名，协调器合并签名并广播。
 
-The first time you do this it takes a couple of hours. After that, spending feels almost normal, just with an extra signing step.
+第一次做需要几个小时。之后，花费感觉几乎正常，只是多了一个签名步骤。
 
-**Distribute the keys carefully.** A common arrangement: one at home, one at a relative or trusted friend's, one in a bank safe-deposit box (or another distant location). The point is no single physical event (house fire, burglary, natural disaster) takes out more than one key.
+**小心分发密钥。** 一种常见安排：一把在家，一把在亲戚或信任的朋友那里，一把在银行保管箱（或另一个远处的地点）。目标是没有任何单一物理事件（房屋火灾、入室盗窃、自然灾害）能同时摧毁超过一把密钥。
 
-## 8. Privacy and Op-Sec
+## 8. 隐私和运维安全
 
-Bitcoin is *pseudonymous*, not anonymous. Every on-chain transaction is public forever. Anyone with the time and the chain analysis tools can correlate addresses to identities. Your privacy is your responsibility.
+比特币是*假名的*，不是匿名的。每笔链上交易永远公开。任何有时间和链分析工具的人都可以将地址与身份关联起来。你的隐私是你自己的责任。
 
 <figure>
-  <img src="/diagrams/privacy-leaks.svg" alt="A matrix mapping six common Bitcoin habits to five types of information leak. Rows: Use a public Electrum server, Reuse addresses, Merge KYC and non-KYC UTXOs, Skip Tor, Buy via KYC exchange, Discuss stack publicly. Columns: IP address, Identity link, Address graph, Balance, Transaction history. Orange dots mark cells where the habit leaks that fact; light gray dashes mark cells where it does not. Discussing publicly and using a public Electrum server are the heaviest leakers; Skip Tor and Buy via KYC each leak one specific thing." />
-  <figcaption>Most privacy leaks have one cause. Running your own node, using Tor, and not talking about your stack fix the majority of them in three habits.</figcaption>
+  <img src="/diagrams/privacy-leaks.svg" alt="一个矩阵，映射六种常见的比特币习惯到五种信息泄露类型。行：使用公共 Electrum 服务器、地址复用、合并 KYC 和非 KYC 的 UTXO、不用 Tor、通过 KYC 交易所购买、公开讨论你的持仓。列：IP 地址、身份关联、地址图谱、余额、交易历史。橙色点标记习惯泄露该信息的单元格；浅灰虚线标记不泄露的。公开讨论和使用公共 Electrum 服务器是最大的泄露源；不用 Tor 和通过 KYC 购买各泄露一种特定信息。" />
+  <figcaption>大多数隐私泄露只有一个原因。运行你自己的节点、使用 Tor、不谈论你的持仓——三个习惯就解决了大部分问题。</figcaption>
 </figure>
 
-The basics, in order of effort:
+基础措施，按努力程度排序：
 
-**1. Never reuse addresses.** Every receipt should be to a fresh address. Modern wallets do this by default. Don't override.
+**1. 永远不要复用地址。** 每次收款都应该用新地址。现代钱包默认这样做。不要覆盖。
 
-**2. Use coin control.** Most wallets let you select which UTXOs to spend in a given transaction. Don't merge UTXOs that come from different sources unless you've thought about it. Mixing UTXOs in one transaction links those sources publicly.
+**2. 使用币控（coin control）。** 大多数钱包让你选择在给定交易中花费哪些 UTXO。不要合并来自不同来源的 UTXO，除非你想过了。在一笔交易中混合 UTXO 会公开链接这些来源。
 
-**3. Run your wallet over Tor.** The internet sees IP addresses tied to transactions even when the blockchain doesn't. Tor breaks that. Most node OSes have a Tor toggle.
+**3. 通过 Tor 运行你的钱包。** 即使区块链不记录 IP 地址，互联网也能看到与交易关联的 IP。Tor 打破这种关联。大多数节点系统有 Tor 开关。
 
-**4. Avoid KYC for everything if you can.** Buying bitcoin without ID is meaningfully harder than buying with ID, but the privacy benefit is real. Peer-to-peer markets (Bisq, RoboSats, AgoraDesk) work. Bitcoin ATMs work in some places. Earning bitcoin (freelancing for it, etc.) works.
+**4. 尽可能避免 KYC。** 不用身份证买比特币比用身份证买要难得多，但隐私收益是真实的。点对点市场（Bisq、RoboSats、AgoraDesk）可行。比特币 ATM 在一些地方可行。赚取比特币（自由职业收比特币等）可行。
 
-**5. Don't talk about your stack publicly.** Not your address, not your balance, not your hardware setup. Anonymity in social spaces is its own form of self-defense. (Use pseudonymous accounts where useful.)
+**5. 不要公开谈论你的持仓。** 不是你的地址，不是你的余额，不是你的硬件配置。在社交空间中的匿名性本身就是一种自卫。（在有用的地方使用假名账户。）
 
-**6. Sweep KYC and no-KYC coins separately.** If half your coins are from a regulated exchange (KYC) and half from peer-to-peer (no KYC), keeping them in different wallets prevents accidentally linking your KYC identity to your private holdings.
+**6. 分开管理 KYC 和非 KYC 的币。** 如果你一半的币来自受监管的交易所（KYC），另一半来自点对点（无 KYC），将它们放在不同钱包中可以防止意外将你的 KYC 身份与私人持仓关联。
 
-**7. Consider CoinJoin.** A privacy-enhancing technique where multiple users pool transactions to obscure which inputs map to which outputs. Wasabi and JoinMarket are the leading implementations. Useful but increasingly scrutinized; research before using.
+**7. 考虑 CoinJoin。** 一种隐私增强技术，多个用户合并交易以混淆哪些输入对应哪些输出。Wasabi 和 JoinMarket 是领先的实现。有用但越来越受到审查；使用前做好研究。
 
-We've put together a [Privacy Best Practices PDF](/downloads/bitcoin-privacy-best-practices.pdf) and a [Privacy Checklist](/downloads/privacy-checklist.pdf) - both downloadable from this site. Read them before scaling up.
+我们整理了一份[隐私最佳实践 PDF](/downloads/bitcoin-privacy-best-practices.pdf) 和一份[隐私清单](/downloads/privacy-checklist.pdf)——均可从本站下载。在放大规模之前读一读。
 
-## 9. Inheritance Planning
+## 9. 继承规划
 
-The hardest part of self-custody is something the marketing doesn't talk about: what happens when you die.
+自托管最难的部分是营销不会谈的那个：你去世后会发生什么。
 
-If you die with self-custodied bitcoin and no inheritance plan, your coins are likely lost forever. Your heirs may know you held bitcoin. They will not know your seed. They will not know your passphrase. They will not know which hardware wallet to look for. The bitcoin is on the chain, but unreachable.
+如果你带着自托管的比特币去世，没有继承计划，你的币很可能永远丢失。你的继承人可能知道你持有比特币。他们不会知道你的助记词。他们不会知道你的密码短语。他们不会知道找哪个硬件钱包。比特币在链上，但不可触及。
 
 <figure>
-  <img src="/diagrams/inheritance-recovery.svg" alt="A left-to-right inheritance recovery diagram. An heir starts on the left, retrieves a sealed letter from the lawyer, follows the letter's instructions to three seed locations (Seed 1 at home, Seed 2 at the bank, Seed 3 at a relative). Two of the three seeds are collected (orange) and the third is grayed out (not needed). The two collected seeds feed into the coordinator, which combines signatures, and funds are recovered." />
-  <figcaption>With a plan, recovery is a path. Without one, the chain is unreachable even when the bitcoin is right there.</figcaption>
+  <img src="/diagrams/inheritance-recovery.svg" alt="从左到右的继承恢复图。继承人从左侧开始，从律师处取回一封密封信，按照信中的指示找到三个助记词位置（助记词 1 在家、助记词 2 在银行、助记词 3 在亲属处）。三个助记词中的两个被收集（橙色），第三个变灰（不需要）。两个收集到的助记词输入协调器，协调器合并签名，资金被恢复。" />
+  <figcaption>有了计划，恢复是一条路径。没有计划，即使比特币就在那里，链也不可触及。</figcaption>
 </figure>
 
-A reasonable inheritance plan:
+一个合理的继承计划：
 
-1. **Document everything.** A sealed letter with: where the seed backups live, what wallet software to install, what to expect (number of UTXOs, approximate balance, approximate addresses), and step-by-step instructions for restoration. Update it annually.
-2. **Don't put the seed itself in the letter.** Put instructions for *finding* the seed. The seed is in the safe / metal plate / safe-deposit box; the letter is in your filing cabinet.
-3. **Distribute the right way.** A trusted family member knows the letter exists. A lawyer or executor knows where to find the letter. Whoever inherits has clear written guidance.
-4. **For multisig**, the plan needs to walk through coordinating multiple keys. Distribute the coordinator wallet descriptor *separately* from any single seed. Anyone with a single seed gets nothing on their own; the system needs the heirs to assemble multiple pieces.
-5. **Practice the recovery.** Have your heirs (or executor) attempt the restoration *while you're alive*, on testnet or with a tiny amount. The first time anyone follows your instructions should not be after you die.
+1. **记录一切。** 一封密封信：助记词备份在哪里、装什么钱包软件、期望看到什么（UTXO 数量、大致余额、大致地址），以及分步恢复说明。每年更新。
+2. **不要把助记词本身放在信里。** 放的是*找到*助记词的说明。助记词在保险箱/钢板/保管箱里；信在你的文件柜里。
+3. **正确分发。** 一个信任的家人知道信的存在。律师或遗嘱执行人知道在哪里找到信。继承人有一份清晰的书面指引。
+4. **对于多签**，计划需要讲清楚如何协调多个密钥。将协调器钱包描述符与任何单个助记词*分开*分发。持有单个助记词的人自己什么都得不到；系统需要继承人组装多个部分。
+5. **练习恢复。** 让你的继承人（或遗嘱执行人）在你活着的时候尝试恢复——在测试网上或用极小金额。任何人第一次遵循你的说明，不应该是在你去世之后。
 
-Bitcoin inheritance is genuinely solvable. Most people don't solve it because most people don't plan. Be the exception.
+比特币继承是真正可解决的。大多数人没解决它是因为大多数人没有规划。做那个例外。
 
-## 10. The Threat Model
+## 10. 威胁模型
 
 <figure>
-  <img src="/diagrams/threat-triangle.svg" alt="A triangle with three corners labeled THEFT (someone finds your seed), LOSS (fire, flood, forgotten), and COERCION (wrench, warrant, kidnap). At the geometric center is a pill labeled YOUR SEED. The three threats every seed backup must plan against." />
-  <figcaption>Three threats. Defending one often weakens defense against another. The work of sovereignty is balancing all three.</figcaption>
+  <img src="/diagrams/threat-triangle.svg" alt="一个三角形，三个角分别标注 THEFT（有人找到你的助记词）、LOSS（火灾、洪水、遗忘）、COERCION（扳手、搜查令、绑架）。几何中心是一颗药丸标注 YOUR SEED。每个助记词备份都必须规划应对的三种威胁。" />
+  <figcaption>三种威胁。防御一种往往会削弱对另一种的防御。主权的工作就是平衡三者。</figcaption>
 </figure>
 
-A note on paranoia: not all threats are equal, and treating them as such wastes your time.
+关于偏执的一点说明：并非所有威胁都同等重要，把它们当成同等重要会浪费你的时间。
 
-For most people holding modest amounts:
+对于持有适中金额的大多数人：
 
-- **Most likely failure:** losing the seed (single backup, fire, forgetfulness)
-- **Second most likely:** phishing (fake support, fake wallet update, fake site)
-- **Third most likely:** exchange failure (if you haven't withdrawn to self-custody)
-- **Fourth most likely:** physical theft (someone learns you hold and breaks in)
+- **最可能的失败：** 丢失助记词（单一备份、火灾、健忘）
+- **第二可能：** 钓鱼（假客服、假钱包更新、假网站）
+- **第三可能：** 交易所倒闭（如果你还没有提取到自托管）
+- **第四可能：** 物理盗窃（有人知道你持有并闯入）
 
-For most people, the multi-location-steel-backup + hardware wallet + don't-talk-about-it pattern is enough. You don't need a Faraday cage. You don't need a $10,000 HSM. You don't need to run your own ISP. You need to not be the easy target.
+对于大多数人，多地点钢板备份 + 硬件钱包 + 不谈论持仓的模式就够了。你不需要法拉第笼。你不需要一万美元的 HSM。你不需要自己开 ISP。你只需要不是那个容易的目标。
 
-For larger amounts: tighten op-sec proportionally. Geographic distribution matters more. Multisig matters more. Talking about your holdings matters even less.
+对于更大金额：按比例收紧运维安全。地理分布更重要。多签更重要。谈论持仓更少。
 
-This is not a competitive sport. The point of sovereignty is calm, not anxiety.
+这不是竞技运动。主权的目的是从容，不是焦虑。
 
-## 11. Graduation
+## 11. 毕业
 
-You're done with the first part of the journey.
+你完成了旅程的第一部分。
 
-You understand why money is broken. You know what Bitcoin actually is. You know how it works under the hood. You self-custody. You use both layers. You run your own node. You have multisig. You have a plan for what happens after you.
+你理解了为什么货币出了问题。你知道了比特币到底是什么。你知道了它底层怎么运作。你自托管。你使用了两层。你运行自己的节点。你有多签。你对走后怎么办有计划。
 
-You don't need permission. You don't need a custodian. You don't need to ask anyone whether your money is safe - you can verify it yourself, end to end, at any moment.
+你不需要许可。你不需要托管方。你不需要问任何人你的钱是否安全——你可以自己端到端验证，在任何时刻。
 
-**That's the deal Bitcoin offered in October 2008.** It took six chapters and however many hours of your time, but you got it.
+**这就是比特币在 2008 年 10 月提出的交易。** 花了 6 章和你不知道多少小时的时间，但你拿到了。
 
-There is more, of course. Lightning routing nodes. Liquid sidechains. Watchtowers. Coinjoin. Discreet log contracts. PSBTs across air-gapped multisig. Sovereign computing more broadly. Network privacy at the application layer. We've started a section called **Rabbit Holes** for those, each one a self-contained explorer on a single topic. Pick one when you feel like it. None of them is required to use Bitcoin well.
+当然还有更多。闪电网络路由节点。Liquid 侧链。瞭望塔。CoinJoin。离散对数合约。气隔多签的 PSBT。更广泛的主权计算。应用层的网络隐私。我们开设了一个叫 **兔子洞** 的板块来讲这些，每个都是一个独立主题的探索器。想看就看。没有一个是你用好比特币所必需的。
 
-Your journey has begun. [The rabbit holes](/rabbit-holes) go deeper.
+你的旅程已经开始。[兔子洞](/rabbit-holes)更深。
 
-> **Pro tip:** Sovereignty is not a destination, it's a posture. The work you did over these six chapters isn't a finish line - it's a foundation. The next ten years of your relationship with Bitcoin will be richer than the first six chapters because you put in the foundation now. Have fun. Stay humble. Run a node.
+> **专业提示：** 主权不是终点，是一种姿态。你在过去六章中做的工作不是终点线——而是地基。你与比特币未来十年的关系将比前六章更丰富，因为你现在打下了地基。享受乐趣。保持谦逊。运行一个节点。

@@ -1,12 +1,12 @@
 ---
-title: "Block Size"
+title: "区块大小"
 slug: block-size
 draft: false
-shortDefinition: "The maximum data permitted in a block, historically 1 MB but effectively larger under SegWit's weight-based rules."
+shortDefinition: "区块中允许的最大数据量，历史上为 1 MB，在 SegWit 的基于权重的规则下实际上更大。"
 keyTakeaways:
-  - "Initially capped at 1 MB to prevent spam"
-  - "SegWit introduced a weight-based system up to 4M weight units"
-  - "Allows higher effective capacity than the strict 1 MB limit"
+  - "最初上限为 1 MB 以防止垃圾交易"
+  - "SegWit 引入了最高 4M weight units 的权重系统"
+  - "允许比严格 1 MB 限制更高的有效容量"
 sources: []
 relatedTerms:
   - bip-42
@@ -24,19 +24,19 @@ sameAs:
 liveWidget: ~
 ---
 
-Block size is Bitcoin's most famous consensus parameter. The original 1 MB hard cap (introduced in July 2010 as an anti-spam measure) was the focus of years of debate and ultimately the 2017 [SegWit](/glossary/segwit-segregated-witness-bip-141) soft fork. The current rule isn't a flat size in bytes; it's a 4 million weight unit limit, where non-witness data costs 4 weight units per byte and witness data costs 1.
+区块大小是比特币最著名的共识参数。最初的 1 MB 硬上限（2010 年 7 月作为反垃圾措施引入）是多年争论的焦点，最终导致 2017 年的 [SegWit](/glossary/segwit-segregated-witness-bip-141)软分叉。当前规则不是以字节为单位的平面大小；而是 400 万 weight units 限制，非见证数据每字节 4 weight units，见证数据每字节 1。
 
-Effects in practice:
+实践中的效果：
 
-- **Typical block sizes** range from 1.3 to 2.0 MB on disk, depending on what fraction of transactions are SegWit/Taproot (which pay the witness discount).
-- **The hard cap** keeps validation costs bounded. A modest laptop can validate every block in seconds; a Raspberry Pi can keep up with the chain tip. That's deliberate. Larger blocks would shift node-running cost upward and centralize the validator set.
-- **The block weight limit** has been politically untouchable since 2017. The 2015-2017 "block size war" (see [BIP 101](/glossary/bip-101-increase-block-size) and [BIP 102](/glossary/bip-102-2mb-block-size)) ended with the SegWit soft fork plus the Bitcoin Cash hard fork; the surviving Bitcoin community settled on "blocks stay small, scaling happens off-chain via Lightning."
+- **典型区块大小**在磁盘上为 1.3 到 2.0 MB，取决于 SegWit/Taproot 交易的比例（它们享受见证折扣）。
+- **硬上限**保持验证成本有界。普通笔记本可在几秒内验证每个区块；树莓派可以跟上链尖端。这是刻意的。更大的区块会推高节点运行成本并中心化验证者集。
+- **区块权重限制**自 2017 年以来在政治上不可触碰。2015-2017 年的"区块大小战争"（见 [BIP 101](/glossary/bip-101-increase-block-size)和 [BIP 102](/glossary/bip-102-2mb-block-size)）以 SegWit 软分叉加 Bitcoin Cash 硬分叉告终；幸存的比特币社区确定了"区块保持小，扩容通过闪电网络在链下进行"。
 
-What this isn't:
+它不是什么：
 
-- It's not 1 MB anymore. Anyone citing "Bitcoin's 1 MB blocks" in 2026 is using outdated information.
-- It's not a literal byte limit. The weight unit framing matters because it changes the economics of SegWit vs legacy transactions.
+- 不再是 1 MB。任何人在 2026 年引用"比特币的 1 MB 区块"都在使用过时信息。
+- 不是字面上的字节限制。Weight units 框架很重要，因为它改变了 SegWit 与传统交易的经济学。
 
-The block-size question is settled for the foreseeable future. The substantive throughput debates have moved to Lightning channel design, payment-routing efficiency, and Taproot script optimization, not on-chain capacity.
+区块大小问题在可预见的未来已经解决。实质性的吞吐量辩论已转移到闪电通道设计、支付路由效率和 Taproot 脚本优化，而非链上容量。
 
-See [The Block Size War](/rabbit-hole/block-size-war) for how this limit became the center of a two-year governance fight.
+参见[区块大小战争](/rabbit-hole/block-size-war)了解此限制如何成为两年治理斗争的中心。

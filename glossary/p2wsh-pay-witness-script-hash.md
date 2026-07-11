@@ -1,12 +1,12 @@
 ---
-title: "P2WSH (Pay to Witness Script Hash)"
+title: "P2WSH（Pay to Witness Script Hash）"
 slug: p2wsh-pay-witness-script-hash
 draft: false
-shortDefinition: "The SegWit version of P2SH for advanced scripts (e.g., multisig) with addresses starting bc1q."
+shortDefinition: "P2SH 的 SegWit 版本，用于高级脚本（如多签），地址以 bc1q 开头。"
 keyTakeaways:
-  - "Carries P2SH functionality into SegWit's witness structure"
-  - "Reduces on-chain data usage for complex scripts/multisig"
-  - "Preferred in modern wallets over older P2SH for advanced scripts"
+  - "将 P2SH 的功能带入 SegWit 的见证结构"
+  - "减少复杂脚本/多签的链上数据占用"
+  - "现代钱包中优先于旧版 P2SH 用于高级脚本"
 sources: []
 relatedTerms:
   - address
@@ -23,14 +23,14 @@ sameAs:
 liveWidget: ~
 ---
 
-P2WSH - "Pay to Witness Script Hash" - is the native [SegWit](/glossary/segwit-segregated-witness-bip-141) version of [P2SH](/glossary/p2sh). It carries the same "send to a script's hash" model into SegWit's witness structure, with all the SegWit benefits: smaller effective fees, no malleability.
+P2WSH——"Pay to Witness Script Hash"——是 [P2SH](/glossary/p2sh) 的原生 [SegWit](/glossary/segwit-segregated-witness-bip-141) 版本。它将相同的"发送到脚本哈希"模型带入 SegWit 的见证结构中，享有所有 SegWit 优势：更低的实际手续费、无延展性。
 
-Addresses start with `bc1q` and are noticeably longer than [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash) addresses, because P2WSH uses a 32-byte script hash (SHA-256) vs P2WPKH's 20-byte key hash (RIPEMD-160 of SHA-256). The longer hash provides stronger collision resistance, which matters for scripts that might be shared with potentially adversarial counterparties.
+地址以 `bc1q` 开头，比 [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash) 地址明显更长，因为 P2WSH 使用 32 字节的脚本哈希（SHA-256），而 P2WPKH 使用 20 字节的密钥哈希（SHA-256 的 RIPEMD-160）。更长的哈希提供更强的抗碰撞性，这对于可能与非合作方共享的脚本很重要。
 
-Where P2WSH is used in practice:
+P2WSH 在实际中的用途：
 
-- **Multisig wallets.** Native SegWit 2-of-3, 3-of-5, etc.
-- **Complex HTLCs.** Some [Lightning](/glossary/lightning-network) channel constructions use P2WSH outputs.
-- **Anything with non-trivial spending logic.** Time locks, hash locks, vault constructions.
+- **多签钱包。** 原生 SegWit 的 2-of-3、3-of-5 等。
+- **复杂 HTLC。** 一些[闪电网络](/glossary/lightning-network)通道构造使用 P2WSH 输出。
+- **任何具有非简单花费逻辑的场景。** 时间锁、哈希锁、金库构造。
 
-For Taproot-aware setups, [P2TR](/glossary/taproot) (witness version 1) generally replaces P2WSH with better properties: aggregated signatures via MuSig2, MAST for hidden script branches, smaller on-chain footprint, single-sig-indistinguishable spends. New multisig wallets typically default to Taproot in 2026. P2WSH remains in heavy use for older multisig setups and ecosystems that haven't migrated yet.
+对于支持 Taproot 的设置，[P2TR](/glossary/taproot)（见证版本 1）通常以更好的特性替代 P2WSH：通过 MuSig2 聚合签名、用 MAST 隐藏脚本分支、更小的链上足迹、与单签不可区分的花费。2026 年新的多签钱包通常默认使用 Taproot。P2WSH 仍在大量用于旧的多签设置和尚未迁移的生态系统。

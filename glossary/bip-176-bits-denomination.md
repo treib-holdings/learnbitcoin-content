@@ -1,12 +1,12 @@
 ---
-title: "BIP 176 (Bits Denomination)"
+title: "BIP 176（Bits 面额）"
 slug: bip-176-bits-denomination
 draft: false
-shortDefinition: "Proposed using 'bits' (1 µBTC) as a user-friendly unit for smaller denominations of Bitcoin."
+shortDefinition: "提议使用 'bits'（1 µBTC）作为较小比特币面额的用户友好单位。"
 keyTakeaways:
-  - "Advocates using microbitcoin ('bits') for everyday amounts"
-  - "Aims to reduce confusion around decimal places"
-  - "Not widely adopted, but highlights user-experience focus"
+  - "主张使用微比特币（'bits'）表示日常金额"
+  - "旨在减少小数点的混淆"
+  - "未被广泛采用，但体现了对用户体验的关注"
 sources: []
 relatedTerms:
   - bip-bitcoin-improvement-proposal
@@ -15,16 +15,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-[BIP-176](https://github.com/bitcoin/bips/blob/master/bip-0176.mediawiki) proposed using "bits" as a standard small-denomination unit for Bitcoin. **1 bit = 1 microbitcoin (µBTC) = 100 [satoshis](/glossary/satoshi-unit) = 0.000001 BTC.**
+[BIP-176](https://github.com/bitcoin/bips/blob/master/bip-0176.mediawiki)提议使用"bits"作为比特币的标准小面额单位。**1 bit = 1 微比特币（µBTC）= 100 [聪](/glossary/satoshi-unit) = 0.000001 BTC。**
 
-The rationale: as BTC's price rose, the decimals required to express everyday amounts became awkward ("0.0001 BTC for a cup of coffee" is hard to read). Bits offered a unit roughly comparable to a US cent at typical 2010s prices, making small amounts more intuitive.
+理由：随着 BTC 价格上涨，表示日常金额所需的小数位变得不便（"0.0001 BTC 买杯咖啡"难以阅读）。Bits 提供了一个在 2010 年代典型价格下大致相当于一美分的单位，使小金额更直观。
 
-The reality, after a decade: **bits lost to sats.** The Bitcoin community largely converged on the satoshi as the unit of choice for small amounts, with phrases like "stacking sats" becoming culturally embedded. Bits did see some adoption (Coinbase used them briefly; a few wallets continue to support them as a display option) but never became dominant.
+十年后的现实：**bits 输给了 sats。** 比特币社区很大程度上收敛到以聪作为小金额的选择单位，"stacking sats"（囤聪）等说法已成为文化符号。Bits 确实有过一些采用（Coinbase 曾短暂使用；一些钱包继续支持作为显示选项），但从未成为主流。
 
-Where the "bits" framing survives:
+"bits"框架存活的地方：
 
-- **A handful of wallets** still offer it as a display unit option.
-- **Older [BIP](/glossary/bip-bitcoin-improvement-proposal) references** continue to mention it.
-- **Educational comparisons** sometimes use bits to bridge between BTC and sat magnitudes.
+- **少数钱包**仍提供它作为显示单位选项。
+- **较旧的 [BIP](/glossary/bip-bitcoin-improvement-proposal)引用**继续提到它。
+- **教育性比较**有时使用 bits 在 BTC 和聪的数量级之间架桥。
 
-For most users in 2026, you can safely think in two units: **BTC** for large amounts, **sats** for small ones. Bits exist but are mostly a historical curiosity. See the [Bitcoin Units rabbit hole](/rabbit-hole/bitcoin-units) for the full unit scale.
+对于 2026 年的大多数用户，可以安全地使用两个单位思考：大额用 **BTC**，小额用**聪**。Bits 存在但主要是历史趣闻。参见 [Bitcoin Units rabbit hole](/rabbit-hole/bitcoin-units)了解完整单位刻度。

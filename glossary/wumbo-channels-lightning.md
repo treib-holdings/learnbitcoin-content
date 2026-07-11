@@ -1,12 +1,12 @@
 ---
-title: "Wumbo Channels (Lightning)"
+title: "Wumbo 通道（闪电网络）"
 slug: wumbo-channels-lightning
 draft: false
-shortDefinition: "Lightning channels exceeding the previous default capacity limit (~0.1677 BTC), allowing larger capacity for high-volume transactions."
+shortDefinition: "超过先前默认容量限制（约 0.1677 BTC）的闪电网络通道，允许更大容量以支持高 volume 交易。"
 keyTakeaways:
-  - "Removes channel size limit for power users or heavy LN traffic"
-  - "Requires explicit wumbo consent from both channel parties"
-  - "Larger funds at stake, so thorough LN reliability is critical"
+  - "为高级用户或大流量闪电网络移除通道大小限制"
+  - "需要通道双方明确启用 wumbo"
+  - "更大金额处于风险中，因此闪电网络可靠性至关重要"
 sources: []
 relatedTerms:
   - lightning-channel
@@ -17,18 +17,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A "wumbo" channel is a [Lightning channel](/glossary/lightning-channel) with a [capacity](/glossary/lightning-channel-capacity) exceeding the original default limit of 0.1677 BTC (16,777,215 sats - the largest value that fits in 3 bytes, hence the cap).
+"Wumbo"通道是[闪电网络通道](/glossary/lightning-channel)，其[容量](/glossary/lightning-channel-capacity)超过原始默认限制 0.1677 BTC（16,777,215 聪——能用 3 字节表示的最大值，因此是上限）。
 
-The cap existed for a defensive reason in Lightning's early days: protocol implementations were new, edge cases were poorly understood, and limiting any single channel's exposure capped the worst-case loss from a bug. As implementations matured and audited their channel-handling code, the cap stopped being protective and started being just a friction.
+这个上限在闪电网络早期出于防御性原因存在：协议实现还很新，边缘情况理解不足，限制任何单个通道的敞口就限制了 bug 造成的最坏情况损失。随着实现成熟和通道处理代码经过审计，上限不再起保护作用，而变成了纯粹的摩擦。
 
-The term "wumbo" is a SpongeBob SquarePants reference ("I wumbo, you wumbo, he/she/me wumbo..."). The crypto convention of naming serious infrastructure after cartoons is unbroken.
+"Wumbo"一词来自《海绵宝宝》中的梗（"I wumbo, you wumbo, he/she/me wumbo..."）。以卡通命名严肃基础设施的密码学传统依然坚挺。
 
-Wumbo support arrived in major implementations around 2020. As of 2026, wumbo is essentially universal - the question is rarely "does your node support wumbo" but "what's the practical upper bound." Channels of 1+ BTC are common among routing operators; major exchange-to-exchange channels can be much larger.
+Wumbo 支持于 2020 年左右在主要实现中到来。截至 2026 年，wumbo 基本上是通用的——问题很少是"你的节点支持 wumbo 吗"，而是"实际的上限是多少"。1+ BTC 的通道在路由运营者中很常见；主要的交易所间通道可以大得多。
 
-What wumbo enables:
+Wumbo 启用了什么：
 
-- **Routing nodes can carry meaningful liquidity.** A 0.16 BTC limit makes serious routing economics impossible; a 5+ BTC channel is more like real infrastructure.
-- **Large recurring payments.** Exchange withdrawals, merchant payouts, payroll-scale flows.
-- **Direct large transfers without splitting via [AMP](/glossary/atomic-multi-path-payment-amp).** A single big channel can handle what previously required multi-path payments.
+- **路由节点可以承载有意义的流动性。** 0.16 BTC 的限制使严肃的路由经济学不可能；5+ BTC 的通道更像真正的基础设施。
+- **大额定期支付。** 交易所提现、商户付款、工资级别的流水。
+- **无需通过 [AMP](/glossary/atomic-multi-path-payment-amp) 拆分的直接大额转账。** 一个大通道可以处理以前需要多路径支付的场景。
 
-The risk side hasn't gone away - bigger channels mean bigger potential losses from bugs or compromises. But Lightning's audited maturity in 2026 makes wumbo a reasonable default for operators who know what they're doing.
+风险面并没有消失——更大的通道意味着 bug 或入侵的潜在损失更大。但闪电网络在 2026 年的审计成熟度使 wumbo 成为知道自己在做什么的运营者的合理默认。

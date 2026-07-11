@@ -1,13 +1,13 @@
 ---
-title: "Methane Mitigation Mining"
+title: "甲烷减排挖矿"
 slug: methane-mitigation-mining
 draft: false
 published: "2026-06-17"
-shortDefinition: "Bitcoin mining powered by methane that would otherwise be vented or flared - landfills and oil fields - combusting a potent greenhouse gas more completely while funding its capture. The one place mining may be net-negative for emissions."
+shortDefinition: "以原本会被排放或燃烧的甲烷为能源的比特币挖矿——垃圾填埋场和油田——更完全地燃烧这种强效温室气体，同时用挖矿收入资助其捕获。挖矿可能对排放产生净负效应的唯一领域。"
 keyTakeaways:
-  - "Methane is far more potent than CO2 over its first decades; landfills vent it and oil fields flare it incompletely"
-  - "Generators plus miners combust the gas more completely, turning methane into less-harmful CO2, and the mining revenue funds the capture"
-  - "Real and profitable without subsidies, but still a small slice of total hash rate - promising, not proven at scale"
+  - "甲烷在头几十年内比 CO2 强效得多；垃圾填埋场排放它，油田不完全燃烧它"
+  - "发电机加上矿机更完全地燃烧气体，将甲烷转化为危害较小的 CO2，挖矿收入资助捕获"
+  - "无需补贴即可盈利，但仍占总算力的一小部分——有前景但尚未规模化验证"
 sources: []
 relatedTerms:
   - stranded-energy
@@ -18,21 +18,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Methane mitigation mining is Bitcoin mining powered by methane that would otherwise be released into the atmosphere or flared as waste. It is the single place in Bitcoin's energy story where mining can plausibly be net-negative for emissions rather than merely defensible.
+甲烷减排挖矿是以原本会释放到大气中或作为废气燃烧的甲烷为能源的比特币挖矿。这是比特原能源故事中挖矿可能合理地对排放产生净负效应而非仅仅可辩护的唯一地方。
 
-## Why methane is the target
+## 为什么甲烷是目标
 
-Methane is a far more potent greenhouse gas than CO2 over its first decades in the atmosphere. Two large sources release it with no business model attached:
+甲烷在进入大气层后的头几十年内是比 CO2 强效得多的温室气体。两个大型来源在没有任何商业模式的情况下释放它：
 
-- **Landfills** vent methane continuously as organic waste decomposes.
-- **Oil fields** flare associated gas - burning it off - because there is no pipeline to carry it to market. Flaring is incomplete combustion, so some methane escapes unburned.
+- **垃圾填埋场**持续排放甲烷，因为有机废物在分解。
+- **油田**燃烧伴生气——把它烧掉——因为没有管道将其运往市场。燃烧是不完全燃烧，所以一些甲烷未燃烧就逃逸。
 
-Both are emissions nobody is paid to prevent. That is exactly the gap a location-agnostic, containerized electricity buyer can fill: park generators and ASICs at the gas, combust it completely (turning methane into less-harmful CO2 plus electricity), and let the mining revenue pay for the capture equipment. It is a specific case of putting [stranded energy](/glossary/stranded-energy) to work.
+两者都是没有人被付费去防止的排放。这正是位置无关、集装箱化电力买家可以填补的空白：将发电机和 ASIC 停放在气体旁，完全燃烧它（将甲烷转化为危害较小的 CO2 加电力），让挖矿收入支付捕获设备。这是将[搁浅能源](/glossary/stranded-energy)投入使用的一个具体案例。
 
-## The honest status
+## 诚实的现状
 
-The strongest quantified version of the argument - associated with investor-advocate Daniel Batten - estimates a surprisingly small amount of methane-fed mining would offset the entire network's footprint. Worth flagging the source: Batten is an investor in the sector, not a neutral academic, so treat his figures as the well-argued bull case rather than settled science.
+最有力的量化版本论点——与投资者兼倡导者 Daniel Batten 相关——估计惊人少量的甲烷挖矿就能抵消整个网络的碳足迹。值得标注来源：Batten 是该领域的投资者而非中立学者，所以将他的数字视为有理有据的多头案例而非定论。
 
-What is not in dispute: the projects exist, they are profitable without subsidies, and the gas they burn was being vented or flared anyway. What is not yet true: that this scales beyond a small fraction of total hash rate. Promising is the right word; proven-at-scale is not, yet.
+没有争议的是：这些项目存在，无需补贴即可盈利，它们燃烧的气体本来就会被排放或燃烧。尚未成真的是：这能扩展到总算力的很小一部分之外。有前景是正确的词；规模化验证还不是。
 
-See the [Bitcoin and Energy rabbit hole](/rabbit-hole/energy) for where this fits in the full picture, alongside the critiques.
+请参阅[比特币与能源深入探讨](/rabbit-hole/energy)了解这在整个图景中的位置，以及相关的批评。

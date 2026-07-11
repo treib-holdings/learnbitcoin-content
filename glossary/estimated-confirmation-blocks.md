@@ -1,12 +1,12 @@
 ---
-title: "Estimated Confirmation Blocks"
+title: "预估确认区块数"
 slug: estimated-confirmation-blocks
 draft: false
-shortDefinition: "A projection (often shown by wallets/explorers) of how many blocks until a given transaction might confirm at its current fee."
+shortDefinition: "钱包/浏览器展示的投影，表示在当前手续费下给定交易可能需要多少个区块才能确认。"
 keyTakeaways:
-  - "Offers a best-effort guess on confirmation time"
-  - "Depends on current mempool congestion and fee rates"
-  - "Subject to change if network conditions shift"
+  - "提供确认时间的尽力估计"
+  - "取决于当前内存池拥堵和手续费率"
+  - "网络条件变化时会改变"
 sources: []
 relatedTerms:
   - absolute-fee
@@ -23,18 +23,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Estimated confirmation blocks" is the output of fee estimation: given the current mempool state and the transaction's feerate, how many blocks until it confirms? Most wallets and explorers expose it as a label like "confirms in ~3 blocks" or "~30 min."
+"预估确认区块数"是手续费估计的输出：给定当前内存池状态和交易手续费率，需要多少个区块才能确认？大多数钱包和浏览器将其显示为"约 3 个区块确认"或"约 30 分钟"之类的标签。
 
-How the estimate is built:
+估计如何构建：
 
-- **Bitcoin Core's `estimatesmartfee` RPC** returns the feerate needed to confirm within N blocks at some target probability. It works by looking at recent block contents and mempool composition.
-- **Mempool snapshots** from sites like mempool.space group pending transactions by feerate and project how many blocks of capacity (at the 4 million weight unit budget per block) are queued.
-- **Wallet integrations** combine the two: pick a target confirmation time, look up the corresponding feerate, build the transaction with that fee.
+- **Bitcoin Core 的 `estimatesmartfee` RPC** 返回在某个目标概率下 N 个区块内确认所需的手续费率。它通过查看近期区块内容和内存池组成来工作。
+- **来自 mempool.space 等站点的内存池快照**按手续费率对待确认交易分组，并投影有多少区块的容量（每个区块 400 万重量单位预算）在排队。
+- **钱包整合**结合两者：选择目标确认时间，查找相应手续费率，用该手续费构建交易。
 
-What can throw off the estimate:
+可能打乱估计的因素：
 
-- **Fee-market spikes** during congestion. A new wave of high-fee transactions can push your transaction back several blocks. The estimate updates, but the transaction you've already broadcast is stuck at its original fee unless you bump it.
-- **Empty blocks.** Occasional miners produce empty or near-empty blocks (sometimes for SPV-mining reasons), wasting block-space capacity and pushing back queued transactions.
-- **Sudden mempool clearing.** A few high-volume blocks in a row can clear the backlog and shrink expected confirmation times faster than estimates predict.
+- **拥堵期间的手续费市场飙升。** 一波新的高手续费交易可以将你的交易推后几个区块。估计会更新，但已广播的交易卡在原始手续费上，除非你加费。
+- **空区块。** 偶尔矿工产出空或接近空的区块（有时因为 SPV 挖矿），浪费区块空间容量并推迟排队交易。
+- **内存池突然清空。** 连续几个高量区块可以清除积压并使预期确认时间比估计预测的更快。
 
-The right way to use the estimate: pick a confirmation target, use the estimated feerate, accept that the actual confirmation time varies around the estimate by ~1-3 blocks. For time-sensitive payments, signal RBF and be prepared to bump if necessary. For "I want this confirmed today" use cases, the default estimate is fine.
+正确使用估计的方式：选择确认目标，使用估计手续费率，接受实际确认时间在估计周围波动约 1-3 个区块。对于时间敏感的支付，标记 RBF 并准备好在必要时加费。对于"我今天想确认"的用例，默认估计就够了。

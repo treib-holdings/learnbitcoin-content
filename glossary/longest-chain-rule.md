@@ -1,12 +1,12 @@
 ---
-title: "Longest Chain Rule"
+title: "最长链规则"
 slug: longest-chain-rule
 draft: false
-shortDefinition: "Bitcoin nodes follow the chain with the most accumulated proof-of-work, ensuring consensus in a decentralized network."
+shortDefinition: "比特币节点遵循累积工作量最多的链，确保去中心化网络中的共识。"
 keyTakeaways:
-  - "Nodes resolve conflicts by picking the chain with the most work"
-  - "Deters attackers from rewriting the ledger without immense hash power"
-  - "Ensures consistent ledger state across the decentralized network"
+  - "节点通过选择工作量最多的链来解决冲突"
+  - "阻止攻击者在没有巨大算力的情况下重写账本"
+  - "确保去中心化网络中账本状态的一致性"
 sources: []
 relatedTerms:
   - block
@@ -18,22 +18,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The longest chain rule is Bitcoin's consensus mechanism for resolving conflicts when multiple valid chains exist: every [node](/glossary/node) follows whichever chain has the most accumulated [proof-of-work](/glossary/proof-work-pow).
+最长链规则是比特币的共识机制，用于解决当存在多条有效链时的冲突：每个[节点](/glossary/node)遵循累积[工作量证明](/glossary/proof-work-pow)最多的链。
 
-The name is slightly misleading. It's *not* the chain with the most blocks (longest); it's the chain with the most cumulative work. In practice these are usually the same, but during [difficulty](/glossary/difficulty) transitions or attempted attacks they can diverge.
+名称略有误导。它*不是*区块最多的链（最长）；而是累积工作量最多的链。实践中通常相同，但在[难度](/glossary/difficulty)调整期间或攻击尝试中可能分歧。
 
-What the rule does:
+规则的作用：
 
-1. When two miners find blocks at the same [height](/glossary/block-height) at nearly the same moment, the network temporarily splits.
-2. Each node follows whichever block it saw first, building on top of it.
-3. As soon as the next block is found on one side, that side has more cumulative work.
-4. Nodes that were on the other side [reorg](/glossary/reorg-reorganization) to the now-heavier chain.
-5. The losing block becomes a [stale block](/glossary/stale-block); its transactions return to the [mempool](/glossary/mempool).
+1. 当两个矿工几乎同时在同一[高度](/glossary/block-height)找到区块时，网络暂时分裂。
+2. 每个节点遵循它先看到的区块，在其上构建。
+3. 一旦某一方找到下一个区块，该方就有更多累积工作量。
+4. 在另一方上的节点[重组](/glossary/reorg-reorganization)到现在更重的链。
+5. 失败的区块成为[陈旧区块](/glossary/stale-block)；其交易返回到[内存池](/glossary/mempool)。
 
-Why this rule is the foundation of Bitcoin's security:
+为什么这条规则是比特币安全的基础：
 
-- **Attacking the chain requires more work than the honest network is producing.** An attacker trying to rewrite history has to mine a longer fork, *secretly*, faster than the rest of the world mines the real one. With Bitcoin's ~700 EH/s of hash rate, this requires owning more than half of the global mining industry. Economically infeasible.
-- **The deeper a transaction sits, the more work would be required to overturn it.** This is what the 6-confirmation convention buys: it would take an attacker controlling >50% of hash rate, working in secret, to overturn a 6-confirm transaction. The probability falls exponentially with depth.
-- **Honest miners are incentivized to build on the longest chain.** A miner who finds a block off the main chain doesn't get paid; the block becomes stale.
+- **攻击链需要比诚实网络产出更多的工作。** 试图重写历史的攻击者必须*秘密地*比世界其余部分挖真实链更快地挖出更长的分叉。以比特币约 700 EH/s 的算力，这需要拥有全球挖矿业的一半以上。经济上不可行。
+- **交易埋得越深，推翻它需要的工作就越多。** 这就是 6 确认约定的价值：需要控制 >50% 算力的攻击者秘密工作才能推翻 6 确认交易。概率随深度指数下降。
+- **诚实矿工被激励在最长的链上构建。** 在主链外找到区块的矿工得不到报酬；区块变陈旧。
 
-The longest chain rule is sometimes called "Nakamoto consensus" - the version of consensus Satoshi described in the [whitepaper](/glossary/whitepaper). It's the deceptively simple rule that turns proof-of-work into a globally agreed-upon ledger.
+最长链规则有时被称为"中本聪共识"——中本聪在[白皮书](/glossary/whitepaper)中描述的共识版本。这是将工作量证明转化为全球公认账本的看似简单的规则。

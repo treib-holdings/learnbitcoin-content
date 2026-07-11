@@ -1,40 +1,40 @@
 ---
-title: "Hidden Miner Tax"
+title: "隐性矿工税"
 slug: hidden-miner-tax
 draft: false
-shortDefinition: "A viewpoint interpreting block rewards (and missed fees) as an 'inflation tax' on BTC holders."
+shortDefinition: "将区块奖励（及错过的手续费）视为 BTC 持有者'通胀税'的观点。"
 keyTakeaways:
-  - "Treats newly minted BTC as diluting existing satoshis' value"
-  - "Contrasts Bitcoin's pre-set issuance with fiat's variable inflation"
-  - "Sparks debate on whether block rewards mirror a 'tax' on holders"
+  - "将新铸造的 BTC 视为稀释现有聪的价值"
+  - "将比特币预设发行与法币可变通胀对比"
+  - "引发区块奖励是否反映对持有者'征税'的辩论"
 sources: []
 relatedTerms:
   - hidden-service-node
   - miner-extractable-value-mev
   - mining
   - mining-algorithm
-  - mining-colocation
+  - mining-collocation
   - mining-centralization
   - retail-mining
 liveWidget: ~
 ---
 
-"Hidden miner tax" is a term used in some Bitcoin economic-theory discussions to describe the [block subsidy](/glossary/block-subsidy) as effectively a recurring tax on existing BTC holders, paid in the form of new BTC issuance diluting their share of the total supply.
+"隐性矿工税"是一些比特币经济理论讨论中使用的术语，将[区块补贴](/glossary/block-subsidy)描述为对现有 BTC 持有者的有效经常税，以新 BTC 发行稀释其总供应份额的形式支付。
 
-The argument:
+论点：
 
-- Every block, ~3.125 BTC of new supply enters circulation (current era, 2024-2028).
-- This dilutes the supply share of every existing BTC holder, even if only marginally.
-- The new BTC goes to miners as payment for [proof-of-work](/glossary/proof-work-pow) security.
-- Therefore, *holders pay for network security through dilution*, regardless of whether they transact - it's a "tax" you can't opt out of.
+- 每个区块，约 3.125 BTC 新供应进入流通（当前时代，2024-2028 年）。
+- 这稀释了每个现有 BTC 持有者的供应份额，即使只是边际的。
+- 新 BTC 给矿工作为[工作量证明](/glossary/proof-work-pow)安全的报酬。
+- 因此，*持有者通过稀释为网络安全付费*，无论他们是否交易——这是一种你无法退出的"税"。
 
-This framing has some validity but also some significant differences from a literal tax:
+这种框架有一定效性，但也与字面税收有一些显著区别：
 
-- **The rate is publicly known and falling.** Current ~0.83% annual issuance, halving every ~4 years, asymptoting to zero by 2140. Predictable in a way no fiat inflation rate is.
-- **The proceeds buy security, not government services.** The "tax" goes to miners who in turn secure the network that holders are using. It's an internal cost of decentralized consensus, not a transfer to an external party.
-- **The asymptote is zero.** Unlike fiat systems where inflation is open-ended, Bitcoin's miner-tax framing approaches zero. By 2140 the entire model shifts to transaction-fee-funded security, with no further dilution.
-- **You can opt out by selling.** Unlike state-imposed taxes, you can simply not hold BTC if you don't want to participate in the security-subsidy arrangement.
+- **比率公开已知且下降。** 当前约 0.83% 年发行率，每约 4 年减半，2140 年渐近于零。可预测的方式是任何法币通胀率都不具备的。
+- **收益购买安全，不是政府服务。** "税"给矿工，矿工反过来保护持有者使用的网络安全。这是去中心化共识的内部成本，不是向外部方的转移。
+- **渐近线为零。** 与通胀开放式的法币系统不同，比特币的矿工税框架趋近于零。到 2140 年整个模型转向交易手续费资助安全，无进一步稀释。
+- **你可以通过出售退出。** 与国家征收的税不同，如果你不想参与安全补贴安排，可以简单地不持有 BTC。
 
-The "hidden tax" framing is most useful for thinking carefully about what current holders actually fund: ongoing network security via accepted dilution. It's least useful when pushed too hard toward "Bitcoin is just slow fiat inflation" - the structural difference (fixed cap, decreasing rate, no discretionary issuance) is large enough to be a difference in kind, not just degree.
+"隐性税"框架对于仔细思考当前持有者实际资助什么最有用：通过接受稀释持续资助网络安全。当推得太远到"比特币只是缓慢的法币通胀"时最没用——结构性差异（固定上限、递减率、无自由发行）大到是性质差异，而非程度差异。
 
-See [Block Subsidy](/glossary/block-subsidy), [Inflation](/glossary/inflation), and [Disinflation](/glossary/disinflation) for the standard framings of the same underlying mechanism.
+同一底层机制的标准框架参见[区块补贴](/glossary/block-subsidy)、[通胀](/glossary/inflation)和[反通胀](/glossary/disinflation)。

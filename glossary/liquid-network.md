@@ -1,12 +1,12 @@
 ---
-title: "Liquid Network"
+title: "Liquid 网络"
 slug: liquid-network
 draft: false
-shortDefinition: "A federated sidechain developed by Blockstream, offering faster settlements, confidential transactions, and a pegged BTC model."
+shortDefinition: "由 Blockstream 开发的联邦侧链，提供更快结算、保密交易和锚定 BTC 模型。"
 keyTakeaways:
-  - "Federated peg secures BTC locked on mainnet in a multi-sig"
-  - "Confidential Transactions hide amounts on L-BTC transfers"
-  - "Faster settlements but relies on trusted functionaries"
+  - "联邦锚定将主网上锁定的 BTC 保护在多签中"
+  - "保密交易隐藏 L-BTC 转账金额"
+  - "更快结算但依赖受信任的功能节点"
 sources: []
 relatedTerms:
   - bitcoin-bridge
@@ -19,26 +19,26 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The **Liquid Network** is a federated Bitcoin [sidechain](/glossary/sidechain) developed by Blockstream and operating since September 2018. It offers faster settlements (~1-minute blocks vs Bitcoin's ~10-minute), confidential transactions (amounts and asset types are hidden from chain observers), and a native asset-issuance framework. Pegged BTC on Liquid is called **L-BTC**.
+**Liquid 网络**是由 Blockstream 开发的联邦比特币[侧链](/glossary/sidechain)，自 2018 年 9 月开始运营。它提供更快的结算（约 1 分钟区块对比比特币的约 10 分钟）、保密交易（金额和资产类型对链上观察者隐藏）和原生资产发行框架。Liquid 上的锚定 BTC 称为 **L-BTC**。
 
-How Liquid works in practice:
+Liquid 的实际运作方式：
 
-- **The [Liquid Federation](/glossary/liquid-federation)** - a consortium of around 65 entities (exchanges, OTC desks, financial firms, Blockstream itself) - runs the sidechain. Block production rotates among federation members.
-- **Peg-in** sends BTC to a federation-controlled multisig on mainnet; L-BTC is issued on Liquid 1:1.
-- **Peg-out** burns L-BTC on Liquid; federation releases BTC from mainnet back to the user.
-- **Confidential Transactions** use cryptographic commitments (homomorphic Pedersen commitments) to hide amounts while letting nodes verify no inflation occurred.
-- **Issued Assets.** Liquid supports issuing arbitrary assets (used by Tether USD on Liquid, gold-backed tokens like PAXG, securities tokens, etc.) alongside L-BTC.
+- **[Liquid 联盟](/glossary/liquid-federation)**——由约 65 个实体（交易所、场外交易台、金融公司、Blockstream 自身）组成的联盟——运营侧链。区块生产在联盟成员间轮换。
+- **锚入**将 BTC 发送到主网上联盟控制的多签；Liquid 上以 1:1 发行 L-BTC。
+- **锚出**在 Liquid 上销毁 L-BTC；联盟从主网将 BTC 释放回用户。
+- **保密交易**使用密码学承诺（同态 Pedersen 承诺）隐藏金额，同时让节点验证没有发生通胀。
+- **发行资产。** Liquid 支持在 L-BTC 旁边发行任意资产（被 Liquid 上的 Tether USD、PAXG 等黄金代币、证券代币等使用）。
 
-What Liquid is used for in 2026:
+2026 年 Liquid 的用途：
 
-- **Inter-exchange settlement.** Major Bitcoin exchanges use Liquid for fast moves between each other, avoiding the 60-minute confirmation lag of mainnet transfers.
-- **OTC desks.** Confidential transactions matter for large block trades where amounts being moved would otherwise be visible to chain analysts.
-- **Stablecoin issuance.** USDT-Liquid is one of the meaningful stablecoin networks for Bitcoin-native settlement.
-- **Security token experiments.** Several issuers have launched tokenized securities on Liquid.
+- **交易所间结算。** 主要比特币交易所使用 Liquid 在彼此之间快速转移，避免主网转账 60 分钟的确认延迟。
+- **场外交易台。** 保密交易对于大宗交易很重要，否则被移动的金额会对链上分析师可见。
+- **稳定币发行。** USDT-Liquid 是比特币原生结算的有意义稳定币网络之一。
+- **证券代币实验。** 多个发行方已在 Liquid 上发行代币化证券。
 
-What Liquid is not:
+Liquid 不是什么：
 
-- **Not trustless like mainnet.** The federation can technically collude. If a majority of federation members signed a malicious peg-out, they could in principle steal pegged BTC. This is a trust assumption (one held by reasonable people) but materially different from Bitcoin's proof-of-work security model.
-- **Not Bitcoin's main scaling solution.** Liquid serves a specific niche (institutional fast settlement, confidential transactions). [Lightning](/glossary/lightning-network) is the general-purpose layer-2.
+- **不像主网那样无需信任。** 联盟技术上可以串通。如果联盟多数签署了恶意锚出，他们原则上可以盗窃锚定的 BTC。这是一种信任假设（被合理的人持有），但与比特币的工作量证明安全模型有本质区别。
+- **不是比特币的主要扩展方案。** Liquid 服务于特定细分市场（机构快速结算、保密交易）。[闪电网络](/glossary/lightning-network)是通用的第二层。
 
-See [Liquid Federation](/glossary/liquid-federation) for the federation structure and [Sidechain](/glossary/sidechain) for the broader category.
+请参阅[Liquid 联盟](/glossary/liquid-federation)了解联盟结构，[侧链](/glossary/sidechain)了解更广泛的类别。

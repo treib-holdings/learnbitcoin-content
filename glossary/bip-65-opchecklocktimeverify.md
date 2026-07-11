@@ -1,12 +1,12 @@
 ---
-title: "BIP 65 (OP_CHECKLOCKTIMEVERIFY) — Plain-English Explainer"
+title: "BIP 65（OP_CHECKLOCKTIMEVERIFY）——通俗解释"
 slug: bip-65-opchecklocktimeverify
 draft: false
-shortDefinition: "What CLTV does, why it was added in 2015, and how it enables payment channels and escrows — without the spec-speak."
+shortDefinition: "CLTV 做了什么、为什么在 2015 年添加、以及它如何支持支付通道和托管——不用规范术语。"
 keyTakeaways:
-  - "Implements time-based spending constraints"
-  - "Enables contracts like payment channels, escrows"
-  - "Strengthens Bitcoin's smart contract flexibility"
+  - "实现基于时间的花费约束"
+  - "支持支付通道、托管等合约"
+  - "增强比特币智能合约灵活性"
 sources: []
 relatedTerms:
   - absolute-locktime
@@ -25,17 +25,17 @@ sameAs:
 liveWidget: ~
 ---
 
-[BIP-65](https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki) added the **OP_CHECKLOCKTIMEVERIFY** (CLTV) opcode to [Bitcoin Script](/glossary/bitcoin-script). Activated as a [soft fork](/glossary/soft-fork) in December 2015, it gave script-level enforcement to [absolute locktimes](/glossary/absolute-locktime).
+[BIP-65](https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki)为 [Bitcoin Script](/glossary/bitcoin-script)添加了 **OP_CHECKLOCKTIMEVERIFY**（CLTV）操作码。2015 年 12 月作为[软分叉](/glossary/soft-fork)激活，它为[绝对锁定时间](/glossary/absolute-locktime)提供了脚本级执行。
 
-Before BIP-65, the only locktime mechanism was the transaction-level `nLockTime` field, which prevents a *whole transaction* from being mined before a given height or time. CLTV brought the same concept into the script itself: an output's locking script could now require that "the spending transaction's `nLockTime` is at least X."
+在 BIP-65 之前，唯一的锁定时间机制是交易级 `nLockTime` 字段，它防止*整笔交易*在给定高度或时间之前被打包。CLTV 将相同概念带入脚本本身：输出的锁定脚本现在可以要求"花费交易的 `nLockTime` 至少为 X"。
 
-This sounds like a small distinction. It's actually load-bearing for entire categories of Bitcoin applications:
+这听起来像很小的区别。实际上它承载了整个类别的比特币应用：
 
-- **[Payment channels](/glossary/payment-channel)** and the [Lightning Network](/glossary/lightning-network) use CLTV to enforce withdrawal delays after force-closing a channel.
-- **[Atomic swaps](/glossary/atomic-swap)** use CLTV to enforce refund deadlines if a counterparty bails.
-- **[HTLCs](/glossary/htlc-hashed-time-locked-contract)** use CLTV as the time-based fallback in their "preimage or timeout" structure.
-- **Inheritance vaults** use CLTV to ensure heirs can claim funds after a long delay if the original owner is inactive.
+- **[支付通道](/glossary/payment-channel)**和[闪电网络](/glossary/lightning-network)使用 CLTV 来执行强制关闭通道后的提款延迟。
+- **[原子互换](/glossary/atomic-swap)**使用 CLTV 在对手方退出时执行退款截止日期。
+- **[HTLC](/glossary/htlc-hashed-time-locked-contract)**使用 CLTV 作为其"原像或超时"结构中基于时间的后备。
+- **继承金库**使用 CLTV 确保在原始所有者不活跃后继承人可以在长延迟后认领资金。
 
-CLTV was paired with [BIP-68/112 (CSV)](/glossary/checksequenceverify-csv) for relative locktimes a year later. Together, the two opcodes turned Bitcoin Script into something powerful enough to support Lightning and most modern multi-party protocols.
+CLTV 一年后与 [BIP-68/112 (CSV)](/glossary/checksequenceverify-csv)配对用于相对锁定时间。两个操作码共同将 Bitcoin Script 变得足够强大，以支持闪电网络和大多数现代多方协议。
 
-For users, you'll rarely interact with CLTV directly. Your wallet or [Lightning](/glossary/lightning-network) implementation handles it behind the scenes. But every Lightning channel you ever use relies on CLTV being there.
+对用户来说，你很少直接与 CLTV 交互。你的钱包或[闪电网络](/glossary/lightning-network)实现在后台处理它。但你曾经使用的每个闪电通道都依赖 CLTV 的存在。

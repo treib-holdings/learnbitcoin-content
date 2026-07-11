@@ -2,11 +2,11 @@
 title: "MuSig2"
 slug: musig2
 draft: false
-shortDefinition: "An enhanced version of MuSig that lowers the number of interaction rounds needed among cosigners."
+shortDefinition: "MuSig 的增强版本，减少了共签者之间所需的交互轮数。"
 keyTakeaways:
-  - "Minimizes the communication overhead in multi-party signing"
-  - "Maintains the privacy and size advantages of MuSig"
-  - "Ideal for collaborative setups with participants in different time zones"
+  - "最小化多方签名的通信开销"
+  - "保持 MuSig 的隐私和大小优势"
+  - "适合参与者位于不同时区的协作设置"
 sources: []
 relatedTerms:
   - psbt
@@ -28,20 +28,20 @@ sameAs:
 liveWidget: ~
 ---
 
-MuSig2 is the practical successor to the original [MuSig](/glossary/musig) Schnorr-aggregation protocol, published in 2020 by Jonas Nick, Tim Ruffing, and Yannick Seurin. It does the same job - aggregate n cosigners into a single combined public key with a single combined signature - in just two rounds of communication instead of three, with the additional benefit that the first round's nonces can be pre-computed and reused across signing sessions.
+MuSig2 是原始 [MuSig](/glossary/musig) Schnorr 聚合协议的实际继任者，由 Jonas Nick、Tim Ruffing 和 Yannick Seurin 于 2020 年发表。它做同样的工作——将 n 个共签者聚合为一个组合公钥和一个组合签名——只需两轮通信而非三轮，额外好处是第一轮的 nonce 可以预计算并在签名会话间重用。
 
-What changed mechanically:
+机械上的变化：
 
-- **MuSig1** required commit-then-reveal nonces (three rounds): each signer first publishes a commitment to their nonce, then the actual nonces, then the partial signatures. The commit-reveal step was necessary to prevent a key-cancellation attack.
-- **MuSig2** uses two independent nonces per signer instead of one, combined in a way that defeats the same attack without needing commitments. Two rounds: exchange nonce pairs, then exchange partial signatures.
+- **MuSig1** 需要"先承诺后揭示"nonce（三轮）：每个签名者首先发布对 nonce 的承诺，然后是实际 nonce，最后是部分签名。承诺-揭示步骤是防止密钥取消攻击的必要条件。
+- **MuSig2** 每个签名者使用两个独立 nonce 而非一个，以击败相同攻击的方式组合，不需要承诺。两轮：交换 nonce 对，然后交换部分签名。
 
-For ergonomics this is a meaningful upgrade. Three rounds means three back-and-forth messages with every signer; two rounds means two. For Lightning channel opens, multisig spend signing, and federation signature protocols where cosigners are geographically distributed, the round reduction is the difference between "signing this thing takes about a minute" and "signing this thing takes about ten seconds."
+对于用户体验这是一个有意义的升级。三轮意味着每个签名者三次往返消息；两轮意味着两次。对于闪电通道开启、多签花费签名和共签者地理分布的联邦签名协议，轮数减少是"签这个东西大约需要一分钟"和"签这个东西大约需要十秒"之间的区别。
 
-Properties (shared with MuSig1):
+属性（与 MuSig1 共有）：
 
-- **n-of-n only.** All cosigners must participate. For m-of-n threshold setups, FROST is the analog.
-- **Aggregated key.** Deterministic function of the cosigner pubkeys.
-- **64-byte signature.** Same size as Taproot single-sig.
-- **Privacy.** On-chain, indistinguishable from a Taproot key-path single-sig spend.
+- **仅 n-of-n。** 所有共签者必须参与。对于 m-of-n 阈值设置，FROST 是类似物。
+- **聚合密钥。** 共签者公钥的确定性函数。
+- **64 字节签名。** 与 Taproot 单签相同大小。
+- **隐私。** 链上与 Taproot 密钥路径单签花费无法区分。
 
-MuSig2 is the version that actually ships in production tooling: BIP 327 standardized it in 2023, libsecp256k1 implements it, hardware wallets are gradually adding support. When people say "MuSig" in 2026 they almost always mean MuSig2.
+MuSig2 是实际上在生产工具中发布的版本：BIP 327 于 2023 年标准化，libsecp256k1 实现，硬件钱包逐步添加支持。当人们在 2026 年说"MuSig"时几乎总是指 MuSig2。

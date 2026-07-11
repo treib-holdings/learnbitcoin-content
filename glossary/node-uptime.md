@@ -1,12 +1,12 @@
 ---
-title: "Node Uptime"
+title: "节点正常运行时间"
 slug: node-uptime
 draft: false
-shortDefinition: "How long a Bitcoin node has remained online and synchronized, relevant for network reliability and routing capacity."
+shortDefinition: "比特币节点持续在线和同步的时间，与网络可靠性和路由容量相关。"
 keyTakeaways:
-  - "Indicates reliability in relaying and validating blocks/transactions"
-  - "Higher uptime fosters a healthier, more robust network"
-  - "Server-grade or well-maintained nodes typically aim for near-constant operation"
+  - "表明中继和验证区块/交易的可靠性"
+  - "更高的正常运行时间促进更健康、更稳健的网络"
+  - "服务器级或维护良好的节点通常以近乎持续运行为目标"
 sources: []
 relatedTerms:
   - dedicated-ip-nodes
@@ -22,15 +22,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Node uptime is how long a Bitcoin node has been running continuously without restart or disconnection.
+节点正常运行时间是比特币节点持续运行而未重启或断开连接的时间。
 
-High uptime is good network citizenship. A long-running node:
+高正常运行时间是良好的网络公民。长期运行的节点：
 
-- Builds up a richer peer-discovery view (`peers.dat` and the `addr` set), which makes it more resistant to [eclipse attacks](/glossary/eclipse-attack).
-- Has a warm mempool. New transactions get validated against an established mempool view, not a cold one.
-- Is useful to other peers during their initial sync; it can serve historical blocks immediately.
-- Doesn't churn the network with repeated reconnections.
+- 积累了更丰富的对等发现视图（`peers.dat` 和 `addr` 集），使其更抵抗[日食攻击](/glossary/eclipse-attack)。
+- 有温暖的内存池。新交易基于已建立的内存池视图而非冷启动状态验证。
+- 在初始同步期间对其他对等方有用；可以立即提供历史区块。
+- 不会因反复重连而搅动网络。
 
-Bitcoin Core doesn't surface uptime as a prominent metric, and there's no leaderboard or reward for keeping a node up. For a regular full node, occasional downtime (minutes or days) is fine; the node just catches up when it comes back.
+Bitcoin Core 不将正常运行时间作为突出指标显示，也没有保持节点在线的排行榜或奖励。对于普通全节点，偶尔停机（几分钟或几天）没问题；节点回来时追上即可。
 
-Uptime matters more for [Lightning](/glossary/lightning-network) routing nodes than for plain full nodes. A Lightning channel needs both sides reachable to update, and a frequently-offline routing node will see channels closed by counterparties or fail to forward payments. If you're running a routing node, optimize for uptime; if you're running a full node for your own wallet, don't bother chasing nines.
+正常运行时间对[闪电网络](/glossary/lightning-network)路由节点比普通全节点更重要。闪电通道需要双方可达才能更新，频繁离线的路由节点会看到通道被对手方关闭或无法转发支付。如果你运行路由节点，优化正常运行时间；如果你为自己的钱包运行全节点，不必追求多个 9。

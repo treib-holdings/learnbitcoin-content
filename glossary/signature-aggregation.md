@@ -1,12 +1,12 @@
 ---
-title: "Signature Aggregation"
+title: "签名聚合"
 slug: signature-aggregation
 draft: false
-shortDefinition: "Combining multiple partial signatures into one final signature (e.g., MuSig), reducing on-chain data footprint."
+shortDefinition: "将多个部分签名组合成一个最终签名（如 MuSig），减少链上数据足迹。"
 keyTakeaways:
-  - "Collapses multiple signers into a single on-chain signature"
-  - "Lowers fees, boosts privacy, fosters multi-party setups"
-  - "Relies on Schnorr's algebraic properties (MuSig, etc.)"
+  - "将多个签名者折叠为链上的单个签名"
+  - "降低手续费，提升隐私，促进多方协作设置"
+  - "依赖 Schnorr 的代数特性（MuSig 等）"
 sources: []
 relatedTerms:
   - elliptic-curve
@@ -22,25 +22,25 @@ sameAs:
 liveWidget: ~
 ---
 
-Signature aggregation is the technique of taking multiple cosigners on a single spend and producing one combined signature that the chain can verify against a single combined public key. The chain learns "this output was authorized," but not how many people authorized it.
+签名聚合是一种技术，将一笔花费中的多个共同签名者合并，生成一个组合签名，链上可以用一个组合公钥来验证。链上只知道"这个输出被授权了"，但不知道有多少人参与了授权。
 
-This is only practical with [Schnorr signatures](/glossary/schnorr-signature), whose linear math lets partial signatures and partial public keys be summed cleanly. The flagship aggregation protocol is **MuSig2**, the second-generation multi-signature scheme designed by Blockstream researchers.
+这只有在 [Schnorr 签名](/glossary/schnorr-signature)下才可行，因为其线性数学特性允许部分签名和部分公钥被干净地求和。旗舰聚合协议是 **MuSig2**，由 Blockstream 研究人员设计的第二代多签方案。
 
-A 3-of-3 spend under MuSig2 works like this:
+MuSig2 下的 3-of-3 花费流程：
 
-1. The three cosigners exchange public-key shares and "nonce commitments" off-chain.
-2. Each produces a partial signature on the transaction.
-3. The partial signatures are combined into one Schnorr signature.
-4. The transaction is broadcast with a single 64-byte signature against a single aggregated public key.
+1. 三个共同签名者在链下交换公钥份额和"随机数承诺"。
+2. 各自对交易产生部分签名。
+3. 部分签名被组合成一个 Schnorr 签名。
+4. 交易以单个 64 字节签名对单个聚合公钥广播。
 
-What the public chain sees: an ordinary-looking single-sig Taproot spend. No hint that three parties were involved.
+公开链上看到的：一笔普通的单签名 Taproot 花费。完全看不出有三方参与。
 
-The wins:
+收益：
 
-- **Lower fees.** One signature uses less block space than three.
-- **Better privacy.** Multisig setups stop being identifiable from on-chain data. Every Taproot spend can plausibly be single-sig, multisig, or a complex script - they all look the same.
-- **Better security ergonomics.** Hardware-wallet vendors and custody services can offer multisig with the cost and footprint of single-sig.
+- **更低的手续费。** 一个签名比三个签名占用更少的区块空间。
+- **更好的隐私。** 多签设置不再能从链上数据中识别。每笔 Taproot 花费都可能是单签、多签或复杂脚本——它们看起来都一样。
+- **更好的安全工效。** 硬件钱包厂商和托管服务可以提供成本和足迹与单签一样的多签方案。
 
-The catch is the off-chain coordination - cosigners must exchange nonces and partial sigs in a careful sequence (MuSig2 is non-trivial to implement). Production-grade libraries exist (libsecp256k1's MuSig2 module, BDK, etc.) and adoption is growing.
+难点在于链下协调——共同签名者必须以精心设计的顺序交换随机数和部分签名（MuSig2 的实现并不简单）。生产级库已经存在（libsecp256k1 的 MuSig2 模块、BDK 等），采用正在增长。
 
-Aggregation is one of the quietest big wins Taproot brought. See [Taproot](/glossary/taproot) and [Schnorr Signature](/glossary/schnorr-signature) for the foundations.
+聚合是 Taproot 带来的最安静的大收益之一。参见 [Taproot](/glossary/taproot)和 [Schnorr 签名](/glossary/schnorr-signature)了解基础。

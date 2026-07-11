@@ -1,12 +1,12 @@
 ---
-title: "Merkle Inclusion Proof"
+title: "默克尔包含证明"
 slug: merkle-inclusion-proof
 draft: false
-shortDefinition: "A cryptographic proof that a given transaction is included in a block's Merkle tree."
+shortDefinition: "证明给定交易被包含在区块默克尔树中的密码学证明。"
 keyTakeaways:
-  - "Links a transaction to the block's Merkle root using partial hashes"
-  - "Used by SPV clients for efficient verification"
-  - "Ensures no tampering occurred without downloading the full block"
+  - "使用部分哈希将交易链接到区块的默克尔根"
+  - "SPV 客户端用于高效验证"
+  - "确保无需下载完整区块即可确认无篡改"
 sources: []
 relatedTerms:
   - bip-37
@@ -19,21 +19,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A merkle inclusion proof is the smallest data structure that lets a verifier confirm a specific transaction belongs in a given block, without having to download all the other transactions in that block. It exploits the merkle tree that Bitcoin builds over each block's transaction list.
+默克尔包含证明是最小的数据结构，让验证者确认特定交易属于给定区块，而无需下载该区块中的所有其他交易。它利用了比特币在每个区块交易列表上构建的默克尔树。
 
-How it works:
+工作原理：
 
-1. Each block header commits to a single 32-byte merkle root, derived by pairwise hashing the block's transaction txids until one root remains.
-2. To prove transaction `T` is in block `B`, you provide `T` itself plus the sibling hashes along the path from `T`'s leaf up to the root - typically `log_2(N)` hashes for a block with N transactions.
-3. The verifier hashes `T` with its sibling, then that result with the next sibling, walking up the tree.
-4. If the final hash matches the merkle root committed to in the block header, `T` is provably in `B`.
+1. 每个区块头提交一个 32 字节的默克尔根，通过对区块交易 txid 两两哈希直到剩下一个根来派生。
+2. 要证明交易 `T` 在区块 `B` 中，你提供 `T` 本身加上从 `T` 的叶子到根路径上的兄弟哈希——对于有 N 笔交易的区块通常是 `log_2(N)` 个哈希。
+3. 验证者将 `T` 与其兄弟哈希，然后将结果与下一个兄弟哈希，沿树向上走。
+4. 如果最终哈希与区块头中提交的默克尔根匹配，`T` 被证明在 `B` 中。
 
-Proof size for typical Bitcoin blocks: ~10-12 sibling hashes (since blocks contain 2,000-3,000 transactions in busy times), so roughly 320-384 bytes plus the transaction itself. Vastly cheaper than fetching the entire block.
+典型比特币区块的证明大小：约 10-12 个兄弟哈希（因为繁忙时区块包含 2,000-3,000 笔交易），所以大约 320-384 字节加上交易本身。比获取整个区块便宜得多。
 
-Where merkle inclusion proofs show up:
+默克尔包含证明出现的场景：
 
-- **SPV light clients.** Wallets that don't validate the full chain ask trusted peers for block headers (verifying difficulty and chain continuity) plus merkle inclusion proofs for transactions they care about. The wallet trusts proof-of-work for the chain tip and verifies cryptographic proofs for individual transaction inclusion.
-- **Bitcoin Core's `gettxoutproof` RPC.** Produces an inclusion proof for one or more transactions; the companion `verifytxoutproof` validates it.
-- **Various second-layer constructions.** Sidechain pegs, drivechain proposals, BitVM, and similar designs use merkle inclusion proofs to commit one chain's state to another.
+- **SPV 轻客户端。** 不验证完整链的钱包向可信对等方请求区块头（验证难度和链连续性）加上它们关心的交易的默克尔包含证明。钱包信任链尖的工作量证明并验证单个交易包含的密码学证明。
+- **Bitcoin Core 的 `gettxoutproof` RPC。** 为一笔或多笔交易生成包含证明；配套的 `verifytxoutproof` 验证它。
+- **各种第二层构造。** 侧链锚定、驱动链提案、BitVM 和类似设计使用默克尔包含证明将一条链的状态提交到另一条链。
 
-What inclusion proofs *don't* prove: that the transaction is valid (you'd need the block's full validation state), or that the chain itself is the canonical one (you'd need proof-of-work and ancestry). They prove only "this transaction is committed to in this block." That's a useful but limited primitive, and a building block in most light-client and cross-chain designs.
+包含证明*不*证明的：交易是有效的（需要区块的完整验证状态），或链本身是规范的（需要工作量证明和祖先链）。它们只证明"这笔交易被提交在这个区块中"。这是一个有用但有限的原语，是大多数轻客户端和跨链设计的构建模块。

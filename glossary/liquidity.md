@@ -1,12 +1,12 @@
 ---
-title: "Liquidity"
+title: "流动性"
 slug: liquidity
 draft: false
-shortDefinition: "The ease of buying/selling BTC with minimal price impact (in markets) or channel capacity (in LN)."
+shortDefinition: "在市场中以最小价格影响买卖 BTC 的容易程度，或在闪电网络中通道容量的可用性。"
 keyTakeaways:
-  - "BTC markets: volume and order book depth for stable trades"
-  - "LN channels: inbound/outbound capacity for successful routing"
-  - "Vital to both exchange usage and off-chain LN payment flow"
+  - "BTC 市场：交易量和订单簿深度支撑稳定交易"
+  - "闪电通道：入站/出站容量支撑成功路由"
+  - "对交易所使用和链下闪电支付流都至关重要"
 sources: []
 relatedTerms:
   - balanced-channel-lightning
@@ -17,22 +17,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Liquidity" means different things in Bitcoin's market context and its Lightning context. Both matter; conflating them confuses everything.
+"流动性"在比特币的市场语境和闪电网络语境中含义不同。两者都重要；混淆它们会搞乱一切。
 
-**Market liquidity** is about exchange order books and over-the-counter venues: how much you can buy or sell before moving the price. High liquidity means tight bid/ask spreads, large orders fill without slippage, and the price discovery process is robust. Low liquidity means thin order books, large spreads, and sharp price moves on modest volume. Major exchange spot markets for BTC/USD are deeply liquid (billions in daily volume, sub-cent spreads); smaller venues or exotic pairs are not.
+**市场流动性**关乎交易所订单簿和场外交易场所：在价格变动之前你能买卖多少。高流动性意味着窄买卖价差、大额订单无滑点成交、价格发现过程稳健。低流动性意味着薄订单簿、大价差和适度交易量下的急剧价格波动。主要交易所的 BTC/USD 现货市场深度流动（日交易量数十亿，价差低于一美分）；较小的平台或冷门交易对则不然。
 
-**Lightning liquidity** is about channel balance distribution. Every Lightning channel has a total capacity (the amount in the funding output) split between local balance (yours, available to send) and remote balance (your peer's, available for them to send to you, i.e. your inbound capacity).
+**闪电流动性**关乎通道余额分布。每个闪电通道有一个总容量（注资输出中的金额），分为本地余额（你的，可发送）和远程余额（对手方的，可向你发送，即你的入站容量）。
 
-- **Outbound liquidity.** The balance on your side of your channels, available to send.
-- **Inbound liquidity.** The balance on the other side of your channels, available for others to send to you. A new channel you funded has zero inbound liquidity; you can't receive until balance flows in.
+- **出站流动性。** 你一侧的通道余额，可用于发送。
+- **入站流动性。** 对手方一侧的通道余额，可供他人向你发送。你自己注资的新通道零入站流动性；在余额流入之前你无法接收。
 
-Lightning users without enough inbound liquidity can't receive payments larger than what's already on the remote side. Lightning users without enough outbound can't send. Routing nodes need [balanced channels](/glossary/balanced-channel-lightning) (substantial liquidity on both sides) to forward in either direction.
+没有足够入站流动性的闪电用户无法接收超过远程一侧已有余额的支付。没有足够出站流动性的闪电用户无法发送。路由节点需要[均衡通道](/glossary/balanced-channel-lightning)（两侧都有充足流动性）才能双向转发。
 
-Getting inbound liquidity:
+获取入站流动性的方式：
 
-- Spend your existing outbound first (every payment you send shifts balance to the other side, increasing your inbound).
-- Buy inbound liquidity from a routing-node service ([liquidity ads](/glossary/liquidity-ads), Lightning Labs' Pool, etc.) or rebalance via non-custodial submarine swaps ([Loop In/Out](/glossary/loop-inout)).
-- Splice or open a channel where the other side commits the capital.
-- Earn inbound by receiving payments (which is circular if you can't receive in the first place).
+- 先花费现有出站（你发送的每笔支付都会将余额转移到另一侧，增加你的入站）。
+- 从路由节点服务购买入站流动性（[流动性广告](/glossary/liquidity-ads)、Lightning Labs 的 Pool 等）或通过非托管潜艇互换再平衡（[Loop In/Out](/glossary/loop-inout)）。
+- 拼接或开一个由对方出资的通道。
+- 通过接收支付赚取入站（如果你一开始就无法接收，这就是循环的）。
 
-The asymmetry is one of Lightning's persistent UX challenges. New users routinely hit the inbound-liquidity wall on their first receive attempt and don't know why.
+这种不对称性是闪电网络持久的 UX 挑战之一。新用户通常在第一次尝试接收时撞上入站流动性墙，却不知道为什么。

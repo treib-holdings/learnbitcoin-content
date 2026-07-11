@@ -1,10 +1,11 @@
----title: "Mining"
+---
+title: "挖矿"
 slug: mining
 draft: false
 status: live
 published: "2026-05-15"
 section: rabbit-hole
-tagline: "Hash, nonce, target. The simplest hard problem in the world, and why it secures $T."
+tagline: "哈希、随机数、目标值。世界上最简单的难题，以及它如何保护数万亿美元。"
 order: 4
 estimatedMinutes: 13
 sources:
@@ -19,153 +20,153 @@ hasInteractive: ["miningSimulator", "feeMarketSimulator", "difficultyClock"]
 import DifficultyClock from '@components/mining/DifficultyClock.svelte';
 import MempoolHistogram from '@components/mining/MempoolHistogram.svelte';
 
-> **Where you're going:** Mining is often described as "Bitcoin's energy problem" or "Bitcoin's lottery." Both are misleading. You'll learn what mining actually is (a cryptographic race with a clock), why it secures the network, and what the long-term economics look like as the subsidy approaches zero.
+> **你将了解：** 挖矿常被描述为"比特币的能源问题"或"比特币的彩票"。两者都有误导性。你会了解挖矿实际上是什么（一个带时钟的密码学竞赛）、它如何保护网络、以及随着补贴趋近于零时的长期经济图景。
 
-## 1. The Lottery No One Cheats At
+## 1. 没人作弊的彩票
 
-A Bitcoin block contains transactions and a header. The header includes a 32-bit number called the **nonce**.
+一个比特币区块包含交易和一个区块头。区块头包含一个 32 位的数字，叫做**随机数**（nonce）。
 
-To "mine" a block, a computer assembles a candidate header, then tries values of the nonce, one after another, looking for a header whose SHA-256 hash starts with enough zero bits to be below the current target.
+要"挖"一个区块，一台计算机组装一个候选区块头，然后逐一尝试不同的随机数值，寻找一个其 SHA-256 哈希以足够多的零位开头、低于当前目标值的区块头。
 
-There is no shortcut. There is no algebra that gets you the right nonce. You guess, you hash, you check, you increment, you hash again. Modern ASICs do this trillions of times per second per chip.
+没有捷径。没有代数能让你找到正确的随机数。你猜、你哈希、你检查、你递增、你再哈希。现代 ASIC 每秒每芯片做万亿次这样的事。
 
-When a miner finds a valid nonce, they broadcast the block. Every other node verifies in milliseconds (hashing the header once is cheap; finding the nonce in the first place is the work). The block is added to the chain. Everyone moves on to mining the next one.
+当一个矿工找到有效随机数时，他广播这个区块。其他每个节点在几毫秒内验证（哈希一次区块头很便宜；找到随机数才是工作）。区块被添加到链上。所有人继续挖下一个。
 
-This is the entire mining loop. Everything else is engineering and accounting.
+这就是整个挖矿循环。其他一切都是工程和会计。
 
-## 2. SHA-256, in One Page
+## 2. SHA-256，一页纸
 
-Mining depends on a cryptographic property of the SHA-256 hash function: **for any given output, there is no known way to find an input that produces it except by trying inputs.**
+挖矿依赖 SHA-256 哈希函数的一个密码学特性：**对于任何给定输出，没有已知方法找到产生它的输入，除非逐一尝试。**
 
-This is called **preimage resistance**, and it's the foundation of every proof-of-work system.
+这叫做**原像抗性**（preimage resistance），它是每个工作量证明系统的基础。
 
-A few facts about SHA-256:
+关于 SHA-256 的几个事实：
 
-- **Input:** any binary data
-- **Output:** exactly 256 bits (a 64-character hex string)
-- **Deterministic:** same input always produces same output
-- **One-way:** computationally infeasible to reverse (see the [Key Space rabbit hole](/rabbit-hole/key-space) on why 2^256 is unbreachable)
-- **Avalanche effect:** changing one bit of input changes ~half the bits of output, unpredictably
+- **输入：** 任意二进制数据
+- **输出：** 恰好 256 位（64 个十六进制字符的字符串）
+- **确定性：** 相同输入总是产生相同输出
+- **单向：** 计算上不可逆（参见[密钥空间深度科普](/rabbit-hole/key-space)了解 2^256 为什么不可突破）
+- **雪崩效应：** 改变输入的一位会改变约一半的输出位，且不可预测
 
-To "mine," you compute `SHA-256(SHA-256(header))` and check whether the resulting 256-bit number is below the current target. The target is what gets adjusted to control how often blocks come out.
+要"挖矿"，你计算 `SHA-256(SHA-256(header))` 并检查结果 256 位数是否低于当前目标值。目标值就是被调整以控制出块频率的东西。
 
-That's it. The entire security model rests on this one function and its one property.
+就这样。整个安全模型建立在这一个函数及其一个特性上。
 
-## 3. The Race
+## 3. 竞赛
 
-Mining is competitive. Thousands of mining operations worldwide are all trying to find a valid nonce for the same height block at the same time. Whoever finds one first gets the reward.
+挖矿是竞争性的。全球数千个挖矿运营同时在同一高度区块寻找有效随机数。谁先找到谁获得奖励。
 
-A few practical consequences:
+几个实际后果：
 
-**You can't "cheat" by working from someone else's progress.** Each miner picks slightly different transactions for their candidate block (and thus different merkle roots), so their candidate headers are different. Finding a nonce for *your* candidate doesn't help anyone else.
+**你不能"利用"别人的进度作弊。** 每个矿工为候选区块选择略有不同的交易（因此有不同的 merkle 根），所以候选区块头不同。找到*你的*候选区块的随机数对其他人没用。
 
-**You can't predict who will win.** Hashing is uniformly random in expectation. A miner with 1% of global hash rate finds, on average, 1% of blocks. But which specific block, and when, is genuinely random.
+**你无法预测谁会赢。** 哈希在期望上是均匀随机的。拥有全网 1% 算力的矿工平均找到 1% 的区块。但具体是哪个区块、什么时候，是真正随机的。
 
-**The clock is hash rate, not wall time.** Bitcoin doesn't care what time it is; it cares how much computation has happened. Blocks appear "every 10 minutes on average," but only because difficulty adjusts to make that average hold.
+**时钟是算力，不是墙钟时间。** 比特币不在乎现在几点；它在乎已完成多少计算。区块"平均每 10 分钟"出现，但只是因为难度调整使得这个平均值成立。
 
-The combination of cryptographic randomness, global competition, and difficulty adjustment gives Bitcoin its most important property: **finality through computational expense**. Once a block is buried under a few more, undoing it would require re-doing all the work, faster than the rest of the world is doing the new work.
+密码学随机性、全球竞争和难度调整的组合给了比特币最重要的特性：**通过计算开销实现的最终性**。一旦一个区块被几个后续区块覆盖，撤销它就需要重新完成所有工作，而且要比世界其他部分做新工作更快。
 
-## 4. Difficulty (and How It Adjusts)
+## 4. 难度（以及它如何调整）
 
-Bitcoin's target block time is 10 minutes. But hash rate goes up and down all the time. So Bitcoin uses an automatic, deterministic mechanism to keep blocks coming on schedule: **difficulty adjustment**.
+比特币的目标出块时间是 10 分钟。但算力一直在上下波动。所以比特币使用一个自动的、确定性的机制来保持出块节奏：**难度调整**。
 
-The rule:
+规则：
 
-- Every **2016 blocks** (about every two weeks), the network looks at how long the last 2016 blocks took.
-- If they took **less than two weeks**, difficulty goes **up** (making future blocks harder).
-- If they took **more than two weeks**, difficulty goes **down** (making future blocks easier).
-- The adjustment is precisely proportional, clamped at ±300%.
+- 每 **2016 个区块**（大约每两周），网络查看最近 2016 个区块花了多长时间。
+- 如果它们花了**不到两周**，难度**上调**（让未来区块更难）。
+- 如果它们花了**超过两周**，难度**下调**（让未来区块更容易）。
+- 调整是精确成比例的，限制在 ±300% 以内。
 
-This is the most consequential single piece of mechanism design in Bitcoin. There is no committee. There is no Federal Reserve raising rates. The network observes its own conditions and corrects, on a fixed schedule, forever.
+这是比特币中最重要的单个机制设计。没有委员会。没有美联储加息。网络观察自身状况并在固定时间表上纠正，永远进行。
 
-Difficulty has gone up roughly 10^13 times since the genesis block - mining is now astronomically harder than it was in 2009, by design, because hash power has scaled up by that much.
+自创世区块以来难度上升了大约 10^13 倍 - 挖矿现在比 2009 年在天文数字级别上更难，这是设计如此，因为算力增长了很多。
 
 <DifficultyClock client:visible />
 
-## 5. What Miners Are Paid
+## 5. 矿工获得什么
 
-A miner who finds a valid block gets paid in two parts:
+找到有效区块的矿工获得两部分收入：
 
-1. **Block subsidy** - the freshly-issued bitcoin per the [supply schedule](/rabbit-hole/supply). Currently 3.125 BTC. Halves every 210,000 blocks (see the [Halvings rabbit hole](/rabbit-hole/halvings)).
-2. **Transaction fees** - the sum of fees from every transaction included in the block. Variable; depends on mempool conditions.
+1. **区块补贴** - 根据[供应量时间表](/rabbit-hole/supply)新发行的比特币。目前是 3.125 BTC。每 210,000 个区块减半（参见[减半深度科普](/rabbit-hole/halvings)）。
+2. **交易手续费** - 区块中每笔交易手续费的总和。可变，取决于内存池状况。
 
-The miner constructs the "coinbase transaction" - a special transaction that pays themselves both amounts. This is the only place new bitcoin enters circulation.
+矿工构建"coinbase 交易" - 一笔特殊交易，将两部分金额支付给自己。这是新比特币进入流通的唯一途径。
 
-The economic logic is plain: producing valid blocks earns the reward; producing invalid blocks (wrong PoW, invalid transactions, exceeding the block weight limit) gets rejected and wastes the electricity. This is what cryptographers call [incentive compatibility](/glossary/incentive-compatibility) - the property that makes rule-following more profitable than rule-breaking for rational, self-interested participants. Bitcoin's security depends on it, and two decades of empirical evidence say it holds.
+经济逻辑很简单：产生有效区块赚取奖励；产生无效区块（错误的工作量证明、无效交易、超过区块重量限制）会被拒绝，浪费了电力。这就是密码学家所说的[激励兼容](/glossary/incentive-compatibility) - 使守规则比违规对理性的、自利的参与者更有利可图。比特币的安全性依赖于此，二十年的经验证据表明它成立。
 
-In Bitcoin's early years, subsidy was essentially all of the revenue (transactions were free). Today, fees are typically 3-10% of miner revenue per block, with occasional spikes much higher during congestion events. By 2140, when the subsidy reaches zero, fees will be 100% of miner revenue.
+在比特币早期，补贴基本上是全部收入（交易免费）。如今，手续费通常是每个区块矿工收入的 3-10%，拥堵事件期间偶尔高得多。到 2140 年补贴为零时，手续费将是矿工收入的 100%。
 
-The transition from subsidy-dominated to fee-dominated revenue is one of the central long-term economic questions in Bitcoin. We covered it briefly in the [Halvings rabbit hole](/rabbit-hole/halvings); the short version is that as long as Bitcoin is *used*, fees will be sufficient.
+从补贴主导向手续费主导的收入转变是比特币设计中的核心长期经济问题。我们在[减半深度科普](/rabbit-hole/halvings)中简要讨论过；简短版本是只要比特币在被*使用*，手续费就足够。
 
-## 6. The Mempool, From the Miner's Side
+## 6. 矿工视角的内存池
 
-Miners don't just include transactions randomly. They pick the ones that maximize their fee revenue per block.
+矿工不是随机打包交易的。他们选择能最大化每区块手续费收入的交易。
 
-The process:
+过程：
 
-1. Take the [mempool](/glossary/mempool) (the pool of unconfirmed transactions).
-2. Sort by **fee rate** (sat/vB, not total fee - block space is the scarce resource).
-3. Greedily pack transactions starting from the highest fee rate, until the block is full (~4 million weight units).
-4. Add the coinbase transaction.
-5. Compute the merkle root, hash the header with various nonces, find one below target.
-6. Broadcast.
+1. 取[内存池](/glossary/mempool)（未确认交易的池子）。
+2. 按**费率**排序（sat/vB，不是总手续费 - 区块空间是稀缺资源）。
+3. 从最高费率开始贪婪打包，直到区块满了（约 400 万重量单位）。
+4. 添加 coinbase 交易。
+5. 计算 merkle 根，用各种随机数哈希区块头，找到一个低于目标值的。
+6. 广播。
 
-This is why your transaction's *fee rate* matters more than its *amount*. A transaction with 1 BTC and a 1 sat/vB fee sits at the bottom of the mempool. A transaction with 0.001 BTC and a 100 sat/vB fee gets mined immediately.
+这就是为什么你的交易的*费率*比*金额*更重要。一笔 1 BTC 交易带 1 sat/vB 费率的待在内存池底部。一笔 0.001 BTC 交易带 100 sat/vB 费率的立即被打包。
 
 <MempoolHistogram client:visible />
 
-## 7. Energy as Security Budget
+## 7. 能源就是安全预算
 
-Bitcoin mining uses electricity. A lot of it. The current global Bitcoin mining footprint is roughly 0.5% of global electricity consumption, varying with price and hash rate.
+比特币挖矿消耗电力。消耗很多。目前全球比特币挖矿的足迹大约是全球电力消费的 0.5%，随价格和算力变化。
 
-This is often presented as a problem. It is, more accurately, a *feature*. Here's why:
+这常被当作一个问题来呈现。更准确地说，它是一个*特性*。原因如下：
 
-**The energy is what makes the security real.** To attack Bitcoin's consensus, an attacker would need to outpace the global mining network. That means matching its hash rate - which means matching its hardware investment and electricity consumption. The energy isn't waste; it's the cost of forging the security.
+**能源消耗就是安全性的来源。** 要攻击比特币的共识，攻击者需要超过全球挖矿网络。这意味着匹配其算力 - 也意味着匹配其硬件投资和电力消耗。能源不是浪费；它是锻造安全性的成本。
 
-**The alternative isn't "no energy used." The alternative is "less security."** Proof-of-stake systems use less energy but achieve security through different means (capital deposits, slashing). Those mechanisms have their own trade-offs, and you can have legitimate debates about which is better, but "uses less energy" alone isn't an argument that something is more secure.
+**替代方案不是"不消耗能源"。替代方案是"更少的安全性"。** 权益证明系统使用更少能源但通过不同方式实现安全性（资本质押、罚没）。这些机制有自己的权衡，你可以合理地争论哪个更好，但"消耗更少能源"本身并不是一个论证说某个系统更安全。
 
-**Mining incentivizes finding *cheapest* energy.** Miners aren't bidding on premium power. They're bidding on whatever is cheapest globally - stranded renewables, flared natural gas that would otherwise be wasted, geothermal in Iceland, hydro in Sichuan during the wet season. The marginal Bitcoin mining operation runs on energy that has no other buyer.
+**挖矿激励寻找最便宜的能源。** 矿工不是在竞价高端电力。他们在竞价全球最便宜的 - 弃风可再生能源、本来要燃烧掉的油田伴生气、冰岛的地热、四川雨季的水电。边际比特币挖矿运营使用的是没有其他买家要的能源。
 
-**Mining can be turned on and off in milliseconds.** This makes it uniquely well-suited as a "buyer of last resort" for energy grids. When demand on the grid spikes (heat wave, sudden outage), miners can turn off in seconds; when there's excess supply (sunny day, low industrial demand), they turn on. This stabilizes grids and improves renewables economics. The University of Texas at Austin has published research on this; Texas ERCOT has actively integrated mining as a grid stabilizer.
+**挖矿可以在几毫秒内开关。** 这使它成为电网"最后买家"的独特适合者。当电网需求飙升（热浪、突发停电），矿工几秒内关机；当供应过剩（晴天、工业需求低），他们开机。这稳定了电网并改善了可再生能源经济学。德克萨斯大学奥斯汀分校已发表相关研究；德州 ERCOT 已积极将挖矿整合为电网稳定器。
 
-None of this means Bitcoin's energy use is irrelevant. It means it's not the simple "waste" story the headlines use.
+这些都不意味着比特币的能源消耗无关紧要。它意味着这不是头条新闻用的那个简单的"浪费"故事。
 
-## 8. Mining Pools, ASICs, and Centralization Risks
+## 8. 矿池、ASIC 和中心化风险
 
-A few realities of the mining industry:
+挖矿产业的几个现实：
 
-**ASICs dominate.** Application-Specific Integrated Circuits designed to do SHA-256 and nothing else. They are vastly more efficient than CPUs or GPUs and have been the only economically viable mining hardware since around 2014. There are a small number of ASIC manufacturers; this is a centralization vector worth watching.
+**ASIC 主导。** 专为做 SHA-256 而设计的专用集成电路（Application-Specific Integrated Circuit）。它们比 CPU 或 GPU 高效得多，自 2014 年左右起一直是唯一经济可行的挖矿硬件。ASIC 制造商数量不多；这是一个值得关注的中心化向量。
 
-**Mining pools dominate.** Most miners don't solo-mine; they join a pool that aggregates hash rate, smooths out variance, and pays members proportionally. A small number of pools control most of the network's hash rate. As of recent years: Foundry USA, AntPool, ViaBTC, F2Pool, and a few others account for most blocks. This is a structural concern.
+**矿池主导。** 大多数矿工不做单独挖矿；他们加入矿池，矿池聚合算力、平滑方差、按比例支付成员。少数矿池控制了网络大部分算力。截至近年：Foundry USA、AntPool、ViaBTC、F2Pool 等占了大部分区块。这是结构性隐忧。
 
-**But pools aren't miners.** The hash rate in a pool comes from individual miners, who can switch pools at will if one starts misbehaving. The "Stratum V2" protocol enables miners (not pools) to choose which transactions go into blocks, even if the pool is coordinating the hashing. This shifts power back to individual miners over time.
+**但矿池不是矿工。** 矿池中的算力来自个别矿工，如果矿池开始作恶他们可以随意切换。"Stratum V2"协议让矿工（不是矿池）选择哪些交易进入区块，即使矿池在协调哈希。这随时间推移将权力转移回个别矿工。
 
-**Geography has shifted.** China dominated mining until 2021, when a government crackdown pushed operations to the US, Kazakhstan, and elsewhere. The US is now the largest mining country. Geographic dispersion has roughly doubled compared to a decade ago.
+**地理位置已转移。** 中国主导挖矿直到 2021 年，政府打压使运营转移到美国、哈萨克斯坦等地。美国现在是最大的挖矿国。地理分散度比十年前大约翻了一倍。
 
-**Solo mining is alive.** Several individuals have found blocks solo-mining on lottery hardware in the past few years. The odds are astronomically low, but not zero.
+**单独挖矿仍然活着。** 过去几年有几个个人用"彩票硬件"单独挖到了区块。概率极低，但不是零。
 
-The state of mining centralization is a real conversation in the Bitcoin community. None of the failure modes here are immediate; all of them are worth attention.
+挖矿中心化的现状是比特币社区中真实的讨论。这里的失败模式都不是迫在眉睫的；所有值得关注。
 
-For the broader picture of how Bitcoin's decentralization actually holds up - mining concentration, client diversity, the 2017 governance stress test - see the [Decentralization rabbit hole](/rabbit-hole/decentralization).
+关于比特币去中心化实际上如何经受考验的更全面图景 - 挖矿集中度、客户端多样性、2017 年治理压力测试 - 参见[去中心化深度科普](/rabbit-hole/decentralization)。
 
-## 9. The Long-Term Picture
+## 9. 长期图景
 
-Mining's role in Bitcoin's economic model evolves over time. Three phases:
+挖矿在比特币经济模型中的角色随时间演变。三个阶段：
 
-**Subsidy era (2009-2030s):** Most miner revenue comes from the block subsidy. Fee revenue exists but is secondary. This is the period we're in.
+**补贴纪元（2009-2030 年代）：** 大部分矿工收入来自区块补贴。手续费收入存在但是次要的。这是我们现在所处的阶段。
 
-**Transition era (2030s-2100s):** As halvings continue, the subsidy diminishes. Fee revenue grows to take its place - both because Bitcoin's usage grows, and because layer-2 scaling pushes the *value-per-byte* of on-chain transactions up.
+**过渡纪元（2030 年代-2100 年代）：** 随着减半继续，补贴减少。手续费收入增长来替代 - 既因为比特币使用增长，也因为二层扩容推高了链上交易的每字节*价值*。
 
-**Fee-only era (~2140+):** The last satoshi has been issued. Miners earn revenue exclusively from fees. The network's security is funded entirely by the demand to transact.
+**纯手续费纪元（约 2140+）：** 最后一个聪已发行。矿工收入完全来自手续费。网络安全完全由交易需求资助。
 
-The transition between these phases is the central long-term question in Bitcoin's design. So far, the trajectory is consistent with the model: fees are growing faster than the network needs them to.
+这些阶段之间的过渡是比特币设计中的核心长期问题。到目前为止，轨迹与模型一致：手续费增长速度超过网络需要的速度。
 
-## 10. What This Buys Us
+## 10. 这给我们带来了什么
 
-A Bitcoin block, with its 80-byte header and the right nonce, is the proof that someone spent enormous computational effort to produce it. Stack hundreds of thousands of those together, and you have a chain whose history cannot be plausibly rewritten by anyone, including all the miners on Earth combined.
+一个比特币区块，加上它 80 字节的区块头和正确的随机数，就是有人花费了巨大计算努力来产生它的证明。把数十万个这样的区块堆在一起，你就得到一条其历史不可能被任何人合理重写的链 - 包括地球上所有矿工联合起来也不行。
 
-That's what mining is for. It's not a coincidence; it's not a side effect; it's the core mechanism that makes the entire system trustless.
+这就是挖矿的用途。它不是巧合；不是副作用；它是使整个系统无需信任的核心机制。
 
-The energy spent isn't paying for transactions to confirm. It's paying for the *immutability* of the entire chain, retroactively, every ten minutes, forever.
+花费的能源不是为确认交易付费的。它是在为整条链的*不可篡改性*付费，每十分钟回溯性地付费，永远。
 
-> **Pro tip:** When someone tells you "Bitcoin mining is wasteful," ask them what they think it's *producing*. The answer is: a globally-shared, censorship-resistant, irreversible record of every transaction, secured against attackers wealthy enough to outspend nation-states. That's not nothing.
+> **实用提示：** 当有人告诉你"比特币挖矿是浪费"时，问他们认为挖矿在*生产*什么。答案是：一个全球共享的、抗审查的、不可逆的每笔交易的记录，安全性足以抵御富裕到能超越主权国家的攻击者。这不是什么都没有。

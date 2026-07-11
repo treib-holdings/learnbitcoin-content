@@ -1,12 +1,12 @@
 ---
-title: "Golden Cross"
+title: "金叉"
 slug: golden-cross
 draft: false
-shortDefinition: "A bullish technical chart pattern where a short-term moving average crosses above a long-term moving average."
+shortDefinition: "一种看涨的技术图表形态，短期移动平均线穿越长期移动平均线上方。"
 keyTakeaways:
-  - "Considered a bullish sign in technical analysis"
-  - "Often involves 50-day crossing above 200-day MA"
-  - "Not a sure bet, especially amid crypto's volatility"
+  - "在技术分析中被视为看涨信号"
+  - "通常涉及 50 日均线上穿 200 日均线"
+  - "在加密货币波动性中并非稳赢"
 sources: []
 relatedTerms:
   - bear-market
@@ -18,24 +18,24 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A golden cross is a technical-analysis pattern: a faster moving average (typically the 50-day) crosses above a slower moving average (typically the 200-day). The opposite pattern (faster below slower) is called a death cross.
+金叉是一种技术分析形态：较快的移动平均线（通常是 50 日线）穿越较慢的移动平均线（通常是 200 日线）上方。相反形态（快线低于慢线）称为死叉。
 
-The interpretation traders apply:
+交易者应用的解读：
 
-- **Bullish signal.** Short-term momentum has turned upward enough to overtake the longer trend. Traders read this as confirmation that an uptrend is establishing.
-- **Confirmation tool, not predictor.** The crossover lags actual price action; by the time the cross happens, the trend is well underway. It's typically used to validate a thesis rather than originate one.
-- **Combined with other signals.** Volume, support/resistance levels, on-chain indicators, and macro context all inform whether to trust the golden cross.
+- **看涨信号。** 短期动量已上行到足以超过长期趋势。交易者将此解读为上升趋势正在建立的确认。
+- **确认工具，非预测器。** 交叉滞后于实际价格行为；当交叉发生时，趋势已在进行中。通常用于验证论点而非发起论点。
+- **与其他信号结合。** 成交量、支撑/阻力位、链上指标和宏观背景都影响是否信任金叉。
 
-Bitcoin's history with the pattern:
+比特币与该形态的历史：
 
-- BTC has produced golden crosses multiple times since 2015, with mixed predictive results.
-- The most-cited "golden cross worked" example is early 2019, where the 50/200 cross preceded the run from ~$3K to ~$13K.
-- The most-cited "golden cross failed" example is May 2021, where the cross happened right as the market topped before a major correction.
+- BTC 自 2015 年以来多次产生金叉，预测结果好坏参半。
+- 最常被引用的"金叉成功"案例是 2019 年初，50/200 交叉先于从约 3,000 美元到约 13,000 美元的涨势。
+- 最常被引用的"金叉失败"案例是 2021 年 5 月，交叉发生在市场顶部后大幅回调之前。
 
-Caveats:
+注意事项：
 
-- **Lagging indicator.** By definition, moving averages smooth out noise by looking backward. The cross is information about what *has been happening*, not necessarily what's coming.
-- **Bitcoin's volatility breaks TA patterns more often than equities.** A 20% week is normal in Bitcoin and absurdly rare in stocks. Patterns calibrated on slower markets don't always transfer cleanly.
-- **Self-fulfilling and self-defeating dynamics.** Enough traders watching the same indicator means it can both work (everyone buying creates the rally) and fail (everyone front-running the signal means the move happens before the cross).
+- **滞后指标。** 根据定义，移动平均线通过向后看来平滑噪声。交叉是关于*一直在发生什么*的信息，不一定是即将发生什么。
+- **比特币的波动性比股票更频繁地打破 TA 形态。** 一周 20% 在比特币中是正常的，在股票中极其罕见。为较慢市场校准的形态不总是干净地转换。
+- **自我实现和自我击败动态。** 足够多的交易者关注同一指标意味着它既可以成功（所有人买入创造涨势），也可以失败（所有人前置信号意味着移动在交叉之前发生）。
 
-For someone using TA seriously, the golden cross is one input among many. For someone using "is the cross green or red?" as their entire investment thesis, the historical record is not encouraging.
+对于认真使用 TA 的人来说，金叉是众多输入之一。对于使用"交叉是绿还是红？"作为整个投资论点的人，历史记录不令人鼓舞。

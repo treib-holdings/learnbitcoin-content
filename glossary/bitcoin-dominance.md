@@ -1,12 +1,12 @@
 ---
-title: "Bitcoin Dominance"
+title: "比特币主导率"
 slug: bitcoin-dominance
 draft: false
-shortDefinition: "A metric tracking BTC's market cap relative to the total cryptocurrency market cap, expressed as a percentage."
+shortDefinition: "追踪 BTC 市值相对于总加密货币市值百分比的指标。"
 keyTakeaways:
-  - "Shows Bitcoin's share of overall crypto market cap"
-  - "May rise when investors seek BTC as a 'safe haven'"
-  - "Drops during strong altcoin speculation periods"
+  - "显示比特币在整体加密市场中的份额"
+  - "投资者寻求 BTC 作为'避风港'时可能上升"
+  - "山寨币投机强盛时期下降"
 sources: []
 relatedTerms:
   - alt-season
@@ -17,24 +17,24 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Bitcoin Dominance is Bitcoin's [market capitalization](/glossary/market-capitalization) as a percentage of the total cryptocurrency market cap. If BTC's market cap is $2 trillion and total crypto market cap is $3.3 trillion, dominance is roughly 60%.
+比特币主导率是比特币[市值](/glossary/market-capitalization)占总加密货币市值的百分比。如果 BTC 市值 2 万亿美元，总加密市值 3.3 万亿美元，主导率约为 60%。
 
-The number is widely tracked as a sentiment indicator:
+这个数字被广泛追踪为情绪指标：
 
-- **Dominance rising** typically means capital is flowing toward Bitcoin and away from [altcoins](/glossary/altcoin). Happens during bear markets (flight to relative quality), early bull markets (Bitcoin moves first), and macro stress events.
-- **Dominance falling** typically means capital is rotating into altcoins. Happens during late-cycle euphoria, [alt seasons](/glossary/alt-season), and periods when retail speculation is high.
+- **主导率上升**通常意味着资金流向比特币、远离[山寨币](/glossary/altcoin)。发生在熊市中（转向相对优质资产）、早期牛市中（比特币先动）和宏观压力事件中。
+- **主导率下降**通常意味着资金轮动到山寨币。发生在后期周期狂热中、[山寨季](/glossary/alt-season)中和散户投机高涨时期。
 
-Historical context:
+历史背景：
 
-- **2013:** Dominance ~95%. Almost no significant altcoins existed.
-- **2018 ICO peak:** Dominance briefly fell below 35%. The first time altcoins collectively rivaled Bitcoin.
-- **2020-2021 cycle:** Dominance oscillated between 40-70%.
-- **2024-2026:** Generally trending higher (~50-65%) as the post-FTX wash-out reduced altcoin enthusiasm.
+- **2013 年：**主导率约 95%。几乎没有有意义的山寨币存在。
+- **2018 年 ICO 高峰：**主导率一度跌破 35%。山寨币首次集体比肩比特币。
+- **2020-2021 年周期：**主导率在 40-70% 之间波动。
+- **2024-2026 年：**总体趋势上行（约 50-65%），FTX 余波减少了山寨币热情。
 
-A few honest caveats about the metric:
+关于该指标的诚实警告：
 
-- **"Total crypto market cap" is fictional in detail.** Many altcoins have huge insider allocations or near-zero liquidity. Their market caps are paper numbers. Bitcoin's market cap is also paper, but the underlying asset is at least trading in real liquidity globally.
-- **Dominance is path-dependent.** What counts as "the rest of crypto" today (including stablecoins like USDT/USDC) is different from what counted in 2017. Comparisons across long time horizons are noisy.
-- **Bitcoin maximalists will argue dominance should always be ~100%** because everything else is, in some technical or moral sense, not money. That's a view; the metric doesn't take a position.
+- **"总加密市值"在细节上是虚构的。**许多山寨币有大量内部分配或接近零的流动性。它们的市值是纸面数字。比特币的市值也是纸面的，但底层资产至少在全球真实流动性中交易。
+- **主导率是路径依赖的。**今天算作"其余加密"的内容（包括 USDT/USDC 等稳定币）与 2017 年的不同。长时间跨度的比较有噪音。
+- **比特币极简主义者会争辩主导率应该始终约为 100%**，因为其他一切在某种技术或道德意义上不是货币。这是一种观点；指标本身不表态。
 
-For traders, dominance is a sentiment dial. For long-term Bitcoin holders, it's mostly a curiosity.
+对于交易者，主导率是情绪刻度盘。对于长期比特币持有者，它主要是好奇心。

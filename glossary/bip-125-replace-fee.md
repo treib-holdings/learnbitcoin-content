@@ -1,12 +1,12 @@
 ---
-title: "BIP 125 (Replace-by-Fee)"
+title: "BIP 125（费用替换）"
 slug: bip-125-replace-fee
 draft: false
-shortDefinition: "Allows a sender to replace an unconfirmed transaction with a higher-fee version, accelerating confirmation."
+shortDefinition: "允许发送方用更高费率的版本替换未确认交易，以加速确认。"
 keyTakeaways:
-  - "Enables fee bumping on unconfirmed transactions"
-  - "Improves confirmation times under heavy network load"
-  - "Affects zero-conf assumptions for real-time payments"
+  - "支持对未确认交易进行手续费提升"
+  - "改善网络拥堵时的确认速度"
+  - "影响实时支付的零确认假设"
 sources: []
 relatedTerms:
   - absolute-fee
@@ -24,20 +24,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 125 specifies opt-in Replace-by-Fee (RBF): a transaction signals it can be replaced by setting at least one input's `nSequence` to a value less than `0xfffffffe`. Wallets and miners that honor the signal then accept a replacement transaction that meets specific policy rules.
+BIP 125 规定了可选的费用替换（RBF）：一笔交易通过将至少一个输入的 `nSequence` 设为小于 `0xfffffffe` 的值来信号其可被替换。遵守该信号的钱包和矿工随后接受满足特定策略规则的替换交易。
 
-The five "BIP 125 conditions" a replacement must satisfy:
+替换必须满足的五个"BIP 125 条件"：
 
-1. The replacement pays a higher absolute fee than the original.
-2. The replacement pays a higher feerate (sats per vbyte).
-3. The replacement pays at least the minimum incremental relay fee.
-4. The replacement doesn't add inputs that weren't visible (unconfirmed) to the original.
-5. The replacement evicts at most 100 transactions total (including descendants).
+1. 替换交易支付比原始交易更高的绝对手续费。
+2. 替换交易支付更高的费率（每 vbyte 聪数）。
+3. 替换交易至少支付最低增量中继费。
+4. 替换交易不添加原始交易中不可见（未确认）的输入。
+5. 替换交易最多驱逐 100 笔交易（包括后代）。
 
-This was opt-in RBF, the default behavior in Bitcoin Core 0.12 (2016) through 23.x. The opt-in compromise was a 2016 concession: merchants who wanted to keep accepting zero-conf payments could refuse to honor RBF-flagged transactions, while users who wanted fee-bumping ability could opt in.
+这是可选 RBF，是 Bitcoin Core 0.12（2016 年）到 23.x 版本的默认行为。可选妥协是 2016 年的让步：希望继续接受零确认支付的商户可以拒绝接受 RBF 标记的交易，而想要手续费提升能力的用户可以选择加入。
 
-In 2024, Bitcoin Core 28.0 changed the default to full RBF: every unconfirmed transaction is replaceable regardless of the `nSequence` signal. The reasoning that finally won: zero-conf was never actually secure (see [race attack](/glossary/race-attack)), so the opt-in compromise was protecting a security model that didn't exist. Merchants who relied on zero-conf migrated to Lightning or started requiring confirmations.
+2024 年，Bitcoin Core 28.0 将默认改为全量 RBF：每笔未确认交易无论 `nSequence` 信号如何都可替换。最终获胜的理由：零确认从未真正安全（参见[竞态攻击](/glossary/race-attack)），所以可选妥协在保护一个不存在的安全模型。依赖零确认的商户迁移到闪电网络或开始要求确认。
 
-In practice now: every modern wallet supports RBF, every modern node will relay full-RBF replacements, and "I forgot to set a high enough fee" is no longer a stuck transaction. It's a one-click fee bump.
+现在的实践：每个现代钱包都支持 RBF，每个现代节点都会中继全量 RBF 替换，"我忘了设足够高的手续费"不再是卡住的交易。一键提升手续费即可。
 
-Spec: [BIP-125](https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki).
+规范：[BIP-125](https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki)。

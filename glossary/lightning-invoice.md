@@ -1,12 +1,12 @@
 ---
-title: "Lightning Invoice"
+title: "闪电发票"
 slug: lightning-invoice
 draft: false
-shortDefinition: "A payment request in the LN, commonly encoded as a BOLT 11 string for easy sending and receiving."
+shortDefinition: "闪电网络中的支付请求，通常编码为 BOLT 11 字符串以便于发送和接收。"
 keyTakeaways:
-  - "Encodes LN payment details (amount, destination, expiry)"
-  - "Scanned or entered into an LN wallet to pay off-chain"
-  - "Can include optional fields like routing hints"
+  - "编码闪电支付详情（金额、目的地、有效期）"
+  - "扫描或输入闪电钱包即可进行链下支付"
+  - "可包含路由提示等可选字段"
 sources: []
 relatedTerms:
   - bolt-11
@@ -24,28 +24,28 @@ sameAs:
 liveWidget: ~
 ---
 
-A Lightning invoice is a payment request on the [Lightning Network](/glossary/lightning-network). It's a string the recipient generates and shares with the payer, encoding everything the payer needs to find and complete a payment.
+闪电发票是[闪电网络](/glossary/lightning-network)上的支付请求。它是接收方生成并与付款方分享的字符串，编码了付款方完成支付所需的一切信息。
 
-The standard format is **BOLT-11**, an encoded string typically starting with `lnbc` (mainnet) or `lntb` (testnet). It contains:
+标准格式是 **BOLT-11**，一种编码字符串，通常以 `lnbc`（主网）或 `lntb`（测试网）开头。它包含：
 
-- **Amount** (optional - some invoices let the payer pick).
-- **Payment hash** - a hash of a secret (the *preimage*) the recipient knows. The payment only completes when the preimage is revealed.
-- **Recipient node public key** - which Lightning node should receive.
-- **Routing hints** - optional info about which channels can deliver the payment, useful for nodes with limited public connectivity.
-- **Expiry** - how long the invoice is valid (default usually 1 hour).
-- **Description / memo** - optional human-readable note.
-- **Signature** from the recipient's node.
+- **金额**（可选——某些发票让付款方自行选择）。
+- **支付哈希**——接收方知道的一个秘密（*原像*）的哈希。只有当原像被揭示时支付才完成。
+- **接收节点公钥**——哪个闪电节点应接收。
+- **路由提示**——关于哪些通道可以送达支付的可选信息，对于公共连接有限的节点有用。
+- **有效期**——发票有效时长（默认通常 1 小时）。
+- **描述/备注**——可选的人类可读注释。
+- **接收方节点的签名**。
 
-The payment flow:
+支付流程：
 
-1. Recipient generates an invoice; copies it to the payer (QR code, copy-paste, NFC, etc.).
-2. Payer's wallet decodes the invoice, finds a route through the network, and forwards an HTLC.
-3. Each hop holds the payment locked until the preimage is revealed.
-4. The final recipient reveals the preimage to claim the payment, which cascades back through the route.
-5. Each routing node along the path now has proof the payment completed.
+1. 接收方生成发票；将其复制给付款方（二维码、复制粘贴、NFC 等）。
+2. 付款方钱包解码发票，在网络中找到路由，并转发一个 HTLC。
+3. 每一跳保持支付锁定，直到原像被揭示。
+4. 最终接收方揭示原像以认领支付，这会沿路由级联返回。
+5. 路径上的每个路由节点现在都有支付完成的证明。
 
-Invoices are single-use. The payment hash gets revealed when the payment settles, so paying the same invoice twice would either fail (the recipient won't accept it again) or be a fraud signal.
+发票是一次性的。支付哈希在支付结算时被揭示，所以重复支付同一发票要么会失败（接收方不会再次接受），要么是欺诈信号。
 
-A newer format, **BOLT-12 offers**, addresses some BOLT-11 limitations - reusable, supports recurring payments, smaller, more private. It was officially merged into the Lightning spec in September 2024. As of 2026 it's supported by Core Lightning, LDK, and eclair/Phoenix; LND adoption is still in progress. Expect BOLT-12 to gradually displace BOLT-11 over the next few years.
+一种较新的格式 **BOLT-12 offers** 解决了 BOLT-11 的一些限制——可重复使用、支持定期支付、更小、更隐私。它于 2024 年 9 月正式合并到闪电网络规范中。截至 2026 年，Core Lightning、LDK 和 eclair/Phoenix 支持它；LND 的采用仍在进行中。预计未来几年 BOLT-12 将逐步取代 BOLT-11。
 
-See [Lightning Network](/glossary/lightning-network) for how invoices get routed.
+请参阅[闪电网络](/glossary/lightning-network)了解发票如何被路由。

@@ -1,12 +1,12 @@
 ---
-title: "Merchant Adoption"
+title: "商家采用"
 slug: merchant-adoption
 draft: false
-shortDefinition: "The ongoing trend of businesses accepting Bitcoin for goods/services, broadening mainstream usage."
+shortDefinition: "企业接受比特币支付商品/服务的持续趋势，扩大主流使用。"
 keyTakeaways:
-  - "Enables paying for goods/services directly in BTC"
-  - "Driven by user demand, lower fees, or marketing appeal"
-  - "Challenges include volatility management and simpler payment workflows"
+  - "使直接用 BTC 支付商品/服务成为可能"
+  - "受用户需求、更低手续费或营销吸引力驱动"
+  - "挑战包括波动性管理和更简化的支付流程"
 sources: []
 relatedTerms:
   - bitcoin-pizza-day
@@ -21,22 +21,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Merchant adoption is the slow, uneven process of businesses accepting Bitcoin as payment for actual goods and services. It's the unglamorous half of Bitcoin's monetization - the other half being investment demand, which gets the headlines.
+商家采用是企业接受比特币作为实际商品和服务支付的缓慢、不均匀的过程。这是比特币货币化进程中不起眼的一半——另一半是投资需求，那才是头条新闻。
 
-What real merchant adoption looks like in 2026:
+2026 年真实商家采用的样子：
 
-- **Lightning-first acceptance.** [Lightning](/glossary/lightning-network) solves the practical problems on-chain Bitcoin can't: payments confirm in seconds, fees are sub-cent, and price exposure is minimal because settlement is instant. Strike, Phoenix, Cash App, and others have made Lightning acceptance trivial to add.
-- **El Salvador's experiment.** Bitcoin has been legal tender in El Salvador since 2021. Adoption has been mixed - widespread tourist use, more limited everyday domestic use, infrastructure (Chivo) had teething issues. As a real-world test of "what happens when a nation-state actively pushes Bitcoin acceptance," it's been informative.
-- **Tail of small merchants.** Coffee shops, freelancers, small businesses worldwide. Often Lightning-enabled via Strike, Phoenix, or similar. Hard to quantify globally but the visible long tail keeps growing.
-- **Recurring Bitcoin-payroll services.** Bitwage, Strike's payroll product, and others let employees route a fraction of paychecks straight into BTC.
-- **Crypto-friendly cards.** Spend-from-BTC debit cards that convert to fiat at the merchant. Not "Bitcoin payment" in the purest sense (the merchant still receives fiat) but a workable hybrid.
+- **闪电网络优先接受。** [闪电网络](/glossary/lightning-network)解决了链上比特币无法解决的实际问题：支付几秒确认、费用低于一美分、价格敞口极小因为结算是即时的。Strike、Phoenix、Cash App 等使添加闪电接受变得轻而易举。
+- **萨尔瓦多实验。** 比特币自 2021 年起在萨尔瓦多是法定货币。采用情况喜忧参半——旅游使用广泛、日常国内使用较有限、基础设施（Chivo）有初期问题。作为"当主权国家积极推动比特币接受时会发生什么"的真实世界测试，它很有参考价值。
+- **小商家长尾。** 咖啡店、自由职业者、全球小企业。通常通过 Strike、Phoenix 等启用闪电。难以全球量化但可见的长尾持续增长。
+- **定期比特币薪资服务。** Bitwage、Strike 的薪资产品等让员工将部分工资直接路由到 BTC。
+- **加密友好银行卡。** 从 BTC 花费的借记卡在商家处转换为法币。不是纯粹意义上的"比特币支付"（商家仍收到法币）但是可行的混合方案。
 
-What slows broader adoption:
+阻碍更广泛采用的因素：
 
-- **Volatility.** A merchant accepting BTC at $50 and receiving fiat conversion at $48 ten minutes later loses 4% net. Lightning + same-block settlement helps, but the underlying instrument is still volatile.
-- **Capital gains complexity.** In most jurisdictions, spending BTC is a taxable event. The accounting friction is real and discourages routine use.
-- **Existing payment infrastructure.** Cards, ACH, and bank transfers are deeply entrenched, low-cost for merchants, and "good enough" for most. The case for switching has to be strong.
+- **波动性。** 在 50 美元接受 BTC 的商家十分钟后在 48 美元法币转换就损失 4%。闪电 + 同区块结算有帮助，但底层工具仍然波动。
+- **资本利得复杂性。** 在大多数司法管辖区，花费 BTC 是应税事件。会计摩擦是真实的并阻碍日常使用。
+- **现有支付基础设施。** 银行卡、ACH 和银行转账根深蒂固，对商家来说成本低，对大多数人"够用了"。切换的理由必须很强。
 
-The encouraging trend: Lightning-enabled point-of-sale is now competitive with credit-card processing on fees and *better* on settlement speed. As the volatility issue eases (long term) and as more people earn directly in sats, "Pay with Bitcoin" becomes a real option rather than a curiosity. We're not there yet at scale, but the trajectory is the right one.
+令人鼓舞的趋势：闪电赋能的销售终端现在在费用上与信用卡处理竞争，在结算速度上*更好*。随着波动性问题缓解（长期）和更多人直接赚取聪，"用比特币支付"成为真正的选择而非新奇事物。我们还没有达到规模化，但方向是对的。
 
-See [Bitcoin Pizza Day](/glossary/bitcoin-pizza-day) for the foundational story of the first real-world Bitcoin payment.
+请参阅[比特币披萨日](/glossary/bitcoin-pizza-day)了解第一笔真实世界比特币支付的基础故事。

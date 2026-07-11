@@ -1,12 +1,12 @@
 ---
-title: "Graph Pruning"
+title: "图修剪"
 slug: graph-pruning
 draft: false
-shortDefinition: "An LN node's maintenance process for removing stale or inactive channels from its local network map to improve efficiency."
+shortDefinition: "闪电网络节点从本地网络映射中移除陈旧或非活跃通道以提高效率的维护过程。"
 keyTakeaways:
-  - "Deletes outdated or non-responsive LN channels from the routing table"
-  - "Saves memory and improves route-finding performance"
-  - "Ensures nodes have a current snapshot of active channels"
+  - "从路由表中删除过时或无响应的闪电通道"
+  - "节省内存并改善路由查找性能"
+  - "确保节点拥有活跃通道的当前快照"
 sources: []
 relatedTerms:
   - inactive-channel
@@ -15,23 +15,23 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Graph pruning is the housekeeping process by which a Lightning node removes stale or unresponsive channels from its local view of the network's routing graph.
+图修剪是闪电网络节点从其本地路由图视图中移除陈旧或无响应通道的清理过程。
 
-The Lightning gossip protocol broadcasts channel announcements and updates across the network so any node can in principle find a route through any other node. But channels can:
+闪电网络 gossip 协议在网络中广播通道公告和更新，使任何节点原则上都能通过任何其他节点找到路由。但通道可以：
 
-- **Go offline** when one side's node is down for an extended period.
-- **Become abandoned** if a node operator stops running their daemon entirely.
-- **Stop updating** their fee policy or capacity advertisements, signaling neglect.
-- **Get force-closed** without the on-chain settlement event reaching every gossip peer.
+- **离线**，当一方的节点长时间停机。
+- **被遗弃**，如果节点运营者完全停止运行其守护进程。
+- **停止更新**其手续费策略或容量广告，表明疏于管理。
+- **被强制关闭**而链上结算事件未到达每个 gossip 对等方。
 
-Without pruning, the local graph accumulates dead branches that waste memory and (worse) cause pathfinding to repeatedly attempt routes that always fail. The node spends time and CPU exploring unreachable destinations.
+不修剪的话，本地图会积累死分支，浪费内存且（更糟）导致路径查找反复尝试总是失败的路由。节点花费时间和 CPU 探索不可达目的地。
 
-Bitcoin Core Lightning, LND, and Eclair each have their own pruning heuristics, but the common shape is:
+Bitcoin Core Lightning、LND 和 Eclair 各有自己的修剪启发式，但共同形式是：
 
-- **Channels with no `channel_update` message in N days (typically 14)** are considered stale and removed.
-- **Channels whose closing transaction has been observed on-chain** are removed immediately.
-- **Channels failing repeated payment attempts** may be temporarily blacklisted for routing even if they're not yet pruned from the graph entirely.
+- **N 天（通常 14 天）内没有 `channel_update` 消息的通道**被视为陈旧并移除。
+- **观察到链上关闭交易的通道**立即移除。
+- **反复支付尝试失败的通道**可能被临时列入路由黑名单，即使尚未从图中完全修剪。
 
-For users this is invisible: the wallet just finds working routes. For node operators it shows up as a steady-state graph size (typically 50K-80K active channels in the public network as of 2026, down from peak hype-cycle highs) versus what would be hundreds of thousands of dead channel records if nothing were ever pruned.
+对用户这是不可见的：钱包只是找到有效路由。对节点运营者，它表现为稳态图大小（2026 年公共网络中通常 5 万-8 万活跃通道，低于炒作周期峰值），而如果从不修剪，将有数十万死通道记录。
 
-Pruning is also one of the reasons Lightning's public routing graph metrics are inherently noisy - different implementations prune on different schedules, so "total Lightning network capacity" depends on whose view you're using.
+修剪也是闪电网络公共路由图指标本质上噪声较大的原因之一——不同实现按不同时间表修剪，因此"闪电网络总容量"取决于你使用谁的视图。

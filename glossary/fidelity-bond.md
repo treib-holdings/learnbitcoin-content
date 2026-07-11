@@ -1,12 +1,12 @@
 ---
-title: "Fidelity Bond"
+title: "保证金债券"
 slug: fidelity-bond
 draft: false
-shortDefinition: "A mechanism (e.g., used in JoinMarket) where participants time-lock or stake BTC to prove commitment and reduce Sybil attacks."
+shortDefinition: "一种机制（如 JoinMarket 中使用），参与者时间锁定或质押 BTC 以证明承诺并减少女巫攻击。"
 keyTakeaways:
-  - "Locks BTC to deter fake or spammy participants"
-  - "Used in privacy tools like JoinMarket to raise attack costs"
-  - "Strikes a balance between anonymity and accountability"
+  - "锁定 BTC 以阻止虚假或垃圾参与者"
+  - "在 JoinMarket 等隐私工具中使用以提高攻击成本"
+  - "在匿名性和问责之间取得平衡"
 sources: []
 relatedTerms:
   - counterparty-risk
@@ -19,22 +19,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A fidelity bond is a [time-locked](/glossary/locktime) BTC deposit used as an [anti-sybil](/glossary/anti-sybil-mechanism) mechanism. The participant commits to having capital locked up for a period; this makes spinning up many fake identities expensive, which makes attacking a privacy protocol economically unattractive.
+保证金债券是作为[反女巫](/glossary/anti-sybil-mechanism)机制使用的[时间锁](/glossary/locktime) BTC 存款。参与者承诺将资本锁定一段时间；这使得创建许多假身份变得昂贵，从而使攻击隐私协议在经济上不具吸引力。
 
-The canonical use case is **JoinMarket** - a decentralized [CoinJoin](/glossary/coinjoin) coordination protocol. JoinMarket's matching market lets participants act as either "makers" (provide liquidity, earn fees) or "takers" (pay for the mix). Without anti-sybil measures, an attacker could spin up many fake makers, all controlled by the same entity, and dominate the matching process to compromise the mix.
+经典用例是 **JoinMarket**——一个去中心化的 [CoinJoin](/glossary/coinjoin) 协调协议。JoinMarket 的匹配市场让参与者作为"做市方"（提供流动性，赚取手续费）或"接受方"（付费混合）。没有反女巫措施，攻击者可以创建许多假的做市方，都由同一实体控制，并主导匹配过程以破坏混合。
 
-Fidelity bonds fix this. A maker can prove their commitment by locking BTC in a time-locked output - typically a [CLTV](/glossary/checklocktimeverify-cltv)-protected UTXO that can't be spent until some future block. Takers prefer to mix with makers who have larger bonds locked for longer, because:
+保证金债券解决了这个问题。做市方可以通过在时间锁输出中锁定 BTC 来证明承诺——通常是 [CLTV](/glossary/checklocktimeverify-cltv) 保护的 UTXO，在某个未来区块之前不能花费。接受方更倾向于与拥有更大更长期锁定债券的做市方混合，因为：
 
-- **An attacker would need to lock real BTC** to spin up convincing fake identities.
-- **Larger bonds + longer locks = higher attack cost** for the same level of sybil capability.
-- **Bond holders have skin in the game** - they can't recover the BTC for the lock period, so they're committed to behaving consistently.
+- **攻击者需要锁定真实 BTC** 才能创建令人信服的假身份。
+- **更大的债券+更长的锁定期 = 同等女巫能力的更高攻击成本。**
+- **债券持有者有利益在其中**——他们在锁定期内无法恢复 BTC，因此承诺保持一致行为。
 
-The capital isn't lost; it's just unspendable for the lock period. The attacker bears the *opportunity cost* of capital tied up. At scale, that opportunity cost becomes prohibitive.
+资本不会丢失；只是在锁定期内不可花费。攻击者承担资金被占用 的*机会成本*。在规模上，机会成本变得高昂。
 
-This concept generalizes. Similar economic-stake mechanisms appear in:
+这个概念可以推广。类似的经济质押机制出现在：
 
-- Lightning Network's channel funding (channel parties have skin in the game).
-- Proof-of-stake systems (validators stake to participate).
-- Some federated systems where committee members post bonds.
+- 闪电网络的通道路资金（通道方有利益在其中）。
+- PoS 系统（验证者质押以参与）。
+- 一些联邦系统，委员会成员发布保证金。
 
-Fidelity bonds are a clean example of how Bitcoin's primitives ([time locks](/glossary/locktime), public verifiability) can be composed to solve adjacent problems like sybil resistance, without changing the base protocol.
+保证金债券是比特币原语（[时间锁](/glossary/locktime)、公开可验证性）如何组合以解决相邻问题如女巫抵抗的干净示例，无需更改基础协议。

@@ -1,12 +1,12 @@
 ---
-title: "Payment Point"
+title: "支付点（Payment Point）"
 slug: payment-point
 draft: false
-shortDefinition: "In LN, the public key derived from a payment's secret hash preimage; the receiver must reveal that preimage to claim funds."
+shortDefinition: "在闪电网络中，由支付秘密哈希原像派生的公钥；接收方必须揭示该原像才能领取资金。"
 keyTakeaways:
-  - "Ties to LN's hashed timelock contracts (HTLCs)"
-  - "Receiver claims payment by revealing preimage of the hashed secret"
-  - "Ensures route-level security without revealing the entire payment path"
+  - "与闪电网络的哈希时间锁合约（HTLC）相关"
+  - "接收方通过揭示哈希秘密的原像来领取支付"
+  - "在不揭示整个支付路径的情况下确保路由级安全"
 sources: []
 relatedTerms:
   - htlc-hashed-time-locked-contract
@@ -17,17 +17,17 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A payment point is the public-key form of a Lightning payment secret, used as the cryptographic anchor in PTLC (Point Time-Locked Contract) payment routing instead of the hash of a preimage.
+支付点是闪电网络支付秘密的公钥形式，在 PTLC（Point Time-Locked Contract，点时间锁合约）支付路由中用作密码学锚点，替代原像的哈希。
 
-The classical Lightning construction uses HTLCs: each hop holds funds that can be claimed by revealing a preimage `r` such that `SHA256(r) = h`. The hash `h` is the same across the entire route, so a network observer who sees the preimage revealed at one hop can correlate it with revelations at other hops, linking the path. PTLCs fix this.
+经典闪电网络构造使用 HTLC：每一跳持有可以通过揭示原像 `r`（满足 `SHA256(r) = h`）来领取的资金。哈希 `h` 在整个路由中相同，因此看到一跳揭示原像的网络观察者可以将其与其他跳的揭示关联起来，链接整个路径。PTLC 修复了这个问题。
 
-PTLCs use a payment point `P = r * G` (where `G` is the curve generator). The sender constructs the route so each hop sees a different shifted point (`P + t_i * G` for some shift `t_i`). The final recipient reveals `r` (the discrete log of `P`); each forwarding hop subtracts its shift and uses the resulting scalar to claim its incoming HTLC. Each hop sees a different point on the curve, so external observers correlating points across hops see nothing useful.
+PTLC 使用支付点 `P = r * G`（其中 `G` 是曲线生成元）。发送方构造路由，使每一跳看到不同的移位点（`P + t_i * G`，对于某个移位 `t_i`）。最终接收方揭示 `r`（`P` 的离散对数）；每个转发跳减去其移位并使用结果标量来领取其入站 HTLC。每一跳看到曲线上不同的点，因此跨跳关联点的外部观察者看不到任何有用信息。
 
-What PTLCs unlock once they ship:
+PTLC 一旦部署将解锁的能力：
 
-- **Stronger routing privacy.** Observers can no longer trivially link hops via shared payment hashes.
-- **Async / spontaneous payments** (LN-keysend equivalents) with better properties.
-- **Atomic Multi-Path payments without correlation.** Each path uses a different point; observers can't tell the parts belong to one payment.
-- **Statless invoices and other advanced constructions** built on the more flexible cryptographic primitive.
+- **更强的路由隐私。** 观察者不再能通过共享支付哈希轻易关联各跳。
+- **异步/自发支付**（LN-keysend 等价物）具有更好的特性。
+- **原子多路径支付无关联。** 每条路径使用不同的点；观察者无法判断各部分属于同一笔支付。
+- **无状态发票和其他高级构造**基于更灵活的密码学原语。
 
-The dependency is Schnorr signatures (BIP 340), which Taproot deployed in 2021. PTLC mechanics are designed and specified, but production Lightning implementations are still rolling them out. As of 2026 most real Lightning payments still go over HTLCs. PTLCs are coming.
+依赖项是 Schnorr 签名（BIP 340），Taproot 已于 2021 年部署。PTLC 机制已设计和规范，但生产闪电网络实现仍在推出中。截至 2026 年，大多数实际闪电支付仍通过 HTLC 进行。PTLC 即将到来。

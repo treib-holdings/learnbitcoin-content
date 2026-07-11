@@ -1,12 +1,12 @@
 ---
-title: "Merkleized Abstract Syntax Tree (MAST)"
+title: "默克尔化抽象语法树（MAST）"
 slug: merkleized-abstract-syntax-tree-mast
 draft: false
-shortDefinition: "A Taproot-based technique placing each script branch in a Merkle tree, hiding unused branches for privacy and efficiency."
+shortDefinition: "一种基于 Taproot 的技术，将每个脚本分支放入默克尔树中，隐藏未使用的分支以提升隐私和效率。"
 keyTakeaways:
-  - "Allows separate script branches, revealing only the used path"
-  - "Enhances privacy by hiding unused logic"
-  - "Reduces on-chain footprint and fees for complex contracts"
+  - "允许分离的脚本分支，仅揭示使用的路径"
+  - "通过隐藏未使用的逻辑增强隐私"
+  - "减少复杂合约的链上占用和手续费"
 sources: []
 relatedTerms:
   - taproot
@@ -17,14 +17,14 @@ relatedTerms:
 liveWidget: ~
 ---
 
-MAST - **M**erkleized **A**bstract **S**yntax **T**ree - is a way of structuring complex [Bitcoin Scripts](/glossary/bitcoin-script) so that only the branch actually being executed at spend time needs to appear on-chain. The other branches stay hidden, committed cryptographically via a [Merkle root](/glossary/merkle-root) but never revealed unless used.
+MAST——**M**erkleized **A**bstract **S**yntax **T**ree（默克尔化抽象语法树）——是一种结构化复杂[比特币脚本](/glossary/bitcoin-script)的方式，使得在花费时只有实际执行的分支需要出现在链上。其他分支保持隐藏，通过[默克尔根](/glossary/merkle-root)密码学提交但永不揭示除非被使用。
 
-This is one of the two cryptographic ideas baked into [Taproot](/glossary/taproot). The other is [Schnorr signatures](/glossary/schnorr-signature) plus key aggregation.
+这是融入 [Taproot](/glossary/taproot) 的两个密码学思想之一。另一个是 [Schnorr 签名](/glossary/schnorr-signature)和密钥聚合。
 
-Why MAST is useful: consider a vault script with multiple spending branches - "owner can spend after 1 confirmation," "owner + trusted backup can spend after 1 day," "trusted backup alone after 1 year." Without MAST, all three branches would be visible in every spend, taking up block space and revealing your security model. With MAST, only the branch you actually use is published. The rest is invisible to chain observers.
+为什么 MAST 有用：考虑一个有多个花费分支的金库脚本——"所有者 1 个确认后可花费"，"所有者 + 可信备份 1 天后可花费"，"可信备份单独 1 年后可花费"。没有 MAST，所有三个分支在每次花费时都可见，占用区块空间并暴露你的安全模型。有了 MAST，只有你实际使用的分支被发布。其余对链上观察者不可见。
 
-Combined with Taproot's "key path spending" (the cooperative-signature option), the privacy gain compounds: if all participants agree, the script never needs to be revealed at all. Observers see what looks like a single-signature spend. If cooperation breaks down, only one branch of the script is exposed.
+结合 Taproot 的"密钥路径花费"（协作签名选项），隐私增益叠加：如果所有参与者同意，脚本根本不需要揭示。观察者看到的是看起来像单签花费的交易。如果合作破裂，只有脚本的一个分支被暴露。
 
-MAST has been part of Bitcoin since the Taproot soft fork activated in November 2021 ([BIP-341 / BIP-342](/glossary/taproot)). It's not a separate feature you opt into; it's the way Taproot script-path spending works.
+MAST 自 Taproot 软分叉于 2021 年 11 月激活以来就是比特币的一部分（[BIP-341 / BIP-342](/glossary/taproot)）。它不是你选择启用的独立功能；它是 Taproot 脚本路径花费的工作方式。
 
-The acronym is a mouthful and the explanation is dense, but the upshot is clean: Bitcoin can now have complex contracts that look the same on-chain as the simplest transactions, until they don't have to.
+缩写很长，解释很密集，但结论很干净：比特币现在可以拥有看起来与最简单交易相同的复杂合约，直到它们不必如此。

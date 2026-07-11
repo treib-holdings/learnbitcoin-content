@@ -1,12 +1,12 @@
 ---
-title: "Full Node"
+title: "全节点"
 slug: full-node
 draft: false
-shortDefinition: "A Bitcoin client that downloads and validates all blocks/transactions, enforcing the rules independently."
+shortDefinition: "下载并验证所有区块/交易、独立执行规则的比特币客户端。"
 keyTakeaways:
-  - "Stores/validates the entire blockchain locally"
-  - "The backbone of Bitcoin's trustless model"
-  - "Requires more resources than lightweight/spv wallets"
+  - "本地存储/验证整个区块链"
+  - "比特币无信任模型的骨干"
+  - "比轻量级/SPV 钱包需要更多资源"
 sources: []
 relatedTerms:
   - bitcoin-client
@@ -27,23 +27,23 @@ sameAs:
 liveWidget: ~
 ---
 
-A full node is a Bitcoin [node](/glossary/node) that downloads, validates, and stores the entire blockchain - every block from the [genesis block](/glossary/genesis-block) on January 3, 2009 through whatever the current tip is right now. It enforces every consensus rule independently and answers to no one's interpretation but its own.
+全节点是下载、验证并存储整个区块链的比特币[节点](/glossary/node)——从 2009 年 1 月 3 日的[创世区块](/glossary/genesis-block)到当前尖端。它独立执行每条共识规则，只服从自己的解释。
 
-The practical specs as of 2026:
+2026 年的实际规格：
 
-- **Disk:** ~600 GB and growing by ~150 GB/year. A 2 TB SSD lasts comfortably for years.
-- **RAM:** 4 GB is workable; 8 GB+ is comfortable.
-- **CPU:** Anything from a Raspberry Pi 4 upward will run it. Initial sync is CPU-bound and takes a few days; ongoing operation is trivial.
-- **Bandwidth:** Several hundred GB per month of outbound, mostly serving blocks to peers. Cap-able via configuration if your ISP is hostile.
+- **磁盘：** 约 600 GB，每年增长约 150 GB。2 TB SSD 可舒适使用数年。
+- **内存：** 4 GB 可用；8 GB+ 舒适。
+- **CPU：** 树莓派 4 及以上均可。初始同步是 CPU 密集型，需要几天；持续运行轻量。
+- **带宽：** 每月数百 GB 出站，主要是向对等方提供区块。如果 ISP 不友好可通过配置限制。
 
-The software is almost always [Bitcoin Core](/glossary/bitcoin-core), the reference implementation. Alternatives like [Bitcoin Knots](/glossary/bitcoin-knots) exist but are essentially patched versions of Core.
+软件几乎总是 [Bitcoin Core](/glossary/bitcoin-core)，参考实现。[Bitcoin Knots](/glossary/bitcoin-knots) 等替代品存在，但本质上是 Core 的修补版本。
 
-Why bother running a full node, when wallets can connect to public servers? Three reasons:
+为什么要费心运行全节点，当钱包可以连接到公共服务器？三个原因：
 
-1. **You verify your own transactions.** Without a full node, you trust whichever server tells you whether your coins are valid. With a full node, you check the math yourself - no trust required.
-2. **You enforce consensus.** Every full node is one more node a hypothetical attacker has to convince. The network's resistance to rule changes scales with the number of independent validators.
-3. **You opt out of metadata leakage.** Querying a public server for "is this transaction confirmed yet?" tells that server which addresses you care about. Your own node sees only the global chain, never your specific interest.
+1. **你验证自己的交易。** 没有全节点，你信任告诉你的币是否有效的服务器。有了全节点，你自己检查数学——不需要信任。
+2. **你执行共识。** 每个全节点是假设攻击者需要多说服的一个节点。网络对规则变更的抵抗力随独立验证者数量而扩展。
+3. **你退出元数据泄露。** 向公共服务器查询"这笔交易确认了吗？"告诉该服务器你关心哪些地址。你自己的节点只看到全局链，从不知道你的具体兴趣。
 
-The Bitcoin community runs an estimated 15,000-20,000 publicly reachable full nodes, plus many more behind NAT or on Tor. Yours can be one of them.
+比特币社区运行着估计 15,000-20,000 个公开可达的全节点，加上更多在 NAT 后或 Tor 上。你的也可以是其中之一。
 
-See the [Sovereignty Journey](/journey/sovereignty) for the full walkthrough.
+完整指南参见[主权之旅](/journey/sovereignty)。

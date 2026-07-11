@@ -1,12 +1,12 @@
 ---
-title: "Pool Hopping"
+title: "矿池跳转（Pool Hopping）"
 slug: pool-hopping
 draft: false
-shortDefinition: "The strategy of switching between mining pools to exploit flaws in their reward systems, mostly fixed in modern pools."
+shortDefinition: "在矿池之间切换以利用其奖励系统缺陷的策略，现代矿池中已基本修复。"
 keyTakeaways:
-  - "Exploits reward timing in older pool payout schemes"
-  - "Countered by modern methods (PPLNS, PPS+), making hopping unprofitable"
-  - "Highlights the importance of robust mining pool reward structures"
+  - "利用旧版矿池支付方案中的奖励时机问题"
+  - "现代方法（PPLNS、PPS+）已使跳转无利可图"
+  - "凸显了稳健矿池奖励结构的重要性"
 sources: []
 relatedTerms:
   - block-reward
@@ -17,16 +17,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Pool hopping is the historical exploit of switching between mining pools to extract above-average rewards by gaming the pool's payout scheme. It was a real problem in 2010-2012; modern pool reward systems have made it practically impossible.
+矿池跳转是历史上利用矿池支付方案缺陷、在矿池间切换以获取超额奖励的行为。2010-2012 年这是一个真实问题；现代矿池奖励系统已使其实际上不可能。
 
-The vulnerable scheme was **proportional payout**: at the end of a round (when a block is found), the pool distributes the reward among all miners proportional to their share contribution in that round. The math problem: a hopper could mine the early shares (when share-per-block expected return is high because the block hasn't been found yet) and bail out before the late shares (where the round-block-find probability is much lower) reduced their expected reward.
+易受攻击的方案是**比例支付**：在一轮结束时（找到一个区块时），矿池根据矿工在该轮中的份额贡献按比例分配奖励。数学问题：跳转者可以在早期挖份额（当每区块预期回报高时）并在晚期份额之前退出（此时找到区块的概率更低降低了预期回报），从而获取超额收益。
 
-How modern pools defeat it:
+现代矿池如何防御：
 
-- **PPLNS (Pay-Per-Last-N-Shares).** Rewards are distributed based on the last N shares submitted, regardless of round boundaries. Hopping in and out doesn't help because your share contribution always counts proportionally to your most recent activity, not to which round it landed in.
-- **PPS / PPS+ / FPPS.** The pool pays each share at a fixed expected-value rate (with a pool fee), regardless of when the block is actually found. The pool absorbs the variance. Miners can't game the timing because every share has the same value.
-- **Score-based methods.** Variants that weight shares by their position in the round so early shares are worth less and late shares worth more, neutralizing the hopping advantage.
+- **PPLNS（Pay-Per-Last-N-Shares）。** 奖励基于最后 N 个份额分配，与轮次边界无关。跳进跳出没有用，因为你的份额贡献总是与最近活动成正比，而不是落在哪一轮。
+- **PPS / PPS+ / FPPS。** 矿池按固定期望值费率支付每个份额（含矿池费），与何时实际找到区块无关。矿池吸收方差。矿工无法利用时机，因为每个份额价值相同。
+- **评分方法。** 各种变体按份额在轮次中的位置加权，使早期份额价值更低、晚期份额价值更高，中和跳转优势。
 
-In 2026, pool hopping is essentially a non-issue in major mining pools. Foundry, AntPool, F2Pool, ViaBTC, MARA Pool, and others all use modern reward schemes that defeat it. The term persists mostly as a historical example of how subtle incentive misalignments in distributed systems can be ruthlessly exploited until the design improves.
+2026 年，矿池跳转在主要矿池中基本不是问题。Foundry、AntPool、F2Pool、ViaBTC、MARA Pool 等都使用击败跳转的现代奖励方案。这个词主要作为历史案例存在——展示分布式系统中微妙的激励错位如何被无情利用，直到设计改进。
 
-Adjacent (and still relevant) variants: pool *hopping* in the sense of switching pools for legitimate operational reasons (fee comparison, payout schedule, geographic latency to pool servers) - that's just normal pool selection, not exploitation, and it's a healthy part of the mining market.
+相关的（仍然有意义的）变体：出于合法运营原因的矿池*跳转*——费率比较、支付计划、到矿池服务器的地理延迟——那只是正常的矿池选择，不是利用，是挖矿市场的健康部分。

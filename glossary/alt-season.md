@@ -1,12 +1,12 @@
 ---
-title: "Alt Season"
+title: "山寨季"
 slug: alt-season
 draft: false
-shortDefinition: "A slang term describing periods when alternative cryptocurrencies (altcoins) experience stronger price growth than Bitcoin."
+shortDefinition: "一个俚语，描述山寨币（altcoins）价格涨幅超过比特币的时期。"
 keyTakeaways:
-  - "Occurs when altcoins outperform Bitcoin"
-  - "Fueled by speculation and market hype"
-  - "High gains but also high volatility"
+  - "发生在山寨币跑赢比特币时"
+  - "由投机和市场炒作推动"
+  - "高收益但也高波动性"
 sources: []
 relatedTerms:
   - altcoin
@@ -17,23 +17,23 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Alt season" is the recurring late-cycle phenomenon where [altcoins](/glossary/altcoin) outperform Bitcoin in percentage terms for a few weeks or months. It typically happens after Bitcoin has already made a strong move and traders rotate into riskier assets looking for outsized returns.
+"山寨季"是周期性出现的后期现象，在此期间[山寨币](/glossary/altcoin)在百分比涨幅上跑赢比特币，持续几周或几个月。它通常发生在比特币已经大幅上涨之后，交易者转向风险更高的资产寻求超额回报。
 
-The pattern, roughly:
+大致模式：
 
-1. Bitcoin doubles or triples first. New money enters the crypto space because of headlines about Bitcoin.
-2. Bitcoin briefly consolidates near a local top.
-3. Traders looking for the "next Bitcoin" rotate into altcoins. Ethereum gets the first wave; smaller-cap coins get the later, more violent moves.
-4. Percentage gains for the loudest altcoins can be 5-10× over Bitcoin during the peak weeks of alt season.
-5. The cycle ends. Bitcoin holds most of its gain; altcoins typically retrace 80-95% from their peaks.
+1. 比特币先翻倍或翻三倍。新资金因比特币的新闻头条进入加密领域。
+2. 比特币在局部顶部附近短暂盘整。
+3. 寻找"下一个比特币"的交易者转向山寨币。以太坊迎来第一波；小市值币种随后出现更剧烈的波动。
+4. 山寨季高峰期最热门山寨币的百分比涨幅可以达到比特币的 5-10 倍。
+5. 周期结束。比特币保留了大部分涨幅；山寨币通常从峰值回撤 80-95%。
 
-What's reliably true about alt season:
+关于山寨季的可靠规律：
 
-- **It feels obvious at the time.** "This time the alts are different." They're usually not.
-- **A few altcoins survive each cycle as meaningful projects.** Most don't.
-- **The percentage gains are real for the small minority who time it well.** The percentage losses are real for the much larger majority who buy near the top.
-- **[Bitcoin Dominance](/glossary/bitcoin-dominance) falls during alt season** and recovers afterward. Watching dominance is one way to identify what cycle phase you're in.
+- **当时感觉很明显。** "这次山寨币不一样。"通常并非如此。
+- **每个周期确实有几个山寨币存活为有意义的项目。** 大多数则不然。
+- **对于少数时机把握得当的人来说，百分比收益是真实的。** 对于更大的多数在顶部买入的人来说，百分比亏损同样真实。
+- **[比特币主导率](/glossary/bitcoin-dominance)在山寨季下降**，之后回升。观察主导率是判断你所处周期阶段的一种方式。
 
-The Bitcoiner take: alt season is essentially a wealth-transfer mechanism from later, less-informed buyers to earlier, better-informed sellers. The structural odds for the typical participant are bad. Anyone who's "doing it for the gains" should also recognize this is a casino, not an investment - which can be fine, if you treat it like one.
+比特币持有者的看法：山寨季本质上是一种财富转移机制——从后来的、信息较少的买家转移到较早的、信息更充分的卖家。对普通参与者来说，结构性胜率很差。任何"为了收益而做"的人都应该认识到这是一个赌场，不是投资——如果你把它当赌场对待，那没问题。
 
-A more conservative path is to ignore alt season entirely and just keep [stacking sats](/glossary/satoshi-unit). It's less exciting and historically performs about the same or better, over enough cycles.
+更保守的路径是完全忽略山寨季，继续[囤聪](/glossary/satoshi-unit)。这没那么刺激，但经过足够多的周期后，历史上表现差不多甚至更好。

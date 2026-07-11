@@ -1,12 +1,12 @@
 ---
-title: "Elliptic Curve"
+title: "椭圆曲线"
 slug: elliptic-curve
 draft: false
-shortDefinition: "A type of curve used in Bitcoin's cryptography (secp256k1) for generating public/private key pairs."
+shortDefinition: "比特币密码学（secp256k1）中用于生成公钥/私钥对的一种曲线。"
 keyTakeaways:
-  - "Foundational math for Bitcoin's public/private key system"
-  - "Used for ECDSA and now Schnorr signatures on secp256k1"
-  - "Security relies on intractability of discrete log problems"
+  - "比特币公钥/私钥系统的基础数学"
+  - "用于 secp256k1 上的 ECDSA 和现在的 Schnorr 签名"
+  - "安全性依赖于离散对数问题的不可解性"
 sources: []
 relatedTerms:
   - bip-66
@@ -24,16 +24,16 @@ sameAs:
 liveWidget: ~
 ---
 
-Bitcoin's [public-key cryptography](/glossary/public-key) is built on a specific elliptic curve called **secp256k1**. Satoshi picked it for the original Bitcoin design and it's been the backbone of every Bitcoin signature ever since.
+比特币的[公钥密码学](/glossary/public-key)建立在一条名为 **secp256k1** 的特定椭圆曲线上。Satoshi 在原始比特币设计中选择它，它一直是每个比特币签名的骨干。
 
-The relevant property: elliptic curves let you do "one-way math." You can multiply a known curve point G by a secret number k to get another point P (cheap). Going the other way - given P, finding k - is computationally infeasible for any realistic adversary. This asymmetry is the **elliptic curve discrete logarithm problem**, and Bitcoin's entire ownership model rests on it staying hard.
+相关属性：椭圆曲线让你做"单向数学"。你可以将已知曲线点 G 乘以秘密数 k 得到另一个点 P（便宜）。反方向——给定 P，找到 k——对任何现实对手来说计算上不可行。这种不对称性就是**椭圆曲线离散对数问题**，比特币的整个所有权模型依赖于它保持困难。
 
-In practice:
+实践中：
 
-- Your [private key](/glossary/private-key) is just a number k between 1 and roughly 2^256.
-- Your [public key](/glossary/public-key) is the point P = k·G on the secp256k1 curve.
-- Signing a transaction proves you know k *without revealing it*, by exploiting the same one-way math.
+- 你的[私钥](/glossary/private-key)就是 1 到大约 2^256 之间的一个数 k。
+- 你的[公钥](/glossary/public-key)是 secp256k1 曲线上的点 P = k·G。
+- 签署交易证明你知道 k *但不揭示它*，通过利用相同的单向数学。
 
-Different elliptic curves exist (ed25519, NIST P-256, others). Bitcoin sticks with secp256k1 for compatibility and because no serious vulnerability has been found in it after sixteen years of being one of the most-attacked cryptographic targets on Earth.
+存在不同的椭圆曲线（ed25519、NIST P-256 等）。比特币坚持使用 secp256k1，因为兼容性且因为作为地球上最受攻击的密码学目标之一十六年后未发现严重漏洞。
 
-The most plausible threat is a sufficiently powerful quantum computer running [Shor's algorithm](/glossary/shors-algorithm), which could in principle break elliptic curve discrete log. This is a real concern but not imminent. Address types that don't reveal public keys until spent ([P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash), [Taproot](/glossary/taproot)) already buy some defense-in-depth against that future, though Taproot is a partial exception (the bech32m address IS the tweaked pubkey, with no hash layer in front). See [Post-Quantum Bitcoin](/glossary/post-quantum-bitcoin) for the migration framework, and the [Key Space rabbit hole](/rabbit-hole/key-space) for why 2^256 is so much bigger than your intuition wants it to be.
+最可能的威胁是足够强大的量子计算机运行 [Shor 算法](/glossary/shors-algorithm)，原则上可以破解椭圆曲线离散对数。这是真实关注但不迫在眉睫。花费前不揭示公钥的地址类型（[P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash)、[Taproot](/glossary/taproot)）已经为那个未来提供了一些纵深防御，尽管 Taproot 是部分例外（bech32m 地址就是调整后的公钥，前面没有哈希层）。迁移框架参见[后量子比特币](/glossary/post-quantum-bitcoin)，为什么 2^256 比你的直觉大得多参见[密钥空间深入探讨](/rabbit-hole/key-space)。

@@ -2,11 +2,11 @@
 title: "BIP 37"
 slug: bip-37
 draft: false
-shortDefinition: "Introduced Bloom filters for lightweight wallets, later criticized for privacy leaks and mostly replaced by BIP 157/158."
+shortDefinition: "为轻量钱包引入布隆过滤器，后因隐私泄露受批评，大部分被 BIP 157/158 取代。"
 keyTakeaways:
-  - "Reduced bandwidth use for SPV wallets"
-  - "Criticized for revealing user interest patterns"
-  - "Mostly deprecated in favor of modern filtering methods"
+  - "减少 SPV 钱包的带宽使用"
+  - "因泄露用户兴趣模式而受批评"
+  - "大部分被现代过滤方法取代"
 sources: []
 relatedTerms:
   - bip-bitcoin-improvement-proposal
@@ -21,12 +21,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-BIP 37 added Bloom Filter support to the Bitcoin P2P protocol so SPV wallets could ask a full node "send me transactions matching this filter" without downloading every block. For a few years it was how every mobile wallet worked.
+BIP 37 为比特币 P2P 协议添加了布隆过滤器支持，让 SPV 钱包可以请求全节点"发送匹配此过滤器的交易"而无需下载每个区块。在几年内它是每个移动钱包的工作方式。
 
-The privacy story turned out to be terrible. A Bloom filter is meant to obscure exactly which addresses a wallet cares about by mixing in enough false positives, but in practice wallets used filter parameters with low false-positive rates (to save bandwidth) and the serving node could de-anonymize most of the wallet's keys with simple statistical analysis, especially across reconnects with refreshed filters. The 2014 "On the Privacy Provisions of Bloom Filters in Lightweight Bitcoin Clients" paper made the situation hard to ignore.
+隐私故事结果很糟糕。布隆过滤器旨在通过混入足够多的假阳性来模糊钱包关心哪些地址，但实际上钱包使用的过滤参数假阳性率很低（为了节省带宽），服务节点可以通过简单的统计分析去匿名化钱包的大部分密钥，特别是在使用刷新过滤器的重连中。2014 年的论文"On the Privacy Provisions of Bloom Filters in Lightweight Bitcoin Clients"使情况难以忽视。
 
-Public nodes mostly stopped serving BIP 37. Bitcoin Core disabled the `NODE_BLOOM` service bit by default in 0.19 (2019), and the few wallets still using BIP 37 in 2026 mostly point at self-hosted nodes.
+公共节点大部分停止了 BIP 37 服务。Bitcoin Core 在 0.19（2019 年）中默认禁用了 `NODE_BLOOM` 服务位，2026 年仍使用 BIP 37 的少数钱包大多指向自托管节点。
 
-The modern replacement is BIP 158 compact block filters: the node publishes a small deterministic filter per block, the client downloads filters and matches them locally. The wallet never sends its filter to anyone. It's strictly more private and only slightly more bandwidth-hungry.
+现代替代方案是 BIP 158 紧凑区块过滤器：节点为每个区块发布一个小的确定性过滤器，客户端下载过滤器并在本地匹配。钱包永远不会向任何人发送其过滤器。它严格来说更隐私，带宽只略大。
 
-Spec: [BIP-37](https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki).
+规范：[BIP-37](https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki)。

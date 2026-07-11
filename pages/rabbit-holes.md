@@ -1,10 +1,7 @@
 ---
-title: "Rabbit Holes"
-heading: "Pick a rabbit hole."
-description: "Pick a rabbit hole. Each one is a self-contained, opinionated deep-dive on a single Bitcoin concept - interactive where it matters, sourced everywhere."
+title: "兔子洞"
+heading: "选一个兔子洞。"
+description: "选一个兔子洞。每个都是独立的、有态度的深度探索，聚焦单个比特币概念——该互动的地方互动，该引出处的地方都有出处。"
 ---
 
-Self-contained explorations, one concept at a time. Interactive where
-the topic earns it (live mempool, real difficulty countdowns, actual
-unit converters). Sourced everywhere. Fall down a hole, come out
-understanding something well.
+一次探索一个概念。该互动的地方互动（实时内存池、真实的难度倒计时、实际的单位转换器），该引出处的地方都有出处。掉进一个洞里，爬出来的时候，你是真懂了。

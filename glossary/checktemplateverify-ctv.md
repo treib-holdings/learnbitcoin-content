@@ -1,12 +1,12 @@
 ---
-title: "CheckTemplateVerify (CTV)"
+title: "CheckTemplateVerify（CTV）"
 slug: checktemplateverify-ctv
 draft: false
-shortDefinition: "Proposed BIP-119 opcode allowing 'template covenants,' restricting how outputs can be spent in future transactions."
+shortDefinition: "BIP-119 提议的操作码，允许'模板契约'，限制输出在未来的交易中如何被花费。"
 keyTakeaways:
-  - "Allows restricting future transaction shapes (template covenants)"
-  - "Potentially beneficial for vaults or batch payment features"
-  - "Debated due to concerns about restricting coin fungibility"
+  - "允许限制未来交易的形状（模板契约）"
+  - "对金库或批量支付功能有潜在益处"
+  - "因可能限制币的可替代性而存在争议"
 sources: []
 relatedTerms:
   - bip-65-opchecklocktimeverify
@@ -22,23 +22,23 @@ relatedTerms:
 liveWidget: ~
 ---
 
-`OP_CHECKTEMPLATEVERIFY` (CTV) is the proposed Bitcoin Script opcode at the heart of [BIP-119](/glossary/bip-119-ctv). Its job: enforce that a spending transaction matches a pre-committed *template* - a specific set of inputs, outputs, sequences, and locktimes.
+`OP_CHECKTEMPLATEVERIFY`（CTV）是 [BIP-119](/glossary/bip-119-ctv) 核心提议的比特币脚本操作码。其功能：强制花费交易与预先承诺的*模板*匹配——一组特定的输入、输出、序列和锁定时间。
 
-How CTV would work at the script level:
+CTV 在脚本层面的工作方式：
 
-1. When you fund a UTXO, the locking script commits to a hash of a transaction template - "to spend this, the spending transaction must hash to value H."
-2. The template specifies things like: how many outputs, what amounts, what scripts those outputs use, what relative locktime the spend requires.
-3. When someone tries to spend, CTV checks the spending transaction against that template. If it matches, the spend is allowed. If not, it's rejected.
+1. 当你为一个 UTXO 提供资金时，锁定脚本承诺一个交易模板的哈希值——"要花费此输出，花费交易的哈希必须等于值 H。"
+2. 模板指定了诸如：有多少输出、什么金额、这些输出使用什么脚本、花费需要什么相对锁定时间等。
+3. 当有人尝试花费时，CTV 根据该模板检查花费交易。如果匹配，允许花费。如果不匹配，拒绝。
 
-This is one specific way to add [covenants](/glossary/covenants) to Bitcoin. It's deliberately limited: CTV doesn't let scripts read *arbitrary* properties of spending transactions, only check them against a precomputed template hash. This limit is part of what makes CTV a smaller-surface-area proposal than some alternatives.
+这是一种向比特币添加[契约](/glossary/covenants)的具体方式。它有意受限：CTV 不允许脚本读取花费交易的*任意*属性，只能根据预计算的模板哈希进行检查。这种限制是 CTV 比一些替代方案表面积更小的部分原因。
 
-Practical applications if it activated:
+如果激活后的实际应用：
 
-- **Vaults** with forced multi-step withdrawal paths.
-- **Channel factories** that open many [Lightning channels](/glossary/lightning-channel) from one on-chain transaction.
-- **Payment pools** for batching many recipients efficiently.
-- **Cold-storage protections** against catastrophic hot-wallet compromise.
+- 具有强制多步提款路径的**金库**。
+- 从一笔链上交易开启多个[闪电通道](/glossary/lightning-channel)的**通道工厂**。
+- 用于高效批量处理多个接收者的**支付池**。
+- 防止热钱包灾难性妥协的**冷存储保护**。
 
-CTV is one of several covenant designs being discussed. Alternatives include OP_VAULT, OP_CAT (re-enabled), OP_CSFS, ANYPREVOUT (Eltoo's primitive), and Taproot-Trees-based approaches. Different proposals have different tradeoffs on expressiveness, complexity, and future flexibility.
+CTV 是正在讨论的多种契约设计之一。替代方案包括 OP_VAULT、OP_CAT（重新启用）、OP_CSFS、ANYPREVOUT（Eltoo 的原语）以及基于 Taproot 树的方法。不同提案在表达力、复杂性和未来灵活性方面有不同的权衡。
 
-As of 2026, no covenant opcode has activated. See [Covenants](/glossary/covenants) for the broader debate and [BIP-119](/glossary/bip-119-ctv) for the specific proposal.
+截至 2026 年，没有契约操作码被激活。更广泛的争论参见[契约](/glossary/covenants)，具体提案参见 [BIP-119](/glossary/bip-119-ctv)。

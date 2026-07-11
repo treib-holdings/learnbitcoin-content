@@ -3,11 +3,11 @@ title: "FTX"
 slug: ftx
 draft: false
 published: "2026-06-18"
-shortDefinition: "The crypto exchange that collapsed in November 2022 with roughly $8B of customer money missing, secretly routed to its sister trading firm Alameda Research. Founder Sam Bankman-Fried is serving 25 years."
+shortDefinition: "2022 年 11 月崩塌的加密交易所，约 80 亿美元客户资金缺失，被秘密转至其关联交易公司 Alameda Research。创始人 Sam Bankman-Fried 被判 25 年监禁。"
 keyTakeaways:
-  - "FTX lent customer deposits to its affiliated hedge fund, Alameda Research, through a near-unlimited line of credit, leaving a roughly $8B hole"
-  - "A run started when reporting exposed Alameda's reliance on FTX's own FTT token; FTX filed for bankruptcy on 11 November 2022"
-  - "Sam Bankman-Fried was convicted on all seven counts in 2023 and sentenced to 25 years in 2024; creditors are repaid at petition-date dollar values, not in their appreciated coins"
+  - "FTX 通过几乎无限的信贷额度将客户存款借给其关联对冲基金 Alameda Research，留下约 80 亿美元缺口"
+  - "报道揭露 Alameda 依赖 FTX 自有的 FTT 代币后引发挤兑；FTX 于 2022 年 11 月 11 日申请破产"
+  - "Sam Bankman-Fried 于 2023 年被定罪全部七项罪名，2024 年被判 25 年；债权人按申请日美元价值偿还，而非升值的币"
 sources:
   - { label: "US DOJ - Samuel Bankman-Fried sentenced to 25 years (2024)", url: "https://www.justice.gov/archives/opa/pr/samuel-bankman-fried-sentenced-25-years-his-orchestration-multiple-fraudulent-schemes" }
   - { label: "SEC - charges against Sam Bankman-Fried (2022)", url: "https://www.sec.gov/newsroom/press-releases/2022-219" }
@@ -23,12 +23,12 @@ sameAs:
 liveWidget: ~
 ---
 
-By late 2022 FTX was one of the largest and most trusted cryptocurrency exchanges anywhere. It sponsored stadiums, courted regulators, and was run by a founder the press treated as a genius. It was also quietly lending its customers' deposits to a hedge fund.
+到 2022 年底，FTX 是全球最大且最受信任的加密货币交易所之一。它赞助体育场、结交监管者，由媒体视为天才的创始人运营。它同时在悄悄地将客户存款借给一家对冲基金。
 
-Sam Bankman-Fried founded FTX in 2019, alongside Alameda Research, a trading firm he had started in 2017. FTX issued its own token, FTT, and Alameda held a huge amount of it. In November 2022 CoinDesk reported that Alameda's balance sheet was propped up by that illiquid FTT. Confidence broke, a competitor said it would dump its FTT, and customers tried to withdraw around $5 billion in a few days. The exchange couldn't honor it, because the money wasn't there. FTX had been routing customer deposits to Alameda through a credit line with effectively no limit. On 11 November 2022, FTX, Alameda, and roughly 130 affiliated companies filed for bankruptcy.
+Sam Bankman-Fried 于 2019 年创立 FTX，同时还有他在 2017 年创立的交易公司 Alameda Research。FTX 发行了自己的代币 FTT，Alameda 持有大量 FTT。2022 年 11 月 CoinDesk 报道 Alameda 的资产负债表由流动性差的 FTT 支撑。信心崩塌，一家竞争对手表示将抛售其 FTT，客户在几天内尝试提取约 50 亿美元。交易所无法兑现，因为钱不在那里。FTX 一直通过实际上无限制的信贷额度将客户存款转给 Alameda。2022 年 11 月 11 日，FTX、Alameda 和约 130 家关联公司申请破产。
 
-The customer shortfall was about $8 billion. Bankman-Fried was convicted on all seven fraud counts in November 2023 and sentenced to 25 years in March 2024. Several of his lieutenants cooperated and were sentenced separately.
+客户缺口约 80 亿美元。Bankman-Fried 于 2023 年 11 月被定罪全部七项欺诈罪名，2024 年 3 月被判 25 年。他的几名副手配合认罪并分别判刑。
 
-The bankruptcy estate, run by John Ray III, is repaying creditors more than 100 percent of what their claims were worth in dollars on 11 November 2022, when bitcoin was around $16,000. Bitcoin later traded well above $90,000. So customers were made "whole" in dollars and got back only a fraction of what their coins would be worth now. With any custodian, you get back what they say you're owed, valued and paid on their terms rather than yours.
+由 John Ray III 运营的破产遗产正在向债权人偿还超过其索赔在 2022 年 11 月 11 日美元价值的 100%，当时比特币约 16,000 美元。比特币后来交易远超 90,000 美元。因此客户在美元上被"全额"偿还，但只拿回了他们的币现在价值的一小部分。对于任何托管人，你拿回的是他们说你欠的、按他们的条件估值和支付的东西，而非你的。
 
-See [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard) for the full decade of receipts.
+完整十年的记录参见[Mt. Gox 到 FTX：托管墓地](/rabbit-hole/mt-gox-ftx-graveyard)。

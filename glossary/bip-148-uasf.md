@@ -1,12 +1,12 @@
 ---
-title: "BIP 148 (UASF)"
+title: "BIP 148（UASF）"
 slug: bip-148-uasf
 draft: false
-shortDefinition: "A user-activated soft fork pushing SegWit by rejecting blocks not signaling for SegWit after a deadline."
+shortDefinition: "一种用户激活的软分叉，通过在截止日期后拒绝不信号 SegWit 的区块来推动 SegWit 激活。"
 keyTakeaways:
-  - "Nodes refused non-SegWit blocks after a certain time"
-  - "Demonstrated node-driven consensus power"
-  - "Helped finalize SegWit activation in 2017"
+  - "节点在一定时间后拒绝不信号 SegWit 的区块"
+  - "展示了节点驱动的共识力量"
+  - "帮助在 2017 年最终完成 SegWit 激活"
 sources: []
 relatedTerms:
   - bip-bitcoin-improvement-proposal
@@ -25,18 +25,18 @@ sameAs:
 liveWidget: ~
 ---
 
-[BIP-148](https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki) is the user-activated soft fork (UASF) proposal that ended the multi-year [SegWit](/glossary/segwit-segregated-witness-bip-141) activation deadlock in mid-2017. It's one of the most important episodes in Bitcoin's governance history.
+[BIP-148](https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki)是用户激活的软分叉（UASF）提案，在 2017 年年中结束了长达数年的 [SegWit](/glossary/segwit-segregated-witness-bip-141)激活僵局。这是比特币治理历史上最重要的事件之一。
 
-The setup: SegWit had broad support from developers, exchanges, businesses, and a clear majority of [nodes](/glossary/node) - but a significant fraction of miners refused to signal for it under [BIP-9](/glossary/bip-9-versionbits). The deadlock persisted for over a year. Some miners wanted concessions (notably a larger block size); others were simply running mining hardware that could exploit a covert optimization called [AsicBoost](/glossary/asicboost) that SegWit would have disrupted.
+背景：SegWit 获得了开发者、交易所、商家的广泛支持，以及明显多数[节点](/glossary/node)的支持——但相当一部分矿工拒绝在 [BIP-9](/glossary/bip-9-versionbits)下信号。僵局持续了一年多。一些矿工想要让步（特别是更大的区块大小）；另一些只是在运行可以利用一种叫 [AsicBoost](/glossary/asicboost)的隐式优化的挖矿硬件，而 SegWit 会破坏这种优化。
 
-BIP-148's proposal, authored by Shaolinfry: starting August 1, 2017, BIP-148-compliant nodes would *reject* any block that didn't signal for SegWit. If enough nodes ran this software, miners would either signal SegWit or get their blocks orphaned by the economic majority of the network.
+BIP-148 的提案，由 Shaolinfry 撰写：从 2017 年 8 月 1 日起，兼容 BIP-148 的节点将*拒绝*任何不信号 SegWit 的区块。如果足够多的节点运行此软件，矿工要么信号 SegWit，要么其区块被经济多数节点孤立。
 
-What actually happened:
+实际发生的事情：
 
-- **The threat of BIP-148 was credible.** Major exchanges, businesses, and node operators signaled intent to run it.
-- **Miners blinked.** Before the August 1 deadline, miners agreed to activate [BIP-91](/glossary/bip-91), which forced SegWit signaling without splitting the chain. SegWit locked in soon after, activating in late August.
-- **The chain didn't split (on Bitcoin's side).** The dispute did spawn Bitcoin Cash as a separate altcoin, but Bitcoin itself remained one chain.
+- **BIP-148 的威胁是可信的。**主要交易所、商家和节点运营商表示了运行它的意图。
+- **矿工让步了。**在 8 月 1 日截止日期之前，矿工同意激活 [BIP-91](/glossary/bip-91)，该提案在不分裂链的情况下强制 SegWit 信号。SegWit 不久后锁定，8 月底激活。
+- **链没有分裂（在比特币这边）。**争议确实催生了 Bitcoin Cash 作为独立的山寨币，但比特币本身保持为一条链。
 
-The lesson: **nodes - not miners - are the ultimate authority on Bitcoin's rules.** Miners can refuse to signal, but they can't force the network to accept blocks that the economic majority of nodes will reject. BIP-148 established this principle in practice. It's been referenced in every subsequent activation discussion.
+教训：**节点——而非矿工——是比特币规则的最终权威。**矿工可以拒绝信号，但他们无法强迫网络接受经济多数节点会拒绝的区块。BIP-148 在实践中确立了这一原则。此后的每次激活讨论都会引用它。
 
-See [The Block Size War](/rabbit-hole/block-size-war) for the two years of deadlock that made a user revolt necessary.
+参见[区块大小战争](/rabbit-hole/block-size-war)了解使用户反抗成为必要的两年僵局。

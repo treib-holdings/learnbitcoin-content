@@ -1,12 +1,12 @@
 ---
-title: "Multisig"
+title: "多签"
 slug: multisig
 draft: false
-shortDefinition: "A wallet setup where spending requires multiple signatures, so no single key (or single key holder) can move funds alone."
+shortDefinition: "一种钱包设置，花费需要多个签名，因此没有单一密钥（或单一密钥持有者）能单独移动资金。"
 keyTakeaways:
-  - "Spending requires M of N cosigner signatures (e.g., 2-of-3)"
-  - "Eliminates the single-point-of-failure problem of a single seed"
-  - "Standard pattern: each cosigner key on a different device, often in different locations"
+  - "花费需要 N 个共签者中的 M 个签名（如 2-of-3）"
+  - "消除了单一种子的单点故障问题"
+  - "标准模式：每个共签者密钥在不同设备上，通常在不同位置"
 sources: []
 relatedTerms:
   - hierarchical-multisig
@@ -43,24 +43,24 @@ ogImageAlt: "BITCOIN MULTISIG in large bold type, with the subtitle 'Threshold-o
     preload="metadata"
     aria-label="Animated walkthrough of a 2-of-3 multisig wallet. Three hardware keys appear in a row with a 'Threshold: 2 of 3' label and the caption 'Three different makers. A bug in one can't break the others.' A transaction signs with two keys and broadcasts. Loss scenario: Key B fades to gray with a 'lost' label; the other two keys still sign and the spend goes through. Theft scenario: a hooded figure grabs Key A, which turns green and is marked 'stolen'; the thief's attempt to sign alone halts at one of two signatures. Closing pillars: Multisig. Threshold-of-keys. Vendor-diverse."
   ></video>
-  <figcaption>Three keys. Any two sign. Lose one and you still spend. Steal one and you still can't.</figcaption>
+  <figcaption>三把密钥。任意两把签名。丢失一把仍可花费。被盗一把仍无法花费。</figcaption>
 </figure>
 
-Multisig is a wallet structure where the output requires multiple signatures to spend, not just one. The script encodes "M of N cosigners must sign" - you might have 3 cosigner keys (N=3) and require any 2 of them to sign for a spend to be valid (M=2). That's the classic [2-of-3](/glossary/m-n).
+多签是一种钱包结构，输出需要多个签名才能花费，而不仅仅是一个。脚本编码"M of N 共签者必须签名"——你可能有三把共签者密钥（N=3），要求其中任意 2 把签名才能使花费有效（M=2）。这就是经典的 [2-of-3](/glossary/m-n)。
 
-The point is to remove the single-point-of-failure problem of a normal single-sig wallet. With one seed, anyone who finds or copies it can drain you. With 2-of-3 multisig spread across three locations or three devices, an attacker needs to compromise two simultaneously - a much harder bar.
+目的是消除普通单签钱包的单点故障问题。一个种子，任何人找到或复制它都能掏空你。2-of-3 多签分布在三个位置或三个设备上，攻击者需要同时攻破两把——一个难得多的门槛。
 
-Common patterns:
+常见模式：
 
-- **2-of-3 personal custody.** One key on a hardware wallet at home, one with a custody service or in a safe deposit box, one with a trusted family member or attorney. Survives loss of any one. Steal one and you still can't spend. The sweet spot for serious personal holdings.
-- **3-of-5 institutional.** Standard for corporate treasuries and large custodians. Survives loss of two, requires three to sign, often paired with hardware security modules.
-- **2-of-2 Lightning channels.** Every Lightning channel is technically a 2-of-2 multisig output between you and your channel partner. Most users never see this; the protocol just uses multisig under the hood for the channel's funding output.
+- **2-of-3 个人托管。** 一把密钥在家中的硬件钱包上，一把在托管服务或银行保险箱中，一把在信任的家庭成员或律师处。丢失任何一把都能恢复。偷到一把仍无法花费。严肃个人持有的甜蜜点。
+- **3-of-5 机构。** 企业金库和大型托管机构的标准。可丢失两把，需要三把签名，通常与硬件安全模块配对。
+- **2-of-2 闪电通道。** 每个闪电通道在技术上是你和通道伙伴之间的 2-of-2 多签输出。大多数用户看不到这一点；协议只是在底层使用多签作为通道的注资输出。
 
-Bitcoin has two ways to express multisig on-chain:
+比特币在链上有两种表达多签的方式：
 
-- **Classical multisig** (`OP_CHECKMULTISIG`, pre-Taproot). Wrapped in P2SH or P2WSH. The script is visible on-chain when spent, so observers can see "this was a 2-of-3 spend." Capped at 15 cosigners by opcode design.
-- **Taproot multisig** (post-2021). Either the script-path (a MAST tree, can go to many more cosigners) or, with MuSig2 / FROST [key aggregation](/glossary/key-aggregation), the spend looks identical to a single-sig Taproot output. Outside observers can't tell it was multisig at all. Privacy and fees both improve.
+- **经典多签**（`OP_CHECKMULTISIG`，Taproot 之前）。封装在 P2SH 或 P2WSH 中。脚本在花费时在链上可见，因此观察者可以看到"这是一个 2-of-3 花费"。操作码设计上限 15 个共签者。
+- **Taproot 多签**（2021 年后）。要么是脚本路径（MAST 树，可以支持更多共签者），要么使用 MuSig2 / FROST [密钥聚合](/glossary/key-aggregation)，花费看起来与单签 Taproot 输出完全相同。外部观察者根本看不出这是多签。隐私和手续费都改善。
 
-The signing flow uses [PSBT](/glossary/psbt). One cosigner builds the transaction, signs their part, passes it to the next, who adds their signature, and so on until the threshold is met. With hardware wallets and coordination tools like Sparrow, Nunchuk, or Specter, this is straightforward but more involved than single-sig.
+签名流程使用 [PSBT](/glossary/psbt)。一个共签者构建交易、签名自己的部分、传给下一个，下一个添加签名，以此类推直到达到阈值。使用硬件钱包和 Sparrow、Nunchuk 或 Specter 等协调工具，这很直接但比单签更复杂。
 
-When to use multisig: when the value justifies the operational complexity. For small balances, a well-backed-up single-sig hardware wallet is more secure than a multisig you'll fumble. For amounts you can't afford to lose and won't move daily, multisig is the right answer.
+何时使用多签：当价值证明运营复杂性合理时。对于小额余额，备份良好的单签硬件钱包比你会搞砸的多签更安全。对于你承受不起丢失且不会每天移动的金额，多签是正确答案。

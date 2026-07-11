@@ -1,12 +1,12 @@
 ---
-title: "PayJoin"
+title: "PayJoin（联合支付）"
 slug: payjoin
 draft: false
-shortDefinition: "A collaborative transaction (a.k.a. P2EP) where sender and receiver both add inputs, obscuring usual input-output analysis."
+shortDefinition: "一种协作交易（又称 P2EP），发送方和接收方都添加输入，使通常的输入-输出分析失效。"
 keyTakeaways:
-  - "Both sides contribute inputs to a single transaction"
-  - "Breaks simplistic chain analysis assumptions"
-  - "Requires special wallet support but can happen on-the-fly"
+  - "双方都为单笔交易贡献输入"
+  - "打破简单的链上分析假设"
+  - "需要特殊钱包支持，但可以在正常支付中无缝发生"
 sources: []
 relatedTerms:
   - address-clustering
@@ -22,18 +22,18 @@ sameAs:
 liveWidget: ~
 ---
 
-PayJoin (also called Pay-to-Endpoint, P2EP) is a privacy-enhancing transaction format where both the sender *and* the receiver contribute [inputs](/glossary/input-transaction-input). The result is an on-chain payment that defeats one of the strongest [chain-analysis](/glossary/chain-analysis) heuristics: "all inputs to a transaction share an owner."
+PayJoin（也叫 Pay-to-Endpoint，P2EP）是一种隐私增强的交易格式，发送方*和*接收方都贡献[输入](/glossary/input-transaction-input)。结果是一笔链上支付，击败了最强的[链上分析](/glossary/chain-analysis)启发式之一："交易的所有输入属于同一所有者。"
 
-A normal payment: sender contributes inputs, receiver contributes nothing. Chain analysts assume all inputs to the transaction belong to one wallet, and use that to cluster addresses.
+普通支付：发送方贡献输入，接收方不贡献任何东西。链上分析师假设交易的所有输入属于一个钱包，并利用这一点来聚类地址。
 
-A PayJoin: sender contributes their inputs, *and the receiver adds at least one of their own inputs* before signing. The transaction now has inputs from two different wallets. The common-input heuristic breaks - any analyst that applies it is going to merge two unrelated wallets into one false cluster.
+PayJoin：发送方贡献其输入，*接收方也添加至少一个自己的输入*然后签名。交易现在有来自两个不同钱包的输入。共同输入启发式被打破——任何应用它的分析师都会将两个不相关的钱包合并为一个错误的聚类。
 
-Practical wins:
+实际好处：
 
-- **For the sender:** the analyst's assumption that all inputs to your transaction are yours becomes wrong. Past clustering analyses get polluted.
-- **For the receiver:** a payment doesn't go to a fresh isolated address; their existing UTXOs are part of the spending pattern, harder to single out.
-- **Both parties** also achieve some [consolidation](/glossary/consolidation-transaction) opportunistically - the receiver gets to spend an old UTXO at the same time they're being paid.
+- **对于发送方：** 分析师对你交易所有输入都是你的假设变得错误。过去的聚类分析被污染了。
+- **对于接收方：** 支付不会去到一个全新的孤立地址；他们现有的 UTXO 是花费模式的一部分，更难被单独识别。
+- **双方**还顺便实现了一些[合并](/glossary/consolidation-transaction)——接收方在被支付的同时有机会花费一个旧 UTXO。
 
-The catch is coordination: both wallets need to talk before broadcast. Standards like [BIP-78](https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki) define an HTTP-based PayJoin protocol where the receiver runs an endpoint. Improvements in 2024-2025 (BIP-77 / async PayJoin via Nostr or similar relays) made coordination easier without requiring the receiver to be online at the moment of payment.
+难点在于协调：两个钱包需要在广播前通信。[BIP-78](https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki) 等标准定义了基于 HTTP 的 PayJoin 协议，接收方运行一个端点。2024-2025 年的改进（BIP-77 / 通过 Nostr 或类似中继的异步 PayJoin）使协调更容易，不要求接收方在支付时刻在线。
 
-PayJoin is unlike [CoinJoin](/glossary/coinjoin) in scale and intent. CoinJoin is many-party batch mixing for after-the-fact privacy. PayJoin is two-party regular-payment privacy. Both are useful; PayJoin is much harder to censor or coordinate against because every PayJoin looks like a normal transaction.
+PayJoin 与 [CoinJoin](/glossary/coinjoin) 在规模和意图上不同。CoinJoin 是多方批量混合，用于事后的隐私。PayJoin 是双方的常规支付隐私。两者都有用；PayJoin 更难被审查或协调对抗，因为每笔 PayJoin 看起来都像普通交易。
