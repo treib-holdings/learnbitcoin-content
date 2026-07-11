@@ -1,12 +1,12 @@
 ---
-title: "Green Address"
+title: "绿色地址"
 slug: green-address
 draft: false
-shortDefinition: "A concept or service branding quick 'trusted' BTC transactions, sometimes using partial multi-sig or third-party assurance."
+shortDefinition: "一种概念或服务品牌，通过部分多签或第三方保证实现快速'可信'BTC 交易。"
 keyTakeaways:
-  - "Seeks instant trust in transactions via a known intermediary"
-  - "Contradicts Bitcoin's decentralized model"
-  - "Never became a mainstream standard but influenced quick payment services"
+  - "通过已知中介寻求交易的即时信任"
+  - "与比特币的去中心化模型相矛盾"
+  - "从未成为主流标准但影响了快速支付服务"
 sources: []
 relatedTerms:
   - address
@@ -19,20 +19,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Green address" is a mostly-historical concept where a transaction is trusted as if it had confirmed already, on the basis that it comes from a known, reputable entity that guarantees not to double-spend. The recipient effectively treats the transaction as final the moment it arrives.
+"绿色地址"是一个主要是历史性的概念，交易被信任为已确认，基于它来自一个已知、有声誉的实体且保证不会双花。接收方在交易到达的瞬间就将其视为最终。
 
-The original proposal (Mt. Gox era, ~2011-2013) had specific patterns:
+原始提案（Mt. Gox 时代，约 2011-2013 年）有特定模式：
 
-- A custodian publishes a designated "green" address.
-- The custodian promises to never double-spend from that address.
-- Merchants accepting payment from the green address grant instant credit, trusting the custodian's promise rather than waiting for confirmations.
+- 托管人发布一个指定的"绿色"地址。
+- 托管人承诺永远不会从该地址双花。
+- 接受绿色地址支付的商户给予即时信用，信任托管人的承诺而非等待确认。
 
-It never gained meaningful adoption for good reasons:
+它从未获得有意义的采用，原因充分：
 
-- **Centralized trust.** The promise is only as good as the custodian's solvency and honesty. The merchant is now trusting two parties: their counterparty AND the custodian's promise. This is the opposite of Bitcoin's value proposition.
-- **The "I trust the custodian" path** has a much simpler implementation: just use a custodial settlement system entirely, the way credit cards work. Adding cryptographic complexity for no security gain doesn't help.
-- **Better alternatives emerged.** Lightning Network solved the "fast settlement" problem with cryptographic finality rather than custodial trust.
+- **中心化信任。** 承诺仅相当于托管人的偿付能力和诚信。商户现在信任两方：对手方和托管人的承诺。这与比特币的价值主张相反。
+- **"我信任托管人"路径**有更简单的实现：直接使用托管结算系统，就像信用卡一样。为无安全增益添加密码复杂性没有帮助。
+- **更好的替代方案出现了。** 闪电网络用密码学最终性而非托管信任解决了"快速结算"问题。
 
-The term occasionally surfaces in marketing for "trusted Bitcoin" services that promise instant credit on Bitcoin payments to known addresses. In every modern case, what's actually being sold is custodial trust dressed in Bitcoin terminology - useful for some users, but not really Bitcoin's offering.
+该术语偶尔出现在承诺比特币支付即时信用的"可信比特币"服务的营销中。在每个现代案例中，实际出售的是披着比特币术语的托管信任——对某些用户有用，但并非比特币真正提供的。
 
-For practical use in 2026: if you need fast settlement, use Lightning. If you need instant credit from a known entity, that entity can just give you instant credit; you don't need Bitcoin in the loop for the instant-credit part. "Green address" is a museum piece from when those options didn't yet exist.
+2026 年的实际使用：如果你需要快速结算，用闪电网络。如果你需要来自已知实体的即时信用，该实体可以直接给你即时信用；你不需要比特币参与即时信用部分。"绿色地址"是那些选项尚不存在时的博物馆展品。

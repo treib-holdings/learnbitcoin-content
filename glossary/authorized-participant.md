@@ -1,13 +1,13 @@
 ---
-title: "Authorized Participant"
+title: "授权参与商"
 slug: authorized-participant
 draft: false
 published: "2026-06-15"
-shortDefinition: "A large broker-dealer with a contract to create and redeem ETF shares directly with the issuer. The arbitrage mechanism that keeps an ETF's market price aligned with its Net Asset Value."
+shortDefinition: "与发行人签订合同、可直接创建和赎回 ETF 份额的大型经纪商。这是保持 ETF 市场价与净资产值一致的套利机制。"
 keyTakeaways:
-  - "Only APs interact directly with the fund; retail trades on the open stock exchange"
-  - "APs arbitrage: when market price > NAV they create shares, when market price < NAV they redeem"
-  - "For Bitcoin ETFs the AP list includes Jane Street, Virtu, JPMorgan, Goldman Sachs, ABN AMRO, Macquarie, and others"
+  - "只有授权参与商直接与基金交互；散户在公开交易所交易"
+  - "授权参与商套利：市场价 > 净资产值时创建份额，市场价 < 净资产值时赎回"
+  - "比特币 ETF 的授权参与商包括 Jane Street、Virtu、JPMorgan、Goldman Sachs、ABN AMRO、Macquarie 等"
 sources: []
 relatedTerms:
   - etf-exchange-traded-fund
@@ -21,40 +21,40 @@ relatedTerms:
 liveWidget: ~
 ---
 
-An Authorized Participant (AP) is a large broker-dealer with a contractual relationship with an ETF issuer that lets it create and redeem ETF shares directly with the fund. Retail investors and most institutions trade ETF shares on the open market through a normal broker; APs alone can mint new shares or destroy existing ones in exchange for the underlying assets (or cash, depending on the structure).
+授权参与商（AP）是与 ETF 发行人有合同关系的大型经纪商，可以直接向基金创建和赎回 ETF 份额。散户投资者和大多数机构通过普通经纪商在公开市场交易 ETF 份额；只有 AP 可以铸造新份额或销毁现有份额以换取底层资产（或现金，取决于结构）。
 
-Why APs exist:
+AP 存在的原因：
 
-- **Continuous arbitrage.** When demand pushes an ETF's market price above its [Net Asset Value](/glossary/nav-net-asset-value), an AP can buy the underlying (BTC), deliver it to the issuer in exchange for new shares at NAV, and sell those shares at the elevated market price. Risk-free profit, modulo execution costs. The act of doing this closes the gap. When market price falls below NAV, APs reverse the trade: buy ETF shares at the discount, redeem them for BTC (or cash) at NAV, and sell that. Either way, the [premium or discount](/glossary/premium-discount-to-nav) gets compressed back toward zero.
-- **Inventory provision.** APs typically also act as market makers in the ETF shares themselves, quoting bids and offers on the [exchange](/glossary/exchange) and providing intraday [liquidity](/glossary/liquidity).
+- **持续套利。**当需求推高 ETF 市场价使其高于[净资产值](/glossary/nav-net-asset-value)时，AP 可以买入底层资产（BTC），交付给发行人以换取按净资产值计的新份额，然后以较高的市场价卖出这些份额。无风险利润（扣除执行成本后）。这个过程缩小了差距。当市场价低于净资产值时，AP 反向操作：以折价买入 ETF 份额，赎回为 BTC（或现金）按净资产值计，然后卖出。无论哪种方式，[溢价或折价](/glossary/premium-discount-to-nav)都被压缩回零。
+- **做市。**AP 通常也在 ETF 份额本身做市，在[交易所](/glossary/exchange)报价买卖并提供日内[流动性](/glossary/liquidity)。
 
-How a creation works mechanically:
+创建的机械流程：
 
-1. AP wants to create a creation unit (typically 5,000 to 40,000 shares for Bitcoin ETFs, varies by issuer).
-2. AP delivers the required basket to the issuer. For cash creation: USD equal to NAV times unit size. For in-kind: BTC equal to the BTC backing per share times unit size.
-3. Issuer credits the AP with the new shares.
-4. AP sells the shares into the market (or holds them as inventory).
+1. AP 想创建一个创建单位（比特币 ETF 通常为 5,000 到 40,000 份，因发行人而异）。
+2. AP 向发行人交付所需篮子。现金创建：等于净资产值乘以单位大小的美元。实物创建：等于每股背后 BTC 数量乘以单位大小的 BTC。
+3. 发行人向 AP 记入新份额。
+4. AP 将份额卖入市场（或持有为库存）。
 
-Redemption is the same in reverse.
+赎回是反向操作。
 
-Who APs are for spot Bitcoin ETFs:
+现货比特币 ETF 的 AP 是谁：
 
-The major US spot ETFs disclosed their initial AP lists in their prospectuses. Names that appear across multiple products include:
+美国主要现货 ETF 在招股说明书中披露了初始 AP 名单。出现在多个产品中的名字包括：
 
-- **Jane Street** - high-frequency market maker, AP for most major US ETFs across asset classes
-- **Virtu Financial** - market maker, very common AP across ETF products
-- **JPMorgan Securities** - large broker-dealer, AP for institutional-skewed products
-- **Goldman Sachs** - large broker-dealer
-- **ABN AMRO Clearing** - European clearing firm with US operations
-- **Macquarie Capital** - investment bank, active in commodity ETFs
-- **Cantor Fitzgerald, BofA Securities, Barclays Capital** - large broker-dealers also on various AP lists
+- **Jane Street**——高频做市商，大多数美国 ETF 的 AP
+- **Virtu Financial**——做市商，非常常见的 ETF AP
+- **JPMorgan Securities**——大型经纪商，偏机构型产品的 AP
+- **Goldman Sachs**——大型经纪商
+- **ABN AMRO Clearing**——有美国业务的欧洲清算公司
+- **Macquarie Capital**——投资银行，活跃于大宗商品 ETF
+- **Cantor Fitzgerald、BofA Securities、Barclays Capital**——也出现在各 AP 名单上的大型经纪商
 
-The Bitcoin-specific wrinkle:
+比特币特有的复杂性：
 
-Traditional commodity ETFs (gold, silver) have AP arrangements built around well-understood physical settlement infrastructure. For spot Bitcoin ETFs, APs need access to BTC liquidity to fulfill creations. Some APs run their own BTC trading desks. Others use Coinbase Prime, OTC desks, or futures markets to source. The 2024 [SEC requirement](/glossary/creation-redemption) for cash-only creation initially meant the issuer (typically via Coinbase Custody) handled the spot BTC execution, but the AP still had to deliver USD in size, which is non-trivial for daily flows in the hundreds of millions.
+传统大宗商品 ETF（黄金、白银）的 AP 安排围绕充分理解的实物交割基础设施建立。对于现货比特币 ETF，AP 需要获取 BTC 流动性来完成创建。一些 AP 运营自己的 BTC 交易台。其他使用 Coinbase Prime、OTC 台或期货市场来获取。2024 年 [SEC 要求](/glossary/creation-redemption)仅限现金创建，最初意味着发行人（通常通过 Coinbase Custody）处理现货 BTC 执行，但 AP 仍需交付大额美元，对于每日数亿美元的流动来说这并非易事。
 
-Why this matters for a retail Bitcoin ETF buyer:
+为什么这对零售比特币 ETF 买家重要：
 
-- A healthy AP list means tight spreads and tight tracking. If APs are absent or hesitant, the wrapper breaks.
-- AP behavior is one reason spot Bitcoin ETFs have tracked the underlying so cleanly since launch - the arbitrage is profitable and many capable firms run it.
-- AP concentration risk exists but is generally less acute than custodian concentration: APs compete; custody for 8 of 11 ETFs is at one firm.
+- 健康的 AP 名单意味着紧密的价差和紧密的跟踪。如果 AP 缺席或犹豫，包装就会出问题。
+- AP 行为是现货比特币 ETF 自上市以来跟踪底层资产如此干净的原因之一——套利有利可图且有许多有能力的公司在运营。
+- AP 集中风险存在但通常不如托管人集中风险严重：AP 互相竞争；而 11 只 ETF 中 8 只的托管在一家公司。

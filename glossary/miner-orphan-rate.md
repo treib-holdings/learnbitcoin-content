@@ -1,12 +1,12 @@
 ---
-title: "Miner Orphan Rate"
+title: "矿工孤块率"
 slug: miner-orphan-rate
 draft: false
-shortDefinition: "The percentage of mined blocks not accepted into the longest chain, often due to propagation delays or near-simultaneous finds."
+shortDefinition: "矿工产出的区块未被最长链接受的百分比，通常由于传播延迟或近同时发现。"
 keyTakeaways:
-  - "Occurs when two competing valid blocks are found simultaneously"
-  - "Reflects network propagation speed, not malicious activity"
-  - "Impacts miner profitability; larger pools tend to have fewer orphans"
+  - "当两个竞争的有效区块同时被发现时发生"
+  - "反映网络传播速度，非恶意行为"
+  - "影响矿工盈利能力；较大的矿池通常孤块更少"
 sources: []
 relatedTerms:
   - block-propagation
@@ -17,25 +17,25 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The orphan rate is the percentage of valid blocks a miner produces that don't end up in the canonical chain - blocks that lost a near-simultaneous race and got abandoned when the network converged on a different tip.
+孤块率是矿工产出的有效区块未被规范链接受的百分比——那些在近同时竞赛中输掉、在网络收敛到不同尖端时被废弃的区块。
 
-Strictly speaking, "orphan" is a misnomer. Blocks that lost the race are properly called *stale blocks*. The term "orphan" is reserved for blocks whose parent isn't known yet. But the colloquial usage persists.
+严格来说，"孤块"是用词不当。输掉竞赛的区块正确名称是*陈旧区块*。"孤块"一词保留给父区块尚未知道的区块。但通俗用法持续存在。
 
-Why orphans happen:
+孤块发生的原因：
 
-- Two miners find valid blocks at roughly the same time, each unaware of the other.
-- Both blocks propagate across the network.
-- Some nodes see block A first, some see block B first; they start mining on their respective tips.
-- When the next block is found, it builds on one of the two. The other becomes stale.
+- 两个矿工大约同时发现有效区块，互不知情。
+- 两个区块在网络中传播。
+- 一些节点先看到区块 A，一些先看到区块 B；它们在各自的尖端上挖。
+- 当下一个区块被发现时，它建立在两者之一上。另一个变陈旧。
 
-For an individual miner, the orphan rate is direct lost revenue. Each orphan means burning electricity to produce a block that earns nothing.
+对单个矿工来说，孤块率是直接的收入损失。每个孤块意味着消耗电力产出一个什么也赚不到的区块。
 
-What drives it:
+驱动因素：
 
-- **Block propagation latency.** The longer your block takes to reach other miners, the higher the chance a competing block beats yours to a critical mass.
-- **Geographic position.** Miners far from the network's connectivity center are at a structural disadvantage.
-- **Pool affiliation.** Large pools have better relay infrastructure (direct peering with other pools, FIBRE membership, etc.) and lower orphan rates than solo miners on residential connections.
+- **区块传播延迟。** 你的区块到达其他矿工的时间越长，竞争区块击败你的关键质量到达的机会就越大。
+- **地理位置。** 远离网络连接中心的矿工处于结构性劣势。
+- **矿池归属。** 大型矿池有更好的中继基础设施（与其他矿池直接对等、FIBRE 成员等），孤块率低于家庭连接上的独立矿工。
 
-Typical 2026 orphan rates: well-connected industrial mining operations see less than 0.5% orphans. Hobbyist solo miners on home internet can see 1-3% orphans. Geographic outliers can be higher.
+2026 年典型孤块率：连接良好的工业挖矿运营看到低于 0.5% 的孤块。家庭互联网上的业余独立矿工可能看到 1-3%。地理偏远者可能更高。
 
-Bitcoin's difficulty retargeting mostly absorbs the network-wide effect of orphans: lost blocks don't change the average inter-block time, they just shift revenue between miners. But for any individual miner the orphan rate is a real and tracked cost of doing business.
+比特币的难度重定向大部分吸收了孤块的全网效应：丢失的区块不改变平均出块间隔，只是在矿工之间转移收入。但对任何单个矿工来说，孤块率是真实且被追踪的运营成本。

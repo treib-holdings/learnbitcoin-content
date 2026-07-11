@@ -2,11 +2,11 @@
 title: "BIP 85"
 slug: bip-85
 draft: false
-shortDefinition: "Defines a standard for creating multiple deterministic child seeds from a single master seed, improving backup convenience."
+shortDefinition: "定义从单个主种子创建多个确定性子种子的标准，改善备份便利性。"
 keyTakeaways:
-  - "Allows generating multiple mnemonic seeds from one root"
-  - "Simplifies backups for multiple wallets"
-  - "Expands on the hierarchical approach of HD wallets"
+  - "允许从一个根生成多个助记词种子"
+  - "简化多个钱包的备份"
+  - "扩展 HD 钱包的分层方法"
 sources: []
 relatedTerms:
   - address-derivation-path
@@ -21,16 +21,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-[BIP-85](https://github.com/bitcoin/bips/blob/master/bip-0085.mediawiki) defines a deterministic way to generate child secrets (typically new BIP-39 mnemonics, but also other formats like WIF private keys, HD seed bytes, or generic 256-bit entropy) from a single master BIP-32 wallet. Each child derivation is fully independent in terms of resulting wallet operation, but reproducible from the master plus a derivation path.
+[BIP-85](https://github.com/bitcoin/bips/blob/master/bip-0085.mediawiki)定义了一种确定性方式，从单个主 BIP-32 钱包生成子密钥（通常是新的 BIP-39 助记词，但也支持 WIF 私钥、HD 种子字节或通用 256 位熵等其他格式）。每个子派生在结果钱包运营方面完全独立，但可从主种子加派生路径重现。
 
-Why this is useful:
+为什么有用：
 
-- **One backup, many wallets.** A user with a single carefully-protected master seed can deterministically generate seeds for separate "sub-wallets" - one for daily spending, one for savings, one to give to a family member, etc. Backups consolidate to the master.
-- **Recoverable secrets, not random ones.** If you lose a sub-wallet's mnemonic, you can re-derive it from the master + path. No need to back up each sub-wallet independently.
-- **General-purpose entropy generation.** BIP-85 supports deriving non-mnemonic outputs too - PGP keys, password seeds, arbitrary bytes for any application that wants deterministic randomness anchored to a backed-up source.
+- **一次备份，多个钱包。**拥有一个精心保护的主种子的用户可以确定性地为独立"子钱包"生成种子——一个日常消费、一个储蓄、一个给家庭成员等。备份合并到主种子。
+- **可恢复的密钥，非随机的。**如果丢失子钱包的助记词，可以从主种子加路径重新派生。无需独立备份每个子钱包。
+- **通用熵生成。**BIP-85 也支持派生非助记词输出——PGP 密钥、密码种子、任何需要锚定到已备份源的确定性随机性的应用的任意字节。
 
-The downside: **the master seed becomes a single point of catastrophic failure.** If the master leaks, every sub-wallet is compromised at once. For users with serious operational security (hardware wallets, secure backup storage), this concentration can be acceptable. For users with weaker key hygiene, it can be worse than independent seeds.
+缺点：**主种子成为单点灾难性故障。**如果主种子泄露，每个子钱包同时被入侵。对于有严肃操作安全（硬件钱包、安全备份存储）的用户，这种集中是可以接受的。对于密钥卫生较弱的用户，它可能比独立种子更糟。
 
-BIP-85 is widely supported in Bitcoin Core, hardware wallets (ColdCard, Trezor, Foundation Passport), and several wallet stacks. It's the standard for "I want multiple wallets but only one backup to safeguard."
+BIP-85 在 Bitcoin Core、硬件钱包（ColdCard、Trezor、Foundation Passport）和多个钱包技术栈中被广泛支持。它是"我想要多个钱包但只保管一个备份"的标准。
 
-See [Hierarchical Deterministic Wallet](/glossary/hierarchical-deterministic-wallet) for the BIP-32 framework this builds on.
+参见[分层确定性钱包](/glossary/hierarchical-deterministic-wallet)了解此规范构建于其上的 BIP-32 框架。

@@ -1,12 +1,12 @@
 ---
-title: "Block Reward"
+title: "区块奖励"
 slug: block-reward
 draft: false
-shortDefinition: "The incentive miners receive for finding a valid block, comprising the block subsidy plus transaction fees."
+shortDefinition: "矿工找到有效区块获得的激励，由区块奖励加交易手续费组成。"
 keyTakeaways:
-  - "Combines new BTC (subsidy) and user-paid fees"
-  - "Halving events reduce the subsidy every 210k blocks"
-  - "Ensures a steady incentive for miners to secure the network"
+  - "结合新发行 BTC（奖励）和用户支付的手续费"
+  - "减半事件每 21 万区块减少奖励"
+  - "确保矿工保护网络的持续激励"
 sources: []
 relatedTerms:
   - bip-42
@@ -28,11 +28,11 @@ sameAs:
 liveWidget: ~
 ---
 
-The block reward is the total compensation a miner receives for finding a valid block. It has two parts:
+区块奖励是矿工找到有效区块获得的总补偿。它有两个部分：
 
-1. **The [block subsidy](/glossary/block-subsidy)** - newly issued BTC, currently 3.125 per block, halved every 210,000 blocks until it reaches zero around 2140.
-2. **Transaction fees** - the sum of fees from every transaction the miner chose to include in the block. Variable; depends on mempool conditions.
+1. **[区块奖励](/glossary/block-subsidy)**——新发行的 BTC，目前每区块 3.125，每 210,000 个区块减半，直到约 2140 年归零。
+2. **交易手续费**——矿工选择包含在区块中的每笔交易手续费之和。可变；取决于内存池状况。
 
-Both parts are paid to the miner via the [coinbase transaction](/glossary/coinbase-transaction), the special first transaction in every block. In Bitcoin's early years the subsidy was nearly all of the reward (transactions were essentially free). Today fees usually contribute 3-10%, with occasional spikes when the mempool is congested.
+两部分都通过 [coinbase 交易](/glossary/coinbase-transaction)支付给矿工——每个区块中特殊的第交易。在比特币早期，奖励几乎占全部（交易基本免费）。如今手续费通常贡献 3-10%，内存池拥堵时偶尔飙升。
 
-The long-term economic question for Bitcoin's security is whether fees can fully replace the shrinking subsidy. So far the trend is consistent with the design - per-byte fees keep rising as Bitcoin's usage matures. See [Mining rabbit hole §5](/rabbit-hole/mining) for the long version.
+比特币安全性的长期经济问题是手续费能否完全替代不断缩减的奖励。到目前为止趋势与设计一致——随着比特币使用成熟，每字节手续费持续上涨。参见[挖矿 rabbit hole §5](/rabbit-hole/mining)了解完整版本。

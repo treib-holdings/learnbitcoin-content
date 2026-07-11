@@ -1,12 +1,12 @@
 ---
-title: "Rescue Transaction"
+title: "救援交易（Rescue Transaction）"
 slug: rescue-transaction
 draft: false
-shortDefinition: "A pre-signed or fallback transaction prepared to secure funds if keys are compromised or LN channels fail."
+shortDefinition: "预先签名的或备用交易，用于在密钥被泄露或 LN 通道失败时保护资金。"
 keyTakeaways:
-  - "Acts as a contingency measure to preserve access to funds"
-  - "Typically pre-signed with certain conditions or time locks"
-  - "Essential for LN forced closures or emergency multisig retrieval"
+  - "作为紧急情况下保全资金访问权的应急措施"
+  - "通常预签名并带有特定条件或时间锁"
+  - "对 LN 强制关闭或多签紧急取回至关重要"
 sources: []
 relatedTerms:
   - hierarchical-multisig
@@ -16,32 +16,32 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A rescue transaction is a pre-signed Bitcoin transaction held in reserve for emergency recovery scenarios. The signing happens during a calm setup phase; the broadcasting happens only if something goes wrong.
+救援交易是预先签名的比特币交易，储备用于紧急恢复场景。签名在平静的设置阶段完成；广播仅在出问题时进行。
 
-Common patterns:
+常见模式：
 
-- **Vault recovery transactions.** In a vault setup (hot key + cold key + timelock-protected withdrawal path), the user pre-signs the "cold key clawback" transaction during setup. If the hot key is ever compromised and an attacker tries to spend, the rescue transaction (already signed, just needs broadcast) sweeps funds to a safe address before the attacker's clawback window expires.
-- **Lightning channel commitments.** Every Lightning channel commitment is, in effect, a pre-signed rescue transaction. If the channel partner disappears, you broadcast your most recent commitment to recover your funds on-chain (with a CSV-locked window).
-- **Multisig emergency recovery.** A 2-of-3 multisig with a pre-signed transaction for the 3 cosigners' agreed worst-case scenario: if cosigner A is unreachable, B and C have a pre-signed tx that moves funds to a fresh setup excluding A.
-- **Inheritance plans.** Pre-signed transactions where the heir-recovery path includes a transaction that can be broadcast after a timelock to claim funds.
+- **金库恢复交易。** 在金库设置中（热密钥 + 冷密钥 + 时间锁保护的提款路径），用户在设置时预签名"冷密钥追回"交易。如果热密钥被泄露且攻击者尝试花费，救援交易（已签名，只需广播）在攻击者的追回窗口到期前将资金扫入安全地址。
+- **闪电通道承诺。** 每个闪电通道承诺实际上都是一笔预签名的救援交易。如果通道对手消失，你广播最近的承诺来在链上恢复资金（有一个 CSV 锁定窗口）。
+- **多签紧急恢复。** 2-of-3 多签，3 个共同签名者商定最坏情况下的预签名交易：如果签名者 A 不可达，B 和 C 有一笔预签名交易将资金移至排除 A 的新设置。
+- **继承计划。** 预签名交易中继承人恢复路径包含一笔可在时间锁后广播以领取资金的交易。
 
-What makes rescue transactions powerful:
+救援交易的威力在于：
 
-- **No signing needed at the worst moment.** When something goes wrong, the user (or heir) may be panicked, under coercion, or unavailable. Pre-signed transactions don't require lucid decision-making in a crisis.
-- **Cosigners may be offline.** A pre-signed multisig recovery doesn't require coordinating with cosigners who might be unreachable.
-- **Time-locked enforcement.** Some rescue transactions use CSV/CLTV so they only become valid after a specified delay, giving the primary user time to abort the rescue if it was triggered by mistake.
+- **最坏时刻无需签名。** 出问题时，用户（或继承人）可能恐慌、被胁迫或不可达。预签名交易不需要在危机中做出清醒决策。
+- **共同签名者可能离线。** 预签名的多签恢复不需要与可能不可达的共同签名者协调。
+- **时间锁执行。** 一些救援交易使用 CSV/CLTV，使它们仅在指定延迟后才生效，给主要用户时间在误触发时中止。
 
-Storage and security:
+存储和安全：
 
-- **Where you store the rescue transaction matters.** The signed transaction is exactly as sensitive as a private key for that destination. Anyone who finds it can broadcast it.
-- **Fee considerations.** Pre-signed transactions have a fixed fee, baked in at signing time. If fee rates spike before broadcast, the transaction may be too low-fee to confirm. Some designs pre-sign multiple versions at different fee rates.
-- **State drift.** Multi-input transactions might reference UTXOs that have since been spent. Periodic re-signing keeps the rescue valid.
-- **Operational discipline.** Test the rescue transaction at setup. A pre-signed transaction that turns out to be invalid is worse than no rescue plan.
+- **救援交易存哪里很重要。** 已签名交易对目标地址而言与私钥一样敏感。任何找到它的人都可以广播。
+- **手续费考量。** 预签名交易有固定手续费，在签名时确定。如果签名后手续费率飙升，交易可能因手续费过低无法确认。一些设计在不同手续费率下预签名多个版本。
+- **状态漂移。** 多输入交易可能引用已花费的 UTXO。定期重新签名保持救援有效。
+- **操作纪律。** 在设置时测试救援交易。预签名交易如果后来发现无效比没有救援计划更糟。
 
-Real production examples:
+实际生产示例：
 
-- **Liana** (Wizardsardine's wallet): primary use case is exactly this pattern, with a recovery key that becomes spendable after a configurable timelock.
-- **Casa, Unchained, Nunchuk multisig services**: typically maintain pre-signed recovery transactions as part of customer setup.
-- **DIY vault implementations**: Sparrow + ColdCard + Liana-style scripts can construct any of these designs manually.
+- **Liana**（Wizardsardine 的钱包）：主要用例正是这种模式，恢复密钥在可配置时间锁后可花费。
+- **Casa、Unchained、Nunchuk 多签服务**：通常在客户设置中维护预签名恢复交易。
+- **DIY 金库实现**：Sparrow + ColdCard + Liana 式脚本可以手动构建任何这些设计。
 
-Rescue transactions are one of the most underrated tools in Bitcoin self-custody. They turn theoretical "what if X" scenarios into "here's the file we broadcast if X happens" reality. The upfront work is real; the recovery payoff is enormous when needed.
+救援交易是比特币自托管中最被低估的工具之一。它们将理论上的"如果 X 怎么办"场景变成"如果 X 发生就广播这个文件"的现实。前期工作是真实的；需要时的回报是巨大的。

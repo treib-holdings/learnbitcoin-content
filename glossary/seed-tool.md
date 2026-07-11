@@ -1,12 +1,12 @@
 ---
-title: "Seed Tool"
+title: "种子工具"
 slug: seed-tool
 draft: false
-shortDefinition: "An offline script or application that generates, verifies, or converts BIP 39 mnemonic seeds in a secure environment."
+shortDefinition: "在安全环境中生成、验证或转换 BIP 39 助记词的离线脚本或应用程序。"
 keyTakeaways:
-  - "Enables manual or offline generation and verification of seed phrases"
-  - "Minimizes risk of online tampering or seed compromise"
-  - "Useful for advanced or paranoid setups requiring total transparency"
+  - "支持手动或离线生成和验证助记词"
+  - "最大程度降低在线篡改或种子泄露的风险"
+  - "适用于需要完全透明的高级或偏执设置"
 sources: []
 relatedTerms:
   - hd-wallet-hierarchical-deterministic-wallet
@@ -17,18 +17,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A seed tool is offline software for generating, verifying, or converting BIP 39 mnemonic seeds without trusting a hardware wallet or online generator for the randomness. Common operations:
+种子工具是一种离线软件，用于在不信任硬件钱包或在线生成器的随机性的情况下，生成、验证或转换 BIP 39 助记词。常见操作：
 
-- **Generate a seed from physical entropy.** Roll 99 dice (giving 128+ bits of true randomness) and feed the rolls into the tool; out comes the matching 12 or 24-word phrase. No software RNG involved at any point.
-- **Convert between formats.** BIP 39 words to raw entropy and back. Useful for verifying that two backups (printed words and stamped metal) encode the same seed.
-- **Verify a checksum.** Confirm a written-down 24-word phrase is internally consistent before relying on it.
-- **Test an optional passphrase.** Compute the derived seed for a given (mnemonic + passphrase) pair and verify it produces the expected addresses.
+- **从物理熵生成种子。** 掷 99 次骰子（产生 128+ 位真实随机性），将结果输入工具；输出匹配的 12 或 24 个单词的助记词。全程不涉及任何软件随机数生成器。
+- **格式转换。** BIP 39 单词与原始熵之间的互转。用于验证两份备份（打印的单词和压印的金属）编码的是同一个种子。
+- **验证校验和。** 确认手写的 24 个单词在内部是一致的，然后再依赖它。
+- **测试可选密码。** 计算给定（助记词 + 密码）组合的派生种子，验证它产生预期的地址。
 
-Real implementations:
+实际实现：
 
-- **SeedSigner.** Stateless air-gapped device that takes dice rolls, produces a seed, and signs PSBTs without ever persisting the seed.
-- **Coldcard's BIP 39 entropy tool.** Built into the device firmware; supports dice, cards, and other entropy sources.
-- **Ian Coleman's open-source BIP 39 tool.** Runs in a browser, but designed to be downloaded and used offline. Used to verify seeds, derive addresses, and sanity-check wallet behavior.
-- **Various Python / Rust CLI tools.** For developers who want to verify what their wallet is doing or build custom backup workflows.
+- **SeedSigner。** 无状态气隙设备，接受骰子输入，生成种子，签署 PSBT，从不持久存储种子。
+- **Coldcard 的 BIP 39 熵工具。** 内置于设备固件中；支持骰子、卡片和其他熵源。
+- **Ian Coleman 的开源 BIP 39 工具。** 在浏览器中运行，但设计为下载后离线使用。用于验证种子、派生地址和检查钱包行为。
+- **各种 Python / Rust CLI 工具。** 供想验证钱包行为或构建自定义备份流程的开发者使用。
 
-The discipline that makes a seed tool useful: run it on an air-gapped machine (or a dedicated trusted device), use the verified open-source version, and confirm the output matches what your wallet sees before trusting any meaningful amount to the resulting seed.
+使种子工具有用的纪律：在气隙机器（或专用可信设备）上运行，使用经验证的开源版本，并在将任何有意义的金额托付给所得种子之前确认输出与钱包看到的一致。

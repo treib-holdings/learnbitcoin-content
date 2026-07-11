@@ -1,13 +1,13 @@
 ---
-title: "QuadrigaCX"
+title: "QuadrigaCX（夸德里加交易所）"
 slug: quadriga-cx
 draft: false
 published: "2026-06-18"
-shortDefinition: "Canada's largest crypto exchange, whose founder died in 2018 supposedly holding the only keys to its cold wallets - which turned out to have been emptied months earlier. About CAD 169M of customer money gone."
+shortDefinition: "加拿大最大的加密交易所，其创始人在 2018 年去世，据说唯一掌握冷钱包密钥——结果发现冷钱包早在 8 个月前就被掏空了。约 1.69 亿加元的客户资金消失。"
 keyTakeaways:
-  - "Founder and CEO Gerald Cotten died in December 2018; the company claimed only he could access the cold wallets"
-  - "The Ontario Securities Commission concluded in 2020 that Quadriga 'operated like a Ponzi scheme' - the cold wallets had been empty since April 2018, eight months before Cotten died"
-  - "Around 76,000 clients lost roughly CAD 169M; creditors have recovered only about 13 percent"
+  - "创始人兼 CEO Gerald Cotten 于 2018 年 12 月去世；公司声称只有他能访问冷钱包"
+  - "安大略证券委员会在 2020 年得出结论：Quadriga '像庞氏骗局一样运营'——冷钱包自 2018 年 4 月就已清空，即 Cotten 去世前 8 个月"
+  - "约 76,000 名客户损失约 1.69 亿加元；债权人仅收回约 13%"
 sources:
   - { label: "Ontario Securities Commission - QuadrigaCX investigation report, conclusion (2020)", url: "https://www.osc.ca/quadrigacxreport/conclusion.html" }
   - { label: "OSC news release - investigative report on QuadrigaCX (2020)", url: "https://www.osc.ca/en/news-events/news/osc-publishes-investigative-report-quadrigacx" }
@@ -22,12 +22,12 @@ sameAs:
 liveWidget: ~
 ---
 
-QuadrigaCX was Canada's largest cryptocurrency exchange, founded in 2013. Its collapse is the oddest one here, because for a while it looked like an accident instead of a fraud.
+QuadrigaCX 是加拿大最大的加密货币交易所，成立于 2013 年。它的崩塌是这里最离奇的一个，因为一开始看起来像意外而非欺诈。
 
-In December 2018 the founder and CEO, Gerald Cotten, died of complications from Crohn's disease while travelling in India. He was 30. The company said Cotten was the only person who held the private keys to its cold wallets, so roughly CAD 169 million of customer funds were now stuck beyond anyone's reach. The story spread quickly: the only person with the keys had died, and the money was locked away with him.
+2018 年 12 月，创始人兼 CEO Gerald Cotten 在印度旅行期间因克罗恩病并发症去世，年仅 30 岁。公司说 Cotten 是唯一掌握冷钱包私钥的人，约 1.69 亿加元的客户资金因此无法触及。故事传播很快：唯一掌握密钥的人去世了，钱随他一起被锁死了。
 
-Then the court-appointed monitor, Ernst & Young, looked at the wallets. They were empty, and had been since April 2018, eight months before Cotten died. There was nothing locked away at all. In June 2020 the Ontario Securities Commission concluded that Quadriga had "operated like a Ponzi scheme." Cotten had been running fake trades under aliases, paying real withdrawals out of new deposits, and spending client money on houses and a private jet.
+然后法院任命的监管人 Ernst & Young 查看了钱包。它们是空的，自 2018 年 4 月起就是空的——Cotten 去世前 8 个月。什么都没有被锁住。2020 年 6 月，安大略证券委员会得出结论：Quadriga "像庞氏骗局一样运营"。Cotten 一直在用化名进行虚假交易，用新存款支付真实提款，将客户资金花在房产和私人飞机上。
 
-Around 76,000 clients were affected. Creditors who filed roughly CAD 303 million in claims have recovered about 13 percent. The theory that Cotten faked his own death is popular and completely unproven, and it doesn't really matter either way, because the money was gone months before the funeral. If you can't audit a custodian, you're trusting it blind.
+约 76,000 名客户受影响。提交了约 3.03 亿加元索赔的债权人收回了约 13%。Cotten 假死 theory 很流行但完全未证实，而且无论如何都不重要，因为钱在葬礼之前几个月就没了。如果你不能审计托管方，你就是在盲目信任它。
 
-See [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard) for where Quadriga sits in the pattern.
+参见 [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard) 了解 Quadriga 在这一模式中的位置。

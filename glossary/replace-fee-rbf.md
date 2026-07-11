@@ -1,12 +1,12 @@
 ---
-title: "Replace-by-Fee (RBF)"
+title: "手续费替换（Replace-by-Fee，RBF）"
 slug: replace-fee-rbf
 draft: false
-shortDefinition: "A mechanism allowing a sender to rebroadcast an unconfirmed TX with higher fees, replacing the original transaction in the mempool."
+shortDefinition: "一种机制，允许发送方以更高手续费重新广播未确认交易，替换内存池中的原始交易。"
 keyTakeaways:
-  - "Allows fee bumping on unconfirmed transactions"
-  - "Enhances user control in congested mempool conditions"
-  - "Reduces reliability of zero-conf payments"
+  - "允许对未确认交易进行手续费加价"
+  - "在内存池拥堵时增强用户控制"
+  - "降低零确认支付的可靠性"
 sources: []
 relatedTerms:
   - absolute-fee
@@ -27,23 +27,23 @@ sameAs:
 liveWidget: ~
 ---
 
-Replace-by-Fee (RBF) is a [mempool](/glossary/mempool) policy that lets a sender rebroadcast a stuck [transaction](/glossary/transaction) with a higher [fee](/glossary/fee-estimation), replacing the original.
+手续费替换（RBF）是一种[内存池](/glossary/mempool)策略，允许发送方以更高[手续费](/glossary/fee-estimation)重新广播卡住的[交易](/glossary/transaction)，替换原始交易。
 
-Defined in [BIP-125](/glossary/bip-125-replace-fee), opt-in RBF works like this: the original transaction signals it's replaceable by setting an `nSequence` value below the maximum. If congestion makes your transaction stall, you can construct a new transaction that:
+由 [BIP-125](/glossary/bip-125-replace-fee) 定义，可选 RBF 的工作方式：原始交易通过设置低于最大值的 `nSequence` 来信号可替换。如果拥堵使你的交易停滞，你可以构建一笔新交易：
 
-- Spends at least one of the same UTXOs.
-- Pays a higher absolute fee than the original.
-- Pays a higher fee *rate* than the original.
+- 花费至少一个相同的 UTXO。
+- 支付比原始交易更高的绝对手续费。
+- 支付比原始交易更高的手续费*率*。
 
-Nodes that follow BIP-125 will drop the old transaction from their mempool and accept the new one. Miners, looking for the highest fee rate, are more likely to pick yours up.
+遵循 BIP-125 的节点会从内存池中丢弃旧交易并接受新交易。矿工寻找最高手续费率，更有可能捡起你的新交易。
 
-What RBF buys you:
+RBF 给你带来什么：
 
-- **Recovery from fee underestimation.** You miscalculated fees during a quiet period and got caught when congestion hit; bump and proceed.
-- **Faster confirmation when urgency changes.** You needed it confirmed cheaply, then suddenly you need it confirmed now.
+- **从手续费低估中恢复。** 你在平静期算错了手续费，结果遇到拥堵；加价继续。
+- **紧急程度变化时加快确认。** 你本来需要便宜确认，突然需要立即确认。
 
-What it costs:
+代价：
 
-- **Zero-confirmation reliability.** A recipient looking at "unconfirmed in the mempool" can no longer assume the transaction won't be replaced. RBF-signaled transactions explicitly admit this. (Non-RBF transactions historically had stronger zero-conf guarantees, but see [Full RBF](/glossary/full-rbf) for why those are eroding.)
+- **零确认可靠性。** 看到"内存池中未确认"的接收方不能再假设交易不会被替换。RBF 信号交易明确承认这一点。（非 RBF 交易历史上曾有更强的零确认保证，但参见 [Full RBF](/glossary/full-rbf) 了解为何这些保证正在侵蚀。）
 
-Most modern wallets default to RBF-enabled transactions. Some merchants who accept zero-conf payments require non-RBF transactions or just wait for the first confirmation. See [Fee Bumping](/glossary/fee-bumping) for the broader concept (RBF is one method; CPFP is the other).
+大多数现代钱包默认启用 RBF 交易。一些接受零确认支付的商户要求非 RBF 交易或直接等第一个确认。参见 [Fee Bumping](/glossary/fee-bumping) 了解更广泛的概念（RBF 是一种方法；CPFP 是另一种）。

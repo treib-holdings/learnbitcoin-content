@@ -1,12 +1,12 @@
 ---
-title: "AML (Anti-Money Laundering)"
+title: "AML（反洗钱）"
 slug: aml-anti-money-laundering
 draft: false
-shortDefinition: "Regulatory measures designed to prevent criminals from converting illicit funds into legitimate assets, often enforced by exchanges."
+shortDefinition: "旨在防止犯罪分子将非法资金转化为合法资产的监管措施，通常由交易所执行。"
 keyTakeaways:
-  - "Regulations to detect and report illicit funds"
-  - "Often paired with KYC checks at exchanges"
-  - "Balances legal compliance with user privacy"
+  - "用于检测和报告非法资金的法规"
+  - "通常与交易所的 KYC 检查配合使用"
+  - "在法律合规与用户隐私之间寻求平衡"
 sources: []
 relatedTerms:
   - bitlicense
@@ -15,19 +15,19 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Anti-Money Laundering (AML) refers to the body of laws, regulations, and procedures designed to detect and prevent the conversion of illicit funds into legitimate financial flows. In Bitcoin practice, AML rules apply to the on-ramps and off-ramps (exchanges, custodial wallets, OTC desks, payment processors), not to the protocol itself or to self-hosted wallets.
+反洗钱（AML）是指旨在检测和防止将非法资金转化为合法金融流的法律、法规和程序的统称。在比特币实践中，AML 规则适用于入金和出金通道（交易所、托管钱包、OTC 台、支付处理商），而不适用于协议本身或自托管钱包。
 
-The major regulatory frameworks Bitcoin businesses navigate:
+比特币企业需要应对的主要监管框架：
 
-- **Bank Secrecy Act (US, 1970)** establishes the basic obligations for financial institutions. FinCEN's 2013 guidance brought crypto exchanges in scope as Money Services Businesses.
-- **FATF Recommendations (2019, "Travel Rule")** require Virtual Asset Service Providers to share originator and beneficiary information for transfers above thresholds. Adoption varies by jurisdiction.
-- **EU AMLD5 / AMLD6 / MiCA** progressively pulled crypto custodial services into the same supervisory regime as banks.
-- **National frameworks** range from light-touch (Switzerland, Singapore) to heavy (US, EU, much of Latin America).
+- **银行保密法（美国，1970 年）**确立了金融机构的基本义务。FinCEN 2013 年的指导意见将加密交易所纳入货币服务业务（MSB）的监管范围。
+- **FATF 建议（2019 年，"旅行规则"）**要求虚拟资产服务提供商在超过阈值的转账中共享发起方和受益方信息。各司法管辖区的采用程度不同。
+- **EU AMLD5 / AMLD6 / MiCA** 逐步将加密托管服务纳入与银行相同的监管体系。
+- **各国框架**从轻触式（瑞士、新加坡）到严格（美国、欧盟、拉丁美洲大部分地区）不等。
 
-The honest dual-use framing:
+诚实的双用途框架：
 
-- **What AML legitimately deters:** the simplest kinds of money laundering and the obvious cases of bad actors moving large sums through licensed venues. Sanctions enforcement against publicly-listed addresses works.
-- **What AML costs:** every customer who passes KYC creates a database row that gets breached, sold, or subpoenaed. Major exchange data breaches (Coinbase, Binance, Ledger's customer leak) are direct consequences of mandatory KYC. The data is also weaponized by chain-analysis firms (Chainalysis, Elliptic, TRM) that link real identities to on-chain activity, eroding the pseudonymity that's part of Bitcoin's design.
-- **What AML doesn't deter:** sophisticated actors who use mixers, peer-to-peer trades, non-KYC venues, or jurisdictions outside the FATF perimeter. The compliance regime hits casual users harder than sophisticated criminals.
+- **AML 合理遏制了什么：**最简单的洗钱形式和明显的恶意行为者通过持牌场所转移大额资金的案例。对公开列出的地址实施制裁是有效的。
+- **AML 的代价：**每个通过 KYC 的客户都创建了一条数据库记录，这些记录会被泄露、出售或被传唤。主要交易所的数据泄露事件（Coinbase、Binance、Ledger 的客户泄露）是强制 KYC 的直接后果。这些数据还被链上分析公司（Chainalysis、Elliptic、TRM）武器化，将真实身份与链上活动关联，侵蚀了比特币设计中的假名性。
+- **AML 未能遏制的：**使用混币器、点对点交易、非 KYC 场所或 FATF 范围之外司法管辖区的高级行为者。合规制度对普通用户的打击比对高级犯罪分子更大。
 
-For an individual Bitcoiner, the practical takeaways are: assume any exchange interaction is logged and may be shared with governments; consider non-KYC alternatives (peer-to-peer trading, lightning-LSP-anonymous channels, Bitcoin ATMs in some jurisdictions) for amounts where the surveillance burden outweighs the convenience.
+对于个人比特币持有者，实际的启示是：假设任何交易所交互都被记录，并可能与政府共享；在监控负担超过便利性的金额上，考虑非 KYC 替代方案（点对点交易、闪电网络 LSP 匿名通道、某些司法管辖区的比特币 ATM）。

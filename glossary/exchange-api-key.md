@@ -1,12 +1,12 @@
 ---
-title: "Exchange API Key"
+title: "交易所 API 密钥"
 slug: exchange-api-key
 draft: false
-shortDefinition: "Credentials provided by an exchange so bots or third-party software can access trading features programmatically."
+shortDefinition: "交易所提供的凭证，让机器人或第三方软件以编程方式访问交易功能。"
 keyTakeaways:
-  - "Lets trading bots or software interact with exchange accounts"
-  - "Security and permission management are critical"
-  - "API key breaches can result in lost funds or unauthorized trades"
+  - "让交易机器人或软件与交易所账户交互"
+  - "安全和权限管理至关重要"
+  - "API 密钥泄露可能导致资金丢失或未授权交易"
 sources: []
 relatedTerms:
   - centralized-exchange-cex
@@ -16,22 +16,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-An exchange API key is the credential pair (key ID + secret) that lets software interact with an exchange account programmatically. Trading bots, portfolio trackers, accounting tools, and tax-reporting services all consume API keys.
+交易所 API 密钥是让软件以编程方式与交易所账户交互的凭证对（密钥 ID + 密钥）。交易机器人、投资组合追踪器、会计工具和税务报告服务都使用 API 密钥。
 
-The standard permission model exchanges expose:
+交易所暴露的标准权限模型：
 
-- **Read-only.** Fetch balances, trades, deposit/withdrawal history. Useful for portfolio trackers, tax tools, alerting. Worst-case compromise is data leakage, no fund loss.
-- **Trade.** Read-only plus place and cancel orders. Compromise lets an attacker pump your account into bad trades but not withdraw funds. Trading bots use this level.
-- **Withdraw.** All of the above plus the ability to move funds off the exchange. Compromise = full account drain. Use only when absolutely necessary.
+- **只读。** 获取余额、交易、充提历史。适用于投资组合追踪器、税务工具、警报。最坏情况泄露是数据泄露，无资金损失。
+- **交易。** 只读加下单和取消订单。泄露让攻击者可以将你的账户推入糟糕交易但不能提取资金。交易机器人使用此级别。
+- **提现。** 以上所有加移走资金的能力。泄露 = 完全账户清空。仅在绝对必要时使用。
 
-Best practices:
+最佳实践：
 
-- **Match permission to use case.** Tax software needs read-only; never give it withdraw access.
-- **IP whitelist.** Most exchanges let you bind an API key to one or more IP addresses. A stolen key from outside the allowed IPs is useless.
-- **Withdrawal address whitelist.** Some exchanges support address whitelists for the withdraw permission: even with a stolen key, the attacker can only withdraw to addresses you pre-approved.
-- **Key rotation.** Rotate every 6-12 months as a default. Always rotate immediately after suspecting compromise.
-- **Never share or commit keys.** API keys in public Git repos are routinely found by attackers within minutes. The bot/script that uses them should read them from a secrets manager or environment variable, not from source code.
+- **权限匹配用例。** 税务软件需要只读；永远不要给它提现权限。
+- **IP 白名单。** 大多数交易所允许你将 API 密钥绑定到一个或多个 IP 地址。从允许 IP 之外窃取的密钥无用。
+- **提现地址白名单。** 一些交易所支持提现权限的地址白名单：即使密钥被盗，攻击者也只能提取到你预先批准的地址。
+- **密钥轮换。** 每 6-12 个月轮换作为默认。怀疑泄露后始终立即轮换。
+- **永不分享或提交密钥。** 公开 Git 仓库中的 API 密钥通常在几分钟内被攻击者发现。使用它们的机器人/脚本应从密钥管理器或环境变量读取，而非源代码。
 
-The biggest historical losses to API-key compromise: various users have lost full account balances when phishing or malware exfiltrated their trading-bot configurations. The pattern is so common that exchanges now generally require email + 2FA confirmation for new API key creation with withdraw permission.
+历史上因 API 密钥泄露造成的最大损失：各种用户在钓鱼或恶意软件窃取交易机器人配置时丢失了全部账户余额。这种模式如此常见，以至于交易所现在通常要求邮箱+2FA 确认才能创建具有提现权限的新 API 密钥。
 
-The deeper Bitcoin discipline: anything on an exchange isn't yours, full stop. API keys are a power tool for active trading, not a storage strategy. Long-term holdings belong in self-custody, where there's no API to compromise.
+更深层的比特币纪律：交易所上的任何东西都不是你的，句号。API 密钥是主动交易的功率工具，不是存储策略。长期持有属于自托管，那里没有 API 可以被攻击。

@@ -1,12 +1,12 @@
 ---
-title: "State Channel"
+title: "状态通道"
 slug: state-channel
 draft: false
-shortDefinition: "A generic off-chain mechanism letting participants transact privately, then settle the final state on-chain. LN channels are a prime example."
+shortDefinition: "一种通用链下机制，让参与方私下交易，然后在链上结算最终状态。闪电网络通道是典型例子。"
 keyTakeaways:
-  - "Converts repeated on-chain transactions into private off-chain updates"
-  - "Settles on the main chain only once the channel closes"
-  - "Enables real-time trading or micropayments with minimal fees"
+  - "将重复的链上交易转化为私密的链下更新"
+  - "仅在通道关闭时在主链上结算"
+  - "以最小手续费实现实时交易或微支付"
 sources: []
 relatedTerms:
   - bolt-11
@@ -18,17 +18,17 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A state channel is a general construction where two or more parties lock funds (or data) in a shared on-chain output, then exchange signed off-chain updates that mutually agree on a new state. Only the opening, the final settlement, and any contested close ever touch the blockchain. Everything in between is private, instant, and free.
+状态通道是一种通用构造，两方或多方将资金（或数据）锁定在一个共享的链上输出中，然后交换签名的链下更新来协商新状态。只有开通道、最终结算和任何有争议的关闭才会触及区块链。中间一切都是私密的、即时的、免费的。
 
-The basic mechanism:
+基本机制：
 
-1. Parties co-fund a 2-of-2 multisig output (the "anchor" transaction). This is the on-chain commitment.
-2. They construct a commitment transaction that distributes those funds according to the current state, but don't broadcast it.
-3. To update, they sign a new commitment transaction reflecting the new state. The old commitment becomes "old"; both parties keep the new one privately.
-4. When they're done, they cooperatively sign and broadcast a final settlement transaction. Net effect: one funding transaction in, one settlement transaction out, and however many state updates in between.
+1. 各方共同出资一个 2-of-2 多签输出（"锚定"交易）。这是链上承诺。
+2. 他们构建一个承诺交易，按当前状态分配资金，但不广播。
+3. 要更新，他们签署反映新状态的新承诺交易。旧承诺变为"旧"；双方私下保留新的。
+4. 完成后，他们协作签署并广播最终结算交易。净效果：一笔资金交易入，一笔结算交易出，中间有任意多次状态更新。
 
-The cheating problem: what stops a party from broadcasting an old commitment that pays them more? In Lightning's design, each commitment is asymmetric and includes a punishment path: if you broadcast an old state, your counterparty can spend your entire balance (the "justice transaction"). The deterrent makes cheating economically irrational.
+作弊问题：什么阻止一方广播一个对自己更有利的旧承诺？在闪电网络的设计中，每个承诺是不对称的，包含一个惩罚路径：如果你广播旧状态，对方可以花掉你的全部余额（"正义交易"）。威慑使作弊在经济上不理性。
 
-Bitcoin's Lightning Network is the most-deployed state channel construction in existence. It specializes the generic state-channel idea to payment routing (HTLCs, multi-hop payments, gossip-based pathfinding) but the underlying primitive is the same.
+比特币的闪电网络是部署最广泛的状态通道构造。它将通用的状态通道理念专门化为支付路由（HTLC、多跳支付、基于 gossip 的路径查找），但底层原语是相同的。
 
-State channels are part of the layer-2 family alongside sidechains, rollups, and other off-chain settlement designs. The base layer provides settlement and dispute resolution; the channel provides volume and speed. For payments, the tradeoff has been worth it: Lightning settles millions of dollars in daily volume that the base layer simply couldn't carry at acceptable fees.
+状态通道与侧链、rollup 和其他链下结算设计同属二层家族。基础层提供结算和争议解决；通道提供量和速度。对支付来说，这个权衡是值得的：闪电网络每天结算数百万美元的交易量，这些是基础层在可接受手续费下根本无法承载的。

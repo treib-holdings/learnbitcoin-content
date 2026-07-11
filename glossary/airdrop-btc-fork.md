@@ -1,12 +1,12 @@
 ---
-title: "Airdrop (BTC Fork)"
+title: "空投（BTC 分叉）"
 slug: airdrop-btc-fork
 draft: false
-shortDefinition: "In Bitcoin forks, it's when BTC holders automatically receive new forked coins in a 1:1 ratio, mirroring their BTC balance."
+shortDefinition: "在比特币分叉中，BTC 持有者按 1:1 比例自动获得新的分叉币，镜像其 BTC 余额。"
 keyTakeaways:
-  - "A fork snapshot grants holders new coins"
-  - "Key management and security are crucial"
-  - "The new chain might or might not gain value"
+  - "分叉快照向持有者发放新币"
+  - "密钥管理和安全至关重要"
+  - "新链可能增值也可能不增值"
 sources: []
 relatedTerms:
   - bitcoin-cash
@@ -16,18 +16,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-An airdrop in the Bitcoin-fork context is the automatic distribution of new forked coins to whoever held BTC at the moment of a chain split. The split creates two chains sharing identical pre-fork history, so the same private keys control balances on both chains.
+比特币分叉语境下的空投是指在链分裂时，自动将新的分叉币分发给在分裂时刻持有 BTC 的人。分裂创建了两条共享分叉前完全相同历史的链，因此同一组私钥控制两条链上的余额。
 
-The canonical example is the [Bitcoin Cash](/glossary/bitcoin-cash) fork on August 1, 2017 at block 478,558. Every BTC holder at that block height also became a holder of the same number of BCH on the new chain. The same private key controlled both. To claim, holders had to import their key (carefully) into BCH-compatible software and either spend the BCH or move it to a BCH-aware address.
+经典案例是 2017 年 8 月 1 日区块高度 478,558 处的[比特币现金](/glossary/bitcoin-cash)分叉。在该区块高度持有 BTC 的每个人都同时成为新链上同等数量 BCH 的持有者。同一个私钥控制两者。要领取，持有者必须（小心地）将私钥导入 BCH 兼容软件，然后花费 BCH 或将其转移到 BCH 感知地址。
 
-Subsequent BTC-derived forks airdropped to BTC holders too: Bitcoin Gold (Oct 2017), Bitcoin Diamond (Nov 2017), SegWit2x's attempted but-aborted 2X fork (Nov 2017), Bitcoin Private (Mar 2018), and a long tail of mostly-failed attempts. Most of these are now worthless or near-worthless; a few (BCH) retain meaningful market value.
+后续的 BTC 衍生分叉也向 BTC 持有者空投：Bitcoin Gold（2017 年 10 月）、Bitcoin Diamond（2017 年 11 月）、SegWit2x 尝试但中止的 2X 分叉（2017 年 11 月）、Bitcoin Private（2018 年 3 月），以及一长串基本失败的尝试。这些大多现在已无价值或接近无价值；少数（BCH）仍有有意义的市场价值。
 
-The risks of "claiming" airdropped coins:
+"领取"空投币的风险：
 
-- **Private-key exposure.** Importing your BTC seed into an unfamiliar fork wallet means trusting that wallet's code with the seed. Malicious fork wallets have stolen actual BTC by this vector.
-- **Replay risk on chains without replay protection.** Spending fork coins could accidentally also spend BTC on the original chain. Modern forks usually include replay protection (see [replay-attack](/glossary/replay-attack)), but it's still worth checking.
-- **Time and attention.** Most forks aren't worth claiming relative to the operational risk.
+- **私钥暴露。** 将你的 BTC 种子导入一个不熟悉的分叉钱包意味着信任该钱包的代码处理种子。恶意分叉钱包已经通过这种方式盗取了实际的 BTC。
+- **无重放保护链上的重放风险。** 花费分叉币可能意外地同时在原始链上花费 BTC。现代分叉通常包含重放保护（参见[重放攻击](/glossary/replay-attack)），但仍值得检查。
+- **时间和精力。** 相对于操作风险，大多数分叉不值得领取。
 
-The safe procedure if you do claim: first move your BTC to a fresh wallet (so the original keys hold zero BTC, no replay risk), then use the original keys with the fork's tools to claim the fork coins, then dispose of those tools.
+如果你确实要领取，安全步骤是：首先将你的 BTC 转移到新钱包（这样原始密钥中持有零 BTC，无重放风险），然后使用原始密钥和分叉工具领取分叉币，最后丢弃这些工具。
 
-By 2026, BTC-fork airdrops have mostly stopped being a thing. The 2017-2018 wave was driven by the block-size-war fallout; subsequent forks haven't generated meaningful adoption or value, and the community moved on.
+到 2026 年，BTC 分叉空投基本上已经不是事了。2017-2018 年的浪潮由区块大小战争的余波驱动；后续分叉没有产生有意义的采用或价值，社区已经翻篇了。

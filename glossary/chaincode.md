@@ -1,12 +1,12 @@
 ---
-title: "Chaincode"
+title: "链码（Chaincode）"
 slug: chaincode
 draft: false
-shortDefinition: "In HD wallets (BIP 32), a 256-bit value paired with a parent key to derive child keys deterministically."
+shortDefinition: "在 HD 钱包（BIP 32）中，与父密钥配对的 256 位值，用于确定性派生子密钥。"
 keyTakeaways:
-  - "Paired with a key to deterministically create child keys"
-  - "Central to hierarchical deterministic wallet design (BIP 32)"
-  - "Protects the master seed while enabling multiple derivation paths"
+  - "与密钥配对以确定性创建子密钥"
+  - "层次确定性钱包设计（BIP 32）的核心"
+  - "在支持多条派生路径的同时保护主种子"
 sources: []
 relatedTerms:
   - address-derivation-path
@@ -21,13 +21,13 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The chaincode is the 32-byte "right half" of a BIP 32 extended key. It pairs with the actual key material (the "left half") to form an extended private key (`xprv`) or extended public key (`xpub`).
+链码是 BIP 32 扩展密钥的 32 字节"右半部分"。它与实际密钥材料（"左半部分"）配对，形成扩展私钥（`xprv`）或扩展公钥（`xpub`）。
 
-Why split it. BIP 32 derives child keys via HMAC-SHA512 over the parent key, the chaincode, and the child index. The chaincode contributes entropy to the derivation so that knowing the parent public key alone is not enough to derive children; you also need the chaincode. That's what makes `xpub` a real artifact: it carries the chaincode along with the public key, allowing watch-only descendants to be derived without giving up the private side.
+为什么要拆分。BIP 32 通过对父密钥、链码和子索引进行 HMAC-SHA512 运算来派生子密钥。链码为派生提供熵，因此仅知道父公钥不足以派生子密钥；你还需要链码。这就是 `xpub` 成为真正有意义的工件的原因：它将链码与公钥一起携带，允许只观察后代被派生而不暴露私钥侧。
 
-The privacy implications are sharp:
+隐私影响很尖锐：
 
-- A chaincode plus a public key (the `xpub`) lets anyone derive all non-hardened child public keys. Useful for watch-only wallets. Dangerous if the `xpub` leaks: a leaked `xpub` exposes the full address tree of that wallet, breaking transactional privacy completely. Treat `xpub` like a balance sheet, not like an address.
-- A chaincode plus a child private key, in a non-hardened derivation, lets you reconstruct the parent private key. This is the "BIP 32 non-hardened leak" that motivates hardened derivation (indexes 2^31 and above) for top-level accounts. Bitcoin Core, hardware wallets, and any sensible HD wallet use hardened derivation for the account level so that leaking one child private key doesn't compromise siblings or ancestors.
+- 链码加上公钥（即 `xpub`）允许任何人派生所有非强化子公钥。这对只读钱包很有用。但如果 `xpub` 泄露就很危险：泄露的 `xpub` 暴露了该钱包的完整地址树，完全破坏交易隐私。把 `xpub` 当作资产负债表对待，而不是地址。
+- 链码加上子私钥，在非强化派生中，可以重建父私钥。这就是"BIP 32 非强化泄露"，也是顶层账户使用强化派生（索引 2^31 及以上）的原因。Bitcoin Core、硬件钱包和任何合理的 HD 钱包都在账户级别使用强化派生，这样泄露一个子私钥就不会危及同级或祖先。
 
-For users, the chaincode is invisible plumbing. For developers and integrators, it's the load-bearing detail that separates "HD wallet" from "deterministic but fragile key generation."
+对于用户来说，链码是不可见的底层管道。对于开发者和集成商来说，它是区分"HD 钱包"和"确定性但脆弱的密钥生成"的关键细节。

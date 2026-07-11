@@ -1,12 +1,12 @@
 ---
-title: "Wallet"
+title: "钱包"
 slug: wallet
 draft: false
-shortDefinition: "Software or hardware managing private keys and addresses, enabling users to send/receive BTC."
+shortDefinition: "管理私钥和地址的软件或硬件，让用户能够发送/接收 BTC。"
 keyTakeaways:
-  - "Manages keys that control BTC outputs, not physical currency"
-  - "Can be software-only, hardware-based, or multi-sig setups"
-  - "Safety depends on careful backup and key protection"
+  - "管理的是控制 BTC 输出的密钥，而非实物货币"
+  - "可以是纯软件、硬件设备或多签设置"
+  - "安全性取决于仔细的备份和密钥保护"
 sources: []
 relatedTerms:
   - bitcoin-client
@@ -32,23 +32,23 @@ sameAs:
 liveWidget: ~
 ---
 
-A Bitcoin wallet doesn't actually hold Bitcoin. Bitcoin lives on the chain. A wallet holds the [private keys](/glossary/private-key) that authorize moving it.
+比特币钱包实际上不持有比特币。比特币在链上。钱包持有的是授权移动它的[私钥](/glossary/private-key)。
 
-What a wallet does, mechanically:
+钱包在机制上做什么：
 
-- **Generates and stores keys**, typically by deriving them from a [BIP-39](/glossary/bip-39) seed phrase using a [hierarchical deterministic](/glossary/hierarchical-deterministic-wallet) structure.
-- **Tracks the on-chain UTXOs you can spend** - either by querying a remote server, or, with a full-validation wallet like [Bitcoin Core](/glossary/bitcoin-core), by running a full node alongside.
-- **Constructs and signs [transactions](/glossary/transaction)** when you want to send.
-- **Generates fresh receive [addresses](/glossary/address)** as you need them.
+- **生成和存储密钥**，通常通过 [BIP-39](/glossary/bip-39) 助记词使用[层次化确定性](/glossary/hierarchical-deterministic-wallet)结构派生。
+- **跟踪你能花费的链上 UTXO**——要么通过查询远程服务器，要么像 [Bitcoin Core](/glossary/bitcoin-core) 那样运行全节点进行完整验证。
+- **构建并签署[交易](/glossary/transaction)**，当你想发送时。
+- **生成新的接收[地址](/glossary/address)**，按需提供。
 
-Wallets come in several archetypes, each with different security/convenience tradeoffs:
+钱包有几种原型，各有不同的安全/便利权衡：
 
-- **[Custodial wallets](/glossary/custodial-wallet)** - someone else holds your keys (Coinbase, Cash App, Strike). Easiest to use, weakest property guarantees. You don't own Bitcoin; you own an IOU.
-- **Mobile wallets** - Phoenix, Muun, BlueWallet, etc. You hold the keys, convenient daily use, hot-wallet security model.
-- **Desktop wallets** - Sparrow, Bitcoin Core's own wallet, Wasabi. Often connect to your own node; more powerful coin control.
-- **[Hardware wallets](/glossary/hardware-wallet)** - Trezor, ColdCard, Jade, BitBox, Ledger. Keys stay on a dedicated signing device, never touching internet-connected machines.
-- **Multisig setups** - more than one device required to authorize a transaction. Strongly recommended for significant amounts.
+- **[托管钱包](/glossary/custodial-wallet)**——别人持有你的密钥（Coinbase、Cash App、Strike）。最易用，最弱的财产保证。你不拥有比特币；你拥有一个借条。
+- **移动钱包**——Phoenix、Muun、BlueWallet 等。你持有密钥，日常使用方便，热钱包安全模型。
+- **桌面钱包**——Sparrow、Bitcoin Core 自带钱包、Wasabi。通常连接到自己的节点；更强大的币控制。
+- **[硬件钱包](/glossary/hardware-wallet)**——Trezor、ColdCard、Jade、BitBox、Ledger。密钥留在专用签名设备上，永不触及联网机器。
+- **多签设置**——需要多个设备才能授权交易。对大额资产强烈推荐。
 
-The right wallet depends on what you're holding and what you're doing. Spending money you'd carry as cash? A mobile wallet is fine. Long-term savings? Hardware, ideally multisig. The general rule: more value → more friction → more separation between keys and online surfaces.
+合适的钱包取决于你持有什么以及做什么。像随身现金一样的花费？移动钱包就行。长期储蓄？硬件钱包，理想情况下多签。通用规则：价值越高 → 摩擦越多 → 密钥与在线环境的分离越远。
 
-See the [Journey: Be Your Own Bank](/journey/be-your-own-bank) chapter for the full walkthrough.
+参见[旅程：做自己的银行](/journey/be-your-own-bank)章节了解完整指南。

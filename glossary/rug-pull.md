@@ -1,12 +1,12 @@
 ---
-title: "Rug Pull"
+title: "卷地毯（Rug Pull）"
 slug: rug-pull
 draft: false
-shortDefinition: "A DeFi/alt term where project founders vanish and abscond with user funds. Less relevant in Bitcoin's decentralized environment."
+shortDefinition: "DeFi/山寨币术语，项目创始人卷款跑路。在比特币去中心化环境中不太相关。"
 keyTakeaways:
-  - "Common in alt/DeFi contexts where devs control locked liquidity"
-  - "Investors lose funds as the project collapses or devs steal tokens"
-  - "Highlighting Bitcoin's advantage in decentralization and self-custody"
+  - "在山寨/DeFi 场景中常见，开发者控制锁定的流动性"
+  - "投资者因项目崩塌或开发者盗取代币而损失资金"
+  - "凸显比特币在去中心化和自托管方面的优势"
 sources: []
 relatedTerms:
   - altcoin
@@ -17,33 +17,33 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A rug pull is a scam pattern (predominantly in DeFi and altcoin markets) where project founders attract investment into a token, contract, or liquidity pool, then abruptly drain it and disappear. The investors are left holding worthless tokens; the founders abscond with the real value.
+卷地毯是一种骗局模式（主要在 DeFi 和山寨币市场），项目创始人吸引投资到代币、合约或流动性池中，然后突然抽干资金并消失。投资者拿着毫无价值的代币；创始人带着真实价值跑路。
 
-The mechanics in classic Ethereum / Solana DeFi rug pulls:
+经典以太坊/Solana DeFi 卷地毯的机制：
 
-1. Founders deploy a token contract on Ethereum, Solana, BSC, etc.
-2. They market the project aggressively: AI hype, meme momentum, celebrity endorsements, fake partnerships.
-3. Users buy the token, often through a DEX liquidity pool the founders control.
-4. Once enough investment is in, founders use admin privileges (or simply hold most of the supply) to drain the liquidity pool or dump their holdings, crashing the price to near zero.
-5. The website goes offline, the Twitter account vanishes, the Discord empties.
+1. 创始人在以太坊、Solana、BSC 等上部署代币合约。
+2. 他们激进营销项目：AI 炒作、meme 动量、名人代言、虚假合作。
+3. 用户购买代币，通常通过创始人控制的 DEX 流动性池。
+4. 一旦足够多的投资进入，创始人利用管理员权限（或简单持有大部分供应）抽干流动性池或抛售持仓，将价格砸到接近零。
+5. 网站下线，Twitter 账号消失，Discord 清空。
 
-Why this is structurally less common in Bitcoin:
+为什么这在比特币中结构上不太常见：
 
-- **No native smart contracts.** Bitcoin doesn't host the kind of tokens that get rug-pulled. Most rug pulls happen on programmable-contract platforms.
-- **No projects to invest in at the protocol level.** You can hold BTC, full stop. There's no "Bitcoin project" issuing tokens that you're funding.
-- **No founders to abscond.** The protocol is decentralized; no team controls the supply or can drain it.
+- **没有原生智能合约。** 比特币不托管会被卷地毯的代币。大多数卷地毯发生在可编程合约平台上。
+- **协议层面没有可投资项目。** 你可以持有 BTC，就这样。没有"比特币项目"发行代币让你投资。
+- **没有可跑路的创始人。** 协议是去中心化的；没有团队控制供应或可以抽干它。
 
-Where rug-pull-like scams DO happen in the Bitcoin context:
+卷地毯式骗局在比特币语境中确实发生的地方：
 
-- **Custodial scams.** [Mt. Gox](/glossary/exchange), [QuadrigaCX](/glossary/exchange), Bitconnect, BitClub Network. Functionally similar pattern: trust the operator, operator drains funds. The Bitcoin is real; the custodian is the scam.
-- **Bitcoin "yield" products.** Companies promising Bitcoin yield often turn out to be running fractional reserves, lending unsecured, or operating Ponzi structures. Celsius, Genesis, BlockFi exposed this pattern in 2022-2023.
-- **Mining-share scams.** [Hashlet](/glossary/hashlet) / GAW Miners' Hashlets are the canonical example: sold fractional ownership of mining hash rate that didn't exist. Pure Ponzi.
-- **"Bitcoin-related" tokens.** Various BRC-20s and inscription-based tokens have followed standard altcoin rug-pull patterns. These technically use Bitcoin's chain but are functionally separate from BTC itself.
+- **托管骗局。** [Mt. Gox](/glossary/exchange)、[QuadrigaCX](/glossary/exchange)、Bitconnect、BitClub Network。功能上类似模式：信任运营方，运营方抽干资金。比特币是真的；托管方是骗局。
+- **比特币"收益"产品。** 承诺比特币收益的公司通常是部分准备金、无担保放贷或庞氏结构。Celsius、Genesis、BlockFi 在 2022-2023 年暴露了这个模式。
+- **挖矿份额骗局。** [Hashlet](/glossary/hashlet) / GAW Miners 的 Hashlets 是典型例子：出售不存在算力的分数所有权。纯庞氏。
+- **"比特币相关"代币。** 各种 BRC-20 和基于铭文的代币遵循了标准山寨币卷地毯模式。这些技术上使用比特币的链但功能上与 BTC 本身是分开的。
 
-The protective framing:
+保护性框架：
 
-- **If a "Bitcoin product" pays yield greater than the risk-free rate, it's either lending your BTC out (counterparty risk), running on fractional reserves (Bitconnect / Celsius risk), or outright fraud.**
-- **If a project asks you to deposit BTC and trust their custody, you're not buying Bitcoin's properties anymore. You're buying their operational integrity.**
-- **Self-custody eliminates the rug-pull attack surface.** Hardware wallet + seed phrase + cold storage. No one can pull anything because no one else has access.
+- **如果一个"比特币产品"支付高于无风险利率的收益，它要么在借出你的 BTC（对手方风险），要么在运行部分准备金（Bitconnect / Celsius 风险），要么是彻头彻尾的欺诈。**
+- **如果一个项目要求你存入 BTC 并信任他们的托管，你不再拥有比特币的特性。你拥有的是他们的运营诚信。**
+- **自托管消除了卷地毯攻击面。** 硬件钱包 + 助记词 + 冷存储。没有人能卷走任何东西，因为没有其他人有访问权。
 
-The honest term-of-art point: "rug pull" is borrowed from altcoin / DeFi culture. In Bitcoin contexts, it usually refers to either custodial failures (which existed before "rug pull" was a phrase) or token scams operating on Bitcoin's chain (which are technically rugged-pulled but aren't pulling Bitcoin itself). The structural lesson is older and simpler: not your keys, not your coins.
+诚实的术语说明："rug pull"借自山寨币/DeFi 文化。在比特币语境中，它通常指托管失败（在"rug pull"成为词语之前就存在了）或在比特币链上运行的代币骗局（技术上被卷地毯了但不是拉动比特币本身）。结构性教训更古老更简单：不是你的密钥，就不是你的币。

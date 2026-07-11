@@ -1,12 +1,12 @@
 ---
-title: "Lightning Sphinx"
+title: "闪电 Sphinx"
 slug: lightning-sphinx
 draft: false
-shortDefinition: "The onion-routing protocol LN uses to obscure each hop's identity, preserving routing privacy."
+shortDefinition: "闪电网络使用的洋葱路由协议，用于隐藏每一跳的身份，保护路由隐私。"
 keyTakeaways:
-  - "Implements onion-style encryption to hide full route details"
-  - "Each hop only sees enough data to forward payment"
-  - "Protects LN users from linkability and censorship"
+  - "实现洋葱式加密以隐藏完整路由详情"
+  - "每一跳只能看到足够转发支付的数据"
+  - "保护闪电网络用户免受关联和审查"
 sources: []
 relatedTerms:
   - htlc-preimage-manager
@@ -39,18 +39,18 @@ ogImageAlt: "A frame from LearnBitcoin's onion routing animation. Bob (highlight
   <figcaption>Three intermediate hops, three wraps. Each node sees only its own layer.</figcaption>
 </figure>
 
-Sphinx is the specific cryptographic packet format Lightning uses for [onion routing](/glossary/onion-routing-lightning). Defined in [BOLT-4](https://github.com/lightning/bolts/blob/master/04-onion-routing.md), it's the data structure that travels with each Lightning payment, telling each routing hop the next destination without revealing the full path.
+Sphinx 是闪电网络用于[洋葱路由](/glossary/onion-routing-lightning)的特定密码学数据包格式。定义在 [BOLT-4](https://github.com/lightning/bolts/blob/master/04-onion-routing.md) 中，它是随每笔闪电支付传输的数据结构，告诉每个路由跳下一跳的目的地而不揭示完整路径。
 
-The Sphinx packet is a fixed size (1,300 bytes for the standard format) regardless of how many hops the payment will traverse. This is by design: if packet size varied with hop count, observers could infer route length. Padding keeps every onion the same width.
+Sphinx 数据包是固定大小（标准格式 1,300 字节），无论支付将经过多少跳。这是设计如此：如果数据包大小随跳数变化，观察者可以推断路由长度。填充使每个洋葱保持相同大小。
 
-Each layer of the onion is encrypted with a key derived from the public key of the corresponding hop. When a hop receives a Sphinx packet:
+洋葱的每一层用从对应跳公钥派生的密钥加密。当某一跳收到 Sphinx 数据包时：
 
-1. It decrypts the outermost layer using its private key.
-2. It reads the forwarding instructions (next hop, amount, timeout).
-3. It re-pads the remainder and forwards it to the next hop.
+1. 它用私钥解密最外层。
+2. 它读取转发指令（下一跳、金额、超时）。
+3. 它重新填充剩余部分并转发到下一跳。
 
-The next hop sees an onion that looks identical in size and structure to what the first hop received - it can't tell whether it's 2 hops in or 5 hops in.
+下一跳看到的洋葱在大小和结构上与第一跳收到的完全相同——它无法判断自己是第 2 跳还是第 5 跳。
 
-Sphinx was originally designed by George Danezis and Ian Goldberg in 2009, for mixnets and onion-routing systems generally. Lightning adopted and adapted it for payment routing specifically. The same underlying cryptography is used in other privacy systems.
+Sphinx 最初由 George Danezis 和 Ian Goldberg 于 2009 年设计，用于混合网络和洋葱路由系统。闪电网络采用并适配了它用于支付路由。相同的底层密码学被其他隐私系统使用。
 
-Sphinx is what makes Lightning's privacy claims credible. It's also why Lightning is a strict privacy upgrade over on-chain Bitcoin: not only do payments not hit the public chain, the routing path is hidden from anyone except direct neighbors.
+Sphinx 是闪电网络隐私声明的可信基础。这也是为什么闪电网络是相对于链上比特币的严格隐私升级：不仅支付不上公共链，路由路径对除直接邻居外的任何人都隐藏。

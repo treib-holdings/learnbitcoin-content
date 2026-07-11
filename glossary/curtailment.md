@@ -1,13 +1,13 @@
 ---
-title: "Curtailment"
+title: "削减（Curtailment）"
 slug: curtailment
 draft: false
 published: "2026-06-17"
-shortDefinition: "Deliberately reducing or stopping electricity use (or generation) to balance a grid. Bitcoin mining is a curtailable load that can vanish in seconds when the grid needs power elsewhere."
+shortDefinition: "故意减少或停止电力使用（或发电）以平衡电网。比特币挖矿是一种可削减的负载，可以在电网需要电力时在几秒内消失。"
 keyTakeaways:
-  - "Curtailment is intentionally cutting load or generation to keep supply and demand matched"
-  - "Renewable grids curtail (waste) surplus power when generation outruns demand - exactly the energy mining can absorb"
-  - "A miner curtailing during peak demand is the same flexibility in reverse: load that disappears on command"
+  - "削减是故意减少负载或发电以保持供需匹配"
+  - "可再生电网在发电超过需求时削减（浪费）多余电力——正是挖矿可以吸收的能源"
+  - "在需求高峰时削减的矿工是同一灵活性的反向表现：按命令消失的负载"
 sources: []
 relatedTerms:
   - demand-response
@@ -18,17 +18,17 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Curtailment is the deliberate reduction of electricity use or generation to keep a grid balanced. Supply and demand on an electrical grid must match instant to instant; when they do not, something gets curtailed.
+削减是故意减少电力使用或发电以保持电网平衡。电网上的供需必须即时匹配；当不匹配时，某些东西就会被削减。
 
-It cuts both directions, and Bitcoin mining touches both:
+它有两个方向，比特币挖矿都涉及：
 
-- **Generation curtailment.** When a wind or solar farm produces more power than the grid can use or transmit, the surplus is curtailed - the turbines are feathered, the panels clipped, and the energy is simply wasted. This happens constantly on renewable-heavy grids with limited transmission or storage. It is the canonical example of [stranded energy](/glossary/stranded-energy): electricity with no buyer.
-- **Load curtailment.** A flexible consumer reduces its draw on command so the grid can serve higher-priority demand. This is the [demand-response](/glossary/demand-response) side.
+- **发电削减。** 当风电或光伏农场产生的电力超过电网可使用或传输的量时，多余的电力被削减——涡轮机叶片调整角度、面板截断，能源被简单浪费。这在传输或存储有限的可再生能源为主的电网上经常发生。这是[搁浅能源](/glossary/stranded-energy)的典型例子：没有买家的电力。
+- **负载削减。** 灵活的消费者按命令减少用电，以便电网可以服务更高优先级的需求。这是[需求响应](/glossary/demand-response)的一面。
 
-## Why mining fits both ends
+## 为什么挖矿适合两端
 
-A [miner](/glossary/mining) is a buyer of last resort for curtailed generation - it will run on the surplus electrons a wind farm would otherwise waste, because those are the cheapest electrons available. And it is a first candidate for load curtailment - it can shut down in seconds when the grid needs that capacity back, because unlike a factory it loses only forgone mining revenue, not work in progress.
+[矿工](/glossary/mining)是削减发电的最后买家——它会在风电场原本要浪费的多余电子上运行，因为那些是最便宜的可用电子。它也是负载削减的首选候选——它可以在几秒内关闭，当电网需要恢复该容量时，因为与工厂不同，它只损失错过的挖矿收入，而不是在制品。
 
-That two-sided flexibility is why mining keeps appearing in grid-balancing arguments. The same property - indifference to *when* the power flows - lets a miner soak up power nobody wants and give back power everybody suddenly needs.
+这种双向灵活性就是挖矿不断出现在电网平衡论证中的原因。同一属性——对电力*何时*流动的不在乎——让矿工可以吸收没人想要的电力，并在所有人突然需要时归还电力。
 
-See the [Bitcoin and Energy rabbit hole](/rabbit-hole/energy) for how this plays out on real grids, and the honest limits of the argument.
+实际电网中的表现参见[比特币与能源深入探讨](/rabbit-hole/energy)，以及论证的诚实限制。

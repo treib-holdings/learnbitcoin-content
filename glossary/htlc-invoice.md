@@ -1,12 +1,12 @@
 ---
-title: "HTLC Invoice"
+title: "HTLC 发票"
 slug: htlc-invoice
 draft: false
-shortDefinition: "An LN invoice referencing a hashed secret (payment hash). The receiver must reveal the preimage to collect funds."
+shortDefinition: "引用哈希秘密（支付哈希）的闪电网络发票。接收方必须揭示原像以收取资金。"
 keyTakeaways:
-  - "Ties LN payments to a specific hashed secret"
-  - "Receiver must disclose the preimage for final settlement"
-  - "Crucial for LN's atomic multi-hop security"
+  - "将闪电网络支付绑定到特定哈希秘密"
+  - "接收方必须披露原像以完成结算"
+  - "对闪电网络原子多跳安全至关重要"
 sources: []
 relatedTerms:
   - bolt-11
@@ -23,20 +23,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-An HTLC invoice is, in practical terms, an ordinary [Lightning invoice](/glossary/lightning-invoice) - one whose `payment_hash` field is used to construct [Hashed Time-Locked Contracts](/glossary/htlc-hashed-time-locked-contract) at each hop of the routed payment. Almost every [Lightning payment](/glossary/lightning-payment) made today is via HTLC invoices.
+HTLC 发票实际上是普通的[闪电网络发票](/glossary/lightning-invoice)——其 `payment_hash` 字段用于在路由支付的每跳构建[哈希时间锁合约](/glossary/htlc-hashed-time-locked-contract)。今天几乎每笔[闪电网络支付](/glossary/lightning-payment)都通过 HTLC 发票完成。
 
-What makes the invoice "HTLC-based":
+使发票"基于 HTLC"的原因：
 
-1. The receiver picks a random 32-byte **preimage** and computes its SHA-256 hash. This hash goes into the invoice as the `payment_hash`.
-2. The sender's wallet uses the payment hash to construct HTLCs along the route - each hop is locked by the same hash.
-3. To claim payment, the receiver reveals the preimage. This propagates backward through the route, settling every HTLC.
+1. 接收方选择一个随机 32 字节**原像**并计算其 SHA-256 哈希。该哈希作为 `payment_hash` 进入发票。
+2. 发送方钱包使用支付哈希沿路由构建 HTLC——每跳被相同哈希锁定。
+3. 要认领支付，接收方揭示原像。这沿路由反向传播，结算每个 HTLC。
 
-This is essentially the [BOLT-11](/glossary/bolt-11) invoice mechanism. "HTLC invoice" is a description of the cryptographic mechanism rather than a separate format - all standard Lightning invoices work this way.
+这本质上是 [BOLT-11](/glossary/bolt-11) 发票机制。"HTLC 发票"是密码机制的描述，而非单独格式——所有标准闪电网络发票都这样工作。
 
-Variants and successors:
+变体和后继：
 
-- **[BOLT-12](/glossary/bolt-11) offers** still use HTLC-based settlement; the change is in invoice format and reusability, not the underlying cryptography.
-- **PTLCs (Point Time-Locked Contracts)** are a proposed future replacement for HTLCs using [Schnorr](/glossary/schnorr-signature)/Taproot-based point math instead of hash preimages. They'd give better privacy (each hop's lock looks different rather than all sharing the same hash). Not yet deployed.
-- **Held HTLCs / hodl invoices** are HTLC invoices that the receiver deliberately doesn't settle immediately - useful for conditional payments where the receiver wants to confirm something off-chain before completing.
+- **[BOLT-12](/glossary/bolt-11) offers** 仍使用基于 HTLC 的结算；变化在发票格式和可重用性，而非底层密码学。
+- **PTLC（点时间锁合约）**是提议的未来 HTLC 替代品，使用 [Schnorr](/glossary/schnorr-signature)/Taproot 基的点运算而非哈希原像。它们提供更好的隐私（每跳的锁看起来不同而非全部共享相同哈希）。尚未部署。
+- **持有 HTLC / hodl 发票**是接收方故意不立即结算的 HTLC 发票——适用于接收方想在完成前确认链下某些条件的条件支付。
 
-For everyday Lightning users, "HTLC invoice" is just "the way Lightning invoices work." The mechanism is invisible behind wallet UX. See [HTLC](/glossary/htlc-hashed-time-locked-contract) for the underlying primitive.
+对于日常闪电网络用户，"HTLC 发票"就是"闪电网络发票的工作方式"。机制在钱包 UX 后不可见。底层原语参见 [HTLC](/glossary/htlc-hashed-time-locked-contract)。

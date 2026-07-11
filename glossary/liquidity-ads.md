@@ -1,12 +1,12 @@
 ---
-title: "Liquidity Ads"
+title: "流动性广告"
 slug: liquidity-ads
 draft: false
-shortDefinition: "A c-lightning plugin allowing node operators to advertise LN channel liquidity for lease, facilitating inbound capacity."
+shortDefinition: "一种闪电协议，允许节点运营者广告出租闪电通道流动性，促进入站容量获取。"
 keyTakeaways:
-  - "Offers a decentralized marketplace for LN channel capacity"
-  - "Helps new merchants or heavy receivers get inbound liquidity"
-  - "Implemented as a plugin for c-lightning to automate channel leasing"
+  - "提供闪电通道容量的去中心化市场"
+  - "帮助新商家或高频接收者获得入站流动性"
+  - "作为闪电网络协议的一部分实现通道租赁自动化"
 sources: []
 relatedTerms:
   - lightning-channel
@@ -17,18 +17,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Liquidity Ads is the Lightning protocol for advertising channel-opening offers: a routing node publishes "I'll open a channel with X sats of inbound liquidity for Y sats in fees, locked for Z blocks." A node that needs inbound capacity finds an ad it likes and accepts; the routing node opens a channel funded mostly on its side.
+流动性广告是闪电网络中广告通道开启要约的协议：一个路由节点发布"我将以 Y 聪的手续费开设一个有 X 聪入站流动性的通道，锁定 Z 个区块"。需要入站容量的节点找到喜欢的广告并接受；路由节点开设一个主要由其一方注资的通道。
 
-Originally a Core Lightning plugin (Lisa Neigut's design, 2021), liquidity ads landed in the official Lightning specification (BOLT 2 channel-establishment v2) and are supported by Core Lightning, Eclair, and increasingly LND. It's now part of the protocol rather than a single implementation's feature.
+最初作为 Core Lightning 插件（Lisa Neigut 的设计，2021 年），流动性广告已进入官方闪电网络规范（BOLT 2 通道建立 v2），并被 Core Lightning、Eclair 和越来越多的 LND 支持。它现在是协议的一部分而非单一实现的功能。
 
-What problem it solves. New Lightning users (especially merchants and service nodes) need inbound liquidity from day one. The traditional options were:
+它解决的问题：新闪电用户（尤其是商家和服务节点）从第一天起就需要入站流动性。传统选项是：
 
-- **Spend down first** to free up inbound. Requires already having spending capacity, which new users don't.
-- **Find peers manually.** "Anyone out there willing to open a channel to me?" Hit and miss; doesn't scale.
-- **Use a commercial service** like Lightning Labs Pool (now retired) or Voltage. Worked but centralized the inbound-liquidity market on a few providers.
+- **先花出去**以释放入站。需要已有花费能力，而新用户没有。
+- **手动找对等方。** "有人愿意和我开通道吗？"碰运气；不可扩展。
+- **使用商业服务**如 Lightning Labs Pool（已退役）或 Voltage。有效但将入站流动性市场集中在少数提供商上。
 
-Liquidity ads decentralizes the marketplace. Any node can advertise; any node can shop. The pricing is set per-routing-node, so a competitive market emerges naturally. Channel terms (size, duration, fees) are explicit upfront.
+流动性广告使市场去中心化。任何节点都可以广告；任何节点都可以选购。定价按路由节点设定，竞争市场自然形成。通道条款（大小、持续时间、费率）预先明确。
 
-In practice, the ecosystem is still maturing. Discovery is gossip-based, so finding the right ad isn't quite "open the marketplace and browse." Tools like `lncli` and CLN's `bkpr` plus third-party explorers expose ads to operators, but UX for end users (just clicking "I need inbound, find me a channel") is improving slowly.
+实践中，生态系统仍在成熟。发现基于 gossip，所以找到合适的广告不完全是"打开市场浏览"。`lncli` 和 CLN 的 `bkpr` 等工具以及第三方浏览器向运营者展示广告，但终端用户的 UX（只需点击"我需要入站，帮我找通道"）正在缓慢改善。
 
-The protocol replaces a centralized custody trust ("trust this Lightning service to give me a channel") with a marketplace match. That's the more decentralized, more Bitcoin-shaped answer to the inbound-liquidity problem.
+该协议用市场匹配取代了集中托管信任（"信任这个闪电服务给我通道"）。这是入站流动性问题的更去中心化、更比特币式的答案。

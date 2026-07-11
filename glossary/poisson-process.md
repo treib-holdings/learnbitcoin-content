@@ -1,12 +1,12 @@
 ---
-title: "Poisson Process"
+title: "泊松过程（Poisson Process）"
 slug: poisson-process
 draft: false
-shortDefinition: "A statistical model describing Bitcoin block discovery as a random event with an average 10-minute interval but high variance."
+shortDefinition: "一种统计模型，将比特币出块描述为平均 10 分钟间隔但方差很大的随机事件。"
 keyTakeaways:
-  - "Blocks arrive randomly but average ~10 minutes over time"
-  - "Variance is normal- occasionally blocks come seconds apart or hours apart"
-  - "Difficulty retargeting keeps the long-term average stable"
+  - "出块随机但长期平均约 10 分钟"
+  - "方差是正常的——偶尔几秒出块，偶尔间隔数小时"
+  - "难度调整保持长期平均稳定"
 sources: []
 relatedTerms:
   - difficulty
@@ -15,20 +15,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Poisson process is a statistical model where events happen independently at a constant average rate but with random timing. Bitcoin block discovery is a near-perfect Poisson process - each hash attempt is independent, the probability of finding a valid block is constant given the current [difficulty](/glossary/difficulty), and the resulting block arrivals follow an exponential distribution.
+泊松过程是一种统计模型，其中事件以恒定平均速率独立随机发生。比特币出块是一个近乎完美的泊松过程——每次哈希尝试是独立的，在当前[难度](/glossary/difficulty)下找到有效区块的概率是恒定的，出块时间遵循指数分布。
 
-What this means in practice:
+这在实践中意味着：
 
-- **The expected time between blocks is 10 minutes**, set by [difficulty retargeting](/glossary/difficulty-retargeting).
-- **The actual time between any given pair of blocks is random.** Half the time it's under 7 minutes; about a third of the time it's over 12 minutes; a few times a year a block takes over an hour.
-- **There's no "due" block.** A 30-minute gap doesn't make the next block "more likely soon." Each second of hashing is independent of every prior second.
+- **预期出块间隔为 10 分钟**，由[难度调整](/glossary/difficulty-retargeting)设定。
+- **任意两个区块之间的实际时间是随机的。** 一半的时间不到 7 分钟；约三分之一的时间超过 12 分钟；一年中有几次一个区块需要超过一小时。
+- **没有"该出"的区块。** 30 分钟的间隔不会使下一个区块"更可能很快出现"。每一秒的哈希都与之前的每一秒独立。
 
-Why this matters for users:
+为什么这对用户很重要：
 
-- **[Block time](/glossary/block-time) variance is normal.** People who see a 50-minute gap and worry the network is broken are misreading the statistics. The network is fine; the variance is built in.
-- **[Confirmation count](/glossary/double-spend) matters more than wall-clock time.** For settlement security, the question is "how many blocks have been mined on top of my transaction," not "how many minutes have passed."
-- **You can compute probabilities.** Given the network's current hash rate, you can calculate the probability of a block appearing in the next N minutes, of N blocks in 1 hour, of zero blocks in 1 hour, etc. All standard exponential-distribution math.
+- **[出块时间](/glossary/block-time)方差是正常的。** 看到 50 分钟间隔就担心网络坏了的人是误读了统计。网络没问题；方差是内建的。
+- **[确认数](/glossary/double-spend)比挂钟时间更重要。** 对于结算安全性，问题是"我的交易上面挖了多少个区块"，而不是"过了多少分钟"。
+- **你可以计算概率。** 给定网络当前算力，你可以计算下一个 N 分钟内出块的概率、1 小时内出 N 个块的概率、1 小时内零个块的概率等。所有标准的指数分布数学。
 
-For miners, the Poisson nature of block discovery is the source of revenue variance - and the reason [pooled mining](/glossary/pooled-mining) is so popular. Solo mining means your revenue is one big lump every N months with a giant variance window. Pooled mining smooths the Poisson distribution into a steadier income stream.
+对于矿工，出块的泊松特性是收入方差的来源——也是[矿池](/glossary/pooled-mining)如此流行的原因。单独挖矿意味着你的收入是每 N 个月一次的大笔金额，方差窗口巨大。矿池将泊松分布平滑为更稳定的收入流。
 
-A "Poisson process" is the technical name for "random independent events at a constant rate." Bitcoin is the most famous real-world example of one.
+"泊松过程"是"以恒定速率随机独立事件"的技术名称。比特币是最著名的现实世界例子。

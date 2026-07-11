@@ -1,12 +1,12 @@
 ---
-title: "Bitcoin Satellite"
+title: "比特币卫星"
 slug: bitcoin-satellite
 draft: false
-shortDefinition: "A Blockstream initiative that broadcasts Bitcoin's blockchain data via satellite, letting nodes sync offline."
+shortDefinition: "Blockstream 的项目，通过卫星广播比特币区块链数据，让节点可以离线同步。"
 keyTakeaways:
-  - "Delivers blockchain data via satellite link"
-  - "Enhances redundancy for node operators"
-  - "Requires minimal hardware to receive the broadcast"
+  - "通过卫星链路传输区块链数据"
+  - "增强节点运营商的冗余"
+  - "需要最少的硬件即可接收广播"
 sources: []
 relatedTerms:
   - block-propagation
@@ -18,12 +18,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Bitcoin Satellite is Blockstream's broadcast of Bitcoin blocks over geostationary satellite. Several leased transponders cover most of the populated planet. A small receive-only dish (around 45 cm) plus a $200-300 receiver gives a node a real-time block feed without an internet connection.
+比特币卫星是 Blockstream 通过地球静止卫星广播比特币区块的服务。几个租用的转发器覆盖了大部分有人居住的地球。一个小的只接收天线（约 45 厘米）加上 200-300 美元的接收器就能给节点提供无需互联网连接的实时区块馈送。
 
-The use cases are narrower than the marketing implies. You still need some way to broadcast your own transactions: a phone with cell service, an SMS gateway, or Blockstream's paid satellite uplink service that queues messages for satellite transmission. So it's not quite "Bitcoin without the internet" for the user. But it does mean:
+使用场景比营销暗示的要窄。你仍然需要某种方式广播你自己的交易：有蜂窝服务的手机、SMS 网关，或 Blockstream 的付费卫星上行服务（排队消息通过卫星传输）。所以对用户来说不完全是"没有互联网的比特币"。但它确实意味着：
 
-- A node in a censored network can keep its chain state current without revealing that it's running Bitcoin. The dish points at a satellite, not at a server.
-- A node in a remote location with intermittent internet can fill gaps from satellite.
-- The network has a redundant, hard-to-jam block distribution path that doesn't depend on any single ISP, country, or peering arrangement.
+- 审查网络中的节点可以在不暴露运行比特币的情况下保持链状态最新。天线指向卫星，不指向服务器。
+- 间歇性互联网的远程位置节点可以从卫星填补空缺。
+- 网络有一条冗余的、难以干扰的区块分发路径，不依赖任何单一 ISP、国家或对等安排。
 
-It's a "good to know it exists" infrastructure piece. Most node operators with reliable internet will never touch it. For the few who need it, it's the difference between a working node and a stale one.
+它是"知道它存在就好"的基础设施。大多数有可靠互联网的节点运营商永远不会碰它。对于需要它的少数人，它是工作节点和陈旧节点之间的区别。

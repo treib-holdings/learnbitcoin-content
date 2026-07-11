@@ -1,12 +1,12 @@
 ---
-title: "Altcoin"
+title: "山寨币"
 slug: altcoin
 draft: false
-shortDefinition: "Any cryptocurrency that isn't Bitcoin, covering a huge range of coins with diverse features and goals."
+shortDefinition: "任何不是比特币的加密货币，涵盖具有不同特性和目标的众多币种。"
 keyTakeaways:
-  - "Includes thousands of non-Bitcoin cryptocurrencies"
-  - "Often introduces new features or use cases"
-  - "Riskiest segment of the crypto market"
+  - "包括数千种非比特币加密货币"
+  - "常引入新功能或用例"
+  - "加密市场中风险最高的类别"
 sources: []
 relatedTerms:
   - alt-season
@@ -18,19 +18,19 @@ relatedTerms:
 liveWidget: ~
 ---
 
-An "altcoin" is any cryptocurrency that isn't Bitcoin. The term covers everything from genuinely novel research projects (Monero, for privacy) to forks of Bitcoin with minor changes (Litecoin, Bitcoin Cash) to pure marketing exercises with no technical substance (most of the long tail).
+"山寨币"是指任何不是比特币的加密货币。这个术语涵盖了从真正新颖的研究项目（Monero，主打隐私）到做了少量修改的比特币分叉（Litecoin、Bitcoin Cash）再到没有技术实质的纯营销噱头（长尾中的大多数）的一切。
 
-This site is Bitcoin-only. That's a deliberate editorial choice, not a slight against curiosity. The reasons we don't cover altcoins:
+本站只关注比特币。这是一个刻意的编辑选择，不是对好奇心的轻视。我们不覆盖山寨币的原因：
 
-- **Bitcoin's monetary properties are different in kind, not degree.** A fixed-supply, permissionless, neutral, miner-secured base layer is the thing every alternative is implicitly competing with. Most of them either drop one of those properties (centralized issuance, mutable supply, controlled validator sets) or never had it. The exceptions are interesting; the bulk aren't.
-- **Most altcoins are venture-funded equity in disguise.** Founders hold large pre-mine allocations. Token launches are often closer to an IPO than to a monetary innovation. The economic model rewards insiders first. The worst version of the pattern - founders dumping pre-mined supply onto the public after launch - is the canonical [rug pull](/glossary/rug-pull), repeated cyclically across DeFi, Solana memecoins, and any platform where issuing a new token is cheap.
-- **Adoption time is finite.** Spending time learning Bitcoin deeply pays compounding dividends. Spending it cycling through altcoins doesn't.
+- **比特币的货币属性是本质上的不同，不是程度上的差异。** 固定供应量、无需许可、中立、矿工保护的基础层是每个替代品隐含地与之竞争的东西。大多数替代品要么放弃了其中某个属性（中心化发行、可变供应量、受控的验证者集），要么从未拥有过。例外很有趣；大部分不是。
+- **大多数山寨币是风投资助的变相股权。** 创始人持有大量预挖份额。代币发行通常更像 IPO 而非货币创新。经济模型优先奖励内部人士。最糟糕的模式——创始人在上线后向公众抛售预挖代币——是经典的[rug pull](/glossary/rug-pull)，在 DeFi、Solana meme 币和任何发行新代币成本很低的平台上周期性重复。
+- **学习时间是有限的。** 花时间深入学习比特币会产生复利回报。花在轮换山寨币上的时间则不会。
 
-What we will acknowledge:
+我们承认的：
 
-- **Some altcoin engineering is genuinely novel.** Monero's ring signatures, Ethereum's smart-contract platform, Zcash's zk-SNARKs - these advanced the cryptographic state of the art. Bitcoin has borrowed from this research where it made sense and would degrade Bitcoin's properties least (Schnorr signatures, MAST).
-- **The "altcoin" label is doing work.** Many things sold as "crypto" don't claim to be alternative *money*; they're vehicles for speculation, governance experiments, or distributed-computing markets. Calling them altcoins lumps them with monetary alternatives they're not actually competing in.
+- **一些山寨币工程确实新颖。** Monero 的环签名、Ethereum 的智能合约平台、Zcash 的 zk-SNARKs——这些推进了密码学的前沿。比特币在合理且最不损害其属性的地方借鉴了这些研究成果（Schnorr 签名、MAST）。
+- **"山寨币"这个标签在做一些工作。** 许多作为"加密"出售的东西并不声称是替代*货币*；它们是投机工具、治理实验或分布式计算市场。将它们称为山寨币将它们与实际上并未参与的货币替代品混为一谈。
 
-The bridges that connect BTC to altcoin chains - [Bitcoin bridges](/glossary/bitcoin-bridge), wrapped BTC, custodial peg-ins - inherit those chains' trust assumptions and attack surfaces. BTC on Bitcoin is BTC. BTC on Ethereum is an IOU.
+连接 BTC 与山寨币链的桥梁——[比特币桥](/glossary/bitcoin-bridge)、包装 BTC、托管式锚定——继承了这些链的信任假设和攻击面。比特币上的 BTC 是 BTC。以太坊上的 BTC 是一张借条。
 
-If you're learning Bitcoin and considering whether to broaden into altcoins: the honest answer is "later, if at all, and only after you've understood why Bitcoin's properties are hard to replicate." Most people who broaden too early end up with smaller stacks of everything.
+如果你正在学习比特币并考虑是否扩展到山寨币：诚实的回答是"以后再说，如果有的话，而且只有在你理解了为什么比特币的属性难以复制之后。"大多数过早扩展的人最终什么都只持有更少的份额。

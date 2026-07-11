@@ -1,12 +1,12 @@
 ---
-title: "Tor Hidden Service"
+title: "Tor 隐藏服务"
 slug: tor-hidden-service
 draft: false
-shortDefinition: "Hosting a Bitcoin node or service over Tor, hiding real IP addresses and enhancing privacy/censorship resistance."
+shortDefinition: "通过 Tor 托管比特币节点或服务，隐藏真实 IP 地址，增强隐私和抗审查能力。"
 keyTakeaways:
-  - "Conceals node location and blocks direct IP correlation"
-  - "Important for anonymity, avoids certain ISP or state-level blocking"
-  - "Can be slower due to Tor's layered encryption and relay hops"
+  - "隐藏节点位置，阻止直接 IP 关联"
+  - "对匿名性很重要，可避免某些 ISP 或国家级封锁"
+  - "由于 Tor 的分层加密和中继跳转，可能较慢"
 sources: []
 relatedTerms:
   - hidden-service-node
@@ -23,17 +23,17 @@ sameAs:
 liveWidget: ~
 ---
 
-A Tor hidden service - now officially called an **onion service** - is a network endpoint that's only reachable through the Tor network, identified by a `.onion` address. The endpoint's real IP location is hidden from both the user and the wider internet.
+Tor 隐藏服务——现在官方称为**洋葱服务**——是一个只能通过 Tor 网络访问的网络端点，以 `.onion` 地址标识。端点的真实 IP 位置对用户和整个互联网都是隐藏的。
 
-For a [Bitcoin node](/glossary/node), running as a Tor onion service provides:
+对于[比特币节点](/glossary/node)，作为 Tor 洋葱服务运行提供：
 
-- **Network-layer privacy.** Your real IP doesn't appear in peer lists, isn't visible to chainalysis firms scanning the gossip network, and isn't logged by other node operators.
-- **Censorship resistance.** Governments or ISPs that try to block Bitcoin can block IP ranges, but blocking Tor itself is much harder (and crosses a much higher political line).
-- **Protection against [eavesdropping attacks](/glossary/eavesdropping-attack).** Without your IP, observers can't easily correlate your broadcasts with your physical location or identity.
-- **Protection against [eclipse attacks](/glossary/eclipse-attack).** Tor's random circuit selection makes it much harder for an attacker to predict or target your specific outbound peers.
+- **网络层隐私。** 你的真实 IP 不出现在对等节点列表中，链上分析公司扫描 gossip 网络时看不到，也不会被其他节点运营者记录。
+- **抗审查。** 试图封锁比特币的政府或 ISP 可以封锁 IP 段，但封锁 Tor 本身难得多（而且跨越了更高的政治红线）。
+- **防止[窃听攻击](/glossary/eavesdropping-attack)。** 没有你的 IP，观察者很难将你的广播与物理位置或身份关联。
+- **防止[日食攻击](/glossary/eclipse-attack)。** Tor 的随机电路选择使攻击者更难预测或定向你的特定出站对等节点。
 
-The cost is latency. Tor adds ~200-500ms of round-trip time over normal internet routes due to its three-hop relay structure. For Bitcoin's needs - block propagation every ~10 minutes, transactions that propagate over seconds - this latency is essentially invisible in practice. Block- and transaction-relay over Tor work fine.
+代价是延迟。Tor 由于三跳中继结构，在正常互联网路由上增加约 200-500 毫秒往返时间。对比特币的需求——每约 10 分钟传播一次区块，交易在几秒内传播——这种延迟实际上不可见。通过 Tor 的区块和交易传播工作正常。
 
-Bitcoin Core has shipped first-class Tor support since 2014. Running your node behind Tor is a single config-file change (`proxy=127.0.0.1:9050` plus a few related options). Many node-in-a-box products (Umbrel, Start9, RaspiBlitz) ship with Tor enabled by default. The same hidden-service pattern can also expose [RPC for remote management](/glossary/json-rpc-over-tor), letting you control your home node from anywhere without opening any firewall ports.
+Bitcoin Core 自 2014 年起就内置了一流 Tor 支持。在节点后运行 Tor 只需一个配置文件改动（`proxy=127.0.0.1:9050` 加几个相关选项）。许多一体化节点产品（Umbrel、Start9、RaspiBlitz）默认启用 Tor。同样的隐藏服务模式也可以暴露[远程管理 RPC](/glossary/json-rpc-over-tor)，让你从任何地方控制家里的节点而无需开放任何防火墙端口。
 
-For self-custody users running a [full node](/glossary/full-node), running over Tor is the single biggest privacy upgrade you can make at the network layer. Strongly recommended for anyone who cares about not having their on-chain activity correlated with their home IP.
+对于运行[全节点](/glossary/full-node)的自托管用户，通过 Tor 运行是你在网络层能做的最大的隐私升级。强烈推荐给任何关心链上活动与家庭 IP 关联的人。

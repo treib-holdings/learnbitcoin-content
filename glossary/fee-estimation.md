@@ -1,12 +1,12 @@
 ---
-title: "Fee Estimation"
+title: "手续费估计"
 slug: fee-estimation
 draft: false
-shortDefinition: "Predicting the required sat/vByte rate to confirm within a certain timeframe, given current network conditions."
+shortDefinition: "根据当前网络条件预测在特定时间范围内确认所需的 sat/vByte 费率。"
 keyTakeaways:
-  - "Helps users avoid overpaying or underpaying transaction fees"
-  - "Involves reading mempool backlog and recent block inclusion rates"
-  - "Can fluctuate quickly in times of sudden network activity"
+  - "帮助用户避免多付或少付交易手续费"
+  - "涉及读取内存池积压和近期区块纳入率"
+  - "在突发网络活动时可能快速波动"
 sources: []
 relatedTerms:
   - absolute-fee
@@ -23,15 +23,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Fee estimation is the wallet's job of predicting how many satoshis per virtual byte (sat/vB) you need to pay to get your [transaction](/glossary/transaction) confirmed within some target number of blocks. Pay too little and you wait; pay too much and you overpay.
+手续费估计是钱包的工作，预测你需要支付多少聪/虚拟字节（sat/vB）才能在目标区块数内确认[交易](/glossary/transaction)。付太少就等；付太多就多付。
 
-The estimate is built from two signals:
+估计基于两个信号构建：
 
-- **Current [mempool](/glossary/mempool) state.** How much unconfirmed transaction data is queued up at each fee rate? The fuller the mempool, the higher the floor.
-- **Recent block history.** What fee rates were actually included in the last several blocks? This anchors the estimate to what miners are accepting right now.
+- **当前[内存池](/glossary/mempool)状态。** 每个手续费率有多少未确认交易数据排队？内存池越满，底线越高。
+- **近期区块历史。** 最近几个区块实际纳入了什么手续费率？这将估计锚定到矿工当前接受的费率。
 
-Bitcoin Core exposes its own estimator via the `estimatesmartfee` RPC; this is what most nodes and wallets reference, sometimes blended with third-party feeds. Estimates come in tiers: next-block, ~3 blocks, ~6 blocks, ~24 blocks. Lower urgency means lower fee.
+Bitcoin Core 通过 `estimatesmartfee` RPC 暴露自己的估计器；这是大多数节点和钱包参考的，有时混合第三方数据源。估计分层提供：下一区块、约 3 区块、约 6 区块、约 24 区块。更低紧迫性意味着更低手续费。
 
-In low-traffic periods, the estimator often returns 1 sat/vB across all tiers - the relay minimum. In congestion events (Ordinals mints, exchange withdrawal storms, market panic), the next-block estimate can spike to hundreds of sat/vB in minutes.
+在低流量时期，估计器通常在所有层级返回 1 sat/vB——中继最低值。在拥堵事件中（Ordinals 铸造、交易所提现风暴、市场恐慌），下一区块估计可以在几分钟内飙升到数百 sat/vB。
 
-Estimates are *guesses*. If you underpay and get stuck, see [Fee Bumping](/glossary/fee-bumping). The live fee market is visible in the [Mining rabbit hole §6](/rabbit-hole/mining) and on the [Node page](/node/).
+估计是*猜测*。如果你少付卡住了，参见[手续费加价](/glossary/fee-bumping)。实时手续费市场可在[挖矿深入探讨 §6](/rabbit-hole/mining)和[节点页面](/node/)查看。

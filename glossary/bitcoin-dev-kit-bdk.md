@@ -2,11 +2,11 @@
 title: "Bitcoin Dev Kit (BDK)"
 slug: bitcoin-dev-kit-bdk
 draft: false
-shortDefinition: "An open-source Rust library offering flexible tools for building custom Bitcoin wallets with descriptor-based key management."
+shortDefinition: "一个开源 Rust 库，提供基于描述符的密钥管理灵活工具来构建自定义比特币钱包。"
 keyTakeaways:
-  - "Facilitates custom wallet building with Rust's safety benefits"
-  - "Leverages descriptors for precise key/script organization"
-  - "Supports multiple backends (e.g., Electrum, Core)"
+  - "利用 Rust 的安全优势促进自定义钱包构建"
+  - "使用描述符精确组织密钥/脚本"
+  - "支持多种后端（如 Electrum、Core）"
 sources: []
 relatedTerms:
   - bitcoin-core
@@ -22,20 +22,20 @@ sameAs:
 liveWidget: ~
 ---
 
-The **Bitcoin Dev Kit (BDK)** is an open-source Rust library that provides modular building blocks for constructing Bitcoin wallets. Maintained by an active community of contributors, BDK powers a growing number of production wallets in 2026 - including major Lightning wallets that need on-chain functionality alongside off-chain.
+**Bitcoin Dev Kit (BDK)** 是一个开源 Rust 库，提供构建比特币钱包的模块化构建块。由活跃的贡献者社区维护，BDK 在 2026 年驱动着越来越多的生产钱包——包括需要链上功能伴随链下的主要闪电钱包。
 
-What BDK provides:
+BDK 提供的：
 
-- **Descriptor-based wallet primitives.** Output script descriptors (the modern way to specify "what scripts does this wallet use") let BDK handle complex setups - multisig, miniscript, custom locktime constructions - through a clean interface.
-- **Pluggable backends.** Connect to a Bitcoin Core node, an Electrum server, an Esplora REST API, or run completely offline with PSBT-based workflows.
-- **Coin selection algorithms.** Built-in strategies for picking UTXOs (largest-first, branch-and-bound, etc.).
-- **PSBT support.** First-class [PSBT](/glossary/psbt) construction and finalization.
-- **Cross-platform.** Rust core with FFI bindings for Swift, Kotlin, Python, JavaScript - so mobile and embedded wallets can use it.
+- **基于描述符的钱包原语。**输出脚本描述符（指定"这个钱包使用什么脚本"的现代方式）让 BDK 通过干净接口处理复杂设置——多签、miniscript、自定义锁定时间构造等。
+- **可插拔后端。**连接到 Bitcoin Core 节点、Electrum 服务器、Esplora REST API，或完全离线运行基于 PSBT 的工作流。
+- **币选择算法。**内置选择 UTXO 的策略（最大优先、分支定界等）。
+- **PSBT 支持。**一流的 [PSBT](/glossary/psbt) 构建和完成。
+- **跨平台。**Rust 核心带 Swift、Kotlin、Python、JavaScript 的 FFI 绑定——移动和嵌入式钱包都可以使用。
 
-Where BDK shines: anyone building a new Bitcoin wallet doesn't have to write descriptor parsing, PSBT logic, coin selection, fee estimation, and the rest from scratch. BDK handles the plumbing; the wallet builder focuses on UX and features.
+BDK 的亮点：任何构建新比特币钱包的人不需要从头写描述符解析、PSBT 逻辑、币选择、费用估算等。BDK 处理管道；钱包构建者专注用户体验和功能。
 
-Notable BDK-based wallets in 2026 include Mutiny Wallet, Cake Wallet's Bitcoin module, some Lightning Service Providers' onboarding flows, and various enterprise custody tools. The library has also been embedded into hardware wallet companion software.
+2026 年基于 BDK 的知名钱包包括 Mutiny Wallet、Cake Wallet 的比特币模块、一些闪电服务提供商的上线流程以及各种企业托管工具。该库也被嵌入硬件钱包配套软件。
 
-For developers, BDK is one of two big Rust-based Bitcoin libraries (alongside [LDK](/glossary/lightning-network-daemon-lnd) for Lightning). Together they're the modern foundation of most new Bitcoin wallet development not based directly on Bitcoin Core's codebase.
+对于开发者，BDK 是两大基于 Rust 的比特币库之一（另一个是用于闪电的 [LDK](/glossary/lightning-network-daemon-lnd)）。两者共同构成大多数不直接基于 Bitcoin Core 代码库的新比特币钱包开发的现代基础。
 
-See [bitcoindevkit.org](https://bitcoindevkit.org/) for documentation and [Wallet](/glossary/wallet) for the broader landscape.
+参见 [bitcoindevkit.org](https://bitcoindevkit.org/) 获取文档，[钱包](/glossary/wallet)了解更广泛的全景。

@@ -1,12 +1,12 @@
 ---
-title: "Peer Discovery"
+title: "节点发现（Peer Discovery）"
 slug: peer-discovery
 draft: false
-shortDefinition: "Nodes find each other using DNS seeds, hard-coded peers, or gossip from connected nodes to expand their network view."
+shortDefinition: "节点通过 DNS 种子、硬编码节点或已连接节点传播来发现彼此，扩展网络视图。"
 keyTakeaways:
-  - "Bootstraps a node's initial peer set"
-  - "Combines DNS seeds, built-in seeds, and peer-shared addresses"
-  - "Prevents reliance on a single server or centralized directory"
+  - "引导节点的初始节点集合"
+  - "结合 DNS 种子、内置种子和节点共享地址"
+  - "避免依赖单一服务器或中心化目录"
 sources: []
 relatedTerms:
   - bip-159
@@ -23,16 +23,16 @@ sameAs:
 liveWidget: ~
 ---
 
-Peer discovery is how a fresh [Bitcoin node](/glossary/node) finds other nodes to connect to. Without an initial peer list, the node would be isolated; without ongoing discovery, the network couldn't heal after churn.
+节点发现是一个新的[比特币节点](/glossary/node)找到其他节点进行连接的方式。没有初始节点列表，节点将处于孤立状态；没有持续发现，网络在节点更替后无法自我修复。
 
-Bitcoin Core uses several mechanisms, in order of fallback:
+Bitcoin Core 使用多种机制，按回退顺序：
 
-1. **DNS seeds.** Maintained by trusted Bitcoin developers (Pieter Wuille, Matt Corallo, Luke Dashjr, Christian Decker, others). These are domain names like `seed.bitcoin.sipa.be` that return IP addresses of well-connected, recently-active full nodes. The node queries them on first start.
-2. **Hard-coded seed nodes.** A fallback list shipped with the Bitcoin Core binary. Used only if DNS seeds are unreachable. Recompiled into each release with currently-active nodes.
-3. **Peer gossip (the `addr` protocol).** Once connected to one or more peers, the node asks them for *their* peer lists, expanding its known-peer set organically. This is how the network heals: any one server going down doesn't break anyone's ability to discover others.
-4. **Manual configuration.** Operators can specify peers via `-addnode` or `-connect` flags. Useful for sovereign setups that don't want to trust DNS seeds.
-5. **Tor / I2P / CJDNS.** Bitcoin Core supports peer discovery over privacy networks, useful for operators behind hostile firewalls or wanting to obscure their IP.
+1. **DNS 种子。** 由受信任的比特币开发者维护（Pieter Wuille、Matt Corallo、Luke Dashjr、Christian Decker 等）。这些是像 `seed.bitcoin.sipa.be` 这样的域名，返回连接良好、近期活跃的全节点 IP 地址。节点在首次启动时查询它们。
+2. **硬编码种子节点。** Bitcoin Core 二进制文件中附带的回退列表。仅在 DNS 种子不可达时使用。每次发布时重新编译当前活跃节点。
+3. **节点传播（`addr` 协议）。** 一旦连接到一个或多个节点，节点向它们请求*它们的*节点列表，有机地扩展已知节点集合。这就是网络自我修复的方式：任何一台服务器宕机都不会破坏其他人发现节点的能力。
+4. **手动配置。** 运营者可以通过 `-addnode` 或 `-connect` 标志指定节点。适用于不想信任 DNS 种子的主权设置。
+5. **Tor / I2P / CJDNS。** Bitcoin Core 支持在隐私网络上进行节点发现，适用于在敌意防火墙后或想要隐藏 IP 的运营者。
 
-The DNS-seed step is the most centralized part of the bootstrap, and it's worth knowing about. A malicious DNS seed could feed your node a curated list of attacker-controlled peers (an "eclipse attack" setup). The defense is having multiple independent seeds; an attacker would need to compromise most of them simultaneously. The seeds themselves are operated by separate, well-known individuals across multiple jurisdictions.
+DNS 种子步骤是引导过程中最中心化的部分，值得了解。恶意 DNS 种子可以向你的节点提供攻击者控制的节点列表（"日食攻击"设置）。防御措施是有多个独立种子；攻击者需要同时攻破大部分种子。种子本身由不同身份的知名个人在不同司法管辖区运营。
 
-For a long-running node, the initial bootstrap matters far less than the ongoing peer health - Bitcoin Core continuously evaluates peer behavior, drops misbehaving connections, and replaces them via the gossip mechanism. See [Eclipse Attack](/glossary/eclipse-attack) for the relevant threat model.
+对于长期运行的节点，初始引导远不如持续的节点健康重要——Bitcoin Core 持续评估节点行为，断开不当行为的连接，并通过传播机制替换它们。参见 [Eclipse Attack](/glossary/eclipse-attack) 了解相关威胁模型。

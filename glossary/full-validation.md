@@ -1,12 +1,12 @@
 ---
-title: "Full Validation"
+title: "完全验证"
 slug: full-validation
 draft: false
-shortDefinition: "When a node verifies every single block and transaction under Bitcoin's consensus rules, ensuring complete data integrity."
+shortDefinition: "节点根据比特币共识规则验证每个区块和交易，确保完整数据完整性。"
 keyTakeaways:
-  - "Provides the highest level of security and trustlessness"
-  - "Checks every consensus rule from genesis block onward"
-  - "Requires more computational resources but enhances network resilience"
+  - "提供最高级别的安全性和无信任性"
+  - "从创世区块开始检查每条共识规则"
+  - "需要更多计算资源但增强网络韧性"
 sources: []
 relatedTerms:
   - corrupted-chain-state
@@ -19,21 +19,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Full validation is what a Bitcoin [full node](/glossary/full-node) does on every block: independently verify, against every consensus rule, that the block and all its transactions are correct. No shortcuts, no trust in other nodes, no "this looks right."
+完全验证是比特币[全节点](/glossary/full-node)对每个区块执行的操作：根据每条共识规则独立验证区块及其所有交易是否正确。没有捷径，不信任其他节点，没有"这看起来对了"。
 
-What gets validated:
+验证内容：
 
-- **Block structure.** Header format, timestamp constraints, version number, target/difficulty.
-- **[Proof-of-work](/glossary/proof-work-pow).** The block header hashes to a value below the current target.
-- **Merkle root commitment.** The header's Merkle root actually corresponds to the transactions in the block.
-- **Every transaction.** Inputs reference valid [UTXOs](/glossary/utxo-unspent-transaction-output) that haven't been spent. Signatures verify against the locking scripts. Output values don't exceed input values (no inflation bug). [Block subsidy](/glossary/block-subsidy) doesn't exceed the protocol-defined amount for that height.
-- **Script execution.** Every spending script executes to true under Bitcoin's scripting rules.
-- **Soft-fork rules.** [SegWit](/glossary/segwit-segregated-witness-bip-141), [Taproot](/glossary/taproot), [CLTV](/glossary/bip-65-opchecklocktimeverify), [CSV](/glossary/checksequenceverify-csv), and others all enforced.
+- **区块结构。** 头格式、时间戳约束、版本号、目标/难度。
+- **[工作量证明](/glossary/proof-work-pow)。** 区块头哈希低于当前目标。
+- **Merkle 根承诺。** 头中的 Merkle 根实际对应区块中的交易。
+- **每笔交易。** 输入引用有效且未花费的 [UTXO](/glossary/utxo-unspent-transaction-output)。签名根据锁定脚本验证。输出值不超过输入值（无通胀 bug）。[区块补贴](/glossary/block-subsidy)不超过该高度协议定义的量。
+- **脚本执行。** 每个花费脚本在比特币脚本规则下执行为真。
+- **软分叉规则。** [SegWit](/glossary/segwit-segregated-witness-bip-141)、[Taproot](/glossary/taproot)、[CLTV](/glossary/bip-65-opchecklocktimeverify)、[CSV](/glossary/checksequenceverify-csv) 等全部执行。
 
-Why this matters more than it sounds:
+为什么这比听起来更重要：
 
-- **You learn the chain's true state from first principles.** You don't have to trust your network peers, exchanges, block explorers, or chainanalysis firms. The chain says what it says; your node tells you.
-- **You enforce the consensus rules.** If a miner ever tried to produce a block with too much subsidy, an invalid signature, or any other rule violation, your node would reject it. Multiplied by tens of thousands of full nodes, this is what makes the rules *real* rather than just suggestions.
-- **No 51% attack can compromise your view.** Even if every miner colluded to produce invalid blocks, your full node would reject them. Hash rate alone isn't enough to fool a full validator.
+- **你从第一性原理学习链的真实状态。** 你不必信任网络对等方、交易所、区块浏览器或链上分析公司。链说什么就是什么；你的节点告诉你。
+- **你执行共识规则。** 如果矿工试图产出补贴过多的区块、签名无效或任何其他违规，你的节点会拒绝。乘以数万个全节点，这就是使规则*真实*而非仅仅是建议的原因。
+- **没有 51% 攻击可以损害你的视图。** 即使每个矿工串通产出无效区块，你的全节点也会拒绝。仅凭算力不足以欺骗全验证者。
 
-The contrast is [SPV](/glossary/spv-simplified-payment-verification), which checks proof-of-work in block headers and trusts inclusion proofs but doesn't fully validate the contents. SPV is fine for a phone wallet. Full validation is the security model that defines Bitcoin's defense against bad actors. See [Full Node](/glossary/full-node) for what running this costs in practice.
+对比是 [SPV](/glossary/spv-simplified-payment-verification)，它检查区块头中的工作量证明并信任包含证明但不完全验证内容。SPV 对手机钱包来说没问题。完全验证是定义比特币对抗不良行为者防御的安全模型。实际运行成本参见[全节点](/glossary/full-node)。

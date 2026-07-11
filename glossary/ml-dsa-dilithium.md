@@ -3,11 +3,11 @@ title: "ML-DSA / Dilithium (FIPS 204)"
 slug: ml-dsa-dilithium
 draft: false
 published: "2026-06-01"
-shortDefinition: "The NIST-standardized lattice-based post-quantum signature scheme - leading candidate for replacing Bitcoin's ECDSA/Schnorr signatures."
+shortDefinition: "NIST 标准化的基于格的后量子签名方案——替代比特币 ECDSA/Schnorr 签名的主要候选。"
 keyTakeaways:
-  - "NIST-standardized lattice-based PQ signature scheme (FIPS 204, August 2024)"
-  - "Signatures are ~50x larger than current Bitcoin signatures (~3KB vs 64 bytes)"
-  - "Leading candidate to replace ECDSA/Schnorr in Bitcoin's PQ migration, though not formally proposed yet"
+  - "NIST 标准化的基于格的后量子签名方案（FIPS 204，2024 年 8 月）"
+  - "签名比当前比特币签名大约 50 倍（约 3KB 对比 64 字节）"
+  - "比特币后量子迁移的主要候选，但尚未正式提出"
 sources: []
 relatedTerms:
   - post-quantum-bitcoin
@@ -21,54 +21,54 @@ relatedTerms:
 liveWidget: ~
 ---
 
-ML-DSA - the Module-Lattice-Based Digital Signature Algorithm - is the post-quantum signature standard NIST finalized as [FIPS 204](https://csrc.nist.gov/pubs/fips/204/final) in August 2024. It's based on CRYSTALS-Dilithium, the lattice-cryptography scheme that won NIST's post-quantum signature competition. For Bitcoin's migration discussions, ML-DSA is the most-cited candidate to replace [ECDSA](/glossary/ecdsa-elliptic-curve-digital-signature-algorithm) and [Schnorr](/glossary/schnorr-signature).
+ML-DSA——Module-Lattice-Based Digital Signature Algorithm（基于模块格的数字签名算法）——是 NIST 于 2024 年 8 月最终确定为 [FIPS 204](https://csrc.nist.gov/pubs/fips/204/final) 的后量子签名标准。它基于 CRYSTALS-Dilithium，赢得 NIST 后量子签名竞赛的格密码学方案。在比特币迁移讨论中，ML-DSA 是被引用最多的替代 [ECDSA](/glossary/ecdsa-elliptic-curve-digital-signature-algorithm) 和 [Schnorr](/glossary/schnorr-signature) 的候选。
 
-## What it is
+## 它是什么
 
-ML-DSA is a digital signature scheme whose security depends on the hardness of lattice problems - specifically, the Module Learning With Errors (MLWE) and Module Short Integer Solution (MSIS) problems. These problems are believed to be hard even for quantum computers; [Shor's algorithm](/glossary/shors-algorithm) doesn't apply to lattice problems the way it applies to elliptic-curve discrete logs.
+ML-DSA 是一种数字签名方案，其安全性取决于格问题的硬度——具体是 Module Learning With Errors (MLWE) 和 Module Short Integer Solution (MSIS) 问题。这些问题被认为即使对量子计算机也是困难的；[Shor 算法](/glossary/shors-algorithm) 对格问题不像对椭圆曲线离散对数那样适用。
 
-The scheme produces signatures using polynomial arithmetic over module lattices. Three parameter sets are standardized:
+该方案使用模块格上的多项式算术生成签名。标准化了三组参数：
 
-- **ML-DSA-44**: ~128-bit security, ~2,420-byte signatures
-- **ML-DSA-65**: ~192-bit security, ~3,293-byte signatures
-- **ML-DSA-87**: ~256-bit security, ~4,595-byte signatures
+- **ML-DSA-44**：约 128 位安全，约 2,420 字节签名
+- **ML-DSA-65**：约 192 位安全，约 3,293 字节签名
+- **ML-DSA-87**：约 256 位安全，约 4,595 字节签名
 
-[Public keys](/glossary/public-key) range from ~1,300 to ~2,600 bytes depending on parameter set.
+[公钥](/glossary/public-key)从约 1,300 到约 2,600 字节不等，取决于参数集。
 
-## Lattice-based assumption
+## 基于格的假设
 
-The security assumption behind ML-DSA is different in kind from ECDSA's. ECDSA assumes the discrete logarithm problem is hard; that assumption fails on a [CRQC](/glossary/crqc-cryptographically-relevant-quantum-computer). Lattice problems - finding short vectors in high-dimensional lattices, or solving systems of noisy linear equations - are not known to be efficiently solvable by any quantum algorithm.
+ML-DSA 背后的安全假设与 ECDSA 的性质不同。ECDSA 假设离散对数问题是困难的；该假设在 [CRQC](/glossary/crqc-cryptographically-relevant-quantum-computer) 上失效。格问题——在高维格中寻找短向量或求解带噪线性方程组——不知道有任何量子算法可以高效求解。
 
-This isn't a guarantee. Lattice cryptography is younger than RSA and ECDSA; the cryptographic community has less collective experience with attacks against it. Future breakthroughs (quantum or classical) could weaken specific schemes. NIST's standardization reflects current consensus that lattice problems offer the best balance of security and practicality for post-quantum signatures - not that they're proven unbreakable.
+这不是保证。格密码学比 RSA 和 ECDSA 年轻；密码学界对其攻击的集体经验较少。未来突破（量子或经典）可能削弱特定方案。NIST 的标准化反映了当前共识：格问题在后量子签名中提供了安全性和实用性的最佳平衡——并非它们被证明不可破解。
 
-## Trade-offs
+## 权衡
 
-Compared to Bitcoin's current schemes:
+与比特币当前方案相比：
 
-- ECDSA signature (DER-encoded on-chain): ~71-72 bytes
-- Schnorr signature ([BIP-340](https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki)): exactly 64 bytes
-- ML-DSA-65 signature (mid-range parameter set): ~3,293 bytes
+- ECDSA 签名（链上 DER 编码）：约 71-72 字节
+- Schnorr 签名（[BIP-340](https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki)）：恰好 64 字节
+- ML-DSA-65 签名（中等参数集）：约 3,293 字节
 
-That's a ~50x increase in signature size. The downstream effects:
+签名大小增加约 50 倍。下游影响：
 
-- Transaction size grows substantially; fees grow proportionally
-- Block weight budget is consumed faster
-- Pruning storage requirements increase
-- UTXO set size and validation cost rise
+- 交易大小显著增长；手续费成比例增长
+- 区块重量预算消耗更快
+- 剪枝存储需求增加
+- UTXO 集大小和验证成本上升
 
-These aren't dealbreakers, but they're the reason Bitcoin's PQ migration isn't a simple drop-in. Block-space economics will need to absorb the larger signatures, which is part of why [BIP-361's](/glossary/bip-361) two-phase migration spans five years.
+这些不是交易破坏者，但这是比特币后量子迁移不是简单即插即用的原因。区块空间经济学需要吸收更大的签名，这也是 [BIP-361](/glossary/bip-361) 两阶段迁移跨越五年的部分原因。
 
-## Position in the Bitcoin migration discussion
+## 在比特币迁移讨论中的地位
 
-BIP-361 - the active draft proposal for Bitcoin's post-quantum migration - is signature-scheme-agnostic. It defers the choice of specific PQ algorithm to a separate "TBD Post Quantum Signature BIP" that hasn't been published. ML-DSA is the leading candidate for that slot because:
+BIP-361——比特币后量子迁移的活跃草案提案——与签名方案无关。它将特定后量子算法的选择推迟到尚未发布的单独"TBD Post Quantum Signature BIP"。ML-DSA 是该位置的主要候选因为：
 
-- It's NIST-standardized (FIPS 204)
-- Its signature size is the most reasonable among current PQ candidates ([SLH-DSA / SPHINCS+](/glossary/slh-dsa-sphincs-plus) is much larger; Falcon is smaller but more implementation-fragile)
-- Verification is fast enough for full-node validation at Bitcoin's scale
-- It's already being deployed in non-Bitcoin contexts (TLS, code signing)
+- 它是 NIST 标准化的（FIPS 204）
+- 其签名大小在当前后量子候选中最合理（[SLH-DSA / SPHINCS+](/glossary/slh-dsa-sphincs-plus) 大得多；Falcon 更小但实现更脆弱）
+- 验证速度足够快，可用于比特币规模的全节点验证
+- 它已在非比特币场景中部署（TLS、代码签名）
 
-The alternative candidates are part of the live discussion. Bitcoin's choice will weigh signature size against security-assumption diversity.
+替代候选是活跃讨论的一部分。比特币的选择将在签名大小与安全假设多样性之间权衡。
 
-See the [Quantum and Bitcoin rabbit hole](/rabbit-hole/quantum-and-bitcoin) for the block-space cost of the candidate schemes and how the choice gets made.
+请参阅[量子与比特币深入探讨](/rabbit-hole/quantum-and-bitcoin)了解候选方案的区块空间成本及选择如何做出。
 
-Spec: [FIPS 204](https://csrc.nist.gov/pubs/fips/204/final) (NIST CSRC).
+规范：[FIPS 204](https://csrc.nist.gov/pubs/fips/204/final)（NIST CSRC）。

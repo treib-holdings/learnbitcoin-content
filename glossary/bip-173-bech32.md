@@ -1,12 +1,12 @@
 ---
-title: "BIP 173 (Bech32)"
+title: "BIP 173（Bech32）"
 slug: bip-173-bech32
 draft: false
-shortDefinition: "Introduced the bech32 address format, a SegWit-compatible encoding with improved error detection."
+shortDefinition: "引入 bech32 地址格式，一种与 SegWit 兼容的编码，具有改进的错误检测。"
 keyTakeaways:
-  - "Uses base32 encoding and a robust checksum"
-  - "Native SegWit support reduces fees and malleability"
-  - "Easier to type and scan with fewer errors"
+  - "使用 base32 编码和健壮的校验和"
+  - "原生 SegWit 支持降低手续费和延展性"
+  - "更容易输入和扫描，错误更少"
 sources: []
 relatedTerms:
   - address
@@ -25,17 +25,17 @@ sameAs:
 liveWidget: ~
 ---
 
-[BIP-173](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki) defines **bech32**, the address format used for native [SegWit](/glossary/segwit-segregated-witness-bip-141) outputs. Bech32 addresses are recognizable by their `bc1q` prefix (mainnet) or `tb1q` (testnet).
+[BIP-173](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki)定义了 **bech32**，用于原生 [SegWit](/glossary/segwit-segregated-witness-bip-141)输出的地址格式。Bech32 地址可通过其 `bc1q` 前缀（主网）或 `tb1q`（测试网）识别。
 
-Why bech32 exists and is worth caring about:
+bech32 为何存在且值得关注：
 
-- **Better error detection.** Bech32's checksum is mathematically designed to detect typos and adjacent-character swaps - the kind of mistakes humans actually make. The previous Base58Check format was strong but less rigorous; bech32 catches more errors with better mathematical guarantees.
-- **Lowercase + alphanumeric only.** Bech32 uses only `0-9` and `a-z` (excluding visually-confusable characters like `1/l/I` and `0/O/b`). Easier to read aloud, dictate over the phone, and re-key by hand.
-- **QR code friendly.** Bech32 in all-lowercase produces smaller QR codes than mixed-case Base58. Wallets render bech32 addresses as uppercase inside QR codes for further compactness while remaining valid.
-- **Native SegWit support.** The whole point: bech32 was designed to be the witness-version-0 address format. Spending from bech32 saves ~30-40% in fees compared to legacy P2PKH.
+- **更好的错误检测。** Bech32 的校验和经过数学设计，能检测拼写错误和相邻字符交换——人类实际会犯的那类错误。之前的 Base58Check 格式很强但不够严谨；bech32 以更好的数学保证捕获更多错误。
+- **仅小写 + 字母数字。** Bech32 只使用 `0-9` 和 `a-z`（排除视觉易混淆字符如 `1/l/I` 和 `0/O/b`）。更容易朗读、电话口述和手动重新输入。
+- **二维码友好。** 全小写的 bech32 生成比混合大小写 Base58 更小的二维码。钱包在二维码内以大写渲染 bech32 地址以进一步紧凑，同时保持有效。
+- **原生 SegWit 支持。** 核心要点：bech32 被设计为见证版本 0 的地址格式。从 bech32 花费比传统 P2PKH 节省约 30-40% 手续费。
 
-Designed by Pieter Wuille (Bitcoin Core dev) and proposed in 2017, bech32 became the default address format for new SegWit deployments through the late 2010s.
+由 Pieter Wuille（Bitcoin Core 开发者）设计，2017 年提出，bech32 在 2010 年代后期成为新 SegWit 部署的默认地址格式。
 
-A successor, **bech32m** (BIP-350), was introduced for [Taproot](/glossary/taproot) addresses (prefix `bc1p`). It uses essentially the same format with one constant changed, fixing a subtle weakness in bech32 that mattered for the new witness versions.
+继任者 **bech32m**（BIP-350）为 [Taproot](/glossary/taproot)地址（前缀 `bc1p`）引入。它使用基本相同的格式但更改了一个常数，修复了 bech32 中对新见证版本有影响的微妙弱点。
 
-In 2026, most wallets default to bech32 or bech32m addresses for new receives. Legacy formats (`1...`, `3...`) still work but are gradually being phased out in everyday use. See [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash) and [Taproot](/glossary/taproot) for the script formats bech32/bech32m wrap.
+2026 年，大多数钱包默认使用 bech32 或 bech32m 地址收款。传统格式（`1...`、`3...`）仍然有效但在日常使用中逐渐被淘汰。参见 [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash)和 [Taproot](/glossary/taproot)了解 bech32/bech32m 包装的脚本格式。

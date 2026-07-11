@@ -1,12 +1,12 @@
 ---
-title: "BIP 9 (VersionBits)"
+title: "BIP 9（VersionBits）"
 slug: bip-9-versionbits
 draft: false
-shortDefinition: "A signaling method allowing miners to indicate support for soft-fork proposals in block headers before reaching activation thresholds."
+shortDefinition: "一种信号方法，允许矿工在区块头中表示对软分叉提案的支持，在达到激活阈值之前。"
 keyTakeaways:
-  - "Uses bits in block headers for miner signaling"
-  - "Triggers soft forks after passing thresholds"
-  - "Helps coordinate network upgrades more smoothly"
+  - "使用区块头中的位进行矿工信号"
+  - "在通过阈值后触发软分叉"
+  - "帮助更顺利地协调网络升级"
 sources: []
 relatedTerms:
   - bip-bitcoin-improvement-proposal
@@ -22,15 +22,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-[BIP-9](https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki) introduced **VersionBits**, the miner-signaling mechanism used to coordinate Bitcoin [soft-fork](/glossary/soft-fork) activation. The premise: encode candidate soft-fork proposals into specific bits of the [block header](/glossary/block-header)'s version field, and let miners set those bits to indicate readiness.
+[BIP-9](https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki)引入了 **VersionBits**，用于协调比特币[软分叉](/glossary/soft-fork)激活的矿工信号机制。前提：将候选软分叉提案编码到[区块头](/glossary/block-header)版本字段的特定位中，让矿工设置这些位来表示就绪。
 
-The mechanism:
+机制：
 
-1. A new BIP is assigned one of the version bits and a deployment window (a start time and an end time).
-2. During the window, miners can set the bit in their blocks to signal support.
-3. If 95% of blocks in a 2,016-block retarget period signal, the soft fork "locks in" for the next retarget period and then activates.
-4. If the deployment window ends without reaching threshold, the proposal expires.
+1. 新 BIP 被分配一个版本位和一个部署窗口（开始时间和结束时间）。
+2. 在窗口期间，矿工可以在其区块中设置该位来信号支持。
+3. 如果 2,016 个区块重定向周期内 95% 的区块信号支持，软分叉在下一个重定向周期"锁定"然后激活。
+4. 如果部署窗口结束未达阈值，提案过期。
 
-This worked cleanly for several soft forks (e.g., BIP-65 CLTV, BIP-68 CSV). It famously broke down during the [SegWit](/glossary/segwit-segregated-witness-bip-141) activation in 2017, when a significant minority of miners refused to signal despite broad user support. That deadlock led to alternative activation methods: [BIP-148 (UASF)](/glossary/bip-148-uasf), [BIP-91](/glossary/bip-91), and ultimately a successor framework called BIP-8 / "speedy trial," which was used to activate [Taproot](/glossary/taproot) in 2021 with a fallback to user-enforced activation if miner signaling failed.
+这对几个软分叉运作良好（如 BIP-65 CLTV、BIP-68 CSV）。它在 2017 年 [SegWit](/glossary/segwit-segregated-witness-bip-141)激活期间著名地崩溃了，当时少数矿工尽管有广泛的用户支持仍拒绝信号。那个僵局导致了替代激活方法：[BIP-148 (UASF)](/glossary/bip-148-uasf)、[BIP-91](/glossary/bip-91)，以及最终的继任框架 BIP-8 / "快速审判"，后者用于在 2021 年激活 [Taproot](/glossary/taproot)，如果矿工信号失败则回退到用户强制激活。
 
-The deeper lesson from the SegWit episode: **miners signal readiness, but they don't decide the rules.** When user nodes are willing to enforce a rule regardless of miner signaling, miners eventually fall in line. BIP-9 made coordination smoother for uncontroversial upgrades but didn't have a clean answer for contested ones. Modern activation methods build that lesson in.
+SegWit 事件的更深层教训：**矿工信号就绪，但他们不决定规则。**当用户节点愿意无论矿工信号如何都执行规则时，矿工最终会跟从。BIP-9 使无争议升级的协调更顺利，但对有争议的没有干净的答案。现代激活方法吸收了这个教训。

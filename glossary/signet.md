@@ -2,11 +2,11 @@
 title: "Signet"
 slug: signet
 draft: false
-shortDefinition: "A specialized Bitcoin test network where blocks are signed by a central coordinator, offering more stability than Testnet."
+shortDefinition: "一种特殊的比特币测试网络，区块由中心化协调者签名，比测试网更稳定。"
 keyTakeaways:
-  - "Combines aspects of public test networks with controlled block production"
-  - "Eases software testing with stable, low-spam conditions"
-  - "Still distinct from mainnet; not for real BTC usage"
+  - "结合了公共测试网络与受控出块的特点"
+  - "在稳定、低垃圾信息环境下便于软件测试"
+  - "仍与主网不同；不用于真实 BTC"
 sources: []
 relatedTerms:
   - bitcoin-core
@@ -17,19 +17,19 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Signet is a Bitcoin test network ([BIP-325](https://github.com/bitcoin/bips/blob/master/bip-0325.mediawiki)) where blocks are produced on a regular schedule by a designated **block signer** rather than by competitive [mining](/glossary/mining). It's the test environment for serious protocol and wallet development.
+Signet 是一个比特币测试网络（[BIP-325](https://github.com/bitcoin/bips/blob/master/bip-0325.mediawiki)），区块由指定的**区块签名者**按固定计划产生，而非通过竞争性[挖矿](/glossary/mining)。它是面向严肃协议和钱包开发的测试环境。
 
-What Signet fixes vs [testnet](/glossary/testnet):
+Signet 相对[测试网](/glossary/testnet)修复的问题：
 
-- **Predictable block times.** Signet blocks come every ~10 minutes consistently. No 20-minute droughts followed by 30 blocks in 5 minutes.
-- **No spam-driven difficulty wars.** The signer controls block production; there's nothing to spam.
-- **Realistic-feeling fee market.** With predictable blocks, you can actually test fee estimation and congestion behavior in a way that's hard on chaotic testnet.
+- **可预测的出块时间。** Signet 区块稳定地每约 10 分钟出一个。不会有 20 分钟的干旱后 5 分钟内出 30 个块的情况。
+- **没有垃圾信息驱动的难度战。** 签名者控制出块；没有什么可被垃圾信息攻击的。
+- **接近真实的费用市场。** 在可预测的出块下，你确实可以测试费用估算和拥堵行为，这在混乱的测试网上很难做到。
 
-What Signet trades for that stability:
+Signet 为稳定性付出的代价：
 
-- **The signer is a trusted role.** It's appropriate for a test network, but a real attacker controlling the signer could disrupt Signet trivially. The default Signet has a known signer; you can run *your own* Signet with your own signer if you want a controlled environment.
-- **Coins are still worthless.** It's a test network; Signet BTC has no economic value.
+- **签名者是一个受信任的角色。** 对测试网络来说没问题，但如果真正的攻击者控制了签名者，可以轻易扰乱 Signet。默认 Signet 有已知的签名者；你可以运行*自己的* Signet 配自己的签名者，如果你需要受控环境的话。
+- **币仍然没有价值。** 这是测试网络；Signet 上的 BTC 没有经济价值。
 
-Custom Signets are increasingly common. A team can spin up their own signer, distribute the network's magic parameters, and have a fully-controlled test environment with whatever block-production cadence they want. This is the default for protocol-development work like Taproot, Drivechains experimentation, and Lightning protocol-spec testing.
+自定义 Signet 越来越常见。一个团队可以启动自己的签名者，分发网络参数，就拥有一个完全受控的测试环境，出块节奏随意设定。这是协议开发工作的默认选择，如 Taproot、Drivechain 实验和闪电协议规范测试。
 
-For most everyday wallet development, the default Signet is fine. For weird edge-case testing, run your own. See [Testnet](/glossary/testnet) for the older, less-controlled alternative and [Mainnet](/glossary/mainnet) for the real thing.
+对大多数日常钱包开发来说，默认 Signet 就够了。对奇怪的边缘案例测试，运行自己的。参见[测试网](/glossary/testnet)了解更旧、更不受控的替代方案，以及[主网](/glossary/mainnet)了解真实环境。

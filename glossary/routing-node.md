@@ -1,12 +1,12 @@
 ---
-title: "Routing Node"
+title: "路由节点（Routing Node）"
 slug: routing-node
 draft: false
-shortDefinition: "An LN node focusing on forwarding third-party payments, holding ample liquidity and strategic connections."
+shortDefinition: "专注于转发第三方支付的 LN 节点，拥有充足流动性和战略性连接。"
 keyTakeaways:
-  - "Connects multiple LN channels to forward payments for fees"
-  - "Requires careful liquidity management and stable uptime"
-  - "Essential for LN's decentralized payment routing"
+  - "连接多个 LN 通道以转发支付赚取手续费"
+  - "需要精细的流动性管理和稳定在线时间"
+  - "对 LN 去中心化支付路由至关重要"
 sources: []
 relatedTerms:
   - gossip-protocol-lightning
@@ -18,18 +18,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A routing node is a Lightning node that forwards third-party payments through its channels for fees. It's distinct from an end-user node that just sends and receives its own payments: a routing node is plumbing for the network.
+路由节点是转发第三方支付通过其通道赚取手续费的闪电网络节点。它与只发送和接收自己支付的终端用户节点不同：路由节点是网络的管道。
 
-What running one actually involves:
+运行一个路由节点实际涉及：
 
-- **Multiple well-funded channels** to peers with strong onward connectivity. Typical setups have 10-50+ channels totaling tens to hundreds of millions of sats.
-- **Constant uptime.** Channels need both sides online to update; a frequently-offline routing node will see channels closed by counterparties and fail to forward.
-- **Active liquidity management.** Inbound and outbound balance drift as payments flow. Circular rebalancing, submarine swaps (Loop, PeerSwap), and channel-splicing tools restore balance without closing channels.
-- **Fee policy tuning.** Per-channel `base_fee` (msat) and `fee_rate` (parts per million). Set too high and payments route around you; set too low and you subsidize traffic.
-- **Channel-partner selection.** New channels to popular hubs improve fee revenue; new channels to dead nodes lock up capital.
+- **多个资金充足的通道**连接到有良好延伸连接的对手。典型设置有 10-50+ 个通道，总计数千万到数亿聪。
+- **持续在线。** 通道需要双方在线来更新；频繁离线的路由节点会被对手方关闭通道且无法转发。
+- **主动流动性管理。** 随支付流动，入站和出站余额会漂移。循环再平衡、潜艇交换（Loop、PeerSwap）和通道拼接工具在不关闭通道的情况下恢复平衡。
+- **费率策略调优。** 每通道的 `base_fee`（毫聪）和 `fee_rate`（百万分比）。设太高支付会绕过你；设太低你在补贴流量。
+- **通道对手选择。** 到热门枢纽的新通道提高手续费收入；到死节点的新通道锁定资金。
 
-The economic reality is sobering. Most routing nodes earn 0.5-2% annualized on locked capital before costs, and that's before the operational overhead of monitoring, server costs, and the opportunity cost of capital that has to sit in channels. Routing as a business has thin margins; most successful routers run it as an extension of some other Lightning service (a wallet provider, a merchant gateway, etc.) rather than as a standalone profit center.
+经济现实是清醒的。大多数路由节点在锁定资金上年化 0.5-2%，这是在监控、服务器成本和锁定资金机会成本之前的数字。路由作为业务利润微薄；大多数成功的路由者将其作为其他闪电服务（钱包提供商、商户网关等）的延伸来运营，而非独立的利润中心。
 
-The major Lightning implementations all support routing-node operation: [LND](/glossary/lightning-network-daemon-lnd), Core Lightning (CLN), Eclair, and LDK. Each has its own approach to liquidity management and fee setting. Operator tooling like Thunderhub, RTL, and Charge-LND fills the gaps in raw daemon UX.
+主要闪电网络实现都支持路由节点运营：[LND](/glossary/lightning-network-daemon-lnd)、Core Lightning（CLN）、Eclair 和 LDK。每个都有自己的流动性管理和费率设置方式。Thunderhub、RTL 和 Charge-LND 等运营工具填补了原始守护进程 UX 的空白。
 
-Routing nodes are what make Lightning a payment network rather than a collection of bilateral payment channels. They're not mandatory for end users (most senders pay nothing to do nothing); they are how multi-hop payment routing works at all.
+路由节点是使闪电网络成为支付网络而非双边支付通道集合的原因。它们对终端用户不是必须的（大多数发送者什么都不用做）；它们是多跳支付路由得以运作的方式。

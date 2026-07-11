@@ -1,12 +1,12 @@
 ---
-title: "Lightning Network Daemon (lnd)"
+title: "闪电网络守护进程（LND）"
 slug: lightning-network-daemon-lnd
 draft: false
-shortDefinition: "A leading LN software implementation by Lightning Labs, alongside Core Lightning (Blockstream), Eclair (ACINQ), and LDK."
+shortDefinition: "由 Lightning Labs 开发的领先闪电网络软件实现，与 Core Lightning（Blockstream）、Eclair（ACINQ）和 LDK 并列。"
 keyTakeaways:
-  - "One of the most widely used LN node implementations"
-  - "Provides APIs for easy integration into wallets and services"
-  - "Compatible with other LN implementations via BOLT specifications"
+  - "使用最广泛的闪电网络节点实现之一"
+  - "提供 API 便于钱包和服务集成"
+  - "通过 BOLT 规范与其他闪电网络实现兼容"
 sources: []
 relatedTerms:
   - bolt
@@ -22,20 +22,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-LND (Lightning Network Daemon) is one of the major [Lightning Network](/glossary/lightning-network) implementations, developed by Lightning Labs since 2016. Written in Go, it's the most widely deployed Lightning node software, especially in turnkey "node-in-a-box" products (Umbrel, Start9, MyNode, RaspiBlitz) where most users never see the underlying daemon.
+LND（Lightning Network Daemon）是由 Lightning Labs 自 2016 年起开发的[闪电网络](/glossary/lightning-network)主要实现之一。用 Go 语言编写，是部署最广泛的闪电节点软件，尤其在"盒装节点"产品（Umbrel、Start9、MyNode、RaspiBlitz）中，大多数用户从未看到底层守护进程。
 
-How it compares to the other major implementations:
+与其他主要实现的对比：
 
-- **LND (Lightning Labs)** - Go, REST + gRPC APIs, monolithic. Largest user base. Strong tooling and integrations.
-- **[Core Lightning](/glossary/core-lightning-c-lightning)** (Blockstream) - C, plugin-first architecture, minimal resource footprint. Often the choice for advanced users and routing operators.
-- **Eclair** (ACINQ) - Scala, optimized for mobile (powers Phoenix wallet) and high-volume routing.
-- **LDK** (Spiral) - a library you embed in your own app rather than running as a daemon. Used by Cash App, Mutiny, Mercury Layer.
+- **LND（Lightning Labs）**——Go 语言，REST + gRPC API，单体架构。用户基数最大。强大的工具和集成。
+- **[Core Lightning](/glossary/core-lightning-c-lightning)**（Blockstream）——C 语言，插件优先架构，资源占用小。通常是高级用户和路由运营者的选择。
+- **Eclair**（ACINQ）——Scala 语言，针对移动端优化（驱动 Phoenix 钱包）和大容量路由。
+- **LDK**（Spiral）——一个嵌入你自己应用的库而非独立守护进程。被 Cash App、Mutiny、Mercury Layer 使用。
 
-LND specifics:
+LND 的特点：
 
-- **APIs.** REST and gRPC interfaces make integration straightforward for wallets and services. Most Lightning-aware applications target LND first.
-- **Watchtower support.** Built-in eltoo-style watchtowers help guard channels when you're offline.
-- **Macaroon-based auth.** Fine-grained capability tokens for delegated access (e.g., letting a wallet query balance but not spend).
-- **One notable caveat:** LND does not yet natively support [BOLT-12 offers](/glossary/lightning-invoice). The LNDK shim project enables BOLT-12 alongside an LND deployment, but native support is still in progress.
+- **API。** REST 和 gRPC 接口使集成对钱包和服务来说很简单。大多数闪电感知应用优先适配 LND。
+- **瞭望塔支持。** 内建的 eltoo 式瞭望塔帮助在你离线时保护通道。
+- **基于 Macaroon 的认证。** 细粒度能力令牌用于委托访问（例如让钱包查询余额但不能花费）。
+- **一个值得注意的注意事项：** LND 尚未原生支持 [BOLT-12 offers](/glossary/lightning-invoice)。LNDK shim 项目可以在 LND 部署旁启用 BOLT-12，但原生支持仍在进行中。
 
-LND is fine for most use cases. Pick it if you want broad ecosystem compatibility. Pick [CLN](/glossary/core-lightning-c-lightning) if you want native BOLT-12 or a smaller resource footprint.
+LND 适用于大多数用例。如果你想要广泛的生态系统兼容性就选它。如果你想要原生 BOLT-12 或更小的资源占用就选 [CLN](/glossary/core-lightning-c-lightning)。

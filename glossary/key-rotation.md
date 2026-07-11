@@ -1,12 +1,12 @@
 ---
-title: "Key Rotation"
+title: "密钥轮换"
 slug: key-rotation
 draft: false
-shortDefinition: "Regularly replacing or generating new cryptographic keys to minimize exposure if an old key is compromised."
+shortDefinition: "定期更换或生成新的密码学密钥，以减少旧密钥被泄露时的风险。"
 keyTakeaways:
-  - "Helps mitigate risks if a key is compromised or leaked"
-  - "Avoids tying too many transactions to a single address"
-  - "Often automated in enterprise-level custody solutions"
+  - "有助于在密钥被泄露或泄露时降低风险"
+  - "避免过多交易绑定到单一地址"
+  - "在企业级托管方案中通常自动化"
 sources: []
 relatedTerms:
   - bitcoin-inheritance-planning
@@ -23,16 +23,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Key rotation" has two distinct meanings in Bitcoin, and conflating them is a common source of confusion:
+"密钥轮换"在比特币中有两种不同含义，混淆它们是常见的误解来源：
 
-- Address rotation: using a fresh address for every receive. HD wallets do this automatically, and the keys for each address are derived from the same master seed. The seed itself doesn't rotate. This is privacy hygiene, not security rotation, and every modern wallet does it by default.
+- 地址轮换：每次收款使用新地址。HD 钱包自动做到这一点，每个地址的密钥都从同一个主种子派生。种子本身不轮换。这是隐私卫生，不是安全轮换，每个现代钱包都默认这样做。
 
-- True key rotation: moving funds from one set of keys to a brand new set, then destroying or retiring the old keys. This is what corporate security policy means by "rotate the keys." In Bitcoin it's a deliberate, manual operation: spend everything to fresh addresses derived from a new seed.
+- 真正的密钥轮换：将资金从一组密钥转移到全新的一组，然后销毁或退役旧密钥。这就是企业安全政策所说的"轮换密钥"。在比特币中，这是一个刻意的、手动的操作：将所有资金花费到从新种子派生的新地址。
 
-True key rotation makes sense when:
+真正的密钥轮换在以下情况有意义：
 
-- A cosigner in a multisig leaves and you don't want them holding even a now-insufficient share of the quorum.
-- You suspect a key has been compromised but aren't sure (cold backup that was briefly exposed, for example).
-- A long-running setup has accumulated enough operational history that you'd rather start fresh than audit every past touchpoint.
+- 多签中的共签者离开，你不想让他们持有即使已不足法定人数的份额。
+- 你怀疑某把密钥已被泄露但不确定（例如冷备份曾短暂暴露）。
+- 长期运行的设置积累了足够的运营历史，你宁愿重新开始也不愿审计每个过往接触点。
 
-For most individual users, periodic key rotation in this stronger sense is overkill. The seed sitting in your hardware wallet is not at higher risk this year than it was last year. Address rotation (automatic) handles the privacy story; rotating the underlying seed without cause just introduces opportunities for human error during the migration.
+对于大多数个人用户，这种更强意义上的定期密钥轮换是过度的。你硬件钱包里的种子今年的风险不比去年高。地址轮换（自动的）处理隐私问题；无原因地轮换底层种子只是在迁移过程中引入人为错误的机会。

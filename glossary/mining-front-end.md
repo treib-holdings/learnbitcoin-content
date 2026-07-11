@@ -1,12 +1,12 @@
 ---
-title: "Mining Front-End"
+title: "挖矿前端"
 slug: mining-front-end
 draft: false
-shortDefinition: "Software or UI acting as a bridge between mining hardware (ASICs) and protocols like Stratum or getblocktemplate."
+shortDefinition: "作为挖矿硬件（ASIC）与 Stratum 或 getblocktemplate 等协议之间桥梁的软件或 UI。"
 keyTakeaways:
-  - "Coordinates ASIC tasks, pool settings, and job assignments"
-  - "Displays performance metrics and config options"
-  - "Essential for large-scale mining management"
+  - "协调 ASIC 任务、矿池设置和工作分配"
+  - "显示性能指标和配置选项"
+  - "对大规模挖矿管理至关重要"
 sources: []
 relatedTerms:
   - asic-application-specific-integrated-circuit
@@ -17,24 +17,24 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A mining front-end is the software layer that sits between mining hardware (ASICs) and the protocol that delivers them work: Stratum from a pool, or [getblocktemplate](/glossary/bip-22-getblocktemplate) for solo mining. The front-end handles connection management, work assignment, share submission, and operator-facing controls.
+挖矿前端是位于挖矿硬件（ASIC）和向它们交付工作的协议之间的软件层：来自矿池的 Stratum，或独立挖矿的 [getblocktemplate](/glossary/bip-22-getblocktemplate)。前端处理连接管理、工作分配、份额提交和面向运营者的控制。
 
-For a single home miner, the "front-end" is just the firmware running on the ASIC itself. For an industrial operation with hundreds or thousands of devices, the front-end is a separate layer running on a server somewhere, often called a fleet manager or farm controller.
+对于单个家庭矿工，"前端"就是 ASIC 上运行的固件。对于拥有数百或数千台设备的工业运营，前端是在某处服务器上运行的独立层，通常称为机队管理器或农场控制器。
 
-What the front-end does:
+前端的功能：
 
-- **Pool connections.** Maintain Stratum connections to one or more mining pools, automatically failing over if one pool's connection drops.
-- **Work distribution.** Receive block-template jobs from the pool and route them to individual ASICs (or to a Stratum proxy that does the routing).
-- **Share submission.** Take found shares from ASICs and submit them back to the pool.
-- **Monitoring and control.** Track each ASIC's hash rate, temperature, voltage, frequency, fan speed; alert or auto-shutdown on overheating; remotely reboot misbehaving devices.
-- **Firmware management.** Push firmware updates across the fleet, particularly important for [proprietary firmware](/glossary/proprietary-mining-firmware) like BraiinsOS or LuxOS.
+- **矿池连接。** 维护与一个或多个矿池的 Stratum 连接，在一个矿池连接断开时自动故障转移。
+- **工作分发。** 从矿池接收区块模板作业并将其路由到各个 ASIC（或路由到执行分发的 Stratum 代理）。
+- **份额提交。** 从 ASIC 获取找到的份额并提交回矿池。
+- **监控和控制。** 跟踪每个 ASIC 的算力、温度、电压、频率、风扇速度；过热时警报或自动关机；远程重启异常设备。
+- **固件管理。** 在整个机队中推送固件更新，对 [BraiinsOS](/glossary/proprietary-mining-firmware) 或 LuxOS 等专有固件特别重要。
 
-Common products in the category (2026):
+2026 年该类别的常见产品：
 
-- **Awesome Miner**: paid Windows-centric fleet manager popular with mid-size operations.
-- **Hive OS**: cloud-managed Linux-based mining OS, with a web dashboard.
-- **Braiins Farm Proxy + Farm Manager**: open-source Stratum V2 stack from Braiins, the team behind the original Slush Pool.
-- **Foreman**: SaaS fleet management for large mining operations.
-- **MiningCore / NOMP / open-source pool software**: the other side of the protocol that pool operators run.
+- **Awesome Miner**：付费的以 Windows 为中心的机队管理器，受中型运营欢迎。
+- **Hive OS**：云管理的基于 Linux 的挖矿操作系统，带有 Web 仪表板。
+- **Braiins Farm Proxy + Farm Manager**：来自 Braiins（原 Slush Pool 背后的团队）的开源 Stratum V2 技术栈。
+- **Foreman**：大型挖矿运营的 SaaS 机队管理。
+- **MiningCore / NOMP / 开源矿池软件**：矿池运营者运行的协议另一端。
 
-For a hobbyist running one or two ASICs, the front-end is mostly invisible. For an operator running thousands, the front-end is the difference between profitable and not.
+对于运行一两台 ASIC 的爱好者，前端大部分不可见。对于运行数千台的运营者，前端是盈利与否的区别。

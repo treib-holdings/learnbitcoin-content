@@ -1,12 +1,12 @@
 ---
-title: "Pruning Mode"
+title: "修剪模式（Pruning Mode）"
 slug: pruning-mode
 draft: false
-shortDefinition: "A feature in Bitcoin Core that discards older block data after validation, minimizing disk usage while preserving node security."
+shortDefinition: "Bitcoin Core 的一项功能，在验证后丢弃旧区块数据，最小化磁盘使用同时保持节点安全性。"
 keyTakeaways:
-  - "Enables running a full node with reduced disk space"
-  - "Fully validates once but discards old blocks after syncing"
-  - "Ideal for space-limited users but can't provide deep historical data"
+  - "允许以更少磁盘空间运行全节点"
+  - "完整验证一次，但同步后丢弃旧区块"
+  - "适合空间有限的用户，但无法提供深度历史数据"
 sources: []
 relatedTerms:
   - bitcoin-client
@@ -15,22 +15,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Pruning mode is a Bitcoin Core option (`-prune=<MB>` in `bitcoin.conf`) that discards historical block data after it's been validated, keeping only enough recent block data to handle reorgs and serve the wallet. A pruned node still verifies every transaction in every block during its initial sync; it just throws the raw blocks away once it no longer needs them.
+修剪模式是 Bitcoin Core 的一个选项（`bitcoin.conf` 中的 `-prune=<MB>`），在验证历史区块数据后将其丢弃，只保留足够的近期区块数据来处理重组和服务钱包。修剪节点在初始同步时仍然验证每个区块中的每笔交易；它只是在不再需要原始区块时将其丢弃。
 
-What pruning preserves:
+修剪保留的内容：
 
-- **The UTXO set.** The current state of all unspent transaction outputs. This is what wallets actually need to determine balances and build transactions. ~10-15 GB in 2026 and growing slowly.
-- **The chain tip and recent blocks.** Up to the prune-target's worth (minimum ~550 MB) of recent block data, in case of reorgs.
-- **Block headers.** The full header chain stays. Headers are small (~80 bytes each, ~75 MB total).
+- **UTXO 集。** 所有未花费交易输出的当前状态。这是钱包确定余额和构建交易实际需要的。2026 年约 10-15 GB，缓慢增长。
+- **链尖和近期区块。** 最多到修剪目标值（最小约 550 MB）的近期区块数据，以备重组。
+- **区块头。** 完整的头部链保留。头部很小（每个约 80 字节，总计约 75 MB）。
 
-What pruning gives up:
+修剪放弃的内容：
 
-- **Serving historical blocks to other peers.** A pruned node can't help other peers' initial sync; the data isn't there to send.
-- **Rescan-from-scratch operations.** If you import an old seed and need to scan the chain from a year ago, a pruned node can't do it. You'd need to disable pruning and re-download or use a non-pruned node.
-- **Some RPC calls.** `getblock` on old blocks fails; `gettxoutproof` for ancient transactions fails.
+- **向其他节点提供历史区块。** 修剪节点不能帮助其他节点初始同步；数据不在了。
+- **从头扫描操作。** 如果你导入旧助记词需要从一年前扫描链，修剪节点做不到。你需要禁用修剪并重新下载或使用非修剪节点。
+- **一些 RPC 调用。** 对旧区块的 `getblock` 失败；对古老交易的 `gettxoutproof` 失败。
 
-Disk usage with pruning enabled is typically 15-25 GB total (UTXO set + recent blocks + headers + indexes), vs ~600 GB for a fully-archival node. The difference is what makes "running a full node" practical on a Raspberry Pi or laptop with a modest SSD.
+启用修剪后磁盘使用通常为 15-25 GB（UTXO 集 + 近期区块 + 头部 + 索引），而非完全归档节点的约 600 GB。这个差异使"运行全节点"在 Raspberry Pi 或配有普通 SSD 的笔记本电脑上变得可行。
 
-Pruning does not weaken consensus enforcement. A pruned node still validates every block, rejects invalid blocks, and behaves identically to a non-pruned node for the wallet and consensus-rule perspective. The only thing it can't do is serve old data to others.
+修剪不会削弱共识执行。修剪节点仍然验证每个区块，拒绝无效区块，在钱包和共识规则方面与非修剪节点行为完全一致。唯一不能做的是向他人提供旧数据。
 
-For most users, pruning is the right default. For node operators who want to help bootstrap new nodes or run a block explorer, archival mode (no pruning) is needed. Bitcoin Core lets you switch by editing the config and re-syncing.
+对于大多数用户，修剪是正确的默认选择。对于想要帮助引导新节点或运行区块浏览器的节点运营者，需要归档模式（不修剪）。Bitcoin Core 允许你通过编辑配置和重新同步来切换。

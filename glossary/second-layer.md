@@ -1,12 +1,12 @@
 ---
-title: "Second Layer"
+title: "第二层"
 slug: second-layer
 draft: false
-shortDefinition: "Networks built atop Bitcoin's main chain, like Lightning or sidechains, for improved scalability or features."
+shortDefinition: "建立在比特币主链之上的网络，如闪电网络或侧链，用于提升扩展性或增加功能。"
 keyTakeaways:
-  - "Eases load on the base chain for faster/cheaper payments"
-  - "Examples include LN channels and pegged sidechains"
-  - "Requires eventual settlement or peg-out to reconcile final states"
+  - "减轻主链负担，实现更快更便宜的支付"
+  - "典型例子包括闪电网络通道和锚定侧链"
+  - "需要最终结算或赎回以核对最终状态"
 sources: []
 relatedTerms:
   - atomic-swap
@@ -21,19 +21,19 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Second layer" (or "layer 2") refers to any protocol built on top of Bitcoin's base chain that processes transactions outside the main chain while ultimately settling back to it. The goal is to add throughput, speed, or features without changing - and without burdening - the base layer.
+"第二层"（或"Layer 2"）指任何建立在比特币基础链之上的协议，在主链之外处理交易，但最终仍结算回主链。目标是在不改变也不增加基础层负担的情况下，增加吞吐量、速度或功能。
 
-The major second-layer designs for Bitcoin:
+比特币主要的第二层设计：
 
-- **[Lightning Network](/glossary/lightning-network).** Off-chain payment channels secured by Bitcoin scripts. Instant, cheap, private payments; periodic on-chain settlement. The most-deployed Bitcoin second layer.
-- **[Sidechains](/glossary/sidechain)** like Liquid and RSK. Separate blockchains pegged to Bitcoin via federated or other peg mechanisms. Often used for features Bitcoin lacks (confidential transactions, smart contracts).
-- **Statechains / Mercury Layer.** Off-chain transfer of UTXO control without on-chain transactions, with eventual fallback to on-chain.
-- **Ark.** A newer approach where a service operator allows many users to transact instantly via short-lived off-chain channels.
-- **Chaumian e-cash** (Fedimint, Cashu). Federated mints issuing privacy-preserving e-cash redeemable for sats on Lightning. Trade self-custody for strong privacy and instant payments at the federation level.
-- **Drivechain (proposed)** - hypothetical sidechain category secured by Bitcoin miners voting on peg withdrawals. Not yet activated.
+- **[闪电网络](/glossary/lightning-network)。** 由比特币脚本保障的链下支付通道。即时、便宜、私密的支付；定期链上结算。部署最广泛的比特币第二层。
+- **[侧链](/glossary/sidechain)**，如 Liquid 和 RSK。通过联邦或其他锚定机制与比特币挂钩的独立区块链。常用于实现比特币缺少的功能（保密交易、智能合约）。
+- **Statechain / Mercury Layer。** 无需链上交易即可链下转移 UTXO 控制权，最终回退到链上。
+- **Ark。** 一种较新的方案，由服务运营商通过短期链下通道让许多用户即时交易。
+- **Chaumian 电子现金**（Fedimint、Cashu）。联邦铸币厂发行保护隐私的电子现金，可兑换闪电网络上的聪。以牺牲自托管换取联邦级别的强隐私和即时支付。
+- **Drivechain（提案中）**——由比特币矿工投票管理赎回的假设性侧链类别。尚未激活。
 
-The shared logic of every second layer: Bitcoin's base chain is the global settlement layer - secure, immutable, expensive to use in volume. Second layers absorb the day-to-day transactional load and only settle back to the base chain when needed.
+每个第二层的共同逻辑：比特币基础链是全球结算层——安全、不可篡改，但大量使用时成本高。第二层吸收日常交易负载，仅在需要时结算回基础链。
 
-The trade-offs vary by design. Lightning is genuinely trustless but requires liquidity management. Sidechains are easier to use but introduce federation trust. E-cash mints are convenient but require federation honesty.
+不同的设计有不同的权衡。闪电网络真正无需信任但需要流动性管理。侧链更易用但引入了联邦信任。电子现金铸币厂方便但需要联邦诚实。
 
-The base + layer model is how Bitcoin scales. The base layer doesn't need to handle every coffee purchase; it needs to settle the final state. See [Layer 1](/glossary/layer-1) for the base-chain view this builds on.
+基础层加第二层的模式是比特币扩展的方式。基础层不需要处理每一杯咖啡的购买；它只需要结算最终状态。参见 [Layer 1](/glossary/layer-1) 了解基础链视角。

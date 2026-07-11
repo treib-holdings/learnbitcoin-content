@@ -1,11 +1,12 @@
----title: "How Bitcoin Works"
+---
+title: "比特币如何运作"
 slug: how-bitcoin-works
 draft: false
 status: live
 published: "2026-05-15"
 order: 3
 estimatedMinutes: 30
-tagline: "Blocks, transactions, mining, fees, UTXOs. The machinery, demystified, without skipping the parts that matter."
+tagline: "区块、交易、挖矿、手续费、UTXO。揭开机器的面纱,跳过那些不该跳过的部分。"
 prerequisites: ["what-bitcoin-actually-is"]
 relatedTerms: ["block", "transaction", "utxo-unspent-transaction-output", "mempool", "transaction-fee", "miner", "merkle-root", "nonce", "difficulty", "difficulty-retargeting", "full-node"]
 ogImage: "/diagrams/og/alice-pays-bob.png"
@@ -17,134 +18,134 @@ sources:
   - { label: "Mastering Bitcoin (Andreas Antonopoulos, CC-BY-SA)", url: "https://github.com/bitcoinbook/bitcoinbook" }
 ---
 
-> **Where you're going:** You'll be able to follow a transaction from "click send" to "it's irreversible." You'll understand what mempool, fees, blocks, and miners actually do, and you'll have a mental model concrete enough to reason about Bitcoin instead of just believing in it.
+> **你将走向何方:** 你将能跟踪一笔交易从"点击发送"到"不可逆转"的全过程。你会理解内存池、手续费、区块和矿工到底在干什么,并拥有一个足够具体的思维模型,让你能推理比特币,而不只是信仰它。
 
-## 1. The Send Button
+## 1. 发送按钮
 
-Alice has 1 BTC. She wants to send 0.5 BTC to Bob. She opens her wallet, types Bob's address, enters the amount, picks a fee, and taps Send.
+Alice 有 1 BTC。她想给 Bob 发 0.5 BTC。她打开钱包,输入 Bob 的地址,填金额,选手续费,点发送。
 
-A few seconds later, Bob's wallet shows the incoming payment as "unconfirmed." Roughly ten minutes later, it shows "1 confirmation." An hour after that, it's "6 confirmations" - and effectively unrevocable.
+几秒后,Bob 的钱包显示收到付款,状态是"未确认"。大约十分钟后,变成"1 次确认"。再过一小时左右,变成"6 次确认"——实际上不可撤销了。
 
-This chapter is what happens in between. We'll go layer by layer. By the end, you'll be able to draw it on a napkin.
+这一章就是讲中间发生了什么。我们一层一层来。读完之后,你能在餐巾纸上画出来。
 
-## 2. There Are No Balances
+## 2. 没有余额这回事
 
-Here's the first idea most people get wrong:
+这是大多数人搞错的第一个概念:
 
-**Bitcoin does not track account balances.** There is no row anywhere that says *"Alice: 1.00000000 BTC."* That's not what the ledger is.
+**比特币不追踪账户余额。** 没有任何地方有一行写着 *"Alice: 1.00000000 BTC."* 那不是账本做的事。
 
-What the ledger tracks is **transactions** - and each transaction creates **outputs** that can later be spent. An *unspent* output (a UTXO, "unspent transaction output") is the only thing that exists. Your "balance" is just the sum of every UTXO your wallet can spend.
+账本追踪的是**交易**——每笔交易创造一些**输出**,这些输出以后可以被花费。一个*未花费*的输出(UTXO,"unspent transaction output",即未花费交易输出)是唯一存在的东西。你的"余额"只是你的钱包能花费的所有 UTXO 的总和。
 
-A useful mental model: Bitcoin is **like cash, not like a bank account**.
+一个有用的思维模型:比特币**像现金,不像银行账户**。
 
-When you pay $4.30 at a coffee shop with a $5 bill, you don't tell the cashier "deduct $4.30 from my $5." You hand over a discrete bill. The cashier hands you back $0.70 in change as a *new* set of bills. Your wallet contains different physical objects than before.
+你在咖啡店用 5 美元钞票付 4.30 美元,你不会跟收银员说"从我那 5 美元里扣 4.30"。你递过去一整张钞票,收银员找给你 0.70 美元的*新*零钱。你钱包里装的东西和之前不一样了。
 
-UTXOs work exactly like this. Alice's "1 BTC" might actually be one UTXO worth 1 BTC, or two UTXOs of 0.5 BTC each, or 100 UTXOs of 0.01 BTC, or any other combination. The wallet hides the difference. The chain doesn't have a choice.
+UTXO 就是这么工作的。Alice 的"1 BTC"可能实际上是一个价值 1 BTC 的 UTXO,或者两个 0.5 BTC 的 UTXO,或者 100 个 0.01 BTC 的 UTXO,任何组合都行。钱包帮你隐藏了区别。链没得选。
 
-This sounds like a quirk. It's actually the foundation of everything else.
+这听起来像个怪癖。实际上它是其他一切的基础。
 
-## 3. The Anatomy of a Transaction
+## 3. 交易的解剖
 
-Alice's transaction to Bob has three parts:
+Alice 给 Bob 的交易有三个部分:
 
-- **Inputs.** References to UTXOs Alice currently controls. Each input is "I am spending this specific output from this specific past transaction." Each input includes a cryptographic signature - proof that Alice has the private key authorized to spend that UTXO.
-- **Outputs.** Where the bitcoin is going. In Alice's case, two outputs: 0.5 BTC to Bob's address, and ~0.499 BTC back to herself as change. (Change goes to a *new* address Alice's wallet generates automatically.)
-- **The fee.** The amount left over after inputs minus outputs. This isn't a separate field - it's whatever you didn't claim back as change. Miners take it as the reward for including your transaction.
+- **输入。** 指向 Alice 当前控制的 UTXO 的引用。每个输入就是"我要花费这个特定过去交易的这个特定输出"。每个输入包含一个加密签名——证明 Alice 拥有被授权花费那个 UTXO 的私钥。
+- **输出。** 比特币去哪。在 Alice 的例子里,两个输出:0.5 BTC 到 Bob 的地址,约 0.499 BTC 作为找零回到她自己。(找零去一个 Alice 钱包自动生成的*新*地址。)
+- **手续费。** 输入减去输出后剩下的金额。这不是一个单独的字段——它就是你没拿回来当找零的那部分。矿工拿走它作为打包你交易的奖励。
 
-In Alice's example, inputs total 1.0 BTC, outputs total 0.999 BTC, and the missing 0.001 BTC is the fee.
+在 Alice 的例子中,输入共 1.0 BTC,输出共 0.999 BTC,差的 0.001 BTC 就是手续费。
 
 <figure>
   <img src="/diagrams/alice-pays-bob.svg" alt="Alice's 1.0 BTC UTXO is consumed by a transaction that creates two new UTXOs: 0.5 BTC to Bob and 0.499 BTC change to Alice at a new address. The remaining 0.001 BTC is the fee paid to the miner." />
-  <figcaption>Alice's 1.0 BTC UTXO is consumed whole. Two new UTXOs are created; the 0.001 BTC fee is the difference between inputs and outputs.</figcaption>
+  <figcaption>Alice 的 1.0 BTC UTXO 被整体消费。两个新 UTXO 被创造出来;0.001 BTC 的手续费就是输入和输出之间的差额。</figcaption>
 </figure>
 
-The transaction is then **signed** - Alice's wallet uses her private key to produce a signature that proves she's authorized to spend those specific inputs. The signature does not reveal the private key. Anyone can verify it; only Alice could have created it.
+然后交易被**签名**——Alice 的钱包用她的私钥生成一个签名,证明她有权花费这些特定输入。签名不会泄露私钥。任何人都能验证它;只有 Alice 能创造它。
 
-What gets broadcast to the network is roughly 250 bytes of data: the inputs, the outputs, the signatures, the metadata. That's it. The whole transaction fits in a thumbnail image's worth of bytes.
+广播到网络的大约是 250 字节数据:输入、输出、签名、元数据。就这样。整笔交易占的字节数和一张缩略图差不多。
 
-## 4. The Mempool - The Waiting Room
+## 4. 内存池——候诊室
 
-Once Alice's wallet broadcasts the transaction, it goes to one of her wallet's connected nodes, which forwards it to its peers, which forward to theirs. Within seconds, every node on the Bitcoin network has heard about Alice's transaction and stored it in its local **mempool** - short for "memory pool" - the queue of valid transactions waiting to be mined.
+Alice 的钱包广播交易后,它先到她钱包连接的一个节点,节点再转发给它的对等节点,对等节点再转发给它们的对等节点。几秒之内,比特币网络上的每个节点都收到了 Alice 的交易,并把它存在自己的本地**内存池**(mempool)里——就是"memory pool"的简称——等待被挖矿的有效交易队列。
 
-A few things to notice:
+几个要注意的点:
 
-- **The mempool isn't a single global thing.** Every node has its own copy. They're nearly identical but not perfectly - a node in Tokyo and a node in São Paulo might have slightly different sets for a few seconds. Eventually they converge.
-- **Mempool transactions are valid but unconfirmed.** Every node has already checked: signatures are valid, the UTXOs being spent actually exist and are unspent, the math adds up. If any check fails, the transaction is dropped.
-- **The mempool is sorted by fee rate.** Miners want to maximize their earnings per block, so they pick the highest-fee transactions first. Your fee determines your seat in line.
+- **内存池不是单一的全球事物。** 每个节点有自己的副本。它们几乎一样但不完全一样——东京的节点和圣保罗的节点可能在几秒内有略微不同的集合。最终会收敛。
+- **内存池里的交易有效但未确认。** 每个节点已经检查过:签名有效,被花费的 UTXO 确实存在且未花费,数学对得上。任何检查失败,交易就被丢弃。
+- **内存池按手续费率排序。** 矿工想最大化每个区块的收益,所以他们先挑手续费最高的交易。你的手续费决定你的排队位置。
 
-You can [look at the live mempool yourself](https://chainquery.com/reports/data/mempool.json) - that's a JSON feed from a live Bitcoin node, updated every few seconds.
+你可以[亲自看实时内存池](https://chainquery.com/reports/data/mempool.json)——那是一个来自活比特币节点的 JSON 数据流,几秒更新一次。
 
-## 5. Mining: How a Block Actually Gets Made
+## 5. 挖矿:区块是怎么造出来的
 
-A miner is just a computer running specialized software, doing two things in parallel:
+矿工就是一台运行专门软件的电脑,同时做两件事:
 
-1. **Building candidate blocks.** It assembles the most profitable subset of transactions from its mempool, adds a coinbase transaction (which pays itself the block reward + accumulated fees), and constructs a block header.
-2. **Hashing the header repeatedly with different nonces.** A "nonce" is just a number - a slot in the header where the miner can plug in different values. The miner tries trillions per second, looking for a hash output below the current target.
+1. **组装候选区块。** 从内存池里挑出最有利可图的交易子集,加一笔 coinbase 交易(给自己支付区块奖励 + 累积手续费),构造区块头。
+2. **用不同的 nonce 反复哈希区块头。** "nonce"就是一个数字——区块头里一个可以填入不同值的槽位。矿工每秒尝试万亿次,寻找一个哈希输出低于当前目标值的 nonce。
 
-When a miner finds a nonce that produces a hash below target, they broadcast the block. Every node:
+当矿工找到一个使哈希低于目标的 nonce,就广播区块。每个节点:
 
-- Receives the block
-- Verifies the hash is below target
-- Verifies every transaction in the block
-- Adds the block to its copy of the chain
-- Removes those transactions from its mempool
-- Starts mining on top of this new block
+- 收到区块
+- 验证哈希低于目标
+- 验证区块中的每笔交易
+- 把区块加到自己链的副本上
+- 从内存池中移除这些交易
+- 开始在这个新区块之上挖
 
-This whole cascade - from "miner finds nonce" to "every node on Earth has the block" - takes a few seconds. The block has arrived. Alice's transaction is now in it. Bob's wallet shows "1 confirmation."
+这整条流水线——从"矿工找到 nonce"到"地球上每个节点都收到了区块"——只需几秒。区块到了。Alice 的交易在里面了。Bob 的钱包显示"1 次确认"。
 
-## 6. Difficulty: The Self-Regulating Clock
+## 6. 难度:自我调节的时钟
 
-Bitcoin's target block time is **10 minutes**. Not because 10 minutes is special, but because Satoshi picked it as a compromise: long enough that blocks have time to propagate to the whole network before the next one starts, short enough that confirmations don't take forever.
+比特币的目标出块时间是 **10 分钟**。不是因为 10 分钟有什么特别,而是中本聪选的一个折中:长到区块有时间在全网络传播再出下一个,短到确认不用等太久。
 
-But total hash power on the network goes up and down all the time. If hash power doubles, blocks would start coming every 5 minutes. If it halves, every 20.
+但全网总算力一直在变。算力翻倍,区块就 5 分钟一个。减半,就 20 分钟一个。
 
-To keep blocks coming at ~10-minute average, the protocol adjusts difficulty every **2016 blocks** - roughly every two weeks. If the previous 2016 blocks took less than two weeks, difficulty goes up. If they took more, difficulty goes down. The adjustment is exact: it scales by the ratio of actual time to expected time.
+为了保持平均 ~10 分钟出一个块,协议每 **2016 个区块**调整一次难度——大约每两周。如果前 2016 个区块花的时间不到两周,难度上升。超过两周,难度下降。调整是精确的:按实际时间与预期时间的比率缩放。
 
-This is the most beautiful piece of mechanism design in Bitcoin. **No human sets the difficulty.** No committee meets to "raise rates." The network responds to its own conditions, automatically, every two weeks, forever.
+这是比特币中最精妙的机制设计。**没有人设定难度。** 没有委员会开会"加息"。网络每两周自动响应自身状况,永远如此。
 
-You can [watch the next difficulty adjustment counting down](https://chainquery.com/reports/data/mining.json) on the live node feed.
+你可以在实时节点数据上[看下一次难度调整倒计时](https://chainquery.com/reports/data/mining.json)。
 
-## 7. Block Headers and Merkle Trees
+## 7. 区块头和默克尔树
 
-A Bitcoin block is two parts: a small header (80 bytes) and a body containing all the transactions (currently averaging ~1.5 MB).
+一个比特币区块有两部分:一个小区块头(80 字节)和一个包含所有交易的区块体(目前平均约 1.5 MB)。
 
-The header is dense. It contains:
+区块头很紧凑。它包含:
 
-- **Version** - software-version bits
-- **Previous block hash** - links this block to the one before it
-- **Merkle root** - a single 32-byte hash that summarizes *every* transaction in the body
-- **Timestamp** - when the miner constructed it
-- **Difficulty target** - what hash output the nonce must beat
-- **Nonce** - the number the miner found
+- **版本号**——软件版本位
+- **前一个区块的哈希**——把本区块和前一个连起来
+- **默克尔根**(Merkle root)——一个 32 字节的哈希,汇总了区块体中的*每一笔*交易
+- **时间戳**——矿工构造区块的时间
+- **难度目标**——nonce 需要打败的哈希输出
+- **Nonce**——矿工找到的那个数字
 
-The clever part is the **merkle root**. It's the root of a binary tree built by hashing transactions in pairs, then hashing pairs of those hashes, all the way up. The result is a single value that depends on every transaction in the block. Change any transaction, and the merkle root changes, and the block's hash changes, and the chain breaks.
+巧妙的部分是**默克尔根**。它是一棵二叉树的根:交易两两配对做哈希,然后哈希再两两配对,一路往上。最终结果是一个依赖于区块中每一笔交易的单一值。改任何一笔交易,默克尔根就变,区块哈希就变,链就断了。
 
 <figure>
   <img src="/diagrams/merkle-tree.svg" alt="A binary Merkle tree. Eight transactions (TX1 through TX8) at the bottom are paired and hashed together to produce four intermediate hashes. Those four are paired and hashed again to produce two more. The final pair is hashed once more to produce the single Merkle root at the top. The block's 80-byte header contains only that root." />
-  <figcaption>Eight transactions, hashed pairwise up to a single root. Change any leaf, and every hash on the path to the root changes too.</figcaption>
+  <figcaption>八笔交易,两两哈希直到一个根。改任何叶子,通往根路径上的每个哈希都会变。</figcaption>
 </figure>
 
-Why does this matter? Because someone who only has the 80-byte header has a cryptographic commitment to all the transactions, without having to download them. This is what makes light wallets (SPV) possible: they can verify that a particular transaction is in a particular block by downloading the merkle path - a handful of hashes - instead of the whole block.
+为什么这重要?因为只有 80 字节区块头的人,就拥有了所有交易的加密承诺,而不需要下载它们。这就是轻钱包(SPV)能工作的原因:它们只需下载默克尔路径——一小撮哈希——就能验证某笔特定交易在某个特定区块里,而不需要下载整个区块。
 
-The merkle tree is one of those ideas that, the first time you see it, you think "that's overkill." The hundredth time, you realize it's exactly the right amount of kill.
+默克尔树就是那种你第一次看到会想"这也过度了吧"的想法。第一百次你会意识到,它恰好是恰到好处的杀伐。
 
-## 8. Confirmations: Why We Wait
+## 8. 确认:为什么要等
 
-Alice's transaction is in block N. Bob's wallet says "1 confirmation."
+Alice 的交易在区块 N 里。Bob 的钱包说"1 次确认"。
 
-Why wait for more? Because nothing is ever truly final on a probabilistic network - only *increasingly* final.
+为什么要等更多?因为在概率性网络上,没有什么东西是真正终局的——只有*越来越*终局。
 
-Imagine an attacker who wants to reverse Alice's payment. They'd have to:
+想象一个想撤销 Alice 付款的攻击者。他得:
 
-1. Build an alternative chain branching off the block *before* Alice's transaction
-2. Mine that alternative chain faster than the rest of the world mines the real chain
-3. Eventually broadcast their longer chain, causing every honest node to switch
+1. 从 Alice 交易*之前*的区块分叉出一条替代链
+2. 比世界其他地方挖真实链更快地挖这条替代链
+3. 最终广播更长的链,让所有诚实节点切换
 
-Doable for one block, if the attacker controls enough hash power for one lucky moment. **Doable for six blocks? Nearly impossible.**
+一个区块有可能做到——如果攻击者碰巧控制了足够算力,走运一次。**六个区块?几乎不可能。**
 
-Here's the rough probability math, assuming the attacker controls 30% of hash power:
+这是大致的概率数学,假设攻击者控制 30% 算力:
 
-| Confirmations | Probability of successful reversal |
+| 确认数 | 成功逆转概率 |
 |---|---|
 | 1 | ~17.5% |
 | 2 | ~4.4% |
@@ -155,38 +156,38 @@ Here's the rough probability math, assuming the attacker controls 30% of hash po
 
 <figure>
   <img src="/diagrams/confirmations-stack.svg" alt="A chain of six Bitcoin blocks. The first block contains Alice's transaction; each subsequent block is a confirmation built on top. Below each block is the probability that a 30 percent attacker reverses the payment given that many confirmations, dropping from 17.5 percent at one confirmation to effectively 0 percent at six. A use-case axis above maps small purchases (t-shirt) on the left to large purchases (house) on the right; a time axis below shows roughly ten minutes per block, with the full chain settling in about an hour." />
-  <figcaption>Each confirmation drops the reversal probability roughly an order of magnitude. After six, the chance is effectively zero - practically irreversible.</figcaption>
+  <figcaption>每增加一次确认,逆转概率大约下降一个数量级。六次之后,概率实际上为零——事实上不可逆。</figcaption>
 </figure>
 
-That's why six confirmations (about an hour) is the conventional "settled" threshold. For very large amounts you might wait longer; for a coffee, one confirmation is plenty. Exchanges typically want six. Hardware wallets default to six.
+这就是为什么 6 次确认(大约一小时)是传统的"已结算"门槛。金额特别大可以等更久;买杯咖啡一次确认就够了。交易所通常要求 6 次。硬件钱包默认 6 次。
 
-The deeper a transaction is, the more astronomical the cost of un-doing it becomes. At twelve confirmations, you'd need to outpace the entire global hash rate for two hours straight. That's not "hard," it's "this has not happened in 16 years."
+交易越深,撤销它的代价越天文。到 12 次确认,你需要连续两小时跑赢全球总算力。那不是"难",那是"16 年来没发生过"。
 
-## 9. The Chain (and Reorgs)
+## 9. 链(和重组)
 
-Each block's header includes the hash of the previous block. This is what makes it a *chain* and not just a list. Changing any block changes its hash, which means the next block's "previous hash" no longer matches, which means every node rejects the change.
+每个区块头包含前一个区块的哈希。这就是它是一条*链*而不只是一个列表的原因。改任何区块都会改变它的哈希,意味着下一个区块的"前一个哈希"不再匹配,意味着每个节点都会拒绝这个改动。
 
-To meaningfully alter old history, you'd have to rebuild every block from your target backward - at modern hash rates, this is roughly the energy budget of a small country, sustained for as long as the chain has been running. The further back you go, the more expensive it gets, geometrically.
+要有意义地篡改旧历史,你得从目标区块开始往后重建每一个区块——以现代算力,这大致是一个小国家自链启动以来的能源预算。越往回,越贵,几何级增长。
 
-Sometimes the network has a *brief* disagreement about which block came first - two miners find valid blocks at nearly the same instant, and different parts of the network see different ones first. This is called a **reorg**. It resolves itself within one or two blocks: the chain that gets the next valid block on top wins, and the orphaned block becomes a "stale block." Transactions that were only in the stale block return to the mempool.
+有时网络会*短暂地*在谁先出块上产生分歧——两个矿工几乎同时找到有效区块,网络不同部分看到不同的那个。这叫**重组**(reorg)。在一两个区块内自行解决:先获得下一个有效区块的链获胜,被孤立的区块变成"陈旧区块"(stale block)。只在陈旧区块中的交易回到内存池。
 
-Reorgs of 1-2 blocks happen a few times a year. Reorgs of more than 2 are vanishingly rare. The deepest accidental reorg in Bitcoin's history was 4 blocks, in 2010. It hasn't happened since.
+1-2 个区块的重组每年发生几次。超过 2 个的极其罕见。比特币历史上最深的意外重组是 2010 年的 4 个区块。之后再没发生过。
 
-## 10. Verifying Without Trusting
+## 10. 验证而非信任
 
-You don't have to take anyone's word for any of this. You can run a **full node** - software that downloads the entire chain (currently ~600 GB), validates every transaction back to the genesis block, and continues validating every new block forever.
+你不必因为任何人说的就相信以上任何内容。你可以运行一个**全节点**——软件下载整条链(目前约 600 GB),验证追溯到创世区块的每笔交易,并持续验证每个新区块,永远。
 
-A full node verifies:
+全节点验证:
 
-- Every signature on every transaction
-- Every UTXO reference (does this output actually exist, is it unspent, is the spender authorized?)
-- Every block header (is the hash below target?)
-- Every consensus rule (no double-spending, no money created from nothing, no rule violations)
+- 每笔交易的每个签名
+- 每个 UTXO 引用(这个输出真的存在吗?未花费吗?花费者被授权了吗?)
+- 每个区块头(哈希低于目标吗?)
+- 每条共识规则(没有双花,没有凭空造钱,没有违反规则)
 
-If a miner produced an invalid block - say, paying themselves more than the schedule allows - every full node on Earth would reject it. The miner's work would be wasted. The block would never become part of the chain.
+如果矿工产出了一个无效区块——比如给自己支付超过时间表允许的数量——地球上每个全节点都会拒绝它。矿工的工作白费了。那个区块永远不会成为链的一部分。
 
-This is what makes Bitcoin trustless. Not "no one is in charge" in a hand-wavy sense, but "every participant can independently verify every rule." You don't trust the miners. You don't trust the developers. You don't even trust me. You run the software, and the software tells you what's true.
+这就是比特币"无需信任"的含义。不是含糊的"没人管",而是"每个参与者都能独立验证每条规则"。你不信任矿工,你不信任开发者,你甚至不用信任我。你运行软件,软件告诉你什么是真的。
 
-A laptop can run a full node. A Raspberry Pi can run a full node. You don't need permission; you just need software and disk space. Chapter 6 is when you'll actually do it.
+一台笔记本电脑能运行全节点。一台树莓派能运行全节点。你不需要许可;你只需要软件和硬盘空间。第六章你将真正动手做。
 
-> **Pro tip:** Three things stick from this chapter and the rest is detail. **One:** there are no balances, just UTXOs. **Two:** mining is a clock plus a security budget. **Three:** the chain is verifiable end-to-end by anyone with a computer. The next chapter is where you stop reading about Bitcoin and start owning it.
+> **提示:** 这一章有三件事要记住,其余都是细节。**第一:**没有余额,只有 UTXO。**第二:**挖矿是一个时钟加一个安全预算。**第三:**链可以被任何有电脑的人端到端验证。下一章你不再只是读比特币,你开始拥有它。

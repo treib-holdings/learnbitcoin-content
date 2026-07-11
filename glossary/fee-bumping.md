@@ -1,12 +1,12 @@
 ---
-title: "Fee Bumping"
+title: "手续费加价"
 slug: fee-bumping
 draft: false
-shortDefinition: "Increasing a transaction's priority after it's broadcast, typically via Replace-by-Fee (RBF) or Child-Pays-for-Parent (CPFP)."
+shortDefinition: "在交易广播后提高其优先级，通常通过 Replace-by-Fee（RBF）或 Child-Pays-for-Parent（CPFP）。"
 keyTakeaways:
-  - "Prevents transactions from lingering in mempool at low fees"
-  - "RBF replaces the original transaction; CPFP uses a child transaction"
-  - "Widely supported feature in modern Bitcoin wallets"
+  - "防止交易以低手续费在内存池中滞留"
+  - "RBF 替换原始交易；CPFP 使用子交易"
+  - "现代比特币钱包广泛支持的功能"
 sources: []
 relatedTerms:
   - absolute-fee
@@ -23,16 +23,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Fee bumping is what you do when your [transaction](/glossary/transaction) is stuck. The [mempool](/glossary/mempool) has more transactions than will fit in the next several blocks, miners are picking the higher-fee ones first, and yours is sitting too far down the priority list. Two mechanisms let you raise the effective fee after broadcast:
+手续费加价是你的[交易](/glossary/transaction)卡住时你要做的操作。[内存池](/glossary/mempool)中的交易多于接下来几个区块能容纳的，矿工优先选手续费高的，你的交易优先级太低。两种机制让你在广播后提高有效手续费：
 
-**Replace-by-Fee (RBF).** Rebroadcast the same transaction with a higher fee, replacing the original in mempools. Defined in [BIP 125](/glossary/bip-125-replace-fee), now opt-in by default in most wallets. Requires the original transaction to signal RBF (or, with **full-RBF**, doesn't require it - nodes running full-RBF will accept the replacement regardless).
+**Replace-by-Fee（RBF）。** 以更高手续费重新广播同一笔交易，替换内存池中的原始交易。定义在 [BIP 125](/glossary/bip-125-replace-fee) 中，现在大多数钱包默认可选择开启。要求原始交易标记 RBF（或者，使用 **full-RBF**，不要求——运行 full-RBF 的节点无论如何都接受替换）。
 
-**Child-Pays-for-Parent (CPFP).** Don't touch the stuck transaction. Instead, spend one of its unconfirmed outputs in a new "child" transaction with a fee large enough to cover both itself and the parent's shortfall. Miners are economically incentivized to include both - the child only confirms if the parent does. Useful when you can't RBF (the original didn't signal, or you don't control all the inputs) but you do control an output.
+**Child-Pays-for-Parent（CPFP）。** 不动卡住的交易。而是花费其一个未确认输出到一笔新的"子"交易，手续费足以覆盖自身和父交易的不足。矿工有经济激励包含两者——子交易只有在父交易确认时才确认。当你无法 RBF（原始未标记，或你不控制所有输入）但你控制一个输出时有用。
 
-Most modern wallets handle this for you with a "bump fee" button. The actual decision tree:
+大多数现代钱包通过"加价"按钮为你处理这个。实际决策树：
 
-- **You're the sender, RBF was signaled** → RBF (cleaner, replaces in place).
-- **You're the receiver of a stuck incoming transaction** → CPFP, spending the unconfirmed output to yourself.
-- **Sender, RBF wasn't signaled** → CPFP if you have a spendable output, otherwise wait.
+- **你是发送方，RBF 已标记** → RBF（更干净，原地替换）。
+- **你是卡住入账交易的接收方** → CPFP，将未确认输出花给自己。
+- **发送方，RBF 未标记** → 如果你有可花费的输出则 CPFP，否则等待。
 
-See [Fee Estimation](/glossary/fee-estimation) to avoid needing this in the first place.
+避免一开始就需要这个参见[手续费估计](/glossary/fee-estimation)。

@@ -1,12 +1,12 @@
 ---
-title: "Bitcoin Pizza Day"
+title: "比特币披萨日"
 slug: bitcoin-pizza-day
 draft: false
-shortDefinition: "May 22, 2010-famously marking the first real-world BTC purchase (10,000 BTC for two pizzas)."
+shortDefinition: "2010 年 5 月 22 日——著名地标志着首次真实世界 BTC 购买（10,000 BTC 买两个披萨）。"
 keyTakeaways:
-  - "Marks the first reported commercial transaction with BTC"
-  - "Highlights Bitcoin's early novelty and later astronomical appreciation"
-  - "Celebrated as a lighthearted day of nostalgia in the crypto world"
+  - "标志着首笔已知的 BTC 商业交易"
+  - "突显比特币早期的猎奇和后来天文数字般的增值"
+  - "在加密世界中被当作轻松的怀旧日庆祝"
 sources:
   - label: "Jeremy 'jercos' Sturdivant on the pizza transaction (X, May 2026)"
     url: "https://x.com/jercos/status/2058387155119202805"
@@ -22,44 +22,44 @@ relatedTerms:
 liveWidget: ~
 ---
 
-On May 22, 2010, a programmer named Laszlo Hanyecz posted on the Bitcoin Talk forum offering 10,000 BTC to anyone who would order him two pizzas. Another forum user, Jeremy Sturdivant (known on Bitcoin Talk as "jercos"), took him up on it, called Papa John's, and had pizzas delivered to Laszlo's house in Florida. Laszlo sent jercos 10,000 BTC.
+2010 年 5 月 22 日，一位名叫 Laszlo Hanyecz 的程序员在 Bitcoin Talk 论坛发帖，愿意用 10,000 BTC 换取有人帮他点两个披萨。另一位论坛用户 Jeremy Sturdivant（在 Bitcoin Talk 上名为"jercos"）接了单，打了 Papa John's 的电话，将披萨送到了 Laszlo 在佛罗里达的家。Laszlo 给 jercos 发了 10,000 BTC。
 
-This is the **first known commercial transaction** in Bitcoin's history. At the BTC price of the time (roughly $0.004 per BTC), the pizzas cost about $41 total. At any BTC price you'd care to mention since 2017, those pizzas would be worth multiple lifetimes of pizza.
+这是比特币历史上**首笔已知的商业交易**。以当时的 BTC 价格（约每 BTC 0.004 美元）计算，披萨总共约值 41 美元。以 2017 年以来你随便提的任何 BTC 价格计算，那些披萨将价值好几辈子的披萨。
 
-## The other side of the trade
+## 交易的另一面
 
-The story is usually told from Laszlo's perspective. The other party, jercos, who actually called the pizzeria and received the 10,000 BTC, was rarely heard from until May 2026. Jercos posted a short handheld video on X giving his own account of the trade, and gave LearnBitcoin permission to quote it here:
+这个故事通常从 Laszlo 的角度讲述。另一方——实际打电话给披萨店并收到 10,000 BTC 的 jercos——直到 2026 年 5 月才罕见地发声。Jercos 在 X 上发了一段短视频讲述自己对这笔交易的回忆，并授权 LearnBitcoin 在此引用：
 
-> My name is Jeremy, or jercos. I was the other party in the Bitcoin pizza transaction.
+> 我叫 Jeremy，或者叫 jercos。我是比特币披萨交易的另一方。
 >
-> I've always been interested in decentralized currencies to some degree, starting off with e-gold, going through Open Transactions, which resembles a modern token economy somewhat but never took off nearly as much.
+> 我一直对去中心化货币有一定兴趣，从 e-gold 开始，经过 Open Transactions——它有点像现代代币经济但从未如此大规模推广。
 >
-> So when I encountered Bitcoin, I didn't know it was going to be the one, but I knew it - or something like it - would be an important part of the infrastructure of the future.
+> 所以当我遇到比特币时，我不知道它会是那个，但我知道它——或类似的东西——将是未来基础设施的重要组成部分。
 >
-> I'm incredibly pleased to see it take off like it did, and yeah, I couldn't have set a better goal for it.
+> 我非常高兴看到它像这样起飞，是的，我无法为它设定一个更好的目标了。
 >
-> Obviously I would have held on to that if I knew where it was going. But at the same time, the spirit of it... Just lock it away and never look at it again?
+> 显然如果我知道它会走向哪里，我会一直拿着。但与此同时，它的精神... 就锁起来再也不看？
 >
-> I spent it on a road trip I've mentioned, but that wasn't originally the plan. Kind of ran out of money on the road trip and things happened anyway.
+> 我在一次公路旅行中花掉了它，我提到过，但那不是原来的计划。旅行中钱花完了，事情就那样发生了。
 >
-> This is real me, real nature. Don't think AI's very good at interactions with nature. One cut of course.
+> 这是真实的我，真实的自然。不觉得 AI 很擅长与自然互动。当然剪辑过。
 
-[Source: jercos on X, May 2026.](https://x.com/jercos/status/2058387155119202805)
+[来源：jercos on X, 2026 年 5 月。](https://x.com/jercos/status/2058387155119202805)
 
-Two things stand out in his account:
+他的叙述中有两点突出：
 
-- **He saw Bitcoin (or something like it) as inevitable infrastructure** before there was reason to think it would be the one. He'd been paying attention to e-gold and Open Transactions for years. Bitcoin fit a pattern he was already watching for.
-- **He doesn't regret the spend, and the framing is the point.** Yes, he'd hold if he could go back. But the spirit of the experiment was to actually use it - "Just lock it away and never look at it again?" - and that spirit is what made the transaction historically meaningful in the first place.
+- **在还没有理由认为比特币会是那个"它"之前，他就看到比特币（或类似的东西）是不可避免的基础设施。**他已经关注 e-gold 和 Open Transactions 多年了。比特币符合他正在观察的模式。
+- **他不后悔花掉它，这个框架才是关键。**是的，如果能回去他会持有。但实验的精神是实际使用它——"就锁起来再也不看？"——正是这种精神使这笔交易在历史上具有意义。
 
-## How the story gets told
+## 故事如何被讲述
 
-The pizza day story is told two different ways:
+披萨日的故事有两种讲法：
 
-- **"Most expensive pizza ever"** - the conventional gag, retold every May 22. Worth a chuckle. Misses the point.
-- **"First proof that Bitcoin actually worked as money"** - the version Laszlo himself has consistently offered in interviews, and the version jercos's account corroborates. Without someone willing to actually spend BTC for goods, Bitcoin is just an interesting database. Laszlo and jercos did the experiment, on the open internet, for two pizzas. They paved the road that every later BTC payment uses.
+- **"史上最贵的披萨"**——常规笑话，每年 5 月 22 日复述。值得一笑。但没抓住要点。
+- **"比特币作为货币确实有效的首次证明"**——Laszlo 本人在采访中一直提供的版本，也是 jercos 的叙述所佐证的版本。没有愿意实际花费 BTC 换商品的人，比特币只是一个有趣的数据库。Laszlo 和 jercos 在开放互联网上为两个披萨做了实验。他们铺平了后来每个 BTC 支付使用的道路。
 
-Laszlo went on to be the first person to mine Bitcoin on a GPU (a major performance jump at the time) and made several more BTC-for-pizza trades through 2010. He's said publicly he doesn't regret it.
+Laszlo 后来成为第一个用 GPU 挖比特币的人（当时是一个重大性能飞跃），并在 2010 年做了多次 BTC 换披萨的交易。他公开表示不后悔。
 
-**May 22 is now Bitcoin Pizza Day** - celebrated with pizza-themed meetups, sat-denominated pizza promotions from Lightning-enabled vendors, and a recurring reminder of how far the network has come. In 2026 you can still order a pizza with sats via Lightning at any number of merchants. The thing Laszlo and jercos did experimentally in 2010 now takes 30 seconds and a QR code.
+**5 月 22 日现在是比特币披萨日**——以披萨主题聚会、闪电网络商户的聪计价披萨促销以及对比特币走过多远的循环提醒来庆祝。2026 年你仍然可以在众多商户通过闪电网络用聪点披萨。Laszlo 和 jercos 在 2010 年实验性做的事情现在只需 30 秒和一个二维码。
 
-See [Journey Chapter 5](/journey/using-bitcoin) for the modern version of "actually spending bitcoin."
+参见 [Journey Chapter 5](/journey/using-bitcoin) 了解"实际花费比特币"的现代版本。

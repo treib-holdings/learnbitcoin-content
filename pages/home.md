@@ -1,8 +1,8 @@
 ---
-title: "Learn Bitcoin: The Bitcoin School"
-heading: "The Bitcoin School"
-description: "For people who want to understand Bitcoin, not flip it. Plain language, sourced claims, on-chain numbers verified. No altcoins, no ads, no newsletter."
-tertiary: "Plain language. Sourced claims. On-chain numbers verified against a real node. Huge glossary, Rabbit Holes, and one opinionated Journey from \"what is money?\" to running a full node. No altcoins, no affiliate links, no newsletter pitch."
+title: "学比特币：比特币学校"
+heading: "比特币学校"
+description: "写给想搞懂比特币的人，不是写给想炒币的人。大白话，有出处，链上数据可验证。不谈山寨币，不放广告，不推邮件订阅。"
+tertiary: "大白话。有出处。链上数据用真实节点验证。海量术语表、兔子洞，还有一条从"什么是钱？"到运行全节点的硬核路线。不谈山寨币，不放分销链接，不推邮件订阅。"
 ---
 
-For people who want to understand Bitcoin. Not flip it.
+写给想搞懂比特币的人。不是写给想炒币的人。

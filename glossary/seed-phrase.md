@@ -1,13 +1,13 @@
 ---
-title: "Seed Phrase"
+title: "助记词"
 slug: seed-phrase
 draft: false
-shortDefinition: "12 or 24 English words (BIP-39) that encode a Bitcoin wallet's master secret. The complete backup; lose it and you lose the coins, leak it and someone else has them."
+shortDefinition: "12 或 24 个英文单词（BIP-39），编码了比特币钱包的主密钥。这是完整的备份——丢了它就丢了币，泄露了它别人就能拿走你的币。"
 keyTakeaways:
-  - "Standard is BIP-39 - a 2,048-word list, 11 bits per word, with a built-in checksum"
-  - "12 words = 128 bits of entropy. 24 words = 256 bits. Either is unguessable in practice"
-  - "Every key and address in an HD wallet derives from this single phrase"
-  - "Store offline. Verify the backup. Consider geographic redundancy"
+  - "标准是 BIP-39——一个 2,048 个单词的列表，每个单词 11 位，内置校验和"
+  - "12 个单词 = 128 位熵。24 个单词 = 256 位。两者在实践中都不可猜测"
+  - "HD 钱包中的每个密钥和地址都从这一组词派生"
+  - "离线存储。验证备份。考虑地理冗余"
 sources:
   - { label: "Seed Backup Strategies rabbit hole", url: "https://www.learnbitcoin.com/rabbit-hole/seed-backup-strategies" }
 relatedTerms:
@@ -36,36 +36,36 @@ sameAs:
 liveWidget: ~
 ---
 
-A seed phrase is a sequence of 12 or 24 English words that encodes the master secret for an entire Bitcoin wallet. Also called a "mnemonic phrase" or "recovery phrase" - the terms are interchangeable in practice.
+助记词是一组 12 或 24 个英文单词，编码了整个比特币钱包的主密钥。也叫"mnemonic phrase"或"recovery phrase"——这些术语在实践中可以互换使用。
 
-## What it is, mechanically
+## 它是什么，机制层面
 
-The standard is **[BIP-39](/glossary/bip-39)**, published in 2013. It defines:
+标准是 **[BIP-39](/glossary/bip-39)**，发布于 2013 年。它定义了：
 
-- A fixed list of 2,048 words. Each word is unique in its first four letters, so a half-typed word still resolves unambiguously and transcription errors are easier to catch.
-- A mapping from binary entropy to word sequences. Each word encodes 11 bits.
-- A SHA-256-derived checksum, so a mistyped or randomly-guessed phrase fails validation instead of silently opening a different (and probably empty) wallet.
-- A derivation from words to a 512-bit master seed: PBKDF2-HMAC-SHA512, 2,048 iterations, with an optional user-chosen passphrase as the salt.
+- 一个固定的 2,048 个单词的列表。每个单词的前四个字母唯一，所以即使只打了一半也能无歧义地解析，转录错误也更容易发现。
+- 从二进制熵到单词序列的映射。每个单词编码 11 位。
+- 一个由 SHA-256 派生的校验和，所以打错或随机猜测的助记词会验证失败，而不是静默地打开一个不同的（可能为空的）钱包。
+- 从单词到 512 位主种子的派生：PBKDF2-HMAC-SHA512，2,048 次迭代，可选的用户自选密码作为盐值。
 
-That 512-bit master seed feeds into [BIP-32](/glossary/bip-32) hierarchical key derivation, which produces every [private key](/glossary/private-key) and address the wallet uses. The chain - words to master seed to master private key to derived keys to addresses - is purely deterministic. Same words in, same wallet out, on any BIP-39 + BIP-32 compatible software.
+这个 512 位主种子输入到 [BIP-32](/glossary/bip-32) 层次化密钥派生中，生成钱包使用的每个[私钥](/glossary/private-key)和地址。整个链条——单词到主种子到主私钥到派生密钥到地址——是完全确定性的。同样的词进去，同样的钱包出来，在任何兼容 BIP-39 + BIP-32 的软件上都是如此。
 
-12 words encodes 128 bits of entropy. 24 words encodes 256 bits. Either is more than enough; 128 bits of randomness is unguessable in any practical sense, and 256 bits is well beyond the reach of any conceivable adversary.
+12 个单词编码 128 位熵。24 个单词编码 256 位。两者都绰绰有余；128 位随机性在任何实际意义上都不可猜测，256 位则远超任何可想象的对手的能力。
 
-## Why it has won
+## 为什么它赢了
 
-Portability. Back up with one wallet, restore on a completely different brand, your coins are still there - as long as both implement the standard. That cross-vendor interoperability is one of the quiet wins of Bitcoin's standards process.
+便携性。用一个钱包备份，在完全不同品牌的钱包上恢复，你的币还在——只要两者都实现了标准。这种跨厂商互操作性是比特币标准流程中一个低调的胜利。
 
-The phrase is the **complete** backup. From those 12 or 24 words, a [hierarchical deterministic wallet](/glossary/hierarchical-deterministic-wallet) can regenerate every private key, every public key, and every address the wallet has ever used or will ever use. Lose your hardware wallet, your phone, your laptop - all of it - you can restore the wallet on any compatible device by typing the words back in.
+助记词是**完整的**备份。从这 12 或 24 个单词出发，一个[层次化确定性钱包](/glossary/hierarchical-deterministic-wallet)可以重新生成钱包曾经使用或将要使用的每个私钥、公钥和地址。丢了硬件钱包、手机、笔记本电脑——全部丢了——你只需在任何兼容设备上输入这些单词就能恢复钱包。
 
-That power cuts both ways. Anyone who reads your seed phrase has the same capability.
+这种能力是双刃剑。任何看到你助记词的人都有同样的能力。
 
-## Storage rules
+## 存储规则
 
-- **Write it down on paper or metal.** Do not photograph it. Do not type it into a computer except into a wallet during restore. Do not store it in a password manager or cloud drive.
-- **Verify the backup.** Practice restoring on a fresh device. A backup you have never tested is a backup you do not have.
-- **Consider geographic redundancy.** A house fire that destroys your seed and your hardware wallet has destroyed your money. Two or three copies in physically separate locations is reasonable for non-trivial amounts.
-- **Consider a passphrase** (the "25th word"). An optional, user-chosen additional secret that combines with the 12 or 24 words to derive a separate wallet. Powerful but adds operational risk: forget the passphrase and the funds are gone.
+- **写在纸上或金属上。** 不要拍照。不要输入电脑（除非在钱包中恢复时）。不要存在密码管理器或云盘中。
+- **验证备份。** 在一个新设备上练习恢复。从未测试过的备份等于没有备份。
+- **考虑地理冗余。** 一场火灾同时毁了你的助记词和硬件钱包就等于毁了你的钱。对于非小额资产，在物理上分离的地点放两三份副本是合理的。
+- **考虑加一个密码**（"第 25 个词"）。一个可选的、用户自选的附加密码，与 12 或 24 个单词组合派生出单独的钱包。功能强大但增加了操作风险：忘了密码，资金就没了。
 
-The seed phrase is the **one** thing you must protect to truly self-custody Bitcoin. Everything else is recoverable; this is not.
+助记词是真正自托管比特币时**唯一**必须保护的东西。其他一切都可以恢复；这个不行。
 
-See the [Seed Backup Strategies rabbit hole](/rabbit-hole/seed-backup-strategies) for the deeper treatment - paper versus metal, multisig backup schemes, inheritance planning, and how to verify a backup without exposing the words to anyone else.
+参见[助记词备份策略深度指南](/rabbit-hole/seed-backup-strategies)了解更深入的内容——纸质 vs 金属、多签备份方案、继承规划，以及如何在不向任何人暴露单词的情况下验证备份。

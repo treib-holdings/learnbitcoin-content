@@ -1,13 +1,13 @@
 ---
-title: "Miner Signaling"
+title: "矿工信号"
 slug: miner-signaling
 draft: false
 published: "2026-05-29"
-shortDefinition: "The process by which miners indicate readiness to enforce a proposed consensus rule, usually by setting a designated bit in the block header's version field."
+shortDefinition: "矿工通过在区块头版本字段中设置特定位来表示准备执行拟议共识规则的过程。"
 keyTakeaways:
-  - "Signaling is the standard mechanism for activating soft forks via BIP-9 versionbits"
-  - "A threshold of signaling blocks (often 95%) over a difficulty period triggers lock-in"
-  - "Miner signaling is necessary but not sufficient - full nodes ultimately enforce the rules"
+  - "信号是通过 BIP-9 版本位激活软分叉的标准机制"
+  - "一个难度周期内达到信号阈值（通常 95%）触发锁定"
+  - "矿工信号是必要但不充分的——全节点最终执行规则"
 sources: []
 relatedTerms:
   - bip-9-versionbits
@@ -22,39 +22,39 @@ sameAs:
 liveWidget: ~
 ---
 
-*Miner signaling* is how Bitcoin coordinates the activation of new consensus rules. When a [soft fork](/glossary/soft-fork) is being proposed, miners include a flag in the blocks they produce indicating they're ready to enforce the new rule. Once a threshold of those signaling blocks is reached over a difficulty period, the rule "locks in" and activation follows.
+*矿工信号*是比特币协调新共识规则激活的方式。当一个[软分叉](/glossary/soft-fork)被提议时，矿工在他们产出的区块中包含一个标志，表示他们准备好执行新规则。一旦在一个难度周期内达到这些信号区块的阈值，规则"锁定"并随后激活。
 
-The mechanism is mostly defined by [BIP-9 (versionbits)](/glossary/bip-9-versionbits), the standard activation framework used since 2016. Variations exist for specific situations - UASF-style ([BIP-148](/glossary/bip-148-uasf)), Speedy Trial, and so on - but the core idea is the same: miners broadcast intent through their blocks.
+机制主要由 [BIP-9（版本位）](/glossary/bip-9-versionbits)定义，这是自 2016 年以来使用的标准激活框架。特定情况有变体——UASF 式（[BIP-148](/glossary/bip-148-uasf)）、Speedy Trial 等——但核心思想相同：矿工通过区块广播意图。
 
-## How it works
+## 工作原理
 
-A soft fork proposal reserves a specific bit (0-28) in the 32-bit `nVersion` field of the block header. Miners who support the proposal flip that bit to 1 in the blocks they mine.
+软分叉提案在区块头 32 位 `nVersion` 字段中保留一个特定位（0-28）。支持提案的矿工在他们挖的区块中将该位翻转为 1。
 
-Activation has several phases:
+激活有几个阶段：
 
-- **Defined** - the proposal exists but signaling hasn't started.
-- **Started** - signaling is open. Miners may flip the bit.
-- **Locked-in** - the threshold (typically 95% over a 2,016-block difficulty period) has been reached. Activation is now guaranteed.
-- **Active** - the new rule is enforced. Any block violating it is rejected by upgraded nodes.
-- **Failed** - the timeout passed without reaching the threshold. Signaling is closed.
+- **Defined**——提案存在但信号尚未开始。
+- **Started**——信号开放。矿工可以翻转该位。
+- **Locked-in**——阈值（通常 2,016 区块难度周期内 95%）已达到。激活现在确定。
+- **Active**——新规则被执行。任何违反它的区块被升级节点拒绝。
+- **Failed**——超时未达阈值。信号关闭。
 
-The exact threshold and timeout depend on the specific deployment. SegWit used 95% over a 2,016-block window. Some later proposals have used different parameters (BIP-110 (RDTS), for example, proposed 55%). The rules of each fork are defined upfront.
+确切阈值和超时取决于具体部署。SegWit 使用 2,016 区块窗口内 95%。一些后来的提案使用了不同参数（例如 BIP-110 (RDTS) 提议 55%）。每个分叉的规则预先定义。
 
-## What miner signaling actually means
+## 矿工信号实际意味着什么
 
-Signaling is a *coordination mechanism*, not a vote. Miners signal *readiness to enforce*, not *approval*. A miner can signal a bit without actually running the new code - though doing so risks producing invalid blocks once the rule activates, which would lose them the block reward.
+信号是*协调机制*，不是投票。矿工信号的是*执行准备*，不是*批准*。矿工可以在不实际运行新代码的情况下信号一个位——尽管这样做在规则激活后冒着产出无效区块的风险，会损失区块奖励。
 
-The key constraint: **full nodes - not miners - enforce Bitcoin's rules.** A signaled-and-activated soft fork only matters if economic nodes adopt the new client. Historically, contested activations have shown the limit of miner-only signaling:
+关键约束：**全节点——不是矿工——执行比特币的规则。** 信号并激活的软分叉只有在经济节点采用新客户端时才重要。从历史看，有争议的激活展示了矿工单独信号的局限：
 
-- **SegWit (2017)** activated only after BIP-148 / user-activated soft fork pressure threatened to force the issue. Miners initially resisted; the threat of UASF changed the dynamic.
-- **Taproot (2021)** used Speedy Trial - a 90% miner threshold with a short window - and activated cleanly because the proposal was broadly uncontroversial.
+- **SegWit（2017）**只有在 BIP-148 / 用户激活软分叉压力威胁强制推进后才激活。矿工最初抵制；UASF 的威胁改变了动态。
+- **Taproot（2021）**使用 Speedy Trial——90% 矿工阈值加短窗口——因为提案广泛无争议而顺利激活。
 
-The lesson: miner signaling is the official path, but it's structured against a backdrop of node-operator power. When miners and economic nodes agree, signaling works smoothly. When they disagree, signaling reveals the disagreement rather than resolving it.
+教训：矿工信号是官方路径，但它是在节点运营者权力的背景下构建的。当矿工和经济节点同意时，信号顺利运作。当他们不同意时，信号揭示分歧而非解决分歧。
 
-## Why it matters
+## 为什么重要
 
-A Bitcoin learner sees miner signaling references constantly - in news about upgrades, in debates about active BIPs, in mempool.space block headers showing version bits. Understanding the mechanism makes those references legible.
+比特币学习者会不断看到矿工信号引用——在关于升级的新闻中、在活跃 BIP 的辩论中、在 mempool.space 区块头显示版本位时。理解机制使这些引用可读。
 
-It also clarifies what "Bitcoin governance" actually is in practice: a multi-step coordination dance with no central decider, where miners get one structural role, node operators another, and users a third. No single group can force a change against the others.
+它还澄清了"比特币治理"在实践中实际是什么：一个没有中央决策者的多步协调舞蹈，矿工有一个结构性角色，节点运营者另一个，用户第三个。没有任何单一群体可以强加变更于其他群体。
 
-See [The Block Size War](/rabbit-hole/block-size-war) for the episode that established the limits of miner signaling.
+请参阅[区块大小战争](/rabbit-hole/block-size-war)了解确立矿工信号局限的事件。

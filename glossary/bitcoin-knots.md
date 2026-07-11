@@ -2,11 +2,11 @@
 title: "Bitcoin Knots"
 slug: bitcoin-knots
 draft: false
-shortDefinition: "A Bitcoin Core-based fork adding extra features, maintained by an independent development community."
+shortDefinition: "基于 Bitcoin Core 的分叉，添加额外功能，由独立开发社区维护。"
 keyTakeaways:
-  - "Derived from Bitcoin Core but with more features"
-  - "Maintained by a separate group, not official Core devs"
-  - "May introduce new features sooner but with potentially more risk"
+  - "源自 Bitcoin Core 但有更多功能"
+  - "由单独的团队维护，非官方 Core 开发者"
+  - "可能更早引入新功能但潜在风险更高"
 sources: []
 relatedTerms:
   - bitcoin-client
@@ -19,15 +19,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-**Bitcoin Knots** is a derivative of [Bitcoin Core](/glossary/bitcoin-core) maintained by a single developer, Luke Dashjr. It tracks Core's codebase closely and adds patches that reflect the maintainer's particular views on how a Bitcoin node should behave - especially around mempool policy and what transactions are considered "spam."
+**Bitcoin Knots** 是 [Bitcoin Core](/glossary/bitcoin-core)的衍生版本，由单一开发者 Luke Dashjr 维护。它紧随 Core 的代码库，并添加反映维护者对节点应如何行为的特定观点的补丁——特别是在内存池策略和哪些交易被视为"垃圾"方面。
 
-Two important things to understand about Knots' governance:
+关于 Knots 治理需要了解的两件事：
 
-- **It's a one-person project.** Unlike [Bitcoin Core](/glossary/bitcoin-core), which is maintained by a rotating cast of contributors with formal review processes and broad community input, Knots reflects one developer's editorial decisions. The community doesn't dictate what goes into Knots; the maintainer does. The code is open-source and anyone can fork it, but direction sits with the maintainer.
-- **The added patches encode specific policy opinions.** Most notably, Knots applies stricter default filtering against transaction types its maintainer considers spam (large [OP_RETURN](/glossary/opreturn) payloads, [Ordinals](/glossary/opreturn-based-tokens)-style inscriptions, etc.). This is a policy choice, not a neutral technical improvement, and reasonable people disagree about whether node operators should impose these filters on what they relay.
+- **这是个人项目。**与 [Bitcoin Core](/glossary/bitcoin-core)不同——后者由轮换贡献者维护，有正式审查流程和广泛的社区输入——Knots 反映一个开发者的编辑决定。社区不决定什么进入 Knots；维护者决定。代码是开源的，任何人都可以分叉，但方向由维护者掌控。
+- **添加的补丁编码了特定的策略观点。**最值得注意的是，Knots 对其维护者认为是垃圾的交易类型（大型 [OP_RETURN](/glossary/opreturn) 载荷、[Ordinals](/glossary/opreturn-based-tokens)式铭文等）应用更严格的默认过滤。这是策略选择，非中立的技术改进，合理的人可能对节点运营商是否应对中继内容施加这些过滤器有不同看法。
 
-The compatibility note: Knots is consensus-compatible with Core. A Knots node sees the same chain and accepts the same blocks. The differences are in **relay policy** (which transactions to forward) and **mempool admission** (which transactions to keep), which are local node choices, not consensus rules.
+兼容性说明：Knots 与 Core 共识兼容。Knots 节点看到相同的链并接受相同的区块。差异在**中继策略**（转发哪些交易）和**内存池准入**（保留哪些交易），这些是本地节点选择，不是共识规则。
 
-For most users, **[Bitcoin Core](/glossary/bitcoin-core) is the reference implementation** - the codebase with broad developer review, the most-tested validation logic, and policies that emerge from the community-review process rather than a single maintainer's preferences. It's the default for a reason, and the default this site recommends.
+对于大多数用户，**[Bitcoin Core](/glossary/bitcoin-core)是参考实现**——拥有广泛开发者审查、最充分测试的验证逻辑以及从社区审查过程而非单一维护者偏好中产生的策略的代码库。它是默认选择是有原因的，也是本站推荐的默认选项。
 
-Knots is a legitimate option if you've thought carefully about the policy stance you're taking by running it. If you haven't - if you're just looking for a Bitcoin node - Core is the answer.
+如果你已经仔细考虑过运行 Knots 所采取的策略立场，它是一个合理选项。如果你没有——如果你只是在找一个比特币节点——Core 是答案。

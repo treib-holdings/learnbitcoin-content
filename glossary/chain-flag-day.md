@@ -1,12 +1,12 @@
 ---
-title: "Chain Flag Day"
+title: "链上旗帜日"
 slug: chain-flag-day
 draft: false
-shortDefinition: "A chosen date or block height when nodes begin enforcing new consensus rules, often seen in user-activated forks."
+shortDefinition: "节点开始执行新共识规则的选定日期或区块高度，常见于用户激活的分叉。"
 keyTakeaways:
-  - "Sets a deadline for enforcing consensus changes"
-  - "Popular in user-activated soft fork strategies"
-  - "Can unify the network or risk a chain split"
+  - "为执行共识变更设定截止日期"
+  - "在用户激活软分叉策略中很常见"
+  - "可以统一网络，也可能导致链分叉"
 sources: []
 relatedTerms:
   - bip-148-uasf
@@ -20,21 +20,21 @@ sameAs:
 liveWidget: ~
 ---
 
-A "chain flag day" is a Bitcoin upgrade activation mechanism where new consensus rules begin enforcing at a pre-announced block height or timestamp - rather than waiting for [BIP-9](/glossary/bip-9-versionbits)-style miner signaling thresholds.
+"链上旗帜日"是一种比特币升级激活机制，新共识规则在预先公布的区块高度或时间戳开始执行——而不是等待 [BIP-9](/glossary/bip-9-versionbits) 式的矿工信号阈值。
 
-The pattern:
+流程：
 
-1. **Developers announce the change** with months of lead time and a specific activation height.
-2. **Node operators upgrade software** to enforce the new rules starting at the flag day.
-3. **At the activation height**, nodes running new software begin rejecting blocks that violate the new rules.
-4. **Non-upgraded nodes** continue accepting old-rule-conformant blocks, but if a majority of the economic network is upgraded, miners following the old rules see their blocks orphaned.
+1. **开发者公布变更**，提前数月通知并指定具体的激活高度。
+2. **节点运营者升级软件**，从旗帜日起开始执行新规则。
+3. **到达激活高度时**，运行新软件的节点开始拒绝违反新规则的区块。
+4. **未升级的节点**继续接受符合旧规则的区块，但如果经济网络中的多数已升级，遵循旧规则的矿工会看到自己的区块被孤立。
 
-The famous example: [BIP-148 (UASF)](/glossary/bip-148-uasf) for SegWit activation in 2017. The UASF set August 1, 2017 as the flag day - nodes running BIP-148 would reject blocks not signaling for SegWit starting that date. The credibility of the flag day broke the miner-signaling deadlock and SegWit activated cleanly via [BIP-91](/glossary/bip-91) a week before the deadline.
+著名的例子：2017 年 SegWit 激活的 [BIP-148（UASF）](/glossary/bip-148-uasf)。UASF 设定 2017 年 8 月 1 日为旗帜日——运行 BIP-148 的节点将从该日起拒绝不为 SegWit 信号的区块。旗帜日的可信度打破了矿工信号的僵局，SegWit 在截止日期前一周通过 [BIP-91](/glossary/bip-91) 顺利激活。
 
-Flag day mechanics matter because they shift the activation power from miners (who can stall BIP-9 signaling) to nodes (who can enforce the rule unilaterally). The economic majority of nodes - exchanges, businesses, large holders, the long tail of self-custody users - is what ultimately decides what "Bitcoin" is.
+旗帜日机制很重要，因为它将激活权力从矿工（他们可以拖延 BIP-9 信号）转移到节点（节点可以单方面执行规则）。节点的经济多数——交易所、企业、大额持有者、自托管用户的长尾——最终决定了什么是"比特币"。
 
-The Taproot activation in 2021 used a softer variant called "speedy trial," which combined miner signaling with a fallback flag day if miners failed to coordinate. It worked smoothly.
+2021 年的 Taproot 激活使用了一种更温和的变体，叫做"快速试验"（speedy trial），将矿工信号与矿工未能协调时的旗帜日后备方案结合。效果很顺利。
 
-Flag days are powerful but risky. If they're not actually supported by the economic majority, they can fragment the network. If they are, they're the most credible activation tool in Bitcoin's governance toolkit.
+旗帜日功能强大但有风险。如果实际上没有得到经济多数的支持，它们可能分裂网络。如果得到了支持，它们就是比特币治理工具箱中最可信的激活工具。
 
-See [BIP-148](/glossary/bip-148-uasf) for the historical case study and [Soft Fork](/glossary/soft-fork) for the broader activation landscape.
+历史案例参见 [BIP-148](/glossary/bip-148-uasf)，更广泛的激活全景参见[软分叉](/glossary/soft-fork)。

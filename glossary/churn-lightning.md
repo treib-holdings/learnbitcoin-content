@@ -1,12 +1,12 @@
 ---
-title: "Churn (Lightning)"
+title: "通道流失（闪电网络）"
 slug: churn-lightning
 draft: false
-shortDefinition: "Frequent channel openings, closings, or rebalancing on the Lightning Network-can be costly and reduce efficiency."
+shortDefinition: "闪电网络上频繁的通道开启、关闭或再平衡——可能成本高昂并降低效率。"
 keyTakeaways:
-  - "Refers to moving channel liquidity frequently on LN"
-  - "Racks up on-chain fees if done excessively"
-  - "Efficient liquidity management can minimize costly churn"
+  - "指在闪电网络上频繁移动通道流动性"
+  - "过度操作会累积链上手续费"
+  - "高效的流动性管理可以减少 costly 流失"
 sources: []
 relatedTerms:
   - autopilot-lightning
@@ -23,27 +23,27 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Channel churn is the rate at which [Lightning channels](/glossary/lightning-channel) are opened and closed on-chain. Some churn is unavoidable - users add/remove liquidity, channels go inactive, services rebalance. High churn is a problem because every channel open and close is an on-chain Bitcoin transaction with real fee cost.
+通道流失是指[闪电通道](/glossary/lightning-channel)在链上被开启和关闭的速率。一些流失是不可避免的——用户添加/移除流动性、通道变得不活跃、服务进行再平衡。高流失率是一个问题，因为每次通道开启和关闭都是一笔链上比特币交易，有真实的手续费成本。
 
-What contributes to churn:
+导致流失的因素：
 
-- **Users opening channels they don't end up using much.** Inactive channels eventually get closed to recover the locked capital.
-- **Liquidity rebalancing.** Without [splicing](/glossary/lightning-channel-splicing), the only way to change a channel's capacity is to close it and reopen. Frequent rebalancing = high churn.
-- **Custodial wallet operators** who open and close channels in response to user activity.
-- **LSP onboarding flows** that may rotate channels as user balances grow.
-- **Routing nodes** managing liquidity across many counterparties.
+- **用户开启了最终不太使用的通道。** 不活跃的通道最终会被关闭以回收锁定的资金。
+- **流动性再平衡。** 没有[拼接](/glossary/lightning-channel-splicing)，改变通道容量的唯一方法是关闭并重新开启。频繁再平衡 = 高流失。
+- **托管钱包运营商**根据用户活动开启和关闭通道。
+- **LSP 入驻流程**可能随着用户余额增长而轮换通道。
+- **路由节点**管理多个对手方的流动性。
 
-Why churn matters:
+为什么流失很重要：
 
-- **On-chain costs aggregate.** A single channel costs ~$0.50-$5 to open and close at typical fees. A million-channel ecosystem with monthly churn is millions in Bitcoin transaction costs per year.
-- **Channel-history loss.** When a channel closes, its accumulated routing reputation and gossip presence disappear. Reopening doesn't restore that history.
-- **Mempool pressure.** Lots of channel closes during a single fee window push fees up for everyone.
+- **链上成本累积。** 在典型手续费下，单个通道的开启和关闭成本约为 0.50-5 美元。一个拥有月度流失率的百万通道生态系统每年要花费数百万美元的比特币交易成本。
+- **通道历史丢失。** 当通道关闭时，其累积的路由声誉和 gossip 存在感会消失。重新开启不会恢复该历史。
+- **内存池压力。** 在单一手续费窗口期间大量通道关闭会推高所有人的手续费。
 
-How modern Lightning reduces churn:
+现代闪电网络如何减少流失：
 
-- **[Channel splicing](/glossary/lightning-channel-splicing)** lets capacity be adjusted without closing. Major win, deployed 2024+.
-- **Better LSP designs** open right-sized channels initially.
-- **Channel reuse** for repeat customers via inbound liquidity services.
-- **Better wallet UX** that doesn't push users to close channels unnecessarily.
+- **[通道拼接](/glossary/lightning-channel-splicing)**允许在不关闭的情况下调整容量。重大改进，2024 年起部署。
+- **更好的 LSP 设计**初始开启大小合适的通道。
+- 通过入站流动性服务为回头客**复用通道**。
+- 更好的钱包用户体验，不会推送用户不必要地关闭通道。
 
-Churn isn't the enemy; it's a normal feature of an evolving network. The goal is reducing *unnecessary* churn, which is most of it.
+流失不是敌人；它是不断发展的网络的正常特征。目标是减少*不必要的*流失，而这占了大部分。

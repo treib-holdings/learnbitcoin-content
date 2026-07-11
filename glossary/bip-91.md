@@ -2,11 +2,11 @@
 title: "BIP 91"
 slug: bip-91
 draft: false
-shortDefinition: "A signaling coordination method during the SegWit activation phase of 2017's scaling debates."
+shortDefinition: "2017 年扩容辩论中 SegWit 激活阶段的信号协调方法。"
 keyTakeaways:
-  - "Soft-fork coordination tool for SegWit signaling"
-  - "Part of the 2017 New York Agreement"
-  - "Helped finalize SegWit activation despite controversy"
+  - "SegWit 信号协调工具"
+  - "2017 年纽约协议的一部分"
+  - "帮助在争议中完成 SegWit 激活"
 sources: []
 relatedTerms:
   - bip-bitcoin-improvement-proposal
@@ -21,22 +21,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-[BIP-91](https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki) is the miner-coordinated mechanism that activated [SegWit](/glossary/segwit-segregated-witness-bip-141) in August 2017, defusing what was about to be a chain-splitting confrontation with [BIP-148 (UASF)](/glossary/bip-148-uasf).
+[BIP-91](https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki)是 2017 年 8 月激活 [SegWit](/glossary/segwit-segregated-witness-bip-141)的矿工协调机制，化解了即将与 [BIP-148 (UASF)](/glossary/bip-148-uasf)发生的链分裂对抗。
 
-The deadlock context: SegWit had been ready for a year. The [BIP-9](/glossary/bip-9-versionbits) signaling threshold (95%) couldn't be reached because a minority of miners were holding out. The UASF crowd was preparing to enforce SegWit unilaterally starting August 1, 2017, which would have orphaned non-signaling blocks and potentially split the chain.
+僵局背景：SegWit 已准备好一年。[BIP-9](/glossary/bip-9-versionbits)信号阈值（95%）无法达到，因为少数矿工坚持不信号。UASF 人群正准备从 2017 年 8 月 1 日起单方面强制执行 SegWit，这将孤立不信号的区块并可能分裂链。
 
-BIP-91 was the compromise. Authored by James Hilliard and adopted by miners as part of the "SegWit2x" / New York Agreement effort, it lowered the activation threshold and forced rapid coordination:
+BIP-91 是妥协方案。由 James Hilliard 撰写，作为"SegWit2x"/纽约协议努力的一部分被矿工采纳，它降低了激活阈值并强制快速协调：
 
-1. **80% threshold** (lower than BIP-9's 95%) for SegWit signaling.
-2. **Mandatory.** Once 80% was reached in a 336-block window, *all* miners had to signal for SegWit going forward, or their blocks would be orphaned.
-3. **Quick deployment.** Locked in mid-July 2017, activated in August.
+1. **80% 阈值**（低于 BIP-9 的 95%）用于 SegWit 信号。
+2. **强制性的。**一旦在 336 个区块窗口内达到 80%，*所有*矿工必须继续信号 SegWit，否则其区块被孤立。
+3. **快速部署。**2017 年 7 月中旬锁定，8 月激活。
 
-What this actually achieved:
+这实际达成了什么：
 
-- **SegWit activated cleanly** about 10 days before BIP-148's August 1 deadline. No chain split, no orphaned blocks at scale.
-- **Demonstrated miner responsiveness to user pressure.** The credible threat of UASF moved miners who had been refusing for over a year.
-- **The "SegWit2x" hard-fork half of the agreement was abandoned** later in 2017, when it became clear users had no appetite for the 2MB block-size hard fork that miners had wanted. The "2x" never happened.
+- **SegWit 在 BIP-148 的 8 月 1 日截止日期前约 10 天干净激活。**没有链分裂，没有大规模孤块。
+- **展示了矿工对用户压力的响应。**UASF 的可信威胁移动了一年多来一直拒绝的矿工。
+- **"SegWit2x"硬分叉部分后来被放弃**，因为用户对矿工想要的 2MB 区块大小硬分叉没有胃口。"2x"从未发生。
 
-BIP-91 is a small technical document with outsized historical importance. It's the bridge between a stalemate and a successful upgrade, and the moment that established the modern "users hold the leverage, not miners" framing in Bitcoin governance.
+BIP-91 是一份小巧的技术文档，但历史重要性巨大。它是僵局与成功升级之间的桥梁，也是确立现代"用户持有杠杆而非矿工"比特币治理框架的时刻。
 
-See [The Block Size War](/rabbit-hole/block-size-war) for the standoff BIP-91 defused.
+参见[区块大小战争](/rabbit-hole/block-size-war)了解 BIP-91 化解的对峙。

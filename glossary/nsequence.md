@@ -2,11 +2,11 @@
 title: "nSequence"
 slug: nsequence
 draft: false
-shortDefinition: "Originally for partial transaction updates, repurposed by BIP 68 to enforce relative locktimes in OP_CSV scripts."
+shortDefinition: "最初用于部分交易更新，被 BIP 68 重新用于在 OP_CSV 脚本中强制相对锁定时间。"
 keyTakeaways:
-  - "Transformed from a partial replace mechanism to a relative locktime indicator"
-  - "BIP 68 + OP_CSV enable advanced channel logic using nSequence"
-  - "Crucial for second-layer solutions requiring time-based outputs"
+  - "从部分替换机制转变为相对锁定时间指示器"
+  - "BIP 68 + OP_CSV 使用 nSequence 实现高级通道逻辑"
+  - "对需要基于时间输出的第二层解决方案至关重要"
 sources: []
 relatedTerms:
   - absolute-locktime
@@ -24,21 +24,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-`nSequence` is a 32-bit field per [transaction input](/glossary/input-transaction-input) in Bitcoin. Originally intended as a partial-replacement mechanism in Bitcoin's earliest design, it has since been repurposed by [BIP-68](/glossary/bip-68-relative-locktime) (and signaling for [BIP-125 RBF](/glossary/replace-fee-rbf)) to encode:
+`nSequence` 是比特币中每个[交易输入](/glossary/input-transaction-input)的 32 位字段。最初在比特币最早的设计中用作部分替换机制，后来被 [BIP-68](/glossary/bip-68-relative-locktime) 重新利用（并作为 [BIP-125 RBF](/glossary/replace-fee-rbf) 的信号）编码：
 
-- **Relative locktimes.** Lower 16 bits encode a block-count or time-based delay since the input's UTXO was confirmed.
-- **Type flag.** Bit 22 chooses between block-based and time-based interpretation.
-- **Disable flag.** Bit 31, when set, disables relative-locktime enforcement for that input.
-- **RBF signaling.** Any `nSequence` value less than `0xfffffffe` signals BIP-125 opt-in [RBF](/glossary/replace-fee-rbf).
+- **相对锁定时间。** 低 16 位编码自输入 UTXO 确认以来的区块数或时间延迟。
+- **类型标志。** 第 22 位选择基于区块还是基于时间的解释。
+- **禁用标志。** 第 31 位设置时禁用该输入的相对锁定时间强制。
+- **RBF 信号。** 任何低于 `0xfffffffe` 的 `nSequence` 值信号 [BIP-125](/glossary/replace-fee-rbf) 选择性加入 RBF。
 
-The current default value is `0xfffffffd` (BIP-125 RBF signaling enabled) or `0xffffffff` (no relative locktime, no RBF signaling), depending on the wallet.
+当前默认值是 `0xfffffffd`（启用 BIP-125 RBF 信号）或 `0xffffffff`（无相对锁定时间，无 RBF 信号），取决于钱包。
 
-The semantics matter for a few cases users actually encounter:
+语义在用户实际遇到的几种情况中重要：
 
-- **A wallet that supports RBF** sets `nSequence` to `0xfffffffd` so the transaction can be replaced via [BIP-125](/glossary/replace-fee-rbf).
-- **A [Lightning](/glossary/lightning-network) commitment transaction** uses specific `nSequence` values to encode the channel-close delay window enforced via [OP_CHECKSEQUENCEVERIFY](/glossary/checksequenceverify-csv).
-- **A scripted contract with relative locktime** sets `nSequence` to the delay value and pairs the input with a CSV check in the locking script.
-
-`nSequence` is one of those Bitcoin protocol details that most users will never encounter directly, but that's quietly load-bearing for Lightning, vaults, and most advanced multi-party constructions. The history of repurposing it from "partial replacement" to "relative locktime + RBF signaling" is a small example of how Bitcoin's protocol pragmatically reuses field semantics over time.
-
-See [BIP-68](/glossary/bip-68-relative-locktime) for the relative-locktime semantics and [Locktime](/glossary/locktime) for the broader time-based scripting framework.
+- **支持 RBF 的钱包**将 `nSequence` 设为 `0xfffffffd`，使交易可通过 [BIP-125](/glossary/replace-fee-rbf) 替换。
+- **使用相对锁定时间的交易**（如闪电通道承诺交易中的 CSV 延迟）在相关输入中设置适当的 `nSequence` 值。

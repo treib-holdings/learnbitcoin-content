@@ -1,12 +1,12 @@
 ---
-title: "Block Height"
+title: "区块高度"
 slug: block-height
 draft: false
-shortDefinition: "The count of blocks since the genesis block (which is at height 0)."
+shortDefinition: "自创世区块（高度 0）以来的区块计数。"
 keyTakeaways:
-  - "Counts blocks from the original genesis block"
-  - "Used for referencing specific points in the blockchain"
-  - "Essential for protocol events tied to block intervals"
+  - "从原始创世区块开始计数"
+  - "用于引用区块链中的特定位置"
+  - "对与区块间隔相关的协议事件至关重要"
 sources: []
 relatedTerms:
   - bip-30
@@ -27,14 +27,14 @@ sameAs:
 liveWidget: ~
 ---
 
-Block height is the number of blocks between any given block and the [genesis block](/glossary/genesis-block), which sits at height 0. Block 1 is one above genesis. Block 840,000 - where the most recent [halving](/glossary/halving-halvening) occurred - is 840,000 above it.
+区块高度是任何给定区块与[创世区块](/glossary/genesis-block)之间的区块数，创世区块位于高度 0。区块 1 比创世高一个。区块 840,000——最近一次[减半](/glossary/halving-halvening)发生处——比创世高 840,000。
 
-Height is the canonical way to refer to a point in Bitcoin's history. Timestamps are imprecise (miners control their own clocks within a window). Dates depend on calendar conventions. But block heights are integer, monotonic, and identical for every node on the network.
+高度是引用比特币历史中某个点的标准方式。时间戳不精确（矿工在窗口内控制自己的时钟）。日期取决于日历惯例。但区块高度是整数、单调的，对网络上的每个节点都相同。
 
-Most of Bitcoin's protocol-level events are scheduled by height, not by date:
+比特币的大多数协议级事件按高度而非日期调度：
 
-- **[Halvings](/glossary/halving-halvening)** happen at heights 210,000, 420,000, 630,000, and so on (every 210,000).
-- **[Difficulty retargets](/glossary/difficulty-retargeting)** happen at heights that are multiples of 2,016.
-- **Soft forks** (Taproot, SegWit, BIP-66, etc.) activate when a target height is reached or signaling thresholds clear in a retarget window.
+- **[减半](/glossary/halving-halvening)**在高度 210,000、420,000、630,000 等处发生（每 210,000 个区块）。
+- **[难度重定向](/glossary/difficulty-retargeting)**在 2,016 的倍数高度处发生。
+- **软分叉**（Taproot、SegWit、BIP-66 等）在达到目标高度或信号阈值在重定向窗口中清除时激活。
 
-If you want a single number that locates "what's happening on Bitcoin right now," it's the current block height. See the [Node page](/node/) for the live current height.
+如果你想要一个定位"比特币现在在发生什么"的单一数字，就是当前区块高度。参见 [Node 页面](/node/)获取实时当前高度。

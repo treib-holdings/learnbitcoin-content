@@ -1,12 +1,12 @@
 ---
-title: "Accelerator"
+title: "交易加速器"
 slug: accelerator
 draft: false
-shortDefinition: "A third-party service designed to rebroadcast or include your transaction in a block faster, often for a fee."
+shortDefinition: "一种第三方服务，旨在更快地重新广播或将你的交易纳入区块，通常需要付费。"
 keyTakeaways:
-  - "Offers faster transaction confirmation for a premium"
-  - "Useful during high network congestion"
-  - "Depends on miners or mining pools cooperating"
+  - "提供更快的交易确认，需支付额外费用"
+  - "在网络高度拥堵时有用"
+  - "依赖矿工或矿池配合"
 sources: []
 relatedTerms:
   - fee-bumping
@@ -19,24 +19,24 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A transaction accelerator is a third-party service that helps a stuck unconfirmed transaction get included in a block faster, typically by paying a mining pool out-of-band to prioritize it.
+交易加速器是一种第三方服务，帮助卡住的未确认交易更快被纳入区块，通常通过向矿池支付额外费用来优先处理。
 
-How the canonical accelerator services work:
+典型加速器服务的工作流程：
 
-1. User submits a stuck transaction's txid to the accelerator's web form.
-2. The service pays a participating mining pool (or pools) directly via traditional payment rails or via a separate on-chain transaction.
-3. The mining pool prioritizes the transaction in its block templates: included in any block the pool mines, regardless of the transaction's on-chain feerate.
-4. If the pool gets a block, the transaction confirms.
+1. 用户将卡住的交易 txid 提交到加速器的网页表单。
+2. 服务通过传统支付渠道或单独的链上交易向参与矿池直接付款。
+3. 矿池在其区块模板中优先处理该交易：无论交易的链上费率如何，只要矿池挖到区块就将其纳入。
+4. 如果矿池挖到区块，交易即被确认。
 
-Two flavors historically:
+历史上的两种类型：
 
-- **Free accelerators** (early ViaBTC, BTC.com): rebroadcast for free if the transaction meets some minimum feerate. Useful for bumping marginally-under-priced transactions when the rebroadcaster has wider peer connectivity than the user.
-- **Paid accelerators** (ViaBTC's commercial service, Mempool.space's mining-pool-funded service, others): pay actual money to a participating pool to include your transaction.
+- **免费加速器**（早期的 ViaBTC、BTC.com）：如果交易达到某个最低费率，免费重新广播。当广播方比用户有更广泛的节点连接时，对提升略微低于市场费率的交易有用。
+- **付费加速器**（ViaBTC 的商业服务、Mempool.space 的矿池资助服务等）：向参与矿池支付真金白银以纳入你的交易。
 
-Why they're largely obsolete now:
+为什么现在基本被淘汰了：
 
-- **RBF is universal.** Replace-by-Fee (especially after Bitcoin Core 28.0's full-RBF default in 2024) lets you bump a stuck transaction's feerate yourself. No third party needed.
-- **CPFP works.** Child-Pays-For-Parent lets you spend an output of the stuck transaction at a high feerate, pulling both into the same block.
-- **Mempool transparency.** Tools like mempool.space's fee estimator make it much harder to get stuck in the first place.
+- **RBF 已普及。** Replace-by-Fee（特别是在 2024 年 Bitcoin Core 28.0 默认启用 full-RBF 后）让你自己就能提升卡住交易的费率。不需要第三方。
+- **CPFP 也可行。** Child-Pays-For-Parent 让你以高费率花费卡住交易的输出，将两笔交易拉入同一个区块。
+- **内存池透明度。** mempool.space 等费用估算工具让人一开始就很难被卡住。
 
-Accelerators were a workaround for the era of mandatory opt-in RBF, where many transactions were broadcast non-replaceable, leaving fee bumping impossible. With RBF default, the use case for accelerators is mostly limited to legacy non-RBF transactions or transactions where the original sender lost the wallet that signed them. For ordinary stuck transactions in 2026: bump the fee with RBF instead.
+加速器是强制 opt-in RBF 时代的权宜之计，那时许多交易以不可替换的方式广播，无法提升手续费。有了默认 RBF 后，加速器的使用场景主要限于遗留的非 RBF 交易，或原始发送方丢失了签名钱包的交易。对于 2026 年普通的卡住交易：用 RBF 提升手续费就好。

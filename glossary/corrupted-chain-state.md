@@ -1,12 +1,12 @@
 ---
-title: "Corrupted Chain State"
+title: "链状态损坏"
 slug: corrupted-chain-state
 draft: false
-shortDefinition: "A node's local blockchain data becomes invalid or inconsistent, often requiring a re-index or full sync."
+shortDefinition: "节点的本地区块链数据变得无效或不一致，通常需要重新索引或完全同步。"
 keyTakeaways:
-  - "Results from hardware, file system, or software issues"
-  - "Causes invalid or incomplete local blockchain data"
-  - "Often resolved by re-indexing or re-downloading the chain"
+  - "由硬件、文件系统或软件问题导致"
+  - "导致本地区块链数据无效或不完整"
+  - "通常通过重新索引或重新下载链来解决"
 sources: []
 relatedTerms:
   - bitcoin-vault
@@ -21,23 +21,23 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Corrupted chain state is the operational failure mode where a node's local database (block files, UTXO set, indexes) becomes internally inconsistent. The cryptographic chain itself is fine; the *local copy* is broken.
+链状态损坏是节点本地数据库（区块文件、UTXO 集、索引）变得内部不一致的运营故障模式。密码链本身没问题；*本地副本*坏了。
 
-Common causes:
+常见原因：
 
-- **Power loss or hard shutdown** during a database write. LevelDB and Bitcoin Core handle most of these gracefully but not all.
-- **Disk corruption** (failing SSD, bad sectors, RAID rebuild bug).
-- **Filesystem-level issues**, especially over networked storage (NFS, sshfs - never run a node off these).
-- **Bitcoin Core software bugs** during major version upgrades, occasionally.
-- **Out-of-memory kills** mid-write.
+- **数据库写入期间断电或硬关机。** LevelDB 和 Bitcoin Core 优雅地处理了大部分情况，但不是全部。
+- **磁盘损坏**（SSD 故障、坏扇区、RAID 重建错误）。
+- **文件系统层面的问题**，尤其是网络存储（NFS、sshfs——永远不要在这些上运行节点）。
+- **Bitcoin Core 软件在大版本升级期间的 bug**，偶尔发生。
+- **写入中途内存不足被杀。**
 
-Symptoms: the node refuses to start, reports "corrupted block database," fails to validate new blocks, or shows wildly wrong balances.
+症状：节点拒绝启动，报告"corrupted block database"，无法验证新区块，或显示严重错误的余额。
 
-The fix ladder, easiest first:
+修复阶梯，从简单到复杂：
 
-- **`-reindex-chainstate`.** Rebuilds the UTXO set from the existing on-disk blocks. Fast if blocks are intact; cleans most corruption in the chainstate database.
-- **`-reindex`.** Rebuilds both the block index and the chainstate by re-reading and re-validating every block file. Takes longer (hours), but doesn't require re-downloading.
-- **Delete `chainstate/` and reindex.** If `-reindex-chainstate` fails, manually remove the chainstate directory before reindexing.
-- **Delete and resync from scratch.** Delete `blocks/` and `chainstate/`, start fresh. Last resort; takes a full IBD time (12+ hours on good hardware).
+- **`-reindex-chainstate`。** 从现有磁盘区块重建 UTXO 集。如果区块完整则速度较快；清理链状态数据库中的大部分损坏。
+- **`-reindex`。** 通过重新读取和重新验证每个区块文件来重建区块索引和链状态。耗时更长（数小时），但不需要重新下载。
+- **删除 `chainstate/` 并重新索引。** 如果 `-reindex-chainstate` 失败，在重新索引前手动删除 chainstate 目录。
+- **删除并从零开始同步。** 删除 `blocks/` 和 `chainstate/`，从头开始。最后手段；需要完整的 IBD 时间（好硬件上 12+ 小时）。
 
-Prevention is mostly operational: run on reliable hardware (consumer SSD with power-loss protection, ECC RAM if you're paranoid), use an uninterruptible power supply, don't run nodes on networked filesystems, and back up the wallet (not the chain state - the chain state is reproducible from the network).
+预防主要是运营方面的：在可靠硬件上运行（具有断电保护的消费级 SSD，偏执的话用 ECC RAM），使用不间断电源，不要在网络文件系统上运行节点，备份钱包（不是链状态——链状态可以从网络重建）。

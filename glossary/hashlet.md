@@ -2,48 +2,48 @@
 title: "Hashlet"
 slug: hashlet
 draft: false
-shortDefinition: "A now-defunct term for 'cloud mining shares,' often linked to historical scams such as GAW Miners."
+shortDefinition: "已废弃的'云挖矿份额'术语，通常与 GAW Miners 等历史骗局相关。"
 keyTakeaways:
-  - "Marketed as fractional cloud mining ownership"
-  - "Associated with notable Ponzi schemes and scams"
-  - "Eroded trust in cloud mining's viability for many users"
+  - "以云挖矿部分所有权名义营销"
+  - "与著名的庞氏骗局和诈骗相关"
+  - "侵蚀了许多用户对云挖矿可行性的信任"
 sources: []
 relatedTerms:
   - hash
   - hash-rate
   - hash-rate-derivative
   - mining-algorithm
-  - mining-colocation
+  - mining-collocation
   - pooled-mining
   - revenue-ths
   - rug-pull
 liveWidget: ~
 ---
 
-"Hashlet" was the brand name for a Bitcoin cloud-mining product sold by GAW Miners in 2014. It's also one of the more notorious scams in Bitcoin's history, and a useful cautionary tale about how to lose money in Bitcoin without losing any actual private keys.
+"Hashlet"是 GAW Miners 于 2014 年销售的比特币云挖矿产品的品牌名。它也是比特币历史上最臭名昭著的骗局之一，以及一个关于如何在比特币中亏钱而不丢失任何私钥的有用警示故事。
 
-The pitch:
+推销：
 
-- GAW Miners (founded by Josh Garza) sold "Hashlets" - supposed fractional ownership shares in their mining operation.
-- Each Hashlet was advertised as giving you a portion of GAW's hash rate, with daily payouts.
-- The product launched in August 2014; tens of thousands of Hashlets were sold for over $10 million total revenue.
+- GAW Miners（由 Josh Garza 创立）销售"Hashlet"——声称是其挖矿运营的部分所有权份额。
+- 每个 Hashlet 被宣传为给你 GAW 算力的一部分，每日支付。
+- 产品于 2014 年 8 月推出；售出数万个 Hashlet，总收入超过 1000 万美元。
 
-The problem:
+问题：
 
-- The mining hardware GAW claimed to operate didn't exist at the scale they claimed, or at all.
-- The "payouts" were made by paying earlier investors with later investors' funds. Classic Ponzi structure.
-- GAW also launched "Paycoin" (XPY), an associated cryptocurrency Garza promised would be backed by a "Coin Vault" of $100M. The vault didn't exist. Paycoin collapsed from a peak of $14 to near-zero within months.
+- GAW 声称运营的挖矿硬件不存在于所声称的规模，或根本不存在。
+- "支付"是用后来投资者的资金支付早期投资者。经典庞氏结构。
+- GAW 还推出了"Paycoin"（XPY），Garza 承诺将由 1 亿美元的"Coin Vault"支撑的金库。金库不存在。Paycoin 从峰值 14 美元在几个月内崩塌到接近零。
 
-The aftermath:
+后果：
 
-- The SEC charged Garza with securities fraud in 2015.
-- In 2018, Garza pled guilty to wire fraud and was sentenced to 21 months in federal prison plus $9.1M in restitution.
-- Most Hashlet "investors" lost most of their money. Recoveries were partial at best.
+- SEC 于 2015 年以证券欺诈指控 Garza。
+- 2018 年，Garza 认罪电信诈骗，被判 21 个月联邦监禁加 910 万美元赔偿。
+- 大多数 Hashlet"投资者"损失了大部分资金。回收最多是部分的。
 
-Why this matters as a glossary entry, not just a footnote:
+为什么这作为词汇条目重要，而不仅是脚注：
 
-- **Cloud mining as a category is dominated by scams.** Hashlet is the canonical Bitcoin-context version of what altcoin markets call a [rug pull](/glossary/rug-pull) - sell shares or tokens backed by something that doesn't exist, pay early investors with new funds, vanish when new investment slows. HashOcean, BitClub Network, Mining Capital Coin, USI-Tech, and many others followed similar patterns through the late 2010s.
-- **The pattern is consistent.** Promise yield on hash rate you can't independently verify. Pay early investors with new investor funds. Collapse when new investment slows.
-- **Legitimate cloud mining exists** (NiceHash hash-rate marketplace, some hosted-miner services), but it's a niche market, not the "passive income mining" pitched by scams.
+- **云挖矿作为一个类别被骗局主导。** Hashlet 是山寨币市场称为[rug pull](/glossary/rug-pull)的典型比特币版本——销售由不存在的东西支撑的份额或代币，用新资金支付早期投资者，新投资减缓时消失。HashOcean、BitClub Network、Mining Capital Coin、USI-Tech 等在 2010 年代后期遵循类似模式。
+- **模式一致。** 承诺你无法独立验证的算力收益。用新投资者资金支付早期投资者。新投资减缓时崩塌。
+- **合法云挖矿存在**（NiceHash 算力市场、一些托管矿机服务），但这是利基市场，不是骗局推销的"被动收入挖矿"。
 
-For modern self-custody Bitcoiners the takeaway is structural: if a yield product can't show you the real hardware producing the hash, doesn't let you verify the on-chain payouts trace to actual block rewards, and pays "too good to be true" returns, it's almost certainly a Hashlet-style scam. The honest forms of Bitcoin mining exposure are buying ASICs and electricity yourself, or buying mining-company equity through normal capital markets. Everything in between has a poor track record.
+对于现代自托管比特币用户，要点是结构性的：如果一个收益产品不能向你展示产生算力的真实硬件，不能让你验证链上支付可追溯到实际区块奖励，并支付"好得难以置信"的回报，它几乎肯定是 Hashlet 式骗局。诚实的比特币挖矿敞口形式是自己购买 ASIC 和电力，或通过正常资本市场购买矿业公司股票。两者之间的东西记录很差。

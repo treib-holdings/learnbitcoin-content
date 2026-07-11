@@ -1,12 +1,12 @@
 ---
-title: "Market Depth"
+title: "市场深度"
 slug: market-depth
 draft: false
-shortDefinition: "The amount of buy/sell orders at various price levels on an exchange, influencing how large trades impact the price."
+shortDefinition: "交易所各价格水平的买卖订单量，影响大额交易对价格的冲击程度。"
 keyTakeaways:
-  - "Reflects how large orders affect market price"
-  - "Deeper books = less slippage, more liquidity"
-  - "Crucial for whales or institutional traders' execution strategies"
+  - "反映大额订单如何影响市场价格"
+  - "更深的订单簿 = 更少滑点、更多流动性"
+  - "对巨鲸或机构交易者的执行策略至关重要"
 sources: []
 relatedTerms:
   - blockchain
@@ -22,20 +22,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Market depth is the volume of buy and sell orders sitting at various price levels on an [exchange](/glossary/centralized-exchange-cex). A market with "deep" books has enough orders queued up that even large trades execute close to the current quoted price. A "thin" market has so few orders that even moderate trades move the price significantly.
+市场深度是[交易所](/glossary/centralized-exchange-cex)各价格水平的买卖订单量。"深"的订单簿有足够排队的订单，即使大额交易也能在接近当前报价的价格执行。"薄"的市场订单太少，甚至中等交易就会显著移动价格。
 
-Why it matters:
+为什么重要：
 
-- **Slippage.** If you try to buy $1M worth of BTC and the next 1,000 sell orders only add up to $500k, your $1M order will eat through the book and push the average price up. The difference between the quoted price and your fill price is slippage.
-- **Volatility signal.** Thin books are more volatile - a single large order can swing the price. Deep books are more stable.
-- **Manipulation risk.** Shallow markets are easier to manipulate via spoofing, wash trading, and front-running.
+- **滑点。** 如果你试图买入价值 100 万美元的 BTC，而接下来的 1,000 个卖单总共只有 50 万美元，你的 100 万美元订单将吃穿订单簿并推高平均价格。报价和成交价之间的差异就是滑点。
+- **波动性信号。** 薄的订单簿更波动——单笔大额订单可以摆动价格。深的订单簿更稳定。
+- **操纵风险。** 浅市场更容易通过欺骗、洗盘交易和抢先交易来操纵。
 
-How Bitcoin market depth typically looks in 2026:
+2026 年比特币市场深度的典型情况：
 
-- **Major spot markets** (Coinbase, Kraken, Binance) - very deep within ±1% of the spot price. Tens of millions in available liquidity per side.
-- **Smaller exchanges** - depth varies. The advertised "volume" is often a poor proxy for actual depth.
-- **DEX / peer-to-peer markets** - much thinner. Each individual trade is a separate match rather than an order book; large trades require splitting or waiting.
+- **主要现货市场**（Coinbase、Kraken、Binance）——在现货价格 ±1% 范围内非常深。每侧数千万美元的可用流动性。
+- **较小的交易所**——深度各异。宣传的"交易量"通常不是实际深度的良好代理。
+- **DEX/点对点市场**——薄得多。每笔交易是单独匹配而非订单簿；大额交易需要拆分或等待。
 
-For retail users buying $50 at a time, depth never matters - you're using fractions of a satoshi of book space. For OTC desks moving 8-figure positions, depth is the whole game; large trades are typically executed via dedicated OTC desks rather than touching the public order book at all.
+对于一次买 50 美元的零售用户，深度永远不是问题——你只用了订单簿空间中不到一个聪的零头。对于移动 8 位数头寸的场外交易台，深度就是一切；大额交易通常通过专门的场外交易台执行，而不是直接触及公共订单簿。
 
-The honest framing: most reported "trading volume" numbers are inflated or misleading. Depth tells you what the market can actually absorb without breaking. It's the more meaningful number for anyone moving real size.
+诚实的框架：大多数报告的"交易量"数字是虚高或误导性的。深度告诉你市场实际能吸收多少而不崩溃。对于移动真实规模的人来说，这是更有意义的数字。

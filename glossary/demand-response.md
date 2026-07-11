@@ -1,13 +1,13 @@
 ---
-title: "Demand Response"
+title: "需求响应"
 slug: demand-response
 draft: false
 published: "2026-06-17"
-shortDefinition: "Grid programs that pay large electricity consumers to reduce or shut off load on command. Bitcoin miners are the most flexible demand-response participant ever connected to a grid."
+shortDefinition: "电网项目向大型电力消费者付费以按命令减少或关闭负载。比特币矿工是有史以来连接到电网的最灵活的需求响应参与者。"
 keyTakeaways:
-  - "Grid operators pay flexible loads to power down during peak demand, keeping the grid stable without new generation"
-  - "Bitcoin miners can shed nearly all load in seconds and care only about price, making them ideal participants"
-  - "Riot Platforms earned $31.7M in ERCOT credits in August 2023 - more than the bitcoin it mined that month"
+  - "电网运营商向灵活负载付费在需求高峰时关机，无需新建发电就能保持电网稳定"
+  - "比特币矿工可以在几秒内削减几乎所有负载，且只关心价格，使其成为理想参与者"
+  - "Riot Platforms 在 2023 年 8 月从 ERCOT 获得了 3170 万美元的积分——比当月挖出的比特币还多"
 sources: []
 relatedTerms:
   - energy-fud
@@ -18,22 +18,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Demand response is the set of grid programs that pay large electricity consumers to cut their usage when the grid is stressed, instead of building extra generation that sits idle most of the year. The grid operator gets a buffer it can call on; the consumer gets paid for the flexibility.
+需求响应是一系列电网项目，向大型电力消费者付费以在电网紧张时减少用电，而不是建设一年中大部分时间闲置的额外发电。电网运营商获得可以调用的缓冲；消费者因灵活性获得报酬。
 
-Most industrial loads are bad at this. A factory, a smelter, a data center serving live users - none can power down at a moment's notice without breaking something. Bitcoin [miners](/glossary/mining) are the exception, and the reason is structural: a miner can halt nearly all of its load in seconds, lose nothing but forgone mining revenue, and resume just as fast. It is the most interruptible large load ever connected to a grid.
+大多数工业负载不擅长这个。工厂、冶炼厂、为实时用户提供服务的数据中心——都无法在不破坏某些东西的情况下瞬间关机。比特币[矿工](/glossary/mining)是例外，原因是结构性的：矿工可以在几秒内停止几乎所有负载，只损失错过的挖矿收入，并同样快速地恢复。它是有史以来连接到电网的最可中断的大负载。
 
-## The Texas receipt
+## 德克萨斯的收据
 
-The clearest demonstration is ERCOT, the Texas grid. In August 2023, during a heat wave, Riot Platforms earned **$31.7 million** in a single month from grid programs - $24.2 million selling pre-purchased power back to the grid at crisis prices, plus $7.4 million in demand-response credits. The bitcoin it actually mined that month was worth about $8.9 million. During the worst hours, Riot curtailed more than 95 percent of its load, handing those megawatts back to air conditioners.
+最清晰的演示是 ERCOT，德克萨斯电网。2023 年 8 月，在热浪期间，Riot Platforms 在一个月内从电网项目赚取了 **3170 万美元**——2420 万美元通过以危机价格将预购电力卖回电网，加上 740 万美元的需求响应积分。当月实际挖出的比特币价值约 890 万美元。在最严重的时段，Riot 削减了超过 95% 的负载，将这些兆瓦交还给空调。
 
-Three mechanisms are usually bundled together under "demand response":
+三种机制通常被归入"需求响应"：
 
-- **Price response.** When power costs more than the bitcoin it would produce, the miner powers down and resells. No contract needed - arithmetic does it.
-- **Ancillary services.** The grid pays the miner for the *option* to shed load on command, whether or not the call ever comes.
-- **Peak-avoidance programs.** Powering down during the handful of annual system peaks cuts transmission costs all year.
+- **价格响应。** 当电力成本超过其将产生的比特币价值时，矿工关机并转售。不需要合同——算术就做到了。
+- **辅助服务。** 电网向矿工支付削减负载的*期权*，无论是否调用。
+- **高峰避让项目。** 在年度系统少数高峰期间关机可削减全年的传输成本。
 
-## The honest tension
+## 诚实的张力
 
-Critics call these payments a subsidy - paying a polluter not to pollute, for a load that arguably should not exist. The defense is that grid operators pay many large consumers and generators for flexibility, because dispatchable demand is genuinely valuable to a grid that cannot store much energy. Both framings describe the same fact: a grid that builds around interruptible mining is making a bet about how that load behaves in a crisis, and the bet is only as good as the contracts.
+批评者称这些付款为补贴——向污染者付费不污染，而该负载可能本不应存在。辩护是电网运营商向许多大型消费者和发电方支付灵活性费用，因为可调度需求对无法储存大量能源的电网确实有价值。两种框架描述了同一事实：围绕可中断挖矿建设的电网在对该负载在危机中的行为下注，而赌注只和合同一样好。
 
-See the [Bitcoin and Energy rabbit hole](/rabbit-hole/energy) for the full grid-services argument and the criticism of it.
+完整的电网服务论证及其批评参见[比特币与能源深入探讨](/rabbit-hole/energy)。

@@ -1,12 +1,12 @@
 ---
-title: "Partial Signature"
+title: "部分签名（Partial Signature）"
 slug: partial-signature
 draft: false
-shortDefinition: "In multisig or PSBT workflows, a single participant's signature, awaiting more signatures to finalize spending."
+shortDefinition: "在多签或 PSBT 工作流中，单个参与者的签名，需要更多签名才能完成交易花费。"
 keyTakeaways:
-  - "Represents one cosigner's authorization in a multisig transaction"
-  - "Many partial signatures combine to meet the M-of-N threshold"
-  - "Employed in distributed/PSBT setups for secure multi-party approvals"
+  - "代表多签交易中一个共同签名者的授权"
+  - "多个部分签名组合以满足 M-of-N 阈值"
+  - "用于分布式/PSBT 设置中的安全多方审批"
 sources: []
 relatedTerms:
   - psbt
@@ -18,12 +18,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A partial signature is one cosigner's contribution to a multi-party signed transaction. It isn't a complete signature on its own; the transaction is only valid once enough partial signatures combine to meet the script's threshold.
+部分签名是单个共同签名者对多方签名交易的贡献。它本身不是一个完整的签名；只有当足够多的部分签名组合在一起满足脚本的阈值时，交易才有效。
 
-There are two flavors in modern Bitcoin:
+现代比特币中有两种形式：
 
-- Classical multisig. Each cosigner produces a full ECDSA or Schnorr signature against the same sighash. The script combines M of them on-chain (e.g., 2-of-3 P2WSH or a Taproot script-path leaf). Partial signatures are tracked through the [PSBT](/glossary/psbt) workflow: each signer adds their signature to the PSBT and passes it on until the threshold is met, then anyone finalizes the transaction.
+- 经典多签。每个共同签名者对相同的 sighash 产生完整的 ECDSA 或 Schnorr 签名。脚本在链上组合其中的 M 个（例如 2-of-3 P2WSH 或 Taproot 脚本路径叶子）。部分签名通过 [PSBT](/glossary/psbt) 工作流追踪：每个签名者将自己的签名添加到 PSBT 中并传递，直到达到阈值，然后任何人都可以完成交易。
 
-- Aggregated signatures (MuSig2, FROST). Each cosigner produces a partial signature that's a fragment of a single Schnorr signature. None of them is a valid signature on its own; the protocol combines them into one signature, and one signature is what ends up on-chain. To outside observers it's indistinguishable from single-sig.
+- 聚合签名（MuSig2、FROST）。每个共同签名者产生一个部分签名，它是单个 Schnorr 签名的一个片段。没有一个片段本身是有效签名；协议将它们组合成一个签名，链上只出现这一个签名。对外部观察者来说，它与单签不可区分。
 
-The first kind has been Bitcoin standard since P2SH multisig in 2012 and is what most hardware-wallet multisig flows use today. The second is newer (post-Taproot, 2021+) and underpins modern Lightning channels and emerging vault designs where privacy and on-chain footprint matter.
+第一种自 2012 年 P2SH 多签以来就是比特币标准，也是当今大多数硬件钱包多签流程使用的形式。第二种较新（Taproot 之后，2021 年以后），是现代闪电通道和新兴金库设计的基础，在这些场景中隐私和链上足迹很重要。

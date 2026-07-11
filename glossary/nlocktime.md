@@ -2,11 +2,11 @@
 title: "nLocktime"
 slug: nlocktime
 draft: false
-shortDefinition: "A field specifying the earliest block height or timestamp at which a transaction can be confirmed."
+shortDefinition: "一个字段，指定交易可被确认的最早区块高度或时间戳。"
 keyTakeaways:
-  - "Prevents confirmation before a certain block/time"
-  - "Used by advanced scripting for timed releases or escrow"
-  - "Zero or a past value means it's immediately valid"
+  - "在某个区块/时间之前阻止确认"
+  - "被高级脚本用于定时释放或托管"
+  - "零或过去的值意味着立即可用"
 sources: []
 relatedTerms:
   - absolute-locktime
@@ -24,18 +24,14 @@ relatedTerms:
 liveWidget: ~
 ---
 
-`nLockTime` is the protocol-level name for Bitcoin's [locktime](/glossary/locktime) field - a 32-bit value in every transaction specifying the earliest block height or Unix timestamp at which the transaction may be included in a block.
+`nLocktime` 是比特币[锁定时间](/glossary/locktime)字段的协议级名称——每笔交易中的 32 位值，指定交易可被包含在区块中的最早区块高度或 Unix 时间戳。
 
-The `n` prefix is a holdover from Satoshi's original C++ code, where integer fields conventionally started with `n`. You'll see it in source code, BIPs, and protocol docs; in conversation, people just say "locktime."
+`n` 前缀是中本聪原始 C++ 代码的遗留，其中整数字段通常以 `n` 开头。你会在源代码、BIP 和协议文档中看到它；在交流中，人们只说"locktime"。
 
-Value semantics:
+值语义：
 
-- **0** - immediate validity (default).
-- **1 to 499,999,999** - interpreted as a block height.
-- **500,000,000 and above** - interpreted as a Unix timestamp (seconds since the epoch).
+- **0**——立即可用（默认）。
+- **1 至 499,999,999**——解释为区块高度。
+- **500,000,000 及以上**——解释为 Unix 时间戳（自纪元以来的秒数）。
 
-`nLockTime` is paired with the per-input `nSequence` field. If every input's `nSequence` is `0xffffffff`, `nLockTime` is *ignored* - the transaction is treated as having no time lock regardless of the field's value. Setting any `nSequence` below the maximum makes `nLockTime` enforceable.
-
-This little quirk is the foundation for [Replace-by-Fee](/glossary/replace-fee-rbf), which uses `nSequence` to signal "this transaction can be replaced." It's also how older relative-locktime workflows handled things before [CHECKSEQUENCEVERIFY](/glossary/checksequenceverify-csv) was added.
-
-See [Locktime](/glossary/locktime) for the practical view and [Absolute Locktime](/glossary/absolute-locktime) for the contrast with relative-locktime via `nSequence`.
+`nLocktime` 与每个输入的 `nSequence` 字段配对。如果每个输入的 `nSequence` 都是 `0xffffffff`，`nLocktime` 被*忽略*——无论字段值如何，交易被视为没有时间锁。将任何 `nSequence` 设为低于最大值使 `nLocktime` 可执行。

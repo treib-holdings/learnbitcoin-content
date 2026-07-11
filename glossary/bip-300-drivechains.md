@@ -1,12 +1,12 @@
 ---
-title: "BIP 300 (Drivechains)"
+title: "BIP 300（驱动链）"
 slug: bip-300-drivechains
 draft: false
-shortDefinition: "Proposes a mechanism called 'drivechains'-merge-mined, two-way-pegged sidechains for extending Bitcoin functionality."
+shortDefinition: "提出一种名为'驱动链'的机制——合并挖矿的双向锚定侧链，用于扩展比特币功能。"
 keyTakeaways:
-  - "Leverages Bitcoin's PoW for sidechain security"
-  - "Two-way peg allows BTC to move off and on sidechains"
-  - "Debated concept due to potential miner power concerns"
+  - "利用比特币 PoW 为侧链提供安全性"
+  - "双向锚定允许 BTC 在侧链和主链之间移动"
+  - "因矿工权力问题而存在争议"
 sources: []
 relatedTerms:
   - bip-bitcoin-improvement-proposal
@@ -19,28 +19,28 @@ relatedTerms:
 liveWidget: ~
 ---
 
-[BIP-300](https://github.com/bitcoin/bips/blob/master/bip-0300.mediawiki) is the proposed Bitcoin consensus mechanism that would enable **drivechains** - [sidechains](/glossary/sidechain) where the peg between Bitcoin and the sidechain is enforced not by a federation, but by Bitcoin miners voting on withdrawal requests. Drivechains were proposed by Paul Sztorc in 2015 and remain one of the longest-running "should this activate?" debates in Bitcoin.
+[BIP-300](https://github.com/bitcoin/bips/blob/master/bip-0300.mediawiki)是提议的比特币共识机制，将启用**驱动链**——[侧链](/glossary/sidechain)，其比特币和侧链之间的锚定不由联盟执行，而由比特币矿工对提款请求投票执行。驱动链由 Paul Sztorc 于 2015 年提出，至今仍是比特币中持续时间最长的"是否应该激活"辩论之一。
 
-How drivechains would work, simplified:
+驱动链的工作方式（简化）：
 
-1. **A drivechain is launched** with its own consensus rules. Users can [peg-in](/glossary/peg) BTC to it (locking the BTC on mainnet, receiving sidechain tokens).
-2. **Sidechain activity happens** with whatever rules the sidechain implements (privacy, smart contracts, faster blocks, anything).
-3. **To peg-out**, sidechain participants propose a withdrawal transaction to mainnet.
-4. **Miners vote** on each withdrawal over a long period (~3 months). If enough miners support it, BTC is released back to mainnet. If not, it stays locked.
+1. **驱动链启动**，有自己的共识规则。用户可以[锚入](/glossary/peg) BTC 到侧链（在主网上锁定 BTC，接收侧链代币）。
+2. **侧链活动**以侧链实现的任何规则进行（隐私、智能合约、更快出块等）。
+3. **要锚出**，侧链参与者向主网提出提款交易。
+4. **矿工投票**对每笔提款在长时间内（约 3 个月）投票。如果足够多的矿工支持，BTC 被释放回主网。如果不支持，则保持锁定。
 
-This is a [two-way peg](/glossary/peg) without a federated multisig. The trust assumption is: a majority of Bitcoin miners won't conspire to steal from drivechain peg-outs they don't approve, over months of voting.
+这是一种无需联盟多签的[双向锚定](/glossary/peg)。信任假设是：大多数比特币矿工不会在数月的投票中串谋盗取他们不认可的驱动链锚出。
 
-The arguments **for**:
+**支持论点**：
 
-- **Permissionless sidechain experimentation.** Anyone could launch a drivechain with new features without needing Bitcoin protocol upgrades. Use cases: privacy chains (Confidential Transactions), high-throughput payment chains, alt-VM chains, etc.
-- **BTC remains the only token.** No new altcoins; sidechain activity is denominated in pegged BTC.
-- **Bitcoin captures the fee economy** of sidechains via [merged mining](/glossary/merged-mining) ([BIP-301](/glossary/bip-301)).
+- **无需许可的侧链实验。**任何人都可以启动具有新功能的驱动链，无需比特币协议升级。用例：隐私链（机密交易）、高吞吐支付链、替代虚拟机链等。
+- **BTC 仍然是唯一代币。**没有新山寨币；侧链活动以锚定的 BTC 计价。
+- **比特币通过[合并挖矿](/glossary/merged-mining)（[BIP-301](/glossary/bip-301)）捕获侧链的手续费经济。**
 
-The arguments **against**:
+**反对论点**：
 
-- **Miner power expands.** Drivechains formally give miners the authority to approve/deny peg-outs - a major shift from "miners just order transactions" to "miners hold custody."
-- **MEV pressure.** Sidechains with rich economies could generate MEV that flows back to miners, potentially incentivizing concentration.
-- **Complexity.** Drivechain support adds non-trivial validation logic to Bitcoin Core.
-- **Hype vs reality.** Years of "drivechains will solve X" discourse without much built.
+- **矿工权力扩大。**驱动链正式赋予矿工批准/拒绝锚出的权力——从"矿工只排序交易"到"矿工持有托管权"的重大转变。
+- **MEV 压力。**具有丰富经济的侧链可能产生流回矿工的 MEV，潜在激励集中化。
+- **复杂性。**驱动链支持给 Bitcoin Core 增加了不小的验证逻辑。
+- **炒作与现实。**多年"驱动链将解决 X"的讨论但建造不多。
 
-BIP-300 has not activated. Patches exist in some Bitcoin Core forks; the proposal cycles in and out of community discussion. As of 2026 it's not on a near-term roadmap, but the conversation hasn't died either. See [BIP-301](/glossary/bip-301) for the companion merged-mining piece and [Sidechain](/glossary/sidechain) for the broader category.
+BIP-300 未激活。补丁存在于一些 Bitcoin Core 分叉中；该提案在社区讨论中时隐时现。截至 2026 年不在近期路线图上，但讨论也没有消亡。参见 [BIP-301](/glossary/bip-301)了解配套的合并挖矿部分，[侧链](/glossary/sidechain)了解更广泛的类别。

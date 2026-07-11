@@ -1,12 +1,12 @@
 ---
-title: "Batch Transaction"
+title: "批量交易"
 slug: batch-transaction
 draft: false
-shortDefinition: "A method of bundling multiple Bitcoin payments into a single on-chain transaction to save fees and reduce network load."
+shortDefinition: "将多笔比特币支付打包到一笔链上交易中的方法，以节省手续费并减少网络负载。"
 keyTakeaways:
-  - "Combines multiple payments into one transaction"
-  - "Decreases total fees and blockchain data usage"
-  - "Requires trust in the entity performing the batch"
+  - "将多笔支付合并为一笔交易"
+  - "降低总手续费和区块链数据使用"
+  - "需要对执行批处理的实体有一定信任"
 sources: []
 relatedTerms:
   - consolidation-transaction
@@ -16,14 +16,14 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A batch transaction bundles multiple separate payments into one Bitcoin transaction with multiple outputs. Instead of `n` transactions each with their own inputs, fee overhead, and confirmation wait, you make one transaction paying `n` recipients at once.
+批量交易将多笔独立的支付打包成一笔有多个输出的比特币交易。不是 `n` 笔交易各自有输入、手续费开销和确认等待，而是一笔交易同时支付 `n` 个收款方。
 
-The savings are real. A transaction's bytes are dominated by inputs (script, signature, witness data), not outputs. Adding a fifth output to a transaction adds maybe 30 vbytes; sending five separate transactions costs five full transactions worth of input overhead. Exchanges processing withdrawals, custodians paying out coupons, payroll services, mining pool payouts: all classic batch-transaction users. Coinbase Exchange's batched withdrawals are estimated to have saved millions of dollars in network fees over the years.
+节省是实实在在的。一笔交易的字节数主要由输入（脚本、签名、见证数据）决定，而非输出。给一笔交易添加第五个输出大约增加 30 vbyte；而发五笔独立交易需要五笔完整的输入开销。处理提币的交易所、支付券的托管方、薪酬服务、矿池打款：都是经典的批量交易用户。Coinbase 交易所的批量提币估计多年来节省了数百万美元的网络手续费。
 
-What you give up:
+你放弃的：
 
-- Privacy for recipients. All n recipients are visible in one transaction. Chain analysis can cluster them as "paid by the same source on the same day" much more confidently than n separate transactions would allow.
-- Atomicity in operational systems. If one recipient address is invalid or one payment needs to be reversed, you can't just amend it; the whole batch already broadcast or already confirmed.
-- Variance in confirmation. The whole batch confirms together. If you mis-fee the batch, all recipients wait.
+- 收款方隐私。所有 n 个收款方在一笔交易中可见。链上分析可以比 n 笔独立交易更自信地将他们聚类为"同一天由同一来源支付"。
+- 操作系统中的原子性。如果一个收款方地址无效或一笔支付需要撤销，你不能只修改它；整批已经广播或已经确认。
+- 确认的方差。整批一起确认。如果你给批次设错了手续费，所有收款方都在等。
 
-For high-volume operators, the fee savings dominate. For privacy-sensitive flows (donations, payroll where individual amounts shouldn't be linkable), separate transactions remain the right call. The honest answer is "it depends on whose privacy you're optimizing."
+对于高量级运营商，手续费节省占主导。对于隐私敏感的场景（捐赠、个人金额不应被关联的薪酬），单独交易仍然是正确选择。诚实的回答是"取决于你在优化谁的隐私"。

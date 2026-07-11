@@ -1,12 +1,12 @@
 ---
-title: "Anti-Sybil Mechanism"
+title: "抗女巫攻击机制"
 slug: anti-sybil-mechanism
 draft: false
-shortDefinition: "Any technique preventing an attacker from cheaply spinning up numerous nodes or identities, thus maintaining fair consensus."
+shortDefinition: "任何阻止攻击者低成本创建大量节点或身份的技术，从而维护公平的共识。"
 keyTakeaways:
-  - "Stops attackers from creating infinite fake identities"
-  - "Proof-of-work is Bitcoin's main anti-Sybil method"
-  - "Crucial for maintaining decentralized consensus"
+  - "阻止攻击者创建无限假身份"
+  - "工作量证明是比特币的主要抗女巫方法"
+  - "对维护去中心化共识至关重要"
 sources: []
 relatedTerms:
   - byzantine-fault-tolerance
@@ -15,20 +15,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-An anti-sybil mechanism is any system designed to prevent an attacker from gaining disproportionate influence by creating many fake identities. The name comes from a 2002 paper by John Douceur describing the "Sybil attack" - named after the multiple-personality case study.
+抗女巫攻击机制是任何旨在防止攻击者通过创建大量假身份来获得不成比例影响力的系统。这个名字来自 John Douceur 2002 年的一篇论文，描述了"女巫攻击"（Sybil attack）——以多重人格案例研究命名。
 
-In open distributed systems where anyone can join, sybil attacks are the central security problem. If creating a new identity is free, an attacker can create unlimited identities and dominate any voting or consensus process. Anti-sybil mechanisms make identities *costly* in a way that bounds an attacker's influence by their resources rather than by their willingness to register accounts.
+在任何人都可以加入的开放分布式系统中，女巫攻击是核心安全问题。如果创建新身份是免费的，攻击者可以创建无限身份并主导任何投票或共识过程。抗女巫机制使身份变得*有成本*，从而将攻击者的影响力限制在其资源上，而非注册账户的意愿上。
 
-Bitcoin's primary anti-sybil mechanism is **[proof-of-work](/glossary/proof-work-pow)**. Each "vote" (block) requires real computational work and real energy expenditure. An attacker can't pretend to be many [miners](/glossary/miner) - they have to actually do the work. To get 51% of voting power, they need 51% of global hash rate, which requires 51% of global mining infrastructure. The cost is staggering and growing.
+比特币的主要抗女巫机制是**[工作量证明](/glossary/proof-work-pow)**。每次"投票"（区块）需要真正的计算工作和真正的能源消耗。攻击者不能假装是很多[矿工](/glossary/miner)——他们必须实际做这些工作。要获得 51% 的投票权，他们需要全球算力的 51%，这需要全球挖矿基础设施的 51%。这个成本是惊人的，而且还在增长。
 
-Other anti-sybil approaches used in different systems:
+其他系统中使用的抗女巫方法：
 
-- **Proof-of-stake.** Identities are weighted by economic stake in the system. An attacker has to acquire significant amounts of the underlying asset, which is publicly visible and expensive.
-- **Identity verification.** Real-world ID checks ([KYC](/glossary/kyc-know-your-customer)-style). Strong but compromises privacy and adds trusted third parties.
-- **Web of trust.** Identities are vouched for by other identities. Brittle but used by PGP-era systems.
-- **[Fidelity bonds](/glossary/fidelity-bond).** Time-locked capital deposits. Used in protocols like JoinMarket for sybil resistance without a central authority.
-- **Captchas / proof-of-personhood.** Various weak proxies for "is this a unique human." Generally cheap to defeat at scale.
+- **权益证明。**身份按系统中的经济权益加权。攻击者必须获取大量底层资产，这是公开可见且昂贵的。
+- **身份验证。**真实世界身份检查（[KYC](/glossary/kyc-know-your-customer)式）。强但损害隐私并引入可信第三方。
+- **信任网络。**身份由其他身份担保。脆弱但被 PGP 时代的系统使用。
+- **[保证金债券](/glossary/fidelity-bond)。**时间锁定的资本存款。在 JoinMarket 等协议中用于无中心化权威的抗女巫。
+- **验证码/人格证明。**"这是否是一个唯一的人类"的各种弱代理。通常在大规模时成本很低即可击败。
 
-Bitcoin's choice of proof-of-work has trade-offs (energy use, centralization pressure toward cheap-power regions) but solves the open-membership sybil problem cleanly. Many of the cryptocurrencies that exist today are essentially experiments in alternative anti-sybil mechanisms - with mixed results on whether the alternatives actually hold up under adversarial conditions.
+比特币选择工作量证明有权衡（能源使用、向廉价电力区域集中的压力），但干净利落地解决了开放成员资格的女巫问题。今天存在的许多加密货币本质上是替代抗女巫机制的实验——这些替代品在对抗条件下是否真正站得住脚，结果参差不齐。
 
-See [Byzantine Fault Tolerance](/glossary/byzantine-fault-tolerance) for the broader consensus problem this is a piece of.
+参见[拜占庭容错](/glossary/byzantine-fault-tolerance)了解这是其中一部分的更广泛共识问题。

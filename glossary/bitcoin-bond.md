@@ -1,12 +1,12 @@
 ---
-title: "Bitcoin Bond"
+title: "比特币债券"
 slug: bitcoin-bond
 draft: false
-shortDefinition: "A debt instrument denominated in or collateralized by Bitcoin, such as El Salvador's 'Volcano Bonds.'"
+shortDefinition: "以比特币计价或以比特币为抵押的债务工具，如萨尔瓦多的'火山债券'。"
 keyTakeaways:
-  - "Combines debt issuance with Bitcoin's price dynamics"
-  - "Can leverage BTC as collateral or payout currency"
-  - "Reflects Bitcoin's broader integration into finance"
+  - "将债务发行与比特币价格动态结合"
+  - "可利用 BTC 作为抵押品或支付货币"
+  - "反映比特币更广泛融入金融体系"
 sources: []
 relatedTerms:
   - bitlicense
@@ -18,25 +18,25 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Bitcoin bond is a debt instrument either denominated in BTC, collateralized by BTC, or with returns tied to BTC's price performance. It's a real category of financial product that's emerged as Bitcoin has matured into a treasury asset for sovereigns and corporations.
+比特币债券是以 BTC 计价、以 BTC 为抵押或回报与 BTC 价格表现挂钩的债务工具。随着比特币成熟为主权国家和企业机构的国库资产，这是一个真实出现的金融产品类别。
 
-Notable examples:
+典型案例：
 
-- **El Salvador's "Volcano Bonds"** - announced in 2021, repeatedly delayed, finally launched in 2025. Tie proceeds to a sovereign Bitcoin treasury and a planned geothermal Bitcoin mining operation. Returns are pegged to a combination of bond coupon and BTC price exposure.
-- **MicroStrategy convertible notes** - corporate debt issued in USD, used by Michael Saylor's MicroStrategy specifically to acquire BTC. Bondholders get conventional yield; the company gets leveraged Bitcoin exposure. Multiple issuances 2020-2026.
-- **BitBonds (proposed)** - various proposals for US government bonds that include partial Bitcoin treasury exposure on the issuer side. Discussed by some policy circles; not yet issued.
-- **Corporate / municipal pilots.** Several smaller corporate and municipal issuances have experimented with BTC-linked structures.
+- **萨尔瓦多的"火山债券"**——2021 年宣布，多次延期，2025 年最终发行。收益与主权比特币国库和计划的地热比特币挖矿运营挂钩。回报锚定债券票息和 BTC 价格敞口的组合。
+- **MicroStrategy 可转换票据**——以美元发行的企业债，由 Michael Saylor 的 MicroStrategy 专门用于收购 BTC。债券持有人获得传统收益；公司获得杠杆比特币敞口。2020-2026 年间多次发行。
+- **BitBonds（提议）**——各种美国国债提案，包含发行方的部分比特币国库敞口。被一些政策圈讨论；尚未发行。
+- **企业/市政试点。**若干较小的企业和市政发行尝试了 BTC 挂钩结构。
 
-What Bitcoin bonds enable:
+比特币债券使能的：
 
-- **Sovereign and corporate Bitcoin accumulation** financed by traditional debt markets, with BTC exposure baked into the structure.
-- **Investor exposure to BTC** within instruments their mandates can hold (some pension funds, sovereign wealth funds, regulated entities can hold debt instruments more readily than spot BTC).
-- **A bridging product** between traditional fixed-income markets and Bitcoin.
+- **主权和企业比特币积累**通过传统债务市场融资，BTC 敞口内嵌于结构中。
+- **投资者在其授权可持有的工具中获得 BTC 敞口**（一些养老基金、主权财富基金、受监管实体可以持有债务工具比持有现货 BTC 更容易）。
+- **传统固定收益市场与比特币之间的桥接产品。**
 
-The risks:
+风险：
 
-- **Issuer credit risk plus BTC price risk** combine in non-trivial ways. The instruments can be hard to model.
-- **Regulatory uncertainty** especially for sovereigns operating in jurisdictions where BTC's legal status is contested.
-- **Execution risk.** Volcano Bonds were repeatedly delayed for years before launch. Others have been announced and never shipped.
+- **发行人信用风险加 BTC 价格风险**以非平凡方式组合。这些工具可能难以建模。
+- **监管不确定性**，特别是在 BTC 法律地位有争议的司法管辖区运营的主权发行人。
+- **执行风险。**火山债券在发行前多次延期数年。其他已宣布但从未交付。
 
-Bitcoin bonds are an experimental but real product category. They reflect Bitcoin's growing legitimacy as a treasury asset, not just a speculative one.
+比特币债券是一个实验性但真实的产品类别。它们反映了比特币作为国库资产日益增长的合法性，而不仅仅是投机性资产。

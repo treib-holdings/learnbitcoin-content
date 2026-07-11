@@ -1,12 +1,12 @@
 ---
-title: "Reward Era"
+title: "奖励时代（Reward Era）"
 slug: reward-era
 draft: false
-shortDefinition: "Each ~4-year period (210k blocks) between Bitcoin halvings. The block subsidy halves at the end of an era."
+shortDefinition: "比特币两次减半之间约 4 年（21 万区块）的时期。每个时代结束时区块补贴减半。"
 keyTakeaways:
-  - "Spans 210k blocks (~4 years), after which the subsidy halves"
-  - "Helps create Bitcoin's deflationary issuance model"
-  - "Cyclical speculation and miner adjustments often align with halving events"
+  - "跨越 21 万区块（约 4 年），之后补贴减半"
+  - "帮助创造比特币的通缩发行模型"
+  - "周期性投机和矿工调整通常与减半事件相关"
 sources: []
 relatedTerms:
   - block-reward
@@ -17,28 +17,28 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A reward era (also called "epoch" by some analysts) is each ~4-year period between halvings during which the block subsidy stays at a fixed value. The full schedule is locked in by protocol math: 210,000 blocks per era, subsidy halving at each transition.
+奖励时代（一些分析师称之为"epoch"）是两次减半之间区块补贴保持固定值的约 4 年时期。完整时间表由协议数学锁定：每个时代 210,000 个区块，每个过渡时补贴减半。
 
-The complete schedule:
+完整时间表：
 
-| Era | Block range | Year (approx) | Subsidy | Notes |
+| 时代 | 区块范围 | 年份（约） | 补贴 | 备注 |
 |---|---|---|---|---|
-| 1 | 0 - 209,999 | 2009-2012 | 50 BTC | Genesis era; CPU mining era |
-| 2 | 210,000 - 419,999 | 2012-2016 | 25 BTC | First halving Nov 2012; GPU and early ASIC era |
-| 3 | 420,000 - 629,999 | 2016-2020 | 12.5 BTC | Industrial ASIC era; SegWit activates 2017 |
-| 4 | 630,000 - 839,999 | 2020-2024 | 6.25 BTC | Taproot activates 2021; halvening April 2024 |
-| **5** | **840,000 - 1,049,999** | **2024-2028** | **3.125 BTC** | **Current era** |
+| 1 | 0 - 209,999 | 2009-2012 | 50 BTC | 创世纪时代；CPU 挖矿时代 |
+| 2 | 210,000 - 419,999 | 2012-2016 | 25 BTC | 2012 年 11 月首次减半；GPU 和早期 ASIC 时代 |
+| 3 | 420,000 - 629,999 | 2016-2020 | 12.5 BTC | 工业 ASIC 时代；2017 年 SegWit 激活 |
+| 4 | 630,000 - 839,999 | 2020-2024 | 6.25 BTC | 2021 年 Taproot 激活；2024 年 4 月减半 |
+| **5** | **840,000 - 1,049,999** | **2024-2028** | **3.125 BTC** | **当前时代** |
 | 6 | 1,050,000 - 1,259,999 | 2028-2032 | 1.5625 BTC | |
 | 7 | 1,260,000 - 1,469,999 | 2032-2036 | 0.78125 BTC | |
 | ... | ... | ... | ... | ... |
-| 33 | block ~6,930,000 | ~2140 | 0 | Subsidy rounds to zero satoshis |
+| 33 | 约 6,930,000 区块 | 约 2140 | 0 | 补贴四舍五入为零聪 |
 
-Each transition is mechanically simple: at the start of the era, every node automatically applies the new subsidy. There's no vote, no announcement, no human in the loop. The protocol just enforces the halved value.
+每次过渡在机制上很简单：在新时代开始时，每个节点自动应用新补贴。没有投票，没有公告，没有人工干预。协议只是执行减半后的值。
 
-Cultural and market features around halvings:
+围绕减半的文化和市场特征：
 
-- **Halving cycles** have historically been associated with bull-market price runs in the 12-18 months following each halving, attributed to the supply-issuance reduction. The pattern has held through 2012, 2016, 2020, and 2024 cycles but the causal model is debated.
-- **Miner capitulation** events often follow halvings: marginal miners with high electricity costs become unprofitable overnight and shut down, reducing hash rate temporarily.
-- **Difficulty adjustment** rebalances hash rate over the following weeks to restore the 10-minute block target.
+- **减半周期**历史上与减半后 12-18 个月的牛市相关，归因于供应发行量减少。这个模式在 2012、2016、2020 和 2024 周期中保持，但因果模型有争议。
+- **矿工投降**事件通常跟随减半：高电费成本的边际矿工一夜之间变得不盈利而关机，暂时降低算力。
+- **难度调整**在随后几周重新平衡算力，恢复 10 分钟出块目标。
 
-Reward era is the structural unit Bitcoin's monetary policy plans in. The protocol's commitment isn't to a fixed annual inflation rate; it's to a known sequence of eras with halving transitions until the asymptote is reached.
+奖励时代是比特币货币政策规划的结构单位。协议的承诺不是固定年通胀率；而是一个已知的有减半过渡的时代序列，直到渐近线。

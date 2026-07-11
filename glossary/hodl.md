@@ -2,11 +2,11 @@
 title: "HODL"
 slug: hodl
 draft: false
-shortDefinition: "A humorous misspelling of 'hold' that became a rallying cry for long-term Bitcoin holders."
+shortDefinition: "'hold' 的幽默拼写错误，成为长期比特币持有者的口号。"
 keyTakeaways:
-  - "Encourages ignoring short-term price swings"
-  - "Originated from a drunken forum post in 2013"
-  - "Became an iconic term in Bitcoin culture"
+  - "鼓励忽略短期价格波动"
+  - "源于 2013 年的一个醉酒论坛帖子"
+  - "成为比特币文化中的标志性术语"
 sources: []
 relatedTerms:
   - bitcoin-faucet
@@ -18,12 +18,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"HODL" started as a 2013 forum typo. A holder named GameKyuubi, in the middle of a brutal market crash and a few drinks deep, posted a screed titled "I AM HODLING" explaining why he refused to sell. The post became legendary; the typo stuck.
+"HODL"始于 2013 年的一个论坛拼写错误。一位名叫 GameKyuubi 的持有者在剧烈市场崩盘和几杯酒下肚后，发了一篇标题为"I AM HODLING"的长帖，解释为什么他拒绝卖出。帖子成为传奇；拼写错误留下了。
 
-Today "hodl" is shorthand for the strategy of buying Bitcoin and holding it through volatility, ignoring the noise of short-term price swings. It's the most quietly effective strategy in Bitcoin's history: every multi-year holder, regardless of when they entered, has at some point been told that selling now would be smart. Most who held instead are glad they did.
+今天"hodl"是买入比特币并在波动中持有的策略的简称，忽略短期价格波动的噪声。这是比特币历史上最安静但最有效的策略：每个多年持有者，无论何时入场，都曾在某个时刻被告知现在卖出是明智的。大多数选择持有的人庆幸自己那么做了。
 
-The cultural meaning runs deeper than "don't sell." Hodling implies you understand what you bought - that Bitcoin's value comes from monetary properties that mature over decades, not from clever entries and exits. People who trade Bitcoin frequently tend to hold less of it. People who hold it tend to hold it longer than they planned.
+文化意义比"不要卖"更深。Hodling 暗示你理解你买了什么——比特币的价值来自数十年成熟的货币属性，而不是聪明的入场和出场。频繁交易比特币的人往往持有更少。持有的人往往持有比计划更久。
 
-Sometimes back-formed as an acronym for "Hold On for Dear Life." That's a retrofit; the typo came first.
+有时被回溯为首字母缩写"Hold On for Dear Life"（为亲爱的生命坚持）。那是后补的；拼写错误先来。
 
-See also [DCA](/glossary/dca-dollar-cost-averaging), which is essentially hodling with new purchases.
+另见 [DCA](/glossary/dca-dollar-cost-averaging)，本质上是 hodling 加新购买。

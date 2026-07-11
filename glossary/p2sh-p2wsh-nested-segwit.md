@@ -1,12 +1,12 @@
 ---
-title: "P2SH-P2WSH (Nested SegWit Script)"
+title: "P2SH-P2WSH（嵌套 SegWit 脚本）"
 slug: p2sh-p2wsh-nested-segwit
 draft: false
-shortDefinition: "A P2WSH output wrapped in a P2SH outer layer so the address looks legacy (starts with '3') while the spend uses SegWit witness data."
+shortDefinition: "将 P2WSH 输出包裹在 P2SH 外层中，使地址看起来像传统格式（以 '3' 开头），但花费时使用 SegWit 见证数据。"
 keyTakeaways:
-  - "Backwards-compatibility hack from the 2017-2018 SegWit rollout"
-  - "Receive address looks like P2SH (starts with '3'), but the spend uses witness data"
-  - "Larger and more expensive than native P2WSH; modern wallets default to bc1q or Taproot"
+  - "2017-2018 年 SegWit 部署期间的向后兼容方案"
+  - "接收地址看起来像 P2SH（以 '3' 开头），但花费时使用见证数据"
+  - "比原生 P2WSH 更大、更贵；现代钱包默认使用 bc1q 或 Taproot"
 sources: []
 relatedTerms:
   - p2sh
@@ -22,29 +22,29 @@ sameAs:
 liveWidget: ~
 ---
 
-P2SH-P2WSH - sometimes called "nested SegWit script" or "P2SH-wrapped P2WSH" - is a [P2WSH](/glossary/p2wsh-pay-witness-script-hash) output wrapped inside a [P2SH](/glossary/p2sh) outer layer. The address looks legacy (starts with `3`), but the spend follows [SegWit](/glossary/segwit-segregated-witness-bip-141) rules: the redeem script just commits to a P2WSH `scriptPubKey`, and the actual witness data sits outside the legacy transaction structure.
+P2SH-P2WSH——有时被称为"嵌套 SegWit 脚本"或"P2SH 包裹的 P2WSH"——是一个被 [P2SH](/glossary/p2sh) 外层包裹的 [P2WSH](/glossary/p2wsh-pay-witness-script-hash) 输出。地址看起来像传统格式（以 `3` 开头），但花费时遵循 [SegWit](/glossary/segwit-segregated-witness-bip-141) 规则：赎回脚本只是承诺一个 P2WSH 的 `scriptPubKey`，实际的见证数据位于传统交易结构之外。
 
-It existed for one reason: backwards compatibility during the SegWit rollout in 2017-2018.
+它存在的唯一原因：2017-2018 年 SegWit 部署期间的向后兼容性。
 
-When SegWit activated in August 2017, most wallets and exchanges did not yet support sending to native SegWit addresses (`bc1q...`). They did know how to send to `3...` addresses ([P2SH](/glossary/p2sh) had been around since 2012, via [BIP-16](/glossary/p2sh)). To let users adopt SegWit before the rest of the ecosystem caught up, wallets generated P2SH-P2WSH addresses: legacy-looking on the outside, SegWit on the inside. Senders saw a familiar `3...` address; the receiver got SegWit's fee discount and malleability fix.
+2017 年 8 月 SegWit 激活时，大多数钱包和交易所还不支持发送到原生 SegWit 地址（`bc1q...`）。但它们知道如何发送到 `3...` 地址（[P2SH](/glossary/p2sh) 自 2012 年起就存在了，通过 [BIP-16](/glossary/p2sh)）。为了让用户在生态系统跟上之前就能采用 SegWit，钱包生成了 P2SH-P2WSH 地址：外表看起来像传统地址，内在是 SegWit。发送方看到的是熟悉的 `3...` 地址；接收方获得了 SegWit 的手续费折扣和延展性修复。
 
-How the wrapping works:
+包裹机制的工作原理：
 
-- **Receive.** The address is the hash of a short redeem script: `OP_0 <32-byte-script-hash>`, which is itself a P2WSH `scriptPubKey`.
-- **Spend.** The input reveals that redeem script (P2SH semantics), and the actual spending script plus signatures live in the witness stack (SegWit semantics).
+- **接收。** 地址是一个简短赎回脚本的哈希：`OP_0 <32-byte-script-hash>`，这本身就是一个 P2WSH 的 `scriptPubKey`。
+- **花费。** 输入揭示该赎回脚本（P2SH 语义），实际的花费脚本和签名位于见证栈中（SegWit 语义）。
 
-In practice it is a P2WSH spend with one extra wrapping layer. You pay the bytes for the P2SH wrapper but get most of the SegWit benefits inside.
+实际上它就是一个多了一层包裹的 P2WSH 花费。你需要为 P2SH 包裹层支付额外字节，但能获得 SegWit 的大部分好处。
 
-**Where you would see it:**
+**你会在哪里看到它：**
 
-- Wallets generated between mid-2017 and ~2019 that wanted SegWit benefits without breaking sender compatibility
-- Multisig setups from that era (Casa, Unchained, BitGo, and similar) often defaulted to P2SH-P2WSH
-- Hardware wallets that supported SegWit before the ecosystem normalized on `bc1q`
+- 2017 年中到 2019 年左右生成的钱包，想要获得 SegWit 好处又不想破坏发送方兼容性
+- 那个时期的多签设置（Casa、Unchained、BitGo 等）通常默认使用 P2SH-P2WSH
+- 在生态系统普及 `bc1q` 之前支持 SegWit 的硬件钱包
 
-**Modern picture:**
+**现状：**
 
-- New wallets default to [native SegWit](/glossary/native-segwit) (`bc1q...`) or [Taproot](/glossary/taproot) (`bc1p...`). No reason to nest anymore.
-- Existing P2SH-P2WSH UTXOs are still spendable forever; nothing about the format expired.
-- If you hold one, sweeping it to a native SegWit or Taproot address on a fee-light day costs you a transaction but pays back in lower future spend costs.
+- 新钱包默认使用[原生 SegWit](/glossary/native-segwit)（`bc1q...`）或 [Taproot](/glossary/taproot)（`bc1p...`）。不再需要嵌套了。
+- 现有的 P2SH-P2WSH UTXO 仍然可以永久花费；这种格式没有过期。
+- 如果你持有这种 UTXO，在手续费较低的日子将其扫入原生 SegWit 或 Taproot 地址，需要花一笔交易费，但能在未来的花费中节省成本。
 
-The same pattern exists for single-sig: P2SH-wrapped [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash) gives a `3...` address that spends under SegWit. Same rationale, same modern story.
+同样的模式也存在于单签场景：P2SH 包裹的 [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash) 提供一个 `3...` 地址，在 SegWit 规则下花费。理由相同，现状也一样。

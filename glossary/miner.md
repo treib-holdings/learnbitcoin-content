@@ -1,12 +1,12 @@
 ---
-title: "Miner"
+title: "矿工"
 slug: miner
 draft: false
-shortDefinition: "A participant using specialized hardware to find valid block hashes, securing the network and earning block rewards."
+shortDefinition: "使用专用硬件寻找有效区块哈希的参与者，保护网络安全并赚取区块奖励。"
 keyTakeaways:
-  - "Searches for a block hash meeting network difficulty"
-  - "Receives newly minted BTC (subsidy) plus transaction fees"
-  - "Mostly large-scale ASIC operations in today's mining landscape"
+  - "搜索满足网络难度的区块哈希"
+  - "获得新铸造的 BTC（补贴）加上交易手续费"
+  - "当今挖矿领域主要是大规模 ASIC 运营"
 sources: []
 relatedTerms:
   - coinbase-transaction
@@ -28,12 +28,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A miner is anyone running hardware that participates in Bitcoin's [proof-of-work](/glossary/proof-work-pow) - generating candidate [block headers](/glossary/block-header) and hashing them, trying to find one valid enough to propose to the network. In return, the miner collects the [block reward](/glossary/block-reward): newly minted BTC plus all the fees from transactions they include.
+矿工是运行硬件参与比特币[工作量证明](/glossary/proof-work-pow)的任何人——生成候选[区块头](/glossary/block-header)并哈希它们，试图找到足够有效以向网络提议的区块。作为回报，矿工收集[区块奖励](/glossary/block-reward)：新铸造的 BTC 加上他们包含的所有交易手续费。
 
-In practice "miners" today are large industrial operations running thousands of ASIC chips, sited near cheap electricity (hydro in Sichuan during the wet season, stranded gas in West Texas, geothermal in Iceland, off-peak nuclear in France). The hardware is specialized; the economics are razor-thin; the margins live or die on the cost of one kilowatt-hour.
+实践中，今天的"矿工"是运行数千个 ASIC 芯片的大型工业运营，位于廉价电力附近（雨季四川的水电、西德克萨斯的搁浅天然气、冰岛的地热、法国的离峰核电）。硬件是专用的；经济利润极薄；利润率取决于一千瓦时电力的成本。
 
-Smaller actors still exist. Solo miners with one or two machines occasionally win blocks via lottery hardware. Hobbyists run small rigs for the experience. Most production hash rate, though, flows through [mining pools](/glossary/mining-pool) - aggregators that bundle small contributors so each receives smooth payouts instead of waiting years for a solo block find.
+较小的参与者仍然存在。一两台机器的独立矿工偶尔通过彩票式硬件赢得区块。爱好者为体验运行小型矿机。但大多数生产算力通过[矿池](/glossary/mining-pool)流动——将小贡献者聚集在一起，使每人获得平滑的支付，而不是等待数年才能独立找到一个区块。
 
-Miners are not Bitcoin's rulers. The protocol is enforced by every full node, not by miners. Miners can choose *which valid transactions* to include in their blocks, but they can't change the rules. Any block that violates consensus (more than the allowed subsidy, an invalid signature, etc.) gets rejected by every honest node on Earth.
+矿工不是比特币的统治者。协议由每个全节点执行，而非矿工。矿工可以选择*哪些有效交易*包含在他们的区块中，但他们不能改变规则。任何违反共识的区块（超过允许的补贴、无效签名等）都会被地球上每个诚实节点拒绝。
 
-See the [Mining rabbit hole](/rabbit-hole/mining) for the full mechanism, and [Mining Pool](/glossary/mining-pool) for the centralization concerns around how miners actually organize.
+请参阅[挖矿深入探讨](/rabbit-hole/mining)了解完整机制，以及[矿池](/glossary/mining-pool)了解关于矿工实际组织方式的中心化担忧。

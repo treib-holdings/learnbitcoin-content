@@ -1,12 +1,12 @@
 ---
-title: "Dust Attack"
+title: "粉尘攻击"
 slug: dust-attack
 draft: false
-shortDefinition: "Sending tiny BTC amounts to addresses in an attempt to track them when they're later consolidated, revealing wallet clusters."
+shortDefinition: "向地址发送极少量的 BTC，试图在它们后来被合并时追踪，揭示钱包聚类。"
 keyTakeaways:
-  - "Exploits dust consolidation to deanonymize addresses"
-  - "Users can freeze or ignore dust to preserve privacy"
-  - "Highlighting suspiciously small UTXOs helps reduce risk"
+  - "利用粉尘合并来去匿名化地址"
+  - "用户可以冻结或忽略粉尘以保护隐私"
+  - "标记可疑的小额 UTXO 有助于降低风险"
 sources: []
 relatedTerms:
   - address-reuse
@@ -19,22 +19,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A dust attack is a privacy-degradation tactic where an adversary sends tiny amounts of BTC (dust) to many addresses they want to track. When the recipient eventually consolidates those dust outputs with other coins in a transaction, the adversary can link all the inputs together as belonging to the same wallet.
+粉尘攻击是一种隐私降级策略，攻击者向许多他们想追踪的地址发送极少量的 BTC（粉尘）。当接收者最终将这些粉尘输出与其他币合并到一笔交易中时，攻击者可以将所有输入关联为属于同一钱包。
 
-How the attack works:
+攻击工作方式：
 
-1. The attacker sends 1,000 or so sats to thousands of addresses they've identified as potentially interesting (from chain analysis, leaked databases, etc.).
-2. Some recipients ignore the dust; some don't notice; some intentionally sweep it up later thinking it's "free money."
-3. Whenever the recipient signs a transaction that includes the dust as one of the inputs, the wallet has effectively declared "these inputs belong to the same entity." Chain analysis algorithms cluster the inputs into a single owner's wallet.
-4. The attacker now knows the cluster's other addresses, can track its activity, and potentially identify the real-world owner.
+1. 攻击者向数千个他们确定为可能感兴趣的地址（来自链上分析、泄露的数据库等）发送约 1,000 聪。
+2. 一些接收者忽略粉尘；一些没注意到；一些后来有意扫走以为这是"免费的钱"。
+3. 每当接收者签署一笔包含粉尘作为输入之一的交易时，钱包实际上声明了"这些输入属于同一实体"。链上分析算法将输入聚类为单一所有者的钱包。
+4. 攻击者现在知道了该聚类的其他地址，可以追踪其活动，并可能识别真实所有者。
 
-Modern defenses:
+现代防御：
 
-- **Coin control.** Bitcoin Core, Sparrow, and most serious self-custody wallets let users select which UTXOs to spend. Excluding suspicious dust from a transaction preserves the privacy boundary.
-- **UTXO labels and freezing.** Some wallets automatically flag UTXOs received from unfamiliar sources as suspicious. Sparrow's "Do Not Spend" flag is the canonical pattern.
-- **CoinJoin.** Mixing dust through a CoinJoin breaks the deanonymization link.
-- **Just don't spend it.** A 1,000-sat UTXO is worth less than the marginal fee to include it. Leaving it in the wallet costs nothing and prevents the cluster-merge.
+- **币控制。** Bitcoin Core、Sparrow 和大多数严肃的自托管钱包允许用户选择花费哪些 UTXO。从交易中排除可疑粉尘保留了隐私边界。
+- **UTXO 标签和冻结。** 一些钱包自动标记从不熟悉来源接收的 UTXO 为可疑。Sparrow 的"Do Not Spend"标志是经典模式。
+- **CoinJoin。** 通过 CoinJoin 混合粉尘打破了去匿名化链接。
+- **干脆不花。** 一个 1,000 聪的 UTXO 价值低于包含它的边际手续费。留在钱包中不花任何成本且阻止聚类合并。
 
-The attack has been documented against high-value targets repeatedly. Binance addresses received a high-profile dust attack in 2019; users of various exchanges have been targeted periodically. The defense isn't difficult once you know to look; the attack succeeds against users who don't.
+这种攻击已被多次记录针对高价值目标。Binance 地址在 2019 年收到了高调的粉尘攻击；各种交易所用户周期性地被针对。一旦知道要关注，防御并不困难；攻击成功针对的是不知道的用户。
 
-For ordinary users: don't sweep random small UTXOs into your main wallet. If you didn't send it to yourself or recognize the source, treat it as a tracking attempt.
+对于普通用户：不要将随机的小额 UTXO 扫入你的主钱包。如果你不是自己发送的或不认识来源，将其视为追踪尝试。

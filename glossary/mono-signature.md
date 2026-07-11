@@ -1,12 +1,12 @@
 ---
-title: "Mono-Signature"
+title: "单签"
 slug: mono-signature
 draft: false
-shortDefinition: "A single ECDSA or Schnorr signature controlling an output-typical single-sig scenario versus multisig."
+shortDefinition: "单一 ECDSA 或 Schnorr 签名控制一个输出——典型的单签场景，与多签相对。"
 keyTakeaways:
-  - "Standard approach: one private key signs, one signature suffices"
-  - "Less secure than multisig if the key is compromised"
-  - "Schnorr single-sig can be more compact than ECDSA"
+  - "标准方式：一把私钥签名，一个签名即可"
+  - "密钥被泄露时不如多签安全"
+  - "Schnorr 单签可以比 ECDSA 更紧凑"
 sources: []
 relatedTerms:
   - interactive-multi-sig
@@ -20,12 +20,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Mono-signature" is an unusual phrasing for what most people call single-sig: one private key, one signature, controlling one output. It's the default Bitcoin spending pattern.
+"单签"是大多数人所说的单签（single-sig）的不寻常表述：一把私钥，一个签名，控制一个输出。这是比特币的默认花费模式。
 
-The vast majority of on-chain Bitcoin transactions today are single-sig. The rest use classical multisig or aggregated schemes for higher-security custody (vaults, exchange cold storage, treasuries) or for protocol reasons (Lightning channels are technically 2-of-2 multisig under the hood, but most other 2-of-2 outputs are now Taproot key-path spends that look like single-sig).
+当今链上大多数比特币交易都是单签的。其余使用经典多签或聚合方案用于更高安全的托管（金库、交易所冷存储、金库）或协议原因（闪电通道在底层技术上是 2-of-2 多签，但大多数其他 2-of-2 输出现在是看起来像单签的 Taproot 密钥路径花费）。
 
-Schnorr (Taproot) single-sig signatures are 64 bytes; ECDSA single-sig signatures are 71-72 bytes after [low-R](/glossary/low-r-signatures) grinding. Both authorize spending with one private key, both look on-chain like one signature, both have the same single-point-of-failure security profile.
+Schnorr（Taproot）单签签名是 64 字节；ECDSA 单签签名在[低 R](/glossary/low-r-signatures) 研磨后是 71-72 字节。两者都用一把私钥授权花费，两者在链上看起来都是一个签名，两者都有相同的单点故障安全特征。
 
-The tradeoff is the obvious one: one key, one point of failure. Lose access to the key (lost seed, dead drive, no backup) and the coins are gone. Compromise the key (malware, supply-chain attack on a wallet, careless seed handling) and the coins are stolen. Multisig and aggregated signatures spread that risk across multiple keys or devices, at the cost of operational complexity.
+权衡是显而易见的：一把密钥，一个故障点。丢失密钥访问权限（丢失种子、硬盘损坏、无备份）代币就没了。密钥被泄露（恶意软件、钱包供应链攻击、种子处理不当）代币就被盗了。多签和聚合签名将该风险分散到多把密钥或设备上，代价是运营复杂性。
 
-For most users, a single hardware wallet (single-sig) with a properly verified seed backup is dramatically more secure than the alternatives they'd actually execute correctly. Multisig is a real upgrade only if you're willing to use it competently.
+对于大多数用户，一把硬件钱包（单签）加正确验证的种子备份比他们实际能正确执行的替代方案安全得多。多签只有在你愿意胜任地使用它时才是真正的升级。

@@ -1,12 +1,12 @@
 ---
-title: "Bitcoin Faucet"
+title: "比特币水龙头"
 slug: bitcoin-faucet
 draft: false
-shortDefinition: "A website or application distributing small BTC amounts-satoshis-often for education or marketing."
+shortDefinition: "分发少量 BTC（聪）的网站或应用，通常用于教育或营销。"
 keyTakeaways:
-  - "Distributes tiny BTC amounts as a 'freebie'"
-  - "Helps newcomers learn about Bitcoin transactions"
-  - "Commonly funded by ads or promotional budgets"
+  - "分发微量 BTC 作为'免费赠品'"
+  - "帮助新手了解比特币交易"
+  - "通常由广告或推广预算资助"
 sources: []
 relatedTerms:
   - bitcoin-script
@@ -16,15 +16,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Bitcoin faucet is a website or app that distributes tiny amounts of BTC (typically sats, not whole coins) in exchange for completing simple tasks: solving a captcha, watching an ad, clicking through a promotion.
+比特币水龙头是分发少量 BTC 的网站或应用（通常是聪，不是整币），用户需完成简单任务：解验证码、看广告、点击推广。
 
-The original Bitcoin faucet was Gavin Andresen's, launched in mid-2010, which handed out 5 BTC per visitor to anyone with a wallet address. At the time BTC was worth less than a penny, so the giveaway was negligible in dollar terms. In 2026 the cumulative payout of that faucet would be worth small fortunes if held; "Andresen's faucet" coins occasionally surface as old UTXOs that haven't moved in 15 years.
+最初的比特币水龙头由 Gavin Andresen 于 2010 年中推出，给每个有钱包地址的访客发 5 BTC。当时 BTC 价值不到一美分，所以赠送金额在美元层面可以忽略。2026 年该水龙头的累计支付如果持有至今将是小笔财富；"Andresen 的水龙头"币偶尔作为 15 年未移动的旧 UTXO 出现。
 
-Modern faucets are generally a different operation:
+现代水龙头通常是不同的运营：
 
-- **Microscopic payouts.** A modern faucet might pay 10-100 sats per claim (a fraction of a cent). Most users won't earn meaningful amounts, but the experience teaches what an address, transaction, and confirmation feel like.
-- **Ad-funded.** The economic model is showing ads or driving signups for other services. The user gets sats; the operator collects ad revenue or referral fees.
-- **Testnet faucets** are different and important: they give out testnet BTC (with zero monetary value) so developers can test wallet code, smart contracts, and Lightning channels without risking real coins. Every Bitcoin developer uses these regularly.
-- **Lightning faucets.** Some faucets pay over Lightning rather than on-chain, since the fee economics make on-chain dust transactions inefficient.
+- **微量支付。**现代水龙头每次可能支付 10-100 聪（不到一美分的一小部分）。大多数用户不会赚到有意义的金额，但体验教会你地址、交易和确认是什么感觉。
+- **广告资助。**经济模型是展示广告或推动其他服务的注册。用户获得聪；运营商收集广告收入或推荐费。
+- **测试网水龙头**不同且重要：它们分发测试网 BTC（零货币价值），让开发者可以测试钱包代码、智能合约和闪电通道而不用冒险真币。每个比特币开发者都经常使用这些。
+- **闪电水龙头。**一些水龙头通过闪电网络而非链上支付，因为费用经济学使链上灰尘交易不划算。
 
-For learners, a faucet remains a fine way to experience a real Bitcoin transaction end-to-end without spending dollars. The amounts are tiny but the mechanics are real. For anyone past the absolute beginner stage, faucets are mostly an artifact of Bitcoin's early-era community-building rather than a meaningful source of funds.
+对于学习者，水龙头仍然是体验真实比特币交易端到端而不花费美元的好方式。金额很小但机制是真实的。对于过了绝对新手阶段的人来说，水龙头主要是比特币早期社区建设的遗物，而非有意义的资金来源。

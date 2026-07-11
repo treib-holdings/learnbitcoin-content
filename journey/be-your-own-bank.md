@@ -1,16 +1,17 @@
----title: "Be Your Own Bank"
+---
+title: "做自己的银行"
 slug: be-your-own-bank
 draft: false
 status: live
 published: "2026-05-15"
 order: 4
 estimatedMinutes: 35
-tagline: "If your keys live on an exchange, you don't own Bitcoin. You own an IOU. This chapter teaches you to own actual Bitcoin."
+tagline: "如果你的私钥放在交易所，你拥有的不是比特币，而是一张欠条。这一章教你拥有真正的比特币。"
 prerequisites: ["how-bitcoin-works"]
 relatedTerms: ["seed-phrase", "private-key", "hardware-wallet", "custodial-wallet", "address", "deterministic-wallet", "watch-only-wallet", "paper-wallet", "multisig", "shamir-secret-sharing", "hierarchical-multisig"]
 legacyUrls: ["/be-your-own-bank"]
 ogImage: "/diagrams/og/hd-wallet-tree.png"
-ogImageAlt: "One seed, every address. A 12-word seed phrase at the top derives a master key, which deterministically derives every child key and address the wallet will ever use. Back up the seed once and the whole tree is recoverable forever."
+ogImageAlt: "一个种子，所有地址。顶部是一组 12 个词的助记词，从中派生出主密钥，再确定性地派生出钱包将使用的所有子密钥和地址。只需备份一次种子，整棵树就永远可以恢复。"
 sources:
   - { label: "BIP 39 - Mnemonic seed phrases (Bitcoin Improvement Proposal)", url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" }
   - { label: "BIP 32 - Hierarchical deterministic wallets", url: "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" }
@@ -19,219 +20,219 @@ sources:
   - { label: "24-word seed backup form (PDF, this site)", url: "/downloads/seed-backup-24-word.pdf" }
 ---
 
-> **Where you're going:** By the end of this chapter, you'll have generated a wallet you control, backed up the seed properly, received a real (small) Bitcoin transaction, and verified it from a second device. You'll have done self-custody. Optional: do it for real.
+> **你要去哪里：** 读完这一章，你将生成一个自己掌控的钱包，正确备份助记词，收到一笔真实的（小额）比特币交易，并在第二台设备上验证它。你就完成了自托管。可选：来真的。
 
-## 1. The Promise You Make to Yourself
+## 1. 对自己的承诺
 
-Up until this chapter, you've been *learning about* Bitcoin. From here on, you can *use* it - but only if you're willing to take on the responsibility that comes with sovereign money.
+到这一章为止，你一直在*学习*比特币。从现在开始，你可以*使用*它了——但前提是你愿意承担主权货币带来的责任。
 
-The bargain is this: **you, and only you, hold the keys. Nobody can take them. Nobody can freeze them. And nobody is going to help you if you lose them.**
+交易是这样的：**你，只有你，持有密钥。没人能拿走它们。没人能冻结它们。也没人会在你弄丢它们时帮你找回来。**
 
-That's not a marketing line. It's how the math works. A Bitcoin address is just a public form of a private key. The private key is a 256-bit number. Whoever has the number can sign transactions that spend the coins. There is no second factor. There is no recovery email. There is no customer service.
+这不是营销话术，这是数学决定的。比特币地址只是公钥的一种表现形式。私钥是一个 256 位的数字。谁有这个数字，谁就能签名花费这些币。没有第二因素，没有找回邮箱，没有客服。
 
-This is the deal. This chapter is about taking it seriously without being scared of it.
+这就是交易。这一章讲的是认真对待它，但不必害怕它。
 
-## 2. Custodial vs Self-Custody
+## 2. 托管 vs 自托管
 
-Most people who "own Bitcoin" don't, technically.
+大多数"拥有比特币"的人，严格来说并没有拥有。
 
-When you buy bitcoin on an exchange - Coinbase, Kraken, Binance, Cash App - the exchange holds the keys. You hold a number in their database that says "you are owed X bitcoin." It's an IOU. It looks like Bitcoin on your screen, but legally and technically it's a claim against the exchange.
+当你在交易所买比特币——Coinbase、Kraken、Binance、Cash App——交易所持有密钥。你持有的是他们数据库里的一个数字，写着"你被欠 X 个比特币"。这是一张欠条（IOU）。屏幕上看起来像比特币，但法律上和技术上，它是对交易所的债权。
 
-This is fine for some uses (trading, beginners, very small amounts). It is **not Bitcoin's value proposition.** Custodial bitcoin can be frozen by the custodian, seized by a government, lost in a hack, lost in a bankruptcy, withheld for KYC reasons, or simply unavailable when their servers are down.
+这在某些场景下没问题（交易、新手、极小金额）。但这**不是比特币的价值主张。** 托管币可以被托管方冻结、被政府没收、在黑客攻击中丢失、在破产中蒸发、因 KYC 原因被扣押，或者在他们服务器宕机时无法使用。
 
-You can't have the properties from chapter 2 - *portable, scarce, sovereign* - and trust a third party with your keys. The whole point was to remove the third party.
+你不可能同时拥有第 2 章说的那些特性——*便携、稀缺、主权*——又把密钥交给第三方。整个意义就在于去掉第三方。
 
-**Self-custody** means you generate and hold the private keys yourself. Your wallet software does this - it generates a random number, derives the keys, and shows you addresses. The number lives on your device (and a backup), not in anyone's database.
+**自托管**（self-custody）意味着你自己生成并持有私钥。你的钱包软件做这件事——它生成一个随机数，派生出密钥，给你显示地址。这个数字只存在于你的设备（和备份）上，不在任何人的数据库里。
 
-The trade-off is symmetric: with custody comes risk (not your keys, not your coins), and with self-custody comes responsibility (lose your keys, lose your coins). Bitcoin lets you choose; most other systems don't even give you the option.
+代价是对称的：托管有风险（不是你的密钥，就不是你的币），自托管有责任（弄丢密钥，就弄丢币）。比特币让你选择；大多数其他系统连选项都不给你。
 
-## 3. Keys, Not Coins
+## 3. 是密钥，不是币
 
-The mental shift that matters most: **you don't own coins. You own keys.**
+最重要的思维转变：**你拥有的不是币，是密钥。**
 
-Bitcoin doesn't exist as files on your computer. It exists as UTXOs (see chapter 3) on the global ledger. Your wallet doesn't "contain" bitcoin in any meaningful sense - it contains the keys that authorize spending specific UTXOs on the ledger.
+比特币不以文件的形式存在于你的电脑上。它以 UTXO（未花费交易输出，见第 3 章）的形式存在于全球账本上。你的钱包在任何意义上都不"包含"比特币——它包含的是授权花费特定 UTXO 的密钥。
 
-This is why:
-- A wallet on a hardware device with no internet can still "have" bitcoin
-- You can have the same wallet open on multiple devices (they're showing the same UTXOs)
-- Restoring a wallet on a new device shows the same balance instantly (the chain is the truth; the device just reads it)
+这就是为什么：
+- 一个没有联网的硬件设备上的钱包仍然能"有"比特币
+- 你可以在多台设备上打开同一个钱包（它们显示的是同一组 UTXO）
+- 在新设备上恢复钱包会立刻显示相同余额（区块链才是真相，设备只是读取它）
 
-When you "back up your wallet," you're backing up the *keys* - specifically, the seed they're derived from. If you have the seed, you can reconstruct all the keys, on any device, forever.
+当你"备份钱包"时，你备份的是*密钥*——具体来说，是派生它们的种子。有了种子，你就能在任何设备上永远重建所有密钥。
 
 <figure>
-  <img src="/diagrams/hd-wallet-tree.svg" alt="A hierarchical deterministic wallet tree: a 12-word seed phrase at the top derives a master key, which in turn derives an unlimited sequence of child keys and addresses. Five sample bc1q addresses branch from the master key, with the implication that millions more follow the same derivation." />
-  <figcaption>One seed encodes a deterministic tree of keys and addresses. Back up the seed once; the whole tree is recoverable forever.</figcaption>
+  <img src="/diagrams/hd-wallet-tree.svg" alt="一个层次确定性钱包树：顶部是一组 12 个词的助记词，从中派生出主密钥，再依次派生出无限序列的子密钥和地址。五个示例 bc1q 地址从主密钥分出，暗示后面还有数百万个地址遵循同样的派生路径。" />
+  <figcaption>一个种子编码了一整棵确定性的密钥和地址树。备份一次种子，整棵树永远可恢复。</figcaption>
 </figure>
 
-This is one of Bitcoin's most powerful properties and one of the easiest to underestimate.
+这是比特币最强大的特性之一，也是最容易被低估的。
 
-## 4. The Seed Phrase
+## 4. 助记词
 
-Modern Bitcoin wallets don't make you back up individual private keys. They give you a **seed phrase** - usually 12 or 24 English words.
+现代比特币钱包不需要你逐个备份私钥。它们给你一组**助记词**（seed phrase）——通常是 12 个或 24 个英文单词。
 
-It looks like this (don't use this one - it's a public example):
+它看起来像这样（别用这个——这是公开示例）：
 
 ```
 abandon abandon abandon abandon abandon abandon
 abandon abandon abandon abandon abandon about
 ```
 
-Those words encode a number. The number seeds a deterministic generator (defined in [BIP 39](/glossary/bip-39) and [BIP 32](/glossary/bip-32)) that produces every key and address your wallet will ever need. From one seed, you get a tree of millions of addresses. They're all derived; only one secret matters.
+这些单词编码了一个数字。这个数字作为一个确定性生成器的种子（定义在 [BIP 39](/glossary/bip-39) 和 [BIP 32](/glossary/bip-32) 中），生成你的钱包将需要的所有密钥和地址。一个种子，一棵包含数百万地址的树。它们都是派生出来的，只有这一个秘密最重要。
 
-**A few facts that should change your behavior:**
+**几个应该改变你行为的事实：**
 
-- **Anyone with your seed phrase has your bitcoin.** Period. There is no second factor. There is no recovery. There is no "but they'd need your password too" - the password is part of the wallet software, not the chain.
-- **12 vs 24 words.** Both are secure. 12 words = 128 bits of entropy; 24 words = 256 bits. Both are well beyond brute-force range. The choice is a matter of preference. (24-word is the default for most hardware wallets.)
-- **Never type your seed into a website. Never. Ever.** Not your wallet provider's site. Not a help page. Not anywhere. The only places the seed should live are on your wallet device and on physical backups *you* created.
-- **Do not memorize it.** Brains forget seeds, even ones you were sure you'd remember. Steel does not.
-- **Do not photograph it.** Phones back up to clouds. Clouds get breached.
+- **任何拥有你助记词的人都能拿走你的比特币。** 没有例外。没有第二因素。没有找回途径。不存在"但他们还需要你的密码"——密码是钱包软件的一部分，不是链上的。
+- **12 词 vs 24 词。** 都安全。12 词 = 128 位熵；24 词 = 256 位。都远超暴力破解范围。选择只是个人偏好。（24 词是大多数硬件钱包的默认值。）
+- **永远不要把助记词输入网站。永远。永远。** 不是你的钱包服务商的网站。不是帮助页面。不是任何地方。助记词应该只存在于你的钱包设备和*你*制作的物理备份上。
+- **不要背它。** 大脑会忘记助记词，哪怕你确信自己记得住。钢不会。
+- **不要拍照。** 手机会自动备份到云端。云端会被攻破。
 
-The seed phrase is not a password. It is the *root* of your entire Bitcoin existence. Treat it accordingly.
+助记词不是密码。它是你整个比特币存在的*根基*。用相应的态度对待它。
 
-## 5. Wallet Types - When to Use Each
+## 5. 钱包类型——各用什么场景
 
-A "wallet" is just software that manages keys. The categories matter more than the brands:
+"钱包"就是管理密钥的软件。类型比品牌更重要：
 
-- **Hot wallet** - keys live on an internet-connected device (phone, laptop). Convenient. Higher attack surface. Best for small, working-balance amounts.
-- **Cold wallet** - keys live on a device that's never connected to the internet. More effort to use. Much harder to compromise. Best for long-term holdings.
-- **Hardware wallet** - a small dedicated device (about the size of a USB stick) that holds keys and signs transactions, while a companion app on your phone or laptop handles everything else. The keys never leave the hardware. **This is the standard recommendation for any amount you'd be sad to lose.**
-- **Paper wallet** - keys written on paper, no device at all. Cheap. Easy to mess up. We don't recommend it as a primary backup anymore (lots of subtle ways to get it wrong) but as a *secondary* backup of a seed, it's useful.
-- **Multisig** - a wallet where spending requires multiple keys, often held in different places. Eliminates single-point-of-failure. The right answer for serious balances. We'll get to it in chapter 6.
+- **热钱包**（hot wallet）——密钥存在于联网设备上（手机、笔记本电脑）。方便。攻击面更大。适合小额、日常使用的金额。
+- **冷钱包**（cold wallet）——密钥存在于从不联网的设备上。使用起来更麻烦。更难被攻破。适合长期持有。
+- **硬件钱包**（hardware wallet）——一个小型专用设备（大约 U 盘大小），持有密钥并签名交易，同时手机或笔记本电脑上的配套应用处理其他一切。密钥永远不会离开硬件。**这是任何你不想损失的金额的标准推荐。**
+- **纸钱包**（paper wallet）——密钥写在纸上，没有任何设备。便宜。容易出错。我们不再推荐它作为主要备份方式（有很多微妙的出错方式），但作为种子的*次要*备份，它有用。
+- **多签**（multisig）——一种需要多个密钥才能花费的钱包，通常存放在不同地点。消除单点故障。对于较大的余额是正确选择。我们在第 6 章讲。
 
-**The right pattern for most people:**
+**大多数人的正确模式：**
 
-- A hot wallet on your phone for small everyday amounts
-- A hardware wallet for the rest
-- A multisig setup once your stack justifies the complexity
+- 手机上放一个热钱包，用于日常小额
+- 其余的放硬件钱包
+- 余额大到值得折腾时，上多签
 
-You can mix and match. Wallets are just tools.
+你可以混搭。钱包只是工具。
 
-## 6. Picking Your First Wallet
+## 6. 选你的第一个钱包
 
-We don't sell wallets. We don't take affiliate commissions. Here's the unvarnished filter:
-
-<figure>
-  <img src="/photos/hardware-wallet-ecosystem.jpg" alt="Four Bitcoin hardware wallets from four different vendors on a light wood surface, left to right: Trezor Safe 5 (vertical touchscreen with secure element), Blockstream Jade (compact single-button stick), Coldcard Mk4 (transparent case showing the circuit board and physical numeric keypad), and Keystone 3 Pro (large landscape touchscreen with fingerprint sensor and QR-only air-gapped operation). Four different design philosophies for the same problem: keeping a private key off an internet-connected device." />
-  <figcaption>The hardware wallet ecosystem. Four vendors, four design philosophies, one job: keep the private key off the internet.</figcaption>
-</figure>
-
-**For a free, open-source mobile wallet (hot, beginner-friendly):**
-- **BlueWallet** (iOS, Android) - Bitcoin-only, open source, works fine for everyday amounts
-- **Phoenix** - Bitcoin + Lightning, very low friction; runs an embedded LN node
-- **Mutiny** - newer, web-first Lightning wallet
-
-**For a hardware wallet (cold, serious balances):**
-- **Trezor Safe 5** - widely used, established brand; multi-coin by default but supports Bitcoin-only firmware
+我们不卖钱包。不拿联盟佣金。以下是不加修饰的筛选标准：
 
 <figure>
-  <img src="/photos/trezor-safe-5-pin.jpg" alt="The Trezor Safe 5 hardware wallet powered on, displaying its scrambled PIN entry screen. The number positions are randomized on each unlock to prevent shoulder-surfing and smudge-pattern attacks. The device sits on dark leather, with the embossed Trezor lock icon visible below the screen." />
-  <figcaption>Trezor Safe 5 in PIN entry. Numbers shuffle on every unlock - shoulder-surfing and smudge attacks don't work when the layout changes.</figcaption>
+  <img src="/photos/hardware-wallet-ecosystem.jpg" alt="四个不同厂商的比特币硬件钱包放在浅色木面上，从左到右：Trezor Safe 5（带安全芯片的竖屏触摸屏）、Blockstream Jade（紧凑的单按键棒状设备）、Coldcard Mk4（透明外壳可见电路板和物理数字键盘）、Keystone 3 Pro（大横屏触摸屏带指纹传感器和仅 QR 的气隔操作）。四种不同的设计理念解决同一个问题：让私钥远离联网设备。" />
+  <figcaption>硬件钱包生态。四个厂商，四种设计理念，一个任务：让私钥远离互联网。</figcaption>
 </figure>
 
-- **Coldcard** (Mk4 or Q) - Bitcoin-only, fully open-source firmware, designed for paranoid users
+**免费开源移动钱包（热钱包，新手友好）：**
+- **BlueWallet**（iOS、Android）——只支持比特币，开源，日常金额够用
+- **Phoenix**——比特币 + 闪电网络，极低摩擦；内嵌一个 LN 节点
+- **Mutiny**——较新，网页优先的闪电钱包
+
+**硬件钱包（冷钱包，较大余额）：**
+- **Trezor Safe 5**——广泛使用，成熟品牌；默认多币种但支持纯比特币固件
 
 <figure>
-  <img src="/photos/coldcard-mk4-pin.jpg" alt="The Coldcard Mk4 hardware wallet mid-PIN-entry. The transparent case reveals the circuit board and secure element chip. A small green status LED indicates the device is powered. The OLED screen displays 'Enter PIN Prefix' with a numeric counter. A physical 12-button keypad is below the screen." />
-  <figcaption>Coldcard Mk4 in PIN-prefix entry. The transparent case is intentional - anyone can verify the chip on the device matches the public spec.</figcaption>
+  <img src="/photos/trezor-safe-5-pin.jpg" alt="Trezor Safe 5 硬件钱包开机状态，显示打乱的 PIN 输入界面。数字位置在每次解锁时随机化，以防止偷窥和指纹痕迹攻击。设备放在深色皮革上，屏幕下方可见压印的 Trezor 锁图标。" />
+  <figcaption>Trezor Safe 5 的 PIN 输入界面。每次解锁数字都会打乱——偷窥和指纹攻击在布局变化时不起作用。</figcaption>
 </figure>
 
-- **Foundation Passport** - Bitcoin-only, fully air-gapped (no USB data, uses QR codes and microSD); US-made
-- **Keystone 3 Pro** - Bitcoin-friendly, fully air-gapped (no USB data, QR-only), fingerprint sensor, large landscape touchscreen
+- **Coldcard**（Mk4 或 Q）——只支持比特币，完全开源固件，为偏执用户设计
 
 <figure>
-  <img src="/photos/keystone-3-pro-box.jpg" alt="The Keystone 3 Pro hardware wallet resting on its blue retail packaging. The device's landscape touchscreen is dark; the box shows the Keystone wordmark and product name. Light wood surface in the background." />
-  <figcaption>Keystone 3 Pro arrives in this box. Landscape touchscreen, QR-only operation - no USB data, no Bluetooth.</figcaption>
+  <img src="/photos/coldcard-mk4-pin.jpg" alt="Coldcard Mk4 硬件钱包正在输入 PIN。透明外壳露出电路板和安全芯片。一个小绿色状态指示灯表示设备已通电。OLED 屏幕显示 'Enter PIN Prefix' 和一个数字计数器。屏幕下方是物理 12 键键盘。" />
+  <figcaption>Coldcard Mk4 的 PIN 前缀输入。透明外壳是有意为之——任何人都可以验证设备上的芯片与公开规格一致。</figcaption>
 </figure>
 
-- **Jade** by Blockstream - affordable, Bitcoin-focused
+- **Foundation Passport**——只支持比特币，完全气隔（无 USB 数据，使用 QR 码和 microSD）；美国制造
+- **Keystone 3 Pro**——对比特币友好，完全气隔（无 USB 数据，仅 QR），指纹传感器，大横屏触摸屏
 
 <figure>
-  <img src="/photos/jade-unlock.jpg" alt="The Blockstream Jade hardware wallet powered on, displaying its unlock screen. The compact device shows 'Unlock Jade' on a small color screen, with status indicators for initialization and firmware version. The JADE wordmark is embossed on the side." />
-  <figcaption>Blockstream Jade at unlock. Single button, color screen, secure element - the budget-conscious entry into self-custody.</figcaption>
+  <img src="/photos/keystone-3-pro-box.jpg" alt="Keystone 3 Pro 硬件钱包放在蓝色零售包装盒上。设备的横屏触摸屏是暗的；盒子上有 Keystone 品牌名和产品名。背景是浅色木面。" />
+  <figcaption>Keystone 3 Pro 就装在这个盒子里。横屏触摸屏，仅 QR 操作——无 USB 数据，无蓝牙。</figcaption>
 </figure>
 
-**Why "Bitcoin-only" matters:** wallets that support 50 cryptocurrencies have 50× the attack surface. Every supported coin is more code, more libraries, more places things can go wrong. Bitcoin-only firmware has fewer features but a smaller, more thoroughly audited codebase. If you're using a hardware wallet for Bitcoin, run Bitcoin-only firmware. (Most of the above support it.)
-
-**What to avoid for self-custody:**
-- Any wallet that asks you to upload your seed for "backup"
-- Any wallet without published source code
-- Any "wallet" that's actually a custodial app pretending (Robinhood, PayPal "crypto," etc.)
-- Browser extensions, for any serious amount - too much attack surface
-
-The wallet ecosystem moves quickly. The specific brand may shift over the next few years. The *category* recommendations won't.
+- **Jade**（Blockstream 出品）——价格亲民，专注比特币
 
 <figure>
-  <img src="/photos/trezor-evolution.jpg" alt="Four Trezor hardware wallets in chronological order on a light wood surface, left to right: Trezor One (2014), Trezor Model T (2018), Trezor Safe 3 (2023), Trezor Safe 5 (2024). The shapes and screen sizes show a decade of progression - from the original two-button monochrome design to the current touchscreen flagship with a secure element." />
-  <figcaption>Ten years of Bitcoin hardware wallets. The Trezor One on the left shipped in 2014 as the first hardware wallet ever made. The Safe 5 on the right shipped in 2024. The category has matured. The specifics will keep changing; the idea won't.</figcaption>
+  <img src="/photos/jade-unlock.jpg" alt="Blockstream Jade 硬件钱包开机状态，显示解锁界面。紧凑的设备在小彩屏上显示 'Unlock Jade'，以及初始化和固件版本的状态指示。侧面压印有 JADE 品牌名。" />
+  <figcaption>Blockstream Jade 解锁界面。单按键，彩屏，安全芯片——自托管的预算入门之选。</figcaption>
 </figure>
 
-## 7. Backing Up Properly
+**为什么"只支持比特币"重要：** 支持 50 种加密货币的钱包有 50 倍的攻击面。每一种支持的币都意味着更多代码、更多库、更多出错的角落。纯比特币固件功能更少，但代码库更小、审计更彻底。如果你用硬件钱包存比特币，就运行纯比特币固件。（以上大多数都支持。）
 
-Your seed phrase needs to survive: fire, flood, theft, loss, your own forgetfulness, and a moderately determined adversary. That sounds dramatic until you realize it has to last decades.
+**自托管应该避免的：**
+- 任何要求你上传助记词用于"备份"的钱包
+- 任何没有公开源代码的钱包
+- 任何实际上是托管应用却假装不是的"钱包"（Robinhood、PayPal "crypto" 等）
+- 浏览器插件，用于任何严肃金额——攻击面太大
 
-**The standard approach:**
+钱包生态变化很快。具体品牌可能在未来几年更替。*类别*建议不会变。
 
-1. **Write the seed on paper, then transcribe to metal.** Stamped or engraved steel plates (Cryptosteel, Seedplate, Blockmit, or a do-it-yourself washer-and-stamp setup) survive fire and water. Paper does not. Use paper *only* as a working copy while you make the steel one. Then burn the paper.
-2. **Store backups in at least two physically separate locations.** A safe at home plus a safe-deposit box, or two homes, or one location plus a trusted family member's. The goal is that no single fire or burglary loses both copies.
-3. **Verify the backup.** Before you put any meaningful amount in the wallet, wipe the device and restore from your seed. If the restored wallet shows the same addresses, the backup is good. This is the only way to *know* the backup works.
-4. **Document for inheritance.** Write a sealed letter for your heirs that explains where the backups are, what software to install, and what addresses to expect. Don't put the seed itself in the letter; put instructions for finding it.
+<figure>
+  <img src="/photos/trezor-evolution.jpg" alt="四个 Trezor 硬件钱包按时间顺序排列在浅色木面上，从左到右：Trezor One（2014）、Trezor Model T（2018）、Trezor Safe 3（2023）、Trezor Safe 5（2024）。形状和屏幕大小展示了十年的演进——从最初的双按键单色设计到当前带安全芯片的触摸屏旗舰。" />
+  <figcaption>十年的比特币硬件钱包。左边的 Trezor One 在 2014 年作为有史以来第一个硬件钱包发布。右边的 Safe 5 在 2024 年发布。品类已经成熟。具体会继续变化，理念不会。</figcaption>
+</figure>
 
-We've made printable seed-backup forms for both [12-word](/downloads/seed-backup-12-word.pdf) and [24-word](/downloads/seed-backup-24-word.pdf) seeds, available on this site. Use them or your own format - what matters is consistency and durability.
+## 7. 正确备份
 
-**One more thing.** Do not split your seed phrase across multiple locations as a security measure ("first 6 words here, last 6 words there"). This is called *seed splitting* and it provides much less security than you'd expect - losing one location loses everything, *and* the second location is easier to attack. If you want geographic redundancy for advanced setups, use [multisig](/glossary/multisig) (chapter 6) or [Shamir's Secret Sharing](/glossary/shamir-secret-sharing), not seed splitting.
+你的助记词需要经受住：火灾、洪水、盗窃、丢失、你自己的健忘，以及一个中等程度的对手。听起来很戏剧化，直到你意识到它得管用几十年。
 
-## 8. Receiving Your First Transaction
+**标准做法：**
 
-This is the moment.
+1. **把助记词写在纸上，然后誊刻到金属上。** 冲压或雕刻的钢板（Cryptosteel、Seedplate、Blockmit，或 DIY 的垫圈+冲压方案）能扛住火灾和水。纸不能。纸只在你制作钢板的过渡期作为工作副本使用。然后烧掉纸。
+2. **至少在两个物理上分离的地点存放备份。** 家里一个保险箱加一个银行保管箱，或两个住所，或一个地点加一个信任的家人的地方。目标是任何一次火灾或入室盗窃不会同时毁掉两份副本。
+3. **验证备份。** 在钱包里放入任何有意义的金额之前，抹掉设备并从助记词恢复。如果恢复的钱包显示相同的地址，备份就是好的。这是*知道*备份有效的唯一方法。
+4. **为继承做记录。** 给你的继承人写一封密封信，解释备份在哪里、装什么软件、期望看到什么地址。不要把助记词本身放在信里；放的是找到它的说明。
 
-1. **Open your wallet** (we'll assume you picked one from section 6 and set it up).
-2. **Generate a fresh address.** Every wallet has a "Receive" button. Click it. The wallet derives a new address from your seed and shows it to you, usually as a QR code and a string starting with `bc1`.
-3. **Send a small amount to that address.** From an exchange, another wallet, anywhere. Five or ten dollars worth of sats. Don't send your life savings to a brand-new wallet you've never used.
-4. **Watch the mempool.** Your wallet will show "unconfirmed" almost immediately as the transaction enters the mempool. Within ~10 minutes you should see 1 confirmation. After about an hour, 6.
-5. **Verify the receive address externally.** Open [ChainQuery.com/address/](https://chainquery.com/address) and paste your address. You should see the same balance and the same incoming transaction. Two independent views of the same chain. This is the verify-don't-trust step.
+我们做了可打印的助记词备份表，[12 词](/downloads/seed-backup-12-word.pdf)和 [24 词](/downloads/seed-backup-24-word.pdf)都有，可在本站下载。用它们或你自己的格式——重要的是一致性和耐久性。
 
-Congratulations. You just did self-custody.
+**还有一件事。** 不要把助记词拆成多份作为安全措施（"前 6 个词放这里，后 6 个词放那里"）。这叫*种子拆分*（seed splitting），它提供的安全性远低于你的预期——丢失一个地点就丢失一切，*而且*第二个地点更容易被攻击。如果你想要地理位置冗余的高级方案，用[多签](/glossary/multisig)（第 6 章）或 [Shamir's Secret Sharing](/glossary/shamir-secret-sharing)，而不是种子拆分。
 
-The bitcoin you just received is yours in a way that custodial bitcoin never was. No exchange can freeze it. No government can seize it without your private key. You can move it anywhere, anytime, on a Sunday at 3 a.m., for any reason. That's the whole point.
+## 8. 收到你的第一笔交易
 
-## 9. Sign a Message - Prove You Own It
+就是这一刻。
 
-Here's a useful trick: you can prove you control an address *without* moving any coins.
+1. **打开你的钱包**（假设你已经在第 6 节选了一个并设置好了）。
+2. **生成一个新地址。** 每个钱包都有"接收"按钮。点它。钱包从你的种子派生一个新地址并显示给你，通常是一个 QR 码和一串以 `bc1` 开头的字符串。
+3. **向那个地址发送一小笔金额。** 从交易所、另一个钱包、任何地方。五到十美元的聪（sat）就够了。别把你全部身家发到一个从没用过的新钱包。
+4. **观察内存池。** 交易进入内存池后，你的钱包几乎立刻会显示"未确认"。大约 10 分钟内你应该看到 1 次确认。大约一小时后，6 次。
+5. **外部验证接收地址。** 打开 [ChainQuery.com/address/](https://chainquery.com/address) 并粘贴你的地址。你应该看到相同的余额和相同的入账交易。两个独立的视角看同一条链。这是"验证而非信任"的步骤。
 
-Bitcoin supports **message signing**. Your wallet uses your private key to produce a signature on an arbitrary text message. Anyone with the signature, the message, and your address can verify the signature is valid - proving you have the key.
+恭喜。你完成了自托管。
 
-How:
+你刚收到的比特币是你的，以一种托管比特币永远不会有的方式。没有交易所能冻结它。没有政府能在没有你私钥的情况下没收它。你可以在任何时间、任何原因、周日凌晨三点把它转到任何地方。这就是全部的意义。
 
-1. In your wallet, find "Sign message." (Most wallets have it; some require an advanced settings toggle.)
-2. Enter a message: *"I control address bc1qexampleaddress. Today's date is YYYY-MM-DD."*
-3. Sign. You get a base64 blob.
-4. Anyone can paste the (message, signature, address) triple into a verifier - try the [Bitcoin Core signature verification RPC](https://chainquery.com/rpc/verifymessage) or your wallet's "Verify message" feature - and they will see "valid" or "invalid."
+## 9. 签名一条消息——证明你拥有它
 
-This is how you prove ownership of an address to an insurance company, an inheritance lawyer, or a future suspicious you. No coins move. No fees pay. The signature is portable and timestamps anchor it in time.
+这里有个有用的技巧：你可以*不移动任何币*就证明你控制一个地址。
 
-## 10. The Common Ways People Lose Bitcoin
+比特币支持**消息签名**（message signing）。你的钱包用你的私钥对一段任意文本消息产生签名。任何拥有签名、消息和你地址的人都可以验证签名是否有效——证明你持有密钥。
 
-Honest list, ordered by what shows up most often in incident postmortems and exchange compromise reports. The ordering is editorial - exact frequencies aren't published anywhere reliable.
+怎么做：
 
-1. **Leaving funds on an exchange.** Exchange goes bankrupt (Mt. Gox, FTX, Celsius, BlockFi…). Funds gone.
-2. **Phishing the seed.** Fake support reps, fake wallet updates, fake "verify your wallet" pages. **No legitimate wallet, ever, asks you to type your seed online.** If it does, it's a scam.
-3. **Losing the seed.** Single backup, single location, single fire. The 1% of seed-loss events that aren't theft.
-4. **Buggy or malicious wallet software.** Use audited, open-source wallets. Verify download signatures from the publisher when possible.
-5. **Wrong derivation path / address type.** You restore to a wallet using a different default than the one that generated it, see "0 BTC," panic. Less common with modern wallets but happens. Solution: try restoring with each common standard (BIP 84 for native SegWit, BIP 86 for Taproot, etc.) before assuming theft.
-6. **Sending to the wrong address.** Bitcoin transactions are irreversible. Always check the first and last several characters of an address before sending. Better, send a small test first.
-7. **Inheritance failure.** Owner dies, heirs have no idea where the seed is. Common; preventable; document.
+1. 在你的钱包里找到"签名消息"。（大多数钱包都有；有些需要打开高级设置开关。）
+2. 输入一条消息：*"我控制地址 bc1qexampleaddress。今天是 YYYY-MM-DD。"*
+3. 签名。你会得到一串 base64 文本。
+4. 任何人都可以把（消息、签名、地址）三元组粘贴到验证器里——试试 [Bitcoin Core 的签名验证 RPC](https://chainquery.com/rpc/verifymessage) 或你钱包的"验证消息"功能——他们会看到"有效"或"无效"。
 
-The pattern is mostly **operational, not technical**. The cryptography is not the failure point. You are. So is everyone. Plan accordingly.
+这就是你向保险公司、继承律师或未来怀疑的自己证明地址所有权的方式。没有币移动。不付手续费。签名是可移植的，时间戳锚定了它在时间中的位置。
 
-## 11. Your Milestone
+## 10. 人们丢失比特币的常见方式
 
-Before you move on to chapter 5, do these four things:
+诚实的清单，按事件事后分析和交易所被黑报告中出现的频率排序。排序是编辑性的——确切频率没有可靠公开数据。
 
-- [ ] Pick a wallet (mobile is fine for now; hardware once you've got hands-on confidence)
-- [ ] Generate a seed and back it up on paper *and* metal
-- [ ] Receive a small amount (a few dollars' worth of sats; not your savings)
-- [ ] Sign a message proving you control the receiving address
+1. **把币留在交易所。** 交易所破产（Mt. Gox、FTX、Celsius、BlockFi……）。币没了。
+2. **助记词被钓鱼。** 假客服、假钱包更新、假"验证你的钱包"页面。**没有任何合法钱包会要求你在线输入助记词。** 如果它这么做了，就是骗局。
+3. **弄丢助记词。** 单一备份、单一地点、一把火。不是盗窃的那 1% 的种子丢失事件。
+4. **有 bug 或恶意的钱包软件。** 使用经过审计的开源钱包。尽可能从发布者那里验证下载签名。
+5. **错误的派生路径/地址类型。** 你恢复到一个使用了与生成时不同默认值的钱包，看到"0 BTC"，慌了。现代钱包不太常见了但还是会发生。解决方案：在假设被盗之前，依次尝试每种常见标准（BIP 84 用于原生 SegWit，BIP 86 用于 Taproot 等）恢复。
+6. **发到错误地址。** 比特币交易不可逆。发之前始终检查地址的前几个和后几个字符。更好的做法是，先发一小笔测试。
+7. **继承失败。** 持有者去世，继承人完全不知道助记词在哪。很常见；可预防；做记录。
 
-That's it. You've done self-custody. You're no longer dependent on an exchange or a custodian to hold the keys to your money. Whether or not you go bigger from here is your call.
+模式主要是**操作层面的，不是技术层面的**。密码学不是失败点。你才是。所有人都是。提前规划。
 
-> **Pro tip:** The hardest part of self-custody isn't technical, it's psychological. The first time you hold a real seed you're solely responsible for, it feels heavy. That weight is the actual product of Bitcoin - sovereign ownership. People who claim self-custody is "too hard" mostly mean it feels heavy. They're not wrong. They're just not seeing the trade.
+## 11. 你的里程碑
+
+在进入第 5 章之前，做这四件事：
+
+- [ ] 选一个钱包（手机钱包现在就行；有了实操信心后上硬件钱包）
+- [ ] 生成助记词，用纸*和*金属备份
+- [ ] 收一小笔金额（几美元的聪；不是你的全部积蓄）
+- [ ] 签名一条消息，证明你控制接收地址
+
+就这样。你完成了自托管。你不再依赖交易所或托管方来持有你资金的密钥。是否从这里继续加大力度，由你决定。
+
+> **专业提示：** 自托管最难的部分不是技术，是心理。第一次你拿着一个完全由你负责的真实助记词时，它感觉很沉重。那个重量就是比特币真正的产品——主权持有。说自托管"太难"的人大多是指它感觉很重。他们没错。他们只是没看到交易的全貌。

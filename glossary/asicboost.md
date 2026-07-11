@@ -2,11 +2,11 @@
 title: "ASICBoost"
 slug: asicboost
 draft: false
-shortDefinition: "A mining optimization technique reducing parts of the SHA-256 calculation, lowering energy costs and boosting efficiency."
+shortDefinition: "一种挖矿优化技术，通过减少部分 SHA-256 计算来降低能源成本并提升效率。"
 keyTakeaways:
-  - "Optimizes the SHA-256 hashing process"
-  - "Increases mining efficiency and profitability"
-  - "Originally sparked debates on fairness and patents"
+  - "优化 SHA-256 哈希过程"
+  - "提高挖矿效率和盈利能力"
+  - "最初引发了公平性和专利争议"
 sources: []
 relatedTerms:
   - asic-application-specific-integrated-circuit
@@ -16,13 +16,13 @@ relatedTerms:
 liveWidget: ~
 ---
 
-ASICBoost is a mining-efficiency optimization that exploits a quirk in SHA-256's structure to skip some redundant work, gaining roughly 15-20% efficiency on top of baseline [ASIC](/glossary/asic-application-specific-integrated-circuit) performance. Two variants exist:
+ASICBoost 是一种挖矿效率优化，利用 SHA-256 结构中的一个特性来跳过一些冗余计算，在 [ASIC](/glossary/asic-application-specific-integrated-circuit) 基线性能之上获得约 15-20% 的效率提升。存在两种变体：
 
-- **Overt ASICBoost.** Manipulates the block header version field to find collisions that share state in the SHA-256 midstate computation. Visible on-chain; doesn't require any tricks at the protocol level.
-- **Covert ASICBoost.** Manipulates the merkle root by reordering transactions, achieving the same midstate-collision effect. Not directly visible on-chain. Famously incompatible with [SegWit](/glossary/segwit-segregated-witness-bip-141), which restructures how the merkle root is computed.
+- **显式 ASICBoost。**操控区块头版本字段来寻找在 SHA-256 中间态计算中共享状态的碰撞。链上可见；不需要在协议层面做任何手脚。
+- **隐式 ASICBoost。**通过重新排序交易来操控 merkle 根，实现相同的中间态碰撞效果。链上不直接可见。著名地与 [SegWit](/glossary/segwit-segregated-witness-bip-141) 不兼容，因为 SegWit 重构了 merkle 根的计算方式。
 
-The covert variant became a political flashpoint during the 2017 [SegWit](/glossary/segwit-segregated-witness-bip-141) activation deadlock. Greg Maxwell publicly observed that some major mining hardware (notably from one specific manufacturer at the time) appeared to use covert ASICBoost, and that the manufacturer's resistance to SegWit might be partly driven by SegWit incompatibility with that optimization. The accusation was disputed; the timing was suggestive.
+隐式变体在 2017 年 [SegWit](/glossary/segwit-segregated-witness-bip-141) 激活僵局期间成为政治焦点。Greg Maxwell 公开观察到一些主要挖矿硬件（特别是当时某家制造商的产品）似乎使用了隐式 ASICBoost，而该制造商对 SegWit 的抵制可能部分源于 SegWit 与该优化不兼容。指控被否认；但时机很微妙。
 
-The episode raised the question: who is gaining hidden efficiency advantages, and does the network know? The answer, broadly, was "yes, this was happening" - leading to discussions about whether to deliberately disable covert ASICBoost in future protocol changes.
+这一事件提出了一个问题：谁在获得隐藏的效率优势，网络是否知情？大致的回答是"是的，这确实在发生"——引发了关于是否在未来协议变更中故意禁用隐式 ASICBoost 的讨论。
 
-Today (2026), modern mining ASICs widely implement overt ASICBoost as standard, with the optimization built into firmware. It's no longer a secret advantage; it's table stakes. The story is now mostly historical, but it's a useful case study in how hardware-level optimizations can interact with consensus-level decisions in subtle ways.
+到 2026 年，现代挖矿 ASIC 已广泛将显式 ASICBoost 作为标准实现，优化内置于固件中。它不再是秘密优势；而是基本门槛。这个故事现在主要是历史性的，但它是一个有用的案例研究，说明硬件级优化如何以微妙的方式与共识级决策相互作用。

@@ -1,12 +1,12 @@
 ---
-title: "Satoshi Nakamoto"
+title: "Satoshi Nakamoto（中本聪）"
 slug: satoshi-nakamoto
 draft: false
-shortDefinition: "The pseudonymous creator of Bitcoin who published the whitepaper in 2008, mined early blocks, and disappeared in 2011."
+shortDefinition: "比特币的化名创造者，2008 年发布白皮书，挖了早期区块，2011 年消失。"
 keyTakeaways:
-  - "Invented Bitcoin's proof-of-work based, decentralized design"
-  - "Disappeared, fostering Bitcoin's leaderless evolution"
-  - "Holds a mythical status with unrevealed identity"
+  - "发明了比特币基于工作量证明的去中心化设计"
+  - "消失，促进了比特币无领导的发展"
+  - "身份成谜，具有神话般地位"
 sources: []
 relatedTerms:
   - bitcoin-pizza-day
@@ -21,12 +21,12 @@ sameAs:
 liveWidget: ~
 ---
 
-Satoshi Nakamoto is the pseudonym used by the person, or group, who designed Bitcoin and launched the network. They published the [whitepaper](/glossary/whitepaper) on October 31, 2008, mined the [genesis block](/glossary/genesis-block) on January 3, 2009, and remained active on email and forums for about two years.
+Satoshi Nakamoto（中本聪）是设计比特币并启动网络的人或团队使用的化名。他们于 2008 年 10 月 31 日发布了[白皮书](/glossary/whitepaper)，2009 年 1 月 3 日挖出[创世区块](/glossary/genesis-block)，在邮件和论坛上活跃了约两年。
 
-In April 2011 Satoshi sent their final known message and disappeared. They had been handing development control to early contributor Gavin Andresen in the months prior, telling him they had "moved on to other things." No verified message from Satoshi has appeared since.
+2011 年 4 月中本聪发送了最后一条已知消息后消失。在此前几个月里，他一直在将开发控制权移交给早期贡献者 Gavin Andresen，告诉他已经"转向其他事情"。此后没有出现任何经验证来自中本聪的消息。
 
-Satoshi mined an estimated 1.1 million BTC in the network's earliest months. None of it has ever been spent. At current prices that's tens of billions of dollars sitting visible on-chain, untouched for over a decade - one of the more credible signals that whoever Satoshi was, they were not in it for the money.
+中本聪在网络最早几个月挖了估计 110 万 BTC。这些币从未被花费过。按当前价格计算，那是数百亿美元，在链上可见，十多年来未动——这是对中本聪动机的一个更可信信号：他们不是为了钱。
 
-Many candidates have been proposed (Hal Finney, Nick Szabo, Dorian Nakamoto, Adam Back, Craig Wright, others). None have been definitively confirmed. The identity may never be known, and that's a feature: Bitcoin works because no one controls it, and an unknown founder is a stronger guarantee of that than any founder who could be subpoenaed, threatened, or co-opted.
+许多候选人被提出（Hal Finney、Nick Szabo、Dorian Nakamoto、Adam Back、Craig Wright 等）。没有人被确证。身份可能永远不会被知道，这是一个特性：比特币之所以运作是因为没有人控制它，一个未知的创始人是比任何可能被传唤、威胁或收买的创始人更强的保证。
 
-Satoshi's earliest collaborator [Hal Finney](/glossary/hal-finneys-running-bitcoin) was the first person besides Satoshi to run Bitcoin, the recipient of the first BTC transaction, and the author of the famous "Running bitcoin" tweet on January 11, 2009 - now etched into Bitcoin culture.
+中本聪最早的合作者 [Hal Finney](/glossary/hal-finneys-running-bitcoin) 是除中本聪外第一个运行比特币的人，第一笔 BTC 交易的接收者，以及 2009 年 1 月 11 日那条著名的"Running bitcoin"推文的作者——现已铭刻在比特币文化中。

@@ -1,12 +1,12 @@
 ---
-title: "DCA (Dollar-Cost Averaging)"
+title: "DCA（定投）"
 slug: dca-dollar-cost-averaging
 draft: false
-shortDefinition: "Investing a fixed amount of currency in BTC at regular intervals, reducing exposure to short-term volatility."
+shortDefinition: "以固定金额的货币定期投资 BTC，降低短期波动的影响。"
 keyTakeaways:
-  - "Mitigates emotional trading by automating recurring buys"
-  - "Builds a position gradually without precise market timing"
-  - "A popular, stress-free approach for long-term investors"
+  - "通过自动化定期购买来减少情绪化交易"
+  - "逐步建仓无需精确择时"
+  - "长期投资者的流行、无压力方法"
 sources: []
 relatedTerms:
   - bear-market
@@ -19,12 +19,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Dollar-cost averaging is the strategy of buying a fixed dollar amount of Bitcoin on a regular schedule, regardless of price. $100 every Friday. $50 every payday. Whatever the cadence, the rule is the same: same amount, same interval, no exceptions.
+定投（Dollar-Cost Averaging）是按固定时间表购买固定美元金额比特币的策略，不管价格如何。每周五 100 美元。每个发薪日 50 美元。无论频率如何，规则相同：相同金额，相同间隔，没有例外。
 
-The advantage is psychological more than mathematical. You don't have to decide whether today's price is a good entry, because you decided that question once when you set the schedule. You're never buying "the top," because next week you're buying again at whatever price exists then. Over enough cycles, your average cost basis ends up somewhere reasonable.
+优势更多是心理上的而非数学上的。你不必决定今天的价格是否是好的入场点，因为你在设定时间表时就决定了这个问题。你永远不会"买在顶点"，因为下周你会以那时的价格再次购买。经过足够多的周期，你的平均成本基础最终在合理位置。
 
-Several Bitcoin-only services (Strike, Swan, River, others) automate this, as do most major exchanges. Set it up once, forget it. The set-and-ignore part is a huge fraction of the value - DCA is mostly a defense against your own market timing instincts, which are unreliable.
+几个比特币专属服务（Strike、Swan、River 等）以及大多数主要交易所都提供自动化。设置一次，忘记它。设置后忘记的部分是价值的很大一部分——DCA 主要是对你自己的市场择时本能的防御，这些本能是不可靠的。
 
-DCA is not the highest-return strategy if you happen to time a bottom correctly. It is the highest-return strategy among realistic humans who can't reliably do that.
+如果你碰巧在底部精准入场，DCA 不是最高回报策略。在无法可靠做到这一点的普通人中，它是最高回报策略。
 
-See also [HODL](/glossary/hodl) - DCA is hodling, with new purchases layered in.
+另见 [HODL](/glossary/hodl)——DCA 就是 hodling，只是叠加了新购买。

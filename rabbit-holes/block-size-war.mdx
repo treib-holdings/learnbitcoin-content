@@ -1,11 +1,11 @@
 ---
-title: "The Block Size War"
+title: "区块大小战争"
 slug: block-size-war
 draft: false
 published: "2026-07-07"
 status: live
 section: rabbit-hole
-tagline: "The 2015-2017 fight over Bitcoin's block size limit, from Bitcoin XT to the UASF to the forks that split away, and how it settled who actually controls the rules."
+tagline: "2015-2017 年关于比特币区块大小限制的斗争，从 Bitcoin XT 到 UASF 到分叉出去的那些，以及它如何确定了谁真正控制规则。"
 order: 14
 estimatedMinutes: 13
 ogImage: "/diagrams/og/block-size-war-timeline.png"
@@ -39,131 +39,131 @@ relatedTerms:
   - bitcoin-core
 ---
 
-> **Where you're going:** For about two years Bitcoin tore itself apart over how big a block should be. The argument was nominally about a megabyte of block space, but the real fight was over who gets to change Bitcoin's rules: the miners, the big companies, or the ordinary people running nodes. This chapter walks through how the war started, the failed deals and the alternative software, the standoff over SegWit, the moment users forced the issue, and the two forks that broke off. The ending is the payoff, because it decided how Bitcoin has handled every upgrade since.
+> **你将了解：** 大约两年间，比特币围绕区块应该多大而撕裂。争论表面上是一兆字节的区块空间，但真正的斗争是关于谁有权改变比特币的规则：矿工、大公司，还是运行节点的普通人。本章走过战争如何开始、失败的交易和替代软件、SegWit 的僵局、用户强行推动的时刻、以及两次分叉出去的过程。结局是回报，因为它决定了此后比特币如何处理每次升级。
 
-## A fight about one megabyte
+## 关于一个兆字节的斗争
 
-Bitcoin blocks have a size limit. Satoshi added it quietly in 2010, capping each block at one megabyte. Blocks were nearly empty back then and cost almost nothing to fill, so the cap was a cheap defense against someone stuffing the chain with junk. At the time nobody treated it as a sacred number. It was a temporary guard rail.
+比特币区块有大小限制。中本聪在 2010 年悄悄加了它，将每个区块上限设为一兆字节。当时区块几乎是空的，填满成本几乎为零，所以这个上限是对有人往链上塞垃圾的廉价防御。当时没有人把它当作神圣数字。它是临时护栏。
 
-By 2015 the guard rail was starting to bind. Blocks were filling up during busy periods, transactions were waiting longer to confirm, and fees were creeping up. The question was obvious: do we raise the limit?
+到 2015 年护栏开始约束了。忙碌时段区块被填满，交易等待更久才确认，手续费在爬升。问题很明显：要不要提高限制？
 
-Answering it turned out to be the hardest thing Bitcoin has ever done. The argument ran from roughly August 2015 to November 2017. It split companies, developers, miners, and online communities into hostile camps, and it ended with two permanent forks off the network. Jonathan Bier later wrote a whole book about it, *The Blocksize War*, and the title gets the tone right.
+回答它结果是比特币做过的最难的事。争论大约从 2015 年 8 月持续到 2017 年 11 月。它分裂了公司、开发者、矿工和线上社区为敌对阵营，以两次永久分叉结束。Jonathan Bier 后来写了一整本书《The Blocksize War》，书名抓住了正确的基调。
 
 <figure>
   <img src="/diagrams/block-size-war-timeline.svg" alt="A two-lane timeline of the 2015-2017 block size war. An orange horizontal line represents the Bitcoin chain. Above it, moves by miners and companies: Bitcoin XT ships August 2015, the 18-hour Hong Kong truce of February 2016 later collapses, a bug knocks 70 percent of Bitcoin Unlimited nodes offline in March 2017, and 58 companies claiming 83 percent of mining power sign the New York Agreement in May 2017. Below the line, moves by users and developers: SegWit ships in October 2016 but miners refuse to signal, BIP-148 sets an August 1, 2017 flag day, and BIP-91 in July 2017 sees the miners fold. On the line itself, Bitcoin Cash forks away on August 1, 2017 as a gray branch that later splits again into Bitcoin SV in November 2018, and SegWit goes live at block 481,824 on August 24, 2017. A dashed stub ending in an X marks SegWit2x, called off November 8, 2017, the fork that never happened. Takeaway: a claimed 83 percent of mining power could not change one rule without the users." />
-  <figcaption>The war in one picture: moves by miners and companies above the line, moves by users and developers below it. Bitcoin Cash left in August 2017; the SegWit2x fork was called off before it happened.</figcaption>
+  <figcaption>战争一张图：矿工和公司的行动在线上方，用户和开发者的行动在线下方。Bitcoin Cash 于 2017 年 8 月离开；SegWit2x 分叉在发生前被取消。</figcaption>
 </figure>
 
-## The two sides
+## 两方
 
-The dispute sorted people into two camps that disagreed about what Bitcoin is for.
+争端把人分成两个阵营，他们对比特币的用途有不同看法。
 
-The **big-blockers** wanted to raise the limit, soon and substantially. Their reasoning was straightforward. Bitcoin should work as everyday electronic cash, fees should stay low, and if blocks are filling up then you make them bigger. Disk space and bandwidth are cheap and getting cheaper, so why accept artificial congestion? This camp included early heavyweights like Gavin Andresen, who Satoshi had handed the project to, the developer Mike Hearn, the entrepreneur Roger Ver, and the large Chinese mining operations led by Bitmain's Jihan Wu.
+**大区块方**想尽快大幅提高限制。理由很直接。比特币应该作为日常电子现金运作，手续费应该保持低，如果区块满了就做更大。磁盘空间和带宽便宜且越来越便宜，为什么要接受人为拥堵？这个阵营包括早期重量级人物如 Gavin Andresen（中本聪把项目交给了他）、开发者 Mike Hearn、企业家 Roger Ver，以及以比特大陆（Bitmain）的吴忌寒为首的中国大型挖矿运营。
 
-The **small-blockers** wanted to keep blocks small and grow capacity other ways. For them the issue was decentralization. The whole point of running a [full node](/glossary/full-node) is that you verify the rules yourself instead of trusting someone else. The bigger blocks get, the more expensive it becomes to run a node, and the fewer people bother. Push that far enough and validation ends up concentrated in a handful of data centers, which is the kind of choke point Bitcoin exists to avoid. Better to keep the base layer lean, improve how efficiently it uses the space it has, and move everyday payment volume to systems built on top, like the [Lightning Network](/glossary/lightning-network). This camp included most of the [Bitcoin Core](/glossary/bitcoin-core) development group.
+**小区块方**想保持小区块，用其他方式扩展容量。对他们来说问题是去中心化。运行[全节点](/glossary/full-node)的全部意义是你自己验证规则而不是信任别人。区块越大，运行节点成本越高，愿意做的人越少。推到极端，验证集中到少数几个数据中心，那正是比特币要避免的瓶颈。保持基础层精简，改善空间使用效率，把日常支付量移到上面构建的系统上，比如[闪电网络](/glossary/lightning-network)。这个阵营包括大多数 [Bitcoin Core](/glossary/bitcoin-core) 开发组。
 
-It is worth being fair here, because the caricature from the time was that one side wanted Bitcoin to grow and the other wanted to strangle it. That is not what was going on. Both sides wanted Bitcoin to scale. They disagreed about how, and behind that, they disagreed about who should get to make the call. The second disagreement is the one the war ended up settling.
+这里值得公允，因为当时的漫画式描述是一方想让比特币增长，另一方想扼杀它。不是那样的。两方都想比特币扩容。他们分歧于如何做，在背后，分歧于谁应该做这个决定。第二个分歧才是战争最终解决的。
 
-## The alternative clients
+## 替代客户端
 
-The big-block camp's first move was to route around Bitcoin Core by shipping rival software with a bigger limit baked in.
+大区块阵营的第一步是通过发布内置更大限制的竞品软件绕过 Bitcoin Core。
 
-**Bitcoin XT** came first, in August 2015, built by Mike Hearn and Gavin Andresen around [BIP-101](/glossary/bip-101-increase-block-size), which would have raised the cap to 8 MB and then kept doubling it. The idea was that if enough miners and users ran XT, its rules would simply become Bitcoin. It got a burst of attention, then faded.
+**Bitcoin XT** 最先来，2015 年 8 月，由 Mike Hearn 和 Gavin Andresen 基于 [BIP-101](/glossary/bip-101-increase-block-size) 构建，该提议将上限提到 8 MB 然后持续翻倍。想法是如果足够多的矿工和用户运行 XT，它的规则就简单地变成比特币。它引起了一阵关注，然后衰落了。
 
-**Bitcoin Classic** followed in early 2016 with a more modest proposal, a straight bump to 2 MB. **Bitcoin Unlimited**, the most ambitious of the three, tried to remove the fixed limit altogether and replace it with something called "emergent consensus," where node operators and miners would each set their own preferred size and the network would supposedly converge on a number on its own. It had first appeared around the start of 2016, and by 2017 it had become the big-block camp's flagship.
+**Bitcoin Classic** 在 2016 年初跟进，提议更温和地直接提到 2 MB。**Bitcoin Unlimited**，三者中最雄心勃勃的，试图完全移除固定限制，用一种叫"涌现共识"的东西替代，节点操作者和矿工各自设自己偏好的大小，网络据说会自行收敛到一个数字。它在 2016 年初左右首次出现，到 2017 年已成为大区块阵营的旗舰。
 
-Bitcoin Unlimited is also where this approach hit a wall in the most embarrassing way possible. In March 2017 a bug in its code was exploited, and most of the Bitcoin Unlimited nodes on the network crashed at once. The count dropped from about 780 to around 250 before patched nodes came back online. The cause was a debugging check that the developers had left active in production software, which let a single malformed message knock a node offline. For a project whose entire pitch was that it should take over running Bitcoin, having roughly 70 percent of its nodes fall over to one crafted packet was not a good look, and it hardened the small-block camp's argument that this software was not ready to carry the network.
+Bitcoin Unlimited 也是这种方法以最令人尴尬的方式撞墙的地方。2017 年 3 月，其代码中的一个 bug 被利用，网络上大多数 Bitcoin Unlimited 节点同时崩溃。数量从约 780 降到约 250，打补丁的节点才回来。原因是开发者在生产软件中留了活跃的调试检查，一条畸形消息就能让节点下线。对一个全部卖点就是应该接管运行比特币的项目，大约 70% 的节点被一条精心构造的数据包打倒是不好看的，而且它强化了小区块方的论点：这个软件没有准备好承载网络。
 
-None of the alternative clients ever got close to taking over. Miners flirted with them, the price of switching was high, and the nodes run by exchanges, businesses, and everyday users, the ones whose acceptance actually defines which chain is "Bitcoin," mostly stayed on Core. But the pressure was real and constant, and it set the backdrop for everything that followed.
+没有一个替代客户端接近过接管。矿工与它们调情，切换成本高，而交易所、企业和日常用户运行的节点 - 那些实际上定义哪条链是"比特币"的节点 - 大多留在 Core 上。但压力是真实且持续的，它为后面的一切设定了背景。
 
-## SegWit, and why it stalled
+## SegWit，以及它为何停滞
 
-The small-block camp's answer to congestion was [SegWit](/glossary/segwit-segregated-witness-bip-141), short for Segregated Witness.
+小区块方对拥堵的回答是 [SegWit](/glossary/segwit-segregated-witness-bip-141)，全称 Segregated Witness（隔离见证）。
 
-SegWit was clever. It moved the witness data, the signatures that prove a transaction is authorized, out of the main block structure and into a separate section. That fixed a long-standing flaw called transaction malleability, a quirk that let a transaction's ID be altered before it confirmed, which had made it unsafe to build payment systems on top of Bitcoin. The fix cleared the path for Lightning. As a side effect SegWit also raised capacity, because the restructured blocks could hold more transaction data, up to a new effective ceiling of roughly double the old limit. And it did all this as a [soft fork](/glossary/soft-fork), a backward-compatible change that did not force everyone to upgrade at once.
+SegWit 很聪明。它把见证数据 - 证明交易被授权的签名 - 移出主区块结构放到一个独立区域。这修复了一个长期存在的缺陷叫交易延展性（transaction malleability），一种怪癖允许交易在确认前 ID 被篡改，这使得在比特币上构建支付系统不安全。修复为闪电网络铺了路。作为副作用，SegWit 也提高了容量，因为重构后的区块可以容纳更多交易数据，有效上限大约翻倍到旧限的两倍。而且它作为[软分叉](/glossary/soft-fork)做这一切 - 一种向后兼容的变更，不强制所有人同时升级。
 
-So SegWit gave the small-blockers more capacity and the second-layer groundwork they wanted, without a contentious hard fork. The catch was activation. SegWit was set to turn on only once miners signaled support for it in 95 percent of recent blocks, and the miners aligned with the big-block camp simply declined to signal. A change a large part of the ecosystem wanted sat frozen because a group of miners would not flip a bit.
+所以 SegWit 给小区块方更多容量和他们想要的二层基础工作，没有一次有争议的硬分叉。问题是激活。SegWit 被设为只有在矿工在最近区块中 95% 发出支持信号后才开启，而与大区块阵营对齐的矿工干脆拒绝发信号。大部分生态系统想要的一个变更被冻结了，因为一群矿工不肯翻一个比特。
 
-There had already been one attempt to break this kind of deadlock with a handshake. In February 2016 a group of Core developers and the major mining pools met in Hong Kong and, after more than eighteen hours of talks, announced the "Bitcoin Roundtable Consensus." The miners, who together produced over 80 percent of blocks, would run SegWit, and in exchange the developers present agreed to write code for a roughly 2 MB hard fork and propose it within a few months. It looked like a truce, but it did not hold. The developers had signed in a personal capacity and could not commit Core as a whole, the hard fork code never gained broad support, and the miners, feeling the deal had not been honored, were in no hurry to activate SegWit. Both halves of the bargain missed their deadlines. By early 2017 the two sides trusted each other less than before, and SegWit was still stuck.
+之前已经有过一次尝试用握手打破这种僵局。2016 年 2 月，一批 Core 开发者和主要矿池在香港会面，超过十八小时的谈判后宣布了"比特币圆桌共识"。矿工 - 合计产出超过 80% 的区块 - 将运行 SegWit，交换条件是在场的开发者同意写约 2 MB 硬分叉代码并在几个月内提议。看起来像休战，但没持续。开发者以个人身份签署，无法代表 Core 整体承诺，硬分叉代码没获得广泛支持，矿工觉得协议没被履行，也不急着激活 SegWit。协议的两半都错过了截止日期。到 2017 年初双方互信不如以前，SegWit 仍然卡着。
 
-## The AsicBoost theory
+## AsicBoost 理论
 
-Why would miners block an upgrade most of the ecosystem wanted, even one that added the capacity their own customers were asking for? In April 2017 the Core developer Greg Maxwell offered an answer that poured gasoline on the fire.
+为什么矿工会阻止大多数生态系统想要的升级，甚至是一个添加了他们自己客户要求容量的升级？2017 年 4 月，Core 开发者 Greg Maxwell 给出了一个浇油于火的答案。
 
-On the development mailing list, Maxwell pointed out that a mining optimization called [AsicBoost](/glossary/asicboost) let hardware mine more efficiently and earn more per chip. One common "covert" way of using it was incompatible with SegWit; if SegWit activated, that particular trick would stop working. He noted that a major manufacturer's chips appeared to support it. That manufacturer was Bitmain, the largest maker of mining hardware and a central player on the big-block side.
+在开发邮件列表上，Maxwell 指出一种叫 [AsicBoost](/glossary/asicboost) 的挖矿优化让硬件更高效地挖矿、每芯片赚更多。一种常见的"隐蔽"使用方式与 SegWit 不兼容；如果 SegWit 激活，那个特定技巧就不再有效。他注意到一家主要制造商的芯片似乎支持它。那家制造商是比特大陆，最大的挖矿硬件制造商，也是大区块阵营的核心角色。
 
-If true, it meant some of the opposition to SegWit had less to do with block size philosophy than with protecting a private hardware advantage worth a lot of money. Bitmain responded that its chips did support AsicBoost, as some competitors' chips did, but said it had only tested the technique on a test network. The company denied using AsicBoost on the main chain and denied that it had anything to do with its opposition to SegWit.
+如果属实，这意味着对 SegWit 的部分反对与区块大小哲学关系不大，更多是保护一个价值大量金钱的私人硬件优势。比特大陆回应说其芯片确实支持 AsicBoost，一些竞争对手的芯片也支持，但说只在测试网络上测试过该技术。公司否认在主链上使用 AsicBoost，也否认这与它反对 SegWit 有任何关系。
 
-The truth of who used what, when, was never fully nailed down in public, and you do not have to take a side on it to see why it mattered. The accusation reframed the whole conflict for a lot of onlookers. It suggested the deadlock might be held in place by financial self-interest dressed up as principle, and it made the small-block camp far less willing to keep negotiating.
+谁在何时用了什么的真相从未在公开场合完全坐实，你不必选边也能看到为什么它重要。这个指控为很多旁观者重新框架了整个冲突。它暗示僵局可能被伪装成原则的财务私利所维持，它让小区块方远不愿意继续谈判。
 
-## The New York Agreement
+## 纽约协议
 
-In May 2017, with SegWit still stuck, a different group tried to force a settlement. At the Consensus conference in New York, a coalition of companies and miners signed what became known as the [New York Agreement](/glossary/new-york-agreement-nya).
+2017 年 5 月，SegWit 仍然卡着，另一个群体试图强制解决。在纽约的 Consensus 会议上，一个公司和大矿工联盟签署了后来被称为[纽约协议](/glossary/new-york-agreement-nya)（New York Agreement）的东西。
 
-The deal was organized by Digital Currency Group, the venture firm run by Barry Silbert. Fifty-eight companies across 22 countries signed, and the signatories claimed to represent about 83 percent of the network's mining power. The plan, called [SegWit2x](/glossary/segwit2x), was a compromise with two parts. First, activate SegWit, which the small-blockers wanted. Second, a few months later, hard fork to 2 MB blocks, which the big-blockers wanted. Each side would get half.
+协议由 Digital Currency Group 组织，那是 Barry Silbert 运营的风险投资公司。58 家来自 22 个国家的公司签署，签署方声称代表约 83% 的网络算力。计划叫 [SegWit2x](/glossary/segwit2x)，是一个有两部分的妥协。首先激活 SegWit，小区块方想要的。几个月后硬分叉到 2 MB 区块，大区块方想要的。每方得一半。
 
-The problem was who was missing from the room. This was an agreement among exchanges, wallet companies, and mining pools. The developers who actually maintain Bitcoin Core were not part of it, and neither, in any meaningful sense, were the users who run nodes. To the small-block camp, that was the entire objection. A few dozen executives meeting at a conference cannot rewrite Bitcoin's rules by signing a document, because they are not the ones who enforce the rules. The people running nodes are, and the nodes reject any block that breaks the rules they choose to run, no matter who mined it or who signed what. (Our entry on [Bitcoin governance](/glossary/bitcoin-governance) lays out exactly where that veto sits and why.)
+问题是谁不在房间里。这是一个交易所、钱包公司和矿池之间的协议。维护 Bitcoin Core 的开发者不是其中一部分，意义上也不在场的还有运行节点的用户。对小区块方来说那全部就是反对。几十个高管在会议上签一份文件不能改写比特币的规则，因为他们不是执行规则的人。运行节点的人才是，而节点拒绝任何打破它们选择运行的规则的区块，不管谁挖的或谁签了什么。（我们的[比特币治理](/glossary/bitcoin-governance)词条详细说明了那个否决权在哪里以及为什么在那里。）
 
-Instead of ending the war, the agreement set up its final confrontation. On one side, an industry coalition with a coordinated plan, a supermajority of mining power, and most of the industry's biggest names. On the other, the users running nodes, who by then already had a deadline of their own.
+协议没有结束战争，而是设了最终对决。一方是产业联盟，有协调计划、绝对多数算力和行业最大牌的名声。另一方是运行节点的用户，他们那时已经有了自己的截止日期。
 
-## The users set a deadline
+## 用户设定截止日期
 
-The users' weapon had been on the table since before the New York Agreement was signed. In February 2017, a pseudonymous coder going by shaolinfry had proposed something called a user-activated soft fork, or UASF.
+用户的武器在纽约协议签署前就已摆上桌面。2017 年 2 月，一个化名 shaolinfry 的编码者提出了一个叫用户激活软分叉（UASF）的东西。
 
-The idea, written up in March 2017 as [BIP-148](/glossary/bip-148-uasf), inverted the usual order. Instead of waiting for miners to signal SegWit, ordinary node operators would set a flag day, August 1, 2017, after which their nodes would reject any block that did not signal support for SegWit. It put the threat on the miners. Keep stalling and the nodes run by users and businesses will reject your blocks, and the bitcoin you mine on the wrong side of the split will not be the bitcoin the exchanges and users recognize.
+想法在 2017 年 3 月写成 [BIP-148](/glossary/bip-148-uasf)，颠倒了通常的顺序。不是等待矿工发信号支持 SegWit，而是普通节点操作者设定一个旗日（flag day），2017 年 8 月 1 日，之后他们的节点会拒绝任何不发 SegWit 支持信号的区块。它把威胁压在矿工身上。继续拖延，用户和企业运行的节点就会拒绝你的区块，你在分叉错误一侧挖的比特币不会是交易所和用户认可的比特币。
 
-It was a genuinely risky play. If miners called the bluff, Bitcoin could have split into two chains on August 1 with no clear winner. But the movement caught on. "UASF" hats appeared, node operators advertised that they were running BIP-148, and businesses started drawing up contingency plans for a split. The users, who rarely act as an organized bloc, were now enforcing a deadline of their own. Part of the New York Agreement's urgency came from that same calendar; the industry wanted SegWit activated by agreement before the users forced the question on August 1.
+这是一个真正有风险的赌博。如果矿工叫了牌，比特币可能在 8 月 1 日分裂成两条链没有明显赢家。但运动起来了。"UASF"帽子出现了，节点操作者宣传他们在运行 BIP-148，企业开始为分叉制定应急计划。很少作为有组织集体行动的用户，现在在执行自己的截止日期。纽约协议的部分紧迫感正来自这个日历；产业想在 8 月 1 日用户强制提问前通过协议激活 SegWit。
 
-Faced with the flag day, the miners blinked. James Hilliard, an engineer at a mining-hardware firm, offered a face-saving exit with [BIP-91](/glossary/bip-91), a mechanism that let miners make SegWit signaling mandatory among themselves at a lower threshold, getting SegWit activated before August 1 and avoiding the BIP-148 split. BIP-91 went into force around July 20, 2017. SegWit followed, passing its final signaling threshold in early August and going live at block 481,824 on August 24, 2017. After two years, the upgrade the miners had stalled was live, and it was the users' deadline that forced it through.
+面对旗日，矿工眨了。James Hilliard，一位挖矿硬件公司的工程师，用 [BIP-91](/glossary/bip-91) 提供了一个保全面子的出口，一个机制让矿工以更低阈值在自己之间使 SegWit 发信号成为强制，在 8 月 1 日前激活 SegWit 避免 BIP-148 分裂。BIP-91 在 2017 年 7 月 20 日左右生效。SegWit 随后在 8 月初过了最终信号阈值，于 2017 年 8 月 24 日在区块 481,824 正式上线。两年后矿工拖延的升级活了下来，是用户的截止日期推动了它。
 
 <figure>
   <img src="/diagrams/uasf-flag-day.svg" alt="A countdown timeline of the 2017 user-activated soft fork standoff. A horizontal axis runs from February to August 2017 toward a dashed vertical line marked August 1, the flag day. Along the way: shaolinfry proposes the UASF in February 2017, BIP-148 is published in March 2017 setting the August 1 flag day, the New York Agreement on May 23, 2017 is the industry's answer, and on July 20, 2017 BIP-91 locks in with miners beginning mandatory SegWit signaling, bracketed as 12 days to spare. Below the axis, clusters of orange dots grow month by month, showing nodes running BIP-148 coming online. Past the flag day line, an orange milestone marks August 24: SegWit live, no split. Takeaway: the threat was credible, so it never had to be carried out." />
-  <figcaption>The countdown: BIP-148 set the date in March, the industry answered in May, and the miners moved twelve days before the deadline.</figcaption>
+  <figcaption>倒计时：BIP-148 在 3 月设定日期，产业在 5 月回应，矿工在截止日期前 12 天行动了。</figcaption>
 </figure>
 
-## August 1: Bitcoin Cash splits off
+## 8 月 1 日：Bitcoin Cash 分叉出去
 
-SegWit activating did not mean everyone fell into line. The faction that had never wanted SegWit and wanted bigger blocks above all else was not going to accept the outcome. On August 1, 2017, the date the UASF had set as its line in the sand, they forked off onto their own chain: [Bitcoin Cash](/glossary/bitcoin-cash).
+SegWit 激活不意味着所有人都归队。从未想要 SegWit 且最想要更大区块的那一派不打算接受结果。2017 年 8 月 1 日，UASF 划定的沙线日期，他们分叉到自己的链上：[Bitcoin Cash](/glossary/bitcoin-cash)（比特币现金）。
 
-Bitcoin Cash kept the transaction history up to the split, so everyone holding bitcoin also held an equal amount of the new coin. From there the new chain went its own way. It rejected SegWit, raised the block size limit straight to 8 MB, and later to 32 MB, and set out to be the cheap-payments chain the big-block camp had argued for all along. Both chains kept running. Both, by some definition, claimed to be the real Bitcoin. The market did not stay undecided for long: the original chain kept the overwhelming majority of the mining power, the price, the developers, and the name Bitcoin.
+Bitcoin Cash 保留了分叉前的交易历史，所以每个持有比特币的人也持有等量的新币。从那里新链走自己的路。它拒绝了 SegWit，将区块大小限制直接提到 8 MB，后来到 32 MB，立志成为大区块阵营一直主张的便宜支付链。两条链继续运行。某种意义上都声称是真正的比特币。市场没有犹豫太久：原始链保留了绝大部分算力、价格、开发者和比特币的名字。
 
-The forking did not stop there. In November 2018 Bitcoin Cash itself split again, into Bitcoin Cash and [Bitcoin SV](/glossary/bitcoin-sv-bsv), in a bitter feud that included a so-called hash war, with each side pouring mining power into its own chain to prove dominance while Craig Wright's camp threatened outright attacks on the rival chain. Wright claims to be Satoshi Nakamoto; a UK court comprehensively rejected that claim in 2024 after finding he had forged documents to support it. Each fork down the chain had fewer users and less mining power than the one before it. That pattern is part of the lesson too. Forking off is cheap, but each new chain kept only a small share of the value, security, and users of the one it left.
+分叉没停在那里。2018 年 11 月 Bitcoin Cash 自身又分裂了，分成 Bitcoin Cash 和 [Bitcoin SV](/glossary/bitcoin-sv-bsv)，在一场包括所谓算力战的激烈争斗中，双方各自倾入算力到自己的链来证明主导，而 Craig Wright 的阵营威胁对竞争链直接攻击。Wright 声称自己是中本聪；2024 年一家英国法院在发现他伪造文件后全面驳回了这一主张。每次分叉后的链都比前者更少用户和更少算力。那个模式也是教训的一部分。分叉出去很便宜，但每条新链只保留了它离开的那条的一小部分价值、安全性和用户。
 
-## November: the 2x half is called off
+## 11 月：2x 部分被取消
 
-There was still one piece of the New York Agreement left standing. SegWit had activated, but the second half, the 2 MB hard fork, was scheduled for around mid-November 2017.
+纽约协议还剩一块。SegWit 激活了，但第二部分，2 MB 硬分叉，定于约 2017 年 11 月中旬。
 
-It never happened. As the date approached, support drained away. Signatory companies began withdrawing, the developer community was overwhelmingly opposed, and there was no clean technical way to force a change onto the users who would simply keep running the old rules. On November 8, 2017, a group of the plan's own organizers published a short message suspending it. They wrote that they had not built sufficient consensus for the upgrade, and that keeping the community together mattered more than getting it through.
+它从没发生。随着日期临近，支持流失。签署公司开始退出，开发者社区压倒性反对，而且没有办法在技术上强制用户接受他们只会继续运行旧规则的变更。2017 年 11 月 8 日，计划的一些组织者发布了一条简短消息暂停了它。他们写道没有为升级建立足够的共识，保持社区团结比推进更重要。
 
-That suspension is usually marked as the end of the war. The big-block faction that wanted to leave had already left as Bitcoin Cash. The attempt to enlarge Bitcoin itself by industry agreement was now dead. Small blocks had won. More importantly, so had the people running nodes.
+那个暂停通常被标记为战争的结束。想离开的大区块派已经作为 Bitcoin Cash 离开了。通过产业协议扩大比特币本身的尝试现在死了。小区块赢了。更重要的是，运行节点的人赢了。
 
-## The war was never really about megabytes
+## 战争从不是真正关于兆字节
 
-Step back from the dates and the acronyms and the underlying question is plain. The war was never really about one megabyte versus two, or eight, or thirty-two. The question was whether the powerful players in Bitcoin's economy can change the rules when they decide they want to.
+退后看日期和缩写，底层问题很明显。战争从不是真正关于一兆对两兆、八兆或三十二兆。问题是比特币经济中的强大参与者能否在他们想的时候改变规则。
 
-The answer the war produced was no, not on their own. A supermajority of miners could not do it. The largest companies in the industry, acting together with that mining power behind them, could not do it. What stopped them was the most unglamorous part of the whole system, the thousands of people independently running nodes that enforced the rules they chose and rejected everything else.
+战争给出的答案是不能，靠自己不行。占绝对多数的矿工做不到。行业最大的公司带着算力联合行动做不到。阻止他们的是整个系统最不起眼的部分 - 数千个独立运行节点的人，执行他们选择的规则，拒绝一切其他。
 
-That is the durable result. Changing Bitcoin's consensus rules requires rough agreement across all the groups that make up the network, and any one of them, including ordinary users, can refuse. The process is slow and messy, and from 2015 to 2017 it was genuinely ugly, but it works, and it is the reason the 21 million cap is credible in a way no corporate promise could ever be. If a two-year civil war could not force through a change to a single anti-spam limit, nobody is quietly changing the supply schedule.
+这就是持久的结果。改变比特币的共识规则需要网络各组的粗略同意，任何一组，包括普通用户，都可以拒绝。过程缓慢且混乱，从 2015 到 2017 年是真正丑陋的，但它有效，这是 2100 万上限可信的方式，不是公司承诺能比的。如果一场两年的内战都不能强制通过一个反垃圾限制的改变，没有人会悄悄改变供应量时间表。
 
-You can see the proof in what came after. When Taproot, a far less controversial upgrade, activated in 2021, it followed a careful, deliberate path with broad buy-in and no drama. The lesson of the block size war was absorbed. Big changes now wait until the whole network is ready.
+你可以在之后看到证明。当 Taproot，一个远不那么有争议的升级，在 2021 年激活时，它走了一条谨慎的、深思熟虑的路径，广泛买入无戏剧。区块大小战争的教训已被吸收。大变更现在等到整个网络准备好了。
 
-## The receipts that outlasted the war
+## 比战争活得更久的遗迹
 
-A few artifacts of the conflict are still lying around if you know where to look.
+如果你知道去哪找，冲突的一些遗迹仍然在。
 
-The media front was as fierce as the technical one. The two big online forums, the r/bitcoin subreddit and the bitcointalk forum, were heavily moderated by people on the small-block side, which pushed much of the big-block camp onto a rival subreddit, r/btc, and into a parallel media ecosystem. Each side accused the other of censorship, and each was partly right. Some of the domain bans from that era are still quietly enforced years later. ChainQuery.com, the sister site that runs the Bitcoin node behind this one, was still automatically filtered from r/bitcoin as of 2026, a small live fossil of the war's media battles.
+媒体前线和技术前线一样激烈。两个主要在线论坛，r/bitcoin subreddit 和 bitcointalk 论坛，由小区块方的人重度审核，这把大区块阵营推到了竞争对手 subreddit r/btc 和一个平行媒体生态系统。双方互相指责审查，双方都对一部分。那个时代的一些域名封禁至今仍被安静地执行。ChainQuery.com，运行本站背后比特币节点的姊妹站，截至 2026 年仍被 r/bitcoin 自动过滤 - 战争媒体战的一个小活化石。
 
-The AsicBoost story got a quiet coda too. The optimization later became openly supported and widely used in a form compatible with SegWit, which drained most of the drama out of the original accusation without ever fully resolving who had been doing what in 2017.
+AsicBoost 故事也有一个安静的尾声。优化后来以与 SegWit 兼容的形式公开支持并被广泛使用，这从原始指控中排除了大部分戏剧，却没有完全解决 2017 年谁在做什么。
 
-And the forks are still trading. Bitcoin Cash and Bitcoin SV both still exist, with their own communities and a tiny fraction of Bitcoin's value, security, and activity. The people who were sure that bigger blocks were Bitcoin's future were free to go build exactly that, and did, and the market has spent the years since deciding which vision it actually wanted.
+而分叉仍在交易。Bitcoin Cash 和 Bitcoin SV 都仍存在，有自己的社区和比特币价值、安全性和活跃度的一小部分。那些确信更大区块是比特币未来的人可以去建那个，也确实建了，而市场这些年一直在决定它真正想要哪个愿景。
 
-## What this buys us
+## 这给我们带来了什么
 
-The thing to remember from this chapter is that Bitcoin's resistance to change is deliberate, and that the war is what proved it holds under pressure.
+这章要记住的是比特币对变革的抵抗是刻意的，战争是证明它在压力下成立的过程。
 
-- **Nobody is in charge, and that held up under maximum pressure.** The single largest coordinated attempt to change Bitcoin's rules failed, not by a vote, but because the users who run nodes declined to go along. That is what decentralization looks like when it is actually tested.
-- **The economic majority is the final check.** The last veto belongs to the people validating their own transactions, which is why running your own node is an act with real weight behind it.
-- **The hard-money promise is believable because of this.** A 21 million cap that a committee could revise would be worthless. The block size war shows that even a trivial-sounding change is nearly impossible to force through, which is why the important rules are safe.
-- **Forking is the pressure-release valve.** Anyone who disagrees can leave and start their own chain. Bitcoin Cash and Bitcoin SV did. What they could not take with them was the network's value, and that freedom to exit is part of what kept the original chain coherent.
+- **没有人在负责，这在最大压力下成立了。** 最大规模的协调改变比特币规则的尝试失败了，不是通过投票，而是因为运行节点的用户拒绝跟随。那就是去中心化在实际被测试时的样子。
+- **经济多数是最终检查。** 最后的否决权属于验证自己交易的人，这就是为什么运行自己的节点是一个有真实分量的行为。
+- **硬货币承诺因为此而可信。** 一个委员会能修改的 2100 万上限毫无价值。区块大小战争表明即使一个听起来琐碎的改变也几乎不可能强制通过，这就是为什么重要的规则是安全的。
+- **分叉是压力释放阀。** 任何不同意的人可以离开建自己的链。Bitcoin Cash 和 Bitcoin SV 做了。他们带不走的是网络的价值，而退出的自由是保持原始链连贯的一部分。
 
-The war was exhausting and it was not pretty. But it answered a question that mattered more than any block size, and the answer is the reason the rules hold without depending on anyone in particular to keep them.
+战争令人疲惫，也不好看。但它回答了一个比任何区块大小都重要的问题，答案就是规则不依赖任何特定人来维护它们的原因。

@@ -3,11 +3,11 @@ title: "BlockFi"
 slug: blockfi
 draft: false
 published: "2026-06-18"
-shortDefinition: "A crypto lender that paid yield on deposits by lending them to leveraged firms. It settled with the SEC for $100M in early 2022, then went bankrupt that November from exposure to FTX and 3AC."
+shortDefinition: "一家加密借贷公司，通过将存款借给杠杆公司来支付收益。2022 年初与 SEC 和解 1 亿美元，同年 11 月因 FTX 和 3AC 敞口破产。"
 keyTakeaways:
-  - "BlockFi's Interest Accounts paid yield by lending customer crypto to firms like Alameda and 3AC, with no FDIC or SIPC backstop"
-  - "It settled with the SEC and state regulators for $100M in February 2022 over its unregistered lending product - a warning eight months before it failed"
-  - "FTX bailed it out in mid-2022, then FTX's own collapse dragged BlockFi into Chapter 11 on 28 November 2022"
+  - "BlockFi 的利息账户通过将客户加密资产借给 Alameda 和 3AC 等公司来支付收益，无 FDIC 或 SIPC 保障"
+  - "2022 年 2 月因未注册借贷产品与 SEC 和州监管机构和解 1 亿美元——比其倒闭早八个月的警告"
+  - "FTX 在 2022 年中救助了它，然后 FTX 自身倒闭将 BlockFi 拖入第 11 章破产，2022 年 11 月 28 日"
 sources:
   - { label: "SEC - BlockFi to pay $100M over its unregistered crypto lending product (2022)", url: "https://www.sec.gov/newsroom/press-releases/2022-26" }
   - { label: "US Bankruptcy Court, District of New Jersey - BlockFi case page", url: "https://www.njb.uscourts.gov/BlockFi" }
@@ -22,12 +22,12 @@ sameAs:
 liveWidget: ~
 ---
 
-BlockFi sold a simple-sounding product: deposit your crypto and earn interest. The interest came from lending that crypto to leveraged trading firms, and there was no FDIC or SIPC insurance behind any of it. Depositors were unsecured creditors who had been shown a yield number and not much about the risk.
+BlockFi 销售一个听起来简单的产品：存入你的加密资产并获得利息。利息来自将这些加密资产借给杠杆交易公司，背后没有任何 FDIC 或 SIPC 保险。存款人是不受担保的债权人，他们看到一个收益率数字，但对风险所知甚少。
 
-Founded in 2017 by Zac Prince and Flori Marquez, BlockFi was once valued around $3 billion. In February 2022 it agreed to a $100 million settlement, half to the SEC and half to state regulators, for offering its BlockFi Interest Accounts as unregistered securities. That was a clear warning, eight months before the company actually failed.
+BlockFi 由 Zac Prince 和 Flori Marquez 于 2017 年创立，一度估值约 30 亿美元。2022 年 2 月，它同意支付 1 亿美元和解金——一半给 SEC，一半给州监管机构——因其 BlockFi 利息账户作为未注册证券发行。这是明确的警告，比公司实际倒闭早八个月。
 
-Then the 2022 collapses hit. BlockFi took a loss on its exposure to Three Arrows Capital and was rescued mid-year by a roughly $400 million credit facility from [FTX](/glossary/ftx), which also took an option to buy the company. When FTX itself collapsed that November, the rescue turned into the problem: BlockFi was now exposed to a bankrupt FTX and Alameda. It paused withdrawals and filed for Chapter 11 on 28 November 2022.
+然后 2022 年的连环崩盘来袭。BlockFi 因对 Three Arrows Capital 的敞口遭受损失，年中由 [FTX](/glossary/ftx)约 4 亿美元信贷额度救助，FTX 还获得了收购该公司的期权。当 FTX 自身在 11 月倒闭时，救助变成了问题：BlockFi 现在暴露于破产的 FTX 和 Alameda。它暂停提款并于 2022 年 11 月 28 日申请第 11 章破产。
 
-Creditor recovery has been relatively good. A settlement with the FTX estate funded distributions aiming at close to 100 percent of eligible claims. Even so, that meant years of frozen funds and uncertainty for ordinary depositors, which is the real cost of a yield whose source you can't see.
+债权人回收情况相对较好。与 FTX 遗产的和解资助了接近 100% 合格索赔的分配。即便如此，这意味着普通存款人数年的冻结资金和不确定性——这才是收益来源不透明的真正代价。
 
-See [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard) for how BlockFi's collapse fits the 2022 cascade.
+参见 [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard)了解 BlockFi 的崩溃如何融入 2022 年连环崩盘。

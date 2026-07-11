@@ -1,12 +1,12 @@
 ---
-title: "Futures"
+title: "期货"
 slug: futures
 draft: false
-shortDefinition: "Financial contracts allowing speculation on Bitcoin's future price, settling on a set date at a pre-agreed rate."
+shortDefinition: "允许在设定日期以预定价格结算的比特币未来价格投机金融合约。"
 keyTakeaways:
-  - "Let traders bet on or hedge BTC price without holding spot BTC"
-  - "Regulated futures exist on traditional markets (e.g., CME)"
-  - "Can increase liquidity but also risk leveraged blowups"
+  - "让交易者无需持有现货 BTC 即可押注或对冲 BTC 价格"
+  - "传统市场存在受监管期货（如 CME）"
+  - "可以增加流动性但也存在杠杆爆仓风险"
 sources: []
 relatedTerms:
   - bear-market
@@ -19,18 +19,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A futures contract is an agreement to buy or sell Bitcoin at a fixed price on (or before) a specified future date. Bitcoin futures markets are deep, liquid, and where a large fraction of price discovery actually happens day to day.
+期货合约是在指定未来日期（或之前）以固定价格买入或卖出比特币的协议。比特币期货市场深度、流动，是日常价格发现的主要场所。
 
-Two main flavors:
+两种主要类型：
 
-- **Standardized futures with expiration** (CME, Bakkt, ICE). Quarterly or monthly contracts that cash-settle (or in some cases physically deliver) at expiration. Used heavily by institutional traders and hedgers. The CME launched cash-settled BTC futures in December 2017; physically-delivered futures followed.
-- **Perpetual futures (perps).** Crypto-native invention, pioneered by BitMEX in 2016. No expiration date; the price is kept anchored to spot via a "funding rate" payment between long and short holders every 8 hours. Perps dominate crypto derivatives volume on Binance, Bybit, OKX, Deribit, and dYdX.
+- **有到期日的标准化期货**（CME、Bakkt、ICE）。季度或月度合约，到期时现金结算（或某些情况下实物交割）。机构交易者和对冲者大量使用。CME 于 2017 年 12 月推出现金结算的 BTC 期货；实物交割期货随后推出。
+- **永续期货（perps）。** 加密原住民发明，由 BitMEX 于 2016 年首创。无到期日；价格通过每 8 小时多空持有者之间的"资金费率"支付锚定现货。永续合约主导 Binance、Bybit、OKX、Deribit 和 dYdX 上的加密衍生品交易量。
 
-Why futures matter beyond speculation:
+为什么期货超越投机很重要：
 
-- **Hedging.** A miner with future BTC production can lock in today's price; a treasury holding BTC can hedge downside without selling spot.
-- **Price discovery.** Futures markets often lead spot in reacting to news; the basis (futures - spot) signals market expectations.
-- **Leverage.** Most crypto futures offer 10x-100x leverage. This is great for sophisticated traders, ruinous for everyone else. Liquidation cascades during volatile moves are a defining feature of crypto market structure.
-- **Institutional access.** Regulated futures gave traditional firms a way to gain BTC exposure before spot ETFs existed. The CME futures market predates the US spot Bitcoin ETF by six years.
+- **对冲。** 有未来 BTC 产出的矿工可以锁定今天的价格；持有 BTC 的金库可以在不卖出现货的情况下对冲下行。
+- **价格发现。** 期货市场在反应新闻方面经常领先现货；基差（期货-现货）反映市场预期。
+- **杠杆。** 大多数加密期货提供 10 倍-100 倍杠杆。对老练交易者很好，对其他人是灾难。波动期间的清算级联是加密市场结构的决定性特征。
+- **机构准入。** 受监管期货在现货 ETF 存在之前给了传统公司获取 BTC 敞口的途径。CME 期货市场比美国现货比特币 ETF 早六年。
 
-The risks are real. Leveraged positions can be liquidated in seconds during volatile moves; funding rates can swing aggressively; exchange counterparty risk applies (perpetual futures live on the exchanges that issue them). For most retail users, perps are a fast way to lose money. For institutional treasury management and miner hedging, they're useful instruments. Spot Bitcoin without leverage remains the conservative default.
+风险是真实的。杠杆头寸在波动期间可在几秒内被清算；资金费率可以剧烈摆动；交易所交易对手风险适用（永续期货存在于发行它们的交易所上）。对大多数散户来说，永续合约是快速亏钱的方式。对机构金库管理和矿工对冲，它们是有用工具。无杠杆的现货比特币仍然是保守默认。

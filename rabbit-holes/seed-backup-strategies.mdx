@@ -1,10 +1,11 @@
----title: "Seed Backup Strategies"
+---
+title: "助记词备份策略"
 slug: seed-backup-strategies
 draft: false
 status: live
 published: "2026-05-28"
 section: rabbit-hole
-tagline: "Twelve words is your wallet. Lose them and you lose your bitcoin. Here is how serious people back them up."
+tagline: "十二个词就是你的钱包。丢了它们就丢了你的比特币。这是认真的人如何备份的。"
 order: 8
 estimatedMinutes: 12
 sources:
@@ -18,159 +19,159 @@ ogImage: "/diagrams/og/seed-backup.jpg"
 ogImageAlt: "Three hardware wallets in a row on a wood surface: a Coldcard Mk4 keypad device on the left, a Blockstream Jade in the middle, and a Trezor Safe on the right. The lineup that anchors a 2-of-3 multisig setup."
 ---
 
-> **Where you're going:** A practical, threat-model-first walk through how to back up a Bitcoin seed phrase. You will learn what you are actually backing up, the three threats you are defending against (theft, loss, coercion), and the concrete options - from a sheet of paper to a multi-location, multi-party, multi-signature setup.
+> **你将了解：** 一次以威胁模型为导向的、实用的比特币助记词备份指南。你会了解你实际在备份什么、你防御的三个威胁（盗窃、丢失、胁迫）、以及从一张纸到多地多方的多签方案的具体选项。
 
-## 1. What You Are Actually Backing Up
+## 1. 你实际在备份什么
 
-When you set up a Bitcoin wallet, somewhere in the process the wallet shows you 12 or 24 words. Write them down, the wallet says. Keep them safe.
+当你设置比特币钱包时，过程中某个地方钱包会给你看 12 或 24 个词。写下来，钱包说。保管好。
 
-Those words are your [seed phrase](/glossary/seed-phrase), more precisely a [BIP 39](/glossary/bip-39) mnemonic. They encode the entropy from which every private key in your wallet is derived. Lose the words, lose every key, lose every bitcoin those keys ever controlled.
+那些词是你的[助记词](/glossary/seed-phrase)，更准确地说是 [BIP 39](/glossary/bip-39) 助记码。它们编码了熵，你钱包中的每个私钥都从这些熵派生。丢了词，丢每个密钥，丢那些密钥曾控制过的每个比特币。
 
-Critical: the seed phrase is the *only* thing you need to back up. You do not need to back up:
+关键：助记词是你*唯一*需要备份的东西。你不需要备份：
 
-- **The wallet software.** Any BIP-39 compatible wallet can re-derive your keys from the words.
-- **The list of addresses.** They are derived deterministically from the seed.
-- **Transaction history.** It is on the blockchain.
+- **钱包软件。** 任何兼容 BIP-39 的钱包都能从词重新派生你的密钥。
+- **地址列表。** 它们从种子确定性派生。
+- **交易历史。** 它在区块链上。
 
-You also do not need to back up the device. A hardware wallet is just a key-derivation device; if the device dies, you restore the seed into a new device and you are back where you started.
+你也不需要备份设备。硬件钱包只是一个密钥派生设备；设备坏了，你把种子恢复到新设备里就回到起点。
 
-The seed is everything. Everything else is recoverable from the seed.
+种子就是一切。其他一切都可以从种子恢复。
 
-## 2. The Threat Triangle
+## 2. 威胁三角
 
-Backup strategy is a triangle of three threats:
+备份策略是三个威胁的三角：
 
-1. **Theft.** Someone finds your seed and steals your bitcoin.
-2. **Loss.** You misplace, destroy, or forget where you put the seed; your house burns down; your safety-deposit box bank fails.
-3. **Coercion.** Someone with a wrench, a court order, or a kidnap victim compels you to hand over your seed.
+1. **盗窃。** 有人找到你的助记词并偷走你的比特币。
+2. **丢失。** 你放错了、毁了或忘了种子在哪；房子着火；保险箱银行倒闭。
+3. **胁迫。** 有人用扳手、法院命令或绑架人质强迫你交出种子。
 
 <figure>
   <img src="/diagrams/threat-triangle.svg" alt="A triangle with three corners labeled THEFT (someone finds your seed), LOSS (fire, flood, forgotten), and COERCION (wrench, warrant, kidnap). At the geometric center is a pill labeled YOUR SEED. The three threats every seed backup must plan against." />
-  <figcaption>Three threats. Defending one often weakens defense against another.</figcaption>
+  <figcaption>三个威胁。防御一个往往会削弱对另一个的防御。</figcaption>
 </figure>
 
-A good backup defends against all three. The hard part: defending against any one of them often *worsens* your defense against the others.
+好的备份防御所有三个。难的部分：防御任何一个往往*恶化*你对其他的防御。
 
-- Keep the seed at home (no loss risk from third parties) → higher theft risk.
-- Split the seed across locations (loss-resistant) → if any one location is compromised, you have made attack easier.
-- Use a passphrase to protect against theft → if you forget the passphrase, full loss.
-- Distribute shares to family → coercion attack on any family member can compromise you.
+- 种子放在家里（没有第三方丢失风险）→ 更高盗窃风险。
+- 种子分多处（抗丢失）→ 如果任一位置被入侵，你使攻击更容易了。
+- 用密码短语防盗 → 忘了密码，全丢。
+- 把分片分给家人 → 对任一家人的胁迫攻击可以危及你。
 
-There is no single "best" backup. There is the backup that fits *your* threats and amounts. Treat the rest of this rabbit hole as a menu, not a prescription.
+没有单一"最佳"备份。只有适合*你*的威胁和金额的备份。把这篇深度科普当作菜单，不是处方。
 
-## 3. Paper: The Floor
+## 3. 纸质：底线
 
-A piece of paper with your seed words written in pencil is a valid backup. For small amounts (under a few thousand dollars, say), it is often sufficient.
+一张纸用铅笔写上你的助记词就是有效备份。对于小额（比如几千美元以下），通常足够了。
 
 <figure>
   <img src="/photos/seed-backup/paper-card.jpg" alt="A blank Trezor paper recovery card on light wood, printed with sections for device PIN, anti-phishing code words, and a 24-word seed grid." />
-  <figcaption>Most hardware wallets ship with a paper card formatted for the seed they generate. Free, immediate, fragile.</figcaption>
+  <figcaption>大多数硬件钱包附带一张为它们生成的种子格式化的纸卡。免费、即时、脆弱。</figcaption>
 </figure>
 
-Properties of paper:
-- **Cheap.** Nothing to buy.
-- **Trivial to copy.** You can make three copies in three minutes.
-- **Fragile.** Burns in a house fire. Smudges in a flood. Fades in sunlight.
-- **Easy to read.** No special tools needed.
-- **Easy for others to read.** If someone finds it, there is no decryption barrier.
+纸质备份属性：
+- **便宜。** 不用买东西。
+- **复制简单。** 三分钟做三份。
+- **脆弱。** 房子着火烧掉。发洪水糊掉。阳光晒褪色。
+- **易读。** 不需要特殊工具。
+- **易被他人读取。** 如果有人找到它，没有解密障碍。
 
-Paper backup best practices:
-- Pencil, not pen. Pen ink fades faster than pencil graphite.
-- Acid-free paper.
-- Multiple copies in physically separated locations.
-- Tamper-evident envelope if you want to know whether it has been seen.
+纸质备份最佳实践：
+- 铅笔，不是圆珠笔。圆珠笔墨水比铅笔石墨褪色更快。
+- 无酸纸。
+- 多份副本放在物理分离的位置。
+- 如果想知道是否被看过，用防篡改信封。
 
 <figure>
   <img src="/photos/seed-backup/paper-coldcard-recovery.jpg" alt="A blank Coldcard 'ultimate recovery card' with fields for the base seed words, extended fingerprint, derivation type, derivation paths, software versions, and multisig role." />
-  <figcaption>Paper can record more than seed words. For wallets with derivation quirks or multisig roles, the metadata that lets someone actually restore the wallet matters as much as the words.</figcaption>
+  <figcaption>纸可以记录不止助记词。对于有派生特性或多签角色的钱包，让某人实际恢复钱包所需的元数据与词一样重要。</figcaption>
 </figure>
 
-For wallets under five figures, paper is reasonable. For more, you want metal.
+对于五位数以下的钱包，纸质是合理的。更多的话，你需要金属。
 
-## 4. Metal: The Standard
+## 4. 金属：标准配置
 
-A metal seed backup is a stamped or engraved record of your seed in stainless steel or titanium. Many product names exist; they all do the same fundamental thing.
+金属种子备份是你在不锈钢或钛上冲压或雕刻的助记词记录。有很多产品名；它们做的都是同一件基本事。
 
 <figure>
   <img src="/photos/seed-backup/steel-tube.jpg" alt="A tube-style stainless-steel seed backup on light wood with the protective sleeve removed. Each letter is marked by punching dots into a fixed grid. The shaft is blank." />
-  <figcaption>Tube format. The shaft encodes letters in a dot-matrix grid; the sleeve guards against impact and casual inspection.</figcaption>
+  <figcaption>管式格式。轴上以点阵网格编码字母；套筒防撞击和随意查看。</figcaption>
 </figure>
 
 <figure>
   <img src="/photos/seed-backup/steel-plate-tile.jpg" alt="A two-piece stainless-steel seed backup on light wood: a lid plate above and a channel plate below. Pre-stamped letter tiles slide into rows; the lid screws on top." />
-  <figcaption>Tile format. Pre-stamped letter tiles drop into channels and the lid locks them.</figcaption>
+  <figcaption>磁贴格式。预冲压字母磁贴滑入通道，盖板锁住。</figcaption>
 </figure>
 
 <figure>
   <img src="/photos/seed-backup/steel-plate-tab.jpg" alt="A two-piece stainless-steel seed backup on light wood: a cover plate above and a marking plate below. Word numbers 13 through 24 are visible alongside letter slots designed to be bent or punched for each character." />
-  <figcaption>Tab format. Pre-cut tabs in the front plate get bent through letter slots in the back plate. Same job, no loose pieces.</figcaption>
+  <figcaption>翻片格式。前面板的预切翻片穿过后面板的字母槽。同样的事，没有散件。</figcaption>
 </figure>
 
-Properties of metal:
-- **Fire-resistant.** Stainless steel survives a house fire intact. Titanium products survive 1,000+ degrees Celsius.
-- **Water-resistant.** No fading, no smudging.
-- **Decade-durable.** With reasonable care, indefinite life.
-- **Costs $50 to $300** depending on durability tier and form factor.
+金属备份属性：
+- **防火。** 不锈钢在房屋火灾中完好无损。钛产品耐受 1000+ 摄氏度。
+- **防水。** 不褪色不模糊。
+- **十年耐久。** 适当保养可无限期保存。
+- **成本 $50 到 $300**，取决于耐久等级和形态。
 
-For amounts in the four-to-six figures, metal is the right floor. Two metal backups in physically separated locations is a strong baseline.
+对于四到六位数的金额，金属是正确的底线。两份金属备份放在物理分离的位置是一个强基线。
 
-Things to consider:
-- **Do not photograph the metal plate "for backup."** A digital copy of your seed defeats the purpose of an offline backup. Many wallet leaks trace to phone-photo backups.
-- **Test recovery before you trust it.** Reset your wallet, restore from the metal, verify the addresses match. Once. Then never again.
-- **Store separately from the hardware wallet.** Keeping seed and device together is two-thirds of a complete kit for a thief.
+需要注意的：
+- **不要给金属板拍照"做备份"。** 种子的数字副本破坏了离线备份的目的。很多钱包泄漏可追溯到手机照片备份。
+- **先测试恢复再信任。** 重置你的钱包，从金属恢复，验证地址匹配。一次就好。然后永不再做。
+- **与硬件钱包分开存放。** 种子和设备放在一起就是给小偷的三分之二完整套件。
 
-(See [hardware seed vault](/glossary/hardware-seed-vault) for the higher-end offerings.)
+（参见[硬件种子保险库](/glossary/hardware-seed-vault)了解更高端产品。）
 
-## 5. The Passphrase ("25th word")
+## 5. 密码短语（"第 25 个词"）
 
-[BIP 39](/glossary/bip-39) supports an optional **passphrase** in addition to the 12 or 24 mnemonic words. Sometimes called "the 25th word," though it can be any string of any length.
+[BIP 39](/glossary/bip-39) 支持一个可选的**密码短语**，在 12 或 24 个助记词之外。有时叫"第 25 个词"，虽然它可以是任意长度的任意字符串。
 
-The passphrase is mixed into seed derivation. Different passphrase → completely different wallet, with completely different addresses, derived from the same words.
+密码短语混入种子派生。不同密码短语 → 完全不同的钱包，完全不同的地址，都从同样的词派生。
 
-Why it matters:
-- **Theft defense.** Someone who finds your seed words alone gets a wallet with no funds. The wallet with the actual bitcoin is behind the passphrase.
-- **Plausible deniability.** You can set up a "decoy" wallet without a passphrase that holds a small amount, and a "real" wallet with a passphrase that holds everything. A coercer who demands "your wallet" gets the decoy.
-- **Single point of failure (the other way).** Forget the passphrase, lose everything. There is no recovery, no customer-service line, no password reset.
+为什么重要：
+- **防盗。** 只找到你的助记词的人得到的是一个没钱的钱包。真正有比特币的钱包在密码短语后面。
+- **合理否认。** 你可以设一个不用密码短语的"诱饵"钱包放小额，和一个用密码短语的"真正"钱包放全部。胁迫者要"你的钱包"时给诱饵。
+- **单点故障（另一个方向）。** 忘了密码短语，全丢。没有恢复、没有客服、没有密码重置。
 
-Passphrase best practices:
-- Choose something long and not memorable, then write it down separately from the seed.
-- Do not rely on remembering it. Human memory is a worse storage medium than steel.
-- Test recovery with the passphrase before depositing real funds.
+密码短语最佳实践：
+- 选长且不好记的，然后写下来与种子分开存放。
+- 不要指望记住它。人脑是比钢更差的存储介质。
+- 在存入真金白银前用密码短语测试恢复。
 
-For high-value wallets, a passphrase is standard practice. For low-value wallets, it adds risk without much gain.
+对高价值钱包，密码短语是标准做法。对低价值钱包，它增加风险却没太多收益。
 
-## 6. Shamir Secret Sharing (SLIP 39)
+## 6. 沙米尔秘密分享（SLIP 39）
 
-[Shamir Secret Sharing](/glossary/shamir-secret-sharing) (via [SLIP 39](https://github.com/satoshilabs/slips/blob/master/slip-0039.md)) splits a seed into N shares, of which M are required to reconstruct (M-of-N).
+[沙米尔秘密分享](/glossary/shamir-secret-sharing)（通过 [SLIP 39](https://github.com/satoshilabs/slips/blob/master/slip-0039.md)）将种子分成 N 份，其中 M 份需要才能重建（M-of-N）。
 
-Example: 3-of-5. You generate 5 shares. Any 3 can recover the seed. Any 2 reveal nothing.
+例子：3-of-5。你生成 5 份。任意 3 份可恢复种子。任意 2 份不透露任何信息。
 
 <figure>
   <img src="/photos/seed-backup/shamir-shares.jpg" alt="Four blank paper cards laid end-to-end on light wood, each with five rows of letter cells, numbered 1-5, 6-10, 11-15, and 16-20. The format matches a 20-word SLIP-39 share." />
-  <figcaption>One SLIP-39 share, formatted on perforated paper. A full M-of-N setup is several of these, ideally re-encoded onto metal, distributed across separate locations.</figcaption>
+  <figcaption>一张 SLIP-39 分片，在打孔纸上排版。完整的 M-of-N 设置有多张这样的，理想情况下重新编码到金属上，分散在不同位置。</figcaption>
 </figure>
 
-This is **not** the same as splitting words across pieces of paper. Naive splitting (write words 1 to 12 on paper A and 13 to 24 on paper B) drastically reduces the brute-force space of the missing half. 12 words is much, much less than 24, and is a serious security mistake.
+这**不**等于把词分到不同纸上。朴素分割（词 1-12 写在纸 A、词 13-24 写在纸 B）大幅降低了缺失半部分的暴力搜索空间。12 个词远比 24 个少得多，是严重的安全错误。
 
-Shamir Secret Sharing is mathematically sound. Each share is the same size as the original; no share gives any information about the secret on its own.
+沙米尔秘密分享在数学上是可靠的。每份与原始同样大小；任何一份单独不给出关于秘密的任何信息。
 
-Use cases:
-- **Geographic distribution.** Shares at home, at a parent's house, in a bank box, and at a friend's. Recover any 3-of-5.
-- **Inheritance.** Heirs each hold a share; M-of-N can spend after your death.
-- **Operational.** A business holds shares with key principals; M-of-N approves a spend.
+用例：
+- **地理分布。** 分片在家、父母家、银行保险箱和朋友那里。3-of-5 可恢复。
+- **继承。** 继承人各持一份；你去世后 M-of-N 可花费。
+- **运营。** 企业与关键人员各持分片；M-of-N 批准花费。
 
-Hardware wallets that support SLIP-39 include Trezor and Coldcard (via different paths). Some software wallets support it; most do not.
+支持 SLIP-39 的硬件钱包包括 Trezor 和 Coldcard（通过不同路径）。一些软件钱包支持；大多数不支持。
 
-Tradeoffs:
-- **Adds complexity.** More to back up, more to coordinate.
-- **Harder to recover from operator error.** A simple paper backup is one piece. Shamir is M pieces; if any one share's recovery fails, you need to track down others.
-- **Custom format.** Not all wallets read SLIP-39 shares. Recovery requires a compatible tool.
+权衡：
+- **增加复杂性。** 要备份更多、协调更多。
+- **操作错误恢复更难。** 一张纸备份就一件。沙米尔是 M 件；如果任一份恢复失败，你需要找其他份。
+- **自定义格式。** 不是所有钱包读取 SLIP-39 分片。恢复需要兼容工具。
 
-For mid-to-high-value setups with real inheritance or geographic concerns, Shamir is excellent. For everyday savings, it is overkill.
+对有真实继承或地理考虑的中高价值设置，沙米尔很好。对日常储蓄，它过度。
 
-## 7. Multisig: Backup as a Wallet Strategy
+## 7. 多签：作为钱包策略的备份
 
-[Multisig](/glossary/multisig) - a wallet that requires M-of-N signatures to spend - is more than a backup; it is a different wallet model. But it functions powerfully as a backup strategy.
+[多签](/glossary/multisig)（multisig）- 需要 M-of-N 签名才能花费的钱包 - 不仅仅是备份；它是一种不同的钱包模型。但作为备份策略它功能强大。
 
 <figure>
   <video
@@ -185,68 +186,68 @@ For mid-to-high-value setups with real inheritance or geographic concerns, Shami
     preload="metadata"
     aria-label="Animated walkthrough of a 2-of-3 multisig wallet. Three hardware keys appear in a row with a Threshold 2 of 3 label and the caption Three different makers a bug in one cannot break the others. A transaction signs with two keys and broadcasts. Loss scenario: Key B fades to gray, the other two still sign and the spend goes through. Theft scenario: a hooded figure grabs Key A which turns green and is marked stolen, the thief's attempt to sign alone halts at one of two signatures. Closing pillars: Multisig. Threshold-of-keys. Vendor-diverse."
   ></video>
-  <figcaption>2-of-3 multisig end to end: setup, normal spend, loss, theft. Three keys, any two sign.</figcaption>
+  <figcaption>2-of-3 多签端到端：设置、正常花费、丢失、盗窃。三把密钥，任意两把签名。</figcaption>
 </figure>
 
 <figure>
   <img src="/photos/seed-backup/multisig-three-devices.jpg" alt="Three hardware wallets in a row on light wood: a Coldcard Mk4 keypad device on the left, a Blockstream Jade in the middle, and a Trezor Safe on the right." />
-  <figcaption>A 2-of-3 multisig setup with three different vendors. Vendor diversity is a defense against any single firmware or supply-chain compromise.</figcaption>
+  <figcaption>用三个不同厂商的 2-of-3 多签设置。厂商多样性是对任何单一固件或供应链漏洞的防御。</figcaption>
 </figure>
 
-A 2-of-3 multisig:
-- 3 keys, held in 3 separate locations or by 3 separate parties.
-- Any 2 keys can spend.
-- **Loss of any 1 key:** no funds lost. You can re-create the lost key and migrate.
-- **Theft of any 1 key:** no funds lost.
+2-of-3 多签：
+- 3 把密钥，放在 3 个不同位置或由 3 个不同方持有。
+- 任意 2 把可花费。
+- **丢失任 1 把：** 不丢钱。你可以重建丢失的密钥并迁移。
+- **被盗任 1 把：** 不丢钱。
 
-This is dramatically more resilient than single-sig with multiple seed backups. Each "key" can have its own backup (paper, metal, passphrase). Loss of an entire key's worth of backup is recoverable as long as 2 of the 3 keys remain.
+这比带多个种子备份的单签更有韧性得多。每把"密钥"可以有自己的备份（纸、金属、密码短语）。丢失整把密钥的备份只要 3 把中 2 把还在就可恢复。
 
-Tradeoffs:
-- **More complex setup.** Three hardware wallets, three seeds, careful configuration.
-- **Heir difficulty.** Inheriting a multisig is harder than inheriting a seed phrase.
-- **PSBTs.** Spending requires coordinated signatures, typically via [Partially-Signed Bitcoin Transactions](/glossary/psbt).
+权衡：
+- **设置更复杂。** 三个硬件钱包，三个种子，仔细配置。
+- **继承人困难。** 继承多签比继承助记词更难。
+- **PSBT。** 花费需要协调签名，通常通过[部分签名的比特币交易](/glossary/psbt)（PSBT）。
 
-For meaningful amounts of bitcoin, multisig is the gold standard. For under five figures, single-sig with strong backup is fine.
+对有意义的比特币金额，多签是黄金标准。五位数以下，单签加强备份就行。
 
-## 8. Inheritance: The Dead-Man's-Switch Problem
+## 8. 继承：死人开关问题
 
-The hardest backup question is not "what if I lose my seed" but "what happens when I die?"
+最难的备份问题不是"如果我丢了种子怎么办"而是"我死了怎么办？"
 
-Default outcome: nothing. Your bitcoin is gone forever, locked behind a seed no one else has. By some estimates, several million BTC are already permanently lost this way.
+默认结果：什么也不发生。你的比特币永远没了，锁在没有人有的种子背后。据某些估计，几百万 BTC 已经这样永久丢失了。
 
-Options:
-- **Sealed instructions.** A letter with your lawyer or in a safe, opened on death, that explains how to access your bitcoin. Simple, but trust-dependent.
-- **Multisig with heirs.** Some keys held by you, some by heirs or executors. Designed to be unspendable while you are alive but spendable after.
-- **Time-locked transactions.** Pre-signed transactions that become valid after a long delay (years). Requires periodic refresh.
-- **Inheritance services.** Specialized custodians who execute on death certificates. Centralization tradeoff.
+选项：
+- **密封说明。** 你的律师或保险箱里一封信，去世时打开，说明如何访问你的比特币。简单但依赖信任。
+- **继承人多签。** 一些密钥你持有，一些由继承人或执行人持有。设计为你在世时不可花费但你去世后可花费。
+- **时间锁交易。** 预签名交易在很长延迟（数年）后生效。需要定期刷新。
+- **继承服务。** 专门托管人在死亡证明上执行。中心化权衡。
 
-Whatever the mechanism, a real inheritance plan requires *testing*. A plan you never tested is a plan that probably does not work.
+无论什么机制，真正继承计划需要*测试*。没测试过的计划很可能不管用。
 
-There is no excuse for skipping this once your stack is meaningful. (See [inheritance seed backup](/glossary/inheritance-seed-backup) for more.)
+一旦你的持仓有意义就没有借口跳过这件事。（参见[继承种子备份](/glossary/inheritance-seed-backup)了解更多。）
 
-## 9. The Single-Point-of-Failure Mistake
+## 9. 单点故障错误
 
-The most common failure mode in seed backup is one form of "single point of failure" or another:
+种子备份中最常见的失败模式是某种"单点故障"：
 
-- **One seed copy.** House fire → all gone.
-- **All copies in one place.** Same outcome.
-- **Cloud-stored "encrypted" backup.** Cloud provider breach plus weak password → all gone.
-- **Memorized passphrase, no written copy.** You forget → all gone.
-- **Heirs do not know where the backup is.** You die → all gone.
-- **"Encrypted" with a password only you know.** You forget → all gone.
+- **一份种子副本。** 房子着火 → 全没。
+- **所有副本在一处。** 同样结果。
+- **云端"加密"备份。** 云服务商泄露加弱密码 → 全没。
+- **记在脑里的密码短语，无书面副本。** 忘了 → 全没。
+- **继承人不知道备份在哪。** 你去世 → 全没。
+- **"加密"只用你知道的密码。** 忘了 → 全没。
 
-The pattern: any backup strategy that depends on a single thing not failing is a bad strategy. Real backups depend on multiple things failing simultaneously, with each component's failure being independent of the others.
+模式：任何依赖单一样东西不失败的备份策略都是坏策略。真正的备份依赖多个东西同时失败，每个组件的失败是独立的。
 
-A good test: write down everything that has to *not* fail for you to retain access. If the list is one item, your backup is fragile. If it is three or more independent items, you are in good shape.
+一个好测试：写下你必须*不*失败什么才能保留访问权。如果列表只有一项，你的备份脆弱。如果是三个或更多独立项，你就处于好状态。
 
-## 10. What This Buys Us
+## 10. 这给我们带来了什么
 
-A well-designed seed backup is the difference between "I own bitcoin" and "I temporarily control bitcoin until something happens to my paperwork."
+设计良好的种子备份是"我拥有比特币"和"在某事发生在我的文书工作上之前我暂时控制比特币"的区别。
 
-Bitcoin self-custody is the most extreme form of personal financial responsibility yet invented. No customer support, no password reset, no fraud department. The seed is the wallet, the wallet is the bitcoin, the responsibility is yours.
+比特币自托管是迄今发明的最极端形式的个人金融责任。没有客服、没有密码重置、没有欺诈部门。种子就是钱包，钱包就是比特币，责任是你的。
 
-That is not a bug. It is the entire point. The cost of full sovereignty is the obligation to manage your own keys, including planning for every reasonable failure mode.
+这不是 bug。它是全部意义。完全主权的代价是管理自己密钥的义务，包括为每种合理的失败模式做计划。
 
-Take it seriously. Test your recovery. Update your plan as your stack grows. Tell at least one person you trust where the recovery instructions live.
+认真对待。测试你的恢复。随着你的持仓增长更新你的计划。至少告诉你信任的一个人恢复说明放在哪里。
 
-> **Pro tip:** The single highest-leverage action you can take this week, if you hold meaningful bitcoin, is to test your recovery procedure. Erase your hardware wallet, restore from your backup, verify the addresses match. If you cannot do it cold, your backup is theoretical.
+> **实用提示：** 如果你持有有意义的比特币，这周你能做的最高杠杆行动就是测试你的恢复流程。擦除你的硬件钱包，从你的备份恢复，验证地址匹配。如果你不能冷恢复，你的备份只是理论上的。

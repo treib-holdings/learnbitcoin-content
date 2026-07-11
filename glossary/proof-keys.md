@@ -1,12 +1,12 @@
 ---
-title: "Proof of Keys"
+title: "Proof of Keys（密钥证明日）"
 slug: proof-keys
 draft: false
-shortDefinition: "An annual campaign started by Trace Mayer, urging users to withdraw BTC from custodians on Jan 3rd to test self-custody."
+shortDefinition: "由 Trace Mayer 发起的年度活动，鼓励用户在 1 月 3 日从托管方提取 BTC 以测试自托管。"
 keyTakeaways:
-  - "Promotes sovereignty by controlling your private keys"
-  - "Tests exchanges' ability to honor mass withdrawal requests"
-  - "Celebrated each January 3rd, linking to Bitcoin's genesis date"
+  - "通过控制自己的私钥促进主权意识"
+  - "测试交易所有无能力应对大规模提款请求"
+  - "每年 1 月 3 日庆祝，与比特币创世日相关"
 sources: []
 relatedTerms:
   - counterparty-risk
@@ -15,23 +15,23 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Proof of Keys is an annual movement, started by Trace Mayer in 2019, encouraging Bitcoin holders to withdraw their coins from exchanges and custodians on January 3rd, the anniversary of the Bitcoin Genesis block. The slogan: "Not your keys, not your coins."
+Proof of Keys 是一年一度的活动，由 Trace Mayer 于 2019 年发起，鼓励比特币持有者在 1 月 3 日——比特币创世区块周年纪念日——从交易所和托管方提取他们的币。口号："不是你的密钥，就不是你的币。"
 
-The point isn't ceremonial. It's a coordinated stress test of custodians:
+重点不是仪式性的。它是对托管方的协调压力测试：
 
-- If lots of customers all try to withdraw at once, the custodian has to actually move BTC out of cold storage. Fractional reserves, missing funds, or operational bottlenecks become visible.
-- An exchange that can't honor withdrawals on January 3rd has problems users should know about. An exchange that can shows it's actually solvent in real BTC, not just promises.
-- Even when no insolvency exists, the exercise teaches users how custody actually works: the difference between "BTC in an exchange account" and "BTC in a wallet you control" is real, and exercising it makes the distinction concrete.
+- 如果大量客户同时尝试提款，托管方就必须真正从冷存储中移出 BTC。部分准备金、缺失资金或运营瓶颈都会暴露。
+- 一个在 1 月 3 日无法处理提款的交易所有用户应该知道的问题。一个能处理提款的交易所表明它确实有真实 BTC，而不仅仅是承诺。
+- 即使没有资不抵债的情况，这个练习也教会用户托管实际如何运作："交易所账户里的 BTC"和"你控制的钱包里的 BTC"之间的区别是真实的，实践它使这种区别具体化。
 
-The historical record:
+历史记录：
 
-- **2019 (first event)**: Modest participation. No major exchange failures triggered, but a useful cultural milestone.
-- **2020-2021**: Bull market context. Less withdrawal pressure because users were comfortable with exchange counterparty risk.
-- **2022 retrospective**: The FTX collapse in November 2022 vindicated the entire Proof of Keys thesis. FTX held customer BTC that wasn't actually there; users who'd "withdrawn during Proof of Keys" in prior years had kept their coins, users who hadn't lost theirs.
-- **2023+**: Renewed cultural emphasis in the post-FTX environment. Self-custody adoption increased meaningfully after the 2022 contagion.
+- **2019（首届）**：参与度适中。没有触发重大交易所倒闭，但这是一个有用的文化里程碑。
+- **2020-2021**：牛市背景。提款压力较小，因为用户对交易所对手方风险感到舒适。
+- **2022 回顾**：2022 年 11 月 FTX 崩溃验证了整个 Proof of Keys 论点。FTX 持有的客户 BTC 实际上并不存在；在之前年份"Proof of Keys 期间提款"的用户保住了他们的币，没有提款的用户失去了他们的。
+- **2023+**：FTX 后环境中对自我托管的重新强调。2022 年传染后自托管采用显著增加。
 
-Trace Mayer's framing (paraphrased): "If you do this every year, you can see whether your exchange is solvent. If you only do it during a crisis, you might be too late."
+Trace Mayer 的表述（转述）："如果你每年都这样做，你可以看到你的交易所是否资不抵债。如果你只在危机时才这样做，你可能太迟了。"
 
-The practical takeaway aligns with the [Be Your Own Bank chapter](/journey/be-your-own-bank): for any amount of BTC you actually care about, self-custody is the answer. Use exchanges for fiat on-ramps and trading; withdraw to hardware-wallet-controlled addresses promptly. Proof of Keys Day is a useful reminder, but the underlying discipline applies year-round.
+实际的启示与[成为你自己的银行章节](/journey/be-your-own-bank)一致：对于你真正关心的任何数量的 BTC，自托管是答案。用交易所做法币入口和交易；及时提取到硬件钱包控制的地址。Proof of Keys 日是有用的提醒，但底层纪律全年适用。
 
-January 3rd will probably remain a Bitcoin cultural moment for as long as Bitcoin exists. It's the annual reminder that the network's value proposition is sovereignty, and sovereignty requires actually controlling the keys.
+1 月 3 日可能只要比特币存在就一直是比特币文化时刻。它是年度提醒：网络的价值主张是主权，而主权需要真正控制密钥。

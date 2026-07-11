@@ -1,12 +1,12 @@
 ---
-title: "BIP 342 (Tapscript)"
+title: "BIP 342（Tapscript）"
 slug: bip-342-tapscript
 draft: false
-shortDefinition: "Defines Taproot scripting logic, including opcodes and versioning for future expansions of Bitcoin smart contracts."
+shortDefinition: "定义 Taproot 脚本逻辑，包括操作码和版本控制，为未来比特币智能合约扩展做准备。"
 keyTakeaways:
-  - "Introduces a new scripting version for Taproot"
-  - "Supports additional opcodes and flexible upgrades"
-  - "Ensures forward-compatibility for advanced smart contracts"
+  - "为 Taproot 引入新的脚本版本"
+  - "支持额外的操作码和灵活升级"
+  - "确保高级智能合约的前向兼容性"
 sources: []
 relatedTerms:
   - bip-bitcoin-improvement-proposal
@@ -24,18 +24,18 @@ sameAs:
 liveWidget: ~
 ---
 
-[BIP-342](https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki) defines **Tapscript** - the version of [Bitcoin Script](/glossary/bitcoin-script) used by [Taproot](/glossary/taproot) outputs when they're spent via the script-path branch (as opposed to the cooperative key-path branch). Activated as a [soft fork](/glossary/soft-fork) in November 2021 alongside BIP-340 and BIP-341.
+[BIP-342](https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki)定义了 **Tapscript**——[Taproot](/glossary/taproot)输出通过脚本路径分支花费时（相对于协作式密钥路径分支）使用的 [Bitcoin Script](/glossary/bitcoin-script)版本。2021 年 11 月作为[软分叉](/glossary/soft-fork)与 BIP-340 和 BIP-341 一起激活。
 
-Tapscript is mostly the same Bitcoin Script you already know, but with several improvements:
+Tapscript 与你已知的 Bitcoin Script 大致相同，但有几项改进：
 
-- **New signature [opcodes](/glossary/op-code-operation-code).** `OP_CHECKSIGADD` replaces `OP_CHECKMULTISIG` (which was deprecated for Tapscript) with a cleaner per-signature accumulator pattern.
-- **[Schnorr signatures](/glossary/schnorr-signature) for `OP_CHECKSIG`** within Tapscript, matching the rest of Taproot's signature scheme.
-- **Removed legacy opcodes.** A few opcodes that didn't make sense or had subtle quirks are gone in Tapscript context.
-- **Versioning.** Tapscript is "leaf version 0xC0" in Taproot; future leaf versions can introduce *more* opcodes (or different rules) without requiring another full protocol upgrade. This is the future-proofing piece.
-- **Cleaner resource accounting.** Tapscript meters resource usage differently from legacy script, with cleaner upper bounds on validation cost.
+- **新签名[操作码](/glossary/op-code-operation-code)。** `OP_CHECKSIGADD` 替代 `OP_CHECKMULTISIG`（在 Tapscript 中已弃用），使用更清晰的逐签名累加器模式。
+- **Tapscript 内的 `OP_CHECKSIG` 使用 [Schnorr 签名](/glossary/schnorr-signature)**，与 Taproot 其余签名方案一致。
+- **移除遗留操作码。** 一些没有意义或有微妙怪癖的操作码在 Tapscript 上下文中被移除。
+- **版本控制。** Tapscript 是 Taproot 中的"叶子版本 0xC0"；未来的叶子版本可以引入*更多*操作码（或不同规则），而无需另一次完整协议升级。这是面向未来的关键。
+- **更清晰的资源计量。** Tapscript 以不同于遗留脚本的方式计量资源使用，验证成本的上界更清晰。
 
-The versioning aspect is the under-discussed win. Adding a new opcode to legacy Bitcoin Script requires a soft fork that updates the version field's interpretation - cumbersome. In Tapscript, a new leaf version can introduce different opcodes while leaving existing leaf versions untouched. Future capability extensions (covenants, new signature schemes, etc.) can use this slot.
+版本控制方面是一个被低估的胜利。向遗留 Bitcoin Script 添加新操作码需要更新版本字段解释的软分叉——笨重。在 Tapscript 中，新的叶子版本可以引入不同操作码而不影响现有叶子版本。未来的能力扩展（契约、新签名方案等）可以使用这个插槽。
 
-For most users, Tapscript is invisible. When you spend a Taproot output cooperatively (the "key-path" spend), Tapscript isn't involved - just a Schnorr signature. Tapscript only comes into play if you need to use the script-path branch (an alternative branch in a [MAST](/glossary/merkleized-abstract-syntax-tree-mast)). Even then, your wallet handles it.
+对大多数用户来说，Tapscript 是不可见的。当你以协作方式花费 Taproot 输出（"密钥路径"花费）时，Tapscript 不参与——只需一个 Schnorr 签名。Tapscript 只在使用脚本路径分支（[MAST](/glossary/merkleized-abstract-syntax-tree-mast)中的替代分支）时才起作用。即使那样，你的钱包也会处理它。
 
-See [Taproot](/glossary/taproot) for the broader upgrade and [Bitcoin Script](/glossary/bitcoin-script) for the legacy scripting language Tapscript extends.
+参见 [Taproot](/glossary/taproot)了解更广泛的升级，[Bitcoin Script](/glossary/bitcoin-script)了解 Tapscript 扩展的遗留脚本语言。

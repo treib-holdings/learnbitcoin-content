@@ -1,12 +1,12 @@
 ---
-title: "Wallet Import Format (WIF)"
+title: "钱包导入格式（WIF）"
 slug: wallet-import-format-wif
 draft: false
-shortDefinition: "A user-friendly encoding of a private key (often starting with '5,' 'K,' or 'L') commonly used in Bitcoin wallets."
+shortDefinition: "私钥的用户友好编码（通常以 '5'、'K' 或 'L' 开头），常用于比特币钱包。"
 keyTakeaways:
-  - "Wraps a raw private key with a prefix and checksum in Base58Check"
-  - "Simplifies manual entry but must be handled securely"
-  - "Gradually superseded by HD seed phrases for typical backups"
+  - "用 Base58Check 将原始私钥包装上前缀和校验和"
+  - "简化手动输入但必须安全处理"
+  - "在典型备份中逐渐被 HD 助记词取代"
 sources: []
 relatedTerms:
   - gui-wallet
@@ -17,20 +17,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-WIF (Wallet Import Format) is a Base58Check encoding of a single Bitcoin private key. It wraps the raw 32-byte private key with a network prefix byte, an optional compression flag, and a 4-byte checksum so a typo at the wallet import screen fails fast instead of silently loading a different key.
+WIF（钱包导入格式）是单个比特币私钥的 Base58Check 编码。它将原始 32 字节私钥包装上网络前缀字节、可选压缩标志和 4 字节校验和，使钱包导入界面的打错会快速失败而非静默加载一个不同的密钥。
 
-What WIF strings look like:
+WIF 字符串的样子：
 
-- **`5...`** - uncompressed-public-key form. Legacy; only present in pre-2012-ish wallets and a few collector wallets.
-- **`K...` or `L...`** - compressed-public-key form. The standard format for modern WIF.
-- **`p2...`** (or other prefixes) - BIP 38 encrypted private keys: a WIF protected with a passphrase. The user must decrypt before use.
+- **`5...`**——未压缩公钥形式。遗留格式；只存在于 2012 年以前的钱包和少数收藏钱包中。
+- **`K...` 或 `L...`**——压缩公钥形式。现代 WIF 的标准格式。
+- **`p2...`**（或其他前缀）——BIP 38 加密私钥：受密码保护的 WIF。使用前必须先解密。
 
-Where you still encounter WIF in 2026:
+2026 年仍会遇到 WIF 的场景：
 
-- **Sweeping a paper wallet.** Older paper wallets stored a single WIF; importing it into a modern wallet moves the coins to your HD-managed addresses.
-- **One-off private key recovery.** A long-dormant address resurfaces, you have the raw private key somewhere, and you need to spend it once.
-- **Educational tools.** Some teaching wallets and Bitcoin developer playgrounds use WIF because it's compact and human-readable.
+- **扫入纸钱包。** 旧的纸钱包存储单个 WIF；将其导入现代钱包会把币转移到你的 HD 管理地址。
+- **一次性私钥恢复。** 一个沉睡已久的地址重现，你在某处有原始私钥，需要花费一次。
+- **教学工具。** 一些教学钱包和比特币开发者练习场使用 WIF，因为它紧凑且人类可读。
 
-WIF is a single-key format. There's no derivation, no tree, no children. If you import a WIF and then spend from the resulting address, modern wallets typically don't track future addresses derived from any related key - because there isn't a related key tree. For ongoing custody, modern practice is BIP 39 mnemonic seed phrases driving BIP 32 HD wallets. WIF lives on as the legacy single-key compatibility format.
+WIF 是单密钥格式。没有派生，没有树，没有子密钥。如果你导入一个 WIF 然后从所得地址花费，现代钱包通常不会跟踪从任何相关密钥派生的未来地址——因为没有相关密钥树。对持续保管，现代做法是 BIP 39 助记词驱动 BIP 32 HD 钱包。WIF 作为遗留的单密钥兼容格式存留。
 
-Security note: a WIF is exactly as sensitive as a raw private key. Anyone with the string can spend the coins. Treat it like cash, not like a public address.
+安全提示：WIF 与原始私钥一样敏感。任何拥有这个字符串的人都可以花费其中的币。像对待现金一样对待它，不要像公开地址一样对待它。

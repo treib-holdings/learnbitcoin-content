@@ -1,11 +1,11 @@
 ---
-title: "Quantum and Bitcoin"
+title: "量子计算与比特币"
 slug: quantum-and-bitcoin
 draft: false
 published: "2026-06-11"
 status: live
 section: rabbit-hole
-tagline: "Quantum is the FUD claim that comes up most often after fiat-debasement and energy. The honest version: the threat is real, the timeline is slow, the fix is governance, and Bitcoin has agency."
+tagline: "量子是继法币贬值和能源之后出现最多的 FUD 指控。诚实版本：威胁是真实的，时间线是缓慢的，修复靠治理，比特币有能动性。"
 order: 11
 estimatedMinutes: 14
 sources:
@@ -32,7 +32,7 @@ relatedTerms:
   - address-reuse
 ---
 
-> **Where you're going:** Bitcoin's signatures rely on math a sufficiently large quantum computer could break. That computer does not exist yet. The math has been understood since 1994. This page walks through what is actually exposed, what is not, what Bitcoin can do about it, and why the answer is governance, not panic.
+> **你将了解：** 比特币的签名依赖于一台足够大的量子计算机可以破解的数学。那台计算机还不存在。数学从 1994 年就被理解了。本页会走一遍实际暴露了什么、什么没有、比特币能做什么、以及为什么答案是治理而非恐慌。
 
 <figure>
   <video
@@ -47,179 +47,179 @@ relatedTerms:
     preload="metadata"
     aria-label="Forty-five-second animation across four states. Today: 25 percent of supply at quantum-exposed addresses (orange), 75 percent safe behind a hash (gray). Bitcoin Prepares: a post-quantum signature scheme activates, the bar morphs slowly, the residual orange grows in place to 18 percent stranded (lost keys, permanent), and the rest of the supply migrates to a deep ink color labeled PQ-safe at 82 percent. Quantum Arrives: the bar does not change - the threat meets a prepared network, the residual is labeled Lost keys, stranded permanently. Closing manifesto: Quantum is real. Bitcoin is preparing. Stop address reuse."
   ></video>
-  <figcaption>Forty-five seconds. The bar moves when Bitcoin prepares. It stays still when quantum arrives. Preparation, not panic.</figcaption>
+  <figcaption>四十五秒。当比特币准备时条在动。当量子到来时它不动。是准备，不是恐慌。</figcaption>
 </figure>
 
-Quantum is the FUD claim that comes up most often after fiat-debasement and energy. Most of the noise is either doom ("quantum breaks Bitcoin tomorrow") or dismissal ("decades away, ignore it"). Both are wrong. The honest version is more interesting and more useful: the threat is real, the timeline is slow, the fix is governance, and Bitcoin has agency. That last word matters. The system was designed to evolve under exactly this kind of constraint.
+量子是继法币贬值和能源之后出现最多的 FUD 指控。大多数噪音要么是末日论（"量子明天就破解比特币"）要么是轻视（"几十年后的事，忽略它"）。两者都错了。诚实版本更有趣也更有用：威胁是真实的，时间线是缓慢的，修复靠治理，比特币有能动性。最后那个词很重要。系统设计就是要在这种约束下演进的。
 
-## The number that lands
+## 落地的数字
 
-About **30.5 percent of circulating supply** sits at quantum-exposed addresses today - close to one bitcoin in three. That figure carries a correction worth stating outright. The original Baseline 2026 Q2 measurement counted 5,071,264 BTC, or 25.3 percent. A later parser pass (methodology v1.1) folded in roughly another 1.04 million BTC of nested-segwit reuse the first walk had skipped, which brings the strict figure to about 30.5 percent.
+目前大约 **30.5% 的流通供应量** 位于量子暴露的地址上 - 接近每三个比特币中就有一个。这个数字带一个值得直说的更正。原始的 2026 年第二季度基线测量是 5,071,264 BTC，即 25.3%。后来的解析器（方法论 v1.1）纳入了约 104 万个第一次扫描跳过的嵌套 SegWit 复用 BTC，将严格数字带到约 30.5%。
 
-The breakdown below is that v1.0 baseline - 5,071,264 BTC across 12,749,047 addresses, before the nested-segwit coins were folded in. Some are dormant. Most are not. The largest single bucket is not Satoshi - it is **1,896,840 BTC at modern segwit (P2WPKH) addresses that got reused at least once**. Real users, real wallets, real habits.
+下面的分解是 v1.0 基线 - 5,071,264 BTC，分布在 12,749,047 个地址上，在纳入嵌套 SegWit 币之前。其中一些是休眠的。大多数不是。最大的单一桶不是中本聪 - 而是 **1,896,840 BTC 在现代 SegWit（P2WPKH）地址上，至少复用过一次**。真实的用户，真实的钱包，真实的习惯。
 
-Snapshot: 2026-06-07, block 952,694, methodology v1.0. The full breakdown:
+快照：2026-06-07，区块 952,694，方法论 v1.0。完整分解：
 
 <figure>
   <img src="/diagrams/quantum-exposure-stacked.svg" alt="Horizontal bar chart of the six Bitcoin script types holding quantum-exposed BTC. P2WPKH reuse-exposed leads at 1,896,840 BTC (37.4 percent of at-risk pool). P2PKH reuse-exposed 1,196,717 BTC. P2PK always-exposed 853,247 BTC. P2WSH reuse-exposed 675,992 BTC. P2SH reuse-exposed 238,709 BTC. P2TR always-exposed 209,759 BTC. Total 5,071,264 BTC across 12,749,047 addresses." />
-  <figcaption>Six buckets, ordered by BTC at risk. Always-exposed types (P2PK, bare multisig, P2TR) in deep orange. Reuse-exposed types in lighter orange. This is the v1.0 Baseline 2026 Q2 breakdown (5,071,264 BTC); the v1.1 correction adds roughly 1.04M BTC of nested-segwit reuse on top. Snapshot 2026-06-07, base block 952,694. Source: ChainQuery.</figcaption>
+  <figcaption>六个桶，按风险中的 BTC 排序。始终暴露类型（P2PK、裸多签、P2TR）深橙色。复用暴露类型浅橙色。这是 v1.0 基线（5,071,264 BTC）；v1.1 更正在此之上增加了约 104 万 BTC 嵌套 SegWit 复用。快照 2026-06-07，基础区块 952,694。来源：ChainQuery。</figcaption>
 </figure>
 
-Source: [ChainQuery quantum-exposure report](https://chainquery.com/reports/quantum-exposure), bitcoind 28 node, weekly Sunday snapshots.
+来源：[ChainQuery quantum-exposure report](https://chainquery.com/reports/quantum-exposure)，bitcoind 28 节点，每周日快照。
 
-This is not a crisis. It is a forcing function.
+这不是危机。这是一个倒逼机制。
 
-## The honest version of the number
+## 数字的诚实版本
 
-BIP-361 cites "over 34 percent of all BTC" as quantum-exposed. ChainQuery's strict number is about 30.5 percent. The gap is methodology.
+BIP-361 引用"超过所有 BTC 的 34%"为量子暴露。ChainQuery 的严格数字是约 30.5%。差距在于方法论。
 
-BIP-361 counts every P2SH and P2WSH address whose redeem script was ever revealed on chain. ChainQuery only counts the ones where the revealed script actually contains a pubkey followed by a CHECKSIG-family opcode. Timelock-only scripts get excluded. Hash-preimage scripts get excluded. They do not leak pubkeys on spend.
+BIP-361 计算每个在链上揭示过兑换脚本的 P2SH 和 P2WSH 地址。ChainQuery 只计算那些揭示的脚本实际包含一个公钥后跟 CHECKSIG 系列操作码的。只有时间锁的脚本被排除。只有哈希原像的脚本被排除。它们不在花费时泄漏公钥。
 
-**Real exposure sits between these two numbers.** ChainQuery is the rigorous lower bound. BIP-361 is the upper bound that informs the migration framework. We use ChainQuery because it is provable from chain data; we cite BIP-361 because it is what a proposed soft fork is being written against.
+**真实暴露在这两个数字之间。** ChainQuery 是可从链数据证明的严格下限。BIP-361 是迁移框架所依据的上限。我们使用 ChainQuery 因为它从链数据可证明；我们引用 BIP-361 因为那是提议的软分叉正在编写的依据。
 
-A third independent measurement anchors the upper bound empirically. The [Wicked Smart Bitcoin quantum exposure dashboard](https://wickedsmartbitcoin.com/quantum_exposure) applies the conservative BIP-361-style counting rule directly to chain data and reports 34.55 percent at block 951,000 - matching BIP-361's analytic figure almost exactly. Methodology v1.1 closed most of the original gap: folding in the roughly 1.04 million BTC of nested-segwit reuse (P2SH-wrapped P2WPKH and P2WSH, whose pubkey is revealed in the witness) narrowed the distance to Wicked's number to about 4 points. The residual is small, and it is not explained by puzzle scripts - timelock-only, hash-preimage, and OP_RETURN-shaped redeems together hold only tens of BTC. Three measurements, transparent gap.
+第三个独立测量从实证角度锚定了上限。[Wicked Smart Bitcoin quantum exposure dashboard](https://wickedsmartbitcoin.com/quantum_exposure) 将保守的 BIP-361 风格计数规则直接应用于链数据，报告在区块 951,000 处为 34.55% - 几乎完全匹配 BIP-361 的分析数字。方法论 v1.1 关闭了原始差距的大部分：纳入约 104 万 BTC 的嵌套 SegWit 复用（P2SH 包装的 P2WPKH 和 P2WSH，其公钥在见证中揭示）将到 Wicked 数字的距离缩小到约 4 个百分点。残差很小，不由谜题脚本解释 - 只有时间锁、哈希原像和 OP_RETURN 形式的兑换总共只持有几十个 BTC。三次测量，透明差距。
 
-Either way: roughly a third of the supply, today.
+无论哪种方式：大约三分之一的供应量，就在今天。
 
-## What "quantum-exposed" actually means
+## "量子暴露"实际意味着什么
 
-There are two classes of exposure. Order matters because the easier case explains the harder one.
+有两类暴露。顺序重要因为更容易的案例解释了更难的。
 
-**Always-exposed.** The pubkey is on chain from the moment the output is created. No spend required.
+**始终暴露。** 公钥从输出创建时就在链上。不需要花费。
 
-- **[P2PK](/glossary/p2pk-pay-public-key) (pay-to-public-key):** the output script literally contains the pubkey. Satoshi-era coinbase rewards use this. 853,247 BTC across 22,223 addresses. Most have not moved in over a decade. The bulk of this slice maps to the [Patoshi pattern](https://chainquery.com/stories/patoshi-pattern) - the ExtraNonce fingerprint of a single dominant early miner whose blocks account for roughly 22 percent of Bitcoin's first year.
-- **Bare multisig:** the script contains every signer's pubkey. Rare in modern use, still on chain from older deployments.
-- **[P2TR](/glossary/taproot) (Taproot, BIP-341):** the bech32m address IS the tweaked pubkey. There is no hash layer in front. **Every new taproot output is permanently exposed by design.** 209,759 BTC and growing every block.
+- **[P2PK](/glossary/p2pk-pay-public-key)（付给公钥）：** 输出脚本字面上包含公钥。中本聪时代的 coinbase 奖励使用这种。853,247 BTC，分布在 22,223 个地址上。大多数超过十年没动过。这部分的主体对应 [Patoshi 模式](https://chainquery.com/stories/patoshi-pattern) - 单一主导早期矿工的 ExtraNonce 指纹，其区块占比特币第一年的约 22%。
+- **裸多签：** 脚本包含每个签名者的公钥。现代使用中很少，旧部署仍在链上。
+- **[P2TR](/glossary/taproot)（Taproot，BIP-341）：** bech32m 地址*就是*调整后的公钥。前面没有哈希层。**每个新的 Taproot 输出在设计上永久暴露。** 209,759 BTC，每个区块都在增长。
 
-**Reuse-exposed.** The pubkey is hidden behind a hash on creation, but the spending witness contains the raw pubkey. After the first spend, every future deposit to that address is exposed.
+**复用暴露。** 公钥在创建时隐藏在哈希后面，但花费见证包含原始公钥。第一次花费后，未来到该地址的每笔存款都暴露了。
 
-- **P2PKH:** the legacy "1..." address. 1,196,717 BTC at reused legacy addresses.
-- **P2WPKH:** native segwit "bc1q..." short form. 1,896,840 BTC - the largest single bucket. This is not Satoshi. This is people who upgraded their wallet and kept reusing addresses.
-- **P2WSH and P2SH:** segwit and legacy script-hash forms. Counted as exposed only when the revealed redeem script contains a pubkey push followed by a CHECKSIG-family opcode, or contains OP_CHECKMULTISIG / OP_CHECKMULTISIGVERIFY. The multisig variants matter: most 2-of-3 cold-storage P2SH and P2WSH spends look like that on chain. 675,992 BTC at P2WSH, 238,709 BTC at P2SH.
+- **P2PKH：** 传统的"1..."地址。1,196,717 BTC 在复用的传统地址上。
+- **P2WPKH：** 原生 SegWit "bc1q..."短格式。1,896,840 BTC - 最大的单一桶。这不是中本聪。这是升级了钱包但继续复用地址的人。
+- **P2WSH 和 P2SH：** SegWit 和传统脚本哈希形式。仅在揭示的兑换脚本包含公钥推送后跟 CHECKSIG 系列操作码，或包含 OP_CHECKMULTISIG / OP_CHECKMULTISIGVERIFY 时才被计为暴露。多签变体重要：大多数 2-of-3 冷存储 P2SH 和 P2WSH 花费在链上看起来就是那样。675,992 BTC 在 P2WSH，238,709 BTC 在 P2SH。
 
-The protocol does not protect you here. Best practices do.
+协议在这里不保护你。最佳实践保护你。
 
-Cite: [BIP-143](/glossary/bip-143) (segwit witness structure - where the pubkey gets revealed), [BIP-341](/glossary/bip-341) (taproot uses the raw tweaked pubkey, no hash layer), [BIP-361](/glossary/bip-361) (the proposed migration framework).
+引用：[BIP-143](/glossary/bip-143)（SegWit 见证结构 - 公钥在哪里被揭示）、[BIP-341](/glossary/bip-341)（Taproot 使用原始调整公钥，没有哈希层）、[BIP-361](/glossary/bip-361)（提议的迁移框架）。
 
-## Why we can't just fix this today
+## 为什么不能今天就修
 
-A natural question: if reuse is the biggest bucket, why does this number not just shrink as users migrate to fresh addresses? It does, at the margin. But there are three reasons the figure is sticky, and understanding them is the difference between sensible action and panic.
+一个自然的问题：如果复用是最大的桶，为什么这个数字不会随着用户迁移到新地址而缩小？它在边际上确实在缩。但数字黏在有三个原因，理解它们是 sensible 行动和恐慌的区别。
 
-**The reuse pool can drain. The always-exposed pool cannot.** Individual action works on the reuse-exposed pool - 4.01 million BTC in the v1.0 baseline, larger once the nested-segwit reuse is folded in: move coins to a fresh address, never reuse it, and that BTC leaves the at-risk pool. Modern wallets default to this. The bleed today is from legacy custody (older exchanges, hardware wallets pre-2020, custom scripts) and from users who manually override the default to consolidate at a single public address.
+**复用桶可以排干。始终暴露桶不能。** 个人行动对复用暴露桶有效 - v1.0 基线中的 401 万 BTC，纳入嵌套 SegWit 复用后更大：把币移到新地址，不复用，那些 BTC 就离开风险池。现代钱包默认这样做。今天的出血来自遗留托管（旧交易所、2020 年前的硬件钱包、自定义脚本）和手动覆盖默认值以在单一公共地址整合的用户。
 
-The always-exposed pool (1,063,006 BTC) is a different problem. P2PK coinbase rewards from 2009-2010 require the original private keys to move, and a large fraction of those keys are presumed lost forever. Bare multisig has the same lost-key problem at smaller scale. And [P2TR](/glossary/taproot) has no unreveal: the bech32m address IS the tweaked pubkey, so every new taproot output adds to always-exposed supply at creation time. You cannot migrate out of P2TR without a destination type that does not exist yet.
+始终暴露池（1,063,006 BTC）是另一个问题。2009-2010 年的 P2PK coinbase 奖励需要原始私钥才能移动，其中大部分密钥被认为永久丢失了。裸多签在更小规模上有同样的丢密问题。而 [P2TR](/glossary/taproot) 没有未揭示：bech32m 地址*就是*调整后的公钥，所以每个新 Taproot 输出在创建时就加入了始终暴露供应。你不能在还没有一个不存在的新目的地址类型的情况下从 P2TR 迁出。
 
-**The act of migrating creates its own attack surface.** Every spend from a hashed-address type reveals the pubkey for the few minutes between broadcast and confirmation. Today no [CRQC (cryptographically-relevant quantum computer)](/glossary/crqc-cryptographically-relevant-quantum-computer) exists, so this window is theoretical. But if a CRQC did exist and was watching the mempool, an attacker could derive the private key in real time, broadcast a competing transaction with a higher fee, and steal the funds before the original transaction confirmed. The spend itself becomes the vector. This is the "in-flight" attack that any post-quantum migration framework has to contend with.
+**迁移行为本身创造了自己的攻击面。** 每笔从哈希地址类型的花费在广播和确认之间的几分钟内揭示公钥。今天没有 [CRQC（密码学相关量子计算机）](/glossary/crqc-cryptographically-relevant-quantum-computer)存在，所以这个窗口是理论性的。但如果 CRQC 存在并在监视内存池，攻击者可以实时推导私钥，广播一笔更高手续费的竞争交易，在原始交易确认前偷走资金。花费本身就变成了向量。这就是"在途"攻击，任何后量子迁移框架都必须应对。
 
 <figure>
   <img src="/diagrams/quantum-inflight-attack.svg" alt="A swimlane timeline showing the in-flight attack. Top lane: Alice signs a 10 BTC transaction to Bob; the signature and pubkey go visible in the witness while the tx waits in the mempool for about 10 minutes; her transaction is dropped at the block. Bottom lane: an attacker reads the now-public pubkey from the mempool, derives the private key via Shor's algorithm, and broadcasts a competing transaction with a higher fee that confirms first. Today this is theoretical because no CRQC exists; after a CRQC it would be routine." />
-  <figcaption>The mempool window is the attack surface. Today this is theoretical. In a CRQC era it is the single biggest migration risk, which is why mass-migrating at once concentrates the danger rather than diffusing it.</figcaption>
+  <figcaption>内存池窗口就是攻击面。今天这是理论性的。在 CRQC 时代它是最大的单一迁移风险，这就是为什么大规模一次性迁移集中了危险而非分散它。</figcaption>
 </figure>
 
-**Mass migration is the worst possible response.** A panic in which every holder consolidates at once spikes fees, expands the in-flight attack surface across millions of UTXOs simultaneously, and gives an early CRQC the most target-rich environment it will ever see. The right response is the boring one: migrate deliberately, over a multi-year window, on a schedule that the protocol itself can defend.
+**大规模迁移是最糟的回应。** 一个每个持有者同时整合的恐慌推高手续费、在数百万 UTXO 上同时扩大在途攻击面，给早期 CRQC 最丰富的目标环境。正确的回应是无聊的那个：在一个多年窗口内、在一个协议自身可以防御的时间表上、有意识地迁移。
 
-The framing that makes the rest of this chapter make sense: individual action helps individuals. It does not solve the systemic problem. The reuse pool can shrink through user behavior. The always-exposed floor can only shrink through protocol change. Both pools can only fully resolve when a post-quantum signature scheme ships and people migrate to PQ-native addresses. That is why the answer is governance, not panic. The fix has to be governance.
+使本章其余部分有意义的框架：个人行动帮助个人。它不解决系统性问题。复用池可以通过用户行为缩小。始终暴露下限只能通过协议变更缩小。两个池只有在后量子签名方案上线且人们迁移到 PQ 原生地址时才能完全解决。这就是为什么答案是治理，不是恐慌。修复必须是治理。
 
-## The actual threat is Shor, not Grover
+## 实际威胁是 Shor，不是 Grover
 
-"Quantum breaks Bitcoin" is a sentence. The threat depends on which part of Bitcoin you mean.
+"量子破解比特币"是一句话。威胁取决于你指比特币的哪一部分。
 
-**[Shor's algorithm](/glossary/shors-algorithm)** breaks elliptic-curve cryptography. Given the public key on the secp256k1 curve, Shor's derives the private key in polynomial time on a sufficiently large quantum computer. This is what threatens Bitcoin's [ECDSA](/glossary/ecdsa-elliptic-curve-digital-signature-algorithm) and [Schnorr](/glossary/schnorr-signature) signatures. It is the existential exposure. It is why the exposed-supply number - about 30.5 percent of all BTC - matters.
+**[Shor 算法](/glossary/shors-algorithm)** 破解椭圆曲线密码学。给定 secp256k1 曲线上的公钥，Shor 算法在足够大的量子计算机上以多项式时间推导私钥。这是威胁比特币 [ECDSA](/glossary/ecdsa-elliptic-curve-digital-signature-algorithm) 和 [Schnorr](/glossary/schnorr-signature) 签名的东西。这是存亡性暴露。这就是暴露供应量数字 - 约 30.5% 的 BTC - 重要的原因。
 
-**[Grover's algorithm](/glossary/grovers-algorithm)** gives quadratic speedup on unstructured search. Applied to SHA-256, it halves effective security: 256-bit becomes 128-bit. Annoying. Not catastrophic. 128-bit symmetric security is still the standard floor for cryptography elsewhere. Bitcoin's [proof-of-work](/glossary/proof-work-pow) survives Grover's. Bitcoin's hashed addresses (P2PKH, P2WPKH that have never been spent) survive Grover's. The 21 million supply cap survives Grover's.
+**[Grover 算法](/glossary/grovers-algorithm)** 在非结构化搜索中给二次加速。应用于 SHA-256，它减半有效安全性：256 位变 128 位。麻烦。不是灾难性的。128 位对称安全仍然是密码学其他地方的标准底线。比特币的[工作量证明](/glossary/proof-work-pow)在 Grover 算法下存活。比特币的哈希地址（P2PKH、从未花费的 P2WPKH）在 Grover 算法下存活。2100 万供应上限在 Grover 算法下存活。
 
-The signature is the weak link, not the hash. That is the entire story of why "post-quantum Bitcoin" is about replacing signature schemes, not about replacing SHA-256.
+签名是弱链接，不是哈希。这就是"后量子比特币"关于替换签名方案而非替换 SHA-256 的整个故事。
 
-## The timeline, honest version
+## 时间线，诚实版本
 
-No [cryptographically-relevant quantum computer (CRQC)](/glossary/crqc-cryptographically-relevant-quantum-computer) exists. A CRQC capable of running Shor's against secp256k1 needs millions of stable physical qubits arranged into thousands of logical qubits via error correction, with sustained coherence across millions of gate operations and gate fidelity high enough that the error-correction overhead does not blow up.
+没有 [密码学相关量子计算机（CRQC）](/glossary/crqc-cryptographically-relevant-quantum-computer)存在。一台能对 secp256k1 运行 Shor 算法的 CRQC 需要数百万个稳定的物理量子位，通过纠错排列成数千个逻辑量子位，在数百万门操作中保持持续相干，且门保真度足够高使纠错开销不爆炸。
 
-State of the art today: hundreds of noisy physical qubits, demonstrated logical (error-corrected) qubit counts in the single digits. Multiple orders of magnitude separate today's systems from CRQC, on several axes (qubit count, error rates, coherence time).
+当前最先进：数百个嘈杂物理量子位，展示的逻辑（纠错）量子位计数为个位数。今天的系统与 CRQC 之间在多个轴上相距多个数量级（量子位计数、错误率、相干时间）。
 
-The progress curve is steady but it is not Moore's Law. Doubling logical qubits is much harder than doubling transistors because error correction overhead scales with system size. Most expert estimates put a CRQC capable of breaking 256-bit ECDSA somewhere in a 10-to-30-year window. BIP-361's authors cite academic roadmaps pointing at 2027 to 2030. Pessimistic accounts push to the 2040s or later.
+进展曲线稳定但不是摩尔定律。逻辑量子位翻倍比晶体管翻倍难得多，因为纠错开销随系统规模扩大。大多数专家估计能破解 256 位 ECDSA 的 CRQC 在 10 到 30 年窗口内。BIP-361 作者引用指向 2027 到 2030 的学术路线图。悲观估计推到 2040 年代或更晚。
 
-The discipline is to plan for the optimistic case while the optimistic case is still future tense. The optimistic case has been "as early as 2027" since 2017, and the threshold keeps moving forward as quantum hardware progress meets the engineering reality of error correction. The trend line is toward eventual capability. The honest answer is "before we are ready, and possibly suddenly."
+纪律是在乐观情况仍然是未来式时为乐观情况做计划。乐观情况自 2017 年以来一直是"最早 2027 年"，且随着量子硬件进展遇到纠错的工程现实，阈值一直在向前移。趋势线指向最终能力。诚实的答案是"在我们准备好之前，而且可能突然。"
 
-The right planning horizon is therefore "before that, with margin." Bitcoin's governance moves in years. That matches.
+正确的规划时间窗口因此是"在那之前，留有余量。"比特币的治理以年为单位移动。这匹配。
 
-## What Bitcoin can do, and is doing
+## 比特币能做什么，正在做什么
 
-Three categories of response, in order of how disruptive they are to existing users.
+三类回应，按对现有用户的颠覆程度排序。
 
-**1. Encourage best practices today.** Zero protocol change required.
+**1. 今天就鼓励最佳实践。** 零协议变更需要。
 
-- Use modern hashed scripts (P2WPKH, P2PKH) and never reuse the address.
-- Avoid P2TR for cold storage that has to survive the migration window, because P2TR outputs are exposed at creation.
-- Spend old P2PK coins into modern scripts when it is safe to do so.
+- 使用现代哈希脚本（P2WPKH、P2PKH）且不复用地址。
+- 对需要存活过迁移窗口的冷存储避免使用 P2TR，因为 P2TR 输出在创建时就暴露。
+- 安全时将旧 P2PK 币移入现代脚本。
 
-This is free. It is also voluntary, which is the limit.
+这是免费的。它也是自愿的，这是限制。
 
-**2. Soft-fork to deprecate vulnerable script types.** Disable spends from P2PK and other always-exposed scripts after a specified block height. Force migration before the threat lands. The contentious part: coins whose keys are lost (or whose owner is silent) become permanently locked. Whether that is a feature or a bug is the most charged question in the whole debate.
+**2. 软分叉废弃脆弱脚本类型。** 在指定区块高度后禁用 P2PK 和其他始终暴露脚本的支出。在威胁到来前强制迁移。争议部分：密钥丢失（或所有者沉默）的币被永久锁定。这是特性还是 bug 是整个辩论中最激烈的问题。
 
-**3. Soft-fork to add post-quantum signature schemes.** New output types that use ML-DSA or SLH-DSA signatures. Users move coins to PQ addresses over years. This is the likely path. Two BIPs already in draft frame the work: [BIP-360](/glossary/bip-360) proposes Pay-to-Merkle-Root (P2MR), a Taproot variant that removes the key path spend so the bech32m address no longer reveals a pubkey - fixing long-exposure quantum risk on tapscript outputs and providing the tapscript-capable platform a future PQ signature opcode would need. [BIP-361](/glossary/bip-361) defines the migration framework that sunsets ECDSA and Schnorr over a multi-year window. The specific cryptographic algorithm for full quantum resistance (ML-DSA vs SLH-DSA vs a hybrid) is deferred to a separate Post-Quantum Signature BIP that has not been assigned a number yet, because the choice is still pre-consensus.
+**3. 软分叉添加后量子签名方案。** 新输出类型使用 ML-DSA 或 SLH-DSA 签名。用户在数年间将币移到 PQ 地址。这是可能路径。两个 BIP 已在草案中：[BIP-360](/glossary/bip-360) 提议 Pay-to-Merkle-Root（P2MR），一种 Taproot 变体，移除密钥路径花费使 bech32m 地址不再揭示公钥 - 修复了 tapscript 输出上的长期暴露量子风险并为未来 PQ 签名操作码提供 tapscript 能力平台。[BIP-361](/glossary/bip-361) 定义了在多年窗口内逐步淘汰 ECDSA 和 Schnorr 的迁移框架。完全量子抗性的具体密码算法（ML-DSA vs SLH-DSA vs 混合）推迟到尚未分配编号的单独后量子签名 BIP，因为选择仍在共识前阶段。
 
-All three categories run through the same governance process. There is no fast governance. There is no central upgrade authority. The slowness is the feature, and it is also the constraint. See [Bitcoin governance](/glossary/bitcoin-governance) for the five-veto model that decides which soft forks actually activate.
+三类都通过同一治理过程。没有快速治理。没有中央升级权威。慢是特性，也是约束。参见[比特币治理](/glossary/bitcoin-governance)了解决定哪些软分叉实际激活的五否决模型。
 
-## The candidate replacements
+## 候选替代方案
 
-NIST finalized two post-quantum signature standards in August 2024. Both are on the table.
+NIST 于 2024 年 8 月确定了两个后量子签名标准。两者都在桌面上。
 
 <figure>
   <img src="/diagrams/pq-signature-sizes.svg" alt="Horizontal bar chart comparing on-chain signature sizes. Schnorr is 64 bytes; ECDSA is roughly 71 bytes. ML-DSA-65 is about 3,293 bytes, 51 times larger than Schnorr. SLH-DSA-128s is about 7,856 bytes, 123 times larger. SLH-DSA-256f is about 49,856 bytes, 779 times larger. A 4-MB block fits roughly 4,500 spends today, around 1,000 ML-DSA-65 spends, and only about 80 SLH-DSA-256f spends." />
-  <figcaption>Block-space cost is where the migration is felt. The cryptographic choice between ML-DSA and SLH-DSA is also a fee-market decision.</figcaption>
+  <figcaption>区块空间成本是迁移感受到的地方。ML-DSA 和 SLH-DSA 之间的密码选择也是费市场决策。</figcaption>
 </figure>
 
-The two schemes side by side:
+两个方案对比：
 
 | | [ML-DSA](/glossary/ml-dsa-dilithium) (Dilithium) | [SLH-DSA](/glossary/slh-dsa-sphincs-plus) (SPHINCS+) |
 |---|---|---|
-| Math | Lattice-based (MLWE, MSIS) | Hash-based (Merkle trees of one-time signatures) |
-| Security assumption | Lattice problems are hard for quantum and classical | SHA-256 family hash function security only |
-| Maturity | Newer math, less collective cryptanalysis | Conservative, well-understood primitives |
-| Signature size | ~2.5 - 4.5 KB | ~7 - 50 KB |
-| Verification speed | Fast | Slower |
-| Trade | Smaller and faster, less mature | Larger and slower, more conservative |
-| Spec | [FIPS 204](https://csrc.nist.gov/pubs/fips/204/final) | [FIPS 205](https://csrc.nist.gov/pubs/fips/205/final) |
+| 数学 | 基于格（MLWE, MSIS） | 基于哈希（一次性签名的 Merkle 树） |
+| 安全假设 | 格问题对量子和经典都难 | 仅 SHA-256 系列哈希函数安全性 |
+| 成熟度 | 较新数学，集体密码分析较少 | 保守，充分理解的原语 |
+| 签名大小 | ~2.5 - 4.5 KB | ~7 - 50 KB |
+| 验证速度 | 快 | 较慢 |
+| 权衡 | 更小更快，不够成熟 | 更大更慢，更保守 |
+| 规范 | [FIPS 204](https://csrc.nist.gov/pubs/fips/204/final) | [FIPS 205](https://csrc.nist.gov/pubs/fips/205/final) |
 
-ML-DSA is the leading candidate on efficiency grounds. SLH-DSA is the conservative fallback when the lattice math is judged too novel. A hybrid scheme that combines a classical signature with a PQ signature during the transition window is also being discussed - belt and suspenders against the possibility that the PQ scheme itself is broken before the classical scheme falls.
+ML-DSA 是效率方面的领先候选。SLH-DSA 是当格数学被认为太新时的保守回退。在过渡窗口期间结合经典签名和 PQ 签名的混合方案也在讨论中 - 双保险以防 PQ 方案本身在经典方案倒下前被破解。
 
-The final choice is downstream of consensus. There is no committee. There is the same governance process that produced [Taproot](/glossary/taproot) and [SegWit](/glossary/segwit-segregated-witness-bip-141), running on its native timescale.
+最终选择在共识下游。没有委员会。有同样的产生 [Taproot](/glossary/taproot) 和 [SegWit](/glossary/segwit-segregated-witness-bip-141) 的治理过程，以其原生时间尺度运行。
 
-## What you can do today
+## 你今天能做什么
 
-The actions that actually help.
+实际有帮助的行动。
 
-- **Audit your own UTXOs.** Any P2PK outputs in your stash? Move them to modern addresses. Any addresses you reused? Move those balances to fresh ones.
-- **Use modern hashed scripts.** P2WPKH and P2PKH are pubkey-hashed. The pubkey is not revealed until you spend. If you spend once and never reuse, your exposure window is the few minutes between broadcast and confirmation.
-- **Never reuse addresses.** Modern wallets default to this. Do not override the default.
-- **Be deliberate about Taproot for long-term cold storage.** P2TR is exposed at creation. The advantages of Taproot are real (privacy, efficiency for complex scripts) but for "park it for ten years and forget it" storage, hashed scripts have a smaller attack surface across the migration window.
-- **Do not panic-move coins.** The threat is not imminent. A poorly-considered consolidation tx is a bigger risk to your stack today than a CRQC is.
-- **Follow the BIP discussions.** The community needs informed nodes more than it needs anxious ones.
+- **审计你自己的 UTXO。** 你的存储中有 P2PK 输出吗？移到现代地址。有复用的地址吗？把那些余额移到新的。
+- **使用现代哈希脚本。** P2WPKH 和 P2PKH 是公钥哈希。公钥在你花费前不揭示。如果你花费一次且不复用，你的暴露窗口是广播和确认之间的几分钟。
+- **永远不复用地址。** 现代钱包默认这样做。不要覆盖默认值。
+- **对长期冷存储审慎使用 Taproot。** P2TR 在创建时就暴露。Taproot 的优势是真实的（隐私、复杂脚本的效率），但对于"放着十年不管"的存储，哈希脚本在迁移窗口期间有更小的攻击面。
+- **不要恐慌性移币。** 威胁不是迫在眉睫的。一次考虑不周的整合交易今天对你持仓的风险比 CRQC 大。
+- **关注 BIP 讨论。** 社区需要知情的节点而不是焦虑的节点。
 
-## The honest uncertainty
+## 诚实的不确定性
 
-Things we do not know.
+我们不知道的事情。
 
-- When a CRQC arrives. Estimates from 5 years to 50 years all exist. The honest answer is "before we are ready, and possibly suddenly."
-- Whether the first CRQC will be public. A state actor or a private lab could build one before anyone announces it.
-- Whether ML-DSA or SLH-DSA will hold up under future cryptanalysis. Lattice math is younger than RSA or ECDSA; the cryptographic community has less collective experience attacking it.
-- Whether Bitcoin's governance can ship a soft fork on the timeline that is needed. It has before. There is no guarantee it will again.
+- CRQC 何时到来。从 5 年到 50 年的估计都存在。诚实的答案是"在我们准备好之前，而且可能突然。"
+- 第一台 CRQC 是否公开。国家行为者或私人实验室可能在任何人宣布之前就造了一台。
+- ML-DSA 或 SLH-DSA 是否能在未来密码分析下站住。格数学比 RSA 或 ECDSA 年轻；密码学社区攻击它的集体经验更少。
+- 比特币治理能否在需要的时间线上出货软分叉。它以前做到过。不能保证再次做到。
 
-These uncertainties do not change the answer. They sharpen it. **Bitcoin's preparation has to start before the threat is concrete, because once the threat is concrete it is too late.**
+这些不确定性不改变答案。它们使之更尖锐。**比特币的准备必须在威胁具体化之前开始，因为一旦威胁具体化就太晚了。**
 
-That preparation is happening, in public, slowly, contentiously, exactly as the protocol was designed to evolve.
+准备正在进行中，公开地，缓慢地，有争议地，完全如协议设计来演进的那样。
 
-## Closing
+## 结语
 
-Quantum is real. Bitcoin is preparing. The slow consensus that frustrates the urgent is the same slow consensus that protects against the panicked.
+量子是真实的。比特币在准备。让急切者沮丧的缓慢共识，同样保护了对抗恐慌的缓慢。
 
-Trust the mechanism. Watch it work.
+信任机制。看它运作。
 
-Move your coins to modern addresses.
+把你的币移到现代地址。
 
 ---
 
-**Sources and further reading**
+**来源和延伸阅读**
 
 - ChainQuery quantum-exposure report: https://chainquery.com/reports/quantum-exposure (snapshot 2026-06-07, block 952,694)
 - BIP-361 - Post-Quantum Migration: https://github.com/bitcoin/bips/blob/master/bip-0361.mediawiki

@@ -1,12 +1,12 @@
 ---
-title: "Static Channel Backup (SCB)"
+title: "静态通道备份（SCB）"
 slug: static-channel-backup-scb
 draft: false
-shortDefinition: "A file storing essential LN channel data so a user can attempt recovery if local channel state is lost."
+shortDefinition: "存储闪电网络通道关键数据的文件，在本地通道状态丢失时用户可尝试恢复。"
 keyTakeaways:
-  - "Protects LN funds from total loss in case of node data failure"
-  - "Forces channel closure on the known state, ignoring newer updates"
-  - "A partial fallback requiring subsequent re-channeling if used"
+  - "在节点数据故障时保护闪电网络资金免遭完全损失"
+  - "以已知状态强制关闭通道，忽略更新的更新"
+  - "一种部分回退方案，使用后需要重新开通道"
 sources: []
 relatedTerms:
   - fraudulent-channel-close
@@ -17,24 +17,24 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Static Channel Backup is a small file (typically called `channel.backup` in LND) that captures the minimum metadata needed to recover a Lightning node's on-chain funds after total local data loss: channel funding outpoints, remote node pubkeys, and basic peer-connection info.
+静态通道备份是一个小文件（在 LND 中通常叫 `channel.backup`），捕获了在完全丢失本地数据后恢复闪电网络节点链上资金所需的最低元数据：通道资金输出点、远端节点公钥和基本对等连接信息。
 
-It's a "static" backup because the file doesn't need updating after every channel state change. It captures what's needed for emergency recovery, not the current channel balance.
+它叫"静态"备份是因为文件不需要在每次通道状态变更后更新。它捕获的是紧急恢复所需的信息，不是当前通道余额。
 
-How recovery works with an SCB:
+使用 SCB 恢复的流程：
 
-1. Your node dies. Hardware failure, ransomware, dropped phone in the ocean. Local channel state is gone.
-2. You install a fresh node, restore the seed phrase, and load the SCB.
-3. The new node reaches out to each channel peer with a `channel_reestablish` message that essentially says "I lost state, please force-close at the latest commitment you have."
-4. The peer obliges, broadcasting their latest commitment transaction.
-5. Your on-chain funds become spendable after the CSV timelock window expires.
+1. 你的节点挂了。硬件故障、勒索软件、手机掉进海里。本地通道状态没了。
+2. 你安装一个新节点，恢复助记词，加载 SCB。
+3. 新节点向每个通道对等方发送 `channel_reestablish` 消息，本质上是说"我丢了状态，请在你的最新承诺上强制关闭。"
+4. 对等方照做，广播其最新承诺交易。
+5. 你的链上资金在 CSV 时间锁窗口到期后变为可花费。
 
-What you give up:
+你放弃的：
 
-- **In-flight HTLCs.** Any pending payment routed through your node at the moment of failure may resolve in the counterparty's favor.
-- **The cheating-detection ability.** If your peer is dishonest and broadcasts an *older* commitment that pays them more, you can't detect or punish it. Watchtowers running before the failure can still respond on your behalf if they were monitoring.
-- **Channel continuity.** Channels close. You start fresh, pay on-chain fees, and re-establish liquidity.
+- **在途 HTLC。** 失败时刻正通过你节点路由的任何待处理支付可能以对方有利的方式解决。
+- **作弊检测能力。** 如果你的对等方不诚实，广播了一个对自己更有利的*旧*承诺，你无法检测或惩罚。在失败前运行的瞭望塔如果当时在监控，仍可以代表你响应。
+- **通道连续性。** 通道关闭了。你从头开始，付链上手续费，重新建立流动性。
 
-What you keep: your on-chain Bitcoin from the channels' final settled balances. Better than nothing, dramatically better than complete fund loss.
+你保留的：通道最终结算余额中的链上比特币。比什么都没有好，比完全丢失资金好得多。
 
-SCBs are an emergency tool, not a substitute for proper backups. The right architecture is: regular volume-level backups of the node's full state directory, *plus* an up-to-date SCB as a last-resort fallback. Both LND and Core Lightning expose SCB-style recovery; modern Lightning wallets often handle SCB storage automatically.
+SCB 是紧急工具，不是正确备份的替代品。正确的架构是：定期对节点完整状态目录做卷级备份，*加上*最新的 SCB 作为最后手段的回退。LND 和 Core Lightning 都提供 SCB 式恢复；现代闪电钱包通常自动处理 SCB 存储。

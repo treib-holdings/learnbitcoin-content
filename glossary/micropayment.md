@@ -1,12 +1,12 @@
 ---
-title: "Micropayment"
+title: "微支付"
 slug: micropayment
 draft: false
-shortDefinition: "A very small-value payment, typically impractical on-chain due to fees, but feasible via LN or off-chain solutions."
+shortDefinition: "非常小额的支付，因手续费在链上不实际，但通过闪电网络或链下方案可行。"
 keyTakeaways:
-  - "Usually too small to justify on-chain fees"
-  - "LN or sidechains enable fractions-of-a-cent payments"
-  - "Drives new use cases like streaming payments or micro-tipping"
+  - "通常太小不足以支付链上手续费"
+  - "闪电网络或侧链实现几分之一美分的支付"
+  - "驱动流式支付或微打赏等新用例"
 sources: []
 relatedTerms:
   - bolt-11
@@ -17,31 +17,31 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A micropayment is a payment too small to be economical via traditional payment rails or on-chain Bitcoin transactions due to overhead. Typical threshold: anything under a few cents, where fees would dominate the payment value.
+微支付是因开销太大而无法通过传统支付渠道或链上比特币交易进行的过小金额支付。典型阈值：几美分以下的任何金额，手续费会主导支付价值。
 
-Why micropayments don't work on-chain:
+为什么微支付在链上不可行：
 
-- A typical Bitcoin transaction costs anywhere from a few cents to several dollars in fees depending on mempool conditions.
-- Paying someone $0.01 via on-chain Bitcoin while fees are $1 means the recipient gets paid $0.01 and pays $1 to access the value. Net result is loss.
-- The [dust limit](/glossary/dust-limit) (~300-550 sats per output) is a separate hard floor that prevents creating outputs smaller than ~$0.20 worth of BTC at current prices.
+- 一笔典型的比特币交易手续费根据内存池状况从几美分到几美元不等。
+- 在手续费为 1 美元时用链上比特币向某人支付 0.01 美元，意味着接收者获得 0.01 美元但要花 1 美元才能访问价值。净结果是亏损。
+- [粉尘限制](/glossary/dust-limit)（每个输出约 300-550 聪）是另一个硬性下限，防止创建低于约 0.20 美元价值的输出。
 
-Lightning Network is the canonical answer:
+闪电网络是经典答案：
 
-- Sub-second settlement, sub-cent fees, instant finality (within the channel network).
-- A $0.01 Lightning payment costs typically 0-10 sats in routing fees: still real cost, but multiple orders of magnitude lower than on-chain.
-- Practical for streaming payments (pay-per-second video / data), pay-per-API-call services, tipping, real-time content monetization.
+- 亚秒级结算、低于美分的费用、即时最终性（在通道网络内）。
+- 0.01 美元的闪电支付通常花费 0-10 聪的路由费：仍有实际成本，但比链上低多个数量级。
+- 适用于流式支付（按秒付费视频/数据）、按 API 调用付费服务、打赏、实时内容变现。
 
-Active micropayment use cases as of 2026:
+截至 2026 年活跃的微支付用例：
 
-- **Podcasting 2.0 streaming sats.** Listeners stream Lightning payments to podcast hosts in real time while listening. Standard in Fountain, Castamatic, and other modern podcast apps.
-- **Lightning-paid APIs.** Pay-per-call services where users send sats to use computation, data, or AI inference. Marginal services rather than mainstream, but technically viable.
-- **In-game economies.** Some games use Lightning for in-game item purchases, sub-cent unit pricing.
-- **AI agent micropayments.** Speculative-but-growing area: AI agents paying each other sats for API access, computation, data retrieval.
+- **播客 2.0 流式聪。** 听众在收听时实时向播客主持人流式发送闪电支付。Fountain、Castamatic 等现代播客应用的标准功能。
+- **闪电付费 API。** 按调用付费服务，用户发送聪来使用计算、数据或 AI 推理。边缘服务而非主流，但技术上可行。
+- **游戏内经济。** 一些游戏使用闪电进行游戏内物品购买、亚美分单位定价。
+- **AI 代理微支付。** 推测性但增长的领域：AI 代理相互支付聪以获取 API 访问、计算、数据检索。
 
-Pre-Lightning attempts:
+闪电网络之前的尝试：
 
-- **PayPal Micropayments tier**: existed but had per-transaction floors that limited true micropayments.
-- **Flattr, Patreon, BAT**: various non-Bitcoin micropayment systems with their own custody and trust assumptions.
-- **Bitcoin Cash / other "big-block" forks**: claim on-chain micropayments are feasible. Math works only if fees stay low; structurally less robust than off-chain.
+- **PayPal 微支付层级**：存在但有每笔交易下限限制了真正的微支付。
+- **Flattr、Patreon、BAT**：各种非比特币微支付系统，有自己的托管和信任假设。
+- **Bitcoin Cash / 其他"大区块"分叉**：声称链上微支付可行。只有在手续费保持低位时数学才成立；结构上不如链下稳健。
 
-Micropayments are one of Lightning's strongest use cases - things that traditional finance literally can't do because the rails impose per-transaction overhead. Whether they become a major economic phenomenon or stay a niche feature is still being decided, but the technical capability is there in a way it never was before Lightning matured.
+微支付是闪电网络最强的用例之一——传统金融因渠道施加每笔交易开销而 literally 做不到的事情。它们是否会成为主要经济现象还是保持小众功能仍在决定中，但技术能力已经以一种闪电网络成熟之前从未有过的方式存在。

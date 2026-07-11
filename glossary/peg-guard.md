@@ -1,12 +1,12 @@
 ---
-title: "Peg-Guard"
+title: "Peg-Guard（锚定守护）"
 slug: peg-guard
 draft: false
-shortDefinition: "A security measure in sidechain peg systems preventing exploit or double-spend of pegged BTC, often requiring federation consent."
+shortDefinition: "侧链锚定系统中的安全措施，防止锚定 BTC 被利用或双花，通常需要联邦签名。"
 keyTakeaways:
-  - "Prevents pegged BTC from being withdrawn illegitimately"
-  - "Federation or multi-sig typically verifies legitimate peg-outs"
-  - "Crucial to sidechain security where two-way pegs are used"
+  - "防止锚定的 BTC 被非法提取"
+  - "联邦或多签通常验证合法的 peg-out"
+  - "对使用双向锚定的侧链安全至关重要"
 sources: []
 relatedTerms:
   - liquid-federation
@@ -17,21 +17,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A **peg-guard** is a security mechanism in a [sidechain](/glossary/sidechain) peg system designed to prevent fraudulent withdrawals - especially the catastrophic failure mode where a bug or attack lets someone "print" pegged BTC out of thin air, creating sidechain tokens that aren't backed by actual mainnet BTC reserves.
+**Peg-guard** 是[侧链](/glossary/sidechain)锚定系统中旨在防止欺诈性提取的安全机制——尤其是那种灾难性的失败模式：某个漏洞或攻击让人凭空"打印"锚定 BTC，创建没有实际主网 BTC 储备支撑的侧链代币。
 
-What a peg-guard needs to protect against:
+Peg-guard 需要防范的情况：
 
-- **Sidechain consensus bugs.** A bug that lets invalid blocks pass could create sidechain tokens that shouldn't exist. If those tokens then get peg-out approval, real BTC drains from the locked reserve.
-- **Inflation in sidechain code.** Software bugs that issue more sidechain tokens than were locked via peg-ins.
-- **Collusion among peg operators.** Federation members signing peg-outs not backed by valid peg-ins.
+- **侧链共识漏洞。** 让无效区块通过的漏洞可能创建不应存在的侧链代币。如果这些代币随后获得 peg-out 批准，真正的 BTC 将从锁定的储备中被抽走。
+- **侧链代码中的通胀。** 发行超过 peg-in 锁定数量的侧链代币的软件漏洞。
+- **锚定运营者串通。** 联邦成员签署没有有效 peg-in 支撑的 peg-out。
 
-Common peg-guard implementations:
+常见的 peg-guard 实现：
 
-- **Multi-signature thresholds on peg-out.** Requiring 11-of-15 federation signatures means a single rogue operator can't drain funds. Used by [Liquid](/glossary/liquid-network).
-- **Cross-validation requirements.** Federation members independently validate both the sidechain state and the peg-out proposal before signing. If a sidechain bug looks like it's draining the peg reserve, members refuse to sign.
-- **Audit reserves.** Some sidechains publish proof-of-reserves regularly so users can verify the peg backing matches the issued tokens.
-- **Slow withdrawal windows** (drivechain style). Long delays before peg-outs finalize give time to detect anomalies.
+- **Peg-out 多签阈值。** 要求 11-of-15 联邦签名意味着单个恶意运营者无法抽走资金。由 [Liquid](/glossary/liquid-network) 使用。
+- **交叉验证要求。** 联邦成员在签名前独立验证侧链状态和 peg-out 提案。如果侧链漏洞看起来在抽空锚定储备，成员拒绝签名。
+- **审计储备。** 一些侧链定期发布储备证明，让用户验证锚定支撑与已发行代币匹配。
+- **慢速提取窗口**（drivechain 风格）。peg-out 最终确认前的长延迟提供了检测异常的时间。
 
-In Liquid specifically, the "peg-guard" framing isn't formally branded but the function is performed by federation members independently validating Liquid state before signing peg-out releases. The decentralized validation is the guard - if the federation suspects a Liquid bug, individual members can refuse to sign and the peg-out doesn't go through.
+在 Liquid 中，"peg-guard"这个说法不是正式品牌，但该功能由联邦成员在签署 peg-out 释放前独立验证 Liquid 状态来执行。去中心化验证就是守护——如果联邦怀疑 Liquid 有漏洞，单个成员可以拒绝签名，peg-out 就无法进行。
 
-For users, the peg-guard isn't directly visible but is part of what makes a sidechain peg trustworthy enough to use at scale. A sidechain with a strong peg-guard is one where consensus bugs don't immediately drain the BTC reserve.
+对于用户来说，peg-guard 不是直接可见的，但它是使侧链锚定足够可信以供大规模使用的部分。一个有强 peg-guard 的侧链，其共识漏洞不会立即抽空 BTC 储备。

@@ -1,12 +1,12 @@
 ---
-title: "K-of-K Multisig"
+title: "K-of-K 多签"
 slug: k-k-multisig
 draft: false
-shortDefinition: "A multisignature scheme requiring all signers (e.g., a 3-of-3) to approve a transaction, maximizing security but reducing flexibility."
+shortDefinition: "一种多签方案，要求所有签名者（如 3-of-3）都批准交易，最大化安全性但降低灵活性。"
 keyTakeaways:
-  - "Demands unanimous approval from all cosigners"
-  - "Greatly boosts security at the cost of redundancy"
-  - "Requires careful backup to prevent permanent lockups"
+  - "要求所有共签者一致同意"
+  - "极大提升安全性但牺牲了冗余"
+  - "需要谨慎备份以防止永久锁定"
 sources: []
 relatedTerms:
   - hierarchical-multisig
@@ -17,24 +17,24 @@ relatedTerms:
 liveWidget: ~
 ---
 
-K-of-K multisig (more commonly written n-of-n) is the multi-signature configuration where every single cosigner must sign for a transaction to be valid. A 2-of-2 setup needs both keys; 3-of-3 needs all three. No threshold flexibility.
+K-of-K 多签（更常写为 n-of-n）是一种多签配置，每个共签者都必须签名才能使交易有效。2-of-2 设置需要两把密钥；3-of-3 需要全部三把。没有阈值灵活性。
 
-The security/redundancy tradeoff:
+安全性/冗余权衡：
 
-- **Security: maximum.** No subset of cosigners can spend without unanimous consent. Compromising any subset short of the full set yields nothing.
-- **Redundancy: minimum.** Losing access to any single key permanently locks the funds. There's no fallback.
+- **安全性：最高。** 任何共签者子集都无法在非全体一致同意的情况下花费。攻破任何少于全集的子集都一无所获。
+- **冗余：最低。** 丢失任何一把密钥的访问权限将永久锁定资金。没有退路。
 
-Where k-of-k makes sense:
+K-of-K 适用的场景：
 
-- **Lightning channels.** Every Lightning channel is a 2-of-2 multisig between the two channel partners. Both keys are required to spend the channel funds (under normal cooperative-close conditions); the penalty mechanism handles dispute resolution if one party tries to cheat with an old state.
-- **Atomic swaps and HTLCs.** Often constructed as 2-of-2 with timelock fallbacks.
-- **High-security institutional treasuries** where the operational requirement is "no single point of failure including any cosigner" and the institution maintains redundant backup procedures for every key.
-- **Joint accounts** between two specific entities (business partners, spouses) where the intent is "neither of us can spend without the other."
+- **闪电通道。** 每个闪电通道都是两个通道伙伴之间的 2-of-2 多签。两把密钥都需要才能花费通道资金（在正常的协作关闭条件下）；惩罚机制处理一方试图用旧状态作弊时的纠纷。
+- **原子交换和 HTLC。** 通常构造为带有时间锁退路的 2-of-2。
+- **高安全性机构金库**，运营要求是"没有任何单点故障包括任何共签者"，且机构为每把密钥维护冗余备份程序。
+- **两个特定实体之间的联合账户**（商业伙伴、配偶），意图是"没有对方任何一方都不能花费"。
 
-Where k-of-k is the wrong choice:
+K-of-K 不适用的场景：
 
-- **Personal long-term self-custody.** A 2-of-3 (allowing recovery if any one of three keys is lost) is dramatically more resilient than a 2-of-2 (where any key loss locks the funds).
-- **Inheritance scenarios.** Heirs need a path to the funds. K-of-k with all keys held by the original owner means no path.
-- **Cross-team operational use.** If even one cosigner is offline or unavailable, transactions can't happen. Threshold multisig (m-of-n with m < n) avoids this.
+- **个人长期自托管。** 2-of-3（允许三把密钥中丢失任何一把的恢复）比 2-of-2（任何密钥丢失都锁定资金）弹性得多。
+- **遗产场景。** 继承人需要一条通往资金的路径。所有密钥由原持有人持有的 K-of-K 意味着没有路径。
+- **跨团队运营使用。** 如果哪怕一个共签者离线或不可用，交易就无法进行。阈值多签（m-of-n，m < n）避免了这个问题。
 
-The rule of thumb: use k-of-k only when the security requirement is unanimous-consent-or-nothing AND you have separate robust procedures to ensure no cosigner ever permanently loses access. For most uses, the m-of-n variant where m < n (typically 2-of-3 or 3-of-5) is the right answer. The cost of one extra cosigner key is much lower than the cost of losing funds to a single-cosigner failure.
+经验法则：仅当安全要求是"全体一致同意否则不可花费"且你有独立可靠的程序确保没有共签者会永久丢失密钥时才使用 K-of-K。对于大多数用途，m < n 的 m-of-n 变体（通常是 2-of-3 或 3-of-5）才是正确选择。增加一个额外共签者密钥的成本远低于因单个共签者失败而丢失资金的成本。

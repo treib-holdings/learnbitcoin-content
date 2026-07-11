@@ -1,14 +1,9 @@
 ---
-title: "Node Status"
-heading: "A live Bitcoin node, in public."
-description: "Live Bitcoin network data: block height, halving countdown, supply, difficulty, mempool, and price - all from a full Bitcoin node, via ChainQuery."
+title: "节点状态"
+heading: "一个活生生的比特币节点，公开运行。"
+description: "实时比特币网络数据：区块高度、减半倒计时、供应量、难度、内存池和价格——全部来自一个全节点，通过 ChainQuery 提供。"
 ---
 
-Every on-chain number on this site comes from a full Bitcoin node,
-not from an exchange, not from an aggregator, not from a "data
-partner." If the node is lying to you, every other node on Earth
-disagrees with it, and you should believe them, not it.
+这个网站上每个链上数据都来自一个全节点，不是来自交易所，不是来自数据聚合器，也不是来自什么"数据合作伙伴"。如果这个节点骗了你，地球上所有其他节点都会反对它，你应该相信它们，而不是它。
 
-The data feed comes from [ChainQuery.com](https://chainquery.com),
-which runs the node and exposes a no-fee public API. Verify, don't
-trust.
+数据来自 [ChainQuery.com](https://chainquery.com)，它运行着这个节点并提供免费的公开 API。验证，别信任。

@@ -1,12 +1,12 @@
 ---
-title: "Key Split"
+title: "密钥分片"
 slug: key-split
 draft: false
-shortDefinition: "Partitioning a private key into multiple fragments (e.g., via Shamir's Secret Sharing), so no single share can spend funds alone."
+shortDefinition: "将私钥分成多个片段（如通过 Shamir 秘密共享），使任何单一分片都无法单独花费资金。"
 keyTakeaways:
-  - "Enhances security by dividing the private key among multiple holders"
-  - "No single party alone can recreate or use the key"
-  - "Widely employed for off-chain backups or seed phrase resilience"
+  - "通过将私钥分配给多个持有者来增强安全性"
+  - "任何单一方都无法独自重建或使用密钥"
+  - "广泛用于链下备份或助记词弹性"
 sources: []
 relatedTerms:
   - bitcoin-inheritance-planning
@@ -19,13 +19,13 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Key splitting partitions a private key (or a seed) into multiple shares such that any threshold number can reconstruct the secret but fewer cannot. The canonical math is Shamir's Secret Sharing (SSS).
+密钥分片将一个私钥（或种子）分成多个份额，使得任意阈值数量的份额可以重建密钥，但少于阈值则不能。经典的数学方法是 Shamir 秘密共享（SSS）。
 
-In Bitcoin practice, the most common form is SLIP-39, a standardized SSS scheme for BIP 39 seeds. Trezor supports it natively, and tools like SeedSigner can produce SLIP-39 shares from any seed. Typical configurations: 2-of-3 or 3-of-5 shares spread across geographic locations or trusted parties.
+在比特币实践中，最常见的形式是 SLIP-39，一种用于 BIP 39 种子的标准化 SSS 方案。Trezor 原生支持它，SeedSigner 等工具可以从任何种子生成 SLIP-39 份额。典型配置：2-of-3 或 3-of-5 份额分布在不同的地理位置或受信任的人之间。
 
-The crucial caveat that most introductions skip: key splitting is not the same security model as multisig.
+大多数介绍中忽略的关键注意事项：密钥分片与多签的安全模型不同。
 
-- Multisig: each cosigner signs independently with their own key, and the M signatures get combined by the script. No single device ever holds the spending capacity.
-- Key splitting: at signing time, the threshold of shares must be combined back into a single private key on one device, which then signs. That device momentarily holds the full key.
+- 多签：每个共签者用自己的密钥独立签名，M 个签名由脚本组合。没有任何单一设备曾持有完整的支付能力。
+- 密钥分片：在签名时，阈值数量的份额必须在一台设备上重新组合成单一私钥，然后由该设备签名。该设备在那一刻持有完整密钥。
 
-So key splitting is excellent for cold backup distribution (no one location is sufficient to steal the wallet) but worse than multisig for hot/warm operational use (the reconstruction event is a juicy target). Most security-serious setups use multisig for the operational layer and may use SSS to distribute backup of any single key.
+因此，密钥分片非常适合冷备份分发（没有任何单一位置足以盗窃钱包），但对于热/温运营使用来说不如多签（重建事件是一个诱人的目标）。大多数注重安全的设置在运营层使用多签，并可能使用 SSS 来分发任何单一密钥的备份。

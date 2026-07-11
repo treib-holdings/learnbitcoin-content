@@ -3,11 +3,11 @@ title: "Mt. Gox"
 slug: mt-gox
 draft: false
 published: "2026-06-18"
-shortDefinition: "The Tokyo exchange that once handled most of the world's Bitcoin trading until it collapsed in 2014 with roughly 850,000 BTC missing. The original 'not your keys, not your coins' catastrophe."
+shortDefinition: "曾处理全球大部分比特币交易的东京交易所，2014 年崩溃时约 85 万 BTC 失踪。最初的'不是你的密钥就不是你的币'灾难。"
 keyTakeaways:
-  - "At its peak it handled around 70 percent of global Bitcoin trades; it halted withdrawals in February 2014 and filed for bankruptcy with roughly 850,000 BTC gone (about 750,000 customer, 100,000 company)"
-  - "There was no single dramatic hack - the coins bled out over years through poor controls and undetected theft, hidden behind faked balances"
-  - "Creditor repayments finally began in July 2024, more than a decade later, paid in bitcoin that was worth far more than the dollars originally lost"
+  - "巅峰时处理约全球比特币交易的 70%；2014 年 2 月停止提现并申请破产，约 85 万 BTC 消失（约 75 万客户币，10 万公司币）"
+  - "没有单一的大黑客——代币通过糟糕的控制和未被发现的盗窃在数年间流失，隐藏在伪造的余额后面"
+  - "债权人偿还终于在 2024 年 7 月开始，十多年后，以价值远超最初损失美元的比特币支付"
 sources:
   - { label: "Mt. Gox Rehabilitation Trustee - repayment commencement announcement (2024)", url: "https://www.mtgox.com/img/pdf/20240705_01_announcement_en.pdf" }
   - { label: "CNN - Mark Karpeles found guilty of data manipulation (2019)", url: "https://www.cnn.com/2019/03/14/tech/mark-karpeles-mt-gox" }
@@ -22,10 +22,10 @@ sameAs:
 liveWidget: ~
 ---
 
-Mt. Gox was the first big Bitcoin disaster. The site started in 2007 as a place to trade Magic: The Gathering cards (the name is short for "Magic: The Gathering Online eXchange") and was turned into a Bitcoin exchange in 2010. Mark Karpeles bought it in 2011, and by 2013 it was handling roughly 70 percent of all Bitcoin trades in the world.
+Mt. Gox 是第一个大比特币灾难。该网站 2007 年作为交易万智牌卡片的场所开始（名字是"Magic: The Gathering Online eXchange"的缩写），2010 年转为比特币交易所。Mark Karpeles 于 2011 年买下它，到 2013 年它处理了全球约 70% 的比特币交易。
 
-It froze withdrawals on 7 February 2014 and filed for bankruptcy in Tokyo on 28 February. Roughly 850,000 BTC were gone, about 750,000 of them customer coins and 100,000 the company's own, which came to nearly 7 percent of all the bitcoin that existed then. It wasn't one big hack. The coins had been leaking out for years through bad controls and theft nobody caught, hidden behind balance numbers that were faked. In March 2014 the company found 199,999 BTC sitting in an old wallet it had forgotten about, which gives you a sense of how the place was run.
+它在 2014 年 2 月 7 日冻结提现，2 月 28 日在东京申请破产。约 85 万 BTC 消失了，其中约 75 万是客户代币，10 万是公司自有，占当时存在的所有比特币的近 7%。不是一次大黑客。代币通过糟糕的控制和无人发现的盗窃在数年间流失，隐藏在伪造的余额数字后面。2014 年 3 月公司在旧钱包中找到了 199,999 BTC，从中可以窥见那地方是怎么管理的。
 
-Karpeles was convicted in a Japanese court in 2019, but for manipulating data to inflate balances, not for stealing the coins. He was acquitted of that. The bankruptcy was later switched to a civil rehabilitation so creditors would be repaid in bitcoin instead of its much lower 2014 dollar value, and those repayments finally started in July 2024. People who left their coins on Mt. Gox waited more than ten years to get a portion of them back.
+Karpeles 于 2019 年在日本法院被定罪，但是因为操纵数据虚增余额，不是盗窃代币。他被宣判无罪。破产后来转为民事再生，使债权人以比特币而非其低得多的 2014 年美元价值获偿，偿还终于在 2024 年 7 月开始。把币留在 Mt. Gox 的人等了十多年才拿回一部分。
 
-See [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard) for the full decade of failures it began.
+请参阅[Mt. Gox 到 FTX：托管墓地](/rabbit-hole/mt-gox-ftx-graveyard)了解它开启的完整十年失败。

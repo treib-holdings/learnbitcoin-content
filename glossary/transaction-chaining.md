@@ -1,12 +1,12 @@
 ---
-title: "Transaction Chaining"
+title: "交易链式"
 slug: transaction-chaining
 draft: false
-shortDefinition: "Broadcasting multiple transactions that depend on the outputs of earlier unconfirmed transactions."
+shortDefinition: "广播多笔依赖于先前未确认交易输出的交易。"
 keyTakeaways:
-  - "Multiple unconfirmed TXs depend on each other's outputs"
-  - "Mempool policies may restrict how many TXs can chain"
-  - "Used in CPFP or rapid-fire sending before confirmations"
+  - "多笔未确认交易相互依赖彼此的输出"
+  - "内存池策略可能限制可链接的交易数量"
+  - "用于 CPFP 或在确认前快速连续发送"
 sources: []
 relatedTerms:
   - consolidation-transaction
@@ -15,18 +15,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Transaction chaining is broadcasting a transaction that spends an output from an unconfirmed parent. The child sits in the mempool waiting for the parent (and potentially other ancestors) to confirm first.
+交易链式是指广播一笔花费来自未确认父交易输出的交易。子交易在内存池中等待父交易（以及可能的其他祖先）先被确认。
 
-It's normal and supported. Bitcoin doesn't make you wait for confirmations to spend your own outputs. But there are limits:
+这是正常且被支持的。比特币不要求你等待确认才能花费自己的输出。但有限制：
 
-- Bitcoin Core's default policy caps unconfirmed chains at 25 ancestors / 25 descendants per transaction, with an aggregate weight ceiling. Beyond that, the chain becomes unrelayable, and miners won't include it.
-- The whole chain confirms or fails together. If an ancestor gets evicted (because fees are too low or a conflicting tx replaces it), all descendants become invalid.
-- Miners optimize for fee-per-vbyte across the chain as a unit. A high-fee child pulls a low-fee parent into a block (Child Pays For Parent, CPFP); a low-fee child stuck behind a low-fee parent goes nowhere.
+- Bitcoin Core 默认策略将未确认链限制为每笔交易 25 个祖先 / 25 个后代，并有总权重上限。超过这个限制，链将无法被中继，矿工也不会包含。
+- 整条链一起确认或一起失败。如果祖先被驱逐（因为费用太低或被冲突交易替换），所有后代都变为无效。
+- 矿工以整条链为单位优化每虚拟字节费率。高费子交易可以将低费父交易拉入区块（CPFP）；低费子交易卡在低费父交易后面则寸步难行。
 
-Common use cases:
+常见用例：
 
-- CPFP fee bumping: parent transaction is under-fee'd; user (or recipient) spends one of its outputs in a child transaction at a much higher fee, paying for both.
-- Rapid consecutive sends: exchange withdrawal flows, payment processors, anyone needing to issue multiple transactions in succession without waiting for confirmations between them.
-- Lightning splice transactions and certain on-chain swap constructions that depend on a specific UTXO becoming available.
+- CPFP 费用提升：父交易费用不足；用户（或接收方）在更高费率下花费其输出之一作为子交易，为两者付费。
+- 快速连续发送：交易所提现流程、支付处理商、任何需要连续发多笔交易而不等待确认的场景。
+- 闪电网络拼接交易和某些依赖特定 UTXO 可用的链上互换构造。
 
-Long chains are fine as long as the cumulative fee rate makes the whole chain attractive to miners. They become a problem when the parent is so under-fee'd that it's stuck and CPFP can't save it before mempool eviction kicks in.
+只要累计费率使整条链对矿工有吸引力，长链就没问题。当父交易费用低到卡住且 CPFP 在内存池驱逐前无法拯救时，才会成为问题。

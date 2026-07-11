@@ -1,10 +1,11 @@
----title: "UTXOs"
+---
+title: "UTXO"
 slug: utxos
 draft: false
 status: live
 published: "2026-05-15"
 section: rabbit-hole
-tagline: "Bitcoin does not have balances. It has UTXOs. Once you see them, you can not unsee them."
+tagline: "比特币没有余额。它有 UTXO。一旦你看到了它们，就再也回不去了。"
 order: 6
 estimatedMinutes: 10
 sources:
@@ -18,126 +19,126 @@ ogImage: "/diagrams/og/alice-pays-bob.png"
 ogImageAlt: "Alice pays Bob 0.5 BTC: a UTXO transaction diagram showing how the 1.0 BTC input is consumed and two new UTXOs are created (0.5 BTC to Bob and 0.499 BTC change to Alice), with 0.001 BTC fee to the miner."
 ---
 
-> **Where you're going:** Most newcomers picture a Bitcoin wallet like a bank account: a balance that goes up and down. Bitcoin does not work that way. You will learn what a UTXO is, why "your balance" is calculated from scratch every time you open your wallet, and why almost every privacy leak in Bitcoin traces back to how UTXOs link together.
+> **你将了解：** 大多数新手把比特币钱包想象成银行账户：一个上上下下的余额。比特币不是这样工作的。你会了解什么是 UTXO（未花费交易输出）、为什么"你的余额"是每次打开钱包时从头计算的、以及为什么比特币中几乎每个隐私泄漏都可以追溯到 UTXO 的关联方式。
 
-## 1. The Mental Model Swap
+## 1. 转换思维模型
 
-When someone says "I have 0.3 BTC," it sounds like there is a row in a database with their name and the number 0.3. Bitcoin does not have such rows.
+当某人说"我有 0.3 BTC"时，听起来像数据库里有一行记录着他的名字和数字 0.3。比特币没有这样的行。
 
-Bitcoin has **UTXOs** - **U**nspent **T**ransaction **O**utputs. Discrete chunks of bitcoin, each locked by a specific script, scattered across the blockchain. When your wallet says you have 0.3 BTC, what it actually means is: "we found seventeen UTXOs you can spend, and they add up to 0.3 BTC."
+比特币有 **UTXO** - 即**U**nspent **T**ransaction **O**utputs（未花费交易输出）。离散的比特币块，每一块被特定的脚本锁定，散布在整个区块链上。当你的钱包说你有 0.3 BTC 时，它实际上的意思是："我们找到了 17 个你可以花费的 UTXO，它们加起来等于 0.3 BTC。"
 
-Once you see this, you can not unsee it. The change problem, the privacy leaks, the fee math, the dust problem - all of them are downstream of UTXOs.
+一旦你看到了这一点，就再也回不去了。找零问题、隐私泄漏、手续费计算、尘埃问题 - 所有这些都源于 UTXO 的下游效应。
 
-## 2. What a UTXO Actually Is
+## 2. UTXO 实际上是什么
 
-A UTXO has three pieces:
+一个 UTXO 有三部分：
 
-- **A value.** How much bitcoin, measured in satoshis (1 BTC = 100,000,000 sats).
-- **A locking script.** A small program that defines who can spend it. The most common script says "whoever can provide a signature matching this public key hash."
-- **A provenance.** The transaction it came from and which output index within that transaction.
+- **一个面值。** 多少比特币，以聪为单位（1 BTC = 100,000,000 聪）。
+- **一个锁定脚本。** 一个小程序，定义了谁可以花费它。最常见的脚本说"能提供与这个公钥哈希匹配的签名的人。"
+- **一个来源。** 它来自哪个交易，以及该交易中的哪个输出索引。
 
-That is the entire structure. A UTXO is a value gated by a script. When someone spends a UTXO, they prove they can satisfy the script (usually by providing a signature), and the UTXO is consumed.
+这就是整个结构。UTXO 就是一个被脚本把关的面值。当某人花费一个 UTXO 时，他证明自己能满足脚本（通常通过提供签名），该 UTXO 就被消耗掉。
 
-The blockchain does not store "balances." It stores a giant set of UTXOs. Your node calculates your balance by checking which UTXOs your wallet can unlock.
+区块链不存储"余额"。它存储一个巨大的 UTXO 集合。你的节点计算你的余额，方法是检查哪些 UTXO 你的钱包能解锁。
 
-## 3. Spending: Inputs In, Outputs Out
+## 3. 花费：输入进，输出出
 
-A Bitcoin [transaction](/glossary/transaction-fee) has two sides:
+一笔比特币[交易](/glossary/transaction-fee)有两面：
 
-- **Inputs:** UTXOs being consumed (spent entirely).
-- **Outputs:** new UTXOs being created.
+- **输入：** 被消耗的 UTXO（整块花费）。
+- **输出：** 新创建的 UTXO。
 
-Here is the critical part: **UTXOs are consumed whole.** You can not spend half of a UTXO. If Alice has a UTXO worth 1.0 BTC and wants to send Bob 0.5 BTC, she spends the entire 1.0 BTC UTXO. The transaction creates two new UTXOs: one for 0.5 BTC to Bob, one for roughly 0.499 BTC (minus fees) back to Alice.
+这里是关键部分：**UTXO 是整块消耗的。** 你不能花半个 UTXO。如果 Alice 有一个价值 1.0 BTC 的 UTXO，想给 Bob 发 0.5 BTC，她要花费整个 1.0 BTC 的 UTXO。这笔交易创建两个新 UTXO：一个 0.5 BTC 给 Bob，一个大约 0.499 BTC（减去手续费）回到 Alice。
 
 <figure>
   <img src="/diagrams/alice-pays-bob.svg" alt="Alice's 1.0 BTC UTXO is consumed by a transaction that creates two new UTXOs: 0.5 BTC to Bob and 0.499 BTC change to Alice at a new address. The remaining 0.001 BTC is the fee paid to the miner." />
-  <figcaption>Alice's 1.0 BTC UTXO is consumed whole. Two new UTXOs are created; the 0.001 BTC fee is the difference between inputs and outputs.</figcaption>
+  <figcaption>Alice 的 1.0 BTC UTXO 被整块消耗。两个新 UTXO 被创建；0.001 BTC 手续费是输入和输出之间的差额。</figcaption>
 </figure>
 
-That second UTXO is **change.** It is your own money, returned to you, in a new chunk.
+第二个 UTXO 就是**找零**。它是你自己的钱，退回给你，成为一个新块。
 
-This is mechanically identical to paying for a $4 coffee with a $20 bill. You do not tear the $20 in half. You hand over the whole bill and get $16 in change. Bitcoin transactions work the same way.
+这在机制上和用 20 美元钞票买 4 美元咖啡完全一样。你不会把 20 美元撕成两半。你递出整张钞票，找回 16 美元零钱。比特币交易也是这样工作的。
 
-## 4. The Change Address Problem
+## 4. 找零地址问题
 
-When your wallet creates change, it has a choice: send the change back to the **same address** you spent from, or send it to a **new address** you also control.
+当你的钱包创建找零时，它有一个选择：把找零发回你花费的**同一个地址**，或者发到一个你也控制的**新地址**。
 
-Almost every modern wallet picks a new address. Why? Privacy.
+几乎每个现代钱包都选择新地址。为什么？隐私。
 
-If change always went back to the spending address, anyone watching the blockchain could trivially link every transaction you ever made. By using a fresh change address each time, your wallet breaks that easy link.
+如果找零总是回到花费地址，任何观察区块链的人都可以轻易地把你做过的每笔交易关联起来。通过每次使用新的找零地址，你的钱包打破了这种简单链接。
 
-But this creates a different problem: **address reuse is now a strong fingerprint.** If you reuse an address, anyone watching can see all the UTXOs that ever went to it, and can confidently say "this person controls all of these." Most privacy leaks in Bitcoin start with address reuse.
+但这制造了另一个问题：**地址复用现在是一个强指纹。** 如果你复用地址，任何观察者都可以看到曾经流入它的所有 UTXO，并可以自信地说"这个人控制着所有这些。"比特币中大多数隐私泄漏始于地址复用。
 
-(See [address clustering](/glossary/address-clustering) for how [chain-analysis](/glossary/chain-analysis) firms exploit this.)
+（参见[地址聚类](/glossary/address-clustering)，了解[链上分析](/glossary/chain-analysis)公司如何利用这一点。）
 
-## 5. Your "Balance" Is a Sum
+## 5. 你的"余额"是一个求和
 
-Your wallet's "balance" is calculated, not stored. When you open your wallet:
+你的钱包"余额"是计算出来的，不是存储的。当你打开钱包时：
 
-1. The wallet derives every address it can control (from the seed, via a [BIP 32](/glossary/bip-32) derivation path).
-2. The wallet (or its backing node) scans the UTXO set for outputs locked to those addresses.
-3. The wallet sums their values.
+1. 钱包派生出它能控制的每个地址（从种子，通过 [BIP 32](/glossary/bip-32) 派生路径）。
+2. 钱包（或其后端节点）扫描 UTXO 集，寻找锁定到这些地址的输出。
+3. 钱包对它们的面值求和。
 
-That sum is your balance. There is no row in any database that says "user X has 0.3 BTC." There are 17 UTXOs, each locked by a script your wallet can satisfy, and the sum of their values is 0.3 BTC.
+那个和就是你的余额。没有任何数据库里有一行写着"用户 X 有 0.3 BTC"。只有 17 个 UTXO，每个被你的钱包能满足的脚本锁定，它们的面值之和是 0.3 BTC。
 
-This has practical consequences. If your balance of 0.3 BTC is one UTXO worth 0.3 BTC, sending 0.1 BTC is straightforward: one input, two outputs, small transaction, small fee. If your balance of 0.3 BTC is 300 UTXOs of 0.001 BTC each, sending 0.1 BTC requires consuming 100 of them as inputs - a much larger transaction with a much higher fee.
+这有实际后果。如果你的 0.3 BTC 余额是一个价值 0.3 BTC 的 UTXO，发送 0.1 BTC 很直接：一个输入，两个输出，小交易，小手续费。如果你的 0.3 BTC 余额是 300 个各 0.001 BTC 的 UTXO，发送 0.1 BTC 需要消耗其中 100 个作为输入 - 一个更大的交易，更高的手续费。
 
-The shape of your UTXO set matters as much as the total.
+你的 UTXO 集合的形状和总量一样重要。
 
-## 6. Coin Selection
+## 6. 币选择
 
-Picking which UTXOs to spend is called **coin selection.** It is a non-trivial optimization problem with several competing goals:
+选择花哪些 UTXO 叫做**币选择**（coin selection）。这是一个非平凡的优化问题，有几个相互竞争的目标：
 
-- **Minimize fees.** Fewer and smaller inputs make a smaller transaction.
-- **Minimize change.** Create change that is useful, not dust.
-- **Preserve privacy.** Do not link UTXOs that do not need to be linked.
-- **Manage UTXO set size.** Avoid leaving a wallet full of tiny UTXOs.
+- **最小化手续费。** 更少更小的输入做出更小的交易。
+- **最小化找零。** 创造有用的找零，而不是尘埃。
+- **保护隐私。** 不关联不需要关联的 UTXO。
+- **管理 UTXO 集大小。** 避免钱包充满微小 UTXO。
 
-Bitcoin Core uses an algorithm called **Branch and Bound** as its primary coin selector, falling back to **Knapsack** when BnB cannot find an exact match. Other wallets use simpler heuristics ("largest first," "smallest first," "random").
+Bitcoin Core 使用一种叫**Branch and Bound**的算法作为主要币选择器，在 BnB 找不到精确匹配时回退到**Knapsack**。其他钱包使用更简单的启发式（"最大优先"、"最小优先"、"随机"）。
 
-Most users never think about coin selection. Most users probably should. (See [coin control](/glossary/coin-control) for wallets that expose it.)
+大多数用户从不考虑币选择。大多数用户可能应该考虑。（参见[币控制](/glossary/coin-control)了解提供此功能的钱包。）
 
-## 7. The UTXO Set, Globally
+## 7. 全局 UTXO 集
 
-As of 2026, the Bitcoin UTXO set contains roughly **85 to 110 million UTXOs**, totaling slightly under 20 million BTC.
+截至 2026 年，比特币 UTXO 集包含大约 **8500 万到 1.1 亿个 UTXO**，总计略低于 2000 万 BTC。
 
-This set is what every full node holds (in memory, on disk, with a cache, depending on configuration). When you receive a transaction, your node verifies that every input refers to a real, unspent UTXO. That check has to be fast - which is why nodes optimize the UTXO set heavily.
+这个集合是每个全节点持有的（根据配置在内存中、磁盘上、带缓存）。当你收到一笔交易时，你的节点验证每个输入引用的是真实的、未花费的 UTXO。这个检查必须快速 - 这就是为什么节点会大量优化 UTXO 集。
 
-The size of the UTXO set is a load-bearing performance metric. Every new node that spins up has to download and verify enough chain history to reconstruct it. Spam transactions that create lots of small UTXOs (dust attacks, inscription-heavy transactions) bloat the set and impose cost on every node operator, forever.
+UTXO 集大小是一个承重的性能指标。每个新启动的节点必须下载并验证足够的链历史来重建它。创建大量小 UTXO 的垃圾交易（尘埃攻击、铭文密集交易）膨胀了这个集合，并永久地给每个节点操作者施加成本。
 
-This is why "small transactions are free" is not true. Even a transaction with a tiny fee imposes a permanent cost on the UTXO set, which every node operator pays for in storage and validation work.
+这就是为什么"小额交易免费"不对。即使是一笔带微小手续费的交易也会对 UTXO 集施加永久成本，每个节点操作者都要在存储和验证工作中为此付费。
 
-## 8. Privacy: UTXOs Are Linked
+## 8. 隐私：UTXO 是关联的
 
-Once you create a transaction with multiple inputs, you have publicly declared that the same entity controls all of them. This is called **input clustering**, and it is the single most powerful tool chain-analysis firms have.
+一旦你创建了一笔有多个输入的交易，你就公开声明同一个实体控制着所有这些输入。这叫做**输入聚类**（input clustering），是链上分析公司拥有的最强大的工具。
 
-If you receive UTXO A on Monday and UTXO B on Tuesday from different sources, they are privately linkable only by you - the world does not know they share an owner. But the moment you spend them together in a single transaction, the link is permanent and public.
+如果你周一从来源 A 收到 UTXO A，周二从来源 B 收到 UTXO B，它们只有你能私下关联 - 世界上没有人知道它们共享一个所有者。但当你在一笔交易中一起花费它们时，这个关联就永久且公开了。
 
-This is why [coin control](/glossary/coin-control) matters. It is also why [CoinJoin](/glossary/coinjoin) and [PayJoin](/glossary/payjoin) exist - to deliberately create ambiguity about which UTXOs belong to whom.
+这就是为什么[币控制](/glossary/coin-control)重要。这也是为什么 [CoinJoin](/glossary/coinjoin) 和 [PayJoin](/glossary/payjoin) 存在 - 故意制造关于哪些 UTXO 属于谁的模糊性。
 
-A useful rule of thumb: every input you add to a transaction adds a public claim of common ownership. Combine UTXOs from different sources only when you have already accepted that those sources are now publicly linked.
+一个有用的经验法则：你加到交易中的每个输入都是一个公共的共同所有权声明。只有在你已经接受这些来源现在被公开关联时，才合并来自不同来源的 UTXO。
 
-## 9. Dust: When a UTXO Costs More to Spend Than It Is Worth
+## 9. 尘埃：当 UTXO 花费成本超过其价值
 
-There is a fee floor for transactions: the smaller a UTXO, the larger a percentage of its value the fee will be when you try to spend it. At some point, the fee exceeds the value.
+交易有手续费下限：UTXO 越小，你试图花费它时手续费占其价值的百分比就越大。在某个点上，手续费超过了价值。
 
-Bitcoin Core defines a [dust limit](/glossary/dust-limit) - currently around 546 satoshis for a typical P2WPKH output - below which the network will not even relay transactions creating that output. The reasoning: a UTXO that costs more to spend than it is worth is permanently wasted space in every node's UTXO set.
+Bitcoin Core 定义了[尘埃限额](/glossary/dust-limit) - 目前对于典型的 P2WPKH 输出约为 546 聪 - 低于此值网络甚至不会中继创建该输出的交易。理由：一个花费成本超过其价值的 UTXO 是每个节点 UTXO 集中永久浪费的空间。
 
-[Dust attacks](/glossary/dust-attack) exploit this: an attacker sends tiny UTXOs (just above dust limit) to many addresses they are trying to deanonymize. If a victim accidentally spends one in a transaction with their other UTXOs, the attacker confirms ownership of all of those UTXOs through the input clustering described above.
+[尘埃攻击](/glossary/dust-attack)利用这一点：攻击者向许多他们试图去匿名化的地址发送微小 UTXO（刚好高于尘埃限额）。如果受害者在与他们的其他 UTXO 的交易中不小心花费了一个，攻击者就通过上述输入聚类确认了所有这些 UTXO 的所有权。
 
-The defense: never sweep dust into your main wallet. See [dust sweeping](/glossary/dust-sweeping) for the careful version.
+防御：永远不要把尘埃扫入你的主钱包。参见[尘埃清理](/glossary/dust-sweeping)了解谨慎版本。
 
-## 10. What This Buys Us
+## 10. 这给我们带来了什么
 
-The UTXO model is one of Bitcoin's most underappreciated design choices. Compared to account-based systems (Ethereum, most banks), UTXOs are:
+UTXO 模型是比特币最被低估的设计选择之一。与基于账户的系统（以太坊、大多数银行）相比，UTXO 是：
 
-- **Statelessly validatable.** Each transaction can be verified independently, in any order. There is no "global state" you need the latest version of to check whether a transaction is valid.
-- **Parallelizable.** Two transactions touching different UTXOs can be validated in parallel without coordination.
-- **Auditable.** The supply at any block height is the sum of all UTXOs at that height. No "what's the total balance of all accounts" gymnastics.
-- **Privacy-flexible.** Multiple UTXOs per user are the *substrate* for techniques like CoinJoin and PayJoin. Account-based systems do not have this option.
+- **无状态可验证。** 每笔交易可以独立验证，任意顺序。不需要"全局状态"来检查一笔交易是否有效。
+- **可并行化。** 两笔涉及不同 UTXO 的交易可以并行验证，无需协调。
+- **可审计。** 任何区块高度的供应量就是该高度所有 UTXO 的总和。不需要"所有账户总余额是多少"的折腾。
+- **隐私灵活。** 每个用户多个 UTXO 是 CoinJoin 和 PayJoin 等技术的*基础*。基于账户的系统没有这个选项。
 
-The tradeoff is mental model. Account balances are easier to explain to a beginner. UTXOs are easier to scale and audit.
+代价是思维模型。账户余额更容易向初学者解释。UTXO 更容易扩展和审计。
 
-Bitcoin chose auditability and scalability. Now you understand why.
+比特币选择了可审计性和可扩展性。现在你理解了为什么。
 
-> **Pro tip:** When debugging a stuck or surprisingly expensive transaction, the first question is always "how many UTXOs did your wallet consume to build it?" Most surprises in Bitcoin fees trace back to coin selection.
+> **实用提示：** 当调试一笔卡住或出乎意料贵的交易时，第一个问题永远是"你的钱包消耗了多少个 UTXO 来构建它？"比特币手续费的多数意外都可以追溯到币选择。

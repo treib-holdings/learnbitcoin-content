@@ -1,13 +1,13 @@
 ---
-title: "Premium / Discount (to NAV)"
+title: "溢价/折价（对 NAV）"
 slug: premium-discount-to-nav
 draft: false
 published: "2026-06-15"
-shortDefinition: "The difference between an ETF's market price and its Net Asset Value per share, expressed as a percentage. Positive means premium, negative means discount."
+shortDefinition: "ETF 市场价格与每份额净资产价值（NAV）之间的差异，以百分比表示。正值为溢价，负值为折价。"
 keyTakeaways:
-  - "Open-end ETFs stay within basis points of NAV thanks to creation/redemption arbitrage"
-  - "Persistent large premiums or discounts mean the arbitrage mechanism is broken or blocked"
-  - "Pre-conversion GBTC's 40% premium and later 50% discount is the canonical Bitcoin case study"
+  - "开放式 ETF 通过申购/赎回套利将价格保持在 NAV 的几个基点以内"
+  - "持续的大幅溢价或折价意味着套利机制失效或被阻断"
+  - "转换前 GBTC 的 40% 溢价和后来的 50% 折价是比特币的经典案例"
 sources: []
 relatedTerms:
   - etf-exchange-traded-fund
@@ -20,39 +20,39 @@ relatedTerms:
 liveWidget: ~
 ---
 
-When an ETF trades on a stock exchange, two prices exist for the same share:
+当 ETF 在证券交易所交易时，同一份额存在两个价格：
 
-- **Market price.** Whatever the order book says right now.
-- **[Net Asset Value](/glossary/nav-net-asset-value) per share.** The fund's underlying holdings divided by share count.
+- **市场价格。** 订单簿当前显示的价格。
+- **每份额[净资产价值](/glossary/nav-net-asset-value)（NAV）。** 基金底层持仓除以份额数。
 
-The percentage difference between them is the premium (market price above NAV) or discount (market price below NAV).
+两者之间的百分比差异就是溢价（市场价格高于 NAV）或折价（市场价格低于 NAV）。
 
-For a healthy open-end ETF:
+对于一个健康的开放式 ETF：
 
-- The gap is typically a few basis points - tighter than the bid/ask spread on most US stocks.
-- [Authorized Participants](/glossary/authorized-participant) continuously arbitrage. If market price > NAV, an AP buys the underlying, delivers it to the issuer, receives shares at NAV, and sells at market price. The act of doing this closes the gap. Reverse for discount.
-- Persistent premium or discount means the arbitrage is failing - either creation/redemption is blocked, the underlying is illiquid, or the AP cannot transact in the underlying.
+- 差距通常在几个基点以内——比大多数美股的买卖价差还小。
+- [授权参与者](/glossary/authorized-participant)持续套利。如果市场价格 > NAV，AP 买入底层资产，交付给发行方，按 NAV 获得份额，然后按市场价格卖出。这个行为本身缩小了差距。折价时反向操作。
+- 持续的溢价或折价意味着套利失败——要么申购/赎回被阻止，要么底层资产流动性不足，要么 AP 无法交易底层资产。
 
-The Bitcoin case study: GBTC (Grayscale Bitcoin Trust)
+比特币案例：GBTC（Grayscale Bitcoin Trust）
 
-Before its January 2024 conversion to a [spot ETF](/glossary/spot-bitcoin-etf), GBTC was a closed-end trust, not an ETF. Crucial structural difference: closed-end funds have fixed share counts and no [creation/redemption](/glossary/creation-redemption) by APs. The wrapper has no arbitrage mechanism.
+在 2024 年 1 月转换为[现货 ETF](/glossary/spot-bitcoin-etf) 之前，GBTC 是一个封闭式信托，不是 ETF。关键的结构差异：封闭式基金有固定份额数，没有 AP 的[申购/赎回](/glossary/creation-redemption)。该载体没有套利机制。
 
-The GBTC premium/discount timeline:
+GBTC 溢价/折价时间线：
 
-- **2017-2021: large premium.** US accredited investors could subscribe to GBTC at NAV; after a six-month lockup, shares could be sold on the OTC market at whatever price the public would pay. With institutional demand for BTC exposure and no easy alternative, GBTC routinely traded at 20%-40% premiums. The premium itself became a yield strategy: subscribe at NAV, wait six months, sell into the premium.
-- **February 2021: premium collapses.** As alternative wrappers proliferated (Canadian spot ETFs, futures-based US ETFs from October 2021), the GBTC premium collapsed to zero.
-- **2022-2023: deep discount.** Grayscale's parent DCG had stress around the Genesis subsidiary (post-3AC, post-Celsius). Genesis ultimately filed for bankruptcy. Redemptions stayed blocked. The discount widened to 40%, then 50%. With no way for arbitrageurs to redeem shares for the underlying BTC, the discount persisted for over a year.
-- **August 2023: court win.** Grayscale won its DC Circuit suit against the SEC's denial of spot ETF conversion. Discount began closing on expectation of approval.
-- **January 10, 2024: conversion approved.** GBTC became a redeemable spot ETF. Discount closed to near zero.
+- **2017-2021：大幅溢价。** 美国合格投资者可以按 NAV 认购 GBTC；六个月锁定期后，份额可以在 OTC 市场上以公众愿意支付的价格出售。由于机构对 BTC 暴露的需求且没有便捷替代方案，GBTC 经常以 20%-40% 的溢价交易。溢价本身成为一种收益策略：按 NAV 认购，等六个月，在溢价时卖出。
+- **2021 年 2 月：溢价崩溃。** 随着替代载体增多（加拿大现货 ETF、2021 年 10 月的美国期货 ETF），GBTC 溢价崩溃至零。
+- **2022-2023：深度折价。** Grayscale 母公司 DCG 在 Genesis 子公司（3AC 和 Celsius 之后）周围承压。Genesis 最终申请破产。赎回持续被阻止。折价扩大到 40%，然后 50%。套利者无法赎回份额换取底层 BTC，折价持续了一年多。
+- **2023 年 8 月：法庭胜诉。** Grayscale 在 DC 巡回法院赢得对 SEC 拒绝现货 ETF 转换的诉讼。折价在预期批准下开始收窄。
+- **2024 年 1 月 10 日：转换获批。** GBTC 成为可赎回的现货 ETF。折价收窄至接近零。
 
-What the GBTC arc shows:
+GBTC 弧线显示：
 
-- **Premium/discount is a wrapper-quality signal.** A persistent gap means something is structurally wrong with the product, not with the underlying asset.
-- **Closed-end vs open-end matters enormously.** The same asset wrapped in a closed-end trust vs an ETF behaves very differently in stress.
-- **Redemption rights are the load-bearing feature.** Without them, the AP arbitrage doesn't exist, and the wrapper's price can drift arbitrarily from its NAV.
+- **溢价/折价是载体质量信号。** 持续的差距意味着产品结构有问题，而非底层资产有问题。
+- **封闭式 vs 开放式影响巨大。** 同一资产在封闭式信托和 ETF 中的表现截然不同。
+- **赎回权是核心特性。** 没有赎回权，AP 套利就不存在，载体的价格可以任意偏离 NAV。
 
-For US spot Bitcoin ETFs since launch:
+美国现货比特币 ETF 自上线以来：
 
-- IBIT, FBTC, BITB, ARKB and the others have traded within basis points of NAV. The creation/redemption mechanism is working as designed.
-- Day-of and week-of large flow events occasionally show wider premiums or discounts intraday, but they compress quickly.
-- This boring outcome is exactly what a healthy ETF looks like. The dramatic GBTC chart is the exception, not the rule.
+- IBIT、FBTC、BITB、ARKB 等在 NAV 的几个基点以内交易。申购/赎回机制按设计运作。
+- 大流量事件当天或当周偶尔出现更大的日内溢价或折价，但很快被压缩。
+- 这种无聊的结果正是一个健康 ETF 的样子。戏剧性的 GBTC 图表是例外，不是规则。

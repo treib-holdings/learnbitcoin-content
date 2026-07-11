@@ -1,12 +1,12 @@
 ---
-title: "Layer 1"
+title: "第一层"
 slug: layer-1
 draft: false
-shortDefinition: "The Bitcoin mainnet blockchain, where transactions settle on-chain under the full proof-of-work consensus."
+shortDefinition: "比特币主网区块链，交易在完整的工作量证明共识下在链上结算。"
 keyTakeaways:
-  - "Foundation of Bitcoin's security and settlement"
-  - "Constrained in throughput, leading to layer-2 expansions"
-  - "Miners and full nodes collectively enforce consensus"
+  - "比特币安全和结算的基础"
+  - "吞吐量受限，导致了第二层扩展"
+  - "矿工和全节点共同执行共识"
 sources: []
 relatedTerms:
   - bitcoin-core
@@ -20,30 +20,30 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Layer 1 is Bitcoin's base chain - the [proof-of-work](/glossary/proof-work-pow)-secured ledger where every confirmed transaction ultimately settles. It's the maximum-security, maximum-finality, but also slowest and most expensive layer in Bitcoin's architecture.
+第一层是比特币的基础链——由[工作量证明](/glossary/proof-work-pow)保护的账本，每笔确认的交易最终都在此结算。它是比特币架构中安全性最高、最终性最强，但也是最慢、最昂贵的层级。
 
-What lives on layer 1:
+第一层上的内容：
 
-- **Every UTXO**, controlled directly by [private keys](/glossary/private-key) or scripts.
-- **Every on-chain transaction**, validated by every [full node](/glossary/full-node) under Bitcoin's consensus rules.
-- **The [block subsidy](/glossary/block-subsidy)** issuance.
-- **Channel opens and closes** for [Lightning](/glossary/lightning-network).
-- **Peg-ins and peg-outs** for [sidechains](/glossary/sidechain).
-- **Settlement of any second-layer activity** that ultimately resolves back to BTC ownership.
+- **每个 UTXO**，由[私钥](/glossary/private-key)或脚本直接控制。
+- **每笔链上交易**，由每个[全节点](/glossary/full-node)根据比特币共识规则验证。
+- **[区块补贴](/glossary/block-subsidy)**的发行。
+- [闪电网络](/glossary/lightning-network)的**通道开启和关闭**。
+- [侧链](/glossary/sidechain)的**锚入和锚出**。
+- **任何最终回归 BTC 所有权的第二层活动结算**。
 
-The properties layer 1 is optimized for:
+第一层优化的属性：
 
-- **Finality.** Once a transaction is buried under enough blocks, it's effectively permanent. The [longest chain rule](/glossary/longest-chain-rule) and accumulated proof-of-work make rewriting it cost more than any plausible attacker can afford.
-- **Censorship resistance.** No party can block specific transactions from eventually being mined. Miners might try, but other miners exist who won't.
-- **Verifiability.** Every node validates everything for itself. No trust required.
-- **21 million cap enforcement.** The [supply asymptote](/glossary/asymptote) is enforced here, by every node, every block.
+- **最终性。** 一旦交易被足够多的区块覆盖，它实际上是永久的。[最长链规则](/glossary/longest-chain-rule)和累积的工作量证明使重写成本超过任何合理攻击者能承受的范围。
+- **抗审查。** 没有任何方可以阻止特定交易最终被挖出。矿工可能尝试，但其他不这样做矿工也存在。
+- **可验证性。** 每个节点为自己验证一切。不需要信任。
+- **2100 万上限执行。** [供应渐近线](/glossary/asymptote)在这里由每个节点、每个区块执行。
 
-What layer 1 is *not* optimized for:
+第一层*未*优化的方面：
 
-- **Throughput.** ~7 transactions per second on average, with a hard cap that doesn't change.
-- **Instant payments.** Confirmations take ~10 minutes on average; full settlement takes longer.
-- **Microtransactions.** Fees make low-value payments uneconomical at the base layer.
+- **吞吐量。** 平均约每秒 7 笔交易，有不会改变的上限。
+- **即时支付。** 确认平均需要约 10 分钟；完全结算需要更长时间。
+- **微支付。** 手续费使低价值支付在基础层不经济。
 
-These constraints are *features*, not bugs. They keep the base chain secure enough to be the world's final settlement layer. [Second-layer](/glossary/second-layer) solutions like Lightning handle the use cases base-layer constraints rule out.
+这些限制是*特性*而非缺陷。它们使基础链足够安全，成为世界的最终结算层。[第二层](/glossary/second-layer)解决方案如闪电网络处理基础层限制所排除的用例。
 
-Layer 1 is the part of Bitcoin that doesn't change. Everything else builds on top.
+第一层是比特币中不变的部分。其他一切都建立在它之上。

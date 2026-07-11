@@ -1,12 +1,12 @@
 ---
-title: "BIP 47 (Payment Codes)"
+title: "BIP 47（支付码）"
 slug: bip-47-payment-codes
 draft: false
-shortDefinition: "A system for reusable payment codes, aiming to improve privacy and avoid static address reuse."
+shortDefinition: "可复用支付码系统，旨在改善隐私并避免静态地址复用。"
 keyTakeaways:
-  - "Enables private reusable payment codes"
-  - "Generates unique addresses automatically"
-  - "Addresses privacy risks of reusing static addresses"
+  - "支持私密的可复用支付码"
+  - "自动生成唯一地址"
+  - "解决复用静态地址的隐私风险"
 sources: []
 relatedTerms:
   - bip-bitcoin-improvement-proposal
@@ -17,17 +17,17 @@ relatedTerms:
 liveWidget: ~
 ---
 
-[BIP-47](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki) ("Reusable Payment Codes") defines a system where a receiver publishes one long-term **payment code**, and senders derive fresh on-chain [addresses](/glossary/address) from it for each payment. The goal: avoid [address reuse](/glossary/address-reuse) while still having a single, shareable identifier.
+[BIP-47](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki)（"可复用支付码"）定义了一个系统，接收方发布一个长期**支付码**，发送方从中为每笔支付派生新的链上[地址](/glossary/address)。目标：避免[地址复用](/glossary/address-reuse)同时仍有一个可分享的标识符。
 
-How it worked:
+工作方式：
 
-1. The receiver publishes their payment code (an extended public key plus some metadata, encoded as a string starting with `PM...`).
-2. The sender does a one-time **notification transaction** on-chain: a tiny payment to a special derivation that "introduces" the sender to the receiver and exchanges the cryptographic material needed for ECDH-based address derivation.
-3. From that point forward, both parties can derive a stream of unique addresses for payments between them, without further on-chain handshakes.
+1. 接收方发布其支付码（一个扩展公钥加一些元数据，编码为以 `PM...` 开头的字符串）。
+2. 发送方做一次链上**通知交易**：一笔向特殊派生地址的微小支付，向接收方"介绍"发送方并交换 ECDH 地址派生所需的密码材料。
+3. 从此，双方可以派生一系列唯一地址用于之间的支付，无需更多链上握手。
 
-In practice, BIP-47 saw limited adoption. The Samourai Wallet team championed it; a handful of other wallets implemented it. Two main reasons it didn't take off broadly:
+实践中，BIP-47 采用有限。Samourai Wallet 团队推动了它；少数其他钱包实现了它。未广泛采用的两个主要原因：
 
-- **The notification transaction is a privacy leak in itself.** It tells chain observers "this user is using payment codes," and links the sender and receiver via that single on-chain transaction. The whole point was supposed to be privacy.
-- **The infrastructure burden.** Each receiver needed to scan the chain for incoming notification transactions, then derive and watch all the corresponding addresses.
+- **通知交易本身就是隐私泄露。**它告诉链上观察者"这个用户在使用支付码"，并通过那笔链上交易关联发送方和接收方。整个意义本应是隐私。
+- **基础设施负担。**每个接收方需要扫描链上的通知交易，然后派生并监控所有相应地址。
 
-The modern successor is **[Silent Payments](/glossary/silent-payments)** (BIP-352, 2023), which achieves the same "one reusable code, fresh addresses per payment" goal without any notification transaction. As of 2026, BIP-47 is mostly of historical interest; new wallets adopting reusable receive codes are picking Silent Payments instead.
+现代继任者是 **[Silent Payments](/glossary/silent-payments)**（BIP-352，2023 年），在无需任何通知交易的情况下实现相同的"一个可复用码，每笔支付新地址"目标。截至 2026 年，BIP-47 主要具有历史意义；采用可复用收款码的新钱包选择 Silent Payments。

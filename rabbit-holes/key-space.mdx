@@ -1,10 +1,11 @@
----title: "Key Space"
+---
+title: "密钥空间"
 slug: key-space
 draft: false
 status: live
 published: "2026-05-15"
 section: rabbit-hole
-tagline: "2^256. A number so large the universe doesn't have enough atoms to brute-force one."
+tagline: "2^256。一个大到宇宙中没有足够原子来暴力破解的数字。"
 order: 5
 estimatedMinutes: 6
 sources:
@@ -20,93 +21,93 @@ ogImageAlt: "One seed, every address. A 12-word seed phrase at the top derives a
 
 import KeySpaceVisualizer from '@components/keyspace/KeySpaceVisualizer.svelte';
 
-> **Where you're going:** A visceral, scale-by-scale walk through the number of possible Bitcoin private keys. By the end you'll understand why "guessing" a Bitcoin key is not a strategy that can be improved by more computers.
+> **你将了解：** 一次直观的、逐级放大的比特币私钥可能数量之旅。读完之后你会理解为什么"猜中"一个比特币密钥不是一种可以通过更多计算机来改善的策略。
 
-## Why This Matters
+## 为什么这很重要
 
-Your Bitcoin lives behind a private key. Anyone who knows the key can spend the BTC. Anyone who doesn't, can't.
+你的比特币背后是一把私钥（private key）。知道这把密钥的人可以花掉这些 BTC。不知道的人，不能。
 
-That sounds fragile. What stops an attacker from just trying every possible key until they hit yours?
+这听起来很脆弱。什么阻止攻击者干脆把每个可能的密钥都试一遍，直到碰到你的？
 
-The answer is "the math," and it is not a casual answer. The number of possible Bitcoin keys is so large that it overwhelms every intuition you have for *large*. Bigger than the number of grains of sand on Earth. Bigger than the number of stars in the observable universe. Bigger than the number of *atoms* in the observable universe, by many orders of magnitude.
+答案是"数学"，这不是一个随便说说的答案。比特币可能的密钥数量如此之大，以至于它颠覆了你对*大*的一切直觉。比地球上所有沙粒的数量还大。比可观测宇宙中所有恒星的数量还大。比可观测宇宙中所有*原子*的数量还大好几个数量级。
 
-This rabbit hole is a tour through that number. The goal isn't to teach you cryptography; it's to make you *feel* the scale at a gut level, so you understand why "brute-forcing a Bitcoin key" isn't a real category of threat. It's not even on the menu.
+这篇深度科普是对那个数字的一次游览。目的不是教你密码学；而是让你在直觉层面*感受*这个尺度，从而理解为什么"暴力破解比特币密钥"不是一个真正的威胁类别。它甚至不在选项菜单上。
 
 <figure>
   <img src="/diagrams/hd-wallet-tree.svg" alt="A hierarchical deterministic wallet tree: a 12-word seed phrase at the top derives a master key, which in turn derives an unlimited sequence of child keys and addresses. Five sample bc1q addresses branch from the master key, with the implication that millions more follow the same derivation." />
-  <figcaption>Every wallet derives a tree of keys from one seed. That seed lives somewhere in the 2^256-sized space we're about to walk.</figcaption>
+  <figcaption>每个钱包从一个种子派生出一棵密钥树。那个种子就在我们即将游览的 2^256 大小的空间里的某个地方。</figcaption>
 </figure>
 
-## The Number
+## 这个数字
 
-A Bitcoin private key is a 256-bit number. "256-bit" means it can take any of 2^256 possible values - call it the **key space**. (A few of those values are excluded by the secp256k1 curve, but that subtracts essentially nothing from the total.)
+比特币私钥是一个 256 位的数字。"256 位"意味着它可以取 2^256 个可能值中的任何一个 - 称之为**密钥空间**（key space）。（其中一些值被 secp256k1 曲线排除，但这从总数中减去的量本质上可以忽略不计。）
 
-2^256 written out in decimal:
+2^256 用十进制写出来是：
 
 > 115,792,089,237,316,195,423,570,985,008,687,907,853,269,984,665,640,564,039,457,584,007,913,129,639,936
 
-Seventy-eight digits. We don't have intuition for numbers this big. So let's build some.
+七十八位数字。我们对这么大的数字没有直觉。所以让我们建立一些。
 
-## Walk It
+## 走一遍
 
 <KeySpaceVisualizer client:load />
 
-## What This Means in Practice
+## 这在实践中意味着什么
 
-Bitcoin's security against brute-force key guessing rests on this number being absurdly large. To make it concrete:
+比特币对抗暴力破解密钥猜测的安全性建立在这个数字荒谬地大之上。具体来说：
 
-- Imagine you control every computer on Earth, repurposed to do nothing but guess private keys.
-- Imagine each one tries a trillion keys per second.
-- Imagine you keep this up for a billion years.
+- 想象你控制了地球上所有计算机，全部重新编程为只做一件事：猜私钥。
+- 想象每台计算机每秒尝试一万亿个密钥。
+- 想象你持续这样做十亿年。
 
-You will have explored roughly 2^140 of the 2^256 possible keys. That's about 2^116 keys deep, on a space that's 2^256 wide. Your search has covered an *infinitesimal* fraction of one percent. You will not find a single private key in use.
+你将探索大约 2^256 个可能密钥中的 2^140。也就是在一个 2^256 宽的空间上，还差大约 2^116 个密钥深度。你的搜索覆盖了不到百分之一的百分之一的……无限小分数。你不会找到任何一个正在使用中的私钥。
 
-The math doesn't care how fast your hardware gets. Doubling computing power moves you exactly one bit further. To brute-force a 256-bit key, you'd need to halve the search space 256 times. **Each doubling of compute halves it once.** That is not a war you can win by buying more GPUs.
+数学不在乎你的硬件变快多少。计算能力翻倍只会让你多前进一个比特。要暴力破解 256 位密钥，你需要把搜索空间减半 256 次。**每次算力翻倍只减半一次。** 这不是一场你能通过买更多 GPU 来赢的战争。
 
-## So Why 256 Bits?
+## 那为什么是 256 位？
 
-256 bits is generous. AES-128 (the symmetric encryption used everywhere from your WiFi to your hard drive) uses 128-bit keys and is already considered safe against brute force. Bitcoin doubles that.
+256 位很慷慨。AES-128（从你的 WiFi 到你的硬盘都在用的对称加密）使用 128 位密钥，已经被认为对暴力破解是安全的。比特币翻了一倍。
 
-The extra margin matters because:
+这个额外余量很重要，因为：
 
-1. **Quantum computers.** A sufficiently large quantum computer running Grover's algorithm would effectively halve the bit-strength of symmetric crypto - reducing 128-bit security to ~64-bit (potentially feasible) and 256-bit to ~128-bit (still safe). The 256-bit choice is partly future-proofing.
-2. **Birthday attacks.** Finding *any* collision in a 256-bit space takes ~2^128 work, not 2^256. Bitcoin's design accounts for this.
-3. **Belt and suspenders.** Cryptographic primitives are rarely defeated by brute force; they're defeated by *flaws*. Generous bit-length is the safety net.
+1. **量子计算机。** 一台足够大的量子计算机运行 Grover 算法可以将对称密码的有效位强度减半 - 将 128 位安全性降至约 64 位（可能可行），将 256 位降至约 128 位（仍然安全）。256 位的选择部分是对未来的预判。
+2. **生日攻击。** 在 256 位空间中找到*任意*碰撞需要约 2^128 的工作量，而不是 2^256。比特币的设计考虑了这一点。
+3. **双保险。** 密码学原语很少被暴力破解击败；它们被*漏洞*击败。慷慨的位长度是安全网。
 
-Most attacks on Bitcoin keys in practice are not brute force. They're:
+实践中对比特币密钥的大多数攻击不是暴力破解。它们是：
 
-- Stolen seed phrases (the human element)
-- Weak entropy in key generation (the bug element)
-- Side-channel attacks on hardware (the implementation element)
-- Phishing and social engineering (the everything-else element)
+- 被盗的助记词（人为因素）
+- 密钥生成中的弱熵（bug 因素）
+- 硬件的侧信道攻击（实现因素）
+- 钓鱼和社会工程（其他一切因素）
 
-The 2^256 number is what stops attackers from doing the obvious thing. Everything else is what stops them from doing the subtle things.
+2^256 这个数字阻止的是攻击者做最显而易见的事。其他一切因素阻止的是他们做隐蔽的事。
 
-## The Math, Simplified
+## 简化的数学
 
-For context, the powers of 2 from the visualizer above translate to these "real world" comparisons:
+作为参考，上面可视化器中 2 的幂次对应这些"现实世界"比较：
 
-| Bits | Approximate size | What it's roughly equivalent to |
+| 位数 | 大约大小 | 大致相当于 |
 |---|---|---|
-| 2^32 | 4.3 × 10^9 | IPv4 address space |
-| 2^64 | 1.8 × 10^19 | Grains of sand on Earth |
-| 2^128 | 3.4 × 10^38 | Atoms in your body |
-| 2^160 | 1.5 × 10^48 | Bitcoin's address space (160-bit hashes) |
-| 2^192 | 6.3 × 10^57 | Atoms in the Sun |
-| 2^224 | 2.7 × 10^67 | Atoms in the Milky Way |
-| 2^256 | 1.2 × 10^77 | Bitcoin's private key space - close to the atom count of the observable universe |
+| 2^32 | 4.3 × 10^9 | IPv4 地址空间 |
+| 2^64 | 1.8 × 10^19 | 地球上的沙粒数 |
+| 2^128 | 3.4 × 10^38 | 你身体里的原子数 |
+| 2^160 | 1.5 × 10^48 | 比特币的地址空间（160 位哈希） |
+| 2^192 | 6.3 × 10^57 | 太阳中的原子数 |
+| 2^224 | 2.7 × 10^67 | 银河系中的原子数 |
+| 2^256 | 1.2 × 10^77 | 比特币的私钥空间 - 接近可观测宇宙的原子数 |
 
-The universe has somewhere between 10^78 and 10^82 atoms total. Bitcoin's key space (10^77) is the same order of magnitude. **Each Bitcoin key is, in a real sense, the address of an atom in the universe.** That's not a metaphor; it's an arithmetic comparison.
+宇宙大约有 10^78 到 10^82 个原子。比特币的密钥空间（10^77）是同一数量级。**每个比特币密钥，在真正意义上，就是宇宙中一个原子的地址。** 这不是比喻；这是算术比较。
 
-## The Practical Takeaway
+## 实际收获
 
-You don't have to "trust" Bitcoin's key security. You can reason about it.
+你不必"信任"比特币的密钥安全。你可以自己推理。
 
-- Generate a key randomly (good entropy)
-- Keep it secret
-- Use a wallet that doesn't leak metadata
-- Don't get phished
+- 随机生成密钥（良好的熵）
+- 保密
+- 使用不泄露元数据的钱包
+- 别被钓鱼
 
-Brute force is not on the threat model. The math is doing its job. The remaining attack surface is operational, not cryptographic.
+暴力破解不在威胁模型中。数学在做好它的本职工作。剩余的攻击面是操作性的，不是密码学性的。
 
-> **Pro tip:** Whenever someone tells you Bitcoin will "eventually be cracked by computers," ask them what fraction of 2^256 the most powerful computer in history has explored to date. The answer is, effectively, zero - and exponential improvements in compute do not change the answer.
+> **实用提示：** 每当有人告诉你比特币"最终会被计算机破解"，问他们历史上最强大的计算机迄今探索了 2^256 的多少分之一。答案实际上是零 - 而且算力的指数级改善不会改变这个答案。

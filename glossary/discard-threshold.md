@@ -1,12 +1,12 @@
 ---
-title: "Discard Threshold"
+title: "丢弃阈值"
 slug: discard-threshold
 draft: false
-shortDefinition: "A mempool rule where the lowest-fee transactions get dropped when the mempool reaches its full capacity."
+shortDefinition: "内存池规则，当内存池达到满容量时，最低手续费的交易被丢弃。"
 keyTakeaways:
-  - "Drops low-fee transactions from the mempool under high load"
-  - "Encourages higher fees in periods of heavy network traffic"
-  - "Varies by node configuration and available memory"
+  - "在高负载时从内存池丢弃低手续费交易"
+  - "在网络流量大时鼓励更高手续费"
+  - "因节点配置和可用内存而异"
 sources: []
 relatedTerms:
   - absolute-fee
@@ -19,20 +19,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The discard threshold is the dynamic minimum fee rate a transaction must pay to stay in a Bitcoin node's mempool when memory is under pressure. Below the threshold, the node drops the transaction; at the threshold or above, it stays.
+丢弃阈值是当内存压力下交易必须支付才能留在比特币节点内存池中的动态最低手续费率。低于阈值，节点丢弃交易；达到或高于阈值，交易保留。
 
-How it works in Bitcoin Core:
+在 Bitcoin Core 中的工作方式：
 
-- Each node enforces a maxmempool size (default 300 MB).
-- When the mempool exceeds that size, the node evicts the lowest-feerate transactions first.
-- The feerate of the evicted transactions becomes a floor: any incoming transaction below that feerate is rejected outright.
-- The floor decays slowly over time as new low-fee transactions become acceptable, but during fee spikes it can rise dramatically.
+- 每个节点强制执行 maxmempool 大小（默认 300 MB）。
+- 当内存池超过该大小时，节点首先驱逐最低手续费率的交易。
+- 被驱逐交易的手续费率成为底线：任何低于该手续费率的入站交易被直接拒绝。
+- 底线随时间缓慢衰减，随着新的低手续费交易变得可接受，但在手续费飙升期间可以急剧上升。
 
-Why this is operationally important:
+为什么这在运营上很重要：
 
-- During fee-rate escalation (Ordinals era, post-halving periods, market spikes), the discard threshold can jump from ~1 sat/vB to 50+ sat/vB within hours.
-- A transaction broadcast at "normal" fees during a calm period can become unrelayable if the mempool fills before it confirms.
-- Bumping with [RBF](/glossary/bip-125-replace-fee) is the standard recovery: replace the stuck transaction with a higher-feerate version.
-- Tools like mempool.space's "next-block fee" estimate effectively show the current discard threshold so wallets can set fees that will actually stick.
+- 在手续费率升级期间（Ordinals 时代、减半后时期、市场飙升），丢弃阈值可以在几小时内从约 1 sat/vB 跳升到 50+ sat/vB。
+- 在平静期以"正常"手续费广播的交易如果在内存在填满前未确认，可能变得无法中继。
+- 用 [RBF](/glossary/bip-125-replace-fee) 加费是标准恢复方式：用更高手续费率版本替换卡住的交易。
+- mempool.space 的"下一区块手续费"估计等工具实际上显示了当前丢弃阈值，以便钱包设置真正能留下的手续费。
 
-The discard threshold is also a defense against mempool spam: an attacker who wants to flood the network with low-fee garbage finds that the floor rises as their attack continues, naturally pricing out the spam. The mempool is a fee market, and the discard threshold is the price-clearing mechanism.
+丢弃阈值也是对内存池垃圾攻击的防御：想用低手续费垃圾淹没网络的攻击者发现底线随着攻击持续而上升，自然地将垃圾定价出局。内存池是一个手续费市场，丢弃阈值是价格清算机制。

@@ -1,12 +1,12 @@
 ---
-title: "Colored Coins"
+title: "染色币"
 slug: colored-coins
 draft: false
-shortDefinition: "An early approach for representing external assets on Bitcoin by 'coloring' specific satoshis with extra data."
+shortDefinition: "一种早期方法，通过用额外数据'染色'特定聪来在比特币上表示外部资产。"
 keyTakeaways:
-  - "Tags specific BTC outputs as representing external assets"
-  - "Early precursor to tokenization concepts on Bitcoin"
-  - "Never took off widely due to technical and practical hurdles"
+  - "将特定 BTC 输出标记为代表外部资产"
+  - "比特币上代币化概念的早期先驱"
+  - "由于技术和实际障碍未能广泛推广"
 sources: []
 relatedTerms:
   - bitcoin-days-destroyed
@@ -17,20 +17,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Colored coins is the original (2012-2014) idea for representing arbitrary assets on Bitcoin by "coloring" specific satoshis with off-chain metadata. The math: a particular UTXO is declared to represent an asset (a share of stock, a property title, a currency), and a parallel off-chain ledger tracks which UTXOs carry which colors.
+染色币是最初（2012-2014 年）通过用链下元数据"染色"特定聪来在比特币上表示任意资产的想法。其原理：声明一个特定的 UTXO 代表一种资产（一股股票、一份产权、一种货币），并在平行的链下账本中跟踪哪些 UTXO 携带哪些颜色。
 
-The original design was clever but didn't quite work for several reasons:
+原始设计很巧妙，但由于几个原因并未真正奏效：
 
-- **No on-chain enforcement.** Bitcoin's protocol can't distinguish "blue satoshis" from regular satoshis. Color rules live entirely off-chain in client software.
-- **Fragmentation risk.** If the color metadata is lost or different clients disagree on the coloring rules, the same UTXO might be interpreted differently by different observers.
-- **Mixing problem.** Sending a colored UTXO mixed with regular UTXOs creates ambiguity about which output inherits the color.
-- **Throughput limits.** Each colored-coin transaction is a regular Bitcoin transaction with all the on-chain cost that implies.
+- **没有链上执行。** 比特币协议无法区分"蓝色聪"和普通聪。颜色规则完全存在于链下客户端软件中。
+- **碎片化风险。** 如果颜色元数据丢失或不同客户端对染色规则有分歧，同一个 UTXO 可能被不同观察者做出不同解释。
+- **混合问题。** 将染色 UTXO 与普通 UTXO 一起发送会产生关于哪个输出继承颜色的歧义。
+- **吞吐量限制。** 每笔染色币交易都是一笔普通的比特币交易，伴随着所有链上成本。
 
-Successors and descendants:
+后继者和衍生品：
 
-- **Counterparty** (2014, mostly historical). Embedded asset data in OP_RETURN outputs. Hosted the early SaltSwap and various token experiments.
-- **Omni Layer** (2014-present). Built USDT on Bitcoin originally (the bulk of USDT has since migrated to Ethereum / Tron).
-- **RGB and Taproot Assets** (2022+). Modern revivals using Taproot and client-side validation. Active development; production usage limited.
-- **Inscriptions / Ordinals / Runes / BRC-20** (2023+). The current wave of "everything is a token" experiments embedding data in witness space and ordinal-numbered satoshis. Controversial in the Bitcoin community; commercially significant during 2023-2024 fee spikes.
+- **Counterparty**（2014 年，主要是历史性的）。在 OP_RETURN 输出中嵌入资产数据。托管了早期的 SaltSwap 和各种代币实验。
+- **Omni Layer**（2014 年至今）。最初在比特币上构建了 USDT（大部分 USDT 后来迁移到 Ethereum / Tron）。
+- **RGB 和 Taproot Assets**（2022 年起）。使用 Taproot 和客户端验证的现代复兴。活跃开发中；生产使用有限。
+- **Inscriptions / Ordinals / Runes / BRC-20**（2023 年起）。当前一波"一切都是代币"的实验，将数据嵌入见证空间和序数编号的聪中。在比特币社区中有争议；在 2023-2024 年手续费飙升期间具有商业意义。
 
-The 2026 reality: colored-coin-style tokens on Bitcoin remain experimental and niche. The bulk of token activity happens on Ethereum / Solana / other smart-contract chains. The persistent appeal is "settle tokens on the most secure base layer," but the practical realities (fee costs, complexity, fungibility implications) keep most token activity off Bitcoin. The honest framing: Bitcoin can host tokens, but it's not optimized for them, and most of the use cases work better elsewhere or don't work at all.
+2026 年的现实：比特币上的染色币式代币仍然是实验性和小众的。大部分代币活动发生在 Ethereum / Solana / 其他智能合约链上。持久的吸引力是"在最安全的基础层上结算代币"，但实际情况（手续费成本、复杂性、可替代性影响）使大部分代币活动远离比特币。诚实的表述是：比特币可以托管代币，但不为此优化，大多数用例在其他地方效果更好或根本不适用。

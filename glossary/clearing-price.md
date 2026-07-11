@@ -1,12 +1,12 @@
 ---
-title: "Clearing Price"
+title: "清算价格"
 slug: clearing-price
 draft: false
-shortDefinition: "The market equilibrium price where BTC's available supply meets current demand."
+shortDefinition: "BTC 可用供应量与当前需求相遇的市场均衡价格。"
 keyTakeaways:
-  - "Represents the real-time equilibrium of BTC's market valuation"
-  - "Influenced by supply/demand, liquidity, and market sentiment"
-  - "Varies across exchanges but typically converges globally"
+  - "代表 BTC 市场估值的实时均衡"
+  - "受供需、流动性和市场情绪影响"
+  - "各交易所略有不同但通常全球趋同"
 sources: []
 relatedTerms:
   - bull-market
@@ -19,20 +19,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The clearing price is the market equilibrium where buy and sell orders cross: at that price, willing buyers and willing sellers actually transact. It's what you see ticking on exchanges: "BTC/USD at $X" is the current clearing price.
+清算价格是买卖订单交叉的市场均衡点：在该价格上，愿意买的人和愿意卖的人实际成交。这就是你在交易所看到的跳动数字："BTC/USD $X" 就是当前清算价格。
 
-Mechanically, on a continuous order-book exchange:
+在连续订单簿交易所中的机制：
 
-- **The bid side** is buyers' orders, sorted highest first.
-- **The ask side** is sellers' orders, sorted lowest first.
-- **The clearing price** is wherever the highest bid meets (or crosses) the lowest ask. When they cross, a trade executes and the order book updates.
+- **买方**的订单，按最高价优先排列。
+- **卖方**的订单，按最低价优先排列。
+- **清算价格**是最高的买价与最低的卖价相遇（或交叉）之处。当它们交叉时，交易执行，订单簿更新。
 
-This is the price-discovery mechanism in real time. Multiple things complicate the picture:
+这就是实时的价格发现机制。多个因素使情况复杂化：
 
-- **Multiple exchanges, slightly different prices.** Arbitrage flows close gaps but don't eliminate them. Coinbase, Kraken, Binance, Bitfinex, Bitstamp typically agree within a few basis points; smaller venues can diverge meaningfully.
-- **OTC desks and large block trades** clear off the public order book at negotiated prices, sometimes meaningfully different from the public clearing price for size that would otherwise move the visible book.
-- **Local fiat pairs** (CNY, INR, NGN, ARS) can show large premiums or discounts to USD-denominated prices, reflecting capital controls and arbitrage friction.
+- **多个交易所，价格略有不同。** 套利流缩小差距但不会消除。Coinbase、Kraken、Binance、Bitfinex、Bitstamp 通常在几个基点内一致；较小的交易场所可能有显著差异。
+- **OTC 柜台和大宗交易**在公共订单簿之外以协商价格成交，有时与公共清算价格有明显差异，尤其是对于否则会推动可见订单簿的大宗交易。
+- **本地法币交易对**（CNY、INR、NGN、ARS）可能对美元计价价格显示大幅溢价或折价，反映资本管制和套利摩擦。
 
-For users, "the price of Bitcoin" usually means the consolidated mid-price across major USD exchanges, weighted by volume. Index sources like the CME CF Bitcoin Reference Rate, Coinbase's price index, and Coingecko aggregate this for downstream consumers.
+对于用户来说，"比特币价格"通常指主要美元交易所的成交量加权中间价。CME CF 比特币参考利率、Coinbase 价格指数和 Coingecko 等指数源为下游消费者汇总这些数据。
 
-Clearing price is one of the most cited Bitcoin metrics and one of the most context-dependent. It's a useful daily reference and a misleading metric for "what is Bitcoin worth" - the answer depends on size, venue, and time horizon.
+清算价格是被引用最多的比特币指标之一，也是最依赖上下文的指标之一。它是有用的日常参考，但对于"比特币值多少"来说是一个有误导性的指标——答案取决于规模、场所和时间跨度。

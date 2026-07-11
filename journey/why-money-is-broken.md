@@ -1,11 +1,12 @@
----title: "Why Money Is Broken"
+---
+title: "为什么货币体系出了问题"
 slug: why-money-is-broken
 draft: false
 status: live
 published: "2026-05-15"
 order: 1
 estimatedMinutes: 22
-tagline: "Inflation isn't a force of nature. It's a policy. Once you see how fiat actually works, Bitcoin stops looking strange."
+tagline: "通胀不是自然规律,而是一项政策。一旦你看懂了法定货币的运作方式,比特币就不再显得奇怪了。"
 prerequisites: []
 relatedTerms: ["fiat", "inflation", "disinflation", "cbdc-central-bank-digital-currency", "satoshi-nakamoto"]
 ogImage: "/diagrams/og/dollar-purchasing-power.png"
@@ -18,7 +19,7 @@ sources:
   - { label: "Cantillon - Essai sur la Nature du Commerce (1755)", url: "https://oll.libertyfund.org/titles/cantillon-an-essay-on-economic-theory" }
 ---
 
-> **Where you're going:** By the end of this chapter, you'll be able to explain - in plain English, to your dad - why every fiat currency in history has lost most of its purchasing power, and why that isn't an accident. You won't have met Bitcoin yet. You'll just see the shape of the problem it tries to solve.
+> **你将走向何方:** 读完这一章,你就能用大白话跟你爸解释——为什么历史上每一种法定货币都丢掉了大部分购买力,以及为什么这不是意外。你还没接触比特币,你只是先看清了它要解决的问题长什么样。
 
 <figure>
   <video
@@ -33,163 +34,163 @@ sources:
     preload="metadata"
     aria-label="Animated line chart: $1 from 1970 declines decade by decade to about $0.12 today, with green dollar coins continuously fading as purchasing power erodes."
   ></video>
-  <figcaption>Half a century of inflation, decade by decade. $1 in 1970 → about $0.12 today.</figcaption>
+  <figcaption>半个世纪的通胀,十年又十年。1970 年的 1 美元 → 今天大约值 0.12 美元。</figcaption>
 </figure>
 
-## 1. The Feeling That Something's Wrong
+## 1. 那种"哪里不对劲"的感觉
 
-You make more money than you used to. Your rent is higher. Your groceries cost more. The number on your paycheck went up; the number of grocery bags it carries home didn't.
+你赚的钱比以前多了。房租涨了。买菜花得更多了。工资条上的数字大了,拎回家的购物袋没多。
 
-Most people feel this. Most people are also told, in various polite ways, that they're imagining it. *Inflation is normal. The economy is strong. Just put your money in the stock market.*
+大多数人都有这种感觉。但大多数人也会被用各种客气的方被告知——你想多了。*通胀是正常的。经济很健康。把钱投到股市里就好了。*
 
-Here's the thing: you aren't imagining it. The dollar in your pocket is, by design, worth a little less than it was last year - and a lot less than it was when your grandparents were your age. That's not a glitch. That's how the system was built.
+事实是:你没想多。你口袋里的美元,按设计,就比去年不值钱了一点——比你爷爷奶奶那辈不值钱了很多。这不是系统出了 bug,这就是系统被造出来的方式。
 
-This chapter walks through how it got built that way, who benefits, and why it matters.
+本章就来拆解这个系统是怎么搭起来的,谁从中受益,以及为什么这件事很重要。
 
-## 2. What Money Is Actually For
+## 2. 货币到底用来干嘛
 
-Strip away the brand names and currency symbols and money has three jobs:
+去掉品牌名和货币符号,货币有三件事要干:
 
-- **Medium of exchange** - you can trade it for stuff. Beats hauling around chickens.
-- **Store of value** - you can save it now and spend it later without losing purchasing power.
-- **Unit of account** - you can use it to measure and compare prices.
+- **交易媒介**——你能用它换东西。比拎着鸡到处跑强。
+- **价值储存**——你现在存着,以后花掉,购买力不会跑掉。
+- **计价单位**——你能用它来衡量和比较价格。
 
-Dollars are great at job one. They're okay at job three (prices in dollars are confusing across decades, but workable). They're terrible at job two over any meaningful time horizon.
+美元在第一件事上很出色。第三件事还行(跨年代看美元标价会有点混乱,但勉强能用)。但在第二件事上——在任何有意义的时间跨度上——美元糟糕透顶。
 
-That second-job failure is the entire subject of this chapter.
+第二件事的失败,就是整章的主题。
 
-## 3. A Short History of Money
+## 3. 货币简史
 
-This is the version you can tell at a dinner party.
+这是你在饭局上能讲的版本。
 
-1. **People bartered.** It worked badly. You had to find someone who had what you wanted *and* wanted what you had. Economists call this the "coincidence of wants." Most people call it inconvenient.
+1. **人们以物易物。** 不好使。你得找到一个既有你想要的东西、又恰好想要你有的人。经济学家管这叫"需求的双重巧合"。大多数人管这叫麻烦。
 
-2. **Commodity money.** Communities settled on scarce, durable things - salt, shells, cattle, beads, copper, silver, gold. Gold won most rounds because it's portable, divisible, durable, verifiable, and rare. It earned the job.
+2. **商品货币。** 社区渐渐选择了稀缺、耐用的东西——盐、贝壳、牛、珠子、铜、银、金。金子赢了大多数回合,因为它便携、可分、耐用、可验证、稀有。它凭实力拿下了这份工作。
 
-3. **Coins.** Governments stamped metal into standard weights so you didn't have to weigh it every time. They also discovered they could shave a little off each coin and pocket the difference. This is called *debasement* and it's been going on since the Roman denarius.
+3. **铸币。** 政府把金属铸成标准重量,这样你不用每次都称一称。他们也发现可以从每枚硬币上削一点下来揣自己兜里。这叫"劣币化"(debasement),从罗马第纳里乌斯就开始了。
 
-4. **Paper money - backed.** Goldsmiths and later banks issued paper notes that promised "redeemable for X grams of gold on demand." Paper is lighter than metal, so this was an improvement. As long as the issuer actually had the gold, it worked.
+4. **纸币——有锚的。** 金匠和后来的银行发行纸票,承诺"凭票即兑 X 克黄金"。纸比金属轻,这是个进步。只要发行方真有金子,这套系统就能跑。
 
-5. **Paper money - partially backed.** Banks figured out that not everyone redeems at once. They could issue more notes than they had gold, as long as the math stayed quiet.
+5. **纸币——部分锚定的。** 银行发现不是所有人会同时来兑换。他们可以发行比金库里的金子更多的票据,只要账面上过得去就行。
 
-6. **The classical gold standard (~1870-1914).** Most major economies pegged their currencies to specific weights of gold. International trade settled in gold. Inflation was near zero over decades.
+6. **古典金本位(约 1870-1914)。** 大多数主要经济体把货币锚定到特定重量的黄金。国际贸易用黄金结算。几十年来通胀接近于零。
 
-7. **Bretton Woods (1944).** After two world wars wrecked the old system, the world rebuilt around a US dollar pegged to gold at $35/oz, with every other currency pegged to the dollar. America held the gold; everyone else held dollars.
+7. **布雷顿森林体系(1944)。** 两次世界大战打烂了旧体系,世界围绕一个锚定黄金(35 美元/盎司)的美元重建,其他货币再锚定美元。美国拿着黄金,其他人拿着美元。
 
-8. **August 15, 1971.** Nixon went on television and ended dollar convertibility to gold. The suspension was supposed to be temporary. It was never restored. We have lived in the post-1971 monetary world ever since.
+8. **1971 年 8 月 15 日。** 尼克松上电视,宣布美元与黄金脱钩。暂停本应是"临时"的。再也没有恢复过。从那以后,我们就活在 1971 年后的货币世界里。
 
-That's the history. The next section is what changed in 1971 and why it matters.
+这就是历史。下一节讲 1971 年到底变了什么,以及为什么它重要。
 
-## 4. The Nixon Shock
+## 4. 尼克松冲击
 
-By the late 1960s, the United States had spent heavily - Vietnam, the Great Society, the space race - and printed dollars to do it. Foreign governments holding those dollars started asking for the gold the peg promised. France famously sent a warship to collect theirs.
+到 1960 年代末,美国大肆开支——越战、伟大社会计划、太空竞赛——靠印钞票来付账。持有美元的外国政府开始要求兑换承诺的黄金。法国甚至派了一艘军舰去拉自己的金子。
 
-There wasn't enough gold to honor the promises.
+金子不够兑现承诺了。
 
-On August 15, 1971, Nixon announced a "temporary" suspension of dollar-to-gold conversion. He told Americans:
+1971 年 8 月 15 日,尼克松宣布"暂时"暂停美元与黄金的兑换。他对美国人说:
 
-> "Your dollar will be worth just as much tomorrow as it is today."
+> "你的美元明天会和今天一样值钱。"
 
-Measured by the US Consumer Price Index, a 1971 dollar has the purchasing power of roughly **$0.13 in 2025**. You can verify this yourself on the [BLS inflation calculator](https://www.bls.gov/data/inflation_calculator.htm). Eighty-seven percent of the dollar's purchasing power was deleted over fifty-four years. Most of that deletion happened after 1971.
+按美国消费者物价指数(CPI)计算,1971 年的 1 美元在今天大约只值 **0.13 美元**。你可以在 [BLS 通胀计算器](https://www.bls.gov/data/inflation_calculator.htm)上自己验证。五十四年间,美元的购买力被抹掉了 87%。而大部分抹除发生在 1971 年之后。
 
-That's the moment the dollar stopped being tethered to anything scarce. From then on, the supply could expand whenever it was politically convenient - which, it turns out, is most of the time.
+就是那个时刻,美元不再锚定任何稀缺的东西。从那以后,货币供应量可以在政治上方便的时候任意扩张——事实证明,这几乎一直都是方便的。
 
-## 5. The Cantillon Effect (Without the Jargon)
+## 5. 坎蒂隆效应(不讲黑话)
 
-Here's a question most introductory economics classes avoid:
+这是一个大多数入门经济学课回避的问题:
 
-**When new money enters an economy, who gets it first?**
+**当新钱进入经济体时,谁先拿到?**
 
-Not everyone, all at once, evenly. The new money flows through specific channels - government spending, bank lending, financial markets - and the people closest to those channels get it before prices have time to adjust.
+不是所有人同时、均匀地拿到。新钱通过特定渠道流入——政府支出、银行贷款、金融市场——靠近这些渠道的人,在价格还来不及调整之前就先拿到了。
 
-By the time the new money reaches your paycheck, prices have already moved up to reflect the larger money supply. You're not richer. You're holding more dollars that buy the same things, or less.
+等到新钱流到你的工资单上,价格已经涨上去了,反映了更大的货币供应量。你没有变富,你只是拿着更多美元,买到的东西一样甚至更少。
 
-This is called the **Cantillon effect**, after Richard Cantillon, an 18th-century banker who described it in his 1755 essay on commerce. It's not a conspiracy theory. It's a structural consequence of how monetary expansion actually works.
+这叫**坎蒂隆效应**(Cantillon effect),得名于理查德·坎蒂隆,一位 18 世纪的银行家,他在 1755 年的商贸论文中描述了这个现象。这不是阴谋论,这是货币扩张实际运作方式的结构性结果。
 
-Who benefits, in rough order of proximity to new money:
+谁受益,按距离新钱的远近排序:
 
-1. **The government**, which spends it first
-2. **Primary dealers and large banks**, which lend it next
-3. **Corporations** that borrow at low rates and use the cash to buy back stock and bid up asset prices
-4. **Asset owners** - real estate, equities, gold - whose holdings rise as money chases them
-5. **Workers**, eventually, through wages - but with a lag
+1. **政府**,最先花出去
+2. **一级交易商和大型银行**,接着贷出去
+3. **企业**,以低利率借钱,用现金回购股票,推高资产价格
+4. **资产持有者**——房产、股票、黄金——他们的持仓随资金涌入而升值
+5. **工人**,最终,通过工资——但有滞后
 
-If you own assets, monetary expansion is roughly neutral or beneficial to you. If you live paycheck to paycheck and save in cash, monetary expansion is a continuous, quiet tax.
+如果你拥有资产,货币扩张对你大致是中性或有益的。如果你靠工资生活并存现金,货币扩张就是一种持续的、无声的税。
 
-## 6. The Math of Compounding
+## 6. 复利的数学
 
-"Two percent inflation" sounds tame. Compounded, it isn't.
+"2% 的通胀"听起来很温和。复利一下就不温和了。
 
-| Annual inflation | 10 years | 20 years | 40 years |
+| 年通胀率 | 10 年后 | 20 年后 | 40 年后 |
 |---|---|---|---|
 | 2% | −18% | −33% | −55% |
 | 3% | −26% | −45% | −70% |
 | 5% | −40% | −64% | −86% |
 | 7% | −50% | −74% | −93% |
 
-The official US CPI averaged around 4% from 1971 to today. That's a working life of erosion.
+美国官方 CPI 从 1971 年到今天平均约 4%。这是一整个工作生涯的侵蚀。
 
 <figure>
   <img src="/diagrams/dollar-purchasing-power.svg" alt="What a dollar buys, 1971 to today: a line chart showing one dollar declining to about 13 cents over 55 years of compounded inflation at roughly 4 percent annual CPI." />
-  <figcaption>$1 in 1971 is worth about $0.13 today. 55 years of ~4% compounded CPI.</figcaption>
+  <figcaption>1971 年的 1 美元今天大约值 0.13 美元。55 年,约 4% 的复利 CPI。</figcaption>
 </figure>
 
-And CPI is a conservative measure. It's been re-weighted multiple times since the 1980s in ways that reduce the headline number. Honest measures - like the cost of housing, healthcare, and a college degree - have run dramatically hotter. A house, a hospital stay, and a four-year degree all cost a multiple of what they cost a generation ago, in real terms, even after adjusting for the "official" inflation rate.
+而且 CPI 还是一个偏保守的指标。自 1980 年代以来它被多次重新加权,方式都是降低 headline 数字。更诚实的指标——比如住房、医疗和大学学位的成本——涨得远比官方数字猛。房子、住院、四年制学位,即使按"官方"通胀率调整后,实际成本也是一代人之前的数倍。
 
-## 7. Who Pays and Who Benefits
+## 7. 谁付钱,谁受益
 
-This is where the politics get clear.
+到这儿,政治就清楚了。
 
-**Who pays the inflation tax:**
+**谁付了通胀税:**
 
-- People who save in cash
-- People on fixed incomes
-- Wage earners (because wages lag prices)
-- Young people (who must buy assets at inflated prices)
-- The poor (who hold most of their wealth in dollars, not assets)
+- 存现金的人
+- 靠固定收入生活的人
+- 靠工资的人(因为工资涨得比价格慢)
+- 年轻人(得用膨胀的价格买资产)
+- 穷人(大部分财富以美元形式持有,不是资产)
 
-**Who benefits from inflation:**
+**谁从通胀中受益:**
 
-- Debtors paying back fixed-dollar loans (especially governments, which are the biggest debtors in history)
-- Asset owners - stocks, real estate, gold, businesses
-- People who get the new money first (see section 5)
-- Anyone whose income is leveraged to asset prices
+- 欠固定美元债务的人(尤其是政府,史上最大债务人)
+- 资产持有者——股票、房产、黄金、企业
+- 先拿到新钱的人(见第 5 节)
+- 收入与资产价格挂钩的人
 
-The standard advice - *just invest your savings* - works only if you have savings to invest, the knowledge to invest them, and the stomach to hold through downturns. Roughly half of Americans don't.
+标准建议——*把积蓄拿去投资*——只有在你有积蓄可投、有知识去投、有心态扛过下跌时才管用。大约一半美国人不具备这些条件。
 
-Inflation, in practice, is a wealth transfer from people who hold dollars to people who hold assets. It's enacted by every government in modern history, and there's no line item for it on your tax return.
+通胀,在实践中,就是从持有美元的人手里向持有资产的人手里转移财富。每个现代政府都在这么做,你的税单上不会有这一项。
 
-## 8. The Quiet Tax
+## 8. 无声的税
 
-You don't vote for inflation.
+你没有为通胀投过票。
 
-When taxes go up, there's a debate. There's a bill. Someone has to defend it. When the money supply expands, there's a press release from the Federal Reserve, and most people don't read it.
+加税的时候,有辩论,有法案,有人得出来辩护。货币供应量扩张的时候,美联储发个新闻稿,大多数人看都不看。
 
-The transfer happens quietly, continuously, year after year. The dollar in your savings account today has the purchasing power of about 87 cents in 2020 dollars. Five years. Thirteen percent.
+财富转移就那样安静地、持续地,一年又一年地发生。你今天储蓄账户里的美元,购买力大约等于 2020 年的 87 美分。五年。13%。
 
-If a politician proposed a 13% tax on savings accounts, there would be riots. The same 13% reduction in purchasing power, delivered through monetary expansion, is described as "normal" and "the cost of doing business."
+如果有个政客提议对储蓄账户征 13% 的税,会上街的。同样是 13% 的购买力缩水,通过货币扩张来交付,却被描述为"正常"和"做生意的代价"。
 
-This isn't a conspiracy. It's how the system functions. The people who designed it largely meant well. The consequences are what they are.
+这不是阴谋。这就是系统的运作方式。设计它的人大体上是好意。后果就是那样。
 
-## 9. The Unanswered Question
+## 9. 没有被回答的问题
 
-So here's the question this chapter sets up but doesn't answer:
+这一章抛出了问题,但没有回答:
 
-**What would money look like if no one could expand its supply?**
+**如果没有人能扩张货币供应量,钱会是什么样子?**
 
-What if it were:
+如果它是:
 
-- **Portable** - easy to move across borders, instantly
-- **Divisible** - fine enough for any purchase
-- **Durable** - doesn't rot, doesn't rust, doesn't depend on a bank
-- **Verifiable** - impossible to counterfeit
-- **Scarce** - and not just "scarce because we agreed," but *scarce because the math says so*
-- **Sovereign** - outside the control of any government or company
+- **便携的**——能瞬间跨境移动
+- **可分的**——足够精细,任何金额都付得了
+- **耐用的**——不腐烂、不生锈、不依赖银行
+- **可验证的**——无法伪造
+- **稀缺的**——不是"因为我们说好就稀缺",而是"因为数学说稀缺就稀缺"
+- **主权的**——不受任何政府或公司控制
 
-That money would do all three jobs - medium of exchange, store of value, unit of account - and it would do the second one *as well as gold did before 1971*, with none of gold's downsides.
+那种货币能同时做好三件事——交易媒介、价值储存、计价单位——而且第二件事能做得像 1971 年前的黄金一样好,还没有黄金的缺点。
 
-It would have to be a new kind of thing. It would have to use cryptography to make scarcity provable. It would have to use a network instead of a vault. It would have to be a protocol, not a product.
+它必须是一种新东西。它必须用密码学来让稀缺性可证明。它必须用网络代替金库。它必须是一个协议,不是一个产品。
 
-That money exists. It has been running, without interruption, since January 3, 2009. The next chapter is about what it actually is.
+那种货币存在。它从 2009 年 1 月 3 日起,一直不间断地运行着。下一章就讲它到底是什么。
 
-> **Pro tip:** If you only remember one thing from this chapter, remember that inflation is a *policy*, not a force of nature. Once you see that, you can't unsee it. Everything Bitcoin does is in response to a system that was built - deliberately or carelessly - to lose its grip on value over time.
+> **提示:** 这一章如果你只记一件事,记住通胀是一项*政策*,不是自然规律。一旦你看清了,就再也装不回去了。比特币所做的一切,都是在回应一个被设计成——不管是有意还是疏忽——会随时间丧失价值掌控力的系统。

@@ -1,13 +1,13 @@
 ---
-title: "CRQC (Cryptographically-Relevant Quantum Computer)"
+title: "CRQC（密码学相关量子计算机）"
 slug: crqc-cryptographically-relevant-quantum-computer
 draft: false
 published: "2026-06-01"
-shortDefinition: "The threshold at which a quantum computer is large and stable enough to break real-world cryptography - specifically, ECDSA on secp256k1 for Bitcoin."
+shortDefinition: "量子计算机足够大且稳定，能够破解现实世界密码学的阈值——对比特币而言，即破解 secp256k1 上的 ECDSA。"
 keyTakeaways:
-  - "Threshold of quantum hardware capable of breaking real-world cryptography"
-  - "Logical qubits, coherence time, and gate fidelity matter as much as raw qubit counts"
-  - "Current systems are orders of magnitude below CRQC for Bitcoin on multiple axes"
+  - "能够破解现实世界密码学的量子硬件阈值"
+  - "逻辑量子比特、相干时间和门保真度与原始量子比特数同样重要"
+  - "当前系统在多个维度上距离比特币的 CRQC 还差数个数量级"
 sources: []
 relatedTerms:
   - post-quantum-bitcoin
@@ -21,46 +21,46 @@ relatedTerms:
 liveWidget: ~
 ---
 
-CRQC is the working term for the scale of quantum hardware needed to actually break the cryptography securing modern systems - Bitcoin included. It's a moving target defined by both the algorithm being run ([Shor's](/glossary/shors-algorithm), in Bitcoin's case) and the cryptographic parameter being attacked (a 256-bit elliptic curve key, for [ECDSA](/glossary/ecdsa-elliptic-curve-digital-signature-algorithm) and [Schnorr](/glossary/schnorr-signature)).
+CRQC 是指能够实际破解保护现代系统（包括比特币）的密码学所需的量子硬件规模的术语。它是一个移动目标，由运行的算法（比特币情况下是 [Shor 算法](/glossary/shors-algorithm)）和被攻击的密码参数（[ECDSA](/glossary/ecdsa-elliptic-curve-digital-signature-algorithm) 和 [Schnorr](/glossary/schnorr-signature) 的 256 位椭圆曲线密钥）共同定义。
 
-"How many qubits does Bitcoin need to worry about?" is a question with a footnote longer than the answer.
+"比特币需要担心多少量子比特？"这个问题，脚注比答案还长。
 
-## What separates qubits from CRQC
+## 什么区分了量子比特和 CRQC
 
-A quantum computer with N physical qubits is not equivalent to "N qubits of cryptographic-attack capability." Three factors separate raw hardware from CRQC status:
+拥有 N 个物理量子比特的量子计算机不等于"N 个量子比特的密码攻击能力"。三个因素将原始硬件与 CRQC 状态区分开来：
 
-- **Logical vs. physical qubits.** Quantum operations are noisy. Reliable computation requires error correction, which uses many physical qubits to encode each fault-tolerant logical qubit. Current ratios run roughly 100-1,000 physical qubits per logical qubit, depending on the error-correction scheme.
-- **Coherence time.** Quantum states decohere quickly. Running Shor's at cryptographic scale requires sustained coherence across millions of gate operations.
-- **Gate fidelity.** Each quantum gate operation has an error rate. Lower fidelity means more error correction, which means more physical qubits per logical qubit. The relationship is superlinear: small fidelity gains pay back disproportionately.
+- **逻辑量子比特 vs 物理量子比特。** 量子操作是有噪声的。可靠计算需要纠错，使用许多物理量子比特来编码每个容错逻辑量子比特。当前比率大约是每个逻辑量子比特 100-1,000 个物理量子比特，取决于纠错方案。
+- **相干时间。** 量子态快速退相干。在密码学规模上运行 Shor 算法需要跨越数百万个门操作维持相干性。
+- **门保真度。** 每个量子门操作都有错误率。更低的保真度意味着更多纠错，意味着每个逻辑量子比特需要更多物理量子比特。关系是超线性的：小的保真度提升带来不成比例的回报。
 
-## What's needed for Bitcoin
+## 比特币需要什么
 
-Working estimates for the hardware to break [secp256k1](/glossary/elliptic-curve) via Shor's algorithm:
+通过 Shor 算法破解 [secp256k1](/glossary/elliptic-curve) 的硬件工作估计：
 
-- ~2,000-3,000 logical (error-corrected) qubits
-- Millions of physical qubits, given current error-correction overhead (~1,000 physical per logical for surface codes)
-- Sustained quantum coherence on the timescale of the full computation - hours to days
+- 约 2,000-3,000 个逻辑（纠错）量子比特
+- 考虑当前纠错开销，需要数百万物理量子比特（表面码约 1,000 个物理/逻辑）
+- 在完整计算的时间尺度上——数小时到数天——维持量子相干性
 
-The exact numbers depend on which estimate you trust. Optimistic accounts pull the logical-qubit requirement lower; pessimistic accounts push the physical-to-logical ratio higher. None of the estimates are within a single order of magnitude of any system that exists today.
+具体数字取决于你信任哪个估计。乐观的估计将逻辑量子比特需求拉低；悲观的估计将物理/逻辑比率推高。没有一个估计在任何一个轴上接近当今存在的任何系统的一个数量级以内。
 
-## Where the hardware is
+## 硬件现状
 
-Public quantum systems span multiple architectures, each with different scaling profiles:
+公开的量子系统跨越多种架构，每种有不同的扩展特性：
 
-- **Gate-based platforms** (superconducting, trapped-ion): higher per-qubit fidelity, slower physical-qubit scaling. Used by IBM, Google, Quantinuum, and others.
-- **Neutral-atom platforms** (e.g., QuEra, Atom Computing): faster scaling in raw qubit count, historically lower per-qubit fidelity, improving rapidly.
-- **Photonic, topological, and other architectures**: earlier-stage, with smaller demonstrated systems.
+- **门控平台**（超导、离子阱）：更高的单量子比特保真度，更慢的物理量子比特扩展。IBM、Google、Quantinuum 等使用。
+- **中性原子平台**（如 QuEra、Atom Computing）：原始量子比特数扩展更快，历史上单量子比特保真度更低，但正在快速改进。
+- **光子、拓扑和其他架构**：更早期，演示系统更小。
 
-Across all of them, **demonstrated logical (error-corrected) qubit counts remain in the single digits**. Raw physical qubit counts are the most visible metric in press releases, but they're not the binding constraint - gate fidelity, coherence time, and error-correction overhead matter more for actually running Shor's at cryptographic scale.
+在所有架构中，**已演示的逻辑（纠错）量子比特数仍为个位数**。原始物理量子比特数是新闻稿中最可见的指标，但它们不是约束瓶颈——门保真度、相干时间和纠错开销对实际在密码学规模上运行 Shor 算法更为重要。
 
-No demonstrated CRQC capability against any real-world cryptography exists. The gap remains multiple orders of magnitude on multiple axes.
+目前不存在针对任何现实世界密码学的已演示 CRQC 能力。差距在多个轴上仍为数个数量级。
 
-## Why the timeline keeps slipping but not closing
+## 为什么时间线一直在推迟但没有闭合
 
-The CRQC horizon has been "5-10 years out" for over a decade. The frustrating pattern: each year brings real progress in qubit counts and error correction, but the engineering challenges scale superlinearly with system size. Adding qubits creates new noise problems; new noise problems require new error-correction overhead; new overhead pushes the CRQC threshold further away.
+CRQC 地平线已经"5-10 年之后"超过十年了。令人沮丧的模式：每年在量子比特数和纠错方面带来真实进展，但工程挑战随系统规模超线性增长。增加量子比特产生新的噪声问题；新的噪声问题需要新的纠错开销；新的开销将 CRQC 阈值推得更远。
 
-But the trend line is still forward. The question isn't whether CRQCs are buildable in principle - Shor's algorithm proves they are - it's whether the engineering progress curve will eventually meet the threshold. Most experts believe it will. The disagreement is *when*.
+但趋势线仍在前进。问题不在于 CRQC 在原理上是否可建造——Shor 算法证明了可以——而在于工程进度曲线最终是否会达到阈值。大多数专家相信会。分歧在于*何时*。
 
-For Bitcoin, the implication is that the migration must start well before CRQC arrival, because coordinating the network on a new signature scheme takes years. [BIP-361's](/glossary/bip-361) authors cite this directly: *"academic road-maps now estimate a cryptographically-relevant quantum computer as early as 2027-2030."*
+对于比特币，意味着迁移必须在 CRQC 到来之前很久就开始，因为协调网络采用新签名方案需要数年时间。[BIP-361](/glossary/bip-361) 的作者直接引用：*"学术路线图现在估计密码学相关量子计算机最早在 2027-2030 年。"
 
-See the [Quantum and Bitcoin rabbit hole](/rabbit-hole/quantum-and-bitcoin) for the honest timeline and what the migration window means in practice.
+诚实的时间线和迁移窗口的实际意义参见[量子与比特币深入探讨](/rabbit-hole/quantum-and-bitcoin)。

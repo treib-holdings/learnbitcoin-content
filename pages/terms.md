@@ -1,99 +1,71 @@
 ---
-title: "Terms"
-heading: "The deal, in plain English."
-description: "Terms of use for LearnBitcoin.com. Short version: read it, share it, do not blame us if you mess up."
+title: "条款"
+heading: "说人话的协议。"
+description: "LearnBitcoin.com 的使用条款。长话短说：随便看，随便转，搞砸了别怪我们。"
 ---
 
-The site exists to teach Bitcoin honestly. You can read it for free.
-You can copy it, translate it, remix it, run your own version of it.
-You cannot sue us for any of it.
+这个站存在的目的是老老实实地教你比特币。你可以免费看。你可以复制、翻译、混编，搞一个你自己的版本。你不能因为这些内容起诉我们。
 
-That is most of it. The legal version follows.
+基本上就这些。下面是法律版本。
 
-## The content is yours to use
+## 内容随你用
 
-All content is licensed
-[CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/). Use
-it, embed it, translate it, build on top of it. The only asks are
-attribution back to learnbitcoin.com and that your derivative is also
-CC-BY-SA. See [How to attribute](https://github.com/treib-holdings/learnbitcoin-content#how-to-attribute)
-for the recommended format.
+所有内容采用
+[CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可。用吧，嵌入吧，翻译吧，在它上面继续建。唯一的要求是注明出处链接回 learnbitcoin.com，并且你的衍生作品也用 CC-BY-SA。推荐格式见[如何署名](https://github.com/treib-holdings/learnbitcoin-content#how-to-attribute)。
 
-The site code is not currently open source. Maybe later. Reach out if
-you want to talk about it.
+网站代码目前没有开源。也许以后会。想聊的话联系我们。
 
-## What this site is not
+## 这个站不是什么
 
-We teach. We do not advise. Specifically, **nothing on this site is**:
+我们教书。不建议。具体来说，**这个站上的任何内容都不是**：
 
-- Financial advice.
-- Investment advice.
-- Tax advice.
-- Legal advice.
+- 财务建议。
+- 投资建议。
+- 税务建议。
+- 法律建议。
 
-If you are about to make a decision involving meaningful money, talk
-to someone whose job is to be liable for that advice. We are not
-that person.
+如果你要做涉及真金白银的决定，去找一个需要为此建议承担责任的人。我们不是那个人。
 
-Bitcoin's price can go up. Bitcoin's price can go down. Self-custody
-is your responsibility. We do not custody your funds. We do not have
-access to anyone's keys.
+比特币的价格可能涨，也可能跌。自托管是你自己的责任。我们不托管你的资金。我们没有任何人的私钥。
 
-## No warranties
+## 免责声明
 
-The site is provided as is. We aim for accuracy, we cite sources,
-and we correct mistakes when we find them. But: no warranty,
-express or implied, of any kind. If a number is stale, a tutorial
-breaks, a linked tool misbehaves, or your hardware wallet eats your
-coffee table, that is between you and the universe.
+本站按"现状"提供。我们追求准确，我们引用出处，发现错误会改。但是：不提供任何明示或暗示的保证。如果某个数据过期了，某个教程失效了，某个链接的工具抽风了，或者你的硬件钱包吞了你的咖啡桌，那是你跟宇宙之间的事。
 
-The on-chain numbers come from a full Bitcoin node, accessed via
-[ChainQuery](https://chainquery.com). We trust that more than we
-trust an exchange API. We still cannot promise it is right every
-second of every day. Verify, do not trust.
+链上数据来自一个全节点，通过 [ChainQuery](https://chainquery.com) 访问。我们比信任交易所 API 更信任它。但我们仍然不能保证它每时每刻都对。验证，别信任。
 
-## What we will not do
+## 我们不会做的事
 
-- Impersonate any of you.
-- Change the meaning of pages without leaving a git diff.
-- Put up a cookie banner.
-- Insert affiliate links.
-- Sell, rent, or share data about you.
+- 冒充你们中的任何人。
+- 不留 git diff 就改变页面含义。
+- 放 cookie 弹窗。
+- 插入分销链接。
+- 出售、出租或分享关于你的数据。
 
-## What you should not do
+## 你不应该做的事
 
-- Scrape the site at a rate that knocks it over. Cloudflare will
-  block you anyway, but please be polite.
-- Impersonate us. The name, branding, and "honest Bitcoin school"
-  positioning are ours.
-- Republish content as your own original work. CC-BY-SA requires
-  attribution; doing without it is a license violation.
+- 用会把站搞垮的频率爬站。Cloudflare 反正会拦你，但请礼貌点。
+- 冒充我们。名字、品牌和"诚实比特币学校"的定位是我们的。
+- 把内容当成你自己的原创重新发布。CC-BY-SA 要求署名，不做就是违反许可。
 
-## Takedown or correction
+## 下架或更正
 
-If you think something on the site infringes your copyright, defames
-you, or is just wrong, email
-[hello@learnbitcoin.com](mailto:hello@learnbitcoin.com) with:
+如果你觉得站上的内容侵犯了你的版权、诽谤了你，或者就是错了，发邮件给 [hello@learnbitcoin.com](mailto:hello@learnbitcoin.com)，附上：
 
-- The URL.
-- What is wrong.
-- A source for the correct version (if it is a factual issue).
+- URL。
+- 哪里错了。
+- 正确版本的出处（如果是事实性问题）。
 
-Most fixes happen within days, in public, with a git commit. For
-serious legal claims, we will respond in writing.
+大多数修复在几天内完成，公开的，带着 git commit。对于严重的法律主张，我们会书面回复。
 
-## Governing law
+## 适用法律
 
-These terms are governed by the laws of the State of Connecticut,
-USA. Any disputes go before the state and federal courts located in
-Connecticut. You agree to that jurisdiction by using the site.
+这些条款受美国康涅狄格州法律管辖。任何争议提交康涅狄格州的州法院和联邦法院。你使用本站即表示接受该管辖。
 
-## Updates
+## 更新
 
-These terms can change. When they do, the change lives in git
-history at the [public content repo](https://github.com/treib-holdings/learnbitcoin-content/blob/main/pages/terms.md).
-Material changes will be noted at the top of this page for a while.
+这些条款可能变更。变更时，记录在[公开内容仓库](https://github.com/treib-holdings/learnbitcoin-content/blob/main/pages/terms.md)的 git 历史中。重大变更会在本页面顶部标注一段时间。
 
-## Contact
+## 联系方式
 
-[hello@learnbitcoin.com](mailto:hello@learnbitcoin.com).
+[hello@learnbitcoin.com](mailto:hello@learnbitcoin.com)。

@@ -1,12 +1,12 @@
 ---
-title: "Balanced Channel (Lightning)"
+title: "平衡通道（闪电网络）"
 slug: balanced-channel-lightning
 draft: false
-shortDefinition: "A Lightning channel whose capacity is split roughly equally between both participants, allowing seamless sending and receiving."
+shortDefinition: "容量大致均分给双方的闪电通道，允许无缝发送和接收。"
 keyTakeaways:
-  - "Equal distribution of funds between channel partners"
-  - "Prevents payment failures for both sending and receiving"
-  - "Can require active monitoring or rebalancing tools"
+  - "通道伙伴之间资金均等分配"
+  - "防止发送和接收的支付失败"
+  - "可能需要主动监控或再平衡工具"
 sources: []
 relatedTerms:
   - lightning-channel
@@ -21,24 +21,24 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A balanced channel is a Lightning channel where local and remote balance are roughly equal: both sides have meaningful capacity to send to the other. This is what routing nodes want for most channels, because a balanced channel can forward payments in either direction.
+平衡通道是指本地和远程余额大致相等的闪电通道：双方都有有意义的容量可以向对方发送。这是路由节点对大多数通道的期望，因为平衡通道可以在两个方向转发支付。
 
-Why balance matters:
+为什么平衡很重要：
 
-- **For routing nodes.** A 10M-sat channel split 5M / 5M can forward up to 5M in either direction. The same 10M channel skewed 9M / 1M can only forward 1M one way and 9M the other; the long-tail capacity is unusable until balance shifts back.
-- **For users.** Skew has a direction. A new channel funded entirely by you (10M / 0M) lets you send but not receive. A channel funded entirely by your peer (0M / 10M) lets you receive but not send.
+- **对于路由节点。**一个 1000 万聪的通道分成 500 万 / 500 万可以在任一方向转发最多 500 万。同样的 1000 万通道倾斜到 900 万 / 100 万只能一个方向转发 100 万，另一个方向 900 万；长尾容量在平衡恢复之前无法使用。
+- **对于用户。**倾斜有方向。完全由你出资的新通道（1000 万 / 0）让你能发送但不能接收。完全由对等方出资的通道（0 / 1000 万）让你能接收但不能发送。
 
-How balance gets out of whack:
+平衡如何失调：
 
-- **Asymmetric payment flow.** Users send more than they receive (or vice versa); balance drifts to one side.
-- **Routing imbalance.** Forwarded payments through a routing node shift balance toward the receiving side.
-- **One-sided channel funding.** New channels usually start fully on one side.
+- **不对称支付流。**用户发送多于接收（或反之）；余额向一侧漂移。
+- **路由不平衡。**通过路由节点转发的支付将余额向接收侧转移。
+- **单侧通道出资。**新通道通常完全在一侧。
 
-How operators restore balance:
+运营商如何恢复平衡：
 
-- **Circular rebalancing.** Pay yourself in a loop through other nodes, paying small routing fees to shift balance between your own channels.
-- **Submarine swaps** (Loop, PeerSwap). Trade Lightning balance for on-chain balance and vice versa, effectively moving capacity in or out of channels without closing them.
-- **Splicing.** Use Lightning channel splicing to add or remove on-chain funds from an existing channel.
-- **Liquidity ads / channel purchase.** Open a fresh channel with the balance shape you need.
+- **循环再平衡。**通过其他节点向自己支付一个环路，支付少量路由费来在自己的通道之间转移余额。
+- **潜艇互换**（Loop、PeerSwap）。将闪电余额换为链上余额或反之，无需关闭通道即可有效移入或移出容量。
+- **拼接（Splicing）。**使用闪电通道拼接从现有通道添加或移除链上资金。
+- **流动性广告 / 通道购买。**开一个你需要的余额形状的新通道。
 
-For end-user wallets, balance management is mostly automatic or invisible. For routing nodes, it's a daily operational task and the most important determinant of channel revenue: an out-of-balance channel earns no fees on the dry side until balance is restored.
+对于终端用户钱包，余额管理大多是自动或不可见的。对于路由节点，这是日常运营任务，也是通道收入最重要的决定因素：失衡通道在干燥侧不赚手续费，直到余额恢复。

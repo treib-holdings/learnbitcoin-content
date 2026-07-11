@@ -1,13 +1,13 @@
 ---
-title: "SLH-DSA / SPHINCS+ (FIPS 205)"
+title: "SLH-DSA / SPHINCS+（FIPS 205）"
 slug: slh-dsa-sphincs-plus
 draft: false
 published: "2026-06-01"
-shortDefinition: "The NIST-standardized hash-based post-quantum signature scheme - conservative fallback to ML-DSA, with stronger security assumptions but much larger signatures."
+shortDefinition: "NIST 标准化的基于哈希的后量子签名方案——ML-DSA 的保守备选方案，安全假设更强但签名体积大得多。"
 keyTakeaways:
-  - "NIST-standardized hash-based PQ signature scheme (FIPS 205, August 2024)"
-  - "Signatures are 100x-800x larger than current Bitcoin signatures"
-  - "Conservative fallback to ML-DSA in Bitcoin's PQ discussion - valued for hash-function security model, not efficiency"
+  - "NIST 标准化的基于哈希的后量子签名方案（FIPS 205，2024 年 8 月）"
+  - "签名比当前比特币签名大 100-800 倍"
+  - "在比特币后量子讨论中作为 ML-DSA 的保守备选——价值在于哈希函数安全模型，而非效率"
 sources: []
 relatedTerms:
   - post-quantum-bitcoin
@@ -19,55 +19,55 @@ relatedTerms:
 liveWidget: ~
 ---
 
-SLH-DSA - the Stateless Hash-Based Digital Signature Algorithm - is the post-quantum signature standard NIST finalized as [FIPS 205](https://csrc.nist.gov/pubs/fips/205/final) in August 2024. It's based on SPHINCS+, the hash-based scheme that emerged from the same NIST competition that produced [ML-DSA](/glossary/ml-dsa-dilithium). In Bitcoin's post-quantum discussion, SLH-DSA is the conservative fallback - chosen when lattice-based schemes are considered too cryptographically novel and the safer choice is hash-based security.
+SLH-DSA——无状态基于哈希的数字签名算法——是 NIST 于 2024 年 8 月最终确定为 [FIPS 205](https://csrc.nist.gov/pubs/fips/205/final) 的后量子签名标准。它基于 SPHINCS+，一个从产生 [ML-DSA](/glossary/ml-dsa-dilithium) 的同一 NIST 竞赛中脱颖而出的基于哈希的方案。在比特币的后量子讨论中，SLH-DSA 是保守备选——当认为基于格的方案在密码学上太新时选择它，更安全的选择是基于哈希的安全性。
 
-## What it is
+## 它是什么
 
-SLH-DSA constructs signatures from hash function compositions - Merkle trees of one-time signatures, recursively. The security assumption is the hardness of finding [hash](/glossary/hash) collisions and preimages, which [Grover's algorithm](/glossary/grovers-algorithm) reduces by half but doesn't break.
+SLH-DSA 从哈希函数组合中构造签名——一次性签名的 Merkle 树，递归构建。安全假设是找到[哈希](/glossary/hash)碰撞和原像的难度，[Grover 算法](/glossary/grovers-algorithm)将其减半但不会破解。
 
-Three security levels are standardized, each with "small" and "fast" variants (trading signature size for verification speed):
+三个安全级别已标准化，每个有"小"和"快"变体（以签名大小换验证速度）：
 
-- **SLH-DSA-128s**: ~7,856-byte signatures, ~128-bit security, slow signing
-- **SLH-DSA-128f**: ~17,088-byte signatures, ~128-bit security, fast signing
-- **SLH-DSA-256s**: ~29,792-byte signatures, ~256-bit security
-- **SLH-DSA-256f**: ~49,856-byte signatures, ~256-bit security
+- **SLH-DSA-128s**：约 7,856 字节签名，约 128 位安全性，签名速度慢
+- **SLH-DSA-128f**：约 17,088 字节签名，约 128 位安全性，签名速度快
+- **SLH-DSA-256s**：约 29,792 字节签名，约 256 位安全性
+- **SLH-DSA-256f**：约 49,856 字节签名，约 256 位安全性
 
-Public keys are small (~32-64 bytes); signature size is where the cost lives.
+公钥很小（约 32-64 字节）；签名大小是成本所在。
 
-## Hash-based vs lattice-based
+## 基于哈希 vs 基于格
 
-SLH-DSA's security model is fundamentally different from ML-DSA's:
+SLH-DSA 的安全模型与 ML-DSA 根本不同：
 
-- **ML-DSA**: security from the assumed hardness of lattice problems. Mathematically well-studied, but cryptographically younger than hash functions.
-- **SLH-DSA**: security from the assumed hardness of inverting hash functions (one-way functions). Hash functions are among the oldest, most-studied, and most-trusted cryptographic primitives.
+- **ML-DSA**：安全性来自格问题的假设难度。数学上研究充分，但在密码学上比哈希函数年轻。
+- **SLH-DSA**：安全性来自求逆哈希函数（单向函数）的假设难度。哈希函数是最古老、研究最充分、最可信的密码学原语之一。
 
-The trade: hash-based schemes are conservative - built on cryptographic primitives with decades of analysis. But they pay a massive cost in signature size. Lattice-based schemes are more efficient but rely on a younger area of cryptanalysis where future breakthroughs are more plausible.
+权衡：基于哈希的方案是保守的——建立在有数十年分析的密码学原语之上。但签名体积代价巨大。基于格的方案更高效，但依赖于更年轻的密码分析领域，未来突破的可能性更大。
 
-If you want signatures that won't be broken by any algorithm we don't yet know exists, SLH-DSA is the conservative choice. If you want practical efficiency, ML-DSA wins.
+如果你想要不会被任何我们目前不知道存在的算法破解的签名，SLH-DSA 是保守选择。如果你想要实际效率，ML-DSA 胜出。
 
-## Trade-offs
+## 权衡
 
-Compared to Bitcoin's current schemes:
+与比特币当前方案相比：
 
-- [ECDSA](/glossary/ecdsa-elliptic-curve-digital-signature-algorithm) signature: ~71-72 bytes
-- [Schnorr](/glossary/schnorr-signature) signature: 64 bytes
-- SLH-DSA-128s signature: ~7,856 bytes - over 100x larger
-- SLH-DSA-256f signature: ~49,856 bytes - nearly 800x larger
+- [ECDSA](/glossary/ecdsa-elliptic-curve-digital-signature-algorithm) 签名：约 71-72 字节
+- [Schnorr](/glossary/schnorr-signature) 签名：64 字节
+- SLH-DSA-128s 签名：约 7,856 字节——大 100 多倍
+- SLH-DSA-256f 签名：约 49,856 字节——大近 800 倍
 
-At Bitcoin's scale, full SLH-DSA migration would balloon transaction sizes and compress effective block capacity significantly. The largest parameter sets are arguably impractical for general Bitcoin transactions; the smallest are still ~10x larger than ML-DSA signatures.
+在比特币的规模下，全面迁移到 SLH-DSA 将使交易体积膨胀，并显著压缩有效区块容量。最大的参数集对一般比特币交易来说可以说是不切实际的；最小的仍然比 ML-DSA 签名大约 10 倍。
 
-The case for SLH-DSA in Bitcoin is therefore conservative-cryptography, not efficiency. It would be the choice if the community wanted maximum confidence that no future cryptanalytic breakthrough could threaten the network - at the cost of block-space economics.
+因此，SLH-DSA 在比特币中的理由是保守密码学，而非效率。如果社区希望最大程度确信没有任何未来的密码分析突破能威胁网络——以区块空间经济为代价——它会是选择。
 
-## Position in the Bitcoin migration discussion
+## 在比特币迁移讨论中的位置
 
-SLH-DSA is the second NIST-standardized PQ signature scheme and the canonical hash-based alternative to ML-DSA. In Bitcoin's discourse, it's usually mentioned as:
+SLH-DSA 是第二个 NIST 标准化的后量子签名方案，是基于哈希的 ML-DSA 替代方案。在比特币讨论中，通常被提及为：
 
-- A fallback if lattice schemes are later compromised by a classical attack
-- An option for high-value or long-lifetime transactions where conservative security matters more than fees
-- A possible component in a hybrid scheme - multiple signatures from different security assumptions on the same transaction
+- 如果格方案后来被经典攻击破解的备选
+- 用于高价值或长生命周期交易，保守安全比手续费更重要
+- 混合方案的可能组件——同一笔交易上来自不同安全假设的多个签名
 
-[BIP-361's](/glossary/bip-361) "TBD Post Quantum Signature BIP" hasn't published yet, so the formal Bitcoin position on SLH-DSA is undetermined. The current discussion tends to assume ML-DSA as default with SLH-DSA as backup.
+[BIP-361](/glossary/bip-361)的"TBD Post Quantum Signature BIP"尚未发布，因此比特币对 SLH-DSA 的正式立场尚未确定。当前讨论倾向于以 ML-DSA 为默认，SLH-DSA 为备选。
 
-See the [Quantum and Bitcoin rabbit hole](/rabbit-hole/quantum-and-bitcoin) for the block-space trade-offs between the candidate schemes.
+参见[量子与比特币深度指南](/rabbit-hole/quantum-and-bitcoin)了解候选方案之间的区块空间权衡。
 
-Spec: [FIPS 205](https://csrc.nist.gov/pubs/fips/205/final) (NIST CSRC).
+规范：[FIPS 205](https://csrc.nist.gov/pubs/fips/205/final)（NIST CSRC）。

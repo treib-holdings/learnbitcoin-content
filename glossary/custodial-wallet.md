@@ -1,12 +1,12 @@
 ---
-title: "Custodial Wallet"
+title: "托管钱包"
 slug: custodial-wallet
 draft: false
-shortDefinition: "A wallet where a third party holds private keys on the user's behalf, similar to a bank holding customer funds."
+shortDefinition: "由第三方代用户持有私钥的钱包，类似于银行持有客户资金。"
 keyTakeaways:
-  - "Funds controlled by a third-party entity"
-  - "Convenient but introduces significant counterparty risk"
-  - "Contrasts with the self-custody principles of Bitcoin"
+  - "资金由第三方实体控制"
+  - "方便但引入显著的交易对手风险"
+  - "与比特币的自托管原则相对"
 sources: []
 relatedTerms:
   - counterparty-risk
@@ -26,14 +26,14 @@ sameAs:
 liveWidget: ~
 ---
 
-A custodial wallet is one where a third party holds the [private keys](/glossary/private-key) and you hold an account balance. Coinbase, Binance, Cash App, Robinhood - any service where you "have BTC" but never see a seed phrase is custodial.
+托管钱包是第三方持有[私钥](/glossary/private-key)、你持有账户余额的钱包。Coinbase、Binance、Cash App、Robinhood——任何你"有 BTC"但从未看到助记词的服务都是托管的。
 
-What this actually means: you don't own Bitcoin. You own a *claim* on Bitcoin held by a company, recorded in that company's internal database. If they're solvent and cooperative, that claim works just like owning Bitcoin. If they're not, it doesn't.
+这实际意味着：你不拥有比特币。你拥有的是对公司持有的比特币的*索取权*，记录在该公司的内部数据库中。如果他们有偿付能力且配合，该索取权就像拥有比特币一样运作。如果他们不是，就不行。
 
-Custodians fail more often than crypto promoters acknowledge. Mt. Gox lost 850,000 BTC in 2014. QuadrigaCX lost the keys with its CEO in 2019. The 2022 contagion took Celsius, BlockFi, Voyager, Genesis, and FTX inside the same calendar year, with an $8B customer shortfall at FTX alone. Customer recoveries take years and are usually partial.
+托管方失败的频率比加密推广者承认的要高。Mt. Gox 在 2014 年丢失了 850,000 BTC。QuadrigaCX 在 2019 年因 CEO 去世而丢失了密钥。2022 年的连锁暴雷在同一年内带走了 Celsius、BlockFi、Voyager、Genesis 和 FTX，仅 FTX 就有 80 亿美元的客户缺口。客户回收需要数年且通常是不完整的。
 
-Even working custodians can freeze your account, demand additional KYC, restrict withdrawals during volatility, or quietly lose access to their own hot wallets via internal compromise. The risk pattern is structural, not theoretical.
+即使正常运营的托管方也可以冻结你的账户、要求额外 KYC、在波动期间限制提现，或因内部妥协而悄悄失去对自己热钱包的访问。风险模式是结构性的，不是理论性的。
 
-"Not your keys, not your coins" is the response. It's not a slogan; it's the technical reality. Bitcoin only delivers its core property - censorship-resistant, seizure-resistant, debasement-resistant money - to the actual key holder. Anyone else is just using a high-friction bank.
+"不是你的密钥，就不是你的币"就是回应。这不是口号；这是技术现实。比特币只在实际密钥持有者手中提供其核心特性——抗审查、抗没收、抗贬值的货币。其他人只是在用一家高摩擦的银行。
 
-Custodial wallets have legitimate uses: as on-ramps from fiat (you have to start somewhere), as venues for active trading, as occasional payment rails. Just don't confuse them with owning Bitcoin. Move out to self-custody (see [Wallet](/glossary/wallet), [Hardware Wallet](/glossary/hardware-wallet)) for anything you actually want to keep.
+托管钱包有合法用途：作为法币入金通道（你必须从某个地方开始），作为主动交易的场所，作为偶尔的支付通道。只是不要把它们与拥有比特币混淆。把你真正想保留的东西转移到自托管（参见[钱包](/glossary/wallet)、[硬件钱包](/glossary/hardware-wallet)）。

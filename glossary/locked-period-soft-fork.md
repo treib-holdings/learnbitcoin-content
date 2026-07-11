@@ -1,12 +1,12 @@
 ---
-title: "Locked-In Period (Soft Fork)"
+title: "锁定期（软分叉）"
 slug: locked-period-soft-fork
 draft: false
-shortDefinition: "A stage after a soft-fork signaling threshold is met but before the new consensus rules become active on the network."
+shortDefinition: "软分叉信号阈值达到后、新共识规则在网络上生效之前的等待阶段。"
 keyTakeaways:
-  - "Threshold met → locked in → waiting period → final activation"
-  - "Prevents abrupt rule changes so nodes can update smoothly"
-  - "Miners and users must align before rules become mandatory"
+  - "阈值达到 -> 锁定 -> 等待期 -> 最终激活"
+  - "防止突然规则变更以便节点平滑更新"
+  - "矿工和用户必须在规则变为强制之前对齐"
 sources: []
 relatedTerms:
   - bip-9-versionbits
@@ -20,14 +20,14 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The locked-in period is the waiting window between a soft fork meeting its signaling threshold and the new consensus rules actually taking effect.
+锁定期是软分叉达到信号阈值后到新共识规则实际生效之间的等待窗口。
 
-In BIP 9 versionbits, the sequence is:
+在 BIP 9 版本位中，序列是：
 
-1. Started: signaling open, miners can set the version bit if they support the upgrade.
-2. Locked-in: threshold met (historically 95% of blocks in a 2016-block period). The outcome is now committed; the upgrade will activate.
-3. Active: rules take effect. Blocks that violate the new rules are rejected.
+1. Started：信号开放，矿工如果支持升级可以设置版本位。
+2. Locked-in：阈值达到（历史上为 2016 区块周期中 95% 的区块）。结果现在已确定；升级将激活。
+3. Active：规则生效。违反新规则的区块被拒绝。
 
-The gap between Locked-in and Active is the "locked-in period," typically one full retarget interval (~2 weeks). Its purpose is operational: node operators who haven't upgraded yet have a defined window to do so. Wallets, exchanges, and infrastructure can announce final compatibility status. Miners who weren't signaling can ensure their software is updated. The transition then happens at a known, predictable height with everyone forewarned.
+Locked-in 和 Active 之间的间隔就是"锁定期"，通常是一个完整的重定向间隔（约 2 周）。其目的是运营性的：尚未升级的节点运营者有一个明确的窗口来完成升级。钱包、交易所和基础设施可以宣布最终兼容状态。未发信号的矿工可以确保其软件已更新。然后转换在一个已知的、可预测的高度发生，所有人都已预先知晓。
 
-Under Speedy Trial (used for Taproot), the same idea applies: lock-in is followed by a fixed delay before active. The mechanics changed but the operational rationale didn't. Sudden activation, even of a positive change, increases the risk of stale software hitting a wall and orphaning blocks or rejecting valid transactions. The lock-in period is a coordination courtesy that turned out to be load-bearing.
+在 Speedy Trial（用于 Taproot）下，同样的理念适用：锁定后有一个固定延迟才激活。机制变了但运营理由没变。即使是积极的变化，突然激活也会增加陈旧软件碰壁、产生孤块或拒绝有效交易的风险。锁定期是一种协调礼貌，事实证明是承重的。

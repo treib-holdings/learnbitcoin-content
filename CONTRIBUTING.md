@@ -1,95 +1,64 @@
-# Contributing to LearnBitcoin
+# 贡献指南
 
-Thanks for considering it. This repo holds every word that shows up on
-[learnbitcoin.com](https://learnbitcoin.com): the glossary, the journey
-chapters, the rabbit holes, the downloadable PDFs.
+感谢你的考虑。这个仓库存放着 [learnbitcoin.com](https://learnbitcoin.com) 上的每一个字：术语表、进阶章节、兔子洞、可下载的 PDF。
 
-The content is licensed [CC-BY-SA-4.0](LICENSE). Use it, remix it, build
-your own Bitcoin school on top of it. The site itself (Astro, Svelte,
-the rendering pipeline) lives in a separate private repo.
+内容采用 [CC-BY-SA-4.0](LICENSE) 许可。用吧，混编吧，在上面建你自己的比特币学校。网站本身（Astro、Svelte、渲染管线）在另一个私有仓库里。
 
-## What we welcome
+## 我们欢迎什么
 
-- **Typos and grammar fixes.** Send a PR. We will merge fast.
-- **Factual corrections.** Cite a primary source. We update on-chain
-  numbers periodically but it is impossible to keep every figure live
-  in static content.
-- **Clarifications.** If a paragraph is confusing or could be sharper,
-  open an issue or a PR. Show us the before and after.
-- **New glossary entries.** If a term is missing, propose it via the
-  "Propose a new entry" issue template.
-- **New rabbit holes.** These are bigger commitments. Open an issue
-  first so we can talk about scope and angle before you write 8,000
-  words.
-- **Better cross-links.** The rehype plugin auto-links exact title
-  matches, but manual links still beat auto-links for prose flow.
-- **sameAs links on glossary entries.** External references that go
-  in the content `sameAs:` array. See below.
-- **Translations.** Long-term goal. Talk to us first.
+- **错别字和语法修正。** 发 PR，我们会快速合并。
+- **事实性更正。** 引用一手来源。我们会定期更新链上数据，但不可能让静态内容里的每个数字都保持实时。
+- **澄清。** 如果某段话令人困惑或可以更精炼，开个 issue 或 PR。给我们看看改前改后。
+- **新术语条目。** 如果缺少某个术语，用"提议新条目"issue 模板来提交。
+- **新兔子洞。** 这是更大的投入。先开个 issue，让我们聊聊范围和角度，然后再写 8000 字。
+- **更好的交叉链接。** rehype 插件会自动链接精确标题匹配，但手动链接在行文流畅度上仍然更好。
+- **术语条目的 sameAs 链接。** 放在内容的 `sameAs:` 数组里的外部参考链接。见下文。
+- **翻译。** 长期目标。先跟我们聊聊。
 
-## What we will not merge
+## 我们不会合并什么
 
-- Anything about altcoins, tokens, or "crypto generally."
-- Price predictions, "this could moon" content, anything that ages
-  like milk.
-- Affiliate links of any kind.
-- Tracking pixels, analytics beacons, or "just one small JS snippet."
-- Content that names specific custodial Lightning wallets as
-  long-term recommendations. The landscape moves too fast.
-- Edgelord politics. Bitcoin-only does not mean Bitcoin-tribal.
+- 任何关于山寨币、代币或"泛加密货币"的内容。
+- 价格预测、"这个要起飞"之类的内容、任何很快会过时的东西。
+- 任何形式的分销链接。
+- 追踪像素、分析信标、"就加一小段 JS"。
+- 将特定托管型闪电网络钱包列为长期推荐的内容。这个领域变化太快了。
+- 边缘政治。只谈比特币不等于比特币部落主义。
 
-## How to submit
+## 如何提交
 
-1. **For small fixes (typos, broken links, factual corrections):** open
-   a pull request directly. We will merge if it is correct.
-2. **For new content or substantive changes:** open an issue first
-   using the relevant template. Brief alignment beats wasted hours.
-3. **For anything else:** open a discussion or just email us. See the
-   contact link on the [manifesto page](https://learnbitcoin.com/manifesto).
+1. **小修复（错别字、断链、事实更正）：** 直接开 pull request。对了我们就合并。
+2. **新内容或实质性修改：** 先用对应模板开个 issue。先对齐比白写几小时强。
+3. **其他：** 开个讨论或者直接发邮件。联系方式见[宣言页面](https://learnbitcoin.com/manifesto)。
 
-## Style and voice
+## 风格与语气
 
-The site has a consistent voice. The short version:
+这个站有一致的语气。简单来说：
 
-- **Plain language.** Write so a curious normie can follow without
-  feeling talked down to.
-- **Sourced.** Every factual claim should cite a primary source: BIPs,
-  source code, papers, reputable references. Not blog posts that link
-  to blog posts.
-- **Opinionated, not preachy.** Take positions where they are earned.
-  Skip the moralizing.
-- **ASCII straight punctuation only.** No curly quotes, no smart
-  apostrophes, no en-dashes, no ellipsis characters. Curly quotes
-  break YAML frontmatter.
-- **Use U+00B5 (µ) for unit prefixes, not U+03BC (μ).** They look
-  identical but the OG card font subset includes only the Latin block,
-  so Greek mu renders as a missing-glyph box on social previews. The
-  Unicode standard recommends U+00B5 (Micro Sign) for unit prefixes
-  like µBTC, µs, µm anyway. On macOS, Option+M types µ.
-- **No price predictions.** Ever.
-- **Real numbers, current era.** If you cite supply, fees, hash rate,
-  or similar, use figures consistent with the current era and
-  cross-checked against the chain.
+- **大白话。** 写得让一个好奇的普通人能跟上，不觉得被居高临下。
+- **有出处。** 每个事实性论断都应引用一手来源：BIP、源代码、论文、权威参考。不是链接到博客的博客。
+- **有态度，不说教。** 该表态就表态。别道德说教。
+- **只用 ASCII 直引号和直撇号。** 不用弯引号、智能撇号、en-dash、省略号字符。弯引号会破坏 YAML frontmatter。
+- **单位前缀用 U+00B5 (µ)，不用 U+03BC (μ)。** 它们看起来一样，但 OG 卡片的字体子集只包含拉丁区块，希腊 mu 在社交预览中会显示为缺字方框。Unicode 标准也建议单位前缀如 µBTC、µs、µm 使用 U+00B5（Micro Sign）。在 macOS 上，Option+M 输入 µ。
+- **不预测价格。** 永远不。
+- **真实数字，当前时代。** 如果你引用供应量、手续费、算力等数据，使用与当前时代一致并经过链上交叉验证的数字。
 
-If you are unsure whether something fits the voice, look at a few
-existing entries and match the cadence.
+如果你不确定某个内容是否符合语气，看几篇已有条目，找到那个节奏。
 
-## sameAs values
+## sameAs 值
 
-Glossary entries can list external URLs to authoritative references
-in their content `sameAs:` array.
+术语条目可以在内容的 `sameAs:` 数组中列出指向权威参考的外部 URL。
 
-Good sources, in rough order of priority:
+好的来源，按优先级粗略排序：
 
 - Wikipedia
 - Wikidata
 - Bitcoin Wiki (en.bitcoin.it)
-- The BIP source on GitHub (for BIP entries)
-- Bitcoin Optech topic pages
+- GitHub 上的 BIP 源码（针对 BIP 条目）
+- Bitcoin Optech 主题页
 
-2-5 URLs per entry is plenty. Skip blog posts and marketing pages.
+每个条目 2-5 个 URL 足够。跳过博客和营销页面。
 
-Example:
+示例：
 
 ```yaml
 sameAs:
@@ -98,98 +67,67 @@ sameAs:
   - "https://en.bitcoin.it/wiki/UTXO"
 ```
 
-## OG cards and the `ogImage` override
+## OG 卡片和 `ogImage` 覆盖
 
-Every glossary entry, rabbit hole, and journey chapter gets a social
-preview card (`og:image`). The site auto-renders one at
-`/og/<collection>/<slug>.png` from the entry's `title` and short text,
-so you do not need to do anything for a stock card.
+每个术语条目、兔子洞和进阶章节都会生成一张社交预览卡（`og:image`）。网站会在 `/og/<collection>/<slug>.png` 自动渲染一张，基于条目的 `title` 和短文本，所以你不需要为默认卡片做任何事。
 
-You can override the auto-resolved URL with an `ogImage` field in
-frontmatter:
+你可以通过 frontmatter 中的 `ogImage` 字段覆盖自动生成的 URL：
 
 ```yaml
-ogImage: "/og/glossary/bip-361.png?v=2"     # cache-bust after editing
-ogImage: "/diagrams/og/halvings.png"        # static diagram image
+ogImage: "/og/glossary/bip-361.png?v=2"     # 编辑后缓存刷新
+ogImage: "/diagrams/og/halvings.png"        # 静态图表图片
 ogImageAlt: "Description of the image."     # optional alt text
 ```
 
-Common use cases:
+常见用例：
 
-- **Cache-bust after editing.** Twitter caches OG cards for ~7 days
-  and the Cloudflare CDN caches for 24h. Append `?v=2` (then `?v=3`,
-  etc.) to force a re-fetch when you change a `shortDefinition` or
-  `tagline` that affects the card.
-- **Custom diagram.** Point at a checked-in static image when the
-  entry deserves a richer visual than the text-only template can do.
-  Every journey chapter does this today.
+- **编辑后刷新缓存。** Twitter 缓存 OG 卡片约 7 天，Cloudflare CDN 缓存 24 小时。追加 `?v=2`（然后 `?v=3`，以此类推）来强制重新获取当你改了影响卡片的 `shortDefinition` 或 `tagline` 时。
+- **自定义图表。** 当条目需要比纯文本模板更丰富的视觉效果时，指向一个已提交的静态图片。目前每个进阶章节都这样做。
 
-The Worker routes off URL path, so the `?v=N` query string is purely
-a cache-busting facade — the rendered card content is unchanged.
+Worker 按 URL 路径路由，所以 `?v=N` 查询字符串纯粹是缓存刷新的手段——渲染的卡片内容不会变。
 
-## Where things live
+## 文件在哪里
 
 ```
-glossary/             # One markdown file per term
-journey/              # Six narrative chapters
-rabbit-holes/         # Deep dives, mostly MDX (interactive widgets)
-downloads/            # PDFs distributed at /downloads/
+glossary/             # 每个术语一个 markdown 文件
+journey/              # 六个叙事章节
+rabbit-holes/         # 深度探索，大多 MDX（交互式组件）
+downloads/            # 在 /downloads/ 提供的 PDF
 ```
 
-Each file has YAML frontmatter that the site renderer reads. Look at
-neighboring files for the exact schema; do not invent new fields
-without coordinating first.
+每个文件都有站点渲染器读取的 YAML frontmatter。看邻近文件了解确切的 schema；不先沟通不要自创新字段。
 
-## Publishing dates
+## 发布日期
 
-Journey chapters and rabbit holes carry two ISO-date frontmatter
-fields. The build pipeline enforces the first; the second is
-opt-in.
+进阶章节和兔子洞带有两个 ISO 日期 frontmatter 字段。第一个由构建管线强制执行；第二个是可选的。
 
-- **`published: "YYYY-MM-DD"`** - when the entry first became publicly
-  visible on the site. **Required on non-draft journey and rabbit-hole
-  entries.** The web repo's `check-published-dates` script runs in
-  every `predev` / `prebuild` / `prepreview` hook and fails the build
-  if this field is missing or malformed on a non-draft entry.
+- **`published: "YYYY-MM-DD"`** - 条目首次在网站上公开可见的日期。**非草稿的进阶和兔子洞条目必填。** Web 仓库的 `check-published-dates` 脚本在每个 `predev` / `prebuild` / `prepreview` hook 中运行，如果非草稿条目缺少此字段或格式错误，构建会失败。
 
-  Wired into: RSS feed `pubDate` (newest-first sort) + schema.org
-  Article `datePublished` + `og:article:published_time`.
+  接入：RSS feed `pubDate`（最新优先排序）+ schema.org Article `datePublished` + `og:article:published_time`。
 
-- **`updated: "YYYY-MM-DD"`** - when the entry was last meaningfully
-  revised. **Optional. Bump on substantive rewrites, not typo fixes.**
-  Re-notifies RSS subscribers and signals freshness to search engines.
+- **`updated: "YYYY-MM-DD"`** - 条目最后一次实质性修改的日期。**可选。实质性重写时更新，错别字修复不用。** 会重新通知 RSS 订阅者并给搜索引擎发送新鲜度信号。
 
-  Wired into: RSS feed `<atom:updated>` + schema.org Article
-  `dateModified` (Google freshness signal) + `og:article:modified_time`.
+  接入：RSS feed `<atom:updated>` + schema.org Article `dateModified`（Google 新鲜度信号）+ `og:article:modified_time`。
 
-Glossary entries can also carry these fields but are not enforced
-(there are 440+ entries; fall back to launch day via
-`DEFAULT_PUBLISHED` if absent). Set them on glossary entries when
-accuracy matters for search-engine freshness on that specific entry.
+术语条目也可以带这些字段但不强制（有 440+ 条目；缺失时回退到上线日的 `DEFAULT_PUBLISHED`）。在搜索引擎对特定条目的新鲜度有要求时，建议设置。
 
-Example:
+示例：
 
 ```yaml
 published: "2026-06-15"
 updated: "2026-07-02"
 ```
 
-Always quote the date string. Bare `YYYY-MM-DD` parses as a YAML date
-type and fails schema validation.
+日期字符串始终加引号。不加引号的 `YYYY-MM-DD` 会被 YAML 解析为日期类型，导致 schema 验证失败。
 
-## Credit
+## 署名
 
-Substantive contributions get credited in the relevant commit and in
-the page metadata where it makes sense. We do not maintain a
-contributors page yet (the project is still young) but we will when
-the contributor list is long enough to deserve one.
+实质性贡献会在相关 commit 和页面元数据中署名。我们目前还没有贡献者页面（项目还年轻），但当贡献者列表足够长时会建一个。
 
-## License
+## 许可证
 
-By submitting a contribution you agree that it is licensed under
-[CC-BY-SA-4.0](LICENSE) along with the rest of the repo.
+提交贡献即表示你同意该内容与仓库其余部分一样采用 [CC-BY-SA-4.0](LICENSE) 许可。
 
-## Code of conduct
+## 行为准则
 
-Be honest. Be precise. Cite your sources. Stay on topic. That is
-the whole code.
+诚实。精准。引用来源。不要跑题。就这些。

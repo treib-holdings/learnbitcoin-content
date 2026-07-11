@@ -1,13 +1,13 @@
 ---
-title: "NAV (Net Asset Value)"
+title: "NAV（净资产价值）"
 slug: nav-net-asset-value
 draft: false
 published: "2026-06-15"
-shortDefinition: "The per-share value of an ETF's underlying holdings, calculated as (total assets minus liabilities) divided by shares outstanding. The anchor that creation/redemption arbitrage keeps the market price tied to."
+shortDefinition: "ETF 每股底层资产价值，计算为（总资产减负债）除以流通股数。创建/赎回套利使市场价格锚定的基准。"
 keyTakeaways:
-  - "Calculated each trading day at market close against a reference price"
-  - "For a spot Bitcoin ETF: total BTC holdings priced at the daily reference rate, divided by share count"
-  - "Market price drifts from NAV intraday; arbitrage usually pulls it back within basis points"
+  - "每个交易日按参考价格在收盘时计算"
+  - "对于现货比特币 ETF：BTC 持有量按日参考汇率定价，除以股数"
+  - "市场价格日内偏离 NAV；套利通常在基点内拉回"
 sources: []
 relatedTerms:
   - etf-exchange-traded-fund
@@ -20,33 +20,19 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Net Asset Value is the per-share value of an ETF's underlying holdings. For a spot Bitcoin ETF, NAV is computed daily:
+净资产价值是 ETF 底层资产的每股价值。对于现货比特币 ETF，NAV 每日计算：
 
 ```
-NAV per share = (BTC held x reference rate - liabilities) / shares outstanding
+每股 NAV = (BTC 持有量 x 参考汇率 - 负债) / 流通股数
 ```
 
-The mechanics:
+机制：
 
-- **Strike time.** US spot Bitcoin ETFs strike NAV daily at 4:00 PM London time using the [CME CF Bitcoin Reference Rate](/glossary/cme-cf-bitcoin-reference-rate) (BRR). The choice of London 4 PM rather than New York close aligns with the established institutional benchmark and overlaps with both London and US trading hours.
-- **Liabilities** include accrued management fees, custody fees, and any other operational costs - typically small for a passive Bitcoin product.
-- **Share count** changes daily through [creation and redemption](/glossary/creation-redemption) by [Authorized Participants](/glossary/authorized-participant).
+- **定价时间。** 美国现货比特币 ETF 每天伦敦时间下午 4:00 使用 [CME CF 比特币参考汇率](/glossary/cme-cf-bitcoin-reference-rate)（BRR）定价 NAV。选择伦敦下午 4 点而非纽约收盘与既定的机构基准一致，并与伦敦和美国交易时间重叠。
+- **负债**包括应计管理费、托管费和任何其他运营成本——对于被动比特币产品通常很小。
+- **股数**通过[授权参与者](/glossary/authorized-participant)的[创建和赎回](/glossary/creation-redemption)每日变化。
 
-Two related figures show up in ETF disclosures:
+ETF 披露中出现的两个相关数字：
 
-- **NAV per share (end-of-day).** The official figure published after market close. Used for performance reporting, accounting, and fee calculations.
-- **iNAV (Indicative NAV).** A continuously-updated estimate of NAV, calculated and published roughly every 15 seconds during trading hours. iNAV is what traders watch to spot premium/discount opportunities in real time.
-
-Why NAV matters:
-
-- **Arbitrage anchor.** When market price > NAV, APs create new shares (deliver BTC or cash to the issuer, receive shares at NAV, sell at market price). When market price < NAV, APs redeem (buy shares at market price, deliver to issuer, receive BTC or cash at NAV). The gap closes.
-- **Fee basis.** Management fees are charged as a percentage of NAV per year, accrued daily.
-- **Regulatory reference.** Disclosures, prospectus calculations, and tax basis all key off NAV.
-
-Where NAV gets interesting:
-
-- **Closed-end funds (legacy GBTC pre-conversion).** Without creation/redemption, share count was fixed. NAV moved with the BTC price; market price moved with investor demand for the wrapper. The two diverged dramatically - 40% premium in 2020-2021, 50% discount in 2022-2023.
-- **Cash creation vs in-kind.** When creation is cash-only, the issuer (or its custodian) must execute BTC trades to deploy new cash. The execution price may differ from the NAV strike rate. In-kind delivery sidesteps this entirely.
-- **Cash drag.** BTC not yet deployed (in transit, awaiting settlement) earns nothing while still counted in NAV. A small contributor to [tracking error](/glossary/tracking-error).
-
-NAV is the boring but load-bearing number in ETF structure. When NAV behaves as expected and the market price tracks it within basis points, the wrapper is working. When it doesn't, something is broken - and the size of the gap is exactly what [premium/discount](/glossary/premium-discount-to-nav) measures.
+- **每股 NAV（日终）。** 盘后发布的官方数字。用于业绩报告、会计和费用计算。
+- **iNAV（指示性 NAV）。** NAV 的持续更新估计，在交易时间内大约每 15 秒计算和发布一次。iNAV 是交易者实时发现溢价/折价机会所关注的。

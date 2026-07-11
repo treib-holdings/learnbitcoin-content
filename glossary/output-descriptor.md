@@ -1,12 +1,12 @@
 ---
-title: "Output Descriptor"
+title: "输出描述符"
 slug: output-descriptor
 draft: false
-shortDefinition: "A human-readable notation describing how to generate or watch specific Bitcoin scripts/addresses."
+shortDefinition: "一种人类可读的表示法，描述如何生成或观察特定比特币脚本/地址。"
 keyTakeaways:
-  - "Simplifies sharing and managing sets of addresses/scripts"
-  - "Works with watch-only wallets or complex multi-sig setups"
-  - "Improves clarity over older, ad hoc address generation approaches"
+  - "简化了地址/脚本集的共享和管理"
+  - "适用于只读钱包或复杂的多签设置"
+  - "比旧的临时地址生成方法更清晰"
 sources: []
 relatedTerms:
   - bitcoin-core
@@ -21,29 +21,29 @@ sameAs:
 liveWidget: ~
 ---
 
-An output descriptor is a compact text format that describes how to derive a set of Bitcoin scripts and addresses. It replaces ad-hoc collections of "raw addresses" with a self-contained recipe a wallet can plug in and start watching or spending from.
+输出描述符是一种紧凑文本格式，描述如何派生一组比特币脚本和地址。它用一种自包含的配方取代了临时的"原始地址"集合，钱包可以插入并开始观察或花费。
 
-A typical descriptor looks like:
+一个典型的描述符看起来像：
 
 ```
 wpkh([d34db33f/84h/0h/0h]xpub6BosfCnifzxcF.../<0;1>/*)#cm5e6jrn
 ```
 
-Decoded:
+解码：
 
-- `wpkh(...)` - the script type. Here, witness public-key hash (P2WPKH, native SegWit).
-- `[d34db33f/84h/0h/0h]` - the BIP 32 origin: master key fingerprint and the derivation path used to reach this xpub.
-- `xpub6Bos...` - the extended public key.
-- `/<0;1>/*` - multipath: derive children at both `/0/*` (receive) and `/1/*` (change), index ranging over all integers.
-- `#cm5e6jrn` - a checksum so typos fail fast at import time.
+- `wpkh(...)`——脚本类型。这里是见证公钥哈希（P2WPKH，原生 SegWit）。
+- `[d34db33f/84h/0h/0h]`——BIP 32 起点：主密钥指纹和用于到达此 xpub 的派生路径。
+- `xpub6Bos...`——扩展公钥。
+- `/<0;1>/*`——多路径：在 `/0/*`（接收）和 `/1/*`（找零）处派生子项，索引遍历所有整数。
+- `#cm5e6jrn`——校验和，使拼写错误在导入时快速失败。
 
-Why descriptors matter:
+描述符为什么重要：
 
-- **Self-describing.** Anyone reading the descriptor can derive the same addresses without out-of-band conventions like "we used BIP 84 with account 0 and SegWit." The descriptor encodes all of that explicitly.
-- **Watch-only wallets.** Hand a descriptor (no private keys) to a phone or laptop and it can monitor balances and build unsigned PSBTs.
-- **Multisig coordination.** A multisig wallet is described by a single descriptor like `wsh(sortedmulti(2,xpub_A/<0;1>/*,xpub_B/<0;1>/*,xpub_C/<0;1>/*))`. Cosigners import the same descriptor and they're automatically synchronized.
-- **Tooling interoperability.** Sparrow, Specter, Nunchuk, Bitcoin Core, and most modern wallets accept descriptors. Move your watch-only wallet between tools by copying one string.
+- **自描述。** 任何阅读描述符的人都可以派生相同的地址，无需带外约定如"我们使用了 BIP 84 账户 0 和 SegWit。"描述符显式编码了所有这些。
+- **只读钱包。** 将描述符（无私钥）交给手机或笔记本电脑，它可以监控余额和构建未签名 PSBT。
+- **多签协调。** 多签钱包由单个描述符描述，如 `wsh(sortedmulti(2,xpub_A/<0;1>/*,xpub_B/<0;1>/*,xpub_C/<0;1>/*))`。共签者导入相同描述符，自动同步。
+- **工具互操作性。** Sparrow、Specter、Nunchuk、Bitcoin Core 和大多数现代钱包都接受描述符。通过复制一个字符串在工具间移动只读钱包。
 
-Bitcoin Core moved to descriptor wallets as the default in 0.21 (2021) and made them mandatory for new wallets in 0.22. The legacy `addmultisigaddress`-style of wallet management is officially deprecated in favor of descriptors.
+Bitcoin Core 在 0.21（2021 年）中将描述符钱包设为默认，在 0.22 中对新钱包强制使用。旧式 `addmultisigaddress` 钱包管理方式已正式弃用，推荐使用描述符。
 
-For most users, descriptors stay invisible; the wallet handles them. For multisig setups, integrators, and anyone debugging a custody configuration, they're the lingua franca.
+对于大多数用户，描述符是不可见的；钱包处理它们。对于多签设置、集成者和任何调试托管配置的人，它们是通用语言。

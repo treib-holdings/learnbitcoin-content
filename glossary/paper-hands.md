@@ -1,12 +1,12 @@
 ---
-title: "Paper Hands"
+title: "纸手（Paper Hands）"
 slug: paper-hands
 draft: false
-shortDefinition: "Slang for quickly selling BTC at the first sign of volatility or market fear-opposite of 'diamond hands.'"
+shortDefinition: "俚语，指在市场波动或恐慌时迅速卖出 BTC——与 '钻石手' 相反。"
 keyTakeaways:
-  - "Depicts selling quickly under market stress"
-  - "Contrast with diamond hands (steadfast holders)"
-  - "Reflects the meme-driven nature of crypto trading sentiment"
+  - "描述在市场压力下迅速卖出的行为"
+  - "与钻石手（坚定持有者）形成对比"
+  - "反映了加密货币交易情绪中梗文化的一面"
 sources: []
 relatedTerms:
   - airdrop-btc-fork
@@ -18,19 +18,19 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Paper hands" is slang for selling Bitcoin during a market downturn instead of holding through it. The opposite is "diamond hands" - holding regardless of price action.
+"纸手"是在市场下跌时卖出比特币而不是坚持持有的俚语。相反的是"钻石手"——无论价格如何都持有。
 
-The term is meme culture, but the underlying behavior is real and well-studied. Most traders, retail and professional, underperform a buy-and-hold strategy. The reasons compound:
+这个词来自梗文化，但背后的行为是真实的且有充分研究的。大多数交易者，无论是散户还是专业机构，表现都不如买入并持有策略。原因会叠加：
 
-- **Panic selling near the bottom.** Bear markets feel terminal in the moment. The catastrophizing voice in your head, when prices have fallen 70%+, is hard to ignore. People who sell into it lock in the loss.
-- **Profit-taking too early.** Selling 10% gains during a multi-year bull run leaves the bulk of the move on the table.
-- **Re-entering at higher prices.** Once you've sold, you're either right (and feel smart) or wrong (and now need to buy back in at higher prices to participate). Most return to buying higher than they sold.
+- **在接近底部时恐慌卖出。** 熊市在当时感觉是世界末日。当价格已经下跌 70% 以上时，你脑海中灾难化的声音很难被忽视。在此时卖出的人把亏损变成了现实。
+- **过早获利了结。** 在多年牛市中只赚了 10% 就卖出，会把大部分涨幅留在桌面上。
+- **以更高价格重新入场。** 一旦你卖出了，你要么是对的（感觉聪明），要么是错的（现在需要以更高价格买回来才能参与）。大多数人最终买回来的价格比卖出时更高。
 
-The opposite discipline - [HODL](/glossary/hodl), or in colloquial terms diamond hands - is empirically the better strategy across every multi-year window in Bitcoin's history. Not because holding is clever, but because the alternative requires you to be a better market timer than essentially everyone, and you're probably not.
+相反的纪律——[HODL](/glossary/hodl)，通俗地说就是钻石手——在比特币历史上每个多年时间窗口中都是经验上更好的策略。不是因为持有有多聪明，而是因为替代方案要求你成为一个比几乎所有其他人都更好的市场择时者，而你大概率不是。
 
-Two honest qualifications:
+两个诚实的限定：
 
-- **There are legitimate reasons to sell** that aren't paper hands: actual emergency expenses, rebalancing into a real-world purchase you planned for, or rebalancing if Bitcoin has become an irresponsible fraction of your net worth. Sound money doesn't mean never converting it.
-- **The "diamond hands" meme can also be cult-coded.** Holding to zero is just as bad an outcome as paper-handing the bottom. Selling a portion to lock in real-world results is not weakness.
+- **有合理的卖出理由**不算纸手：真正的紧急开支、按计划进行现实消费的再平衡、或者当比特币在你的净资产中占比过高时进行再平衡。健全的货币并不意味着永远不兑换。
+- **"钻石手"的梗也可能带有邪教色彩。** 持有到归零和在最底部纸手一样糟糕。卖出一部分来锁定现实世界的结果不是软弱。
 
-Paper hands is a label for a *pattern* of fear-driven trading. The pattern is bad. Selective, deliberate sales for life reasons aren't paper hands.
+纸手是对一种*恐惧驱动交易模式*的标签。这种模式是不好的。出于生活原因的有选择性、有目的的卖出不是纸手。

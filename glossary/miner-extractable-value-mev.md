@@ -1,12 +1,12 @@
 ---
-title: "Miner Extractable Value (MEV)"
+title: "矿工可提取价值（MEV）"
 slug: miner-extractable-value-mev
 draft: false
-shortDefinition: "A concept from Ethereum focusing on reordering/injecting transactions for profit; limited in Bitcoin due to simpler scripting."
+shortDefinition: "源自以太坊的概念，指通过重新排序/注入交易获利；在比特币中因更简单的脚本而受限。"
 keyTakeaways:
-  - "Mainly relevant to smart-contract-based chains (e.g., Ethereum)"
-  - "Bitcoin's limited script reduces front-running or contract exploit opportunities"
-  - "Miners might reorder for higher fees but deeper MEV is uncommon"
+  - "主要与智能合约链相关（如以太坊）"
+  - "比特币有限的脚本减少了抢先交易或合约利用机会"
+  - "矿工可能为更高手续费重新排序但深层 MEV 不常见"
 sources: []
 relatedTerms:
   - chain-analysis
@@ -21,26 +21,26 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Miner Extractable Value (MEV) is the profit a miner can extract from a block beyond the standard [block reward](/glossary/block-reward) by deliberately ordering, including, or excluding specific transactions. The term originated in the Ethereum ecosystem, where MEV is a major and well-studied phenomenon. In Bitcoin, it's much smaller in practice.
+矿工可提取价值（MEV）是矿工通过故意排序、包含或排除特定交易从区块中提取的超出标准[区块奖励](/glossary/block-reward)的利润。术语起源于以太坊生态系统，在那里 MEV 是一个重大且被充分研究的现象。在比特币中，实践中要小得多。
 
-What MEV looks like on Ethereum:
+MEV 在以太坊上的样子：
 
-- **Front-running DEX trades.** A miner sees a large pending buy on Uniswap, inserts their own buy before it, lets the victim's buy execute (pushing price up), then sells immediately for profit. Standard "sandwich attack."
-- **Arbitrage extraction.** Miners take profitable arbitrage opportunities that bots would otherwise capture, since miners control transaction inclusion ordering within the block.
-- **Liquidation racing.** Whoever's transaction arrives first liquidates undercollateralized positions; miners win the race by definition.
+- **DEX 交易抢先。** 矿工看到 Uniswap 上一个大额待处理买单，在前面插入自己的买单，让受害者的买单执行（推高价格），然后立即卖出获利。标准"三明治攻击"。
+- **套利提取。** 矿工捕获本会被机器人获取的有利可图的套利机会，因为矿工控制区块内的交易包含顺序。
+- **清算竞赛。** 谁的交易先到谁清算抵押不足的头寸；矿工通过定义赢得竞赛。
 
-By 2022, MEV was a billion-dollar-plus annual industry on Ethereum, with specialized infrastructure (Flashbots, MEV-Boost) capturing and redistributing MEV.
+到 2022 年，MEV 在以太坊上是年产值数十亿美元的产业，有专门的基础设施（Flashbots、MEV-Boost）捕获和重新分配 MEV。
 
-Why Bitcoin has dramatically less MEV:
+为什么比特币的 MEV 大幅减少：
 
-- **Limited script.** [Bitcoin Script](/glossary/bitcoin-script) doesn't support the kinds of complex DEX, lending, or liquidation contracts that generate large MEV. There's no on-chain Uniswap to front-run.
-- **UTXO model.** Bitcoin's [UTXO](/glossary/utxo-unspent-transaction-output) model doesn't have the "shared global state" that makes Ethereum's account model MEV-rich. Each UTXO is independent.
-- **Simpler fee market.** Bitcoin miners do reorder transactions by fee rate (a small form of MEV), but the dynamic range is narrow compared to Ethereum's contract-driven opportunities.
+- **有限脚本。** [比特币脚本](/glossary/bitcoin-script)不支持产生大型 MEV 的复杂 DEX、借贷或清算合约。没有链上 Uniswap 可以抢先。
+- **UTXO 模型。** 比特币的 [UTXO](/glossary/utxo-unspent-transaction-output) 模型没有以太坊账户模型那种使 MEV 丰富的"共享全局状态"。每个 UTXO 是独立的。
+- **更简单的费率市场。** 比特币矿工确实按费率重新排序交易（一种小型 MEV），但动态范围比以太坊合约驱动的机会窄。
 
-What Bitcoin MEV does exist:
+比特币上确实存在的 MEV：
 
-- **Fee bidding wars** during congested moments. Whoever pays more gets in first. This is the basic fee market, sometimes labeled MEV.
-- **[Fee sniping](/glossary/fee-sniping).** A miner could deliberately reorg blocks to capture old high-fee transactions. Defenses (locktime-anchored transactions) exist.
-- **Inscription/Ordinals ordering.** Some MEV-like dynamics arose around 2023-2024 inscription mints where miners could prioritize specific submissions.
+- **拥堵时刻的费用竞价战。** 谁付更多谁先打包。这是基本费率市场，有时被标记为 MEV。
+- **[手续费狙击](/glossary/fee-sniping)。** 矿工可以故意重组区块以捕获旧的高费交易。存在防御措施（锁定时间锚定交易）。
+- **铭文/Ordinals 排序。** 2023-2024 年铭文铸造期间出现了一些类 MEV 动态，矿工可以优先处理特定提交。
 
-The shorter version: MEV is a meaningful concept that Bitcoin's design largely avoids, mostly because Bitcoin keeps its base layer intentionally narrow. This is one of the unsung benefits of not being a smart-contract platform.
+简短版本：MEV 是一个有意义的概念，比特币的设计在很大程度上避免了，主要是因为比特币有意保持基础层精简。这是不作为智能合约平台的不为人知的好处之一。

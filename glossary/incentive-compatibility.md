@@ -1,12 +1,12 @@
 ---
-title: "Incentive Compatibility"
+title: "激励兼容性"
 slug: incentive-compatibility
 draft: false
-shortDefinition: "Bitcoin's game-theoretic design aligns miner/node behavior with securing the network for rewards."
+shortDefinition: "比特币的博弈论设计使矿工/节点的行为与保护网络安全以获取奖励相一致。"
 keyTakeaways:
-  - "Encourages honest mining and consensus enforcement"
-  - "Cheating becomes unprofitable or leads to wasted work"
-  - "Core reason Bitcoin can remain secure in a decentralized environment"
+  - "鼓励诚实挖矿和共识执行"
+  - "作弊变得无利可图或导致白费算力"
+  - "比特币能在去中心化环境中保持安全的核心原因"
 sources: []
 relatedTerms:
   - byzantine-fault-tolerance
@@ -17,15 +17,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Incentive compatibility is the game-theoretic property of a mechanism in which rational, self-interested participants find following the rules more profitable than breaking them. It's the property that makes Bitcoin work in a decentralized world full of adversaries.
+激励兼容性是一种机制的博弈论属性：理性的、自利的参与者发现遵守规则比违反规则更有利可图。正是这一属性让比特币能在充满对手的去中心化世界中运作。
 
-How it shows up in Bitcoin:
+它在比特币中的体现：
 
-- **Miners** burn electricity to compute proof-of-work. They earn block subsidies plus transaction fees only if their block is accepted by the network. Producing invalid blocks (wrong PoW, invalid transactions, exceeding the block weight limit) gets rejected and wastes the electricity. Producing valid blocks earns the reward. The economically rational miner follows the rules.
-- **Nodes** validate every transaction against consensus rules. They reject invalid blocks even if those blocks have more accumulated proof-of-work. The node has nothing to gain from accepting invalid blocks (no reward, no fees, just incorrect bookkeeping that makes them lose money on transactions they thought were valid).
-- **Users** pay fees to miners voluntarily because their transactions confirm faster. Miners include the highest-fee transactions because they're the most profitable.
-- **51% attacks** are mathematically possible but economically self-destructive: a miner with enough hash to rewrite history would destroy the value of the Bitcoin they're mining for. The cost of attack exceeds the benefit, so the attack doesn't happen.
+- **矿工**消耗电力计算工作量证明。只有当他们的区块被网络接受时，才能赚取区块补贴和交易手续费。产出无效区块（错误的 PoW、无效交易、超出区块重量限制）会被拒绝，白白浪费电力。产出有效区块则获得奖励。经济理性的矿工会遵守规则。
+- **节点**根据共识规则验证每笔交易。即使区块累积了更多的工作量证明，节点也会拒绝无效区块。节点接受无效区块没有任何好处（没有奖励、没有手续费，只是错误的记账，让自己以为有效的交易实际无效而亏损）。
+- **用户**自愿向矿工支付手续费，因为这样交易确认更快。矿工优先打包手续费最高的交易，因为那最有利可图。
+- **51% 攻击**在数学上是可能的，但在经济上是自我毁灭的：拥有足够算力重写历史的矿工会摧毁他们所挖比特币的价值。攻击成本超过收益，因此攻击不会发生。
 
-The incentive-compatibility argument has limits. It assumes participants are rational and discount short-term gains against long-term value. It can break down for actors with non-monetary motivations (state-level adversaries, ideologues, terminally-online griefers) or for actors who can externalize costs (hash rate from stolen electricity, custodial coin theft).
+激励兼容性论证有其局限。它假设参与者是理性的，会将短期收益与长期价值权衡。对于有非货币动机的参与者（国家级对手、意识形态者、纯粹搞破坏的人）或能将成本外部化的参与者（使用偷来的电力挖矿、盗窃托管币），这一属性可能失效。
 
-But the structural property holds for the dominant economic actors most of the time, and that's what's needed. Bitcoin doesn't require everyone to be honest; it requires honest actors to be more profitable than dishonest ones in aggregate. Two decades into the experiment, that property has held empirically.
+但这一结构性属性在大多数时间对主要的经济参与者是成立的，这就足够了。比特币不要求每个人都诚实；它要求诚实的参与者在总体上比不诚实的更有利可图。这项实验进行了二十多年，这一属性在经验上一直成立。

@@ -1,12 +1,12 @@
 ---
-title: "Peg-out"
+title: "Peg-out（锚定赎回）"
 slug: peg-out
 draft: false
-shortDefinition: "Returning tokens from a sidechain to mainnet BTC after federation or multi-sig checks the transaction's validity."
+shortDefinition: "在联邦或多签验证交易有效性后，将侧链代币换回主网 BTC。"
 keyTakeaways:
-  - "Sidechain tokens are redeemed for real BTC on mainnet"
-  - "Federation multi-sig or functionaries confirm no double spends"
-  - "Closes the loop on two-way pegging from sidechain to Bitcoin"
+  - "侧链代币被赎回为主网上的真实 BTC"
+  - "联邦多签或功能成员确认无双花"
+  - "完成从侧链到比特币的双向锚定闭环"
 sources: []
 relatedTerms:
   - liquid-federation
@@ -17,21 +17,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A **peg-out** is the operation of converting sidechain tokens back into mainnet BTC, completing the round trip that began with a [peg-in](/glossary/peg). It's the half of the [two-way peg](/glossary/peg) lifecycle that requires the most trust assumption, because someone has to authorize releasing the originally-locked BTC on mainnet.
+**Peg-out** 是将侧链代币转换回主网 BTC 的操作，完成始于 [peg-in](/glossary/peg) 的往返。这是[双向锚定](/glossary/peg)生命周期中需要最多信任假设的一半，因为必须有人授权释放主网上最初锁定的 BTC。
 
-The mechanics depend on the peg architecture:
+具体机制取决于锚定架构：
 
-- **[Federated peg](/glossary/liquid-network) (e.g., Liquid):** the user burns L-BTC on Liquid; the [federation](/glossary/liquid-federation) verifies the burn, and a threshold of federation members (e.g., 11-of-15 functionaries) signs a transaction releasing BTC from the federation's mainnet multisig. The federation honestly executing peg-outs is the critical trust assumption.
-- **Drivechain ([BIP-300](/glossary/bip-300-drivechains)):** withdrawal proposals are voted on by [miners](/glossary/miner) over a long period (~3 months). If enough miners approve, BTC is released. This shifts the trust to the mining majority.
-- **SPV-validated peg:** sidechain validators verify the peg-out via SPV proofs of mainnet activity. Theoretically more trustless but rarely deployed at scale.
+- **[联邦锚定](/glossary/liquid-network)（如 Liquid）：** 用户在 Liquid 上销毁 L-BTC；[联邦](/glossary/liquid-federation)验证销毁，联邦成员阈值（如 11-of-15 功能成员）签署一笔交易，从联邦的主网多签中释放 BTC。联邦诚实执行 peg-out 是关键的信任假设。
+- **Drivechain（[BIP-300](/glossary/bip-300-drivechains)）：** 提款提案由[矿工](/glossary/miner)在较长时期内（约 3 个月）投票。如果足够多的矿工批准，BTC 被释放。这将信任转移到矿工多数。
+- **SPV 验证锚定：** 侧链验证者通过主网活动的 SPV 证明验证 peg-out。理论上更无需信任，但很少大规模部署。
 
-What can go wrong with peg-outs:
+Peg-out 可能出什么问题：
 
-- **Federation refusal.** If a federation decides to censor a peg-out (sanctions compliance, dispute, malicious behavior), the user is stuck with sidechain tokens they can't redeem.
-- **Federation compromise.** A hacked or coerced federation could approve a fake peg-out, draining the locked BTC.
-- **Slow processing.** Drivechain-style peg-outs are intentionally slow (months); federated peg-outs are faster (hours-days) but still slower than on-chain transfers.
-- **Sidechain failure.** If the sidechain itself fails (bug, shutdown, hostile takeover), peg-outs may become impossible.
+- **联邦拒绝。** 如果联邦决定审查 peg-out（合规要求、争议、恶意行为），用户就拿着无法赎回的侧链代币。
+- **联邦被攻破。** 被黑客攻击或被胁迫的联邦可能批准虚假 peg-out，抽走锁定的 BTC。
+- **处理缓慢。** Drivechain 式 peg-out 有意设计为缓慢（数月）；联邦 peg-out 更快（数小时到数天），但仍比链上转账慢。
+- **侧链失败。** 如果侧链本身失败（漏洞、关闭、被恶意接管），peg-out 可能变得不可能。
 
-For users moving real value via sidechains, the peg-out path is the key risk to evaluate. Once your BTC is pegged in, you're committed to whatever the peg-out mechanism actually delivers under stress.
+对于通过侧链转移真实价值的用户，peg-out 路径是需要评估的关键风险。一旦你的 BTC 被 peg-in，你就受制于 peg-out 机制在压力下实际能交付什么。
 
-See [Peg](/glossary/peg) for peg-in and broader context, [Peg-Guard](/glossary/peg-guard) for security mechanisms.
+参见 [Peg](/glossary/peg) 了解 peg-in 和更广泛的背景，[Peg-Guard](/glossary/peg-guard) 了解安全机制。

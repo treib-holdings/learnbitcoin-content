@@ -1,12 +1,12 @@
 ---
-title: "Retail Mining"
+title: "零售挖矿（Retail Mining）"
 slug: retail-mining
 draft: false
-shortDefinition: "Small-scale, home-based mining setups, largely overshadowed by industrial operations in the ASIC era."
+shortDefinition: "小规模、家庭式挖矿设置，在 ASIC 时代基本被工业运营所掩盖。"
 keyTakeaways:
-  - "Hobbyist or small-scale approach generally outcompeted by industrial ASIC farms"
-  - "Sometimes done for ideology, leftover heat usage, or free electricity scenarios"
-  - "Real profitability is uncommon without unique cost advantages"
+  - "爱好者或小规模方式，通常被工业 ASIC 矿场碾压"
+  - "有时出于意识形态、余热利用或免费电力场景而进行"
+  - "没有独特成本优势时很少能真正盈利"
 sources: []
 relatedTerms:
   - asic-application-specific-integrated-circuit
@@ -25,18 +25,18 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Retail mining" is small-scale Bitcoin mining done at home or in a small operation, typically with one or a few [ASIC](/glossary/asic-application-specific-integrated-circuit) units. It's been economically marginal since around 2014 when industrial mining took over, but the category has been quietly revived in 2024-2026 by some specific tailwinds.
+"零售挖矿"是在家中或小作坊中进行的小规模比特币挖矿，通常配备一台或几台 [ASIC](/glossary/asic-application-specific-integrated-circuit)。自 2014 年工业挖矿接管以来，它在经济上一直处于边缘地位，但在 2024-2026 年因一些特定的顺风而悄然复苏。
 
-What makes retail mining viable in 2026 for some operators:
+2026 年零售挖矿对某些运营者可行的原因：
 
-- **Heat reuse.** A mining ASIC produces 3-4 kW of heat continuously. In a cold climate, that's free space heating. The "miner" effectively pays for the BTC with electricity it would have spent on heat anyway. [Bitmain](https://bitmain.com)'s Antminer Hydro line and standalone "space heater" form factors specifically target this market.
-- **Off-grid energy.** Stranded renewables (rural solar, wind, micro-hydro) can power miners without grid connection. The BTC produced is essentially a payment for using energy that would otherwise be curtailed.
-- **Hash-rate-as-savings.** Some users frame retail mining as "DCA via electricity bill" - regular small BTC accumulation rather than expecting day-by-day profit.
-- **Lottery-mining culture.** Cheap "lottery" miners running at home solo, with negligible expected revenue but a non-zero chance of finding a block worth ~3.125 BTC. A few have actually won; the stories sustain the genre.
+- **热量利用。** 一台挖矿 ASIC 持续产生 3-4 kW 热量。在寒冷气候中，那是免费供暖。"矿工"实际上用电费本要花在取暖上的电来支付 BTC。[Bitmain](https://bitmain.com) 的 Antminer Hydro 系列和独立"空间加热器"形态专门针对这个市场。
+- **离网能源。** 弃置可再生能源（乡村太阳能、风能、微型水电）可以在不连网的情况下为矿机供电。产出的 BTC 本质上是使用否则会被弃用的能源的报酬。
+- **算力即储蓄。** 一些用户将零售挖矿视为"通过电费定投"——定期小额 BTC 积累，而非期望日常盈利。
+- **彩票挖矿文化。** 廉价的"彩票"矿机在家单独运行，预期收入微乎其微但有一定概率找到一个价值约 3.125 BTC 的区块。一些人真的赢了；这些故事维持了这个品类。
 
-What still doesn't work:
+仍然行不通的：
 
-- **Pure profit-driven retail mining** competing with industrial operations on standard residential electricity rates (typically $0.10-0.30/kWh). Industrial mining at $0.04-0.07/kWh outcompetes you.
-- **Old hardware on residential rates.** A 2-year-old miner at 25 J/TH on $0.15 kWh electricity loses money even before depreciation.
+- **纯利润驱动的零售挖矿**与工业运营在标准住宅电价（通常 $0.10-0.30/kWh）上竞争。工业挖矿以 $0.04-0.07/kWh 运营，碾压你。
+- **旧硬件加住宅电价。** 一台两年前效率 25 J/TH 的矿机在 $0.15/kWh 电价上即使不考虑折旧也在亏钱。
 
-Retail mining isn't going to dominate global hash rate. It might play a real role at the margins - in heating economies, in off-grid setups, and as the cultural backbone of "I run my own miner." That's a smaller story than the industry, but a real one.
+零售挖矿不会主导全球算力。但它可能在边际上扮演真实角色——在供暖经济中、在离网设置中，以及作为"我运行自己的矿机"的文化骨干。这比行业的故事小，但真实。

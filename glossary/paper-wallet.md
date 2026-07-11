@@ -1,12 +1,12 @@
 ---
-title: "Paper Wallet"
+title: "纸钱包（Paper Wallet）"
 slug: paper-wallet
 draft: false
-shortDefinition: "A printed private key (and address) used for offline BTC storage. Secure if generated correctly but physically vulnerable."
+shortDefinition: "将私钥（和地址）打印在纸上用于离线存储 BTC。如果正确生成是安全的，但物理上脆弱。"
 keyTakeaways:
-  - "Entire security depends on proper offline generation and key safeguarding"
-  - "Physical damage or theft is a major risk"
-  - "Largely supplanted by hardware wallets or more robust cold storage"
+  - "整体安全性取决于正确的离线生成和密钥保护"
+  - "物理损坏或盗窃是主要风险"
+  - "基本上已被硬件钱包或更可靠的冷存储方案取代"
 sources: []
 relatedTerms:
   - address
@@ -20,17 +20,17 @@ sameAs:
 liveWidget: ~
 ---
 
-A paper wallet is a [private key](/glossary/private-key) (and matching [address](/glossary/address)) printed onto paper - often as a QR code - and stored physically rather than digitally. Once the most common form of cold storage in 2012-2014; mostly obsoleted today.
+纸钱包是将[私钥](/glossary/private-key)（及对应的[地址](/glossary/address)）打印在纸上的方式——通常以二维码形式——以物理方式而非数字方式存储。2012-2014 年曾是最常见的冷存储形式；如今基本已被淘汰。
 
-The original appeal: no digital attack surface. A piece of paper can't be hacked over the internet, can't run malware, can't be remotely exfiltrated. Generate it offline, store it somewhere safe, you're done.
+最初的吸引力：没有数字攻击面。一张纸不能被通过网络黑客攻击，不能运行恶意软件，不能被远程窃取。离线生成，存放在安全的地方，就行了。
 
-Why paper wallets fell out of favor:
+纸钱包失宠的原因：
 
-- **Single-key fragility.** A paper wallet typically backs up *one* private key. Spend any portion of it, and you have to sweep the entire balance to a new address (because Bitcoin Script doesn't allow partial spends of a UTXO). Most "I lost BTC to paper wallet mistakes" stories trace back to people sending change to nowhere by misunderstanding this.
-- **Generation hazards.** A paper wallet is only as good as the entropy used to generate it. Online "paper wallet generators" have repeatedly been backdoored; offline tools require careful air-gapping.
-- **Physical fragility.** Paper burns, gets wet, fades, gets thrown out by mistake. The medium isn't archival.
-- **No mature ecosystem.** Modern wallets don't import single-key paper wallets cleanly; you'll fight with sweeps, fee management, and compatibility.
+- **单密钥脆弱性。** 纸钱包通常只备份*一个*私钥。花费其中任何一部分，你就必须将全部余额扫入新地址（因为 Bitcoin Script 不允许 UTXO 的部分花费）。大多数"我因纸钱包失误丢了 BTC"的故事都可以追溯到人们因为不理解这一点而将找零发送到了不存在的地方。
+- **生成风险。** 纸钱包的安全性取决于生成它时使用的熵。在线"纸钱包生成器"多次被发现有后门；离线工具需要小心地进行物理隔离。
+- **物理脆弱性。** 纸会燃烧、会湿、会褪色、会被误扔。这种介质不具备档案保存品质。
+- **缺乏成熟生态。** 现代钱包不能干净地导入单密钥纸钱包；你需要处理扫入、手续费管理和兼容性问题。
 
-The modern replacement is a [seed phrase](/glossary/seed-phrase) backup stored on metal (steel plates, washers, etched titanium), combined with a [hardware wallet](/glossary/hardware-wallet) for active use. Functionally similar to a paper wallet's air-gapped property, vastly better in every practical dimension.
+现代替代方案是将[助记词](/glossary/seed-phrase)备份存储在金属上（钢板、垫圈、蚀刻钛板），配合[硬件钱包](/glossary/hardware-wallet)用于日常使用。功能上类似于纸钱包的物理隔离特性，但在每个实际维度上都远胜一筹。
 
-If you find an old paper wallet, sweep it carefully (whole-UTXO, not partial), retire the address, and migrate to a modern HD setup. Don't generate new ones.
+如果你发现了一个旧纸钱包，请小心扫入（整个 UTXO，不是部分），停用该地址，迁移到现代 HD 设置。不要再生成新的纸钱包了。

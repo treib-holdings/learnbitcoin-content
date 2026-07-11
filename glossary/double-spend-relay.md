@@ -1,12 +1,12 @@
 ---
-title: "Double Spend Relay"
+title: "双花中继"
 slug: double-spend-relay
 draft: false
-shortDefinition: "A node policy or tool that forwards conflicting transactions to detect (or broadcast warnings about) potential double spends."
+shortDefinition: "一种节点策略或工具，转发冲突交易以检测（或广播警告）潜在的双花。"
 keyTakeaways:
-  - "Relays conflicting TXs rather than discarding them"
-  - "Helps merchants spot double spends for zero-conf payments"
-  - "Useful but doesn't replace waiting for confirmations"
+  - "转发冲突交易而非丢弃"
+  - "帮助商户发现零确认支付的双花"
+  - "有用但不能替代等待确认"
 sources: []
 relatedTerms:
   - double-spend
@@ -17,16 +17,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Double-spend relay is the practice of propagating conflicting (mutually-incompatible) unconfirmed transactions through the P2P network so that merchants and services can detect double-spend attempts in real time.
+双花中继是通过 P2P 网络传播冲突（互不兼容的）未确认交易的做法，以便商户和服务能够实时检测双花尝试。
 
-By default, a Bitcoin Core node accepts the first version of a transaction it sees and silently drops any conflicting versions that arrive later. That's fine for the node's own bookkeeping but bad for anyone trying to detect a [race attack](/glossary/race-attack): if Alice sends one tx to the merchant and a conflicting tx to most of the network, the merchant's node never hears about the conflict until the wrong one confirms.
+默认情况下，Bitcoin Core 节点接受它看到的第一个交易版本，并静默丢弃后来到达的冲突版本。这对节点自身的记账没问题，但对任何试图检测[竞赛攻击](/glossary/race-attack)的人来说很糟糕：如果 Alice 向商户发送一笔交易，向网络大部分发送一笔冲突交易，商户的节点永远不会听到冲突，直到错误的那笔被确认。
 
-Double-spend relay flips that default. When a conflicting transaction arrives, the node forwards it to peers (typically with a flag indicating it's a conflict) so monitoring services can see both versions and raise an alert.
+双花中继翻转了这一默认设置。当冲突交易到达时，节点将其转发给对等方（通常带有表示冲突的标志），以便监控服务能看到两个版本并发出警报。
 
-Where this matters:
+这在哪里重要：
 
-- **Zero-conf merchants.** Coffee shops, point-of-sale terminals, and instant-settlement services that accept payments before confirmation rely on double-spend monitoring to flag suspicious activity. Bitrefill, mempool.space, and various commercial monitoring services consume the relay.
-- **Mempool monitoring infrastructure.** Block explorers and chain-analysis tools track conflict events as signals.
-- **Research.** Studying real-world race-attack rates and mempool behavior.
+- **零确认商户。** 咖啡店、POS 终端和在确认前接受支付的即时结算服务依赖双花监控来标记可疑活动。Bitrefill、mempool.space 和各种商业监控服务消费中继。
+- **内存池监控基础设施。** 区块浏览器和链上分析工具追踪冲突事件作为信号。
+- **研究。** 研究真实世界的竞赛攻击率和内存池行为。
 
-The flip side: the full-RBF default in Bitcoin Core 28.0 (2024) means most transactions are explicitly replaceable, so "conflict relay" is now closer to "RBF replacement relay" - a feature, not an attack signal. Genuine attempted double-spends (non-RBF conflicts) are now rare because zero-conf reliance on unmarked-final transactions has largely been abandoned in favor of Lightning or waiting for confirmations.
+另一面：Bitcoin Core 28.0（2024 年）中的 full-RBF 默认意味着大多数交易明确可替换，因此"冲突中继"现在更接近"RBF 替换中继"——一个功能，不是攻击信号。真正的双花尝试（非 RBF 冲突）现在很少见，因为对未标记最终交易的零确认依赖已在很大程度上被闪电网络或等待确认所取代。

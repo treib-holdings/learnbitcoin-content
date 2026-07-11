@@ -1,12 +1,12 @@
 ---
-title: "Locktime"
+title: "锁定时间"
 slug: locktime
 draft: false
-shortDefinition: "A field in a Bitcoin transaction specifying the earliest block height or timestamp at which it can be included in a block."
+shortDefinition: "比特币交易中的一个字段，指定交易可被包含在区块中的最早区块高度或时间戳。"
 keyTakeaways:
-  - "Acts as a do-not-confirm-before date or block height"
-  - "Often used with time-based opcodes for escrow/payment channels"
-  - "nLocktime set to 0 means the transaction is valid immediately"
+  - "充当'在此日期或区块高度之前不要确认'的角色"
+  - "常与基于时间的操作码一起用于托管/支付通道"
+  - "nLocktime 设为 0 表示交易立即可用"
 sources: []
 relatedTerms:
   - absolute-locktime
@@ -23,21 +23,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Locktime is a field in every Bitcoin [transaction](/glossary/transaction) (technically called `nLockTime`) that specifies the earliest moment the transaction can be included in a block. Until that threshold passes, [nodes](/glossary/node) reject the transaction.
+锁定时间是每笔比特币[交易](/glossary/transaction)中的一个字段（技术上称为 `nLockTime`），指定交易可被包含在区块中的最早时刻。在该阈值通过之前，[节点](/glossary/node)拒绝该交易。
 
-The field has two interpretations depending on its value:
+该字段根据值有两种解释：
 
-- **Less than 500,000,000:** interpreted as a **block height**. The transaction can only be confirmed in a block at or above that height.
-- **500,000,000 or greater:** interpreted as a **Unix timestamp**. The transaction can only be confirmed once the current network time (specifically, the median time of the last 11 blocks) is at or after that timestamp.
+- **小于 500,000,000：** 解释为**区块高度**。交易只能在等于或高于该高度的区块中确认。
+- **500,000,000 或更大：** 解释为 **Unix 时间戳**。交易只能在当前网络时间（具体来说，最近 11 个区块的中位时间）等于或晚于该时间戳时确认。
 
-If locktime is 0 (the default for most wallets), the transaction is valid immediately and can be confirmed in the next block.
+如果锁定时间为 0（大多数钱包的默认值），交易立即可用并可在下一个区块中确认。
 
-Where this matters:
+在哪些场景重要：
 
-- **[Payment channels](/glossary/payment-channel) and [Lightning](/glossary/lightning-network).** Channel commitment transactions use locktime to enforce withdrawal delays during disputes.
-- **Escrow and timed releases.** A transaction can be pre-signed but not broadcast (or broadcast but not mineable) until a specific future block or date.
-- **[Fee sniping](/glossary/fee-sniping) prevention.** Many modern wallets set locktime to the current block height when constructing transactions. This discourages a kind of attack where a miner deliberately reorgs to capture old high-fee transactions.
+- **[支付通道](/glossary/payment-channel)和[闪电网络](/glossary/lightning-network)。** 通道承诺交易使用锁定时间来执行争议期间的提款延迟。
+- **托管和定时释放。** 交易可以预签名但不广播（或广播但不可挖矿），直到特定的未来区块或日期。
+- **[手续费狙击](/glossary/fee-sniping)预防。** 许多现代钱包在构建交易时将锁定时间设为当前区块高度。这阻止了一种矿工故意重组以捕获旧高费交易的攻击。
 
-For more sophisticated time-based logic, locktime works alongside the [CHECKLOCKTIMEVERIFY](/glossary/checklocktimeverify-cltv) opcode (which lets scripts check the locktime themselves), and the related [CSV](/glossary/checksequenceverify-csv) / [nSequence](/glossary/nsequence) fields, which provide *relative* (rather than absolute) timing.
+对于更复杂的基于时间的逻辑，锁定时间与 [CHECKLOCKTIMEVERIFY](/glossary/checklocktimeverify-cltv) 操作码（让脚本自己检查锁定时间）以及相关的 [CSV](/glossary/checksequenceverify-csv) / [nSequence](/glossary/nsequence) 字段（提供*相对*而非绝对计时）协同工作。
 
-See [Absolute Locktime](/glossary/absolute-locktime) for the broader concept and [nLocktime](/glossary/nlocktime) for the field-level synonym.
+请参阅[绝对锁定时间](/glossary/absolute-locktime)了解更广泛的概念，[nLocktime](/glossary/nlocktime)了解字段级别的同义词。

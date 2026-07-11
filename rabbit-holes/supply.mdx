@@ -1,10 +1,11 @@
----title: "The Supply Schedule"
+---
+title: "供应量时间表"
 slug: supply
 draft: false
 status: live
 published: "2026-05-15"
 section: rabbit-hole
-tagline: "21 million, forever. Here's how the math works, and why it can't change."
+tagline: "2100 万，永远不变。这是数学怎么运作的，以及为什么它不能被改变。"
 order: 2
 estimatedMinutes: 8
 sources:
@@ -17,33 +18,33 @@ hasInteractive: ["supplyChart"]
 
 import SupplyChart from '@components/supply/SupplyChart.svelte';
 
-> **Where you're going:** You'll understand exactly where the 21 million number comes from, why the actual cap is 20,999,999.9769 BTC (not a clean 21M), and why this schedule is enforced not by a promise but by every node on Earth.
+> **你将了解：** 你会准确理解 2100 万这个数字从哪里来、为什么实际上限是 20,999,999.9769 BTC（不是整齐的 2100 万）、以及为什么这个时间表不是由承诺强制执行而是由地球上每个节点强制执行的。
 
-## 1. The 21 Million Number
+## 1. 2100 万这个数字
 
-If Bitcoin had a slogan, "21 million, forever" would be it. The cap is mentioned in every introductory article, plastered on every conference t-shirt, and tattooed on a non-trivial number of forearms.
+如果比特币有口号，"2100 万，永远不变"就是了。这个上限出现在每篇入门文章中，印在每个会议 T 恤上，纹在不少人的前臂上。
 
-It's also the easiest claim to verify and one of the hardest claims to actually break. Most people who repeat it don't know where the number comes from. Let's fix that.
+它也是最容易验证的声明之一，也是最难真正打破的声明之一。大多数重复它的人不知道这个数字从哪里来。让我们搞清楚。
 
-The cap is not a constitutional amendment. It is not a federal mandate. It is not a corporate policy. It is **the sum of an infinite geometric series** that every Bitcoin node calculates on every block, forever.
+这个上限不是宪法修正案。不是联邦法令。不是公司政策。它是**一个无穷几何级数的和**，每个比特币节点在每个区块上永远计算着它。
 
-If a miner tried to issue more than the schedule allows, every other node would reject the block. The math is in the code, the code runs on tens of thousands of computers, and changing it would require near-universal coordination across people who genuinely don't want it changed.
+如果一个矿工试图发行超过时间表允许的数量，其他每个节点都会拒绝这个区块。数学在代码里，代码运行在数以万计的计算机上，而改变它需要几乎所有人协调一致 - 而这些人真心不希望它被改变。
 
-It's the most boring kind of scarcity. It's also the most reliable kind ever invented.
+这是最无聊的一种稀缺。也是人类发明的最可靠的一种。
 
-## 2. Where It Comes From
+## 2. 它从哪里来
 
-The supply schedule is defined in `GetBlockSubsidy`, a function in Bitcoin Core's source code. The math:
+供应量时间表定义在 `GetBlockSubsidy` 中，这是 Bitcoin Core 源代码中的一个函数。数学是：
 
-- **First block reward:** 50 BTC
-- **Halving interval:** every 210,000 blocks (about every 4 years at 10-minute average block time)
-- **Halving rule:** the reward halves at each interval and rounds toward zero in satoshi precision
+- **首个区块奖励：** 50 BTC
+- **减半间隔：** 每 210,000 个区块（在平均 10 分钟出块时间下约每 4 年）
+- **减半规则：** 奖励在每个间隔减半，并在聪的精度下向零取整
 
-That's it. Three numbers and one rule. The cap is what falls out.
+就这样。三个数字和一条规则。上限就是从中得出的结果。
 
-## 3. The Issuance Curve
+## 3. 发行曲线
 
-Each "era" between halvings produces a fixed amount of new bitcoin:
+两个减半之间的每个"纪元"产生固定数量的新比特币：
 
 ```
 Era 0:  50 BTC × 210,000 blocks   = 10,500,000 BTC
@@ -55,7 +56,7 @@ Era 5:  1.5625 BTC × 210,000 blocks =  328,125 BTC
 ...
 ```
 
-Adding these up gives you a geometric series:
+把这些加起来就得到一个几何级数：
 
 ```
 S = 50 × 210,000 × (1 + 1/2 + 1/4 + 1/8 + 1/16 + ...)
@@ -63,101 +64,101 @@ S = 10,500,000 × 2
 S = 21,000,000
 ```
 
-The series converges to exactly 21 million in the mathematical limit. In practice, satoshi-level rounding (the reward drops below 1 satoshi after enough halvings) means the actual cap is **20,999,999.9769 BTC**, give or take a sat.
+这个级数在数学极限上恰好收敛到 2100 万。在实践中，聪级别的取整（奖励在足够多次减半后降到 1 聪以下）意味着实际上限是 **20,999,999.9769 BTC**，差不到一聪。
 
-The "missing" 0.0231 BTC isn't a bug. It's the floor on what can be expressed in 8 decimal places. After block ~6,930,000 (sometime around the year 2140), the subsidy rounds to zero satoshis and no more bitcoin will ever be issued.
+"缺失"的 0.0231 BTC 不是 bug。这是 8 位小数能表达的下限。大约在第 6,930,000 个区块（2140 年左右），补贴向下取整为零聪，之后不再有新的比特币被发行。
 
-## 4. The Halving Schedule
+## 4. 减半时间表
 
-We covered this briefly in [Chapter 2](/journey/what-bitcoin-actually-is) of the Journey. Here it is in full detail:
+我们在旅程第 2 章中简要介绍过。这里是完整细节：
 
-| Halving | Block | Date | New reward | Cumulative supply |
+| 减半 | 区块 | 日期 | 新奖励 | 累计供应量 |
 |---|---|---|---|---|
-| Genesis | 0 | Jan 3, 2009 | 50 BTC | 0 |
-| 1st | 210,000 | Nov 28, 2012 | 25 BTC | 10,500,000 |
-| 2nd | 420,000 | Jul 9, 2016 | 12.5 BTC | 15,750,000 |
-| 3rd | 630,000 | May 11, 2020 | 6.25 BTC | 18,375,000 |
-| 4th | 840,000 | Apr 19, 2024 | 3.125 BTC | 19,687,500 |
-| 5th | 1,050,000 | ~2028 | 1.5625 BTC | 20,343,750 |
-| 6th | 1,260,000 | ~2032 | 0.78125 BTC | 20,671,875 |
-| 7th | 1,470,000 | ~2036 | 0.390625 BTC | 20,835,937.5 |
+| 创世 | 0 | 2009年1月3日 | 50 BTC | 0 |
+| 第1次 | 210,000 | 2012年11月28日 | 25 BTC | 10,500,000 |
+| 第2次 | 420,000 | 2016年7月9日 | 12.5 BTC | 15,750,000 |
+| 第3次 | 630,000 | 2020年5月11日 | 6.25 BTC | 18,375,000 |
+| 第4次 | 840,000 | 2024年4月19日 | 3.125 BTC | 19,687,500 |
+| 第5次 | 1,050,000 | ~2028 | 1.5625 BTC | 20,343,750 |
+| 第6次 | 1,260,000 | ~2032 | 0.78125 BTC | 20,671,875 |
+| 第7次 | 1,470,000 | ~2036 | 0.390625 BTC | 20,835,937.5 |
 | ... | ... | ... | ... | ... |
-| 32nd | ~6,720,000 | ~2136 | ~1 sat | ~20,999,999.98 |
-| 33rd | ~6,930,000 | ~2140 | 0 sat (rounds down) | 20,999,999.9769 |
+| 第32次 | ~6,720,000 | ~2136 | ~1 聪 | ~20,999,999.98 |
+| 第33次 | ~6,930,000 | ~2140 | 0 聪（向下取整） | 20,999,999.9769 |
 
-Each halving cuts the *new* supply rate in half. The first four halvings issued 19,687,500 BTC, about 94% of the total. The remaining 28 halvings spread the last 6% across more than a century.
+每次减半将*新增*供应率减半。前四次减半发行了 19,687,500 BTC，约占总量的 94%。剩余 28 次减半将最后 6% 分散在一个多世纪中。
 
-This is what people mean when they say Bitcoin is *front-loaded* and *disinflationary*. Most of the supply is already out. The schedule approaches its asymptote at zero.
+这就是人们说比特币是*前置发行*和*反通胀*的含义。大部分供应已经流出。时间表以趋近于零的渐近线接近终点。
 
-## 5. The 20,999,999.9769 Asymptote
+## 5. 20,999,999.9769 这个渐近线
 
-The slightly-less-than-21M number is worth pausing on, because it gets at something interesting about Bitcoin's design.
+这个略少于 2100 万的数字值得停下来思考，因为它触及了比特币设计中有趣的东西。
 
-Bitcoin tracks balances in **satoshis**, not BTC. One satoshi is the smallest representable unit: 1 / 100,000,000 of a BTC. (See the [Bitcoin Units rabbit hole](/rabbit-hole/bitcoin-units) for a full walk through the scale.)
+比特币以**聪**（satoshis）而非 BTC 来记录余额。一聪是最小可表示单位：1/100,000,000 BTC。（参见[比特币单位深度科普](/rabbit-hole/bitcoin-units)了解完整刻度。）
 
-When you halve a reward, you halve the satoshi count. 50 BTC = 5,000,000,000 satoshis. After 1 halving: 2,500,000,000. After 2: 1,250,000,000. And so on.
+当你把奖励减半时，你把聪的数量减半。50 BTC = 5,000,000,000 聪。1 次减半后：2,500,000,000。2 次后：1,250,000,000。以此类推。
 
-Eventually you reach a halving where the reward is below 1 satoshi. At that point, integer division by 2 produces 0. There's nothing smaller than a satoshi (on the base layer, anyway), so the subsidy becomes zero and stays there.
+最终你会到达奖励低于 1 聪的减半点。此时，整数除以 2 产生 0。没有比聪更小的单位（至少在基础层上），所以补贴变为零并保持为零。
 
-This happens at halving 33, somewhere around the year 2140. The total supply at that moment is 20,999,999.9769 BTC. That's the actual cap. The "21 million" is a marketing-friendly rounded version.
+这发生在第 33 次减半，大约在 2140 年左右。此时的总供应量是 20,999,999.9769 BTC。这是实际上限。"2100 万"是一个营销友好的四舍五入版本。
 
-## 6. Inflation Rate Today vs. Gold
+## 6. 今天的通胀率 vs. 黄金
 
-Bitcoin's *annual inflation rate* is the new supply being issued each year divided by the total existing supply. Let's compute the current value:
+比特币的*年通胀率*是每年新增供应量除以总现有供应量。让我们计算当前值：
 
-- Current subsidy (era 4): 3.125 BTC per block
-- Blocks per year: ~52,560
-- Annual issuance: 3.125 × 52,560 = **164,250 BTC per year**
-- Total supply (mid-era 4): ~19,867,581 BTC
-- Annual inflation: 164,250 / 19,867,581 = **~0.83%**
+- 当前补贴（第 4 纪元）：每区块 3.125 BTC
+- 每年区块数：约 52,560
+- 年发行量：3.125 × 52,560 = **164,250 BTC/年**
+- 总供应量（第 4 纪元中期）：约 19,867,581 BTC
+- 年通胀率：164,250 / 19,867,581 = **约 0.83%**
 
-For comparison:
-- **Gold:** historically ~1.5-2% annual supply growth from mining
-- **USD M2:** averaged ~7% annual growth from 1971-2024 (much higher during 2020-2022)
-- **Most fiat currencies:** 2-10% in stable economies, much higher in unstable ones
+对比：
+- **黄金：** 历史上每年约 1.5-2% 的供应量增长
+- **美元 M2：** 1971-2024 年平均约 7%（2020-2022 年间更高）
+- **大多数法定货币：** 稳定经济体 2-10%，不稳定经济体更高
 
-After the next halving (block 1,050,000, around 2028), Bitcoin's annual issuance will drop to ~82,125 BTC, and its inflation rate will halve to roughly 0.4%.
+下一次减半后（第 1,050,000 个区块，约 2028 年），比特币年发行量将降至约 82,125 BTC，通胀率将减半至约 0.4%。
 
-**Bitcoin's monetary expansion rate is already lower than gold's.** That's a remarkable fact and one most people get wrong.
+**比特币的货币扩张率已经低于黄金。** 这是一个了不起的事实，也是大多数人搞错的事实。
 
 <SupplyChart client:visible />
 
-## 7. The Social Contract Argument
+## 7. 社会契约论
 
-The 21 million cap is enforced by code, not by promise. But code can be changed. So the deeper question is: *why won't it be?*
+2100 万上限由代码强制执行，不是由承诺。但代码可以改变。所以更深的问题是：*为什么不会被改？*
 
-Three reasons, in order of importance:
+三个原因，按重要性排序：
 
-**1. Enforcement is distributed.** Every full node validates every block against the supply schedule. To raise the cap, you'd need not just developer agreement, but for every node operator on Earth to *run* the new software. Node operators are, definitionally, people who care enough about Bitcoin to validate it themselves. They are the *least* likely demographic to accept a supply increase.
+**1. 执行是分布式的。** 每个全节点根据供应量时间表验证每个区块。要提高上限，你不仅需要开发者同意，还需要地球上每个节点操作者去*运行*新软件。节点操作者，按定义，是那些在乎比特币到要自己验证的人的人。他们是最不可能接受供应量增加的群体。
 
-**2. The cap is the value proposition.** People hold Bitcoin precisely because the supply is fixed. Raising the cap destroys the only durable reason to hold it instead of any other asset. This is not a technical observation; it's an economic one. The first vote to raise the cap is the last day Bitcoin is worth anything.
+**2. 上限就是价值主张。** 人们持有比特币恰恰因为供应量固定。提高上限会摧毁持有它而不是任何其他资产的唯一持久理由由。这不是技术观察；这是经济观察。第一次投票提高上限的那天，就是比特币不再值钱的那天。
 
-**3. There's no one to ask.** Bitcoin has no CEO, no board, no foundation, no Satoshi. Even if someone wanted to raise the cap, there is no central party with the authority to propose it credibly. Any proposal becomes a fork, and the fork that keeps the 21M cap is, by every economic measure, "real Bitcoin." The fork that raises it becomes an altcoin overnight.
+**3. 没有人可以问。** 比特币没有 CEO，没有董事会，没有基金会，没有中本聪。即使有人想提高上限，也没有一个中心方有权威可信地提出它。任何提议都会变成分叉（fork），而保持 2100 万上限的分叉，从每个经济指标来看，就是"真正的比特币"。提高上限的分叉一夜之间就变成了山寨币。
 
-This isn't a guarantee. It's a Schelling point so strong that arguing against it has never been a serious project. In sixteen years of Bitcoin's history, no proposal to raise the cap has gotten meaningful traction. The closest thing was the 2017 "scaling debate," which was about block *size*, not supply, and which the 1MB-block side decisively won.
+这不是保证。这是一个如此强大的谢林点（Schelling point），以至于反对它的争论从未成为严肃项目。在比特币十六年的历史中，没有一个提高上限的提议获得过实质性支持。最接近的是 2017 年的"扩容辩论"，那是关于区块*大小*的，不是供应量，而且 1MB 区块那一边决定性地赢了。
 
-## 8. After Block ~6,930,000
+## 8. 第 ~6,930,000 个区块之后
 
-When the last satoshi is mined around the year 2140, miners stop receiving any *new* bitcoin. From that point forward, their entire revenue comes from **transaction fees** - the small amounts users attach to transactions to incentivize inclusion.
+当最后一个聪在 2140 年左右被挖出时，矿工不再获得任何*新增*比特币。从那时起，他们的全部收入来自**交易手续费** - 用户附加到交易上的小额费用，以激励矿工将其打包。
 
-This is sometimes posed as a worry: *will miners still mine if there's no subsidy?* The answer, as we've come to see, is yes, as long as transaction volume + fees + bitcoin's value combine to make the energy investment worthwhile.
+这有时被提为一个担忧：*没有补贴时矿工还会挖矿吗？* 答案，如我们已经看到的，是会的，只要交易量 + 手续费 + 比特币的价值结合起来使得能源投资值得。
 
-In practice, fees have been growing as a percentage of miner revenue for years. By 2140, the network expects them to be the entire compensation. The economics work out as long as Bitcoin is being used at all.
+实践中，多年来手续费作为矿工收入的占比一直在增长。到 2140 年，网络期望它们成为全部报酬。只要比特币还在被使用，经济就走得通。
 
-This is also why scaling Bitcoin matters - the [Lightning Network](/glossary/lightning-network), batching, and second-layer protocols all reduce on-chain transaction volume *per user* but increase the *value* moving through Bitcoin, which translates to higher per-byte fees, which keeps miners paid.
+这也是为什么比特币扩容很重要 - [闪电网络](/glossary/lightning-network)、批处理和二层协议都降低了每个用户的链上交易量，但增加了流经比特币的*价值*，这转化为更高的每字节手续费，从而保持矿工有收入。
 
-The 21 million cap is the *monetary* policy. The fee market is the *security* policy. Both are in the code. Neither has a backdoor.
+2100 万上限是*货币*政策。手续费市场是*安全*政策。两者都在代码中。两者都没有后门。
 
-## 9. What This Buys Us
+## 9. 这给我们带来了什么
 
-The 21M cap is the single most boring fact about Bitcoin, and the single most consequential.
+2100 万上限是比特币最无聊的事实，也是最重要的。
 
-It means:
+它意味着：
 
-- **Your savings cannot be diluted.** No one can print more Bitcoin to fund anything. Not a war, not a stimulus, not a bailout, not a vote-buying program.
-- **The supply schedule is the same in 2140 as it is today.** You can plan around it across human lifetimes.
-- **There is no "growth target."** The Federal Reserve targets 2% inflation. Bitcoin targets none. Bitcoin doesn't target anything. It just runs.
+- **你的储蓄不会被稀释。** 没人能印更多比特币来资助任何东西。不是战争，不是刺激计划，不是救助，不是拉票计划。
+- **供应量时间表现在和 2140 年一样。** 你可以跨越人类终身来规划。
+- **没有"增长目标"。** 美联储的目标是 2% 通胀。比特币不目标任何东西。比特币就是运行。
 
-That's the deal. Boring, fixed, verifiable, durable. A monetary system without a steering wheel.
+这就是交易。无聊、固定、可验证、持久。一个没有方向盘的货币系统。
 
-> **Pro tip:** When someone tells you "Bitcoin's 21M cap could change," ask them which specific change they think would pass. The honest answer is "none, ever," because there is no path to changing it that doesn't break Bitcoin as a thing worth changing. The cap is what holds.
+> **实用提示：** 当有人告诉你"比特币的 2100 万上限可能会变"，问他们认为哪个具体改变能通过。诚实的答案是"没有任何改变能通过"，因为不存在一条改变它的路径不同时摧毁比特币作为值得改变的东西。上限就是支撑。

@@ -1,12 +1,12 @@
 ---
-title: "Race Attack"
+title: "竞争攻击（Race Attack）"
 slug: race-attack
 draft: false
-shortDefinition: "Attempting to double-spend a zero-confirmation transaction by quickly broadcasting a conflicting, higher-fee transaction."
+shortDefinition: "通过快速广播一笔冲突的、更高手续费的交易，尝试对零确认交易进行双花。"
 keyTakeaways:
-  - "Exploits zero-conf acceptance by sending a conflicting transaction"
-  - "Relies on miners prioritizing the higher-fee or faster-broadcast TX"
-  - "Merchants avoid by requiring confirmations or LN-based payments"
+  - "通过发送冲突交易利用零确认接受"
+  - "依赖矿工优先处理更高手续费或更快广播的交易"
+  - "商户可通过要求确认或使用闪电网络支付来避免"
 sources: []
 relatedTerms:
   - double-spend
@@ -21,17 +21,17 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A race attack is a double-spend against a zero-confirmation transaction. The attacker sends two conflicting transactions in quick succession: one to the merchant (or merchant's wallet's view of the network) and one paying themselves back, with the second crafted to win the race to miners.
+竞争攻击是对零确认交易的双花。攻击者快速连续发送两笔冲突交易：一笔给商户（或商户钱包对网络的视图），另一笔付给自己，第二笔被设计为在到矿工的竞争中获胜。
 
-Two flavors:
+两种形式：
 
-- Vanilla race attack: broadcast tx-A to the merchant and tx-B to the rest of the network at roughly the same time, hoping miners see tx-B first.
-- RBF-enabled race: broadcast tx-A (RBF-flagged) to the merchant, then broadcast tx-B at a higher fee. Since Replace-by-Fee is honest about replacement, this isn't really an "attack" so much as the protocol working as documented; the merchant just didn't wait.
+- 普通竞争攻击：大致同时向商户广播 tx-A，向网络其余部分广播 tx-B，希望矿工先看到 tx-B。
+- RBF 式竞争：向商户广播 tx-A（标记 RBF），然后以更高手续费广播 tx-B。由于手续费替换是对替换的诚实机制，这不算真正的"攻击"，而是协议按文档工作；商户只是没等确认。
 
-Mitigations on the merchant side:
+商户侧的缓解措施：
 
-- Wait for at least one confirmation. Slow, but cryptographically the right answer.
-- Use Lightning for instant settlement. Lightning payments are final on the second-hop level immediately, no zero-conf risk.
-- Run a double-spend monitor that watches the mempool for conflicting transactions and flags them in real time. Reduces but doesn't eliminate the risk.
+- 等至少一个确认。慢，但密码学上是正确答案。
+- 使用闪电网络进行即时结算。闪电网络支付在第二跳级别立即最终，无零确认风险。
+- 运行双花监控，监控内存池中的冲突交易并实时标记。降低但不消除风险。
 
-Many merchants still accept zero-conf for small amounts because the attack is non-trivial to execute (requires technical skill, decent timing, and a low-fee initial transaction that flags itself). The risk is real but the practical incidence is low. For amounts over a few dollars, wait for confirmations or use Lightning.
+许多商户仍对小金额接受零确认，因为攻击执行有一定难度（需要技术能力、较好的时机和低手续费的初始交易本身就是信号）。风险是真实的但实际发生率低。对于超过几美元的金额，等确认或使用闪电网络。

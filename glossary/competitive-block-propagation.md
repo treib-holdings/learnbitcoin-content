@@ -1,12 +1,12 @@
 ---
-title: "Competitive Block Propagation"
+title: "竞争性区块传播"
 slug: competitive-block-propagation
 draft: false
-shortDefinition: "The rapid broadcasting of newly mined blocks as miners race to share them with the network first."
+shortDefinition: "矿工竞相将新挖出的区块快速广播给网络，以率先分享新区块。"
 keyTakeaways:
-  - "Miners aim to broadcast new blocks as fast as possible"
-  - "Reduces orphan blocks and maximizes reward certainty"
-  - "Relay innovations like Compact Blocks improve network speed"
+  - "矿工旨在尽可能快地广播新区块"
+  - "减少孤块并最大化奖励确定性"
+  - "紧凑区块等中继创新提升网络速度"
 sources: []
 relatedTerms:
   - block-propagation
@@ -14,25 +14,25 @@ relatedTerms:
   - miner-extractable-value-mev
   - mining-algorithm
   - mining-centralization
-  - mining-colocation
+  - mining-collocation
   - stale-block
 liveWidget: ~
 ---
 
-Competitive block propagation is the high-stakes version of [block propagation](/glossary/block-propagation): the race to broadcast a freshly-mined block to enough of the network that other miners switch to building on top of it before they find a competing block of their own.
+竞争性区块传播是[区块传播](/glossary/block-propagation)的高风险版本：将刚挖出的区块尽快广播给足够多的网络，使其他矿工在找到自己的竞争区块之前就切换到在其之上构建。
 
-The economics:
+经济学：
 
-- A block that propagates faster has a better chance of being the one other miners extend. That's the block whose reward gets paid.
-- A block that propagates slowly may be overtaken by a near-simultaneous block from a better-connected miner. The slower block becomes an orphan; its reward is lost.
-- For large operations, the orphan rate is a real percentage of revenue. Cutting it by half a percent is worth significant engineering investment.
+- 传播更快的区块有更好的机会成为其他矿工延伸的区块。那个区块的奖励才会被支付。
+- 传播慢的区块可能被来自连接更好的矿工的几乎同时的区块超越。较慢的区块成为孤块；其奖励丢失。
+- 对于大型运营，孤块率是收入的一个真实百分比。将其减半值得大量的工程投资。
 
-How miners compete:
+矿工如何竞争：
 
-- **Compact Blocks (BIP 152)** at the protocol level: every miner gets this for free in Bitcoin Core.
-- **Direct peering** with other miners and pools: skip the public P2P network for the most latency-sensitive hops.
-- **Dedicated relay networks** (FIBRE, Falcon): UDP-based low-latency block relay, run by miners and infrastructure providers, push blocks globally in tens of milliseconds.
-- **Geographic placement.** Mining near major internet exchange points (Frankfurt, Amsterdam, Singapore, Ashburn) shaves milliseconds of latency.
-- **Validation-free forwarding.** "Spy mining" / "headers-first mining" lets a miner build on a new block's *header* before validating its body. Risky if the body turns out invalid, but for the seconds it saves it can be worth it.
+- **紧凑区块（BIP 152）**在协议层面：每个矿工在 Bitcoin Core 中免费获得这个。
+- **与其他矿工和矿池的直接对等连接**：跳过公共 P2P 网络以减少最延迟敏感的跳数。
+- **专用中继网络**（FIBRE、Falcon）：基于 UDP 的低延迟区块中继，由矿工和基础设施提供商运营，在几十毫秒内将区块推送到全球。
+- **地理布局。** 在主要互联网交换点（法兰克福、阿姆斯特丹、新加坡、阿什本）附近挖矿可减少几毫秒的延迟。
+- **无验证转发。** "间谍挖矿"/"头优先挖矿"让矿工在验证区块体之前就开始基于新区块的*头*构建。如果区块体最终无效则有风险，但为了节省的几秒钟可能是值得的。
 
-The arms race is bounded by the same protocol everyone runs. No miner can structurally pull ahead; the optimizations are marginal and well-known. But at industrial scale, marginal becomes meaningful.
+军备竞赛受到所有人运行的相同协议的约束。没有矿工能在结构上领先；优化是边际的且众所周知的。但在工业规模下，边际变得有意义。

@@ -1,12 +1,12 @@
 ---
-title: "Core Lightning (c-lightning)"
+title: "Core Lightning（c-lightning）"
 slug: core-lightning-c-lightning
 draft: false
-shortDefinition: "A major Lightning Network implementation by Blockstream, focused on modularity and command-line flexibility."
+shortDefinition: "Blockstream 开发的主要闪电网络实现，专注于模块化和命令行灵活性。"
 keyTakeaways:
-  - "Implements LN with a modular, plugin-friendly design"
-  - "Highly configurable for advanced or enterprise setups"
-  - "One of the three major LN implementations (LND, Eclair, c-lightning)"
+  - "以模块化、插件友好的设计实现闪电网络"
+  - "为高级或企业环境高度可配置"
+  - "三大闪电网络实现之一（LND、Eclair、c-lightning）"
 sources: []
 relatedTerms:
   - atomic-multi-path-payment-amp
@@ -26,21 +26,21 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Core Lightning (CLN), formerly **c-lightning**, is one of the major [Lightning Network](/glossary/lightning-network) implementations. Developed by [Blockstream](https://blockstream.com/), it's written in C and emphasizes modularity, minimal resource footprint, and a plugin architecture that lets developers extend functionality without forking the core daemon.
+Core Lightning（CLN），原名 **c-lightning**，是主要的[闪电网络](/glossary/lightning-network)实现之一。由 [Blockstream](https://blockstream.com/) 开发，用 C 语言编写，强调模块化、最小资源占用和插件架构，让开发者无需 fork 核心守护进程即可扩展功能。
 
-How it stacks up against the other main implementations:
+与其他主要实现的对比：
 
-- **CLN** - C, modular, plugin-first. Strong on advanced workflows and resource efficiency. Notable for shipping [BOLT-12 offers](/glossary/lightning-invoice) support early.
-- **LND** (Lightning Labs) - Go, monolithic, REST/gRPC APIs. Most common in turnkey node-in-a-box products. Largest user base.
-- **Eclair** (ACINQ) - Scala, powers the Phoenix mobile wallet. Strong on mobile/embedded use cases.
-- **LDK** (Spiral) - Library, not a daemon. Embedded into apps like Cash App, Mutiny.
+- **CLN**——C 语言，模块化，插件优先。在高级工作流和资源效率方面表现出色。率先支持 [BOLT-12 offers](/glossary/lightning-invoice)。
+- **LND**（Lightning Labs）——Go 语言，单体式，REST/gRPC API。在即插即用节点产品中最常见。用户群最大。
+- **Eclair**（ACINQ）——Scala 语言，驱动 Phoenix 移动钱包。在移动/嵌入式用例方面表现出色。
+- **LDK**（Spiral）——库，不是守护进程。嵌入到 Cash App、Mutiny 等应用中。
 
-CLN's plugin system is the differentiator. Common plugins handle things like channel rebalancing, advanced routing strategies, [splicing](/glossary/lightning-channel-splicing), watchtowers, and accounting. The model is "small core, many plugins" rather than "big monolith with feature flags."
+CLN 的插件系统是差异化因素。常见插件处理通道再平衡、高级路由策略、[拼接](/glossary/lightning-channel-splicing)、瞭望塔和记账等功能。其模式是"小核心，多插件"而非"带功能标志的大单体"。
 
-For self-hosted Lightning operators in 2026, CLN is a strong choice especially for:
+对于 2026 年自托管闪电网络运营者，CLN 是一个强有力的选择，特别适合：
 
-- Operators who want minimal resource use on cheap hardware (Raspberry Pi, low-end VPS).
-- Routing nodes that benefit from plugin-based rebalancing.
-- Anyone wanting native BOLT-12 support.
+- 想在廉价硬件（树莓派、低端 VPS）上最小化资源使用的运营者。
+- 受益于基于插件再平衡的路由节点。
+- 任何想要原生 BOLT-12 支持的人。
 
-Less ideal for users who want a click-to-install graphical experience - Umbrel and similar node distributions historically defaulted to LND, though many now offer CLN as an option. See [Lightning Node](/glossary/lightning-node) for the broader landscape.
+不太适合想要点击安装图形体验的用户——Umbrel 等节点发行版历史上默认使用 LND，尽管许多现在提供 CLN 作为选项。更广泛的全景参见[闪电节点](/glossary/lightning-node)。

@@ -1,12 +1,12 @@
 ---
-title: "Off-Chain"
+title: "链下"
 slug: off-chain
 draft: false
-shortDefinition: "Any Bitcoin-related activity that doesn't settle directly on the main blockchain, including Lightning channels, sidechains, and custodial bookkeeping."
+shortDefinition: "任何不直接在主区块链上结算的比特币相关活动，包括闪电通道、侧链和托管记账。"
 keyTakeaways:
-  - "Lowers mainnet usage; saves block space and fees"
-  - "Ranges from trust-minimized (Lightning) to fully trusted (custodial)"
-  - "Trust-minimized off-chain still anchors disputes back to the base layer"
+  - "减少主网使用；节省区块空间和手续费"
+  - "范围从最小信任（闪电网络）到完全信任（托管）"
+  - "最小信任的链下仍将争议锚定回基础层"
 sources: []
 relatedTerms:
   - layer-1
@@ -17,27 +17,27 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Off-chain" is the catchall for any Bitcoin-related activity that doesn't produce an on-chain transaction. The base layer remains the ultimate source of truth; off-chain systems track state, balances, or commitments somewhere else and (in trust-minimized designs) anchor back to the chain when needed.
+"链下"是任何不产生链上交易的比特币相关活动的总称。基础层仍是最终权威来源；链下系统在其他地方追踪状态、余额或承诺，并在需要时（在最小信任设计中）锚定回链上。
 
-The major flavors:
+主要类型：
 
-- **Trust-minimized off-chain.** The [Lightning Network](/glossary/lightning-network) is the canonical example. Two parties open a channel with one on-chain funding transaction, exchange unlimited signed off-chain state updates between themselves, and only return to the chain when they close the channel or get into a dispute. The off-chain state is enforceable on-chain if anyone misbehaves.
+- **最小信任链下。** [闪电网络](/glossary/lightning-network)是典型例子。两方用一笔链上注资交易开启通道，在彼此之间交换无限的签名链下状态更新，只有在关闭通道或发生争议时才回到链上。链下状态在任何人行为不当时可在链上执行。
 
-- **Sidechains.** Liquid, Drivechains-style proposals, and other [sidechain](/glossary/sidechain) designs run a separate chain that pegs into Bitcoin. Activity happens on the sidechain; the base layer only sees the peg events.
+- **侧链。** Liquid、驱动链式提案和其他[侧链](/glossary/sidechain)设计运行一个锚定到比特币的独立链。活动发生在侧链上；基础层只看到锚定事件。
 
-- **Custodial off-chain.** Every exchange's internal ledger is off-chain. When you trade BTC on Coinbase or move balance between accounts on Strike, no Bitcoin transaction happens. The custodian just updates rows in a database. Fast, free, and exactly as secure as the custodian.
+- **托管链下。** 每个交易所的内部账本都是链下的。当你在 Coinbase 上交易 BTC 或在 Strike 上在账户间转移余额时，没有比特币交易发生。托管人只是更新数据库中的行。快速、免费，安全性与托管人完全一样。
 
-What off-chain lets you do that on-chain can't:
+链下让你能做到链下做不到的事：
 
-- **Sub-second settlement.** Lightning payments finalize in seconds; on-chain takes minutes.
-- **Sub-cent fees.** Off-chain payments don't compete for block space.
-- **Privacy improvements.** Lightning routing doesn't leave a permanent on-chain record of every hop.
-- **Throughput.** The off-chain layer can process millions of state updates between two on-chain anchor points.
+- **亚秒级结算。** 闪电支付几秒内完成；链上需要几分钟。
+- **低于美分的费用。** 链下支付不竞争区块空间。
+- **隐私改善。** 闪电路由不为每一跳留下永久的链上记录。
+- **吞吐量。** 链下层可以在两个链上锚点之间处理数百万次状态更新。
 
-What you give up:
+你放弃的：
 
-- **Some trust.** Trust-minimized off-chain (Lightning) has carefully-designed dispute resolution. Custodial off-chain doesn't, and the [exchange failure list](/glossary/exchange) is the warning label.
-- **Some liquidity flexibility.** Lightning channel balance is locked between two parties; on-chain UTXOs can be spent to anyone.
-- **Some auditability.** Off-chain activity isn't publicly verifiable unless the operator chooses to publish it.
+- **一些信任。** 最小信任链下（闪电网络）有精心设计的争议解决。托管链下没有，[交易所失败列表](/glossary/exchange)就是警告标签。
+- **一些流动性灵活性。** 闪电通道余额锁定在两方之间；链上 UTXO 可以花给任何人。
+- **一些可审计性。** 链下活动不可公开验证，除非运营者选择发布。
 
-The on-chain / off-chain split is intentional. The base layer optimizes for security and settlement; off-chain layers optimize for volume and speed. Bitcoin's strategy from the start was to use one to serve the other, rather than try to make a single layer do everything.
+链上/链下的分割是有意的。基础层优化安全和结算；链下层优化量和速度。比特币从一开始的策略就是用一方服务另一方，而非试图让单一层做所有事。

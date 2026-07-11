@@ -1,12 +1,12 @@
 ---
-title: "Atomic Multi-Path Payment (AMP)"
+title: "原子多路径支付（AMP）"
 slug: atomic-multi-path-payment-amp
 draft: false
-shortDefinition: "A Lightning Network feature splitting one payment into multiple smaller payments that recombine upon receipt."
+shortDefinition: "闪电网络的一项功能，将一笔支付拆分为多笔较小的支付，在收款方处重新组合。"
 keyTakeaways:
-  - "Splits a single payment into multiple routes"
-  - "Helps bypass channel capacity limitations"
-  - "Only completes when all partial payments arrive"
+  - "将单笔支付拆分为多条路由"
+  - "帮助绕过通道容量限制"
+  - "只有所有部分都到达后才完成支付"
 sources: []
 relatedTerms:
   - atomic-swap
@@ -23,23 +23,23 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Atomic Multi-Path Payment (AMP) is a [Lightning](/glossary/lightning-network) technique that splits a single logical payment into multiple smaller partial payments, each [routed](/glossary/lightning-routing) along a different path through the network. The receiver only "completes" the payment when all parts arrive.
+原子多路径支付（AMP）是一种[闪电网络](/glossary/lightning-network)技术，将一笔逻辑支付拆分为多笔较小的部分支付，每笔通过网络中不同的路径[路由](/glossary/lightning-routing)。收款方只有在所有部分都到达后才"完成"支付。
 
-The motivation: any single [Lightning channel](/glossary/lightning-channel) has a limited capacity, often a few million sats or less. Sending a payment larger than the smallest channel on any candidate route would fail with the single-path approach. AMP works around this by spreading the load across multiple routes.
+动机：任何单个[闪电通道](/glossary/lightning-channel)的容量有限，通常只有几百万聪或更少。使用单路径方法发送大于任何候选路由上最小通道容量的支付会失败。AMP 通过将负载分散到多条路由来解决这个问题。
 
-How it works:
+工作原理：
 
-1. The sender's wallet decides to use AMP and splits the total into chunks (say, 5 × 200,000 sats for a 1,000,000-sat payment).
-2. It finds different routes for each chunk - ideally through disjoint channels so no one path is fully loaded.
-3. All chunks are sent simultaneously using [HTLCs](/glossary/htlc-hashed-time-locked-contract).
-4. The receiver holds each incoming HTLC until they've received all of them.
-5. Once complete, the receiver releases the preimage and all chunks settle atomically.
+1. 发送方钱包决定使用 AMP 并将总额拆分为多块（例如，将 1,000,000 聪的支付拆为 5 × 200,000 聪）。
+2. 为每块找到不同的路由——理想情况下通过不相交的通道，这样没有单条路径被完全加载。
+3. 所有块使用 [HTLC](/glossary/htlc-hashed-time-locked-contract) 同时发送。
+4. 收款方持有每个传入的 HTLC，直到收到全部。
+5. 完成后，收款方释放原像，所有块原子性地结算。
 
-If even one chunk fails to route, the receiver refuses to release the preimage and the entire payment unwinds via HTLC timeouts. Nothing partial gets settled.
+如果即使一块路由失败，收款方拒绝释放原像，整笔支付通过 HTLC 超时回滚。不会有部分结算。
 
-Variants:
+变体：
 
-- **MPP** (Multi-Path Payment) - the basic split-and-recombine variant. All parts share the same payment hash.
-- **AMP proper** - introduced by Olaoluwa Osuntokun in BOLT-12-era specs. Uses separate sub-hashes per part for slightly better privacy and reliability properties.
+- **MPP**（多路径支付）——基本的拆分重组变体。所有部分共享同一个支付哈希。
+- **AMP 本身**——由 Olaoluwa Osuntokun 在 BOLT-12 时代的规范中引入。每个部分使用独立的子哈希，隐私性和可靠性略好。
 
-Both are widely supported in 2026 across major Lightning implementations. The practical upshot for users: payments that would have failed in 2019 due to liquidity constraints now succeed routinely. Wallets retry automatically with different splits if the first attempt doesn't route.
+两者在 2026 年的主流闪电网络实现中都被广泛支持。对用户的实际影响：2019 年因流动性约束会失败的支付现在 routinely 成功。如果第一次尝试路由失败，钱包会自动用不同的拆分重试。

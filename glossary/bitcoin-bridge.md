@@ -1,12 +1,12 @@
 ---
-title: "Bitcoin Bridge"
+title: "比特币桥"
 slug: bitcoin-bridge
 draft: false
-shortDefinition: "Any mechanism linking Bitcoin to other blockchains or layers, enabling cross-chain swaps or wrapped BTC."
+shortDefinition: "将比特币连接到其他区块链或层的任何机制，支持跨链互换或包装 BTC。"
 keyTakeaways:
-  - "Facilitates BTC usage on other chains or layers"
-  - "Enables cross-chain liquidity and DeFi access"
-  - "Involves trade-offs in security and trust models"
+  - "促进 BTC 在其他链或层上使用"
+  - "支持跨链流动性和 DeFi 访问"
+  - "涉及安全性和信任模型的权衡"
 sources: []
 relatedTerms:
   - bip-300-drivechains
@@ -19,17 +19,17 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Bitcoin bridge is any mechanism for moving BTC's value onto another blockchain so it can be used in that chain's applications. The bridge holds the real BTC (or claims to) and issues a representation - a "wrapped" version - on the destination chain.
+比特币桥是将 BTC 价值转移到另一条区块链上以便在该链应用中使用的任何机制。桥持有真实 BTC（或声称持有）并在目标链上发行一个表示——"包装"版本。
 
-Major patterns:
+主要模式：
 
-- **Custodial wrapped BTC.** WBTC on Ethereum is the canonical example: a custodian (BitGo) holds real BTC and issues ERC-20 tokens 1:1. Users trust the custodian. Tens of billions of dollars have been bridged this way over the years.
-- **Federated bridges.** Liquid Network and Rootstock (RSK) use multisig federations: a quorum of designated parties controls the BTC and signs off on peg-ins / peg-outs. Less trust-minimized than non-custodial but more decentralized than a single custodian.
-- **tBTC and sBTC-style proposals.** Attempt to be more decentralized: collateralized peg-keepers, threshold signature ceremonies, etc. Mixed track records.
-- **Atomic swaps.** Not technically a bridge - direct peer-to-peer exchange where BTC stays on Bitcoin and the counterparty asset stays on its native chain. No wrapped token involved, no trust required, but requires a counterparty willing to swap.
+- **托管包装 BTC。**以太坊上的 WBTC 是典型例子：托管方（BitGo）持有真实 BTC 并 1:1 发行 ERC-20 代币。用户信任托管方。多年来已有数百亿美元通过这种方式桥接。
+- **联盟桥。**Liquid Network 和 Rootstock (RSK) 使用多签联盟：指定方达到法定人数控制 BTC 并签署锚入/锚出。比非托管信任更少但比单一托管方更去中心化。
+- **tBTC 和 sBTC 式提案。**尝试更去中心化：抵押锚定守护者、阈值签名仪式等。记录参差不齐。
+- **原子互换。**技术上不是桥——直接的点对点交换，BTC 留在比特币上，对手资产留在其原生链上。不涉及包装代币，不需要信任，但需要有意愿的对手方。
 
-The track record is grim. Cross-chain bridges have collectively lost over $2.5 billion to hacks: Ronin Bridge ($625M, March 2022), Wormhole ($325M, February 2022), Nomad Bridge ($190M, August 2022), Harmony Horizon ($100M, June 2022), and many smaller incidents. Bridges are among the most-targeted attack surfaces in the broader crypto landscape because they're high-value honeypots holding pools of locked assets.
+记录惨淡。跨链桥总共因黑客攻击损失超过 25 亿美元：Ronin Bridge（6.25 亿，2022 年 3 月）、Wormhole（3.25 亿，2022 年 2 月）、Nomad Bridge（1.9 亿，2022 年 8 月）、Harmony Horizon（1 亿，2022 年 6 月），以及许多较小事件。桥是更广泛加密领域中被攻击最多的面，因为它们是持有锁定资产池的高价值蜜罐。
 
-The Bitcoin-only perspective: bridging BTC to other chains exposes it to those chains' risks, regulatory profiles, and smart-contract bug surfaces - all things Bitcoin was designed to avoid. The honest framing is that bridges trade Bitcoin's security properties for access to other ecosystems' applications, and historically that trade has been expensive.
+比特币唯一视角：将 BTC 桥到其他链使其暴露于那些链的风险、监管特征和智能合约 bug 面——所有比特币被设计来避免的东西。诚实的框架是桥用比特币的安全属性换取对其他生态系统应用的访问，而历史上这个交易代价高昂。
 
-If you genuinely need BTC value on another chain (for arbitrage, specific DeFi exposure, whatever), accept the custodial / smart-contract risk knowingly. For everything else, Lightning, Liquid, or just keeping BTC on Bitcoin are usually better answers.
+如果你确实需要其他链上的 BTC 价值（套利、特定 DeFi 敞口等），知情地接受托管/智能合约风险。其他一切情况下，闪电网络、Liquid 或只把 BTC 留在比特币上通常是更好的答案。

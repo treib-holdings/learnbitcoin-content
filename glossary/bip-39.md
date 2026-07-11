@@ -1,12 +1,12 @@
 ---
-title: "BIP 39 (Mnemonic Seed)"
+title: "BIP 39（助记词）"
 slug: bip-39
 draft: false
-shortDefinition: "The 2013 standard for encoding a wallet seed as 12-24 English words, with an optional passphrase for extra protection."
+shortDefinition: "2013 年将钱包种子编码为 12-24 个英文单词的标准，可选密码提供额外保护。"
 keyTakeaways:
-  - "Encodes 128-256 bits of entropy as 12-24 words from a 2048-word list"
-  - "Optional passphrase produces a different wallet from the same words"
-  - "Universally adopted; the canonical way wallets back up their seed"
+  - "将 128-256 位熵编码为 2048 词表中的 12-24 个单词"
+  - "可选密码从相同单词产生不同钱包"
+  - "被普遍采用；钱包备份种子的标准方式"
 sources: []
 relatedTerms:
   - bip-32
@@ -20,25 +20,25 @@ sameAs:
 liveWidget: ~
 ---
 
-BIP 39, authored by Marek Palatinus, Pavol Rusnak, Aaron Voisine, and Sean Bowe in September 2013, defines how a Bitcoin wallet encodes its seed as a sequence of 12 to 24 ordinary English words. The same construction is used by every major modern Bitcoin wallet.
+BIP 39 由 Marek Palatinus、Pavol Rusnak、Aaron Voisine 和 Sean Bowe 于 2013 年 9 月撰写，定义了比特币钱包如何将其种子编码为 12 到 24 个普通英文单词序列。同一构造被所有主流现代比特币钱包使用。
 
-The math:
+数学：
 
-1. Start with 128, 160, 192, 224, or 256 bits of cryptographic entropy.
-2. Append a SHA-256-derived checksum (entropy / 32 bits long).
-3. Split into 11-bit groups and look each up in the 2048-word BIP 39 wordlist.
+1. 从 128、160、192、224 或 256 位密码学熵开始。
+2. 附加 SHA-256 派生的校验和（熵 / 32 位长）。
+3. 分成 11 位组，在 2048 词 BIP 39 词表中查找每个组。
 
-The result is a phrase of 12, 15, 18, 21, or 24 words. 12 words encode 128 bits of entropy; 24 words encode 256 bits (see [mnemonic entropy bits](/glossary/mnemonic-entropy-bits) for the full ladder). Both are well beyond brute-force range; the choice is preference. Hardware wallets typically default to 24.
+结果是 12、15、18、21 或 24 个单词的短语。12 个单词编码 128 位熵；24 个单词编码 256 位（参见[助记词熵位](/glossary/mnemonic-entropy-bits)了解完整阶梯）。两者都远超暴力破解范围；选择是偏好问题。硬件钱包通常默认 24 个。
 
-To get the actual wallet seed (the input for [BIP 32](/glossary/bip-32) derivation), the mnemonic is fed through PBKDF2-HMAC-SHA512 with 2048 iterations, with an optional passphrase as the salt. Pass an empty passphrase and you get one wallet; pass a non-empty passphrase and you get a completely different wallet from the same words. That optional [passphrase](/glossary/mnemonic-password) is sometimes called the "25th word."
+要获得实际钱包种子（[BIP 32](/glossary/bip-32)派生的输入），助记词通过 PBKDF2-HMAC-SHA512 处理，2048 次迭代，可选密码作为盐。传入空密码得到一个钱包；传入非空密码从相同单词得到完全不同的钱包。这个可选[密码](/glossary/mnemonic-password)有时被称为"第 25 个词"。
 
-Why BIP 39 matters:
+BIP 39 为什么重要：
 
-- **Human-friendly backup.** A 24-word list is easier to write down accurately, transcribe, and verify than 64 hex characters.
-- **Error detection.** The checksum catches almost all transcription errors at load time, so a typo fails fast instead of silently opening a different (and probably empty) wallet.
-- **Cross-wallet portability.** Restore a BIP 39 seed in any BIP 39 / BIP 32 compatible wallet and get the same keys.
-- **Multiple language wordlists.** The wordlist is published in English, Japanese, Korean, Spanish, French, Italian, Czech, Portuguese, and Chinese (both simplified and traditional). Same math, localized words.
+- **人类友好的备份。**24 个单词的列表比 64 个十六进制字符更容易准确写下、转录和验证。
+- **错误检测。**校验和在加载时捕获几乎所有转录错误，所以拼写错误会快速失败而非静默打开一个不同的（可能是空的）钱包。
+- **跨钱包可移植性。**在任何兼容 BIP 39 / BIP 32 的钱包中恢复 BIP 39 种子得到相同密钥。
+- **多语言词表。**词表以英语、日语、韩语、西班牙语、法语、意大利语、捷克语、葡萄牙语和中文（简体和繁体）发布。数学相同，词语本地化。
 
-The English wordlist was chosen carefully: 2048 words (exactly 11 bits each), each unique within its first four letters (so a half-typed word still resolves unambiguously), no easily-confused pairs, and no offensive terms. It's the most-deployed mnemonic standard in cryptocurrency by orders of magnitude.
+英语词表经过精心选择：2048 个单词（恰好每个 11 位），每个在前四个字母内唯一（所以半个单词也能明确解析），没有容易混淆的对，没有冒犯性词汇。它是加密货币中部署最广泛的助记标准，遥遥领先。
 
-Spec: [BIP-39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
+规范：[BIP-39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)。

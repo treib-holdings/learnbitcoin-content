@@ -1,12 +1,12 @@
 ---
-title: "Shamir's Secret Sharing"
+title: "Shamir 秘密共享"
 slug: shamir-secret-sharing
 draft: false
-shortDefinition: "A cryptographic scheme that splits a secret into N shares such that any threshold M can reconstruct it but fewer cannot."
+shortDefinition: "一种密码学方案，将秘密分成 N 份，任意阈值 M 份可以重建秘密，少于 M 份则无法获取任何信息。"
 keyTakeaways:
-  - "Standard math for splitting a seed across multiple locations"
-  - "Standardized for BIP 39 seeds as SLIP-39 (Trezor supports natively)"
-  - "Not equivalent to multisig - see key-split for the security caveat"
+  - "将种子拆分到多个位置的标准数学方法"
+  - "针对 BIP 39 种子的标准化形式为 SLIP-39（Trezor 原生支持）"
+  - "不等同于多签——安全模型不同，参见 key-split 了解安全注意事项"
 sources: []
 relatedTerms:
   - bitcoin-inheritance-planning
@@ -16,8 +16,8 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Shamir's Secret Sharing (SSS) is the math behind splitting a Bitcoin seed (or any secret) into multiple shares such that any M of N shares can reconstruct it, but any M-1 reveal nothing. Named for cryptographer Adi Shamir, who published the construction in 1979.
+Shamir 秘密共享（SSS）是将比特币种子（或任何秘密）拆分成多份的数学基础，使得任意 M 份中的 N 份可以重建秘密，但任何 M-1 份都不泄露任何信息。以密码学家 Adi Shamir 命名，他于 1979 年发表了这一构造。
 
-In Bitcoin practice, the standard form is SLIP-39: a wordlist-based SSS scheme for BIP 39 seeds. Trezor implements it natively; SeedSigner can produce SLIP-39 shares from any seed. Typical configurations: 2-of-3 or 3-of-5 shares distributed across geographic locations or trusted parties.
+在比特币实践中，标准形式是 SLIP-39：一种基于单词列表的 SSS 方案，用于 BIP 39 种子。Trezor 原生实现；SeedSigner 可以从任何种子生成 SLIP-39 份额。典型配置：2-of-3 或 3-of-5 份额分布在不同的地理位置或可信的人手中。
 
-The full discussion of SSS in Bitcoin - including the crucial caveat that SSS is **not** the same security model as [multisig](/glossary/multisig), because key reconstruction at signing time momentarily holds the full key on one device - lives at [key-split](/glossary/key-split).
+关于 SSS 在比特币中的完整讨论——包括关键注意事项：SSS **不等同于** [多签](/glossary/multisig)的安全模型，因为签名时重建密钥会在单个设备上瞬间持有完整密钥——详见 [key-split](/glossary/key-split)。

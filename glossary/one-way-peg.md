@@ -1,12 +1,12 @@
 ---
-title: "One-Way Peg"
+title: "单向锚定"
 slug: one-way-peg
 draft: false
-shortDefinition: "A pegging mechanism allowing BTC to move into a side system (e.g., burn) without an equally trusted exit path."
+shortDefinition: "一种锚定机制，允许 BTC 移入侧系统（如燃烧）而没有同等可信的退出路径。"
 keyTakeaways:
-  - "Transfers BTC into a new system but not out again"
-  - "Used in burn or partial pegging experiments"
-  - "Less user-friendly than a two-way peg approach"
+  - "将 BTC 转入新系统但不能转回"
+  - "用于燃烧或部分锚定实验"
+  - "不如双向锚定方案用户友好"
 sources: []
 relatedTerms:
   - counterparty-risk
@@ -14,20 +14,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A **one-way peg** is a mechanism that moves BTC into a separate system (typically by locking or burning) without providing a return path - once pegged in, you can't peg out and recover the original BTC.
+**单向锚定**是一种将 BTC 移入独立系统（通常通过锁定或燃烧）而不提供返回路径的机制——一旦锚入，就无法锚出恢复原始 BTC。
 
-The classic implementation: **proof-of-burn**. You send BTC to a provably unspendable address (e.g., an [OP_RETURN](/glossary/opreturn) output, or an address with no known private key). The destroyed BTC is publicly verifiable on-chain. In return, you receive equivalent units in some other system - often a separate cryptocurrency, sidechain, or off-chain entitlement.
+经典实现：**燃烧证明**。你将 BTC 发送到一个可证明不可花费的地址（如 [OP_RETURN](/glossary/opreturn) 输出或没有已知私钥的地址）。销毁的 BTC 在链上可公开验证。作为回报，你在某个其他系统中获得等值单位——通常是独立的加密货币、侧链或链下权益。
 
-Why a project might use one-way pegging:
+为什么项目可能使用单向锚定：
 
-- **Bootstrapping a new chain.** Burn BTC to mint genesis tokens on a new chain, ensuring fair initial distribution proportional to economic commitment. Used by some early altcoins (Counterparty being the most notable example).
-- **Demonstrating intent.** Provable, irreversible destruction of BTC shows real economic commitment to the new system - harder to walk back from than a [two-way peg](/glossary/peg) where coins can return.
-- **Avoiding peg complexity.** One-way pegs don't require federation infrastructure, drivechain mechanics, or other approaches needed for trustless redemption.
+- **引导新链。** 燃烧 BTC 在新链上铸造创世代币，确保按经济承诺比例公平初始分配。被一些早期山寨币使用（Counterparty 是最著名的例子）。
+- **展示意图。** 可证明的、不可逆的 BTC 销毁展示了对新系统的真实经济承诺——比代币可以返回的[双向锚定](/glossary/peg)更难撤回。
+- **避免锚定复杂性。** 单向锚定不需要联邦基础设施、驱动链机制或其他无需信任赎回所需的方法。
 
-What one-way pegs cost:
+单向锚定的代价：
 
-- **Permanent BTC supply reduction.** The burned BTC are gone from circulation forever. (This is actually a feature for the broader Bitcoin economy: any BTC permanently destroyed concentrates value among remaining holders.)
-- **No exit option for participants.** If the destination system fails, your peg-in is non-recoverable.
-- **Limited use cases.** Most legitimate sidechain or layer-2 designs prefer [two-way pegs](/glossary/peg) for user flexibility.
+- **永久减少 BTC 供应。** 燃烧的 BTC 永远从流通中消失。（这对更广泛的比特币经济实际上是一个特性：任何永久销毁的 BTC 都使剩余持有者的价值更集中。）
+- **参与者无退出选项。** 如果目标系统失败，你的锚入不可恢复。
+- **使用场景有限。** 大多数合法的侧链或第二层设计更倾向于[双向锚定](/glossary/peg)以提供用户灵活性。
 
-In modern Bitcoin practice, one-way pegs are rare. [Liquid](/glossary/liquid-network), [Lightning](/glossary/lightning-network), and most active layer-2 systems use two-way pegs or non-peg-based architectures. The one-way-peg pattern is mostly historical, with niche use in specific proof-of-burn scenarios.
+在现代比特币实践中，单向锚定很少见。[Liquid](/glossary/liquid-network)、[闪电网络](/glossary/lightning-network)和大多数活跃的第二层系统使用双向锚定或非锚定架构。单向锚定模式主要是历史性的，在特定燃烧证明场景中有小众用途。

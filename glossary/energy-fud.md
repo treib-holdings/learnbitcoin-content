@@ -1,12 +1,12 @@
 ---
-title: "Energy FUD"
+title: "能源 FUD"
 slug: energy-fud
 draft: false
-shortDefinition: "Criticism of Bitcoin's proof-of-work energy consumption without acknowledging nuances like renewable usage or grid balancing benefits."
+shortDefinition: "批评比特币工作量证明的能源消耗，但不承认可再生能源使用或电网平衡的好处等细微差别。"
 keyTakeaways:
-  - "Often oversimplifies the role of renewables and surplus energy"
-  - "Mining energy usage secures the ledger via proof-of-work"
-  - "Ongoing debate about balancing environmental impact with network security"
+  - "经常过度简化可再生能源和剩余能源的角色"
+  - "挖矿能源使用通过工作量保护账本安全"
+  - "关于环境影响与网络安全平衡的持续辩论"
 sources: []
 relatedTerms:
   - double-spend
@@ -17,23 +17,23 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Energy FUD" is the Bitcoin community's term for criticism of Bitcoin's [proof-of-work](/glossary/proof-work-pow) energy consumption that the community considers misleading, manipulative, or technically uninformed. Like the broader [FUD](/glossary/fud-fear-uncertainty-doubt) category, the label is sometimes deserved and sometimes used too quickly to dismiss legitimate concerns.
+"能源 FUD"是比特币社区对比特币[工作量证明](/glossary/proof-work-pow)能源消耗批评的术语，社区认为这些批评是误导性的、操纵性的或技术上无知的。像更广泛的 [FUD](/glossary/fud-fear-uncertainty-doubt) 类别一样，这个标签有时是恰当的，有时被过快地用来否定合理的担忧。
 
-The honest case for being skeptical of "Bitcoin wastes energy" framings:
+对"比特币浪费能源"框架持怀疑态度的诚实理由：
 
-- **Bitcoin mining migrates toward stranded and otherwise wasted energy.** Hydro overflow, flared natural gas, off-peak nuclear, curtailed wind - sources that produce electricity that would otherwise be wasted. The marginal mining operation runs on energy nobody else is bidding for.
-- **Bitcoin doesn't directly consume gas or oil.** It consumes electricity, which is increasingly generated from renewables. The "Bitcoin's carbon footprint" calculation depends entirely on grid mix assumptions, which vary wildly by jurisdiction.
-- **Mining can stabilize renewable grids.** ERCOT (Texas) has explicit programs using Bitcoin miners as flexible demand: miners turn off in seconds when grid demand spikes, freeing capacity. This is a real grid-services value that conventional industrial loads can't provide.
-- **The energy is the security.** Bitcoin's [proof-of-work](/glossary/proof-work-pow) is what makes the chain expensive to attack. Removing the energy expenditure would remove the security.
+- **比特币挖矿向搁浅和其他浪费的能源迁移。** 水力发电过剩、天然气火炬燃烧、非高峰核电、削减的风电——这些来源产生的电力本来会被浪费。边际挖矿运营使用的是没有其他人竞标的能源。
+- **比特币不直接消耗天然气或石油。** 它消耗电力，电力越来越多地由可再生能源产生。"比特币碳足迹"的计算完全取决于电网组合假设，不同司法管辖区差异巨大。
+- **挖矿可以稳定可再生电网。** ERCOT（德克萨斯）有明确项目使用比特币矿工作为灵活需求：当电网需求飙升时矿工几秒内关机，释放容量。这是传统工业负载无法提供的真实电网服务价值。
+- **能源就是安全。** 比特币的[工作量证明](/glossary/proof-work-pow)使攻击链变得昂贵。移除能源支出就是移除安全性。
 
-The honest case for being concerned anyway:
+仍然值得关注的诚实理由：
 
-- **Some mining runs on coal or other heavy emitters.** Not all of it is stranded renewables. The real grid mix matters.
-- **Heat and noise externalities.** A mining operation produces local pollution that residents near data centers experience directly.
-- **Aggregate scale is real.** Bitcoin's global mining draw is in the high tens of TWh per year - meaningful even if the marginal operation runs on stranded power.
+- **一些挖矿使用煤炭或其他高排放能源。** 并非全部都是搁浅可再生能源。真实的电网组合很重要。
+- **热和噪音外部性。** 挖矿运营产生的局部污染，数据中心附近的居民直接体验到。
+- **总规模是真实的。** 比特币全球挖矿消耗在每年数十 TWh 级别——即使边际运营使用搁浅电力，这也是有意义的。
 
-"Energy FUD" as a label is most accurate when applied to claims that ignore these nuances - "Bitcoin uses more energy than [country]" without context, "every Bitcoin transaction costs [X kWh]" calculations that conflate marginal and average energy use, etc. It's least accurate when applied to *any* energy-related concern reflexively.
+"能源 FUD"作为标签在应用于忽略这些细微差别的说法时最准确——"比特币使用的能源比[某国]多"而不提供背景、"每笔比特币交易成本[X kWh]"计算混淆边际和平均能源使用等。在反射性地应用于*任何*能源相关担忧时最不准确。
 
-The Bitcoiner discipline: don't dismiss energy concerns wholesale. Engage with the strong forms of the critique. The strong forms have answers; the weak forms get called FUD because they don't.
+比特币用户的纪律：不要全盘否定能源担忧。与批评的强形式交锋。强形式有答案；弱形式被称为 FUD 因为它们没有。
 
-See the [Bitcoin and Energy rabbit hole](/rabbit-hole/energy) for the full treatment, including which forms of the critique have answers and which do not.
+完整论述，包括哪些形式的批评有答案哪些没有，参见[比特币与能源深入探讨](/rabbit-hole/energy)。

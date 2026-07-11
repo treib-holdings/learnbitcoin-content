@@ -1,12 +1,12 @@
 ---
-title: "Bear Market"
+title: "熊市"
 slug: bear-market
 draft: false
-shortDefinition: "A prolonged market downturn with falling prices, pessimistic sentiment, and cautious trading behaviors."
+shortDefinition: "价格下跌、情绪悲观、交易行为谨慎的持续市场低迷期。"
 keyTakeaways:
-  - "Characterized by declining crypto prices"
-  - "Breeds pessimism and reduced trading activity"
-  - "Can foster innovation and accumulation opportunities"
+  - "以加密货币价格下跌为特征"
+  - "催生悲观情绪和交易活动减少"
+  - "也可能孕育创新和积累机会"
 sources: []
 relatedTerms:
   - bull-market
@@ -20,25 +20,25 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A bear market is a sustained period of falling prices and depressed sentiment. The term comes from traditional finance and applies to any asset; in Bitcoin it has a recognizable cyclic pattern.
+熊市是价格持续下跌、情绪低迷的时期。这个术语来自传统金融，适用于任何资产；在比特币中它有一个可识别的周期模式。
 
-Bitcoin's bear markets, roughly:
+比特币的熊市，大致：
 
-- **2011** - $30s → $2. The first crash, after the Mt. Gox spike.
-- **2013-2015** - $1,100 → $200 (-82%). The Mt. Gox collapse and Silk Road shutdown era.
-- **2018** - $20,000 → $3,200 (-84%). The post-ICO-mania hangover.
-- **2022** - $69,000 → $15,500 (-78%). Terra/Luna collapse, Celsius/Voyager/Genesis bankruptcies, FTX implosion.
+- **2011 年**——30 多美元 → 2 美元。Mt. Gox 暴涨后的第一次崩盘。
+- **2013-2015 年**——1,100 美元 → 200 美元（-82%）。Mt. Gox 倒闭和 Silk Road 被关停时期。
+- **2018 年**——20,000 美元 → 3,200 美元（-84%）。ICO 狂热后的宿醉。
+- **2022 年**——69,000 美元 → 15,500 美元（-78%）。Terra/Luna 崩溃、Celsius/Voyager/Genesis 破产、FTX 暴雷。
 
-The pattern is uncomfortable to live through and bigger in magnitude than nearly any traditional asset. Bitcoin bear markets routinely take 70-85% off the previous cycle's peak. They also generally end with a recovery to new all-time highs within 18-30 months of the bottom - though "generally" is doing a lot of work in a sample size of four.
+这个模式经历起来不舒服，幅度比几乎所有传统资产都大。比特币熊市通常从前一周期峰值下跌 70-85%。它们也通常在底部后 18-30 个月内恢复到新的历史高点——尽管在样本量为四的情况下，"通常"承担了很多工作。
 
-What's reliably true about bear markets:
+关于熊市的可靠规律：
 
-- **The bottom is never obvious.** Every false rally during a bear market looks like the start of recovery. Most of them aren't.
-- **Capitulation events** - exchanges blow up, miners shut down, "Bitcoin is dead" articles trend - cluster near the actual bottom. Not at random points throughout.
-- **Leverage cascades amplify the moves.** Each cycle's bull run accumulates more leverage (perpetual futures, lending platforms, DeFi); the bear unwind is a [Minsky moment](/glossary/minsky-moment) where the leverage liquidates faster than fundamentals shift. 2018's $20K → $3.2K and 2022's $69K → $15.5K both fit the pattern.
-- **The strongest holders accumulate.** People who [DCA](/glossary/dca-dollar-cost-averaging) through a bear market end up with a much lower average cost basis than people who only buy in bull markets.
-- **The protocol doesn't change.** Bitcoin keeps producing blocks every ten minutes regardless of what the price is doing. Bear markets are an asset-price phenomenon, not a network phenomenon.
+- **底部从不是明显的。**熊市中的每次假反弹看起来都像复苏的开始。大多数不是。
+- **投降事件**——交易所倒闭、矿工关机、"比特币已死"文章刷屏——集中在实际底部附近。而非在整个过程中的随机时点。
+- **杠杆级联放大了波动。**每个周期的牛市都积累了更多杠杆（永续期货、借贷平台、DeFi）；熊市去杠杆是一个[明斯基时刻](/glossary/minsky-moment)，杠杆清算速度快于基本面转变。2018 年的 20K → 3.2K 和 2022 年的 69K → 15.5K 都符合这个模式。
+- **最坚定的持有者在积累。**在熊市中[定投](/glossary/dca-dollar-cost-averaging)的人最终平均成本远低于只在牛市买入的人。
+- **协议不会改变。**无论价格怎样，比特币每十分钟产出一个区块。熊市是资产价格现象，不是网络现象。
 
-The Bitcoiner discipline during a bear market is to remember it's part of the cycle. Stop trading. Keep stacking. Build the things you can build when there's no hype to chase. The bull market that follows tends to reward people who used the bear well.
+比特币持有者在熊市中的纪律是记住这是周期的一部分。停止交易。继续囤。在没有炒作可追的时候去建设你能建设的东西。随后的牛市往往会奖赏那些善用熊市的人。
 
-See [Bull Market](/glossary/bull-market) for the other side and [Volatility](/glossary/volatility) for the underlying dynamic.
+参见[牛市](/glossary/bull-market)了解另一面，[波动性](/glossary/volatility)了解底层动态。

@@ -1,12 +1,12 @@
 ---
-title: "Soft Fork"
+title: "软分叉"
 slug: soft-fork
 draft: false
-shortDefinition: "A backward-compatible change to Bitcoin's consensus rules, valid if a majority of miners/nodes enforce it."
+shortDefinition: "对比特币共识规则的向后兼容变更，如果有多数矿工/节点执行则生效。"
 keyTakeaways:
-  - "Backward-compatible rule changes tighten or add new constraints"
-  - "Rely on miner/node majority support to activate"
-  - "Non-upgraded nodes remain functional but miss nuances of new rules"
+  - "向后兼容的规则变更收紧或添加新约束"
+  - "依赖矿工/节点多数支持来激活"
+  - "未升级的节点仍能运行，但会遗漏新规则的细节"
 sources: []
 relatedTerms:
   - bip-bitcoin-improvement-proposal
@@ -25,18 +25,18 @@ sameAs:
 liveWidget: ~
 ---
 
-A soft fork is a Bitcoin consensus change that *tightens* the rules: things that were previously valid become invalid under the new rules, but anything valid under the new rules is also valid under the old. Older nodes that haven't upgraded still see new blocks as legitimate; they just don't enforce the new constraints themselves.
+软分叉是收紧规则的比特币共识变更：以前有效的东西在新规则下变得无效，但新规则下有效的任何东西在旧规则下也有效。未升级的旧节点仍然认为新区块是合法的；它们只是不执行新约束本身。
 
-This is the *backwards-compatible* way to evolve Bitcoin's protocol. It contrasts with a hard fork, which loosens rules and creates an incompatible chain that old nodes reject.
+这是比特币协议演进的*向后兼容*方式。与硬分叉相对，后者放松规则并创建旧节点会拒绝的不兼容链。
 
-Notable Bitcoin soft forks:
+值得注意的比特币软分叉：
 
-- **[BIP-16 (P2SH)](/glossary/p2sh)** - 2012. Added the [P2SH](/glossary/p2sh) address format.
-- **[BIP-65 (CLTV)](/glossary/bip-65-opchecklocktimeverify)** - 2015. Added `OP_CHECKLOCKTIMEVERIFY` for [absolute locktimes](/glossary/absolute-locktime) in scripts.
-- **[BIP-68/112/113 (CSV)](/glossary/checksequenceverify-csv)** - 2016. Added relative locktimes.
-- **[BIP-141 (SegWit)](/glossary/segwit-segregated-witness-bip-141)** - 2017. The big one; restructured witness data, fixed malleability, doubled effective block capacity.
-- **[BIP-340/341/342 (Taproot)](/glossary/taproot)** - 2021. Added [Schnorr signatures](/glossary/schnorr-signature), Taproot, and Tapscript.
+- **[BIP-16（P2SH）](/glossary/p2sh)**——2012 年。添加了 [P2SH](/glossary/p2sh) 地址格式。
+- **[BIP-65（CLTV）](/glossary/bip-65-opchecklocktimeverify)**——2015 年。添加了 `OP_CHECKLOCKTIMEVERIFY`，用于脚本中的[绝对时间锁](/glossary/absolute-locktime)。
+- **[BIP-68/112/113（CSV）](/glossary/checksequenceverify-csv)**——2016 年。添加了相对时间锁。
+- **[BIP-141（SegWit）](/glossary/segwit-segregated-witness-bip-141)**——2017 年。大事件；重构见证数据，修复延展性，有效翻倍区块容量。
+- **[BIP-340/341/342（Taproot）](/glossary/taproot)**——2021 年。添加了 [Schnorr 签名](/glossary/schnorr-signature)、Taproot 和 Tapscript。
 
-Activation typically involves miner signaling: enough miners must signal readiness for the new rules in their block headers before the fork "locks in" and starts being enforced. The mechanism is defined in [BIP-9](/glossary/bip-9-versionbits) and its successors. After activation, nodes that haven't upgraded continue working but may accept blocks that violate the new rules - which is why genuinely majority-supported soft forks are essentially safe, while contested ones can create chain splits.
+激活通常涉及矿工信号：足够多的矿工必须在区块头中信号表示准备好接受新规则，然后软分叉"锁定"并开始执行。机制定义在 [BIP-9](/glossary/bip-9-versionbits)及其后继者中。激活后，未升级的节点继续工作，但可能接受违反新规则的区块——这就是为什么真正有多数支持的软分叉本质上是安全的，而有争议的可能导致链分裂。
 
-The soft-fork approach is conservative: Bitcoin can add features without forcing everyone to upgrade simultaneously. It's also part of why Bitcoin evolves slowly - any proposal has to satisfy a high bar of community + miner + economic-node consensus to actually activate. The full multi-stakeholder dynamic is what [Bitcoin governance](/glossary/bitcoin-governance) describes; soft forks are the most common shape that process takes when the goal is adding capability without splitting the network.
+软分叉方式是保守的：比特币可以在不强迫所有人同时升级的情况下添加功能。这也是比特币演进缓慢的部分原因——任何提案都需要满足社区 + 矿工 + 经济节点共识的高门槛才能真正激活。完整的多方利益相关者动态就是[比特币治理](/glossary/bitcoin-governance)所描述的；软分叉是这一过程以添加能力而不分裂网络为目标时最常见的形态。

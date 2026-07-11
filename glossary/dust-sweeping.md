@@ -1,12 +1,12 @@
 ---
-title: "Dust Sweeping"
+title: "粉尘清扫"
 slug: dust-sweeping
 draft: false
-shortDefinition: "Combining multiple low-value UTXOs (dust) into a single output, typically done when transaction fees are low."
+shortDefinition: "将多个低价值 UTXO（粉尘）合并为单个输出，通常在交易手续费低时进行。"
 keyTakeaways:
-  - "Merges small outputs into fewer, larger UTXOs"
-  - "Saves on future fees if done at low-fee times"
-  - "Potential privacy trade-off if addresses are linked"
+  - "将小输出合并为更少、更大的 UTXO"
+  - "在低手续费时操作可节省未来手续费"
+  - "如果地址被链接，存在潜在隐私权衡"
 sources: []
 relatedTerms:
   - discard-threshold
@@ -19,24 +19,24 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Dust sweeping is the practice of consolidating many small UTXOs (dust and near-dust) into one larger UTXO via a transaction designed to be efficient when fees are low.
+粉尘清扫是将许多小 UTXO（粉尘和接近粉尘）合并为一个更大 UTXO 的做法，通过设计在低手续费时高效的交易来完成。
 
-Why anyone does this:
+为什么这样做：
 
-- **Future transaction efficiency.** Each input you spend adds ~70-150 vbytes of transaction weight, costing fee at whatever the future feerate is. Consolidating now at 5 sat/vB is much cheaper than spending those inputs individually at 100 sat/vB in a future fee spike.
-- **Wallet cleanup.** A wallet with hundreds of small UTXOs is slow to manage and ugly to look at. Consolidation tidies up.
-- **UTXO set responsibility.** Dust-cluttered wallets contribute to the global UTXO set bloat. Consolidating is a small act of network citizenship.
+- **未来交易效率。** 你花费的每个输入增加约 70-150 vbytes 的交易重量，以未来手续费率收费。现在以 5 sat/vB 合并比在未来手续费飙升时以 100 sat/vB 单独花费这些输入便宜得多。
+- **钱包清理。** 有数百个小 UTXO 的钱包管理缓慢且看起来杂乱。合并整理干净。
+- **UTXO 集责任。** 粉尘杂乱的钱包加剧了全球 UTXO 集膨胀。合并是一种小小的网络公民行为。
 
-How to do it correctly:
+如何正确操作：
 
-- **Wait for low fees.** Mempool.space's fee estimator shows the bottom-of-mempool feerate; consolidate when it's below 5 sat/vB (often weekends, late nights, post-fee-spike clearouts).
-- **Group by privacy boundary.** Don't merge UTXOs from different identity / use-case clusters in the same transaction. If you have wallet-A and wallet-B intentionally separated, keep them separated through consolidation.
-- **Watch out for dust attacks.** If you've received [dust attack](/glossary/dust-attack) outputs, consolidating them with your main wallet defeats your privacy. Either exclude them or sweep them through a CoinJoin first.
-- **Sign once, broadcast once.** Build one large consolidation transaction rather than many small ones to amortize transaction overhead.
+- **等待低手续费。** Mempool.space 的手续费估计器显示内存池底部的手续费率；当低于 5 sat/vB 时合并（通常是周末、深夜、手续费飙升后的清理期）。
+- **按隐私边界分组。** 不要在同一笔交易中合并来自不同身份/用例聚类的 UTXO。如果你有意将钱包 A 和钱包 B 分开，在合并过程中也要保持分开。
+- **注意粉尘攻击。** 如果你收到了[粉尘攻击](/glossary/dust-attack)输出，将它们与主钱包合并会破坏你的隐私。要么排除它们，要么先通过 CoinJoin 扫走。
+- **签一次，广播一次。** 构建一笔大型合并交易而非许多小交易，以摊销交易开销。
 
-What not to do:
+不该做的：
 
-- **Don't sweep absurdly small UTXOs.** A 200-sat UTXO that would cost 50 sats in fee to spend is barely worth it; you net 150 sats minus the future-fee discount. Sometimes leaving dust as dust is fine.
-- **Don't consolidate during fee spikes.** The whole point is fee arbitrage; consolidating during a spike is the wrong direction.
+- **不要清扫极小的 UTXO。** 一个 200 聪的 UTXO 花费需要 50 聪手续费，几乎不值得；你净得 150 聪减去未来折扣。有时让粉尘保持粉尘就好。
+- **不要在手续费飙升时合并。** 整个目的是手续费套利；在飙升时合并是错误的方向。
 
-For users with large UTXO sets (heavy on-chain Lightning participants, miners, payment processors), consolidation is a regular operational task. For typical users with a handful of UTXOs, it's rarely worth thinking about until fees drop significantly and you happen to be looking.
+对于拥有大量 UTXO 集的用户（重度链上闪电网络参与者、矿工、支付处理器），合并是常规运营任务。对于只有少量 UTXO 的典型用户，除非手续费显著下降且你正好在看，否则很少值得考虑。

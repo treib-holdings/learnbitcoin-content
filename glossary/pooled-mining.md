@@ -1,12 +1,12 @@
 ---
-title: "Pooled Mining"
+title: "矿池挖矿（Pooled Mining）"
 slug: pooled-mining
 draft: false
-shortDefinition: "Multiple miners combining their hash power in a mining pool and splitting rewards according to contributed work."
+shortDefinition: "多名矿工将算力合并到矿池中，按贡献的工作量分配奖励。"
 keyTakeaways:
-  - "Reduces income variance by sharing block rewards"
-  - "Dominant in Bitcoin's ASIC age, overshadowing solo mining"
-  - "Can raise centralization issues if a handful of pools control most hash rate"
+  - "通过共享区块奖励降低收入方差"
+  - "在比特币 ASIC 时代占主导地位，远超单独挖矿"
+  - "少数矿池控制大部分算力可能引发中心化担忧"
 sources: []
 relatedTerms:
   - hashlet
@@ -16,22 +16,22 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Pooled mining is the practice of combining many [miners'](/glossary/miner) [hash rate](/glossary/hash-rate) into a single coordinated effort, with rewards split among participants based on contributed work. It's how nearly all Bitcoin mining happens in 2026.
+矿池挖矿是将许多[矿工](/glossary/miner)的[算力](/glossary/hash-rate)合并为单一协调行动的做法，奖励按贡献的工作量在参与者之间分配。这是 2026 年几乎所有比特币挖矿的方式。
 
-The mechanism: each miner submits "shares" - block-header candidates that meet a lower difficulty target than the actual network target. Shares prove the miner is doing real work without actually being valid blocks. When *anyone* in the pool finds a real block, the [block reward](/glossary/block-reward) is distributed across all contributing miners proportional to their submitted shares.
+机制：每个矿工提交"份额"——满足低于实际网络目标难度的区块头候选。份额证明矿工在做真实工作，但本身不是有效区块。当矿池中*任何人*找到真实区块时，[区块奖励](/glossary/block-reward)按提交的份额比例分配给所有贡献矿工。
 
-Why miners pool:
+矿工为何加入矿池：
 
-- **Variance reduction.** A solo miner with 1 PH/s would find an average of one block every ~26 years. The variance around that average is brutal: they might find three in 2026 and zero in the next 50 years. Pooling smooths that into a smaller, steadier income stream.
-- **Operational simplicity.** Pools handle block template construction, payout accounting, and other infrastructure miners don't want to run themselves.
-- **No solo-mining illusion.** The dirty secret of solo mining at small scale is that it's essentially the lottery. Pooled mining is honest about the variance.
+- **降低方差。** 一个算力 1 PH/s 的单独矿工平均每约 26 年才能找到一个区块。围绕这个平均值的方差是残酷的：他们可能在 2026 年找到 3 个，然后在接下来 50 年一个都找不到。矿池将其平滑为更小、更稳定的收入流。
+- **运营简化。** 矿池处理区块模板构建、支付会计和其他矿工不想自己运行的基础设施。
+- **消除单独挖矿幻想。** 小规模单独挖矿的肮脏秘密本质上是买彩票。矿池对方差是诚实的。
 
-The pool ecosystem:
+矿池生态系统：
 
-- **Major pools** (Foundry USA, AntPool, ViaBTC, F2Pool) control most of the network's hash rate. See [Mining Pool](/glossary/mining-pool) for details.
-- **Smaller / decentralized pools** like Ocean and Braiins try to offer alternatives with different policies on transaction selection or payout schemes.
-- **Stratum V2** is the protocol upgrade letting individual miners choose their own transactions while still using a pool for variance smoothing - a meaningful structural fix to mining centralization concerns.
+- **主要矿池**（Foundry USA、AntPool、ViaBTC、F2Pool）控制了网络大部分算力。参见 [Mining Pool](/glossary/mining-pool) 了解详情。
+- **较小的/去中心化矿池**如 Ocean 和 Braiins 试图在交易选择或支付方案上提供不同策略的替代选择。
+- **Stratum V2** 是协议升级，让个别矿工在仍使用矿池平滑方差的同时选择自己的交易——对挖矿中心化问题的有意义的结构性修复。
 
-Pooled mining has always been a centralization concern. It's also genuinely necessary for everyone except the largest mining operations. The hope, more than the certainty, is that Stratum V2 adoption gradually shifts power back to individual miners within pools.
+矿池挖矿一直是中心化担忧的来源。但对于除最大挖矿操作外的所有人来说，它又是真正必要的。希望——而非确定性——是 Stratum V2 的采用逐渐将权力交还给矿池中的个别矿工。
 
-See [Mining Pool](/glossary/mining-pool) for the broader landscape and [Mining Centralization](/glossary/mining-centralization) for the structural debate.
+参见 [Mining Pool](/glossary/mining-pool) 了解更广泛的全景，[Mining Centralization](/glossary/mining-centralization) 了解结构性辩论。

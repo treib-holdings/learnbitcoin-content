@@ -1,12 +1,12 @@
 ---
-title: "Inflation"
+title: "通胀"
 slug: inflation
 draft: false
-shortDefinition: "The rate at which new BTC enters circulation, diminishing over time due to halving events."
+shortDefinition: "新 BTC 进入流通的速率，由于减半事件而随时间递减。"
 keyTakeaways:
-  - "Starts high at launch (50 BTC/block) and shrinks at each halving"
-  - "Ensures a max cap of ~21 million BTC by ~2140"
-  - "Shapes Bitcoin's scarcity narrative versus fiat inflation"
+  - "发布时速率很高（50 BTC/区块），每次减半后减半"
+  - "确保到约 2140 年最大总量约为 2100 万 BTC"
+  - "塑造了比特币相对法币通胀的稀缺性叙事"
 sources: []
 relatedTerms:
   - asymptote
@@ -20,12 +20,12 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Inflation" can mean two different things, and they're worth keeping straight.
+"通胀"可以指两种不同的东西，值得区分清楚。
 
-In economics broadly, inflation usually means the general rise in prices over time - what costs $1 today costs $1.03 next year. This is measured by indexes like CPI and driven by many factors, but in a fiat system the dominant long-term cause is expansion of the money supply.
+在广义经济学中，通胀通常指价格随时间普遍上涨——今天花费 1 美元的东西明年要花 1.03 美元。这通过 CPI 等指数来衡量，由许多因素驱动，但在法币体系中，长期主导原因是货币供应量的扩张。
 
-In Bitcoin specifically, "inflation" refers to the rate at which *new BTC* enters the circulating supply each year. It's purely a function of the block subsidy schedule and the average block rate. As of the fifth subsidy era (post-April 2024 halving), Bitcoin's annual issuance is about 164,250 BTC against a circulating supply of ~19.9M - an inflation rate of roughly 0.83% per year. That's already lower than gold's historical 1.5-2%.
+在比特币中，"通胀"指的是每年*新 BTC* 进入流通供应的速率。它纯粹是区块补贴计划和平均出块速率的函数。截至第五个补贴时代（2024 年 4 月减半后），比特币年发行量约为 164,250 BTC，流通供应量约 1990 万枚——年通胀率约为 0.83%。这已经低于黄金历史上 1.5-2% 的水平。
 
-Each halving cuts the issuance rate in half. After the 2028 halving, Bitcoin's inflation rate drops to ~0.4%. After the 33rd halving around 2140, it reaches zero and stays there forever.
+每次减半将发行速率减半。2028 年减半后，比特币通胀率降至约 0.4%。到 2140 年左右第 33 次减半后，通胀率降至零并永远保持。
 
-The contrast with fiat is the whole point. Bitcoin's monetary inflation is mathematically locked, publicly verifiable, and trending toward zero. Fiat monetary inflation is set by committees behind closed doors, with no upper bound. See the [Supply Schedule rabbit hole](/rabbit-hole/supply) for the math, and [Disinflation](/glossary/disinflation) for what "decreasing inflation rate" means.
+与法币的对比才是关键。比特币的货币通胀是数学锁定的、可公开验证的、趋向于零的。法币的货币通胀由闭门会议中的委员会决定，没有上限。请参阅[供应计划](/rabbit-hole/supply)了解数学细节，以及[反通胀](/glossary/disinflation)了解"通胀率递减"意味着什么。

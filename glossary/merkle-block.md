@@ -1,12 +1,12 @@
 ---
-title: "Merkle Block"
+title: "默克尔区块"
 slug: merkle-block
 draft: false
-shortDefinition: "A stripped-down block sent to SPV clients, containing only headers and minimal Merkle paths for relevant transactions."
+shortDefinition: "发送给 SPV 客户端的精简区块，仅包含区块头和相关交易的最小默克尔路径。"
 keyTakeaways:
-  - "Used by SPV wallets to confirm specific transactions in a block"
-  - "Contains minimal data: block header + Merkle path"
-  - "Saves bandwidth/storage, enabling lightweight verification"
+  - "SPV 钱包用于确认区块中的特定交易"
+  - "包含最小数据：区块头 + 默克尔路径"
+  - "节省带宽/存储，实现轻量级验证"
 sources: []
 relatedTerms:
   - bip-37
@@ -20,16 +20,16 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Merkle block is a Bitcoin peer-to-peer message ([defined in BIP-37](https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki)) that a [full node](/glossary/full-node) sends to an [SPV](/glossary/spv-simplified-payment-verification) client. It contains:
+默克尔区块是一种比特币点对点消息（[定义在 BIP-37](https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki)），由[全节点](/glossary/full-node)发送给 [SPV](/glossary/spv-simplified-payment-verification) 客户端。它包含：
 
-- The full [block header](/glossary/block-header) (80 bytes).
-- A list of transactions in the block that match the SPV client's [Bloom filter](/glossary/bloom-filter).
-- A [Merkle proof](/glossary/merkle-proof) showing those transactions are committed in the block's [Merkle root](/glossary/merkle-root).
+- 完整的[区块头](/glossary/block-header)（80 字节）。
+- 区块中与 SPV 客户端的[布隆过滤器](/glossary/bloom-filter)匹配的交易列表。
+- 一个[默克尔证明](/glossary/merkle-proof)，显示这些交易被提交在区块的[默克尔根](/glossary/merkle-root)中。
 
-This is what lets a phone wallet check whether *its* transactions appeared in the latest block, without downloading the whole block.
+这就是让手机钱包检查*它自己的*交易是否出现在最新区块中的方式，而无需下载整个区块。
 
-The downside, which has gotten more attention over the years: **Bloom filters leak privacy**. The SPV client sends its filter to the full node, which can probabilistically reverse-engineer which addresses or transactions the client cares about. For a privacy-conscious user, this is a meaningful concern - one that BIP-37 didn't anticipate when it was written in 2012.
+缺点，多年来受到更多关注：**布隆过滤器泄露隐私**。SPV 客户端将其过滤器发送给全节点，全节点可以概率性地逆向工程出客户端关心哪些地址或交易。对于注重隐私的用户，这是一个有意义的担忧——BIP-37 在 2012 年编写时未预料到这一点。
 
-The modern replacement is **[BIP-157/158](/glossary/bip-158) compact block filters**: the *server* computes a filter per block, the *client* downloads it and checks for matches locally without revealing which addresses are theirs. Better privacy at modest bandwidth cost. Most modern SPV-style mobile wallets (Phoenix, Mutiny, Breez, etc.) use this approach rather than BIP-37 Merkle blocks.
+现代替代方案是 **[BIP-157/158](/glossary/bip-158) 紧凑区块过滤器**：由*服务端*为每个区块计算过滤器，*客户端*下载并在本地检查匹配，而不透露自己关心哪些地址。更好的隐私，适度的带宽成本。大多数现代 SPV 风格的移动钱包（Phoenix、Mutiny、Breez 等）使用这种方法而非 BIP-37 默克尔区块。
 
-Merkle blocks still work and are still implemented by Bitcoin Core, but their use has been deprecated in many parts of the modern wallet ecosystem.
+默克尔区块仍然有效且仍被 Bitcoin Core 实现，但在现代钱包生态系统中的使用已在许多部分被弃用。

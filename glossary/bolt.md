@@ -2,11 +2,11 @@
 title: "BOLT"
 slug: bolt
 draft: false
-shortDefinition: "Short for 'Basis of Lightning Technology,' these specs define how Lightning Network implementations interact and remain compatible."
+shortDefinition: "'Basis of Lightning Technology' 的缩写，这些规范定义闪电网络实现如何交互和保持兼容。"
 keyTakeaways:
-  - "Defines core LN protocol mechanics"
-  - "Allows different LN implementations to interoperate"
-  - "Covers channel setup, routing, security, and more"
+  - "定义核心 LN 协议机制"
+  - "允许不同 LN 实现互操作"
+  - "覆盖通道建立、路由、安全等"
 sources: []
 relatedTerms:
   - bolt-11
@@ -25,20 +25,20 @@ sameAs:
 liveWidget: ~
 ---
 
-BOLT - **B**asis **O**f **L**ightning **T**echnology - is the specification series that defines how [Lightning Network](/glossary/lightning-network) implementations interoperate. It's to Lightning what [BIPs](/glossary/bip-bitcoin-improvement-proposal) are to Bitcoin: a set of versioned, community-reviewed documents that anyone building Lightning software is expected to follow.
+BOLT——**B**asis **O**f **L**ightning **T**echnology——是定义[闪电网络](/glossary/lightning-network)实现如何互操作的规范系列。它对于闪电网络就像 [BIP](/glossary/bip-bitcoin-improvement-proposal)对于比特币：一组版本化的、社区审查的文档，任何构建闪电软件的人都应遵循。
 
-The current BOLT documents (numbered 0 through 12 with some experimental additions) cover:
+当前 BOLT 文档（编号 0 到 12，还有一些实验性补充）覆盖：
 
-- **BOLT 1** - base protocol, message framing.
-- **BOLT 2** - peer protocol for channel management (open, close, update).
-- **BOLT 3** - transaction and script formats for on-chain channel state.
-- **BOLT 4** - onion routing (the [Sphinx](/glossary/lightning-sphinx) packet format).
-- **BOLT 5** - on-chain transactions and channel closure logic.
-- **BOLT 7** - gossip protocol for advertising channel info.
-- **BOLT 9** - feature flags.
-- **[BOLT 11](/glossary/bolt-11)** - invoice format.
-- **BOLT 12** - offers (the reusable-invoice successor to BOLT 11), merged 2024.
+- **BOLT 1**——基础协议，消息帧。
+- **BOLT 2**——通道管理的对等协议（开、关、更新）。
+- **BOLT 3**——链上通道状态的交易和脚本格式。
+- **BOLT 4**——洋葱路由（[Sphinx](/glossary/lightning-sphinx)包格式）。
+- **BOLT 5**——链上交易和通道关闭逻辑。
+- **BOLT 7**——广播通道信息的 gossip 协议。
+- **BOLT 9**——功能标志。
+- **[BOLT 11](/glossary/bolt-11)**——发票格式。
+- **BOLT 12**——offers（BOLT 11 的可复用发票继任者），2024 年合并。
 
-Maintained on [github.com/lightning/bolts](https://github.com/lightning/bolts) by representatives of the major implementations - Lightning Labs (LND), Blockstream (Core Lightning), ACINQ (Eclair), Spiral (LDK). Changes go through pull requests, review, and broad consensus across implementations.
+在 [github.com/lightning/bolts](https://github.com/lightning/bolts)上由主要实现的代表维护——Lightning Labs (LND)、Blockstream (Core Lightning)、ACINQ (Eclair)、Spiral (LDK)。变更通过 pull request、审查和跨实现的广泛共识进行。
 
-This multi-vendor coordination is why a Phoenix wallet (Eclair) can open a channel with a Core Lightning node and route through LND-operated infrastructure to pay an LDK-based receiver. They all follow the same BOLTs.
+这种多供应商协调是为什么 Phoenix 钱包（Eclair）可以与 Core Lightning 节点开通道，并通过 LND 运营的基础设施路由以支付基于 LDK 的接收方。它们都遵循相同的 BOLT。

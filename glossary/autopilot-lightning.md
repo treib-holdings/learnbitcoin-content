@@ -1,12 +1,12 @@
 ---
-title: "Autopilot (Lightning)"
+title: "自动驾驶（闪电网络）"
 slug: autopilot-lightning
 draft: false
-shortDefinition: "An LN feature that automatically opens and manages channels based on connectivity and capacity heuristics."
+shortDefinition: "闪电网络的一项功能，根据连接性和容量启发式自动开启和管理通道。"
 keyTakeaways:
-  - "Automates channel creation and management"
-  - "Uses heuristics to choose ideal peers"
-  - "Helps newcomers onboard without deep LN knowledge"
+  - "自动化通道创建和管理"
+  - "使用启发式选择理想对等节点"
+  - "帮助新用户无需深入了解闪电网络即可上手"
 sources: []
 relatedTerms:
   - atomic-multi-path-payment-amp
@@ -22,20 +22,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Lightning Autopilot is a feature in some [Lightning](/glossary/lightning-network) implementations that automatically selects channel peers and opens channels on your behalf, based on graph-connectivity heuristics rather than manual choice. It exists to lower the operational barrier for new Lightning node operators.
+闪电网络自动驾驶是某些[闪电网络](/glossary/lightning-network)实现中的功能，基于图连接性启发式而非手动选择自动选择通道对等节点并代你开启通道。它的存在是为了降低新闪电节点运营商的运营门槛。
 
-The original autopilot feature appeared in [LND](/glossary/lightning-network-daemon-lnd) and tries to:
+最初的自动驾驶功能出现在 [LND](/glossary/lightning-network-daemon-lnd) 中，尝试：
 
-- **Identify well-connected nodes** in the gossip graph that could provide good routing paths.
-- **Pick channel sizes** based on configured budgets and network conditions.
-- **Periodically rebalance or close** channels that aren't working out.
+- **识别 gossip 图中连接良好的节点**，可以提供好的路由路径。
+- **根据配置预算和网络条件选择通道大小。**
+- **定期再平衡或关闭**效果不佳的通道。
 
-The honest assessment of autopilot in practice:
+对自动驾驶实际效果的诚实评估：
 
-- **It works, sort of, for new users.** Onboarding goes from "pick channels manually, hope they route well" to "click a button, get channels." That's a real UX improvement.
-- **The heuristics aren't great.** Autopilot tends to pick big well-connected nodes, which works but contributes to centralization pressure - everyone connecting to the same few hubs creates a hub-and-spoke topology.
-- **Serious operators don't use it.** Routing-node operators who care about earning fees pick channels deliberately based on their own analysis. Casual users who just want to send payments are increasingly served by [custodial wallets](/glossary/custodial-lightning-wallet) or LSP-based wallets (Phoenix, Mutiny) that handle channel management entirely behind the UI.
+- **对新用户来说，还行。**上手从"手动选通道，希望路由好"变成"点一个按钮，得到通道"。这是真正的用户体验改善。
+- **启发式不太好。**自动驾驶倾向于选择大的、连接良好的节点，这虽然可行但加剧了中心化压力——每个人都连接到相同的几个枢纽，创造了星型拓扑。
+- **认真的运营商不用它。**关心赚取手续费的路由节点运营商根据自己的分析精心选择通道。只想发送支付的普通用户越来越多地由[托管钱包](/glossary/custodial-lightning-wallet)或基于 LSP 的钱包（Phoenix、Mutiny）服务，这些钱包在 UI 背后完全处理通道管理。
 
-Where autopilot fits in 2026: a middle-ground tool for self-custody operators who run their own Lightning node but don't want to manage it actively. Modern LSP-based onboarding has largely supplanted it for non-technical users; manual channel selection has supplanted it for serious operators.
+2026 年自动驾驶的位置：面向自托管运营商的中间地带工具，他们运行自己的闪电节点但不想主动管理。现代基于 LSP 的上线方式已在很大程度上取代了它对非技术用户的作用；手动通道选择已取代了它对认真运营商的作用。
 
-The honest take: autopilot was a useful first attempt at automating Lightning channel management. It's neither the worst nor the best approach. If you're running your own LND node and don't have strong opinions about channels, autopilot is a reasonable default. If you have strong opinions, you'll bypass it.
+诚实地说：自动驾驶是自动化闪电通道管理的有用首次尝试。它既不是最差的方法也不是最好的方法。如果你运行自己的 LND 节点且对通道没有强烈意见，自动驾驶是合理的默认选项。如果你有强烈意见，你会绕过它。

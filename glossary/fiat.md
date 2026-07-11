@@ -1,12 +1,12 @@
 ---
-title: "Fiat"
+title: "法币"
 slug: fiat
 draft: false
-shortDefinition: "Government-issued money, like USD or EUR, unbacked by any physical commodity and relying on state authority for value."
+shortDefinition: "政府发行的货币，如美元或欧元，无任何实物商品支持，依靠国家权威维持价值。"
 keyTakeaways:
-  - "Issued and regulated by governments"
-  - "No inherent commodity backing, value rests on trust and policy"
-  - "Bitcoin frequently paired against fiat for liquidity and adoption"
+  - "由政府发行和监管"
+  - "无内在商品支持，价值基于信任和政策"
+  - "比特币经常与法币配对以衡量流动性和采用"
 sources: []
 relatedTerms:
   - bitcoin-atm
@@ -21,10 +21,10 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Fiat is money declared valuable by government decree rather than by any physical backing. The US dollar, the euro, the yen - these are fiat. There's no gold in a vault redeeming them; their value rests entirely on legal tender laws and trust in the issuing central bank.
+法币是由政府法令宣布有价值而非由任何实物支持的货币。美元、欧元、日元——都是法币。金库中没有黄金来赎回它们；其价值完全建立在法定货币法和对发行央行信任的基础上。
 
-Fiat has two superpowers that Bitcoin doesn't. First, a state's authority can force people to accept it - try paying your US taxes in BTC. Second, the issuer can create more of it on demand. That second power is also why fiat reliably loses purchasing power over decades. The US dollar has lost roughly 96% of its 1913 value. The Argentine peso has lost more than 99% of its 2018 value in under a decade.
+法币有两个比特币没有的超能力。第一，国家权威可以强制人们接受它——试试用 BTC 交美国税。第二，发行方可以按需创造更多。第二个权力也是法币在数十年间可靠地失去购买力的原因。美元已失去约 96% 的 1913 年价值。阿根廷比索在不到十年内失去了超过 99% 的 2018 年价值。
 
-Bitcoin was designed as a direct alternative: no issuer, no discretionary policy, a fixed supply. That doesn't mean fiat is going away tomorrow. Most people on Earth get paid in fiat, pay rent in fiat, and convert to BTC through a "fiat on-ramp" - an exchange, ATM, or peer-to-peer trade. The two systems coexist. Bitcoin's role is to be the option that can't be diluted.
+比特币被设计为直接替代方案：没有发行方，没有自由裁量政策，固定供应量。这不意味着法币明天就消失。地球上大多数人以法币获得报酬、以法币付房租，并通过"法币入金通道"——交易所、ATM 或点对点交易——转换为 BTC。两个系统共存。比特币的角色是成为不会被稀释的选项。
 
-See [Inflation](/glossary/inflation) for the specific mechanism by which fiat purchasing power declines, and [Journey Chapter 1](/journey/why-money-is-broken) for the long version of why this matters.
+购买力下降的具体机制参见[通胀](/glossary/inflation)，为什么这重要的长版本参见[旅程第一章](/journey/why-money-is-broken)。

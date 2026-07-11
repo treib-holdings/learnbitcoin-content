@@ -2,11 +2,11 @@
 title: "BECH32m"
 slug: bech32m
 draft: false
-shortDefinition: "An updated bech32 address format (BIP-350) for Taproot, featuring improved error detection compared to original bech32."
+shortDefinition: "用于 Taproot 的更新版 bech32 地址格式（BIP-350），比原始 bech32 具有更好的错误检测能力。"
 keyTakeaways:
-  - "Supports Taproot addresses using 'bc1p' prefix"
-  - "Enhanced checksum for fewer address errors"
-  - "Defined in BIP-350 as an upgrade over bech32"
+  - "支持使用 'bc1p' 前缀的 Taproot 地址"
+  - "增强的校验和，减少地址错误"
+  - "在 BIP-350 中定义为 bech32 的升级"
 sources: []
 relatedTerms:
   - address
@@ -19,15 +19,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Bech32m is the address-encoding format used for [Taproot](/glossary/taproot) and any future SegWit version. It looks like `bc1p...` on mainnet and `tb1p...` on testnet, using the same character set as the original [bech32](/glossary/bip-173-bech32) format but with a different checksum constant.
+Bech32m 是用于 [Taproot](/glossary/taproot) 及任何未来 SegWit 版本的地址编码格式。在主网上看起来像 `bc1p...`，在测试网上像 `tb1p...`，使用与原始 [bech32](/glossary/bip-173-bech32) 格式相同的字符集，但校验和常数不同。
 
-The reason for the new format is a subtle bug in bech32. The original bech32 checksum used the constant 1, which interacted badly with certain edit-distance properties: a typo or attacker could create variations of an address that still validated as bech32 despite encoding different data. Pieter Wuille discovered the issue in 2020 and proposed bech32m (BIP 350) with a different checksum constant (`0x2bc830a3`) that closes the weakness.
+新格式的原因是 bech32 中的一个微妙 bug。原始 bech32 校验和使用常数 1，它与某些编辑距离属性的交互不佳：拼写错误或攻击者可以创建地址变体，尽管编码了不同数据仍能通过 bech32 验证。Pieter Wuille 在 2020 年发现了这个问题，并提出了 bech32m（BIP 350），使用不同的校验和常数（`0x2bc830a3`），弥补了这个弱点。
 
-How it splits in practice:
+实际中的分割：
 
-- **Witness version 0** outputs ([P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash) `bc1q...` and [P2WSH](/glossary/p2wsh-pay-witness-script-hash) `bc1q...`) continue to use original bech32 for backwards compatibility. The weakness doesn't affect v0 in practice because v0 doesn't allow the length variations the bug would exploit.
-- **Witness version 1+** (Taproot `bc1p...` and any future versions) use bech32m. The address validator picks the right algorithm based on the first decoded data byte (the witness version).
+- **见证版本 0** 输出（[P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash) `bc1q...` 和 [P2WSH](/glossary/p2wsh-pay-witness-script-hash) `bc1q...`）出于向后兼容继续使用原始 bech32。这个弱点在实践中不影响 v0，因为 v0 不允许该 bug 会利用的长度变体。
+- **见证版本 1+**（Taproot `bc1p...` 及任何未来版本）使用 bech32m。地址验证器根据第一个解码数据字节（见证版本）选择正确的算法。
 
-For users, the difference is invisible. Wallets pick the right encoding for the address type they're generating. The interesting story is mostly that constructive crypto review caught the bug before it hurt anyone in practice, and Bitcoin's upgrade-via-soft-fork model accommodated the fix cleanly.
+对用户来说，区别是不可见的。钱包为自己生成的地址类型选择正确的编码。有趣的故事主要是建设性的密码学审查在任何人实际受害之前发现了 bug，而比特币的软分叉升级模型干净地适应了修复。
 
-Spec: [BIP-350](https://github.com/bitcoin/bips/blob/master/bip-0350.mediawiki).
+规范：[BIP-350](https://github.com/bitcoin/bips/blob/master/bip-0350.mediawiki)。

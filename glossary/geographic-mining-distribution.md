@@ -1,12 +1,12 @@
 ---
-title: "Geographic Mining Distribution"
+title: "挖矿地理分布"
 slug: geographic-mining-distribution
 draft: false
-shortDefinition: "A snapshot of how global hashing power is spread among different regions, relevant for decentralization and policy."
+shortDefinition: "全球算力在不同地区的分布快照，与去中心化和政策相关。"
 keyTakeaways:
-  - "Distribution impacts regulatory and censorship concerns"
-  - "Historically, large presence in China; now more globally dispersed"
-  - "Reflects how miners chase low energy costs and favorable rules"
+  - "分布影响监管和审查担忧"
+  - "历史上在中国有大量存在；现在更分散全球"
+  - "反映矿工如何追逐低能源成本和有利规则"
 sources: []
 relatedTerms:
   - competitive-block-propagation
@@ -15,30 +15,30 @@ relatedTerms:
   - energy-fud
   - mining
   - mining-centralization
-  - mining-colocation
+  - mining-collocation
   - retail-mining
 liveWidget: ~
 ---
 
-Geographic mining distribution is the breakdown of Bitcoin's hash rate across countries and regions. It matters for one reason: if too much hash concentrates in one jurisdiction, that jurisdiction effectively has veto power over Bitcoin via simple regulation.
+挖矿地理分布是比特币算力在各国和地区的分布。它重要的原因：如果太多算力集中在一个司法管辖区，该管辖区通过简单的监管就对比特币拥有事实上的否决权。
 
-The history is dramatic:
+历史戏剧性：
 
-- **2017-2021: China dominant.** Estimates put China at 50-75% of global hash rate, fueled by cheap hydro power in Sichuan/Yunnan during wet seasons and coal-power Mongolia/Xinjiang in dry seasons.
-- **May-June 2021: China ban.** The Chinese government banned crypto mining outright. Hash rate dropped roughly 50% within weeks as miners packed shipping containers full of ASICs and exported.
-- **2022-2026: post-ban dispersion.** The hash rate moved to the United States (now the leading host country, ~35-40%), Russia, Kazakhstan, Canada, Malaysia, and a long tail of other countries.
+- **2017-2021 年：中国主导。** 估计中国占全球算力的 50-75%，雨季由四川/云南廉价水力推动，旱季由蒙古/新疆煤电推动。
+- **2021 年 5-6 月：中国禁令。** 中国政府全面禁止加密挖矿。几周内算力下降约 50%，矿工打包装满 ASIC 的集装箱出口。
+- **2022-2026 年：禁令后分散。** 算力转移到美国（现领先，约 35-40%）、俄罗斯、哈萨克斯坦、加拿大、马来西亚以及其他一长串国家。
 
-What "distribution" actually depends on:
+"分布"实际取决于什么：
 
-- **Cheap power availability.** Stranded hydro (Paraguay, Iceland, Norway, Pacific Northwest US), flared natural gas (Texas, North Dakota, Oman), nuclear baseload (Tennessee, parts of Europe), excess solar/wind.
-- **Regulatory tolerance.** Some jurisdictions actively court miners (El Salvador, parts of Texas); others ban or heavily tax them.
-- **Climate.** Cold climates reduce cooling cost; warm climates require immersion cooling or hydro-power-paired air-conditioning.
-- **Political stability.** Mining operations require multi-year capital deployments; unstable regulation makes that infeasible.
+- **廉价电力可用性。** 搁浅水力（巴拉圭、冰岛、挪威、美国太平洋西北）、天然气火炬（德克萨斯、北达科他、阿曼）、核电基载（田纳西、欧洲部分地区）、过剩太阳能/风能。
+- **监管容忍度。** 一些司法管辖区积极吸引矿工（萨尔瓦多、德克萨斯部分地区）；其他禁止或重税。
+- **气候。** 寒冷气候降低散热成本；温暖气候需要浸没散热或水力配套空调。
+- **政治稳定性。** 挖矿运营需要多年资本部署；不稳定监管使这不可行。
 
-Why this matters for Bitcoin security:
+为什么这对比特币安全很重要：
 
-- A single country with 51%+ hash could censor transactions or attempt deeper reorgs. No single country currently has that.
-- Concentration into 3-4 cooperating countries could still produce a censoring majority. The actual dispersion across many countries makes this politically difficult.
-- The post-2021 dispersion is the structural reason "China shutting down mining" became a non-event for Bitcoin's security - the hash relocated rather than disappearing.
+- 拥有 51%+ 算力的单一国家可以审查交易或尝试更深的重组。目前没有单一国家拥有。
+- 集中在 3-4 个合作国家仍可产生审查多数。实际分散在许多国家使这在政治上困难。
+- 2021 年后分散是"中国关闭挖矿"成为比特币安全非事件的结构性原因——算力重新安置而非消失。
 
-Monitoring sources: Cambridge Centre for Alternative Finance's Bitcoin Mining Map (the canonical academic source) plus on-chain heuristics from various analytics firms. All sources are estimates; mining operations don't publicize locations, and the picture changes monthly.
+监控来源：剑桥替代金融中心的比特币挖矿地图（权威学术来源）加上各分析公司的链上启发式。所有来源都是估计；挖矿运营不公开位置，情况每月变化。

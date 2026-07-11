@@ -1,12 +1,12 @@
 ---
-title: "Native SegWit"
+title: "原生 SegWit"
 slug: native-segwit
 draft: false
-shortDefinition: "Bech32 transaction formats (bc1q...) introduced by SegWit, offering lower fees and reduced transaction malleability."
+shortDefinition: "SegWit 引入的 Bech32 交易格式（bc1q...），提供更低手续费和减少交易可延展性。"
 keyTakeaways:
-  - "Saves fees due to SegWit's discount on witness data"
-  - "Simplifies address parsing, with better error detection"
-  - "Becoming the preferred standard for modern wallets"
+  - "因 SegWit 对见证数据的折扣而节省手续费"
+  - "简化地址解析，具有更好的错误检测"
+  - "成为现代钱包的首选标准"
 sources: []
 relatedTerms:
   - bech32m
@@ -25,15 +25,13 @@ sameAs:
 liveWidget: ~
 ---
 
-"Native SegWit" refers to SegWit usage with bech32 addresses (`bc1q...` on mainnet) rather than the older P2SH-wrapped SegWit pattern (`3...` addresses). Witness data lives in the segregated witness portion of the transaction either way; the on-chain encoding is what differs.
+"原生 SegWit"指使用 bech32 地址（主网 `bc1q...`）的 SegWit，而非较旧的 P2SH 包装 SegWit 模式（`3...` 地址）。见证数据无论哪种方式都居住在交易的隔离见证部分；区别在于链上编码。
 
-Why "native" vs "wrapped":
+为什么有"原生"与"包装"之分：
 
-- **Wrapped SegWit** (P2SH-P2WPKH, [P2SH-P2WSH](/glossary/p2sh-p2wsh-nested-segwit)). A SegWit output dressed up as a P2SH output so wallets that didn't yet understand bech32 could still send to it. Compatible with everything but pays for the wrapper overhead.
-- **Native SegWit** (P2WPKH, P2WSH). Direct bech32 encoding, no wrapper. Smaller transactions, lower fees, identical security properties. Requires the sender's wallet to understand bech32, which all modern wallets do.
+- **包装 SegWit**（P2SH-P2WPKH，[P2SH-P2WSH](/glossary/p2sh-p2wsh-nested-segwit)）。一个伪装成 P2SH 输出的 SegWit 输出，使尚不理解 bech32 的钱包仍能发送给它。与一切兼容但为包装开销付费。
+- **原生 SegWit**（P2WPKH，P2WSH）。直接 bech32 编码，无包装。更小的交易、更低的手续费、相同的安全属性。要求发送方钱包理解 bech32，所有现代钱包都已支持。
 
-Native SegWit was the cleaner end state of the SegWit design (BIP 141), but the ecosystem rolled out wrapped first to ease the transition. By 2026, native SegWit is the default for new wallets, and the wrapped form is mostly legacy.
+原生 SegWit 是 SegWit 设计（BIP 141）更清晰的最终状态，但生态系统先推出包装版以缓解过渡。到 2026 年，原生 SegWit 是新钱包的默认选项，包装形式主要是遗留。
 
-Fee savings are real but modest: a P2WPKH spend is roughly 10-15% cheaper than the wrapped equivalent in vbytes. Add [Taproot](/glossary/taproot) (`bc1p...`, [bech32m](/glossary/bech32m)) for slightly more savings and better privacy, and you've got the modern address-format stack: legacy P2PKH (`1...`) for old wallets, wrapped SegWit (`3...`) for transition cases, native SegWit (`bc1q...`) for current use, Taproot (`bc1p...`) for the cutting edge.
-
-If you're picking an address type for a new wallet in 2026: Taproot if your senders support it, native SegWit otherwise.
+手续费节省真实但适度：P2WPKH 花费比包装等价物大约便宜 10-15% vbyte。加上 [Taproot](/glossary/taproot)（`bc1p...`，[bech32m](/glossary/bech32m)）获得略多节省和更好隐私，你就有了现代地址格式栈：遗留 P2PKH（`1...`）用于旧钱包，包装 SegWit（`3...`）用于过渡场景，原生 SegWit（`bc1q...`）用于当前使用，Taproot（`bc1p...`）用于前沿。

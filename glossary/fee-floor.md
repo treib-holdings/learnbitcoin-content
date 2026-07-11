@@ -1,12 +1,12 @@
 ---
-title: "Fee Floor"
+title: "手续费底线"
 slug: fee-floor
 draft: false
-shortDefinition: "An unofficial minimum fee rate below which transactions rarely get mined, especially during busy mempool conditions."
+shortDefinition: "非官方的最低手续费率，低于此值的交易在繁忙内存池条件下很少被挖出。"
 keyTakeaways:
-  - "Reflects the lowest competitive fee rate during congestion"
-  - "Transactions below it may remain unconfirmed for long"
-  - "Can drop if the mempool clears or network activity declines"
+  - "反映拥堵期间最低竞争手续费率"
+  - "低于此值的交易可能长时间未确认"
+  - "内存池清空或网络活动下降时可能降低"
 sources: []
 relatedTerms:
   - absolute-fee
@@ -23,25 +23,25 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The fee floor is the practical minimum fee rate (in sat/vByte) below which Bitcoin transactions are unlikely to confirm in a reasonable timeframe. It's not a single protocol-level constant; it's an emergent property of the [mempool](/glossary/mempool) state and miner behavior at any given moment.
+手续费底线是实际最低手续费率（以 sat/vByte 为单位），低于此值的比特币交易不太可能在合理时间范围内确认。它不是单一的协议级常量；它是[内存池](/glossary/mempool)状态和矿工行为在任一时刻的涌现属性。
 
-Two related concepts that get conflated:
+两个经常被混淆的相关概念：
 
-- **The relay-policy minimum.** Bitcoin Core's default minimum to *accept* a transaction into its mempool: 1 sat/vB. Below this, the transaction won't be relayed by Core nodes at all. Knots and other implementations can set this higher.
-- **The market floor.** The actual fee rate the cheapest currently-mined transactions are paying. During congestion this can be much higher than the relay minimum; during quiet periods it equals the relay minimum.
+- **中继策略最低值。** Bitcoin Core 默认*接受*交易进入内存池的最低值：1 sat/vB。低于此值，Core 节点根本不中继交易。Knots 和其他实现可以设置更高。
+- **市场底线。** 当前被挖出的最便宜交易实际支付的手续费率。拥堵期间可以远高于中继最低值；安静时期等于中继最低值。
 
-How the market floor behaves:
+市场底线的行为：
 
-- **Idle periods (typical 2024-2026 low-traffic times):** the cheapest mined transactions pay 1-2 sat/vB. Nearly anything gets in.
-- **Moderate congestion:** 5-20 sat/vB floor. Lowest-fee transactions sit in mempool for hours.
-- **Severe congestion (Ordinals mints, exchange exodus, market panic):** floor spikes to 50-500+ sat/vB. Transactions below this can wait days or get evicted.
+- **空闲时期（2024-2026 年典型的低流量时期）：** 最便宜的被挖交易支付 1-2 sat/vB。几乎任何交易都能进入。
+- **中等拥堵：** 5-20 sat/vB 底线。最低手续费交易在内存池中等待数小时。
+- **严重拥堵（Ordinals 铸造、交易所出逃、市场恐慌）：** 底线飙升至 50-500+ sat/vB。低于此值的交易可能等待数天或被驱逐。
 
-What sets the floor:
+什么决定底线：
 
-- **Block space is fixed.** Roughly 4MB equivalent weight per block, ~144 blocks/day = bounded throughput.
-- **Demand varies wildly.** Spikes can be 10x baseline within hours.
-- **Miners pack by fee rate.** Highest-paying transactions get in first; lower-paying ones queue.
+- **区块空间固定。** 每个区块约 4MB 等效重量，每天约 144 个区块 = 有界吞吐量。
+- **需求变化剧烈。** 几小时内峰值可达基线的 10 倍。
+- **矿工按手续费率打包。** 最高手续费的交易先进入；低手续费的排队。
 
-The fee floor isn't enforced by anyone. It's just what happens when there's more transaction demand than block space. Modern wallets do [fee estimation](/glossary/fee-estimation) to set rates that comfortably clear the current floor; aggressive users sometimes underpay and rely on [RBF](/glossary/replace-fee-rbf) to bump up later if needed.
+手续费底线不由任何人执行。它只是当交易需求超过区块空间时发生的事情。现代钱包做[手续费估计](/glossary/fee-estimation)来设置舒适超过当前底线的费率；激进用户有时少付并依赖 [RBF](/glossary/replace-fee-rbf) 在需要时加价。
 
-In the long run, the fee floor becomes a more meaningful number as [block subsidies](/glossary/block-subsidy) decline and miner revenue depends more on fees. The 2140 endgame requires fees alone to fund mining; the floor under those conditions has to be high enough to sustain network security.
+长期来看，随着[区块补贴](/glossary/block-subsidy)下降和矿工收入更多依赖手续费，手续费底线变得更有意义。2140 年的终局需要手续费单独资助挖矿；该条件下的底线必须高到足以维持网络安全。

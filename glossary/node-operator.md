@@ -1,12 +1,12 @@
 ---
-title: "Node Operator"
+title: "节点运营者"
 slug: node-operator
 draft: false
-shortDefinition: "An individual or entity running a Bitcoin node to verify blocks/transactions and help maintain the network."
+shortDefinition: "运行比特币节点以验证区块/交易并帮助维护网络的个人或实体。"
 keyTakeaways:
-  - "Directly enforces consensus rules, not relying on intermediaries"
-  - "Can serve the network by relaying transactions/blocks"
-  - "Helps preserve censorship resistance and protocol independence"
+  - "直接执行共识规则，不依赖中间方"
+  - "可以通过中继交易/区块服务网络"
+  - "帮助维护抗审查性和协议独立性"
 sources: []
 relatedTerms:
   - bitcoin-knots
@@ -24,17 +24,15 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A node operator is anyone running a Bitcoin full node. That's it. No registration, no permission, no minimum capital. You download Bitcoin Core (or Knots, or btcd, or a packaged distribution), point it at some disk, open a port if you can, and you're a node operator.
+节点运营者是任何运行比特币全节点的人。就是这样。没有注册、没有许可、没有最低资本。你下载 Bitcoin Core（或 Knots、btcd、或打包发行版），指向某个磁盘，如果可以打开一个端口，你就是节点运营者了。
 
-What you actually do when you run a node:
+运行节点时你实际做的事：
 
-- Validate every block and every transaction against consensus rules. Nothing enters your view of the chain without passing your own checks.
-- Relay transactions and blocks to peers, helping the network propagate.
-- Serve historical data to new nodes during their initial sync, if you accept inbound connections.
-- Refuse to follow any rule change you don't agree with. This is the structural mechanism by which Bitcoin remains user-controlled.
+- 根据共识规则验证每个区块和每笔交易。没有任何东西能不经你自己检查就进入你的链视角。
+- 向对等方中继交易和区块，帮助网络传播。
+- 如果接受入站连接，在初始同步期间向新节点提供历史数据。
+- 拒绝跟随你不同意的任何规则变更。这是比特币保持用户控制的结构性机制。
 
-You don't earn money for running a node. Block rewards belong to [miners](/glossary/miner). What you get is independence. You stop trusting a third party to tell you the truth about your own balance, your own transactions, or whether a block is valid.
+运行节点不赚钱。区块奖励属于[矿工](/glossary/miner)。你获得的是独立性。你不再信任第三方告诉你自己余额、自己交易或区块是否有效的真相。
 
-Hardware requirements in 2026 are modest. A ~1 TB SSD, a quad-core CPU, 4-8 GB RAM, decent internet. A Raspberry Pi 5 or any old laptop runs a node comfortably. Packaged distributions (Umbrel, Start9, RaspiBlitz, MyNode, Citadel) make setup roughly as easy as installing an app.
-
-If you use Bitcoin and don't run a node, you're trusting someone else's. That's a defensible choice for mobile or casual use, but the difference between trusting and verifying is real, and node-operator is what verifying looks like.
+2026 年的硬件要求不高。约 1 TB SSD、四核 CPU、4-8 GB 内存、不错的互联网。树莓派 5 或任何旧笔记本电脑都能舒适运行节点。打包发行版（Umbrel、Start9、RaspiBlitz、MyNode、Citadel）使安装大致像安装一个应用一样简单。

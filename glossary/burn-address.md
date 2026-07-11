@@ -1,12 +1,12 @@
 ---
-title: "Burn Address"
+title: "销毁地址"
 slug: burn-address
 draft: false
-shortDefinition: "An address for which no private key is known, effectively removing any BTC sent there from circulation."
+shortDefinition: "没有已知私钥的地址，发送到那里的任何 BTC 实际上从流通中移除。"
 keyTakeaways:
-  - "Coins sent there can't be reclaimed without a private key"
-  - "Used in symbolic or supply-reduction scenarios"
-  - "Irreversible action removing BTC from the economy"
+  - "发送到那里的币没有私钥无法收回"
+  - "用于象征性或供应量减少场景"
+  - "不可逆操作，将 BTC 从经济中移除"
 sources: []
 relatedTerms:
   - address
@@ -17,20 +17,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A burn address is a Bitcoin address whose private key is provably unknown. Coins sent there are unspendable forever, because no signature can be produced to claim them.
+销毁地址是其私钥可证明未知的比特币地址。发送到那里的币永远不可花费，因为无法产生签名来认领它们。
 
-Three common ways to build a burn address:
+构建销毁地址的三种常见方式：
 
-- **Provably-unowned vanity addresses.** Patterns like `1BitcoinEater...Eat...` are chosen specifically so the address looks intentional and unspendable. The full address still has to derive from a hash, which means there is *some* private key, but the structure of the address makes it astronomically improbable that anyone could find it.
-- **`OP_RETURN` outputs.** Strictly speaking these aren't addresses at all; they're outputs with a script that's deliberately invalid for spending. Bitcoin Core won't even index them as UTXOs. Used for embedding data on-chain (timestamps, commitments, attestations).
-- **Mathematically-impossible addresses.** Addresses derived from "magic" hash inputs (all zeros, the SHA-256 of "burn", etc.) that no realistic key search can reproduce.
+- **可证明无人拥有的虚荣地址。**如 `1BitcoinEater...Eat...` 的模式被特意选择，使地址看起来是有意和不可花费的。完整地址仍需从哈希派生，意味着*存在*某个私钥，但地址的结构使任何人找到它的概率天文数字般低。
+- **`OP_RETURN` 输出。**严格来说这些根本不是地址；它们是带有故意无效花费脚本的输出。Bitcoin Core 甚至不会将它们索引为 UTXO。用于在链上嵌入数据（时间戳、承诺、证明）。
+- **数学上不可能的地址。**从"魔法"哈希输入（全零、SHA-256 of "burn" 等）派生的地址，没有现实的密钥搜索可以重现。
 
-Why anyone deliberately burns BTC:
+为什么有人故意销毁 BTC：
 
-- **Proof of burn.** Some sidechain bootstrap mechanisms required participants to burn BTC on mainnet to receive sidechain coins. Real money, on the line, no easy revoke.
-- **Symbolic destruction.** Demonstrating commitment to a protocol, expressing protest, or making a public statement.
-- **Confiscation handling.** Governments occasionally destroy seized coins; sending to a burn address is one way (sending to a legitimate treasury address is more common).
+- **燃烧证明。**一些侧链引导机制要求参与者在主网上销毁 BTC 以接收侧链币。真金白银，在线上，没有轻易撤销。
+- **象征性销毁。**展示对协议的承诺，表达抗议，或做出公开声明。
+- **没收处理。**政府偶尔销毁查扣的币；发送到销毁地址是一种方式（发送到合法国库地址更常见）。
 
-Quietly, Bitcoin's circulating supply is also reduced by accidental burns: lost seeds, dead drives, addresses with keys nobody can recover. Best estimates suggest 3-4 million BTC are effectively lost (Glassnode and Chainalysis publish ranges). Those aren't ceremonial burns, but the net effect on supply is the same.
+悄悄地，比特币的流通供应也因意外销毁而减少：丢失的种子、损坏的硬盘、无人能恢复密钥的地址。最佳估计表明 3-4 百万 BTC 实际已丢失（Glassnode 和 Chainalysis 发布范围）。那些不是仪式性销毁，但对供应的净效果相同。
 
-Sending to a burn address is irreversible by design. There is no recovery process and no human you can appeal to. If you're doing it, do it carefully.
+发送到销毁地址按设计是不可逆的。没有恢复过程，没有人可以申诉。如果你要这样做，请谨慎操作。

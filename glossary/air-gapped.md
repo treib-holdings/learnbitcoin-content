@@ -1,12 +1,12 @@
 ---
-title: "Air-gapped"
+title: "物理隔离"
 slug: air-gapped
 draft: false
-shortDefinition: "Refers to a device completely isolated from any network, used for securely generating or storing private keys offline."
+shortDefinition: "指完全与任何网络隔离的设备，用于安全地离线生成或存储私钥。"
 keyTakeaways:
-  - "Prevents remote network attacks on private keys"
-  - "Requires offline devices or computers"
-  - "Used by individuals and organizations valuing maximum security"
+  - "防止私钥遭受远程网络攻击"
+  - "需要离线设备或计算机"
+  - "被重视最高安全性的个人和机构使用"
 sources: []
 relatedTerms:
   - hardware-seed-vault
@@ -17,20 +17,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-"Air-gapped" describes a device that has no network connection of any kind: no Wi-Fi, no Ethernet, no Bluetooth, no cellular, no NFC. The only way data crosses to or from the device is through a deliberate, physical, single-use channel: a QR code shown on the screen, a microSD card carried over, or in extreme cases manual entry.
+"物理隔离"（Air-gapped）描述的是一种没有任何网络连接的设备：没有 Wi-Fi、没有以太网、没有蓝牙、没有蜂窝网络、没有 NFC。数据进出设备的唯一方式是通过有意的、物理的、一次性的通道：屏幕上显示的二维码、传递的 microSD 卡，或者在极端情况下手动输入。
 
-For Bitcoin self-custody, air-gap is a security strategy: the device that holds private keys never sees the public internet, so remote attackers have no network path to the seed.
+对于比特币自托管来说，物理隔离是一种安全策略：持有私钥的设备从不接触公共互联网，因此远程攻击者没有到达种子的网络路径。
 
-What an air-gapped setup looks like in practice:
+物理隔离设置在实际中是什么样的：
 
-- **Hardware wallets done right.** Coldcard, Foundation Passport, SeedSigner, and similar devices are designed for air-gap operation. Transactions are passed in as PSBTs via SD card or QR; signed PSBTs come back the same way. The signing device never touches the network.
-- **Old laptop, network hardware removed.** A dedicated machine with the Wi-Fi card physically removed (or never installed), running an offline signing tool. Common for advanced multisig setups.
-- **Faraday-shielded signing rooms.** Institutional cold-storage operations sometimes do signing inside a room shielded against radio emissions, defeating both network attacks and side-channel attacks like keystroke-EM monitoring.
+- **正确使用的硬件钱包。** Coldcard、Foundation Passport、SeedSigner 等设备专为物理隔离操作而设计。交易以 PSBT 格式通过 SD 卡或二维码传入；签名后的 PSBT 以同样方式传出。签名设备从不接触网络。
+- **拆除了网络硬件的旧笔记本。** 一台专用机器，Wi-Fi 卡已被物理移除（或从未安装），运行离线签名工具。常见于高级多签设置。
+- **法拉第屏蔽签名室。** 机构级冷存储操作有时在防无线电发射的房间内进行签名，同时防御网络攻击和侧信道攻击（如键盘电磁监控）。
 
-What air-gap doesn't protect against:
+物理隔离不能防御的：
 
-- **Supply-chain attacks.** A compromised device that arrives already malicious can leak the seed via subtle side channels (timing, micro-modulated screen output, etc.). Buy hardware wallets from the manufacturer directly when possible.
-- **Physical theft and coercion.** Air-gap is a network defense, not a physical one. Pair it with appropriate physical security.
-- **PSBT tampering.** The signing device must independently verify that the transaction it's signing matches what the user intended. A compromised online machine could send a malicious PSBT to the air-gapped device; if the device's display doesn't show the actual destination, the user signs the attack. This is why hardware wallets have screens.
+- **供应链攻击。** 一个到手时已被植入恶意固件的设备可以通过微妙的侧信道泄露种子（时序、微调制的屏幕输出等）。尽可能直接从制造商处购买硬件钱包。
+- **物理盗窃和胁迫。** 物理隔离是网络防御，不是物理防御。需要配合适当的物理安全措施。
+- **PSBT 篡改。** 签名设备必须独立验证它签名的交易与用户意图一致。被入侵的在线机器可以向物理隔离设备发送恶意 PSBT；如果设备的显示屏不显示实际目标地址，用户就会签下攻击交易。这就是硬件钱包有屏幕的原因。
 
-For most users, a single hardware wallet (which is air-gapped by design for the key material) is the practical answer. Dedicated air-gapped computers with PSBT shuffling are for higher-value or institutional setups where the marginal security justifies the operational overhead.
+对于大多数用户来说，一个硬件钱包（其密钥材料天然是物理隔离的）就是实用的答案。专用物理隔离计算机加 PSBT 传递适用于更高价值或机构级设置，在这些场景下边际安全性值得操作开销。

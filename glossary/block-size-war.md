@@ -1,14 +1,14 @@
 ---
-title: "Block Size War"
+title: "区块大小战争"
 slug: block-size-war
 draft: false
 published: "2026-06-29"
 updated: "2026-07-07"
-shortDefinition: "The 2015-2017 fight over whether to raise Bitcoin's 1 MB block size limit. Big-blockers wanted bigger blocks for cheaper on-chain payments; small-blockers wanted to keep blocks small and scale in layers. Small blocks won, and the losing side forked off as Bitcoin Cash."
+shortDefinition: "2015-2017 年关于是否提高比特币 1 MB 区块大小上限的争斗。大区块方想要更大区块以实现更便宜的链上支付；小区块方想保持小区块并通过分层扩容。小区块获胜，失败方分叉为 Bitcoin Cash。"
 keyTakeaways:
-  - "The dispute was less about a megabyte number than about who gets to change Bitcoin's rules: the miners and large companies, or the users running their own nodes"
-  - "SegWit activated as a soft fork in August 2017 without the block size increase the big-block camp wanted; the SegWit2x hard fork that was supposed to follow was called off that November"
-  - "The economic majority running full nodes, not the miners and not the companies, held the final say - a precedent that has governed every Bitcoin upgrade since"
+  - "争斗与其说是关于一个兆字节的数字，不如说是关于谁有权改变比特币的规则：矿工和大公司，还是运行自己节点的用户"
+  - "SegWit 于 2017 年 8 月作为软分叉激活，没有大区块阵营想要的区块大小增加；原定随后进行的 SegWit2x 硬分叉在 11 月被取消"
+  - "运行全节点的经济多数——而非矿工也非公司——拥有最终决定权，这一先例此后主导了每次比特币升级"
 sources:
   - { label: "Jonathan Bier - The Blocksize War: The Battle for Control Over Bitcoin's Protocol Rules (2021)", url: "https://www.goodreads.com/book/show/57429394-the-blocksize-war" }
   - { label: "Bitcoin Magazine - Segregated Witness Activates on Bitcoin (2017)", url: "https://bitcoinmagazine.com/technical/segregated-witness-activates-bitcoin-what-expect" }
@@ -25,20 +25,20 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Between August 2015 and November 2017, Bitcoin nearly tore itself apart over the 1 megabyte cap on how much data each block can hold. Satoshi added that limit in 2010 as an anti-spam measure. By 2015 blocks were filling up, fees were climbing, and the community could not agree on what to do about it.
+2015 年 8 月到 2017 年 11 月间，比特币差点因每个区块可容纳多少数据的 1 兆字节上限而撕裂。中本聪在 2010 年添加了该限制作为反垃圾措施。到 2015 年区块开始填满，手续费攀升，社区无法就如何处理达成一致。
 
-The big-blockers wanted to raise the limit so more transactions would fit on-chain and fees would stay low. Their case was that Bitcoin should work as cheap digital cash, and that a bigger [block size](/glossary/block-size) was the obvious fix. The camp included Gavin Andresen, Mike Hearn, Roger Ver, and large mining operations led by Bitmain's Jihan Wu. They shipped competing software meant to replace [Bitcoin Core](/glossary/bitcoin-core) and lift the cap: Bitcoin XT in 2015, then Bitcoin Classic and Bitcoin Unlimited in 2016. The flagship proposal was [BIP-101](/glossary/bip-101-increase-block-size), which jumped straight to 8 MB.
+大区块方想提高上限使更多交易能上链且手续费保持低廉。他们的理由是比特币应该作为廉价的数字现金工作，更大的[区块大小](/glossary/block-size)是显然的修复。阵营包括 Gavin Andresen、Mike Hearn、Roger Ver 和以 Bitmain 吴忌寒为首的大型挖矿运营。他们发布了旨在替代 [Bitcoin Core](/glossary/bitcoin-core)并提高上限的竞争软件：2015 年的 Bitcoin XT，然后是 2016 年的 Bitcoin Classic 和 Bitcoin Unlimited。旗舰提案是 [BIP-101](/glossary/bip-101-increase-block-size)，直接跳到 8 MB。
 
-The small-blockers wanted to keep the limit where it was. They argued that big blocks make running a [full node](/glossary/full-node) more expensive, which pushes ordinary users off the network and concentrates control in a handful of data centers. They preferred to scale in layers: improve the data efficiency on the base chain, then move volume to systems built on top of it like the [Lightning Network](/glossary/lightning-network). Most of the Bitcoin Core development group sat in this camp.
+小区块方想保持上限不变。他们论辩大区块使运行[全节点](/glossary/full-node)更昂贵，将普通用户推离网络并集中控制到少数数据中心。他们偏好分层扩容：提高基础链的数据效率，然后将交易量移到其上构建的系统如[闪电网络](/glossary/lightning-network)。大多数 Bitcoin Core 开发组在这个阵营。
 
-[SegWit](/glossary/segwit-segregated-witness-bip-141) was the small-block path forward. It was a [soft fork](/glossary/soft-fork) that fixed transaction malleability, raised effective capacity to roughly 4 million weight units without a hard fork, and cleared the way for Lightning. But it needed 95 percent of miners to [signal](/glossary/miner-signaling) support, and the miners aligned with the big-block camp refused to signal.
+[SegWit](/glossary/segwit-segregated-witness-bip-141)是小区块方的前进路径。它是一个[软分叉](/glossary/soft-fork)，修复了交易延展性，将有效容量提高到约 400 万 weight units 而无需硬分叉，并为闪电网络扫清了道路。但它需要 95% 的矿工[信号](/glossary/miner-signaling)支持，而与大区块阵营结盟的矿工拒绝信号。
 
-The deadlock broke in 2017, under pressure from two directions. In March, a pseudonymous developer published [BIP-148](/glossary/bip-148-uasf), a user-activated soft fork. From August 1, 2017, nodes running it would reject any block that did not signal SegWit, with or without the miners' cooperation. In May, a group of companies and mining pools signed the [New York Agreement](/glossary/new-york-agreement-nya), a deal known as [SegWit2x](/glossary/segwit2x) that promised to activate SegWit first and then hard fork to 2 MB blocks about three months later. Bitcoin Core developers were not part of the deal, and many users read it as a backroom attempt to take over the protocol.
+僵局在 2017 年从两个方向的压力下打破。3 月，一位匿名开发者发布了 [BIP-148](/glossary/bip-148-uasf)，一种用户激活的软分叉。从 2017 年 8 月 1 日起，运行它的节点将拒绝任何不信号 SegWit 的区块，无论矿工是否配合。5 月，一群公司和矿池签署了[纽约协议](/glossary/new-york-agreement-nya)，一项被称为 [SegWit2x](/glossary/segwit2x) 的协议，承诺先激活 SegWit 然后约三个月后硬分叉到 2 MB 区块。Bitcoin Core 开发者未参与该协议，许多用户将其视为接管协议的后室尝试。
 
-With the flag day approaching and a [chain split](/glossary/chain-split) on the table, miners activated SegWit through a compromise mechanism (BIP-91) in July. Miner signaling crossed the threshold in early August, and SegWit went live at block 481,824 on August 24, 2017.
+随着旗帜日临近和[链分裂](/glossary/chain-split)摆在桌面上，矿工在 7 月通过妥协机制（BIP-91）激活了 SegWit。矿工信号在 8 月初跨过阈值，SegWit 于 2017 年 8 月 24 日在区块 481,824 处上线。
 
-The faction that still wanted bigger blocks forked away on August 1 as [Bitcoin Cash](/glossary/bitcoin-cash). The second half of SegWit2x, the 2 MB hard fork, was scheduled for that November and then called off on November 8, 2017 for lack of consensus.
+仍想要更大区块的派系在 8 月 1 日分叉为 [Bitcoin Cash](/glossary/bitcoin-cash)。SegWit2x 的后半部分——2 MB 硬分叉——原定 11 月进行，后因缺乏共识于 11 月 8 日取消。
 
-The war settled a bigger question than block size. The final say over the rules belonged to the people running full nodes, the economic majority, rather than to the miners or the companies that signed the agreement. That is the central claim of [Bitcoin governance](/glossary/bitcoin-governance), and the block size war is the case study that tested it in real conditions.
+这场战争解决了一个比区块大小更大的问题。规则的最终决定权属于运行全节点的人——经济多数——而非矿工或签署协议的公司。这是[比特币治理](/glossary/bitcoin-governance)的核心主张，区块大小战争是在真实条件下测试它的案例研究。
 
-See [The Block Size War](/rabbit-hole/block-size-war) for the full story, from Bitcoin XT through the UASF to the forks that left.
+参见[区块大小战争](/rabbit-hole/block-size-war)了解完整故事，从 Bitcoin XT 到 UASF 到离开的分叉。

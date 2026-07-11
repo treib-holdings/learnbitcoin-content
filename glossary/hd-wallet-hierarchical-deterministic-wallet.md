@@ -1,12 +1,12 @@
 ---
-title: "HD Wallet (Hierarchical Deterministic Wallet)"
+title: "HD 钱包（层次确定性钱包）"
 slug: hd-wallet-hierarchical-deterministic-wallet
 draft: false
-shortDefinition: "A wallet using BIP 32 derivation paths to create a structured key tree from one seed."
+shortDefinition: "使用 BIP 32 派生路径从一个种子创建结构化密钥树的钱包。"
 keyTakeaways:
-  - "Allows all addresses to be recovered from one master seed"
-  - "Follows standardized derivation paths (e.g., BIP 44)"
-  - "A defining feature of modern Bitcoin wallet design"
+  - "所有地址可从一个主种子恢复"
+  - "遵循标准化派生路径（如 BIP 44）"
+  - "现代比特币钱包设计的决定性特征"
 sources: []
 relatedTerms:
   - address-derivation-path
@@ -32,26 +32,26 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Hierarchical Deterministic (HD) wallet is the standard Bitcoin wallet design where every key the wallet will ever need is deterministically derived from a single root seed. Back up the seed; you've backed up everything.
+层次确定性（HD）钱包是标准比特币钱包设计，其中钱包将需要的每个密钥都从一个根种子确定性地派生。备份种子；你就备份了一切。
 
-The structure, defined in [BIP 32](/glossary/bip-32):
+结构定义在 [BIP 32](/glossary/bip-32) 中：
 
-- A single seed (typically 12 or 24 [BIP 39](/glossary/bip-39) words) plus optional passphrase produces a 512-bit master seed.
-- The master seed splits into a master private key and a master chaincode.
-- Children are derived by HMAC-SHA512 of (parent key, chaincode, index). Each child is itself a parent that can derive its own children. This forms the tree.
-- Standardized paths (BIP 44 for legacy, BIP 49 for wrapped SegWit, BIP 84 for native SegWit, BIP 86 for Taproot) tell wallets exactly where to look for addresses.
+- 单个种子（通常是 12 或 24 个 [BIP 39](/glossary/bip-39) 词）加可选密码短语产生 512 位主种子。
+- 主种子分为主私钥和主链码。
+- 子密钥通过（父密钥、链码、索引）的 HMAC-SHA512 派生。每个子密钥本身是可以派生自己子密钥的父密钥。这形成了树。
+- 标准化路径（旧版的 BIP 44、包装 SegWit 的 BIP 49、原生 SegWit 的 BIP 84、Taproot 的 BIP 86）告诉钱包确切在哪里查找地址。
 
-Why HD wallets dominate:
+为什么 HD 钱包主导：
 
-- **One backup covers everything.** Write down 12 or 24 words, and you've backed up every address your wallet will ever generate, across every account, indefinitely.
-- **Cross-wallet portability.** Import a BIP 39 seed into any standards-compliant wallet (Sparrow, BlueWallet, Electrum, Trezor, ColdCard, anything) and get the same addresses.
-- **Watch-only support.** Hand someone the xpub (extended public key) and they can derive every receive address without ever seeing private keys. Useful for accounting, monitoring, watch-only mobile apps backed by hardware wallets.
-- **Multi-account separation.** The BIP 44/84/86 path structure includes an account level so users can maintain logically separated wallets (`account 0` for personal, `account 1` for business, etc.) from a single seed.
-- **Hardware wallet integration.** The hardware device holds the seed; software wallets only see the xpub. The standardized derivation paths mean any compatible software pairs with any compatible hardware.
+- **一次备份覆盖一切。** 写下 12 或 24 个词，你就备份了钱包将生成的每个地址，跨每个账户，无限期。
+- **跨钱包可移植性。** 将 BIP 39 种子导入任何合规标准的钱包（Sparrow、BlueWallet、Electrum、Trezor、ColdCard），获得相同地址。
+- **只读支持。** 向某人提供 xpub（扩展公钥），他们可以派生每个接收地址而无需看到私钥。适用于会计、监控、由硬件钱包支撑的只读移动应用。
+- **多账户分离。** BIP 44/84/86 路径结构包含账户级别，用户可以从单个种子维护逻辑分离的钱包（`account 0` 个人、`account 1` 商业等）。
+- **硬件钱包整合。** 硬件设备持有种子；软件钱包只看到 xpub。标准化派生路径意味着任何兼容软件都与任何兼容硬件配对。
 
-What HD wallets aren't:
+HD 钱包不是什么：
 
-- **A privacy panacea.** All children share the same chaincode at each branch; if someone obtains an xpub, they can derive all non-hardened children. Hardened derivation (used for top-level paths) prevents this from extending up the tree.
-- **A backup replacement.** The seed is still a single point of failure. Lose the seed, lose everything. Hardware wallets and multisig setups add resilience layers on top of HD.
+- **隐私万灵药。** 所有子密钥在每个分支共享相同链码；如果有人获得 xpub，他们可以派生所有非强化子密钥。强化派生（用于顶层路径）防止这向上扩展。
+- **备份替代品。** 种子仍然是单点故障。丢失种子，丢失一切。硬件钱包和多签设置在 HD 之上添加弹性层。
 
-HD wallets became universal around 2014-2016 as BIP 32 / 39 / 44 implementations matured. Today, essentially every wallet worth using is an HD wallet, and "the seed" is the universal backup primitive.
+HD 钱包在 2014-2016 年左右随着 BIP 32 / 39 / 44 实现成熟而普及。今天，基本上每个值得使用的钱包都是 HD 钱包，"种子"是通用备份原语。

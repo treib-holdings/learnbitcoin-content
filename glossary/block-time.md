@@ -1,12 +1,12 @@
 ---
-title: "Block Time"
+title: "出块时间"
 slug: block-time
 draft: false
-shortDefinition: "The average interval between consecutive blocks, targeted around 10 minutes for Bitcoin."
+shortDefinition: "连续区块之间的平均间隔，比特币目标约为 10 分钟。"
 keyTakeaways:
-  - "Aims for ~10 minutes per new block on average"
-  - "Difficulty adjusts to maintain stable intervals"
-  - "A core design choice balancing security and throughput"
+  - "目标为平均每 10 分钟一个新区块"
+  - "难度调整以维持稳定间隔"
+  - "平衡安全性和吞吐量的核心设计选择"
 sources: []
 relatedTerms:
   - bip-152-compact-blocks
@@ -23,14 +23,14 @@ sameAs:
 liveWidget: ~
 ---
 
-Bitcoin's target block time is 10 minutes. That's the *average* interval [difficulty](/glossary/difficulty) tries to maintain by adjusting how hard the mining puzzle is. It's not the time you should expect to wait for any individual block.
+比特币的目标出块时间是 10 分钟。这是[难度](/glossary/difficulty)试图通过调整挖矿难题难度来维持的*平均*间隔。不是你应该期望等待任何单个区块的时间。
 
-Mining is a [Poisson process](/glossary/poisson-process). Each second, every miner in the world is independently trying random nonces. There's no "due" block. The actual interval between blocks is exponentially distributed: many blocks land in 1-5 minutes, some take 20-40 minutes, and a few times a year a block takes over an hour. The 10-minute number is just the mean over a long window.
+挖矿是一个[泊松过程](/glossary/poisson-process)。每秒，世界上每个矿工都在独立尝试随机数。没有"到期"的区块。区块之间的实际间隔呈指数分布：许多区块在 1-5 分钟内产生，一些需要 20-40 分钟，每年有几次一个区块需要超过一小时。10 分钟这个数字只是长时间窗口内的均值。
 
-The choice of 10 minutes (rather than, say, 1 minute like Litecoin or 15 seconds like Ethereum) was a deliberate tradeoff:
+选择 10 分钟（而非莱特币的 1 分钟或以太坊的 15 秒）是刻意的权衡：
 
-- **Long enough** to let a new block propagate to virtually every node on Earth before the next one is found. This minimizes [orphan blocks](/glossary/orphan-block) and chain forks.
-- **Long enough** that the [proof-of-work](/glossary/proof-work-pow) per block is meaningful security.
-- **Short enough** that confirmations accumulate at a useful rate. Six confirmations (the conventional "settled" threshold for large amounts) is about an hour.
+- **足够长**让新区块在下一个区块被发现之前传播到几乎每个节点。这最小化[孤块](/glossary/orphan-block)和链分叉。
+- **足够长**使每个区块的[工作量证明](/glossary/proof-work-pow)是有意义的安全性。
+- **足够短**使确认以有用的速度积累。六次确认（大额的传统"已结算"阈值）约为一小时。
 
-The [difficulty retarget](/glossary/difficulty-retargeting) every 2,016 blocks pulls the average back toward 10 minutes when global hash rate has grown (or shrunk). See the [Mining rabbit hole §4](/rabbit-hole/mining) for the long version.
+每 2,016 个区块的[难度重定向](/glossary/difficulty-retargeting)在全球算力增长（或减少）时将平均值拉回 10 分钟。参见[挖矿 rabbit hole §4](/rabbit-hole/mining)了解完整版本。

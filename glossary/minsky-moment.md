@@ -1,12 +1,12 @@
 ---
-title: "Minsky Moment"
+title: "明斯基时刻"
 slug: minsky-moment
 draft: false
-shortDefinition: "An economic term for a sudden market collapse due to excessive leverage or speculation-used metaphorically for Bitcoin crashes."
+shortDefinition: "经济学术语，指因过度杠杆或投机导致的突然市场崩盘——比喻性地用于比特币暴跌。"
 keyTakeaways:
-  - "Describes abrupt market downturns due to over-leverage"
-  - "Applies to traditional assets but also suits volatile Bitcoin cycles"
-  - "Highlights risks of hype-fueled speculation in crypto markets"
+  - "描述因过度杠杆导致的突然市场下行"
+  - "适用于传统资产，也适合波动的比特币周期"
+  - "凸显加密市场中炒作驱动投机的风险"
 sources: []
 relatedTerms:
   - bear-market
@@ -17,33 +17,33 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A Minsky Moment is the sudden collapse of asset prices when accumulated leverage and speculative debt unwind. Named for economist Hyman Minsky, who argued that long periods of stability paradoxically breed instability by encouraging participants to take on ever-riskier positions until the system can no longer sustain them.
+明斯基时刻是当累积杠杆和投机债务解体时资产价格的突然崩盘。以经济学家海曼·明斯基命名，他认为长期稳定反而矛盾地滋生不稳定，因为鼓励参与者承担越来越高的风险，直到系统无法维持。
 
-Minsky's framework identifies three financing types:
+明斯基的框架识别了三种融资类型：
 
-1. **Hedge finance**: borrowers can service principal and interest from cash flows.
-2. **Speculative finance**: borrowers can service interest but must roll over principal.
-3. **Ponzi finance**: borrowers depend on asset appreciation to make any payments.
+1. **对冲融资**：借款人可以从现金流中偿还本金和利息。
+2. **投机融资**：借款人可以偿还利息但必须续借本金。
+3. **庞氏融资**：借款人依赖资产升值才能还款。
 
-A stable market gradually migrates from hedge to speculative to Ponzi as participants stretch for yield. The Minsky Moment is when reality reasserts itself: a small trigger (margin call, liquidity squeeze, sentiment shift) cascades through the leveraged positions, forcing liquidations that crash asset prices and trigger more liquidations.
+稳定市场逐渐从对冲迁移到投机再到庞氏，因为参与者追求收益。明斯基时刻是现实重新确立的时候：一个小触发因素（追加保证金、流动性紧缩、情绪转变）级联穿透杠杆头寸，迫使清算导致资产价格崩盘并触发更多清算。
 
-Bitcoin contexts where the term gets invoked:
+比特币语境中使用该术语的场景：
 
-- **November 2018**: BTC fell from ~$6,400 to ~$3,200 in a few weeks, ending a multi-month grind lower with capitulation.
-- **March 2020**: COVID-driven liquidation cascade. BTC fell ~50% in a day. Many crypto funds with leverage were wiped out.
-- **May 2021**: Leveraged longs got rinsed in days as BTC fell from ~$58K to ~$30K. Coinbase IPO timing and Tesla position revisions added narrative context.
-- **June-November 2022**: The "crypto contagion" cascade. Three Arrows Capital collapse, Celsius bankruptcy, then FTX in November. Multi-month deleveraging.
-- **April-May 2024**: Post-halving funding-rate-driven liquidations. Smaller than prior crashes but a textbook Minsky-style unwind.
+- **2018 年 11 月**：BTC 从约 $6,400 在几周内跌至约 $3,200，以投降结束了数月的下行。
+- **2020 年 3 月**：COVID 驱动的清算级联。BTC 一天内跌约 50%。许多有杠杆的加密基金被清盘。
+- **2021 年 5 月**：杠杆多头在几天内被清洗，BTC 从约 $58K 跌至约 $30K。
+- **2022 年 6-11 月**："加密传染"级联。Three Arrows Capital 崩盘、Celsius 破产，然后 11 月 FTX。数月去杠杆。
+- **2024 年 4-5 月**：减半后资金费率驱动的清算。比之前的崩盘小但教科书式的明斯基式解体。
 
-What the term gets right:
+该术语正确的方面：
 
-- **Crypto markets accumulate leverage** during bull cycles via perpetual futures, lending platforms, and DeFi protocols. The leverage isn't always visible in real time but builds up to dangerous levels.
-- **Liquidation cascades are real.** Forced selling at one venue triggers margin calls at others, creating reflexive price collapses faster than fundamentals can adjust.
-- **The "stability breeds instability" thesis fits crypto well.** Each cycle has produced more leverage than the prior one; each crash has been more violent.
+- **加密市场在牛市周期中累积杠杆**，通过永续合约、借贷平台和 DeFi 协议。杠杆不总是实时可见但会累积到危险水平。
+- **清算级联是真实的。**一个场所的强制卖出触发其他场所的追加保证金，产生比基本面调整更快的反射性价格崩盘。
+- **"稳定滋生不稳定"的论点很适合加密。**每个周期产生了比前一个更多的杠杆；每次崩盘都更猛烈。
 
-What the term oversimplifies:
+该术语过度简化的方面：
 
-- **Bitcoin spot demand is real and structural.** The 2022 deleveraging didn't destroy BTC as an asset; it cleaned out the leverage and held above prior cycle floors.
-- **"Minsky Moment" gets used as a catch-all** for any sharp drawdown, sometimes by commentators who haven't read Minsky. Specific leverage / debt-unwind dynamics aren't always present.
+- **比特币现货需求是真实且结构性的。**2022 年去杠杆没有摧毁 BTC 作为资产；它清理了杠杆并守住前周期的底部。
+- **"明斯基时刻"被泛用**为任何急剧下跌的统称，有时是被没读过明斯基的评论员使用。特定的杠杆/债务解体动态并不总是存在。
 
-The honest usage: the Minsky framework is one useful lens for understanding crypto's cycle dynamics, not the only one. Bitcoin holders who survive cycles are usually the ones who avoid both extremes - not over-leveraging at the top, not panic-selling at the bottom.
+诚实用法：明斯基框架是理解加密周期动态的一个有用视角，不是唯一的。在周期中存活的比特币持有者通常是避免两个极端的人——不在顶部过度杠杆，不在底部恐慌卖出。

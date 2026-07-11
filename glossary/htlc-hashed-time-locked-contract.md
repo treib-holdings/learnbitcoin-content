@@ -1,12 +1,12 @@
 ---
-title: "HTLC (Hashed Time-Locked Contract)"
+title: "HTLC（哈希时间锁合约）"
 slug: htlc-hashed-time-locked-contract
 draft: false
-shortDefinition: "A mechanism requiring a secret (preimage) to unlock payment before a time lock expires, core to LN and atomic swaps."
+shortDefinition: "要求在时间锁到期前揭示秘密（原像）以解锁支付的机制，闪电网络和原子交换的核心。"
 keyTakeaways:
-  - "Enables trust-minimized payment and swaps"
-  - "Uses a hash puzzle + time lock for safe fallback"
-  - "Foundation of LN's multi-hop payment logic"
+  - "实现最小化信任的支付和交换"
+  - "使用哈希谜题 + 时间锁实现安全后备"
+  - "闪电网络多跳支付逻辑的基础"
 sources: []
 relatedTerms:
   - atomic-multi-path-payment-amp
@@ -37,28 +37,28 @@ sameAs:
 liveWidget: ~
 ---
 
-A Hashed Time-Locked Contract (HTLC) is a Bitcoin script that locks funds with two conditions: spendable by *anyone* who reveals a secret value (the **preimage** of a known hash), OR refundable to the sender if a time deadline passes without that secret being revealed.
+哈希时间锁合约（HTLC）是一种比特币脚本，用两个条件锁定资金：可被揭示秘密值（已知哈希的**原像**）的*任何人*花费，或者在时间截止前未揭示该秘密则退还给发送方。
 
-In script form, roughly:
+脚本形式，大致：
 
 ```
-IF hash(provided value) == target_hash THEN
-  pay to receiver
-ELSE IF current_time > deadline THEN
-  pay back to sender
+IF hash(提供的值) == 目标哈希 THEN
+  支付给接收方
+ELSE IF 当前时间 > 截止时间 THEN
+  退还给发送方
 END
 ```
 
-This deceptively simple structure is the foundation of trustless multi-party Bitcoin protocols.
+这个看似简单的结构是无信任多方比特币协议的基础。
 
-Why HTLCs are so useful:
+为什么 HTLC 如此有用：
 
-- **[Lightning Network routing](/glossary/lightning-routing).** When you pay across multiple Lightning hops, each hop is bound by an HTLC. The receiver knows the secret. They claim from the previous hop by revealing it. That hop claims from the one before by passing on the same secret. Backward up the chain, every hop gets paid atomically as the secret propagates. Either the whole payment succeeds, or it all unwinds when the timeouts hit.
-- **[Atomic swaps](/glossary/atomic-swap).** Two parties on different chains can swap tokens without trust. Each side locks funds in an HTLC. Whoever first reveals the secret claims their funds and exposes the secret, letting the other party claim theirs. If anyone bails, both refunds trigger at the deadline.
-- **[Submarine swaps](/glossary/submarine-swap).** Swap on-chain BTC for Lightning BTC (or vice versa) trustlessly via paired HTLCs.
+- **[闪电网络路由](/glossary/lightning-routing)。** 当你跨多个闪电跳支付时，每跳受 HTLC 约束。接收方知道秘密。他们通过揭示它从前一跳认领。该跳通过传递相同秘密从再前一跳认领。沿链向后，当秘密传播时每跳原子性地获得支付。要么整个支付成功，要么在超时时全部回滚。
+- **[原子交换](/glossary/atomic-swap)。** 不同链上的两方可以无信任地交换代币。每方在 HTLC 中锁定资金。谁先揭示秘密就认领自己的资金并暴露秘密，让对方认领他们的。如果任何人退出，两方退款在截止时触发。
+- **[潜艇交换](/glossary/submarine-swap)。** 通过配对 HTLC 无信任地将链上 BTC 换为闪电 BTC（或反之）。
 
-The "time-locked" part isn't optional. Without a deadline, funds could be stuck forever waiting for a secret that may never be revealed. The deadline ensures that *something* happens - either the payment completes (secret revealed) or it doesn't (refund triggers). Time itself becomes part of the security model.
+"时间锁"部分不是可选的。没有截止时间，资金可能永远卡在等待可能永远不会到来的秘密。截止确保*某事*发生——要么支付完成（秘密揭示），要么不完成（退款触发）。时间本身成为安全模型的一部分。
 
-HTLCs are the cryptographic primitive that makes Bitcoin's layer-2 ecosystem actually trustless. They've been in production since 2017 and have moved trillions of sats worth of payments without ever requiring an intermediary to be honest.
+HTLC 是使比特币二层生态系统真正无信任的密码原语。它们自 2017 年起投入生产，已转移了数万亿聪价值的支付，从未需要中间人诚实。
 
-See [Payment Points](/glossary/payment-point) for the PTLC successor concept: same atomicity, same time-lock guarantees, but the hash-and-preimage lock is replaced by an elliptic-curve point and scalar. Smaller on-chain footprint and better privacy properties, pending wider Taproot adoption.
+PTLC 后继概念参见[支付点](/glossary/payment-point)：相同原子性、相同时间锁保证，但哈希-原像锁被椭圆曲线点和标量替换。更小的链上占用和更好的隐私属性，等待更广泛的 Taproot 采用。

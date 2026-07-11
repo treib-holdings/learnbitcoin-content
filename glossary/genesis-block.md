@@ -1,12 +1,12 @@
 ---
-title: "Genesis Block"
+title: "创世区块"
 slug: genesis-block
 draft: false
-shortDefinition: "The very first Bitcoin block, mined by Satoshi Nakamoto on January 3, 2009, referencing a Times headline."
+shortDefinition: "比特币的第一个区块，由 Satoshi Nakamoto 于 2009 年 1 月 3 日挖出，引用了一条《泰晤士报》标题。"
 keyTakeaways:
-  - "Mined by Satoshi, forming the blockchain's foundation"
-  - "Contains a reference to 2009 banking crisis headlines"
-  - "Its coinbase reward is unspendable due to special coding"
+  - "由 Satoshi 挖出，构成区块链的基础"
+  - "包含对 2009 年银行业危机标题的引用"
+  - "其 coinbase 奖励因特殊编码而不可花费"
 sources: []
 relatedTerms:
   - block-header
@@ -24,18 +24,18 @@ sameAs:
 liveWidget: ~
 ---
 
-The genesis block is block 0 of the Bitcoin chain - the first one. [Satoshi Nakamoto](/glossary/satoshi-nakamoto) mined it on January 3, 2009, and embedded a now-famous message in its [coinbase transaction](/glossary/coinbase-transaction):
+创世区块是比特币链的区块 0——第一个。[Satoshi Nakamoto](/glossary/satoshi-nakamoto) 于 2009 年 1 月 3 日挖出，并在其 [coinbase 交易](/glossary/coinbase-transaction)中嵌入了一条著名的消息：
 
 > "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks"
 
-This was a verbatim Times of London front-page headline from earlier that day. It serves two purposes. First, it proves the block wasn't pre-mined - it couldn't have existed before the newspaper headline did. Second, it's an unmistakable statement of intent: Bitcoin launched in the middle of a banking crisis, explicitly invoking the failures of the system it was designed to compete with.
+这是当天早些时候《泰晤士报》头版标题的原文。它有两个目的。第一，证明区块没有被预挖——它在报纸标题存在之前不可能存在。第二，是明确的意图声明：比特币在银行业危机中诞生，明确提及了它被设计来竞争的系统的失败。
 
-A few technical quirks of the genesis block:
+创世区块的一些技术特点：
 
-- **The 50 BTC [block subsidy](/glossary/block-subsidy) is unspendable.** Satoshi hard-coded it in a way that's not part of the UTXO set. The coins exist in lore but not in the spendable supply.
-- **No previous block hash.** The previous-block-hash field is all zeros, since there's nothing before it.
-- **Hardcoded into Bitcoin Core.** Every node ships with the exact bytes of the genesis block baked in. It's not "found" by the network; it's a constant.
+- **50 BTC [区块补贴](/glossary/block-subsidy)不可花费。** Satoshi 以不属于 UTXO 集的方式硬编码。这些币存在于传说中但不在于可花费供应中。
+- **没有前一个区块哈希。** 前一区块哈希字段全为零，因为之前什么都没有。
+- **硬编码在 Bitcoin Core 中。** 每个节点内置创世区块的确切字节。它不是被网络"发现"的；它是一个常量。
 
-The genesis block is mostly symbolic now, but the message is worth re-reading on every halving. It's the founding document of an alternative monetary system, written in 80 bytes by someone who hasn't been seen since.
+创世区块现在主要是象征性的，但那条消息值得每次减半时重读。它是一个替代货币系统的创始文件，由一个再未出现的人用 80 字节写下。
 
-See the [whitepaper](/glossary/whitepaper) for the companion document, and [Satoshi Nakamoto](/glossary/satoshi-nakamoto) for what we know about who put it there.
+配套文件参见[白皮书](/glossary/whitepaper)，我们所知关于谁留下它的参见 [Satoshi Nakamoto](/glossary/satoshi-nakamoto)。
