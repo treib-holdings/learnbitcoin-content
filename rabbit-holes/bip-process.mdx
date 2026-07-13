@@ -1,0 +1,116 @@
+---
+title: "The BIP Process"
+slug: bip-process
+draft: true
+published: "2026-07-14"
+status: live
+section: rabbit-hole
+tagline: "How an idea becomes a Bitcoin Improvement Proposal, what the editors actually control, why most proposals die, and how the ones that matter get activated - including the covenant activation fight underway in 2026."
+order: 15
+estimatedMinutes: 12
+ogImage: "/diagrams/og/bip-lifecycle.png"
+ogImageAlt: "Flow diagram of the BIP lifecycle under BIP-3: an idea from the mailing list becomes a numbered Draft, advances to Complete when the spec is finished and Deployed when used in the real world, with a gray Closed exit for proposals that are withdrawn, rejected, or superseded. Note: the editors assign numbers, the network decides adoption."
+sources:
+  - { label: "BIP-1 - BIP Purpose and Guidelines (2011)", url: "https://github.com/bitcoin/bips/blob/master/bip-0001.mediawiki" }
+  - { label: "BIP-2 - BIP process, revised (2016)", url: "https://github.com/bitcoin/bips/blob/master/bip-0002.mediawiki" }
+  - { label: "BIP-3 - Updated BIP Process (deployed 2026)", url: "https://github.com/bitcoin/bips/blob/master/bip-0003.md" }
+  - { label: "bitcoin-dev mailing list - David Harding, Taproot activation proposal Speedy Trial (2021)", url: "https://www.mail-archive.com/bitcoin-dev@lists.linuxfoundation.org/msg09604.html" }
+  - { label: "Bitcoin Optech - Soft fork activation", url: "https://bitcoinops.org/en/topics/soft-fork-activation/" }
+  - { label: "Bitcoin Optech Newsletter #388 - BIP-3 reaches Deployed (2026)", url: "https://bitcoinops.org/en/newsletters/2026/01/16/" }
+  - { label: "Bitcoin Optech Newsletter - the CTV/CSFS open letter and responses (2025)", url: "https://bitcoinops.org/en/newsletters/2025/07/04/" }
+  - { label: "Delving Bitcoin - BIP-119 CTV activation client (2026)", url: "https://delvingbitcoin.org/t/bip-119-ctv-activation-client/2242" }
+relatedTerms:
+  - bip-bitcoin-improvement-proposal
+  - bip-9-versionbits
+  - bip-8
+  - speedy-trial
+  - bip-148-uasf
+  - bip-341
+  - miner-signaling
+  - soft-fork
+  - taproot
+  - bitcoin-governance
+  - bip-101-increase-block-size
+---
+
+> **Where you're going:** Bitcoin has no product team and no roadmap, yet it ships upgrades. The unit of change is the BIP, the Bitcoin Improvement Proposal - a numbered text file in a public repository. This chapter covers where BIPs came from, what the editors who run the repository actually control (much less than people assume), the lifecycle a proposal moves through, how the important ones get activated on the network, and why the covenant proposals everyone argues about today have been sitting at Draft for years. If you read our [block size war](/rabbit-hole/block-size-war) chapter, this is the same governance machine viewed from the inside.
+
+## A text file with a number
+
+Every deliberate change to Bitcoin you have ever heard of - SegWit, [Taproot](/glossary/taproot), the block size increases people fought over - started life as a text file. A Bitcoin Improvement Proposal is a design document with a number, a specification, and a motivation section, kept in a public repository that anyone can read.
+
+The convention is borrowed. In 2011 a developer named Amir Taaki adapted Python's PEP process for Bitcoin and wrote the result up as BIP-1, in places simply copying the Python text and swapping the names. The governance instrument for a monetary network was cribbed from a programming language's paperwork, and it worked, because the problem is the same. How does a project with no boss agree on changes? You write proposals down, number them, and argue about them in public.
+
+BIP-1 established three kinds of proposal, and the categories survive in updated form today: consensus and standards changes (the ones that alter what software must do), informational documents, and process documents - proposals about how proposals work. Keep that last category in mind; it comes back.
+
+## What the editors actually do
+
+The repository is maintained by BIP editors, and the single most misunderstood thing about Bitcoin governance is what those editors control.
+
+They assign numbers. They check that a submission is on topic, properly formatted, coherent, and licensed acceptably. Under the current process document they are explicitly barred from judging whether a proposal is a good idea or likely to be adopted. An author cannot self-assign a number; drafts circulate under working names until an editor assigns one in public. But once a proposal meets the formal bar, the editors are not supposed to stand in its way, however much they may personally dislike it.
+
+For roughly a decade the editor was one person, Luke Dashjr, which made the role a recurring flashpoint: every delayed number assignment looked like gatekeeping, whatever the reason. In February 2024 the role expanded to a team, and as of 2026 six editors share it: Bryan Bishop, Jon Atack, Luke Dashjr, Mark "Murch" Erhardt, Olaoluwa Osuntokun, and Ruben Somsen.
+
+The cleanest illustration of what a BIP number means is the OP_CAT episode. Its supporters campaigned for the meme number 420. The editors assigned 347, the next sensible slot, in April 2024. The press covered the number assignment either way, and none of it moved the proposal an inch closer to activation, because a BIP number is a filing label. It is not an endorsement, and it is not a prediction.
+
+## The lifecycle
+
+<figure>
+  <img src="/diagrams/bip-lifecycle.svg" alt="Flow diagram of the BIP lifecycle under BIP-3. An idea from the mailing list becomes a numbered Draft after an editor assigns a number. The orange path advances from Draft to Complete, when the specification is finished, to Deployed, when it is used in the real world, with a note that Deployed requires adoption, not editor approval, and an arrow onward to activation via signaling and nodes. A gray Closed box below collects proposals that are withdrawn, rejected, or superseded, with a note that most proposals end there and that this is the system working. A footnote records that until January 2026 the BIP-2 process used nine statuses, collapsed to four by BIP-3." />
+  <figcaption>The lifecycle under BIP-3, in force since January 2026. The editors only control the left edge of this picture. Everything after that depends on the network adopting the proposal.</figcaption>
+</figure>
+
+For most of Bitcoin's history the lifecycle came from BIP-2, a 2016 process document by Luke Dashjr. It defined nine statuses - Draft, Deferred, Proposed, Rejected, Withdrawn, Final, Active, Replaced, Obsolete - and some mechanical rules for moving between them: authors could park or withdraw their own proposals, anyone could request a stale proposal be marked Rejected after three years without progress, and reaching Final required objective evidence of adoption.
+
+In January 2026 a new process document took over. BIP-3, authored by the Bitcoin Core contributor known as Murch, collapsed the nine statuses to four: Draft, Complete (the specification is finished), Deployed (it is in real-world use), and Closed (withdrawn, rejected, or superseded - the terminal bucket). It also tightened the editor role described above and made process documents living documents that can be amended in place.
+
+A proposal to change the proposal process was itself drafted, numbered, argued over in public for more than a year, and adopted through the very process it replaced. The system amended its own constitution using its own rules, twice now (BIP-2 replaced BIP-1 the same way). Nothing about that required anyone's permission, and nothing about it was enforceable until the people using the repository simply started following the new document.
+
+## Reaching Deployed
+
+Deployed is the status that matters, and no committee can grant it. A proposal gets there when the network actually runs it.
+
+The bar depends on what kind of change it is. A [soft fork](/glossary/soft-fork) has to actually activate on the network, which is the hardest test Bitcoin has. Under the old BIP-2 rules, a wallet-level standard needed at least two independent, compatible implementations before it could be called Final, and a change to how nodes talk to each other needed real nodes speaking it in the wild. The details have evolved, but the principle has never changed: adoption comes first, and the paperwork catches up. There are BIPs that half the wallets on earth implement, and there are BIPs with beautiful specifications that nothing has ever run. The repository just records which is which.
+
+This is the answer to a question newcomers reasonably ask: who approves Bitcoin upgrades? Nobody approves them. Authors propose, editors file, and then the proposal goes out into the world to win adoption or fail to. For consensus changes, that contest has a formal arena.
+
+## How a consensus change actually activates
+
+A consensus change is special because every node has to agree on the rules or the network splits. So Bitcoin developed machinery for coordinating the switch-on, and the machinery has its own BIPs.
+
+The workhorse is [BIP-9](/glossary/bip-9-versionbits), version bits. Miners set a bit in the blocks they mine to signal readiness for a named change. If enough blocks in a difficulty period signal - a stretch of 2,016 blocks, roughly two weeks, and BIP-9 asked for 95 percent of them - the change locks in and activates on schedule. [Miner signaling](/glossary/miner-signaling) is a readiness check, not a vote: it exists so the network can see that the people building blocks will enforce the new rules, not to give them a veto over whether the rules are wanted.
+
+It became a veto anyway, exactly once. During the [block size war](/rabbit-hole/block-size-war), miners opposed to SegWit simply declined to signal, and a 95 percent threshold handed a minority the power to freeze an upgrade the wider ecosystem wanted. Breaking that freeze took the threat of [BIP-148](/glossary/bip-148-uasf), a user-activated soft fork that would reject non-signaling blocks after a flag day. Miners began signaling weeks before the deadline, through the BIP-91 compromise, under pressure widely credited to the UASF. It worked, at the cost of two of the ugliest years in Bitcoin's history.
+
+The scar tissue from that fight shaped everything since. [BIP-8](/glossary/bip-8) generalized the UASF idea into a reusable mechanism: deployment windows measured in block heights, and a flag called lockinontimeout, LOT for short, which when set to true makes signaling mandatory in the final period so the fork cannot be stalled to death. When Taproot came up for activation in early 2021, the community agreed on nearly everything except that flag, and the LOT=true versus LOT=false argument threatened to become its own small war.
+
+What ended the standoff was a deliberate change of question. [Speedy Trial](/glossary/speedy-trial), proposed by Russell O'Connor and written up by David Harding in March 2021, said: stop arguing about the guarantee and run a short experiment. Three months of signaling at a 90 percent threshold. Succeed fast or fail fast, and if it fails, debate the stronger mechanisms with data in hand. Miners reached the threshold in June 2021, about six weeks in, and Taproot activated that November at block 709,632. The five-month gap between lock-in and activation was deliberate: a fixed activation height gave node operators time to upgrade no matter how quickly miners signaled.
+
+Taproot remains, as of 2026, the last soft fork to activate on Bitcoin. One protocol upgrade in the better part of a decade is the pace, and nobody who built this system considers that a failure. A monetary network is supposed to be this hard to change.
+
+## Most BIPs die, and that is fine
+
+Walk the repository and you find the graveyard. BIP-62, a 2014 attempt to fix transaction malleability by patching its symptoms one by one, was withdrawn by its own author when the whole-cloth fix (SegWit) proved better. [BIP-101](/glossary/bip-101-increase-block-size), the 8 MB block size increase that shipped in Bitcoin XT, is filed as Closed - the most consequential dead BIP in the repository, and the one that opened the war. Dozens of others sit where their momentum ran out: numbered, specified, argued over, and never adopted.
+
+None of that is dysfunction. The process is a filter, and dead proposals are what a working filter leaves behind. Getting a number is easy by design - it costs the editors nothing and it puts the idea on the public record with a citable name. Getting the network to run your idea is hard by design, because the network is a monetary system holding other people's savings, and the burden of proof belongs on the change, not on the status quo. The repository's dead proposals are the receipts of ideas that got their hearing and did not clear the bar. The system worked on them too.
+
+## The covenant debate
+
+The covenant debate is the best place to watch the machine run in real time.
+
+Covenants are proposed script capabilities that would let a coin constrain how it can be spent next - the building block for vaults, congestion control, and a family of layer-two designs. Three proposals anchor the discussion. BIP-119, OP_CHECKTEMPLATEVERIFY or CTV, has been sitting at Draft since January 2020. BIP-347, OP_CAT, has a finished specification - status Complete - and, as you would now expect, that alone has moved it no closer to deployment. BIP-348, OP_CHECKSIGFROMSTACK, is a Draft that often travels in a bundle with CTV.
+
+The history already includes one cautionary tale. In April 2022, CTV's author announced a Speedy Trial-style activation attempt through a standalone client, and withdrew it within about ten days under heavy developer pushback. The consistent objection, then and since, has been about process rather than merit: an activation attempt without broad consensus is the block size war's playbook, and everyone remembers how that went. A 2025 open letter asking Bitcoin Core to prioritize CTV and CSFS review within six months drew the same response from several senior contributors - pressure campaigns, they argued, set proposals back.
+
+As we publish this, the question is genuinely open. In early 2026 an independent activation client for CTV appeared with a year-long signaling window that opened in March 2026, echoing the UASF pattern of putting a deadline on the table without Bitcoin Core's involvement. Whether meaningful signaling materializes, whether Core review moves, whether the whole attempt fades like 2022's did - none of that is knowable from here, and we will not pretend otherwise. What we can tell you is how to read it: watch whether the economic majority of nodes and businesses moves, because as the war chapter showed, that is where activation is actually decided.
+
+## What this buys us
+
+The BIP process looks bureaucratic from the outside and anarchic from the inside, and both impressions miss what it does.
+
+- **It makes change legible.** Every serious proposal gets a number, a specification, and a public paper trail. When you hear that some upgrade is coming to Bitcoin, there is a document to check and a status to read, and now you know how to read it.
+- **It separates filing from approving.** The editors run a filing system rather than a gate. Nobody in the process holds the power people keep assuming someone must hold, and that is on purpose.
+- **Deployed status is evidence, not authority.** A BIP advances when the world adopts it. The repository is a map of what happened, which is why it can be trusted in a way a roadmap never could be.
+- **The graveyard is the guarantee.** Most proposals die, including well-crafted ones with passionate backers. A system where changing Bitcoin is this hard is the same system that makes the 21 million cap worth believing.
+
+The block size war settled who controls Bitcoin's rules. The BIP process is what that settlement looks like as paperwork: ideas in, numbers assigned, arguments in public, and the network, rather than any editor or letter-writing campaign, deciding what becomes Bitcoin.
