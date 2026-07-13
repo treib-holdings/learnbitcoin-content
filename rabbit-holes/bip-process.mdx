@@ -86,6 +86,11 @@ The scar tissue from that fight shaped everything since. [BIP-8](/glossary/bip-8
 
 What ended the standoff was a deliberate change of question. [Speedy Trial](/glossary/speedy-trial), proposed by Russell O'Connor and written up by David Harding in March 2021, said: stop arguing about the guarantee and run a short experiment. Three months of signaling at a 90 percent threshold. Succeed fast or fail fast, and if it fails, debate the stronger mechanisms with data in hand. Miners reached the threshold in June 2021, about six weeks in, and Taproot activated that November at block 709,632. The five-month gap between lock-in and activation was deliberate: a fixed activation height gave node operators time to upgrade no matter how quickly miners signaled.
 
+<figure>
+  <img src="/diagrams/activation-mechanisms.svg" alt="Three side-by-side cards comparing Bitcoin's soft-fork activation designs. BIP-9, the workhorse: timestamp-based window, 95 percent threshold, and if miners stall it expires and fails quietly, in practice a minority veto; several upgrades used it, and SegWit stalled under it. BIP-8 with LOT set to true, the guarantee: height-based window, 90 percent threshold, signaling becomes mandatory in the final period; never used on mainnet but shapes every debate anyway. Speedy Trial, the experiment, highlighted in orange: a three-month window plus a fixed activation height, 90 percent threshold, fails fast so the community regroups with real data; used for Taproot in 2021, locked in after six weeks. Takeaway: the designs differ mainly in what happens when miners refuse to signal." />
+  <figcaption>Three answers to the same design question. Speedy Trial is the one that has actually shipped an upgrade.</figcaption>
+</figure>
+
 Taproot remains, as of 2026, the last soft fork to activate on Bitcoin. One protocol upgrade in the better part of a decade is the pace, and nobody who built this system considers that a failure. A monetary network is supposed to be this hard to change.
 
 ## Most BIPs die, and that is fine
