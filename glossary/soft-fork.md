@@ -40,3 +40,5 @@ Notable Bitcoin soft forks:
 Activation typically involves miner signaling: enough miners must signal readiness for the new rules in their block headers before the fork "locks in" and starts being enforced. The mechanism is defined in [BIP-9](/glossary/bip-9-versionbits) and its successors. After activation, nodes that haven't upgraded continue working but may accept blocks that violate the new rules - which is why genuinely majority-supported soft forks are essentially safe, while contested ones can create chain splits.
 
 The soft-fork approach is conservative: Bitcoin can add features without forcing everyone to upgrade simultaneously. It's also part of why Bitcoin evolves slowly - any proposal has to satisfy a high bar of community + miner + economic-node consensus to actually activate. The full multi-stakeholder dynamic is what [Bitcoin governance](/glossary/bitcoin-governance) describes; soft forks are the most common shape that process takes when the goal is adding capability without splitting the network.
+
+See [The BIP Process](/rabbit-hole/bip-process) for how soft forks move from proposal to activation.

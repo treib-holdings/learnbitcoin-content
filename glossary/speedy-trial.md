@@ -33,3 +33,5 @@ The last piece was a minimum activation height. Even if miners locked Taproot in
 Technically, Speedy Trial is not a BIP. It is a deployment configuration, a modified [BIP-9](/glossary/bip-9-versionbits) with the lowered threshold and the added height floor, and its parameters live in [BIP-341](/glossary/bip-341)'s deployment section. It shipped in Bitcoin Core 0.21.1 on May 1, 2021. Signaling ran in whole difficulty periods starting at block 681,408, and on June 12, 2021 the 1,815th block of a period signaled, guaranteeing lock-in at that period's end, about six weeks into the window. Taproot then activated on schedule at block 709,632 on November 14, 2021.
 
 As of 2026 it is still the most recent soft fork to activate on Bitcoin, which makes Speedy Trial the reference precedent in today's covenant activation debates. See [miner signaling](/glossary/miner-signaling) for the underlying mechanism.
+
+See [The BIP Process](/rabbit-hole/bip-process) for the deadlock Speedy Trial resolved.

@@ -34,3 +34,5 @@ BIP-8 also recommends a signaling threshold of 90 percent (1,815 of 2,016 blocks
 The LOT flag turned into the central fight of the Taproot activation debate in early 2021. Community meetings agreed on almost everything, including the 90 percent threshold, but split on LOT=true versus LOT=false, with neither side able to claim consensus. Bitcoin Core ultimately sidestepped the question by shipping [Speedy Trial](/glossary/speedy-trial), a BIP-9-based deployment that borrowed BIP-8's threshold and added a height-based activation delay. A minority of node operators ran an alternative client that used BIP-8 with LOT=true as a backstop; it never had to enforce anything, because Speedy Trial succeeded first.
 
 As of 2026, BIP-8 is still a draft and has never been used for a mainnet activation. Its influence is real anyway: every activation discussion since 2017, including the current covenant debates, is argued partly in BIP-8's vocabulary of guaranteed versus miner-dependent activation.
+
+See [The BIP Process](/rabbit-hole/bip-process) for where BIP-8 fits in the activation story.

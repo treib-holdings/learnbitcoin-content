@@ -69,3 +69,5 @@ Taproot adoption took a few years to ripple through wallet software, hardware wa
 One structural property worth naming: Taproot outputs commit to the tweaked public key directly in the bech32m address - there is no hash layer in front. Every P2TR output is therefore "always-exposed" in [post-quantum](/glossary/post-quantum-bitcoin) terms: the pubkey is on chain from output creation, regardless of whether it is ever spent. The tradeoff buys key-path privacy and efficiency for complex contracts. The fix when post-quantum signatures arrive is a new output type, not abandoning Taproot.
 
 See [Schnorr Signature](/glossary/schnorr-signature) and [Signature Aggregation](/glossary/signature-aggregation) for the building blocks.
+
+See [The BIP Process](/rabbit-hole/bip-process) for the process that got Taproot activated.

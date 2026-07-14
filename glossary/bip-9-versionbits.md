@@ -34,3 +34,5 @@ The mechanism:
 This worked cleanly for several soft forks (e.g., BIP-65 CLTV, BIP-68 CSV). It famously broke down during the [SegWit](/glossary/segwit-segregated-witness-bip-141) activation in 2017, when a significant minority of miners refused to signal despite broad user support. That deadlock led to alternative activation methods: [BIP-148 (UASF)](/glossary/bip-148-uasf), [BIP-91](/glossary/bip-91), and ultimately a successor framework called BIP-8 / "speedy trial," which was used to activate [Taproot](/glossary/taproot) in 2021 with a fallback to user-enforced activation if miner signaling failed.
 
 The deeper lesson from the SegWit episode: **miners signal readiness, but they don't decide the rules.** When user nodes are willing to enforce a rule regardless of miner signaling, miners eventually fall in line. BIP-9 made coordination smoother for uncontroversial upgrades but didn't have a clean answer for contested ones. Modern activation methods build that lesson in.
+
+See [The BIP Process](/rabbit-hole/bip-process) for how version bits fit the wider upgrade machinery.
