@@ -8,7 +8,7 @@ tagline: "August 15, 2010: someone created 184 billion BTC out of thin air. Five
 order: 9
 estimatedMinutes: 10
 ogImage: "/diagrams/og/inflation-bug-postmortem.png"
-ogImageAlt: "Block 74,638 created billions of bitcoin over the 21M cap. The bug value 184,467,440,737 stacked above the legitimate 21,000,000 cap — visualizing the moment Bitcoin almost became fiat-like uncapped supply."
+ogImageAlt: "Block 74,638 created billions of bitcoin over the 21M cap. The bug value 184,467,440,737 stacked above the legitimate 21,000,000 cap - visualizing the moment Bitcoin almost became fiat-like uncapped supply."
 sources:
   - { label: "CVE-2010-5139 - Bitcoin value overflow vulnerability", url: "https://nvd.nist.gov/vuln/detail/CVE-2010-5139" }
   - { label: "BitcoinTalk - The Strange Story of the Bitcoin Bug (thread #823)", url: "https://bitcointalk.org/index.php?topic=823.0" }
@@ -53,7 +53,7 @@ The bug was in `CTransaction::CheckTransaction`, the function every node calls t
 
 The code that did this check used a **signed 64-bit integer** to hold the sum, and added each output value in sequence. If two outputs each had values near 2^63, their sum would overflow. Wrap around past the maximum representable positive number into the negative range. A negative sum is, of course, less than `MAX_MONEY`. The check passed.
 
-The transaction had two outputs, each set to roughly 9.2 × 10^18 satoshis - just past the overflow threshold. Their sum overflowed to a small negative number. The validation function said "looks fine." The transaction got mined.
+The transaction had two outputs, each set to roughly 9.2 x 10^18 satoshis - just past the overflow threshold. Their sum overflowed to a small negative number. The validation function said "looks fine." The transaction got mined.
 
 This is a textbook example of a class of bugs that has been understood since at least the 1970s. C and C++ allow signed integer overflow, the behavior is technically undefined, and writing checks that do not account for it is a known footgun. Satoshi wrote it anyway. So would any of us.
 

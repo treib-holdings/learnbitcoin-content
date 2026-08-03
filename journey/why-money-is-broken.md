@@ -33,7 +33,7 @@ sources:
     preload="metadata"
     aria-label="Animated line chart: $1 from 1970 declines decade by decade to about $0.12 today, with green dollar coins continuously fading as purchasing power erodes."
   ></video>
-  <figcaption>Half a century of inflation, decade by decade. $1 in 1970 → about $0.12 today.</figcaption>
+  <figcaption>Half a century of inflation, decade by decade. $1 in 1970 -> about $0.12 today.</figcaption>
 </figure>
 
 ## 1. The Feeling That Something's Wrong
@@ -122,10 +122,10 @@ If you own assets, monetary expansion is roughly neutral or beneficial to you. I
 
 | Annual inflation | 10 years | 20 years | 40 years |
 |---|---|---|---|
-| 2% | −18% | −33% | −55% |
-| 3% | −26% | −45% | −70% |
-| 5% | −40% | −64% | −86% |
-| 7% | −50% | −74% | −93% |
+| 2% | -18% | -33% | -55% |
+| 3% | -26% | -45% | -70% |
+| 5% | -40% | -64% | -86% |
+| 7% | -50% | -74% | -93% |
 
 The official US CPI averaged around 4% from 1971 to today. That's a working life of erosion.
 

@@ -24,7 +24,7 @@ The pattern, roughly:
 1. Bitcoin doubles or triples first. New money enters the crypto space because of headlines about Bitcoin.
 2. Bitcoin briefly consolidates near a local top.
 3. Traders looking for the "next Bitcoin" rotate into altcoins. Ethereum gets the first wave; smaller-cap coins get the later, more violent moves.
-4. Percentage gains for the loudest altcoins can be 5-10× over Bitcoin during the peak weeks of alt season.
+4. Percentage gains for the loudest altcoins can be 5-10x over Bitcoin during the peak weeks of alt season.
 5. The cycle ends. Bitcoin holds most of its gain; altcoins typically retrace 80-95% from their peaks.
 
 What's reliably true about alt season:

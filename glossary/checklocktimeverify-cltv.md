@@ -27,7 +27,7 @@ liveWidget: ~
 
 **OP_CHECKLOCKTIMEVERIFY** (CLTV) is the Bitcoin Script opcode that enforces [absolute locktime](/glossary/absolute-locktime) inside a script. It's the script-level companion to the transaction-level [`nLockTime`](/glossary/nlocktime) field.
 
-The opcode's semantics: when CLTV executes, it checks that the spending transaction's `nLockTime` is at least a specific value (which CLTV reads from the stack). If that condition holds, the script continues; if not, the spending fails. So a locking script can require "to spend, the spending transaction must claim a locktime ≥ X" - effectively locking the output until that block height or timestamp.
+The opcode's semantics: when CLTV executes, it checks that the spending transaction's `nLockTime` is at least a specific value (which CLTV reads from the stack). If that condition holds, the script continues; if not, the spending fails. So a locking script can require "to spend, the spending transaction must claim a locktime >= X" - effectively locking the output until that block height or timestamp.
 
 Introduced via [BIP-65](/glossary/bip-65-opchecklocktimeverify) in December 2015, CLTV is one of the script primitives that made advanced Bitcoin constructions practical. Common uses:
 

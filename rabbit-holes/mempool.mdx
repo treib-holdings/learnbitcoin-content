@@ -20,7 +20,7 @@ hasInteractive: ["mempoolHistogram"]
 
 import MempoolHistogram from '@components/mining/MempoolHistogram.svelte';
 
-> **Where you're going:** The most misunderstood piece of Bitcoin's plumbing. There is no "the" mempool — every node has its own, transactions sort by sat/vB, and fee rate is the only number that matters. Here is how it actually works.
+> **Where you're going:** The most misunderstood piece of Bitcoin's plumbing. There is no "the" mempool - every node has its own, transactions sort by sat/vB, and fee rate is the only number that matters. Here is how it actually works.
 
 <figure>
   <video
@@ -35,7 +35,7 @@ import MempoolHistogram from '@components/mining/MempoolHistogram.svelte';
     preload="metadata"
     aria-label="Animated walkthrough of the Bitcoin mempool. Alice broadcasts a transaction at 3 sat/vB and lands at the bottom fee tier. Bob broadcasts later at 50 sat/vB and jumps to the top. A block scoops the top tier and Bob confirms. Over more blocks the mempool drains and Alice eventually mines. Leftover low-fee transactions evict after two weeks and the value returns to the sender's wallet, where it can be rebroadcast at a higher rate."
   ></video>
-  <figcaption>Broadcast, propagation, fee-rate sorting, mining, eviction, rebroadcast — the full mempool lifecycle in under a minute.</figcaption>
+  <figcaption>Broadcast, propagation, fee-rate sorting, mining, eviction, rebroadcast - the full mempool lifecycle in under a minute.</figcaption>
 </figure>
 
 ## 1. The Mempool, In One Line
@@ -68,7 +68,7 @@ When you broadcast a transaction:
 
 1. Your wallet sends it to a Bitcoin node (yours, your wallet provider's, or via a public broadcast service).
 2. That node validates it. Signatures correct? Inputs exist and unspent? Fee meets relay minimum? Script policy ok?
-3. If valid, the node adds it to its mempool and relays it to peers via the `inv` → `getdata` → `tx` message sequence.
+3. If valid, the node adds it to its mempool and relays it to peers via the `inv` -> `getdata` -> `tx` message sequence.
 4. Each receiving peer repeats steps 2 and 3.
 
 Within roughly 5 to 10 seconds, the transaction is in most mempools globally.

@@ -52,10 +52,10 @@ Backup strategy is a triangle of three threats:
 
 A good backup defends against all three. The hard part: defending against any one of them often *worsens* your defense against the others.
 
-- Keep the seed at home (no loss risk from third parties) → higher theft risk.
-- Split the seed across locations (loss-resistant) → if any one location is compromised, you have made attack easier.
-- Use a passphrase to protect against theft → if you forget the passphrase, full loss.
-- Distribute shares to family → coercion attack on any family member can compromise you.
+- Keep the seed at home (no loss risk from third parties) -> higher theft risk.
+- Split the seed across locations (loss-resistant) -> if any one location is compromised, you have made attack easier.
+- Use a passphrase to protect against theft -> if you forget the passphrase, full loss.
+- Distribute shares to family -> coercion attack on any family member can compromise you.
 
 There is no single "best" backup. There is the backup that fits *your* threats and amounts. Treat the rest of this rabbit hole as a menu, not a prescription.
 
@@ -126,7 +126,7 @@ Things to consider:
 
 [BIP 39](/glossary/bip-39) supports an optional **passphrase** in addition to the 12 or 24 mnemonic words. Sometimes called "the 25th word," though it can be any string of any length.
 
-The passphrase is mixed into seed derivation. Different passphrase → completely different wallet, with completely different addresses, derived from the same words.
+The passphrase is mixed into seed derivation. Different passphrase -> completely different wallet, with completely different addresses, derived from the same words.
 
 Why it matters:
 - **Theft defense.** Someone who finds your seed words alone gets a wallet with no funds. The wallet with the actual bitcoin is behind the passphrase.
@@ -229,12 +229,12 @@ There is no excuse for skipping this once your stack is meaningful. (See [inheri
 
 The most common failure mode in seed backup is one form of "single point of failure" or another:
 
-- **One seed copy.** House fire → all gone.
+- **One seed copy.** House fire -> all gone.
 - **All copies in one place.** Same outcome.
-- **Cloud-stored "encrypted" backup.** Cloud provider breach plus weak password → all gone.
-- **Memorized passphrase, no written copy.** You forget → all gone.
-- **Heirs do not know where the backup is.** You die → all gone.
-- **"Encrypted" with a password only you know.** You forget → all gone.
+- **Cloud-stored "encrypted" backup.** Cloud provider breach plus weak password -> all gone.
+- **Memorized passphrase, no written copy.** You forget -> all gone.
+- **Heirs do not know where the backup is.** You die -> all gone.
+- **"Encrypted" with a password only you know.** You forget -> all gone.
 
 The pattern: any backup strategy that depends on a single thing not failing is a bad strategy. Real backups depend on multiple things failing simultaneously, with each component's failure being independent of the others.
 

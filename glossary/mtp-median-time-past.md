@@ -1,8 +1,8 @@
 ---
-title: "MTP (Median Time Past) — How Bitcoin Tracks Network Time"
+title: "MTP (Median Time Past) - How Bitcoin Tracks Network Time"
 slug: mtp-median-time-past
 draft: false
-shortDefinition: "Bitcoin uses the median of the last 11 block timestamps as 'network time.' Here's why — and how it stops miners from gaming time-locked transactions."
+shortDefinition: "Bitcoin uses the median of the last 11 block timestamps as 'network time.' Here's why - and how it stops miners from gaming time-locked transactions."
 keyTakeaways:
   - "Prevents outlier timestamps from messing with time-based rules"
   - "Ensures consistent locktime functionality and consensus enforcement"

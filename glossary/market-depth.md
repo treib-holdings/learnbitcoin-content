@@ -32,7 +32,7 @@ Why it matters:
 
 How Bitcoin market depth typically looks in 2026:
 
-- **Major spot markets** (Coinbase, Kraken, Binance) - very deep within ±1% of the spot price. Tens of millions in available liquidity per side.
+- **Major spot markets** (Coinbase, Kraken, Binance) - very deep within +/-1% of the spot price. Tens of millions in available liquidity per side.
 - **Smaller exchanges** - depth varies. The advertised "volume" is often a poor proxy for actual depth.
 - **DEX / peer-to-peer markets** - much thinner. Each individual trade is a separate match rather than an order book; large trades require splitting or waiting.
 

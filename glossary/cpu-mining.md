@@ -29,7 +29,7 @@ CPU mining is mining Bitcoin using a general-purpose computer processor instead 
 The historical progression:
 
 - **2009-2010:** CPU mining. Anyone with a laptop could find blocks. [Satoshi](/glossary/satoshi-nakamoto) and [Hal Finney](/glossary/hal-finneys-running-bitcoin) mined this way.
-- **Late 2010:** GPU mining started. Graphics cards turned out to be roughly 50-100× faster at hashing than CPUs. CPU miners couldn't compete.
+- **Late 2010:** GPU mining started. Graphics cards turned out to be roughly 50-100x faster at hashing than CPUs. CPU miners couldn't compete.
 - **2013:** [ASICs](/glossary/asic-application-specific-integrated-circuit) arrived. GPU miners became uncompetitive in months.
 - **2014+:** ASIC-only era. CPU mining produces 0.000000001% of network hash rate, if that.
 

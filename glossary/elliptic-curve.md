@@ -31,7 +31,7 @@ The relevant property: elliptic curves let you do "one-way math." You can multip
 In practice:
 
 - Your [private key](/glossary/private-key) is just a number k between 1 and roughly 2^256.
-- Your [public key](/glossary/public-key) is the point P = k·G on the secp256k1 curve.
+- Your [public key](/glossary/public-key) is the point P = k*G on the secp256k1 curve.
 - Signing a transaction proves you know k *without revealing it*, by exploiting the same one-way math.
 
 Different elliptic curves exist (ed25519, NIST P-256, others). Bitcoin sticks with secp256k1 for compatibility and because no serious vulnerability has been found in it after sixteen years of being one of the most-attacked cryptographic targets on Earth.

@@ -49,4 +49,4 @@ A typical send works like this: your wallet picks one or more of your UTXOs whos
 
 Once confirmed, the transaction is identified forever by its **txid** - the double-SHA256 hash of its serialized form. The outputs it created become new UTXOs in the global set, available to be spent in future transactions, and the inputs it consumed are gone for good.
 
-See the [Mining rabbit hole §6](/rabbit-hole/mining) for how miners decide which transactions to pack into a block, and [UTXO](/glossary/utxo-unspent-transaction-output) for the "coin object" model that underlies Bitcoin's accounting.
+See the [Mining rabbit hole section 6](/rabbit-hole/mining) for how miners decide which transactions to pack into a block, and [UTXO](/glossary/utxo-unspent-transaction-output) for the "coin object" model that underlies Bitcoin's accounting.

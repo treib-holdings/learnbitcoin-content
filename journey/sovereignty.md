@@ -97,7 +97,7 @@ A node is only useful if your wallet talks to it instead of a third-party server
 
 Three reasonable starting points for a desktop wallet that pairs cleanly with your own node:
 
-- **Sparrow Wallet.** Cleanest UI for own-node pairing. Settings → Server → "Use Bitcoin Core" or "Connect to Electrum server." Sparrow becomes a thin client over your node.
+- **Sparrow Wallet.** Cleanest UI for own-node pairing. Settings -> Server -> "Use Bitcoin Core" or "Connect to Electrum server." Sparrow becomes a thin client over your node.
 - **Specter Desktop.** Talks directly to your Bitcoin Core via RPC. Multisig-friendly. Slightly more advanced setup.
 - **Electrum.** The veteran light client. Long track record. Point it at the Electrum endpoint your node OS exposes.
 

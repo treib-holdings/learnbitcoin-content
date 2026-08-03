@@ -68,7 +68,7 @@ Once Alice's wallet broadcasts the transaction, it goes to one of her wallet's c
 
 A few things to notice:
 
-- **The mempool isn't a single global thing.** Every node has its own copy. They're nearly identical but not perfectly - a node in Tokyo and a node in São Paulo might have slightly different sets for a few seconds. Eventually they converge.
+- **The mempool isn't a single global thing.** Every node has its own copy. They're nearly identical but not perfectly - a node in Tokyo and a node in Sao Paulo might have slightly different sets for a few seconds. Eventually they converge.
 - **Mempool transactions are valid but unconfirmed.** Every node has already checked: signatures are valid, the UTXOs being spent actually exist and are unspent, the math adds up. If any check fails, the transaction is dropped.
 - **The mempool is sorted by fee rate.** Miners want to maximize their earnings per block, so they pick the highest-fee transactions first. Your fee determines your seat in line.
 

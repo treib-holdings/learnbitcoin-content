@@ -2,9 +2,9 @@
 title: "Market Capitalization"
 slug: market-capitalization
 draft: false
-shortDefinition: "A metric for a crypto asset's total value, calculated as price per coin × circulating supply."
+shortDefinition: "A metric for a crypto asset's total value, calculated as price per coin x circulating supply."
 keyTakeaways:
-  - "Price × circulating supply = rough total valuation"
+  - "Price x circulating supply = rough total valuation"
   - "Headline-friendly but may overstate actual 'money at risk'"
   - "Commonly used to compare crypto assets' relative scale"
 sources: []
@@ -22,7 +22,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Market capitalization (or "market cap") is the spot price of an asset multiplied by the number of units in circulation. For Bitcoin: BTC/USD price × circulating supply (currently ~20 million BTC).
+Market capitalization (or "market cap") is the spot price of an asset multiplied by the number of units in circulation. For Bitcoin: BTC/USD price x circulating supply (currently ~20 million BTC).
 
 The number is useful as a *rough* gauge of an asset's scale, especially for comparison: at any given time, BTC's market cap can be compared to gold's ($15-20T as of 2026), Apple's market cap (~$3.5T), or the entire S&P 500's total value (~$50T).
 

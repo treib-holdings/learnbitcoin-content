@@ -41,7 +41,7 @@ ogImageAlt: "A Lightning Network mesh diagram with ten labeled nodes (Alice, Bob
 
 Bitcoin's base layer is a chain. Every transaction is appended sequentially, broadcast globally, validated by every node, and stored forever.
 
-[Lightning](/glossary/lightning-network) is not a chain. It is a **graph.** Nodes have **channels** to other nodes. Channels can route payments. A payment from Alice to Carol can hop Alice → Bob → Carol if Alice and Bob share a channel, and Bob and Carol share another channel.
+[Lightning](/glossary/lightning-network) is not a chain. It is a **graph.** Nodes have **channels** to other nodes. Channels can route payments. A payment from Alice to Carol can hop Alice -> Bob -> Carol if Alice and Bob share a channel, and Bob and Carol share another channel.
 
 This is the entire premise. Off the chain, in a separate network, with payments that route through intermediaries who do not need to trust each other.
 
@@ -103,7 +103,7 @@ Lightning uses onion routing - specifically a construction called [Sphinx](/glos
 
 When Alice wants to pay Carol via Bob, her node:
 
-1. Constructs the route: Alice → Bob → Carol.
+1. Constructs the route: Alice -> Bob -> Carol.
 2. Builds an "onion" with layered encryption: outermost layer for Bob, inner layer for Carol.
 3. Sends the onion to Bob.
 4. Bob decrypts his layer. He sees: "forward this onion to Carol, with this amount, this fee, this expiry."

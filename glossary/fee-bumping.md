@@ -31,8 +31,8 @@ Fee bumping is what you do when your [transaction](/glossary/transaction) is stu
 
 Most modern wallets handle this for you with a "bump fee" button. The actual decision tree:
 
-- **You're the sender, RBF was signaled** → RBF (cleaner, replaces in place).
-- **You're the receiver of a stuck incoming transaction** → CPFP, spending the unconfirmed output to yourself.
-- **Sender, RBF wasn't signaled** → CPFP if you have a spendable output, otherwise wait.
+- **You're the sender, RBF was signaled** -> RBF (cleaner, replaces in place).
+- **You're the receiver of a stuck incoming transaction** -> CPFP, spending the unconfirmed output to yourself.
+- **Sender, RBF wasn't signaled** -> CPFP if you have a spendable output, otherwise wait.
 
 See [Fee Estimation](/glossary/fee-estimation) to avoid needing this in the first place.

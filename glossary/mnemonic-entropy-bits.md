@@ -4,7 +4,7 @@ slug: mnemonic-entropy-bits
 draft: false
 shortDefinition: "The underlying binary randomness used to generate BIP 39 seed words (commonly 128, 192, or 256 bits)."
 keyTakeaways:
-  - "128 bits → 12 words, 256 bits → 24 words, etc."
+  - "128 bits -> 12 words, 256 bits -> 24 words, etc."
   - "Higher entropy means stronger cryptographic security"
   - "Checksum ensures small mistakes don't create an invalid seed"
 sources: []
@@ -21,11 +21,11 @@ A BIP 39 mnemonic is a human-friendly encoding of raw random bits. The wallet ge
 
 The mapping is fixed:
 
-- 128 bits + 4 checksum bits → 12 words
-- 160 bits + 5 checksum bits → 15 words
-- 192 bits + 6 checksum bits → 18 words
-- 224 bits + 7 checksum bits → 21 words
-- 256 bits + 8 checksum bits → 24 words
+- 128 bits + 4 checksum bits -> 12 words
+- 160 bits + 5 checksum bits -> 15 words
+- 192 bits + 6 checksum bits -> 18 words
+- 224 bits + 7 checksum bits -> 21 words
+- 256 bits + 8 checksum bits -> 24 words
 
 128 bits is the practical security floor. Brute-forcing 2^128 operations is computationally infeasible by any known method, classical or quantum (Grover's algorithm halves the bit-strength against quantum search, so 128-bit entropy becomes ~64-bit quantum security, which is the edge of "expensive but doable" if large-scale quantum computers existed; this is one reason a paranoid setup uses 24 words instead of 12).
 

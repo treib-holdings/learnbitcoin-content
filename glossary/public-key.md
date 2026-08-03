@@ -23,7 +23,7 @@ liveWidget: ~
 
 A public key is a number derived from a [private key](/glossary/private-key) via elliptic curve multiplication. It corresponds uniquely to the private key but reveals nothing about it - you can publish your public key without compromising your secret.
 
-The mechanism: Bitcoin uses the secp256k1 elliptic curve. Multiplying a curve generator point G by your private key k gives a point P = k·G. That point P (encoded as 33 bytes in compressed form) is your public key. Going forward from k to P is cheap. Going backward from P to k requires solving the elliptic curve discrete logarithm problem, which is computationally intractable - the same intractability that secures most of the modern internet's cryptography.
+The mechanism: Bitcoin uses the secp256k1 elliptic curve. Multiplying a curve generator point G by your private key k gives a point P = k*G. That point P (encoded as 33 bytes in compressed form) is your public key. Going forward from k to P is cheap. Going backward from P to k requires solving the elliptic curve discrete logarithm problem, which is computationally intractable - the same intractability that secures most of the modern internet's cryptography.
 
 What public keys are used for:
 

@@ -48,4 +48,4 @@ The fee market dynamics:
 
 Long-term, transaction fees become *the* incentive for miners. Today they're ~3-10% of [block reward](/glossary/block-reward) revenue; as the [block subsidy](/glossary/block-subsidy) halves toward zero around 2140, fees become 100% of it. The fee market that exists today is a small preview of the fee market Bitcoin needs to sustain its security post-subsidy.
 
-See live mempool fee bands on the [Node page](/node/) or in the [Mining rabbit hole §6](/rabbit-hole/mining).
+See live mempool fee bands on the [Node page](/node/) or in the [Mining rabbit hole section 6](/rabbit-hole/mining).

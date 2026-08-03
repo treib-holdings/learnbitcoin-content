@@ -32,7 +32,7 @@ Major tools and what they're for:
 
 What the tools make visible:
 
-- **Transaction flows.** Address A → Address B → Address C, with amounts and timestamps.
+- **Transaction flows.** Address A -> Address B -> Address C, with amounts and timestamps.
 - **Address clustering.** Heuristics that group addresses likely controlled by the same entity (common input ownership, change address detection).
 - **Mempool dynamics.** Real-time view of pending transactions and fee competition.
 - **Network topology.** Lightning channel graphs, peer connection maps, geographic distribution.

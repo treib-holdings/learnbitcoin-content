@@ -32,9 +32,9 @@ If anyone bails at any step, the HTLCs time out and refund automatically. The tr
 
 Practical uses:
 
-- **BTC ↔ BTC across layers.** Swap on-chain BTC for Lightning BTC and vice versa - see [submarine swaps](/glossary/submarine-swap).
-- **BTC ↔ other Bitcoin-derived chains** (Liquid, sidechains, etc.).
-- **BTC ↔ stablecoins** via decentralized swap markets like Robosats.
+- **BTC <-> BTC across layers.** Swap on-chain BTC for Lightning BTC and vice versa - see [submarine swaps](/glossary/submarine-swap).
+- **BTC <-> other Bitcoin-derived chains** (Liquid, sidechains, etc.).
+- **BTC <-> stablecoins** via decentralized swap markets like Robosats.
 
 The catch is operational complexity. Atomic swaps require both parties' wallets to speak the protocol, both chains to support the necessary script primitives, and careful timeout management. Most ordinary users delegate to a swap service (which may itself be trust-minimized) rather than doing it raw.
 

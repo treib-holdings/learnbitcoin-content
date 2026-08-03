@@ -24,7 +24,7 @@ For Bitcoin specifically, the main DEX patterns are:
 - **[Atomic swaps](/glossary/atomic-swap)** between BTC and other assets - HTLC-based trustless exchange. Slower than centralized order books but custody-free.
 - **Robosats** - a Tor-only peer-to-peer marketplace using Lightning escrow. Order book matches BTC against fiat (sent via local payment rails); escrow is held by a Lightning HTLC, not by the platform.
 - **Bisq** - longer-established peer-to-peer marketplace with on-chain multisig escrow. Slower than Robosats but more flexible payment methods.
-- **Submarine-swap providers** like Boltz Exchange for trustless on-chain ↔ Lightning conversion.
+- **Submarine-swap providers** like Boltz Exchange for trustless on-chain <-> Lightning conversion.
 
 Strengths:
 

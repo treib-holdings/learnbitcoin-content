@@ -33,4 +33,4 @@ The choice of 10 minutes (rather than, say, 1 minute like Litecoin or 15 seconds
 - **Long enough** that the [proof-of-work](/glossary/proof-work-pow) per block is meaningful security.
 - **Short enough** that confirmations accumulate at a useful rate. Six confirmations (the conventional "settled" threshold for large amounts) is about an hour.
 
-The [difficulty retarget](/glossary/difficulty-retargeting) every 2,016 blocks pulls the average back toward 10 minutes when global hash rate has grown (or shrunk). See the [Mining rabbit hole §4](/rabbit-hole/mining) for the long version.
+The [difficulty retarget](/glossary/difficulty-retargeting) every 2,016 blocks pulls the average back toward 10 minutes when global hash rate has grown (or shrunk). See the [Mining rabbit hole section 4](/rabbit-hole/mining) for the long version.

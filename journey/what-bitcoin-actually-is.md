@@ -98,7 +98,7 @@ Here's the math:
 
 ```
 50 + 25 + 12.5 + 6.25 + 3.125 + ... = 100 BTC per halving cycle
-210,000 blocks × 100 BTC = 21,000,000 BTC (rounded; actual: 20,999,999.9769)
+210,000 blocks x 100 BTC = 21,000,000 BTC (rounded; actual: 20,999,999.9769)
 ```
 
 The supply is a geometric series that converges. New issuance approaches zero asymptotically. The last fractional satoshi will be mined around the year 2140.

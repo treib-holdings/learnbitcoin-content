@@ -147,7 +147,7 @@ We don't sell wallets. We don't take affiliate commissions. Here's the unvarnish
   <figcaption>Blockstream Jade at unlock. Single button, color screen, secure element - the budget-conscious entry into self-custody.</figcaption>
 </figure>
 
-**Why "Bitcoin-only" matters:** wallets that support 50 cryptocurrencies have 50× the attack surface. Every supported coin is more code, more libraries, more places things can go wrong. Bitcoin-only firmware has fewer features but a smaller, more thoroughly audited codebase. If you're using a hardware wallet for Bitcoin, run Bitcoin-only firmware. (Most of the above support it.)
+**Why "Bitcoin-only" matters:** wallets that support 50 cryptocurrencies have 50x the attack surface. Every supported coin is more code, more libraries, more places things can go wrong. Bitcoin-only firmware has fewer features but a smaller, more thoroughly audited codebase. If you're using a hardware wallet for Bitcoin, run Bitcoin-only firmware. (Most of the above support it.)
 
 **What to avoid for self-custody:**
 - Any wallet that asks you to upload your seed for "backup"
@@ -210,7 +210,7 @@ This is how you prove ownership of an address to an insurance company, an inheri
 
 Honest list, ordered by what shows up most often in incident postmortems and exchange compromise reports. The ordering is editorial - exact frequencies aren't published anywhere reliable.
 
-1. **Leaving funds on an exchange.** Exchange goes bankrupt (Mt. Gox, FTX, Celsius, BlockFi…). Funds gone.
+1. **Leaving funds on an exchange.** Exchange goes bankrupt (Mt. Gox, FTX, Celsius, BlockFi...). Funds gone.
 2. **Phishing the seed.** Fake support reps, fake wallet updates, fake "verify your wallet" pages. **No legitimate wallet, ever, asks you to type your seed online.** If it does, it's a scam.
 3. **Losing the seed.** Single backup, single location, single fire. The 1% of seed-loss events that aren't theft.
 4. **Buggy or malicious wallet software.** Use audited, open-source wallets. Verify download signatures from the publisher when possible.

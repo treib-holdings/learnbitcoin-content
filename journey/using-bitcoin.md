@@ -214,7 +214,7 @@ These aren't reasons to avoid Bitcoin. They're the operational consequences of o
 Before chapter 6 (Sovereignty - running a node, multisig, op-sec), do these three things:
 
 - [ ] Send a deliberate on-chain transaction - pick the fee rate yourself, watch it confirm
-- [ ] Open a Lightning channel or fund a self-custodial LN wallet (the non-custodial managed category in §6 is the easy path)
+- [ ] Open a Lightning channel or fund a self-custodial LN wallet (the non-custodial managed category in section 6 is the easy path)
 - [ ] Send and receive a Lightning payment - it should take seconds
 
 That's it. You're using Bitcoin, not just holding it. Welcome to actually living in the new monetary system.

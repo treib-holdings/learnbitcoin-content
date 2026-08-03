@@ -42,4 +42,4 @@ The counterweight is that **pool operators are not miners**. The hash rate in a 
 
 On the operator side, the layer that actually manages pool connections, work distribution, and per-ASIC monitoring is the [mining front-end](/glossary/mining-front-end) - just stock firmware for a hobbyist with one ASIC, a dedicated fleet-management stack for industrial operators running thousands.
 
-The current state is uncomfortable but not catastrophic. See [Mining rabbit hole §8](/rabbit-hole/mining) for a longer look at mining centralization and how it's actually evolving.
+The current state is uncomfortable but not catastrophic. See [Mining rabbit hole section 8](/rabbit-hole/mining) for a longer look at mining centralization and how it's actually evolving.

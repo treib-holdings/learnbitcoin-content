@@ -25,11 +25,11 @@ A bull market is a sustained period of rising prices and growing positive sentim
 
 Bitcoin's price history through 2025 shows roughly four major bull cycles, each peaking 12-18 months after a [halving](/glossary/halving-halvening):
 
-- **2010-2011** - $0.001 → $30s. The "early adopters" era.
-- **2013** - $13 → $1,100. The Mt. Gox / Silk Road era, ended by major exchange failures.
-- **2016-2017** - $400 → $20,000. SegWit activation, retail mania.
-- **2020-2021** - $5,000 → $69,000. COVID money printing, MicroStrategy and Tesla, El Salvador adoption.
-- **2024-2025** - $40,000 → $100,000+. Spot ETFs, post-halving cycle continuation.
+- **2010-2011** - $0.001 -> $30s. The "early adopters" era.
+- **2013** - $13 -> $1,100. The Mt. Gox / Silk Road era, ended by major exchange failures.
+- **2016-2017** - $400 -> $20,000. SegWit activation, retail mania.
+- **2020-2021** - $5,000 -> $69,000. COVID money printing, MicroStrategy and Tesla, El Salvador adoption.
+- **2024-2025** - $40,000 -> $100,000+. Spot ETFs, post-halving cycle continuation.
 
 The pattern is real. Whether it's *causal* (the [halving](/glossary/halving-halvening) reduces issuance, demand catches up, price rises) or *coincidental* (cycles happen for unrelated reasons that just line up with halvings) is endlessly debated. With n=3 or n=4 complete cycles, there isn't enough data to settle the question rigorously.
 

@@ -44,4 +44,4 @@ What counterbalances it:
 - **Geographic dispersion has improved.** Compared to 2018-2020 when ~65% of hash was in China, the network is now spread across many more countries.
 - **Mining hardware is fungible.** Miners can and do route their hash rate through different pools, in different jurisdictions, on short notice.
 
-The honest assessment: mining centralization is a real concern with real failure modes, but the structural counterweights are also real. It's an area worth watching, worth pushing back on with Stratum V2 adoption and pool-operator scrutiny, and worth not panicking about. See [Mining rabbit hole §8](/rabbit-hole/mining) for a longer look.
+The honest assessment: mining centralization is a real concern with real failure modes, but the structural counterweights are also real. It's an area worth watching, worth pushing back on with Stratum V2 adoption and pool-operator scrutiny, and worth not panicking about. See [Mining rabbit hole section 8](/rabbit-hole/mining) for a longer look.

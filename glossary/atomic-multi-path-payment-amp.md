@@ -29,7 +29,7 @@ The motivation: any single [Lightning channel](/glossary/lightning-channel) has 
 
 How it works:
 
-1. The sender's wallet decides to use AMP and splits the total into chunks (say, 5 × 200,000 sats for a 1,000,000-sat payment).
+1. The sender's wallet decides to use AMP and splits the total into chunks (say, 5 x 200,000 sats for a 1,000,000-sat payment).
 2. It finds different routes for each chunk - ideally through disjoint channels so no one path is fully loaded.
 3. All chunks are sent simultaneously using [HTLCs](/glossary/htlc-hashed-time-locked-contract).
 4. The receiver holds each incoming HTLC until they've received all of them.

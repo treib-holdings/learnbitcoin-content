@@ -50,6 +50,6 @@ Wallets come in several archetypes, each with different security/convenience tra
 - **[Hardware wallets](/glossary/hardware-wallet)** - Trezor, Jade, BitBox, Ledger. Keys stay on a dedicated signing device, never touching internet-connected machines.
 - **Multisig setups** - more than one device required to authorize a transaction. Strongly recommended for significant amounts.
 
-The right wallet depends on what you're holding and what you're doing. Spending money you'd carry as cash? A mobile wallet is fine. Long-term savings? Hardware, ideally multisig. The general rule: more value → more friction → more separation between keys and online surfaces.
+The right wallet depends on what you're holding and what you're doing. Spending money you'd carry as cash? A mobile wallet is fine. Long-term savings? Hardware, ideally multisig. The general rule: more value -> more friction -> more separation between keys and online surfaces.
 
 See the [Journey: Be Your Own Bank](/journey/be-your-own-bank) chapter for the full walkthrough.

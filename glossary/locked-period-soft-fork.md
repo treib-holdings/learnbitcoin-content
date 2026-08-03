@@ -4,7 +4,7 @@ slug: locked-period-soft-fork
 draft: false
 shortDefinition: "A stage after a soft-fork signaling threshold is met but before the new consensus rules become active on the network."
 keyTakeaways:
-  - "Threshold met → locked in → waiting period → final activation"
+  - "Threshold met -> locked in -> waiting period -> final activation"
   - "Prevents abrupt rule changes so nodes can update smoothly"
   - "Miners and users must align before rules become mandatory"
 sources: []

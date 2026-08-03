@@ -25,7 +25,7 @@ sameAs:
 liveWidget: ~
 ---
 
-Hash rate is the total computational throughput being thrown at Bitcoin's [proof-of-work](/glossary/proof-work-pow) puzzle, measured in [hashes](/glossary/hash) per second. As of mid-2026, the global Bitcoin hash rate is around **700 EH/s** - 700 exahashes per second, or 7 × 10^20 hashes every second.
+Hash rate is the total computational throughput being thrown at Bitcoin's [proof-of-work](/glossary/proof-work-pow) puzzle, measured in [hashes](/glossary/hash) per second. As of mid-2026, the global Bitcoin hash rate is around **700 EH/s** - 700 exahashes per second, or 7 x 10^20 hashes every second.
 
 The units climb fast:
 
