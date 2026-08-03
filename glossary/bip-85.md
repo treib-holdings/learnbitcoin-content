@@ -2,6 +2,7 @@
 title: "BIP 85"
 slug: bip-85
 draft: false
+updated: "2026-08-03"
 shortDefinition: "Defines a standard for creating multiple deterministic child seeds from a single master seed, improving backup convenience."
 keyTakeaways:
   - "Allows generating multiple mnemonic seeds from one root"
@@ -31,6 +32,6 @@ Why this is useful:
 
 The downside: **the master seed becomes a single point of catastrophic failure.** If the master leaks, every sub-wallet is compromised at once. For users with serious operational security (hardware wallets, secure backup storage), this concentration can be acceptable. For users with weaker key hygiene, it can be worse than independent seeds.
 
-BIP-85 is widely supported in Bitcoin Core, hardware wallets (ColdCard, Trezor, Foundation Passport), and several wallet stacks. It's the standard for "I want multiple wallets but only one backup to safeguard."
+BIP-85 is widely supported in Bitcoin Core, hardware wallets (Trezor, Foundation Passport, and others), and several wallet stacks. It's the standard for "I want multiple wallets but only one backup to safeguard."
 
 See [Hierarchical Deterministic Wallet](/glossary/hierarchical-deterministic-wallet) for the BIP-32 framework this builds on.

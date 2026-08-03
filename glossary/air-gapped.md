@@ -2,6 +2,7 @@
 title: "Air-gapped"
 slug: air-gapped
 draft: false
+updated: "2026-08-03"
 shortDefinition: "Refers to a device completely isolated from any network, used for securely generating or storing private keys offline."
 keyTakeaways:
   - "Prevents remote network attacks on private keys"
@@ -23,7 +24,7 @@ For Bitcoin self-custody, air-gap is a security strategy: the device that holds 
 
 What an air-gapped setup looks like in practice:
 
-- **Hardware wallets done right.** Coldcard, Foundation Passport, SeedSigner, and similar devices are designed for air-gap operation. Transactions are passed in as PSBTs via SD card or QR; signed PSBTs come back the same way. The signing device never touches the network.
+- **Hardware wallets done right.** Foundation Passport, SeedSigner, and similar devices are designed for air-gap operation. Transactions are passed in as PSBTs via SD card or QR; signed PSBTs come back the same way. The signing device never touches the network.
 - **Old laptop, network hardware removed.** A dedicated machine with the Wi-Fi card physically removed (or never installed), running an offline signing tool. Common for advanced multisig setups.
 - **Faraday-shielded signing rooms.** Institutional cold-storage operations sometimes do signing inside a room shielded against radio emissions, defeating both network attacks and side-channel attacks like keystroke-EM monitoring.
 

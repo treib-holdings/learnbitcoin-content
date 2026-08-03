@@ -2,6 +2,7 @@
 title: "Constant Time"
 slug: constant-time
 draft: false
+updated: "2026-08-03"
 shortDefinition: "A practice in cryptography where operations take the same amount of time, preventing side-channel leaks of sensitive data."
 keyTakeaways:
   - "Prevents leaking secrets via timing or power analysis"
@@ -27,6 +28,6 @@ Why this matters for Bitcoin:
 
 The library that does Bitcoin's heavy cryptographic lifting is [libsecp256k1](https://github.com/bitcoin-core/secp256k1) (the C library extracted from Bitcoin Core). It's been audited and reimplemented specifically for constant-time properties: the signing path performs the same operations in the same order regardless of the key bits, and the relevant memory accesses are constant.
 
-Hardware wallets take this further. The secure elements in ColdCard, Trezor Safe, Foundation Passport, and BitBox include hardware-level protections against power analysis (randomized timing, current-limiting, glitch detection). The threat model assumes attackers can put the device on an oscilloscope.
+Hardware wallets take this further. The secure elements in Trezor Safe, Foundation Passport, and BitBox include hardware-level protections against power analysis (randomized timing, current-limiting, glitch detection). The threat model assumes attackers can put the device on an oscilloscope.
 
 For users none of this is visible; it just works. For library authors and hardware-wallet designers, constant-time discipline is one of the load-bearing details that turns Bitcoin's "cryptographic security" from a slogan into something actually achievable on real silicon.

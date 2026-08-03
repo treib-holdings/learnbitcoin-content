@@ -1,6 +1,8 @@
----title: "Be Your Own Bank"
+---
+title: "Be Your Own Bank"
 slug: be-your-own-bank
 draft: false
+updated: "2026-08-03"
 status: live
 published: "2026-05-15"
 order: 4
@@ -128,15 +130,10 @@ We don't sell wallets. We don't take affiliate commissions. Here's the unvarnish
   <figcaption>Trezor Safe 5 in PIN entry. Numbers shuffle on every unlock - shoulder-surfing and smudge attacks don't work when the layout changes.</figcaption>
 </figure>
 
-- **Coldcard** (Mk4 or Q) - Bitcoin-only, fully open-source firmware, designed for paranoid users
-
-<figure>
-  <img src="/photos/coldcard-mk4-pin.jpg" alt="The Coldcard Mk4 hardware wallet mid-PIN-entry. The transparent case reveals the circuit board and secure element chip. A small green status LED indicates the device is powered. The OLED screen displays 'Enter PIN Prefix' with a numeric counter. A physical 12-button keypad is below the screen." />
-  <figcaption>Coldcard Mk4 in PIN-prefix entry. The transparent case is intentional - anyone can verify the chip on the device matches the public spec.</figcaption>
-</figure>
-
 - **Foundation Passport** - Bitcoin-only, fully air-gapped (no USB data, uses QR codes and microSD); US-made
 - **Keystone 3 Pro** - Bitcoin-friendly, fully air-gapped (no USB data, QR-only), fingerprint sensor, large landscape touchscreen
+
+*Coldcard was on this list until July 2026, when a firmware entropy flaw left seeds guessable and wallets were drained at scale ([CoinDesk's report](https://www.coindesk.com/tech/2026/07/31/major-bitcoin-wallet-flaw-drains-594-btc-in-25-minute-sweep) has the details). We removed it the week the drains began. If you generated a seed on a Coldcard, treat it as compromised: move funds to a seed generated on a different device and follow the manufacturer's advisory.*
 
 <figure>
   <img src="/photos/keystone-3-pro-box.jpg" alt="The Keystone 3 Pro hardware wallet resting on its blue retail packaging. The device's landscape touchscreen is dark; the box shows the Keystone wordmark and product name. Light wood surface in the background." />

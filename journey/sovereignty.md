@@ -140,7 +140,7 @@ Multisig isn't just for paranoid whales. The right setup for $20,000 of bitcoin 
 
 A 2-of-3 multisig requires three things.
 
-**Three hardware wallets, from three different manufacturers.** Vendor diversity is the rule, not specific brands. Three reasonable starting points: Coldcard, Foundation Passport, Trezor. Others exist; pick three from brands you trust and can verify. A hardware vulnerability in one model should not compromise more than one of your keys.
+**Three hardware wallets, from three different manufacturers.** Vendor diversity is the rule, not specific brands. Three reasonable starting points: Jade, Foundation Passport, Trezor. Others exist; pick three from brands you trust and can verify. A hardware vulnerability in one model should not compromise more than one of your keys. The July 2026 Coldcard entropy incident is the case study: seeds generated on affected firmware were guessable, wallets were drained, and a multisig with only one affected key would have held. If any of your keys came from a Coldcard, rotate that seed on a different device.
 
 **Three seed phrases**, each generated on its own hardware wallet, each backed up independently on metal in physically separate locations.
 

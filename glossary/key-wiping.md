@@ -2,6 +2,7 @@
 title: "Key Wiping"
 slug: key-wiping
 draft: false
+updated: "2026-08-03"
 shortDefinition: "Securely erasing private keys from memory or storage so they cannot be recovered by forensic or malware tools."
 keyTakeaways:
   - "Prevents data remnants after signing sessions"
@@ -21,7 +22,7 @@ liveWidget: ~
 
 Key wiping is the practice of overwriting private-key material in memory (and persistent storage) so it can't be recovered through later forensic analysis, cold-boot attacks, or malware that scrapes the device after the fact.
 
-In hardware wallets it's part of the firmware contract. Trezor, ColdCard, Jade, BitBox, Ledger, and the rest unpack the seed only when needed for a derivation or signature, do the work in a constrained region of memory, and overwrite that region before returning. On factory reset, the entire secure element or flash region holding the seed is overwritten (not just marked deleted).
+In hardware wallets it's part of the firmware contract. Trezor, Jade, BitBox, Ledger, and the rest unpack the seed only when needed for a derivation or signature, do the work in a constrained region of memory, and overwrite that region before returning. On factory reset, the entire secure element or flash region holding the seed is overwritten (not just marked deleted).
 
 In general-purpose software the picture is messier. Bitcoin Core's wallet encryption tries to clear sensitive buffers when locked, but it's running on a multi-tasking OS where swap files, memory pressure, and kernel paging can copy buffers to disk without the application's knowledge. This is one of the reasons hardware wallets exist: the controlled execution environment makes key wiping actually enforceable.
 

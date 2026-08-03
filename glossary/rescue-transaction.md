@@ -2,6 +2,7 @@
 title: "Rescue Transaction"
 slug: rescue-transaction
 draft: false
+updated: "2026-08-03"
 shortDefinition: "A pre-signed or fallback transaction prepared to secure funds if keys are compromised or LN channels fail."
 keyTakeaways:
   - "Acts as a contingency measure to preserve access to funds"
@@ -42,6 +43,6 @@ Real production examples:
 
 - **Liana** (Wizardsardine's wallet): primary use case is exactly this pattern, with a recovery key that becomes spendable after a configurable timelock.
 - **Casa, Unchained, Nunchuk multisig services**: typically maintain pre-signed recovery transactions as part of customer setup.
-- **DIY vault implementations**: Sparrow + ColdCard + Liana-style scripts can construct any of these designs manually.
+- **DIY vault implementations**: Sparrow + a hardware signer + Liana-style scripts can construct any of these designs manually.
 
 Rescue transactions are one of the most underrated tools in Bitcoin self-custody. They turn theoretical "what if X" scenarios into "here's the file we broadcast if X happens" reality. The upfront work is real; the recovery payoff is enormous when needed.

@@ -2,6 +2,7 @@
 title: "Wallet"
 slug: wallet
 draft: false
+updated: "2026-08-03"
 shortDefinition: "Software or hardware managing private keys and addresses, enabling users to send/receive BTC."
 keyTakeaways:
   - "Manages keys that control BTC outputs, not physical currency"
@@ -46,7 +47,7 @@ Wallets come in several archetypes, each with different security/convenience tra
 - **[Custodial wallets](/glossary/custodial-wallet)** - someone else holds your keys (Coinbase, Cash App, Strike). Easiest to use, weakest property guarantees. You don't own Bitcoin; you own an IOU.
 - **Mobile wallets** - Phoenix, Muun, BlueWallet, etc. You hold the keys, convenient daily use, hot-wallet security model.
 - **Desktop wallets** - Sparrow, Bitcoin Core's own wallet, Wasabi. Often connect to your own node; more powerful coin control.
-- **[Hardware wallets](/glossary/hardware-wallet)** - Trezor, ColdCard, Jade, BitBox, Ledger. Keys stay on a dedicated signing device, never touching internet-connected machines.
+- **[Hardware wallets](/glossary/hardware-wallet)** - Trezor, Jade, BitBox, Ledger. Keys stay on a dedicated signing device, never touching internet-connected machines.
 - **Multisig setups** - more than one device required to authorize a transaction. Strongly recommended for significant amounts.
 
 The right wallet depends on what you're holding and what you're doing. Spending money you'd carry as cash? A mobile wallet is fine. Long-term savings? Hardware, ideally multisig. The general rule: more value → more friction → more separation between keys and online surfaces.

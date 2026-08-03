@@ -2,6 +2,7 @@
 title: "HD Wallet (Hierarchical Deterministic Wallet)"
 slug: hd-wallet-hierarchical-deterministic-wallet
 draft: false
+updated: "2026-08-03"
 shortDefinition: "A wallet using BIP 32 derivation paths to create a structured key tree from one seed."
 keyTakeaways:
   - "Allows all addresses to be recovered from one master seed"
@@ -44,7 +45,7 @@ The structure, defined in [BIP 32](/glossary/bip-32):
 Why HD wallets dominate:
 
 - **One backup covers everything.** Write down 12 or 24 words, and you've backed up every address your wallet will ever generate, across every account, indefinitely.
-- **Cross-wallet portability.** Import a BIP 39 seed into any standards-compliant wallet (Sparrow, BlueWallet, Electrum, Trezor, ColdCard, anything) and get the same addresses.
+- **Cross-wallet portability.** Import a BIP 39 seed into any standards-compliant wallet (Sparrow, BlueWallet, Electrum, Trezor, anything) and get the same addresses.
 - **Watch-only support.** Hand someone the xpub (extended public key) and they can derive every receive address without ever seeing private keys. Useful for accounting, monitoring, watch-only mobile apps backed by hardware wallets.
 - **Multi-account separation.** The BIP 44/84/86 path structure includes an account level so users can maintain logically separated wallets (`account 0` for personal, `account 1` for business, etc.) from a single seed.
 - **Hardware wallet integration.** The hardware device holds the seed; software wallets only see the xpub. The standardized derivation paths mean any compatible software pairs with any compatible hardware.

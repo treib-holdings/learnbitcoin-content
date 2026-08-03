@@ -2,6 +2,7 @@
 title: "Seed Tool"
 slug: seed-tool
 draft: false
+updated: "2026-08-03"
 shortDefinition: "An offline script or application that generates, verifies, or converts BIP 39 mnemonic seeds in a secure environment."
 keyTakeaways:
   - "Enables manual or offline generation and verification of seed phrases"
@@ -27,7 +28,6 @@ A seed tool is offline software for generating, verifying, or converting BIP 39 
 Real implementations:
 
 - **SeedSigner.** Stateless air-gapped device that takes dice rolls, produces a seed, and signs PSBTs without ever persisting the seed.
-- **Coldcard's BIP 39 entropy tool.** Built into the device firmware; supports dice, cards, and other entropy sources.
 - **Ian Coleman's open-source BIP 39 tool.** Runs in a browser, but designed to be downloaded and used offline. Used to verify seeds, derive addresses, and sanity-check wallet behavior.
 - **Various Python / Rust CLI tools.** For developers who want to verify what their wallet is doing or build custom backup workflows.
 
