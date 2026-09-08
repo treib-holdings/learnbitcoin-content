@@ -9,7 +9,7 @@ keyTakeaways:
   - "zkSNACKs shut its coordinator down on June 1, 2024, a preemptive response to the Samourai Wallet prosecutions - the company itself was never charged with anything"
   - "The wallet did not die: it moved to community development, added coordinator selection so anyone can run or choose a coordinator, and kept shipping releases into 2026"
 sources:
-  - { label: "Wasabi Wallet blog - zkSNACKs discontinues its coinjoin coordination service (2024)", url: "https://blog.wasabiwallet.io/zksnacks-is-discontinuing-its-coinjoin-coordination-service-1st-of-june/" }
+  - { label: "Wasabi Wallet blog - zkSNACKs discontinues its coinjoin coordination service (2024, archived copy)", url: "http://web.archive.org/web/20241007122748/https://blog.wasabiwallet.io/zksnacks-is-discontinuing-its-coinjoin-coordination-service-1st-of-june/" }
   - { label: "CoinDesk - Wasabi coordinator to blacklist certain bitcoin transactions (2022)", url: "https://www.coindesk.com/tech/2022/03/14/wasabi-wallets-coinjoin-coordinator-to-blacklist-certain-bitcoin-transactions" }
   - { label: "WabiSabi paper - IACR ePrint 2021/206", url: "https://eprint.iacr.org/2021/206" }
 relatedTerms:
