@@ -46,3 +46,5 @@ What chain analysis is *also* used for:
 The defenses are the privacy techniques covered elsewhere in this glossary: [avoid address reuse](/glossary/address-reuse), use [CoinJoin](/glossary/coinjoin) or [PayJoin](/glossary/payjoin) where applicable, prefer [Lightning](/glossary/lightning-network) for payments, run your node over [Tor](/glossary/tor-hidden-service), avoid KYC choke points where possible.
 
 Chain analysis isn't going away. Privacy-preserving Bitcoin use is a discipline, not a default.
+
+Go deeper in [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) - how the heuristics work, where the name attaches, what the tools get wrong, and the defenses that still hold.

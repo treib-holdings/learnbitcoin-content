@@ -37,3 +37,5 @@ Practical wins:
 The catch is coordination: both wallets need to talk before broadcast. Standards like [BIP-78](https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki) define an HTTP-based PayJoin protocol where the receiver runs an endpoint. Improvements in 2024-2025 (BIP-77 / async PayJoin via Nostr or similar relays) made coordination easier without requiring the receiver to be online at the moment of payment.
 
 PayJoin is unlike [CoinJoin](/glossary/coinjoin) in scale and intent. CoinJoin is many-party batch mixing for after-the-fact privacy. PayJoin is two-party regular-payment privacy. Both are useful; PayJoin is much harder to censor or coordinate against because every PayJoin looks like a normal transaction.
+
+See [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) for where PayJoin fits among the tools that look like ordinary use.

@@ -36,3 +36,5 @@ The tradeoff is receiver-side scanning cost. To find payments, the receiver's wa
 BIP-352 was formally adopted in 2023. As of 2026, several wallets and node implementations ship Silent Payments support; broader adoption is in progress. It's the most credible practical "stealth address" mechanism on Bitcoin today.
 
 See [Stealth Address](/glossary/stealth-address) for the historical context, and [Address Reuse](/glossary/address-reuse) for the problem this solves.
+
+See [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) for where Silent Payments fit among the defenses.

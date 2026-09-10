@@ -45,3 +45,5 @@ Wallets that expose coin control well: Sparrow, Bitcoin Core, Electrum, Specter 
 The general guidance: if you care about privacy or fee optimization, learn coin control. If you're using Bitcoin as casual spending money, the auto-select default is fine. The control is there when you need it.
 
 See [UTXO](/glossary/utxo-unspent-transaction-output) for the underlying concept and [Address Clustering](/glossary/address-clustering) for the privacy concern this addresses.
+
+See [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) for why merging coins is the leak coin control exists to prevent.

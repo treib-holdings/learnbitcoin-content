@@ -38,3 +38,5 @@ The privacy defense is to deliberately violate these heuristics:
 - Use [Lightning](/glossary/lightning-network) for payments that don't need to be on-chain.
 
 Clustering is not a single moment of detection; it's an accumulated set of evidence that gets stronger over time. The defense is also continuous: privacy on Bitcoin is a practice, not a one-shot fix.
+
+See [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) for the two heuristics that build most clusters and the exchange record that names them.

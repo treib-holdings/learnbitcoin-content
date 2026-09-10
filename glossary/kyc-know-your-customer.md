@@ -39,3 +39,5 @@ For ordinary users, KYC creates several real costs:
 Non-KYC options exist for Bitcoin specifically: peer-to-peer markets (Robosats, Bisq), mining your own BTC, accepting Bitcoin as payment, [submarine swaps](/glossary/submarine-swap), and decentralized exchange venues. They're more friction than the giants but preserve the properties most people came to Bitcoin for.
 
 A defensible Bitcoiner approach: KYC is sometimes the only available on-ramp, and that's fine to use deliberately. But minimize how much of your stack ever touches it, and avoid making KYC venues the long-term custody point.
+
+See [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) for how the exchange record becomes the anchor that names an entire address cluster.

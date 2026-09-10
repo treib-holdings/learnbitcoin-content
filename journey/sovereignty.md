@@ -182,7 +182,7 @@ The basics, in order of effort:
 
 **6. Sweep KYC and no-KYC coins separately.** If half your coins are from a regulated exchange (KYC) and half from peer-to-peer (no KYC), keeping them in different wallets prevents accidentally linking your KYC identity to your private holdings.
 
-**7. Consider CoinJoin.** A privacy-enhancing technique where multiple users pool transactions to obscure which inputs map to which outputs. Wasabi and JoinMarket are the leading implementations. Useful but increasingly scrutinized; research before using.
+**7. Consider CoinJoin.** A privacy-enhancing technique where multiple users pool transactions to obscure which inputs map to which outputs. The landscape changed in 2024, when US prosecutors arrested the operators of one coordinator and the other major coordinator shut itself down; the decentralized designs survived. Read [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) before using any of them.
 
 We've put together a [Privacy Best Practices PDF](/downloads/bitcoin-privacy-best-practices.pdf) and a [Privacy Checklist](/downloads/privacy-checklist.pdf) - both downloadable from this site. Read them before scaling up.
 

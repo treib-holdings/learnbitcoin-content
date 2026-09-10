@@ -38,3 +38,5 @@ If you can't avoid reusing one specific address, at least make it a clearly-publ
 The protocol allows reuse. The privacy model doesn't. Treat addresses as one-shot.
 
 Address reuse also has a [post-quantum dimension](/glossary/post-quantum-bitcoin). Spending from a P2PKH or P2WPKH address publishes the public key in the spending transaction. Every subsequent deposit to that same address inherits that exposure - and once a sufficiently powerful quantum computer exists, those balances become spendable by anyone. Reuse is therefore both a privacy mistake and a long-horizon security one.
+
+See [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) for how address reuse feeds the clustering heuristics, and for Silent Payments as the fix for permanent addresses.

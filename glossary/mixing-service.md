@@ -37,3 +37,5 @@ The practical landscape:
 - [Lightning](/glossary/lightning-network) routing: arguably the most-used "mixing" mechanism in Bitcoin today, since Lightning payments don't appear on the public chain at all.
 
 If you're considering using a mixer, do your research on the specific service's history, legal jurisdiction, and trust assumptions. The category includes legitimate privacy tools, ineffective theater, and outright traps.
+
+See [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) for what happened to coordinator-based mixing in 2024 and what survived.

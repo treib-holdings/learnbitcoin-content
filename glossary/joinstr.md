@@ -28,3 +28,5 @@ After 2024, that architecture became the whole point. Prosecutors took down [Sam
 The honesty requirement cuts the other way, though. Joinstr was announced on the bitcoin-dev mailing list in August 2022 by its pseudonymous developer as an explicit proof of concept, with the denial-of-service and Sybil weaknesses acknowledged in the same thread. Years later, the public artifacts are still an Electrum plugin marked pre-alpha, an experimental Rust library that warns against mainnet use, and documentation. No independent measurements show meaningful mixing volume. [JoinMarket](/glossary/joinmarket) has run for a decade and struggles to keep maintainers; Joinstr has yet to show that anyone much uses it at all.
 
 It earns its place in the privacy conversation as a direction of travel: coordination pushed onto infrastructure so generic that shutting it down would mean shutting down Nostr itself. Whether it matures into something people actually use is, as of 2026, genuinely unsettled.
+
+See [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) for the whole 2024 story and where CoinJoin stands now.

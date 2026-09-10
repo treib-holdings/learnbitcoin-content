@@ -37,3 +37,5 @@ The cost is latency. Tor adds ~200-500ms of round-trip time over normal internet
 Bitcoin Core has shipped first-class Tor support since 2014. Running your node behind Tor is a single config-file change (`proxy=127.0.0.1:9050` plus a few related options). Many node-in-a-box products (Umbrel, Start9, RaspiBlitz) ship with Tor enabled by default. The same hidden-service pattern can also expose [RPC for remote management](/glossary/json-rpc-over-tor), letting you control your home node from anywhere without opening any firewall ports.
 
 For self-custody users running a [full node](/glossary/full-node), running over Tor is the single biggest privacy upgrade you can make at the network layer. Strongly recommended for anyone who cares about not having their on-chain activity correlated with their home IP.
+
+See [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) for which leak Tor closes and which ones it does not touch.

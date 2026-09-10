@@ -38,3 +38,5 @@ The implementation landscape changed dramatically in 2024. **Wasabi's coordinato
 [PayJoin](/glossary/payjoin) is a different, smaller-scale approach that achieves similar privacy goals without batched mixing.
 
 Privacy on Bitcoin is achievable but requires deliberate effort. CoinJoin is one tool; address discipline, Tor, [Lightning](/glossary/lightning-network), and avoiding KYC choke points are others.
+
+See [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) for the full landscape after 2024: what CoinJoin does and does not protect, what the arrests changed, and what survived.

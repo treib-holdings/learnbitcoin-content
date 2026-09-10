@@ -28,3 +28,5 @@ Bitcoin is fungible *in protocol*: 1 BTC always equals 1 BTC, and the consensus 
 Several tools push back. [CoinJoin](/glossary/coinjoin) breaks transaction-graph linkage by combining inputs from many users in a single transaction. [Silent Payments](/glossary/silent-payments) and [stealth addresses](/glossary/stealth-address) reduce on-chain address reuse. [Lightning](/glossary/lightning-network) routes payments off-chain, where they aren't individually broadcast.
 
 The deeper argument is that fungibility is a property a community has to defend, not just one a protocol enforces. The protocol can't prevent a third party from deciding some coins are "tainted." Bitcoiners can - by refusing to accept that framing and by using privacy tools as a matter of course. A currency where coins have memory eventually becomes a currency where coins have permission.
+
+See [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) for how exchange risk scoring erodes fungibility in practice.
