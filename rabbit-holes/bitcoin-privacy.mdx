@@ -30,6 +30,7 @@ sources:
   - { label: "BIP-352 - Silent Payments", url: "https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki" }
   - { label: "Bitcoin Optech - Payjoin topic", url: "https://bitcoinops.org/en/topics/payjoin/" }
   - { label: "Bitcoin Wiki - Privacy (wallet fingerprinting)", url: "https://en.bitcoin.it/wiki/Privacy#Wallet_fingerprinting" }
+  - { label: "Bitcoin Core 23.0 release notes - change output type follows the destination", url: "https://bitcoincore.org/en/releases/23.0/" }
   - { label: "CoinDesk - Roman Storm guilty of unlicensed money transmitting conspiracy in partial verdict (2025)", url: "https://www.coindesk.com/policy/2025/08/06/roman-storm-guilty-of-unlicensed-money-transmitting-conspiracy-in-partial-verdict" }
   - { label: "The Block - Roman Storm retrial pushed back to April 2027 (2026)", url: "https://www.theblock.co/news/regulation/2026-08-26-tornado-cash-roman-storm-retrial-april-2027-412761" }
   - { label: "Bitcoin Optech - Silent payments topic", url: "https://bitcoinops.org/en/topics/silent-payments/" }
@@ -81,6 +82,8 @@ The paper that turned chain analysis into a discipline is a 2013 paper from the 
 The first heuristic is the one Satoshi described. If a transaction spends three inputs, whoever built it controlled all three keys, so the three addresses go into one cluster. Wallets trigger this constantly, because paying 0.25 BTC when you hold six coins of 0.05 means spending six inputs at once. Every such spend welds addresses together, and the welds never come apart.
 
 The second is change detection. Bitcoin has no balances, only [UTXOs](/rabbit-hole/utxos), so paying 0.5 BTC from a 0.75 BTC coin means one output of 0.5 to the payee and one of roughly 0.25 back to yourself at a fresh address. An analyst looking at the two outputs asks which one is the [change](/glossary/change-output). The odd amount usually is. So is the one going to a never-before-seen address, and so is the one whose script type matches the inputs. Now the change address joins your cluster too, and the trail continues into your next transaction.
+
+> **Pro tip:** Your wallet's defaults do a lot of this work for the analyst. Pay a `bc1p` Taproot address from a wallet that sends change to a `bc1q` address and the change is simply the output that matches your inputs. Bitcoin Core has matched the change type to the destination type when it can since version 23.0 in 2022, and the better wallets do the same. Before worrying about which CoinJoin coordinator is still running, check what your own wallet does with change. Credit to u/Kind-Economics-7184 on r/Bitcoin for the framing.
 
 There are more heuristics, some of them subtle, and the [Bitcoin Wiki's privacy article](https://en.bitcoin.it/wiki/Privacy), largely written by JoinMarket's creator Chris Belcher, catalogs them better than anything else online. But the two above do most of the work. They are also just guesses. A cluster is a statement of probability dressed up as a fact, and we will come back to why that matters.
 
