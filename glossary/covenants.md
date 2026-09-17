@@ -45,3 +45,5 @@ The debate has two sides:
 Current candidate proposals: [BIP-119 (CTV)](/glossary/bip-119-ctv), OP_VAULT, OP_CAT re-enablement, ANYPREVOUT, and others. No single proposal has yet built broad enough consensus to activate. The discussion continues.
 
 The covenants debate is one of the more substantive open questions in Bitcoin protocol development as of 2026. Worth understanding even if you don't have a strong view on it yet.
+
+See [OP_SUCCESS](/glossary/op-success) for the reserved opcodes the covenant proposals target, and [How Taproot Actually Works](/rabbit-hole/how-taproot-works) for the hooks Tapscript left open.

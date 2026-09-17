@@ -2,7 +2,8 @@
 title: "Merkleized Abstract Syntax Tree (MAST)"
 slug: merkleized-abstract-syntax-tree-mast
 draft: false
-shortDefinition: "A Taproot-based technique placing each script branch in a Merkle tree, hiding unused branches for privacy and efficiency."
+updated: "2026-09-17"
+shortDefinition: "A technique, deployed in Bitcoin through Taproot, that places each script branch in a Merkle tree, hiding unused branches for privacy and efficiency."
 keyTakeaways:
   - "Allows separate script branches, revealing only the used path"
   - "Enhances privacy by hiding unused logic"
@@ -28,3 +29,5 @@ Combined with Taproot's "key path spending" (the cooperative-signature option), 
 MAST has been part of Bitcoin since the Taproot soft fork activated in November 2021 ([BIP-341 / BIP-342](/glossary/taproot)). It's not a separate feature you opt into; it's the way Taproot script-path spending works.
 
 The acronym is a mouthful and the explanation is dense, but the upshot is clean: Bitcoin can now have complex contracts that look the same on-chain as the simplest transactions, until they don't have to.
+
+See [How Taproot Actually Works](/rabbit-hole/how-taproot-works) for how the tree is committed and what a script-path spend reveals.

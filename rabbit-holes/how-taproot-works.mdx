@@ -1,0 +1,217 @@
+---
+title: "How Taproot Actually Works"
+slug: how-taproot-works
+draft: false
+published: "2026-09-17"
+status: live
+section: rabbit-hole
+tagline: "One key, two doors. How a Taproot output is built, why every one looks the same until it is spent, what Schnorr signatures changed, what Tapscript left open for the future, and what has actually been done with it since 2021, inscriptions included."
+order: 17
+estimatedMinutes: 15
+ogImage: "/diagrams/og/taproot-two-paths.png"
+ogImageAlt: "Diagram of a Taproot output: an internal key and a Merkle tree of scripts are combined by a tweak into a single 32-byte output key, which can be spent through the key path with one 64-byte signature or through the script path by revealing one leaf and a control block."
+sources:
+  - { label: "BIP-340 - Schnorr Signatures for secp256k1", url: "https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki" }
+  - { label: "BIP-341 - Taproot: SegWit version 1 spending rules", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki" }
+  - { label: "BIP-342 - Validation of Taproot Scripts", url: "https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki" }
+  - { label: "BIP-350 - Bech32m format for v1+ witness addresses", url: "https://github.com/bitcoin/bips/blob/master/bip-0350.mediawiki" }
+  - { label: "BIP-327 - MuSig2 for BIP340-compatible Multi-Signatures", url: "https://github.com/bitcoin/bips/blob/master/bip-0327.mediawiki" }
+  - { label: "BIP-141 - Segregated Witness (block weight and the witness discount)", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
+  - { label: "BIP-360 - Pay-to-Merkle-Root (P2MR)", url: "https://github.com/bitcoin/bips/blob/master/bip-0360.mediawiki" }
+  - { label: "BIP-347 - OP_CAT in Tapscript", url: "https://github.com/bitcoin/bips/blob/master/bip-0347.mediawiki" }
+  - { label: "Gregory Maxwell - Taproot: Privacy preserving switchable scripting, bitcoin-dev (2018)", url: "https://www.mail-archive.com/bitcoin-dev@lists.linuxfoundation.org/msg06673.html" }
+  - { label: "Pieter Wuille - Taproot proposal, bitcoin-dev (2019)", url: "https://www.mail-archive.com/bitcoin-dev@lists.linuxfoundation.org/msg07954.html" }
+  - { label: "Pieter Wuille - Schnorr signatures BIP, bitcoin-dev (2018)", url: "https://www.mail-archive.com/bitcoin-dev@lists.linuxfoundation.org/msg07250.html" }
+  - { label: "Pieter Wuille - bip-taproot and bip-tapscript, SF Bitcoin Devs talk transcript (2019)", url: "https://btctranscripts.com/sf-bitcoin-meetup/2019-12-16-bip-taproot-bip-tapscript/" }
+  - { label: "Pieter Wuille - Schnorr signatures for Bitcoin, Scaling Bitcoin Milan transcript (2016)", url: "https://btctranscripts.com/scalingbitcoin/milan-2016/schnorr-signatures/" }
+  - { label: "David A. Harding - Taproot activation proposal Speedy Trial, bitcoin-dev (2021)", url: "https://www.mail-archive.com/bitcoin-dev@lists.linuxfoundation.org/msg09604.html" }
+  - { label: "Greg Sanders - the SegWit fee attack on offline signers, bitcoin-dev (2017)", url: "https://www.mail-archive.com/bitcoin-dev@lists.linuxfoundation.org/msg05902.html" }
+  - { label: "Ledger Donjon - security bulletin LSB-010, massive transaction fees in the BTC app (2020)", url: "https://donjon.ledger.com/lsb/010/" }
+  - { label: "Bitcoin Optech - Taproot topic", url: "https://bitcoinops.org/en/topics/taproot/" }
+  - { label: "Bitcoin Optech - Tapscript topic", url: "https://bitcoinops.org/en/topics/tapscript/" }
+  - { label: "Bitcoin Optech - MAST topic", url: "https://bitcoinops.org/en/topics/mast/" }
+  - { label: "Bitcoin Optech - Simple taproot channels topic", url: "https://bitcoinops.org/en/topics/simple-taproot-channels/" }
+  - { label: "Bitcoin Optech Newsletter #201 - why OP_CHECKMULTISIG cannot be batch verified (2022)", url: "https://bitcoinops.org/en/newsletters/2022/05/25/" }
+  - { label: "Bitcoin Optech Newsletter #237 - inscriptions and witness data (2023)", url: "https://bitcoinops.org/en/newsletters/2023/02/08/" }
+  - { label: "Bitcoin Optech Newsletter #175 - the first wallets able to pay bech32m addresses (2021)", url: "https://bitcoinops.org/en/newsletters/2021/11/17/" }
+  - { label: "Crowdfund Insider - Bitcoin Taproot address now supported on Kraken (2022)", url: "https://www.crowdfundinsider.com/2022/12/200147-bitcoin-taproot-address-supported-on-kraken/" }
+  - { label: "Unchained - Coinbase activates Bitcoin Taproot transfers (2024)", url: "https://unchainedcrypto.com/coinbase-activates-bitcoin-taproot-transfers/" }
+  - { label: "ACINQ - Phoenix moves swaps to Taproot (2024)", url: "https://acinq.co/blog/phoenix-swaproot" }
+  - { label: "Ledger Bitcoin app 2.4.0 release, MuSig2 support (2025)", url: "https://github.com/LedgerHQ/app-bitcoin-new/releases/tag/2.4.0" }
+  - { label: "Bitcoin Core 0.21.1 release notes (Speedy Trial activation parameters)", url: "https://bitcoincore.org/en/releases/0.21.1/" }
+  - { label: "Bitcoin Core 22.0 release notes (bech32m)", url: "https://bitcoincore.org/en/releases/22.0/" }
+  - { label: "Bitcoin Core 23.0 release notes (tr() descriptors by default in new wallets)", url: "https://bitcoincore.org/en/releases/23.0/" }
+  - { label: "Bitcoin Core PR #22260 - make bech32m the default (closed 2021)", url: "https://github.com/bitcoin/bitcoin/pull/22260" }
+  - { label: "Bitcoin Core PR #19953 - implement BIP 340-342 validation", url: "https://github.com/bitcoin/bitcoin/pull/19953" }
+  - { label: "libsecp256k1 PR #1134 - batch verification module (open)", url: "https://github.com/bitcoin-core/secp256k1/pull/1134" }
+  - { label: "sipa/bech32 issue #51 - the bech32 insertion weakness (2019)", url: "https://github.com/sipa/bech32/issues/51" }
+  - { label: "Google Patents - US 4,995,082, Claus P. Schnorr", url: "https://patents.google.com/patent/US4995082A/en" }
+  - { label: "Bitcoin Core source - src/script/interpreter.cpp", url: "https://github.com/bitcoin/bitcoin/blob/master/src/script/interpreter.cpp" }
+  - { label: "Pieter Wuille - do inscriptions exploit a bug? (Bitcoin Stack Exchange, 2025)", url: "https://bitcoin.stackexchange.com/a/128044" }
+  - { label: "Ordinals documentation - inscriptions", url: "https://docs.ordinals.com/inscriptions.html" }
+  - { label: "mempool.space - block 709,632, the Taproot activation block", url: "https://mempool.space/block/0000000000000000000687bca986194dc2c1f949318629b44bb54ec0a94d8244" }
+  - { label: "mempool.space - the first Taproot spend, block 709,635", url: "https://mempool.space/tx/33e794d097969002ee05d336686fc03c9e15a597c1b9827669460fac98799036" }
+  - { label: "mainnet.observer - output type distribution", url: "https://mainnet.observer/charts/output-type-distribution-count/" }
+  - { label: "mainnet.observer - transactions spending Taproot", url: "https://mainnet.observer/charts/transactions-spending-taproot/" }
+  - { label: "mainnet.observer - P2TR key-path versus script-path inputs", url: "https://mainnet.observer/charts/inputs-p2tr-paths/" }
+  - { label: "ChainQuery - UTXO set repartition by output type", url: "https://chainquery.com/reports/utxo-repartition" }
+  - { label: "lnd 0.21.0 release notes - production simple taproot channels (2026)", url: "https://github.com/lightningnetwork/lnd/blob/master/docs/release-notes/release-notes-0.21.0.md" }
+  - { label: "Eclair v0.14.0 release notes - taproot channels on by default (2026)", url: "https://github.com/ACINQ/eclair/blob/master/docs/release-notes/eclair-v0.14.0.md" }
+relatedTerms:
+  - taproot
+  - bip-340
+  - bip-341
+  - bip-342-tapscript
+  - bech32m
+  - schnorr-signature
+  - x-only-public-key
+  - taproot-tweak
+  - key-path-spend
+  - script-path-spend
+  - control-block
+  - nums-point
+  - op-checksigadd
+  - op-success
+  - merkleized-abstract-syntax-tree-mast
+  - musig2
+  - signature-aggregation
+  - segwit-segregated-witness-bip-141
+  - speedy-trial
+  - sighash
+  - silent-payments
+  - bip-360
+  - post-quantum-bitcoin
+  - covenants
+---
+
+> **Where you're going:** Taproot is the most recent change to Bitcoin's consensus rules, as of 2026, and most descriptions of it stop at "better privacy and cheaper multisig." This chapter opens the box. You will see how a Taproot output is built from one key and a tree of scripts, why every one of them looks identical on the chain until it is spent, what the two ways of spending reveal and hide, what Schnorr signatures actually changed and what they did not, and which doors Tapscript deliberately left open for future upgrades. Then it looks at what has happened since activation: who adopted it, who did not, and the inscription wave, which the design allowed and nobody proposed. If you read [The BIP Process](/rabbit-hole/bip-process), Taproot was its worked example. Here it is in full.
+
+## The problem Taproot solved
+
+Before Taproot, the chain told you what kind of coin you were looking at. A payment to a single key and a payment to a script were different output types, and when a script was spent, the whole script went on the chain: every key in a 2-of-3 [multisig](/glossary/multisig), every branch of a vault, including the branches nobody used. Anyone reading the chain could sort outputs into "ordinary" and "fancy" and study the fancy ones, and the fancy ones were exactly the wallets with the most to protect.
+
+Two ideas circulated for years without fixing that. The first was to hide unused script branches in a Merkle tree and reveal only the branch being executed. Johnson Lau specified a version in 2016 as [BIP-114](https://github.com/bitcoin/bips/blob/master/bip-0114.mediawiki), and Mark Friedenbach proposed a more general one in 2017. Bitcoin Optech's [MAST](/glossary/merkleized-abstract-syntax-tree-mast) topic page carries the history. Hiding branches was a real improvement, but a Merkle-tree output was still visibly a script output. Gregory Maxwell's point, in the post that started Taproot, was that a script output whose only company is other script outputs has a small crowd to hide in.
+
+Maxwell's January 2018 [bitcoin-dev post](https://www.mail-archive.com/bitcoin-dev@lists.linuxfoundation.org/msg06673.html) added the second idea. Friedenbach had pointed out that almost every interesting contract has a top branch where everyone involved simply agrees and signs. So take the participants' combined public key, tweak it with a hash of the fallback script, and publish the tweaked key as an ordinary-looking output. If everyone agrees, they sign with the tweaked key and the chain sees a plain single-key payment with zero overhead. If they do not, one of them reveals the script and proves it was committed inside the key. Until a contract goes wrong, the chain cannot tell it from a payment.
+
+Pieter Wuille turned that into a specification. He posted the Schnorr signature draft in July 2018 and the Taproot and Tapscript drafts in May 2019, with a reference implementation of about 520 lines of consensus code. The three documents became [BIP-340](/glossary/bip-340), [BIP-341](/glossary/bip-341), and [BIP-342](/glossary/bip-342-tapscript) in January 2020, authored by Wuille with Jonas Nick and, for the Taproot pair, Anthony Towns. Tim Ruffing co-authored the signature BIP.
+
+## The construction: one key, two doors
+
+<figure>
+  <img src="/diagrams/taproot-two-paths.svg" alt="Left side, construction: an internal key P (32 bytes) and a script tree of three leaves, A, B and C, hashed pairwise into a Merkle root, both feed a tweak step, Q equals P plus the hash of P and the root times G, which produces the output key Q, the 32-byte value that sits on the chain as a bc1p address. Right side, two doors below Q. The key path door, highlighted in orange: one 64-byte Schnorr signature with the tweaked key, which everyone behind P must agree to; it looks like any single-signature spend and the tree is never revealed. The script path door, in gray: reveal one leaf script, its inputs, and a control block holding the leaf version, P, and the Merkle path (33 plus 32 times m bytes); the other leaves stay hidden." />
+  <figcaption>Everything a Taproot output can do is folded into one 32-byte key. The chain sees the key. It learns nothing else until the coin is spent.</figcaption>
+</figure>
+
+Start with an internal key, called P in the BIP. It is a 32-byte [x-only public key](/glossary/x-only-public-key), which is an ordinary secp256k1 public key with its Y coordinate left out and taken to be even. In the simplest case P is one person's key. In a shared wallet it is an aggregate of several people's keys, built with [MuSig2](/glossary/musig2) so that a signature from the aggregate requires all of them.
+
+Next, optionally, build a tree of scripts. Each leaf is a spending condition written in [Tapscript](/glossary/bip-342-tapscript), paired with a leaf version byte. Each leaf is hashed with a tagged hash, then leaves are paired and hashed up to a single Merkle root, the same trick a block uses to commit to its transactions. Two details matter later. Siblings are sorted before hashing, so a Merkle path needs no left-or-right markers. And the tree does not have to be balanced: the BIP recommends putting likely branches near the root so their proofs are short.
+
+Now the [tweak](/glossary/taproot-tweak). Hash the internal key together with the Merkle root, multiply the result by the curve's base point, and add it to P. The result, Q, is the output key:
+
+```
+t = hash_TapTweak(P || merkle_root)
+Q = P + t*G
+```
+
+Q is what goes on the chain. The output script is two bytes, `OP_1` and a push, followed by the 32-byte key, and the address is that key in [bech32m](/glossary/bech32m) form, the 62-character strings starting `bc1p`. Even an output with no scripts at all should be tweaked, using P alone as the hash input. The BIP recommends that, since consensus cannot tell a tweaked key from an untweaked one, because an untweaked aggregate key is open to a theft attack where one participant secretly bakes a script into a key the others think is plain.
+
+Two properties follow. Every Taproot output on earth is a 32-byte key, so nothing on the chain distinguishes a single-signature savings address from a 5-of-5 federation with three emergency branches behind it. And the key on the chain is the key itself, not a hash of it. That was a deliberate choice and, Wuille said in a 2019 talk, the most controversial one in the proposal. It costs nothing in privacy, since a key-path spend reveals the key anyway, and it saves 32 bytes of witness in every spend. The cost of that choice is covered in the last section.
+
+## Door one: the key path
+
+To spend through the [key path](/glossary/key-path-spend), the witness holds exactly one item: a 64-byte [Schnorr signature](/glossary/schnorr-signature) that verifies against Q. The signer does not use the private key behind P. It uses that key plus the tweak t, which it can compute because it knows the tree. If P is an aggregate, the participants run MuSig2 to produce one signature, and the chain sees one signature.
+
+That is the entire spend. The witness carries no script and no public key, and it proves nothing about what else the output could have done. A key-path spend from a multisig vault looks identical to a key-path spend from a phone wallet, and the tree behind it, if there was one, is never revealed. Over the 30 days ending 17 September 2026, nine out of ten Taproot spends used this door.
+
+It is also the cheapest spend Bitcoin has. A native SegWit single-key spend carries a signature of about 71 bytes and a 33-byte public key in its witness. A key-path spend carries 64 bytes. The signature can grow to 65 if the signer wants a sighash mode other than the default, and the default, [SIGHASH_DEFAULT](/glossary/sighash), was defined for Taproot so that the common case could drop the byte. A 65-byte signature whose last byte is zero is invalid, which stops a third party from padding a 64-byte signature into a second valid witness with a different witness ID and fee rate than the signer intended.
+
+## Door two: the script path
+
+When cooperation fails, or when the output was only ever meant to be spent by script, the spender opens the [script path](/glossary/script-path-spend). The witness now holds three kinds of item: whatever inputs the script needs, such as signatures, then the leaf script itself, then a [control block](/glossary/control-block).
+
+The control block is the proof. Its first byte holds the leaf version and one bit recording whether Q's Y coordinate is even or odd. The next 32 bytes are the internal key P. After that come the sibling hashes along the path from the leaf up to the root, 32 bytes each. A control block is therefore 33 + 32m bytes for a leaf at depth m, and the depth is capped at 128. A verifying node hashes the revealed script into a leaf hash, combines it with each sibling in sorted order until it reaches a root, recomputes the tweak from P and that root, and checks that the result is the Q sitting in the output. Only then does it run the script.
+
+A script-path spend reveals one script, the internal key, and as many hashes as the leaf is deep. It hides every other leaf and the number of leaves. The BIP's own worked example is a five-leaf tree in which spending one leaf reveals three hashes and nothing about the four scripts that were not used. Since a leaf's depth is visible, the shape of the tree leaks a little, including a hint at which wallet software built it, which is why the BIP suggests deviating from the space-optimal tree shape when privacy matters. And the fact that the script path was used at all is a signal in itself, usually that the parties could not agree.
+
+The [NUMS point](/glossary/nums-point) closes the loop for outputs that should have no key path. If a coin must only ever be spendable by script, the internal key is set to a point whose private key nobody can know, and the BIP supplies one, derived by hashing the base point. The output looks like every other Taproot output, since a NUMS key is just a key, but the key door is welded shut. The spend is another matter: a control block carrying the raw point from the BIP announces a script-only output, which is why the BIP suggests adding a random multiple of G to it so that each wallet's unspendable key is its own.
+
+## What Schnorr changed, and what it did not
+
+Bitcoin used ECDSA for its first twelve years, and BIP-340 replaced it for Taproot spends with a Schnorr scheme tailored to secp256k1. The signature is a 64-byte pair, r and s, where r is the X coordinate of a nonce point and s is a scalar, and the verification equation is one line:
+
+```
+s*G = R + e*P     where e = hash(r || P || m)
+```
+
+Three things fall out of that equation that ECDSA cannot offer.
+
+**Linearity.** Because the verification equation is linear, several signers can combine their keys and nonces and add up their partial signatures to get one signature that is valid for the sum of their keys. That is why keys can be aggregated at all, why MuSig2 exists, and why a five-party spend can look like one signature. BIP-327 specifies MuSig2 as a two-round protocol. It shipped in libsecp256k1 in November 2024, Bitcoin Core learned to parse its descriptors in 2025, and Ledger's Bitcoin app added it in March 2025.
+
+**A proof.** Schnorr signatures are provably unforgeable under the discrete logarithm assumption in the random oracle model. ECDSA has no comparable proof; as Wuille put it in 2016, its security "is based on people trying to break it and failing." Because the proof is of strong unforgeability, Schnorr signatures are also non-malleable by construction, where ECDSA needed a policy rule to paper over its malleability.
+
+**Batchability.** A verifier can check many Schnorr signatures in one combined equation and gain roughly a factor of two on large batches. Tapscript's design choices, including replacing `OP_CHECKMULTISIG`, were made to keep this possible.
+
+The limits deserve the same space as the gains. Batch verification is designed in but not switched on: as of September 2026, Bitcoin Core verifies every Schnorr signature individually, and the libsecp256k1 batch module has been an open pull request since 2022. Aggregation across the inputs of a transaction, which would shrink every multi-input transaction, is not in Bitcoin either; it would need a soft fork, and the draft proposals for it were still open in 2026. Schnorr is not quantum resistant, since it rests on the same discrete logarithm problem as ECDSA. And ECDSA did not go anywhere: it remains the rule for every legacy and SegWit version 0 spend, and most coins still sit in those.
+
+One more correction, because it appears in nearly every Schnorr explainer, and an earlier version of ours repeated it. The story goes that Bitcoin used ECDSA because Claus Schnorr's patent had expired only shortly before, too late for the scheme to be standardized. The patent, US 4,995,082, was filed in February 1990 and expired in February 2010, more than a year after Bitcoin launched. So it was still in force at launch, which is consistent with avoiding the scheme but proves nothing about motive. The duller explanation is that ECDSA was the standardized elliptic-curve signature scheme with an implementation in OpenSSL, and Satoshi used what was there. BIP-340 never mentions the patent. Its case for Schnorr is the three properties above.
+
+The scheme also inherits ECDSA's one operational hazard and manages it better. Reusing a nonce leaks the private key, so BIP-340's default signer derives its nonce from the key, the message, and fresh randomness together, which is safe even when the randomness is poor. MuSig2 is the exception: its nonces must not be derived from the key and message alone, BIP-327 flags the warning as important, and the only deterministic option it allows is for the last signer, who already holds everyone else's nonces.
+
+## Tapscript: the same script, with doors left open
+
+Tapscript is the version of Bitcoin script that runs in a script-path spend. It is not a new language. BIP-342 defines it as the existing SegWit script rules with a short list of changes, and the stated goal is narrow: bring Schnorr signatures, batch-friendly checks, and a better signature hash to script spends. The changes are still worth knowing, because they are where the next upgrades will plug in.
+
+**Multisig got a new opcode.** `OP_CHECKMULTISIG` is disabled in Tapscript because it does not say which signature belongs to which key, so a verifier cannot line up the pairs in advance for a batch. [OP_CHECKSIGADD](/glossary/op-checksigadd) replaces it: each key gets a signature or an empty slot, a counter goes up by one per valid signature, and a final comparison enforces the threshold. A 2-of-3 becomes three checks and a count. The old 20-key ceiling is gone; the stack limit bounds it now, and Bitcoin Core's descriptor for these scripts accepts up to 999 keys.
+
+**Some opcodes now mean "succeed."** Tapscript reserves a set of byte values, the [OP_SUCCESS](/glossary/op-success) opcodes, and any script containing one is valid, unconditionally, today. Use one in a live script and anyone who can reveal the leaf can take the coins; BIP-342 says as much. The point is that a future soft fork can give any of them a meaning, and the new rule can do anything, including write to the stack, which the older `OP_NOP` reservations could not. The covenant proposals you may have heard argued over are exactly this: `OP_CAT` is a proposed meaning for OP_SUCCESS126, `OP_CHECKSIGFROMSTACK` for OP_SUCCESS204. None had activated as of September 2026. [The BIP Process](/rabbit-hole/bip-process) covers the fight.
+
+**Two more hooks.** A leaf version other than the Tapscript one passes validation unconditionally, reserving room for a future script language. And a public key in Tapscript that is neither empty nor 32 bytes is treated as an unknown key type whose signature check is skipped, reserving room for a future signature scheme. Both are the kind of forward-compatibility that lets a new signature scheme arrive by soft fork, though a post-quantum scheme with multi-kilobyte signatures would also need the 520-byte cap on a witness element lifted, which a rule change through these hooks is allowed to do. Bitcoin Core refuses to relay transactions that use any of these hooks, so nobody can trip over them by accident.
+
+**The limits moved.** Tapscript drops the 10,000-byte script size cap and the 201-opcode cap, since the reasons for them no longer apply. It keeps the 1,000-item stack limit and the 520-byte limit on any single stack element or push. It replaces the block-wide count of signature operations with a budget per input of 50 plus the witness size in bytes, which ordinary scripts never approach.
+
+**The signature hash commits to more.** A Taproot signature commits to the amounts and output scripts of every input in the transaction, not just the one being signed. That closes an attack on hardware wallets that Greg Sanders described in 2017 and Saleem Rashid reported to vendors in 2020, where a compromised computer could feed an offline signer two half-truths about a two-input transaction and walk away with the difference as a fee. Ledger's advisory on it is in the sources. Script-path signatures also commit to the exact leaf being executed.
+
+## The address bug caught in time
+
+Taproot addresses use bech32m rather than the bech32 format SegWit introduced, and the reason is a bug that an outsider found two and a half years before activation.
+
+In May 2019 a tester named Jonathan Knowles, running property-based tests against the bech32 reference code, found that whenever a bech32 string ends in the letter `p`, inserting or deleting any number of `q` characters just before it leaves the checksum valid. Version 0 addresses were safe because they are only valid at two fixed lengths, so a changed length is rejected on its own. Taproot addresses would not have been, and a truncated address that still validated would have sent coins into the void. Wuille disclosed it to the mailing list that November and wrote BIP-350 in December 2020. The fix changes one constant in the checksum, from 1 to `0x2bc830a3`, and nothing else: same alphabet, same `bc1` prefix. The two formats cannot produce the same string, and a bc1p address with the old checksum is simply invalid.
+
+The BIP notes that this broke every old wallet's ability to send to a Taproot address, and calls the break intentional. Experiments had shown that hardly any wallet could send to a new witness version correctly anyway, and some would have burned funds trying. The rollout that followed was slow. Bitcoin Core could pay bc1p addresses from version 0.21.1 in May 2021, the same release that carried the activation parameters. Exchanges took years to follow: Kraken enabled withdrawals to them in December 2022 and Coinbase in October 2024, almost three years after activation.
+
+## The road to activation
+
+Taproot's consensus code was merged into Bitcoin Core in October 2020 and shipped, switched off, in version 0.21.0 the following January. What took the rest of 2021 was deciding how to switch it on, an argument the war over the block size had made everyone wary of. The details are in the BIP process chapter. The short version is that a proposal called [Speedy Trial](/glossary/speedy-trial), suggested by Russell O'Connor and written up by David Harding in March 2021, gave miners three months to signal readiness at a 90 percent threshold, with activation fixed at a block height months later so node operators had time to upgrade.
+
+Bitcoin Core 0.21.1 shipped the parameters on 1 May 2021. Signal counting began that day at block 681,408. The threshold, 1,815 signaling blocks in one 2,016-block period, was reached at block 687,284 on 12 June 2021, in the third period tried; 1,983 of that period's blocks signaled. Then everyone waited. Block 709,632 arrived at 05:15 UTC on 14 November 2021, mined by F2Pool, and the rules were live. The block created 14 Taproot outputs and spent none, and its second transaction carried an `OP_RETURN` reading "gm taproot" with a carrot emoji. The first spend under the new rules came three blocks later, in 709,635, a key-path spend by a user known as bitbug42. Andrew Chow made the second spend and the first through the script path.
+
+From Maxwell's post to that block was 1,391 days. As of September 2026, no consensus change has activated since.
+
+## 2021 to 2026: what people did with it
+
+The numbers are not what the launch coverage predicted, in either direction.
+
+By count, Taproot outputs are the largest kind in the UTXO set: about 54 million of 165 million unspent outputs in ChainQuery's snapshot of 14 September 2026, roughly a third. By value they hold about 1.1 percent of all bitcoin. The gap is dust: tens of millions of tiny Taproot outputs, most of them left behind by inscriptions and tokens. Measured by current use, Taproot is a minority format: over the 30 days ending 17 September 2026, about 5 percent of new outputs were Taproot and about 5 percent of transactions spent one. In January 2024, at the height of the inscription market, that second figure was 63 percent.
+
+Wallet defaults explain the payment side. Bitcoin Core still hands out native SegWit `bc1q` addresses by default; a 2021 pull request to switch was closed in favor of an opt-in setting in the GUI, at a time when few services could pay to `bc1p`, and as of September 2026 nothing has reopened it. Trezor and Ledger default to SegWit and offer Taproot as an option you have to find. The wallets that use `bc1p` by default are mostly inscription wallets, which need a Tapscript leaf to hold the data, and some Lightning wallets, where the smaller witness is worth real money; Phoenix moved its swaps to Taproot in 2024 for that reason. Lightning itself moved slowly: simple Taproot channels were experimental in lnd from October 2023, became production in lnd 0.21 in June 2026, and were switched on by default in Eclair in May 2026, still only for private channels, with the specification for announced ones unfinished. [Silent payments](/glossary/silent-payments) always pay to a Taproot output, so every silent payment is Taproot adoption by construction.
+
+Then there is the use nobody planned. Inscriptions, from December 2022, store arbitrary data inside a Tapscript leaf that is revealed in a script-path spend, wrapped in an `OP_FALSE OP_IF ... OP_ENDIF` envelope that the script engine parses and never executes. That is valid under the rules as written. Tapscript requires the value fed to `OP_IF` to be exactly empty or a single 0x01 byte, so an empty push is the canonical false, and Wuille has said plainly that Taproot changed nothing about the consensus weight rules that make it cheap. The 75 percent discount on witness bytes dates from SegWit in 2017. What Taproot did change was the 10,000-byte script limit, which is why a single leaf can hold a 3.9-megabyte image, chunked into 520-byte pushes. Miners took the biggest ones directly, since they exceed the relay size limit. The fee market registered it: total fees in 2023 were 23,445 BTC against 5,375 the year before, and the May 2023 token wave backed up the mempool far enough that Binance paused bitcoin withdrawals twice in one day. In September 2023, nine out of ten Taproot spends went through the script path. By September 2026 that had flipped back to one in ten, and the inscription count had passed 127 million.
+
+Whether that counts as abuse is a fight the site does not need to referee. Andrew Poelstra's position from early 2023, that there is no effective way to stop witness data and that trying would undo deliberate design choices, is the one that has held, in the sense that no consensus rule against it has been activated since.
+
+## The cost of the key on the chain
+
+The controversial choice from the construction section is the one that matters for the long run. Because a Taproot output is the public key itself, the key is exposed to a future quantum attacker from the moment the output is created, not from the moment it is spent. BIP-341 argues, correctly, that hash-based protection was always weak: keys are exposed while a spend waits to confirm, and enormous amounts of bitcoin already sit at reused addresses with exposed keys. But every new Taproot output adds to the exposed pile, and ChainQuery's September 2026 count puts about 220,000 BTC there.
+
+The proposed fix keeps the tree and drops the key door. [BIP-360](/glossary/bip-360), Pay-to-Merkle-Root, defines a SegWit version 2 output that works like Taproot without a key path, so nothing is exposed at creation. It was still a draft in September 2026 and it adds no post-quantum signature scheme by itself. Our [quantum chapter](/rabbit-hole/quantum-and-bitcoin) covers where that leaves holders. The relevant point here is that a post-quantum scheme has two ways in: the hooks Tapscript left open, unknown leaf versions and unknown key types, or a fresh witness version, which is the route BIP-360 takes. Both slots exist because the people who designed them assumed they would be needed.
+
+## What this buys us
+
+- **You can read a Taproot output.** It is one 32-byte key, tweaked to commit to a tree you cannot see. Nothing on the chain distinguishes a phone wallet from a federation until the coin moves.
+- **You know what each door reveals.** The key path reveals one signature. The script path reveals one script, the internal key, and a Merkle proof, and it signals that the parties did not agree.
+- **You know what Schnorr bought and what it did not.** Aggregation, a security proof, and non-malleability arrived. Batch verification and cross-input aggregation are still on the shelf, and ECDSA still guards most of the coins.
+- **You know where the next upgrade plugs in.** OP_SUCCESS opcodes, unknown leaf versions, and unknown key types are the reserved slots. The covenant debate and the post-quantum debate are both arguments about which slot to fill.
+- **You know the numbers.** A third of unspent outputs, one percent of the value, five percent of current use, and a five-year history in which the biggest single application was one nobody proposed.
+
+Taproot did what its designers said it would, and it did one thing they did not, and the rules absorbed both without changing. Whether that is a success depends on what you wanted from it. What it is, as of 2026, is the clearest example Bitcoin has of an upgrade designed with the next one in mind.
