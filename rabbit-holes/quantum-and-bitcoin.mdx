@@ -3,13 +3,15 @@ title: "Quantum and Bitcoin"
 slug: quantum-and-bitcoin
 draft: false
 published: "2026-06-11"
+updated: "2026-09-17"
 status: live
 section: rabbit-hole
 tagline: "Quantum is the FUD claim that comes up most often after fiat-debasement and energy. The honest version: the threat is real, the timeline is slow, the fix is governance, and Bitcoin has agency."
 order: 11
 estimatedMinutes: 14
 sources:
-  - { label: "ChainQuery quantum-exposure report (snapshot 2026-06-07, block 952,694)", url: "https://chainquery.com/reports/quantum-exposure" }
+  - { label: "ChainQuery quantum-exposure report (live, weekly; figures in this chapter from the 2026-09-14 snapshot, block 967,001)", url: "https://chainquery.com/reports/quantum-exposure" }
+  - { label: "Wicked Smart Bitcoin - quantum exposure dashboard and published history", url: "https://wickedsmartbitcoin.com/quantum_exposure" }
   - { label: "ChainQuery x LearnBitcoin Baseline 2026 Q2 PDF", url: "https://chainquery.com/reports/quantum-quarterly/baseline_2026.pdf" }
   - { label: "BIP-360 - Pay-to-Merkle-Root (draft)", url: "https://github.com/bitcoin/bips/blob/master/bip-0360.mediawiki" }
   - { label: "BIP-361 - Post-Quantum Migration (draft)", url: "https://github.com/bitcoin/bips/blob/master/bip-0361.mediawiki" }
@@ -54,32 +56,32 @@ Quantum is the FUD claim that comes up most often after fiat-debasement and ener
 
 ## The number that lands
 
-About **30.5 percent of circulating supply** sits at quantum-exposed addresses today - close to one bitcoin in three. That figure carries a correction worth stating outright. The original Baseline 2026 Q2 measurement counted 5,071,264 BTC, or 25.3 percent. A later parser pass (methodology v1.1) folded in roughly another 1.04 million BTC of nested-segwit reuse the first walk had skipped, which brings the strict figure to about 30.5 percent.
+About **35.6 percent of circulating supply** sits at quantum-exposed addresses as of September 2026, more than one bitcoin in three. That figure moved twice between the Baseline 2026 Q2 measurement and methodology v1.2, and both moves were corrections to the measurement rather than changes on the chain. The original Baseline 2026 Q2 measurement counted 5,071,264 BTC, or 25.3 percent. A parser fix in June 2026 (methodology v1.1) folded in roughly 1.04 million BTC of nested-segwit reuse the first walk had skipped, taking the figure to about 30.5 percent. A second fix a week later (v1.2) found that about half of the old uncompressed-key P2PK coins had been silently dropped by a key-matching bug; repairing it moved P2PK from about 0.85 million to about 1.72 million BTC and the headline to 35.6 percent. ChainQuery caught the second bug by diffing its results against Wicked Smart Bitcoin's independently built count after he open-sourced his pipeline, and credits him for closing the gap.
 
-The breakdown below is that v1.0 baseline - 5,071,264 BTC across 12,749,047 addresses, before the nested-segwit coins were folded in. Some are dormant. Most are not. The largest single bucket is not Satoshi - it is **1,896,840 BTC at modern segwit (P2WPKH) addresses that got reused at least once**. Real users, real wallets, real habits.
+The breakdown below is the live figure: 7,142,979 BTC across 13,961,993 addresses. Some of those coins are dormant; the reuse-exposed buckets, which make up most of the total, sit at addresses that have been spent from at least once. The largest single bucket is not Satoshi's coins but **2,045,013 BTC at modern segwit (P2WPKH) addresses that were reused at least once**, which points to ordinary wallets in everyday use. The Satoshi-era P2PK coins are now the second bucket, about a quarter of the pile.
 
-Snapshot: 2026-06-07, block 952,694, methodology v1.0. The full breakdown:
+Snapshot: 2026-09-14, block 967,001, refreshed every Sunday. The full breakdown:
 
 <figure>
-  <img src="/diagrams/quantum-exposure-stacked.svg" alt="Horizontal bar chart of the six Bitcoin script types holding quantum-exposed BTC. P2WPKH reuse-exposed leads at 1,896,840 BTC (37.4 percent of at-risk pool). P2PKH reuse-exposed 1,196,717 BTC. P2PK always-exposed 853,247 BTC. P2WSH reuse-exposed 675,992 BTC. P2SH reuse-exposed 238,709 BTC. P2TR always-exposed 209,759 BTC. Total 5,071,264 BTC across 12,749,047 addresses." />
-  <figcaption>Six buckets, ordered by BTC at risk. Always-exposed types (P2PK, bare multisig, P2TR) in deep orange. Reuse-exposed types in lighter orange. This is the v1.0 Baseline 2026 Q2 breakdown (5,071,264 BTC); the v1.1 correction adds roughly 1.04M BTC of nested-segwit reuse on top. Snapshot 2026-06-07, base block 952,694. Source: ChainQuery.</figcaption>
+  <img src="/diagrams/quantum-exposure-stacked.svg" alt="Horizontal bar chart of the six Bitcoin script types holding quantum-exposed BTC. P2WPKH reuse-exposed leads at 2,045,013 BTC (28.6 percent of the at-risk pool). P2PK always-exposed 1,715,227 BTC. P2SH reuse-exposed 1,264,332 BTC. P2PKH reuse-exposed 1,190,389 BTC. P2WSH reuse-exposed 708,176 BTC. P2TR always-exposed 219,843 BTC. Total 7,142,979 BTC across 13,961,993 addresses." />
+  <figcaption>Six buckets, ordered by BTC at risk. Always-exposed types (P2PK, P2TR) in deep orange. Reuse-exposed types in lighter orange. Live figures after the v1.1 and v1.2 corrections; the P2SH bucket now includes nested-segwit reuse. Snapshot 2026-09-14, block 967,001. Source: ChainQuery.</figcaption>
 </figure>
 
-Source: [ChainQuery quantum-exposure report](https://chainquery.com/reports/quantum-exposure), bitcoind 28 node, weekly Sunday snapshots.
+Source: [ChainQuery quantum-exposure report](https://chainquery.com/reports/quantum-exposure), computed on a Bitcoin Core node, weekly Sunday snapshots.
 
 This is not a crisis. It is a forcing function.
 
 ## The honest version of the number
 
-BIP-361 cites "over 34 percent of all BTC" as quantum-exposed. ChainQuery's strict number is about 30.5 percent. The gap is methodology.
+BIP-361 states that "over 34% of all bitcoin" had revealed a public key on chain as of March 1, 2026. ChainQuery's strict number is about 35.6 percent at block 967,001. Under the Baseline 2026 Q2 measurement the two were nine points apart, and an earlier version of this chapter attributed the gap to methodology.
 
-BIP-361 counts every P2SH and P2WSH address whose redeem script was ever revealed on chain. ChainQuery only counts the ones where the revealed script actually contains a pubkey followed by a CHECKSIG-family opcode. Timelock-only scripts get excluded. Hash-preimage scripts get excluded. They do not leak pubkeys on spend.
+The conservative rule, the one Wicked Smart Bitcoin's dashboard applies and ChainQuery describes as BIP-361-style parsing, counts every P2SH and P2WSH address whose redeem script was ever revealed on chain. ChainQuery only counts the ones where the revealed script actually contains a pubkey followed by a CHECKSIG-family opcode. Timelock-only scripts get excluded. Hash-preimage scripts get excluded. They do not leak pubkeys on spend.
 
-**Real exposure sits between these two numbers.** ChainQuery is the rigorous lower bound. BIP-361 is the upper bound that informs the migration framework. We use ChainQuery because it is provable from chain data; we cite BIP-361 because it is what a proposed soft fork is being written against.
+That distinction is still correct, and it turned out to be worth only tens of BTC. The nine-point gap was two measurement bugs, described above, and once they were fixed the counts converged. The [Wicked Smart Bitcoin quantum exposure dashboard](https://wickedsmartbitcoin.com/quantum_exposure) applies the conservative BIP-361-style rule directly to chain data and publishes its history: its snapshots give about 34.4 percent at block 950,000 and 35.2 percent at block 961,000, and ChainQuery lands a little above the later one because it measures at a later block. The distance between the three counts is now block-height drift rather than parsing.
 
-A third independent measurement anchors the upper bound empirically. The [Wicked Smart Bitcoin quantum exposure dashboard](https://wickedsmartbitcoin.com/quantum_exposure) applies the conservative BIP-361-style counting rule directly to chain data and reports 34.55 percent at block 951,000 - matching BIP-361's analytic figure almost exactly. Methodology v1.1 closed most of the original gap: folding in the roughly 1.04 million BTC of nested-segwit reuse (P2SH-wrapped P2WPKH and P2WSH, whose pubkey is revealed in the witness) narrowed the distance to Wicked's number to about 4 points. The residual is small, and it is not explained by puzzle scripts - timelock-only, hash-preimage, and OP_RETURN-shaped redeems together hold only tens of BTC. Three measurements, transparent gap.
+That convergence is the reason to trust the figure. An analytic count, a conservative on-chain count, and a strict on-chain count, built by people who disagreed about the rules, arrive at the same answer. We still use ChainQuery's number because it is reproducible from chain data, and we still cite BIP-361 because it is what a proposed soft fork is being written against.
 
-Either way: roughly a third of the supply, today.
+Either way: more than a third of the supply, as of September 2026.
 
 ## What "quantum-exposed" actually means
 
@@ -87,15 +89,15 @@ There are two classes of exposure. Order matters because the easier case explain
 
 **Always-exposed.** The pubkey is on chain from the moment the output is created. No spend required.
 
-- **[P2PK](/glossary/p2pk-pay-public-key) (pay-to-public-key):** the output script literally contains the pubkey. Satoshi-era coinbase rewards use this. 853,247 BTC across 22,223 addresses. Most have not moved in over a decade. The bulk of this slice maps to the [Patoshi pattern](https://chainquery.com/stories/patoshi-pattern) - the ExtraNonce fingerprint of a single dominant early miner whose blocks account for roughly 22 percent of Bitcoin's first year.
-- **Bare multisig:** the script contains every signer's pubkey. Rare in modern use, still on chain from older deployments.
-- **[P2TR](/glossary/taproot) (Taproot, BIP-341):** the bech32m address IS the tweaked pubkey. There is no hash layer in front. **Every new taproot output is permanently exposed by design.** 209,759 BTC and growing every block.
+- **[P2PK](/glossary/p2pk-pay-public-key) (pay-to-public-key):** the output script literally contains the pubkey. Satoshi-era coinbase rewards use this. 1,715,227 BTC across 39,465 addresses, almost all of it coinbase rewards that have never moved. The bulk of this slice maps to the [Patoshi pattern](https://chainquery.com/stories/patoshi-pattern) - the ExtraNonce fingerprint of a single dominant early miner whose blocks account for roughly 22 percent of Bitcoin's first year.
+- **Bare multisig:** the script contains every signer's pubkey. Rare in modern use, still on chain from older deployments, and effectively nothing in the current count.
+- **[P2TR](/glossary/taproot) (Taproot, BIP-341):** the bech32m address IS the tweaked pubkey. There is no hash layer in front. **Every new taproot output is permanently exposed by design.** 219,843 BTC across 5,052,695 addresses, and every new taproot output adds to it.
 
 **Reuse-exposed.** The pubkey is hidden behind a hash on creation, but the spending witness contains the raw pubkey. After the first spend, every future deposit to that address is exposed.
 
-- **P2PKH:** the legacy "1..." address. 1,196,717 BTC at reused legacy addresses.
-- **P2WPKH:** native segwit "bc1q..." short form. 1,896,840 BTC - the largest single bucket. This is not Satoshi. This is people who upgraded their wallet and kept reusing addresses.
-- **P2WSH and P2SH:** segwit and legacy script-hash forms. Counted as exposed only when the revealed redeem script contains a pubkey push followed by a CHECKSIG-family opcode, or contains OP_CHECKMULTISIG / OP_CHECKMULTISIGVERIFY. The multisig variants matter: most 2-of-3 cold-storage P2SH and P2WSH spends look like that on chain. 675,992 BTC at P2WSH, 238,709 BTC at P2SH.
+- **P2PKH:** the legacy "1..." address. 1,190,389 BTC at reused legacy addresses.
+- **P2WPKH:** native segwit "bc1q..." short form. 2,045,013 BTC, the largest single bucket. This is not Satoshi. This is people who upgraded their wallet and kept reusing addresses.
+- **P2WSH and P2SH:** segwit and legacy script-hash forms. Counted as exposed only when the revealed redeem script contains a pubkey push followed by a CHECKSIG-family opcode, or contains OP_CHECKMULTISIG / OP_CHECKMULTISIGVERIFY. The multisig variants matter: most 2-of-3 cold-storage P2SH and P2WSH spends look like that on chain. 708,176 BTC at P2WSH and 1,264,332 BTC at P2SH, most of the P2SH figure being nested-segwit addresses (P2SH-wrapped P2WPKH, plus some P2SH-wrapped P2WSH) whose pubkey is revealed in the witness, the coins the v1.1 correction added.
 
 The protocol does not protect you here. Best practices do.
 
@@ -221,7 +223,7 @@ Move your coins to modern addresses.
 
 **Sources and further reading**
 
-- ChainQuery quantum-exposure report: https://chainquery.com/reports/quantum-exposure (snapshot 2026-06-07, block 952,694)
+- ChainQuery quantum-exposure report: https://chainquery.com/reports/quantum-exposure (live, weekly snapshots; figures above from 2026-09-14, block 967,001)
 - BIP-361 - Post-Quantum Migration: https://github.com/bitcoin/bips/blob/master/bip-0361.mediawiki
 - NIST FIPS 204 (ML-DSA): https://csrc.nist.gov/pubs/fips/204/final
 - NIST FIPS 205 (SLH-DSA): https://csrc.nist.gov/pubs/fips/205/final
