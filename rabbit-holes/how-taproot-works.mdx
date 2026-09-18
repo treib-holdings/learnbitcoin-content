@@ -3,6 +3,7 @@ title: "How Taproot Actually Works"
 slug: how-taproot-works
 draft: false
 published: "2026-09-17"
+updated: "2026-09-18"
 status: live
 section: rabbit-hole
 tagline: "One key, two doors. How a Taproot output is built, why every one looks the same until it is spent, what Schnorr signatures changed, what Tapscript left open for the future, and what has actually been done with it since 2021, inscriptions included."
@@ -202,7 +203,7 @@ Whether that counts as abuse is a fight the site does not need to referee. Andre
 
 ## The cost of the key on the chain
 
-The controversial choice from the construction section is the one that matters for the long run. Because a Taproot output is the public key itself, the key is exposed to a future quantum attacker from the moment the output is created, not from the moment it is spent. BIP-341 argues, correctly, that hash-based protection was always weak: keys are exposed while a spend waits to confirm, and enormous amounts of bitcoin already sit at reused addresses with exposed keys. But every new Taproot output adds to the exposed pile, and ChainQuery's September 2026 count puts about 220,000 BTC there.
+The controversial choice from the construction section is the one that matters for the long run. Because a Taproot output holds a public key, the tweaked output key, rather than a hash of one, that key is exposed to a future quantum attacker from the moment the output is created, not from the moment it is spent. An attacker who could derive its private key would not need the internal key or the script tree, because the key path alone spends the coin, which puts every Taproot output in the same position as the old pay-to-public-key outputs. BIP-341 argues, correctly, that hash-based protection was always weak: keys are exposed while a spend waits to confirm, and enormous amounts of bitcoin already sit at reused addresses with exposed keys. But every new Taproot output adds to the exposed pile, and ChainQuery's September 2026 count puts about 220,000 BTC there.
 
 The proposed fix keeps the tree and drops the key door. [BIP-360](/glossary/bip-360), Pay-to-Merkle-Root, defines a SegWit version 2 output that works like Taproot without a key path, so nothing is exposed at creation. It was still a draft in September 2026 and it adds no post-quantum signature scheme by itself. Our [quantum chapter](/rabbit-hole/quantum-and-bitcoin) covers where that leaves holders. The relevant point here is that a post-quantum scheme has two ways in: the hooks Tapscript left open, unknown leaf versions and unknown key types, or a fresh witness version, which is the route BIP-360 takes. Both slots exist because the people who designed them assumed they would be needed.
 
