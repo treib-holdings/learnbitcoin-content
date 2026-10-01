@@ -1,0 +1,300 @@
+---
+title: "The 2013 Chain Fork"
+slug: 2013-chain-fork
+draft: false
+published: "2026-10-01"
+status: live
+section: rabbit-hole
+tagline: "On 11 March 2013 a software upgrade split Bitcoin into two chains. Developers, pool operators and exchanges argued it out in a public chat room and put it back together in under eight hours. This is the log, with the timestamps."
+order: 18
+estimatedMinutes: 14
+ogImage: "/diagrams/og/2013-chain-fork.png"
+ogImageAlt: "Two-lane timeline of the Bitcoin chain fork of 11 to 12 March 2013. The chain splits after block 225,429. The upper gray lane, followed by version 0.8 nodes, starts with a 998 kB block from Slush's pool at 22:39 UTC, holds about 60 percent of mining power, runs for 25 blocks and ends at 225,454. The lower orange lane, which every version could follow, overtakes at block 225,455 at 06:20 UTC and continues as the single chain."
+sources:
+  - { label: "BIP-50 - March 2013 Chain Fork Post-Mortem", url: "https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki" }
+  - { label: "BIP-50 revision history (the February 2016 rewrite)", url: "https://github.com/bitcoin/bips/commits/master/bip-0050.mediawiki" }
+  - { label: "bitcoin.org - 11/12 March 2013 Chain Fork Information", url: "https://bitcoin.org/en/alert/2013-03-11-chain-fork" }
+  - { label: "bitcoin.org - the chain fork notice as it read on 12 March 2013, 02:45 UTC (Wayback Machine)", url: "http://web.archive.org/web/20130312113133/http://bitcoin.org/chainfork.html" }
+  - { label: "bitcoin.org - March 2013 upgrade deadline (the May 15 notice)", url: "https://bitcoin.org/en/alert/2013-03-15-upgrade-deadline" }
+  - { label: "#bitcoin-dev IRC log, 11 March 2013 (buildingbitcoin.org, Wayback Machine)", url: "http://web.archive.org/web/20200923052820/https://buildingbitcoin.org/bitcoin-dev/log-2013-03-11.html" }
+  - { label: "#bitcoin-dev IRC log, 12 March 2013 (buildingbitcoin.org, Wayback Machine)", url: "http://web.archive.org/web/20200921053434/https://buildingbitcoin.org/bitcoin-dev/log-2013-03-12.html" }
+  - { label: "Pieter Wuille - first email to bitcoin-development, 12 March 2013 00:18 UTC", url: "https://gnusha.org/pi/bitcoindev/CAPg+sBip_4Jtxhq+rm-na2=RSJ_PuoZt+akGgJyo0b_Bwbr1Dw@mail.gmail.com/" }
+  - { label: "Pieter Wuille - Alert: chain fork caused by pre-0.8 clients dealing badly with large blocks (BitcoinTalk)", url: "https://bitcointalk.org/index.php?topic=152030.0" }
+  - { label: "Pieter Wuille - 0.8 was wrong for not following the rules of the network, bitcoin-development (13 March 2013)", url: "https://gnusha.org/pi/bitcoindev/20130313183824.GB7921@vps7135.xlshosting.net/" }
+  - { label: "Gavin Andresen - 0.8.1 plan, bitcoin-development (17 March 2013)", url: "https://gnusha.org/pi/bitcoindev/CABsx9T050Zia=5Xy4fRh_RtjOQzAVi-UPKmhYCuKbdZTF3U7dA@mail.gmail.com/" }
+  - { label: "Bitcoin 0.7.2 source - src/db.cpp, the 10,000 lock setting", url: "https://github.com/bitcoin/bitcoin/blob/v0.7.2/src/db.cpp#L85-L86" }
+  - { label: "Bitcoin 0.8.1 source - src/main.cpp, the 4,500 txid rule", url: "https://github.com/bitcoin/bitcoin/blob/v0.8.1/src/main.cpp#L2056-L2073" }
+  - { label: "Bitcoin 0.8.1 release notes", url: "https://bitcoin.org/en/release/v0.8.1" }
+  - { label: "Bitcoin Core PR #2373 - the temporary block rule", url: "https://github.com/bitcoin/bitcoin/pull/2373" }
+  - { label: "Mike Hearn - Soft block size limit reached, action required by YOU (BitcoinTalk, 6 March 2013)", url: "https://bitcointalk.org/index.php?topic=149668.0" }
+  - { label: "macbook-air - A successful DOUBLE SPEND US$10000 against OKPAY this morning (BitcoinTalk)", url: "https://bitcointalk.org/index.php?topic=152348.0" }
+  - { label: "BTC Guild pool thread, 12 March 2013 (Eleuthria on the cost)", url: "https://bitcointalk.org/index.php?topic=49417.1840" }
+  - { label: "blockchain.info - the orphaned block 225,430 (Wayback Machine, 14 March 2013)", url: "https://web.archive.org/web/20130314234504/http://blockchain.info/block/000000000000015c50b165fcdd33556f8b44800c5298943ac70b112df480c023" }
+  - { label: "mempool.space - block 225,430 on the surviving chain", url: "https://mempool.space/block/00000000000001c108384350f74090433e7fcf79a606b8e797f065b130575932" }
+  - { label: "mempool.space - block 225,455, where the old chain overtook", url: "https://mempool.space/block/000000000000016924f85069603be8164578eedf113f44d60bf0438cba047c7f" }
+  - { label: "mempool.space - block 252,451, 16 August 2013", url: "https://mempool.space/block/0000000000000024b58eeb1134432f00497a6a860412996e7a260f47126eed07" }
+  - { label: "bitcoin-data/stale-blocks - some headers of the abandoned chain", url: "https://github.com/bitcoin-data/stale-blocks/blob/master/stale-blocks.csv" }
+  - { label: "NVD - CVE-2013-3220", url: "https://nvd.nist.gov/vuln/detail/CVE-2013-3220" }
+  - { label: "Pieter Wuille - How is a hard fork resolved? (Bitcoin Stack Exchange, April 2013)", url: "https://bitcoin.stackexchange.com/a/10000" }
+  - { label: "Pieter Wuille - Chaincode Labs podcast, part 1 (2020 transcript)", url: "https://btctranscripts.com/chaincode-podcast/2020-01-28-pieter-wuille-part1" }
+  - { label: "Vitalik Buterin - Bitcoin Network Shaken by Blockchain Fork (Bitcoin Magazine, 13 March 2013)", url: "https://bitcoinmagazine.com/technical/bitcoin-network-shaken-by-blockchain-fork-1363144448" }
+  - { label: "Ars Technica - Major glitch in Bitcoin network sparks sell-off; price temporarily falls 23% (12 March 2013)", url: "https://arstechnica.com/information-technology/2013/03/major-glitch-in-bitcoin-network-sparks-sell-off-price-temporarily-falls-23/" }
+  - { label: "Hacker News - Bitcoin blockchain issue, Mt Gox deposits temporarily suspended (12 March 2013)", url: "https://news.ycombinator.com/item?id=5359406" }
+  - { label: "Alan Reiner - bitcoin-development, 12 March 2013", url: "https://www.mail-archive.com/bitcoin-development@lists.sourceforge.net/msg01832.html" }
+  - { label: "Neighbourhood Pool Watch - weekly pool and network statistics, 10 March 2013", url: "https://organofcorti.blogspot.com/2013/03/10th-march-2013-weekly-pool-and-network.html" }
+  - { label: "Neighbourhood Pool Watch - weekly pool and network statistics, 17 March 2013", url: "https://organofcorti.blogspot.com/2013/03/17th-march-2013-weekly-pool-and-network.html" }
+  - { label: "Mt. Gox USD trade history (bitcoincharts archive, Wayback Machine)", url: "http://web.archive.org/web/20161229014309/http://api.bitcoincharts.com/v1/csv/mtgoxUSD.csv.gz" }
+  - { label: "99Bitcoins - Bitcoin Obituaries", url: "https://99bitcoins.com/bitcoin-obituaries/" }
+  - { label: "BitMEX Research - Bitcoin's consensus forks (Wayback Machine)", url: "https://web.archive.org/web/20240110121831/https://blog.bitmex.com/bitcoins-consensus-forks/" }
+  - { label: "Pieter Wuille - why consensus-relevant libraries are pinned (Bitcoin Stack Exchange)", url: "https://bitcoin.stackexchange.com/a/75147" }
+  - { label: "Arvind Narayanan - Analyzing the 2013 Bitcoin fork (Princeton CITP, 2015)", url: "https://blog.citp.princeton.edu/2015/07/28/analyzing-the-2013-bitcoin-fork-centralized-decision-making-saved-the-day/" }
+  - { label: "Jameson Lopp - Running Bitcoin Core v0.7 and earlier (2022)", url: "https://blog.lopp.net/running-bitcoin-core-v0-7-and-earlier/" }
+  - { label: "Satoshi Nakamoto on alternative implementations (BitcoinTalk, 17 June 2010)", url: "https://bitcointalk.org/index.php?topic=195.msg1611#msg1611" }
+  - { label: "bitcoin.org - the July 2015 BIP-66 fork alert", url: "https://bitcoin.org/en/alert/2015-07-04-spv-mining" }
+  - { label: "Bitcoin Core - CVE-2018-17144 full disclosure", url: "https://bitcoincore.org/en/2018/09/20/notice/" }
+relatedTerms:
+  - bip-50
+  - chain-split
+  - fork
+  - soft-fork
+  - reorg-reorganization
+  - stale-block
+  - orphan-block
+  - double-spend
+  - longest-chain-rule
+  - transaction-finality
+  - fork-detection
+  - mining-pool
+  - hash-rate
+  - full-node
+  - bitcoin-core
+  - block-size
+  - mt-gox
+  - bip-40-alerts-avoid-replay
+  - inflation-bug
+  - bitcoin-governance
+  - consensus-parameter
+hasInteractive: []
+---
+
+> **Where you're going:** For seven hours and forty-one minutes in March 2013 the Bitcoin network was split in two. A database swap in version 0.8 had quietly removed a limit nobody knew was a rule, one large block crossed it, and old and new nodes stopped agreeing on what the chain was. This chapter follows the night from the public chat log: who noticed, who argued for which chain, the pool operator who could decide the outcome alone and paid for it, the one double spend, and the fix, which was finished two months later by a planned rule change that may or may not count as a second fork. Along the way it corrects several things the standard retelling gets wrong, including the length of the fork.
+
+## A database swap
+
+Bitcoin 0.8.0 came out in February 2013 and its headline feature was speed. Every version before it had stored the block index in Berkeley DB, an embedded database from the 1990s, and syncing a new [node](/glossary/full-node) had become painfully slow. Version 0.8 replaced it with LevelDB, a port Mike Hearn had started, and a redesigned validation engine written by Pieter Wuille. Nodes synced much faster. Nobody intended to change which blocks were valid, and the release notes did not say that anything about validity had changed.
+
+At the same time, blocks were filling up. The protocol allowed one megabyte, but the software's default for miners was to build blocks of at most 250,000 bytes, and by early March the betting service SatoshiDice was sending enough transactions to hit that ceiling. On 6 March Mike Hearn posted a thread on BitcoinTalk titled "Soft block size limit reached, action required by YOU" telling miners the default had been reached and that they had to choose what to do about it, with raising the setting as the first option. Several raised it. Slush's pool went to 500 kB, then higher. Gregory Maxwell's summary, given in the chat room while the fork was still running: "Gavin and Mike went around and nagged pools to increase their target sizes.. so its not surprising that someone was running with a big setting."
+
+By 11 March about 60 percent of the [hash rate](/glossary/hash-rate), the network's mining power, was running on the new database, and some pools were building blocks up to four times larger than the old default.
+
+## Block 225,430
+
+At 22:39:09 UTC on 11 March 2013, Slush's pool mined block 225,430. It held 1,752 transactions and was about 998,000 bytes, just under the one-megabyte limit. It broke no rule in any document. Nodes running 0.8 accepted it and kept going.
+
+Many nodes running 0.7 and earlier did not. Their logs filled with one line:
+
+```
+Lock table is out of available lock entries
+```
+
+Those nodes treated the block as invalid and waited for a different block at that height. Miners still on old software eventually produced one, at 23:24:19, forty-five minutes later: 797 transactions, 249 kB. That is the block at height 225,430 on the chain that survived, and the one a block explorer shows. The original survives only in archives.
+
+From that point there were two chains with a common history up to block 225,429. New nodes followed the chain with more mining work behind it, the one containing the big block, while old nodes had rejected that block and were left on the other.
+
+<figure>
+  <img src="/diagrams/2013-chain-fork.svg" alt="Two-lane timeline, 11 to 12 March 2013, UTC. A single orange chain runs to block 225,429 at 21:59 and splits. Upper lane, gray, the chain followed by 0.8 nodes: block 225,430 from Slush's pool at 22:39, 998 kB and 1,752 transactions, about 60 percent of mining power, 13 blocks ahead around 02:05, ending in an X at block 225,454 with 25 blocks abandoned and 625 BTC of block rewards lost to the miners who built them. Lower lane, orange, the chain every version could follow: first block at 23:24, 45 minutes behind, overtaking at block 225,455 at 06:20, after which one orange chain continues. Markers: 23:11 first report in the developer chat room, 00:05 the split is recognized, 00:45 developers and BTC Guild agree to go back, 02:36 all BTC Guild servers on the old chain, 06:20 the reorganization." />
+  <figcaption>The chain with most of the mining power behind it was the one that got thrown away.</figcaption>
+</figure>
+
+## The rule nobody wrote down
+
+The cause was two lines in the old software's database setup, in `src/db.cpp`:
+
+```
+dbenv.set_lk_max_locks(10000);
+dbenv.set_lk_max_objects(10000);
+```
+
+Berkeley DB takes a lock on every page of the database it touches during an update, and Bitcoin wrote each block to the database as a single all-or-nothing update. Those two lines capped the number of locks at 10,000. The number was Bitcoin's own choice, picked years earlier; Berkeley DB's default is 1,000. Wuille's estimate the next morning was that updating n entries in the transaction index needs up to 2n locks, and that the offending block "modified slightly over 5000 transaction index entries," which put it past what an old node had.
+
+Block size was a side issue. Full one-megabyte blocks had been tried on [testnet](/glossary/testnet) and passed. What mattered was how many distinct earlier transactions a block touched, and a block could be under the size limit and over the lock limit. [BIP-50](/glossary/bip-50), the postmortem first written that month and partly rewritten in 2016, says so directly: "it did not occur to anyone that there could be blocks that were smaller but require more locks than were available."
+
+The limit also differed from machine to machine. Locks are taken per page, and which entries share a page depends on the order a node happened to write its database. BIP-50 again: "the number of locks required depends on the exact arrangement of the blkindex.dat on disk." The same block could pass on one 0.7 node and fail on another. Some seem to have passed: Peter Todd reported that night that one of his 0.7 nodes appeared to have followed the chain it was supposed to reject, with a log full of errors.
+
+The old software then misreported the failure. Running out of locks is a resource error, like a full disk, but the code treated it as the block being invalid. Wuille, in 2020: "a failure to grab a lock would be treated as that block being invalid."
+
+So Bitcoin had been enforcing an unwritten limit since 2009, one that blocks had been too small to reach, and version 0.8 removed it without anyone knowing it was there.
+
+## 23:11: one broken node
+
+The first report came at 23:11:01 UTC, thirty-two minutes after the block, in the #bitcoin-dev channel on Freenode. A node operator with the handle thermoman wrote:
+
+```
+23:11:01 thermoman: i'm getting invalid chain and "no available lock entries" in db.log
+23:11:09 thermoman: anyone help?
+```
+
+Wuille, who appears in the log as sipa, answered within minutes and treated it as what it looked like, one misbehaving server. "0.8 won't have that problem, as it doesn't use BDB for the blockchain anymore." (BDB is Berkeley DB.) Then, at 23:32: "the problem is BDB ran out of locks and can't do modifications anymore." The advice was to upgrade. thermoman said he could not upgrade a production server on the spot.
+
+At 23:42 a second user, jouke, reported that his 0.7 node was warning him that it, or the rest of the network, needed to upgrade. At 23:59 he pasted the same lock error, and thermoman replied "same here!" A few seconds later Wuille wrote:
+
+```
+23:59:57 sipa: i wonder if there's something that triggered it on the network
+```
+
+## "so... yay accidental hardfork?"
+
+It took six more minutes. Wuille noticed that a public block explorer had not moved past height 225,431 while his own node was at 225,439. Luke Dashjr checked his own logs, found the lock error, and wrote:
+
+```
+00:05:48 Luke-Jr: so... yay accidental hardfork? :x
+00:06:06 jouke: Holy crap
+```
+
+A hard fork is a rule change that old software cannot follow, so nodes that do not upgrade end up on a separate chain. Nobody had planned this one.
+
+The first practical question was about money. Dashjr asked Mark Karpeles of [Mt. Gox](/glossary/mt-gox), who was in the channel as MagicalTux, which side the largest exchange was on. It was on old software. Dashjr suggested freezing deposits. At 00:10:47, five minutes after the word "hardfork" appeared, Karpeles wrote: "I've disabled the import of bitcoin blocks."
+
+Dashjr's advice to the first reporter still holds for anyone caught in a chain split: "this problem is bigger than just you; just don't trust confirmations at this point IMO." A confirmation is a block added on top of the one holding your payment. In a split, confirmations on the chain that loses disappear.
+
+At 00:18 Wuille emailed the developer mailing list. That first message gave the wrong instruction: "Immediate solution is upgrading to 0.8, or manually setting the number of lock objects higher in your database." The corrected email went out at 01:01, although Wuille had been arguing for the old chain in the channel since 00:24.
+
+## Twenty minutes to decide
+
+By 00:20 the situation was clear. The chain that 0.8 nodes followed was six blocks ahead and had the majority of mining power. The other chain was the only one that old nodes could ever accept, because they would reject block 225,430 forever no matter how much work was piled on top of it. The two would not converge on their own.
+
+One way out was to move every user onto 0.8 immediately. The other was to get enough miners off the longer chain for the shorter one to overtake it.
+
+Gavin Andresen, then the lead maintainer, started from the textbook position:
+
+```
+00:22:18 gavinandresen: the 0.8 fork is longer, yes? So majority hashpower is 0.8....
+00:22:46 gavinandresen: first rule of bitcoin: majority hashpower wins
+00:22:53 Luke-Jr: gavinandresen: if we go with 0.8, we are hardforking
+00:23:28 Luke-Jr: gavinandresen: majority hashpower has never ruled on a hardfork before
+00:24:29 sipa: and i disagree with majority hashpower wins; this is a hardfork - just a majority isn't enough
+```
+
+Wuille's argument was about who would be hurt. Miners had upgraded quickly, but most merchants and exchanges were still on old versions. He wrote that "even with 90% of mining power on 0.8, all merchants on an old client will be vulnerable," and then: "the only sane choice is making a chain that we know now everyone accepts." And a few minutes later: "we _cannot_ get every bitcoin user in the world to now instantly switch to 0.8."
+
+Andresen was not persuaded yet. At 00:39: "Going backwards is the wrong thing to do, in my opinion." At 00:40: "The bug is clearly in 0.7." A channel regular answered that the bug was in 0.8, since removing the old database had changed behavior, and Wuille agreed with him. Dashjr answered Andresen: "it's a bitcoin rule we didn't know about."
+
+Michael Marsee, who ran BTC Guild under the name Eleuthria, settled it. BTC Guild was the largest pool, it was on 0.8, and it made up about half of that chain's mining power. He had been following the argument, and at 00:28 he said that rolling back "seems to be the right solution." At 00:30:45, fourteen minutes before the maintainers formally agreed, he wrote: "Working on rolling back BTC Guild to 0.7 now." Seconds later: "An involuntary hardfork doesn't gain legitimacy due to majority." At 00:43 he asked the channel to confirm. Jeff Garzik (jgarzik) was another of the developers, and ACK is their shorthand for agreement.
+
+```
+00:43:42 Eleuthria: I can single handedly put 0.7 back to the majority hash power
+00:43:53 Eleuthria: I just need confirmation that thats what should be done
+00:44:10 sipa: Eleuthria: imho, that is was you should do, but we should have consensus first
+00:44:27 jgarzik: sipa, Eleuthria: ACK on preferring 0.7 chain, for the moment
+00:44:55 gavinandresen: Eleuthria: if you can cleanly get us back on the 0.7 chain, ACK from here, too
+00:45:03 Eleuthria: alright
+```
+
+## The rollback
+
+The decision came thirty-nine minutes after the fork was recognized. Carrying it out took most of the night.
+
+A pool cannot switch chains by flipping a setting. Marsee had to load an old-format copy of the whole chain onto each of his servers and restart them one at a time. He told the channel "it will take about 45 minutes." He also stopped payouts, because every payment the pool made on the 0.8 chain was about to stop existing.
+
+While that ran, the rest of the ecosystem stopped moving money. Erik Voorhees paused SatoshiDice at 00:59. The Bitfloor exchange paused at 01:11. BitPay froze. Coinbase was reported to have suspended sales. At 01:12 Andresen told the channel "Everybody mining on version 0.8 should stop mining for now," and within minutes the same message went out as a network alert, a signed notice the developers could then push to every node.
+
+The market noticed at about the same time. Bitcoin had been trading at just over $48 on Mt. Gox, close to its record. About an hour and a half later it touched $36.65, and within half an hour it was back in the mid-$40s.
+
+The first BTC Guild server came up on the old chain at 01:23. At 02:36: "All BTC Guild servers now on 0.7."
+
+Marek Palatinus, who ran Slush's pool and whose block had started it, arrived at 01:38, the middle of the night for him. "I woke up at 3am thanks to one guy who called me over skype," he wrote on the forum afterwards. His attempt to go back to 0.7 failed, with database errors and a sync that would have taken hours, and the log from the next ninety minutes is the least composed part of the record. Wuille wrote an emergency patch on the spot that let a 0.8 node be told to reject one specific block, tested it, and handed it over at about 03:00 with the note "for the love of god, check that that is the right block; i'm falling asleep now." At 03:17 Palatinus reported it fixed. BIP-50 says he downgraded, but the log shows the downgrade failed and the pool ran patched 0.8.
+
+The gap between the chains reached 13 blocks at about 02:00, and that was roughly the peak. The abandoned chain got its last blocks from stragglers: one from an anonymous miner, stamped 03:28, and one stamped 05:17 from a BTC Guild server that everyone, including its owner, had forgotten was still running 0.8. Marsee's lines as he worked it out: "what the", "how the hell...", "merged mining server", "That server is now offline."
+
+The old chain drew level at 06:19:32 and passed at 06:20:04 with block 225,455, mined by BTC Guild. Nodes running 0.8 did what the software does when a longer valid chain appears, and one operator pasted the result into the channel:
+
+```
+06:22:32 EvilPete: REORGANIZE: Disconnect 25 blocks; ...
+06:22:32 EvilPete: REORGANIZE: Connect 26 blocks; ...
+```
+
+Karpeles, at 06:36: "the good blockchain won against the bad blockchain." Mt. Gox reopened deposits at 06:54.
+
+The cost fell on the miners who had been on the abandoned chain. Twenty-five blocks at 25 BTC each is 625 BTC in block [subsidy](/glossary/block-subsidy), plus fees, that those miners lost; the rewards for those heights went to whoever mined them on the surviving chain. Marsee had paid his miners for hours of work on blocks that were now worthless and put his loss from the fork at 150 to 200 BTC. Palatinus counted six of his pool's blocks gone. Wuille to Marsee at 03:40: "wow... i'm really glad you're still helping us out with this, despite those losses."
+
+## The double spend
+
+At 00:55, with the two chains running side by side, Vitalik Buterin, then a nineteen-year-old writer for Bitcoin Magazine, asked in the channel: "could someone listening in here plan a double spend attack right now?" A double spend means the same coins are paid to two recipients and only one of the payments survives.
+
+Someone did, though by his own account he had not planned it. A BitcoinTalk user called macbook-air had sent 211.9093 BTC, about $10,000 at the time, to the payment processor OKPay at 00:08 to fund an account at the exchange BTC-e, before he knew anything was wrong. The payment confirmed on the 0.8 chain at 01:30, and at 02:08 the exchange credited him $9,800. OKPay had not paused, although Wuille's alert had been up on BitcoinTalk for thirty-eight minutes by then.
+
+At 04:53, having read about the fork, he made two new transactions sending coins from that payment to an address of his own instead. Those confirmed on the other chain at 05:01. When the 0.8 chain was abandoned, the payment to OKPay went with it.
+
+Both halves can be checked. The transaction paying OKPay does not exist on the surviving chain. The two transactions that replaced it are in block 225,446.
+
+He posted about it that evening with the line "I bet merchants would think twice before they decide to accept Bitcoins after the incident." The next morning he reported that OKPay had phoned him and the money had been returned, and OKPay confirmed in the same thread: "Yes we resolved this situation."
+
+The official notice on bitcoin.org, last updated at 02:45 while the chains were still apart, had told merchants the risk of exactly this was small, because transactions were reaching both chains. BIP-50 records it as "at least one large double spend" by "someone experimenting to see if it was possible." It also suggests why it worked even though both chains saw the transactions in the same order: most likely, when the pools downgraded, their lists of pending transactions were wiped, so the conflicting spend met no resistance.
+
+No other loss to users from the split has been documented.
+
+## From the outside
+
+The developers expected to be buried. Alan Reiner, who maintained the Armory wallet, wrote to the mailing list that morning: "Undoubtedly, many articles (and especially commenters) will shape this into 'the end of Bitcoin'."
+
+Buterin's report for Bitcoin Magazine, published the next day, called it "one of the closest moments that we have come to the underlying Bitcoin protocol actually failing," and ended: "we passed with flying colors." It also gave the figures of 24 blocks and six hours that most later accounts repeat.
+
+The general press was on it within hours and was calmer than the forums. Ars Technica's headline was "Major glitch in Bitcoin network sparks sell-off; price temporarily falls 23%," and the article called the night "an important test of the cryptocurrency's decentralized governance structure." The Hacker News thread had both reactions a few comments apart: one reader called the handling "nothing short of incredible," and another said it "demonstrates that Bitcoin is extremely vulnerable to double spending."
+
+The [obituaries list](/glossary/bitcoin-obituaries) kept by 99Bitcoins, which collects published declarations that Bitcoin is dead, had no entry for March 2013 when checked in October 2026. It goes from December 2012 to April 2013.
+
+## Whose bug?
+
+The argument from the chat room continued for days, and the developers settled on an answer that assigns blame to both versions.
+
+Maxwell, in the channel while the fork was still running (the spelling is his): "0.8 was buggy in that it did not faithfully emulate 0.7 which was an absolute non-negoitable requirement. 0.7 was buggy because it had an unknown implicit limitation that arose out of the behavior of the underlying database library."
+
+Wuille, who had written much of 0.8, on the mailing list on 13 March: "0.7 and before had a bug, but 0.8 was wrong for not following the rules of the network (which I hate to say, as I'm responsible for many changes in 0.8)." The same email has the line the incident is remembered for: "The protocol is whatever the network enforces."
+
+The old behavior was logged in the public vulnerability database as CVE-2013-3220, and it was worse than a limit on busy blocks. A [reorganization](/glossary/reorg-reorganization), the switch from one chain to a longer one, is processed as one large database update, so old nodes could run out of locks while switching chains and fail to follow a perfectly valid one. So the limit could not be kept as a rule and had to go, and removing a rule that makes some blocks invalid is, by definition, a hard [fork](/glossary/fork).
+
+## The fix, and the deadline
+
+Version 0.8.1 was announced on 18 March. Its release notes describe "just two changes."
+
+The first was a temporary rule that every upgraded node enforced. From 21 March until 15 May 2013, a block was invalid if it referred to more than 4,500 distinct transaction ids, counting its own transactions and every earlier transaction they spent from. The number was chosen to sit safely under the roughly 5,000 that old nodes could handle. For those eight weeks, new nodes voluntarily obeyed the old nodes' accidental limit, restated as something every node could compute the same way. Version 0.8.1 also refused to mine blocks larger than 500,000 bytes until 15 May. That second number is the one usually quoted, but it was a cap on what 0.8.1 itself would mine, not a rule about which blocks were valid.
+
+The second change was a checkpoint, a block hash hard-coded into the software, pinning the surviving block at 225,430 so that no 0.8.1 node could be led back onto the abandoned chain.
+
+Everyone still on old software was told to upgrade or to add one line to a configuration file raising the lock limit, and given a date. Andresen: "After May 15, miners will be free to create blocks up to 1MB, and anybody running old versions who ignored the alerts may be left behind." Network alerts repeated it in March and May.
+
+On 15 May the temporary rule expired. Nothing visible happened, because nothing forces a miner to produce a block that old nodes cannot handle. BIP-50 dates the point at which unpatched nodes were actually left behind to 16 August 2013, when block 252,451 "was accepted by the main network, forking unpatched nodes off the network." That block had 1,486 transactions; parsing it gives 5,172 distinct transaction ids by the 0.8.1 measure, over both the temporary rule and the old bound.
+
+Whether any of this should be called a hard fork is disputed by the people who would know. Wuille called the May change one in March 2013, in advance. In 2020, talking about 0.8 having dropped the old limit in the first place, he hedged: "It is debatable whether it is a hard fork given that the old code was actually inconsistent with itself all the time." Maxwell has made the same point, that an old node might or might not get stuck depending on its database. Jameson Lopp tested it in 2022 by syncing old versions from scratch and found them stalling at different heights, some well past August 2013. Because the limit differed from machine to machine, there is no single date on which it stopped applying.
+
+## What the standard retelling gets wrong
+
+This incident is summarized in a lot of places, including an earlier version of our own glossary. Three things in the usual account are not covered above:
+
+- **"BTC Guild lost over a thousand bitcoin to the fork."** Marsee lost 1,254 BTC the night before in an unrelated accident while upgrading to 0.8. The fork cost him 150 to 200.
+- **Quoting BIP-50 as the 2013 account.** Parts of it were rewritten in February 2016. The original text called the event an "unexpected hard fork" and described the 0.8 pools as "running the bug-free version." The sentence about the lock limit having "implicitly had become a network consensus rule" is from the later edit.
+- **The timestamps.** Later Wayback Machine captures of the bitcoinstats.com log archive run an hour behind UTC, and a 2015 analysis published by Princeton's Center for Information Technology Policy inherited the offset. Times in this chapter are from the buildingbitcoin.org archive and agree with the block headers and the mailing-list stamps.
+
+And six that are, collected here because they are the ones most often repeated:
+
+- **"A 24-block fork."** Nodes that reorganized logged "Disconnect 25 blocks." The abandoned chain ran from 225,430 to 225,454 inclusive.
+- **"Six hours."** From the triggering block to the reorganization is 7 hours 41 minutes. Six hours is the figure in Bitcoin Magazine's report, and roughly the time from Wuille's first email.
+- **"The block was too big."** It was under the one-megabyte limit. The cause was the number of database entries it touched.
+- **"Berkeley DB's default lock limit."** The 10,000 was set by Bitcoin's own code.
+- **"0.8.1 imposed a 500 kB block size limit."** The rule nodes enforced was 4,500 transaction ids. The 500 kB figure was a cap on what 0.8.1 itself would mine.
+- **"The developers agreed to roll back, and both pools downgraded."** The lead maintainer argued for the other chain for twenty minutes, the first official email recommended the opposite of what was done, and Slush's pool could not downgrade at all.
+
+## The incidents on either side of it
+
+In August 2010 a missing check let a block create 184 billion bitcoin, and the fix tightened a rule that had been too loose; that story is in the [inflation bug postmortem](/rabbit-hole/inflation-bug-postmortem). In July 2015, during the planned BIP-66 [soft fork](/glossary/soft-fork) (a rule tightening that old nodes still accept), miners who were not fully checking blocks built five more on top of an invalid one. In September 2018 a performance change was found to have removed a check against duplicate inputs, and it was patched before anyone used it. The 2015 and 2018 responses ran through alerts and coordinated releases. Through 2026, no later incident has been argued out line by line in an open chat room the way March 2013 was.
+
+## What this buys us
+
+Two versions of the same software disagreed about a valid block, most of the mining power was on the side that had to be abandoned, and every step from the first report to the last abandoned block happened in public with a timestamp on it. That record is worth having for four reasons.
+
+- **The rules are what the nodes enforce.** Bitcoin's rules are whatever the nodes in the network will accept, including behavior nobody designed, regardless of what the whitepaper or any specification says. Satoshi argued in 2010 against a second implementation because "so much of the design depends on all nodes getting exactly identical results in lockstep." In 2013 a new release of the same software broke that lockstep. Wuille has said the scare is why the developers keep exact, fixed versions of the libraries that could affect consensus, bundled inside [Bitcoin Core](/glossary/bitcoin-core)'s own source tree.
+- **Majority mining power did not decide it.** The chain with about 60 percent of the mining power was the one abandoned, because the people running it concluded that the other chain was the only one every user could follow. The same question returned in 2017 in the [block size war](/rabbit-hole/block-size-war).
+- **The fast fix depended on concentration.** One pool operator could move about a third of the network by himself, and the developers and exchange operators who mattered were in one chat room. Marsee said so that night: "If we were fully decentralized without pools, this could've been a much larger problem than it was today." With mining spread more widely, which is otherwise the goal and the subject of the [mining centralization](/glossary/mining-centralization) entry, a rescue like this would be slower and harder to coordinate.
+- **You know what to do in a split.** The advice from the first ten minutes of that night has not changed, and it is in the tip below.
+
+> **Pro tip:** If you ever hear that the chain has split, do what Luke Dashjr told the first person who reported this one: stop trusting confirmations until it is resolved. If the chain your payment is on gets abandoned, its confirmations go with it, however many there were. Do not send or accept anything large, and read the developers' notice before upgrading or downgrading anything. On the night described here, the first instruction that went out was the wrong one.

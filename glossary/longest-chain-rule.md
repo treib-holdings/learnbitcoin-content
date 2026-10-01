@@ -37,3 +37,5 @@ Why this rule is the foundation of Bitcoin's security:
 - **Honest miners are incentivized to build on the longest chain.** A miner who finds a block off the main chain doesn't get paid; the block becomes stale.
 
 The longest chain rule is sometimes called "Nakamoto consensus" - the version of consensus Satoshi described in the [whitepaper](/glossary/whitepaper). It's the deceptively simple rule that turns proof-of-work into a globally agreed-upon ledger.
+
+The rule has a limit: a chain that some nodes consider invalid does not win by being longer. [The 2013 Chain Fork](/rabbit-hole/2013-chain-fork) is the case where the chain with most of the hash power was the one abandoned.
