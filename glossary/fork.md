@@ -42,3 +42,5 @@ Examples in Bitcoin's history: none of Bitcoin's consensus upgrades since 2010 h
 The asymmetry between soft and hard forks is one of Bitcoin's quieter conservative defenses. Soft forks can ship gradually with no disruption if they have broad support. Hard forks are essentially impossible to deploy on Bitcoin without splitting the network - so changes that *require* a hard fork (e.g., changing the [21M cap](/glossary/asymptote)) are practically infeasible.
 
 The term "fork" is also sometimes confusingly used for *temporary* divergences (two miners finding blocks at the same height), but those are better called brief [reorgs](/glossary/reorg-reorganization) - the network resolves them within a block or two.
+
+For an accidental fork followed minute by minute, see [The 2013 Chain Fork](/rabbit-hole/2013-chain-fork).

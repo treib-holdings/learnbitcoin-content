@@ -170,7 +170,7 @@ To meaningfully alter old history, you'd have to rebuild every block from your t
 
 Sometimes the network has a *brief* disagreement about which block came first - two miners find valid blocks at nearly the same instant, and different parts of the network see different ones first. This is called a **reorg**. It resolves itself within one or two blocks: the chain that gets the next valid block on top wins, and the orphaned block becomes a "stale block." Transactions that were only in the stale block return to the mempool.
 
-Reorgs of 1-2 blocks happen a few times a year. Reorgs of more than 2 are vanishingly rare. The deepest accidental reorg in Bitcoin's history was 4 blocks, in 2010. It hasn't happened since.
+Reorgs of 1-2 blocks happen a few times a year. Reorgs of more than 2 are vanishingly rare, and the deep ones in Bitcoin's history came from software bugs, not from ordinary mining: 53 blocks in August 2010, when the [inflation bug](/rabbit-hole/inflation-bug-postmortem) was rolled back, and 25 blocks in March 2013, when two versions of the software [disagreed about a valid block](/rabbit-hole/2013-chain-fork).
 
 ## 10. Verifying Without Trusting
 

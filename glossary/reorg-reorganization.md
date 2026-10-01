@@ -36,3 +36,5 @@ Two flavors:
 - **Deep reorgs (3+ blocks).** Rare and concerning. Most observed deep reorgs on Bitcoin's mainnet have been caused by software bugs, brief network partitions, or - on testnet - deliberate attacks for research purposes. A deep reorg on mainnet would be a serious event worth investigating.
 
 The economic implication: [transaction finality](/glossary/transaction-finality) on Bitcoin is probabilistic, not binary - a transaction is only as final as the work that has been mined on top of it. One confirmation is "probably fine for small amounts." Six confirmations is "fine for almost everything." Hundreds is "permanent for all practical purposes." See [Double Spend](/glossary/double-spend) for the attack that reorgs make harder, and [Mining rabbit hole](/rabbit-hole/mining) for the economics.
+
+For the deepest reorganization a software disagreement has caused on mainnet, 25 blocks in March 2013, see [The 2013 Chain Fork](/rabbit-hole/2013-chain-fork).

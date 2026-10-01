@@ -42,3 +42,5 @@ Bitcoin Core releases roughly every 6 months. Major versions have brought SegWit
 The codebase has its quirks too. Sjors Provoost's 2015 [Lurking Wife Mode](/glossary/lurking-wife-mode) - a GUI toggle that masks all balance and amount displays - remains shipped, a small reminder that real humans write this software.
 
 See [Full Node](/glossary/full-node) for what running it means, and [Sovereignty Journey](/journey/sovereignty) for why you might want to.
+
+For why changes near validation are treated so conservatively, see [The 2013 Chain Fork](/rabbit-hole/2013-chain-fork), the night a database swap turned out to be a consensus change.

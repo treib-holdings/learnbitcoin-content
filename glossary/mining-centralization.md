@@ -45,3 +45,5 @@ What counterbalances it:
 - **Mining hardware is fungible.** Miners can and do route their hash rate through different pools, in different jurisdictions, on short notice.
 
 The honest assessment: mining centralization is a real concern with real failure modes, but the structural counterweights are also real. It's an area worth watching, worth pushing back on with Stratum V2 adoption and pool-operator scrutiny, and worth not panicking about. See [Mining rabbit hole section 8](/rabbit-hole/mining) for a longer look.
+
+For a night when one pool operator could decide which of two chains survived, and what that says in both directions, see [The 2013 Chain Fork](/rabbit-hole/2013-chain-fork).

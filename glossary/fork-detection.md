@@ -25,7 +25,7 @@ Fork detection is the practice of monitoring for unexpected chain splits - times
 The kinds of forks that get detected:
 
 - **Routine 1-2 block reorgs.** Happen a few times a year from near-simultaneous block finds. Resolved automatically within a block or two; no operator intervention needed.
-- **Software-bug forks.** A bug in node software accepts an invalid block; nodes running the buggy version follow a different chain than nodes running the correct one. Rare, but [BIP 50](/glossary/bip-50) is the canonical 2013 example.
+- **Software-bug forks.** Two versions of node software disagree about whether a block is valid, and each follows a different chain. Rare. The March 2013 fork documented in [BIP 50](/glossary/bip-50) is the canonical example: older nodes rejected a block that newer ones accepted, and the network was split for nearly eight hours. The full account is in [The 2013 Chain Fork](/rabbit-hole/2013-chain-fork).
 - **Activation forks.** A soft-fork or hard-fork rule change activates, and not all nodes upgrade. Intentional but managed via signaling thresholds and warning periods.
 - **Contentious hard forks.** A faction deliberately changes consensus rules. The 2017 Bitcoin Cash split is the example.
 
