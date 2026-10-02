@@ -44,6 +44,8 @@ The wins:
 
 The catch is the off-chain coordination - cosigners must exchange nonces and partial sigs in a careful sequence (MuSig2 is non-trivial to implement). Production-grade libraries exist (libsecp256k1's MuSig2 module since v0.6.0, the rust-secp256k1 bindings since 0.32.0, Ledger's Bitcoin app since v2.4.0) and adoption is growing.
 
+What Bitcoin does not have is aggregation across the inputs of a transaction. The aggregation described here happens among the cosigners of a single output. A transaction that spends five Taproot outputs still carries five signatures, one per input, and combining those into one would take another soft fork.
+
 Aggregation is one of the quietest big wins Taproot brought. See [Taproot](/glossary/taproot) and [Schnorr Signature](/glossary/schnorr-signature) for the foundations.
 
 See [How Taproot Actually Works](/rabbit-hole/how-taproot-works) for which kinds of aggregation Bitcoin has today and which it does not.
