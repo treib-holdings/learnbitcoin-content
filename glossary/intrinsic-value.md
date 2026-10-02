@@ -3,9 +3,10 @@ title: "Intrinsic Value"
 slug: intrinsic-value
 draft: false
 published: "2026-09-29"
+updated: "2026-10-02"
 shortDefinition: "The idea that a thing is worth something on its own, apart from what anyone will pay for it. 'Bitcoin has no intrinsic value' is the oldest criticism of the asset, and it is a true statement about every form of money that has ever worked, which is why economists gave up on the idea in the 1870s."
 keyTakeaways:
-  - "Alan Greenspan (December 2013) and Warren Buffett ('rat poison squared,' May 2018) both used the argument; both would have to say the same of the dollar, which has had no commodity backing since August 1971"
+  - "Alan Greenspan (December 2013) and Warren Buffett ('rat poison squared,' May 2018) both used the argument; both would have to say the same of the dollar, which no one has been able to redeem for gold since August 1971"
   - "Economics replaced intrinsic value with the subjective theory in the 1870s: value is what people will give up for a thing, not a property inside it. Gold's price is mostly a monetary premium too; its industrial use accounts for a small fraction of demand"
   - "What Bitcoin has instead is a set of verifiable properties: a supply fixed in code, transfer without permission, divisibility to a hundred-millionth, and a ledger anyone can audit. Whether those are worth paying for is settled the same way it is for gold or land, by people paying"
 sources:
@@ -35,7 +36,7 @@ liveWidget: ~
 
 The problem is that economics abandoned intrinsic value as a concept in the 1870s, and for a good reason. Carl Menger in Vienna, William Stanley Jevons in Manchester, and Leon Walras in Lausanne each arrived, separately, at the same conclusion: value is not inside objects. It is a judgment people make about how much of one thing they will give up for another, and it changes with circumstances. Water is worth more in a desert. A bulb is worth a canal house for one winter in Haarlem and a bulb the next spring. Nothing about the object changed. This is called the subjective theory of value, it is the foundation of every price theory taught since, and it means the phrase "intrinsic value" describes a category that does not exist.
 
-The critics' own examples show it. Gold's industrial and dental use accounts for a small fraction of the demand for it; the rest is people holding it because other people will hold it, which is a monetary premium, not an intrinsic property. And the dollar has had no commodity backing at all since 15 August 1971, when the US ended convertibility to gold. What gives a dollar its value is that people expect to be able to spend it tomorrow, plus the fact that the government demands taxes in it. Greenspan ran that currency for eighteen years. If intrinsic value were the test, he had been issuing something that failed it.
+The critics' own examples show it. Gold's industrial and dental use accounts for a small fraction of the demand for it; the rest is people holding it because other people will hold it, which is a monetary premium, not an intrinsic property. And no one, not even a foreign central bank, has been able to turn dollars into gold since 15 August 1971, when the US closed the last gold window. What gives a dollar its value is that people expect to be able to spend it tomorrow, plus the fact that the government demands taxes in it. Greenspan ran that currency for eighteen years. If intrinsic value were the test, he had been issuing something that failed it.
 
 What the critics are usually reaching for is a narrower and fairer point: Bitcoin has no cash flow. You cannot value it the way you value a company, by discounting the money it will pay you, because it will never pay you anything. Its entire price is a monetary premium, the amount people will pay to hold and move it. That is true. It is also true of gold, of cash under a mattress, and of the dollar in a checking account, none of which pay you either. "No cash flow" is a correct description of money. It is not the same as "worth nothing."
 
