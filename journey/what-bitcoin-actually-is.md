@@ -46,11 +46,11 @@ The context matters. Lehman Brothers had collapsed six weeks earlier. The financ
 
 Satoshi's email was, in retrospect, the polite version of *"Maybe try this instead."*
 
-Sixty-eight days later, on January 3, 2009, Satoshi mined the first block of the Bitcoin network. Embedded in that block - permanently, unforgeably - was a string of text:
+Sixty-four days later, on January 3, 2009, Satoshi mined the first block of the Bitcoin network. Embedded in that block - permanently, unforgeably - was a string of text:
 
 > *"The Times 03/Jan/2009 Chancellor on brink of second bailout for banks."*
 
-It was the front-page headline of the London *Times* that morning. It is still there, fifteen years later, in every full copy of the Bitcoin blockchain on Earth.
+It was the front-page headline of the London *Times* that morning. It is still there in every full copy of the Bitcoin blockchain on Earth.
 
 This chapter is about what that strange email pointed at.
 
@@ -203,6 +203,6 @@ Chapter 3 is *how it works under the hood* - the machinery. Blocks, transactions
 
 Chapter 4 is *owning it for real*. Seed phrases, hardware wallets, self-custody. You'll do it, not just read about it.
 
-For now, sit with the thing you just learned. **Money got broken in 1971. Sixty-eight days after the 2008 financial crisis peaked, someone proposed an alternative. Fifteen years later, it's still running, the supply schedule is still on track, and the rules haven't changed.** That's the basic fact of the matter. Everything else is detail.
+For now, sit with the thing you just learned. **Money got broken in 1971. Six weeks after Lehman Brothers collapsed, someone proposed an alternative. It's still running, the supply schedule is still on track, and the rules haven't changed.** That's the basic fact of the matter. Everything else is detail.
 
 > **Pro tip:** If you want to verify *any* claim in this chapter, the [whitepaper](/bitcoin.pdf) is nine pages and unchanged since 2009. The [genesis block](https://chainquery.com/rpc/getblock) is still there (run `getblock` on any live node with hash `000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f`), with the *Times* headline embedded in it. The network has been running, with public source code, for sixteen years. Verify, don't trust.

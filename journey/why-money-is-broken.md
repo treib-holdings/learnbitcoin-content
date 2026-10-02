@@ -15,6 +15,7 @@ sources:
   - { label: "FRED - M2 Money Stock (St. Louis Fed)", url: "https://fred.stlouisfed.org/series/M2SL" }
   - { label: "BLS CPI Inflation Calculator", url: "https://www.bls.gov/data/inflation_calculator.htm" }
   - { label: "Nixon's August 15, 1971 Address (full text)", url: "https://www.presidency.ucsb.edu/documents/address-the-nation-outlining-new-economic-policy-the-challenge-peace" }
+  - { label: "Federal Reserve Board - Greenbook, part IV: gold sale to France (18 August 1971)", url: "https://www.federalreserve.gov/monetarypolicy/files/FOMC19710824greenbook19710818.pdf" }
   - { label: "Lyn Alden - What Is Money, Anyway?", url: "https://www.lynalden.com/what-is-money/" }
   - { label: "Cantillon - Essai sur la Nature du Commerce (1755)", url: "https://oll.libertyfund.org/titles/cantillon-an-essay-on-economic-theory" }
 ---
@@ -83,15 +84,15 @@ That's the history. The next section is what changed in 1971 and why it matters.
 
 ## 4. The Nixon Shock
 
-By the late 1960s, the United States had spent heavily - Vietnam, the Great Society, the space race - and printed dollars to do it. Foreign governments holding those dollars started asking for the gold the peg promised. France famously sent a warship to collect theirs.
+By the late 1960s, the United States had spent heavily - Vietnam, the Great Society, the space race - and printed dollars to do it. Foreign governments holding those dollars started asking for the gold the peg promised. France kept converting its dollars into gold through the 1960s, and in early August 1971 it bought another $191 million of US gold.
 
 There wasn't enough gold to honor the promises.
 
 On August 15, 1971, Nixon announced a "temporary" suspension of dollar-to-gold conversion. He told Americans:
 
-> "Your dollar will be worth just as much tomorrow as it is today."
+> "...if you are among the overwhelming majority of Americans who buy American-made products in America, your dollar will be worth just as much tomorrow as it is today."
 
-Measured by the US Consumer Price Index, a 1971 dollar has the purchasing power of roughly **$0.13 in 2025**. You can verify this yourself on the [BLS inflation calculator](https://www.bls.gov/data/inflation_calculator.htm). Eighty-seven percent of the dollar's purchasing power was deleted over fifty-four years. Most of that deletion happened after 1971.
+Measured by the US Consumer Price Index, a 1971 dollar has the purchasing power of roughly **$0.13 in 2025**. You can verify this yourself on the [BLS inflation calculator](https://www.bls.gov/data/inflation_calculator.htm). Eighty-seven percent of the dollar's purchasing power was deleted over fifty-four years.
 
 That's the moment the dollar stopped being tethered to anything scarce. From then on, the supply could expand whenever it was politically convenient - which, it turns out, is most of the time.
 
@@ -166,7 +167,7 @@ You don't vote for inflation.
 
 When taxes go up, there's a debate. There's a bill. Someone has to defend it. When the money supply expands, there's a press release from the Federal Reserve, and most people don't read it.
 
-The transfer happens quietly, continuously, year after year. The dollar in your savings account today has the purchasing power of about 87 cents in 2020 dollars. Five years. Thirteen percent.
+The transfer happens quietly, continuously, year after year. The dollar in your savings account today has the purchasing power of about 80 cents in 2020 dollars. Five years. Twenty percent.
 
 If a politician proposed a 13% tax on savings accounts, there would be riots. The same 13% reduction in purchasing power, delivered through monetary expansion, is described as "normal" and "the cost of doing business."
 

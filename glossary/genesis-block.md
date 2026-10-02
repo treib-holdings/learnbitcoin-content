@@ -18,8 +18,7 @@ relatedTerms:
   - satoshi-nakamoto
   - whitepaper
 sameAs:
-  - "https://en.wikipedia.org/wiki/Blockchain"
-  - "https://www.wikidata.org/wiki/Q20514253"
+  - "https://www.wikidata.org/wiki/Q124624002"
   - "https://en.bitcoin.it/wiki/Genesis_block"
 liveWidget: ~
 ---
