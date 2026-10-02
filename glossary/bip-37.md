@@ -10,8 +10,6 @@ keyTakeaways:
 sources: []
 relatedTerms:
   - bip-bitcoin-improvement-proposal
-  - bip-36-merkle-block-request
-  - bip-40-alerts-avoid-replay
   - bloom-filter
   - merkle-block
   - merkle-inclusion-proof
