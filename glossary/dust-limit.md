@@ -2,12 +2,17 @@
 title: "Dust Limit"
 slug: dust-limit
 draft: false
+updated: "2026-10-02"
 shortDefinition: "A threshold below which an output is deemed dust and rejected by nodes' default policy as non-standard (e.g., ~546 sat for legacy P2PKH)."
 keyTakeaways:
   - "Prevents trivial outputs from flooding the network"
   - "Varies based on script type (e.g., legacy vs. SegWit)"
   - "Policy-level, not a hard consensus rule, but widely enforced"
-sources: []
+sources:
+  - { label: "Bitcoin Core - GetDustThreshold in src/policy/policy.cpp", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/policy.cpp" }
+  - { label: "Bitcoin Core - DUST_RELAY_TX_FEE default in src/policy/policy.h", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/policy.h" }
+  - { label: "Bitcoin Core 29.0 release notes - ephemeral dust", url: "https://bitcoincore.org/en/releases/29.0/" }
+  - { label: "Bitcoin Optech - Uneconomical outputs (dust) topic", url: "https://bitcoinops.org/en/topics/uneconomical-outputs/" }
 relatedTerms:
   - discard-threshold
   - dust
@@ -18,7 +23,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The dust limit is Bitcoin Core's policy threshold below which an output is considered "dust" and the transaction is treated as non-standard, meaning the node won't relay or include it in its mempool.
+The dust limit is Bitcoin Core's policy threshold below which an output is considered "dust" and the transaction is treated as non-standard, meaning the node won't relay or include it in its mempool, with one narrow exception, below.
 
 The exact threshold depends on the output script type, because the calculation accounts for the cost of *spending* that output later: an output is dust if spending it would cost more in fees than the value being moved. As of 2026:
 
@@ -32,13 +37,13 @@ The formula in Bitcoin Core: `dust_threshold = (output_size + input_size) * dust
 
 What "non-standard" means in practice:
 
-- **Default Bitcoin Core nodes won't relay** transactions with dust outputs. The transaction is effectively invisible to most of the network.
+- **Default Bitcoin Core nodes won't relay** transactions with dust outputs. The transaction is effectively invisible to most of the network. The one exception, since Bitcoin Core 29.0, is ephemeral dust: a zero-fee transaction may carry a single dust output if a child transaction relayed with it spends that output.
 - **Default Bitcoin Core mining policy won't include** them in candidate blocks.
 - **Consensus rules don't reject them.** A dust-containing transaction can technically be in a block; the policy is a relay/standardness filter, not a hard rule. Some miners and pools accept dust-containing transactions through out-of-band submission for a fee.
 
 Why the limit exists:
 
-- **UTXO set growth.** Every output a node stores costs memory. Dust outputs that nobody will ever spend bloat the UTXO set forever.
+- **UTXO set growth.** Every output a node stores costs disk space and cache memory. Dust outputs that nobody will ever spend bloat the UTXO set forever.
 - **Economically rational.** If spending an output costs more than the output is worth, no one will ever spend it - it's permanently stuck. Better to never create it in the first place.
 - **Spam resistance.** Tiny outputs are a cheap way to abuse the network. The dust limit raises the cost.
 

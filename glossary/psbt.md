@@ -2,13 +2,18 @@
 title: "PSBT (Partially Signed Bitcoin Transaction)"
 slug: psbt
 draft: false
+updated: "2026-10-02"
 shortDefinition: "BIP 174 standard format for passing a not-yet-fully-signed transaction between multiple devices or cosigners without exposing private keys. The workflow standard that makes modern self-custody actually practical."
 keyTakeaways:
   - "Single binary blob (typically base64-encoded) that carries the unsigned tx skeleton plus per-input UTXO data, derivation paths, and partial signatures"
-  - "Enables hardware wallets to sign air-gapped (USB / microSD / QR / NFC) without ever exposing the seed"
-  - "Cross-vendor: any BIP-174 wallet can pass a PSBT to any other BIP-174 wallet and finalize it"
-  - "PSBT v2 (BIP 370 / BIP 371) adds Taproot support and post-creation tx mutation; modern tooling speaks v2 natively"
-sources: []
+  - "Enables hardware wallets to sign over USB, or air-gapped via microSD / QR / NFC, without ever exposing the seed"
+  - "Cross-vendor: a PSBT built by one BIP-174 wallet can be signed and finalized by another, as long as both support the script type and fields involved"
+  - "PSBT v2 (BIP 370) lets inputs and outputs be added after creation; Taproot fields come from a separate spec (BIP 371) that works with either version, and v2 support is still spreading"
+sources:
+  - { label: "BIP-174 - Partially Signed Bitcoin Transaction Format", url: "https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki" }
+  - { label: "BIP-370 - PSBT Version 2", url: "https://github.com/bitcoin/bips/blob/master/bip-0370.mediawiki" }
+  - { label: "BIP-371 - Taproot Fields for PSBT", url: "https://github.com/bitcoin/bips/blob/master/bip-0371.mediawiki" }
+  - { label: "Bitcoin Core 0.17.0 release notes - BIP 174 PSBT support", url: "https://bitcoincore.org/en/releases/0.17.0/" }
 relatedTerms:
   - bip-bitcoin-improvement-proposal
   - bitcoin-core
@@ -31,7 +36,7 @@ sameAs:
 liveWidget: ~
 ---
 
-PSBT - **P**artially **S**igned **B**itcoin **T**ransaction - is a standardized format ([BIP-174](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki), authored by Andrew Chow and merged into Bitcoin Core 0.17 in 2018) for passing a not-yet-fully-signed transaction between multiple devices or cosigners. It is the workflow standard that makes modern self-custody actually practical.
+PSBT - **P**artially **S**igned **B**itcoin **T**ransaction - is a standardized format ([BIP-174](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki), authored by Ava Chow and merged into Bitcoin Core 0.17 in 2018) for passing a not-yet-fully-signed transaction between multiple devices or cosigners. It is the workflow standard that makes modern self-custody actually practical.
 
 The problem PSBT solves: in any non-trivial signing setup, you typically have a device that *knows the wallet state* (which UTXOs exist, which addresses are yours) but does not have the [private keys](/glossary/private-key), and a separate device that *has the keys* but does not know the wallet state. The unsigned-but-fully-described transaction is the artifact that has to travel between them.
 
@@ -56,11 +61,11 @@ A PSBT is a single binary blob (typically encoded as a base64 string), sectioned
 
 - **Air-gapped signing works.** Hardware wallets that never touch a USB cable can sign via QR codes. The seed never touches an internet-connected device.
 - **Multisig is portable.** Cosigners can be different hardware vendors, different software, different jurisdictions, and still cooperate via a standardized file format.
-- **No key reuse across devices.** Every signer keeps their key locally; only the partial signature crosses a boundary.
+- **Keys stay on their devices.** Every signer keeps their key locally; only the partial signature crosses a boundary.
 
 ## PSBT v2
 
-PSBT v2 (BIP 370 / BIP 371) adds richer [Taproot](/glossary/taproot) support and lets the input and output sets be modified after PSBT creation. Modern tooling (Sparrow, Specter, Nunchuk, BlueWallet, Bitcoin Core, every major hardware wallet) speaks v2 natively.
+PSBT v2 (BIP 370) lets the input and output sets be modified after PSBT creation. [Taproot](/glossary/taproot) support comes from a separate spec, BIP 371, whose fields work in PSBTs of either version. Support for v2 is still uneven. Sparrow, Ledger's Bitcoin app, and recent Coldcard firmware handle it, and Bitcoin Core merged it in 2026 for version 32.0. Some hardware wallets, such as Trezor and BitBox02, never see a PSBT at all, because the desktop app translates it into the device's own protocol.
 
 PSBT is the unsung infrastructure of serious self-custody. If your wallet stack uses hardware devices or multisig, it almost certainly uses PSBT under the hood.
 

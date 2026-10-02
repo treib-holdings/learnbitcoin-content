@@ -2,12 +2,14 @@
 title: "JSON-RPC over Tor"
 slug: json-rpc-over-tor
 draft: false
+updated: "2026-10-02"
 shortDefinition: "Running a remote Bitcoin Core node's RPC interface behind Tor, adding anonymity and censorship resistance to node control."
 keyTakeaways:
-  - "Protects node control interface via Tor's anonymity"
+  - "Bitcoin Core's own docs advise against exposing RPC this way and recommend a VPN or SSH tunnel instead"
   - "Prevents direct IP exposure for remote RPC usage"
   - "Requires extra configuration but significantly boosts privacy"
-sources: []
+sources:
+  - { label: "Bitcoin Core - JSON-RPC interface documentation", url: "https://github.com/bitcoin/bitcoin/blob/master/doc/JSON-RPC-interface.md" }
 relatedTerms:
   - bitcoin-core
   - bitcoin-core-rpc
@@ -17,7 +19,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-JSON-RPC over Tor is the practice of exposing a Bitcoin Core node's RPC interface via a Tor hidden service (`.onion` address) instead of (or in addition to) a clearnet IP. It lets you manage a remote node from anywhere without revealing the node's IP or your own.
+JSON-RPC over Tor is the practice of exposing a Bitcoin Core node's RPC interface via a Tor hidden service (`.onion` address) instead of a clearnet IP. It lets you manage a remote node from anywhere without revealing the node's IP or your own.
 
 Why this matters:
 
@@ -29,13 +31,15 @@ The setup is roughly:
 
 1. Install Tor on the same machine as Bitcoin Core.
 2. Configure a HiddenServiceDir and HiddenServicePort 8332 pointing at Bitcoin Core's RPC port.
-3. Set Bitcoin Core's `-rpcbind=127.0.0.1` and `-rpcallowip` for the Tor SocksPort.
+3. Leave Bitcoin Core's RPC on its default localhost binding. Tor connects to it from the same machine, so no `rpcbind` or `rpcallowip` change is needed.
 4. Use the resulting `.onion` URL with your wallet client (Sparrow, BlueWallet's connect-your-own-node feature, etc.).
 
-Security stays solid because:
+What the onion adds:
 
 - The onion address is only known to people you share it with.
 - RPC auth (rpcauth in bitcoin.conf, or the cookie file) still applies on top of the onion.
 - Tor adds anonymity: even an adversary who knows the .onion can't see your IP.
 
-It's not the easiest setup. But for self-sovereign Bitcoin operators who want their own infrastructure without exposing it, it's the right pattern. Tools like Umbrel, Start9, and RaspiBlitz automate most of the configuration.
+What it doesn't change: anyone who learns the address can reach the RPC port itself. Bitcoin Core's own docs say not to expose RPC to the internet at all, warning that even a Tor onion service could open it to attacks the interface was never hardened against, and they recommend a VPN or an SSH tunnel for remote access instead.
+
+It's not the easiest setup, and it isn't the pattern Bitcoin Core recommends. Tools like Umbrel, Start9, and RaspiBlitz automate most of the configuration for operators who choose it anyway.
