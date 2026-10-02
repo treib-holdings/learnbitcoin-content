@@ -16,7 +16,7 @@ relatedTerms:
   - opreturn
   - opreturn-based-tokens
 sameAs:
-  - "https://en.wikipedia.org/wiki/Ordinals_(protocol)"
+  - "https://docs.ordinals.com/inscriptions.html"
 liveWidget: ~
 ---
 

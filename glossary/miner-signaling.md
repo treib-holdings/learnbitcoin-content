@@ -18,7 +18,7 @@ relatedTerms:
   - bip-91
   - bip-bitcoin-improvement-proposal
 sameAs:
-  - "https://en.bitcoin.it/wiki/Version_bits"
+  - "https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki"
 liveWidget: ~
 ---
 

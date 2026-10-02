@@ -17,7 +17,7 @@ relatedTerms:
   - consensus-parameter
   - bip-148-uasf
 sameAs:
-  - "https://en.bitcoin.it/wiki/Governance"
+  - "https://github.com/bitcoin/bips/blob/master/bip-0003.md"
 ogImage: "/diagrams/og/bitcoin-governance-vetoes.png"
 ogImageAlt: "Pentagon diagram of Bitcoin's five governance stakeholder groups (Developers, Miners, Nodes, Users, Hodlers), each with a 'vetoes by' caption around a central CONSENSUS badge. Title: Five vetoes. One consensus. Tagline: No one is in charge. Everyone can refuse."
 liveWidget: ~
