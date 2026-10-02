@@ -89,7 +89,7 @@ By the late 1960s, the United States had spent heavily - Vietnam, the Great Soci
 
 There wasn't enough gold to honor the promises.
 
-On August 15, 1971, Nixon announced a "temporary" suspension of dollar-to-gold conversion. He told Americans:
+On [August 15, 1971](/glossary/what-happened-in-1971), Nixon announced a "temporary" suspension of dollar-to-gold conversion. He told Americans:
 
 > "...if you are among the overwhelming majority of Americans who buy American-made products in America, your dollar will be worth just as much tomorrow as it is today."
 

@@ -27,6 +27,7 @@ relatedTerms:
   - fud-fear-uncertainty-doubt
   - ponzi-scheme
   - tulip-mania
+  - what-happened-in-1971
 sameAs:
   - "https://www.federalreservehistory.org/essays/gold-convertibility-ends"
 liveWidget: ~
@@ -36,7 +37,7 @@ liveWidget: ~
 
 The problem is that economics abandoned intrinsic value as a concept in the 1870s, and for a good reason. Carl Menger in Vienna, William Stanley Jevons in Manchester, and Leon Walras in Lausanne each arrived, separately, at the same conclusion: value is not inside objects. It is a judgment people make about how much of one thing they will give up for another, and it changes with circumstances. Water is worth more in a desert. A bulb is worth a canal house for one winter in Haarlem and a bulb the next spring. Nothing about the object changed. This is called the subjective theory of value, it is the foundation of every price theory taught since, and it means the phrase "intrinsic value" describes a category that does not exist.
 
-The critics' own examples show it. Gold's industrial and dental use accounts for a small fraction of the demand for it; the rest is people holding it because other people will hold it, which is a monetary premium, not an intrinsic property. And no one, not even a foreign central bank, has been able to turn dollars into gold since 15 August 1971, when the US closed the last gold window. What gives a dollar its value is that people expect to be able to spend it tomorrow, plus the fact that the government demands taxes in it. Greenspan ran that currency for eighteen years. If intrinsic value were the test, he had been issuing something that failed it.
+The critics' own examples show it. Gold's industrial and dental use accounts for a small fraction of the demand for it; the rest is people holding it because other people will hold it, which is a monetary premium, not an intrinsic property. And no one, not even a foreign central bank, has been able to turn dollars into gold since [15 August 1971](/glossary/what-happened-in-1971), when the US closed the last gold window. What gives a dollar its value is that people expect to be able to spend it tomorrow, plus the fact that the government demands taxes in it. Greenspan ran that currency for eighteen years. If intrinsic value were the test, he had been issuing something that failed it.
 
 What the critics are usually reaching for is a narrower and fairer point: Bitcoin has no cash flow. You cannot value it the way you value a company, by discounting the money it will pay you, because it will never pay you anything. Its entire price is a monetary premium, the amount people will pay to hold and move it. That is true. It is also true of gold, of cash under a mattress, and of the dollar in a checking account, none of which pay you either. "No cash flow" is a correct description of money. It is not the same as "worth nothing."
 
