@@ -18,8 +18,8 @@ relatedTerms:
   - lightning-sphinx
   - tor-hidden-service
 liveWidget: ~
-ogImage: "/diagrams/og/onion-routing.png"
-ogImageAlt: "A frame from LearnBitcoin's onion routing animation. Bob (highlighted in orange) is peeling the outermost layer of a three-ring onion with an orange preimage payload at its center. A 'knows: prev = Alice, next = Carol / nothing else' callout sits above the onion, with the caption 'Bob sees: forward to Carol. Nothing else.' below it. Visualizes Lightning onion routing: each hop sees only its own layer."
+ogImage: "/diagrams/og/onion-routing.png?v=2"
+ogImageAlt: "A frame from LearnBitcoin's onion routing animation. Bob (highlighted in orange) is peeling the outermost layer of a three-ring onion with an orange payload at its center, marked with an envelope: Dave's payment instructions. A 'knows: prev = Alice, next = Carol / nothing else' callout sits above the onion, with the caption 'Bob sees: forward to Carol. Nothing else.' below it. Visualizes Lightning onion routing: each hop sees only its own layer."
 ---
 
 <figure>
@@ -33,7 +33,7 @@ ogImageAlt: "A frame from LearnBitcoin's onion routing animation. Bob (highlight
     controls
     controlslist="nodownload noplaybackrate noremoteplayback"
     preload="metadata"
-    aria-label="Animated walkthrough of Lightning's Sphinx onion routing protocol. Alice constructs a four-layer onion inside out: an orange preimage payload for Dave at the center, then a wrap for Eve, a wrap for Carol, and an outermost wrap for Bob. Each route node flashes orange as Alice writes its layer. The onion travels Alice to Bob; Bob peels his outer layer with a callout 'knows: prev = Alice, next = Carol, nothing else.' Then Carol peels, then Eve peels, each with their own privacy callout showing what they can and cannot see. Dave receives just the payload and reveals the preimage. Closes with the pillars 'Onion routing. The privacy is the peeling.'"
+    aria-label="Animated walkthrough of Lightning's Sphinx onion routing protocol. Alice constructs a four-layer onion inside out: an orange payload for Dave at the center, marked with an envelope and labeled 'amount + payment secret' (his payment instructions, not the preimage), then a wrap for Eve, a wrap for Carol, and an outermost wrap for Bob. Each route node flashes orange as Alice writes its layer. The onion travels Alice to Bob; Bob peels his outer layer with a callout 'knows: prev = Alice, next = Carol, nothing else.' Then Carol peels, then Eve peels, each with their own privacy callout showing what they can and cannot see. Dave receives just the payload, which tells him the payment is his. Then an orange R, the preimage, appears inside Dave's own node: he made it with the invoice. He reveals R to get paid, and R travels back along the route through Eve, Carol, and Bob to Alice, each node lighting up as it passes. Closes with the pillars 'Onion routing. The privacy is the peeling.'"
   ></video>
   <figcaption>Three intermediate hops, three wraps. Each node sees only its own layer.</figcaption>
 </figure>
