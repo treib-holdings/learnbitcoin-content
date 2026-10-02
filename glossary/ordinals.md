@@ -14,7 +14,7 @@ relatedTerms:
   - taproot
   - utxo-unspent-transaction-output
 sameAs:
-  - "https://en.wikipedia.org/wiki/Ordinals_(protocol)"
+  - "https://docs.ordinals.com/"
 liveWidget: ~
 ---
 

@@ -24,7 +24,6 @@ relatedTerms:
   - soft-fork
   - taproot
 sameAs:
-  - "https://en.wikipedia.org/wiki/Pay_to_script_hash"
   - "https://en.bitcoin.it/wiki/Pay_to_script_hash"
   - "https://en.bitcoin.it/wiki/BIP_0016"
   - "https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki"
