@@ -1,4 +1,5 @@
----title: "Using Bitcoin"
+---
+title: "Using Bitcoin"
 slug: using-bitcoin
 draft: false
 status: live

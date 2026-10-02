@@ -1,4 +1,5 @@
----title: "What Bitcoin Actually Is"
+---
+title: "What Bitcoin Actually Is"
 slug: what-bitcoin-actually-is
 draft: false
 status: live

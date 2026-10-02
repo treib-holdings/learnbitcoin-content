@@ -1,4 +1,5 @@
----title: "How Bitcoin Works"
+---
+title: "How Bitcoin Works"
 slug: how-bitcoin-works
 draft: false
 status: live
