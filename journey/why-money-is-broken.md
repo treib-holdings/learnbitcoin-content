@@ -1,4 +1,5 @@
----title: "Why Money Is Broken"
+---
+title: "Why Money Is Broken"
 slug: why-money-is-broken
 draft: false
 status: live
