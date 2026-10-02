@@ -11,6 +11,8 @@ sources:
   - { label: "SHA-256 spec (NIST FIPS 180-4)", url: "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf" }
   - { label: "Bitcoin Core - GetNextWorkRequired (difficulty calc)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/pow.cpp" }
   - { label: "Cambridge Bitcoin Electricity Consumption Index", url: "https://ccaf.io/cbnsi/cbeci" }
+  - { label: "mempool.space - block fees chart (fee share of miner revenue)", url: "https://mempool.space/graphs/mining/block-fees" }
+  - { label: "Riot Platforms August 2023 production report (SEC filing - the $31.7M month)", url: "https://www.sec.gov/Archives/edgar/data/1167419/000155837023015517/riot-20230906xex99d1.htm" }
   - { label: "Mining glossary entry", url: "https://www.learnbitcoin.com/glossary/mining" }
 relatedTerms: ["mining", "miner", "hash", "hash-rate", "difficulty", "difficulty-retargeting", "nonce", "block-reward", "block-subsidy", "proof-work-pow", "mempool", "mining-pool", "incentive-compatibility"]
 hasInteractive: ["miningSimulator", "feeMarketSimulator", "difficultyClock"]
@@ -74,11 +76,11 @@ The rule:
 - Every **2016 blocks** (about every two weeks), the network looks at how long the last 2016 blocks took.
 - If they took **less than two weeks**, difficulty goes **up** (making future blocks harder).
 - If they took **more than two weeks**, difficulty goes **down** (making future blocks easier).
-- The adjustment is precisely proportional, clamped at +/-300%.
+- The adjustment is precisely proportional, capped at a factor of four either way: at most 4x up (+300%) or down to a quarter (-75%) in one step.
 
 This is the most consequential single piece of mechanism design in Bitcoin. There is no committee. There is no Federal Reserve raising rates. The network observes its own conditions and corrects, on a fixed schedule, forever.
 
-Difficulty has gone up roughly 10^13 times since the genesis block - mining is now astronomically harder than it was in 2009, by design, because hash power has scaled up by that much.
+Difficulty has gone up roughly 10^14 times since the genesis block - mining is now astronomically harder than it was in 2009, by design, because hash power has scaled up by that much.
 
 <DifficultyClock client:visible />
 
@@ -93,7 +95,7 @@ The miner constructs the "coinbase transaction" - a special transaction that pay
 
 The economic logic is plain: producing valid blocks earns the reward; producing invalid blocks (wrong PoW, invalid transactions, exceeding the block weight limit) gets rejected and wastes the electricity. This is what cryptographers call [incentive compatibility](/glossary/incentive-compatibility) - the property that makes rule-following more profitable than rule-breaking for rational, self-interested participants. Bitcoin's security depends on it, and two decades of empirical evidence say it holds.
 
-In Bitcoin's early years, subsidy was essentially all of the revenue (transactions were free). Today, fees are typically 3-10% of miner revenue per block, with occasional spikes much higher during congestion events. By 2140, when the subsidy reaches zero, fees will be 100% of miner revenue.
+In Bitcoin's early years, subsidy was essentially all of the revenue (transactions were free). In the year to October 2026, fees were about 0.6% of miner revenue, with occasional spikes much higher during congestion events. By 2140, when the subsidy reaches zero, fees will be 100% of miner revenue.
 
 The transition from subsidy-dominated to fee-dominated revenue is one of the central long-term economic questions in Bitcoin. We covered it briefly in the [Halvings rabbit hole](/rabbit-hole/halvings); the short version is that as long as Bitcoin is *used*, fees will be sufficient.
 
@@ -116,7 +118,7 @@ This is why your transaction's *fee rate* matters more than its *amount*. A tran
 
 ## 7. Energy as Security Budget
 
-Bitcoin mining uses electricity. A lot of it. The current global Bitcoin mining footprint is roughly 0.5% of global electricity consumption, varying with price and hash rate.
+Bitcoin mining uses electricity. A lot of it. Mining draws about 173 TWh a year, roughly three quarters of one percent of global electricity (Cambridge's 2025 estimate), and the figure moves with price and hash rate. The [energy chapter](/rabbit-hole/energy) has the full numbers.
 
 This is often presented as a problem. It is, more accurately, a *feature*. Here's why:
 
@@ -126,7 +128,7 @@ This is often presented as a problem. It is, more accurately, a *feature*. Here'
 
 **Mining incentivizes finding *cheapest* energy.** Miners aren't bidding on premium power. They're bidding on whatever is cheapest globally - stranded renewables, flared natural gas that would otherwise be wasted, geothermal in Iceland, hydro in Sichuan during the wet season. The marginal Bitcoin mining operation runs on energy that has no other buyer.
 
-**Mining can be turned on and off in milliseconds.** This makes it uniquely well-suited as a "buyer of last resort" for energy grids. When demand on the grid spikes (heat wave, sudden outage), miners can turn off in seconds; when there's excess supply (sunny day, low industrial demand), they turn on. This stabilizes grids and improves renewables economics. The University of Texas at Austin has published research on this; Texas ERCOT has actively integrated mining as a grid stabilizer.
+**Mining can be turned off and on in seconds.** This makes it uniquely well-suited as a "buyer of last resort" for energy grids. When demand on the grid spikes (heat wave, sudden outage), miners can turn off in seconds; when there's excess supply (sunny day, low industrial demand), they turn on. This stabilizes grids and improves renewables economics. Texas's grid operator, ERCOT, pays large flexible loads to switch off at peak demand; Riot earned $31.7 million in power credits in August 2023 by doing exactly that (see the [energy chapter](/rabbit-hole/energy)).
 
 None of this means Bitcoin's energy use is irrelevant. It means it's not the simple "waste" story the headlines use.
 
