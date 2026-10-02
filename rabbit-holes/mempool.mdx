@@ -1,4 +1,5 @@
----title: "The Mempool"
+---
+title: "The Mempool"
 slug: mempool
 draft: false
 status: live
@@ -12,6 +13,12 @@ ogImageAlt: "Block #950,000 sliding across Bitcoin's top fee tier as Bob's 50 sa
 sources:
   - { label: "BIP 125 - Opt-in Full Replace-by-Fee Signaling", url: "https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki" }
   - { label: "Bitcoin Core source - txmempool.h", url: "https://github.com/bitcoin/bitcoin/blob/master/src/txmempool.h" }
+  - { label: "Bitcoin Core source - kernel/mempool_options.h", url: "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/mempool_options.h" }
+  - { label: "Bitcoin Core 28.0 release notes", url: "https://bitcoincore.org/en/releases/28.0/" }
+  - { label: "Bitcoin Optech - Child pays for parent (CPFP)", url: "https://bitcoinops.org/en/topics/cpfp/" }
+  - { label: "Bitcoin Optech scaling book - Fee bumping", url: "https://github.com/bitcoinops/scaling-book/blob/master/1.fee_bumping/fee_bumping.md" }
+  - { label: "mempool.space - mempool size graph", url: "https://mempool.space/graphs/mempool" }
+  - { label: "Lavi, Sattath, Zohar - Redesigning Bitcoin's fee market", url: "https://arxiv.org/abs/1709.08881" }
   - { label: "mempool.space - real-time mempool visualization", url: "https://mempool.space/" }
   - { label: "Mempool glossary entry", url: "https://www.learnbitcoin.com/glossary/mempool" }
 relatedTerms: ["mempool", "transaction-fee", "bip-125-replace-fee", "fee-rate-escalation", "fee-floor", "fee-sniping"]
@@ -92,7 +99,7 @@ This is the single most important thing to understand about the mempool:
 
 **Miners care about fee rate, not absolute fee.**
 
-Fee rate is the [transaction fee](/glossary/transaction-fee) divided by the transaction's size, expressed in satoshis per virtual byte (**sat/vB**). A 250-byte transaction with a 2,500 sat fee has the same fee rate (10 sat/vB) as a 1,000-byte transaction with a 10,000 sat fee.
+Fee rate is the [transaction fee](/glossary/transaction-fee) divided by the transaction's size, expressed in satoshis per virtual byte (**sat/vB**). A 250-vbyte transaction with a 2,500 sat fee has the same fee rate (10 sat/vB) as a 1,000-vbyte transaction with a 10,000 sat fee.
 
 Why? Because block space is the scarce resource. A miner with a fixed roughly 4 million weight units of space maximizes revenue by including the highest-fee-per-byte transactions first.
 
@@ -121,7 +128,7 @@ If you broadcast a transaction with too low a fee rate, it can sit in the mempoo
 
 **Replace-By-Fee (RBF):** broadcast a replacement transaction with a higher fee. If the original signaled RBF (per [BIP 125](/glossary/bip-125-replace-fee)), nodes that follow the standard will replace it. Bitcoin Core 28.0 (October 2024) made full-RBF the default, so even non-signaling transactions can now be replaced on most of the network. This is the cleanest fix; you need RBF support in your wallet.
 
-**Child-Pays-For-Parent (CPFP):** if you cannot replace the original (you did not send it, or it came from a non-RBF wallet), you can spend the output of the stuck transaction in a *new* transaction that pays a high fee. Miners include transactions as packages; the high fee on the child incentivizes them to also include the parent. CPFP requires the recipient to participate (since they control the unconfirmed UTXO).
+**Child-Pays-For-Parent (CPFP):** if you cannot replace the original (you did not send it, or it came from a non-RBF wallet), you can spend the output of the stuck transaction in a *new* transaction that pays a high fee. Miners include transactions as packages; the high fee on the child incentivizes them to also include the parent. CPFP needs whoever controls an output of the stuck transaction: the recipient, or the sender through a change output.
 
 If neither works, you wait. Either the mempool clears enough that your low-fee transaction makes it in, or after two weeks it gets evicted and you can try again.
 
@@ -134,7 +141,7 @@ A subtle but important distinction:
 
 A transaction can be valid by consensus but rejected by relay policy. Examples:
 
-- A transaction with a non-standard script (technically valid, but no node will relay it). To get it mined, you submit directly to a miner.
+- A transaction with a non-standard script (technically valid, but default nodes will not relay it). To get it mined, you submit directly to a miner.
 - A very large or very low-fee transaction (relay policy might drop it).
 - Inscription-bearing transactions (Bitcoin Core relays them; Bitcoin Knots, by default, does not).
 
@@ -145,7 +152,7 @@ This matters because *policy* is what gets debated. When you hear "should Bitcoi
 Starting in early 2023, **inscriptions** (arbitrary data encoded into transaction witness data) caused sustained mempool congestion for the first time in years. Effects:
 
 - **Fee rates spiked** from typical 1 to 5 sat/vB to 50 to 300+ sat/vB during peak periods.
-- **The mempool grew** from typically 1 to 50 MB to consistently 100 to 500 MB.
+- **The mempool grew** from typically 1 to 50 vMB of waiting transactions to 100 to 500 vMB for much of 2023 and 2024. Default nodes hit their 300 MB memory cap and dropped the cheapest transactions.
 - **Wallets without RBF stranded.** Users could not bump fees on stuck transactions.
 - **Bitcoin Knots saw adoption growth.** Some operators want to filter inscriptions; Knots provides that policy by default.
 
@@ -155,7 +162,7 @@ The debate about whether inscriptions are "spam" is real and ongoing. The techni
 
 The mempool's role in Bitcoin is **price discovery for block space.**
 
-Block space is the scarce, valuable resource. The mempool is the live auction. Every block is a sealed-bid first-price auction where the miner picks the highest-bidding transactions to fill the roughly 4 million weight units of space available.
+Block space is the scarce, valuable resource. The mempool is the live auction. Every block is an open, pay-what-you-bid auction where the miner picks the highest-bidding transactions to fill the roughly 4 million weight units of space available.
 
 Without the mempool: no fee market, no fee signaling, no graceful congestion handling. The chain would just drop transactions that arrived faster than they could be mined.
 
