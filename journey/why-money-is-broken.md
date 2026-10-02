@@ -4,6 +4,7 @@ slug: why-money-is-broken
 draft: false
 status: live
 published: "2026-05-15"
+updated: "2026-10-02"
 order: 1
 estimatedMinutes: 22
 tagline: "Inflation isn't a force of nature. It's a policy. Once you see how fiat actually works, Bitcoin stops looking strange."
@@ -78,7 +79,7 @@ This is the version you can tell at a dinner party.
 
 7. **Bretton Woods (1944).** After two world wars wrecked the old system, the world rebuilt around a US dollar pegged to gold at $35/oz, with every other currency pegged to the dollar. America held the gold; everyone else held dollars.
 
-8. **August 15, 1971.** Nixon went on television and ended dollar convertibility to gold. The suspension was supposed to be temporary. It was never restored. We have lived in the post-1971 monetary world ever since.
+8. **August 15, 1971.** Nixon went on television and closed the last way to turn dollars into gold, which by then only foreign governments and central banks could use. The suspension was supposed to be temporary. It was never restored. We have lived in the post-1971 monetary world ever since.
 
 That's the history. The next section is what changed in 1971 and why it matters.
 
@@ -92,9 +93,9 @@ On August 15, 1971, Nixon announced a "temporary" suspension of dollar-to-gold c
 
 > "...if you are among the overwhelming majority of Americans who buy American-made products in America, your dollar will be worth just as much tomorrow as it is today."
 
-Measured by the US Consumer Price Index, a 1971 dollar has the purchasing power of roughly **$0.13 in 2025**. You can verify this yourself on the [BLS inflation calculator](https://www.bls.gov/data/inflation_calculator.htm). Eighty-seven percent of the dollar's purchasing power was deleted over fifty-four years.
+Measured by the US Consumer Price Index, by 2025 a dollar bought about what **13 cents** bought in 1971. You can verify this yourself on the [BLS inflation calculator](https://www.bls.gov/data/inflation_calculator.htm). Eighty-seven percent of the dollar's purchasing power was deleted over fifty-four years.
 
-That's the moment the dollar stopped being tethered to anything scarce. From then on, the supply could expand whenever it was politically convenient - which, it turns out, is most of the time.
+August 1971 was the moment the dollar stopped being tethered to anything scarce. From then on, the supply could expand whenever it was politically convenient - which, it turns out, is most of the time.
 
 ## 5. The Cantillon Effect (Without the Jargon)
 
@@ -132,8 +133,8 @@ If you own assets, monetary expansion is roughly neutral or beneficial to you. I
 The official US CPI averaged around 4% from 1971 to today. That's a working life of erosion.
 
 <figure>
-  <img src="/diagrams/dollar-purchasing-power.svg" alt="What a dollar buys, 1971 to today: a line chart showing one dollar declining to about 13 cents over 55 years of compounded inflation at roughly 4 percent annual CPI." />
-  <figcaption>$1 in 1971 is worth about $0.13 today. 55 years of ~4% compounded CPI.</figcaption>
+  <img src="/diagrams/dollar-purchasing-power.svg" alt="What a dollar buys, 1971 to 2025: a line chart showing one dollar declining to about 13 cents over 54 years of compounded inflation at roughly 4 percent annual CPI." />
+  <figcaption>By 2025 a dollar bought what about 13 cents bought in 1971. 54 years of ~4% compounded CPI.</figcaption>
 </figure>
 
 And CPI is a conservative measure. It's been re-weighted multiple times since the 1980s in ways that reduce the headline number. Honest measures - like the cost of housing, healthcare, and a college degree - have run dramatically hotter. A house, a hospital stay, and a four-year degree all cost a multiple of what they cost a generation ago, in real terms, even after adjusting for the "official" inflation rate.
@@ -169,7 +170,7 @@ When taxes go up, there's a debate. There's a bill. Someone has to defend it. Wh
 
 The transfer happens quietly, continuously, year after year. The dollar in your savings account today has the purchasing power of about 80 cents in 2020 dollars. Five years. Twenty percent.
 
-If a politician proposed a 13% tax on savings accounts, there would be riots. The same 13% reduction in purchasing power, delivered through monetary expansion, is described as "normal" and "the cost of doing business."
+If a politician proposed a 20% tax on savings accounts, there would be riots. The same 20% reduction in purchasing power, delivered through monetary expansion, is described as "normal" and "the cost of doing business."
 
 This isn't a conspiracy. It's how the system functions. The people who designed it largely meant well. The consequences are what they are.
 
