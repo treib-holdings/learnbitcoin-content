@@ -2,12 +2,14 @@
 title: "Bear Market"
 slug: bear-market
 draft: false
+updated: "2026-10-05"
 shortDefinition: "A prolonged market downturn with falling prices, pessimistic sentiment, and cautious trading behaviors."
 keyTakeaways:
   - "Characterized by declining crypto prices"
   - "Breeds pessimism and reduced trading activity"
   - "Can foster innovation and accumulation opportunities"
-sources: []
+sources:
+  - { label: "Coin Metrics - Community Network Data (BTC daily close, PriceUSD)", url: "https://coinmetrics.io/community-network-data/" }
 relatedTerms:
   - bull-market
   - market-capitalization
@@ -22,20 +24,20 @@ liveWidget: ~
 
 A bear market is a sustained period of falling prices and depressed sentiment. The term comes from traditional finance and applies to any asset; in Bitcoin it has a recognizable cyclic pattern.
 
-Bitcoin's bear markets, roughly:
+Bitcoin's bear markets, peak to trough on daily closing prices (Coin Metrics):
 
-- **2011** - $30s -> $2. The first crash, after the Mt. Gox spike.
-- **2013-2015** - $1,100 -> $200 (-82%). The Mt. Gox collapse and Silk Road shutdown era.
-- **2018** - $20,000 -> $3,200 (-84%). The post-ICO-mania hangover.
-- **2022** - $69,000 -> $15,500 (-78%). Terra/Luna collapse, Celsius/Voyager/Genesis bankruptcies, FTX implosion.
+- **2011** - $29 -> $2.11 (-93%). The first crash, after the Mt. Gox spike.
+- **2013-2015** - $1,135 -> $176 (-85%). The Mt. Gox collapse and Silk Road shutdown era.
+- **2018** - $19,641 -> $3,185 (-84%). The post-ICO-mania hangover.
+- **2022** - $67,542 -> $15,758 (-77%). Terra/Luna collapse, Celsius/Voyager/Genesis bankruptcies, FTX implosion.
 
-The pattern is uncomfortable to live through and bigger in magnitude than nearly any traditional asset. Bitcoin bear markets routinely take 70-85% off the previous cycle's peak. They also generally end with a recovery to new all-time highs within 18-30 months of the bottom - though "generally" is doing a lot of work in a sample size of four.
+The pattern is uncomfortable to live through and bigger in magnitude than nearly any traditional asset. Bitcoin bear markets routinely take 75-93% off the previous cycle's peak. They also generally end with a recovery to new all-time highs within 15-25 months of the bottom - though "generally" is doing a lot of work in a sample size of four.
 
 What's reliably true about bear markets:
 
 - **The bottom is never obvious.** Every false rally during a bear market looks like the start of recovery. Most of them aren't.
-- **Capitulation events** - exchanges blow up, miners shut down, "Bitcoin is dead" articles trend - cluster near the actual bottom. Not at random points throughout.
-- **Leverage cascades amplify the moves.** Each cycle's bull run accumulates more leverage (perpetual futures, lending platforms, DeFi); the bear unwind is a [Minsky moment](/glossary/minsky-moment) where the leverage liquidates faster than fundamentals shift. 2018's $20K -> $3.2K and 2022's $69K -> $15.5K both fit the pattern.
+- **Capitulation events** - exchanges blow up, miners shut down, searches for "Bitcoin is dead" spike - cluster near the actual bottom. Not at random points throughout.
+- **Leverage cascades amplify the moves.** Each cycle's bull run accumulates more leverage (perpetual futures, lending platforms, DeFi); the bear unwind is a [Minsky moment](/glossary/minsky-moment) where the leverage liquidates faster than fundamentals shift. 2018's $19.6K -> $3.2K and 2022's $67.5K -> $15.8K both fit the pattern.
 - **The strongest holders accumulate.** People who [DCA](/glossary/dca-dollar-cost-averaging) through a bear market end up with a much lower average cost basis than people who only buy in bull markets.
 - **The protocol doesn't change.** Bitcoin keeps producing blocks every ten minutes regardless of what the price is doing. Bear markets are an asset-price phenomenon, not a network phenomenon.
 

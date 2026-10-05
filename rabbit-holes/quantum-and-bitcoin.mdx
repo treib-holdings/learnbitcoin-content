@@ -3,7 +3,7 @@ title: "Quantum and Bitcoin"
 slug: quantum-and-bitcoin
 draft: false
 published: "2026-06-11"
-updated: "2026-09-17"
+updated: "2026-10-05"
 status: live
 section: rabbit-hole
 tagline: "Quantum is the FUD claim that comes up most often after fiat-debasement and energy. The honest version: the threat is real, the timeline is slow, the fix is governance, and Bitcoin has agency."
@@ -19,6 +19,9 @@ sources:
   - { label: "FIPS 205 - SLH-DSA", url: "https://csrc.nist.gov/pubs/fips/205/final" }
   - { label: "NIST Post-Quantum Cryptography Project", url: "https://csrc.nist.gov/projects/post-quantum-cryptography" }
   - { label: "Shor 1994 - Algorithms for quantum computation", url: "https://ieeexplore.ieee.org/document/365700" }
+  - { label: "Bluvstein et al. - Logical quantum processor based on reconfigurable atom arrays, Nature (2023; up to 280 physical and 48 logical qubits)", url: "https://www.nature.com/articles/s41586-023-06927-3" }
+  - { label: "Google Quantum AI - Quantum error correction below the surface code threshold, Nature (2024; Willow)", url: "https://www.nature.com/articles/s41586-024-08449-y" }
+  - { label: "IBM - quantum roadmap, including the 1,121-qubit Condor processor (2023)", url: "https://www.ibm.com/quantum/blog/quantum-roadmap-2033" }
   - { label: "Bitcoin governance glossary entry", url: "https://www.learnbitcoin.com/glossary/bitcoin-governance" }
 relatedTerms:
   - post-quantum-bitcoin
@@ -109,7 +112,7 @@ A natural question: if reuse is the biggest bucket, why does this number not jus
 
 **The reuse pool can drain. The always-exposed pool cannot.** Individual action works on the reuse-exposed pool - 4.01 million BTC in the v1.0 baseline, larger once the nested-segwit reuse is folded in: move coins to a fresh address, never reuse it, and that BTC leaves the at-risk pool. Modern wallets default to this. The bleed today is from legacy custody (older exchanges, hardware wallets pre-2020, custom scripts) and from users who manually override the default to consolidate at a single public address.
 
-The always-exposed pool (1,063,006 BTC) is a different problem. P2PK coinbase rewards from 2009-2010 require the original private keys to move, and a large fraction of those keys are presumed lost forever. Bare multisig has the same lost-key problem at smaller scale. And [P2TR](/glossary/taproot) has no unreveal: the bech32m address IS the tweaked pubkey, so every new taproot output adds to always-exposed supply at creation time. You cannot migrate out of P2TR without a destination type that does not exist yet.
+The always-exposed pool (about 1.94 million BTC, almost all of it in the P2PK and P2TR buckets above) is a different problem. P2PK coinbase rewards from 2009-2010 require the original private keys to move, and a large fraction of those keys are presumed lost forever. Bare multisig has the same lost-key problem at smaller scale. And [P2TR](/glossary/taproot) has no unreveal: the bech32m address IS the tweaked pubkey, so every new taproot output adds to always-exposed supply at creation time. You cannot migrate out of P2TR without a destination type that does not exist yet.
 
 **The act of migrating creates its own attack surface.** Every spend from a hashed-address type reveals the pubkey for the few minutes between broadcast and confirmation. Today no [CRQC (cryptographically-relevant quantum computer)](/glossary/crqc-cryptographically-relevant-quantum-computer) exists, so this window is theoretical. But if a CRQC did exist and was watching the mempool, an attacker could derive the private key in real time, broadcast a competing transaction with a higher fee, and steal the funds before the original transaction confirmed. The spend itself becomes the vector. This is the "in-flight" attack that any post-quantum migration framework has to contend with.
 
@@ -126,7 +129,7 @@ The framing that makes the rest of this chapter make sense: individual action he
 
 "Quantum breaks Bitcoin" is a sentence. The threat depends on which part of Bitcoin you mean.
 
-**[Shor's algorithm](/glossary/shors-algorithm)** breaks elliptic-curve cryptography. Given the public key on the secp256k1 curve, Shor's derives the private key in polynomial time on a sufficiently large quantum computer. This is what threatens Bitcoin's [ECDSA](/glossary/ecdsa-elliptic-curve-digital-signature-algorithm) and [Schnorr](/glossary/schnorr-signature) signatures. It is the existential exposure. It is why the exposed-supply number - about 30.5 percent of all BTC - matters.
+**[Shor's algorithm](/glossary/shors-algorithm)** breaks elliptic-curve cryptography. Given the public key on the secp256k1 curve, Shor's derives the private key in polynomial time on a sufficiently large quantum computer. This is what threatens Bitcoin's [ECDSA](/glossary/ecdsa-elliptic-curve-digital-signature-algorithm) and [Schnorr](/glossary/schnorr-signature) signatures. It is the existential exposure. It is why the exposed-supply number - about 35 percent of all BTC - matters.
 
 **[Grover's algorithm](/glossary/grovers-algorithm)** gives quadratic speedup on unstructured search. Applied to SHA-256, it halves effective security: 256-bit becomes 128-bit. Annoying. Not catastrophic. 128-bit symmetric security is still the standard floor for cryptography elsewhere. Bitcoin's [proof-of-work](/glossary/proof-work-pow) survives Grover's. Bitcoin's hashed addresses (P2PKH, P2WPKH that have never been spent) survive Grover's. The 21 million supply cap survives Grover's.
 
@@ -136,9 +139,9 @@ The signature is the weak link, not the hash. That is the entire story of why "p
 
 No [cryptographically-relevant quantum computer (CRQC)](/glossary/crqc-cryptographically-relevant-quantum-computer) exists. A CRQC capable of running Shor's against secp256k1 needs millions of stable physical qubits arranged into thousands of logical qubits via error correction, with sustained coherence across millions of gate operations and gate fidelity high enough that the error-correction overhead does not blow up.
 
-State of the art today: hundreds of noisy physical qubits, demonstrated logical (error-corrected) qubit counts in the single digits. Multiple orders of magnitude separate today's systems from CRQC, on several axes (qubit count, error rates, coherence time).
+State of the art in 2026: physical qubit counts in the hundreds to low thousands, and demonstrated logical (error-corrected or error-detected) qubits in the dozens at best, all on small codes. Multiple orders of magnitude separate today's systems from CRQC, on several axes (qubit count, error rates, coherence time).
 
-The progress curve is steady but it is not Moore's Law. Doubling logical qubits is much harder than doubling transistors because error correction overhead scales with system size. Most expert estimates put a CRQC capable of breaking 256-bit ECDSA somewhere in a 10-to-30-year window. BIP-361's authors cite academic roadmaps pointing at 2027 to 2030. Pessimistic accounts push to the 2040s or later.
+The progress curve is steady but it is not Moore's Law. Doubling logical qubits is much harder than doubling transistors because error correction overhead scales with system size. Most expert estimates put a CRQC capable of breaking 256-bit ECDSA somewhere in a 10-to-30-year window. BIP-361's authors cite a 2027 to 2030 window, sourced to McKinsey's Quantum Technology Monitor 2025. Pessimistic accounts push to the 2040s or later.
 
 The discipline is to plan for the optimistic case while the optimistic case is still future tense. The optimistic case has been "as early as 2027" since 2017, and the threshold keeps moving forward as quantum hardware progress meets the engineering reality of error correction. The trend line is toward eventual capability. The honest answer is "before we are ready, and possibly suddenly."
 

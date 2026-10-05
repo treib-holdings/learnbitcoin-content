@@ -3,6 +3,7 @@ title: "FTX"
 slug: ftx
 draft: false
 published: "2026-06-18"
+updated: "2026-10-05"
 shortDefinition: "The crypto exchange that collapsed in November 2022 with roughly $8B of customer money missing, secretly routed to its sister trading firm Alameda Research. Founder Sam Bankman-Fried is serving 25 years."
 keyTakeaways:
   - "FTX lent customer deposits to its affiliated hedge fund, Alameda Research, through a near-unlimited line of credit, leaving a roughly $8B hole"
@@ -12,6 +13,7 @@ sources:
   - { label: "US DOJ - Samuel Bankman-Fried sentenced to 25 years (2024)", url: "https://www.justice.gov/archives/opa/pr/samuel-bankman-fried-sentenced-25-years-his-orchestration-multiple-fraudulent-schemes" }
   - { label: "SEC - charges against Sam Bankman-Fried (2022)", url: "https://www.sec.gov/newsroom/press-releases/2022-219" }
   - { label: "FTX - US bankruptcy court confirmation of the plan of reorganization (2024)", url: "https://www.prnewswire.com/news-releases/ftx-receives-us-bankruptcy-court-confirmation-of-its-plan-of-reorganization-302269152.html" }
+  - { label: "In re FTX Trading (D. Del. 22-11068), Doc 7090-1 - Digital Assets Conversion Table, BTC at $16,871.63 (filed February 2024)", url: "https://restructuring.ra.kroll.com/FTX/ExternalCall-DownloadPDF?id1=MzA1ODIxOA%3D%3D&id2=0" }
 relatedTerms:
   - mt-gox
   - celsius-genesis-3ac-cluster
@@ -29,6 +31,6 @@ Sam Bankman-Fried founded FTX in 2019, alongside Alameda Research, a trading fir
 
 The customer shortfall was about $8 billion. Bankman-Fried was convicted on all seven fraud counts in November 2023 and sentenced to 25 years in March 2024. Several of his lieutenants cooperated and were sentenced separately.
 
-The bankruptcy estate, run by John Ray III, is repaying creditors more than 100 percent of what their claims were worth in dollars on 11 November 2022, when bitcoin was around $16,000. Bitcoin later traded well above $90,000. So customers were made "whole" in dollars and got back only a fraction of what their coins would be worth now. With any custodian, you get back what they say you're owed, valued and paid on their terms rather than yours.
+The bankruptcy estate, run by John Ray III, is repaying creditors more than 100 percent of what their claims were worth in dollars on 11 November 2022, when the estate's conversion table priced bitcoin at $16,871. Bitcoin later traded well above $90,000. So customers were made "whole" in dollars and got back only a fraction of what their coins would be worth now. With any custodian, you get back what they say you're owed, valued and paid on their terms rather than yours.
 
 See [Mt. Gox to FTX: The Custody Graveyard](/rabbit-hole/mt-gox-ftx-graveyard) for the full decade of receipts.

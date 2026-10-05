@@ -2,12 +2,14 @@
 title: "Difficulty Retargeting"
 slug: difficulty-retargeting
 draft: false
+updated: "2026-10-05"
 shortDefinition: "The automatic recalibration of Bitcoin's mining difficulty every 2016 blocks to sustain a 10-minute block interval."
 keyTakeaways:
   - "Conducted roughly every two weeks (2016 blocks)"
   - "Ensures consistent block intervals despite hash rate changes"
   - "Key to Bitcoin's self-regulating proof-of-work design"
-sources: []
+sources:
+  - { label: "Bitcoin Core source - CalculateNextWorkRequired, the factor-of-four adjustment limit (src/pow.cpp)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/pow.cpp" }
 relatedTerms:
   - block-height
   - block-time
@@ -34,7 +36,7 @@ The rule is mechanical:
 - Every **2,016 blocks** (roughly two weeks), every node computes how long that 2,016-block "epoch" actually took.
 - If it took **less than two weeks**, blocks were too fast: [difficulty](/glossary/difficulty) goes **up**.
 - If it took **more than two weeks**, blocks were too slow: difficulty goes **down**.
-- The adjustment ratio is proportional, **clamped at +/-300%** to prevent extreme swings.
+- The adjustment ratio is proportional, **clamped at a factor of four** either way (at most +300% up or -75% down in one step) to prevent extreme swings.
 
 The adjustment kicks in instantly at the start of the next epoch. The new difficulty is then in force for the next 2,016 blocks, when the cycle repeats.
 

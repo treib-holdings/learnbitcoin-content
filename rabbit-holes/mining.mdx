@@ -4,7 +4,7 @@ slug: mining
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-10-02"
+updated: "2026-10-05"
 section: rabbit-hole
 tagline: "Hash, nonce, target. The simplest hard problem in the world, and why it secures more than a trillion dollars."
 order: 4
@@ -13,6 +13,7 @@ sources:
   - { label: "SHA-256 spec (NIST FIPS 180-4)", url: "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf" }
   - { label: "Bitcoin Core - GetNextWorkRequired (difficulty calc)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/pow.cpp" }
   - { label: "Cambridge Bitcoin Electricity Consumption Index", url: "https://ccaf.io/cbnsi/cbeci" }
+  - { label: "Cambridge Judge Business School - Cambridge study: sustainable energy rising in Bitcoin mining (April 2025; 138 TWh, about 0.5% of global electricity)", url: "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/" }
   - { label: "mempool.space - block fees chart (fee share of miner revenue)", url: "https://mempool.space/graphs/mining/block-fees" }
   - { label: "Riot Platforms August 2023 production report (SEC filing - the $31.7M month)", url: "https://www.sec.gov/Archives/edgar/data/1167419/000155837023015517/riot-20230906xex99d1.htm" }
   - { label: "Mining glossary entry", url: "https://www.learnbitcoin.com/glossary/mining" }
@@ -95,7 +96,7 @@ A miner who finds a valid block gets paid in two parts:
 
 The miner constructs the "coinbase transaction" - a special transaction that pays themselves both amounts. This is the only place new bitcoin enters circulation.
 
-The economic logic is plain: producing valid blocks earns the reward; producing invalid blocks (wrong PoW, invalid transactions, exceeding the block weight limit) gets rejected and wastes the electricity. This is what cryptographers call [incentive compatibility](/glossary/incentive-compatibility) - the property that makes rule-following more profitable than rule-breaking for rational, self-interested participants. Bitcoin's security depends on it, and two decades of empirical evidence say it holds.
+The economic logic is plain: producing valid blocks earns the reward; producing invalid blocks (wrong PoW, invalid transactions, exceeding the block weight limit) gets rejected and wastes the electricity. This is what cryptographers call [incentive compatibility](/glossary/incentive-compatibility) - the property that makes rule-following more profitable than rule-breaking for rational, self-interested participants. Bitcoin's security depends on it, and the evidence since 2009 says it holds.
 
 In Bitcoin's early years, subsidy was essentially all of the revenue (transactions were free). In the year to October 2026, fees were about 0.6% of miner revenue, with occasional spikes much higher during congestion events. By 2140, when the subsidy reaches zero, fees will be 100% of miner revenue.
 
@@ -120,7 +121,7 @@ This is why your transaction's *fee rate* matters more than its *amount*. A tran
 
 ## 7. Energy as Security Budget
 
-Bitcoin mining uses electricity. A lot of it. Mining draws about 173 TWh a year, roughly three quarters of one percent of global electricity (Cambridge's 2025 estimate), and the figure moves with price and hash rate. The [energy chapter](/rabbit-hole/energy) has the full numbers.
+Bitcoin mining uses electricity. A lot of it. Mining draws about 140 to 175 TWh a year depending on Cambridge's method, roughly half to two-thirds of one percent of the world's electricity, and the figure moves with price and hash rate. The [energy chapter](/rabbit-hole/energy) has the full numbers.
 
 This is often presented as a problem. It is, more accurately, a *feature*. Here's why:
 
@@ -144,7 +145,7 @@ A few realities of the mining industry:
 
 **But pools aren't miners.** The hash rate in a pool comes from individual miners, who can switch pools at will if one starts misbehaving. The "Stratum V2" protocol enables miners (not pools) to choose which transactions go into blocks, even if the pool is coordinating the hashing. This shifts power back to individual miners over time.
 
-**Geography has shifted.** China dominated mining until 2021, when a government crackdown pushed operations to the US, Kazakhstan, and elsewhere. The US is now the largest mining country. Geographic dispersion has roughly doubled compared to a decade ago.
+**Geography has shifted.** China dominated mining until 2021, when a government crackdown pushed operations to the US, Kazakhstan, and elsewhere. The US is now the largest mining country.
 
 **Solo mining is alive.** Several individuals have found blocks solo-mining on lottery hardware in the past few years. The odds are astronomically low, but not zero.
 

@@ -4,7 +4,7 @@ slug: lightning-routing
 draft: false
 status: live
 published: "2026-06-04"
-updated: "2026-10-02"
+updated: "2026-10-05"
 section: rabbit-hole
 tagline: "The Lightning Network is a graph. Sending a payment is finding a path through it. Here is how routing actually works."
 order: 10
@@ -15,6 +15,9 @@ sources:
   - { label: "Sphinx: A Compact and Provably Secure Mix Format (Danezis and Goldberg, 2009)", url: "https://www.cypherpunks.ca/~iang/pubs/Sphinx_Oakland09.pdf" }
   - { label: "Tor Protocol Specification - Creating circuits", url: "https://spec.torproject.org/tor-spec/creating-circuits.html" }
   - { label: "mempool.space - Lightning nodes and channels", url: "https://mempool.space/graphs/lightning/nodes-channels" }
+  - { label: "mempool.space - Lightning network capacity", url: "https://mempool.space/graphs/lightning/capacity" }
+  - { label: "Bitcoin Visuals - Lightning Network capacity, channels, and nodes (daily data)", url: "https://bitcoinvisuals.com/lightning" }
+  - { label: "River - Bitcoin Adoption Report 2026, Lightning section (River runs a Lightning business)", url: "https://river.com/learn/files/river-bitcoin-adoption-report-2026.pdf" }
   - { label: "Bitcoin Optech - Trampoline payments", url: "https://bitcoinops.org/en/topics/trampoline-payments/" }
   - { label: "Bitcoin Optech - Multipath payments", url: "https://bitcoinops.org/en/topics/multipath-payments/" }
   - { label: "Bitcoin Optech - Atomic multipath payments (AMP)", url: "https://bitcoinops.org/en/topics/atomic-multipath/" }
@@ -216,7 +219,7 @@ Trade the base layer's guarantees (global verification, persistent recording) fo
 
 Routing is what makes the whole thing work. Without it, Lightning would be a network of disconnected payment channels, useful only between direct counterparties. With it, Lightning is an actual *network*: a graph through which value flows, with no central operator, no permissioned ledger, no payment processor.
 
-The privacy story is genuine but partial. The reliability story is dramatically improved since 2018. The fee story is essentially "free" for typical payments. The capacity story keeps growing as more nodes open more channels.
+The privacy story is genuine but partial. The reliability story is dramatically improved since 2018. The fee story is tiny fees for typical payments, though never quite zero. The capacity story is about consolidation. Public capacity hit a record in late 2025, then fell back in 2026, while the number of public nodes and channels has been shrinking since 2022: liquidity is concentrating in a small number of large nodes.
 
 It is, like Bitcoin itself, not theoretically perfect. It is, like Bitcoin itself, the best thing of its kind that has ever existed in production.
 
