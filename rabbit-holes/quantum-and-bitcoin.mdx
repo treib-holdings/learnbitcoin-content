@@ -3,7 +3,7 @@ title: "Quantum and Bitcoin"
 slug: quantum-and-bitcoin
 draft: false
 published: "2026-06-11"
-updated: "2026-10-05"
+updated: "2026-10-07"
 status: live
 section: rabbit-hole
 tagline: "Quantum is the FUD claim that comes up most often after fiat-debasement and energy. The honest version: the threat is real, the timeline is slow, the fix is governance, and Bitcoin has agency."
@@ -23,6 +23,9 @@ sources:
   - { label: "Google Quantum AI - Quantum error correction below the surface code threshold, Nature (2024; Willow)", url: "https://www.nature.com/articles/s41586-024-08449-y" }
   - { label: "IBM - quantum roadmap, including the 1,121-qubit Condor processor (2023)", url: "https://www.ibm.com/quantum/blog/quantum-roadmap-2033" }
   - { label: "Bitcoin governance glossary entry", url: "https://www.learnbitcoin.com/glossary/bitcoin-governance" }
+  - { label: "Bitcoin Optech Newsletter #412 - why Bitcoin post-quantum work has focused on hash-based signatures (3 July 2026)", url: "https://bitcoinops.org/en/newsletters/2026/07/03/" }
+  - { label: "Bitcoin Optech Newsletter #417 - Pieter Wuille's thread on post-quantum output types: P2MR, P2TRv2, P2TRH, P2QR (7 August 2026)", url: "https://bitcoinops.org/en/newsletters/2026/08/07/" }
+  - { label: "Bitcoin Optech Newsletter #421 - SHRINCS draft BIP, a semi-stateful hash-based signature scheme (4 September 2026)", url: "https://bitcoinops.org/en/newsletters/2026/09/04/" }
 relatedTerms:
   - post-quantum-bitcoin
   - shors-algorithm
@@ -161,7 +164,7 @@ This is free. It is also voluntary, which is the limit.
 
 **2. Soft-fork to deprecate vulnerable script types.** Disable spends from P2PK and other always-exposed scripts after a specified block height. Force migration before the threat lands. The contentious part: coins whose keys are lost (or whose owner is silent) become permanently locked. Whether that is a feature or a bug is the most charged question in the whole debate.
 
-**3. Soft-fork to add post-quantum signature schemes.** New output types that use ML-DSA or SLH-DSA signatures. Users move coins to PQ addresses over years. This is the likely path. Two BIPs already in draft frame the work: [BIP-360](/glossary/bip-360) proposes Pay-to-Merkle-Root (P2MR), a Taproot variant that removes the key path spend so the bech32m address no longer reveals a pubkey - fixing long-exposure quantum risk on tapscript outputs and providing the tapscript-capable platform a future PQ signature opcode would need. [BIP-361](/glossary/bip-361) defines the migration framework that sunsets ECDSA and Schnorr over a multi-year window. The specific cryptographic algorithm for full quantum resistance (ML-DSA vs SLH-DSA vs a hybrid) is deferred to a separate Post-Quantum Signature BIP that has not been assigned a number yet, because the choice is still pre-consensus.
+**3. Soft-fork to add post-quantum signature schemes.** New output types that use post-quantum signatures. Users move coins to PQ addresses over years. This is the likely path. Two BIPs already in draft frame the work: [BIP-360](/glossary/bip-360) proposes Pay-to-Merkle-Root (P2MR), a Taproot variant that removes the key path spend so the bech32m address no longer reveals a pubkey - fixing long-exposure quantum risk on tapscript outputs and providing the tapscript-capable platform a future PQ signature opcode would need. [BIP-361](/glossary/bip-361) defines the migration framework that sunsets ECDSA and Schnorr over a multi-year window. P2MR is not the only output design under discussion: in 2026 Pieter Wuille opened a Delving Bitcoin thread weighing it against alternatives such as P2TRv2, a new Taproot version that would carry a post-quantum signature opcode, and P2TRH, a Taproot variant with a hashed output key. The signature scheme itself is still pre-consensus. In 2026 the SHRINCS working group posted a first draft BIP for SHRINCS, a hash-based scheme compatible with SLH-DSA.
 
 All three categories run through the same governance process. There is no fast governance. There is no central upgrade authority. The slowness is the feature, and it is also the constraint. See [Bitcoin governance](/glossary/bitcoin-governance) for the five-veto model that decides which soft forks actually activate.
 
@@ -186,7 +189,7 @@ The two schemes side by side:
 | Trade | Smaller and faster, less mature | Larger and slower, more conservative |
 | Spec | [FIPS 204](https://csrc.nist.gov/pubs/fips/204/final) | [FIPS 205](https://csrc.nist.gov/pubs/fips/205/final) |
 
-ML-DSA is the leading candidate on efficiency grounds. SLH-DSA is the conservative fallback when the lattice math is judged too novel. A hybrid scheme that combines a classical signature with a PQ signature during the transition window is also being discussed - belt and suspenders against the possibility that the PQ scheme itself is broken before the classical scheme falls.
+Bitcoin's post-quantum work has mostly focused on the hash-based family in the SLH-DSA column. Its signatures are big, but its security rests only on the hash function holding, and it is simpler to implement. The SHRINCS draft BIP is an example: by keeping a little state in the wallet, it gets a hash-based signature down to 548 bytes, with a 5,777-byte fallback that needs no state. Lattice schemes such as ML-DSA and Falcon have smaller signatures than SLH-DSA and keep coming up in the discussion, but the math behind them is newer. A hybrid scheme that combines a classical signature with a PQ signature during the transition window is also being discussed - belt and suspenders against the possibility that the PQ scheme itself is broken before the classical scheme falls.
 
 The final choice is downstream of consensus. There is no committee. There is the same governance process that produced [Taproot](/glossary/taproot) and [SegWit](/glossary/segwit-segregated-witness-bip-141), running on its native timescale.
 

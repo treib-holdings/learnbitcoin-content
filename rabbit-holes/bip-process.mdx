@@ -3,6 +3,7 @@ title: "The BIP Process"
 slug: bip-process
 draft: false
 published: "2026-07-14"
+updated: "2026-10-07"
 status: live
 section: rabbit-hole
 tagline: "How an idea becomes a Bitcoin Improvement Proposal, what the editors actually control, why most proposals die, and how the ones that matter get activated - including the covenant activation fight underway in 2026."
@@ -19,6 +20,10 @@ sources:
   - { label: "Bitcoin Optech Newsletter #388 - BIP-3 reaches Deployed (2026)", url: "https://bitcoinops.org/en/newsletters/2026/01/16/" }
   - { label: "Bitcoin Optech Newsletter - the CTV/CSFS open letter and responses (2025)", url: "https://bitcoinops.org/en/newsletters/2025/07/04/" }
   - { label: "Delving Bitcoin - BIP-119 CTV activation client (2026)", url: "https://delvingbitcoin.org/t/bip-119-ctv-activation-client/2242" }
+  - { label: "bitcoin/bips commit 1c5c149 - BIP 0001: Change BIP editor to Luke Dashjr (6 January 2016)", url: "https://github.com/bitcoin/bips/commit/1c5c149220ef9b0de95b9bed380a00abf61722f1" }
+  - { label: "bitcoin/bips commit 4e53b6e - Add Kalle Alm as BIP editor (6 May 2021)", url: "https://github.com/bitcoin/bips/commit/4e53b6e6c4b279e76ccf107a5a315911466bda4b" }
+  - { label: "bitcoin/bips PR #1573 - BIP2: update BIP editors (merged 23 April 2024)", url: "https://github.com/bitcoin/bips/pull/1573" }
+  - { label: "bitcoin/bips PR #2248 - process: Remove Luke from BIP Editors (merged 10 August 2026)", url: "https://github.com/bitcoin/bips/pull/2248" }
 relatedTerms:
   - bip-bitcoin-improvement-proposal
   - bip-9-versionbits
@@ -49,7 +54,7 @@ The repository is maintained by BIP editors, and the single most misunderstood t
 
 They assign numbers. They check that a submission is on topic, properly formatted, coherent, and licensed acceptably. Under the current process document they are explicitly barred from judging whether a proposal is a good idea or likely to be adopted. An author cannot self-assign a number; drafts circulate under working names until an editor assigns one in public. But once a proposal meets the formal bar, the editors are not supposed to stand in its way, however much they may personally dislike it.
 
-For roughly a decade the editor was one person, Luke Dashjr, which made the role a recurring flashpoint: every delayed number assignment looked like gatekeeping, whatever the reason. In February 2024 the role expanded to a team, and as of 2026 six editors share it: Bryan Bishop, Jon Atack, Luke Dashjr, Mark "Murch" Erhardt, Olaoluwa Osuntokun, and Ruben Somsen.
+From January 2016 the editor was Luke Dashjr, joined by Kalle Alm in 2021, and a team that small made the role a recurring flashpoint: every delayed number assignment looked like gatekeeping, whatever the reason. In April 2024 the list was rewritten. Alm came off it, and Bryan Bishop, Jon Atack, Mark "Murch" Erhardt, Olaoluwa Osuntokun and Ruben Somsen joined Dashjr. Dashjr was removed in August 2026, which left five editors.
 
 The cleanest illustration of what a BIP number means is the OP_CAT episode. Its supporters campaigned for the meme number 420. The editors assigned 347, the next sensible slot, in April 2024. The press covered the number assignment either way, and none of it moved the proposal an inch closer to activation, because a BIP number is a filing label. It is not an endorsement, and it is not a prediction.
 
@@ -107,7 +112,7 @@ Covenants are proposed script capabilities that would let a coin constrain how i
 
 The history already includes one cautionary tale. In April 2022, CTV's author announced a Speedy Trial-style activation attempt through a standalone client, and withdrew it within about ten days under heavy developer pushback. The consistent objection, then and since, has been about process rather than merit: an activation attempt without broad consensus is the block size war's playbook, and everyone remembers how that went. A 2025 open letter asking Bitcoin Core to prioritize CTV and CSFS review within six months drew the same response from several senior contributors - pressure campaigns, they argued, set proposals back.
 
-As we publish this, the question is genuinely open. In early 2026 an independent activation client for CTV appeared with a year-long signaling window that opened in March 2026, echoing the UASF pattern of putting a deadline on the table without Bitcoin Core's involvement. More than three months into that window, miner signaling sits at essentially zero. Whether meaningful signaling materializes, whether Core review moves, whether the whole attempt fades like 2022's did - none of that is knowable from here, and we will not pretend otherwise. What we can tell you is how to read it: watch whether the economic majority of nodes and businesses moves, because as the war chapter showed, that is where activation is actually decided.
+As we publish this, the question is genuinely open. In early 2026 an independent activation client for CTV appeared with a year-long signaling window that opened in March 2026, echoing the UASF pattern of putting a deadline on the table without Bitcoin Core's involvement. Through the first three months of that window, miner signaling stayed at essentially zero. Whether meaningful signaling materializes, whether Core review moves, whether the whole attempt fades like 2022's did - none of that is knowable from here, and we will not pretend otherwise. What we can tell you is how to read it: watch whether the economic majority of nodes and businesses moves, because as the war chapter showed, that is where activation is actually decided.
 
 ## What this buys us
 

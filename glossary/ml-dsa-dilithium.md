@@ -3,12 +3,15 @@ title: "ML-DSA / Dilithium (FIPS 204)"
 slug: ml-dsa-dilithium
 draft: false
 published: "2026-06-01"
-shortDefinition: "The NIST-standardized lattice-based post-quantum signature scheme - leading candidate for replacing Bitcoin's ECDSA/Schnorr signatures."
+shortDefinition: "The NIST-standardized lattice-based post-quantum signature scheme, one of the options discussed for Bitcoin's post-quantum migration."
 keyTakeaways:
   - "NIST-standardized lattice-based PQ signature scheme (FIPS 204, August 2024)"
   - "Signatures are ~50x larger than current Bitcoin signatures (~3KB vs 64 bytes)"
-  - "Leading candidate to replace ECDSA/Schnorr in Bitcoin's PQ migration, though not formally proposed yet"
-sources: []
+  - "Discussed for Bitcoin's PQ migration, though Bitcoin's post-quantum work has mostly focused on hash-based schemes"
+sources:
+  - { label: "NIST FIPS 204 - Module-Lattice-Based Digital Signature Standard (August 2024)", url: "https://csrc.nist.gov/pubs/fips/204/final" }
+  - { label: "Bitcoin Optech Newsletter #412 - why Bitcoin post-quantum work has focused on hash-based signatures (3 July 2026)", url: "https://bitcoinops.org/en/newsletters/2026/07/03/" }
+  - { label: "Bitcoin Optech Newsletter #421 - SHRINCS draft BIP, a semi-stateful hash-based signature scheme (4 September 2026)", url: "https://bitcoinops.org/en/newsletters/2026/09/04/" }
 relatedTerms:
   - post-quantum-bitcoin
   - bip-361
@@ -60,14 +63,14 @@ These aren't dealbreakers, but they're the reason Bitcoin's PQ migration isn't a
 
 ## Position in the Bitcoin migration discussion
 
-BIP-361 - the active draft proposal for Bitcoin's post-quantum migration - is signature-scheme-agnostic. It defers the choice of specific PQ algorithm to a separate "TBD Post Quantum Signature BIP" that hasn't been published. ML-DSA is the leading candidate for that slot because:
+BIP-361 - the active draft proposal for Bitcoin's post-quantum migration - is signature-scheme-agnostic. It leaves the choice of algorithm to a separate signature BIP. ML-DSA comes up in that discussion because:
 
 - It's NIST-standardized (FIPS 204)
-- Its signature size is the most reasonable among current PQ candidates ([SLH-DSA / SPHINCS+](/glossary/slh-dsa-sphincs-plus) is much larger; Falcon is smaller but more implementation-fragile)
+- Its signatures are much smaller than SLH-DSA's ([SLH-DSA / SPHINCS+](/glossary/slh-dsa-sphincs-plus) is much larger; Falcon is smaller but more implementation-fragile)
 - Verification is fast enough for full-node validation at Bitcoin's scale
 - It's already being deployed in non-Bitcoin contexts (TLS, code signing)
 
-The alternative candidates are part of the live discussion. Bitcoin's choice will weigh signature size against security-assumption diversity.
+Even so, Bitcoin's post-quantum work has mostly focused on hash-based signatures, whose security rests only on the hash function holding and which are simpler to implement. The SHRINCS draft BIP, posted in 2026, is a hash-based scheme compatible with SLH-DSA that gets signatures down to 548 bytes by keeping a little state in the wallet. Lattice schemes like ML-DSA remain part of the discussion, and Bitcoin's choice will weigh signature size against how well tested the underlying math is.
 
 See the [Quantum and Bitcoin rabbit hole](/rabbit-hole/quantum-and-bitcoin) for the block-space cost of the candidate schemes and how the choice gets made.
 
