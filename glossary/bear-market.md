@@ -44,3 +44,5 @@ What's reliably true about bear markets:
 The Bitcoiner discipline during a bear market is to remember it's part of the cycle. Stop trading. Keep stacking. Build the things you can build when there's no hype to chase. The bull market that follows tends to reward people who used the bear well.
 
 See [Bull Market](/glossary/bull-market) for the other side and [Volatility](/glossary/volatility) for the underlying dynamic.
+
+See [Rat Poison, Tulips and a Pet Rock](/rabbit-hole/bitcoin-is-dead) for the obituaries written in each bear market, and how many of them the following year proved right.

@@ -47,3 +47,5 @@ What the term oversimplifies:
 - **"Minsky Moment" gets used as a catch-all** for any sharp drawdown, sometimes by commentators who haven't read Minsky. Specific leverage / debt-unwind dynamics aren't always present.
 
 The honest usage: the Minsky framework is one useful lens for understanding crypto's cycle dynamics, not the only one. Bitcoin holders who survive cycles are usually the ones who avoid both extremes - not over-leveraging at the top, not panic-selling at the bottom.
+
+See [Rat Poison, Tulips and a Pet Rock](/rabbit-hole/bitcoin-is-dead) for the 'it can't recover from this' calls tied to each crash, and what the price did a year later.

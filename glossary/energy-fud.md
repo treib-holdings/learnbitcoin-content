@@ -40,3 +40,5 @@ The honest case for being concerned anyway:
 The Bitcoiner discipline: don't dismiss energy concerns wholesale. Engage with the strong forms of the critique. The strong forms have answers; the weak forms get called FUD because they don't.
 
 See the [Bitcoin and Energy rabbit hole](/rabbit-hole/energy) for the full treatment, including which forms of the critique have answers and which do not.
+
+See [Rat Poison, Tulips and a Pet Rock](/rabbit-hole/bitcoin-is-dead) for the dated energy predictions, from 'all the world's energy by 2020' to the EU proof-of-work ban that did not happen.

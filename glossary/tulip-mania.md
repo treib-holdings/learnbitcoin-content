@@ -45,3 +45,5 @@ The comparison describes something real. Bitcoin's four blow-off tops look like 
 Where the comparison breaks is what happened next. A tulip bulb in 1638 was worth a tulip bulb, and it still is. Bitcoin made a new all-time high after each of those four collapses, with more users, more [hash rate](/glossary/hash-rate), and more [nodes](/glossary/node) behind it than at the previous peak. A bubble is a price event; it says nothing about whether the thing underneath was worth anything. The tulip trade had no thing underneath except the bulbs. Whether Bitcoin does is the [intrinsic value](/glossary/intrinsic-value) question, and the four recoveries are the strongest evidence either side has.
 
 The honest way to use the phrase: Bitcoin has had tulip manias inside it. It has not been one. And if you find yourself paying a canal house for something in the last month of a vertical chart, the Haarlem auction is still the right thing to think about.
+
+See [Rat Poison, Tulips and a Pet Rock](/rabbit-hole/bitcoin-is-dead) for every dated tulip and bubble call, and where the analogy holds and breaks across five drawdowns.

@@ -38,3 +38,5 @@ Not all negativity is FUD. Legitimate criticisms exist - real custodial collapse
 The instinctive defense: when you see breathless claims about Bitcoin, ask: *Is this specific? Is it sourced? Can I verify it from on-chain data or a primary document?* If the answer to all three is no, you're probably looking at FUD.
 
 Bitcoiners use the term defensively (sometimes overly so). Sometimes the bad thing actually is bad, and "that's just FUD" becomes its own form of denial. Be skeptical of both directions.
+
+See [Rat Poison, Tulips and a Pet Rock](/rabbit-hole/bitcoin-is-dead) for the full record: each label, who said it and when, what happened next, and the claims that held up.

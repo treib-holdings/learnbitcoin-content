@@ -31,3 +31,5 @@ The honest dual-use framing:
 - **What AML doesn't deter:** sophisticated actors who use mixers, peer-to-peer trades, non-KYC venues, or jurisdictions outside the FATF perimeter. The compliance regime hits casual users harder than sophisticated criminals.
 
 For an individual Bitcoiner, the practical takeaways are: assume any exchange interaction is logged and may be shared with governments; consider non-KYC alternatives (peer-to-peer trading, lightning-LSP-anonymous channels, Bitcoin ATMs in some jurisdictions) for amounts where the surveillance burden outweighs the convenience.
+
+See [Rat Poison, Tulips and a Pet Rock](/rabbit-hole/bitcoin-is-dead) for the 'money laundering' label: who used it, what the Treasury later wrote, and where the label is partly right.

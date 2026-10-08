@@ -47,3 +47,5 @@ The protective framing:
 - **Self-custody eliminates the rug-pull attack surface.** Hardware wallet + seed phrase + cold storage. No one can pull anything because no one else has access.
 
 The honest term-of-art point: "rug pull" is borrowed from altcoin / DeFi culture. In Bitcoin contexts, it usually refers to either custodial failures (which existed before "rug pull" was a phrase) or token scams operating on Bitcoin's chain (which are technically rugged-pulled but aren't pulling Bitcoin itself). The structural lesson is older and simpler: not your keys, not your coins.
+
+See [Rat Poison, Tulips and a Pet Rock](/rabbit-hole/bitcoin-is-dead) for the frauds that used bitcoin as the deposit, and why the convictions were of custodians rather than the protocol.
