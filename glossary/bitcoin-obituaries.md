@@ -4,7 +4,6 @@ slug: bitcoin-obituaries
 linkText:
   - "Bitcoin obituaries"
   - "Bitcoin obituary"
-  - "obituaries"
 draft: false
 published: "2026-09-29"
 updated: "2026-10-05"

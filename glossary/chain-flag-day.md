@@ -1,13 +1,15 @@
 ---
 title: "Chain Flag Day"
 slug: chain-flag-day
+updated: "2026-10-09"
 draft: false
 shortDefinition: "A chosen date or block height when nodes begin enforcing new consensus rules, often seen in user-activated forks."
 keyTakeaways:
   - "Sets a deadline for enforcing consensus changes"
   - "Popular in user-activated soft fork strategies"
   - "Can unify the network or risk a chain split"
-sources: []
+sources:
+  - { label: "BIP 341 - Deployment: modified BIP 9, 90% threshold, signaling 24 April to 11 August 2021, minimum activation height 709,632", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#deployment" }
 relatedTerms:
   - bip-148-uasf
   - chain-split
@@ -33,7 +35,7 @@ The famous example: [BIP-148 (UASF)](/glossary/bip-148-uasf) for SegWit activati
 
 Flag day mechanics matter because they shift the activation power from miners (who can stall BIP-9 signaling) to nodes (who can enforce the rule unilaterally). The economic majority of nodes - exchanges, businesses, large holders, the long tail of self-custody users - is what ultimately decides what "Bitcoin" is.
 
-The Taproot activation in 2021 used a softer variant called "speedy trial," which combined miner signaling with a fallback flag day if miners failed to coordinate. It worked smoothly.
+The Taproot activation in 2021 used Speedy Trial instead: about three months of miner signaling at a 90 percent threshold, with no fallback flag day. Had miners not signaled, it would simply have failed. They signaled, and Taproot activated at block 709,632 in November 2021.
 
 Flag days are powerful but risky. If they're not actually supported by the economic majority, they can fragment the network. If they are, they're the most credible activation tool in Bitcoin's governance toolkit.
 

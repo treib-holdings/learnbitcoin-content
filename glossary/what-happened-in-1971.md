@@ -2,7 +2,6 @@
 title: "What Happened in 1971 (The Nixon Shock)"
 slug: what-happened-in-1971
 linkText:
-  - "1971"
   - "gold window"
 draft: false
 published: "2026-10-02"

@@ -18,7 +18,7 @@ sources:
   - { label: "Nixon's August 15, 1971 Address (full text)", url: "https://www.presidency.ucsb.edu/documents/address-the-nation-outlining-new-economic-policy-the-challenge-peace" }
   - { label: "Federal Reserve Board - Greenbook, part IV: gold sale to France (18 August 1971)", url: "https://www.federalreserve.gov/monetarypolicy/files/FOMC19710824greenbook19710818.pdf" }
   - { label: "Lyn Alden - What Is Money, Anyway?", url: "https://www.lynalden.com/what-is-money/" }
-  - { label: "Cantillon - Essai sur la Nature du Commerce (1755)", url: "https://oll.libertyfund.org/titles/cantillon-an-essay-on-economic-theory" }
+  - { label: "Cantillon - Essay on the Nature of Trade in General (1755), Liberty Fund edition", url: "https://oll.libertyfund.org/titles/essay-on-the-nature-of-trade-in-general-lf-ed" }
 ---
 
 > **Where you're going:** By the end of this chapter, you'll be able to explain - in plain English, to your dad - why every fiat currency in history has lost most of its purchasing power, and why that isn't an accident. You won't have met Bitcoin yet. You'll just see the shape of the problem it tries to solve.

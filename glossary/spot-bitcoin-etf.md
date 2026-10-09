@@ -10,6 +10,7 @@ linkText:
   - "Bitcoin ETFs"
 draft: false
 published: "2026-06-15"
+updated: "2026-10-09"
 shortDefinition: "An exchange-traded fund that holds actual BTC at a regulated custodian and trades on a traditional stock exchange. Approved by the US SEC on January 10, 2024 after eleven years of rejections."
 keyTakeaways:
   - "Holds physical BTC, not futures contracts or other derivatives"
@@ -43,7 +44,7 @@ The eleven-year fight:
 The eleven products that launched on day one:
 
 - **BlackRock iShares Bitcoin Trust (IBIT)** - Coinbase Custody
-- **Fidelity Wise Origin Bitcoin Fund (FBTC)** - Fidelity Digital Assets, self-custodied
+- **Fidelity Wise Origin Bitcoin Fund (FBTC)** - Fidelity Digital Assets (Fidelity's own custodian)
 - **Bitwise Bitcoin ETF (BITB)** - Coinbase Custody
 - **Ark 21Shares Bitcoin ETF (ARKB)** - Coinbase Custody
 - **Grayscale Bitcoin Trust (GBTC)** - Coinbase Custody, converted from the legacy closed-end trust

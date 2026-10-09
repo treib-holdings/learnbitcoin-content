@@ -1,13 +1,15 @@
 ---
 title: "Deployment Threshold (Soft Fork)"
 slug: deployment-threshold-soft-fork
+updated: "2026-10-09"
 draft: false
 shortDefinition: "A required percentage of blocks signaling support for a soft fork before it locks in and activates (e.g., 95%)."
 keyTakeaways:
   - "Sets a block signaling target for soft-fork readiness"
   - "Ensures upgrades only activate with high miner support"
   - "Sometimes criticized for giving miners disproportionate influence"
-sources: []
+sources:
+  - { label: "BIP 341 - Deployment: modified BIP 9, 90% threshold, signaling 24 April to 11 August 2021, minimum activation height 709,632", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#deployment" }
 relatedTerms:
   - bip-9-versionbits
   - bip-91
@@ -29,6 +31,6 @@ The SegWit deployment (2016-2017) is the canonical case study. SegWit was a clea
 
 The resolution was multi-pronged: BIP 91 lowered the SegWit signaling threshold to 80% with a forced lock-in, BIP 148 was a User-Activated Soft Fork (UASF) showing that economically significant nodes could enforce SegWit rules even without miner signaling, and the combined pressure got miners to signal.
 
-Lesson learned: pure miner-threshold activation makes upgrades hostage to mining politics. Taproot's activation used "Speedy Trial" - BIP 9 signaling with a hard minimum activation height, so the upgrade activates either at threshold or at the height, whichever comes first. No more indefinite stuck deployments.
+Lesson learned: pure miner-threshold activation makes upgrades hostage to mining politics. Taproot's activation used Speedy Trial: BIP 9 signaling at a 90 percent threshold over about three months, plus a minimum activation height so node operators had time to upgrade. It could still fail if miners did not signal, but the short window meant a failure would be quick rather than a deadlock that dragged on for a year.
 
 The deployment threshold remains useful as a coordination signal, but the days when it was treated as the final arbiter of activation are over.
