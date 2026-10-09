@@ -1,6 +1,8 @@
 ---
 title: "NAV (Net Asset Value)"
 slug: nav-net-asset-value
+linkText:
+  - "NAV"
 draft: false
 published: "2026-06-15"
 shortDefinition: "The per-share value of an ETF's underlying holdings, calculated as (total assets minus liabilities) divided by shares outstanding. The anchor that creation/redemption arbitrage keeps the market price tied to."

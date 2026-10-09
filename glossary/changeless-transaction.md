@@ -1,6 +1,9 @@
 ---
 title: "Changeless Transaction"
 slug: changeless-transaction
+linkText:
+  - "changeless transaction"
+  - "changeless"
 draft: false
 published: "2026-09-08"
 shortDefinition: "A transaction whose inputs match the payment closely enough that no change output is needed; the small excess goes to the miner as fee. Cheaper to build, cheaper to spend from later, and it gives change detection nothing to work with."

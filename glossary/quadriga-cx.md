@@ -1,6 +1,9 @@
 ---
 title: "QuadrigaCX"
 slug: quadriga-cx
+linkText:
+  - "QuadrigaCX"
+  - "Quadriga"
 draft: false
 published: "2026-06-18"
 shortDefinition: "Canada's largest crypto exchange, whose founder died in 2018 supposedly holding the only keys to its cold wallets - which turned out to have been emptied months earlier. About CAD 169M of customer money gone."

@@ -1,6 +1,8 @@
 ---
 title: "CRQC (Cryptographically-Relevant Quantum Computer)"
 slug: crqc-cryptographically-relevant-quantum-computer
+linkText:
+  - "CRQC"
 draft: false
 published: "2026-06-01"
 shortDefinition: "The threshold at which a quantum computer is large and stable enough to break real-world cryptography - specifically, ECDSA on secp256k1 for Bitcoin."

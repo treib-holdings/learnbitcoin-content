@@ -1,6 +1,8 @@
 ---
 title: "SegWit2x"
 slug: segwit2x
+linkText:
+  - "SegWit2x"
 draft: false
 published: "2026-06-29"
 updated: "2026-07-07"

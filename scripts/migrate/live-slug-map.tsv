@@ -1,3 +1,6 @@
+1971	what-happened-in-1971
+2022 contagion	celsius-genesis-3ac-cluster
+3AC	celsius-genesis-3ac-cluster
 Absolute Fee	absolute-fee
 Absolute Locktime	absolute-locktime
 Accelerator	accelerator
@@ -23,6 +26,7 @@ Atomic Multi-Path Payment (AMP)	atomic-multi-path-payment-amp
 Atomic Swap	atomic-swap
 Atomic Swap Refill	atomic-swap-refill
 Audiobook Model (Lightning)	audiobook-model-lightning
+Authorized Participant	authorized-participant
 Autopilot (Lightning)	autopilot-lightning
 B32 Address	b32-address
 Balanced Channel (Lightning)	balanced-channel-lightning
@@ -35,13 +39,13 @@ BIP 102 (2MB Block Size)	bip-102-2mb-block-size
 BIP 113	bip-113
 BIP 119 (CTV)	bip-119-ctv
 BIP 125 (Replace-by-Fee)	bip-125-replace-fee
+BIP 143	bip-143
 BIP 144 (SegWit Relay)	bip-144-segwit-relay
 BIP 148 (UASF)	bip-148-uasf
 BIP 152 (Compact Blocks)	bip-152-compact-blocks
 BIP 155 (Addr v2)	bip-155-addr-v2
 BIP 158	bip-158
 BIP 159	bip-159
-BIP 170 (TxOut Proof)	bip-170-txout-proof
 BIP 173 (Bech32)	bip-173-bech32
 BIP 176 (Bits Denomination)	bip-176-bits-denomination
 BIP 22 (getblocktemplate)	bip-22-getblocktemplate
@@ -52,27 +56,35 @@ BIP 31 (pong message)	bip-31-pong-message
 BIP 32 (HD Wallets)	bip-32
 BIP 339 (WTXID Relay)	bip-339-wtxid-relay
 BIP 34	bip-34
+BIP 340	bip-340
+BIP 341	bip-341
 BIP 342 (Tapscript)	bip-342-tapscript
 BIP 35 (mempool message)	bip-35-mempool-message
-BIP 36 (merkle block request)	bip-36-merkle-block-request
 BIP 361 (Post Quantum Migration)	bip-361
 BIP 37	bip-37
 BIP 39 (Mnemonic Seed)	bip-39
-BIP 40 (Alerts Avoid Replay)	bip-40-alerts-avoid-replay
 BIP 42	bip-42
 BIP 44	bip-44
 BIP 47 (Payment Codes)	bip-47-payment-codes
 BIP 50	bip-50
 BIP 61	bip-61
+BIP 65	bip-65-opchecklocktimeverify
 BIP 65 (OP_CHECKLOCKTIMEVERIFY)	bip-65-opchecklocktimeverify
 BIP 66	bip-66
 BIP 68 (Relative Locktime)	bip-68-relative-locktime
 BIP 69	bip-69
 BIP 70 (Payment Protocol)	bip-70-payment-protocol
 BIP 75 (Payment Protocol Enhancements)	bip-75-payment-protocol-enhancements
+BIP 8	bip-8
 BIP 85	bip-85
 BIP 9 (VersionBits)	bip-9-versionbits
 BIP 91	bip-91
+BIP-143	bip-143
+BIP-340	bip-340
+BIP-341	bip-341
+BIP-360	bip-360
+BIP-65	bip-65-opchecklocktimeverify
+BIP-8	bip-8
 Bitcoin ATM	bitcoin-atm
 Bitcoin Bond	bitcoin-bond
 Bitcoin Bridge	bitcoin-bridge
@@ -83,13 +95,20 @@ Bitcoin Core RPC	bitcoin-core-rpc
 Bitcoin Days Destroyed	bitcoin-days-destroyed
 Bitcoin Dev Kit (BDK)	bitcoin-dev-kit-bdk
 Bitcoin Dominance	bitcoin-dominance
+Bitcoin ETF	spot-bitcoin-etf
+Bitcoin ETFs	spot-bitcoin-etf
 Bitcoin Faucet	bitcoin-faucet
+Bitcoin governance	bitcoin-governance
 Bitcoin Inheritance Planning	bitcoin-inheritance-planning
 Bitcoin Knots	bitcoin-knots
+Bitcoin obituaries	bitcoin-obituaries
+Bitcoin obituary	bitcoin-obituaries
 Bitcoin Pizza Day	bitcoin-pizza-day
 Bitcoin Satellite	bitcoin-satellite
 Bitcoin Script	bitcoin-script
+Bitcoin SV	bitcoin-sv-bsv
 Bitcoin Vault	bitcoin-vault
+Bitcoin's governance	bitcoin-governance
 BitLicense	bitlicense
 Block	block
 Block Explorer	block-explorer
@@ -98,16 +117,21 @@ Block Height	block-height
 Block Propagation	block-propagation
 Block Reward	block-reward
 Block Size	block-size
+block size war	block-size-war
 Block Subsidy	block-subsidy
 Block Time	block-time
 Blockchain	blockchain
+BlockFi	blockfi
 Bloom Filter	bloom-filter
 BOLT	bolt
 BOLT 11	bolt-11
+Branch and Bound	branch-and-bound-bnb
+branch-and-bound	branch-and-bound-bnb
 Bridge Node (Lightning)	bridge-node-lightning
 Bull Market	bull-market
 Burn Address	burn-address
 Byzantine Fault Tolerance	byzantine-fault-tolerance
+cash creation	creation-redemption
 CBDC (Central Bank Digital Currency)	cbdc-central-bank-digital-currency
 Centralized Exchange (CEX)	centralized-exchange-cex
 Chain Analysis	chain-analysis
@@ -115,16 +139,25 @@ Chain Flag Day	chain-flag-day
 Chain Split	chain-split
 Chain Visualization	chain-visualization
 Chaincode	chaincode
+change address	change-output
+change output	change-output
+change outputs	change-output
+changeless	changeless-transaction
+changeless transaction	changeless-transaction
 CheckLockTimeVerify (CLTV)	checklocktimeverify-cltv
 CheckSequenceVerify (CSV)	checksequenceverify-csv
 CheckTemplateVerify (CTV)	checktemplateverify-ctv
 Churn (Lightning)	churn-lightning
 Clawback Mechanism	clawback-mechanism
 Clearing Price	clearing-price
+CME CF Bitcoin Reference Rate	cme-cf-bitcoin-reference-rate
 Coin Age	coin-age
 Coin Control	coin-control
 Coin Freeze	coin-freeze
+coin selection	coin-selection
+coin-selection	coin-selection
 Coinbase (Transaction)	coinbase-transaction
+CoinGrinder	coingrinder
 CoinJoin	coinjoin
 Colored Coins	colored-coins
 Competitive Block Propagation	competitive-block-propagation
@@ -132,11 +165,17 @@ Competitive Mining	competitive-mining
 Consensus Parameter	consensus-parameter
 Consolidation Transaction	consolidation-transaction
 Constant Time	constant-time
+control block	control-block
 Core Lightning (c-lightning)	core-lightning-c-lightning
 Corrupted Chain State	corrupted-chain-state
 Counterparty Risk	counterparty-risk
 Covenants	covenants
 CPU Mining	cpu-mining
+creation unit	creation-redemption
+creation units	creation-redemption
+creation/redemption	creation-redemption
+CRQC	crqc-cryptographically-relevant-quantum-computer
+curtailment	curtailment
 Custodial Lightning Wallet	custodial-lightning-wallet
 Custodial Wallet	custodial-wallet
 DCA (Dollar-Cost Averaging)	dca-dollar-cost-averaging
@@ -145,10 +184,13 @@ Decentralized Exchange (DEX)	decentralized-exchange-dex
 Dedicated IP (for Nodes)	dedicated-ip-nodes
 Delayed Justice Transaction	delayed-justice-transaction
 Delayed Payment Channel	delayed-payment-channel
+demand response	demand-response
+demand-response	demand-response
 Deployment Threshold (Soft Fork)	deployment-threshold-soft-fork
 Deterministic Wallet	deterministic-wallet
 Difficulty	difficulty
 Difficulty Retargeting	difficulty-retargeting
+Dilithium	ml-dsa-dilithium
 Discard Threshold	discard-threshold
 Disinflation	disinflation
 Double Spend	double-spend
@@ -167,6 +209,8 @@ Energy FUD	energy-fud
 Escrow	escrow
 Escrowed Lightning Channel	escrowed-lightning-channel
 Estimated Confirmation Blocks	estimated-confirmation-blocks
+ETF	etf-exchange-traded-fund
+ETFs	etf-exchange-traded-fund
 Exchange	exchange
 Exchange API Key	exchange-api-key
 Fee Bumping	fee-bumping
@@ -177,11 +221,15 @@ Fee Sniping	fee-sniping
 Fiat	fiat
 Fidelity Bond	fidelity-bond
 FinCEN	fincen
+FIPS 204	ml-dsa-dilithium
+FIPS 205	slh-dsa-sphincs-plus
+flared natural gas	methane-mitigation-mining
 Fork	fork
 Fork Detection	fork-detection
 Fork Watcher	fork-watcher
 Fraud Proof	fraud-proof
 Fraudulent Channel Close	fraudulent-channel-close
+FTX	ftx
 FUD (Fear, Uncertainty, Doubt)	fud-fear-uncertainty-doubt
 Full Node	full-node
 Full RBF	full-rbf
@@ -190,12 +238,15 @@ Fungibility	fungibility
 Futures	futures
 Genesis Block	genesis-block
 Geographic Mining Distribution	geographic-mining-distribution
+gold window	what-happened-in-1971
 Golden Cross	golden-cross
 Gossip Protocol (Lightning)	gossip-protocol-lightning
 Graph Pruning	graph-pruning
 Green Address	green-address
 Greenlist	greenlist
 Griefing Attack	griefing-attack
+Grover's	grovers-algorithm
+Grover's algorithm	grovers-algorithm
 GUI Miner	gui-miner
 GUI Wallet	gui-wallet
 Hal Finney's Running Bitcoin	hal-finneys-running-bitcoin
@@ -222,6 +273,7 @@ HTLC Invoice	htlc-invoice
 HTLC Preimage Manager	htlc-preimage-manager
 I2P (Invisible Internet Project)	i2p-invisible-internet-project
 Iceberg Order	iceberg-order
+in-kind creation	creation-redemption
 Inactive Channel	inactive-channel
 Incentive Compatibility	incentive-compatibility
 Inflation	inflation
@@ -230,16 +282,26 @@ Inheritance Seed Backup	inheritance-seed-backup
 Input (Transaction Input)	input-transaction-input
 Inscriptions	inscriptions
 Interactive Multi-Sig	interactive-multi-sig
+intrinsic value	intrinsic-value
 Jammed HTLC Detector	jammed-htlc-detector
 Jamming Attack (LN)	jamming-attack-ln
+JoinMarket	joinmarket
+Joinstr	joinstr
 JSON-RPC over Tor	json-rpc-over-tor
 K-of-K Multisig	k-k-multisig
 Key Aggregation	key-aggregation
 Key Generation Ceremony	key-generation-ceremony
+key path	key-path-spend
+key path spend	key-path-spend
+key path spending	key-path-spend
 Key Pool	key-pool
 Key Rotation	key-rotation
 Key Split	key-split
 Key Wiping	key-wiping
+key-path	key-path-spend
+key-path spend	key-path-spend
+key-path spending	key-path-spend
+key-path spends	key-path-spend
 KYC (Know Your Customer)	kyc-know-your-customer
 Layer 1	layer-1
 Lightning Anchor Commitment	lightning-anchor-commitment
@@ -268,13 +330,17 @@ Locktime	locktime
 Lockup Period (Lightning)	lockup-period-lightning
 Longest Chain Rule	longest-chain-rule
 Loop In/Out	loop-inout
+LOT=true	bip-8
 Low R Signatures	low-r-signatures
+low-S	low-s-signatures
 Low-S Signatures	low-s-signatures
 Lurking Wife Mode	lurking-wife-mode
 M-of-n	m-n
 Mainnet	mainnet
 Market Capitalization	market-capitalization
 Market Depth	market-depth
+median time past	mtp-median-time-past
+median-time-past	mtp-median-time-past
 Mempool	mempool
 Merchant Adoption	merchant-adoption
 Merged Mining	merged-mining
@@ -284,11 +350,15 @@ Merkle Proof	merkle-proof
 Merkle Root	merkle-root
 Merkle Tree / Merkle Root	merkle-tree-merkle-root
 Merkleized Abstract Syntax Tree (MAST)	merkleized-abstract-syntax-tree-mast
+methane	methane-mitigation-mining
+methane mitigation	methane-mitigation-mining
+methane mitigation mining	methane-mitigation-mining
 Micropayment	micropayment
 Miner	miner
 Miner Capitulation	miner-capitulation
 Miner Extractable Value (MEV)	miner-extractable-value-mev
 Miner Orphan Rate	miner-orphan-rate
+miner signaling	miner-signaling
 Mining	mining
 Mining Algorithm	mining-algorithm
 Mining Centralization	mining-centralization
@@ -300,15 +370,20 @@ Mining Software	mining-software
 Mining Subsidy	mining-subsidy
 Minsky Moment	minsky-moment
 Mixing Service	mixing-service
+ML-DSA	ml-dsa-dilithium
 Mnemonic Entropy Bits	mnemonic-entropy-bits
 Mnemonic Password	mnemonic-password
 Mono-Signature	mono-signature
+Mt. Gox	mt-gox
+MTP	mtp-median-time-past
 MTP (Median Time Past)	mtp-median-time-past
 Multisig	multisig
 MuSig	musig
 MuSig2	musig2
 Native SegWit	native-segwit
+NAV	nav-net-asset-value
 Neutrino	neutrino
+New York Agreement	new-york-agreement-nya
 nLocktime	nlocktime
 Node	node
 Node Autoban	node-autoban
@@ -318,18 +393,26 @@ Node Synchronization	node-synchronization
 Node Uptime	node-uptime
 Nonce	nonce
 Nonce Exhaustion	nonce-exhaustion
+not your keys, not your coins	not-your-keys-not-your-coins
 nSequence	nsequence
+NUMS	nums-point
+NUMS point	nums-point
+NYA	new-york-agreement-nya
+obituaries	bitcoin-obituaries
 Off-Chain	off-chain
 One-Way Peg	one-way-peg
 Onion Routing (Lightning)	onion-routing-lightning
 OP Code (Operation Code)	op-code-operation-code
+OP_CHECKSIGADD	op-checksigadd
 OP_RETURN	opreturn
 OP_RETURN-based Tokens	opreturn-based-tokens
+OP_SUCCESS	op-success
 Oracle-based Betting	oracle-based-betting
 Ordinals	ordinals
 Orphan Block	orphan-block
 Output (Transaction Output)	output-transaction-output
 Output Descriptor	output-descriptor
+P2MR	bip-360
 P2PK (Pay to Public Key)	p2pk-pay-public-key
 P2PKH (Pay to Public Key Hash)	p2pkh-pay-public-key-hash
 P2SH (Pay to Script Hash)	p2sh
@@ -340,6 +423,7 @@ Paper Hands	paper-hands
 Paper Wallet	paper-wallet
 Partial Signature	partial-signature
 Pay-to-IP	pay-ip
+Pay-to-Merkle-Root	bip-360
 PayJoin	payjoin
 Payment Channel	payment-channel
 Payment Codes (BIP 47)	payment-codes-bip-47
@@ -352,20 +436,33 @@ Peg-in	peg
 Peg-out	peg-out
 Penalty Transaction	penalty-transaction
 Poisson Process	poisson-process
+Ponzi scheme	ponzi-scheme
+Ponzi schemes	ponzi-scheme
+Ponzi structure	ponzi-scheme
+Ponzi structures	ponzi-scheme
 Pool Hopping	pool-hopping
 Pooled Mining	pooled-mining
+post-quantum	post-quantum-bitcoin
+post-quantum Bitcoin	post-quantum-bitcoin
+post-quantum migration	post-quantum-bitcoin
+premium/discount	premium-discount-to-nav
 Price Discovery	price-discovery
 Price Floor (BTC)	price-floor-btc
 Price Slippage	price-slippage
 Private Key	private-key
 Proof of Keys	proof-keys
+proof of reserves	proof-of-reserves
+proof-of-reserves	proof-of-reserves
 Proof-of-Work (PoW)	proof-work-pow
 Proprietary Mining Firmware	proprietary-mining-firmware
 Pruning Mode	pruning-mode
 PSBT (Partially Signed Bitcoin Transaction)	psbt
 Public Key	public-key
+Quadriga	quadriga-cx
+QuadrigaCX	quadriga-cx
 Quorum Signatures	quorum-signatures
 Race Attack	race-attack
+rehypothecation	rehypothecation
 Reorg (Reorganization)	reorg-reorganization
 Replace-by-Fee (RBF)	replace-fee-rbf
 Replay Attack	replay-attack
@@ -378,10 +475,17 @@ Routing Node	routing-node
 RPC Whitelist	rpc-whitelist
 Rug Pull	rug-pull
 Safe Mode (Bitcoin Core)	safe-mode-bitcoin-core
+Samourai	whirlpool-samourai
+Samourai Wallet	whirlpool-samourai
 Satoshi (Unit)	satoshi-unit
 Satoshi Nakamoto	satoshi-nakamoto
 Schnorr Signature	schnorr-signature
 Script	script
+script path	script-path-spend
+script-path	script-path-spend
+script-path spend	script-path-spend
+script-path spending	script-path-spend
+script-path spends	script-path-spend
 Scriptless Scripts	scriptless-scripts
 Second Layer	second-layer
 Security	security
@@ -389,39 +493,74 @@ Seed Entropy Mixer	seed-entropy-mixer
 Seed Phrase	seed-phrase
 Seed Tool	seed-tool
 SegWit (Segregated Witness, BIP 141)	segwit-segregated-witness-bip-141
+SegWit2x	segwit2x
+self-custodial	self-custody
+self-custodied	self-custody
+self-custody	self-custody
 Shamir's Secret Sharing	shamir-secret-sharing
 Shielded CoinJoin	shielded-coinjoin
+Shor's	shors-algorithm
+Shor's algorithm	shors-algorithm
 Sidechain	sidechain
 SIGHASH	sighash
 SIGHASH_ANYONECANPAY	sighashanyonecanpay
 SIGHASH_SINGLE	sighashsingle
+signaling threshold	miner-signaling
 Signature Aggregation	signature-aggregation
 Signature Clipping	signature-clipping
 Signet	signet
 Silent Payments	silent-payments
+Silk Road	silk-road
+SLH-DSA	slh-dsa-sphincs-plus
 Soft Fork	soft-fork
+Speedy Trial	speedy-trial
+SPHINCS+	slh-dsa-sphincs-plus
+spot Bitcoin ETF	spot-bitcoin-etf
+spot Bitcoin ETFs	spot-bitcoin-etf
+spot ETF	spot-bitcoin-etf
+spot ETFs	spot-bitcoin-etf
 SPV (Simplified Payment Verification)	spv-simplified-payment-verification
 Stale Block	stale-block
 State Channel	state-channel
 Static Channel Backup (SCB)	static-channel-backup-scb
 Stealth Address	stealth-address
+stranded energy	stranded-energy
+stranded gas	stranded-energy
+stranded hydro	stranded-energy
+stranded power	stranded-energy
 Submarine Swap	submarine-swap
 Taproot	taproot
+Taproot tweak	taproot-tweak
 Testnet	testnet
+Three Arrows	celsius-genesis-3ac-cluster
+Three Arrows Capital	celsius-genesis-3ac-cluster
 Time-Locked Contract	time-locked-contract
 Tor Hidden Service	tor-hidden-service
+tracking error	tracking-error
 Transaction	transaction
 Transaction Chaining	transaction-chaining
 Transaction Fee	transaction-fee
 Transaction Finality	transaction-finality
 Transaction Index (txindex)	transaction-index-txindex
+tulip bubble	tulip-mania
+tulip mania	tulip-mania
+tweaked key	taproot-tweak
+tweaked public key	taproot-tweak
 UTXO (Unspent Transaction Output)	utxo-unspent-transaction-output
+UTXO pool	utxo-pool
 Vanity Address	vanity-address
 Volatility	volatility
+Voyager	voyager-digital
+Voyager Digital	voyager-digital
 Wallet	wallet
 Wallet Import Format (WIF)	wallet-import-format-wif
+Wasabi	wasabi-wallet
+Wasabi Wallet	wasabi-wallet
 Watch-Only Wallet	watch-only-wallet
+Whirlpool	whirlpool-samourai
 Whitepaper	whitepaper
 Wumbo Channels (Lightning)	wumbo-channels-lightning
+x-only	x-only-public-key
+x-only pubkey	x-only-public-key
 Xpub (Extended Public Key)	xpub-extended-public-key
 ZKCP (Zero-Knowledge Contingent Payment)	zkcp-zero-knowledge-contingent-payment

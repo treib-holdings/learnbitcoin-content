@@ -1,6 +1,8 @@
 ---
 title: "CoinGrinder"
 slug: coingrinder
+linkText:
+  - "CoinGrinder"
 draft: false
 published: "2026-09-08"
 shortDefinition: "A Bitcoin Core coin selection algorithm, added in version 27.0 in 2024, that searches for the input set with the smallest total weight so that transactions built during high-fee periods cost as little as possible."

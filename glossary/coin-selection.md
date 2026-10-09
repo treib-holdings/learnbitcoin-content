@@ -1,6 +1,9 @@
 ---
 title: "Coin Selection"
 slug: coin-selection
+linkText:
+  - "coin selection"
+  - "coin-selection"
 draft: false
 published: "2026-09-08"
 shortDefinition: "The wallet-engineering problem of choosing which UTXOs to spend when building a transaction. The choice sets the fee, decides whether there is a change output, and determines which of your addresses get publicly linked together."

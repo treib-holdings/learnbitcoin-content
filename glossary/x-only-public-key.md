@@ -1,6 +1,9 @@
 ---
 title: "X-only Public Key"
 slug: x-only-public-key
+linkText:
+  - "x-only pubkey"
+  - "x-only"
 draft: false
 published: "2026-09-17"
 shortDefinition: "A 32-byte public key that stores only the X coordinate of a curve point, with the Y coordinate implied to be even. Introduced by BIP-340 and used for every Taproot output and signature."

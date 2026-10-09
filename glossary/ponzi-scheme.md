@@ -1,6 +1,11 @@
 ---
 title: "Ponzi Scheme"
 slug: ponzi-scheme
+linkText:
+  - "Ponzi scheme"
+  - "Ponzi schemes"
+  - "Ponzi structure"
+  - "Ponzi structures"
 draft: false
 published: "2026-09-29"
 shortDefinition: "A fraud that pays earlier investors with deposits from later ones while claiming the money comes from a business. It needs an operator, a promised return, and hidden books. Bitcoin has none of the three, though plenty of Ponzis have been run with bitcoin as the deposit."

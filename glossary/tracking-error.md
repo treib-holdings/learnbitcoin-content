@@ -1,6 +1,8 @@
 ---
 title: "Tracking Error"
 slug: tracking-error
+linkText:
+  - "tracking error"
 draft: false
 published: "2026-06-15"
 shortDefinition: "A measure of how closely an ETF's returns follow the returns of the asset it's designed to track. Lower is better, and for spot Bitcoin ETFs the annual gap is roughly the expense ratio plus a few basis points."

@@ -1,6 +1,10 @@
 ---
 title: "BIP-8 (Version Bits with Lock-in by Height)"
 slug: bip-8
+linkText:
+  - "BIP-8"
+  - "BIP 8"
+  - "LOT=true"
 draft: false
 published: "2026-07-13"
 shortDefinition: "A proposed soft-fork activation mechanism that measures deployment windows in block heights instead of timestamps and can guarantee activation through its lockinontimeout flag. Never used for a mainnet activation, but central to every activation debate since 2017."

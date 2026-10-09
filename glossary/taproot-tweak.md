@@ -1,6 +1,10 @@
 ---
 title: "Taproot Tweak"
 slug: taproot-tweak
+linkText:
+  - "Taproot tweak"
+  - "tweaked key"
+  - "tweaked public key"
 draft: false
 published: "2026-09-17"
 shortDefinition: "The step that folds a Taproot output's script tree into its key: hash the internal key and the tree's Merkle root, multiply by the curve's base point, and add the result to the internal key. The output key that lands on the chain commits to everything and reveals nothing."

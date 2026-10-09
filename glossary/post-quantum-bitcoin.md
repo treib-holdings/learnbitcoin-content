@@ -1,6 +1,10 @@
 ---
 title: "Post-Quantum Bitcoin"
 slug: post-quantum-bitcoin
+linkText:
+  - "post-quantum Bitcoin"
+  - "post-quantum migration"
+  - "post-quantum"
 draft: false
 published: "2026-06-01"
 shortDefinition: "The set of protocol changes Bitcoin needs to stay secure against a sufficiently powerful quantum computer - concentrated in the signature schemes, not the hash function."

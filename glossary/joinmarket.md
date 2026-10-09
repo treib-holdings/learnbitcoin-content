@@ -1,6 +1,8 @@
 ---
 title: "JoinMarket"
 slug: joinmarket
+linkText:
+  - "JoinMarket"
 draft: false
 published: "2026-07-13"
 shortDefinition: "The original decentralized CoinJoin: a two-sided market where makers earn fees for providing mixing liquidity and takers pay to mix on demand. No coordinator to seize, which is why it survived 2024 - though by 2026 the original codebase was archived, with an independent successor carrying the network forward."

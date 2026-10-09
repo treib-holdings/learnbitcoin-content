@@ -1,6 +1,8 @@
 ---
 title: "Silk Road"
 slug: silk-road
+linkText:
+  - "Silk Road"
 draft: false
 published: "2026-09-29"
 shortDefinition: "The Tor-hidden darknet market that ran from early 2011 to October 2013 and accepted only bitcoin. It gave Bitcoin its first mainstream headline and the 'only for buying drugs' label, and its shutdown showed the opposite of what the label implied: the public ledger convicted almost everyone involved, including two of the agents investigating it."

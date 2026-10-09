@@ -1,6 +1,14 @@
 ---
 title: "Key-path Spend"
 slug: key-path-spend
+linkText:
+  - "key-path spend"
+  - "key path spend"
+  - "key-path spends"
+  - "key-path spending"
+  - "key path spending"
+  - "key-path"
+  - "key path"
 draft: false
 published: "2026-09-17"
 shortDefinition: "Spending a Taproot output with a single Schnorr signature against the output key. The witness is one 64-byte item, nothing about any script tree is revealed, and the spend looks identical whether one person or a whole federation signed it."

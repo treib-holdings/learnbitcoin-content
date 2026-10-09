@@ -1,6 +1,11 @@
 ---
 title: "Stranded Energy"
 slug: stranded-energy
+linkText:
+  - "stranded energy"
+  - "stranded power"
+  - "stranded gas"
+  - "stranded hydro"
 draft: false
 published: "2026-06-17"
 shortDefinition: "Electricity that is produced or could be produced but has no economical buyer - too remote, too intermittent, or too far from demand. The cheapest energy on earth, and what Bitcoin mining migrates toward."

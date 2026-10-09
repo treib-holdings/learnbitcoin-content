@@ -1,6 +1,8 @@
 ---
 title: "Mt. Gox"
 slug: mt-gox
+linkText:
+  - "Mt. Gox"
 draft: false
 published: "2026-06-18"
 shortDefinition: "The Tokyo exchange that once handled most of the world's Bitcoin trading until it collapsed in 2014 with roughly 850,000 BTC missing. The original 'not your keys, not your coins' catastrophe."

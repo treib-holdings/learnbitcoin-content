@@ -1,6 +1,10 @@
 ---
 title: "Self-Custody"
 slug: self-custody
+linkText:
+  - "self-custody"
+  - "self-custodial"
+  - "self-custodied"
 draft: false
 published: "2026-06-18"
 shortDefinition: "Holding your own bitcoin private keys, so that no exchange, bank, or custodian stands between you and your coins. The thing Bitcoin was built to make possible."

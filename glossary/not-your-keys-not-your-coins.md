@@ -1,6 +1,8 @@
 ---
 title: "Not Your Keys, Not Your Coins"
 slug: not-your-keys-not-your-coins
+linkText:
+  - "not your keys, not your coins"
 draft: false
 published: "2026-06-18"
 shortDefinition: "The Bitcoin maxim that if someone else holds your private keys, you do not really own the bitcoin - you own a promise from them. Proven, repeatedly, by a decade of custodian failures."

@@ -1,6 +1,9 @@
 ---
 title: "What Happened in 1971 (The Nixon Shock)"
 slug: what-happened-in-1971
+linkText:
+  - "1971"
+  - "gold window"
 draft: false
 published: "2026-10-02"
 shortDefinition: "On 15 August 1971 President Nixon closed the gold window: foreign governments could no longer swap dollars for US gold at $35 an ounce. It removed the last outside limit on the dollar. The popular meme that blames it for nearly every economic trend since then goes further than the record does."

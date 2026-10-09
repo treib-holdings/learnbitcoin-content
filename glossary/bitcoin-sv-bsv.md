@@ -1,6 +1,8 @@
 ---
 title: "Bitcoin SV (BSV)"
 slug: bitcoin-sv-bsv
+linkText:
+  - "Bitcoin SV"
 draft: false
 published: "2026-06-29"
 updated: "2026-07-07"

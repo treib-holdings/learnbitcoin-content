@@ -1,6 +1,8 @@
 ---
 title: "OP_CHECKSIGADD"
 slug: op-checksigadd
+linkText:
+  - "OP_CHECKSIGADD"
 draft: false
 published: "2026-09-17"
 shortDefinition: "The Tapscript opcode that replaced OP_CHECKMULTISIG. Each public key gets its own signature check, a counter goes up by one per valid signature, and a final comparison enforces the threshold. Built so that Schnorr signatures can be verified in batches."

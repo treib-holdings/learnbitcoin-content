@@ -1,6 +1,9 @@
 ---
 title: "Shor's Algorithm"
 slug: shors-algorithm
+linkText:
+  - "Shor's algorithm"
+  - "Shor's"
 draft: false
 published: "2026-06-01"
 updated: "2026-10-09"

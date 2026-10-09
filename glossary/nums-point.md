@@ -1,6 +1,9 @@
 ---
 title: "NUMS Point"
 slug: nums-point
+linkText:
+  - "NUMS point"
+  - "NUMS"
 draft: false
 published: "2026-09-17"
 shortDefinition: "A 'nothing up my sleeve' curve point whose private key provably nobody knows, used as the internal key of a Taproot output that must only be spendable through its scripts. The output still looks like any other; its key door is welded shut."

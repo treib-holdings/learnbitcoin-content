@@ -1,6 +1,11 @@
 ---
 title: "Celsius, Genesis, and 3AC (the 2022 Contagion)"
 slug: celsius-genesis-3ac-cluster
+linkText:
+  - "2022 contagion"
+  - "Three Arrows Capital"
+  - "Three Arrows"
+  - "3AC"
 draft: false
 published: "2026-06-18"
 shortDefinition: "The interconnected 2022 collapse of crypto lenders and a hedge fund - Three Arrows Capital, Celsius, and Genesis - where one borrower's default cascaded through firms that had quietly lent out their customers' deposits."

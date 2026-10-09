@@ -1,6 +1,8 @@
 ---
 title: "Block Size War"
 slug: block-size-war
+linkText:
+  - "block size war"
 draft: false
 published: "2026-06-29"
 updated: "2026-07-07"

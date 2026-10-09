@@ -1,6 +1,10 @@
 ---
 title: "Change Output"
 slug: change-output
+linkText:
+  - "change output"
+  - "change outputs"
+  - "change address"
 draft: false
 published: "2026-09-08"
 updated: "2026-09-11"

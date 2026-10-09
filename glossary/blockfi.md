@@ -1,6 +1,8 @@
 ---
 title: "BlockFi"
 slug: blockfi
+linkText:
+  - "BlockFi"
 draft: false
 published: "2026-06-18"
 shortDefinition: "A crypto lender that paid yield on deposits by lending them to leveraged firms. It settled with the SEC for $100M in early 2022, then went bankrupt that November from exposure to FTX and 3AC."

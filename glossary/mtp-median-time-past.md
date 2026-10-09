@@ -1,6 +1,11 @@
 ---
 title: "MTP (Median Time Past) - How Bitcoin Tracks Network Time"
 slug: mtp-median-time-past
+linkText:
+  - "MTP (Median Time Past)"
+  - "median time past"
+  - "median-time-past"
+  - "MTP"
 draft: false
 shortDefinition: "Bitcoin uses the median of the last 11 block timestamps as 'network time.' Here's why - and how it stops miners from gaming time-locked transactions."
 keyTakeaways:

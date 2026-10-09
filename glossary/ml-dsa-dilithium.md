@@ -1,6 +1,10 @@
 ---
 title: "ML-DSA / Dilithium (FIPS 204)"
 slug: ml-dsa-dilithium
+linkText:
+  - "ML-DSA"
+  - "Dilithium"
+  - "FIPS 204"
 draft: false
 published: "2026-06-01"
 shortDefinition: "The NIST-standardized lattice-based post-quantum signature scheme, one of the options discussed for Bitcoin's post-quantum migration."

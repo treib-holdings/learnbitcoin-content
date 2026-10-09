@@ -1,6 +1,9 @@
 ---
 title: "New York Agreement (NYA)"
 slug: new-york-agreement-nya
+linkText:
+  - "New York Agreement"
+  - "NYA"
 draft: false
 published: "2026-06-29"
 updated: "2026-07-07"

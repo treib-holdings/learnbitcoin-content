@@ -1,6 +1,9 @@
 ---
 title: "Bitcoin Governance"
 slug: bitcoin-governance
+linkText:
+  - "Bitcoin governance"
+  - "Bitcoin's governance"
 draft: false
 published: "2026-05-29"
 shortDefinition: "Bitcoin's informal decision-making process. There is no central authority. Changes happen through rough consensus among several stakeholder groups, each of whom holds de facto veto power."

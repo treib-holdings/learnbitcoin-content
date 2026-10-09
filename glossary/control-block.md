@@ -1,6 +1,8 @@
 ---
 title: "Control Block"
 slug: control-block
+linkText:
+  - "control block"
 draft: false
 published: "2026-09-17"
 shortDefinition: "The last witness element in a Taproot script-path spend: one byte of leaf version and parity, the 32-byte internal key, and the Merkle path from the revealed leaf to the root. It lets a node prove the script was committed in the output key."

@@ -1,6 +1,9 @@
 ---
 title: "Low-S Signatures - The Rule That Killed ECDSA Malleability"
 slug: low-s-signatures
+linkText:
+  - "Low-S Signatures"
+  - "low-S"
 draft: false
 shortDefinition: "For every valid ECDSA signature, a second valid one exists. Low-S kills that ambiguity - here's how it works and why it matters."
 keyTakeaways:

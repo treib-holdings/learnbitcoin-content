@@ -1,6 +1,8 @@
 ---
 title: "Rehypothecation"
 slug: rehypothecation
+linkText:
+  - "rehypothecation"
 draft: false
 published: "2026-06-18"
 shortDefinition: "Reusing assets that customers pledged or deposited as if they were the firm's own - lending them out, posting them as collateral, stacking claims on the same coins. The hidden mechanism under the 2022 crypto-lender collapses."

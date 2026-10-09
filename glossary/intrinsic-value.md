@@ -1,6 +1,8 @@
 ---
 title: "Intrinsic Value"
 slug: intrinsic-value
+linkText:
+  - "intrinsic value"
 draft: false
 published: "2026-09-29"
 updated: "2026-10-05"

@@ -1,6 +1,12 @@
 ---
 title: "Script-path Spend"
 slug: script-path-spend
+linkText:
+  - "script-path spend"
+  - "script-path spends"
+  - "script-path spending"
+  - "script-path"
+  - "script path"
 draft: false
 published: "2026-09-17"
 shortDefinition: "Spending a Taproot output by revealing one leaf of its script tree, proving with a control block that the leaf was committed in the output key, and satisfying that script under Tapscript rules. The other leaves stay hidden."

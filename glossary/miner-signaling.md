@@ -1,6 +1,9 @@
 ---
 title: "Miner Signaling"
 slug: miner-signaling
+linkText:
+  - "miner signaling"
+  - "signaling threshold"
 draft: false
 published: "2026-05-29"
 shortDefinition: "The process by which miners indicate readiness to enforce a proposed consensus rule, usually by setting a designated bit in the block header's version field."

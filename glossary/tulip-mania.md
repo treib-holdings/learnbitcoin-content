@@ -1,6 +1,9 @@
 ---
 title: "Tulip Mania"
 slug: tulip-mania
+linkText:
+  - "tulip mania"
+  - "tulip bubble"
 draft: false
 published: "2026-09-29"
 updated: "2026-10-05"

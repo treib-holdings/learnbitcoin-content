@@ -1,6 +1,10 @@
 ---
 title: "BIP 65 (OP_CHECKLOCKTIMEVERIFY) - Plain-English Explainer"
 slug: bip-65-opchecklocktimeverify
+linkText:
+  - "BIP 65 (OP_CHECKLOCKTIMEVERIFY)"
+  - "BIP 65"
+  - "BIP-65"
 draft: false
 shortDefinition: "What CLTV does, why it was added in 2015, and how it enables payment channels and escrows - without the spec-speak."
 keyTakeaways:

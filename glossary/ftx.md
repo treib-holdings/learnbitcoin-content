@@ -1,6 +1,8 @@
 ---
 title: "FTX"
 slug: ftx
+linkText:
+  - "FTX"
 draft: false
 published: "2026-06-18"
 updated: "2026-10-05"

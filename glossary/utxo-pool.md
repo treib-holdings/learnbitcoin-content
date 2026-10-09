@@ -1,6 +1,8 @@
 ---
 title: "UTXO Pool"
 slug: utxo-pool
+linkText:
+  - "UTXO pool"
 draft: false
 published: "2026-09-08"
 shortDefinition: "The set of unspent outputs a wallet controls and can draw on to build transactions. Its shape, a few large coins or many small ones, decides your future fees and how much of your history gets linked when you spend."

@@ -1,6 +1,9 @@
 ---
 title: "Branch and Bound (BnB)"
 slug: branch-and-bound-bnb
+linkText:
+  - "Branch and Bound"
+  - "branch-and-bound"
 draft: false
 published: "2026-09-08"
 shortDefinition: "Bitcoin Core's exact-match coin selection algorithm: a bounded depth-first search for a set of inputs that covers the payment closely enough to need no change output at all."

@@ -1,6 +1,10 @@
 ---
 title: "Whirlpool / Samourai Wallet"
 slug: whirlpool-samourai
+linkText:
+  - "Samourai Wallet"
+  - "Samourai"
+  - "Whirlpool"
 draft: false
 published: "2026-07-13"
 shortDefinition: "The mobile privacy wallet and its CoinJoin service whose founders were arrested in April 2024 and sentenced to prison in 2025. The case that redrew the legal map for coordinator-based mixing."

@@ -1,6 +1,8 @@
 ---
 title: "OP_SUCCESS"
 slug: op-success
+linkText:
+  - "OP_SUCCESS"
 draft: false
 published: "2026-09-17"
 shortDefinition: "A set of opcode values that Tapscript reserves for future upgrades by making any script containing one succeed unconditionally today. Using one now loses funds; giving one a meaning later needs only a soft fork. The covenant proposals target these slots."

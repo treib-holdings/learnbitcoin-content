@@ -1,6 +1,8 @@
 ---
 title: "Speedy Trial"
 slug: speedy-trial
+linkText:
+  - "Speedy Trial"
 draft: false
 published: "2026-07-13"
 shortDefinition: "The activation strategy used for Taproot in 2021: a three-month miner signaling window designed to either succeed quickly or fail quickly, with activation delayed to a fixed block height either way. It ended a months-long deadlock over how soft forks should activate."

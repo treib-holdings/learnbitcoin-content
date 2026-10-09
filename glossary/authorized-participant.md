@@ -1,6 +1,8 @@
 ---
 title: "Authorized Participant"
 slug: authorized-participant
+linkText:
+  - "Authorized Participant"
 draft: false
 published: "2026-06-15"
 shortDefinition: "A large broker-dealer with a contract to create and redeem ETF shares directly with the issuer. The arbitrage mechanism that keeps an ETF's market price aligned with its Net Asset Value."

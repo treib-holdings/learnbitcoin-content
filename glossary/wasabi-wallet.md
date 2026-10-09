@@ -1,6 +1,9 @@
 ---
 title: "Wasabi Wallet"
 slug: wasabi-wallet
+linkText:
+  - "Wasabi Wallet"
+  - "Wasabi"
 draft: false
 published: "2026-07-13"
 shortDefinition: "An open-source desktop Bitcoin wallet with built-in CoinJoin. Its company-run coordinator shut down voluntarily in June 2024 after the Samourai arrests; the wallet itself survived and now coinjoins through independent third-party coordinators."

@@ -1,6 +1,8 @@
 ---
 title: "Joinstr"
 slug: joinstr
+linkText:
+  - "Joinstr"
 draft: false
 published: "2026-07-13"
 updated: "2026-09-17"

@@ -1,6 +1,9 @@
 ---
 title: "ETF (Exchange-Traded Fund)"
 slug: etf-exchange-traded-fund
+linkText:
+  - "ETF"
+  - "ETFs"
 draft: false
 published: "2026-06-15"
 shortDefinition: "A pooled investment vehicle that trades on stock exchanges like a regular share, with units minted and destroyed by institutional brokers to keep the market price tied to the underlying asset's value."

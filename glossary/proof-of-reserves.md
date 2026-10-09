@@ -1,6 +1,9 @@
 ---
 title: "Proof of Reserves"
 slug: proof-of-reserves
+linkText:
+  - "proof of reserves"
+  - "proof-of-reserves"
 draft: false
 published: "2026-06-18"
 shortDefinition: "A cryptographic attestation that an exchange or custodian actually holds the coins it claims to. A real improvement after FTX - but it proves assets, not solvency."

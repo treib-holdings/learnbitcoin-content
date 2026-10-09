@@ -1,6 +1,9 @@
 ---
 title: "Grover's Algorithm"
 slug: grovers-algorithm
+linkText:
+  - "Grover's algorithm"
+  - "Grover's"
 draft: false
 published: "2026-06-01"
 updated: "2026-10-09"

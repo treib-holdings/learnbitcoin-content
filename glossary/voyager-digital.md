@@ -1,6 +1,9 @@
 ---
 title: "Voyager Digital"
 slug: voyager-digital
+linkText:
+  - "Voyager Digital"
+  - "Voyager"
 draft: false
 published: "2026-06-18"
 shortDefinition: "A crypto brokerage that marketed accounts as 'FDIC insured,' then froze withdrawals and went bankrupt in 2022 when its roughly $650M loan to hedge fund 3AC defaulted."
