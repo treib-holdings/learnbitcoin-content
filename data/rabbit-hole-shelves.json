@@ -1,0 +1,8 @@
+[
+  { "id": "money", "label": "Money", "deck": "What makes it money?", "order": 1 },
+  { "id": "how-it-works", "label": "How It Works", "deck": "What actually happens when you use it?", "order": 2 },
+  { "id": "custody-privacy", "label": "Custody and Privacy", "deck": "How do I hold it safely and privately?", "order": 3 },
+  { "id": "who-decides", "label": "Who Decides", "deck": "Who changes the rules, and how?", "order": 4 },
+  { "id": "history", "label": "History", "deck": "What happened, and what changed after?", "order": 5 },
+  { "id": "hard-questions", "label": "Hard Questions", "deck": "The strongest objections, including where the critics are right.", "order": 6 }
+]

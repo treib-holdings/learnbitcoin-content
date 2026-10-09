@@ -3,6 +3,7 @@ title: "Privacy"
 heading: "Here is everything we know about you."
 description: "What data LearnBitcoin collects, who sees it, how long it lives. Short version: almost nothing."
 published: "2026-05-14"
+updated: "2026-10-09"
 ---
 
 Short version: almost nothing.
@@ -55,9 +56,10 @@ neither of which needs your consent:
   site.
 - **localStorage** (key: `lb_progress_v1`) - your browser remembers
   which rabbit holes and journey chapters you have read so the site
-  can show a check mark. The data lives only on your device. It is
-  never sent to our server. Clear your browser storage and it is
-  gone.
+  can show a check mark, and so the home page can point you to the
+  next Journey chapter. The data lives only on your device. It is
+  never sent to our server. Clear your browser storage, or press
+  "Clear it" on the home page, and it is gone.
 
 That is why there is no cookie banner. There is nothing to consent to.
 The manifesto promised no dark patterns; this is what that looks like

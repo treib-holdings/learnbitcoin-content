@@ -133,12 +133,34 @@ a cache-busting facade — the rendered card content is unchanged.
 glossary/             # One markdown file per term
 journey/              # Six narrative chapters
 rabbit-holes/         # Deep dives, mostly MDX (interactive widgets)
+data/                 # Shelf list for the rabbit holes (rabbit-hole-shelves.json)
 downloads/            # PDFs distributed at /downloads/
 ```
 
 Each file has YAML frontmatter that the site renderer reads. Look at
 neighboring files for the exact schema; do not invent new fields
 without coordinating first.
+
+## Rabbit-hole shelves
+
+The rabbit holes are grouped into shelves on `/rabbit-holes`. The
+shelves (id, label, one-line deck, order) live in
+`data/rabbit-hole-shelves.json`. Every rabbit hole needs:
+
+- **`category: <shelf id>`** - its primary shelf, for example
+  `category: how-it-works`. **Required, drafts included.** The build
+  fails if the id is missing or not in the shelf list.
+- **`alsoIn: ["<shelf id>"]`** - optional, up to two more shelves the
+  chapter is also listed on.
+- **`featured: true`** - optional. Featured chapters are linked from
+  the home page's shelf tiles. Only feature chapters that have been
+  through review.
+
+Shelf ids are the page anchors (`/rabbit-holes#money`), so never
+rename one after it has shipped; change its label instead.
+
+Journey chapters can list rabbit holes to read next with
+`goDeeper: ["<rabbit-hole slug>", ...]`.
 
 ## Publishing dates
 
