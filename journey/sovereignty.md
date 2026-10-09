@@ -6,6 +6,7 @@ status: live
 published: "2026-05-15"
 updated: "2026-10-09"
 order: 6
+goDeeper: ["bitcoin-privacy", "decentralization", "seed-backup-strategies"]
 estimatedMinutes: 45
 tagline: "Run your own node. Use multisig. Lock down your op-sec. Graduation: you don't ask anyone for permission to use Bitcoin."
 prerequisites: ["using-bitcoin"]

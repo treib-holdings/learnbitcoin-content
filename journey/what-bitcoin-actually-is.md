@@ -6,6 +6,7 @@ status: live
 published: "2026-05-15"
 updated: "2026-10-09"
 order: 2
+goDeeper: ["supply", "decentralization", "energy"]
 estimatedMinutes: 25
 tagline: "Not a stock. Not a company. Not a payment app. Bitcoin is a new kind of money - and the difference matters."
 prerequisites: ["why-money-is-broken"]

@@ -6,6 +6,7 @@ status: live
 published: "2026-05-15"
 updated: "2026-10-09"
 order: 3
+goDeeper: ["utxos", "mempool", "mining"]
 estimatedMinutes: 30
 tagline: "Blocks, transactions, mining, fees, UTXOs. The machinery, demystified, without skipping the parts that matter."
 prerequisites: ["what-bitcoin-actually-is"]

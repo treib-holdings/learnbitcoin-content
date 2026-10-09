@@ -6,6 +6,7 @@ status: live
 published: "2026-05-15"
 updated: "2026-10-09"
 order: 1
+goDeeper: ["supply", "halvings", "bitcoin-units"]
 estimatedMinutes: 22
 tagline: "Inflation isn't a force of nature. It's a policy. Once you see how fiat actually works, Bitcoin stops looking strange."
 prerequisites: []

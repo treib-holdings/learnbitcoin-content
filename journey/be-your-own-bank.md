@@ -6,6 +6,7 @@ updated: "2026-10-09"
 status: live
 published: "2026-05-15"
 order: 4
+goDeeper: ["mt-gox-ftx-graveyard", "seed-backup-strategies", "key-space"]
 estimatedMinutes: 35
 tagline: "If your keys live on an exchange, you don't own Bitcoin. You own an IOU. This chapter teaches you to own actual Bitcoin."
 prerequisites: ["how-bitcoin-works"]
