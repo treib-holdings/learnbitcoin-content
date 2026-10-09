@@ -2,6 +2,7 @@
 title: "Terms"
 heading: "The deal, in plain English."
 description: "Terms of use for LearnBitcoin.com. Short version: read it, share it, do not blame us if you mess up."
+published: "2026-05-14"
 ---
 
 The site exists to teach Bitcoin honestly. You can read it for free.

@@ -2,6 +2,7 @@
 title: "Privacy"
 heading: "Here is everything we know about you."
 description: "What data LearnBitcoin collects, who sees it, how long it lives. Short version: almost nothing."
+published: "2026-05-14"
 ---
 
 Short version: almost nothing.
