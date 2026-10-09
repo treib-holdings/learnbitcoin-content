@@ -1,0 +1,1805 @@
+[
+  {
+    "id": "2026-10-09-why-money-is-broken",
+    "date": "2026-10-09",
+    "page": "/journey/why-money-is-broken",
+    "title": "Why Money Is Broken",
+    "wrong": "The chapter said CPI had been re-weighted since the 1980s in ways that reduce the headline number, and that every fiat currency in history has lost most of its purchasing power. It also said Bitcoin has run without interruption since 2009, and four cells of its inflation table were miscalculated, so 5% inflation over 20 years showed a 64% loss instead of 62%.",
+    "fixed": "It cites the Bureau of Labor Statistics, which puts the effect of a 1999 method change at less than 0.3 percentage points a year and says a 1983 change in counting homeowners' costs at first made the index's shelter component rise faster. The claim is narrowed to the dollar since 1971, the table is recomputed, and the chapter notes the 2010 and 2013 software bugs that forced the network to throw out part of its record, each repaired within a day.",
+    "commit": "0bbe2f6",
+    "source": "https://www.bls.gov/cpi/factsheets/common-misconceptions-about-cpi.htm"
+  },
+  {
+    "id": "2026-10-09-what-bitcoin-actually-is-2",
+    "date": "2026-10-09",
+    "page": "/journey/what-bitcoin-actually-is",
+    "title": "What Bitcoin Actually Is",
+    "wrong": "The chapter presented the 21 million cap as part of the whitepaper and said Satoshi sent the paper to the cypherpunks mailing list as an attachment. It also said the network had one outage in its first eight months and none since, and that reversing a payment after six confirmations is effectively impossible.",
+    "fixed": "The paper, linked from an email to the Cryptography Mailing List, says only that a predetermined number of coins will enter circulation; Satoshi announced the 21 million total and four-year halvings with the software in January 2009. The chapter covers the 2010 inflation bug and the 2013 chain split, each repaired within a day, and gives an attacker with a tenth of the mining power about a 1-in-1,700 chance after six confirmations.",
+    "commit": "0bbe2f6",
+    "source": "https://www.metzdowd.com/pipermail/cryptography/2009-January/014994.html"
+  },
+  {
+    "id": "2026-10-09-what-bitcoin-actually-is",
+    "date": "2026-10-09",
+    "page": "/journey/what-bitcoin-actually-is",
+    "title": "What Bitcoin Actually Is",
+    "wrong": "The chapter dated the fourth halving to April 19, 2024, and said the last fractional satoshi will be mined around 2140.",
+    "fixed": "Block 840,000 was mined on April 20, 2024 (UTC). Bitcoin counts in whole satoshis, so the subsidy reaches exactly zero at block 6,930,000, around 2140.",
+    "commit": "1abeee5",
+    "source": "https://mempool.space/block/0000000000000000000320283a032748cef8227873ff4872689bf23f1cda83a5"
+  },
+  {
+    "id": "2026-10-09-wallet-import-format-wif",
+    "date": "2026-10-09",
+    "page": "/glossary/wallet-import-format-wif",
+    "title": "Wallet Import Format (WIF)",
+    "wrong": "The entry said BIP 38 encrypted private keys start with 'p2' and called them a passphrase-protected WIF. It also said importing a paper wallet's key into a modern wallet moves the coins to its HD addresses.",
+    "fixed": "BIP 38 keys start with '6P' and are a related format, separate from WIF. Sweeping the key is what moves the coins, in a new transaction to the wallet's HD-managed addresses.",
+    "commit": "375acfd",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0038.mediawiki"
+  },
+  {
+    "id": "2026-10-09-using-bitcoin",
+    "date": "2026-10-09",
+    "page": "/journey/using-bitcoin",
+    "title": "Using Bitcoin",
+    "wrong": "The chapter said a fee bump with RBF requires the original transaction to signal that it is replaceable, that a low-fee backlog usually clears within hours, and that Lightning payments complete in milliseconds.",
+    "fixed": "Since Bitcoin Core 28.0 (October 2024), nodes on default settings accept a higher-fee replacement without that signal, though a wallet may still refuse to bump a transaction that lacks it. From early November 2023 to mid-July 2024 every mempool.space reading showed a backlog bigger than a full day of blocks, and Lightning payments usually complete within seconds.",
+    "commit": "0bbe2f6",
+    "source": "https://bitcoincore.org/en/releases/28.0/"
+  },
+  {
+    "id": "2026-10-09-transaction-index-txindex",
+    "date": "2026-10-09",
+    "page": "/glossary/transaction-index-txindex",
+    "title": "Transaction Index (txindex)",
+    "wrong": "The entry compared the index's size with about 600 GB of archival block data.",
+    "fixed": "The archival block data came to about 775 GB as of October 2026.",
+    "commit": "94e823a",
+    "source": "https://www.blockchain.com/explorer/charts/blocks-size"
+  },
+  {
+    "id": "2026-10-09-transaction-finality",
+    "date": "2026-10-09",
+    "page": "/glossary/transaction-finality",
+    "title": "Transaction Finality",
+    "wrong": "The entry said an attacker's chance of reversing a payment falls off roughly as q^N, where q is the attacker's share of the hash rate and N the number of confirmations. By that formula a 10% attacker would have a 1 in a million chance after six. It also said 1-block reorgs happen a few times a year.",
+    "fixed": "Below half the hash rate, an attacker's chance shrinks exponentially with each confirmation. Meni Rosenfeld's 2012 analysis puts it at about 1 in 1,700 for a 10% attacker after six. One-block reorgs happened dozens of times a year from 2022 through 2025, and two-block reorgs were rare.",
+    "commit": "94e823a",
+    "source": "https://arxiv.org/abs/1402.2009"
+  },
+  {
+    "id": "2026-10-09-transaction-fee",
+    "date": "2026-10-09",
+    "page": "/glossary/transaction-fee",
+    "title": "Transaction Fee",
+    "wrong": "The entry said fees are about 3 to 10 percent of block reward revenue, and that next-block fees touched 500+ sat/vB during an early-2024 Ordinals surge.",
+    "fixed": "Fees were about 0.6 percent of miner revenue in the year to October 2026 (about 6.5 percent in 2024). The big 2024 spike came when the Runes protocol launched at the halving block on April 20, 2024, and the median fee rate in mined blocks averaged more than 1,000 sat/vB for several hours.",
+    "commit": "1abeee5",
+    "source": "https://mempool.space/api/v1/mining/reward-stats/52560"
+  },
+  {
+    "id": "2026-10-09-tracking-error",
+    "date": "2026-10-09",
+    "page": "/glossary/tracking-error",
+    "title": "Tracking Error",
+    "wrong": "The entry said NAV is struck at 4 PM London, listed WisdomTree's BTCW fee as 0.50% and VanEck's HODL as 0.25%, and said spread and slippage on cash creations and redemptions flow into the fund.",
+    "fixed": "NAV is struck as of 4:00 PM New York time. Per the funds' annual reports filed in 2026, BTCW charges 0.25% and HODL 0.20%. At the iShares Bitcoin Trust the authorized participant, not the fund, covers any shortfall when the fund's bitcoin trade comes in at a worse price than the one used for NAV.",
+    "commit": "94e823a",
+    "source": "https://www.sec.gov/Archives/edgar/data/1980994/000143774926006058/bit20251231_10k.htm"
+  },
+  {
+    "id": "2026-10-09-supply",
+    "date": "2026-10-09",
+    "page": "/rabbit-hole/supply",
+    "title": "The Supply Schedule",
+    "wrong": "The chapter gave the supply in the middle of the current era as 19,867,581 BTC, which does not match the schedule (about 20,015,625 BTC at that point), and said fees had been growing as a share of miner revenue for years. It also said the economics work out \"as long as Bitcoin is being used at all\".",
+    "fixed": "The schedule had issued 20,093,750 BTC through block 969,999 (October 5, 2026), for an inflation rate of about 0.82 percent a year. Fees were about 0.6 percent of miner revenue in the year to October 2026, and the chapter treats fee-funded security as an open question and adds the BIP 30 and BIP 42 history.",
+    "commit": "1abeee5",
+    "source": "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp"
+  },
+  {
+    "id": "2026-10-09-stale-block",
+    "date": "2026-10-09",
+    "page": "/glossary/stale-block",
+    "title": "Stale Block",
+    "wrong": "The entry said brief block-finding collisions that leave a block stale happen several times a year.",
+    "fixed": "Near-simultaneous finds leave dozens of stale blocks each year. The public bitcoin-data/stale-blocks dataset lists between 28 and 93 a year from 2022 through 2025.",
+    "commit": "94e823a",
+    "source": "https://github.com/bitcoin-data/stale-blocks"
+  },
+  {
+    "id": "2026-10-09-spot-bitcoin-etf",
+    "date": "2026-10-09",
+    "page": "/glossary/spot-bitcoin-etf",
+    "title": "Spot Bitcoin ETF",
+    "wrong": "The entry said the funds strike NAV against the CME CF Bitcoin Reference Rate at 4:00 PM London time, and put WisdomTree's BTCW fee at 0.50%.",
+    "fixed": "NAV is struck as of 4:00 PM New York time. Several funds, including the iShares Bitcoin Trust, use the New York variant of the CME CF Bitcoin Reference Rate, built from trades between 3:00 and 4:00 PM. BTCW charges 0.25%, inside the 0.19% to 0.25% range most funds give in their annual reports filed in 2026.",
+    "commit": "94e823a",
+    "source": "https://www.sec.gov/Archives/edgar/data/1980994/000143774926006058/bit20251231_10k.htm"
+  },
+  {
+    "id": "2026-10-09-sovereignty",
+    "date": "2026-10-09",
+    "page": "/journey/sovereignty",
+    "title": "Sovereignty",
+    "wrong": "The chapter said to keep the multisig wallet descriptor separate from any seed and never told readers to store it with their seed backups, though two seeds alone cannot rebuild a 2-of-3 wallet. It also gave about 700 GB of chain growing 50 GB a year, a few hundred MB of RAM, and a Raspberry Pi 5 with a 1 TB SSD that syncs in a day or two.",
+    "fixed": "It says to keep a copy of the descriptor with each seed backup, since it records all three public keys and can show the balance but cannot spend. The chain held about 775 GB as of October 2026 and grows about 80 GB a year, Bitcoin Core 31 asks for at least 870 GB of disk and uses a gigabyte or two of RAM, and the Pi 5 option has a 2 TB drive and a first sync of several days.",
+    "commit": "0bbe2f6",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0087.mediawiki"
+  },
+  {
+    "id": "2026-10-09-seed-backup-strategies",
+    "date": "2026-10-09",
+    "page": "/rabbit-hole/seed-backup-strategies",
+    "title": "Seed Backup Strategies",
+    "wrong": "The chapter said writing words 1 to 12 and 13 to 24 of a seed on separate papers \"drastically reduces the brute-force space\" of the missing half.",
+    "fixed": "For a 24-word seed the missing half still leaves about 2^124 possibilities, so the real problems are no redundancy and half the seed exposed to whoever finds one paper. Only a 12-word seed split the same way becomes weak, at about 2^62.",
+    "commit": "1abeee5",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"
+  },
+  {
+    "id": "2026-10-09-security",
+    "date": "2026-10-09",
+    "page": "/glossary/security",
+    "title": "Security",
+    "wrong": "The entry said Bitcoin had never had a double spend that overturned confirmed transactions.",
+    "fixed": "A confirmed payment was double spent during the March 2013 chain split, which a software bug made possible. BIP 50, the developers' write-up of that split, records at least one large double spend.",
+    "commit": "94e823a",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki"
+  },
+  {
+    "id": "2026-10-09-satoshi-nakamoto",
+    "date": "2026-10-09",
+    "page": "/glossary/satoshi-nakamoto",
+    "title": "Satoshi Nakamoto",
+    "wrong": "The entry said none of the roughly 1.1 million BTC that Satoshi mined had ever been spent.",
+    "fixed": "Researcher Sergio Lerner, who estimates Satoshi mined close to 1.1 million BTC in 2009 and early 2010, found in 2019 that 99.9% of those blocks' rewards were unspent. The best-known coins Satoshi did move are the 10 BTC from block 9's reward sent to Hal Finney in block 170 on January 12, 2009.",
+    "commit": "94e823a",
+    "source": "https://bitslog.com/2019/04/16/the-return-of-the-deniers-and-the-revenge-of-patoshi/"
+  },
+  {
+    "id": "2026-10-09-reward-era",
+    "date": "2026-10-09",
+    "page": "/glossary/reward-era",
+    "title": "Reward Era",
+    "wrong": "The entry called Bitcoin's issuance deflationary, labeled the whole first era as CPU mining, and listed era 33 as the era with zero subsidy.",
+    "fixed": "Issuance is disinflationary, GPU mining began in 2010, and era 33 (blocks 6,720,000 to 6,929,999) still pays 1 satoshi per block. The subsidy is zero from block 6,930,000, in era 34.",
+    "commit": "1abeee5",
+    "source": "https://en.bitcoin.it/wiki/History"
+  },
+  {
+    "id": "2026-10-09-revenue-ths",
+    "date": "2026-10-09",
+    "page": "/glossary/revenue-ths",
+    "title": "Revenue per TH/s",
+    "wrong": "The entry's 2026 example used about 0.3 BTC in fees per block and a 700 EH/s hash rate, giving $0.04 to $0.06 per TH/s per day, and it put the electricity cost of a 15 J/TH machine at $0.029 per day.",
+    "fixed": "With June to August 2026 averages, about 0.02 BTC in fees per block and about 910 EH/s, hashprice was about $0.03 per TH/s per day. A 15 J/TH machine uses about $0.018 of electricity per TH/s per day at $0.05/kWh.",
+    "commit": "1abeee5",
+    "source": "https://mempool.space/api/v1/mining/hashrate/all"
+  },
+  {
+    "id": "2026-10-09-pruning-mode",
+    "date": "2026-10-09",
+    "page": "/glossary/pruning-mode",
+    "title": "Pruning Mode",
+    "wrong": "The entry compared a pruned node's 15 to 25 GB with about 600 GB for a fully archival node.",
+    "fixed": "Bitcoin Core 31 estimates that a fully archival node needs at least 870 GB.",
+    "commit": "94e823a",
+    "source": "https://github.com/bitcoin/bitcoin/blob/31.x/src/kernel/chainparams.cpp"
+  },
+  {
+    "id": "2026-10-09-price-discovery",
+    "date": "2026-10-09",
+    "page": "/glossary/price-discovery",
+    "title": "Price Discovery",
+    "wrong": "The entry gave Coinbase's BTC-USD price, a single exchange's market, as an example of the multi-exchange reference rates that ETFs use as official prices.",
+    "fixed": "The examples are now the CME CF Bitcoin Reference Rate, its New York variant and the Fidelity Bitcoin Reference Rate. Fidelity's spot Bitcoin ETF tracks the last of these, which is built from prices on several spot markets.",
+    "commit": "94e823a",
+    "source": "https://www.sec.gov/Archives/edgar/data/1852317/000119312526071484/ck0001852317-20251231.htm"
+  },
+  {
+    "id": "2026-10-09-poisson-process",
+    "date": "2026-10-09",
+    "page": "/glossary/poisson-process",
+    "title": "Poisson Process",
+    "wrong": "The entry said the wait for a block runs past an hour a few times a year.",
+    "fixed": "About 0.25% of blocks take over an hour at a 10-minute average, which is roughly 130 a year, or two or three a week.",
+    "commit": "94e823a"
+  },
+  {
+    "id": "2026-10-09-p2wpkh-pay-witness-public-key-hash",
+    "date": "2026-10-09",
+    "page": "/glossary/p2wpkh-pay-witness-public-key-hash",
+    "title": "P2WPKH (Pay to Witness Public Key Hash)",
+    "wrong": "The entry said P2WPKH was the main format for new addresses only until about 2023, and that by 2026 many wallets had moved their defaults to Taproot for further fee savings. It also called single-use P2WPKH addresses quantum-safe.",
+    "fixed": "P2WPKH has been Bitcoin Core's default address type since version 0.20.0 in 2020. In September 2026 it made up about 53% of new outputs, against about 5% for Taproot, and for single-key use Taproot's fees come out about even with P2WPKH. The hashed key gives some cover against a future quantum computer, but only until the first spend reveals the key.",
+    "commit": "94e823a",
+    "source": "https://mainnet.observer/charts/output-type-distribution-count/"
+  },
+  {
+    "id": "2026-10-09-orphan-block",
+    "date": "2026-10-09",
+    "page": "/glossary/orphan-block",
+    "title": "Orphan Block",
+    "wrong": "The entry said two miners finding a block at almost the same moment, which briefly splits the network, happens a few times a year on average.",
+    "fixed": "Near-simultaneous finds that briefly split the network happen dozens of times a year. The public bitcoin-data/stale-blocks dataset counts between 28 and 93 stale blocks a year from 2022 through 2025.",
+    "commit": "94e823a",
+    "source": "https://github.com/bitcoin-data/stale-blocks"
+  },
+  {
+    "id": "2026-10-09-ordinals",
+    "date": "2026-10-09",
+    "page": "/glossary/ordinals",
+    "title": "Ordinals",
+    "wrong": "The entry called the last satoshi ever mined the 100-trillionth, which did not match the full number printed beside it (about 2.1 quadrillion). It also said a Legendary sat comes every four halvings.",
+    "fixed": "The last satoshi, due around 2140, will be ordinal 2,099,999,997,689,999. A Legendary sat is the first one of each cycle of six halvings, when a halving and a difficulty adjustment fall on the same block.",
+    "commit": "94e823a",
+    "source": "https://docs.ordinals.com/overview.html"
+  },
+  {
+    "id": "2026-10-09-nonce",
+    "date": "2026-10-09",
+    "page": "/glossary/nonce",
+    "title": "Nonce",
+    "wrong": "The entry said modern mining ASICs compute about 100 trillion hashes per second per chip.",
+    "fixed": "Speeds like that belong to a whole mining machine, which is built from many ASIC chips. One machine released in 2024 is rated at 234 trillion hashes per second.",
+    "commit": "94e823a",
+    "source": "https://support.bitmain.com/hc/en-us/articles/31321354157593-S21-Pro-Specification"
+  },
+  {
+    "id": "2026-10-09-node-synchronization",
+    "date": "2026-10-09",
+    "page": "/glossary/node-synchronization",
+    "title": "Node Synchronization",
+    "wrong": "The entry said a new node downloads around 600 GB of blocks, and that pruning cuts disk use to a few GB.",
+    "fixed": "The block data came to about 775 GB as of October 2026. At the prune setting its desktop app suggests, Bitcoin Core 31 estimates a pruned node at about 16 GB.",
+    "commit": "94e823a",
+    "source": "https://www.blockchain.com/explorer/charts/blocks-size"
+  },
+  {
+    "id": "2026-10-09-node-headcount",
+    "date": "2026-10-09",
+    "page": "/glossary/node-headcount",
+    "title": "Node Headcount",
+    "wrong": "The entry's key points said node counts miss Tor-only setups, and the entry said scanners such as Bitnodes sweep the IPv4 and IPv6 address space.",
+    "fixed": "Crawlers such as Bitnodes start from a few seed nodes, keep asking peers for more addresses, and count every IPv4, IPv6, Tor and I2P node that accepts inbound connections. Of the 25,514 reachable nodes Bitnodes counted on October 9, 2026, about half were Tor addresses.",
+    "commit": "94e823a",
+    "source": "https://btcnodes.io/nodes/"
+  },
+  {
+    "id": "2026-10-09-nav-net-asset-value",
+    "date": "2026-10-09",
+    "page": "/glossary/nav-net-asset-value",
+    "title": "NAV (Net Asset Value)",
+    "wrong": "The entry said US spot Bitcoin ETFs strike NAV daily at 4:00 PM London time, using the CME CF Bitcoin Reference Rate.",
+    "fixed": "US spot Bitcoin ETFs strike NAV as of 4:00 PM New York time. Several, including the iShares Bitcoin Trust, use the New York variant of the CME CF Bitcoin Reference Rate, which measures trades from 3:00 to 4:00 PM New York. Others use different benchmarks, such as the Fidelity Bitcoin Reference Rate.",
+    "commit": "94e823a",
+    "source": "https://www.sec.gov/Archives/edgar/data/1980994/000143774926006058/bit20251231_10k.htm"
+  },
+  {
+    "id": "2026-10-09-native-segwit",
+    "date": "2026-10-09",
+    "page": "/glossary/native-segwit",
+    "title": "Native SegWit",
+    "wrong": "The entry put native SegWit's saving over wrapped SegWit at roughly 10-15%, said Taproot adds slightly more savings, and said native SegWit has identical security properties.",
+    "fixed": "A native SegWit input takes about 68 vbytes against about 91 wrapped (roughly 25% less), and a simple one-input, two-output payment about 141 against 166 (roughly 15% less). For a single-key wallet, Taproot's fees come out about even. The script version, P2WSH, uses a 32-byte hash where P2SH uses 20 bytes, because BIP 141's authors judged that finding two scripts with the same 20-byte hash was within reach.",
+    "commit": "375acfd",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki"
+  },
+  {
+    "id": "2026-10-09-multisig",
+    "date": "2026-10-09",
+    "page": "/glossary/multisig",
+    "title": "Multisig",
+    "wrong": "The entry said classical multisig is capped at 15 cosigners by the design of the OP_CHECKMULTISIG opcode, and that an attacker has to compromise two keys of a 2-of-3 at the same time.",
+    "fixed": "The opcode accepts up to 20 keys. P2SH tops out at 15 compressed keys because its whole script has to fit in one 520-byte data element, P2WSH allows the full 20, and Taproot script paths use OP_CHECKSIGADD, which lifts the 20-key cap. A key stolen months earlier still counts toward the two unless the funds have moved to new keys.",
+    "commit": "375acfd",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0383.mediawiki"
+  },
+  {
+    "id": "2026-10-09-mt-gox-ftx-graveyard",
+    "date": "2026-10-09",
+    "page": "/rabbit-hole/mt-gox-ftx-graveyard",
+    "title": "Mt. Gox to FTX: The Custody Graveyard",
+    "wrong": "The chapter said Mt. Gox creditors did not start getting repaid until July 2024.",
+    "fixed": "The Mt. Gox trustee began paying some creditors in yen at the end of 2023. Repayments in bitcoin started in July 2024, more than ten years after the collapse.",
+    "commit": "94e823a",
+    "source": "https://www.theblock.co/post/269212/mt-gox-reportedly-starts-repaying-some-creditors-via-paypal"
+  },
+  {
+    "id": "2026-10-09-mt-gox",
+    "date": "2026-10-09",
+    "page": "/glossary/mt-gox",
+    "title": "Mt. Gox",
+    "wrong": "The entry said creditor repayments began in July 2024, more than a decade after the collapse.",
+    "fixed": "Repayments in yen began at the end of 2023, and repayments in bitcoin started in July 2024, more than ten years after the collapse.",
+    "commit": "94e823a",
+    "source": "https://www.theblock.co/post/269212/mt-gox-reportedly-starts-repaying-some-creditors-via-paypal"
+  },
+  {
+    "id": "2026-10-09-mnemonic-entropy-bits",
+    "date": "2026-10-09",
+    "page": "/glossary/mnemonic-entropy-bits",
+    "title": "Mnemonic Entropy Bits",
+    "wrong": "The entry said Grover's algorithm would cut a 12-word seed to about 64-bit security, \"the edge of expensive but doable\", and pointed to 24 words as the defense. It also said a wrong word would \"almost certainly\" fail the checksum.",
+    "fixed": "Grover's steps have to run largely one after another, which NIST calls difficult in practice, and the bigger quantum risk is Shor's algorithm against exposed public keys, which a longer seed does not help with. The checksum catches a wrong word about 15 times in 16 for a 12-word seed and 255 times in 256 for a 24-word seed.",
+    "commit": "1abeee5",
+    "source": "https://csrc.nist.gov/CSRC/media/Projects/Post-Quantum-Cryptography/documents/call-for-proposals-final-dec-2016.pdf"
+  },
+  {
+    "id": "2026-10-09-mining-subsidy",
+    "date": "2026-10-09",
+    "page": "/glossary/mining-subsidy",
+    "title": "Mining Subsidy",
+    "wrong": "The entry gave 2026 issuance as about 0.83% a year against \"the ~19.7M circulating\", and its table labeled the zero-subsidy period era 33, which by the table's own numbering is the last era that still pays 1 satoshi.",
+    "fixed": "About 20.1 million BTC had been issued by October 2026, for about 0.82% a year. Era 33 (blocks 6,720,000 to 6,929,999) pays 1 satoshi per block, and the subsidy is zero from block 6,930,000.",
+    "commit": "1abeee5",
+    "source": "https://github.com/bitcoin/bitcoin/blob/4bacf21a13c2ed25ef9362ca38f26bf0a67d22c9/src/validation.cpp#L1833-L1844"
+  },
+  {
+    "id": "2026-10-09-mining-pool",
+    "date": "2026-10-09",
+    "page": "/glossary/mining-pool",
+    "title": "Mining Pool",
+    "wrong": "The entry said a miner with 0.1% of the global hash rate would find a block about every 70 days on average.",
+    "fixed": "At 0.1% the average is about one block a week. The example now uses 0.01%, which works out to about one block every 70 days, with some quarters bringing three blocks and some none.",
+    "commit": "94e823a"
+  },
+  {
+    "id": "2026-10-09-mining-2",
+    "date": "2026-10-09",
+    "page": "/glossary/mining",
+    "title": "Mining",
+    "wrong": "The entry put the global hash rate at around 700 EH/s and each block at about 4 x 10^23 hash attempts.",
+    "fixed": "The hash rate averaged about 910 EH/s from June to August 2026, which works out to about 5 x 10^23 attempts per block.",
+    "commit": "1abeee5",
+    "source": "https://mempool.space/api/v1/mining/hashrate/all"
+  },
+  {
+    "id": "2026-10-09-mining",
+    "date": "2026-10-09",
+    "page": "/rabbit-hole/mining",
+    "title": "Mining",
+    "wrong": "The chapter said, as plain fact, that fee revenue will grow to take the subsidy's place in the 2030s and beyond, and that the US is the largest mining country, without a source or date.",
+    "fixed": "It calls fees replacing the subsidy a hope and an open question. The US accounted for about 75% of the mining activity reported in Cambridge's April 2025 survey of 49 firms.",
+    "commit": "1abeee5",
+    "source": "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/"
+  },
+  {
+    "id": "2026-10-09-merkle-block",
+    "date": "2026-10-09",
+    "page": "/glossary/merkle-block",
+    "title": "Merkle Block",
+    "wrong": "The entry said BIP 37 did not anticipate the privacy leak from Bloom filters when it was written in 2012, and that most modern mobile wallets, Phoenix and Mutiny among them, use the newer compact block filters.",
+    "fixed": "BIP 37 expected clients to hide their addresses by choosing a looser filter at the cost of extra bandwidth. A 2014 study found that a wallet using fewer than 20 addresses could still reveal almost all of them. Phoenix and Mutiny never used compact block filters, and the entry now says only that some mobile wallets do.",
+    "commit": "94e823a",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki"
+  },
+  {
+    "id": "2026-10-09-mainnet",
+    "date": "2026-10-09",
+    "page": "/glossary/mainnet",
+    "title": "Mainnet",
+    "wrong": "The entry said mainnet is secured by about 700 EH/s of hash power, an out-of-date figure.",
+    "fixed": "Mainnet averaged about 910 EH/s from June to August 2026.",
+    "commit": "1abeee5",
+    "source": "https://mempool.space/api/v1/mining/hashrate/all"
+  },
+  {
+    "id": "2026-10-09-m-n",
+    "date": "2026-10-09",
+    "page": "/glossary/m-n",
+    "title": "M-of-n",
+    "wrong": "The entry said legacy multisig hard-caps at 15 cosigners because of the OP_CHECKMULTISIG opcode, and that MuSig2 or FROST aggregation hides any M-of-N structure on chain.",
+    "fixed": "The opcode accepts up to 20 keys, the 15-key cap applies only inside P2SH, P2WSH allows 20, and Bitcoin Core's Taproot multi_a descriptor allows up to 999. MuSig2 hides the structure only when all N cosigners sign, and FROST, which covers any M of N, is still a draft BIP as of October 2026.",
+    "commit": "375acfd",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0383.mediawiki"
+  },
+  {
+    "id": "2026-10-09-longest-chain-rule-2",
+    "date": "2026-10-09",
+    "page": "/glossary/longest-chain-rule",
+    "title": "Longest Chain Rule",
+    "wrong": "The entry said only an attacker with more than half of the hash rate could overturn a transaction with six confirmations.",
+    "fixed": "Smaller attackers can too, with odds that fall as more blocks are added. By Meni Rosenfeld's 2012 analysis, an attacker mining in secret with 10% of the hash rate would succeed about once in 1,700 attempts, and one with 30% about once in six. Only an attacker with more than half can count on it.",
+    "commit": "94e823a",
+    "source": "https://arxiv.org/abs/1402.2009"
+  },
+  {
+    "id": "2026-10-09-longest-chain-rule",
+    "date": "2026-10-09",
+    "page": "/glossary/longest-chain-rule",
+    "title": "Longest Chain Rule",
+    "wrong": "The entry put Bitcoin's hash rate at about 700 EH/s, an out-of-date figure.",
+    "fixed": "The hash rate averaged about 910 EH/s from June to August 2026.",
+    "commit": "1abeee5",
+    "source": "https://mempool.space/api/v1/mining/hashrate/all"
+  },
+  {
+    "id": "2026-10-09-lightning-node",
+    "date": "2026-10-09",
+    "page": "/glossary/lightning-node",
+    "title": "Lightning Node",
+    "wrong": "The entry said eclair powers the Phoenix mobile wallet, listed Phoenix among custodial wallets, and named Mutiny (shut down in 2024) and Mercury Layer as LDK users, though LDK's own case studies list neither. It also said only weeks of downtime start to cause problems.",
+    "fixed": "Phoenix is a self-custodial wallet built on lightning-kmp, a separate ACINQ implementation, and LDK's case studies list users such as Cash App, Bitkit and Alby Hub. If a peer broadcasts an old channel state, a node offline past the channel's dispute window can lose funds. LND sets that window by default at about a day to two weeks, depending on channel size, and payments forwarded through a node have shorter deadlines, often a matter of hours.",
+    "commit": "375acfd",
+    "source": "https://github.com/ACINQ/phoenix"
+  },
+  {
+    "id": "2026-10-09-lightning-network-daemon-lnd",
+    "date": "2026-10-09",
+    "page": "/glossary/lightning-network-daemon-lnd",
+    "title": "Lightning Network Daemon (lnd)",
+    "wrong": "The entry said Eclair is optimized for mobile and powers the Phoenix wallet, and named Mutiny, which shut down in 2024, as an LDK user. It also called LND's watchtowers eltoo-style, after a channel design that would need a change to Bitcoin's rules.",
+    "fixed": "Eclair is aimed at servers such as routing nodes, and ACINQ's mobile wallet runs on lightning-kmp, a separate ACINQ implementation. An LND node can run a watchtower for others or hand one encrypted penalty transactions for its own channels, so a cheating partner can still be punished while the node is offline.",
+    "commit": "94e823a",
+    "source": "https://github.com/ACINQ/lightning-kmp"
+  },
+  {
+    "id": "2026-10-09-lightning-network",
+    "date": "2026-10-09",
+    "page": "/glossary/lightning-network",
+    "title": "Lightning Network",
+    "wrong": "The entry's note on BOLT 12 offers said they support recurring payments.",
+    "fixed": "Offers were merged into the Lightning specification in September 2024 without the built-in recurring payments of earlier drafts. An offer can be reused because each payer's wallet uses it to ask for a fresh invoice.",
+    "commit": "94e823a",
+    "source": "https://github.com/lightning/bolts/blob/master/12-offer-encoding.md"
+  },
+  {
+    "id": "2026-10-09-lightning-invoice",
+    "date": "2026-10-09",
+    "page": "/glossary/lightning-invoice",
+    "title": "Lightning Invoice",
+    "wrong": "The entry called an invoice's description optional, presented proof of payment as something each routing node gets without naming the payer, and said BOLT 12 offers support recurring payments.",
+    "fixed": "BOLT 11 requires every invoice to carry a short description or a hash of a longer one, and the preimage the payer ends up holding is its proof of payment. Offers were merged into the spec in September 2024 without the recurring payments that earlier drafts included.",
+    "commit": "375acfd",
+    "source": "https://github.com/lightning/bolts/blob/master/11-payment-encoding.md"
+  },
+  {
+    "id": "2026-10-09-lightning-channel-splicing",
+    "date": "2026-10-09",
+    "page": "/glossary/lightning-channel-splicing",
+    "title": "Lightning Channel Splicing",
+    "wrong": "The entry said splicing reached production in 2024, implemented in Phoenix and Core Lightning through a BOLT extension.",
+    "fixed": "ACINQ added splicing to eclair in April 2023 and to its mobile wallet that July. Core Lightning shipped an experimental version in August 2023 and LDK completed its support in August 2025. Splicing was merged into the Lightning specification in March 2026.",
+    "commit": "94e823a",
+    "source": "https://bitcoinops.org/en/topics/splicing/"
+  },
+  {
+    "id": "2026-10-09-lightning-channel",
+    "date": "2026-10-09",
+    "page": "/glossary/lightning-channel",
+    "title": "Lightning Channel",
+    "wrong": "The entry opened by saying both parties lock funds into a channel's shared output, and its walkthrough mentioned funding by one side only as a variant.",
+    "fixed": "Usually the side that opens a channel puts up all of the bitcoin. A newer option, dual funding, lets the other side add funds too.",
+    "commit": "94e823a",
+    "source": "https://github.com/lightning/bolts/blob/master/02-peer-protocol.md"
+  },
+  {
+    "id": "2026-10-09-lightning-anchor-commitment",
+    "date": "2026-10-09",
+    "page": "/glossary/lightning-anchor-commitment",
+    "title": "Lightning Anchor Commitment",
+    "wrong": "The entry said a channel's commitment transaction is pre-signed when the channel opens, that anchor outputs became standard in the BOLT specs around 2021-2022, and that force-closes during fee storms work reliably.",
+    "fixed": "Both sides sign a fresh commitment every time the channel balance changes. Anchors entered the spec in 2020 and became LND's default in June 2021, and force-closes are far more reliable, though they depend on the node having on-chain bitcoin for the fee bump and can still be hit by pinning attacks.",
+    "commit": "375acfd",
+    "source": "https://bitcoinops.org/en/topics/anchor-outputs/"
+  },
+  {
+    "id": "2026-10-09-key-space",
+    "date": "2026-10-09",
+    "page": "/rabbit-hole/key-space",
+    "title": "Key Space",
+    "wrong": "The chapter said the number of possible keys is bigger than the number of atoms in the observable universe \"by many orders of magnitude\", and that a 256-bit key doubles the strength of AES-128. It also named Grover's algorithm as the quantum threat to keys, and its brute-force example did not state how many computers it assumed.",
+    "fixed": "At about 1.2 x 10^77, the key space is smaller than every estimate of the atom count (10^78 to 10^82), and a 256-bit elliptic-curve key gives about 128-bit security, the same class as AES-128. The quantum threat to keys is Shor's algorithm, and the brute-force example spells out its fleet of 10 billion computers.",
+    "commit": "1abeee5",
+    "source": "https://www.secg.org/sec2-v2.pdf"
+  },
+  {
+    "id": "2026-10-09-inscriptions",
+    "date": "2026-10-09",
+    "page": "/glossary/inscriptions",
+    "title": "Inscriptions",
+    "wrong": "The entry said Casey Rodarmor introduced inscriptions in January 2023, and that inscription demand has been a major driver of fee levels since 2023.",
+    "fixed": "The first inscription was confirmed in block 767,430 on December 14, 2022, and inscribing caught on in the first months of 2023. The fee effect is dated to 2023, when Glassnode estimated that text inscriptions paid between 30% and 60% of all transaction fees during the May wave.",
+    "commit": "375acfd",
+    "source": "https://mempool.space/tx/6fb976ab49dcec017f1e201e84395983204ae1a7c2abf7ced0a85d692e442799"
+  },
+  {
+    "id": "2026-10-09-inflation-bug-postmortem",
+    "date": "2026-10-09",
+    "page": "/rabbit-hole/inflation-bug-postmortem",
+    "title": "The Inflation Bug Postmortem",
+    "wrong": "The chapter said Pieter Wuille noticed the BIP 42 bug in 2014 and that after enough halvings the subsidy would \"wrap around to a large positive value\".",
+    "fixed": "A developer called ditto-b opened the fix as a pull request in March 2014, BIP 42 credits Gregory Maxwell with proposing it, and Wuille wrote the BIP. At the 64th halving the bit shift becomes undefined in C++, and on the platforms Bitcoin Core supported in 2014 the subsidy would have jumped back to 50 BTC.",
+    "commit": "1abeee5",
+    "source": "https://github.com/bitcoin/bitcoin/pull/3842"
+  },
+  {
+    "id": "2026-10-09-inflation",
+    "date": "2026-10-09",
+    "page": "/glossary/inflation",
+    "title": "Inflation",
+    "wrong": "The entry put Bitcoin's circulating supply at about 19.9 million BTC, which was out of date; the schedule passed 20 million in March 2026.",
+    "fixed": "The schedule had issued 20,093,750 BTC through block 969,999 (October 5, 2026), for a rate of about 0.82 percent a year, roughly half the 1.5 to 1.7 percent growth in gold's above-ground stock in 2025.",
+    "commit": "1abeee5",
+    "source": "https://mempool.space/block/000000000000000000001d95e5f7284cb199b8620eb6a7938dd9696f85751bb3"
+  },
+  {
+    "id": "2026-10-09-how-bitcoin-works",
+    "date": "2026-10-09",
+    "page": "/journey/how-bitcoin-works",
+    "title": "How Bitcoin Works",
+    "wrong": "The confirmations table said it showed a 30% attacker, but its odds fit no standard model and fell to 0.025% after six confirmations. The chapter also called difficulty adjustments exact, put the chain at about 600 GB, and said rewriting old history would take as long as the chain has been running.",
+    "fixed": "The table uses Meni Rosenfeld's 2012 figures for a 10% attacker, about 0.06% (1 in 1,700) after six confirmations, and says a 30% attacker still has about a 16% chance after six. One difficulty adjustment is capped at a factor of four either way, the chain is about 775 GB as of October 2026, and redoing all of its work would keep every mining machine busy for a little over three years at October 2026 hash rates.",
+    "commit": "0bbe2f6",
+    "source": "https://arxiv.org/abs/1402.2009"
+  },
+  {
+    "id": "2026-10-09-hidden-miner-tax",
+    "date": "2026-10-09",
+    "page": "/glossary/hidden-miner-tax",
+    "title": "Hidden Miner Tax",
+    "wrong": "The entry said issuance is \"asymptoting to zero by 2140\".",
+    "fixed": "Issuance stops completely at block 6,930,000, around 2140. The rate was about 0.82 percent a year as of October 2026.",
+    "commit": "1abeee5",
+    "source": "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp"
+  },
+  {
+    "id": "2026-10-09-hash-rate",
+    "date": "2026-10-09",
+    "page": "/glossary/hash-rate",
+    "title": "Hash Rate",
+    "wrong": "The entry put the hash rate at about 700 EH/s \"as of mid-2026\", said it had grown 13 orders of magnitude since 2009, and said a brief reorg attack would cost billions of dollars a day.",
+    "fixed": "The June to August 2026 average was about 910 EH/s, and growth since 2009 is about 14 orders of magnitude. The unsourced cost figure was replaced with what an attacker would actually need, more mining hardware than every other miner combined.",
+    "commit": "1abeee5",
+    "source": "https://mempool.space/api/v1/mining/hashrate/all"
+  },
+  {
+    "id": "2026-10-09-hash",
+    "date": "2026-10-09",
+    "page": "/glossary/hash",
+    "title": "Hash",
+    "wrong": "The entry said addresses are hashes of public keys, which keeps the public key private until you spend.",
+    "fixed": "Most addresses are hashes of a public key or a script, which keeps the key or script private until you spend. Taproot addresses carry a public key directly instead of a hash of one.",
+    "commit": "94e823a",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki"
+  },
+  {
+    "id": "2026-10-09-halvings",
+    "date": "2026-10-09",
+    "page": "/rabbit-hole/halvings",
+    "title": "Halvings",
+    "wrong": "The chapter said five halvings had happened, dated the fourth to April 19, 2024, and credited ordinals and inscriptions for that block's fees. It also projected rising fee shares into the 2030s and said the trend so far fit the idea of fees replacing the subsidy.",
+    "fixed": "There have been four halvings; block 840,000 was mined at 00:09 UTC on April 20, 2024, and most of its 37.6 BTC in fees came from Runes, which launched at that block. Fees were about 0.6 percent of miner revenue in the year to October 2026, so the projections were removed and the chapter calls fee-funded security an open question.",
+    "commit": "1abeee5",
+    "source": "https://mempool.space/block/0000000000000000000320283a032748cef8227873ff4872689bf23f1cda83a5"
+  },
+  {
+    "id": "2026-10-09-halving-halvening",
+    "date": "2026-10-09",
+    "page": "/glossary/halving-halvening",
+    "title": "Halving (Halvening)",
+    "wrong": "The entry said the network had weathered five halvings.",
+    "fixed": "As of October 2026 there have been four, in 2012, 2016, 2020 and 2024.",
+    "commit": "1abeee5",
+    "source": "https://mempool.space/block/0000000000000000000320283a032748cef8227873ff4872689bf23f1cda83a5"
+  },
+  {
+    "id": "2026-10-09-hal-finneys-running-bitcoin",
+    "date": "2026-10-09",
+    "page": "/glossary/hal-finneys-running-bitcoin",
+    "title": "Hal Finney's Running Bitcoin",
+    "wrong": "The entry said Bitcoin Core v0.1 was posted to the cypherpunks mailing list and that Hal Finney received block 70's reward of 10 BTC from Satoshi. It also said his coins, roughly 200,000 BTC or more, had never moved. We found no source for that figure.",
+    "fixed": "Satoshi announced Bitcoin v0.1 on the Cryptography Mailing List on January 8, 2009, and sent Hal 10 BTC in block 170 on January 12. In a 2013 forum post, Hal wrote that he mined several blocks in the first days and later moved his coins to an offline wallet for his heirs.",
+    "commit": "94e823a",
+    "source": "https://mempool.space/tx/f4184fc596403b9d638783cf57adfe4c75c605f6356fbc91338530e9831e9e16"
+  },
+  {
+    "id": "2026-10-09-grovers-algorithm",
+    "date": "2026-10-09",
+    "page": "/glossary/grovers-algorithm",
+    "title": "Grover's Algorithm",
+    "wrong": "The entry said that finding a public key behind a P2PKH or P2WPKH address with Grover's algorithm would still face about 2^128 security, and that Aggarwal et al. found mining resistant to quantum speedup \"over a multi-decade horizon\".",
+    "fixed": "For a 160-bit hash Grover's algorithm needs about 2^80 steps, which have to run largely in sequence. The 2017 paper's forecast covered the next 10 years, roughly 2017 to 2027.",
+    "commit": "1abeee5",
+    "source": "https://arxiv.org/abs/1710.10377"
+  },
+  {
+    "id": "2026-10-09-full-rbf",
+    "date": "2026-10-09",
+    "page": "/glossary/full-rbf",
+    "title": "Full RBF",
+    "wrong": "The entry said Bitcoin Core made full RBF its default in version 26 (late 2023), and its summary still called full RBF a proposal.",
+    "fixed": "Bitcoin Core added full RBF as an option in version 24 (late 2022), made it the default in 28.0 (October 2024) and removed the option in 29.0 (April 2025). Every Core node from 29.0 on runs full RBF.",
+    "commit": "94e823a",
+    "source": "https://bitcoincore.org/en/releases/28.0/"
+  },
+  {
+    "id": "2026-10-09-full-node",
+    "date": "2026-10-09",
+    "page": "/glossary/full-node",
+    "title": "Full Node",
+    "wrong": "The entry said a full node needs about 600 GB of disk for the chain, growing by about 150 GB a year.",
+    "fixed": "The chain came to about 775 GB of block data as of October 2026 and grows by roughly 80 GB a year. Bitcoin Core 31's setup screen asks for at least 870 GB.",
+    "commit": "94e823a",
+    "source": "https://www.blockchain.com/explorer/charts/blocks-size"
+  },
+  {
+    "id": "2026-10-09-fork-detection",
+    "date": "2026-10-09",
+    "page": "/glossary/fork-detection",
+    "title": "Fork Detection",
+    "wrong": "The entry said routine reorgs of one or two blocks happen a few times a year.",
+    "fixed": "Near-simultaneous block finds leave dozens of stale blocks each year. The public bitcoin-data/stale-blocks dataset counts between 28 and 93 a year from 2022 through 2025, and reorgs two blocks deep are rare.",
+    "commit": "94e823a",
+    "source": "https://github.com/bitcoin-data/stale-blocks"
+  },
+  {
+    "id": "2026-10-09-fee-rate-escalation",
+    "date": "2026-10-09",
+    "page": "/glossary/fee-rate-escalation",
+    "title": "Fee Rate Escalation",
+    "wrong": "The entry put the April 2024 fee spike down to the halving, saying fees rose as miners' subsidy income dropped.",
+    "fixed": "The spike came from the launch of the Runes token protocol, which switched on at block 840,000, the same block as the halving. Two blocks later the median fee rate in mined blocks passed 500 sat/vB, and it stayed above that for nearly 11 hours straight.",
+    "commit": "94e823a",
+    "source": "https://docs.ordinals.com/runes/specification.html"
+  },
+  {
+    "id": "2026-10-09-fee-bumping",
+    "date": "2026-10-09",
+    "page": "/glossary/fee-bumping",
+    "title": "Fee Bumping",
+    "wrong": "The entry said RBF requires the original transaction to signal that it can be replaced, with full RBF as an exception, and told senders whose transaction didn't signal to use CPFP or wait.",
+    "fixed": "Since Bitcoin Core 28.0 (October 2024), Core nodes on default settings run full RBF and accept a replacement whether or not the original signaled. A wallet may still refuse to bump a transaction that didn't signal; Bitcoin Core's own wallet did until 30.0 (October 2025).",
+    "commit": "94e823a",
+    "source": "https://bitcoincore.org/en/releases/28.0/"
+  },
+  {
+    "id": "2026-10-09-elliptic-curve",
+    "date": "2026-10-09",
+    "page": "/glossary/elliptic-curve",
+    "title": "Elliptic Curve",
+    "wrong": "The entry listed Taproot, along with P2WPKH, as an address type that keeps the public key hidden until the coins are spent, which gives some protection against a future quantum computer. A caveat added in June 2026 still called Taproot only a partial exception.",
+    "fixed": "Taproot gives none of that protection, because a Taproot address holds the tweaked public key itself, with no hash in front. The entry now gives P2WPKH as the example of a type that keeps the key hashed until the coins are spent.",
+    "commit": "94e823a",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki"
+  },
+  {
+    "id": "2026-10-09-double-spend",
+    "date": "2026-10-09",
+    "page": "/glossary/double-spend",
+    "title": "Double Spend",
+    "wrong": "The entry said reversing a payment after six confirmations would take more than half the global hash rate, and that even a sustained majority would succeed only some of the time.",
+    "fixed": "A smaller attacker can still succeed, with odds that shrink with each confirmation. Meni Rosenfeld's 2012 analysis puts the chance after six confirmations at about 1 in 1,700 for an attacker with 10% of the hash rate and about 1 in 6 for one with 30%. An attacker with more than half is sure to win eventually.",
+    "commit": "94e823a",
+    "source": "https://arxiv.org/abs/1402.2009"
+  },
+  {
+    "id": "2026-10-09-double-blind-marketplace",
+    "date": "2026-10-09",
+    "page": "/glossary/double-blind-marketplace",
+    "title": "Double-Blind Marketplace",
+    "wrong": "The entry listed AgoraDesk, a peer-to-peer trading site, among the Bitcoin-native double-blind marketplaces running in 2026.",
+    "fixed": "AgoraDesk wound down in 2024 and its site has been taken offline, so the entry no longer lists it.",
+    "commit": "94e823a"
+  },
+  {
+    "id": "2026-10-09-disinflation",
+    "date": "2026-10-09",
+    "page": "/glossary/disinflation",
+    "title": "Disinflation",
+    "wrong": "The entry said Bitcoin's inflation rate reaches zero \"asymptotically\".",
+    "fixed": "Issuance reaches exactly zero at block 6,930,000, around 2140, because the subsidy is counted in whole satoshis.",
+    "commit": "1abeee5",
+    "source": "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp"
+  },
+  {
+    "id": "2026-10-09-discard-threshold",
+    "date": "2026-10-09",
+    "page": "/glossary/discard-threshold",
+    "title": "Discard Threshold",
+    "wrong": "The entry said mempool.space's next-block fee estimate shows the discard threshold, and gave about 1 sat/vB as the floor in calm periods.",
+    "fixed": "mempool.space shows the mempool's fee floor on its dashboard as 'Minimum fee', relabeled 'Purging' once its node starts evicting transactions. The next-block estimate is a separate rate that never drops below that floor. Bitcoin Core 29.1 (September 2025) lowered the default relay minimum from 1 to 0.1 sat/vB.",
+    "commit": "94e823a",
+    "source": "https://github.com/mempool/mempool/blob/master/frontend/src/app/dashboard/dashboard.component.html"
+  },
+  {
+    "id": "2026-10-09-difficulty",
+    "date": "2026-10-09",
+    "page": "/glossary/difficulty",
+    "title": "Difficulty",
+    "wrong": "The entry said the network had adjusted difficulty roughly 400 times and that difficulty had grown by 13 orders of magnitude since the genesis block.",
+    "fixed": "Difficulty changed more than 460 times between the genesis block and October 2026, and its growth from 1 to about 1.3 x 10^14 is about 14 orders of magnitude.",
+    "commit": "1abeee5",
+    "source": "https://mempool.space/api/v1/mining/hashrate/all"
+  },
+  {
+    "id": "2026-10-09-deployment-threshold-soft-fork",
+    "date": "2026-10-09",
+    "page": "/glossary/deployment-threshold-soft-fork",
+    "title": "Deployment Threshold (Soft Fork)",
+    "wrong": "The entry said Speedy Trial activates Taproot \"either at threshold or at the height, whichever comes first\".",
+    "fixed": "The minimum activation height only set the earliest block where Taproot could take effect, to give nodes time to upgrade. Speedy Trial could still fail if miners did not reach 90 percent signaling within about three months.",
+    "commit": "57cbe8a",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#deployment"
+  },
+  {
+    "id": "2026-10-09-decentralization",
+    "date": "2026-10-09",
+    "page": "/rabbit-hole/decentralization",
+    "title": "Decentralization",
+    "wrong": "The chapter said no single contributor's commits made up more than a few percent of Bitcoin Core's code.",
+    "fixed": "One developer has written more than a tenth of Bitcoin Core's commits, even with merge commits left out. The chapter now says only that Bitcoin Core has had over a thousand contributors since 2009.",
+    "commit": "94e823a",
+    "source": "https://github.com/bitcoin/bitcoin/graphs/contributors"
+  },
+  {
+    "id": "2026-10-09-creation-redemption",
+    "date": "2026-10-09",
+    "page": "/glossary/creation-redemption",
+    "title": "Creation / Redemption (Cash vs In-Kind)",
+    "wrong": "The entry said cash-only creation passed realized gains through the fund and gave up the ETF tax advantage, and that in-kind ETFs suit tax-sensitive long-term holders better. It also cited a stated rationale from Gary Gensler for cash-only, and said Chair Paul Atkins approved in-kind as the new SEC's first major crypto-friendly policy shift.",
+    "fixed": "The iShares Bitcoin Trust, a grantor trust, expects gains on BTC sold for a cash redemption to fall on the redeeming shareholder, and an investor who trades shares on an exchange is taxed the same way under either model. The January 2024 approval order gives no reason for cash-only, which most applications switched to during the SEC's review, and in-kind came by a Commission vote on July 29, 2025.",
+    "commit": "375acfd",
+    "source": "https://www.sec.gov/Archives/edgar/data/1980994/000143774926006058/bit20251231_10k.htm"
+  },
+  {
+    "id": "2026-10-09-corrupted-chain-state",
+    "date": "2026-10-09",
+    "page": "/glossary/corrupted-chain-state",
+    "title": "Corrupted Chain State",
+    "wrong": "The entry said -reindex does not require re-downloading the chain and told readers to delete the chainstate folder by hand if -reindex-chainstate failed. It also tied version-related corruption to upgrades and listed wildly wrong balances as a symptom.",
+    "fixed": "On a pruned node, -reindex downloads the whole chain again and -reindex-chainstate cannot be used. The -reindex-chainstate option wipes the chainstate itself, so there is no need to delete it by hand first. The documented version problem is downgrading, which the 0.15.0 release notes said needs -reindex-chainstate, and the symptoms listed are startup errors such as 'Corrupted block database detected' or blocks failing to validate.",
+    "commit": "375acfd",
+    "source": "https://github.com/bitcoin/bitcoin/blob/master/src/init.cpp"
+  },
+  {
+    "id": "2026-10-09-core-lightning-c-lightning",
+    "date": "2026-10-09",
+    "page": "/glossary/core-lightning-c-lightning",
+    "title": "Core Lightning (c-lightning)",
+    "wrong": "The entry said Eclair powers the Phoenix mobile wallet and is strong on mobile uses, and named Mutiny, which shut down in 2024, as an app built on LDK.",
+    "fixed": "Eclair is aimed at servers such as routing nodes. ACINQ's mobile wallet runs on lightning-kmp, a separate ACINQ implementation, and the entry's LDK examples are now Cash App and Alby Hub.",
+    "commit": "94e823a",
+    "source": "https://github.com/ACINQ/lightning-kmp"
+  },
+  {
+    "id": "2026-10-09-cme-cf-bitcoin-reference-rate",
+    "date": "2026-10-09",
+    "page": "/glossary/cme-cf-bitcoin-reference-rate",
+    "title": "CME CF Bitcoin Reference Rate",
+    "wrong": "The entry said US spot Bitcoin ETFs strike their NAV against the BRR at 4:00 PM London, that the SEC cited the BRR's robustness in its 2024 approval order, and that CME uses the BRR for daily as well as final futures settlement. Its constituent list still named itBit and left out Bullish and Crypto.com.",
+    "fixed": "Several US spot Bitcoin ETFs, including the iShares Bitcoin Trust, use the New York variant (BRRNY), measured from 3:00 to 4:00 PM New York, and the unsupported SEC claim is gone. CME futures settle to the BRR only at expiry, and the list as of August 2026 is Bitstamp, Bullish, Coinbase, Crypto.com, Gemini, Kraken and LMAX Digital, with itBit suspended in July 2026.",
+    "commit": "375acfd",
+    "source": "https://www.sec.gov/Archives/edgar/data/1980994/000143774926006058/bit20251231_10k.htm"
+  },
+  {
+    "id": "2026-10-09-chain-flag-day",
+    "date": "2026-10-09",
+    "page": "/glossary/chain-flag-day",
+    "title": "Chain Flag Day",
+    "wrong": "The entry said Taproot's Speedy Trial combined miner signaling with a fallback flag day.",
+    "fixed": "Speedy Trial had no fallback flag day. It ran about three months of signaling at a 90 percent threshold and would have failed if miners had not signaled; they did, and Taproot activated at block 709,632 in November 2021.",
+    "commit": "57cbe8a",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#deployment"
+  },
+  {
+    "id": "2026-10-09-bolt-11",
+    "date": "2026-10-09",
+    "page": "/glossary/bolt-11",
+    "title": "BOLT 11",
+    "wrong": "The entry called the description optional, described an encoded invoice as a relatively short string, and said paying an invoice a second time would either fail or be a fraud signal.",
+    "fixed": "Every invoice must carry a note or a hash of a longer description, and invoices typically run to a few hundred characters, past the 90-character limit of bech32 addresses. Once a payment settles, its preimage is no longer secret, so a node on the original route could keep a second payment to the same invoice that passes through it.",
+    "commit": "375acfd",
+    "source": "https://github.com/lightning/bolts/blob/master/11-payment-encoding.md"
+  },
+  {
+    "id": "2026-10-09-bolt",
+    "date": "2026-10-09",
+    "page": "/glossary/bolt",
+    "title": "BOLT",
+    "wrong": "The entry's example of different Lightning software working together described the Phoenix wallet as running Eclair.",
+    "fixed": "Phoenix runs on lightning-kmp, a separate ACINQ implementation, so the example now starts with an Eclair node opening a channel to a Core Lightning node.",
+    "commit": "94e823a"
+  },
+  {
+    "id": "2026-10-09-blockchain",
+    "date": "2026-10-09",
+    "page": "/glossary/blockchain",
+    "title": "Blockchain",
+    "wrong": "The entry put the chain at about 600 GB, growing by about 150 GB a year.",
+    "fixed": "The chain held about 775 GB of block data as of October 2026 and grows by roughly 80 GB a year.",
+    "commit": "94e823a",
+    "source": "https://www.blockchain.com/explorer/charts/blocks-size"
+  },
+  {
+    "id": "2026-10-09-block-time",
+    "date": "2026-10-09",
+    "page": "/glossary/block-time",
+    "title": "Block Time",
+    "wrong": "The entry said a block takes over an hour to arrive a few times a year.",
+    "fixed": "At a 10-minute average, the chance that a block takes over an hour is about 0.25%. That comes to about 130 blocks a year, or two or three a week.",
+    "commit": "94e823a"
+  },
+  {
+    "id": "2026-10-09-block-subsidy",
+    "date": "2026-10-09",
+    "page": "/glossary/block-subsidy",
+    "title": "Block Subsidy",
+    "wrong": "The entry said fees are typically 3 to 10 percent of the block reward.",
+    "fixed": "Fees were about 0.6 percent of the total in the year to October 2026, and about 6.5 percent in 2024.",
+    "commit": "1abeee5",
+    "source": "https://mempool.space/api/v1/mining/reward-stats/52560"
+  },
+  {
+    "id": "2026-10-09-block-reward",
+    "date": "2026-10-09",
+    "page": "/glossary/block-reward",
+    "title": "Block Reward",
+    "wrong": "The entry said fees usually make up 3 to 10 percent of the block reward, and that per-byte fees keep rising in line with the design.",
+    "fixed": "Fees were about 0.6 percent of miner revenue in the year to October 2026 (about 6.5 percent in 2024), and the median fee rate in mined blocks fell from about 11 to 12 sat/vB in 2024 to about 1 sat/vB in 2026. Whether fees can replace the subsidy is an open question.",
+    "commit": "1abeee5",
+    "source": "https://mempool.space/api/v1/mining/reward-stats/52560"
+  },
+  {
+    "id": "2026-10-09-bitcoin-pizza-day",
+    "date": "2026-10-09",
+    "page": "/glossary/bitcoin-pizza-day",
+    "title": "Bitcoin Pizza Day",
+    "wrong": "The entry said Laszlo Hanyecz posted his offer of 10,000 BTC for two pizzas on May 22, 2010.",
+    "fixed": "Laszlo Hanyecz posted the offer on the Bitcoin Talk forum on May 18, 2010. Four days later, on May 22, Jeremy Sturdivant (jercos on the forum) took him up on it and had two pizzas delivered.",
+    "commit": "94e823a",
+    "source": "https://bitcointalk.org/index.php?topic=137.0"
+  },
+  {
+    "id": "2026-10-09-bitcoin-dev-kit-bdk",
+    "date": "2026-10-09",
+    "page": "/glossary/bitcoin-dev-kit-bdk",
+    "title": "Bitcoin Dev Kit (BDK)",
+    "wrong": "The entry listed Mutiny Wallet, which shut down in 2024, and Cake Wallet's Bitcoin module among the notable wallets built on BDK in 2026.",
+    "fixed": "The examples now come from the list BDK keeps of projects built on it. As of October 2026 that list includes the Bitkey, Proton Wallet, Bull Bitcoin and Liana wallets, Foundation's Envoy app, and infrastructure such as Fedimint and LDK Node. Cake Wallet is not on it.",
+    "commit": "94e823a",
+    "source": "https://bitcoindevkit.org/adoption/all/"
+  },
+  {
+    "id": "2026-10-09-bip-9-versionbits",
+    "date": "2026-10-09",
+    "page": "/glossary/bip-9-versionbits",
+    "title": "BIP 9 (VersionBits)",
+    "wrong": "The entry said BIP 9 was used to activate BIP 65 (CLTV), and that Taproot was activated with BIP 8 \"speedy trial\" with a fallback to user-enforced activation.",
+    "fixed": "BIP 9's first deployment was the CSV soft fork in 2016, and CLTV used the older IsSuperMajority method. Taproot used Speedy Trial, a modified BIP 9 deployment with a 90 percent threshold and no fallback, which would simply have failed without miner signaling.",
+    "commit": "57cbe8a",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0009/assignments.mediawiki"
+  },
+  {
+    "id": "2026-10-09-bip-66",
+    "date": "2026-10-09",
+    "page": "/glossary/bip-66",
+    "title": "BIP 66",
+    "wrong": "The entry said BIP 66 was the first soft fork activated with the BIP 9 miner-signaling mechanism.",
+    "fixed": "BIP 66 reused the version-number switchover from BIP 34, so once 950 of the previous 1,000 blocks were version 3, version 2 blocks became invalid. BIP 9 came later, and its first deployment was the CSV soft fork of 2016.",
+    "commit": "94e823a",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0066.mediawiki"
+  },
+  {
+    "id": "2026-10-09-bip-42",
+    "date": "2026-10-09",
+    "page": "/glossary/bip-42",
+    "title": "BIP 42",
+    "wrong": "The entry said BIP 42 codified the 21 million cap, that Pieter Wuille discovered the bug, and that issuance would have restarted around the year 2214.",
+    "fixed": "BIP 42 forces the subsidy to zero once 64 halvings have passed; without it, issuance would have restarted at block 13,440,000, around 2263. Wuille wrote the BIP in April 2014, and the fix was merged into Bitcoin Core that month.",
+    "commit": "1abeee5",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0042.mediawiki"
+  },
+  {
+    "id": "2026-10-09-bip-30",
+    "date": "2026-10-09",
+    "page": "/glossary/bip-30",
+    "title": "BIP 30",
+    "wrong": "The entry paired the duplicate coinbase blocks as 91722/91812 and 91842/91880.",
+    "fixed": "Block 91,842's coinbase repeated the txid of block 91,812's, and block 91,880's repeated block 91,722's. Each duplicate overwrote an unspent 50 BTC output, making 100 BTC unspendable, and BIP 30 names those two blocks as its only exceptions.",
+    "commit": "1abeee5",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0030.mediawiki"
+  },
+  {
+    "id": "2026-10-09-bip-159",
+    "date": "2026-10-09",
+    "page": "/glossary/bip-159",
+    "title": "BIP 159",
+    "wrong": "The entry's summary said BIP 159 proposed a NODE_FILTERS service bit for Bloom or compact filters, and its key points called it filter-related and not widely implemented.",
+    "fixed": "BIP 159 defines the NODE_NETWORK_LIMITED service bit, which lets a pruned node announce that it serves at least the last 288 blocks. The BIP is marked Deployed, and Bitcoin Core has signaled the bit since version 0.16.0 and connected to such peers since 0.17.0.",
+    "commit": "94e823a",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0159.mediawiki"
+  },
+  {
+    "id": "2026-10-09-bip-125-replace-fee",
+    "date": "2026-10-09",
+    "page": "/glossary/bip-125-replace-fee",
+    "title": "BIP 125 (Replace-by-Fee)",
+    "wrong": "The entry's list of the five BIP 125 rules left out the rule that the original transaction must signal, and added a higher-feerate rule that BIP 125 does not contain. It also said opt-in RBF was Bitcoin Core's default only through version 23.",
+    "fixed": "The list now gives BIP 125's own five rules, starting with the signaling rule, and notes where Bitcoin Core has since moved away from them. Opt-in RBF was Core's default from 0.12 (2016) through 27.x, and 28.0 made full RBF the default in 2024.",
+    "commit": "94e823a",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki"
+  },
+  {
+    "id": "2026-10-09-be-your-own-bank",
+    "date": "2026-10-09",
+    "page": "/journey/be-your-own-bank",
+    "title": "Be Your Own Bank",
+    "wrong": "The chapter told readers to check a bc1 signature with Bitcoin Core's verifymessage, which accepts only addresses starting with 1, and said a signed message is anchored in time. It also said customers' funds are gone when an exchange goes bankrupt, and described the Jade hardware wallet as having a secure element.",
+    "fixed": "It explains that wallets sign for bc1 addresses in other formats, such as BIP 137 or BIP 322, so the check needs a wallet that supports the same format, and that a signature carries no timestamp. Mt. Gox, which collapsed in February 2014, began repaying creditors in bitcoin in July 2024, and Jade uses a PIN server that Blockstream calls a virtual secure element in place of a secure-element chip.",
+    "commit": "0bbe2f6",
+    "source": "https://github.com/bitcoin/bitcoin/blob/v31.1/src/common/signmessage.cpp"
+  },
+  {
+    "id": "2026-10-09-asymptote",
+    "date": "2026-10-09",
+    "page": "/glossary/asymptote",
+    "title": "Asymptote",
+    "wrong": "The entry called 20,999,999.9769 BTC an asymptote that the supply approaches but never reaches, and said the inflation rate reaches zero only in the limit.",
+    "fixed": "Because rewards are counted in whole satoshis, the schedule reaches exactly 20,999,999.9769 BTC with the last 1-satoshi subsidy in block 6,929,999, and issuance is exactly zero from block 6,930,000. Only the pure math, without rounding, approaches 21 million as an asymptote.",
+    "commit": "1abeee5",
+    "source": "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp"
+  },
+  {
+    "id": "2026-10-09-asic-application-specific-integrated-circuit",
+    "date": "2026-10-09",
+    "page": "/glossary/asic-application-specific-integrated-circuit",
+    "title": "ASIC (Application-Specific Integrated Circuit)",
+    "wrong": "The entry said a single mining ASIC chip does about 100 trillion hashes per second on tens of watts, about 100,000 times a CPU. It also said most mining power comes from stranded or low-cost sources.",
+    "fixed": "A whole 2024 mining machine, built from many chips, is rated at 234 trillion hashes per second on 3,510 watts, about seven million times the 33 million a second of a high-end 2011 desktop CPU. Cambridge's 2025 survey found miners got 52.4% of their power from renewables and nuclear, with natural gas the largest single source at 38.2%.",
+    "commit": "375acfd",
+    "source": "https://cseweb.ucsd.edu/~mbtaylor/papers/Taylor_Bitcoin_IEEE_Computer_2017.pdf"
+  },
+  {
+    "id": "2026-10-09-air-gapped",
+    "date": "2026-10-09",
+    "page": "/glossary/air-gapped",
+    "title": "Air-gapped",
+    "wrong": "The entry said a single hardware wallet is air-gapped by design where its keys are concerned, and named Foundation Passport among the devices designed for air-gapped use.",
+    "fixed": "A hardware wallet used over USB or Bluetooth is not air-gapped, though it still keeps its private keys on the device. Foundation's air-gapped model, Passport Core, is discontinued, and its successor, Passport Prime, is not air-gapped by design.",
+    "commit": "94e823a",
+    "source": "https://docs.foundation.xyz/glossary/home/"
+  },
+  {
+    "id": "2026-10-07-quantum-and-bitcoin",
+    "date": "2026-10-07",
+    "page": "/rabbit-hole/quantum-and-bitcoin",
+    "title": "Quantum and Bitcoin",
+    "wrong": "The chapter called ML-DSA the leading candidate for Bitcoin's post-quantum signatures and presented BIP-360's P2MR without the other output designs under discussion.",
+    "fixed": "Bitcoin Optech reports that Bitcoin's post-quantum work has mostly focused on hash-based signatures, such as the SHRINCS draft BIP posted in 2026, while lattice schemes like ML-DSA remain part of the discussion. P2MR is described as one of several output designs being weighed.",
+    "commit": "3918d74",
+    "source": "https://bitcoinops.org/en/newsletters/2026/07/03/"
+  },
+  {
+    "id": "2026-10-07-ml-dsa-dilithium",
+    "date": "2026-10-07",
+    "page": "/glossary/ml-dsa-dilithium",
+    "title": "ML-DSA / Dilithium (FIPS 204)",
+    "wrong": "The entry called ML-DSA the leading candidate to replace ECDSA and Schnorr signatures in Bitcoin.",
+    "fixed": "ML-DSA is one of the options discussed. Bitcoin's post-quantum work has mostly focused on hash-based signatures, such as the SHRINCS draft BIP posted in 2026.",
+    "commit": "3918d74",
+    "source": "https://bitcoinops.org/en/newsletters/2026/07/03/"
+  },
+  {
+    "id": "2026-10-07-bip-process",
+    "date": "2026-10-07",
+    "page": "/rabbit-hole/bip-process",
+    "title": "The BIP Process",
+    "wrong": "The chapter said Luke Dashjr was the only BIP editor for roughly a decade and that the role became a team in February 2024. Its count of six editors went out of date in August 2026.",
+    "fixed": "Dashjr became editor in January 2016 and Kalle Alm joined in 2021. The list was rewritten in April 2024, adding five editors and dropping Alm, and Dashjr was removed in August 2026, leaving five.",
+    "commit": "3918d74",
+    "source": "https://github.com/bitcoin/bips/pull/1573"
+  },
+  {
+    "id": "2026-10-06-opreturn",
+    "date": "2026-10-06",
+    "page": "/glossary/opreturn",
+    "title": "OP_RETURN",
+    "wrong": "The entry called 80 bytes the OP_RETURN standardness limit, said an OP_RETURN output creates a small dust output, and listed Liquid as a user of OP_RETURN commitments.",
+    "fixed": "Relay limits are policy: Bitcoin Core relayed 40 bytes from 0.9 (2014) and 80 from 0.11 (2015), and 30.0 (October 2025) raised the default to 100,000 bytes. An OP_RETURN output never enters the UTXO set and is not dust, and the Liquid example was replaced with documented users such as Omni, Counterparty, VeriBlock and Runes.",
+    "commit": "3fa1d47",
+    "source": "https://bitcoincore.org/en/releases/30.0/"
+  },
+  {
+    "id": "2026-10-05-tulip-mania",
+    "date": "2026-10-05",
+    "page": "/glossary/tulip-mania",
+    "title": "Tulip Mania",
+    "wrong": "The entry said the tulip comparison had been used against Bitcoin since 2011, put the 2013-2015 drawdown at about 86 percent, and said Jamie Dimon in 2025 let \"any client\" buy bitcoin.",
+    "fixed": "The earliest uses we can document are from 2013, the drawdown measured on daily closes is about 85 percent, and in May 2025 Dimon said JPMorgan would let clients buy it.",
+    "commit": "6851044",
+    "source": "https://www.cnbc.com/2025/05/19/jpmorgan-ceo-jamie-dimon-says-the-bank-will-let-clients-buy-bitcoin.html"
+  },
+  {
+    "id": "2026-10-05-quantum-and-bitcoin",
+    "date": "2026-10-05",
+    "page": "/rabbit-hole/quantum-and-bitcoin",
+    "title": "Quantum and Bitcoin",
+    "wrong": "Two passages still quoted an older snapshot (about 30.5 percent of all BTC exposed, 1,063,006 BTC always exposed) after the chapter's chart had moved to newer data. The chapter also described the best machines as hundreds of noisy physical qubits with single-digit logical qubits, and repeated BIP-361's description of its 2027 to 2030 window as coming from academic roadmaps.",
+    "fixed": "Both passages match the chapter's current snapshot, and the hardware line follows published results: physical qubits in the hundreds to low thousands, and logical qubits in the dozens at best. The 2027 to 2030 window is credited to the report BIP-361 actually cites for it, McKinsey's Quantum Technology Monitor 2025.",
+    "commit": "6851044",
+    "source": "https://www.nature.com/articles/s41586-023-06927-3"
+  },
+  {
+    "id": "2026-10-05-mt-gox-ftx-graveyard",
+    "date": "2026-10-05",
+    "page": "/rabbit-hole/mt-gox-ftx-graveyard",
+    "title": "Mt. Gox to FTX: The Custody Graveyard",
+    "wrong": "The chapter said FTX claims were valued as of 11 November 2022, \"when bitcoin was around $16,000\".",
+    "fixed": "The bankruptcy estate's conversion table priced bitcoin at $16,871 for that date, and the chapter uses that figure.",
+    "commit": "6851044",
+    "source": "https://restructuring.ra.kroll.com/FTX/ExternalCall-DownloadPDF?id1=MzA1ODIxOA%3D%3D&id2=0"
+  },
+  {
+    "id": "2026-10-05-mining",
+    "date": "2026-10-05",
+    "page": "/rabbit-hole/mining",
+    "title": "Mining",
+    "wrong": "The chapter put mining at about 173 TWh a year, roughly three quarters of one percent of global electricity, cited \"two decades of empirical evidence\" for a system launched in 2009, and said geographic dispersion had roughly doubled, without a source.",
+    "fixed": "By Cambridge's methods mining draws about 140 to 175 TWh a year, half to two-thirds of one percent of the world's electricity. The evidence is dated from 2009, and the unsourced dispersion claim was removed.",
+    "commit": "6851044",
+    "source": "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/"
+  },
+  {
+    "id": "2026-10-05-lightning-routing",
+    "date": "2026-10-05",
+    "page": "/rabbit-hole/lightning-routing",
+    "title": "Lightning Routing",
+    "wrong": "The chapter's closing summary said Lightning fees are essentially free and that capacity \"keeps growing as more nodes open more channels\".",
+    "fixed": "Fees are tiny but never quite zero. Public capacity hit a record in late 2025 and then fell back in 2026, while the number of public nodes and channels has been shrinking since 2022.",
+    "commit": "6851044",
+    "source": "https://bitcoinvisuals.com/lightning"
+  },
+  {
+    "id": "2026-10-05-intrinsic-value",
+    "date": "2026-10-05",
+    "page": "/glossary/intrinsic-value",
+    "title": "Intrinsic Value",
+    "wrong": "The entry said Warren Buffett had made the no-intrinsic-value argument against Bitcoin \"every year since\" 2013.",
+    "fixed": "We found no dated Buffett remarks on bitcoin for several of those years, including 2015, 2016 and 2023 to 2025, so the entry says he has made the argument repeatedly since 2014.",
+    "commit": "6851044",
+    "source": "https://buffett.cnbc.com/2018/06/26/buffett-a-z-bitcoinand-cryptocurrencies.html"
+  },
+  {
+    "id": "2026-10-05-inflation-bug-postmortem",
+    "date": "2026-10-05",
+    "page": "/rabbit-hole/inflation-bug-postmortem",
+    "title": "The Inflation Bug Postmortem",
+    "wrong": "The chapter put the August 2010 events at the wrong times (the bad transaction at 19:13 UTC, the first forum report at 19:50), said the bad block held several transactions, put the reorg at 19 hours, and called the fix a hard fork. It also quoted Satoshi with a line we could not find in the record.",
+    "fixed": "The bad block's timestamp is 17:05 UTC, Jeff Garzik's first report came at 18:08, the fix was committed at 21:35 and announced at 23:48, the block held two transactions, and the patched chain overtook about 15 hours later. The fix was a soft fork, as the Bitcoin Wiki records, and the quote was replaced with one from the forum thread.",
+    "commit": "6851044",
+    "source": "https://en.bitcoin.it/wiki/Value_overflow_incident"
+  },
+  {
+    "id": "2026-10-05-inflation-bug",
+    "date": "2026-10-05",
+    "page": "/glossary/inflation-bug",
+    "title": "Inflation Bug",
+    "wrong": "The entry dated the disclosure of CVE-2018-17144 to 18 September 2018 and said patched releases for all supported branches shipped within 24 hours. It called the 2018 bug the canonical example without mentioning the 2010 bug that actually created coins.",
+    "fixed": "The bug was reported on 17 September, Bitcoin Core 0.16.3 fixed it on 18 September, full disclosure came on 20 September, and the older branches were patched on 28 September. The entry names the affected versions, 0.15.0 to 0.16.2, and opens with the August 2010 overflow bug.",
+    "commit": "6851044",
+    "source": "https://bitcoincore.org/en/2018/09/20/notice/"
+  },
+  {
+    "id": "2026-10-05-geographic-mining-distribution",
+    "date": "2026-10-05",
+    "page": "/glossary/geographic-mining-distribution",
+    "title": "Geographic Mining Distribution",
+    "wrong": "The entry said China banned mining outright in May-June 2021, and gave the US share of hash rate as about 35-40% with no date.",
+    "fixed": "The crackdown came in stages: a State Council order in May, provincial shutdown orders in June, and a September declaration that crypto trading was illegal, with a plan to phase out mining. The US share is dated to January 2022, about 38%, the last month in Cambridge's country data.",
+    "commit": "6851044",
+    "source": "https://www.jbs.cam.ac.uk/2022/bitcoin-mining-new-data-reveal-a-surprising-resurgence/"
+  },
+  {
+    "id": "2026-10-05-fud-fear-uncertainty-doubt",
+    "date": "2026-10-05",
+    "page": "/glossary/fud-fear-uncertainty-doubt",
+    "title": "FUD (Fear, Uncertainty, Doubt)",
+    "wrong": "The entry said China had \"banned\" Bitcoin \"roughly 16 times since 2013\", a count with no source.",
+    "fixed": "It lists the formal notices from Chinese regulators in 2013, 2017, 2021 and 2026, and quotes a CoinShares executive's 2021 joke that it had to be \"the 20th time\".",
+    "commit": "6851044",
+    "source": "https://www.cnbc.com/2021/09/24/what-investors-should-know-about-chinas-cryptocurrency-crackdown.html"
+  },
+  {
+    "id": "2026-10-05-ftx",
+    "date": "2026-10-05",
+    "page": "/glossary/ftx",
+    "title": "FTX",
+    "wrong": "The entry said FTX claims were valued as of 11 November 2022, \"when bitcoin was around $16,000\".",
+    "fixed": "The bankruptcy estate's own conversion table priced bitcoin at $16,871 for that date, and the entry uses that figure.",
+    "commit": "6851044",
+    "source": "https://restructuring.ra.kroll.com/FTX/ExternalCall-DownloadPDF?id1=MzA1ODIxOA%3D%3D&id2=0"
+  },
+  {
+    "id": "2026-10-05-energy-fud",
+    "date": "2026-10-05",
+    "page": "/glossary/energy-fud",
+    "title": "Energy FUD",
+    "wrong": "The entry put Bitcoin's mining draw \"in the high tens of TWh per year\".",
+    "fixed": "Cambridge's figures put it at about 140 to 175 TWh a year depending on method, roughly half to two-thirds of one percent of the world's electricity.",
+    "commit": "6851044",
+    "source": "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/"
+  },
+  {
+    "id": "2026-10-05-energy",
+    "date": "2026-10-05",
+    "page": "/rabbit-hole/energy",
+    "title": "Bitcoin and Energy",
+    "wrong": "The chapter said mining uses about 173 TWh a year, roughly three quarters of one percent of global electricity, and put the sustainable share of its energy in the mid-50s to mid-60s percent. It also said Bitcoin uses half as much as gold mining and less than the world's tumble dryers.",
+    "fixed": "Cambridge's own figures give about 140 to 175 TWh, half to two-thirds of one percent, and sustainable-mix estimates run from about a quarter to 60 percent, with Cambridge's 2025 survey at 52.4 percent. The gold figure was corrected to roughly equal, and the tumble-dryer line was dropped because Cambridge's own comparison did not support it.",
+    "commit": "6851044",
+    "source": "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/"
+  },
+  {
+    "id": "2026-10-05-difficulty-retargeting",
+    "date": "2026-10-05",
+    "page": "/glossary/difficulty-retargeting",
+    "title": "Difficulty Retargeting",
+    "wrong": "The entry said each difficulty adjustment is clamped at +/-300%.",
+    "fixed": "Bitcoin Core limits each adjustment to a factor of four either way, so at most +300% up or -75% down in one step.",
+    "commit": "6851044",
+    "source": "https://github.com/bitcoin/bitcoin/blob/master/src/pow.cpp"
+  },
+  {
+    "id": "2026-10-05-decentralization",
+    "date": "2026-10-05",
+    "page": "/rabbit-hole/decentralization",
+    "title": "Decentralization",
+    "wrong": "The chapter said the mining pool GHash.io \"approached 51%\" of the hash rate in 2014 and that miners left it \"within weeks\".",
+    "fixed": "GHash.io held 51 percent of the hash rate for a few hours on 13 June 2014, and miners moved their hash power to other pools within days.",
+    "commit": "a35bd87",
+    "source": "https://www.theguardian.com/technology/2014/jun/16/bitcoin-currency-destroyed-51-attack-ghash-io"
+  },
+  {
+    "id": "2026-10-05-bitcoin-privacy",
+    "date": "2026-10-05",
+    "page": "/rabbit-hole/bitcoin-privacy",
+    "title": "Privacy on Bitcoin: What Works and What Doesn't",
+    "wrong": "The chapter implied that tracing the coins through the chain is what found the bitcoin stolen from Bitfinex.",
+    "fixed": "Investigators followed the coins for years, but the private keys turned up in files in one of the suspects' online accounts, reached with a search warrant. The chapter says the graph pointed to the people and records kept by services did the rest.",
+    "commit": "a35bd87",
+    "source": "https://www.justice.gov/archives/opa/pr/two-arrested-alleged-conspiracy-launder-45-billion-stolen-cryptocurrency"
+  },
+  {
+    "id": "2026-10-05-bitcoin-obituaries",
+    "date": "2026-10-05",
+    "page": "/glossary/bitcoin-obituaries",
+    "title": "Bitcoin Obituaries",
+    "wrong": "The entry dated the first obituary to 15 December 2010, listed Paul Krugman's \"Bitcoin Is Evil\" among the famous entries on 99Bitcoins' list, and said obituaries pile up in the year after each top.",
+    "fixed": "The first entry is a blog post from November 2010; 99Bitcoins dates it by its archived copy. Krugman's piece was never on that list, and obituaries cluster around each top and through the crash, with 113 of 2017's 124 coming before the December top.",
+    "commit": "f4830ea",
+    "source": "https://99bitcoins.com/bitcoin-obituaries/"
+  },
+  {
+    "id": "2026-10-05-bear-market",
+    "date": "2026-10-05",
+    "page": "/glossary/bear-market",
+    "title": "Bear Market",
+    "wrong": "The entry gave rounded, unsourced drawdowns, including -82% for 2013-2015 and -78% for 2022, said bear markets take 70 to 85 percent off the peak, and said \"Bitcoin is dead\" articles cluster near the bottom.",
+    "fixed": "Measured on Coin Metrics daily closing prices, the falls were -93% in 2011, -85% in 2013-2015, -84% in 2018 and -77% in 2022. Searches for \"Bitcoin is dead\" are what spike near the bottom.",
+    "commit": "6851044",
+    "source": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=PriceUSD&frequency=1d&start_time=2010-07-18&end_time=2026-10-08&page_size=10000"
+  },
+  {
+    "id": "2026-10-02-why-money-is-broken-2",
+    "date": "2026-10-02",
+    "page": "/journey/why-money-is-broken",
+    "title": "Why Money Is Broken",
+    "wrong": "The chapter said Nixon ended dollar convertibility to gold in 1971, and that a 1971 dollar had \"the purchasing power of roughly $0.13 in 2025\", which states the comparison backwards. One line still said 13% after the 2020 to 2025 figure had been corrected to 20%.",
+    "fixed": "Ordinary Americans lost gold convertibility in 1933-34, and the window Nixon closed in August 1971 was open only to foreign governments and central banks. By 2025 a dollar bought about what 13 cents bought in 1971, and the 2020 to 2025 loss reads 20% throughout.",
+    "commit": "be23d1b",
+    "source": "https://www.federalreservehistory.org/essays/gold-reserve-act"
+  },
+  {
+    "id": "2026-10-02-why-money-is-broken",
+    "date": "2026-10-02",
+    "page": "/journey/why-money-is-broken",
+    "title": "Why Money Is Broken",
+    "wrong": "The chapter said France \"famously sent a warship\" to collect its gold, quoted Nixon's \"worth just as much tomorrow\" line without its condition, and said a dollar had the purchasing power of about 87 cents in 2020 dollars.",
+    "fixed": "We found no primary record of the warship. The chapter says instead that France kept converting its dollars into gold, and a Federal Reserve staff report records a further $191 million sale of US gold to France in early August 1971. The Nixon quote keeps its condition, and by BLS annual averages a dollar in 2025 bought about what 80 cents bought in 2020, a 20 percent loss.",
+    "commit": "4163f18",
+    "source": "https://www.federalreserve.gov/monetarypolicy/files/FOMC19710824greenbook19710818.pdf"
+  },
+  {
+    "id": "2026-10-02-what-bitcoin-actually-is",
+    "date": "2026-10-02",
+    "page": "/journey/what-bitcoin-actually-is",
+    "title": "What Bitcoin Actually Is",
+    "wrong": "The chapter said the genesis block came 68 days after the whitepaper, and that the whitepaper came 68 days after the 2008 financial crisis peaked.",
+    "fixed": "The whitepaper was announced on October 31, 2008, 64 days before the genesis block on January 3, 2009, and about six weeks after Lehman Brothers collapsed. Two \"fifteen years later\" phrases were also removed.",
+    "commit": "4163f18",
+    "source": "https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html"
+  },
+  {
+    "id": "2026-10-02-utxos",
+    "date": "2026-10-02",
+    "page": "/rabbit-hole/utxos",
+    "title": "UTXOs",
+    "wrong": "The chapter put the P2WPKH dust limit at 546 sats, said Bitcoin Core picks coins with Branch and Bound and falls back to Knapsack, and put the UTXO set at 85 to 110 million outputs. It also called UTXOs statelessly validatable.",
+    "fixed": "Bitcoin Core's default dust limit is 294 sats for P2WPKH and 546 for P2PKH, and since version 23.0 Core runs several coin selection algorithms and keeps the lowest-waste result. The UTXO set held about 165 million outputs as of October 2026, and since validation needs that set, the stateless claim was removed.",
+    "commit": "c599b9b",
+    "source": "https://github.com/bitcoin/bitcoin/blob/master/src/policy/policy.cpp"
+  },
+  {
+    "id": "2026-10-02-silent-payments",
+    "date": "2026-10-02",
+    "page": "/glossary/silent-payments",
+    "title": "Silent Payments",
+    "wrong": "The entry listed two BIP-352 authors, said wallet support started on a hardware signer, and described BIP-375 and BIP-392 as proposals for light clients.",
+    "fixed": "Sebastian Falbesoner joined josibake and Ruben Somsen as a co-author in 2026, and the first wallet support came in a mobile wallet in May 2024. BIP-375 covers sending through PSBTs and BIP-392 covers descriptors.",
+    "commit": "fa94f44",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki"
+  },
+  {
+    "id": "2026-10-02-signature-aggregation",
+    "date": "2026-10-02",
+    "page": "/glossary/signature-aggregation",
+    "title": "Signature Aggregation",
+    "wrong": "The entry explained how cosigners combine their signatures into one but never said this happens within a single input, which left room to read it as aggregation across a whole transaction.",
+    "fixed": "Bitcoin has no cross-input aggregation. A transaction that spends five Taproot outputs still carries five signatures, one per input, and combining them would take another soft fork.",
+    "commit": "e495e5e",
+    "source": "https://github.com/BlockstreamResearch/cross-input-aggregation",
+    "credit": "Danish Ali (BitcoinTalk)"
+  },
+  {
+    "id": "2026-10-02-schnorr-signature",
+    "date": "2026-10-02",
+    "page": "/glossary/schnorr-signature",
+    "title": "Schnorr Signature",
+    "wrong": "The entry said a 5-of-5 multisig under MuSig2 shows up as a single signature without saying that this aggregation happens among the cosigners of one output, not across a transaction's inputs.",
+    "fixed": "A transaction with five Taproot inputs still carries five signatures, and combining signatures across inputs would need another soft fork. The entry says so.",
+    "commit": "e495e5e",
+    "source": "https://github.com/BlockstreamResearch/cross-input-aggregation",
+    "credit": "Danish Ali (BitcoinTalk)"
+  },
+  {
+    "id": "2026-10-02-psbt",
+    "date": "2026-10-02",
+    "page": "/glossary/psbt",
+    "title": "PSBT (Partially Signed Bitcoin Transaction)",
+    "wrong": "The entry said PSBT version 2 (BIP 370 / BIP 371) adds Taproot support, and that Bitcoin Core and every major hardware wallet speak version 2 natively.",
+    "fixed": "Taproot fields come from BIP 371, a separate spec that works with either version, while version 2 (BIP 370) lets inputs and outputs be added after creation. Support for version 2 is uneven, and Bitcoin Core merged it in 2026 for version 32.0.",
+    "commit": "fa94f44",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0371.mediawiki"
+  },
+  {
+    "id": "2026-10-02-payjoin",
+    "date": "2026-10-02",
+    "page": "/glossary/payjoin",
+    "title": "PayJoin",
+    "wrong": "The entry said async PayJoin (BIP 77) runs over Nostr or similar relays, and that both sender and receiver consolidate coins.",
+    "fixed": "BIP 77 passes messages through an untrusted directory server reached over Oblivious HTTP, and only the receiver consolidates. The receiver's main benefit is that the amount paid is hidden.",
+    "commit": "c599b9b",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0077.md"
+  },
+  {
+    "id": "2026-10-02-p2sh",
+    "date": "2026-10-02",
+    "page": "/glossary/p2sh",
+    "title": "P2SH (Pay to Script Hash)",
+    "wrong": "The entry listed a Wikipedia article on pay to script hash as an external reference. That article does not exist, and we found no record that it ever did.",
+    "fixed": "The link was removed. The Bitcoin Wiki pages and BIP 16 remain as references.",
+    "commit": "d1f6630",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki"
+  },
+  {
+    "id": "2026-10-02-ordinals",
+    "date": "2026-10-02",
+    "page": "/glossary/ordinals",
+    "title": "Ordinals",
+    "wrong": "The entry listed a Wikipedia article on the Ordinals protocol as an external reference. That article does not exist, and we found no record that it ever did.",
+    "fixed": "The reference is the Ordinal Theory Handbook, the project's own documentation.",
+    "commit": "d1f6630",
+    "source": "https://docs.ordinals.com/"
+  },
+  {
+    "id": "2026-10-02-onion-routing-lightning",
+    "date": "2026-10-02",
+    "page": "/glossary/onion-routing-lightning",
+    "title": "Onion Routing (Lightning)",
+    "wrong": "The onion routing animation on this page, and its text description, showed the payment preimage at the center of the onion.",
+    "fixed": "The innermost layer carries the receiver's payment instructions, the amount and a payment secret. The receiver already holds the preimage and reveals it to get paid, and the animation was re-rendered to show that.",
+    "commit": "c3f6ee9",
+    "source": "https://github.com/lightning/bolts/blob/master/04-onion-routing.md"
+  },
+  {
+    "id": "2026-10-02-mining-2",
+    "date": "2026-10-02",
+    "page": "/rabbit-hole/mining",
+    "title": "Mining",
+    "wrong": "The chapter said that as long as Bitcoin is used, fees \"will be sufficient\" to pay for its security, and that fees were \"growing faster than the network needs them to\".",
+    "fixed": "Fees were about 0.6% of miner revenue in the year to October 2026. The chapter says nobody knows yet whether fees alone will pay for enough security, which matches the energy chapter.",
+    "commit": "b4e5d5d",
+    "source": "https://mempool.space/api/v1/mining/reward-stats/52560"
+  },
+  {
+    "id": "2026-10-02-mining",
+    "date": "2026-10-02",
+    "page": "/rabbit-hole/mining",
+    "title": "Mining",
+    "wrong": "The chapter said each difficulty adjustment is clamped at +/-300% and that difficulty had grown about 10^13 times since 2009. It also put fees at 3 to 10% of miner revenue and mining at 0.5% of global electricity.",
+    "fixed": "Bitcoin Core caps each adjustment at a factor of four, so at most +300% up or -75% down, and difficulty has grown about 10^14 times. Fees were about 0.6% of miner revenue in the year to October 2026, and the energy share was changed to about 0.75%, a figure that was itself corrected on 5 October 2026.",
+    "commit": "8d556c3",
+    "source": "https://github.com/bitcoin/bitcoin/blob/master/src/pow.cpp"
+  },
+  {
+    "id": "2026-10-02-miner-signaling",
+    "date": "2026-10-02",
+    "page": "/glossary/miner-signaling",
+    "title": "Miner Signaling",
+    "wrong": "The entry listed a Bitcoin Wiki page on version bits as an external reference. That page does not exist, and we found no record that it ever did.",
+    "fixed": "The reference is BIP 9, the specification for version bits signaling.",
+    "commit": "d1f6630",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki"
+  },
+  {
+    "id": "2026-10-02-mempool",
+    "date": "2026-10-02",
+    "page": "/rabbit-hole/mempool",
+    "title": "The Mempool",
+    "wrong": "The chapter said CPFP needs the recipient, called each block a sealed-bid auction, and said the mempool grew to 100 to 500 MB in 2023 and 2024.",
+    "fixed": "The sender can also use CPFP by spending a change output, and the fee auction is open, since every bid sits in public view. The 100 to 500 figure is in vMB of waiting transactions, and default nodes, capped at 300 MB of memory, were dropping the cheapest ones.",
+    "commit": "7ec5f9c",
+    "source": "https://github.com/bitcoinops/scaling-book/blob/master/1.fee_bumping/fee_bumping.md"
+  },
+  {
+    "id": "2026-10-02-lightning-sphinx",
+    "date": "2026-10-02",
+    "page": "/glossary/lightning-sphinx",
+    "title": "Lightning Sphinx",
+    "wrong": "The onion routing animation on this page, and its text description, showed the payment preimage at the center of the onion.",
+    "fixed": "The innermost layer carries the receiver's payment instructions, the amount and a payment secret. The receiver already holds the preimage and reveals it to get paid, and the animation was re-rendered to show that.",
+    "commit": "c3f6ee9",
+    "source": "https://github.com/lightning/bolts/blob/master/04-onion-routing.md"
+  },
+  {
+    "id": "2026-10-02-lightning-routing-2",
+    "date": "2026-10-02",
+    "page": "/rabbit-hole/lightning-routing",
+    "title": "Lightning Routing",
+    "wrong": "The onion routing animation on this page, and its text description, showed the payment preimage at the center of the onion.",
+    "fixed": "The innermost layer carries the receiver's payment instructions, the amount and a payment secret. The receiver already holds the preimage and reveals it to get paid, and the animation was re-rendered to show that.",
+    "commit": "c3f6ee9",
+    "source": "https://github.com/lightning/bolts/blob/master/04-onion-routing.md"
+  },
+  {
+    "id": "2026-10-02-lightning-routing",
+    "date": "2026-10-02",
+    "page": "/rabbit-hole/lightning-routing",
+    "title": "Lightning Routing",
+    "wrong": "The chapter said Sphinx is the same construction Tor uses, that the onion carries the payment preimage to the receiver, and that the public graph has hundreds of thousands of channels. It also said one failed chunk sends a whole multipath payment back, and that the last hop knows the receiver for certain.",
+    "fixed": "Tor builds its circuits one hop at a time while Sphinx packs the whole route into one packet, the receiver already holds the preimage and reveals it to get paid, and the public graph has tens of thousands of channels. Failed chunks are retried on other paths, the last hop can often guess the receiver but cannot be sure, and the BOLT 7 fee formula and gossip details were also corrected.",
+    "commit": "7ec5f9c",
+    "source": "https://github.com/lightning/bolts/blob/master/04-onion-routing.md"
+  },
+  {
+    "id": "2026-10-02-json-rpc-over-tor",
+    "date": "2026-10-02",
+    "page": "/glossary/json-rpc-over-tor",
+    "title": "JSON-RPC over Tor",
+    "wrong": "The entry said security \"stays solid\" when a node's RPC is exposed through a Tor onion service, and called it the right pattern for remote access.",
+    "fixed": "Bitcoin Core's docs say not to expose RPC to the internet at all, warn that even an onion service could open it to attacks, and recommend a VPN or SSH tunnel. The setup steps were also corrected, since Tor needs no rpcbind or rpcallowip change.",
+    "commit": "fa94f44",
+    "source": "https://github.com/bitcoin/bitcoin/blob/master/doc/JSON-RPC-interface.md"
+  },
+  {
+    "id": "2026-10-02-intrinsic-value",
+    "date": "2026-10-02",
+    "page": "/glossary/intrinsic-value",
+    "title": "Intrinsic Value",
+    "wrong": "The entry said the US \"ended convertibility to gold\" on 15 August 1971, which skipped the 1933-34 and 1968 changes that had already ended it for everyone but foreign governments and central banks.",
+    "fixed": "No one, not even a foreign central bank, has been able to redeem dollars for gold since 15 August 1971, when the US closed the last gold window.",
+    "commit": "be23d1b",
+    "source": "https://www.federalreservehistory.org/essays/gold-convertibility-ends"
+  },
+  {
+    "id": "2026-10-02-inscriptions",
+    "date": "2026-10-02",
+    "page": "/glossary/inscriptions",
+    "title": "Inscriptions",
+    "wrong": "The entry listed a Wikipedia article on the Ordinals protocol as an external reference. That article does not exist, and we found no record that it ever did.",
+    "fixed": "The reference is the inscriptions chapter of the Ordinal Theory Handbook.",
+    "commit": "d1f6630",
+    "source": "https://docs.ordinals.com/inscriptions.html"
+  },
+  {
+    "id": "2026-10-02-genesis-block",
+    "date": "2026-10-02",
+    "page": "/glossary/genesis-block",
+    "title": "Genesis Block",
+    "wrong": "The entry's Wikipedia and Wikidata references pointed at the general articles on blockchain, not at the genesis block.",
+    "fixed": "The Wikidata reference points at the genesis block's own item, and the Wikipedia link to the blockchain article was removed. The Bitcoin Wiki page on the genesis block remains.",
+    "commit": "4163f18",
+    "source": "https://www.wikidata.org/wiki/Q124624002"
+  },
+  {
+    "id": "2026-10-02-dust-limit",
+    "date": "2026-10-02",
+    "page": "/glossary/dust-limit",
+    "title": "Dust Limit",
+    "wrong": "The entry said default Bitcoin Core nodes never relay a transaction with a dust output.",
+    "fixed": "Since Bitcoin Core 29.0 there is one exception, ephemeral dust: a zero-fee transaction may carry one dust output if a child transaction relayed with it spends that output. The thresholds the entry gave were right.",
+    "commit": "fa94f44",
+    "source": "https://bitcoincore.org/en/releases/29.0/"
+  },
+  {
+    "id": "2026-10-02-dust-attack",
+    "date": "2026-10-02",
+    "page": "/glossary/dust-attack",
+    "title": "Dust Attack",
+    "wrong": "The entry gave Binance's 2019 dust attack as its main example without saying it happened on Litecoin, and credited Sparrow with the \"Do Not Spend\" flag, which was Samourai Wallet's name for the feature.",
+    "fixed": "The Bitcoin example is Samourai Wallet's October 2018 warning to its users that addresses were being dusted. The freezing feature is described under each wallet's own name.",
+    "commit": "fa94f44",
+    "source": "https://crypto.news/bitcoin-wallet-samourai-dusting-attack/"
+  },
+  {
+    "id": "2026-10-02-decentralization",
+    "date": "2026-10-02",
+    "page": "/rabbit-hole/decentralization",
+    "title": "Decentralization",
+    "wrong": "The chapter said the SegWit2x hard fork was cancelled three days before its planned activation, and its source was a Bitcoin Magazine URL that does not exist.",
+    "fixed": "Mike Belshe's cancellation email went out on November 8, 2017, nine days before block 494,784, where the fork was set to happen. The chapter cites an archived copy of that email.",
+    "commit": "d1f6630",
+    "source": "https://web.archive.org/web/20171108202305/https://lists.linuxfoundation.org/pipermail/bitcoin-segwit2x/2017-November/000685.html"
+  },
+  {
+    "id": "2026-10-02-coinjoin",
+    "date": "2026-10-02",
+    "page": "/glossary/coinjoin",
+    "title": "CoinJoin",
+    "wrong": "The entry left Wasabi out of the CoinJoin tools still in use and did not say that JoinMarket's original repository had been archived. It described the Samourai founders' charges without their outcome.",
+    "fixed": "Wasabi still works with independently run coordinators, and JoinMarket development continues in joinmarket-ng after the original repository was archived in April 2026. The Samourai founders pleaded guilty to the money transmitting count only and were sentenced in 2025 to five and four years.",
+    "commit": "c599b9b",
+    "source": "https://www.justice.gov/usao-sdny/pr/founders-samourai-wallet-cryptocurrency-mixing-service-sentenced-five-and-four-years"
+  },
+  {
+    "id": "2026-10-02-branch-and-bound-bnb",
+    "date": "2026-10-02",
+    "page": "/glossary/branch-and-bound-bnb",
+    "title": "Branch and Bound (BnB)",
+    "wrong": "The entry said Bitcoin Core ran Branch and Bound first, with Knapsack as the fallback, from version 0.17 through 0.21.",
+    "fixed": "That arrangement lasted through version 22.0. From 23.0 the wallet runs every algorithm on each spend and keeps the lowest-waste result.",
+    "commit": "c599b9b",
+    "source": "https://github.com/bitcoin/bitcoin/pull/22009"
+  },
+  {
+    "id": "2026-10-02-bitcoin-governance",
+    "date": "2026-10-02",
+    "page": "/glossary/bitcoin-governance",
+    "title": "Bitcoin Governance",
+    "wrong": "The entry listed a Bitcoin Wiki page on governance as an external reference. That page does not exist, and we found no record that it ever did.",
+    "fixed": "The reference is BIP 3, the document that sets out how Bitcoin Improvement Proposals are handled.",
+    "commit": "d1f6630",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0003.md"
+  },
+  {
+    "id": "2026-10-02-bitcoin-core-rpc",
+    "date": "2026-10-02",
+    "page": "/glossary/bitcoin-core-rpc",
+    "title": "Bitcoin Core RPC",
+    "wrong": "The entry called the interface JSON-RPC 1.0, named rpcauth as the preferred login, and recommended JSON-RPC over Tor for managing a node remotely.",
+    "fixed": "Bitcoin Core uses the older 1.1-style protocol and, since 28.0, JSON-RPC 2.0 when a request asks for it, and the cookie file is the default and preferred login. Core's own docs say not to expose RPC to the internet, even through Tor, and point to a VPN or SSH tunnel.",
+    "commit": "fa94f44",
+    "source": "https://github.com/bitcoin/bitcoin/blob/master/doc/JSON-RPC-interface.md"
+  },
+  {
+    "id": "2026-10-02-bip-40-alerts-avoid-replay",
+    "date": "2026-10-02",
+    "page": "/glossary/bip-40-alerts-avoid-replay",
+    "title": "BIP 40 (Alerts Avoid Replay)",
+    "wrong": "The entry, carried over from the old Drupal glossary, described BIP 40 as a fix to stop old network alerts being replayed, and linked a spec file that does not exist.",
+    "fixed": "BIP 40 is a number set aside for the Stratum wire protocol, and no text was ever published under it. The entry was retired and its URL returns 404.",
+    "commit": "c1ef9c3",
+    "source": "https://github.com/bitcoin/bips/blob/master/README.mediawiki",
+    "retired": true
+  },
+  {
+    "id": "2026-10-02-bip-36-merkle-block-request",
+    "date": "2026-10-02",
+    "page": "/glossary/bip-36-merkle-block-request",
+    "title": "BIP 36 (merkle block request)",
+    "wrong": "The entry, carried over from the old Drupal glossary, described BIP 36 as an early proposal for light clients to request parts of blocks.",
+    "fixed": "BIP 36 is Custom Services, a closed proposal by Stefan Thomas. The entry described a different proposal, so it was retired and its URL returns 404.",
+    "commit": "c1ef9c3",
+    "source": "https://github.com/bitcoin/bips/blob/master/README.mediawiki",
+    "retired": true
+  },
+  {
+    "id": "2026-10-02-bip-170-txout-proof",
+    "date": "2026-10-02",
+    "page": "/glossary/bip-170-txout-proof",
+    "title": "BIP 170 (TxOut Proof)",
+    "wrong": "The entry, carried over from the old Drupal glossary, described BIP 170 as a 2013 proposal for proving a transaction is in a block, and linked a spec file that does not exist.",
+    "fixed": "There is no BIP 170, so the entry was retired and its URL returns 404.",
+    "commit": "c1ef9c3",
+    "source": "https://github.com/bitcoin/bips/blob/master/README.mediawiki",
+    "retired": true
+  },
+  {
+    "id": "2026-10-02-bip-158",
+    "date": "2026-10-02",
+    "page": "/glossary/bip-158",
+    "title": "BIP 158",
+    "wrong": "The entry said compact block filters add up to several megabytes for a year of blocks, and named Phoenix and Mutiny as wallets that use them.",
+    "fixed": "A year of filters is about 1 GB and the whole chain about 13 GB as of 2026, by our own sample of filters downloaded from nodes; Bitcoin Core's release notes put the total at about 4 GiB in 2019. Phoenix and Mutiny never used them, so the entry no longer names them.",
+    "commit": "fa94f44",
+    "source": "https://bitcoincore.org/en/releases/0.19.0.1/"
+  },
+  {
+    "id": "2026-10-02-asmap",
+    "date": "2026-10-02",
+    "page": "/glossary/asmap",
+    "title": "Asmap",
+    "wrong": "The entry said asmap data is shipped or downloaded separately from Bitcoin Core, credited the main data source to Sjors Provoost and Pieter Wuille without support, and implied asmap is in use by default.",
+    "fixed": "Since Bitcoin Core 31.0 a map built from RPKI, IRR and Routeviews data ships inside the release, and asmap stays off unless asmap=1 is set. The unsupported attribution was removed.",
+    "commit": "fa94f44",
+    "source": "https://bitcoincore.org/en/releases/31.0/"
+  },
+  {
+    "id": "2026-10-01-transaction-finality",
+    "date": "2026-10-01",
+    "page": "/glossary/transaction-finality",
+    "title": "Transaction Finality",
+    "wrong": "The entry named the March 2013 split as the most famous of Bitcoin's deep reorgs and then said no reorg had ever overturned a transaction with six or more confirmations \"in normal network operation\", without saying that this one had.",
+    "fixed": "The 25-block reorganization that ended the 2013 fork reversed a payment with more than six confirmations, a double spend of about $10,000 against the payment processor OKPay. The money was returned the next day, and the entry says so.",
+    "commit": "6637eb3",
+    "source": "https://bitcointalk.org/index.php?topic=152348.0"
+  },
+  {
+    "id": "2026-10-01-how-bitcoin-works",
+    "date": "2026-10-01",
+    "page": "/journey/how-bitcoin-works",
+    "title": "How Bitcoin Works",
+    "wrong": "The chapter said the deepest accidental reorg in Bitcoin's history was 4 blocks, in 2010.",
+    "fixed": "The deep reorgs came from software bugs. The chain was rolled back 53 blocks in August 2010 to undo the inflation bug, and 25 blocks in March 2013, when two versions of the software disagreed about a valid block.",
+    "commit": "6637eb3",
+    "source": "https://en.bitcoin.it/wiki/Value_overflow_incident"
+  },
+  {
+    "id": "2026-10-01-fork-detection",
+    "date": "2026-10-01",
+    "page": "/glossary/fork-detection",
+    "title": "Fork Detection",
+    "wrong": "The entry described the March 2013 fork backwards, as a bug that made some nodes accept an invalid block.",
+    "fixed": "Version 0.8 accepted a block that older versions rejected because of an accidental database limit, and the network was split for nearly eight hours.",
+    "commit": "6637eb3",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki"
+  },
+  {
+    "id": "2026-10-01-chain-split",
+    "date": "2026-10-01",
+    "page": "/glossary/chain-split",
+    "title": "Chain Split",
+    "wrong": "The entry called the March 2013 split a 24-block fork.",
+    "fixed": "The abandoned chain was 25 blocks long, and the split lasted 7 hours 41 minutes before the chain that every version could follow overtook it.",
+    "commit": "6637eb3",
+    "source": "https://web.archive.org/web/20200921053434/https://buildingbitcoin.org/bitcoin-dev/log-2013-03-12.html"
+  },
+  {
+    "id": "2026-10-01-bip-50",
+    "date": "2026-10-01",
+    "page": "/glossary/bip-50",
+    "title": "BIP 50",
+    "wrong": "The entry said the March 2013 chain fork took six hours to resolve.",
+    "fixed": "From the triggering block to the reorganization took 7 hours 41 minutes, and the 0.8 chain's 25 blocks were abandoned. The rewritten entry also explains the 10,000-lock database limit in older versions that caused the split, and cites its sources.",
+    "commit": "6637eb3",
+    "source": "https://web.archive.org/web/20200921053434/https://buildingbitcoin.org/bitcoin-dev/log-2013-03-12.html"
+  },
+  {
+    "id": "2026-09-18-quantum-and-bitcoin",
+    "date": "2026-09-18",
+    "page": "/rabbit-hole/quantum-and-bitcoin",
+    "title": "Quantum and Bitcoin",
+    "wrong": "The chapter put quantum-exposed bitcoin at about 30.5 percent of supply and said the gap to BIP-361's figure of more than 34 percent came from different counting rules, with ChainQuery as the lower bound and BIP-361 as the upper bound. It also attributed a redeem-script counting rule to BIP-361 that the BIP does not contain.",
+    "fixed": "ChainQuery's June 23, 2026 methodology update fixed a second bug that had dropped about half of the old uncompressed-key P2PK coins. With that fix applied, the chapter gives about 35.6 percent (7,142,979 BTC at block 967,001, September 14, 2026), in line with Wicked Smart Bitcoin's independent count of 35.2 percent at block 961,000. The gap is described as measurement bugs rather than methodology, and the opening animation and its text description were updated from 25 to 36 percent the same day.",
+    "commit": "8ea7be1",
+    "source": "https://chainquery.com/reports/quantum-exposure"
+  },
+  {
+    "id": "2026-09-18-joinstr",
+    "date": "2026-09-18",
+    "page": "/glossary/joinstr",
+    "title": "Joinstr",
+    "wrong": "The entry called Joinstr a niche proof of concept, said every public release was labeled experimental or pre-alpha, and named only a pre-alpha Electrum plugin, an experimental Rust library and documentation as its public output.",
+    "fixed": "By September 2026 Joinstr had shipped an Electrum plugin, an Android app and an Umbrel app, and its documentation says it can be used on mainnet; the rewritten entry says so and adds that its usage is still small and unmeasured. A dead mailing-list source link was replaced with an archive mirror.",
+    "commit": "8ea7be1",
+    "source": "https://docs.joinstr.xyz/users/faqs"
+  },
+  {
+    "id": "2026-09-18-how-taproot-works",
+    "date": "2026-09-18",
+    "page": "/rabbit-hole/how-taproot-works",
+    "title": "How Taproot Actually Works",
+    "wrong": "The quantum section said 'a Taproot output is the public key itself'. A reader pointed out that what sits in the output is the tweaked key, not the owner's original key, so the line could be read as contradicting the chapter's own construction section.",
+    "fixed": "It was reworded to say a Taproot output holds the tweaked output key rather than a hash of one. It also adds a point athanred made in the same thread, that anyone who could derive that key's private key could spend the coin by key path alone, the same position as old pay-to-public-key outputs.",
+    "commit": "39af3e3",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki",
+    "credit": "ABCbits (BitcoinTalk)"
+  },
+  {
+    "id": "2026-09-17-taproot",
+    "date": "2026-09-17",
+    "page": "/glossary/taproot",
+    "title": "Taproot",
+    "wrong": "The entry said most major wallets default to Taproot addresses for new receive operations, and that every Taproot spend, whatever the script behind it, is just a 64-byte signature against a 32-byte key.",
+    "fixed": "The corrected entry says most major wallets, Bitcoin Core among them, still hand out native SegWit bc1q addresses by default as of 2026 and offer Taproot as an option. It also says only the outputs look alike, since a script-path spend reveals the script that was used.",
+    "commit": "0687756",
+    "source": "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/wallet.h"
+  },
+  {
+    "id": "2026-09-17-signature-aggregation",
+    "date": "2026-09-17",
+    "page": "/glossary/signature-aggregation",
+    "title": "Signature Aggregation",
+    "wrong": "The entry credited MuSig2 to 'Blockstream researchers' and described a nonce-commitment exchange as a step of MuSig2 signing.",
+    "fixed": "MuSig2 was designed by Jonas Nick and Tim Ruffing of Blockstream with Yannick Seurin of ANSSI, the French cybersecurity agency, and it has no nonce-commitment round; that round belonged to the original MuSig. The corrected entry says so and names software that ships MuSig2.",
+    "commit": "0687756",
+    "source": "https://eprint.iacr.org/2020/1261"
+  },
+  {
+    "id": "2026-09-17-schnorr-signature",
+    "date": "2026-09-17",
+    "page": "/glossary/schnorr-signature",
+    "title": "Schnorr Signature",
+    "wrong": "The entry said Claus Schnorr's patent expired in 2008, said Schnorr signatures are unique for a given key and message, and listed MAST among the features built on Schnorr.",
+    "fixed": "US patent 4,995,082 was filed in February 1990 and expired in February 2010, more than a year after Bitcoin launched, and BIP-340 says plainly that it is not a unique-signature scheme. The corrected entry says both and names MuSig2 key aggregation and Taproot key-path spends in place of MAST.",
+    "commit": "0687756",
+    "source": "https://patents.google.com/patent/US4995082A/en"
+  },
+  {
+    "id": "2026-09-17-musig2",
+    "date": "2026-09-17",
+    "page": "/glossary/musig2",
+    "title": "MuSig2",
+    "wrong": "The entry said MuSig2's first-round nonces can be 'reused across signing sessions', and that the original MuSig needed its commit-reveal round to stop a key-cancellation attack.",
+    "fixed": "BIP-327 warns that signing twice with the same nonce exposes the secret key, so each nonce must be used exactly once, and the corrected entry says so. It also explains that the extra round in the original MuSig blocked forgeries across concurrent signing sessions, which is a different problem from key cancellation.",
+    "commit": "0687756",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0327.mediawiki"
+  },
+  {
+    "id": "2026-09-17-musig",
+    "date": "2026-09-17",
+    "page": "/glossary/musig",
+    "title": "MuSig",
+    "wrong": "The entry blamed the original MuSig's problem on a key-cancellation attack and said MuSig2 nonces can be reused across signing sessions.",
+    "fixed": "The original two-round MuSig had a flawed security proof and could be attacked across concurrent signing sessions, which is why it moved to three rounds; key cancellation is a separate attack its design already handled. The corrected entry says this and that each MuSig2 nonce is single-use.",
+    "commit": "0687756",
+    "source": "https://eprint.iacr.org/2018/417"
+  },
+  {
+    "id": "2026-09-17-merkleized-abstract-syntax-tree-mast",
+    "date": "2026-09-17",
+    "page": "/glossary/merkleized-abstract-syntax-tree-mast",
+    "title": "Merkleized Abstract Syntax Tree (MAST)",
+    "wrong": "The short definition called MAST 'a Taproot-based technique.'",
+    "fixed": "MAST was discussed in Bitcoin from 2013 and had its own proposals, such as BIP-114, before it reached Bitcoin through the Taproot soft fork in November 2021. The definition was changed to describe it as a technique deployed through Taproot.",
+    "commit": "0687756",
+    "source": "https://bitcoinops.org/en/topics/mast/"
+  },
+  {
+    "id": "2026-09-17-bip-342-tapscript",
+    "date": "2026-09-17",
+    "page": "/glossary/bip-342-tapscript",
+    "title": "BIP 342 (Tapscript)",
+    "wrong": "The entry said OP_CHECKMULTISIG was 'deprecated' in Tapscript and that 'a few opcodes' were removed, and it described adding an opcode to legacy Script as a matter of reinterpreting a version field.",
+    "fixed": "BIP-342 disables OP_CHECKMULTISIG and OP_CHECKMULTISIGVERIFY, so executing either fails the script, and they are the only two opcodes it lists as disabled. The corrected entry says so, explains the OP_SUCCESS opcodes reserved for future soft forks, and notes that legacy upgrades had to repurpose OP_NOP opcodes.",
+    "commit": "0687756",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki"
+  },
+  {
+    "id": "2026-09-17-bip-341",
+    "date": "2026-09-17",
+    "page": "/glossary/bip-341",
+    "title": "BIP 341 (Taproot)",
+    "wrong": "The entry said a key-path witness is 'exactly 64 bytes', called Speedy Trial an 'extended' signaling period, and said key-path and script-path spends look identical on the wire.",
+    "fixed": "BIP-341 allows a 64-byte signature, or 65 bytes when a non-default sighash type is appended, and it set the Speedy Trial signaling window to run only from April 24 to August 11, 2021. The corrected entry says both, and says it is the P2TR outputs that look identical until they are spent, not the two kinds of spend.",
+    "commit": "0687756",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki"
+  },
+  {
+    "id": "2026-09-17-bech32m",
+    "date": "2026-09-17",
+    "page": "/glossary/bech32m",
+    "title": "BECH32m",
+    "wrong": "The entry said Pieter Wuille discovered the bech32 weakness in 2020 and that Bitcoin's soft-fork upgrade model accommodated the fix.",
+    "fixed": "Jonathan Knowles found and reported the weakness in May 2019, and because address encoding is a wallet convention rather than a consensus rule, the fix needed no soft fork. The corrected entry also describes the actual bug, in which inserting or deleting q characters just before a final p leaves the checksum valid.",
+    "commit": "0687756",
+    "source": "https://github.com/sipa/bech32/issues/51"
+  },
+  {
+    "id": "2026-09-11-bitcoin-privacy",
+    "date": "2026-09-11",
+    "page": "/rabbit-hole/bitcoin-privacy",
+    "title": "Privacy on Bitcoin: What Works and What Doesn't",
+    "wrong": "The chapter said that because the Samourai case ended in a plea, no court ever ruled on whether a non-custodial coordinator is a money transmitter, and it left out the August 2025 jury verdict against Tornado Cash developer Roman Storm under the same money transmission statute. It also said a PayJoin 'looks exactly like an ordinary payment.'",
+    "fixed": "The chapter adds the Storm verdict as the nearest thing to a ruling and says the question is being litigated rather than settled. The PayJoin passage says it looks ordinary only at the level of inputs and outputs, and a new tip explains how wallet fingerprints can reveal whose inputs were whose.",
+    "commit": "1d7d35e",
+    "source": "https://www.coindesk.com/policy/2025/08/06/roman-storm-guilty-of-unlicensed-money-transmitting-conspiracy-in-partial-verdict",
+    "credit": "ObeyKnock (BitcoinTalk), Antidote47k (BitcoinTalk)"
+  },
+  {
+    "id": "2026-09-10-sovereignty",
+    "date": "2026-09-10",
+    "page": "/journey/sovereignty",
+    "title": "Sovereignty",
+    "wrong": "The chapter's list of privacy basics named Wasabi and JoinMarket as 'the leading implementations' of CoinJoin, although the company behind Wasabi had shut down its coordinator on June 1, 2024, weeks after US prosecutors charged the founders of Samourai Wallet over theirs.",
+    "fixed": "The item was rewritten to say the CoinJoin landscape changed in 2024, when the operators of one coordinator were arrested and the other major coordinator shut itself down, while the decentralized designs survived. It sends readers to the Privacy on Bitcoin chapter before they use any of the tools.",
+    "commit": "7129616",
+    "source": "https://web.archive.org/web/20241007122748/https://blog.wasabiwallet.io/zksnacks-is-discontinuing-its-coinjoin-coordination-service-1st-of-june/"
+  },
+  {
+    "id": "2026-09-10-silent-payments",
+    "date": "2026-09-10",
+    "page": "/glossary/silent-payments",
+    "title": "Silent Payments",
+    "wrong": "The entry credited Silent Payments to Chris Belcher, said BIP-352 was 'formally adopted in 2023', and cited no sources.",
+    "fixed": "The rewritten entry says the idea was proposed on the bitcoin-dev mailing list in March 2022 and written up as BIP-352 by josibake and Ruben Somsen, and that the BIP was merged into the BIPs repository in May 2024. It now cites the BIP, Bitcoin Optech and two other sources.",
+    "commit": "6849596",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki"
+  },
+  {
+    "id": "2026-07-14-bip-bitcoin-improvement-proposal",
+    "date": "2026-07-14",
+    "page": "/glossary/bip-bitcoin-improvement-proposal",
+    "title": "BIP (Bitcoin Improvement Proposal)",
+    "wrong": "The entry gave the BIP status path as Draft, then Proposed, then Final, the scheme from BIP-2, as if it were still in force.",
+    "fixed": "It now gives the BIP-3 statuses that replaced BIP-2 in January 2026 (Draft, Complete, Deployed and Closed) and describes the older nine-status scheme as history.",
+    "commit": "9278620",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0003.md"
+  },
+  {
+    "id": "2026-07-07-block-size-war",
+    "date": "2026-07-07",
+    "page": "/glossary/block-size-war",
+    "title": "Block Size War",
+    "wrong": "The entry called BIP-101 the first concrete proposal to raise the limit, though BIP-100 was assigned eleven days earlier, and it told the March 2017 BIP-148 user-activated soft fork as a response to the New York Agreement signed that May. It also said SegWit 'locked in and activated at block 481,824', although lock-in came about two weeks earlier, at block 479,808.",
+    "fixed": "The entry now calls BIP-101 the flagship proposal and places BIP-148 before the agreement. It says miner signaling crossed SegWit's threshold in early August 2017 and that SegWit went live at block 481,824 on August 24, 2017.",
+    "commit": "6f63f33",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki"
+  },
+  {
+    "id": "2026-07-07-bitcoin-sv-bsv",
+    "date": "2026-07-07",
+    "page": "/glossary/bitcoin-sv-bsv",
+    "title": "Bitcoin SV (BSV)",
+    "wrong": "The entry described nChain as Craig Wright's company, and said that in the 2018 hash war each side pointed its mining power at the other side's chain.",
+    "fixed": "It now describes Wright as nChain's chief scientist. It says each side poured mining power into its own chain, while Wright's camp threatened attacks on the rival chain.",
+    "commit": "6f63f33",
+    "source": "https://fortune.com/2017/04/13/bitcoin-inventor-nchain/"
+  },
+  {
+    "id": "2026-06-18-quantum-and-bitcoin",
+    "date": "2026-06-18",
+    "page": "/rabbit-hole/quantum-and-bitcoin",
+    "title": "Quantum and Bitcoin",
+    "wrong": "The chapter said 5,071,264 BTC, or 25.3 percent of circulating supply, sat at quantum-exposed addresses. It put the 9-point gap to Wicked Smart Bitcoin's independent count of 34.55 percent down to scripts that never reveal a public key.",
+    "fixed": "The chapter was corrected to about 30.5 percent after ChainQuery's methodology v1.1 found roughly 1.04 million BTC at reused nested-segwit (P2SH-wrapped) addresses that its first count had skipped. That cut the gap to about 4 points, and the chapter now says the remaining gap is not explained by such scripts, which hold only tens of BTC. A second fix in September 2026 revised the figure again.",
+    "commit": "73c8ed6",
+    "source": "https://chainquery.com/reports/quantum-exposure"
+  },
+  {
+    "id": "2026-05-26-mempool",
+    "date": "2026-05-26",
+    "page": "/rabbit-hole/mempool",
+    "title": "The Mempool",
+    "wrong": "The chapter said 'the default Bitcoin Core mempool' keeps unconfirmed transactions for up to two weeks, which read as a fixed rule rather than a setting each node operator can change. Its eviction bullet also did not say what happens to the coins a dropped transaction tried to spend.",
+    "fixed": "It now says two weeks is Bitcoin Core's default for the -mempoolexpiry setting (336 hours) and that node operators can shorten or extend it. It also says the coins an evicted transaction tried to spend stay unspent on the chain under the sender's keys, and the transaction can be rebroadcast at a higher fee.",
+    "commit": "bd61826",
+    "source": "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/mempool_options.h",
+    "credit": "RetiredAvocado (Reddit)"
+  },
+  {
+    "id": "2026-05-24-bitcoin-pizza-day",
+    "date": "2026-05-24",
+    "page": "/glossary/bitcoin-pizza-day",
+    "title": "Bitcoin Pizza Day",
+    "wrong": "The entry said 'a user in the UK' took up Laszlo Hanyecz's offer and ordered the two pizzas.",
+    "fixed": "It now names the buyer as Jeremy Sturdivant, known on Bitcoin Talk as jercos, and adds jercos's own account of the trade, quoted with his permission.",
+    "commit": "de44095",
+    "source": "https://bitcointalk.org/index.php?topic=137.0"
+  }
+]
