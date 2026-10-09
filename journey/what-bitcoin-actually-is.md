@@ -13,7 +13,7 @@ relatedTerms: ["satoshi-nakamoto", "whitepaper", "proof-work-pow", "decentraliza
 ogImage: "/diagrams/og/network-topology.png"
 ogImageAlt: "Two network topologies side by side. On the left, a single central bank hub stands alone. On the right, Bitcoin as roughly thirty-five peer nodes connected in an organic mesh with no center. One central bank, versus tens of thousands of Bitcoin nodes. No one is in charge."
 sources:
-  - { label: "Bitcoin Whitepaper (Satoshi Nakamoto, 2008)", url: "/bitcoin.pdf" }
+  - { label: "Bitcoin Whitepaper (Satoshi Nakamoto, 2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Genesis block via ChainQuery (run getblock on a live node)", url: "https://chainquery.com/rpc/getblock" }
   - { label: "Cypherpunks mailing list announcement (October 31, 2008)", url: "https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html" }
   - { label: "Satoshi Nakamoto Institute - Bitcoin emails", url: "https://satoshi.nakamotoinstitute.org/emails/" }

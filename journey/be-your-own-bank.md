@@ -16,9 +16,9 @@ ogImageAlt: "One seed, every address. A 12-word seed phrase at the top derives a
 sources:
   - { label: "BIP 39 - Mnemonic seed phrases (Bitcoin Improvement Proposal)", url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" }
   - { label: "BIP 32 - Hierarchical deterministic wallets", url: "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" }
-  - { label: "Bitcoin Privacy Best Practices (PDF, this site)", url: "/downloads/bitcoin-privacy-best-practices.pdf" }
-  - { label: "12-word seed backup form (PDF, this site)", url: "/downloads/seed-backup-12-word.pdf" }
-  - { label: "24-word seed backup form (PDF, this site)", url: "/downloads/seed-backup-24-word.pdf" }
+  - { label: "Bitcoin Privacy Best Practices (PDF, this site)", url: "https://www.learnbitcoin.com/downloads/bitcoin-privacy-best-practices.pdf" }
+  - { label: "12-word seed backup form (PDF, this site)", url: "https://www.learnbitcoin.com/downloads/seed-backup-12-word.pdf" }
+  - { label: "24-word seed backup form (PDF, this site)", url: "https://www.learnbitcoin.com/downloads/seed-backup-24-word.pdf" }
 ---
 
 > **Where you're going:** By the end of this chapter, you'll have generated a wallet you control, backed up the seed properly, received a real (small) Bitcoin transaction, and verified it from a second device. You'll have done self-custody. Optional: do it for real.

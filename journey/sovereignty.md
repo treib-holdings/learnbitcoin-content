@@ -18,7 +18,7 @@ sources:
   - { label: "BIP 174 - Partially Signed Bitcoin Transaction (PSBT)", url: "https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki" }
   - { label: "BIP 67 - deterministic public key sorting for multisig", url: "https://github.com/bitcoin/bips/blob/master/bip-0067.mediawiki" }
   - { label: "Bitcoin Privacy - bitcoin.org reference", url: "https://bitcoin.org/en/protect-your-privacy" }
-  - { label: "Privacy Best Practices PDF (this site)", url: "/downloads/bitcoin-privacy-best-practices.pdf" }
+  - { label: "Privacy Best Practices PDF (this site)", url: "https://www.learnbitcoin.com/downloads/bitcoin-privacy-best-practices.pdf" }
 ---
 
 > **Where you're going:** Your own Bitcoin node, validating every transaction. A multisig wallet that protects against single-point-of-failure. An op-sec posture that lets you hold Bitcoin without becoming a target. This is the graduation chapter. By the end of it, you will not need anyone's permission to use Bitcoin.
