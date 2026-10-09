@@ -12,6 +12,7 @@ tagline: "Hash, nonce, target. The simplest hard problem in the world, and why i
 order: 4
 estimatedMinutes: 13
 sources:
+  - { label: "Bitmain support - S21 Pro specification (234 TH/s typical, 3,510 W, 15 J/TH)", url: "https://support.bitmain.com/hc/en-us/articles/31321354157593-S21-Pro-Specification" }
   - { label: "SHA-256 spec (NIST FIPS 180-4)", url: "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf" }
   - { label: "Bitcoin Core - GetNextWorkRequired (difficulty calc)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/pow.cpp" }
   - { label: "Cambridge Bitcoin Electricity Consumption Index", url: "https://ccaf.io/cbnsi/cbeci" }
@@ -35,7 +36,7 @@ A Bitcoin block contains transactions and a header. The header includes a 32-bit
 
 To "mine" a block, a computer assembles a candidate header, then tries values of the nonce, one after another, looking for a header whose SHA-256 hash starts with enough zero bits to be below the current target.
 
-There is no shortcut. There is no algebra that gets you the right nonce. You guess, you hash, you check, you increment, you hash again. Modern ASICs do this trillions of times per second per chip.
+There is no shortcut. There is no algebra that gets you the right nonce. You guess, you hash, you check, you increment, you hash again. A modern mining machine, packed with many ASIC chips, does this hundreds of trillions of times per second.
 
 When a miner finds a valid nonce, they broadcast the block. Every other node verifies in milliseconds (hashing the header once is cheap; finding the nonce in the first place is the work). The block is added to the chain. Everyone moves on to mining the next one.
 

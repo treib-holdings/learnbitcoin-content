@@ -2,12 +2,14 @@
 title: "Volatility"
 slug: volatility
 draft: false
+updated: "2026-10-09"
 shortDefinition: "A measure of how quickly and widely BTC's price swings over time, often higher than many traditional assets."
 keyTakeaways:
   - "BTC frequently sees large price swings in short periods"
   - "Reflects a nascent market with evolving liquidity and sentiment"
   - "Can create high risk/high reward trading environments"
-sources: []
+sources:
+  - { label: "mempool.space - genesis block 0, mined January 3, 2009", url: "https://mempool.space/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f" }
 relatedTerms:
   - bear-market
   - bull-market
@@ -28,7 +30,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Volatility is the rate and magnitude at which Bitcoin's price changes over time. By any conventional measure, BTC is more volatile than the US dollar, gold, or major stock indices. By no conventional measure is this surprising, given Bitcoin is fifteen years into a global monetization process worth somewhere between zero and "replace gold as the dominant store of value."
+Volatility is the rate and magnitude at which Bitcoin's price changes over time. By any conventional measure, BTC is more volatile than the US dollar, gold, or major stock indices. By no conventional measure is this surprising, given Bitcoin has been in a global monetization process since the network launched in January 2009, with an end point somewhere between zero and "replace gold as the dominant store of value."
 
 A few practical facts:
 

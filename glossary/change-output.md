@@ -7,7 +7,7 @@ linkText:
   - "change address"
 draft: false
 published: "2026-09-08"
-updated: "2026-09-11"
+updated: "2026-10-09"
 shortDefinition: "The output a transaction sends back to the spender when the selected inputs exceed the payment plus the fee. Bitcoin coins are spent whole, like paper bills, and the change is the difference."
 keyTakeaways:
   - "Wallets send change to a fresh internal address on a separate derivation branch (BIP-44 reserves chain 1 for change), so a change address never appears in a request for payment"
@@ -18,7 +18,7 @@ sources:
   - { label: "Bitcoin Wiki - Privacy (change address detection)", url: "https://en.bitcoin.it/wiki/Privacy" }
   - { label: "Bitcoin Wiki - Change", url: "https://en.bitcoin.it/wiki/Change" }
   - { label: "Bitcoin Optech - Coin selection topic", url: "https://bitcoinops.org/en/topics/coin-selection/" }
-  - { label: "Bitcoin Core 23.0 release notes - change output type follows the destination", url: "https://bitcoincore.org/en/releases/23.0/" }
+  - { label: "Bitcoin Core PR #23789 - wallet: strictly match tx change type to improve privacy (merged December 2021, shipped in 23.0)", url: "https://github.com/bitcoin/bitcoin/pull/23789" }
 relatedTerms:
   - utxo-unspent-transaction-output
   - output-transaction-output

@@ -2,12 +2,14 @@
 title: "Lightning Channel"
 slug: lightning-channel
 draft: false
+updated: "2026-10-09"
 shortDefinition: "A two-party off-chain payment channel on the Lightning Network, allowing rapid, low-fee transactions prior to on-chain settlement."
 keyTakeaways:
   - "Locks BTC in a 2-of-2 multi-sig address for off-chain transfers"
   - "Allows near-instant, fee-efficient payments"
   - "Eventually settles on-chain when the channel is closed"
-sources: []
+sources:
+  - { label: "BOLT #2 - Peer Protocol for Channel Management (the funder opens and funds a v1 channel; v2 adds dual funding)", url: "https://github.com/lightning/bolts/blob/master/02-peer-protocol.md" }
 relatedTerms:
   - atomic-multi-path-payment-amp
   - audiobook-model-lightning
@@ -42,11 +44,11 @@ sameAs:
 liveWidget: ~
 ---
 
-A Lightning channel is a payment pipe between two parties on the [Lightning Network](/glossary/lightning-network). Both parties lock funds into a shared 2-of-2 multisig on-chain output (the **funding transaction**), and from there they can exchange unlimited off-chain payments by signing successive **commitment transactions** that update the channel's balance allocation.
+A Lightning channel is a payment pipe between two parties on the [Lightning Network](/glossary/lightning-network). Bitcoin is locked into a shared 2-of-2 multisig on-chain output (the **funding transaction**), and from there the two parties can exchange unlimited off-chain payments by signing successive **commitment transactions** that update the channel's balance allocation. Usually the side that opens the channel puts up all of that bitcoin.
 
 How a channel works, end to end:
 
-1. **Opening.** Alice and Bob both contribute (or one contributes, depending on the protocol variant) to a 2-of-2 multisig. The funding transaction goes on-chain and confirms.
+1. **Opening.** Alice funds a 2-of-2 multisig that needs both her signature and Bob's. (With dual funding, a newer option, Bob can add funds too.) The funding transaction goes on-chain and confirms.
 2. **Transacting.** To pay Bob, Alice constructs a new commitment transaction that allocates less of the channel's balance to herself and more to Bob, signs it, and shares it. Bob signs and stores it too. The old commitment is invalidated using a revocation key. The new state is now the "current truth" between them, even though nothing is on-chain.
 3. **Many updates.** They can repeat this back and forth, in either direction, thousands of times. Each update is just a signed transaction sitting in their wallets.
 4. **Closing.** Either party can broadcast the latest commitment to the chain at any time. The commitment itself is a kind of [rescue transaction](/glossary/rescue-transaction) - pre-signed at every state update, ready to broadcast if the channel partner goes offline or misbehaves. The funds settle according to the latest state. **Cooperative close** is signed by both and clean. **Force close** is unilateral and includes a delay window during which the other party can punish a cheating counterparty (broadcasting an outdated state) using the revocation key.

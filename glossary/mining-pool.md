@@ -2,12 +2,14 @@
 title: "Mining Pool"
 slug: mining-pool
 draft: false
+updated: "2026-10-09"
 shortDefinition: "A collective of miners pooling their hash power and sharing rewards proportionally to contributed work."
 keyTakeaways:
   - "Combines resources for more consistent miner payouts"
   - "Pool members receive shares of the block reward"
   - "Can lead to centralization if few pools dominate"
-sources: []
+sources:
+  - { label: "mempool.space - mining pools over the past year (Foundry USA 28.2%, AntPool 18.1%, F2Pool 12.5%, ViaBTC 9.7% of 52,323 blocks to October 9, 2026)", url: "https://mempool.space/graphs/mining/pools#1y" }
 relatedTerms:
   - block-reward
   - coinbase-transaction
@@ -34,12 +36,14 @@ liveWidget: ~
 
 A mining pool is a group of [miners](/glossary/miner) who combine their hash rate to find blocks together and split the rewards proportionally.
 
-Why pools exist: variance. A miner with 0.1% of global hash rate would, on average, find one block every ~70 days - but the variance around that average is enormous. Some months they'd find three; some months zero. With electricity bills due every month, "averaged over years" is not a viable cash flow. Pools fix this by aggregating many miners' hash power so blocks come more frequently (proportional to combined hash), and paying each contributor based on the "shares" of work they submit. Modern share schemes (PPLNS, FPPS) also defeat [pool hopping](/glossary/pool-hopping) - a historical exploit that gamed early-round shares to extract above-average rewards.
+Why pools exist: variance. A miner with 0.01% of global hash rate would, on average, find one block every ~70 days - but the variance around that average is enormous. Some quarters they'd find three; some quarters zero. With electricity bills due every month, "averaged over years" is not a viable cash flow.
 
-The biggest pools today (Foundry USA, AntPool, ViaBTC, F2Pool, and a handful of others) collectively control well over half of global hash rate. This is the centralization concern that keeps Bitcoin developers up at night: if a few pool operators decide together to censor certain transactions, or to attempt a reorganization, they have the hash power to attempt it.
+Pools fix this by aggregating many miners' hash power so blocks come more frequently (proportional to combined hash), and paying each contributor based on the "shares" of work they submit. Modern share schemes (PPLNS, FPPS) also defeat [pool hopping](/glossary/pool-hopping) - a historical exploit that gamed early-round shares to extract above-average rewards.
+
+Over the year to October 2026, the four biggest pools - Foundry USA, AntPool, F2Pool and ViaBTC - found about 69% of all blocks, by mempool.space's count. This is the centralization concern that keeps Bitcoin developers up at night: if a few pool operators decide together to censor certain transactions, or to attempt a reorganization, they have the hash power to attempt it.
 
 The counterweight is that **pool operators are not miners**. The hash rate in a pool comes from individual miners who can switch pools at will. If a pool starts misbehaving, miners can - and do - migrate elsewhere within hours. There's also work happening to push power back to individual miners: **Stratum V2** is a protocol upgrade that lets miners (not pool operators) choose which transactions go into the blocks they're hashing on. It's been slow to deploy but is the structural fix.
 
 On the operator side, the layer that actually manages pool connections, work distribution, and per-ASIC monitoring is the [mining front-end](/glossary/mining-front-end) - just stock firmware for a hobbyist with one ASIC, a dedicated fleet-management stack for industrial operators running thousands.
 
-The current state is uncomfortable but not catastrophic. See [Mining rabbit hole section 8](/rabbit-hole/mining) for a longer look at mining centralization and how it's actually evolving.
+As of October 2026, the state of things is uncomfortable but not catastrophic. See [Mining rabbit hole section 8](/rabbit-hole/mining) for a longer look at mining centralization and how it's actually evolving.

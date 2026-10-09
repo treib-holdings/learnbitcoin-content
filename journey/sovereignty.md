@@ -31,7 +31,7 @@ sources:
   - { label: "Bitcoin Core 31 - init.cpp help text for -assumevalid and -txindex", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/init.cpp" }
   - { label: "Bitcoin Core 31 - getrawtransaction help (finds confirmed transactions only with -txindex or a block hash)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/rpc/rawtransaction.cpp" }
   - { label: "Bitcoin Core - descriptors.md (addr() descriptors and watch-only descriptor wallets)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/doc/descriptors.md" }
-  - { label: "Umbrel App Store - Bitcoin Node, powered by Bitcoin Core", url: "https://apps.umbrel.com/app/bitcoin" }
+  - { label: "Umbrel App Store - Bitcoin Node, powered by Bitcoin Core (its settings toggle Tor, clearnet and I2P connections)", url: "https://apps.umbrel.com/app/bitcoin" }
   - { label: "umbrelOS - runs on Intel or AMD machines, the Raspberry Pi 5 or a virtual machine", url: "https://github.com/getumbrel/umbrel" }
   - { label: "Start9 - Installing StartOS (desktops, laptops and mini PCs; among Raspberry Pi models, the Pi 4 only)", url: "https://github.com/Start9Labs/start-technologies/blob/master/projects/start-os/docs/src/installing-startos.md" }
   - { label: "Start9 - Tor on StartOS (not included by default; installed as a service)", url: "https://github.com/Start9Labs/start-technologies/blob/master/projects/start-os/docs/src/tor.md" }
@@ -119,7 +119,7 @@ Don't try to perfect this on the first pass. Just get something running. Improve
 3. **Flash the OS** to the SSD or boot drive. The node OS providers give clear flash instructions. (Mac: balenaEtcher. Windows: Rufus. Linux: `dd`.)
 4. **Boot the node** and connect to it via web interface (Umbrel/Start9 give you a `.local` URL on your home network).
 5. **Wait for sync.** The initial download is the painful part - several hundred GB to fetch and validate. On a Pi with a decent SSD, expect it to take several days. Don't worry about it; just leave it running. By default, Bitcoin Core skips signature and script checks for every block up to a recent one that each release assumes is valid (the `assumevalid` setting). It still checks every other rule. Set `assumevalid=0` to check signatures and scripts on those blocks too, at the cost of a slower sync.
-6. **While it syncs,** read the docs. Set up Tor (it's usually a checkbox in the node OS). Decide if you want Lightning (yes, eventually).
+6. **While it syncs,** read the docs. Set up Tor (a setting in some node OSes, an add-on service in others). Decide if you want Lightning (yes, eventually).
 7. **Once synced,** test it. Run a query: get the latest block height. Get a transaction by ID (for confirmed transactions that aren't in your wallet, Bitcoin Core needs `txindex=1` in `bitcoin.conf`). Verify a balance.
 
 You now have a Bitcoin node. Welcome.
@@ -209,7 +209,7 @@ The basics, in order of effort:
 
 **2. Use coin control.** Most wallets let you select which UTXOs to spend in a given transaction. Don't merge UTXOs that come from different sources unless you've thought about it. Mixing UTXOs in one transaction links those sources publicly.
 
-**3. Run your wallet over Tor.** The internet sees IP addresses tied to transactions even when the blockchain doesn't. Tor breaks that. Most node OSes have a Tor toggle.
+**3. Run your wallet over Tor.** The internet sees IP addresses tied to transactions even when the blockchain doesn't. Tor breaks that. Node OSes offer Tor as a setting or an add-on service.
 
 **4. Avoid KYC for everything if you can.** Buying bitcoin without ID is meaningfully harder than buying with ID, but the privacy benefit is real. Peer-to-peer markets such as Bisq and RoboSats work. (AgoraDesk, another peer-to-peer market, shut down in 2024.) Bitcoin ATMs work in some places. Earning bitcoin (freelancing for it, etc.) works.
 

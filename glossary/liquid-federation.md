@@ -2,12 +2,14 @@
 title: "Liquid Federation"
 slug: liquid-federation
 draft: false
+updated: "2026-10-09"
 shortDefinition: "The group of functionaries managing the Liquid sidechain's pegged BTC via a multi-sig setup."
 keyTakeaways:
   - "Federated multi-sig group securing the Liquid sidechain peg"
   - "Requires a threshold of signers to release pegged BTC"
   - "Provides quicker block times and confidential features, but not fully trustless"
-sources: []
+sources:
+  - { label: "Blockstream Help - How does the Liquid Federation's multisig work? (11-of-15 multisig for peg-ins and peg-outs; each of the 15 functionaries holds one key)", url: "https://help.blockstream.com/liquid-network/faqs/how-does-the-liquid-federations-multisig-work" }
 relatedTerms:
   - liquid-network
   - multisig
@@ -24,7 +26,7 @@ The structure as of 2026:
 
 - **Roughly 65 federation members.** Major Bitcoin exchanges (Bitfinex, BTSE), Bitcoin-native firms (Blockstream itself, Bull Bitcoin), market makers, custodians, and trading firms.
 - **Block signing rotates.** A subset of federation members signs each block on a rotating schedule. Blocks come every ~1 minute.
-- **Peg-out approval requires a threshold.** Moving BTC from mainnet back to mainnet via peg-out requires signatures from 11-of-15 active block signers (the exact ratio has evolved).
+- **Peg-out approval requires a threshold.** Moving BTC from Liquid back to Bitcoin's mainnet via peg-out requires signatures from 11 of the 15 functionaries that hold the federation wallet's keys, as of October 2026.
 - **Tamper-evident hardware.** Federation members run dedicated functionary hardware in geographically distributed, security-audited locations.
 
 The trust assumption: a malicious majority of the federation could collude to steal pegged BTC, halt the sidechain, or censor transactions. Geographic and organizational diversity makes this hard but not impossible.

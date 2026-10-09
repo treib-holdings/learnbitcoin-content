@@ -2,12 +2,18 @@
 title: "Lightning Network"
 slug: lightning-network
 draft: false
+updated: "2026-10-09"
 shortDefinition: "A layer-2 system on top of Bitcoin enabling fast, low-fee payments through off-chain channels, settling on-chain only when necessary."
 keyTakeaways:
   - "Solves high on-chain fees and slow confirmations for everyday payments"
   - "Uses payment channels to batch transactions off-chain"
   - "Relies on a global network of LN nodes interconnected by routes"
-sources: []
+sources:
+  - { label: "BOLT #12 - Negotiation Protocol for Lightning Payments (offers)", url: "https://github.com/lightning/bolts/blob/master/12-offer-encoding.md" }
+  - { label: "BOLTs PR #798 - Offers (merged September 2024)", url: "https://github.com/lightning/bolts/pull/798" }
+  - { label: "Bitcoin Optech - Offers (topic page and implementation history)", url: "https://bitcoinops.org/en/topics/offers/" }
+  - { label: "LND 0.22.0 release notes (in development) - first BOLT 12 code", url: "https://github.com/lightningnetwork/lnd/blob/master/docs/release-notes/release-notes-0.22.0.md" }
+  - { label: "LNDK - standalone daemon that adds BOLT 12 offers to LND (experimental)", url: "https://github.com/lndk-org/lndk" }
 relatedTerms:
   - atomic-multi-path-payment-amp
   - audiobook-model-lightning
@@ -76,6 +82,8 @@ Limitations are real:
 
 Lightning is how Bitcoin scales without changing the base layer. The base layer optimizes for settlement security across decades; Lightning optimizes for instant payments. The two are complementary by design.
 
-**A note on BOLT-12 offers.** The legacy invoice format is [BOLT-11](/glossary/bolt-11) - single-use, point-in-time payment requests. BOLT-12 ("offers") is the modern successor: reusable, supports recurring payments, smaller, more private. It was officially merged into the Lightning specification in September 2024. Adoption is implementation-dependent as of 2026: Core Lightning, LDK, and eclair/Phoenix support it natively; LND does not yet (workable via the LNDK shim). Services like Strike, Lightspark, and CoinOS have shipped support; most everyday wallets still default to BOLT-11. Expect that to shift over the next few years.
+**A note on BOLT-12 offers.** The legacy invoice format is [BOLT-11](/glossary/bolt-11) - single-use, point-in-time payment requests. BOLT-12 ("offers") is the modern successor. An offer is reusable, because each payer's wallet uses it to request a fresh invoice over Lightning, and blinded paths let the recipient keep its node hidden. It was merged into the Lightning specification in September 2024, without the built-in recurring payments of earlier drafts.
+
+As of October 2026 Core Lightning, eclair and LDK support offers natively. LND's released versions do not, though work has started in its development branch, and the separate LNDK project, still experimental, adds offers to an LND node.
 
 See [Lightning Channel](/glossary/lightning-channel) for the building block, and [Journey: Using Bitcoin](/journey/using-bitcoin) for the practical user view.

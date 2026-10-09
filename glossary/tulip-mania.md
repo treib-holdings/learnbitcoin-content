@@ -6,7 +6,7 @@ linkText:
   - "tulip bubble"
 draft: false
 published: "2026-09-29"
-updated: "2026-10-05"
+updated: "2026-10-09"
 shortDefinition: "The 1630s Dutch bubble in tulip bulb contracts, cited against Bitcoin since at least 2013 as the original example of a price with nothing behind it. The historical episode was smaller than the legend, and the comparison fails on the one thing tulips never did: come back."
 keyTakeaways:
   - "Bulb contract prices in the Dutch Republic peaked in early February 1637 and collapsed within days; historians who went to the archives found few bankruptcies and a trade confined to a small circle of merchants"
@@ -18,7 +18,8 @@ sources:
   - { label: "Charles Mackay - Extraordinary Popular Delusions and the Madness of Crowds (1841), Project Gutenberg", url: "https://www.gutenberg.org/ebooks/24518" }
   - { label: "CNBC - Jamie Dimon says bitcoin is a fraud that will eventually blow up (September 2017)", url: "https://www.cnbc.com/2017/09/12/jpmorgan-ceo-jamie-dimon-raises-flag-on-trading-revenue-sees-20-percent-fall-for-the-third-quarter.html" }
   - { label: "CNBC - Jamie Dimon says JPMorgan will let clients buy bitcoin (May 2025)", url: "https://www.cnbc.com/2025/05/19/jpmorgan-ceo-jamie-dimon-says-the-bank-will-let-clients-buy-bitcoin.html" }
-  - { label: "Coin Metrics - Community Network Data (BTC daily close, PriceUSD)", url: "https://coinmetrics.io/community-network-data/" }
+  - { label: "Coin Metrics docs - PriceUSD, the USD closing price (daily value is the price at end of day UTC)", url: "https://docs.coinmetrics.io/network-data/network-data-overview/market/price" }
+  - { label: "Coin Metrics community API - BTC PriceUSD daily close, 2011 to 2024", url: "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=PriceUSD&frequency=1d&start_time=2011-01-01&end_time=2024-12-31&page_size=10000" }
 relatedTerms:
   - bull-market
   - bear-market

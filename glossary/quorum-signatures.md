@@ -2,12 +2,14 @@
 title: "Quorum Signatures"
 slug: quorum-signatures
 draft: false
+updated: "2026-10-09"
 shortDefinition: "Threshold signature schemes where a subset (quorum) of signers must cooperate to produce a valid signature."
 keyTakeaways:
   - "Allows M-of-N signing to produce one aggregated signature"
   - "Useful for federations or advanced custody setups"
   - "Reduces signature overhead, potentially boosting privacy"
-sources: []
+sources:
+  - { label: "BIP-445 (Draft as of October 2026) - FROST Signing Protocol for BIP340 Signatures", url: "https://github.com/siv2r/bip-frost-signing" }
 relatedTerms:
   - clawback-mechanism
   - fidelity-bond
@@ -35,4 +37,4 @@ Why care:
 
 The tradeoffs are interactivity and ceremony complexity. FROST requires a distributed key-generation ceremony at setup (no single party ever sees the full key) and signing requires multiple coordinated rounds between the participating signers. Classical M-of-N multisig is operationally simpler: each cosigner signs independently and asynchronously, at the cost of larger on-chain footprint and obvious multisig leakage.
 
-For retail users this is overkill. For federations (Liquid functionaries, Fedimint guardians) and institutional custody, threshold Schnorr is becoming the modern default as tooling matures.
+For retail users this is overkill. Federations and institutional custody are the natural users of threshold Schnorr, though as of October 2026 FROST's Bitcoin spec, BIP 445, is still a draft.

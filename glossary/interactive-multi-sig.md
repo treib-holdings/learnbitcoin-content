@@ -2,12 +2,14 @@
 title: "Interactive Multi-Sig"
 slug: interactive-multi-sig
 draft: false
+updated: "2026-10-09"
 shortDefinition: "A signing model requiring all cosigners to collaborate in real time before producing a valid multi-signature transaction."
 keyTakeaways:
   - "Requires simultaneous or sequential online presence of cosigners"
   - "Potentially reduces signature footprint (e.g., via aggregated signatures)"
   - "More complex to implement but can enhance efficiency or privacy"
-sources: []
+sources:
+  - { label: "BIP-445 (Draft as of October 2026) - FROST Signing Protocol for BIP340 Signatures", url: "https://github.com/siv2r/bip-frost-signing" }
 relatedTerms:
   - hierarchical-multisig
   - m-n
@@ -40,7 +42,7 @@ What interactive multisig costs:
 Production status as of 2026:
 
 - **Lightning channel construction** is increasingly using interactive multisig (2-of-2 MuSig2 for cooperative channel state, instead of classical 2-of-2).
-- **Federation setups** (Fedimint, Liquid functionaries) experiment with FROST.
+- **Federations** could use FROST to sign as a single key, but its Bitcoin spec, BIP 445, is still a draft as of October 2026.
 - **Mainstream personal multisig** (Sparrow + hardware wallets) still uses classical multisig for operational reasons; non-interactive signing fits human workflow better.
 
 The general direction is toward more aggregated / interactive multisig adoption, but the migration is gradual. Both forms will coexist for years.

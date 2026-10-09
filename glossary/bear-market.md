@@ -2,14 +2,15 @@
 title: "Bear Market"
 slug: bear-market
 draft: false
-updated: "2026-10-05"
+updated: "2026-10-09"
 shortDefinition: "A prolonged market downturn with falling prices, pessimistic sentiment, and cautious trading behaviors."
 keyTakeaways:
   - "Characterized by declining crypto prices"
   - "Breeds pessimism and reduced trading activity"
   - "Can foster innovation and accumulation opportunities"
 sources:
-  - { label: "Coin Metrics - Community Network Data (BTC daily close, PriceUSD)", url: "https://coinmetrics.io/community-network-data/" }
+  - { label: "Coin Metrics docs - PriceUSD, the USD closing price (daily value is the price at end of day UTC)", url: "https://docs.coinmetrics.io/network-data/network-data-overview/market/price" }
+  - { label: "Coin Metrics community API - BTC PriceUSD daily close, 2011 to 2024", url: "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=PriceUSD&frequency=1d&start_time=2011-01-01&end_time=2024-12-31&page_size=10000" }
 relatedTerms:
   - bull-market
   - market-capitalization
@@ -31,7 +32,7 @@ Bitcoin's bear markets, peak to trough on daily closing prices (Coin Metrics):
 - **2018** - $19,641 -> $3,185 (-84%). The post-ICO-mania hangover.
 - **2022** - $67,542 -> $15,758 (-77%). Terra/Luna collapse, Celsius/Voyager/Genesis bankruptcies, FTX implosion.
 
-The pattern is uncomfortable to live through and bigger in magnitude than nearly any traditional asset. Bitcoin bear markets routinely take 75-93% off the previous cycle's peak. They also generally end with a recovery to new all-time highs within 15-25 months of the bottom - though "generally" is doing a lot of work in a sample size of four.
+The pattern is uncomfortable to live through and bigger in magnitude than nearly any traditional asset. Bitcoin bear markets routinely take 75-93% off the previous cycle's peak.
 
 What's reliably true about bear markets:
 
@@ -41,7 +42,7 @@ What's reliably true about bear markets:
 - **The strongest holders accumulate.** People who [DCA](/glossary/dca-dollar-cost-averaging) through a bear market end up with a much lower average cost basis than people who only buy in bull markets.
 - **The protocol doesn't change.** Bitcoin keeps producing blocks every ten minutes regardless of what the price is doing. Bear markets are an asset-price phenomenon, not a network phenomenon.
 
-The Bitcoiner discipline during a bear market is to remember it's part of the cycle. Stop trading. Keep stacking. Build the things you can build when there's no hype to chase. The bull market that follows tends to reward people who used the bear well.
+The Bitcoiner discipline during a bear market is simple to say and hard to do. Stop trading. Keep stacking. Build the things you can build when there's no hype to chase.
 
 See [Bull Market](/glossary/bull-market) for the other side and [Volatility](/glossary/volatility) for the underlying dynamic.
 

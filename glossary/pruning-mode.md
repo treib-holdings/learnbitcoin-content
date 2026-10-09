@@ -2,12 +2,15 @@
 title: "Pruning Mode"
 slug: pruning-mode
 draft: false
+updated: "2026-10-09"
 shortDefinition: "A feature in Bitcoin Core that discards older block data after validation, minimizing disk usage while preserving node security."
 keyTakeaways:
   - "Enables running a full node with reduced disk space"
   - "Fully validates once but discards old blocks after syncing"
   - "Ideal for space-limited users but can't provide deep historical data"
-sources: []
+sources:
+  - { label: "Bitcoin Core 31 - intro.cpp (the setup screen adds the two figures and says at least 870 GB of data will be stored)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/qt/intro.cpp" }
+  - { label: "Bitcoin Core 31 - chainparams.cpp (mainnet disk guidelines 856 and 14, which the setup screen adds up to 870 GB)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/kernel/chainparams.cpp" }
 relatedTerms:
   - bitcoin-client
   - bitcoin-core
@@ -29,7 +32,7 @@ What pruning gives up:
 - **Rescan-from-scratch operations.** If you import an old seed and need to scan the chain from a year ago, a pruned node can't do it. You'd need to disable pruning and re-download or use a non-pruned node.
 - **Some RPC calls.** `getblock` on old blocks fails; `gettxoutproof` for ancient transactions fails.
 
-Disk usage with pruning enabled is typically 15-25 GB total (UTXO set + recent blocks + headers + indexes), vs ~600 GB for a fully-archival node. The difference is what makes "running a full node" practical on a Raspberry Pi or laptop with a modest SSD.
+Disk usage with pruning enabled is typically 15-25 GB total (UTXO set + recent blocks + headers + indexes), vs at least 870 GB for a fully-archival node, by Bitcoin Core 31's own estimate. The difference is what makes "running a full node" practical on a Raspberry Pi or laptop with a modest SSD.
 
 Pruning does not weaken consensus enforcement. A pruned node still validates every block, rejects invalid blocks, and behaves identically to a non-pruned node for the wallet and consensus-rule perspective. The only thing it can't do is serve old data to others.
 

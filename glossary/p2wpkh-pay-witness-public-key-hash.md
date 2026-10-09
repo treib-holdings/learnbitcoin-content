@@ -2,12 +2,17 @@
 title: "P2WPKH (Pay to Witness Public Key Hash)"
 slug: p2wpkh-pay-witness-public-key-hash
 draft: false
+updated: "2026-10-09"
 shortDefinition: "A native SegWit single-sig format (often bech32 bc1q...) that lowers fees and prevents signature malleability."
 keyTakeaways:
   - "A witness version for single key/sig with better fee efficiency"
   - "Removes signature data from the main block, cutting malleability"
   - "Encouraged as a standard for modern wallets over legacy addresses"
-sources: []
+sources:
+  - { label: "Bitcoin Core 0.20.0 release notes (2020) - wallet uses bech32 addresses by default", url: "https://bitcoincore.org/en/releases/0.20.0/" }
+  - { label: "mainnet-observer - Output Types by Count, daily share of P2WPKH, P2TR and other outputs", url: "https://mainnet.observer/charts/output-type-distribution-count/" }
+  - { label: "BIP 341 - Taproot: 32-byte output key and 64-byte key-path signature", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki" }
+  - { label: "BIP 141 - Segregated Witness: the P2WPKH witness is a signature and the public key", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
 relatedTerms:
   - address
   - bip-85
@@ -34,6 +39,6 @@ In SegWit, the unlocking data (the "witness") is separated from the main transac
 - **Smaller effective fee.** Witness data counts at 1/4 the weight of non-witness data. A typical P2WPKH spend costs ~40% less in fees than the equivalent P2PKH spend.
 - **No transaction malleability.** The [txid](/glossary/transaction) is computed over the non-witness part only. The signature can't be tweaked after broadcast to change the txid. This is what made [Lightning](/glossary/lightning-network) practically deployable.
 
-P2WPKH was the dominant new-receive format from 2018 through ~2023. As of 2026, many wallets have shifted defaults again toward [P2TR](/glossary/taproot) (Taproot, `bc1p...`) for further fee savings and privacy. P2WPKH remains fully supported, cheaper than P2PKH/P2SH, and a perfectly good choice for everyday use.
+P2WPKH has been Bitcoin Core's default address type since version 0.20.0 (2020), and since 2022 it has been the most common output type on chain in most months. In September 2026 it made up about 53% of new outputs, against about 5% for [P2TR](/glossary/taproot) (Taproot, `bc1p...`). For single-key use, Taproot's smaller inputs and bigger outputs leave fees about even with P2WPKH. P2WPKH remains fully supported, cheaper than P2PKH/P2SH, and a perfectly good choice for everyday use.
 
-Like P2PKH, P2WPKH provides defense-in-depth against [post-quantum threats](/glossary/post-quantum-bitcoin): the public key is hashed in the address and only revealed at spend time. Single-use P2WPKH addresses are quantum-safe today; reused ones are not, because the spending witness contains the raw public key and every subsequent deposit inherits that exposure.
+Like P2PKH, P2WPKH provides defense-in-depth against [post-quantum threats](/glossary/post-quantum-bitcoin): the public key is hashed in the address and only revealed at spend time. Reusing the address loses that cover, because the first spend puts the raw public key in the witness and every later deposit to the address inherits that exposure.

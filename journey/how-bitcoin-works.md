@@ -41,7 +41,7 @@ sources:
   - { label: "Bitcoin Core source - the -assumevalid option (src/init.cpp)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/init.cpp" }
 ---
 
-> **Where you're going:** You'll be able to follow a transaction from "click send" to "it's irreversible." You'll understand what mempool, fees, blocks, and miners actually do, and you'll have a mental model concrete enough to reason about Bitcoin instead of just believing in it.
+> **Where you're going:** You'll be able to follow a transaction from "click send" to "it's effectively final." You'll understand what mempool, fees, blocks, and miners actually do, and you'll have a mental model concrete enough to reason about Bitcoin instead of just believing in it.
 
 ## 1. The Send Button
 

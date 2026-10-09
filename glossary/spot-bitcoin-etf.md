@@ -16,7 +16,15 @@ keyTakeaways:
   - "Holds physical BTC, not futures contracts or other derivatives"
   - "Eleven US spot Bitcoin ETFs were approved simultaneously on Jan 10, 2024"
   - "A regulated wrapper around BTC, not BTC itself - the keys belong to the custodian"
-sources: []
+sources:
+  - { label: "iShares Bitcoin Trust ETF - Form 10-K for 2025: bitcoin valued with the CME CF Bitcoin Reference Rate - New York Variant (3:00-4:00 PM ET window) after 4:00 PM ET; 40,000-share baskets; the AP bears execution price differences on cash orders", url: "https://www.sec.gov/Archives/edgar/data/1980994/000143774926006058/bit20251231_10k.htm" }
+  - { label: "Fidelity Wise Origin Bitcoin Fund - Form 10-K for 2025: Fidelity Bitcoin Reference Rate; shares valued daily as of 4:00 PM Eastern", url: "https://www.sec.gov/Archives/edgar/data/1852317/000119312526071484/ck0001852317-20251231.htm" }
+  - { label: "Franklin Bitcoin ETF - Form 10-K for the fiscal year ended March 31, 2026: NAV from the CME CF Bitcoin Reference Rate - New York Variant after 4:00 PM ET", url: "https://www.sec.gov/Archives/edgar/data/1992870/000114036126026744/ef20070486_10k.htm" }
+  - { label: "SEC press release 2025-101 - SEC Permits In-Kind Creations and Redemptions for Crypto ETPs (July 29, 2025)", url: "https://www.sec.gov/newsroom/press-releases/2025-101-sec-permits-kind-creations-redemptions-crypto-etps" }
+  - { label: "Deloitte - The ETP breakthrough (March 19, 2024): most initial spot bitcoin ETP applications planned in-kind creations; all were revised to cash-only during the SEC comment period", url: "https://www.deloitte.com/us/en/services/tax/articles/etp-breakthrough-cryptos-regulatory-milestone.html" }
+  - { label: "WisdomTree Bitcoin Fund - Form 10-K for 2025: Sponsor Fee of 0.25% per annum", url: "https://www.sec.gov/Archives/edgar/data/1850391/000121465926003899/wtb32026010k.htm" }
+  - { label: "Grayscale Bitcoin Mini Trust ETF - Form 10-K for 2025: Sponsor's Fee at an annual rate of 0.15%", url: "https://www.sec.gov/Archives/edgar/data/2015034/000119312526071952/btc-20251231.htm" }
+  - { label: "Grayscale Bitcoin Trust ETF - Form 10-K for 2025: Sponsor's Fee at an annual rate of 1.5%", url: "https://www.sec.gov/Archives/edgar/data/1588489/000119312526071956/gbtc-20251231.htm" }
 relatedTerms:
   - etf-exchange-traded-fund
   - nav-net-asset-value
@@ -59,16 +67,16 @@ Eight of eleven custody at Coinbase Custody, which makes Coinbase Custody one of
 
 How the wrapper actually works:
 
-- **NAV strikes daily** against the [CME CF Bitcoin Reference Rate](/glossary/cme-cf-bitcoin-reference-rate) at 4:00 PM London time.
+- **NAV strikes daily** as of 4:00 PM New York time. Several funds, including the iShares Bitcoin Trust, use the New York variant of the [CME CF Bitcoin Reference Rate](/glossary/cme-cf-bitcoin-reference-rate) (BRRNY); others use different benchmarks, such as the Fidelity Bitcoin Reference Rate.
 - **[Authorized Participants](/glossary/authorized-participant)** create and redeem shares in large blocks. The mechanism keeps the market price within basis points of [NAV](/glossary/nav-net-asset-value).
-- **[Creation/redemption](/glossary/creation-redemption)** was initially cash-only at SEC insistence; in-kind was approved July 29, 2025 under SEC Chair Paul Atkins.
-- **Expense ratios** cluster at 0.19% to 0.25% for the major products, with WisdomTree BTCW at 0.50% and GBTC at 1.50% (legacy fee from its closed-end days). Grayscale's Bitcoin Mini Trust (BTC, launched 2024) is the cheapest at 0.15%.
+- **[Creation/redemption](/glossary/creation-redemption)** was cash-only at launch. Most of the applications had planned for in-kind creation, but all were revised to cash-only during SEC review. On July 29, 2025 the SEC, under Chair Paul Atkins, voted to allow in-kind.
+- **Expense ratios** in the funds' annual reports filed in 2026 run from 0.19% to 0.25% for most products. The exceptions are Grayscale's Bitcoin Mini Trust (BTC, launched 2024), the cheapest at 0.15%, and GBTC at 1.50% (legacy fee from its closed-end days).
 
 What spot ETFs changed:
 
 - **Brokerage and IRA access.** A retirement account that cannot hold BTC directly can hold IBIT or FBTC. This unlocked structural demand from RIAs, pension funds, endowments, and 401(k)-style accounts.
-- **Price discovery.** Daily creation flows became a meaningful input to [price discovery](/glossary/price-discovery). The 4 PM London NAV strike is one of the most-watched moments in Bitcoin trading.
+- **Price discovery.** Daily creation flows became a meaningful input to [price discovery](/glossary/price-discovery). For funds on BRRNY, the NAV price comes from spot trades between 3:00 and 4:00 PM New York.
 - **The basis trade.** Hedge funds run the spread between spot ETFs and CME futures as a yield strategy. Tight, real, and a major contributor to derivatives liquidity.
 - **Legitimization.** "Bitcoin is an asset class" became defensible inside compliance departments that had previously banned it.
 
-Editorial: spot ETFs were a structural win for Bitcoin's monetary thesis - regulated demand at scale, daily marks against a credible reference rate, and access from accounts that can never hold the asset directly. They are also not Bitcoin. The keys live at Coinbase Custody. The shares are an IOU on someone else's custody arrangement. The whole pitch of Bitcoin - censorship-resistant, bearer, verifiable - is exactly what the ETF wrapper removes. Use the ETF when the use case demands it. For long-term holders who can self-custody, owning the keys is the point.
+Editorial: spot ETFs were a structural win for Bitcoin's monetary thesis - regulated demand at scale, daily marks against a credible reference rate, and access from accounts that can never hold the asset directly. They are also not Bitcoin. The keys sit with a custodian. The shares are an IOU on someone else's custody arrangement. The whole pitch of Bitcoin - censorship-resistant, bearer, verifiable - is exactly what the ETF wrapper removes. Use the ETF when the use case demands it. For long-term holders who can self-custody, owning the keys is the point.

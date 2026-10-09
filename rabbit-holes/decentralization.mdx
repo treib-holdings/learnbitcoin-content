@@ -4,7 +4,7 @@ slug: decentralization
 draft: false
 status: live
 published: "2026-05-18"
-updated: "2026-10-05"
+updated: "2026-10-09"
 section: rabbit-hole
 category: who-decides
 tagline: "What 'decentralized' actually means, where Bitcoin sits on the spectrum, and how the network has defeated takeover attempts without anyone in charge."
@@ -12,10 +12,11 @@ order: 11
 estimatedMinutes: 9
 sources:
   - { label: "Paul Baran - On Distributed Communications (RAND, 1964)", url: "https://www.rand.org/pubs/research_memoranda/RM3420.html" }
-  - { label: "bitnodes.io - live Bitcoin node count", url: "https://bitnodes.io" }
+  - { label: "Bitnodes - reachable Bitcoin nodes (25,514 counted on October 9, 2026)", url: "https://bitnodes.io" }
   - { label: "mempool.space mining dashboard - live pool concentration", url: "https://mempool.space/mining" }
   - { label: "Segwit2x Final Steps, the cancellation email from Mike Belshe (bitcoin-segwit2x list, November 8, 2017, archived)", url: "https://web.archive.org/web/20171108202305/https://lists.linuxfoundation.org/pipermail/bitcoin-segwit2x/2017-November/000685.html" }
   - { label: "Decentralization glossary entry", url: "https://www.learnbitcoin.com/glossary/decentralization" }
+  - { label: "GitHub - Bitcoin Core contributors (the GitHub API lists 1,368 distinct commit authors, anonymous ones included, as of October 2026)", url: "https://github.com/bitcoin/bitcoin/graphs/contributors" }
 relatedTerms: ["decentralization", "full-node", "miner", "consensus-parameter", "soft-fork", "fork", "chain-split", "bitcoin-cash", "bip-148-uasf", "bitcoin-core"]
 ogImage: "/diagrams/og/network-topology.png"
 ogImageAlt: "Two network topologies side by side. On the left, a single central bank hub stands alone. On the right, Bitcoin as roughly thirty-five peer nodes connected in an organic mesh with no center. One central bank, versus tens of thousands of Bitcoin nodes."
@@ -53,11 +54,13 @@ What decentralization *actually* means, in the Bitcoin sense: **no single party 
 
 Bitcoin is the most decentralized monetary system humans have ever built. Three categories of participant, each plays a different role, each constrains the others.
 
-**Node operators.** Around 17,000 to 22,000 reachable Bitcoin nodes are live at any moment, with estimates of 50,000 to 100,000+ when you count non-reachable nodes behind firewalls. Anyone running Bitcoin software that validates every transaction and block. The rules each node enforces define what Bitcoin *is* on that node's copy of the chain. If you don't like a proposed change, you don't run the new software, and your node continues operating on the old rules. A node runs on a laptop, a Raspberry Pi, or any cheap computer with disk space. No permission required. Live count: [bitnodes.io](https://bitnodes.io).
+**Node operators.** Bitnodes counted about 25,500 reachable Bitcoin nodes on October 9, 2026, with estimates of 50,000 to 100,000+ when you count non-reachable nodes behind firewalls. Anyone running Bitcoin software that validates every transaction and block. The rules each node enforces define what Bitcoin *is* on that node's copy of the chain.
+
+If you don't like a proposed change, you don't run the new software, and your node continues operating on the old rules. A node runs on a laptop, a Raspberry Pi, or any cheap computer with disk space. No permission required. Live count: [bitnodes.io](https://bitnodes.io).
 
 **Miners.** Specialized hardware competing to add blocks for the reward. Geographically distributed across the US, Russia, Kazakhstan, Canada, Western Europe, and others. They produce blocks, but they don't make the rules. If miners produce a block that violates consensus, every node rejects it and the miner's electricity is wasted. **Miners follow nodes, not the other way around.**
 
-**Developers.** People who write the software. [Bitcoin Core](/glossary/bitcoin-core) is the dominant implementation, but Bitcoin Knots, btcd, and Libbitcoin are independent implementations of the same protocol. Developers can propose changes; they can't impose them. A pull request to Bitcoin Core has to convince thousands of node operators to actually run the new code. Across 16 years, Bitcoin Core has had over a thousand contributors and no single contributor's commits represent more than a few percent of the code.
+**Developers.** People who write the software. [Bitcoin Core](/glossary/bitcoin-core) is the dominant implementation, but Bitcoin Knots, btcd, and Libbitcoin are independent implementations of the same protocol. Developers can propose changes; they can't impose them. A pull request to Bitcoin Core has to convince thousands of node operators to actually run the new code. Since 2009, Bitcoin Core has had over a thousand contributors.
 
 **Concentration concerns, and the structural answer.**
 
@@ -93,13 +96,13 @@ Decentralization is hard to quantify. Several imperfect metrics, taken together,
 
 | Metric | Bitcoin | What it tells you |
 |---|---|---|
-| Reachable nodes | 17,000-22,000 | Lower bound on participants enforcing rules |
+| Reachable nodes | about 25,500 (October 9, 2026) | Lower bound on participants enforcing rules |
 | Estimated total nodes | 50,000-100,000+ | Real population including non-reachable |
 | Mining hash rate, top pool | varies, ~25-35% | Largest single coordinator of block production |
 | Mining hash rate, top 5 pools | varies, ~80-90% | Concentration vulnerability (mitigated by miner mobility) |
 | Geographic mining distribution | 8+ countries with significant share | Jurisdictional spread |
 | Independent client implementations | 4+ (Core, Knots, btcd, Libbitcoin) | Diversity at the code layer |
-| Bitcoin Core contributors | 1,000+ over 16 years | No single point of failure in dev |
+| Bitcoin Core contributors | 1,000+ since 2009 | No single point of failure in dev |
 
 By comparison, most "decentralized" chains have between 10 and 200 validators, run a single client, and have a foundation or team that effectively controls roadmap.
 
@@ -133,4 +136,4 @@ If you accept that money is uniquely worth defending against capture, you accept
 
 The price is real, and the price is the product.
 
-> **Pro tip:** When someone tells you a project is decentralized, ask: "If ten specific people coordinated, could they change the rules, freeze funds, or shut it down?" For most things called blockchains, the honest answer is yes. For Bitcoin, after sixteen years of stress tests, the answer is still no. That's the entire product.
+> **Pro tip:** When someone tells you a project is decentralized, ask: "If ten specific people coordinated, could they change the rules, freeze funds, or shut it down?" For most things called blockchains, the honest answer is yes. For Bitcoin, after every stress test since 2009, the answer is still no. That's the entire product.

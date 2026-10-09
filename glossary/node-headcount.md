@@ -2,12 +2,17 @@
 title: "Node Headcount"
 slug: node-headcount
 draft: false
+updated: "2026-10-09"
 shortDefinition: "An estimate of how many Bitcoin nodes are on the network, often derived from direct scanning or DNS seeds."
 keyTakeaways:
-  - "Only captures listening nodes, missing hidden or Tor-only setups"
+  - "Only captures listening nodes (Tor and I2P included), missing those that refuse inbound connections"
   - "Frequently used as a decentralization benchmark"
   - "Exact numbers are elusive, highlighting Bitcoin's permissionless nature"
-sources: []
+sources:
+  - { label: "Bitnodes - reachable Bitcoin nodes (25,514 counted on October 9, 2026)", url: "https://bitnodes.io" }
+  - { label: "Coin Dance - public Bitcoin nodes, duplicate and non-listening nodes omitted (25,362 on October 9, 2026; live)", url: "https://coin.dance/nodes" }
+  - { label: "Bitnodes crawler README (sends getaddr messages recursively, starting from a set of seed nodes)", url: "https://github.com/ayeowch/bitnodes" }
+  - { label: "BTC Nodes - reachable nodes split by IPv4, IPv6, onion and I2P (same operator and snapshots as the relaunched bitnodes.io; 12,510 of the 25,514 nodes on October 9, 2026 were onion addresses)", url: "https://btcnodes.io/nodes/" }
 relatedTerms:
   - bitcoin-satellite
   - byzantine-fault-tolerance
@@ -28,7 +33,7 @@ Estimating how many Bitcoin nodes exist is hard, because the network is permissi
 
 Two flavors of count:
 
-- Reachable (listening) nodes. Public scanners (Bitnodes is the canonical one) sweep the IPv4 / IPv6 space and Tor descriptors looking for peers that accept inbound connections. As of 2026 this number sits in the high teens to low twenties of thousands. This is the public-facing fraction of the network.
+- Reachable (listening) nodes. Public crawlers (Bitnodes is the best known) start from a few seed nodes, keep asking peers for more addresses, and count every IPv4, IPv6, Tor and I2P node that accepts an inbound connection. Bitnodes counted 25,514 on October 9, 2026. This is the public-facing fraction of the network.
 - All nodes. Includes everything reachable plus everything behind NAT, residential firewalls, or simply not advertising itself for inbound. Estimates here range from 50K to 100K+, with wide error bars.
 
 Different methodologies produce different numbers. Luke Dashjr's site historically counted more aggressively and produced higher totals; Bitnodes counts conservatively. Neither is wrong; they're answering slightly different questions.

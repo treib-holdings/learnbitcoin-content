@@ -2,12 +2,14 @@
 title: "BOLT"
 slug: bolt
 draft: false
+updated: "2026-10-09"
 shortDefinition: "Short for 'Basis of Lightning Technology,' these specs define how Lightning Network implementations interact and remain compatible."
 keyTakeaways:
   - "Defines core LN protocol mechanics"
   - "Allows different LN implementations to interoperate"
   - "Covers channel setup, routing, security, and more"
-sources: []
+sources:
+  - { label: "Lightning BOLTs repository - the specifications all major implementations follow", url: "https://github.com/lightning/bolts" }
 relatedTerms:
   - bolt-11
   - core-lightning-c-lightning
@@ -41,4 +43,4 @@ The current BOLT documents (numbered 0 through 12 with some experimental additio
 
 Maintained on [github.com/lightning/bolts](https://github.com/lightning/bolts) by representatives of the major implementations - Lightning Labs (LND), Blockstream (Core Lightning), ACINQ (Eclair), Spiral (LDK). Changes go through pull requests, review, and broad consensus across implementations.
 
-This multi-vendor coordination is why a Phoenix wallet (Eclair) can open a channel with a Core Lightning node and route through LND-operated infrastructure to pay an LDK-based receiver. They all follow the same BOLTs.
+This multi-vendor coordination is why an Eclair node can open a channel with a Core Lightning node and route through LND-operated infrastructure to pay an LDK-based receiver. They all follow the same BOLTs.

@@ -2,12 +2,15 @@
 title: "Transaction Index (txindex)"
 slug: transaction-index-txindex
 draft: false
+updated: "2026-10-09"
 shortDefinition: "An optional node setting creating a full index of all transactions by TXID for direct lookup."
 keyTakeaways:
   - "Stores a direct mapping from TXID to block file location"
   - "Facilitates quick transaction queries at the cost of extra storage"
   - "Useful for explorers or deep chain analysis, not mandatory for standard usage"
-sources: []
+sources:
+  - { label: "Blockchain.com - blockchain size chart (774,075 MB on October 8, 2026)", url: "https://www.blockchain.com/explorer/charts/blocks-size" }
+  - { label: "Bitcoin Core PR 35531 - txindex: hash keys and pack positions (existing mainnet txindex about 66 GB, about 26 GB rebuilt; merged August 15, 2026, milestone 32.0)", url: "https://github.com/bitcoin/bitcoin/pull/35531" }
 relatedTerms:
   - block-explorer
   - chain-analysis
@@ -20,7 +23,7 @@ liveWidget: ~
 
 What `txindex` costs:
 
-- **Disk.** Roughly 50-70 GB of additional storage in 2026, growing with the chain. Compared to ~600 GB for the archival block data, it's not the biggest add, but it's not negligible either.
+- **Disk.** Roughly 50-70 GB of additional storage in 2026, growing with the chain. Compared to about 775 GB of archival block data (October 2026), it's not the biggest add, but it's not negligible either. A redesign merged in August 2026 for Bitcoin Core 32.0 shrinks a rebuilt index to about 26 GB.
 - **Initial sync time.** The index gets built during the initial validation pass; expect IBD to be somewhat slower. After the index is built, ongoing operation is unaffected.
 - **Incompatibility with pruning.** `txindex` requires archival mode. Pruned nodes can't maintain a full transaction index because they don't keep all the blocks.
 

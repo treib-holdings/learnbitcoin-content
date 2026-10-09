@@ -1,6 +1,7 @@
 ---
 title: "Poisson Process"
 slug: poisson-process
+updated: "2026-10-09"
 draft: false
 shortDefinition: "A statistical model describing Bitcoin block discovery as a random event with an average 10-minute interval but high variance."
 keyTakeaways:
@@ -20,7 +21,7 @@ A Poisson process is a statistical model where events happen independently at a 
 What this means in practice:
 
 - **The expected time between blocks is 10 minutes**, set by [difficulty retargeting](/glossary/difficulty-retargeting).
-- **The actual time between any given pair of blocks is random.** Half the time it's under 7 minutes; about a third of the time it's over 12 minutes; a few times a year a block takes over an hour.
+- **The actual time between any given pair of blocks is random.** Half the time it's under 7 minutes; about a third of the time it's over 12 minutes; about 130 times a year, two or three a week, a block takes over an hour (e^-6, about 0.25% of blocks).
 - **There's no "due" block.** A 30-minute gap doesn't make the next block "more likely soon." Each second of hashing is independent of every prior second.
 
 Why this matters for users:

@@ -2,12 +2,14 @@
 title: "SPV (Simplified Payment Verification)"
 slug: spv-simplified-payment-verification
 draft: false
+updated: "2026-10-09"
 shortDefinition: "A lightweight client model verifying transactions using block headers and Merkle proofs instead of the full blockchain."
 keyTakeaways:
   - "Stores only block headers, relying on Merkle proofs"
   - "Less resource-intensive than a full node, but more trust in peers"
   - "Privacy concerns arise unless advanced methods (e.g., Neutrino) are used"
-sources: []
+sources:
+  - { label: "mempool.space - block 970,676, mined October 9, 2026", url: "https://mempool.space/block/00000000000000000000af0a39d26d4c26c7dc955385fd5b3f996a7cdda03a6f" }
 relatedTerms:
   - bip-37
   - bip-158
@@ -26,7 +28,7 @@ SPV - **S**implified **P**ayment **V**erification - is the lightweight client mo
 
 How it works:
 
-1. The wallet downloads just the **80-byte [block headers](/glossary/block-header)** for every block from genesis to now. That's ~4 MB per year, totaling well under 100 MB after sixteen years.
+1. The wallet downloads just the **80-byte [block headers](/glossary/block-header)** for every block from genesis to the latest one. That's ~4 MB per year, about 78 MB in total for the roughly 970,000 blocks mined by October 2026.
 2. The wallet validates the chain of headers by checking each one's [proof-of-work](/glossary/proof-work-pow) and that each links correctly to its predecessor.
 3. For a specific transaction the wallet cares about, it asks a [full node](/glossary/full-node) for a [Merkle proof](/glossary/merkle-proof) - a short list of hashes proving the transaction is included in some block's [Merkle tree](/glossary/merkle-tree-merkle-root).
 4. The wallet recomputes the Merkle root from the transaction and the proof, and checks it matches the root stored in that block's header.

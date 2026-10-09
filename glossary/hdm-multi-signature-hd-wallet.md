@@ -2,6 +2,7 @@
 title: "HDM (Multi-Signature HD Wallet)"
 slug: hdm-multi-signature-hd-wallet
 draft: false
+updated: "2026-10-09"
 shortDefinition: "Combines HD derivation with multisig, so each cosigner has an extended key tree for multiple accounts or addresses."
 keyTakeaways:
   - "Deploys multiple HD seeds in a single multisig arrangement"
@@ -33,7 +34,7 @@ Why this is the right design:
 Real-world deployment patterns:
 
 - **2-of-3 personal custody.** One cosigner on a hardware wallet at home, one at a safe deposit box or with a trusted family member, one with a service like Unchained or Casa as the "always-available" third.
-- **3-of-5 institutional.** Standard corporate treasury setup. Five cosigners spread across executives or geographic offices; three required to spend.
+- **3-of-5 for groups and companies.** Five cosigners spread across executives or geographic offices; three required to spend.
 - **2-of-2 Lightning channels.** Every Lightning channel is technically HDM (2-of-2) under the hood, with each channel partner's keys derived from their HD seed.
 
 The convention is now standardized via [BIP-48](https://github.com/bitcoin/bips/blob/master/bip-0048.mediawiki) which specifies derivation paths for multisig wallets, and via the descriptor wallet format that captures the full multisig setup in a portable string.

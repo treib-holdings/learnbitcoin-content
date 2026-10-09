@@ -2,6 +2,7 @@
 title: "Double-Blind Marketplace"
 slug: double-blind-marketplace
 draft: false
+updated: "2026-10-09"
 shortDefinition: "An online market where both buyer and seller have minimal identifying info about each other, often using Bitcoin-based escrow."
 keyTakeaways:
   - "Protects buyer and seller identities in trades"
@@ -32,7 +33,6 @@ Real Bitcoin-native double-blind marketplaces in 2026:
 
 - **Bisq** - peer-to-peer trading, on-chain multisig escrow, Tor-only. Mature, well-funded.
 - **Robosats** - peer-to-peer trading via Lightning, Tor-only, fast settlement.
-- **AgoraDesk** (formerly LocalBitcoins clone after that platform shut down) - peer-to-peer fiat-to-BTC exchanges.
 - **Private chat-based markets** on Nostr, Tor forums, and similar venues. Less structured but real.
 
 What double-blind marketplaces enable:

@@ -1,6 +1,7 @@
 ---
 title: "Block Time"
 slug: block-time
+updated: "2026-10-09"
 draft: false
 shortDefinition: "The average interval between consecutive blocks, targeted around 10 minutes for Bitcoin."
 keyTakeaways:
@@ -25,7 +26,7 @@ liveWidget: ~
 
 Bitcoin's target block time is 10 minutes. That's the *average* interval [difficulty](/glossary/difficulty) tries to maintain by adjusting how hard the mining puzzle is. It's not the time you should expect to wait for any individual block.
 
-Mining is a [Poisson process](/glossary/poisson-process). Each second, every miner in the world is independently trying random nonces. There's no "due" block. The actual interval between blocks is exponentially distributed: many blocks land in 1-5 minutes, some take 20-40 minutes, and a few times a year a block takes over an hour. The 10-minute number is just the mean over a long window.
+Mining is a [Poisson process](/glossary/poisson-process). Each second, every miner in the world is independently trying random nonces. There's no "due" block. The actual interval between blocks is exponentially distributed: many blocks land in 1-5 minutes, some take 20-40 minutes, and about 130 blocks a year, two or three a week, take over an hour (at a 10-minute average, the chance of an hour-long wait is e^-6, about 0.25%). The 10-minute number is just the mean over a long window.
 
 The choice of 10 minutes (rather than, say, 1 minute like Litecoin or 15 seconds like Ethereum) was a deliberate tradeoff:
 

@@ -2,13 +2,14 @@
 title: "MuSig"
 slug: musig
 draft: false
-updated: "2026-09-17"
+updated: "2026-10-09"
 shortDefinition: "A Schnorr-based multi-signature scheme that aggregates multiple public keys into one, reducing transaction size and improving privacy."
 keyTakeaways:
   - "Aggregates multiple pubkeys/signatures into one compact signature"
   - "Improves privacy and fee efficiency for multi-party transactions"
   - "Relies on Schnorr signatures introduced with Taproot"
-sources: []
+sources:
+  - { label: "BIP-445 (Draft as of October 2026) - FROST Signing Protocol for BIP340 Signatures", url: "https://github.com/siv2r/bip-frost-signing" }
 relatedTerms:
   - psbt
   - ecdsa-elliptic-curve-digital-signature-algorithm
@@ -46,7 +47,7 @@ Where MuSig (2) shows up in practice:
 
 - **Lightning channels post-Taproot.** Cooperative closes can use MuSig2 to keep the on-chain footprint identical to a single-sig spend.
 - **Custodial / institutional multisig.** Replaces classical 2-of-2 or 3-of-3 setups where privacy and fee efficiency matter.
-- **Federations.** Smaller (n-of-n) federations can aggregate; larger threshold federations use FROST.
+- **Federations.** Smaller (n-of-n) federations can aggregate; threshold federations need a scheme like FROST, whose Bitcoin spec (BIP 445) is still a draft as of October 2026.
 
 If you're researching modern Bitcoin multisig and the docs say "MuSig," assume MuSig2 unless they specifically call out the older version. The original is mostly historical interest now.
 

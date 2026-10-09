@@ -2,12 +2,14 @@
 title: "Security"
 slug: security
 draft: false
+updated: "2026-10-09"
 shortDefinition: "Refers both to Bitcoin's protocol robustness (PoW, node consensus) and end-user key protection (wallet safety)."
 keyTakeaways:
   - "Protocol security hinges on PoW, difficulty retarget, and full node validation"
   - "User-level security focuses on private key custody and safe wallets"
   - "Combining both fosters a resilient, trust-minimized currency system"
-sources: []
+sources:
+  - { label: "BIP-50 - March 2013 Chain Fork Post-Mortem (older nodes rejected a valid block; at least one large double spend)", url: "https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki" }
 relatedTerms:
   - address-reuse
   - air-gapped
@@ -42,7 +44,7 @@ liveWidget: ~
 
 "Security" in Bitcoin has two distinct meanings that often get conflated:
 
-**Protocol security.** The Bitcoin network's resistance to attack. This rests on [proof-of-work](/glossary/proof-work-pow), a globally distributed mining industry, every full node independently enforcing consensus rules, and a sixteen-year track record. The network has never had a successful 51% attack on its mainnet, never had a double-spend that overturned confirmed transactions, never been censored or shut down. The cryptographic primitives (SHA-256, secp256k1) remain unbroken. The protocol is the most-attacked cryptographic system in the world; it has held.
+**Protocol security.** The Bitcoin network's resistance to attack. This rests on [proof-of-work](/glossary/proof-work-pow), a globally distributed mining industry, every full node independently enforcing consensus rules, and a track record going back to January 2009. The network has never had a successful 51% attack on its mainnet or been shut down. The best-known double spend of a confirmed payment was made possible by a software bug, during the [March 2013 chain split](/rabbit-hole/2013-chain-fork). The cryptographic primitives (SHA-256, secp256k1) remain unbroken. The protocol has been a constant target, and it has held.
 
 **Operational security ("opsec").** *Your* personal security as a Bitcoin user. This is where the failures actually happen:
 

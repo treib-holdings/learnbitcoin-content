@@ -5,7 +5,7 @@ linkText:
   - "intrinsic value"
 draft: false
 published: "2026-09-29"
-updated: "2026-10-05"
+updated: "2026-10-09"
 shortDefinition: "The idea that a thing is worth something on its own, apart from what anyone will pay for it. 'Bitcoin has no intrinsic value' is the oldest criticism of the asset, and it is a true statement about every form of money that has ever worked, which is why economists gave up on the idea in the 1870s."
 keyTakeaways:
   - "Alan Greenspan (December 2013) and Warren Buffett ('rat poison squared,' May 2018) both used the argument; both would have to say the same of the dollar, which no one has been able to redeem for gold since August 1971"
@@ -17,6 +17,7 @@ sources:
   - { label: "CNBC Warren Buffett Archive - Buffett A to Z: bitcoin and cryptocurrencies (his remarks from 2014 on)", url: "https://buffett.cnbc.com/2018/06/26/buffett-a-z-bitcoinand-cryptocurrencies.html" }
   - { label: "Federal Reserve History - Nixon Ends Convertibility of US Dollars to Gold and Announces Wage/Price Controls (August 1971)", url: "https://www.federalreservehistory.org/essays/gold-convertibility-ends" }
   - { label: "Carl Menger - Principles of Economics (1871), Mises Institute edition", url: "https://mises.org/library/book/principles-economics" }
+  - { label: "99Bitcoins - Bitcoin Obituaries (477 entries as of September 2026)", url: "https://99bitcoins.com/bitcoin-obituaries/" }
 relatedTerms:
   - fiat
   - price-discovery
@@ -46,6 +47,6 @@ What the critics are usually reaching for is a narrower and fairer point: Bitcoi
 
 So the question is not whether Bitcoin has intrinsic value, since no money does, but whether its properties are worth a monetary premium. Those properties are specific and checkable. The supply is [fixed in code](/rabbit-hole/supply) and cannot be inflated by anyone. Transfer needs no permission from a bank or a government. It divides to a hundred-millionth. And the ledger can be audited by anyone with a [node](/glossary/node), which is more than can be said for the Federal Reserve or a gold vault. Whether those properties are worth $100 or $100,000 per coin is decided by [price discovery](/glossary/price-discovery), the same process that prices gold and farmland, and the market has been arguing about it, loudly, since 2010.
 
-The honest concession is that a monetary premium can go to zero. Gold's has survived five thousand years; Bitcoin's has survived seventeen, four crashes of 75 percent or more, and 477 [obituaries](/glossary/bitcoin-obituaries). If people stop wanting the properties, the price follows. That is a real risk, and the [fiat](/glossary/fiat) entry explains why the same risk applies, on a longer fuse, to the money in your pocket.
+The honest concession is that a monetary premium can go to zero. Gold's has survived five thousand years; Bitcoin's has survived since 2009, through four crashes of 75 percent or more and the 477 [obituaries](/glossary/bitcoin-obituaries) counted by September 2026. If people stop wanting the properties, the price follows. That is a real risk, and the [fiat](/glossary/fiat) entry explains why the same risk applies, on a longer fuse, to the money in your pocket.
 
 See [Rat Poison, Tulips and a Pet Rock](/rabbit-hole/bitcoin-is-dead) for the dated 'no intrinsic value' and 'worth nothing' calls, and how the two kinds of claim score differently.

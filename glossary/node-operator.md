@@ -2,12 +2,15 @@
 title: "Node Operator"
 slug: node-operator
 draft: false
+updated: "2026-10-09"
 shortDefinition: "An individual or entity running a Bitcoin node to verify blocks/transactions and help maintain the network."
 keyTakeaways:
   - "Directly enforces consensus rules, not relying on intermediaries"
   - "Can serve the network by relaying transactions/blocks"
   - "Helps preserve censorship resistance and protocol independence"
-sources: []
+sources:
+  - { label: "Bitcoin Core 31 - intro.cpp (the setup screen adds the two figures and says at least 870 GB of data will be stored)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/qt/intro.cpp" }
+  - { label: "Bitcoin Core 31 - chainparams.cpp (mainnet disk guidelines 856 and 14, which the setup screen adds up to 870 GB)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/kernel/chainparams.cpp" }
 relatedTerms:
   - bitcoin-knots
   - bitcoin-satellite
@@ -35,6 +38,6 @@ What you actually do when you run a node:
 
 You don't earn money for running a node. Block rewards belong to [miners](/glossary/miner). What you get is independence. You stop trusting a third party to tell you the truth about your own balance, your own transactions, or whether a block is valid.
 
-Hardware requirements in 2026 are modest. A ~1 TB SSD, a quad-core CPU, 4-8 GB RAM, decent internet. A Raspberry Pi 5 or any old laptop runs a node comfortably. Packaged distributions (Umbrel, Start9, RaspiBlitz, MyNode, Citadel) make setup roughly as easy as installing an app.
+Hardware requirements in 2026 are modest. A 2 TB SSD (Bitcoin Core 31's setup screen asks for at least 870 GB), a quad-core CPU, 4-8 GB RAM, decent internet. A Raspberry Pi 5 or any old laptop runs a node comfortably. Packaged distributions (Umbrel, Start9, RaspiBlitz, MyNode) make setup roughly as easy as installing an app.
 
 If you use Bitcoin and don't run a node, you're trusting someone else's. That's a defensible choice for mobile or casual use, but the difference between trusting and verifying is real, and node-operator is what verifying looks like.

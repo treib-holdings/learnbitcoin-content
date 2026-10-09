@@ -2,12 +2,16 @@
 title: "Price Discovery"
 slug: price-discovery
 draft: false
+updated: "2026-10-09"
 shortDefinition: "The process by which open market trading establishes BTC's exchange rate at any given moment."
 keyTakeaways:
   - "Emerges from countless trades across multiple exchanges"
   - "Reflects supply/demand, market depth, and sentiment"
   - "Critical for determining BTC's global 'fair market' rate"
-sources: []
+sources:
+  - { label: "CF Benchmarks - CME CF Cryptocurrency Reference Rates Methodology Guide (version 17.4, August 24, 2026): BRR and BRRNY windows", url: "https://docs.cfbenchmarks.com/CME%20CF%20Reference%20Rates%20Methodology.pdf" }
+  - { label: "Fidelity Wise Origin Bitcoin Fund - Form 10-K for 2025: Fidelity Bitcoin Reference Rate; shares valued daily as of 4:00 PM Eastern", url: "https://www.sec.gov/Archives/edgar/data/1852317/000119312526071484/ck0001852317-20251231.htm" }
+  - { label: "iShares Bitcoin Trust ETF - Form 10-K for 2025: bitcoin valued with the CME CF Bitcoin Reference Rate - New York Variant (3:00-4:00 PM ET window) after 4:00 PM ET", url: "https://www.sec.gov/Archives/edgar/data/1980994/000143774926006058/bit20251231_10k.htm" }
 relatedTerms:
   - bull-market
   - clearing-price
@@ -31,7 +35,7 @@ The structure that produces Bitcoin's price discovery:
 - **Many global exchanges trade BTC.** Coinbase, Kraken, Binance, Bitfinex, Bitstamp, OKX, and dozens more, each running their own order book. Arbitrageurs ensure prices stay closely aligned across venues, typically within a few basis points.
 - **Spot markets vs. derivatives.** Spot exchanges trade actual BTC. Derivatives venues (CME futures, perpetual futures on Binance / Bybit / OKX) trade contracts referencing BTC's price. Derivatives volume often exceeds spot volume, and futures markets often lead spot in incorporating new information.
 - **OTC and dark pools** for institutional flow. Large block trades clear off-exchange at negotiated prices, sometimes meaningfully different from public order books for the same instantaneous size.
-- **Index providers** consolidate multi-venue data into reference rates (CME CF Bitcoin Reference Rate, Coinbase BTC-USD, etc.). These are the "official" prices used by ETFs and institutional settlement.
+- **Index providers** consolidate multi-venue data into reference rates (the CME CF Bitcoin Reference Rate and its New York variant, the Fidelity Bitcoin Reference Rate, etc.). These are the "official" prices used by ETFs and institutional settlement.
 
 What price discovery looks like at different timescales:
 

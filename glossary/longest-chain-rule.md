@@ -10,6 +10,7 @@ keyTakeaways:
   - "Ensures consistent ledger state across the decentralized network"
 sources:
   - { label: "mempool.space API - daily network hash rate since 2009 (June to August 2026 average about 9.1 x 10^20 H/s)", url: "https://mempool.space/api/v1/mining/hashrate/all" }
+  - { label: "Meni Rosenfeld - Analysis of hashrate-based double spending (2012), Table 1: 0.059% for a 10% attacker and 15.6% for a 30% attacker at six confirmations", url: "https://arxiv.org/abs/1402.2009" }
 relatedTerms:
   - block
   - chain-split
@@ -34,8 +35,8 @@ What the rule does:
 
 Why this rule is the foundation of Bitcoin's security:
 
-- **Attacking the chain requires more work than the honest network is producing.** An attacker trying to rewrite history has to mine a longer fork, *secretly*, faster than the rest of the world mines the real one. With Bitcoin's hash rate averaging about 910 EH/s in mid-2026, this requires owning more than half of the global mining industry, which makes the attack economically infeasible.
-- **The deeper a transaction sits, the more work would be required to overturn it.** This is what the 6-confirmation convention buys: it would take an attacker controlling >50% of hash rate, working in secret, to overturn a 6-confirm transaction. The probability falls exponentially with depth.
+- **Attacking the chain requires more work than the honest network is producing.** An attacker trying to rewrite history has to mine a longer fork, *secretly*, faster than the rest of the world mines the real one. With Bitcoin's hash rate averaging about 910 EH/s in mid-2026, doing that reliably requires owning more than half of the global mining industry, which makes the attack economically infeasible.
+- **The deeper a transaction sits, the more work would be required to overturn it.** An attacker working in secret with 10% of the hash rate would overturn a 6-confirmation transaction about once in 1,700 attempts, and one with 30% about once in six, by Meni Rosenfeld's 2012 analysis. Only an attacker with more than 50% could count on it. For anyone below that, the probability falls exponentially with depth.
 - **Honest miners are incentivized to build on the longest chain.** A miner who finds a block off the main chain doesn't get paid; the block becomes stale.
 
 The longest chain rule is sometimes called "Nakamoto consensus" - the version of consensus Satoshi described in the [whitepaper](/glossary/whitepaper). It's the deceptively simple rule that turns proof-of-work into a globally agreed-upon ledger.

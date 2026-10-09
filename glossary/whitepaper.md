@@ -2,12 +2,14 @@
 title: "Whitepaper"
 slug: whitepaper
 draft: false
+updated: "2026-10-09"
 shortDefinition: "Satoshi Nakamoto's original 2008 publication, 'Bitcoin: A Peer-to-Peer Electronic Cash System,' detailing Bitcoin's design."
 keyTakeaways:
   - "Pioneering document that invented decentralized digital currency"
   - "Explains block headers, PoW, and peer-to-peer consensus"
   - "Considered a landmark in cryptographic and monetary innovation"
-sources: []
+sources:
+  - { label: "mempool.space - genesis block 0, mined January 3, 2009", url: "https://mempool.space/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f" }
 relatedTerms:
   - bitcoin-pizza-day
   - genesis-block
@@ -29,6 +31,6 @@ What's actually in those nine pages:
 
 What's *not* in the whitepaper: Lightning, SegWit, Taproot, multisig setups, fee markets at high-fee equilibrium, HD wallets. None of these existed yet. Satoshi described the chassis; everything since has been built on top.
 
-You can read the whitepaper in about 20 minutes. It is genuinely the densest, clearest, most consequential nine pages in the history of computing. If you've never read it, you should - especially because it has aged remarkably well. Every claim it makes about how the system would work has held up across sixteen years of operation.
+You can read the whitepaper in about 20 minutes. It is genuinely the densest, clearest, most consequential nine pages in the history of computing. If you've never read it, you should - especially because it has aged remarkably well. Every claim it makes about how the system would work has held up since the network launched in January 2009.
 
 A locally-served copy lives at [/bitcoin.pdf](/bitcoin.pdf). See also [Satoshi Nakamoto](/glossary/satoshi-nakamoto) for the author, [Genesis Block](/glossary/genesis-block) for the network launch two months later, and [Journey Chapter 2](/journey/what-bitcoin-actually-is) for a longer guided read.

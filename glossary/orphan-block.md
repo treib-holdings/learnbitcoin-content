@@ -2,12 +2,14 @@
 title: "Orphan Block"
 slug: orphan-block
 draft: false
+updated: "2026-10-09"
 shortDefinition: "Older term for a block not accepted into the best chain (more accurately referred to as a stale or orphaned block)."
 keyTakeaways:
   - "Also called stale or uncle blocks in other systems"
   - "Lose out to another valid block in the chain-building process"
   - "Miner of the orphan block doesn't receive the block reward"
-sources: []
+sources:
+  - { label: "bitcoin-data/stale-blocks - public dataset of stale blocks (between 28 and 93 a year from 2022 through 2025, as of October 2026)", url: "https://github.com/bitcoin-data/stale-blocks" }
 relatedTerms:
   - block
   - block-propagation
@@ -21,7 +23,7 @@ liveWidget: ~
 
 "Orphan block" is older terminology for a valid block that didn't end up in the canonical chain. Modern Bitcoin Core documentation prefers [stale block](/glossary/stale-block) for this concept, reserving "orphan" for the genuinely rare case of a block whose parent the local node hasn't yet received.
 
-In practice, when two [miners](/glossary/miner) find a valid block at nearly the same height almost simultaneously - which happens a few times a year on average - the network temporarily splits. Each half builds on the block it saw first. Within a block or two, one branch typically pulls ahead, and the other branch's tip block is abandoned. The miner of that abandoned block doesn't get paid.
+In practice, when two [miners](/glossary/miner) find a valid block at the same height almost simultaneously, the network temporarily splits. Each half builds on the block it saw first. Within a block or two, one branch typically pulls ahead, and the other branch's tip block is abandoned. The miner of that abandoned block doesn't get paid. The public bitcoin-data/stale-blocks dataset counts between 28 and 93 of these stale blocks a year from 2022 through 2025.
 
 The naming history is messy. You'll see "orphan," "stale," and "uncle" (the Ethereum term) all used interchangeably in older write-ups. For Bitcoin in 2026, the cleaner distinction is:
 

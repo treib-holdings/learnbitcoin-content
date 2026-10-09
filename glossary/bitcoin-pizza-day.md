@@ -2,6 +2,7 @@
 title: "Bitcoin Pizza Day"
 slug: bitcoin-pizza-day
 draft: false
+updated: "2026-10-09"
 shortDefinition: "May 22, 2010-famously marking the first real-world BTC purchase (10,000 BTC for two pizzas)."
 keyTakeaways:
   - "Marks the first reported commercial transaction with BTC"
@@ -12,6 +13,8 @@ sources:
     url: "https://x.com/jercos/status/2058387155119202805"
   - label: "jercos grants LearnBitcoin permission to quote (X, May 2026)"
     url: "https://x.com/jercos/status/2058557130727477546"
+  - { label: "Laszlo Hanyecz - Pizza for bitcoins? (Bitcoin Talk, May 18, 2010)", url: "https://bitcointalk.org/index.php?topic=137.0" }
+  - { label: "mempool.space - the 10,000 BTC pizza payment, block 57,043 (May 22, 2010)", url: "https://mempool.space/tx/a1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d" }
 relatedTerms:
   - bitcoin-script
   - merchant-adoption
@@ -22,7 +25,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-On May 22, 2010, a programmer named Laszlo Hanyecz posted on the Bitcoin Talk forum offering 10,000 BTC to anyone who would order him two pizzas. Another forum user, Jeremy Sturdivant (known on Bitcoin Talk as "jercos"), took him up on it, called Papa John's, and had pizzas delivered to Laszlo's house in Florida. Laszlo sent jercos 10,000 BTC.
+On May 18, 2010, a programmer named Laszlo Hanyecz posted on the Bitcoin Talk forum offering 10,000 BTC to anyone who would order him two pizzas. On May 22, another forum user, Jeremy Sturdivant (known on Bitcoin Talk as "jercos"), took him up on it, called Papa John's, and had pizzas delivered to Laszlo's house in Florida. Laszlo sent jercos 10,000 BTC.
 
 This is the **first known commercial transaction** in Bitcoin's history. At the BTC price of the time (roughly $0.004 per BTC), the pizzas cost about $41 total. At any BTC price you'd care to mention since 2017, those pizzas would be worth multiple lifetimes of pizza.
 

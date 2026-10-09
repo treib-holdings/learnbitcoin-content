@@ -137,7 +137,7 @@ There is no "right" fee. There is "the fee you need to pay to get into the next 
 ## 4. Replace-by-Fee (RBF) - When Your Tx Gets Stuck
 
 <figure>
-  <img src="/diagrams/bumping-stuck-tx.svg" alt="Two-row diagram of the two mechanisms for unsticking a Bitcoin transaction. Top row, RBF: a stuck transaction at 5 sat per virtual byte (gray) is replaced by the same transaction at 50 sat per virtual byte (orange), which confirms in the next block while the original disappears. Bottom row, CPFP: a stuck parent at 5 sat per virtual byte (gray) has its change output spent by a new child transaction at 50 sat per virtual byte (orange); both parent and child end up in the next block because the miner sees the combined fee. Tagline: Your transaction is not stuck forever. It is at the wrong fee level for current conditions." />
+  <img src="/diagrams/bumping-stuck-tx.svg" alt="Two-row diagram of the two mechanisms for unsticking a Bitcoin transaction. Top row, RBF: a stuck transaction at 5 sat per virtual byte (gray) is replaced by a new version of the transaction, spending the same coins, at 50 sat per virtual byte (orange), which confirms in the next block while the original disappears. Bottom row, CPFP: a stuck parent at 5 sat per virtual byte (gray) has its change output spent by a new child transaction at 50 sat per virtual byte (orange); both parent and child end up in the next block because the miner sees the combined fee. Tagline: Your transaction is not stuck forever. It is at the wrong fee level for current conditions." />
   <figcaption>Two mechanisms, same outcome: a stuck transaction gets into the next block. RBF replaces the original. CPFP rescues it via a high-fee child.</figcaption>
 </figure>
 
@@ -214,7 +214,7 @@ To send: paste an invoice, hit Pay, done. The payment usually completes within s
 A heuristic that gets most cases right:
 
 <figure>
-  <img src="/diagrams/on-chain-vs-lightning.svg" alt="Three side-by-side cards showing the recommended Bitcoin layer by payment size. Small payments under $50 use Lightning - fees and speed both favor it. Medium payments $50 to a few thousand either works - personal preference. Large payments above a few thousand use on-chain - Lightning channel capacity limits plus settlement preference. Three special cases below: recipient without a Lightning wallet means on-chain; repeated payments to the same party means open a Lightning channel; long-term storage means do not move it at all. Tagline: most people use both; knowing which is which is most of the skill." />
+  <img src="/diagrams/on-chain-vs-lightning.svg" alt="Three side-by-side cards showing the recommended Bitcoin layer by payment size. Small payments under $50 use Lightning - fees and speed both favor it. Medium payments $50 to a few thousand either works - personal preference. Large payments above a few thousand use on-chain - Lightning channel capacity limits plus settlement preference. Three special cases below: recipient without a Lightning wallet means on-chain; repeated payments to the same party means open a Lightning channel; long-term storage means do not move it at all. Tagline: many people use both; knowing which is which is most of the skill." />
   <figcaption>Three payment-size lanes plus three special cases. Most real-world payments fit somewhere on this card.</figcaption>
 </figure>
 

@@ -2,12 +2,14 @@
 title: "Bitcoin Dev Kit (BDK)"
 slug: bitcoin-dev-kit-bdk
 draft: false
+updated: "2026-10-09"
 shortDefinition: "An open-source Rust library offering flexible tools for building custom Bitcoin wallets with descriptor-based key management."
 keyTakeaways:
   - "Facilitates custom wallet building with Rust's safety benefits"
   - "Leverages descriptors for precise key/script organization"
   - "Supports multiple backends (e.g., Electrum, Core)"
-sources: []
+sources:
+  - { label: "Bitcoin Dev Kit - adoption list, projects built with BDK (October 2026)", url: "https://bitcoindevkit.org/adoption/all/" }
 relatedTerms:
   - bitcoin-core
   - bitcoin-knots
@@ -22,7 +24,7 @@ sameAs:
 liveWidget: ~
 ---
 
-The **Bitcoin Dev Kit (BDK)** is an open-source Rust library that provides modular building blocks for constructing Bitcoin wallets. Maintained by an active community of contributors, BDK powers a growing number of production wallets in 2026 - including major Lightning wallets that need on-chain functionality alongside off-chain.
+The **Bitcoin Dev Kit (BDK)** is an open-source Rust library that provides modular building blocks for constructing Bitcoin wallets. Maintained by an active community of contributors, BDK sits under a number of production wallets, including some Lightning wallets that need on-chain functionality alongside their channels.
 
 What BDK provides:
 
@@ -34,8 +36,8 @@ What BDK provides:
 
 Where BDK shines: anyone building a new Bitcoin wallet doesn't have to write descriptor parsing, PSBT logic, coin selection, fee estimation, and the rest from scratch. BDK handles the plumbing; the wallet builder focuses on UX and features.
 
-Notable BDK-based wallets in 2026 include Mutiny Wallet, Cake Wallet's Bitcoin module, some Lightning Service Providers' onboarding flows, and various enterprise custody tools. The library has also been embedded into hardware wallet companion software.
+BDK keeps a list of projects built on it. As of October 2026 that list includes the Bitkey, Proton Wallet, Bull Bitcoin and Liana wallets and Envoy, Foundation's companion app for its hardware wallets. It also includes infrastructure projects such as Fedimint and LDK Node.
 
-For developers, BDK is one of two big Rust-based Bitcoin libraries (alongside [LDK](/glossary/lightning-network-daemon-lnd) for Lightning). Together they're the modern foundation of most new Bitcoin wallet development not based directly on Bitcoin Core's codebase.
+For developers, BDK is one of two big Rust-based Bitcoin libraries (alongside LDK, the Lightning Dev Kit, for Lightning). Together they're the modern foundation of most new Bitcoin wallet development not based directly on Bitcoin Core's codebase.
 
 See [bitcoindevkit.org](https://bitcoindevkit.org/) for documentation and [Wallet](/glossary/wallet) for the broader landscape.
