@@ -2,12 +2,14 @@
 title: "Longest Chain Rule"
 slug: longest-chain-rule
 draft: false
+updated: "2026-10-09"
 shortDefinition: "Bitcoin nodes follow the chain with the most accumulated proof-of-work, ensuring consensus in a decentralized network."
 keyTakeaways:
   - "Nodes resolve conflicts by picking the chain with the most work"
   - "Deters attackers from rewriting the ledger without immense hash power"
   - "Ensures consistent ledger state across the decentralized network"
-sources: []
+sources:
+  - { label: "mempool.space API - daily network hash rate since 2009 (June to August 2026 average about 9.1 x 10^20 H/s)", url: "https://mempool.space/api/v1/mining/hashrate/all" }
 relatedTerms:
   - block
   - chain-split
@@ -32,7 +34,7 @@ What the rule does:
 
 Why this rule is the foundation of Bitcoin's security:
 
-- **Attacking the chain requires more work than the honest network is producing.** An attacker trying to rewrite history has to mine a longer fork, *secretly*, faster than the rest of the world mines the real one. With Bitcoin's ~700 EH/s of hash rate, this requires owning more than half of the global mining industry. Economically infeasible.
+- **Attacking the chain requires more work than the honest network is producing.** An attacker trying to rewrite history has to mine a longer fork, *secretly*, faster than the rest of the world mines the real one. With Bitcoin's hash rate averaging about 910 EH/s in mid-2026, this requires owning more than half of the global mining industry, which makes the attack economically infeasible.
 - **The deeper a transaction sits, the more work would be required to overturn it.** This is what the 6-confirmation convention buys: it would take an attacker controlling >50% of hash rate, working in secret, to overturn a 6-confirm transaction. The probability falls exponentially with depth.
 - **Honest miners are incentivized to build on the longest chain.** A miner who finds a block off the main chain doesn't get paid; the block becomes stale.
 

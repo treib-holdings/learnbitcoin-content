@@ -2,7 +2,7 @@
 title: "Seed Backup Strategies"
 slug: seed-backup-strategies
 draft: false
-updated: "2026-08-03"
+updated: "2026-10-09"
 status: live
 published: "2026-05-28"
 section: rabbit-hole
@@ -11,6 +11,7 @@ order: 8
 estimatedMinutes: 12
 sources:
   - { label: "BIP 39 - Mnemonic code for generating deterministic keys", url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" }
+  - { label: "BIP 141 (2015) - 2^80 work is not infeasible anymore", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
   - { label: "SLIP 39 - Shamir's Secret-Sharing for Mnemonic Codes", url: "https://github.com/satoshilabs/slips/blob/master/slip-0039.md" }
   - { label: "Glacier Protocol - high-security cold storage", url: "https://glacierprotocol.org/" }
   - { label: "Seed Phrase glossary entry", url: "https://www.learnbitcoin.com/glossary/seed-phrase" }
@@ -152,7 +153,7 @@ Example: 3-of-5. You generate 5 shares. Any 3 can recover the seed. Any 2 reveal
   <figcaption>One SLIP-39 share, formatted on perforated paper. A full M-of-N setup is several of these, ideally re-encoded onto metal, distributed across separate locations.</figcaption>
 </figure>
 
-This is **not** the same as splitting words across pieces of paper. Naive splitting (write words 1 to 12 on paper A and 13 to 24 on paper B) drastically reduces the brute-force space of the missing half. 12 words is much, much less than 24, and is a serious security mistake.
+This is **not** the same as splitting words across pieces of paper. Naive splitting (write words 1 to 12 on paper A and 13 to 24 on paper B) gives you no redundancy, since losing either paper loses the coins, and anyone who finds one paper holds half the seed. For a 24-word seed the missing half still leaves about 2^124 possibilities. Split a 12-word seed the same way and only about 2^62 remain, well below the 2^80 steps Bitcoin developers called "not infeasible anymore" in 2015 (BIP 141).
 
 Shamir Secret Sharing is mathematically sound. Each share is the same size as the original; no share gives any information about the secret on its own.
 

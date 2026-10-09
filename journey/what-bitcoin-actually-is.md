@@ -4,6 +4,7 @@ slug: what-bitcoin-actually-is
 draft: false
 status: live
 published: "2026-05-15"
+updated: "2026-10-09"
 order: 2
 estimatedMinutes: 25
 tagline: "Not a stock. Not a company. Not a payment app. Bitcoin is a new kind of money - and the difference matters."
@@ -16,6 +17,8 @@ sources:
   - { label: "Genesis block via ChainQuery (run getblock on a live node)", url: "https://chainquery.com/rpc/getblock" }
   - { label: "Cypherpunks mailing list announcement (October 31, 2008)", url: "https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html" }
   - { label: "Satoshi Nakamoto Institute - Bitcoin emails", url: "https://satoshi.nakamotoinstitute.org/emails/" }
+  - { label: "Bitcoin Core GetBlockSubsidy (permalink, Oct 2026) - halves the subsidy every 210,000 blocks, counted in whole satoshis", url: "https://github.com/bitcoin/bitcoin/blob/4bacf21a13c2ed25ef9362ca38f26bf0a67d22c9/src/validation.cpp#L1833-L1844" }
+  - { label: "mempool.space - block 840,000, the fourth halving (mined 00:09 UTC April 20, 2024)", url: "https://mempool.space/block/0000000000000000000320283a032748cef8227873ff4872689bf23f1cda83a5" }
 ---
 
 > **Where you're going:** You'll be able to describe Bitcoin from first principles - not as a "coin" or "investment," but as a network, a protocol, and a fixed supply of monetary units governed by rules no one can change unilaterally. By the end you'll know who made it, what it actually does, and what trade-offs it asks of you.
@@ -102,7 +105,7 @@ Here's the math:
 210,000 blocks x 100 BTC = 21,000,000 BTC (rounded; actual: 20,999,999.9769)
 ```
 
-The supply is a geometric series that converges. New issuance approaches zero asymptotically. The last fractional satoshi will be mined around the year 2140.
+The supply is a geometric series that converges. New issuance shrinks toward zero, and because Bitcoin counts in whole satoshis, the subsidy hits exactly zero at block 6,930,000, around the year 2140.
 
 The cap is enforced by every full node on the network. If a miner tried to issue more than the schedule allows, every other node would reject the block as invalid. The cap isn't a promise. It's not legislation. It's not a guideline. It is a property of the software that every participant runs.
 
@@ -136,7 +139,7 @@ Every 210,000 blocks, the block reward halves. This is not an opinion poll. It i
 | First | 210,000 | Nov 28, 2012 | 25 BTC |
 | Second | 420,000 | Jul 9, 2016 | 12.5 BTC |
 | Third | 630,000 | May 11, 2020 | 6.25 BTC |
-| Fourth | 840,000 | Apr 19, 2024 | 3.125 BTC |
+| Fourth | 840,000 | Apr 20, 2024 (UTC) | 3.125 BTC |
 | Fifth | 1,050,000 | ~2028 | 1.5625 BTC |
 
 The annual issuance rate of new bitcoin, once high, is now lower than the rate at which new gold is mined out of the ground. After the next halving it will be lower again. The asymptote is zero.

@@ -4,7 +4,7 @@ slug: mining
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-10-05"
+updated: "2026-10-09"
 section: rabbit-hole
 tagline: "Hash, nonce, target. The simplest hard problem in the world, and why it secures more than a trillion dollars."
 order: 4
@@ -13,8 +13,9 @@ sources:
   - { label: "SHA-256 spec (NIST FIPS 180-4)", url: "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf" }
   - { label: "Bitcoin Core - GetNextWorkRequired (difficulty calc)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/pow.cpp" }
   - { label: "Cambridge Bitcoin Electricity Consumption Index", url: "https://ccaf.io/cbnsi/cbeci" }
-  - { label: "Cambridge Judge Business School - Cambridge study: sustainable energy rising in Bitcoin mining (April 2025; 138 TWh, about 0.5% of global electricity)", url: "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/" }
-  - { label: "mempool.space - block fees chart (fee share of miner revenue)", url: "https://mempool.space/graphs/mining/block-fees" }
+  - { label: "Cambridge Judge Business School - Cambridge study: sustainable energy rising in Bitcoin mining (April 2025; 138 TWh, about 0.5% of global electricity; US 75.4% of reported mining activity among 49 surveyed firms)", url: "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/" }
+  - { label: "mempool.space - block fees vs subsidy chart (fee share of miner revenue)", url: "https://mempool.space/graphs/mining/block-fees-subsidy" }
+  - { label: "mempool.space API - mining pool shares over the last year (live; on 9 October 2026: Foundry USA 28.2%, AntPool 18.1%, F2Pool 12.5%, ViaBTC 9.7% of 52,331 blocks)", url: "https://mempool.space/api/v1/mining/pools/1y" }
   - { label: "Riot Platforms August 2023 production report (SEC filing - the $31.7M month)", url: "https://www.sec.gov/Archives/edgar/data/1167419/000155837023015517/riot-20230906xex99d1.htm" }
   - { label: "Mining glossary entry", url: "https://www.learnbitcoin.com/glossary/mining" }
 relatedTerms: ["mining", "miner", "hash", "hash-rate", "difficulty", "difficulty-retargeting", "nonce", "block-reward", "block-subsidy", "proof-work-pow", "mempool", "mining-pool", "incentive-compatibility"]
@@ -91,7 +92,7 @@ Difficulty has gone up roughly 10^14 times since the genesis block - mining is n
 
 A miner who finds a valid block gets paid in two parts:
 
-1. **Block subsidy** - the freshly-issued bitcoin per the [supply schedule](/rabbit-hole/supply). Currently 3.125 BTC. Halves every 210,000 blocks (see the [Halvings rabbit hole](/rabbit-hole/halvings)).
+1. **Block subsidy** - the freshly-issued bitcoin per the [supply schedule](/rabbit-hole/supply). 3.125 BTC as of October 2026. Halves every 210,000 blocks (see the [Halvings rabbit hole](/rabbit-hole/halvings)).
 2. **Transaction fees** - the sum of fees from every transaction included in the block. Variable; depends on mempool conditions.
 
 The miner constructs the "coinbase transaction" - a special transaction that pays themselves both amounts. This is the only place new bitcoin enters circulation.
@@ -141,11 +142,11 @@ A few realities of the mining industry:
 
 **ASICs dominate.** Application-Specific Integrated Circuits designed to do SHA-256 and nothing else. They are vastly more efficient than CPUs or GPUs and have been the only economically viable mining hardware since around 2014. There are a small number of ASIC manufacturers; this is a centralization vector worth watching.
 
-**Mining pools dominate.** Most miners don't solo-mine; they join a pool that aggregates hash rate, smooths out variance, and pays members proportionally. A small number of pools control most of the network's hash rate. As of recent years: Foundry USA, AntPool, ViaBTC, F2Pool, and a few others account for most blocks. This is a structural concern.
+**Mining pools dominate.** Most miners don't solo-mine; they join a pool that aggregates hash rate, smooths out variance, and pays members proportionally. A small number of pools control most of the network's hash rate. In the year to October 9, 2026, Foundry USA, AntPool, F2Pool and ViaBTC together mined more than two-thirds of all blocks. This is a structural concern.
 
 **But pools aren't miners.** The hash rate in a pool comes from individual miners, who can switch pools at will if one starts misbehaving. The "Stratum V2" protocol enables miners (not pools) to choose which transactions go into blocks, even if the pool is coordinating the hashing. This shifts power back to individual miners over time.
 
-**Geography has shifted.** China dominated mining until 2021, when a government crackdown pushed operations to the US, Kazakhstan, and elsewhere. The US is now the largest mining country.
+**Geography has shifted.** China dominated mining until 2021, when a government crackdown pushed operations to the US, Kazakhstan, and elsewhere. In Cambridge's April 2025 survey of 49 mining firms, the US accounted for about 75% of reported mining activity.
 
 **Solo mining is alive.** Several individuals have found blocks solo-mining on lottery hardware in the past few years. The odds are astronomically low, but not zero.
 
@@ -157,9 +158,9 @@ For the broader picture of how Bitcoin's decentralization actually holds up - mi
 
 Mining's role in Bitcoin's economic model evolves over time. Three phases:
 
-**Subsidy era (2009-2030s):** Most miner revenue comes from the block subsidy. Fee revenue exists but is secondary. This is the period we're in.
+**Subsidy era (2009-2030s):** Most miner revenue comes from the block subsidy. Fee revenue exists but is secondary. As of October 2026, Bitcoin is still in this era.
 
-**Transition era (2030s-2100s):** As halvings continue, the subsidy diminishes. Fee revenue grows to take its place - both because Bitcoin's usage grows, and because layer-2 scaling pushes the *value-per-byte* of on-chain transactions up.
+**Transition era (2030s-2100s):** As halvings continue, the subsidy shrinks. The hope is that fee revenue grows to take its place as more people use Bitcoin and layer-2 systems keep block space in demand. Whether that happens is the open question below.
 
 **Fee-only era (~2140+):** The last satoshi has been issued. Miners earn revenue exclusively from fees. The network's security is funded entirely by the demand to transact.
 

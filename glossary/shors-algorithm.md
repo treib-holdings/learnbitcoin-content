@@ -3,12 +3,14 @@ title: "Shor's Algorithm"
 slug: shors-algorithm
 draft: false
 published: "2026-06-01"
+updated: "2026-10-09"
 shortDefinition: "The quantum algorithm that breaks elliptic-curve cryptography - and therefore Bitcoin's ECDSA and Schnorr signatures - given a sufficiently large quantum computer."
 keyTakeaways:
   - "Breaks elliptic-curve cryptography (and RSA) given enough error-corrected qubits"
   - "The specific reason Bitcoin's ECDSA and Schnorr signatures must be replaced before CRQCs arrive"
   - "Algorithm works in principle; hardware to run it at cryptographic scale doesn't exist yet"
-sources: []
+sources:
+  - { label: "SEC 1 v2.0 - Pollard's rho needs about sqrt(pi n/4) steps, the best known non-quantum attack on elliptic-curve keys (Appendix B.1)", url: "https://www.secg.org/sec1-v2.pdf" }
 relatedTerms:
   - post-quantum-bitcoin
   - grovers-algorithm
@@ -28,7 +30,7 @@ Shor's algorithm, published by Peter Shor in 1994, is the reason "post-quantum B
 
 Bitcoin's signature schemes rely on the assumption that, given a [public key](/glossary/public-key) on the [secp256k1 curve](/glossary/elliptic-curve), deriving the corresponding private key is computationally infeasible. Classically, the best known attack takes time exponential in the key size - roughly 2^128 operations for a 256-bit curve. Practically infinite.
 
-Shor's reduces this to polynomial time. On a quantum computer with enough stable, error-corrected qubits, deriving a secp256k1 private key from its public key becomes tractable - minutes to hours instead of trillions of years.
+Shor's reduces this to polynomial time. On a quantum computer with enough stable, error-corrected qubits, deriving a secp256k1 private key from its public key becomes tractable. Without such a machine, even an imaginary fleet of 10 billion ordinary computers, each doing a trillion steps per second, would need about a billion years to recover a single key (see the [Key Space rabbit hole](/rabbit-hole/key-space)).
 
 The mathematical core is finding the period of a function defined modulo a hard number. Classical computers struggle with this; quantum computers exploit superposition and the quantum Fourier transform to find the period efficiently. Both integer factorization and discrete log reduce to period-finding. Both fall to Shor's.
 

@@ -2,12 +2,14 @@
 title: "Mainnet"
 slug: mainnet
 draft: false
+updated: "2026-10-09"
 shortDefinition: "The primary Bitcoin network where real BTC transactions occur and mining rewards have actual economic value."
 keyTakeaways:
   - "Houses the 'real' BTC economy"
   - "Transactions are final and valuable, no free do-overs"
   - "Contrast with testnet, signet, or regtest for dev and testing"
-sources: []
+sources:
+  - { label: "mempool.space API - daily network hash rate since 2009 (June to August 2026 average about 9.1 x 10^20 H/s)", url: "https://mempool.space/api/v1/mining/hashrate/all" }
 relatedTerms:
   - bitcoin-core
   - chain-split
@@ -26,7 +28,7 @@ When you "use Bitcoin," you're using mainnet. When you "run a Bitcoin node," it'
 What distinguishes mainnet from the alternatives:
 
 - **Real economic value.** BTC on mainnet has market price. Bugs and mistakes here cost real money.
-- **Real proof-of-work.** Mainnet is secured by ~700 EH/s of hash power. The other Bitcoin networks have a tiny fraction of that, and are not meaningfully secured against attacker hash rate.
+- **Real proof-of-work.** In mid-2026 (June to August) mainnet was secured by about 910 EH/s of hash power on average. The other Bitcoin networks have a tiny fraction of that, and are not meaningfully secured against attacker hash rate.
 - **Strict consensus rules.** Mainnet runs the full set of Bitcoin Core consensus rules, with no relaxations. Some test networks allow rule loosening for experimentation.
 
 The other Bitcoin-protocol networks exist for developers and experimentation:

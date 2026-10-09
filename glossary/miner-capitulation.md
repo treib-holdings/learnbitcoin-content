@@ -2,6 +2,7 @@
 title: "Miner Capitulation"
 slug: miner-capitulation
 draft: false
+updated: "2026-10-09"
 shortDefinition: "When miners shut off rigs or sell coins en masse due to unprofitable conditions (low price/high difficulty)."
 keyTakeaways:
   - "Miners shut down due to negative profit margins"
@@ -28,7 +29,5 @@ The mechanism is straightforward. Mining costs roughly the same in fiat regardle
 2. **Sell their BTC reserves** to cover ongoing fiat-denominated obligations - keeping the machines on, but adding sell pressure to an already-falling market.
 
 Both happen during capitulation events. Hash rate visibly drops; on-chain analyses show miners moving BTC to exchanges in larger-than-usual quantities. Within an epoch or two, [difficulty](/glossary/difficulty) corrects downward, restoring economics for the survivors.
-
-Historically, miner capitulation has often coincided with the late-cycle bottom in BTC's price - the moment when the most marginal operators have flushed out and the next move tends to be up. This isn't a guarantee. It's a pattern that's held three of the last three major bear markets. Sample size: three.
 
 What capitulation is *not* is a network failure. Bitcoin keeps producing blocks throughout. The survivors get cheaper difficulty and stronger margins on the other side. The system is designed to weather this kind of stress; it has, repeatedly.

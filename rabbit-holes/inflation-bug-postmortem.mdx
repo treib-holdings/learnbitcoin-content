@@ -4,7 +4,7 @@ slug: inflation-bug-postmortem
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-10-05"
+updated: "2026-10-09"
 section: rabbit-hole
 tagline: "August 15, 2010: someone created 184 billion BTC out of thin air. Five hours later, it was fixed. Here is the full story."
 order: 9
@@ -20,6 +20,7 @@ sources:
   - { label: "mempool.space - block 74,691, where the patched chain overtook the bad one (16 August 2010, 08:20 UTC)", url: "https://mempool.space/block/00000000005c22d199706df1c38b38d76f8401920dcbe91edf3417f8847da707" }
   - { label: "Coin Metrics - Community Network Data (BTC daily close, August 2010)", url: "https://coinmetrics.io/community-network-data/" }
   - { label: "BIP 42 - finite monetary supply (the OTHER infinite-supply bug)", url: "https://github.com/bitcoin/bips/blob/master/bip-0042.mediawiki" }
+  - { label: "Bitcoin Core PR #3842 - Fix for GetBlockValue() after block 13,440,000 (opened by ditto-b 11 March 2014, merged 3 April 2014)", url: "https://github.com/bitcoin/bitcoin/pull/3842" }
   - { label: "Bitcoin Core source - GetBlockSubsidy, where the BIP 42 rule lives (src/validation.cpp)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp" }
   - { label: "Bitcoin Wiki - Value overflow incident", url: "https://en.bitcoin.it/wiki/Value_overflow_incident" }
   - { label: "Inflation Bug glossary entry", url: "https://www.learnbitcoin.com/glossary/inflation-bug" }
@@ -109,9 +110,9 @@ This is the largest intentional reorg in Bitcoin's history. It remains a reminde
 
 The August 2010 incident was not Bitcoin's only flirtation with infinite supply.
 
-In 2014, developer Pieter Wuille noticed that the way the block subsidy was coded - using bit shifting to halve every 210,000 blocks - had a subtle bug. After enough halvings, the subsidy did not drop to zero; it wrapped around to a large positive value. Bitcoin's supply, on the books, was technically not capped.
+In March 2014, a developer going by ditto-b opened a pull request to fix a subtle bug. The block subsidy was coded to halve every 210,000 blocks using bit shifting, and that shift already takes the subsidy to zero at the 33rd halving. At the 64th halving, though, the shift becomes undefined in C++, and on every platform Bitcoin Core supported at the time the subsidy would have jumped back to 50 BTC and started the schedule over. Bitcoin's supply, on the books, was technically not capped.
 
-The bug would not trigger until block 13,440,000, the 64th halving, sometime around the year 2264, so it was not urgent. But Wuille wrote [BIP 42](/glossary/bip-42) - the only BIP whose stated purpose is to make Bitcoin's monetary policy work the way Bitcoin's monetary policy is described.
+The bug would not trigger until block 13,440,000, the 64th halving, sometime around the year 2263, so it was not urgent. Pieter Wuille wrote it up anyway, on April 1, 2014, as [BIP 42](/glossary/bip-42) - the only BIP whose stated purpose is to make Bitcoin's monetary policy work the way Bitcoin's monetary policy is described. The BIP thanks Gregory Maxwell for proposing the fix and ditto-b for coding it, and the change was merged into Bitcoin Core two days later.
 
 BIP 42 was a soft fork: it added the rule that the subsidy must be zero once the halving count reaches 64. It activated quietly. Most users have never heard of it.
 
