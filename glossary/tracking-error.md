@@ -12,7 +12,7 @@ keyTakeaways:
   - "Tracking difference is the cumulative return gap; tracking error is its statistical volatility"
   - "Spot Bitcoin ETFs track tightly because creation/redemption arbitrage is profitable and APs are active"
 sources:
-  - { label: "iShares Bitcoin Trust ETF - Form 10-K for 2025: bitcoin valued with the CME CF Bitcoin Reference Rate - New York Variant (3:00-4:00 PM ET window) after 4:00 PM ET; 40,000-share baskets; the AP bears execution price differences on cash orders, and such costs may be passed on to shareholders in the secondary market; from listing through January 10, 2025 the fee was waived to 0.12% on the first $5.0 billion; the Sponsor's Fee covers the Custodians' Fee", url: "https://www.sec.gov/Archives/edgar/data/1980994/000143774926006058/bit20251231_10k.htm" }
+  - { label: "iShares Bitcoin Trust ETF - Form 10-K for 2025: bitcoin valued with the CME CF Bitcoin Reference Rate - New York Variant (3:00-4:00 PM ET window) after 4:00 PM ET; 40,000-share baskets; the AP bears execution price differences on cash orders, and such costs may be passed on to shareholders in the secondary market; from listing through January 10, 2025 the fee was waived to 0.12% on the first $5.0 billion; the Sponsor's Fee covers the Custodians' Fee; in 2025 the NAV per share for financial statements fell 6.55% while the price of bitcoin fell 6.32%, slightly more because of the net Sponsor's Fee of 0.25% of average assets", url: "https://www.sec.gov/Archives/edgar/data/1980994/000143774926006058/bit20251231_10k.htm" }
   - { label: "Fidelity Wise Origin Bitcoin Fund - Form 10-K for 2025: Fidelity Bitcoin Reference Rate; shares valued daily as of 4:00 PM Eastern; core exchange trading typically closes at 4:00 PM", url: "https://www.sec.gov/Archives/edgar/data/1852317/000119312526071484/ck0001852317-20251231.htm" }
   - { label: "SEC press release 2025-101 - SEC Permits In-Kind Creations and Redemptions for Crypto ETPs (July 29, 2025)", url: "https://www.sec.gov/newsroom/press-releases/2025-101-sec-permits-kind-creations-redemptions-crypto-etps" }
   - { label: "VanEck Bitcoin ETF (HODL) - Form 10-K for 2025: Sponsor Fee of 0.20% after a waiver on the first $2.5 billion that ran through July 31, 2026", url: "https://www.sec.gov/Archives/edgar/data/1838028/000093041326000746/c115591_10k-ixbrl.htm" }
@@ -70,7 +70,7 @@ The Grayscale Bitcoin Mini Trust (BTC) launched in mid-2024 as Grayscale's cheap
 Annual tracking difference ~ expense ratio + a few basis points
 ```
 
-In practice, the major spot Bitcoin ETFs since their January 2024 launch have all tracked the underlying within their stated fee ranges. The wrapper works.
+The iShares Bitcoin Trust's annual report for 2025 shows how this plays out. Over the year its NAV per share fell 6.55% while the price of bitcoin fell 6.32%, and the report puts the difference down to its 0.25% sponsor's fee.
 
 Why this matters when picking a Bitcoin ETF:
 
@@ -78,4 +78,4 @@ Why this matters when picking a Bitcoin ETF:
 - **In-kind vs cash creation/redemption affects trading costs.** In-kind, allowed by the SEC on July 29, 2025, takes the fund out of BTC trades when shares are created or redeemed that way.
 - **Don't confuse expense ratio with tracking quality.** A poorly run cheap ETF can track worse than a well-run expensive one. Compare actual tracking-difference history, not just headline fee.
 
-Tracking error is the boring statistic that tells you whether the ETF is doing its job. For Bitcoin, the answer since launch has been: yes, almost annoyingly well.
+Tracking error is the boring statistic that tells you whether the ETF is doing its job. For IBIT in 2025, the answer was yes: it trailed bitcoin by about its fee.

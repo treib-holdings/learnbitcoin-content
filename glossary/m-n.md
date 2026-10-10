@@ -2,7 +2,7 @@
 title: "M-of-n"
 slug: m-n
 draft: false
-updated: "2026-10-09"
+updated: "2026-10-10"
 shortDefinition: "A generic way to denote multisig, requiring M signatures out of N total possible signers (e.g., 2-of-3)."
 keyTakeaways:
   - "General term for threshold signature setups"
@@ -16,7 +16,10 @@ sources:
   - { label: "BIP-141 - Segregated Witness: P2WSH bypasses the 520-byte push limit (10,000-byte script max)", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
   - { label: "BIP-387 - Tapscript Multisig Output Script Descriptors (multi_a, up to 999 keys)", url: "https://github.com/bitcoin/bips/blob/master/bip-0387.mediawiki" }
   - { label: "BIP-445 (Draft as of October 2026) - FROST Signing Protocol for BIP340 Signatures (t-of-n; MuSig2 for n-of-n)", url: "https://github.com/siv2r/bip-frost-signing" }
-  - { label: "Nick, Poelstra, Sanders - Liquid: A Bitcoin Sidechain (Blockstream whitepaper, 2020), 11-of-15 watchman multisig", url: "https://blockstream.com/assets/downloads/pdf/liquid-whitepaper.pdf" }
+  - { label: "Nick, Poelstra, Sanders - Liquid: A Bitcoin Sidechain (Blockstream whitepaper, 2020), 11-of-15 watchman multisig; watchmen sign the Bitcoin transactions that process peg-outs", url: "https://blockstream.com/assets/downloads/pdf/liquid-whitepaper.pdf" }
+  - { label: "Blockstream Help - What is a Liquid Network functionary? (15 functionaries; each functionary is run by a single federation member)", url: "https://help.blockstream.com/liquid-network/faqs/what-is-a-liquid-network-functionary" }
+  - { label: "Blockstream Help - How does the Liquid Federation's multisig work? (11-of-15 multisig for peg-ins and peg-outs; each of the 15 functionaries holds one key in its HSM)", url: "https://help.blockstream.com/liquid-network/faqs/how-does-the-liquid-federations-multisig-work" }
+  - { label: "Liquid Federation - Q1 2026 quarterly update: 87 federation members (May 1, 2026)", url: "https://blog.liquid.net/liquid-federation-quarterly-update-q1-2026/" }
 relatedTerms:
   - psbt
   - bitcoin-vault
@@ -40,7 +43,7 @@ Common configurations:
 
 - 2-of-3: the personal-custody sweet spot. One key with you, one with a trusted backup location, one with a third party (lawyer, friend, custody service). Survives loss of any one. Steal one and you can't spend; steal two and you can.
 - 3-of-5: for groups and companies where more people should have a say. Survives loss of two, requires three to spend.
-- 4-of-7 or higher: large federations and high-stakes custody. Blockstream's 2020 whitepaper for the [Liquid](/glossary/liquid-network) sidechain says the bitcoin backing Liquid is locked in an 11-of-15 multisig. Its 15 keys belong to "watchmen," the federation members who sign withdrawals from Liquid back to Bitcoin.
+- 4-of-7 or higher: large federations and high-stakes custody. Blockstream's 2020 whitepaper for the [Liquid](/glossary/liquid-network) sidechain says the bitcoin backing Liquid is locked in an 11-of-15 multisig. Its 15 keys are held by 15 functionaries, which the whitepaper calls "watchmen" when they sign withdrawals from Liquid back to Bitcoin. Each functionary is run by one member of the Liquid Federation, which had 87 members as of May 2026.
 
 Pre-Taproot multisig uses `OP_CHECKMULTISIG`, which accepts at most 20 keys. In [P2SH](/glossary/p2sh) it tops out at 15 compressed keys, because the whole script has to fit in a single 520-byte data element. [P2WSH](/glossary/p2wsh-pay-witness-script-hash) avoids that limit and allows the full 20. Taproot script-path spends use [`OP_CHECKSIGADD`](/glossary/op-checksigadd) instead, which allows far more keys. Bitcoin Core's `multi_a` [descriptor](/glossary/output-descriptor) (BIP 387) supports up to 999.
 

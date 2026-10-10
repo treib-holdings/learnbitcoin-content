@@ -4,7 +4,7 @@ slug: what-bitcoin-actually-is
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-10-09"
+updated: "2026-10-10"
 order: 2
 goDeeper: ["supply", "decentralization", "energy"]
 estimatedMinutes: 25
@@ -32,7 +32,7 @@ sources:
   - { label: "World Gold Council - Gold Demand Trends Full Year 2025, supply (mine production 3,672 t)", url: "https://www.gold.org/goldhub/research/gold-demand-trends/gold-demand-trends-full-year-2025/supply" }
   - { label: "USGS Mineral Commodity Summaries 2026 - Gold (world mine production 2025: 3,300 t)", url: "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-gold.pdf" }
   - { label: "BTC Nodes - reachable Bitcoin nodes (25,514 in the 19:28 UTC snapshot of October 9, 2026; the old bitnodes.io API now redirects here)", url: "https://btcnodes.io" }
-  - { label: "Coin Dance - public Bitcoin nodes, duplicate and non-listening nodes omitted (25,362 on October 9, 2026; live)", url: "https://coin.dance/nodes" }
+  - { label: "BTC Nodes API - bitnodes.io snapshot of October 9, 2026, 19:28 UTC (25,514 nodes, main chain at height 970,671; 1,829 nodes with Knots user agents report heights off the main chain: 656 stuck at 961,639 and 1,173 near 976,430, ahead of the main chain)", url: "https://btcnodes.io/api/v1/snapshots/1791574083/" }
   - { label: "Mike Belshe - Segwit2x Final Steps, calling off the planned 2MB fork (bitcoin-segwit2x list, November 8, 2017, archived)", url: "https://web.archive.org/web/20171108202305/https://lists.linuxfoundation.org/pipermail/bitcoin-segwit2x/2017-November/000685.html" }
   - { label: "Bitcoin Wiki - Value overflow incident (August 15, 2010; patched client within five hours)", url: "https://en.bitcoin.it/wiki/Value_overflow_incident" }
   - { label: "BIP 50 - March 2013 Chain Fork Post-Mortem", url: "https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki" }
