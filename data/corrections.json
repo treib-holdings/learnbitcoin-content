@@ -1,5 +1,75 @@
 [
   {
+    "id": "2026-10-10-bitcoin-client",
+    "date": "2026-10-10",
+    "page": "/glossary/bitcoin-client",
+    "title": "Bitcoin Client",
+    "wrong": "The entry described Bitcoin Knots as consensus-compatible with Bitcoin Core.",
+    "fixed": "Knots releases up to May 8, 2026 do not include BIP-110. Releases from May 9, 2026 on enforce it, and nodes running them left Bitcoin's main chain on August 8, 2026. In September 2026 Knots shipped a hard fork that moved that chain to a BLAKE2b proof of work.",
+    "commit": "d728434",
+    "source": "https://github.com/bitcoin/bips/pull/2245"
+  },
+  {
+    "id": "2026-10-10-bitcoin-knots",
+    "date": "2026-10-10",
+    "page": "/glossary/bitcoin-knots",
+    "title": "Bitcoin Knots",
+    "wrong": "The entry said Bitcoin Knots is consensus-compatible with Bitcoin Core, so a Knots node sees the same chain and accepts the same blocks, and that the two differ only in relay policy.",
+    "fixed": "Knots releases up to May 8, 2026 follow the same chain as Core. Releases from May 9, 2026 on enforce BIP-110, a temporary limit on data in transactions, and nodes running them rejected the main chain's blocks from August 8, 2026 and split off. Knots 29.4.1, released September 2, 2026, moved that chain to a BLAKE2b proof of work.",
+    "commit": "d728434",
+    "source": "https://github.com/bitcoin/bips/pull/2245"
+  },
+  {
+    "id": "2026-10-10-fork-watcher",
+    "date": "2026-10-10",
+    "page": "/glossary/fork-watcher",
+    "title": "Fork Watcher",
+    "wrong": "The entry said forkmonitor.info runs Bitcoin Knots and libbitcoin nodes alongside Bitcoin Core and btcd, and publishes alerts to RSS, Twitter and mailing-list feeds.",
+    "fixed": "As of October 2026 the site runs several versions of Bitcoin Core plus btcd and bcoin, compares the chains they follow, and keeps a list of stale blocks. It names Localhost Research as its sponsor.",
+    "commit": "d728434",
+    "source": "https://forkmonitor.info/"
+  },
+  {
+    "id": "2026-10-10-full-node",
+    "date": "2026-10-10",
+    "page": "/glossary/full-node",
+    "title": "Full Node",
+    "wrong": "The entry said full nodes almost always run Bitcoin Core and offered Bitcoin Knots as an alternative that is essentially a patched version of Core.",
+    "fixed": "Bitcoin Core runs on most nodes, about 87% in one October 2026 estimate. Knots releases from May 9, 2026 on enforce BIP-110, a temporary limit on data in transactions, and nodes running them left Bitcoin's main chain on August 8, 2026.",
+    "commit": "d728434",
+    "source": "https://github.com/bitcoin/bips/pull/2245"
+  },
+  {
+    "id": "2026-10-10-node-operator",
+    "date": "2026-10-10",
+    "page": "/glossary/node-operator",
+    "title": "Node Operator",
+    "wrong": "The entry listed Bitcoin Knots alongside Bitcoin Core and btcd as software you can download to run a Bitcoin full node.",
+    "fixed": "Only Knots releases made before May 9, 2026 run on Bitcoin's main chain. Later releases enforce BIP-110, and nodes running them left the main chain on August 8, 2026.",
+    "commit": "d728434",
+    "source": "https://github.com/bitcoin/bips/pull/2245"
+  },
+  {
+    "id": "2026-10-10-resource-exhaustion-attack",
+    "date": "2026-10-10",
+    "page": "/glossary/resource-exhaustion-attack",
+    "title": "Resource Exhaustion Attack",
+    "wrong": "The entry said the discard threshold protects nodes from mempool spam by evicting low-fee transactions. It also said Bitcoin Core keeps a ban score and bans peers automatically once their misbehavior adds up, said SegWit's BIP 143 fixed slow quadratic signature hashing outright, and listed limits on chains of unconfirmed transactions as a protocol rule.",
+    "fixed": "Each node's mempool has a size cap, 300 MB by default in Bitcoin Core. When it is full, the node evicts the lowest-fee-rate transactions and raises its minimum fee. Bitcoin Core keeps no ban score: a peer that breaks certain rules is disconnected and its address discouraged, and bans are set only by hand. BIP 143's faster hashing covers only SegWit inputs, and chain limits are relay policy, not consensus.",
+    "commit": "d728434",
+    "source": "https://raw.githubusercontent.com/bitcoin/bitcoin/v31.1/src/banman.h"
+  },
+  {
+    "id": "2026-10-10-authorized-participant",
+    "date": "2026-10-10",
+    "page": "/glossary/authorized-participant",
+    "title": "Authorized Participant",
+    "wrong": "The entry said custody for 8 of the 11 US spot bitcoin ETFs was at one firm.",
+    "fixed": "Custody differs by fund and has changed since the 2024 launch, so the entry now gives one documented example: the iShares Bitcoin Trust listed 13 authorized participants in its annual report for 2025, while one custodian, Coinbase Custody, held its bitcoin.",
+    "commit": "c546920",
+    "source": "https://www.sec.gov/Archives/edgar/data/1980994/000143774926006058/bit20251231_10k.htm"
+  },
+  {
     "id": "2026-10-10-autopilot-lightning",
     "date": "2026-10-10",
     "page": "/glossary/autopilot-lightning",
@@ -35,9 +105,9 @@
     "page": "/rabbit-hole/decentralization",
     "title": "Decentralization",
     "wrong": "The chapter called Bitcoin Knots an independent implementation of Bitcoin, alongside btcd and Libbitcoin, and its metrics table counted Knots among \"4+\" independent clients.",
-    "fixed": "Knots began as a modified version of Bitcoin Core, merging in Core's code for each release. In September 2026 it shipped a hard fork with a different proof of work, so its newest versions no longer follow Bitcoin's main chain. btcd and Libbitcoin are the separately written implementations.",
+    "fixed": "Knots began as a modified version of Bitcoin Core, merging in Core's code for each release. Its releases from May 9, 2026 on enforce BIP-110, a temporary limit on data in transactions, and nodes running them left Bitcoin's main chain on August 8, 2026. A September 2026 release moved that chain to a different proof of work. btcd and Libbitcoin are the separately written implementations.",
     "commit": "c546920",
-    "source": "https://github.com/bitcoinknots/bitcoin"
+    "source": "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.1.knots20260508"
   },
   {
     "id": "2026-10-10-discard-threshold",
@@ -60,12 +130,22 @@
     "source": "https://bitcointalk.org/index.php?topic=155054.0"
   },
   {
+    "id": "2026-10-10-lightning-channel",
+    "date": "2026-10-10",
+    "page": "/glossary/lightning-channel",
+    "title": "Lightning Channel",
+    "wrong": "The entry said a channel's capacity is fixed at open time and that rebalancing through swap services like Loop In/Out, or splicing, is required for more.",
+    "fixed": "The funding transaction sets a channel's capacity, split between the two sides. Swap services like Loop In/Out shift that split, refilling or emptying one side, but the total stays the same. Only splicing, which replaces the funding transaction, changes a channel's capacity.",
+    "commit": "c546920",
+    "source": "https://docs.lightning.engineering/the-lightning-network/liquidity/manage-liquidity"
+  },
+  {
     "id": "2026-10-10-liquid-federation",
     "date": "2026-10-10",
     "page": "/glossary/liquid-federation",
     "title": "Liquid Federation",
     "wrong": "The entry said the federation had roughly 65 members, that each member ran a functionary node, that a subset of members took turns signing each block, and that a malicious majority of the federation could steal the pegged BTC.",
-    "fixed": "The federation had 87 member companies as of May 2026, but only 15 functionaries, each run by one member, sign blocks and hold the keys to the pegged BTC. Each block and each peg-out needs 11 of the 15 signatures, so it would take 11 functionaries colluding, or losing their keys, to take the pegged BTC.",
+    "fixed": "The federation had 87 member companies as of May 2026, but only 15 functionaries, each run by one member, sign blocks and hold the keys to the pegged BTC. Each block and each peg-out needs 11 of the 15 signatures, so signing the pegged BTC away would take 11 functionaries colluding or having their keys stolen. A software bug can also drain the peg, as the September 2026 exploit showed.",
     "commit": "c546920",
     "source": "https://help.blockstream.com/liquid-network/faqs/what-is-a-liquid-network-functionary"
   },
@@ -74,8 +154,8 @@
     "date": "2026-10-10",
     "page": "/glossary/liquid-network",
     "title": "Liquid Network",
-    "wrong": "The entry described the federation as a consortium of around 65 entities, said block production rotated among federation members, and said a majority of federation members could steal the pegged BTC by signing a malicious peg-out.",
-    "fixed": "The federation had 87 member companies as of May 2026. Fifteen functionaries, each run by one member, take turns proposing blocks, and each block needs 11 of their 15 signatures. It would take 11 of those 15 functionaries, colluding or with stolen keys, to take the pegged BTC.",
+    "wrong": "The entry described the federation as a consortium of around 65 entities, said block production rotated among federation members, and said a majority of federation members could steal the pegged BTC by signing a malicious peg-out. It also named PAXG, a gold token issued on Ethereum, among the assets issued on Liquid.",
+    "fixed": "The federation had 87 member companies as of May 2026. Fifteen functionaries, each run by one member, take turns proposing blocks, and each block needs 11 of their 15 signatures. Signing the pegged BTC away would take 11 of those 15 functionaries colluding or having their keys stolen, and a software bug can also drain the peg, as the September 2026 exploit showed. The asset examples are now Tether's USDT, the Brazilian-real stablecoin DePix and tokenized securities.",
     "commit": "c546920",
     "source": "https://help.blockstream.com/liquid-network/faqs/what-is-a-liquid-network-functionary"
   },
@@ -144,8 +224,8 @@
     "date": "2026-10-10",
     "page": "/glossary/tracking-error",
     "title": "Tracking Error",
-    "wrong": "The entry listed cash drag as a source of tracking gap, saying creation cash sits idle until the fund buys bitcoin and calling it a real headwind when the price rises.",
-    "fixed": "At the iShares, Fidelity and WisdomTree funds, among others, the authorized participant pays for any gap between the bitcoin price used for NAV and the price the fund pays when it buys bitcoin for a cash creation, so a price rise in between does not cost the fund.",
+    "wrong": "The entry listed cash drag as a source of tracking gap, saying creation cash sits idle until the fund buys bitcoin and calling it a real headwind when the price rises. It also said Coinbase Custody held the bitcoin for 8 of the 11 US spot ETFs.",
+    "fixed": "At the iShares Bitcoin Trust, the authorized participant pays for any gap between the bitcoin price used for NAV and the price the fund pays when it buys bitcoin for a cash creation, so a price rise in between does not cost the fund. Custody arrangements differ by fund, so the entry no longer gives a count.",
     "commit": "c546920",
     "source": "https://www.sec.gov/Archives/edgar/data/1980994/000143774926006058/bit20251231_10k.htm"
   },
@@ -264,7 +344,7 @@
     "page": "/glossary/discard-threshold",
     "title": "Discard Threshold",
     "wrong": "The entry said mempool.space's next-block fee estimate shows the discard threshold, and gave about 1 sat/vB as the floor in calm periods.",
-    "fixed": "mempool.space shows the mempool's fee floor on its dashboard as 'Minimum fee', relabeled 'Purging' once its node starts evicting transactions. The next-block estimate is a separate rate that never drops below that floor. Bitcoin Core 29.1 (September 2025) lowered the default relay minimum from 1 to 0.1 sat/vB. The entry's definition was itself corrected on 10 October 2026: in Bitcoin Core the discard threshold is a wallet setting for dropping tiny change, not the mempool floor.",
+    "fixed": "mempool.space shows the mempool's fee floor on its dashboard as 'Minimum fee', relabeled 'Purging' when it rises above the relay minimum. Bitcoin Core 29.1 (September 2025) lowered the default relay minimum from 1 to 0.1 sat/vB. The entry's definition was itself corrected on 10 October 2026: in Bitcoin Core the discard threshold is a wallet setting for dropping tiny change, not the mempool floor.",
     "commit": "94e823a",
     "source": "https://github.com/mempool/mempool/blob/master/frontend/src/app/dashboard/dashboard.component.html"
   },
