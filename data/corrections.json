@@ -1,5 +1,155 @@
 [
   {
+    "id": "2026-10-10-atomic-swap-refill",
+    "date": "2026-10-10",
+    "page": "/glossary/atomic-swap-refill",
+    "title": "Atomic Swap Refill",
+    "wrong": "The entry said atomic swap refill let a routing node move balance between two of its channels through a swap with another node, restoring routing capacity without an on-chain transaction, and it described the technique as shifting channel capacity.",
+    "fixed": "The swaps it covers, such as Loop In, Loop Out and PeerSwap, need on-chain transactions, on Bitcoin or, with PeerSwap, on Liquid; PeerSwap's protocol uses two per swap. They move balance from one side of a channel to the other, and the channel's total capacity stays the same. One way to rebalance that does stay off-chain is a circular payment to yourself through other nodes.",
+    "commit": "659e6f9",
+    "source": "https://github.com/ElementsProject/peerswap/blob/master/docs/peer-protocol.md"
+  },
+  {
+    "id": "2026-10-10-bip-148-uasf",
+    "date": "2026-10-10",
+    "page": "/glossary/bip-148-uasf",
+    "title": "BIP 148 (UASF)",
+    "wrong": "The entry said BIP-148 ended a multi-year SegWit activation deadlock that had persisted for over a year.",
+    "fixed": "Miners could signal for SegWit from November 15, 2016, and BIP-91 made every block signal from July 23, 2017, so the deadlock lasted about eight months. In May and early June 2017, only about 30 percent of blocks signaled for SegWit.",
+    "commit": "659e6f9",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki"
+  },
+  {
+    "id": "2026-10-10-bip-9-versionbits",
+    "date": "2026-10-10",
+    "page": "/glossary/bip-9-versionbits",
+    "title": "BIP 9 (VersionBits)",
+    "wrong": "The entry said a significant minority of miners refused to signal for SegWit in 2017, and listed the BIP-8 proposal as coming after BIP-148 and BIP-91.",
+    "fixed": "In May and early June 2017, only about 30 percent of blocks signaled for SegWit, far short of the 95 percent it needed, so the miners holding out were a majority. BIP-8 was proposed in February 2017, before BIP-148 and BIP-91.",
+    "commit": "659e6f9",
+    "source": "https://bitcoinmagazine.com/technical/bip91-segwit-activation-kludge-should-keep-bitcoin-whole"
+  },
+  {
+    "id": "2026-10-10-bip-91-2",
+    "date": "2026-10-10",
+    "page": "/glossary/bip-91",
+    "title": "BIP 91",
+    "wrong": "The entry said BIP-91 lowered SegWit's activation threshold to 80%.",
+    "fixed": "BIP-91 was a separate deployment with its own 80% threshold, on bit 4. It made SegWit signaling mandatory, but SegWit's own 95% threshold never changed, and every block in the period before SegWit's lock-in signaled for it.",
+    "commit": "659e6f9",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki"
+  },
+  {
+    "id": "2026-10-10-bitcoin-governance",
+    "date": "2026-10-10",
+    "page": "/glossary/bitcoin-governance",
+    "title": "Bitcoin Governance",
+    "wrong": "The entry listed BIP-148, the 2017 user-activated soft fork, among proposed changes that failed.",
+    "fixed": "BIP-148's rule, that blocks signal for SegWit from August 1, 2017, was already being met when that date came: every block from July 23 until SegWit locked in signaled for it. SegWit activated on August 24, 2017.",
+    "commit": "659e6f9",
+    "source": "https://mempool.space/block/0000000000000000015411ca4b35f7b48ecab015b14de5627b647e262ba0ec40"
+  },
+  {
+    "id": "2026-10-10-block-size-war",
+    "date": "2026-10-10",
+    "page": "/glossary/block-size-war",
+    "title": "Block Size War",
+    "wrong": "The entry said miners activated SegWit through BIP-91 in July 2017.",
+    "fixed": "Only BIP-91 took effect in July: it locked in on July 21 and was enforced from block 477,120 on July 23, 2017, so every block signaled for SegWit before the August 1 flag day. SegWit itself locked in on August 9 and activated at block 481,824 on August 24.",
+    "commit": "659e6f9",
+    "source": "https://mempool.space/block/0000000000000000015411ca4b35f7b48ecab015b14de5627b647e262ba0ec40"
+  },
+  {
+    "id": "2026-10-10-celsius-genesis-3ac-cluster",
+    "date": "2026-10-10",
+    "page": "/glossary/celsius-genesis-3ac-cluster",
+    "title": "Celsius, Genesis, and 3AC (the 2022 Contagion)",
+    "wrong": "The entry presented Celsius's June 2022 withdrawal freeze as a result of Three Arrows Capital's default, and said BlockFi went down the same way as the lenders 3AC failed to repay.",
+    "fixed": "Celsius froze withdrawals on 12 June 2022, before 3AC was put into liquidation at the end of that month. BlockFi was hurt by 3AC's collapse but kept going on a $400 million credit line from FTX, and filed for bankruptcy after FTX failed in November 2022.",
+    "commit": "659e6f9",
+    "source": "https://www.justice.gov/usao-sdny/pr/founder-celsius-sentenced-12-years-fraud-and-market-manipulation"
+  },
+  {
+    "id": "2026-10-10-chain-flag-day",
+    "date": "2026-10-10",
+    "page": "/glossary/chain-flag-day",
+    "title": "Chain Flag Day",
+    "wrong": "The entry said SegWit activated via BIP-91 a week before BIP-148's August 1, 2017 flag day.",
+    "fixed": "BIP-91 was enforced from block 477,120 on July 23, 2017, about nine days before the flag day, and every block from then until SegWit locked in on August 9 signaled for SegWit. SegWit itself activated at block 481,824 on August 24, 2017.",
+    "commit": "659e6f9",
+    "source": "https://mempool.space/block/0000000000000000001c8018d9cb3b742ef25114f27563e3fc4a1902167f9893"
+  },
+  {
+    "id": "2026-10-10-deployment-threshold-soft-fork",
+    "date": "2026-10-10",
+    "page": "/glossary/deployment-threshold-soft-fork",
+    "title": "Deployment Threshold (Soft Fork)",
+    "wrong": "The entry said BIP 91 lowered SegWit's signaling threshold to 80% with a forced lock-in, that BIP 148 showed nodes could enforce SegWit rules even without miner signaling, and that ASICBoost was incompatible with SegWit.",
+    "fixed": "BIP 91 ran its own 80% deployment on bit 4 and, once active from block 477,120 on July 23, 2017, rejected blocks that did not signal for SegWit. SegWit's 95% threshold never changed and was met by 2,016 of 2,016 blocks. BIP 148 required signaling from August 1 and was never tested. Only a covert form of ASICBoost conflicted with SegWit.",
+    "commit": "659e6f9",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki"
+  },
+  {
+    "id": "2026-10-10-escrow",
+    "date": "2026-10-10",
+    "page": "/glossary/escrow",
+    "title": "Escrow",
+    "wrong": "The entry said Bisq uses 2-of-3 multisig escrow with an arbitrator, that an HTLC seller reveals the preimage after delivering the goods, and that script-based escrow costs nothing beyond transaction fees. It also named RoboSats as an example after saying the escrow agent never holds the funds.",
+    "fixed": "Bisq locks each trade in a 2-of-2 multisig with both traders' deposits, and its mediators hold no key. An HTLC pays the seller for revealing a secret and cannot check whether any goods arrived. Bisq and Hodl Hodl charge trading fees. On RoboSats the coordinator node settles the seller's hold invoice, briefly holds the funds while paying the buyer, and its staff decide disputes.",
+    "commit": "659e6f9",
+    "source": "https://bisq.wiki/Security_deposit"
+  },
+  {
+    "id": "2026-10-10-ftx",
+    "date": "2026-10-10",
+    "page": "/glossary/ftx",
+    "title": "FTX",
+    "wrong": "The entry said FTX, Alameda and roughly 130 affiliated companies filed for bankruptcy on 11 November 2022, and that Sam Bankman-Fried was convicted on seven fraud counts.",
+    "fixed": "The court record shows FTX Trading and 101 affiliated companies filing on 11 and 14 November 2022. Bankman-Fried was convicted on all seven counts against him, including fraud and conspiracy to launder money.",
+    "commit": "659e6f9",
+    "source": "https://www.justice.gov/usao-sdny/pr/statement-us-attorney-damian-williams-conviction-samuel-bankman-fried"
+  },
+  {
+    "id": "2026-10-10-peg-out-2",
+    "date": "2026-10-10",
+    "page": "/glossary/peg-out",
+    "title": "Peg-out",
+    "wrong": "The entry described a Liquid peg-out as the user burning L-BTC, as if anyone could peg out directly.",
+    "fixed": "On Liquid, only federation members holding a peg-out authorization key can peg out, and other users go through one of them.",
+    "commit": "659e6f9",
+    "source": "https://docs.liquid.net/docs/technical-overview"
+  },
+  {
+    "id": "2026-10-10-bip-process",
+    "date": "2026-10-10",
+    "page": "/rabbit-hole/bip-process",
+    "title": "The BIP Process",
+    "wrong": "The chapter said a minority of miners held SegWit back by declining to signal, and that miners began signaling weeks before BIP-148's August 1, 2017 deadline.",
+    "fixed": "Most blocks did not signal. Signaling had been open since November 2016, and in May and early June 2017 only about 30 percent of blocks signaled for SegWit, against the 95 percent it needed. Every block signaled from July 23, about nine days before the deadline, once the BIP-91 deployment took effect.",
+    "commit": "659e6f9",
+    "source": "https://bitcoinmagazine.com/technical/bip91-segwit-activation-kludge-should-keep-bitcoin-whole"
+  },
+  {
+    "id": "2026-10-10-block-size-war-2",
+    "date": "2026-10-10",
+    "page": "/rabbit-hole/block-size-war",
+    "title": "The Block Size War",
+    "wrong": "The chapter said BIP-91 got SegWit activated before BIP-148's August 1, 2017 deadline and went into force around July 20, and a figure description said mandatory SegWit signaling began that day. It also implied SegWit had activated before Bitcoin Cash split off on August 1. Its timeline figure also dated mandatory signaling to July 20, and its countdown figure said that left 12 days to spare before the flag day.",
+    "fixed": "BIP-91 locked in on the evening of July 20, 2017, US time (July 21 UTC), and was enforced from block 477,120 on July 23, so every block signaled for SegWit before August 1. SegWit itself locked in on August 9 and activated at block 481,824 on August 24, after Bitcoin Cash split off. Mandatory signaling began about nine days before the flag day, and both figures now say so.",
+    "commit": "659e6f9",
+    "source": "https://mempool.space/block/0000000000000000015411ca4b35f7b48ecab015b14de5627b647e262ba0ec40"
+  },
+  {
+    "id": "2026-10-10-voyager-digital",
+    "date": "2026-10-10",
+    "page": "/glossary/voyager-digital",
+    "title": "Voyager Digital",
+    "wrong": "The entry said Voyager's \"FDIC insured\" line was technically accurate, and that customers who relied on it had simply misread what was being promised.",
+    "fixed": "The Federal Trade Commission charged that telling customers \"YOUR USD IS FDIC INSURED\" was false. Voyager was not a bank and its customers' deposits were not eligible for FDIC insurance; their cash was protected only if Voyager's partner bank failed, and their crypto not at all. Voyager settled in 2023, and its former CEO settled in 2025.",
+    "commit": "659e6f9",
+    "source": "https://www.ftc.gov/news-events/news/press-releases/2023/10/ftc-reaches-settlement-crypto-company-voyager-digital-charges-former-executive-falsely-claiming"
+  },
+  {
     "id": "2026-10-10-balanced-channel-lightning",
     "date": "2026-10-10",
     "page": "/glossary/balanced-channel-lightning",
@@ -113,8 +263,8 @@
     "id": "2026-10-10-low-s-signatures",
     "date": "2026-10-10",
     "page": "/glossary/low-s-signatures",
-    "title": "Low-S Signatures - The Rule That Killed ECDSA Malleability",
-    "wrong": "The entry said low-S became relay policy through BIP 146 and a consensus rule for SegWit inputs through BIP 141, and that it left exactly one valid signature per key and message.",
+    "title": "Low-S Signatures",
+    "wrong": "The entry said low-S became relay policy through BIP 146 and a consensus rule for SegWit inputs through BIP 141, and that it left exactly one valid signature per key and message. Its title also called low-S the rule that killed ECDSA malleability.",
     "fixed": "Bitcoin Core has enforced low-S as relay policy since version 0.11.1 (October 2015), and it never became a consensus rule: BIP 146, which proposed that, was closed, and BIP 141 has no low-S rule. The key holder can still make other valid signatures. SegWit is what fixed third-party malleability.",
     "commit": "8bb2e1c",
     "source": "https://github.com/bitcoin/bips/blob/master/bip-0146.mediawiki"
@@ -128,6 +278,16 @@
     "fixed": "The Federal Trade Commission charged that telling customers their accounts were FDIC insured was false, and Voyager settled. The insurance covered only the US dollars Voyager kept at a partner bank, and only if that bank failed. Genesis's own bankruptcy filing puts its loans to 3AC at about $2.4 billion, and the figure now says so. About 850,000 BTC went missing from Mt. Gox, but 200,000 were later found in an old wallet, so the figure no longer calls them all stolen.",
     "commit": "8bb2e1c",
     "source": "https://www.ftc.gov/news-events/news/press-releases/2023/10/ftc-reaches-settlement-crypto-company-voyager-digital-charges-former-executive-falsely-claiming"
+  },
+  {
+    "id": "2026-10-10-mt-gox-ftx-graveyard-2",
+    "date": "2026-10-10",
+    "page": "/rabbit-hole/mt-gox-ftx-graveyard",
+    "title": "Mt. Gox to FTX: The Custody Graveyard",
+    "wrong": "The chapter said customers lost money in every one of the seven collapses, told the 2022 story as if Three Arrows Capital's default set off Celsius's freeze, said about 130 companies filed for bankruptcy with FTX, and said Sam Bankman-Fried was convicted on seven fraud counts.",
+    "fixed": "In most of the collapses customers lost some money for good. Celsius froze withdrawals on 12 June 2022, before 3AC was put into liquidation at the end of that month. FTX, Alameda and about 100 related companies filed for bankruptcy, and Bankman-Fried was convicted on all seven counts, including fraud and conspiracy to launder money.",
+    "commit": "8bb2e1c",
+    "source": "https://www.justice.gov/usao-sdny/pr/statement-us-attorney-damian-williams-conviction-samuel-bankman-fried"
   },
   {
     "id": "2026-10-10-node",
