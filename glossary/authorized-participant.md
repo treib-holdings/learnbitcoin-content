@@ -4,18 +4,19 @@ slug: authorized-participant
 linkText:
   - "Authorized Participant"
 draft: false
-updated: "2026-10-09"
+updated: "2026-10-10"
 published: "2026-06-15"
 shortDefinition: "A large broker-dealer with a contract to create and redeem ETF shares directly with the issuer. The arbitrage mechanism that keeps an ETF's market price aligned with its Net Asset Value."
 keyTakeaways:
   - "Only APs interact directly with the fund; retail trades on the open stock exchange"
   - "APs arbitrage: when market price > NAV they create shares, when market price < NAV they redeem"
-  - "For Bitcoin ETFs the AP list includes Jane Street, Virtu, JPMorgan, Goldman Sachs, ABN AMRO, Macquarie, and others"
+  - "AP lists in the spot Bitcoin ETFs' annual reports filed in 2026 include Jane Street, Virtu, JPMorgan, Goldman Sachs, ABN AMRO, Macquarie, and others"
 sources:
-  - { label: "iShares Bitcoin Trust ETF - Form 10-K for 2025: bitcoin valued with the CME CF Bitcoin Reference Rate - New York Variant (3:00-4:00 PM ET window) after 4:00 PM ET; 40,000-share baskets; the AP bears execution price differences on cash orders", url: "https://www.sec.gov/Archives/edgar/data/1980994/000143774926006058/bit20251231_10k.htm" }
-  - { label: "Franklin Bitcoin ETF - Form 10-K for the fiscal year ended March 31, 2026: Creation Units of 50,000 Shares", url: "https://www.sec.gov/Archives/edgar/data/1992870/000114036126026744/ef20070486_10k.htm" }
+  - { label: "iShares Bitcoin Trust ETF - Form 10-K for 2025: bitcoin valued with the CME CF Bitcoin Reference Rate - New York Variant (3:00-4:00 PM ET window) after 4:00 PM ET; 40,000-share baskets; the AP bears execution price differences on cash orders; 13 Authorized Participants listed, of which Jane Street, Virtu, JP Morgan Securities and Marex can do in-kind orders through affiliates; Coinbase Custody is the Bitcoin Custodian (filed February 27, 2026)", url: "https://www.sec.gov/Archives/edgar/data/1980994/000143774926006058/bit20251231_10k.htm" }
+  - { label: "Franklin Bitcoin ETF - Form 10-K for the fiscal year ended March 31, 2026: Creation Units of 50,000 Shares; Authorized Participants as of March 31, 2026 are Citadel Securities, Goldman Sachs, Jane Street, J.P. Morgan Securities, Macquarie Capital and Virtu Americas", url: "https://www.sec.gov/Archives/edgar/data/1992870/000114036126026744/ef20070486_10k.htm" }
   - { label: "iShares Bitcoin Trust ETF - Form 10-K for 2024 (filed March 5, 2025, during the cash-only period): the Trust trades bitcoin with its Bitcoin Trading Counterparties", url: "https://www.sec.gov/Archives/edgar/data/1980994/000143774925006260/bit20241231_10k.htm" }
   - { label: "SEC - Order approving the first eleven spot bitcoin ETPs (Release 34-99306, January 10, 2024); footnote 77: the proposals only contemplate cash creation and redemption by authorized participants", url: "https://www.sec.gov/files/rules/sro/nysearca/2024/34-99306.pdf" }
+  - { label: "SEC press release 2025-101 - SEC Permits In-Kind Creations and Redemptions for Crypto ETPs (July 29, 2025)", url: "https://www.sec.gov/newsroom/press-releases/2025-101-sec-permits-kind-creations-redemptions-crypto-etps" }
 relatedTerms:
   - etf-exchange-traded-fund
   - spot-bitcoin-etf
@@ -46,22 +47,14 @@ Redemption is the same in reverse.
 
 Who APs are for spot Bitcoin ETFs:
 
-The major US spot ETFs disclosed their initial AP lists in their prospectuses. Names that appear across multiple products include:
-
-- **Jane Street** - high-frequency market maker, AP for most major US ETFs across asset classes
-- **Virtu Financial** - market maker, very common AP across ETF products
-- **JPMorgan Securities** - large broker-dealer, AP for institutional-skewed products
-- **Goldman Sachs** - large broker-dealer
-- **ABN AMRO Clearing** - European clearing firm with US operations
-- **Macquarie Capital** - investment bank, active in commodity ETFs
-- **Cantor Fitzgerald, BofA Securities, Barclays Capital** - large broker-dealers also on various AP lists
+Several funds name their APs in their annual reports. The iShares Bitcoin Trust's report for 2025 lists 13, including Jane Street, Virtu, JPMorgan, Goldman Sachs, Citadel Securities, BofA Securities, ABN AMRO Clearing and Macquarie. The Franklin Bitcoin ETF's six APs, as of March 31, 2026, are all on that list too.
 
 The Bitcoin-specific wrinkle:
 
-Traditional commodity ETFs (gold, silver) have AP arrangements built around well-understood physical settlement infrastructure. For spot Bitcoin ETFs, APs need access to BTC liquidity to fulfill creations. Some APs run their own BTC trading desks. Others use Coinbase Prime, OTC desks, or futures markets to source. The [cash-only structure](/glossary/creation-redemption) the SEC approved in January 2024 meant the fund bought and sold BTC through its own trading counterparties, but the AP still had to deliver USD in size, which is non-trivial for daily flows in the hundreds of millions.
+Under the [cash-only structure](/glossary/creation-redemption) the SEC approved in January 2024, the AP delivered dollars and the fund bought or sold the BTC itself through its own trading counterparties. In-kind orders, allowed since July 2025, have the AP hand over or take actual BTC, and not every AP is set up for that. The iShares Bitcoin Trust's annual report for 2025 says four of its 13 APs (Jane Street, Virtu, JPMorgan and Marex) could do in-kind orders, through affiliates.
 
 Why this matters for a retail Bitcoin ETF buyer:
 
 - A healthy AP list means tight spreads and tight tracking. If APs are absent or hesitant, the wrapper breaks.
 - AP behavior is one reason spot Bitcoin ETFs have tracked the underlying so cleanly since launch - the arbitrage is profitable and many capable firms run it.
-- AP concentration risk exists but is generally less acute than custodian concentration: APs compete; custody for 8 of 11 ETFs is at one firm.
+- AP concentration risk exists but is generally less acute than custodian concentration. The iShares Bitcoin Trust, for example, listed 13 APs in its annual report for 2025, while one custodian, Coinbase Custody, held its bitcoin.

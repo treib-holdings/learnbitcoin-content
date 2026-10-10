@@ -131,7 +131,7 @@ Every embedded video ships with a poster frame and schema.org VideoObject struct
 
 3. Add one row to `learnbitcoin-web/src/lib/videos.ts` (name, description, poster, uploadDate, duration — `ffprobe -show_entries format=duration` gives the seconds; write it as ISO 8601, e.g. `PT44S`). The page templates scan the raw body for `/videos/*.mp4` embeds and emit one VideoObject per video from that registry, so a video without a registry row silently gets no structured data.
 
-The poster doubles as the VideoObject `thumbnailUrl`, so the frame choice decides how the video card looks in Google results. Current poster timestamps (re-extract at the same `t` after re-rendering a video): purchasing-power t=13.3, fixed-vs-infinite t=13.5, lightning-mesh t=22, inflation-bug t=7.9, mempool t=22, multisig t=14.1, onion-routing t=20, bitcoin-lifecycle t=40, quantum-timeline t=8.8, energy-demand t=16, bitcoin-is-dead-obituaries t=30.0, death-spiral t=31.0, claim-types t=38.2.
+The poster doubles as the VideoObject `thumbnailUrl`, so the frame choice decides how the video card looks in Google results. Current poster timestamps (re-extract at the same `t` after re-rendering a video): purchasing-power t=15.5, fixed-vs-infinite t=13.5, lightning-mesh t=22, inflation-bug t=7.9, mempool t=22, multisig t=14.1, onion-routing t=20, bitcoin-lifecycle t=40, quantum-timeline t=8.8, energy-demand t=16, bitcoin-is-dead-obituaries t=30.0, death-spiral t=31.0, claim-types t=38.2.
 
 ### Authoring new videos
 

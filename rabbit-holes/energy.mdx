@@ -3,7 +3,7 @@ title: "Bitcoin and Energy"
 slug: energy
 draft: false
 published: "2026-06-17"
-updated: "2026-10-05"
+updated: "2026-10-10"
 status: live
 section: rabbit-hole
 category: hard-questions
@@ -12,7 +12,9 @@ tagline: "How much electricity Bitcoin uses, where it comes from, what the criti
 order: 13
 estimatedMinutes: 15
 sources:
-  - { label: "Cambridge Bitcoin Electricity Consumption Index (CBECI)", url: "https://ccaf.io/cbnsi/cbeci" }
+  - { label: "Cambridge Bitcoin Electricity Consumption Index (CBECI) - live index; its yearly consumption chart puts 2025 at 188.56 TWh (read 10 October 2026)", url: "https://ccaf.io/cbnsi/cbeci" }
+  - { label: "Cambridge CBECI data feed - annualised estimate at the index's default 5 cents per kWh (read 10 October 2026: 162.04 TWh, range 83.08 to 311.7)", url: "https://ccaf.io/cbeci/api/data/stats/0.05" }
+  - { label: "Ember - Global Electricity Review 2026 (world electricity demand 31,779 TWh in 2025; April 2026)", url: "https://ember-energy.org/latest-insights/global-electricity-review-2026/electricity-demand-and-supply-trends/" }
   - { label: "Cambridge Judge Business School - Bitcoin electricity consumption, an improved assessment", url: "https://www.jbs.cam.ac.uk/2023/bitcoin-electricity-consumption/" }
   - { label: "Cambridge Judge Business School - Cambridge study: sustainable energy rising in Bitcoin mining (April 2025; 138 TWh, about 0.5% of global electricity, 52.4% sustainable)", url: "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/" }
   - { label: "de Vries et al. - Revisiting Bitcoin's carbon footprint, Joule (2022; renewables at 25.1% after China's ban)", url: "https://doi.org/10.1016/j.joule.2022.02.005" }
@@ -41,7 +43,7 @@ relatedTerms:
 ---
 
 {/* PRE-FLIP TODOS (verification pass done 2026-06-12):
-   DONE: CBECI 173 TWh / 0.78% (2025) [CORRECTED 2026-10-05 to 140-175 TWh, half to two-thirds of one percent: Cambridge Apr 2025 report 138 TWh ~0.5%, CBECI live 157.6 TWh], comparison figures, Riot Aug 2023, Granbury = MARA/Wolf Hollow, sustainable mix 54-65%
+   DONE: CBECI 173 TWh / 0.78% (2025) [CORRECTED 2026-10-05 to 140-175 TWh, half to two-thirds of one percent: Cambridge Apr 2025 report 138 TWh ~0.5%, CBECI live 157.6 TWh] [UPDATED 2026-10-10 to about 140-160 TWh, roughly half of one percent: CBECI data feed 162.04 TWh on 10 Oct 2026, 2025 total 188.56 (CBECI page yearly chart; the raw /data/yearly feed is reCAPTCHA-gated, so not cited); Ember 2025 world demand 31,779 TWh], comparison figures, Riot Aug 2023, Granbury = MARA/Wolf Hollow, sustainable mix 54-65%
    1. de Vries water paper: optional - add exact Cell Reports Sustainability DOI to sources if citing harder
    2. Optional: a 2024-2026 ERCOT/Riot receipt fresher than Aug 2023 (the 2023 one is canonical, fine as-is)
    3. OPTIONAL hardware photos: Antminer + Spondoolies generations shot (section 1 or 6) - nice-to-have, NOT a blocker; chapter is complete with the two SVGs
@@ -69,7 +71,7 @@ Energy is the objection that comes up first, with everyone. Before [quantum](/ra
 
 ## The number, and the comparison trick
 
-Bitcoin mining draws about 140 to 175 TWh of electricity a year depending on Cambridge's method, roughly half to two-thirds of one percent of the world's electricity. Those are the numbers from the University of Cambridge's [2025 industry survey](https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/) and its [Bitcoin Electricity Consumption Index](https://ccaf.io/cbnsi/cbeci), the most methodologically careful public estimates. It is a lot of electricity.
+On Cambridge's figures as of October 2026, Bitcoin mining draws about 140 to 160 TWh of electricity a year, depending on the method. The University of Cambridge's [2025 industry survey](https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/) found 138 TWh, and its [Bitcoin Electricity Consumption Index](https://ccaf.io/cbnsi/cbeci) read about 162 TWh in October 2026. Those are the most methodologically careful public estimates. The index moves with price and hash rate, and it put the whole of 2025 higher, at about 189 TWh. The world used 31,779 TWh of electricity in 2025, [by Ember's count](https://ember-energy.org/latest-insights/global-electricity-review-2026/electricity-demand-and-supply-trends/), so Bitcoin's share is roughly half of one percent, or about 0.6 percent on the index's 2025 total. It is a lot of electricity.
 
 Now watch what happens to that number in the wild. "More electricity than Argentina": true, and designed to alarm. "About as much as gold mining": roughly true, depending on whose gold estimate you take, and designed to flatter. "More than all of Google": true, and meaningless without asking what each one produces for the energy.
 
@@ -78,7 +80,7 @@ Every one of those comparisons is a choice of denominator, and the choice is doi
 The honest baseline: Bitcoin uses a measurable, material amount of the world's electricity. Under one percent of the global total, more than small countries, less than many single industries nobody writes headlines about. Hold that number still and ask the real questions: what does it buy, where does it come from, and what would that energy be doing otherwise.
 
 <figure>
-  <img src="/diagrams/energy-consumption-context.svg" alt="Horizontal bar chart of estimated annual electricity use in terawatt-hours. Global data centers excluding crypto roughly 415 TWh. Gold mining a range of 132 to 265 TWh depending on scope. Bitcoin mining about 140 to 175 TWh depending on Cambridge's method, which falls inside the gold range. Argentina, an entire country, about 130 TWh." />
+  <img src="/diagrams/energy-consumption-context.svg" alt="Horizontal bar chart of estimated annual electricity use in terawatt-hours. Global data centers excluding crypto roughly 415 TWh. Gold mining a range of 132 to 265 TWh depending on scope. Bitcoin mining 138 to 162 TWh depending on Cambridge's method, which falls inside the gold range. Argentina, an entire country, about 130 TWh." />
   <figcaption>Estimated annual electricity, TWh. Bitcoin sits inside the gold-mining range and below global data centers. Which comparison you reach for is the argument you are making. Sources: Cambridge Centre for Alternative Finance (Bitcoin), IEA (data centers), industry estimates (gold).</figcaption>
 </figure>
 
@@ -145,7 +147,7 @@ The strongest forms of the critique are real, and they deserve to be stated as p
 
 **The water and e-waste critiques deserve straight answers.** The water-footprint estimate published in a peer-reviewed sustainability journal is a legitimate piece of accounting (cooling, plus the water embedded in electricity generation), not FUD. The famous e-waste estimate, "as much as the Netherlands," rests on an assumption that miners scrap ASICs in under a year and a half, which the resale market and the long tail of older rigs running on cheap power both contradict. But the strong form of the critique survives the weak math: ASICs are single-purpose hardware, and the industry's recycling story is thinner than its energy story.
 
-**And the aggregate is the aggregate.** Somewhere between 140 and 175 TWh a year is real consumption with a real footprint, whatever its mix. The honest case for it has to be that what it buys is worth it, not that the number is small.
+**And the aggregate is the aggregate.** Roughly half a percent of the world's electricity is real consumption with a real footprint, whatever its mix. The honest case for it has to be that what it buys is worth it, not that the number is small.
 
 The discipline, same as our [energy-fud](/glossary/energy-fud) entry puts it: engage the strong forms of the critique. The strong forms have answers. The weak forms get called FUD because they don't.
 

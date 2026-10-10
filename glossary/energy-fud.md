@@ -2,7 +2,7 @@
 title: "Energy FUD"
 slug: energy-fud
 draft: false
-updated: "2026-10-05"
+updated: "2026-10-10"
 shortDefinition: "Criticism of Bitcoin's proof-of-work energy consumption without acknowledging nuances like renewable usage or grid balancing benefits."
 keyTakeaways:
   - "Often oversimplifies the role of renewables and surplus energy"
@@ -11,6 +11,8 @@ keyTakeaways:
 sources:
   - { label: "Cambridge Judge Business School - Cambridge study: sustainable energy rising in Bitcoin mining (April 2025; 138 TWh, about 0.5% of global electricity)", url: "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/" }
   - { label: "Cambridge Bitcoin Electricity Consumption Index", url: "https://ccaf.io/cbnsi/cbeci" }
+  - { label: "Cambridge CBECI data feed - annualised estimate at the index's default 5 cents per kWh (read 10 October 2026: 162.04 TWh)", url: "https://ccaf.io/cbeci/api/data/stats/0.05" }
+  - { label: "Ember - Global Electricity Review 2026 (world electricity demand 31,779 TWh in 2025; April 2026)", url: "https://ember-energy.org/latest-insights/global-electricity-review-2026/electricity-demand-and-supply-trends/" }
 relatedTerms:
   - double-spend
   - mining-algorithm
@@ -33,7 +35,7 @@ The honest case for being concerned anyway:
 
 - **Some mining runs on coal or other heavy emitters.** Not all of it is stranded renewables. The real grid mix matters.
 - **Heat and noise externalities.** A mining operation produces local pollution that residents near data centers experience directly.
-- **Aggregate scale is real.** Bitcoin's global mining draw is about 140 to 175 TWh a year depending on Cambridge's method, roughly half to two-thirds of one percent of the world's electricity - meaningful even if the marginal operation runs on stranded power.
+- **Aggregate scale is real.** Bitcoin's global mining draw is about 140 to 160 TWh a year depending on Cambridge's method (as of October 2026), roughly half of one percent of the world's electricity - meaningful even if the marginal operation runs on stranded power.
 
 "Energy FUD" as a label is most accurate when applied to claims that ignore these nuances - "Bitcoin uses more energy than [country]" without context, "every Bitcoin transaction costs [X kWh]" calculations that conflate marginal and average energy use, etc. It's least accurate when applied to *any* energy-related concern reflexively.
 

@@ -4,7 +4,7 @@ slug: mining
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-10-09"
+updated: "2026-10-10"
 section: rabbit-hole
 category: how-it-works
 featured: true
@@ -16,6 +16,8 @@ sources:
   - { label: "SHA-256 spec (NIST FIPS 180-4)", url: "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf" }
   - { label: "Bitcoin Core - GetNextWorkRequired (difficulty calc)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/pow.cpp" }
   - { label: "Cambridge Bitcoin Electricity Consumption Index", url: "https://ccaf.io/cbnsi/cbeci" }
+  - { label: "Cambridge CBECI data feed - annualised estimate at the index's default 5 cents per kWh (read 10 October 2026: 162.04 TWh)", url: "https://ccaf.io/cbeci/api/data/stats/0.05" }
+  - { label: "Ember - Global Electricity Review 2026 (world electricity demand 31,779 TWh in 2025; April 2026)", url: "https://ember-energy.org/latest-insights/global-electricity-review-2026/electricity-demand-and-supply-trends/" }
   - { label: "Cambridge Judge Business School - Cambridge study: sustainable energy rising in Bitcoin mining (April 2025; 138 TWh, about 0.5% of global electricity; US 75.4% of reported mining activity among 49 surveyed firms)", url: "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/" }
   - { label: "mempool.space - block fees vs subsidy chart (fee share of miner revenue)", url: "https://mempool.space/graphs/mining/block-fees-subsidy" }
   - { label: "mempool.space API - mining pool shares over the last year (live; on 9 October 2026: Foundry USA 28.2%, AntPool 18.1%, F2Pool 12.5%, ViaBTC 9.7% of 52,331 blocks)", url: "https://mempool.space/api/v1/mining/pools/1y" }
@@ -125,7 +127,7 @@ This is why your transaction's *fee rate* matters more than its *amount*. A tran
 
 ## 7. Energy as Security Budget
 
-Bitcoin mining uses electricity. A lot of it. Mining draws about 140 to 175 TWh a year depending on Cambridge's method, roughly half to two-thirds of one percent of the world's electricity, and the figure moves with price and hash rate. The [energy chapter](/rabbit-hole/energy) has the full numbers.
+Bitcoin mining uses electricity. A lot of it. Mining draws about 140 to 160 TWh a year depending on Cambridge's method (as of October 2026), roughly half of one percent of the world's electricity, and the figure moves with price and hash rate. The [energy chapter](/rabbit-hole/energy) has the full numbers.
 
 This is often presented as a problem. It is, more accurately, a *feature*. Here's why:
 

@@ -4,7 +4,7 @@ slug: decentralization
 draft: false
 status: live
 published: "2026-05-18"
-updated: "2026-10-09"
+updated: "2026-10-10"
 section: rabbit-hole
 category: who-decides
 tagline: "What 'decentralized' actually means, where Bitcoin sits on the spectrum, and how the network has defeated takeover attempts without anyone in charge."
@@ -12,8 +12,19 @@ order: 11
 estimatedMinutes: 9
 sources:
   - { label: "Paul Baran - On Distributed Communications (RAND, 1964)", url: "https://www.rand.org/pubs/research_memoranda/RM3420.html" }
-  - { label: "Bitnodes - reachable Bitcoin nodes (25,514 counted on October 9, 2026)", url: "https://bitnodes.io" }
-  - { label: "mempool.space mining dashboard - live pool concentration", url: "https://mempool.space/mining" }
+  - { label: "bitnodes.io - independent rebuild of the Bitnodes crawler, run by Rodrigo Martinez and not affiliated with the original project (25,514 reachable nodes on October 9, 2026)", url: "https://bitnodes.io" }
+  - { label: "Luke Dashjr - Bitcoin node software chart, listening nodes plus his estimate of non-listening ones (slices add up to about 104,000 on October 10, 2026: Bitcoin Core 87%, Bitcoin Knots 13%; its per-version list puts about 4,800 nodes on Knots 29.4.1 or 29.4.2)", url: "https://luke.dashjr.org/programs/bitcoin/files/charts/software.html" }
+  - { label: "mempool.space - mining pool ranking by blocks found over one month (to October 10, 2026: Foundry USA 1,124 of 4,407 blocks, 25.5%; top five pools 78.6%)", url: "https://mempool.space/graphs/mining/pools#1m" }
+  - { label: "The Guardian - Bitcoin currency could have been destroyed by '51%' attack (June 16, 2014): GHash.io held 51% of the hash rate for a few hours on Friday, June 13, and some members then pulled their computing power from the pool", url: "https://www.theguardian.com/technology/2014/jun/16/bitcoin-currency-destroyed-51-attack-ghash-io" }
+  - { label: "Bitcoin Knots README (development generally happens in Bitcoin Core and is merged into Knots for each release)", url: "https://github.com/bitcoinknots/bitcoin" }
+  - { label: "Bitcoin Knots v29.4.1 release notes, published by Luke Dashjr (September 2, 2026) - a backward-incompatible protocol change that switches Knots to a BLAKE2b proof of work", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.1.knots20260508" }
+  - { label: "btcd README (an alternative full node Bitcoin implementation written in Go)", url: "https://github.com/btcsuite/btcd" }
+  - { label: "Libbitcoin Node on GitHub (Bitcoin full node, a separate codebase)", url: "https://github.com/libbitcoin/libbitcoin-node" }
+  - { label: "BIP 148 - mandatory SegWit activation (from August 1, 2017, blocks that do not signal for SegWit are rejected)", url: "https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki" }
+  - { label: "Bitcoin Core 31 - chainparams.cpp (mainnet SegwitHeight 481824)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/kernel/chainparams.cpp" }
+  - { label: "mempool.space - block 481,824, the first block under SegWit rules (mined 01:57 UTC, August 24, 2017)", url: "https://mempool.space/block/0000000000000000001c8018d9cb3b742ef25114f27563e3fc4a1902167f9893" }
+  - { label: "UAHF technical specification, the Bitcoin Cash fork rules (activation August 1, 2017, 12:20 UTC; blocks over 1 MB allowed, 8 MB minimum setting)", url: "https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/uahf-technical-spec.md" }
+  - { label: "Digital Currency Group - Bitcoin Scaling Agreement at Consensus 2017, the New York Agreement (archived): as of May 25, 2017 the signers represented 58 companies and 83.28% of hashing power", url: "https://web.archive.org/web/20171223044102/https://medium.com/@DCGco/bitcoin-scaling-agreement-at-consensus-2017-133521fe9a77" }
   - { label: "Segwit2x Final Steps, the cancellation email from Mike Belshe (bitcoin-segwit2x list, November 8, 2017, archived)", url: "https://web.archive.org/web/20171108202305/https://lists.linuxfoundation.org/pipermail/bitcoin-segwit2x/2017-November/000685.html" }
   - { label: "Decentralization glossary entry", url: "https://www.learnbitcoin.com/glossary/decentralization" }
   - { label: "GitHub - Bitcoin Core contributors (the GitHub API lists 1,368 distinct commit authors, anonymous ones included, as of October 2026)", url: "https://github.com/bitcoin/bitcoin/graphs/contributors" }
@@ -54,13 +65,13 @@ What decentralization *actually* means, in the Bitcoin sense: **no single party 
 
 Bitcoin is the most decentralized monetary system humans have ever built. Three categories of participant, each plays a different role, each constrains the others.
 
-**Node operators.** Bitnodes counted about 25,500 reachable Bitcoin nodes on October 9, 2026, with estimates of 50,000 to 100,000+ when you count non-reachable nodes behind firewalls. Anyone running Bitcoin software that validates every transaction and block. The rules each node enforces define what Bitcoin *is* on that node's copy of the chain.
+**Node operators.** bitnodes.io counted about 25,500 reachable Bitcoin nodes on October 9, 2026. Many more run without accepting incoming connections, which keeps them out of that count. A counter run by Luke Dashjr adds an estimate for those and put the total at about 104,000 on October 10, 2026. Dashjr maintains Bitcoin Knots, and his total includes several thousand Knots nodes running versions that no longer follow Bitcoin's main chain. Anyone running Bitcoin software that validates every transaction and block. The rules each node enforces define what Bitcoin *is* on that node's copy of the chain.
 
 If you don't like a proposed change, you don't run the new software, and your node continues operating on the old rules. A node runs on a laptop, a Raspberry Pi, or any cheap computer with disk space. No permission required. Live count: [bitnodes.io](https://bitnodes.io).
 
 **Miners.** Specialized hardware competing to add blocks for the reward. Geographically distributed across the US, Russia, Kazakhstan, Canada, Western Europe, and others. They produce blocks, but they don't make the rules. If miners produce a block that violates consensus, every node rejects it and the miner's electricity is wasted. **Miners follow nodes, not the other way around.**
 
-**Developers.** People who write the software. [Bitcoin Core](/glossary/bitcoin-core) is the dominant implementation, but Bitcoin Knots, btcd, and Libbitcoin are independent implementations of the same protocol. Developers can propose changes; they can't impose them. A pull request to Bitcoin Core has to convince thousands of node operators to actually run the new code. Since 2009, Bitcoin Core has had over a thousand contributors.
+**Developers.** People who write the software. [Bitcoin Core](/glossary/bitcoin-core) is the dominant implementation. btcd (written in Go) and Libbitcoin are separately written implementations of the same protocol. Bitcoin Knots began as a modified version of Core, merging in Core's code for each release. In September 2026 it shipped a hard fork with a different proof of work, so its newest versions no longer follow Bitcoin's main chain. Developers can propose changes; they can't impose them. A pull request to Bitcoin Core has to convince thousands of node operators to actually run the new code. Since 2009, Bitcoin Core has had over a thousand contributors.
 
 **Concentration concerns, and the structural answer.**
 
@@ -82,9 +93,9 @@ A grassroots movement called **UASF** (User-Activated Soft Fork, organized aroun
 
 What actually happened:
 
-- SegWit activated cleanly on August 23, 2017. The mining majority caved when faced with the potential chain split UASF threatened.
+- SegWit activated cleanly on August 24, 2017, at block 481,824. The mining majority caved when faced with the potential chain split UASF threatened.
 - The 2x hard fork was scheduled for November 2017, and was **cancelled nine days before the planned fork**. Once node operators made it clear they would not run the new software, the agreement collapsed. The signers had hashrate; they had money; their nodes still ran old rules. They couldn't actually force the change.
-- Earlier in 2017, on August 1, a different group had forked off and created Bitcoin Cash with bigger blocks. It's now a separate network worth a small fraction of Bitcoin's market value.
+- Earlier in 2017, on August 1, a different group had forked off and created Bitcoin Cash with bigger blocks. It became a separate network with its own coin.
 
 **The lesson is in the mechanics.** Miners had hashrate. Businesses had money. Developers had attention. None of those groups were the deciders. The deciders were the thousands of node operators who chose what software to run. The same people who run a node on a laptop are the same people whose collective choices determine what Bitcoin is.
 
@@ -97,11 +108,11 @@ Decentralization is hard to quantify. Several imperfect metrics, taken together,
 | Metric | Bitcoin | What it tells you |
 |---|---|---|
 | Reachable nodes | about 25,500 (October 9, 2026) | Lower bound on participants enforcing rules |
-| Estimated total nodes | 50,000-100,000+ | Real population including non-reachable |
-| Mining hash rate, top pool | varies, ~25-35% | Largest single coordinator of block production |
-| Mining hash rate, top 5 pools | varies, ~80-90% | Concentration vulnerability (mitigated by miner mobility) |
+| Estimated total nodes | about 104,000 (one estimate, October 10, 2026) | Real population including non-reachable |
+| Mining hash rate, top pool | 25.5% of blocks (month to October 10, 2026) | Largest single coordinator of block production |
+| Mining hash rate, top 5 pools | 78.6% of blocks (same month) | Concentration vulnerability (mitigated by miner mobility) |
 | Geographic mining distribution | 8+ countries with significant share | Jurisdictional spread |
-| Independent client implementations | 4+ (Core, Knots, btcd, Libbitcoin) | Diversity at the code layer |
+| Full-node implementations | Core, plus separately written btcd and Libbitcoin | Diversity at the code layer |
 | Bitcoin Core contributors | 1,000+ since 2009 | No single point of failure in dev |
 
 By comparison, most "decentralized" chains have between 10 and 200 validators, run a single client, and have a foundation or team that effectively controls roadmap.
