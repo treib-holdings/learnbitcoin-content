@@ -4,7 +4,7 @@ slug: mempool
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-10-02"
+updated: "2026-10-10"
 section: rabbit-hole
 category: how-it-works
 tagline: "Where transactions wait before they are real. The auction-house buffer between you and a block."
@@ -23,6 +23,16 @@ sources:
   - { label: "Lavi, Sattath, Zohar - Redesigning Bitcoin's fee market", url: "https://arxiv.org/abs/1709.08881" }
   - { label: "mempool.space - real-time mempool visualization", url: "https://mempool.space/" }
   - { label: "Mempool glossary entry", url: "https://www.learnbitcoin.com/glossary/mempool" }
+  - { label: "Bitcoin Core 31 - policy.cpp (for Taproot script-path spends, relay checks limit each stack item's size but skip the script itself, where an inscription's envelope sits)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/policy/policy.cpp" }
+  - { label: "Ordinal Theory Handbook - Inscriptions (inscription content sits in an envelope: OP_FALSE OP_IF ... OP_ENDIF wrapping data pushes)", url: "https://docs.ordinals.com/inscriptions.html" }
+  - { label: "Bitcoin Knots 25.1.knots20231115 source, script.cpp (from this late-2023 release on, Knots counts the bytes inside an OP_FALSE OP_IF envelope as data-carrier data)", url: "https://github.com/bitcoinknots/bitcoin/blob/v25.1.knots20231115/src/script/script.cpp" }
+  - { label: "Bitcoin Knots 25.1.knots20231115 source, standard.h (-datacarrierfullcount, which applies the data-carrier limit to all known data-carrier methods, is on by default; that limit is 42 bytes in this release)", url: "https://github.com/bitcoinknots/bitcoin/blob/v25.1.knots20231115/src/script/standard.h" }
+  - { label: "Bitcoin Knots 29.3.knots20260507 source, policy.h (the last release before BIP-110: by default the 83-byte data-carrier limit applies to all known data-carrier methods)", url: "https://github.com/bitcoinknots/bitcoin/blob/v29.3.knots20260507/src/policy/policy.h" }
+  - { label: "Bitcoin Knots v29.3.knots20260507 release notes (May 8, 2026) - this version does not support BIP-110", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260507" }
+  - { label: "Bitcoin Knots v29.3.knots20260508 release notes (May 9, 2026) - this version applies BIP-110 (RDTS) after the user confirms", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508" }
+  - { label: "bitcoin/bips PR #2245 - BIP 110 status changed to Closed (opened August 9, 2026); notes Knots released it on mainnet and on August 8 its nodes began rejecting non-signaling blocks, split to a new chain and stalled", url: "https://github.com/bitcoin/bips/pull/2245" }
+  - { label: "Bitcoin Knots - official site (names Luke Dashjr as lead maintainer)", url: "https://bitcoinknots.org/" }
+  - { label: "Luke Dashjr - Bitcoin node count history chart (his Knots node count, listening plus estimated non-listening: 2,793 on May 5, 2025, when the Knots series starts; 23,703 on August 8, 2026; 13,720 on October 10, 2026)", url: "https://luke.dashjr.org/programs/bitcoin/files/charts/historical.html" }
 relatedTerms: ["mempool", "transaction-fee", "bip-125-replace-fee", "fee-rate-escalation", "fee-floor", "fee-sniping"]
 hasInteractive: ["mempoolHistogram"]
 ---
@@ -66,7 +76,7 @@ When you check "the mempool" on a website like mempool.space, you are looking at
 This matters in a few practical cases:
 
 - **Network partitions** (rare but real) can cause mempools to diverge for minutes.
-- **Bitcoin Knots vs [Bitcoin Core](/glossary/bitcoin-core)** apply different relay policies. Knots is more restrictive about inscription-style transactions and will not relay some that Core will.
+- **Bitcoin Knots vs [Bitcoin Core](/glossary/bitcoin-core)** apply different relay policies. Knots releases from late 2023 up to May 8, 2026 follow the same chain as Core but are more restrictive about inscription-style transactions and will not relay some that Core will. Knots releases since then follow a chain that split off from Bitcoin's main chain in August 2026 (see [Bitcoin Knots](/glossary/bitcoin-knots)).
 - **Miners' private mempools.** Mining pools sometimes accept transactions out-of-band that are not in any public mempool, then include them in blocks they mine.
 
 For most users, "the mempool" is a useful approximation. For anyone debugging a stuck transaction, knowing the abstraction is leaky is essential.
@@ -145,7 +155,7 @@ A transaction can be valid by consensus but rejected by relay policy. Examples:
 
 - A transaction with a non-standard script (technically valid, but default nodes will not relay it). To get it mined, you submit directly to a miner.
 - A very large or very low-fee transaction (relay policy might drop it).
-- Inscription-bearing transactions (Bitcoin Core relays them; Bitcoin Knots, by default, does not).
+- Inscription-bearing transactions (Bitcoin Core relays them; Bitcoin Knots releases from late 2023 on, by default, do not relay most of them).
 
 This matters because *policy* is what gets debated. When you hear "should Bitcoin Core filter inscriptions?" the question is whether to change relay policy. It is not a consensus change; it is a question of what individual nodes choose to do.
 
@@ -156,7 +166,7 @@ Starting in early 2023, **inscriptions** (arbitrary data encoded into transactio
 - **Fee rates spiked** from typical 1 to 5 sat/vB to 50 to 300+ sat/vB during peak periods.
 - **The mempool grew** from typically 1 to 50 vMB of waiting transactions to 100 to 500 vMB for much of 2023 and 2024. Default nodes hit their 300 MB memory cap and dropped the cheapest transactions.
 - **Wallets without RBF stranded.** Users could not bump fees on stuck transactions.
-- **Bitcoin Knots saw adoption growth.** Some operators want to filter inscriptions; Knots provides that policy by default.
+- **Bitcoin Knots saw adoption growth.** Since late 2023, Knots has by default refused to relay most inscriptions. An estimate kept by its lead maintainer, Luke Dashjr, put Knots at about 2,800 nodes in May 2025 and more than 23,000 in early August 2026. It stood at about 13,700 on October 10, 2026, two months after newer Knots releases left Bitcoin's main chain.
 
 The debate about whether inscriptions are "spam" is real and ongoing. The technical reality is: they are valid Bitcoin transactions, they pay fees like any other, and the mempool sorts them by fee rate like any other. Whether a node operator chooses to relay them is up to that operator.
 

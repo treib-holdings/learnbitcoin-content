@@ -2,7 +2,7 @@
 title: "Full Node"
 slug: full-node
 draft: false
-updated: "2026-10-09"
+updated: "2026-10-10"
 shortDefinition: "A Bitcoin client that downloads and validates all blocks/transactions, enforcing the rules independently."
 keyTakeaways:
   - "Stores/validates the entire blockchain locally"
@@ -13,6 +13,12 @@ sources:
   - { label: "mempool.space - block sizes and weights (about 82.5 GB of blocks mined from October 2025 to October 2026)", url: "https://mempool.space/graphs/mining/block-sizes-weights" }
   - { label: "Bitcoin Core 31 - intro.cpp (the setup screen adds the two figures and says at least 870 GB of data will be stored)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/qt/intro.cpp" }
   - { label: "Bitnodes - reachable Bitcoin nodes (25,514 counted on October 9, 2026)", url: "https://bitnodes.io" }
+  - { label: "Bitcoin Core - About (a direct descendant of the original Bitcoin client released by Satoshi Nakamoto)", url: "https://bitcoincore.org/en/about/" }
+  - { label: "Luke Dashjr - Bitcoin node software chart, listening nodes plus his estimate of non-listening ones (on October 10, 2026: Bitcoin Core 87%, Bitcoin Knots 13%)", url: "https://luke.dashjr.org/programs/bitcoin/files/charts/software.html" }
+  - { label: "Bitcoin Knots README (development generally takes place in Bitcoin Core and is merged into Knots for each release)", url: "https://github.com/bitcoinknots/bitcoin" }
+  - { label: "Bitcoin Knots v29.3.knots20260508 release notes (May 9, 2026) - this version applies BIP-110 (RDTS) after the user confirms", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508" }
+  - { label: "BIP-110 - Reduced Data Temporary Softfork (temporarily limits data fields; blocks 961,632 to 963,647 that do not signal bit 4 are rejected)", url: "https://github.com/bitcoin/bips/blob/master/bip-0110.mediawiki" }
+  - { label: "bitcoin/bips PR #2245 - BIP 110 status changed to Closed (opened August 9, 2026); notes Knots released it on mainnet and on August 8 its nodes began rejecting non-signaling blocks, split to a new chain and stalled", url: "https://github.com/bitcoin/bips/pull/2245" }
 relatedTerms:
   - bitcoin-client
   - bitcoin-core
@@ -41,7 +47,7 @@ The practical specs as of 2026:
 - **CPU:** Anything from a Raspberry Pi 4 upward will run it. Initial sync is CPU-bound and takes a few days; ongoing operation is trivial.
 - **Bandwidth:** Several hundred GB per month of outbound, mostly serving blocks to peers. Cap-able via configuration if your ISP is hostile.
 
-The software is almost always [Bitcoin Core](/glossary/bitcoin-core), the reference implementation. Alternatives like [Bitcoin Knots](/glossary/bitcoin-knots) exist but are essentially patched versions of Core.
+The software is usually [Bitcoin Core](/glossary/bitcoin-core), a direct descendant of the original Bitcoin software. [Bitcoin Knots](/glossary/bitcoin-knots) is a modified version of Core. Knots releases from May 9, 2026 on enforce BIP-110, a temporary limit on data in transactions, and nodes running them left Bitcoin's main chain on August 8, 2026.
 
 Why bother running a full node, when wallets can connect to public servers? Three reasons:
 

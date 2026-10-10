@@ -2,7 +2,7 @@
 title: "Node Operator"
 slug: node-operator
 draft: false
-updated: "2026-10-09"
+updated: "2026-10-10"
 shortDefinition: "An individual or entity running a Bitcoin node to verify blocks/transactions and help maintain the network."
 keyTakeaways:
   - "Directly enforces consensus rules, not relying on intermediaries"
@@ -11,6 +11,10 @@ keyTakeaways:
 sources:
   - { label: "Bitcoin Core 31 - intro.cpp (the setup screen adds the two figures and says at least 870 GB of data will be stored)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/qt/intro.cpp" }
   - { label: "Bitcoin Core 31 - chainparams.cpp (mainnet disk guidelines 856 and 14, which the setup screen adds up to 870 GB)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/kernel/chainparams.cpp" }
+  - { label: "btcd README (an alternative full node Bitcoin implementation written in Go)", url: "https://github.com/btcsuite/btcd" }
+  - { label: "Bitcoin Knots README (development generally takes place in Bitcoin Core and is merged into Knots for each release)", url: "https://github.com/bitcoinknots/bitcoin" }
+  - { label: "Bitcoin Knots v29.3.knots20260508 release notes (May 9, 2026) - this version applies BIP-110 (RDTS) after the user confirms", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508" }
+  - { label: "bitcoin/bips PR #2245 - BIP 110 status changed to Closed (opened August 9, 2026); notes Knots released it on mainnet and on August 8 its nodes began rejecting non-signaling blocks, split to a new chain and stalled", url: "https://github.com/bitcoin/bips/pull/2245" }
 relatedTerms:
   - bitcoin-knots
   - bitcoin-satellite
@@ -27,7 +31,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A node operator is anyone running a Bitcoin full node. That's it. No registration, no permission, no minimum capital. You download Bitcoin Core (or Knots, or btcd, or a packaged distribution), point it at some disk, open a port if you can, and you're a node operator.
+A node operator is anyone running a Bitcoin full node. That's it. No registration, no permission, no minimum capital. You download Bitcoin Core (or btcd, or a packaged distribution), point it at some disk, open a port if you can, and you're a node operator. Bitcoin Knots, a modified version of Core, works the same way in releases made before May 9, 2026; later Knots releases follow a chain that split off from Bitcoin's main chain on August 8, 2026.
 
 What you actually do when you run a node:
 
