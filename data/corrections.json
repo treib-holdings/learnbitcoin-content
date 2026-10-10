@@ -1,5 +1,215 @@
 [
   {
+    "id": "2026-10-10-balanced-channel-lightning",
+    "date": "2026-10-10",
+    "page": "/glossary/balanced-channel-lightning",
+    "title": "Balanced Channel (Lightning)",
+    "wrong": "The entry said submarine swaps such as Loop and PeerSwap effectively move capacity in or out of channels without closing them.",
+    "fixed": "Submarine swaps trade Lightning balance for on-chain bitcoin without closing the channel. They shift balance from one side of the channel to the other, and the channel's total capacity stays the same. Splicing is what changes the size of the channel itself.",
+    "commit": "8bb2e1c",
+    "source": "https://acinq.co/blog/phoenix-splicing-update"
+  },
+  {
+    "id": "2026-10-10-bip-91",
+    "date": "2026-10-10",
+    "page": "/glossary/bip-91",
+    "title": "BIP 91",
+    "wrong": "The entry said SegWit activated about 10 days before BIP-148's August 1, 2017 deadline, and that BIP-91 locked in in mid-July and activated in August. It also described the miners holding out as a minority who had refused for over a year.",
+    "fixed": "BIP-91 locked in on July 21, 2017 and went live at block 477,120 on July 23, and every block from then until SegWit locked in signaled for it. SegWit itself locked in on August 9 and activated at block 481,824 on August 24. Signaling for SegWit had been open since November 2016, and the SegWit2x organizers put miner support at only 30% in May 2017.",
+    "commit": "8bb2e1c",
+    "source": "https://mempool.space/block/0000000000000000015411ca4b35f7b48ecab015b14de5627b647e262ba0ec40"
+  },
+  {
+    "id": "2026-10-10-energy",
+    "date": "2026-10-10",
+    "page": "/rabbit-hole/energy",
+    "title": "Bitcoin and Energy",
+    "wrong": "The chapter's chart put gold mining's electricity use at 132 to 265 TWh a year and said Bitcoin fell inside that range. It said environmental groups called Riot's $31.7 million in grid payments \"paying a polluter not to pollute,\" and called the best-known e-waste estimate \"as much as the Netherlands.\"",
+    "fixed": "The chart shows gold mining at about 131 TWh, Cambridge's 2019 estimate, which counts all the energy gold mines use, diesel included, so Bitcoin sits a little above it. A KVUE report quotes Environment Texas's director calling the payment absurd and asking that households be paid to conserve instead. The e-waste study compared its figure with the Netherlands' small IT equipment waste.",
+    "commit": "8bb2e1c",
+    "source": "https://ccaf.io/cbnsi/cbeci/comparisons"
+  },
+  {
+    "id": "2026-10-10-bloom-filter",
+    "date": "2026-10-10",
+    "page": "/glossary/bloom-filter",
+    "title": "Bloom Filter",
+    "wrong": "The entry said Bitcoin Core's Bloom filter service first became opt-in and was later disabled by default in v0.19. It also called Bloom filters a historical artifact in Bitcoin.",
+    "fixed": "Bitcoin Core served Bloom filters by default, with a -peerbloomfilters setting to switch them off, until version 0.19.0.1 (November 2019) made off the default. As of October 2026 it is still off by default and can be turned back on. Core also uses Bloom filters internally to track which transactions and addresses each peer already knows.",
+    "commit": "8bb2e1c",
+    "source": "https://bitcoincore.org/en/releases/0.19.0.1/"
+  },
+  {
+    "id": "2026-10-10-custodial-wallet",
+    "date": "2026-10-10",
+    "page": "/glossary/custodial-wallet",
+    "title": "Custodial Wallet",
+    "wrong": "The entry said QuadrigaCX lost the keys with its CEO in 2019.",
+    "fixed": "In early 2019 Quadriga told a court that only its CEO, who died in December 2018, could open its cold wallets. The court-appointed monitor found those wallets had been empty since April 2018, and the Ontario Securities Commission concluded that Quadriga had operated like a Ponzi scheme.",
+    "commit": "8bb2e1c",
+    "source": "https://www.cbc.ca/news/canada/nova-scotia/cryptocurrency-still-missing-quadriga-s-cold-wallets-1.5040099"
+  },
+  {
+    "id": "2026-10-10-decentralized-exchange-dex",
+    "date": "2026-10-10",
+    "page": "/glossary/decentralized-exchange-dex",
+    "title": "Decentralized Exchange (DEX)",
+    "wrong": "The entry said RoboSats escrow is held by a Lightning HTLC, not by the platform.",
+    "fixed": "The RoboSats seller locks the bitcoin with a Lightning hold invoice to the coordinator's node. When the seller confirms the fiat arrived, the coordinator settles it and briefly holds the funds while paying the buyer. If the trade goes wrong, RoboSats staff decide who gets the escrow.",
+    "commit": "8bb2e1c",
+    "source": "https://learn.robosats.org/docs/escrow/"
+  },
+  {
+    "id": "2026-10-10-etf-exchange-traded-fund",
+    "date": "2026-10-10",
+    "page": "/glossary/etf-exchange-traded-fund",
+    "title": "ETF (Exchange-Traded Fund)",
+    "wrong": "The entry said eleven spot Bitcoin ETFs launched simultaneously in January 2024 and called SPY still the largest ETF in the world.",
+    "fixed": "The SEC approved eleven spot Bitcoin ETFs on January 10, 2024, but one of them, Hashdex's DEFI, held bitcoin futures until March 27, 2024, when it switched to spot bitcoin. SPY, listed in January 1993, was the first US ETF.",
+    "commit": "8bb2e1c",
+    "source": "https://www.sec.gov/Archives/edgar/data/1985840/000199937126007288/defi-10k_123125.htm"
+  },
+  {
+    "id": "2026-10-10-exchange",
+    "date": "2026-10-10",
+    "page": "/glossary/exchange",
+    "title": "Exchange",
+    "wrong": "The entry said QuadrigaCX's CEO died, or \"died\", with the only access to its cold wallets, presenting the company's account as fact and hinting that the death was faked.",
+    "fixed": "After CEO Gerald Cotten died in December 2018, Quadriga said only he could reach its cold wallets. The court-appointed monitor found them empty since April 2018, the Ontario Securities Commission concluded the exchange had operated like a Ponzi scheme, and clients lost at least CAD 169 million.",
+    "commit": "8bb2e1c",
+    "source": "https://www.osc.ca/quadrigacxreport/"
+  },
+  {
+    "id": "2026-10-10-fee-estimation",
+    "date": "2026-10-10",
+    "page": "/glossary/fee-estimation",
+    "title": "Fee Estimation",
+    "wrong": "The entry said that in low-traffic periods the fee estimator often returns 1 sat/vB for every target, and called that rate the relay minimum.",
+    "fixed": "Bitcoin Core 29.1 (September 2025) lowered the default relay minimum to 0.1 sat/vB, and 31.0 (April 2026) lowered the fee estimator's minimum from 1 sat/vB to 0.1 to match. When Core's own wallet picks a fee from its estimates, it still won't go below 1 sat/vB unless its -mintxfee setting is lowered.",
+    "commit": "8bb2e1c",
+    "source": "https://bitcoincore.org/en/releases/31.0/"
+  },
+  {
+    "id": "2026-10-10-fee-floor",
+    "date": "2026-10-10",
+    "page": "/glossary/fee-floor",
+    "title": "Fee Floor",
+    "wrong": "The entry said Bitcoin Core's default minimum fee rate for accepting a transaction was 1 sat/vB, that the market floor equals that minimum in quiet periods, and that the cheapest mined transactions paid 1 to 2 sat/vB in low-traffic times from 2024 to 2026.",
+    "fixed": "Bitcoin Core's default relay minimum was 1 sat/vB until version 29.1 (September 2025) lowered it to 0.1 sat/vB, and each node operator can change it. In quiet periods the floor can drop below 1 sat/vB: block 970,789, mined on October 10, 2026, had a median fee rate of about 0.28 sat/vB.",
+    "commit": "8bb2e1c",
+    "source": "https://bitcoincore.org/en/releases/29.1/"
+  },
+  {
+    "id": "2026-10-10-inactive-channel",
+    "date": "2026-10-10",
+    "page": "/glossary/inactive-channel",
+    "title": "Inactive Channel",
+    "wrong": "The entry listed marking an inactive channel as private as one of the things an operator can do with it.",
+    "fixed": "Whether a channel is private is settled when it opens. A public channel can't be switched to private later; the only way is to close it and open a new one. A private channel to a mobile wallet or payment-only node can sit idle for long stretches and still be worth keeping.",
+    "commit": "8bb2e1c",
+    "source": "https://github.com/lightningnetwork/lnd/issues/3230"
+  },
+  {
+    "id": "2026-10-10-low-s-signatures",
+    "date": "2026-10-10",
+    "page": "/glossary/low-s-signatures",
+    "title": "Low-S Signatures - The Rule That Killed ECDSA Malleability",
+    "wrong": "The entry said low-S became relay policy through BIP 146 and a consensus rule for SegWit inputs through BIP 141, and that it left exactly one valid signature per key and message.",
+    "fixed": "Bitcoin Core has enforced low-S as relay policy since version 0.11.1 (October 2015), and it never became a consensus rule: BIP 146, which proposed that, was closed, and BIP 141 has no low-S rule. The key holder can still make other valid signatures. SegWit is what fixed third-party malleability.",
+    "commit": "8bb2e1c",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0146.mediawiki"
+  },
+  {
+    "id": "2026-10-10-mt-gox-ftx-graveyard",
+    "date": "2026-10-10",
+    "page": "/rabbit-hole/mt-gox-ftx-graveyard",
+    "title": "Mt. Gox to FTX: The Custody Graveyard",
+    "wrong": "The chapter said every word of Voyager's \"FDIC insured\" marketing was technically accurate. Its timeline figure put Genesis's loans to 3AC at about $3.5 billion or more, and said about 850,000 BTC were stolen from Mt. Gox.",
+    "fixed": "The Federal Trade Commission charged that telling customers their accounts were FDIC insured was false, and Voyager settled. The insurance covered only the US dollars Voyager kept at a partner bank, and only if that bank failed. Genesis's own bankruptcy filing puts its loans to 3AC at about $2.4 billion, and the figure now says so. About 850,000 BTC went missing from Mt. Gox, but 200,000 were later found in an old wallet, so the figure no longer calls them all stolen.",
+    "commit": "8bb2e1c",
+    "source": "https://www.ftc.gov/news-events/news/press-releases/2023/10/ftc-reaches-settlement-crypto-company-voyager-digital-charges-former-executive-falsely-claiming"
+  },
+  {
+    "id": "2026-10-10-node",
+    "date": "2026-10-10",
+    "page": "/glossary/node",
+    "title": "Node",
+    "wrong": "The entry said the network had roughly 15,000 to 20,000 publicly reachable full nodes, and that the block headers a light SPV wallet downloads come to a few megabytes.",
+    "fixed": "bitnodes.io counted 25,514 reachable nodes on October 9, 2026, including 1,829 Knots nodes that no longer follow Bitcoin's main chain, and one estimate put the total at about 104,000. Each block header is 80 bytes, so the headers for the roughly 970,000 blocks mined by October 2026 come to about 78 MB.",
+    "commit": "8bb2e1c",
+    "source": "https://btcnodes.io/api/v1/snapshots/1791574083/"
+  },
+  {
+    "id": "2026-10-10-opreturn",
+    "date": "2026-10-10",
+    "page": "/glossary/opreturn",
+    "title": "OP_RETURN",
+    "wrong": "The entry said Bitcoin Knots keeps the 80-byte OP_RETURN default and applies it to other ways of embedding data as well. It did not say that newer Knots releases had left Bitcoin's main chain.",
+    "fixed": "Knots relayed only 40 bytes of OP_RETURN data for years, until a November 2025 release raised that to 80. By default it won't relay transactions that carry data outside OP_RETURN outputs, such as inscriptions. Nodes running Knots releases from May 9, 2026 on left Bitcoin's main chain in August 2026.",
+    "commit": "8bb2e1c",
+    "source": "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.2.knots20251110"
+  },
+  {
+    "id": "2026-10-10-peg",
+    "date": "2026-10-10",
+    "page": "/glossary/peg",
+    "title": "Peg-in",
+    "wrong": "The entry said sidechain tokens are economically indistinguishable from BTC, with 1 L-BTC equal to 1 BTC, without saying that this depends on the peg working.",
+    "fixed": "Each sidechain token is meant to be redeemable for one BTC, but only while the peg works. On Liquid, peg-outs were halted after an exploit on September 6, 2026. As of October 10, 2026 they were still paused, and the peg wallet held about 600 BTC less than the L-BTC in circulation.",
+    "commit": "8bb2e1c",
+    "source": "https://blog.blockstream.com/liquid-network-security-incident-assessment/"
+  },
+  {
+    "id": "2026-10-10-premium-discount-to-nav",
+    "date": "2026-10-10",
+    "page": "/glossary/premium-discount-to-nav",
+    "title": "Premium / Discount (to NAV)",
+    "wrong": "The entry called pre-2024 GBTC a closed-end trust with a fixed share count and no creation of shares, and said buyers faced a six-month lockup from 2017 on. It also blamed the February 2021 collapse of the premium partly on US futures ETFs that launched in October 2021.",
+    "fixed": "Before January 2024, GBTC sold new shares to accredited investors in private placements at prices based on NAV. Buyers had to hold them for a year, and for six months once the trust had been an SEC reporting company for 90 days. With redemptions suspended since 2014, its price closed as much as 142% above NAV and 49% below.",
+    "commit": "8bb2e1c",
+    "source": "https://www.sec.gov/Archives/edgar/data/1588489/000119312526071956/gbtc-20251231.htm"
+  },
+  {
+    "id": "2026-10-10-rug-pull",
+    "date": "2026-10-10",
+    "page": "/glossary/rug-pull",
+    "title": "Rug Pull",
+    "wrong": "The entry listed Mt. Gox among custodial scams in which the operator drains customers' funds, saying the custodian was the scam.",
+    "fixed": "Investigators traced Mt. Gox's missing coins to thefts from its hot wallet, and its CEO was acquitted of embezzlement, so it fits that pattern less well than QuadrigaCX, Bitconnect and BitClub Network, which regulators or prosecutors described as frauds or Ponzi schemes.",
+    "commit": "8bb2e1c",
+    "source": "https://blog.wizsec.jp/2015/04/the-missing-mtgox-bitcoins.html"
+  },
+  {
+    "id": "2026-10-10-sidechain",
+    "date": "2026-10-10",
+    "page": "/glossary/sidechain",
+    "title": "Sidechain",
+    "wrong": "The entry said that on a sidechain you can reverse the peg at any time to redeem your BTC, with Liquid as its main example. It also listed statechains (Mercury Layer) among notable Bitcoin sidechains.",
+    "fixed": "Whether you can reverse the peg yourself, and when, depends on who runs it. On Liquid, only federation members holding a peg-out authorization key can peg out, so other users go through one of them, and peg-outs were halted after an exploit on September 6, 2026 and still paused as of October 10, 2026. Statechains, an offchain system, are no longer listed.",
+    "commit": "8bb2e1c",
+    "source": "https://docs.liquid.net/docs/technical-overview"
+  },
+  {
+    "id": "2026-10-10-signature-clipping",
+    "date": "2026-10-10",
+    "page": "/glossary/signature-clipping",
+    "title": "Signature Clipping",
+    "wrong": "The entry said low-S was a consensus rule for SegWit under BIP 141, that the DER standard itself allowed several encodings of one signature, that BIP 66 only made the extras non-standard, and that malleability was solved for all new transactions.",
+    "fixed": "DER allows one encoding; the extra forms came from OpenSSL accepting non-DER signatures, and BIP 66 made strict DER a consensus rule in July 2015. Low-S is only Bitcoin Core relay policy and SegWit has no low-S rule, so a miner could still confirm a high-S copy of a transaction that spends older, non-SegWit outputs.",
+    "commit": "8bb2e1c",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0146.mediawiki"
+  },
+  {
+    "id": "2026-10-10-spot-bitcoin-etf-2",
+    "date": "2026-10-10",
+    "page": "/glossary/spot-bitcoin-etf",
+    "title": "Spot Bitcoin ETF",
+    "wrong": "The entry said approval came after eleven years of rejections, starting with a Winklevoss application rejected in 2013, and quoted the SEC as repeatedly citing \"manipulation in the underlying market\".",
+    "fixed": "The Winklevoss Bitcoin Trust filed with the SEC in July 2013, and the SEC first turned down its exchange listing in March 2017. By Chair Gensler's count, the SEC disapproved more than 20 spot bitcoin filings from 2018 through March 2023. The orders turned on the Exchange Act requirement that an exchange's rules be designed to prevent fraudulent and manipulative acts and practices.",
+    "commit": "8bb2e1c",
+    "source": "https://www.sec.gov/rules/sro/batsbzx/2017/34-80206.pdf"
+  },
+  {
     "id": "2026-10-10-node-autoban",
     "date": "2026-10-10",
     "page": "/glossary/node-autoban",
