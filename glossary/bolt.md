@@ -2,7 +2,7 @@
 title: "BOLT"
 slug: bolt
 draft: false
-updated: "2026-10-09"
+updated: "2026-10-10"
 shortDefinition: "Short for 'Basis of Lightning Technology,' these specs define how Lightning Network implementations interact and remain compatible."
 keyTakeaways:
   - "Defines core LN protocol mechanics"
@@ -10,6 +10,7 @@ keyTakeaways:
   - "Covers channel setup, routing, security, and more"
 sources:
   - { label: "Lightning BOLTs repository - the specifications all major implementations follow", url: "https://github.com/lightning/bolts" }
+  - { label: "ACINQ Phoenix README - self-custodial wallet built on lightning-kmp", url: "https://github.com/ACINQ/phoenix" }
 relatedTerms:
   - bolt-11
   - core-lightning-c-lightning

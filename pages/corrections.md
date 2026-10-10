@@ -1,7 +1,7 @@
 ---
 title: "Corrections"
 heading: "What we got wrong, and what we changed."
-description: "Every factual correction on LearnBitcoin since launch: what the page said, what it says now, and the source. Readers who caught a mistake in public are credited."
+description: "Every factual correction on LearnBitcoin since launch: what the page said, what it says now, and a source where one applies. Readers who caught a mistake in public are credited."
 ---
 
 The manifesto promises that when we get something wrong, we publish the
