@@ -5,7 +5,7 @@ linkText:
   - "block size war"
 draft: false
 published: "2026-06-29"
-updated: "2026-07-07"
+updated: "2026-10-10"
 shortDefinition: "The 2015-2017 fight over whether to raise Bitcoin's 1 MB block size limit. Big-blockers wanted bigger blocks for cheaper on-chain payments; small-blockers wanted to keep blocks small and scale in layers. Small blocks won, and the losing side forked off as Bitcoin Cash."
 keyTakeaways:
   - "The dispute was less about a megabyte number than about who gets to change Bitcoin's rules: the miners and large companies, or the users running their own nodes"
@@ -15,6 +15,13 @@ sources:
   - { label: "Jonathan Bier - The Blocksize War: The Battle for Control Over Bitcoin's Protocol Rules (2021)", url: "https://www.goodreads.com/book/show/57429394-the-blocksize-war" }
   - { label: "Bitcoin Magazine - Segregated Witness Activates on Bitcoin (2017)", url: "https://bitcoinmagazine.com/technical/segregated-witness-activates-bitcoin-what-expect" }
   - { label: "CoinDesk - 2x Called Off: Bitcoin Hard Fork Suspended for Lack of Consensus (2017)", url: "https://www.coindesk.com/markets/2017/11/08/2x-called-off-bitcoin-hard-fork-suspended-for-lack-of-consensus" }
+  - { label: "BIP 9 - Version bits (threshold 1,916 of 2,016 blocks, 95%)", url: "https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki" }
+  - { label: "BIP 148 - Mandatory activation of segwit deployment, by Shaolin Fry (assigned March 12, 2017; from midnight August 1, 2017, blocks that do not signal for SegWit are rejected)", url: "https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki" }
+  - { label: "BIP 91 - Reduced threshold Segwit MASF (activates once 269 of 336 blocks, 80%, signal on bit 4; while active, blocks that do not signal for SegWit on bit 1 are rejected)", url: "https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki" }
+  - { label: "mempool.space - block 476,784 (02:53 UTC, July 21, 2017), first block of BIP 91's locked-in period; 284 of the previous 336 blocks signaled bit 4", url: "https://mempool.space/block/000000000000000000b01b490a1c1f383e10feabefbe0afda46e185b42928ab5" }
+  - { label: "mempool.space - block 477,120 (04:46 UTC, July 23, 2017), first block with BIP 91 active; it and every block after it up to SegWit's lock-in signal bit 1", url: "https://mempool.space/block/0000000000000000015411ca4b35f7b48ecab015b14de5627b647e262ba0ec40" }
+  - { label: "mempool.space - block 479,808 (12:36 UTC, August 9, 2017), first block of SegWit's locked-in period", url: "https://mempool.space/block/0000000000000000012e6060980c6475a9a8e62a1bf44b76c5d51f707d54522c" }
+  - { label: "mempool.space - block 481,824 (01:57 UTC, August 24, 2017), the first block under SegWit rules", url: "https://mempool.space/block/0000000000000000001c8018d9cb3b742ef25114f27563e3fc4a1902167f9893" }
 relatedTerms:
   - block-size
   - bip-101-increase-block-size
@@ -37,7 +44,7 @@ The small-blockers wanted to keep the limit where it was. They argued that big b
 
 The deadlock broke in 2017, under pressure from two directions. In March, a pseudonymous developer published [BIP-148](/glossary/bip-148-uasf), a user-activated soft fork. From August 1, 2017, nodes running it would reject any block that did not signal SegWit, with or without the miners' cooperation. In May, a group of companies and mining pools signed the [New York Agreement](/glossary/new-york-agreement-nya), a deal known as [SegWit2x](/glossary/segwit2x) that promised to activate SegWit first and then hard fork to 2 MB blocks about three months later. Bitcoin Core developers were not part of the deal, and many users read it as a backroom attempt to take over the protocol.
 
-With the flag day approaching and a [chain split](/glossary/chain-split) on the table, miners activated SegWit through a compromise mechanism (BIP-91) in July. Miner signaling crossed the threshold in early August, and SegWit went live at block 481,824 on August 24, 2017.
+With the flag day approaching and a [chain split](/glossary/chain-split) on the table, miners adopted a compromise mechanism, [BIP-91](/glossary/bip-91). It locked in on July 21, 2017 (UTC), and from block 477,120 on July 23 nodes running it rejected any block that did not signal for SegWit, so every block was signaling before the August 1 flag day. SegWit itself locked in on August 9 and went live at block 481,824 on August 24, 2017.
 
 The faction that still wanted bigger blocks forked away on August 1 as [Bitcoin Cash](/glossary/bitcoin-cash). The second half of SegWit2x, the 2 MB hard fork, was scheduled for that November and then called off on November 8, 2017 for lack of consensus.
 

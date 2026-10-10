@@ -14,7 +14,7 @@ sources:
   - { label: "Bitcoin Core 31 - policy/policy.h (DEFAULT_MIN_RELAY_TX_FEE 100 sat/kvB, which is 0.1 sat/vB)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/policy/policy.h" }
   - { label: "Bitcoin Core 31.0 release notes (April 2026) - in one-parent-one-child package relay the parent can pay less than -minrelaytxfee, even zero", url: "https://bitcoincore.org/en/releases/31.0/" }
   - { label: "mempool.space - block 970,789 (15:45 UTC, October 10, 2026): median fee rate about 0.28 sat/vB, lowest about 0.27", url: "https://mempool.space/block/00000000000000000000eaf9b45110e63316329599163509bb047200297ce813" }
-  - { label: "mempool.space - block 840,000, the fourth halving (00:09 UTC, April 20, 2024): median fee rate about 200 sat/vB", url: "https://mempool.space/block/0000000000000000000320283a032748cef8227873ff4872689bf23f1cda83a5" }
+  - { label: "mempool.space - block 840,000, the fourth halving (00:09 UTC, April 20, 2024): fee rates from about 100 sat/vB, median about 200", url: "https://mempool.space/block/0000000000000000000320283a032748cef8227873ff4872689bf23f1cda83a5" }
   - { label: "Ordinals documentation - Runes specification (the Runes protocol activates on block 840,000)", url: "https://docs.ordinals.com/runes/specification.html" }
   - { label: "Bitcoin Core 31 - kernel/mempool_options.h (DEFAULT_MEMPOOL_EXPIRY_HOURS 336, which is two weeks; DEFAULT_MAX_MEMPOOL_SIZE_MB 300)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/kernel/mempool_options.h" }
   - { label: "Bitcoin Core 31 - txmempool.cpp (TrimToSize removes the lowest fee rate group first when the mempool is over its size limit)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/txmempool.cpp" }
@@ -47,8 +47,8 @@ Two related concepts that get conflated:
 
 How the market floor behaves:
 
-- **Quiet periods:** when demand is low, the floor can drop below 1 sat/vB. Block 970,789, mined on October 10, 2026, had a median fee rate of about 0.28 sat/vB.
-- **Busy periods:** when many people want block space at once, the floor climbs. Block 840,000, mined on April 20, 2024, was both the fourth halving and the block where the Runes token protocol switched on. Its median fee rate was about 200 sat/vB.
+- **Quiet periods:** when demand is low, the floor can drop below 1 sat/vB. Block 970,789, mined on October 10, 2026, had fee rates from about 0.27 sat/vB, with a median of about 0.28.
+- **Busy periods:** when many people want block space at once, the floor climbs. Block 840,000, mined on April 20, 2024, was both the fourth halving and the block where the Runes token protocol switched on. Its fee rates started at about 100 sat/vB, with a median of about 200.
 - **Below the floor:** a transaction waits. Bitcoin Core drops it from its mempool after two weeks by default, or sooner if the mempool fills up and it is among the cheapest.
 
 What sets the floor:

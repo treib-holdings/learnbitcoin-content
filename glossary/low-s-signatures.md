@@ -1,12 +1,12 @@
 ---
-title: "Low-S Signatures - The Rule That Killed ECDSA Malleability"
+title: "Low-S Signatures"
 slug: low-s-signatures
 linkText:
   - "Low-S Signatures"
   - "low-S"
 draft: false
 updated: "2026-10-10"
-shortDefinition: "For every valid ECDSA signature, a second valid one exists. Low-S kills that ambiguity - here's how it works and why it matters."
+shortDefinition: "Every ECDSA signature has a twin that is also valid, with its S value flipped. Since version 0.11.1 (2015), Bitcoin Core relays only the low-S form, but that is node policy, not a consensus rule."
 keyTakeaways:
   - "Leaves one acceptable form of each ECDSA signature instead of two"
   - "Curtails malleability by standardizing the S value"

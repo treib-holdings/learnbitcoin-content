@@ -9,7 +9,7 @@ keyTakeaways:
   - "Part of the 2017 New York Agreement"
   - "Helped finalize SegWit activation despite controversy"
 sources:
-  - { label: "BIP 91 - Reduced threshold Segwit MASF, by James Hilliard (activates once 269 of 336 blocks, 80%, signal on bit 4 from June 1, 2017; while active, blocks that do not signal for SegWit on bit 1 are rejected; ends when SegWit locks in)", url: "https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki" }
+  - { label: "BIP 91 - Reduced threshold Segwit MASF, by James Hilliard (its own deployment, segsignal: activates once 269 of 336 blocks, 80%, signal on bit 4 from June 1, 2017; while active, blocks that do not signal for SegWit on bit 1 are rejected, as a way to activate the existing BIP 9 SegWit deployment; ends when SegWit locks in)", url: "https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki" }
   - { label: "BIP 141 - Segregated Witness, deployment (BIP-9 bit 1, signaling from November 15, 2016)", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
   - { label: "BIP 9 - Version bits (threshold 1,916 of 2,016 blocks, 95%; a change is locked in for one retarget period, then active)", url: "https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki" }
   - { label: "BIP 148 - mandatory SegWit activation (from August 1, 2017, blocks that do not signal for SegWit are rejected)", url: "https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki" }
@@ -35,9 +35,9 @@ liveWidget: ~
 
 [BIP-91](https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki) is the miner-coordinated mechanism that activated [SegWit](/glossary/segwit-segregated-witness-bip-141) in August 2017, defusing what was about to be a chain-splitting confrontation with [BIP-148 (UASF)](/glossary/bip-148-uasf).
 
-The deadlock context: miners had been able to signal for SegWit since November 15, 2016, but it needed 95% of the blocks in a 2,016-block period under [BIP-9](/glossary/bip-9-versionbits). Support stayed far short of that. By the SegWit2x organizers' own count, only 30% of miners backed SegWit in May 2017. The UASF crowd was preparing to enforce SegWit unilaterally starting August 1, 2017, which would have rejected non-signaling blocks and potentially split the chain.
+The deadlock context: miners had been able to signal for SegWit since November 15, 2016, but it needed 95% of the blocks in a 2,016-block period under [BIP-9](/glossary/bip-9-versionbits). Support stayed far short of that. By the SegWit2x organizers' own count, only 30% of miners backed SegWit in May 2017. BIP-148's supporters were preparing to reject blocks that did not signal for SegWit from August 1, 2017, which could have split the chain.
 
-BIP-91 was the compromise. Authored by James Hilliard and adopted by miners as part of the "SegWit2x" / New York Agreement effort, it lowered the activation threshold and forced rapid coordination:
+BIP-91 was the compromise. Authored by James Hilliard and adopted by miners as part of the "SegWit2x" / New York Agreement effort, it let miners make SegWit signaling mandatory through a separate deployment with an 80% threshold of its own. It did not change SegWit's 95% threshold. How it worked:
 
 1. **80% threshold.** BIP-91 locked in once 269 of 336 blocks (80%) signaled for it on a bit of its own, far below the 95% SegWit needed.
 2. **Mandatory.** Once BIP-91 was active, *every* block had to signal for SegWit, or nodes enforcing BIP-91 rejected it.

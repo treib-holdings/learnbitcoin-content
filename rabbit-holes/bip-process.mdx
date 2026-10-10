@@ -3,7 +3,7 @@ title: "The BIP Process"
 slug: bip-process
 draft: false
 published: "2026-07-14"
-updated: "2026-10-07"
+updated: "2026-10-10"
 status: live
 section: rabbit-hole
 category: who-decides
@@ -26,6 +26,18 @@ sources:
   - { label: "bitcoin/bips commit 4e53b6e - Add Kalle Alm as BIP editor (6 May 2021)", url: "https://github.com/bitcoin/bips/commit/4e53b6e6c4b279e76ccf107a5a315911466bda4b" }
   - { label: "bitcoin/bips PR #1573 - BIP2: update BIP editors (merged 23 April 2024)", url: "https://github.com/bitcoin/bips/pull/1573" }
   - { label: "bitcoin/bips PR #2248 - process: Remove Luke from BIP Editors (merged 10 August 2026)", url: "https://github.com/bitcoin/bips/pull/2248" }
+  - { label: "BIP 141 - Segregated Witness, deployment (BIP 9 bit 1, signaling from November 15, 2016)", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
+  - { label: "BIP 9 - Version bits (threshold 1,916 of 2,016 blocks, 95%)", url: "https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki" }
+  - { label: "Bitcoin Magazine - BIP91: The SegWit Activation Kludge That Should Keep Bitcoin Whole (Aaron van Wirdum, June 16, 2017): only some 30 percent of hash power signals for SegWit; the SegWit2x team plans to implement BIP91, designed to prevent a coin split by making SegWit2x and BIP148 compatible", url: "https://bitcoinmagazine.com/technical/bip91-segwit-activation-kludge-should-keep-bitcoin-whole" }
+  - { label: "Mike Belshe - Segwit2x Final Steps (bitcoin-segwit2x list, November 8, 2017, archived): SegWit had only 30% support among miners in May; the Segwit2x organizers write that it broke the deadlock and led to SegWit's activation", url: "https://web.archive.org/web/20171108202305/https://lists.linuxfoundation.org/pipermail/bitcoin-segwit2x/2017-November/000685.html" }
+  - { label: "BIP 148 - Mandatory activation of segwit deployment, by Shaolin Fry (from midnight August 1, 2017, by median time past, blocks that do not signal for SegWit on bit 1 are rejected, until SegWit locks in)", url: "https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki" }
+  - { label: "BIP 91 - Reduced threshold Segwit MASF, by James Hilliard (its own deployment on bit 4: activates once 269 of 336 blocks, 80%, signal; while active, blocks that do not signal for SegWit on bit 1 are rejected)", url: "https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki" }
+  - { label: "mempool.space - block 476,448 (23:22 UTC, July 18, 2017): 173 of the previous 336 blocks (mined July 16 to 18) signaled for BIP 91 on bit 4, the first of them at 02:11 UTC on July 17, after 1 of the 336 before them", url: "https://mempool.space/block/0000000000000000011a7da5d28ddffe4313e0659be8c7918a2dfe409a0b7c77" }
+  - { label: "mempool.space - block 476,784 (02:53 UTC, July 21, 2017), first block of BIP 91's locked-in period; 284 of the previous 336 blocks signaled bit 4", url: "https://mempool.space/block/000000000000000000b01b490a1c1f383e10feabefbe0afda46e185b42928ab5" }
+  - { label: "mempool.space - block 477,120 (04:46 UTC, July 23, 2017), first block with BIP 91 active; it and every block after it up to SegWit's lock-in signal bit 1", url: "https://mempool.space/block/0000000000000000015411ca4b35f7b48ecab015b14de5627b647e262ba0ec40" }
+  - { label: "mempool.space - block 479,808 (12:36 UTC, August 9, 2017), first block of SegWit's locked-in period; all 2,016 blocks of the previous period signaled bit 1", url: "https://mempool.space/block/0000000000000000012e6060980c6475a9a8e62a1bf44b76c5d51f707d54522c" }
+  - { label: "mempool.space - block 481,824 (01:57 UTC, August 24, 2017), the first block under SegWit rules", url: "https://mempool.space/block/0000000000000000001c8018d9cb3b742ef25114f27563e3fc4a1902167f9893" }
+  - { label: "Braiins - Anniversary of the BIP148 UASF (August 1, 2020), a retrospective that celebrates it: SegWit signaling had plateaued at about 30%; it says the UASF put Bitcoin's future in the hands of users, not miners", url: "https://braiins.com/news/3-year-anniversary-bip148-uasf" }
 relatedTerms:
   - bip-bitcoin-improvement-proposal
   - bip-9-versionbits
@@ -87,7 +99,7 @@ A consensus change is special because every node has to agree on the rules or th
 
 The workhorse is [BIP-9](/glossary/bip-9-versionbits), version bits. Miners set a bit in the blocks they mine to signal readiness for a named change. If enough blocks in a difficulty period signal - a stretch of 2,016 blocks, roughly two weeks, and BIP-9 asked for 95 percent of them - the change locks in and activates on schedule. [Miner signaling](/glossary/miner-signaling) is a readiness check, not a vote: it exists so the network can see that the people building blocks will enforce the new rules, not to give them a veto over whether the rules are wanted.
 
-It became a veto anyway, exactly once. During the [block size war](/rabbit-hole/block-size-war), miners opposed to SegWit simply declined to signal, and a 95 percent threshold handed a minority the power to freeze an upgrade the wider ecosystem wanted. Breaking that freeze took the threat of [BIP-148](/glossary/bip-148-uasf), a user-activated soft fork that would reject non-signaling blocks after a flag day. Miners began signaling weeks before the deadline, through the BIP-91 compromise, under pressure widely credited to the UASF. It worked, at the cost of two of the ugliest years in Bitcoin's history.
+It became a veto anyway, exactly once. During the [block size war](/rabbit-hole/block-size-war), most blocks did not signal for SegWit. Signaling opened in November 2016, and in May and early June 2017 only about 30 percent of blocks signaled for it, far short of the 95 percent it needed. [BIP-148](/glossary/bip-148-uasf), a user-activated soft fork, set a flag day: from August 1, 2017, its nodes would reject blocks that did not signal. The miners behind the SegWit2x agreement took a different route, [BIP-91](/glossary/bip-91), a separate deployment with an 80 percent threshold that was built to be compatible with BIP-148. Signaling for it took off on July 17 and it locked in on July 21. From July 23, about nine days before the flag day, every block signaled for SegWit until it locked in on August 9. SegWit activated on August 24. UASF supporters credit the flag day for that outcome, and the SegWit2x organizers credit their agreement. The whole fight took two of the ugliest years in Bitcoin's history.
 
 The scar tissue from that fight shaped everything since. [BIP-8](/glossary/bip-8) generalized the UASF idea into a reusable mechanism: deployment windows measured in block heights, and a flag called lockinontimeout, LOT for short, which when set to true makes signaling mandatory in the final period so the fork cannot be stalled to death. When Taproot came up for activation in early 2021, the community agreed on nearly everything except that flag, and the LOT=true versus LOT=false argument threatened to become its own small war.
 
