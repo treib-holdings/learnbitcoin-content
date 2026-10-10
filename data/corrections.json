@@ -1,11 +1,41 @@
 [
   {
+    "id": "2026-10-10-node-autoban",
+    "date": "2026-10-10",
+    "page": "/glossary/node-autoban",
+    "title": "Node Autoban",
+    "wrong": "The entry described Bitcoin Core as still scoring misbehaving peers and banning their IP addresses for 24 hours at 100 points. It said consensus-invalid transactions earned a small, additive score, listed repeated or nonexistent data requests as offenses, said bans can be extended if abuse persists, and said the system makes denial-of-service attacks expensive.",
+    "fixed": "Automatic bans ended with 0.20.1 in 2020, when discouragement replaced them, and 28.0 (2024) dropped the score, so one offense means disconnection and discouragement. Under the old system a consensus-invalid transaction cost the full 100 points, and since 30.0 it is not punished at all. Bans are set only by hand, and Bitcoin Core's code says neither bans nor discouragement protect against denial of service.",
+    "commit": "f3d40f1",
+    "source": "https://raw.githubusercontent.com/bitcoin/bitcoin/v31.1/src/banman.h"
+  },
+  {
+    "id": "2026-10-10-peer-bookmark",
+    "date": "2026-10-10",
+    "page": "/glossary/peer-bookmark",
+    "title": "Peer Bookmark",
+    "wrong": "The entry told readers to combine -addnode or -connect with the -whitelist setting to exempt those peers from rate limits and ban scoring, and said this pairing avoids default policy throttles.",
+    "fixed": "By default -whitelist applies only to incoming connections, so it does nothing for peers added with -addnode or -connect unless its out flag is set. Those peers are already never disconnected or discouraged for misbehavior, and current Bitcoin Core has no ban score.",
+    "commit": "f3d40f1",
+    "source": "https://raw.githubusercontent.com/bitcoin/bitcoin/v31.1/src/init.cpp"
+  },
+  {
+    "id": "2026-10-10-peer-management",
+    "date": "2026-10-10",
+    "page": "/glossary/peer-management",
+    "title": "Peer Management",
+    "wrong": "The entry said a misbehaving peer's score rises until it triggers disconnection and a temporary ban, and that autoban kicks in for repeated invalid data or spam. It also said Bitcoin Core picks outbound peers from different ASNs using a bundled asmap file, and from different geographies.",
+    "fixed": "There is no score or automatic ban: a peer that breaks certain protocol rules is disconnected after one offense and its address discouraged, and bans are set only by hand. Outbound peers are limited to one per address group (/16 for IPv4) and spread across reachable networks. Grouping by network operator needs -asmap, which stays off by default even though 31.0 embeds the map, and nothing selects peers by geography.",
+    "commit": "f3d40f1",
+    "source": "https://raw.githubusercontent.com/bitcoin/bitcoin/v31.1/src/banman.h"
+  },
+  {
     "id": "2026-10-10-bitcoin-client",
     "date": "2026-10-10",
     "page": "/glossary/bitcoin-client",
     "title": "Bitcoin Client",
     "wrong": "The entry described Bitcoin Knots as consensus-compatible with Bitcoin Core.",
-    "fixed": "Knots releases up to May 8, 2026 do not include BIP-110. Releases from May 9, 2026 on enforce it, and nodes running them left Bitcoin's main chain on August 8, 2026. In September 2026 Knots shipped a hard fork that moved that chain to a BLAKE2b proof of work.",
+    "fixed": "Knots releases up to May 8, 2026 do not include BIP-110, a temporary limit on data in transactions. Releases from May 9, 2026 on enforce it, and nodes running them left Bitcoin's main chain on August 8, 2026. In September 2026 Knots shipped a hard fork that moved that chain to a BLAKE2b proof of work.",
     "commit": "d728434",
     "source": "https://github.com/bitcoin/bips/pull/2245"
   },
@@ -15,9 +45,19 @@
     "page": "/glossary/bitcoin-knots",
     "title": "Bitcoin Knots",
     "wrong": "The entry said Bitcoin Knots is consensus-compatible with Bitcoin Core, so a Knots node sees the same chain and accepts the same blocks, and that the two differ only in relay policy.",
-    "fixed": "Knots releases up to May 8, 2026 follow the same chain as Core. Releases from May 9, 2026 on enforce BIP-110, a temporary limit on data in transactions, and nodes running them rejected the main chain's blocks from August 8, 2026 and split off. Knots 29.4.1, released September 2, 2026, moved that chain to a BLAKE2b proof of work.",
+    "fixed": "Knots releases up to 29.3.knots20260507 (May 8, 2026, UTC) follow the same chain as Core. Releases from 29.3.knots20260508 (May 9, 2026, UTC) on enforce BIP-110, a temporary limit on data in transactions, and nodes running them rejected the main chain's blocks from August 8, 2026 and split off. Knots 29.4.1, released September 2, 2026, is a hard fork that gives that chain a BLAKE2b proof of work.",
     "commit": "d728434",
     "source": "https://github.com/bitcoin/bips/pull/2245"
+  },
+  {
+    "id": "2026-10-10-decentralization",
+    "date": "2026-10-10",
+    "page": "/rabbit-hole/decentralization",
+    "title": "Decentralization",
+    "wrong": "The chapter called Bitcoin Knots an independent implementation of Bitcoin, alongside btcd and Libbitcoin, and its metrics table counted Knots among \"4+\" independent clients.",
+    "fixed": "Knots began as a modified version of Bitcoin Core, merging in Core's code for each release. Its releases from May 9, 2026 on enforce BIP-110, a temporary limit on data in transactions, and nodes running them left Bitcoin's main chain on August 8, 2026. A September 2026 release moved that chain to a different proof of work. btcd and Libbitcoin are the separately written implementations.",
+    "commit": "d728434",
+    "source": "https://github.com/bitcoinknots/bitcoin"
   },
   {
     "id": "2026-10-10-fork-watcher",
@@ -34,7 +74,7 @@
     "date": "2026-10-10",
     "page": "/glossary/full-node",
     "title": "Full Node",
-    "wrong": "The entry said full nodes almost always run Bitcoin Core and offered Bitcoin Knots as an alternative that is essentially a patched version of Core.",
+    "wrong": "The entry said full nodes almost always run Bitcoin Core and offered Bitcoin Knots as an alternative, without saying that newer Knots releases no longer follow Bitcoin's main chain.",
     "fixed": "Bitcoin Core runs on most nodes, about 87% in one October 2026 estimate. Knots releases from May 9, 2026 on enforce BIP-110, a temporary limit on data in transactions, and nodes running them left Bitcoin's main chain on August 8, 2026.",
     "commit": "d728434",
     "source": "https://github.com/bitcoin/bips/pull/2245"
@@ -45,7 +85,7 @@
     "page": "/glossary/node-operator",
     "title": "Node Operator",
     "wrong": "The entry listed Bitcoin Knots alongside Bitcoin Core and btcd as software you can download to run a Bitcoin full node.",
-    "fixed": "Only Knots releases made before May 9, 2026 run on Bitcoin's main chain. Later releases enforce BIP-110, and nodes running them left the main chain on August 8, 2026.",
+    "fixed": "Only Knots releases made before May 9, 2026 run on Bitcoin's main chain. Later releases enforce BIP-110, a temporary limit on data in transactions, and nodes running them left the main chain on August 8, 2026.",
     "commit": "d728434",
     "source": "https://github.com/bitcoin/bips/pull/2245"
   },
@@ -100,16 +140,6 @@
     "source": "https://github.com/litecoin-project/litecoin/blob/master/src/chainparams.cpp"
   },
   {
-    "id": "2026-10-10-decentralization",
-    "date": "2026-10-10",
-    "page": "/rabbit-hole/decentralization",
-    "title": "Decentralization",
-    "wrong": "The chapter called Bitcoin Knots an independent implementation of Bitcoin, alongside btcd and Libbitcoin, and its metrics table counted Knots among \"4+\" independent clients.",
-    "fixed": "Knots began as a modified version of Bitcoin Core, merging in Core's code for each release. Its releases from May 9, 2026 on enforce BIP-110, a temporary limit on data in transactions, and nodes running them left Bitcoin's main chain on August 8, 2026. A September 2026 release moved that chain to a different proof of work. btcd and Libbitcoin are the separately written implementations.",
-    "commit": "c546920",
-    "source": "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.1.knots20260508"
-  },
-  {
     "id": "2026-10-10-discard-threshold",
     "date": "2026-10-10",
     "page": "/glossary/discard-threshold",
@@ -137,15 +167,15 @@
     "wrong": "The entry said a channel's capacity is fixed at open time and that rebalancing through swap services like Loop In/Out, or splicing, is required for more.",
     "fixed": "The funding transaction sets a channel's capacity, split between the two sides. Swap services like Loop In/Out shift that split, refilling or emptying one side, but the total stays the same. Only splicing, which replaces the funding transaction, changes a channel's capacity.",
     "commit": "c546920",
-    "source": "https://docs.lightning.engineering/the-lightning-network/liquidity/manage-liquidity"
+    "source": "https://github.com/lightning/bolts/blob/master/02-peer-protocol.md"
   },
   {
     "id": "2026-10-10-liquid-federation",
     "date": "2026-10-10",
     "page": "/glossary/liquid-federation",
     "title": "Liquid Federation",
-    "wrong": "The entry said the federation had roughly 65 members, that each member ran a functionary node, that a subset of members took turns signing each block, and that a malicious majority of the federation could steal the pegged BTC.",
-    "fixed": "The federation had 87 member companies as of May 2026, but only 15 functionaries, each run by one member, sign blocks and hold the keys to the pegged BTC. Each block and each peg-out needs 11 of the 15 signatures, so signing the pegged BTC away would take 11 functionaries colluding or having their keys stolen. A software bug can also drain the peg, as the September 2026 exploit showed.",
+    "wrong": "The entry said the federation had roughly 65 members, that each member ran a functionary node, and that a malicious majority of the federation could steal the pegged BTC.",
+    "fixed": "The federation had 87 member companies as of May 2026, but only 15 functionaries, each run by one member, sign blocks and hold the 15 multisig keys to the pegged BTC. Each block and each peg-out needs 11 of the 15 signatures, so in normal operation signing the pegged BTC away would take 11 functionaries colluding or having their keys stolen. A software bug can also drain the peg, as the September 2026 exploit showed.",
     "commit": "c546920",
     "source": "https://help.blockstream.com/liquid-network/faqs/what-is-a-liquid-network-functionary"
   },
@@ -154,7 +184,7 @@
     "date": "2026-10-10",
     "page": "/glossary/liquid-network",
     "title": "Liquid Network",
-    "wrong": "The entry described the federation as a consortium of around 65 entities, said block production rotated among federation members, and said a majority of federation members could steal the pegged BTC by signing a malicious peg-out. It also named PAXG, a gold token issued on Ethereum, among the assets issued on Liquid.",
+    "wrong": "The entry described the federation as a consortium of around 65 entities and said a majority of federation members could steal the pegged BTC by signing a malicious peg-out. It also named PAXG, a gold token issued on Ethereum, among the assets issued on Liquid.",
     "fixed": "The federation had 87 member companies as of May 2026. Fifteen functionaries, each run by one member, take turns proposing blocks, and each block needs 11 of their 15 signatures. Signing the pegged BTC away would take 11 of those 15 functionaries colluding or having their keys stolen, and a software bug can also drain the peg, as the September 2026 exploit showed. The asset examples are now Tether's USDT, the Brazilian-real stablecoin DePix and tokenized securities.",
     "commit": "c546920",
     "source": "https://help.blockstream.com/liquid-network/faqs/what-is-a-liquid-network-functionary"
@@ -225,7 +255,7 @@
     "page": "/glossary/tracking-error",
     "title": "Tracking Error",
     "wrong": "The entry listed cash drag as a source of tracking gap, saying creation cash sits idle until the fund buys bitcoin and calling it a real headwind when the price rises. It also said Coinbase Custody held the bitcoin for 8 of the 11 US spot ETFs.",
-    "fixed": "At the iShares Bitcoin Trust, the authorized participant pays for any gap between the bitcoin price used for NAV and the price the fund pays when it buys bitcoin for a cash creation, so a price rise in between does not cost the fund. Custody arrangements differ by fund, so the entry no longer gives a count.",
+    "fixed": "At the iShares Bitcoin Trust, the authorized participant pays the difference when the fund pays more for bitcoin for a cash creation than the price used for NAV, so a price rise in between does not cost the fund. Custody arrangements differ by fund, so the entry no longer gives a count.",
     "commit": "c546920",
     "source": "https://www.sec.gov/Archives/edgar/data/1980994/000143774926006058/bit20251231_10k.htm"
   },
