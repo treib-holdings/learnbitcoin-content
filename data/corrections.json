@@ -1,5 +1,155 @@
 [
   {
+    "id": "2026-10-10-autopilot-lightning",
+    "date": "2026-10-10",
+    "page": "/glossary/autopilot-lightning",
+    "title": "Autopilot (Lightning)",
+    "wrong": "The entry said LND's autopilot tries to rebalance or close channels that are not working out.",
+    "fixed": "LND's autopilot, which is off by default, only opens channels. It works within a budget, by default up to 60% of the wallet's funds across at most five channels, and its hook for closing a channel does nothing.",
+    "commit": "c546920",
+    "source": "https://github.com/lightningnetwork/lnd/blob/master/pilot.go"
+  },
+  {
+    "id": "2026-10-10-bip-66",
+    "date": "2026-10-10",
+    "page": "/glossary/bip-66",
+    "title": "BIP 66",
+    "wrong": "The entry said BIP 66 eliminated signature malleability. It also called Mt. Gox the most famous victim of malleability and said malleability was part of the story of the exchange's 850,000 BTC loss.",
+    "fixed": "BIP 66 left one signature tweak open: flipping a signature's S value gives another valid signature and a new txid, which Bitcoin Core blocks only as relay policy. Mt. Gox blamed malleability in 2014, but a study of more than a year of network data found at most about 386 BTC could have been taken that way.",
+    "commit": "c546920",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0146.mediawiki"
+  },
+  {
+    "id": "2026-10-10-block-time",
+    "date": "2026-10-10",
+    "page": "/glossary/block-time",
+    "title": "Block Time",
+    "wrong": "The entry contrasted Bitcoin's 10-minute target with \"1 minute like Litecoin\" and \"15 seconds like Ethereum\".",
+    "fixed": "Litecoin targets 2.5 minutes per block. Ethereum has produced blocks in 12-second slots since the Merge on September 15, 2022, and still did as of October 2026.",
+    "commit": "c546920",
+    "source": "https://github.com/litecoin-project/litecoin/blob/master/src/chainparams.cpp"
+  },
+  {
+    "id": "2026-10-10-decentralization",
+    "date": "2026-10-10",
+    "page": "/rabbit-hole/decentralization",
+    "title": "Decentralization",
+    "wrong": "The chapter called Bitcoin Knots an independent implementation of Bitcoin, alongside btcd and Libbitcoin, and its metrics table counted Knots among \"4+\" independent clients.",
+    "fixed": "Knots began as a modified version of Bitcoin Core, merging in Core's code for each release. In September 2026 it shipped a hard fork with a different proof of work, so its newest versions no longer follow Bitcoin's main chain. btcd and Libbitcoin are the separately written implementations.",
+    "commit": "c546920",
+    "source": "https://github.com/bitcoinknots/bitcoin"
+  },
+  {
+    "id": "2026-10-10-discard-threshold",
+    "date": "2026-10-10",
+    "page": "/glossary/discard-threshold",
+    "title": "Discard Threshold",
+    "wrong": "The entry defined the discard threshold as the minimum fee rate a transaction must pay to stay in a Bitcoin Core node's mempool when memory runs short.",
+    "fixed": "In Bitcoin Core, the discard threshold is the smallest change output the wallet will create. Smaller change is added to the fee instead. The wallet works it out from its -discardfee rate, 10 sat/vB by default. The mempool's minimum fee is a separate rule.",
+    "commit": "c546920",
+    "source": "https://github.com/bitcoin/bitcoin/blob/31.x/src/wallet/init.cpp"
+  },
+  {
+    "id": "2026-10-10-hal-finneys-running-bitcoin",
+    "date": "2026-10-10",
+    "page": "/glossary/hal-finneys-running-bitcoin",
+    "title": "Hal Finney's Running Bitcoin",
+    "wrong": "The entry said Hal Finney corresponded with Satoshi by email about bugs and improvements through much of 2009.",
+    "fixed": "Hal's own 2013 account says the emails covered the first few days after he started running Bitcoin in January 2009, mostly him reporting bugs that Satoshi then fixed.",
+    "commit": "c546920",
+    "source": "https://bitcointalk.org/index.php?topic=155054.0"
+  },
+  {
+    "id": "2026-10-10-liquid-federation",
+    "date": "2026-10-10",
+    "page": "/glossary/liquid-federation",
+    "title": "Liquid Federation",
+    "wrong": "The entry said the federation had roughly 65 members, that each member ran a functionary node, that a subset of members took turns signing each block, and that a malicious majority of the federation could steal the pegged BTC.",
+    "fixed": "The federation had 87 member companies as of May 2026, but only 15 functionaries, each run by one member, sign blocks and hold the keys to the pegged BTC. Each block and each peg-out needs 11 of the 15 signatures, so it would take 11 functionaries colluding, or losing their keys, to take the pegged BTC.",
+    "commit": "c546920",
+    "source": "https://help.blockstream.com/liquid-network/faqs/what-is-a-liquid-network-functionary"
+  },
+  {
+    "id": "2026-10-10-liquid-network",
+    "date": "2026-10-10",
+    "page": "/glossary/liquid-network",
+    "title": "Liquid Network",
+    "wrong": "The entry described the federation as a consortium of around 65 entities, said block production rotated among federation members, and said a majority of federation members could steal the pegged BTC by signing a malicious peg-out.",
+    "fixed": "The federation had 87 member companies as of May 2026. Fifteen functionaries, each run by one member, take turns proposing blocks, and each block needs 11 of their 15 signatures. It would take 11 of those 15 functionaries, colluding or with stolen keys, to take the pegged BTC.",
+    "commit": "c546920",
+    "source": "https://help.blockstream.com/liquid-network/faqs/what-is-a-liquid-network-functionary"
+  },
+  {
+    "id": "2026-10-10-merkle-block",
+    "date": "2026-10-10",
+    "page": "/glossary/merkle-block",
+    "title": "Merkle Block",
+    "wrong": "The entry said a merkle block message contains the transactions in the block that match the wallet's Bloom filter.",
+    "fixed": "A merkle block carries the block header and a partial Merkle tree holding the matching transactions' hashes. The full node sends the matching transactions themselves right after it, as separate tx messages.",
+    "commit": "c546920",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki"
+  },
+  {
+    "id": "2026-10-10-mt-gox",
+    "date": "2026-10-10",
+    "page": "/glossary/mt-gox",
+    "title": "Mt. Gox",
+    "wrong": "The entry said Mark Karpeles was convicted in 2019 for manipulating data rather than for stealing the coins, and that he was acquitted of stealing them.",
+    "fixed": "A Tokyo court convicted Karpeles in 2019 of falsifying Mt. Gox's records to inflate its holdings, and acquitted him of the more serious charges, including a charge that he embezzled about $3 million of customers' money.",
+    "commit": "c546920",
+    "source": "https://www.coindesk.com/markets/2019/03/15/mt-goxs-mark-karpeles-found-guilty-over-data-manipulation-in-tokyo-court"
+  },
+  {
+    "id": "2026-10-10-nav-net-asset-value",
+    "date": "2026-10-10",
+    "page": "/glossary/nav-net-asset-value",
+    "title": "NAV (Net Asset Value)",
+    "wrong": "The entry listed cash drag, creation cash sitting idle before the fund buys bitcoin, as a contributor to tracking error, and said pre-conversion GBTC had a fixed share count.",
+    "fixed": "At the iShares Bitcoin Trust, the authorized participant pays for any gap between the price used for NAV and the price the fund pays for bitcoin. Before January 2024, GBTC did issue new shares, in private placements; its gap to NAV lasted because buyers faced a holding period and there was no redemption program.",
+    "commit": "c546920",
+    "source": "https://www.sec.gov/Archives/edgar/data/1980994/000143774926006058/bit20251231_10k.htm"
+  },
+  {
+    "id": "2026-10-10-peg-guard",
+    "date": "2026-10-10",
+    "page": "/glossary/peg-guard",
+    "title": "Peg-Guard",
+    "wrong": "The entry said Liquid's federation members refuse to sign a peg-out if a sidechain bug looks like it is draining the reserve, and that an individual member can refuse to sign and stop a peg-out.",
+    "fixed": "Liquid has no separate check at peg-out time that the reserve still matches the L-BTC in circulation. The functionaries rely on the sidechain's own validation, and a peg-out needs 11 of 15 functionary signatures, so one refusal cannot block it. In September 2026 a bug let about 3,996 BTC be paid out against unbacked L-BTC.",
+    "commit": "c546920",
+    "source": "https://blog.blockstream.com/liquid-network-security-incident-assessment/"
+  },
+  {
+    "id": "2026-10-10-peg-out",
+    "date": "2026-10-10",
+    "page": "/glossary/peg-out",
+    "title": "Peg-out",
+    "wrong": "The entry said that in an SPV-validated peg, sidechain validators approve a peg-out by checking SPV proofs of mainnet activity, and called the design rarely deployed at scale.",
+    "fixed": "In the SPV peg proposed in the 2014 sidechains paper, Bitcoin itself releases the locked coins when shown an SPV proof that they were sent back on the sidechain. Bitcoin's script cannot check such proofs without a soft fork, so the same paper proposed a federated peg in the meantime.",
+    "commit": "c546920",
+    "source": "https://blockstream.com/sidechains.pdf"
+  },
+  {
+    "id": "2026-10-10-spot-bitcoin-etf",
+    "date": "2026-10-10",
+    "page": "/glossary/spot-bitcoin-etf",
+    "title": "Spot Bitcoin ETF",
+    "wrong": "The entry presented all eleven funds as spot products that launched on day one, said eight of them held their bitcoin at Coinbase Custody in a concentration not structurally addressed, and called GBTC's 1.50% fee a legacy of its days before conversion.",
+    "fixed": "Hashdex's DEFI held bitcoin futures until March 27, 2024. In annual reports filed in 2026, Coinbase Custody was a custodian for nine of the eleven but the only one for five, and several funds had added custodians such as Anchorage Digital and BitGo. GBTC's fee was cut from 2.0% to 1.5% when it converted in January 2024.",
+    "commit": "c546920",
+    "source": "https://www.sec.gov/Archives/edgar/data/1869699/000121390026021831/ea0276464-10k_ark21share.htm"
+  },
+  {
+    "id": "2026-10-10-tracking-error",
+    "date": "2026-10-10",
+    "page": "/glossary/tracking-error",
+    "title": "Tracking Error",
+    "wrong": "The entry listed cash drag as a source of tracking gap, saying creation cash sits idle until the fund buys bitcoin and calling it a real headwind when the price rises.",
+    "fixed": "At the iShares, Fidelity and WisdomTree funds, among others, the authorized participant pays for any gap between the bitcoin price used for NAV and the price the fund pays when it buys bitcoin for a cash creation, so a price rise in between does not cost the fund.",
+    "commit": "c546920",
+    "source": "https://www.sec.gov/Archives/edgar/data/1980994/000143774926006058/bit20251231_10k.htm"
+  },
+  {
     "id": "2026-10-09-air-gapped",
     "date": "2026-10-09",
     "page": "/glossary/air-gapped",
@@ -114,7 +264,7 @@
     "page": "/glossary/discard-threshold",
     "title": "Discard Threshold",
     "wrong": "The entry said mempool.space's next-block fee estimate shows the discard threshold, and gave about 1 sat/vB as the floor in calm periods.",
-    "fixed": "mempool.space shows the mempool's fee floor on its dashboard as 'Minimum fee', relabeled 'Purging' once its node starts evicting transactions. The next-block estimate is a separate rate that never drops below that floor. Bitcoin Core 29.1 (September 2025) lowered the default relay minimum from 1 to 0.1 sat/vB.",
+    "fixed": "mempool.space shows the mempool's fee floor on its dashboard as 'Minimum fee', relabeled 'Purging' once its node starts evicting transactions. The next-block estimate is a separate rate that never drops below that floor. Bitcoin Core 29.1 (September 2025) lowered the default relay minimum from 1 to 0.1 sat/vB. The entry's definition was itself corrected on 10 October 2026: in Bitcoin Core the discard threshold is a wallet setting for dropping tiny change, not the mempool floor.",
     "commit": "94e823a",
     "source": "https://github.com/mempool/mempool/blob/master/frontend/src/app/dashboard/dashboard.component.html"
   },
@@ -303,7 +453,7 @@
     "page": "/glossary/mt-gox",
     "title": "Mt. Gox",
     "wrong": "The entry said creditor repayments began in July 2024, more than a decade after the collapse.",
-    "fixed": "Repayments in yen began at the end of 2023, and repayments in bitcoin started in July 2024, more than ten years after the collapse.",
+    "fixed": "Creditors reported the first repayments, in yen, at the end of 2023. Repayments in bitcoin started in July 2024, more than ten years after the collapse.",
     "commit": "94e823a",
     "source": "https://www.theblock.co/post/269212/mt-gox-reportedly-starts-repaying-some-creditors-via-paypal"
   },
@@ -313,7 +463,7 @@
     "page": "/rabbit-hole/mt-gox-ftx-graveyard",
     "title": "Mt. Gox to FTX: The Custody Graveyard",
     "wrong": "The chapter said Mt. Gox creditors did not start getting repaid until July 2024.",
-    "fixed": "The Mt. Gox trustee began paying some creditors in yen at the end of 2023. Repayments in bitcoin started in July 2024, more than ten years after the collapse.",
+    "fixed": "The first repayments came at the end of 2023, when creditors reported receiving payments from the Mt. Gox trustee in yen. Repayments in bitcoin started in July 2024, more than ten years after the collapse.",
     "commit": "94e823a",
     "source": "https://www.theblock.co/post/269212/mt-gox-reportedly-starts-repaying-some-creditors-via-paypal"
   },
@@ -333,7 +483,7 @@
     "page": "/glossary/node-headcount",
     "title": "Node Headcount",
     "wrong": "The entry's key points said node counts miss Tor-only setups, and the entry said scanners such as Bitnodes sweep the IPv4 and IPv6 address space.",
-    "fixed": "Crawlers such as Bitnodes start from a few seed nodes, keep asking peers for more addresses, and count every IPv4, IPv6, Tor and I2P node that accepts inbound connections. Of the 25,514 reachable nodes Bitnodes counted on October 9, 2026, about half were Tor addresses.",
+    "fixed": "Crawlers such as Bitnodes start from a few seed nodes, keep asking peers for more addresses, and count every IPv4, IPv6, Tor and I2P node that accepts inbound connections. Of the 25,514 reachable nodes bitnodes.io counted on October 9, 2026, about half were Tor addresses.",
     "commit": "94e823a",
     "source": "https://btcnodes.io/nodes/"
   },
@@ -1052,7 +1202,7 @@
     "page": "/rabbit-hole/energy",
     "title": "Bitcoin and Energy",
     "wrong": "The chapter said mining uses about 173 TWh a year, roughly three quarters of one percent of global electricity, and put the sustainable share of its energy in the mid-50s to mid-60s percent. It also said Bitcoin uses half as much as gold mining and less than the world's tumble dryers.",
-    "fixed": "Cambridge's own figures give about 140 to 175 TWh, half to two-thirds of one percent, and sustainable-mix estimates run from about a quarter to 60 percent, with Cambridge's 2025 survey at 52.4 percent. The gold figure was corrected to roughly equal, and the tumble-dryer line was dropped because Cambridge's own comparison did not support it.",
+    "fixed": "Cambridge's own figures give about 140 to 175 TWh, half to two-thirds of one percent (updated on 10 October 2026 to about 140 to 160 TWh, roughly half of one percent), and sustainable-mix estimates run from about a quarter to 60 percent, with Cambridge's 2025 survey at 52.4 percent. The gold figure was corrected to roughly equal, and the tumble-dryer line was dropped because Cambridge's own comparison did not support it.",
     "commit": "6851044",
     "source": "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/"
   },
@@ -1072,7 +1222,7 @@
     "page": "/glossary/energy-fud",
     "title": "Energy FUD",
     "wrong": "The entry put Bitcoin's mining draw \"in the high tens of TWh per year\".",
-    "fixed": "Cambridge's figures put it at about 140 to 175 TWh a year depending on method, roughly half to two-thirds of one percent of the world's electricity.",
+    "fixed": "Cambridge's figures put it at about 140 to 175 TWh a year depending on method, roughly half to two-thirds of one percent of the world's electricity, a range that was itself updated on 10 October 2026 to about 140 to 160 TWh, roughly half of one percent.",
     "commit": "6851044",
     "source": "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/"
   },
@@ -1134,7 +1284,7 @@
     "wrong": "The chapter's closing summary said Lightning fees are essentially free and that capacity \"keeps growing as more nodes open more channels\".",
     "fixed": "Fees are tiny but never quite zero. Public capacity hit a record in late 2025 and then fell back in 2026, while the number of public nodes and channels had been shrinking since 2022, a claim that was itself corrected on 9 October 2026.",
     "commit": "6851044",
-    "source": "https://bitcoinvisuals.com/lightning"
+    "source": "https://bitcoinvisuals.com/static/data/data_daily.csv"
   },
   {
     "id": "2026-10-05-mining",
@@ -1142,7 +1292,7 @@
     "page": "/rabbit-hole/mining",
     "title": "Mining",
     "wrong": "The chapter put mining at about 173 TWh a year, roughly three quarters of one percent of global electricity, cited \"two decades of empirical evidence\" for a system launched in 2009, and said geographic dispersion had roughly doubled, without a source.",
-    "fixed": "By Cambridge's methods mining draws about 140 to 175 TWh a year, half to two-thirds of one percent of the world's electricity. The evidence is dated from 2009, and the unsourced dispersion claim was removed.",
+    "fixed": "By Cambridge's methods mining draws about 140 to 175 TWh a year, half to two-thirds of one percent of the world's electricity, a range that was itself updated on 10 October 2026 to about 140 to 160 TWh, roughly half of one percent. The evidence is dated from 2009, and the unsourced dispersion claim was removed.",
     "commit": "6851044",
     "source": "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/"
   },
