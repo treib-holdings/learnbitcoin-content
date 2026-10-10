@@ -76,7 +76,7 @@ When you check "the mempool" on a website like mempool.space, you are looking at
 This matters in a few practical cases:
 
 - **Network partitions** (rare but real) can cause mempools to diverge for minutes.
-- **Bitcoin Knots vs [Bitcoin Core](/glossary/bitcoin-core)** apply different relay policies. Knots releases from late 2023 up to May 8, 2026 follow the same chain as Core but are more restrictive about inscription-style transactions and will not relay some that Core will. Knots releases since then follow a chain that split off from Bitcoin's main chain in August 2026 (see [Bitcoin Knots](/glossary/bitcoin-knots)).
+- **Bitcoin Knots vs [Bitcoin Core](/glossary/bitcoin-core)** apply different relay policies. Knots releases up to May 8, 2026 follow the same chain as Core; from late 2023 on they are also more restrictive about inscription-style transactions and will not relay some that Core will. Knots releases since then follow a chain that split off from Bitcoin's main chain in August 2026 (see [Bitcoin Knots](/glossary/bitcoin-knots)).
 - **Miners' private mempools.** Mining pools sometimes accept transactions out-of-band that are not in any public mempool, then include them in blocks they mine.
 
 For most users, "the mempool" is a useful approximation. For anyone debugging a stuck transaction, knowing the abstraction is leaky is essential.

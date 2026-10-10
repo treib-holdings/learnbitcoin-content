@@ -47,7 +47,7 @@ The practical specs as of 2026:
 - **CPU:** Anything from a Raspberry Pi 4 upward will run it. Initial sync is CPU-bound and takes a few days; ongoing operation is trivial.
 - **Bandwidth:** Several hundred GB per month of outbound, mostly serving blocks to peers. Cap-able via configuration if your ISP is hostile.
 
-The software is usually [Bitcoin Core](/glossary/bitcoin-core), a direct descendant of the original Bitcoin software. [Bitcoin Knots](/glossary/bitcoin-knots) is a modified version of Core. Knots releases from May 9, 2026 on enforce BIP-110, a temporary limit on data in transactions, and nodes running them left Bitcoin's main chain on August 8, 2026.
+The software is usually [Bitcoin Core](/glossary/bitcoin-core), a direct descendant of the original Bitcoin software, which ran on about 87% of nodes in one October 2026 estimate. [Bitcoin Knots](/glossary/bitcoin-knots) is a modified version of Core. Knots releases from May 9, 2026 on enforce BIP-110, a temporary limit on data in transactions, and nodes running them left Bitcoin's main chain on August 8, 2026.
 
 Why bother running a full node, when wallets can connect to public servers? Three reasons:
 
