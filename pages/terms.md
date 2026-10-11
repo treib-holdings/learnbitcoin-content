@@ -3,7 +3,13 @@ title: "Terms"
 heading: "The deal, in plain English."
 description: "Terms of use for LearnBitcoin.com. Short version: read it, share it, do not blame us if you mess up."
 published: "2026-05-14"
+updated: "2026-10-11"
 ---
+
+**Changed 2026-10-11:** we are adding an email newsletter, and the
+line about sharing data, under "What we will not do", now says who
+handles the list.
+[See the change](https://github.com/treib-holdings/learnbitcoin-content/commits/main/pages/terms.md).
 
 The site exists to teach Bitcoin honestly. You can read it for free.
 You can copy it, translate it, remix it, run your own version of it.
@@ -59,7 +65,10 @@ second of every day. Verify, do not trust.
 - Change the meaning of pages without leaving a git diff.
 - Put up a cookie banner.
 - Insert affiliate links.
-- Sell, rent, or share data about you.
+- Sell or rent data about you. If you subscribe to the newsletter,
+  Buttondown and the companies it runs on handle your address and
+  your open and click records for us.
+  [Privacy](/privacy#the-newsletter) has the details.
 
 ## What you should not do
 

@@ -3,12 +3,17 @@ title: "Security"
 heading: "What we ship, what we don't, and where third parties grade us."
 description: "How LearnBitcoin secures the site - concrete config, independent grades, honest gaps. Verify it yourself."
 published: "2026-05-23"
+updated: "2026-10-11"
 ---
 
-Short version: this site holds none of your money, none of your keys,
-none of your personal data. There is nothing to drain, nothing to steal,
-no API token to rotate. The strongest security posture is having nothing
-worth attacking, and we lean on that.
+Short version: this site holds none of your money and none of your
+keys. The personal data tied to it is the newsletter list, which
+Buttondown keeps for us, and a server log that clears after 3 days;
+[the privacy page](/privacy#what-we-actually-collect) says what each
+holds. Our server holds a single Buttondown key so the signup form
+works. Apart from that key and that short log there is nothing here to
+drain or steal. The strongest security posture is having little worth
+attacking, and we lean on that.
 
 That is not an excuse to ship sloppy. Here is exactly what we run, where
 third parties grade it, and where we know we still owe work.
@@ -30,11 +35,22 @@ third parties grade it, and where we know we still owe work.
   widgets, no Google Fonts, no embedded iframes. Plausible analytics is
   proxied through our own Cloudflare Worker so it is same-origin -
   adblockers do not block it and a CDN compromise cannot backdoor it.
-- **No cookies, no tracking pixels.** Plausible is cookieless. The only
-  browser storage we set is `lb_progress_v1`, which holds your reading
-  progress and never leaves your device. (Cloudflare sets its own
-  `cf_clearance` / `__cf_bm` cookies for abuse mitigation; we do not
-  read them.)
+- **The newsletter form.** A plain HTML form that posts to our own
+  server. It loads nothing from anyone else. Our server passes the
+  address to Buttondown with an API key stored as a Cloudflare secret,
+  never in the code or the repo. The key cannot send email or change
+  account settings. It can manage subscribers, and in Buttondown that
+  includes reading the list and its open and click records, so we
+  treat it like a password and replace it if it ever leaks.
+- **No cookies, no tracking pixels on this site.** Plausible is
+  cookieless. The only browser storage we set is `lb_progress_v1`,
+  which holds your reading progress and never leaves your device.
+  (Cloudflare sets its own `cf_clearance` / `__cf_bm` cookies for
+  abuse mitigation; we do not read them.) The newsletter emails are
+  the exception: they carry Buttondown's open-tracking image and
+  click-tracking links, and
+  [the privacy page](/privacy#the-newsletter) says what they record
+  and where they are hosted.
 - **Locked-down CI.** GitHub Actions third-party actions are pinned to
   commit SHAs, not mutable `@v4` tags. Workflow tokens are scoped to
   read-only by default. Dependabot opens grouped update PRs weekly.
@@ -56,7 +72,10 @@ and re-run the scan yourself:
 
 This is a content site that serves HTML and a few PNGs. We do not:
 
-- Hold any of your money, keys, seed phrases, or personal data.
+- Hold any of your money, keys or seed phrases. The personal data tied
+  to the site is the newsletter list, which Buttondown holds, and a
+  server log that clears after 3 days;
+  [the privacy page](/privacy#what-we-actually-collect) lists both.
 - Run any custodial service, exchange, or wallet.
 - Promise zero-day-fix SLAs. We rescan after every significant change
   and patch real findings within 14 days.
