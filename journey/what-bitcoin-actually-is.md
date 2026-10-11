@@ -5,6 +5,7 @@ draft: false
 status: live
 published: "2026-05-15"
 updated: "2026-10-10"
+reviewedAt: "2026-10-09"
 order: 2
 goDeeper: ["supply", "decentralization", "energy"]
 estimatedMinutes: 25

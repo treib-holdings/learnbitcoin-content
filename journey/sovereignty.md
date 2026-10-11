@@ -5,6 +5,7 @@ draft: false
 status: live
 published: "2026-05-15"
 updated: "2026-10-09"
+reviewedAt: "2026-10-09"
 order: 6
 goDeeper: ["bitcoin-privacy", "decentralization", "seed-backup-strategies"]
 estimatedMinutes: 45

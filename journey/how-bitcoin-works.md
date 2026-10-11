@@ -5,6 +5,7 @@ draft: false
 status: live
 published: "2026-05-15"
 updated: "2026-10-09"
+reviewedAt: "2026-10-09"
 order: 3
 goDeeper: ["utxos", "mempool", "mining"]
 estimatedMinutes: 30
