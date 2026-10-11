@@ -31,8 +31,8 @@ We switched that on because we want to know what gets read. If you
 would rather not be counted, set your mail app not to load remote
 images, which stops most opens from being recorded, and find the pages
 on the site instead of clicking the links. The
-[privacy page](/privacy#the-newsletter) lists everything Buttondown
-keeps, for how long, and how to have it deleted.
+[privacy page](/privacy#the-newsletter) says what Buttondown keeps,
+for how long, and how to have it deleted.
 
 The newsletter is for readers 16 and over.
 
