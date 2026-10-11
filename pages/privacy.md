@@ -26,6 +26,20 @@ which is cookieless, does not fingerprint you, and does not build a
 profile. It tells us "this page got N views this week" without knowing
 which views were yours.
 
+**A few small requests to ChainQuery for the live numbers.** The home
+page, the [node page](/node), and any chapter or glossary entry with a
+live widget (today the Mining, Mempool, Supply Schedule, Halvings and
+Bitcoin Units chapters and the glossary entry for Block) fetch the
+figures they show, such as block height, supply, fees, difficulty and
+price, from [ChainQuery.com](https://chainquery.com), a service we
+also run; most of them repeat the request every 30 to 60 seconds while
+the page stays open. Each request reaches ChainQuery's server the way
+any web request reaches ours: it sees your IP address, your browser's
+user-agent string and that the request came from this site, and no
+cookies travel with it. ChainQuery keeps ordinary web-server logs,
+sits behind Cloudflare as we do, and has its own
+[privacy policy](https://chainquery.com/privacy-policy).
+
 **Whatever you choose to send us.** If you email
 [hello@learnbitcoin.com](mailto:hello@learnbitcoin.com), we have your
 email and whatever you wrote. We read it. We delete what we no longer
