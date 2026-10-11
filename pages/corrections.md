@@ -11,7 +11,9 @@ It covers factual errors in pages that were already live: wrong numbers,
 dates, names and history, sources that never existed, and entries we
 retired because they described the wrong thing. Typo fixes and rewording
 are not listed. Every change is also in the content repo's git history,
-linked from each entry.
+linked from each entry. Most entries so far come from an October 2026
+audit of every page against primary sources; the log carries on from
+there.
 
 Spot something wrong? Open an issue on
 [GitHub](https://github.com/treib-holdings/learnbitcoin-content/issues) or
