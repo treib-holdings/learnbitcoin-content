@@ -27,6 +27,7 @@ Atomic Swap Refill	atomic-swap-refill
 Audiobook Model (Lightning)	audiobook-model-lightning
 Authorized Participant	authorized-participant
 Autopilot (Lightning)	autopilot-lightning
+avoid_reuse	avoid-reuse
 B32 Address	b32-address
 Balanced Channel (Lightning)	balanced-channel-lightning
 Batch Transaction	batch-transaction
@@ -223,6 +224,7 @@ FinCEN	fincen
 FIPS 204	ml-dsa-dilithium
 FIPS 205	slh-dsa-sphincs-plus
 flared natural gas	methane-mitigation-mining
+Forced Address Reuse	forced-address-reuse
 Fork	fork
 Fork Detection	fork-detection
 Fork Watcher	fork-watcher
@@ -235,6 +237,7 @@ Full RBF	full-rbf
 Full Validation	full-validation
 Fungibility	fungibility
 Futures	futures
+Gap Limit	gap-limit
 Genesis Block	genesis-block
 Geographic Mining Distribution	geographic-mining-distribution
 gold window	what-happened-in-1971
@@ -392,6 +395,7 @@ Node Synchronization	node-synchronization
 Node Uptime	node-uptime
 Nonce	nonce
 Nonce Exhaustion	nonce-exhaustion
+Nonce Reuse	nonce-reuse
 not your keys, not your coins	not-your-keys-not-your-coins
 nSequence	nsequence
 NUMS	nums-point
@@ -456,6 +460,7 @@ Proprietary Mining Firmware	proprietary-mining-firmware
 Pruning Mode	pruning-mode
 PSBT (Partially Signed Bitcoin Transaction)	psbt
 Public Key	public-key
+Public Key Exposure	public-key-exposure
 Quadriga	quadriga-cx
 QuadrigaCX	quadriga-cx
 Quorum Signatures	quorum-signatures
