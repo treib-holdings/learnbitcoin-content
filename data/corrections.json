@@ -1,5 +1,115 @@
 [
   {
+    "id": "2026-10-12-bitcoin-obituaries",
+    "date": "2026-10-12",
+    "page": "/glossary/bitcoin-obituaries",
+    "title": "Bitcoin Obituaries",
+    "wrong": "The entry said the block size fight \"was settled by the UASF\", stating one side's account as fact.",
+    "fixed": "The fight was settled in 2017, by a UASF deadline of August 1 or by the miners' BIP 91 compromise that made SegWit signaling mandatory nine days before it, depending on whom you ask. UASF supporters credit the deadline; the SegWit2x organizers credited their own agreement.",
+    "commit": "ceb6634",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki"
+  },
+  {
+    "id": "2026-10-12-energy",
+    "date": "2026-10-12",
+    "page": "/rabbit-hole/energy",
+    "title": "Bitcoin and Energy",
+    "wrong": "The chapter called a miner \"the only industrial-scale electricity buyer\" that is location-agnostic, interruptible in seconds and indifferent to when power arrives, called miners \"the most flexible load ever connected\", said that when power costs more than the bitcoin it would mine a miner \"shuts off and resells. No agreement needed; arithmetic does it,\" and said Riot handed its megawatts back to the grid \"in seconds\" in August 2023. None of it was sourced.",
+    "fixed": "A miner is a rare kind of industrial-scale buyer, not the only one: NERC's 2025 review of large loads found that mining and AI facilities can cycle on and off in under a minute and recorded one mining site dropping 298 megawatts in 25 seconds, and a grid can only count on that speed from loads enrolled in a curtailment or demand-response program. A miner can resell the power it is not using only if its contract allows it, as Riot's long-term fixed-price agreement does; a miner buying at the spot price just stops. Riot's filing says it curtailed more than 95 percent of its load during peak-demand periods and gives no timing.",
+    "commit": "ceb6634",
+    "source": "https://www.nerc.com/globalassets/who-we-are/standing-committees/rstc/3_doc_white-paper-characteristics-and-risks-of-emerging-large-loads.pdf"
+  },
+  {
+    "id": "2026-10-12-centralized-exchange-cex",
+    "date": "2026-10-12",
+    "page": "/glossary/centralized-exchange-cex",
+    "title": "Centralized Exchange (CEX)",
+    "wrong": "The entry said the 2022 contagion alone destroyed tens of billions in customer balances, and grouped Genesis with the 2022 failures without noting that it did not file for bankruptcy until 2023.",
+    "fixed": "The 2022 contagion locked up billions of dollars of customer balances for years rather than destroying tens of billions: Celsius halted withdrawals with $4.7 billion of customer assets on its platform, and FTX had a shortfall of about $8 billion. Much of that money was later paid back in dollars through the bankruptcies, which the Counterparty Risk entry now covers. Genesis froze its lending business in November 2022 and filed for bankruptcy in January 2023.",
+    "commit": "ceb6634",
+    "source": "https://www.justice.gov/usao-sdny/pr/founder-celsius-sentenced-12-years-fraud-and-market-manipulation"
+  },
+  {
+    "id": "2026-10-12-counterparty-risk",
+    "date": "2026-10-12",
+    "page": "/glossary/counterparty-risk",
+    "title": "Counterparty Risk",
+    "wrong": "The entry said Celsius, BlockFi, Voyager, Genesis and FTX all collapsed inside one year, and that customers who had moved BTC into 'yield' arrangements lost most of it.",
+    "fixed": "Genesis froze its lending business in November 2022 but did not file for bankruptcy until January 2023. Customer recoveries varied and took years: Voyager's creditors had received 70 percent of their allowed claims by September 2024, Celsius creditors got about 60 percent back in cash and crypto over two distributions in 2024 plus shares in a new mining company, BlockFi announced in 2024 that it would pay customer claims in full, and FTX had paid or set aside 100 percent of every allowed customer claim by July 2026. Claims were fixed in dollars as of the day each platform filed, so depositors missed bitcoin's later rise in price.",
+    "commit": "ceb6634",
+    "source": "https://storage.courtlistener.com/recap/gov.uscourts.nysb.312840/gov.uscourts.nysb.312840.1785.0.pdf"
+  },
+  {
+    "id": "2026-10-12-decentralization",
+    "date": "2026-10-12",
+    "page": "/rabbit-hole/decentralization",
+    "title": "Decentralization",
+    "wrong": "The chapter said the mining majority \"caved when faced with the potential chain split UASF threatened\", stating one side's account of why SegWit activated in 2017 as fact.",
+    "fixed": "BIP 148 set an August 1, 2017 flag day. Nine days before it, miners made SegWit signaling mandatory among themselves through BIP 91, every block from July 23 on signaled, and the split never came; SegWit activated at block 481,824 on August 24. Whether the flag day forced the miners' hand is disputed: UASF supporters say it did, and the SegWit2x organizers credited their own agreement.",
+    "commit": "ceb6634",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki"
+  },
+  {
+    "id": "2026-10-12-energy-fud",
+    "date": "2026-10-12",
+    "page": "/glossary/energy-fud",
+    "title": "Energy FUD",
+    "wrong": "The entry said mining \"can stabilize renewable grids\" and that miners turning off in seconds is a grid service \"conventional industrial loads can't provide\", without a source.",
+    "fixed": "ERCOT runs programs that use Bitcoin miners as flexible demand, and an enrolled miner can shut off in seconds, which NERC's 2025 review of large loads documents. NERC says the same of AI facilities, so the speed is rare among older industrial loads rather than unique to mining, and whether the payments for it are fair is a separate debate.",
+    "commit": "ceb6634",
+    "source": "https://www.nerc.com/globalassets/who-we-are/standing-committees/rstc/3_doc_white-paper-characteristics-and-risks-of-emerging-large-loads.pdf"
+  },
+  {
+    "id": "2026-10-12-loop-inout",
+    "date": "2026-10-12",
+    "page": "/glossary/loop-inout",
+    "title": "Loop In/Out",
+    "wrong": "The entry said Loop offers liquidity management without on-chain cost, put the service fee at typically 0.1 to 0.5 percent, and called Loop the most-deployed submarine swap service.",
+    "fixed": "Every Loop swap has an on-chain leg that pays a miner fee; what it avoids is opening or closing a channel, and Loop Out batches its on-chain transactions to cut that cost. Lightning Labs publishes no fee range: the server fee is quoted per swap in satoshis, and in their worked example a 1,000,000 sat Loop Out paid 3,260 sat to the server (about 0.3 percent), 6,802 sat on-chain and 2,524 sat in routing fees. The entry now describes Loop as Lightning Labs' own swap tool, bundled with their Lightning Terminal package, rather than the most-deployed service.",
+    "commit": "ceb6634",
+    "source": "https://docs.lightning.engineering/lightning-network-tools/loop/the-loop-cli"
+  },
+  {
+    "id": "2026-10-12-miner-signaling",
+    "date": "2026-10-12",
+    "page": "/glossary/miner-signaling",
+    "title": "Miner Signaling",
+    "wrong": "The entry said SegWit \"activated only after\" user-activated soft fork pressure \"threatened to force the issue\" and that \"the threat of UASF changed the dynamic\", stating one side's account as fact, and it listed no sources.",
+    "fixed": "SegWit was stuck at about 30% miner support against a 95% threshold. BIP 148 set an August 1, 2017 flag day; miners moved first, making SegWit signaling mandatory among themselves through BIP 91 from July 23, and SegWit locked in on August 9. Whether the flag day forced the miners' hand is disputed: UASF supporters say it did, and the SegWit2x organizers credited their own agreement. The entry now lists its sources.",
+    "commit": "ceb6634",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki"
+  },
+  {
+    "id": "2026-10-12-mining",
+    "date": "2026-10-12",
+    "page": "/rabbit-hole/mining",
+    "title": "Mining",
+    "wrong": "The chapter said mining is \"uniquely well-suited\" as a buyer of last resort, stated as fact that miners switching on and off \"stabilizes grids and improves renewables economics\", and said Riot earned $31.7 million in August 2023 by switching off for ERCOT, when most of that money came from reselling its contracted power.",
+    "fixed": "Mining can be switched off in seconds and back on in under a minute, which NERC's 2025 review of large loads documents with one facility shedding 298 megawatts in 25 seconds, and a grid can only count on that from miners enrolled in a curtailment or demand-response program. Riot's $31.7 million in August 2023 was $24.2 million from selling its contracted power back to the grid and $7.4 million in demand-response credits; whether such payments are a public service or a subsidy is left to the energy chapter.",
+    "commit": "ceb6634",
+    "source": "https://www.sec.gov/Archives/edgar/data/1167419/000155837023015517/riot-20230906xex99d1.htm"
+  },
+  {
+    "id": "2026-10-12-stranded-energy",
+    "date": "2026-10-12",
+    "page": "/glossary/stranded-energy",
+    "title": "Stranded Energy",
+    "wrong": "The entry called a Bitcoin miner \"the only large electricity buyer\" that is location-agnostic, interruptible in seconds and indifferent to when power arrives, and said a miner is \"uniquely able\" to monetize stranded energy, with no source.",
+    "fixed": "A miner is a rare kind of large electricity buyer with those three properties, not the only one. NERC's 2025 review of large loads says mining and AI facilities can cycle on and off in under a minute and recorded one mining facility dropping 298 megawatts in 25 seconds.",
+    "commit": "ceb6634",
+    "source": "https://www.nerc.com/globalassets/who-we-are/standing-committees/rstc/3_doc_white-paper-characteristics-and-risks-of-emerging-large-loads.pdf"
+  },
+  {
+    "id": "2026-10-12-submarine-swap",
+    "date": "2026-10-12",
+    "page": "/glossary/submarine-swap",
+    "title": "Submarine Swap",
+    "wrong": "The entry said a submarine swap in (on-chain to Lightning) is used to fund inbound liquidity on a Lightning channel, that submarine swaps in general are a clean way to buy inbound liquidity, and listed Lightning-to-Lightning transfers across implementations as a use.",
+    "fixed": "A swap in moves on-chain coins into your Lightning balance, which adds outbound capacity and uses up room to receive. It is the swap out, Lightning to on-chain, that frees inbound capacity. A submarine swap always has one on-chain leg and one Lightning leg, so it is not a Lightning-to-Lightning transfer; the entry now states the direction for each swap, describes peer-to-peer rebalancing with PeerSwap in place of the dropped use, and cites Lightning Labs' Loop docs, the PeerSwap spec and the Boltz docs.",
+    "commit": "ceb6634",
+    "source": "https://github.com/lightninglabs/loop"
+  },
+  {
     "id": "2026-10-11-quantum-and-bitcoin",
     "date": "2026-10-11",
     "page": "/rabbit-hole/quantum-and-bitcoin",
