@@ -2,12 +2,14 @@
 title: "Lightning Channel Capacity"
 slug: lightning-channel-capacity
 draft: false
+updated: "2026-10-12"
 shortDefinition: "The amount of BTC locked in a Lightning channel, determining how much can be sent or received via that channel."
 keyTakeaways:
   - "Represents total locked funds available for off-chain payments"
   - "Imbalance in capacity distribution can hamper sending or receiving"
   - "Rebalancing strategies keep channels usable for both directions"
-sources: []
+sources:
+  - { label: "Lightning Labs docs - How to Get Inbound Capacity on the Lightning Network: the channel opener starts with zero inbound capacity, every satoshi spent out becomes inbound capacity, Loop Out raises inbound capacity (checked October 12, 2026)", url: "https://docs.lightning.engineering/the-lightning-network/liquidity/how-to-get-inbound-capacity-on-the-lightning-network" }
 relatedTerms:
   - bolt
   - bridge-node-lightning
@@ -39,7 +41,7 @@ Two related concepts that come up constantly:
 For users who only send (e.g., shopping on Lightning), outbound matters. For users who also receive (merchants, content creators getting zaps), inbound matters too. The asymmetry is a real pain point for new Lightning users: when you open a channel by funding it yourself, you start with all outbound and zero inbound. Receiving any meaningful amount requires either:
 
 - Routing some payments outbound first, shifting balance to the other side.
-- A [submarine swap](/glossary/submarine-swap) that "buys" inbound liquidity.
+- A [submarine swap](/glossary/submarine-swap) out, Lightning to on-chain, which moves balance to the other side and so "buys" inbound liquidity.
 - A liquidity service like Lightning Pool, Magma, or LSP-based onboarding (Phoenix, Breez do this automatically).
 - [Channel splicing](/glossary/lightning-channel-splicing) to expand capacity while you're at it.
 

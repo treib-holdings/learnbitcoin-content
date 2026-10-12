@@ -3,7 +3,7 @@ title: "Bitcoin and Energy"
 slug: energy
 draft: false
 published: "2026-06-17"
-updated: "2026-10-10"
+updated: "2026-10-12"
 status: live
 section: rabbit-hole
 category: hard-questions
@@ -39,6 +39,14 @@ sources:
   - { label: "de Vries - Bitcoin's growing water footprint, Cell Reports Sustainability commentary (published online November 2023; 1,573.7 GL of fresh water for power generation in 2021, with on-site cooling estimated separately for large US mines)", url: "https://doi.org/10.1016/j.crsus.2023.100004" }
   - { label: "Digiconomist - author's summary of de Vries and Stoll, Bitcoin's growing e-waste problem, Resources, Conservation and Recycling (September 2021; up to 30.7 kt a year, devices unprofitable in under 1.29 years)", url: "https://digiconomist.net/bitcoins-growing-e-waste-problem/" }
   - { label: "Cambridge Digital Mining Industry Report (April 2025; most retired hardware resold, repurposed or recycled, about 2.3 kt of e-waste in 2024, 24.2% with recycling programmes)", url: "https://www.jbs.cam.ac.uk/wp-content/uploads/2025/04/2025-04-cambridge-digital-mining-industry-report.pdf" }
+  - { label: "NERC Large Loads Task Force - Characteristics and Risks of Emerging Large Loads, white paper (July 2025; cryptocurrency mining and AI facilities can cycle their consumption on and off in less than a minute; large loads can shift consumption in seconds, much quicker than generators can ramp; one North American mining facility ramped down 298 MW within 25 seconds on instruction; such loads are not controllable by the grid operator unless they volunteer for a curtailment or demand-response program; cloud data centers prioritize uptime and run relatively static)", url: "https://www.nerc.com/globalassets/who-we-are/standing-committees/rstc/3_doc_white-paper-characteristics-and-risks-of-emerging-large-loads.pdf" }
+  - { label: "ERCOT staff - An Introduction to ERCOT's Ancillary Services, presentation filed in PUCT Project 53911, item 14 (September 2, 2022; generators or Controllable Load Resources respond within 5 seconds to ERCOT load frequency control instructions; Load Resources on under-frequency relays give full response in 30 cycles; Load Resources providing ECRS must respond within 10 minutes)", url: "https://interchange.puc.texas.gov/Documents/53911_14_1236193.PDF" }
+  - { label: "ERCOT Nodal Protocols Section 2 - Definitions and Acronyms (version dated August 1, 2026; Controllable Load Resource: a Load Resource capable of controllably reducing or increasing consumption under Dispatch control by ERCOT)", url: "https://www.ercot.com/files/docs/2024/06/28/02-080126_Nodal.docx" }
+  - { label: "ERCOT Nodal Protocols Section 3 - Management Activities for the ERCOT System (version dated August 1, 2026; 3.17.1: Regulation Service is capacity that can respond to signals from ERCOT within five seconds; 3.17.2: Responsive Reserve may be provided by Controllable Load Resources; 3.17.4: ECRS includes interruptible Load available on ten minutes' notice)", url: "https://www.ercot.com/files/docs/2025/09/01/03-080126_Nodal.docx" }
+  - { label: "ERCOT Nodal Protocols Section 6 - Adjustment Period and Real-Time Operations (version dated August 28, 2026; 6.5.7.6.1: load frequency control issues control signals every four seconds to each Resource providing Regulation and, if required, RRS or ECRS)", url: "https://www.ercot.com/files/docs/2024/06/28/06-082826_Nodal.docx" }
+  - { label: "ERCOT - news release: ERCOT Creates Voluntary Curtailment Program for Large Flexible Customers During Peak Demand (December 6, 2022; names bitcoin mining facilities; these customers have the flexibility and willingness to reduce their energy use quickly)", url: "https://www.ercot.com/news/release/2022-12-06-ercot-creates-voluntary" }
+  - { label: "Riot Platforms - Form 10-K for 2023 (bitcoin mining presents a stable demand for energy and can be quickly curtailed; under its long-term fixed-price PPA Riot may elect not to use its power and instead sell it for credits against future power costs, depending on the spot price; through ancillary services it bids to sell ERCOT the ability to control its load and power down on demand, and is paid whether or not it is called)", url: "https://www.sec.gov/Archives/edgar/data/1167419/000155837024001550/riot-20231231x10k.htm" }
+  - { label: "ICSOBA - Alba Reduction Line 1 Outage and Recovery, Travaux 54 (October 2025; Aluminium Bahrain, 13 November 2024 outage; about 8 hours without current froze the bath and metal in about 60% of a potline's cells; industry wisdom says recovery becomes extremely difficult after 4 hours and a full potline shutdown is usually inevitable beyond 8; the full line restart took 44 days, believed to be the fastest ever)", url: "https://icsoba.org/assets/files/publications/2025/Shorts/AL10S%20-%20Alba%20Reduction%20Line%201%20Outage%20and%20Recovery.pdf" }
 relatedTerms:
   - energy-fud
   - proof-work-pow
@@ -57,7 +65,8 @@ relatedTerms:
    1. de Vries water paper: optional - add exact Cell Reports Sustainability DOI to sources if citing harder [DONE 2026-10-10: DOI in sources; chart figures, Google, aluminium, KVUE and e-waste also sourced]
    2. Optional: a 2024-2026 ERCOT/Riot receipt fresher than Aug 2023 (the 2023 one is canonical, fine as-is)
    3. OPTIONAL hardware photos: Antminer + Spondoolies generations shot (section 1 or 6) - nice-to-have, NOT a blocker; chapter is complete with the two SVGs
-   4. On flip day: repoint energy-fud closing line + mining RH section 7 to this chapter; add ASSETS.md rows for the 2 new diagrams */}
+   4. On flip day: repoint energy-fud closing line + mining RH section 7 to this chapter; add ASSETS.md rows for the 2 new diagrams
+   5. [2026-10-12] "in seconds" sourced to NERC's July 2025 large-loads white paper (298 MW in 25 s) and ERCOT's 5-second CLR standard; "the only buyer" / "most flexible load ever" softened to comparisons; price-response resale now tied to the PPA per Riot's 10-K; smelter line sourced to ICSOBA 2025. The video's closing card still says "the only industrial load that vanishes in seconds" - re-render if that line is ever revisited. */}
 
 > **Where you're going:** Bitcoin consumes a lot of electricity. That is true, measurable, and by design. This chapter walks through how much, where it comes from, what it buys, what the critics get right, and why "Bitcoin wastes energy" and "Bitcoin is an environmental free lunch" are both wrong.
 
@@ -72,7 +81,7 @@ relatedTerms:
     controls
     controlslist="nodownload noplaybackrate noremoteplayback"
     preload="metadata"
-    aria-label="Thirty-second animation. A grid-capacity bar fills over one heat-wave day as air conditioners switch on and demand climbs. The Bitcoin miner, shown in orange, is the marginal load on top of everything else; at the peak it pushes total demand past a red grid-capacity line. Then the miner powers down in seconds, the orange drains away, and total load falls back under capacity while the grid holds. Closing receipt: Riot Platforms earned 31.7 million dollars to power down on the Texas grid in August 2023, versus 8.9 million dollars of bitcoin mined that month. The only industrial load that vanishes in seconds."
+    aria-label="Thirty-second animation. A grid-capacity bar fills over one heat-wave day as air conditioners switch on and demand climbs. The Bitcoin miner, shown in orange, is the marginal load on top of everything else; at the peak it pushes total demand past a red grid-capacity line. Then the miner powers down in seconds, the orange drains away, and total load falls back under capacity while the grid holds. Closing receipt: Riot Platforms earned 31.7 million dollars to power down on the Texas grid in August 2023, versus 8.9 million dollars of bitcoin mined that month. The closing card reads: the only industrial load that vanishes in seconds."
   ></video>
   <figcaption>Thirty seconds. When the grid hits its limit, the miner is the load that disappears - in seconds, by choice. The receipt is real: Riot, ERCOT, August 2023.</figcaption>
 </figure>
@@ -108,9 +117,11 @@ The obvious follow-up, "then why not proof-of-stake, like everything else," dese
 
 Almost everything surprising about Bitcoin's energy traces back to a single fact:
 
-**A miner is the only industrial-scale electricity buyer that is location-agnostic, interruptible in seconds, and indifferent to when the power arrives.**
+**A miner is a rare kind of industrial-scale electricity buyer: location-agnostic, interruptible in seconds, and indifferent to when the power arrives.**
 
-A factory needs workers, roads, and customers. A data center needs low latency to users. An aluminum smelter can load-shift a little, but shutting it down cold is expensive and slow. A miner needs electricity and an internet connection. It can sit at a hydro dam in the back country, a flare stack in an oil field, or a wind farm at the end of a congested transmission line, wherever a megawatt is cheapest because nobody else can use it.
+The middle claim is the one people doubt, so here is the evidence. NERC, the body that writes reliability standards for the North American grid, reviewed the new generation of very large loads in 2025. It found that mining and AI facilities can cycle their consumption on and off in under a minute, and its report includes a trace of one mining site in North America dropping 298 megawatts in 25 seconds on instruction. NERC files that speed under risks, not gifts, and it is right to: a load that can vanish in seconds can come back just as fast, and the grid has to be ready for both.
+
+A factory needs workers, roads, and customers. A cloud data center is selling uptime, so its draw stays nearly flat whatever the grid is doing. An aluminum smelter cannot simply switch off: a few hours without current and the molten bath in its pots starts to freeze. When one smelter in Bahrain lost current for eight hours in 2024, restarting the line took 44 days, and its engineers believe that was the fastest recovery ever from such an outage. A miner needs electricity and an internet connection. It can sit at a hydro dam in the back country, a flare stack in an oil field, or a wind farm at the end of a congested transmission line, wherever a megawatt is cheapest because nobody else can use it.
 
 That is why mining migrates to stranded power. Not because miners are environmentalists, but because stranded electrons are the cheapest electrons on earth, and mining margins are thin. The incentive does the work; no virtue required.
 
@@ -118,7 +129,7 @@ The same property runs in reverse, and that is where it gets interesting for eve
 
 ## The grid receipts
 
-In August 2023, during a Texas heat wave, Riot Platforms (one of the largest miners on the ERCOT grid) earned [$31.7 million in a single month](https://www.cnbc.com/2023/09/06/texas-paid-bitcoin-miner-riot-31point7-million-to-shut-down-in-august.html) mostly for NOT mining: $24.2 million selling its pre-purchased power back to the grid at crisis prices, and $7.4 million in demand-response credits. The bitcoin it mined that month was worth about $8.9 million. The filing is [public](https://www.sec.gov/Archives/edgar/data/1167419/000155837023015517/riot-20230906xex99d1.htm). During the worst hours, Riot curtailed more than 95 percent of its load, handing those megawatts back to air conditioners in seconds.
+In August 2023, during a Texas heat wave, Riot Platforms (one of the largest miners on the ERCOT grid) earned [$31.7 million in a single month](https://www.cnbc.com/2023/09/06/texas-paid-bitcoin-miner-riot-31point7-million-to-shut-down-in-august.html) mostly for NOT mining: $24.2 million selling its pre-purchased power back to the grid at crisis prices, and $7.4 million in demand-response credits. The bitcoin it mined that month was worth about $8.9 million. The filing is [public](https://www.sec.gov/Archives/edgar/data/1167419/000155837023015517/riot-20230906xex99d1.htm). During the peak-demand periods, Riot curtailed more than 95 percent of its load, handing those megawatts back to the grid.
 
 <figure>
   <img src="/diagrams/energy-demand-response.svg" alt="Line chart over one heat-wave day. Grid demand rises to a sharp late-afternoon peak while miner load runs flat at full capacity then plunges to near zero exactly at that peak, returning power to the grid, before recovering in the evening. The two curves move in opposite directions." />
@@ -127,11 +138,11 @@ In August 2023, during a Texas heat wave, Riot Platforms (one of the largest min
 
 Three mechanisms, worth knowing because they are not the same thing:
 
-1. **Price response.** When power costs more than the bitcoin it would mine, the rational miner shuts off and resells. No agreement needed; arithmetic does it.
-2. **Ancillary services.** The grid operator pays the miner for the *option* to shed its load on command. The miner gets paid whether or not the call comes. The grid gets a dispatchable buffer the size of a small city.
+1. **Price response.** When power costs more than the bitcoin it would mine, the rational miner shuts off. Whether it can also *sell* the power it is not using depends on the contract. Riot buys a block of fixed-price power under a long-term agreement, so when spot prices spike it can stand down and sell that power back to the grid for credits. A miner buying at the spot price just stops, and saves the bill.
+2. **Ancillary services.** The grid operator pays the miner for the *option* to shed its load on command. The miner gets paid whether or not the call comes. This is where the seconds matter: a miner registered with ERCOT as a controllable load resource runs under the grid operator's dispatch control, and when it sells regulation service it has to answer ERCOT's signals within five seconds, the same standard a power plant meets. The grid gets a dispatchable buffer the size of a small city.
 3. **Peak-avoidance programs.** Power down during the handful of annual system peaks, pay dramatically less for transmission all year.
 
-Now the criticism, because it is not stupid: the head of Environment Texas, an environmental group, [called the $31.7 million absurd](https://www.kvue.com/article/news/investigations/defenders/bitcoin-company-reimbursed-conservation-appeal/269-456160f1-f136-4da8-8d58-7724f048fbda), saying ordinary Texans got nothing for cutting their own use, and argued the grid operator should pay households to conserve instead. The honest answer is that grid operators pay many large loads and generators for flexibility, because options on demand are genuinely valuable to a grid that cannot store much; miners are simply the most flexible load ever connected. The honest concession inside the answer: a grid that builds around interruptible mining demand is making a bet about how that demand behaves in a crisis, and the bet is only as good as the contracts. Both things are true, and that is the actual debate.
+Now the criticism, because it is not stupid: the head of Environment Texas, an environmental group, [called the $31.7 million absurd](https://www.kvue.com/article/news/investigations/defenders/bitcoin-company-reimbursed-conservation-appeal/269-456160f1-f136-4da8-8d58-7724f048fbda), saying ordinary Texans got nothing for cutting their own use, and argued the grid operator should pay households to conserve instead. The honest answer is that grid operators pay many large loads and generators for flexibility, because options on demand are genuinely valuable to a grid that cannot store much; a miner is an unusually fast version of something ERCOT was already buying. The honest concession inside the answer: a grid that builds around interruptible mining demand is making a bet about how that demand behaves in a crisis, and the bet is only as good as the contracts. Both things are true, and that is the actual debate.
 
 ## Methane: the one place mining might be net-negative
 
@@ -197,6 +208,7 @@ Argue that question with real numbers. We just gave you ours.
 - Grist on Finnish district heating: https://grist.org/buildings/bitcoin-cryptocurrency-district-heat-finland/
 - Nakamoto Institute, "Bitcoin Does Not Waste Energy": https://nakamotoinstitute.org/mempool/bitcoin-does-not-waste-energy/
 - Mongabay's critical survey (read the other side): https://news.mongabay.com/2025/06/bitcoin-boom-comes-with-huge-intensifying-environmental-footprint/
+- NERC's 2025 review of large loads, mining included (the risk chapters are the useful part): https://www.nerc.com/globalassets/who-we-are/standing-committees/rstc/3_doc_white-paper-characteristics-and-risks-of-emerging-large-loads.pdf
 
 Glossary cluster on this site:
 - [Energy FUD](/glossary/energy-fud)

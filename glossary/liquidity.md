@@ -2,12 +2,14 @@
 title: "Liquidity"
 slug: liquidity
 draft: false
+updated: "2026-10-12"
 shortDefinition: "The ease of buying/selling BTC with minimal price impact (in markets) or channel capacity (in LN)."
 keyTakeaways:
   - "BTC markets: volume and order book depth for stable trades"
   - "LN channels: inbound/outbound capacity for successful routing"
   - "Vital to both exchange usage and off-chain LN payment flow"
-sources: []
+sources:
+  - { label: "Lightning Labs docs - Loop: Loop Out sends Lightning funds to an on-chain address, Loop In sends on-chain bitcoin into a channel; emptying a channel acquires inbound capacity (checked October 12, 2026)", url: "https://docs.lightning.engineering/lightning-network-tools/loop" }
 relatedTerms:
   - balanced-channel-lightning
   - lightning-channel
@@ -31,7 +33,7 @@ Lightning users without enough inbound liquidity can't receive payments larger t
 Getting inbound liquidity:
 
 - Spend your existing outbound first (every payment you send shifts balance to the other side, increasing your inbound).
-- Buy inbound liquidity from a routing-node service ([liquidity ads](/glossary/liquidity-ads), Lightning Labs' Pool, etc.) or rebalance via non-custodial submarine swaps ([Loop In/Out](/glossary/loop-inout)).
+- Buy inbound liquidity from a routing-node service ([liquidity ads](/glossary/liquidity-ads), Lightning Labs' Pool, etc.) or push balance to the other side with a non-custodial submarine swap out ([Loop Out](/glossary/loop-inout), for instance).
 - Splice or open a channel where the other side commits the capital.
 - Earn inbound by receiving payments (which is circular if you can't receive in the first place).
 

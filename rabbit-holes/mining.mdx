@@ -4,7 +4,7 @@ slug: mining
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-10-10"
+updated: "2026-10-12"
 section: rabbit-hole
 category: how-it-works
 featured: true
@@ -21,7 +21,10 @@ sources:
   - { label: "Cambridge Judge Business School - Cambridge study: sustainable energy rising in Bitcoin mining (April 2025; 138 TWh, about 0.5% of global electricity; US 75.4% of reported mining activity among 49 surveyed firms)", url: "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/" }
   - { label: "mempool.space - block fees vs subsidy chart (fee share of miner revenue)", url: "https://mempool.space/graphs/mining/block-fees-subsidy" }
   - { label: "mempool.space API - mining pool shares over the last year (live; on 9 October 2026: Foundry USA 28.2%, AntPool 18.1%, F2Pool 12.5%, ViaBTC 9.7% of 52,331 blocks)", url: "https://mempool.space/api/v1/mining/pools/1y" }
-  - { label: "Riot Platforms August 2023 production report (SEC filing - the $31.7M month)", url: "https://www.sec.gov/Archives/edgar/data/1167419/000155837023015517/riot-20230906xex99d1.htm" }
+  - { label: "Riot Platforms August 2023 production report (SEC filing - the $31.7M month: $24.2 million from selling power back to ERCOT under its long-term power contracts and $7.4 million in demand response credits; power use curtailed by more than 95% during peak demand)", url: "https://www.sec.gov/Archives/edgar/data/1167419/000155837023015517/riot-20230906xex99d1.htm" }
+  - { label: "Riot Platforms - Form 10-K for 2023 (bitcoin mining presents a stable demand for energy and can be quickly curtailed; Riot takes part in ERCOT demand response programs that pay it to power down and offset foregone mining revenue)", url: "https://www.sec.gov/Archives/edgar/data/1167419/000155837024001550/riot-20231231x10k.htm" }
+  - { label: "NERC Large Loads Task Force - Characteristics and Risks of Emerging Large Loads, white paper (July 2025; cryptocurrency mining and AI facilities can cycle their consumption on and off in less than a minute; one North American mining facility ramped down 298 MW within 25 seconds on instruction; such loads are not controllable by the grid operator unless they volunteer for a curtailment or demand-response program)", url: "https://www.nerc.com/globalassets/who-we-are/standing-committees/rstc/3_doc_white-paper-characteristics-and-risks-of-emerging-large-loads.pdf" }
+  - { label: "ERCOT - news release: ERCOT Creates Voluntary Curtailment Program for Large Flexible Customers During Peak Demand (December 6, 2022; names bitcoin mining facilities among large flexible customers that can reduce their energy use quickly)", url: "https://www.ercot.com/news/release/2022-12-06-ercot-creates-voluntary" }
   - { label: "Mining glossary entry", url: "https://www.learnbitcoin.com/glossary/mining" }
 relatedTerms: ["mining", "miner", "hash", "hash-rate", "difficulty", "difficulty-retargeting", "nonce", "block-reward", "block-subsidy", "proof-work-pow", "mempool", "mining-pool", "incentive-compatibility"]
 hasInteractive: ["miningSimulator", "feeMarketSimulator", "difficultyClock"]
@@ -137,7 +140,7 @@ This is often presented as a problem. It is, more accurately, a *feature*. Here'
 
 **Mining incentivizes finding *cheapest* energy.** Miners aren't bidding on premium power. They're bidding on whatever is cheapest globally - stranded renewables, flared natural gas that would otherwise be wasted, geothermal in Iceland, hydro in Sichuan during the wet season. The marginal Bitcoin mining operation runs on energy that has no other buyer.
 
-**Mining can be turned off and on in seconds.** This makes it uniquely well-suited as a "buyer of last resort" for energy grids. When demand on the grid spikes (heat wave, sudden outage), miners can turn off in seconds; when there's excess supply (sunny day, low industrial demand), they turn on. This stabilizes grids and improves renewables economics. Texas's grid operator, ERCOT, pays large flexible loads to switch off at peak demand; Riot earned $31.7 million in power credits in August 2023 by doing exactly that (see the [energy chapter](/rabbit-hole/energy)).
+**Mining can be switched off in seconds and back on in under a minute.** That makes it unusually well suited to the role of flexible load, or "buyer of last resort," for a grid. When demand spikes (heat wave, sudden outage), a miner can drop its load in seconds; when there is surplus (a sunny, windy afternoon with little industrial demand), it can soak it up. NERC, which writes the reliability standards for the North American grid, recorded one mining facility shedding 298 megawatts in 25 seconds on instruction. It also notes the catch: a grid can only count on that flexibility from loads that have signed up for a curtailment or demand-response program. Texas's grid operator, ERCOT, runs such programs, names bitcoin mining facilities as the kind of customer they are for, and its demand-response programs pay enrolled loads to cut back when the grid is tight. Riot reported $31.7 million in power and demand-response credits in August 2023, most of it from selling its contracted power back to the grid while it stood down. Whether that is a public service or a subsidy is argued out in the [energy chapter](/rabbit-hole/energy).
 
 None of this means Bitcoin's energy use is irrelevant. It means it's not the simple "waste" story the headlines use.
 

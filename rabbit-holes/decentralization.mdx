@@ -4,7 +4,7 @@ slug: decentralization
 draft: false
 status: live
 published: "2026-05-18"
-updated: "2026-10-10"
+updated: "2026-10-12"
 section: rabbit-hole
 category: who-decides
 tagline: "What 'decentralized' actually means, where Bitcoin sits on the spectrum, and how the network has defeated takeover attempts without anyone in charge."
@@ -28,14 +28,17 @@ sources:
   - { label: "btcd README (an alternative full node Bitcoin implementation written in Go)", url: "https://github.com/btcsuite/btcd" }
   - { label: "Libbitcoin Node on GitHub (Bitcoin full node, a separate codebase)", url: "https://github.com/libbitcoin/libbitcoin-node" }
   - { label: "BIP 148 - mandatory SegWit activation (from August 1, 2017, blocks that do not signal for SegWit are rejected)", url: "https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki" }
+  - { label: "BIP 91 - Reduced threshold Segwit MASF, by James Hilliard (activates once 269 of 336 blocks, 80%, signal on bit 4; while active, blocks that do not signal for SegWit on bit 1 are rejected; ends when SegWit locks in)", url: "https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki" }
+  - { label: "mempool.space - block 477,120 (04:46 UTC, July 23, 2017), first block with BIP 91 active; it and every block after it up to SegWit's lock-in signal bit 1", url: "https://mempool.space/block/0000000000000000015411ca4b35f7b48ecab015b14de5627b647e262ba0ec40" }
+  - { label: "Braiins - Anniversary of the BIP148 UASF (August 1, 2020), a retrospective that celebrates it: says the pressure from the UASF was enough to force miners to adopt SegWit without SegWit2x", url: "https://braiins.com/news/3-year-anniversary-bip148-uasf" }
   - { label: "Bitcoin Core 31 - chainparams.cpp (mainnet SegwitHeight 481824)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/kernel/chainparams.cpp" }
   - { label: "mempool.space - block 481,824, the first block under SegWit rules (mined 01:57 UTC, August 24, 2017)", url: "https://mempool.space/block/0000000000000000001c8018d9cb3b742ef25114f27563e3fc4a1902167f9893" }
   - { label: "UAHF technical specification, the Bitcoin Cash fork rules (activation August 1, 2017, 12:20 UTC; blocks over 1 MB allowed, 8 MB minimum setting)", url: "https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/uahf-technical-spec.md" }
   - { label: "Digital Currency Group - Bitcoin Scaling Agreement at Consensus 2017, the New York Agreement (archived): as of May 25, 2017 the signers represented 58 companies and 83.28% of hashing power", url: "https://web.archive.org/web/20171223044102/https://medium.com/@DCGco/bitcoin-scaling-agreement-at-consensus-2017-133521fe9a77" }
-  - { label: "Segwit2x Final Steps, the cancellation email from Mike Belshe (bitcoin-segwit2x list, November 8, 2017, archived)", url: "https://web.archive.org/web/20171108202305/https://lists.linuxfoundation.org/pipermail/bitcoin-segwit2x/2017-November/000685.html" }
+  - { label: "Segwit2x Final Steps, the cancellation email from Mike Belshe (bitcoin-segwit2x list, November 8, 2017, archived): says Segwit2x broke the deadlock in August and quickly led to SegWit's activation; calls off the 2MB increase for lack of sufficient consensus", url: "https://web.archive.org/web/20171108202305/https://lists.linuxfoundation.org/pipermail/bitcoin-segwit2x/2017-November/000685.html" }
   - { label: "Decentralization glossary entry", url: "https://www.learnbitcoin.com/glossary/decentralization" }
   - { label: "GitHub - Bitcoin Core contributors (the GitHub API lists 1,368 distinct commit authors, anonymous ones included, as of October 2026)", url: "https://github.com/bitcoin/bitcoin/graphs/contributors" }
-relatedTerms: ["decentralization", "full-node", "miner", "consensus-parameter", "soft-fork", "fork", "chain-split", "bitcoin-cash", "bip-148-uasf", "bitcoin-core"]
+relatedTerms: ["decentralization", "full-node", "miner", "consensus-parameter", "soft-fork", "fork", "chain-split", "bitcoin-cash", "bip-148-uasf", "bip-91", "bitcoin-core"]
 ogImage: "/diagrams/og/network-topology.png"
 ogImageAlt: "Two network topologies side by side. On the left, a single central bank hub stands alone. On the right, Bitcoin as roughly thirty-five peer nodes connected in an organic mesh with no center. One central bank, versus tens of thousands of Bitcoin nodes."
 ---
@@ -100,7 +103,7 @@ A grassroots movement called **UASF** (User-Activated Soft Fork, organized aroun
 
 What actually happened:
 
-- SegWit activated cleanly on August 24, 2017, at block 481,824. The mining majority caved when faced with the potential chain split UASF threatened.
+- BIP 148 set an August 1 flag day. Nine days before it, miners made SegWit signaling mandatory among themselves through [BIP 91](/glossary/bip-91), every block from then on signaled, and the split never came. SegWit activated on August 24, 2017, at block 481,824. Who forced whose hand is still argued: UASF supporters say the flag day did; the SegWit2x organizers credited their own agreement.
 - The 2x hard fork was scheduled for November 2017, and was **cancelled nine days before the planned fork**. Once node operators made it clear they would not run the new software, the agreement collapsed. The signers had hashrate; they had money; their nodes still ran old rules. They couldn't actually force the change.
 - Earlier in 2017, on August 1, a different group had forked off and created Bitcoin Cash with bigger blocks. It became a separate network with its own coin.
 
