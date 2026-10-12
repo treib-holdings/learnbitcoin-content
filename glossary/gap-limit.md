@@ -2,7 +2,7 @@
 title: "Gap Limit"
 slug: gap-limit
 draft: false
-published: "2026-10-13"
+published: "2026-10-12"
 shortDefinition: "The number of unused addresses in a row a wallet will check before it decides there is nothing further to find. BIP-44 sets it at 20; Bitcoin Core keeps 1,000 keys ahead instead. It is the one real limit on handing out a fresh address every time, and it only bites when addresses are created and never paid."
 keyTakeaways:
   - "BIP-44: 'If the software hits 20 unused addresses in a row, it expects there are no used addresses beyond this point and stops searching the address chain'; wallets are told to warn a user who tries to generate past it"

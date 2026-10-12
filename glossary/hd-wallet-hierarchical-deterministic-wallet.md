@@ -2,7 +2,7 @@
 title: "HD Wallet (Hierarchical Deterministic Wallet)"
 slug: hd-wallet-hierarchical-deterministic-wallet
 draft: false
-updated: "2026-10-13"
+updated: "2026-10-12"
 shortDefinition: "A wallet using BIP 32 derivation paths to create a structured key tree from one seed."
 keyTakeaways:
   - "Allows all addresses to be recovered from one master seed"

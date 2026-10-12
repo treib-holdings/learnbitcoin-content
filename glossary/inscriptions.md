@@ -1,6 +1,7 @@
 ---
 title: "Inscriptions"
 slug: inscriptions
+published: "2026-05-20"
 draft: false
 updated: "2026-10-09"
 shortDefinition: "A technique for embedding arbitrary data - text, images, code - inside Bitcoin transactions by writing into Taproot witness data."

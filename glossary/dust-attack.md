@@ -2,7 +2,7 @@
 title: "Dust Attack"
 slug: dust-attack
 draft: false
-updated: "2026-10-13"
+updated: "2026-10-12"
 shortDefinition: "Paying tiny amounts of bitcoin to addresses that have already been used, hoping the owner's wallet will later spend the crumb together with other coins and link them all. The Bitcoin Wiki's name for it is forced address reuse."
 keyTakeaways:
   - "Only works against an address that has already been used, and only pays off if you spend the crumb together with your other coins"

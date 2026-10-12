@@ -4,7 +4,7 @@ slug: avoid-reuse
 linkText:
   - "avoid_reuse"
 draft: false
-published: "2026-10-13"
+published: "2026-10-12"
 shortDefinition: "A Bitcoin Core wallet flag, added in 0.19.0.1, that tracks which addresses the wallet has already spent from and refuses to spend coins sent to them afterwards. It is the reference wallet's defense against forced address reuse. Off by default, set at wallet creation or with setwalletflag, with no switch in the GUI."
 keyTakeaways:
   - "With the flag on, coins are sorted into clean and dirty: dirty means sent to an address the wallet had already spent from, and dirty coins are left out of coin selection; listunspent shows the verdict in a reused field"

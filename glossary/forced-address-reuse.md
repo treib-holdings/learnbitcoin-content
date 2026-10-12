@@ -2,7 +2,7 @@
 title: "Forced Address Reuse"
 slug: forced-address-reuse
 draft: false
-published: "2026-10-13"
+published: "2026-10-12"
 shortDefinition: "An attack in which someone pays a small amount to an address you have already used, betting that your wallet will later spend that crumb together with your other coins and link them all. It is the Bitcoin Wiki's name for what the press calls a dust attack, and it only works against an address that has been used before."
 keyTakeaways:
   - "The crumb itself is harmless; the damage comes when it is spent in the same transaction as your other coins, because common-input ownership then ties them together"

@@ -2,7 +2,7 @@
 title: "Address Reuse"
 slug: address-reuse
 draft: false
-updated: "2026-10-13"
+updated: "2026-10-12"
 shortDefinition: "Paying the same Bitcoin address more than once. It hands your full history, in one place, to anyone watching, puts every coin at the address behind one key, and, once that key has signed, leaves later deposits sitting in the open. Modern wallets avoid it by default."
 keyTakeaways:
   - "Every payment to a reused address is linked in public, forever: counterparties, amounts and timing, all in one place for anyone who ties the address to you"

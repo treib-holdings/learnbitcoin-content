@@ -1,6 +1,7 @@
 ---
 title: "P2SH-P2WSH (Nested SegWit Script)"
 slug: p2sh-p2wsh-nested-segwit
+published: "2026-05-15"
 draft: false
 shortDefinition: "A P2WSH output wrapped in a P2SH outer layer so the address looks legacy (starts with '3') while the spend uses SegWit witness data."
 keyTakeaways:

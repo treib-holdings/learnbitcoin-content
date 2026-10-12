@@ -1,6 +1,7 @@
 ---
 title: "Ordinals"
 slug: ordinals
+published: "2026-05-22"
 draft: false
 updated: "2026-10-09"
 shortDefinition: "A protocol that assigns unique sequential identity to individual satoshis, allowing them to be tracked across transactions and inscribed with arbitrary data."

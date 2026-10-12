@@ -2,7 +2,7 @@
 title: "Public Key Exposure"
 slug: public-key-exposure
 draft: false
-published: "2026-10-13"
+published: "2026-10-12"
 shortDefinition: "The state of a coin whose public key is out in the open, on the chain or in someone else's hands, so that anyone with a way to break the key, such as a future quantum computer, could spend it. Exposed is not the same as stolen. Some script types show the key from creation; hashed types show it on their first spend, which is why address reuse is the main way modern coins end up exposed."
 keyTakeaways:
   - "Two classes: always-exposed (P2PK, bare multisig, Taproot) show the key from creation; reuse-exposed (P2PKH, P2SH, P2WPKH, P2WSH) hide it behind a hash until the first spend, after which every later deposit to that address sits behind a public key"

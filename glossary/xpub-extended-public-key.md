@@ -2,7 +2,7 @@
 title: "Xpub (Extended Public Key)"
 slug: xpub-extended-public-key
 draft: false
-updated: "2026-10-13"
+updated: "2026-10-12"
 shortDefinition: "A BIP 32 feature allowing derivation of child public keys without exposing the master private key."
 keyTakeaways:
   - "Enables derivation of multiple child addresses from a single root"

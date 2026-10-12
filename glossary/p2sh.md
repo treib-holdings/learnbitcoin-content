@@ -1,6 +1,7 @@
 ---
 title: "P2SH (Pay to Script Hash)"
 slug: p2sh
+published: "2026-05-26"
 draft: false
 updated: "2026-10-09"
 shortDefinition: "Pay to Script Hash (BIP 16, 2012): an output type that locks bitcoin to the 20-byte hash of a script. Receivers share a short address starting with 3 and reveal the full script only when spending."

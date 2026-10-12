@@ -2,7 +2,7 @@
 title: "Nonce Reuse"
 slug: nonce-reuse
 draft: false
-published: "2026-10-13"
+published: "2026-10-12"
 shortDefinition: "A signing bug in which two ECDSA signatures from the same private key share the same secret number, visible on the chain as the same r value. Anyone can then compute the private key from the two signatures. Not the same as address reuse, but address reuse is what gives one key a second signature to compare."
 keyTakeaways:
   - "Nils Schneider recovered a private key from the chain this way in January 2013; the August 2013 Android SecureRandom flaw put every Android-generated key at risk, with colliding R values seen on the chain, and led bitcoin.org to tell users that 'key rotation is necessary'"
