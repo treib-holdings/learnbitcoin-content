@@ -98,7 +98,7 @@ There are two classes of exposure. Order matters because the easier case explain
 
 **Always-exposed.** The pubkey is on chain from the moment the output is created. No spend required.
 
-- **[P2PK](/glossary/p2pk-pay-public-key) (pay-to-public-key):** the output script literally contains the pubkey. Satoshi-era coinbase rewards use this. 1,715,227 BTC across 39,465 addresses, almost all of it coinbase rewards that have never moved. The bulk of this slice maps to the [Patoshi pattern](https://chainquery.com/stories/patoshi-pattern) - the ExtraNonce fingerprint of a single dominant early miner whose blocks account for roughly 22 percent of Bitcoin's first year.
+- **[P2PK](/glossary/p2pk-pay-public-key) (pay-to-public-key):** the output script literally contains the pubkey. Satoshi-era coinbase rewards use this. 1,715,227 BTC across 39,465 addresses, almost all of it coinbase rewards that have never moved. The bulk of this slice maps to the [Patoshi pattern](https://chainquery.com/stories/patoshi-pattern) - the ExtraNonce fingerprint of a single dominant early miner whose blocks account for about 40 percent of the first 50,000 blocks, by Sergio Demian Lerner's count.
 - **Bare multisig:** the script contains every signer's pubkey. Rare in modern use, still on chain from older deployments, and effectively nothing in the current count.
 - **[P2TR](/glossary/taproot) (Taproot, BIP-341):** the bech32m address IS the tweaked pubkey. There is no hash layer in front. **Every new taproot output is permanently exposed by design.** 219,843 BTC across 5,052,695 addresses, and every new taproot output adds to it.
 
