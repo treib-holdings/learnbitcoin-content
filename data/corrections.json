@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-10-11-quantum-and-bitcoin",
+    "date": "2026-10-11",
+    "page": "/rabbit-hole/quantum-and-bitcoin",
+    "title": "Quantum and Bitcoin",
+    "wrong": "The chapter said the Patoshi miner's blocks account for roughly 22 percent of Bitcoin's first year, a figure taken from a ChainQuery story that ChainQuery has since corrected.",
+    "fixed": "Sergio Demian Lerner's count puts the Patoshi pattern at about 40 percent of the first 50,000 blocks, which is what ChainQuery's corrected story and the chapter now say.",
+    "commit": "092b4a4",
+    "source": "https://chainquery.com/stories/patoshi-pattern"
+  },
+  {
     "id": "2026-10-10-atomic-swap-refill",
     "date": "2026-10-10",
     "page": "/glossary/atomic-swap-refill",
