@@ -2,12 +2,16 @@
 title: "Mnemonic Password"
 slug: mnemonic-password
 draft: false
-shortDefinition: "An optional passphrase appended to a BIP 39 seed, acting like a '25th word' for extra protection."
+updated: "2026-10-13"
+shortDefinition: "An optional passphrase mixed into the derivation of a BIP 39 seed, acting like a '25th word' for extra protection."
 keyTakeaways:
   - "Enhances security beyond the base seed phrase"
   - "A second factor that must be remembered or backed up securely"
   - "If lost, the wallet becomes impossible to recover"
-sources: []
+sources:
+  - { label: "BIP-39 - Mnemonic code for generating deterministic keys, From mnemonic to seed: the salt is the string mnemonic plus the passphrase; every passphrase generates a valid seed (2013)", url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" }
+  - { label: "Bitcoin Wiki - Seed phrase: Electrum and some other wallets call the passphrase a 13th/25th word", url: "https://en.bitcoin.it/wiki/Seed_phrase" }
+  - { label: "Trezor - What is Shamir backup? FAQ: back up your passphrase offline as well, do not rely solely on memory (accessed 2026-10-13)", url: "https://trezor.io/learn/a/what-is-shamir-backup" }
 relatedTerms:
   - bip-39
   - hierarchical-deterministic-wallet
@@ -27,7 +31,7 @@ What it buys you:
 
 What it costs you:
 
-- Lose the passphrase, lose the wallet. There is no recovery path. The seed words alone are useless. People have permanently locked themselves out of significant balances by forgetting a passphrase or by writing it down somewhere that later got lost or destroyed.
+- Lose the passphrase, lose the wallet. There is no recovery path. The seed words alone are useless. Forget it, or lose the only place it was written down, and the balance behind it is gone for good.
 - Operational complexity. The passphrase must be backed up separately from the seed (otherwise both are lost in the same fire), backed up reliably (otherwise it's lost), and recoverable to your heirs if inheritance matters (otherwise the wallet dies with you).
 - Footguns: a typo in the passphrase derives a silent alternative wallet. The wallet doesn't tell you the passphrase is "wrong"; it just opens a different empty wallet.
 
