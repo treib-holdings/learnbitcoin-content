@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-10-13-block-size-war",
+    "date": "2026-10-13",
+    "page": "/rabbit-hole/block-size-war",
+    "title": "The Block Size War",
+    "wrong": "The chapter stated one side's account of SegWit's 2017 activation as fact: that the moment users forced the issue ended the standoff, that the industry acted before the users forced the question on August 1, and that, faced with the flag day, the miners moved and BIP-91 offered them a face-saving exit.",
+    "fixed": "The order is settled but the credit is disputed. BIP-148 set the August 1 deadline in March 2017, the New York Agreement was signed in May, and BIP-91 made SegWit signaling mandatory from July 23, nine days before the deadline. UASF supporters say the flag day forced miners to signal; the SegWit2x organizers said their agreement broke the deadlock, and BIP-91 was written to make the two plans compatible.",
+    "commit": "ecb99a9",
+    "source": "https://web.archive.org/web/20171108202305/https://lists.linuxfoundation.org/pipermail/bitcoin-segwit2x/2017-November/000685.html"
+  },
+  {
     "id": "2026-10-12-bitcoin-obituaries",
     "date": "2026-10-12",
     "page": "/glossary/bitcoin-obituaries",
