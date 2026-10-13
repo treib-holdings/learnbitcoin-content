@@ -1,5 +1,45 @@
 [
   {
+    "id": "2026-10-13-bip-32",
+    "date": "2026-10-13",
+    "page": "/glossary/bip-32",
+    "title": "BIP 32 (HD Wallets)",
+    "wrong": "The entry said BIP 32 starts from one 512-bit seed that is split directly into the master private key and chaincode, and that restoring a BIP 32 seed in any standard wallet gives the same addresses.",
+    "fixed": "BIP 32 accepts a seed of 128 to 512 bits and runs it through HMAC-SHA512 keyed with the string 'Bitcoin seed'; it is that 512-bit output that is split into the master key and chaincode. The same addresses follow only when both wallets use the same derivation path and script type, because BIP 32 leaves the tree layout advisory.",
+    "commit": "b8304cf",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki"
+  },
+  {
+    "id": "2026-10-13-bip-39",
+    "date": "2026-10-13",
+    "page": "/glossary/bip-39",
+    "title": "BIP 39 (Mnemonic Seed)",
+    "wrong": "The entry said the same construction is used by every major modern Bitcoin wallet, and that the checksum catches almost all transcription errors.",
+    "fixed": "BIP 39 is the most common seed phrase standard but not universal: Electrum deliberately does not generate BIP 39 seeds and uses its own versioned format. The spec describes its checksum as short, with only modest odds of catching random errors; the entry now says it catches most errors and gives the miss rates, about 1 in 16 for 12 words and 1 in 256 for 24.",
+    "commit": "b8304cf",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"
+  },
+  {
+    "id": "2026-10-13-output-descriptor",
+    "date": "2026-10-13",
+    "page": "/glossary/output-descriptor",
+    "title": "Output Descriptor",
+    "wrong": "The entry said Bitcoin Core made descriptor wallets the default in 0.21 (2021) and mandatory for new wallets in 0.22, and that the legacy addmultisigaddress style of wallet management was deprecated.",
+    "fixed": "Bitcoin Core 0.21 (January 2021) introduced descriptor wallets as an experimental, non-default option; 23.0 (April 2022) made them the default for new wallets; 30.0 (October 2025) removed legacy wallets and the legacy-only RPCs, addmultisigaddress included. There was never a Bitcoin Core 0.22.",
+    "commit": "b8304cf",
+    "source": "https://bitcoincore.org/en/releases/23.0/"
+  },
+  {
+    "id": "2026-10-13-shamir-secret-sharing",
+    "date": "2026-10-13",
+    "page": "/glossary/shamir-secret-sharing",
+    "title": "Shamir's Secret Sharing",
+    "wrong": "The entry said SLIP-39 is a wordlist-based Shamir scheme for BIP 39 seeds, and that SeedSigner can produce SLIP-39 shares from any seed.",
+    "fixed": "SLIP-39 splits a wallet's BIP 32 master seed using its own 1024-word list and was proposed by the BIP 39 authors as a replacement for BIP 39; the two are mostly not compatible, and converting an existing phrase yields 59-word shares. SeedSigner's published feature list does not include SLIP-39, so that claim was removed.",
+    "commit": "b8304cf",
+    "source": "https://github.com/satoshilabs/slips/blob/master/slip-0039.md"
+  },
+  {
     "id": "2026-10-13-block-size-war",
     "date": "2026-10-13",
     "page": "/rabbit-hole/block-size-war",
