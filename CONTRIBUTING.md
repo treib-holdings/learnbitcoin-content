@@ -58,9 +58,24 @@ The site has a consistent voice. The short version:
   to blog posts.
 - **Opinionated, not preachy.** Take positions where they are earned.
   Skip the moralizing.
-- **ASCII straight punctuation only.** No curly quotes, no smart
-  apostrophes, no en-dashes, no ellipsis characters. Curly quotes
-  break YAML frontmatter.
+- **ASCII straight punctuation, in every language.** Use straight
+  quotes (`'` and `"`), the hyphen-minus (`-`, spaced ` - ` where a
+  dash is wanted) and three periods (`...`). No curly quotes, no en or
+  em dashes, no ellipsis character, no guillemets (« »), in any
+  language. Curly quotes break YAML frontmatter, and the web build's
+  `check-charset` step refuses the file.
+- **Letters are not punctuation.** English content is pure ASCII,
+  except µ (U+00B5) for unit prefixes. Spanish content under `es/` may
+  also use exactly these characters, which Spanish orthography
+  requires: á é í ó ú ü ñ Á É Í Ó Ú Ü Ñ (U+00E1, U+00E9, U+00ED,
+  U+00F3, U+00FA, U+00FC, U+00F1, U+00C1, U+00C9, U+00CD, U+00D3, U+00DA,
+  U+00DC, U+00D1) and the inverted marks ¿ ¡ (U+00BF, U+00A1). Files
+  are UTF-8 in Unicode NFC. Nothing else outside ASCII. The rule covers
+  the content files in this repo (`glossary/`, `rabbit-holes/`,
+  `journey/`, `pages/` and `es/`); the website's own UI glyphs are out
+  of scope.
+- **Slugs and filenames stay ASCII in every language** (`mineria`, not
+  `minería`).
 - **Use U+00B5 (µ) for unit prefixes, not U+03BC (μ).** They look
   identical but the OG card font subset includes only the Latin block,
   so Greek mu renders as a missing-glyph box on social previews. The
@@ -133,6 +148,8 @@ a cache-busting facade — the rendered card content is unchanged.
 glossary/             # One markdown file per term
 journey/              # Six narrative chapters
 rabbit-holes/         # Deep dives, mostly MDX (interactive widgets)
+pages/                # Editorial copy of the fixed pages (home, manifesto, policies)
+es/                   # The Spanish edition: the same four directories, see below
 data/                 # Shelf list for the rabbit holes (rabbit-hole-shelves.json)
 downloads/            # PDFs distributed at /downloads/
 ```
@@ -140,6 +157,68 @@ downloads/            # PDFs distributed at /downloads/
 Each file has YAML frontmatter that the site renderer reads. Look at
 neighboring files for the exact schema; do not invent new fields
 without coordinating first.
+
+## MDX is code
+
+A `.mdx` file is compiled and run on the build server, where the
+deploy token lives, so the rules are strict. The web build's
+`check-mdx-imports` step enforces the first two and refuses the file
+otherwise:
+
+- The only import allowed is a first-party Svelte component from the
+  web repo: `import Name from '@components/<dir>/<Name>.svelte'`. No
+  packages, URLs, absolute or relative paths, nothing with `..`.
+- No `export` of any kind, no dynamic `import()`, no `import.meta`,
+  anywhere in the file. Fenced code samples are not exempt: a sample
+  that needs those words goes in a `.md` file.
+- `{expressions}` run at build too. The only expressions we merge are
+  component props such as `<SupplyChart height={320} />`; a pull
+  request that adds any other expression is refused by the reviewer,
+  whatever it appears to do.
+
+If a chapter needs something interactive, propose a component in the
+web repo instead.
+
+## Translations (`es/`)
+
+A Spanish edition is being prepared (talk to us before translating
+anything: the pilot is owner-run). Spanish files live under `es/` in
+the same four directories as the English ones (`es/glossary/`,
+`es/rabbit-holes/`, `es/journey/`, `es/pages/`), follow the English
+schema of their type, and add these fields:
+
+```yaml
+slug: mineria                 # the Spanish URL slug, ASCII (entries only; pages/ have none)
+translationOf: mining         # the English slug; for pages/, the English file stem (home, glossary, privacy)
+sourceHash: "3f9a1c2b7d4e"    # first 12 hex of sha256 over the English file's bytes at translation time
+sourceCommit: "a705ffa"       # optional: the English file's last commit, for diffing later
+sourceUpdated: "2026-10-05"   # optional: the English updated (or published) date at translation time
+translation:
+  method: "llm-draft"                # then "llm-draft+human-review" or "human" once reviewed
+  reviewedBy: "<name or handle>"     # optional; shown on the page once someone has reviewed it
+  reviewedAt: "2026-10-20"           # optional
+```
+
+`node scripts/translation-source.mjs rabbit-holes/mining.mdx` prints
+`sourceHash`, `sourceCommit` and `sourceUpdated` for pasting; nobody
+computes a hash by hand. `translationOf` is the one key every
+cross-language feature reads (hreflang, the language switcher, reading
+progress, share cards, the "the English version was updated" notice),
+so it must be exact. The Spanish filename itself is free as long as it
+is ASCII: an `es/pages/inicio.md` with `translationOf: home` is the
+Spanish home page.
+
+The web build's `check-translations` step refuses a Spanish file that
+is missing `translationOf` or `sourceHash`;
+whose `translationOf` names no English entry, a draft, or a chapter
+that is not live; that claims an English source another Spanish file
+already claims; or that reuses another file's `slug`. A page without a
+reviewer is allowed: it ships with a notice saying the translation is an
+AI draft pending human review, and the build prints an UNREVIEWED line
+for it; once someone reviews it, add their name and date and the notice
+becomes a credit. The check warns STALE, without failing, when the
+English file has changed since `sourceHash` was taken; port the change,
+re-run the helper, bump the Spanish `updated`.
 
 ## Rabbit-hole shelves
 

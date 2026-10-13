@@ -7,6 +7,19 @@ name: Notify on content push
 #      are skipped so we never submit a 404/noindex URL. Homepage is always
 #      included as a baseline.
 #
+# Spanish edition (es/**): covered only when the repository variable
+# SPANISH_LIVE is "true" (Settings -> Secrets and variables -> Actions ->
+# Variables). The Spanish routes are built behind the SPANISH switch in
+# learnbitcoin-web/src/lib/features.mjs; this workflow cannot see that
+# switch, and pinging /es/ URLs while it is off would submit 404s. Set the
+# variable in the same hour the switch flips. Until then the web deploy's
+# own IndexNow step (page-hashes diff in learnbitcoin-web deploy.yml) is
+# the only one that mentions Spanish pages, and it only ever submits pages
+# that were actually built. Spanish URLs are built from the frontmatter
+# slug (a Spanish file's name and slug may differ) and the provisional
+# Spanish route segments; keep the three segments below in step with
+# learnbitcoin-web/src/lib/i18n/routes.mjs.
+#
 # Setup (one-time):
 #   1. Generate a GitHub fine-grained PAT scoped to
 #      treib-holdings/learnbitcoin-web with permission:
@@ -69,11 +82,22 @@ jobs:
             RANGE="HEAD~1 HEAD"
           fi
 
+          # Spanish content is diffed only once the edition is live (see the
+          # header). The pathspecs are a bash array so the list is one place.
+          SPANISH_LIVE="${{ vars.SPANISH_LIVE }}"
+          paths=('glossary/*.md' 'rabbit-holes/*.mdx' 'rabbit-holes/*.md' \
+                 'journey/*.md' 'journey/*.mdx')
+          if [ "$SPANISH_LIVE" = "true" ]; then
+            paths+=('es/glossary/*.md' 'es/rabbit-holes/*.mdx' 'es/rabbit-holes/*.md' \
+                    'es/journey/*.md' 'es/journey/*.mdx')
+          else
+            echo "SPANISH_LIVE is not true; es/** changes are not submitted."
+          fi
+
           CHANGED=""
           if [ -n "$RANGE" ]; then
             CHANGED=$(git diff --name-only --diff-filter=ACMR $RANGE -- \
-              'glossary/*.md' 'rabbit-holes/*.mdx' 'rabbit-holes/*.md' \
-              'journey/*.md' 'journey/*.mdx' 2>/dev/null || true)
+              "${paths[@]}" 2>/dev/null || true)
           fi
 
           # Homepage is always submitted; add each changed, non-draft file.
@@ -87,11 +111,30 @@ jobs:
               echo "skip (draft): $f"
               continue
             fi
-            slug=$(basename "$f"); slug="${slug%.md}"; slug="${slug%.mdx}"
             case "$f" in
-              glossary/*)     urls+=("$BASE/glossary/$slug") ;;
-              rabbit-holes/*) urls+=("$BASE/rabbit-hole/$slug") ;;
-              journey/*)      urls+=("$BASE/journey/$slug") ;;
+              es/*)
+                # The URL slug is the frontmatter slug, read from the first
+                # frontmatter block only (line 1 to the closing ---).
+                slug=$(sed -nE '1,/^---$/{s/^slug:[[:space:]]*["'"'"']?([A-Za-z0-9-]+)["'"'"']?[[:space:]]*$/\1/p;}' "$f" | head -n1)
+                if [ -z "$slug" ]; then
+                  echo "skip (no slug in frontmatter): $f"
+                  continue
+                fi
+                case "$f" in
+                  es/glossary/*)     urls+=("$BASE/es/glosario/$slug") ;;
+                  es/rabbit-holes/*) urls+=("$BASE/es/madriguera/$slug") ;;
+                  es/journey/*)      urls+=("$BASE/es/recorrido/$slug") ;;
+                esac
+                ;;
+              *)
+                # English: filename is the slug (CONTRIBUTING.md).
+                slug=$(basename "$f"); slug="${slug%.md}"; slug="${slug%.mdx}"
+                case "$f" in
+                  glossary/*)     urls+=("$BASE/glossary/$slug") ;;
+                  rabbit-holes/*) urls+=("$BASE/rabbit-hole/$slug") ;;
+                  journey/*)      urls+=("$BASE/journey/$slug") ;;
+                esac
+                ;;
             esac
           done <<< "$CHANGED"
 
