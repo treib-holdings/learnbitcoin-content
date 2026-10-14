@@ -1,5 +1,135 @@
 [
   {
+    "id": "2026-10-15-bip-360",
+    "date": "2026-10-15",
+    "page": "/glossary/bip-360",
+    "title": "BIP 360 (Pay-to-Merkle-Root)",
+    "wrong": "The entry said long-exposure quantum attacks 'become impossible' against P2MR outputs, that P2MR 'fixes' the long exposure of Satoshi-era P2PK keys and reused-address keys, and that BIP-360 and BIP-361 'are designed to land together'.",
+    "fixed": "BIP-360 says a P2MR output becomes vulnerable to long-exposure attacks whenever one of its scripts reveals a public key, so the protection depends on not reusing keys. P2MR is a destination for coins that move to it and does nothing for keys that stay exposed. Neither BIP mentions the other, and BIP-361 lists a post-quantum signature BIP as its requirement, which P2MR is not. The entry now says all three.",
+    "commit": "b3ef864",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0360.mediawiki"
+  },
+  {
+    "id": "2026-10-15-bip-361",
+    "date": "2026-10-15",
+    "page": "/glossary/bip-361",
+    "title": "BIP 361 (Post Quantum Migration)",
+    "wrong": "The entry put Phase B 'five years after Phase A activates', said P2PK coins such as Satoshi's could only move 'via the rescue protocol' and reasoned from BIP-32 seeds, said stranding them was 'not the BIP's stated goal', and presented a 2027 to early-2030s arrival for a cryptographically relevant quantum computer as the estimate.",
+    "fixed": "The draft puts Phase A about three years (160,000 blocks) after BIP-361 activates and Phase B two years after that, about five years in all. Its authors say no rescue protocol is believed possible for P2PK and point to a separate Hourglass proposal instead, list abandoned coins staying unspendable as a benefit ('supply discipline'), and cite 2027 to 2030 as an 'as early as' estimate sourced to McKinsey. The entry now says all of this and adds Taproot outputs as the third way a public key ends up on chain.",
+    "commit": "b3ef864",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0361.mediawiki"
+  },
+  {
+    "id": "2026-10-15-crqc-cryptographically-relevant-quantum-computer",
+    "date": "2026-10-15",
+    "page": "/glossary/crqc-cryptographically-relevant-quantum-computer",
+    "title": "CRQC (Cryptographically-Relevant Quantum Computer)",
+    "wrong": "The entry said demonstrated logical (error-corrected) qubit counts remain in the single digits across all hardware platforms, and described superconducting and trapped-ion machines as 'gate-based platforms' in contrast to neutral-atom ones.",
+    "fixed": "Demonstrated logical qubit counts are in the dozens, not single digits: a neutral-atom processor ran circuits with up to 48 logical qubits in December 2023, on small codes with error detection rather than deep error correction. Neutral-atom processors are gate-based too, so the hardware section now groups platforms by the kind of physical qubit they use and cites the Google Willow and Harvard atom-array demonstrations.",
+    "commit": "b3ef864",
+    "source": "https://www.nature.com/articles/s41586-023-06927-3"
+  },
+  {
+    "id": "2026-10-15-ecdsa-elliptic-curve-digital-signature-algorithm",
+    "date": "2026-10-15",
+    "page": "/glossary/ecdsa-elliptic-curve-digital-signature-algorithm",
+    "title": "ECDSA (Elliptic Curve Digital Signature Algorithm)",
+    "wrong": "The entry called P2WPKH and P2WSH legacy address types and said new Taproot outputs use Schnorr 'by default'.",
+    "fixed": "P2WPKH and P2WSH are SegWit v0 output types, not legacy ones; what they share with P2PKH and P2SH is that they are pre-Taproot and still use ECDSA. Taproot outputs use Schnorr only: BIP 341 key path spends verify a BIP 340 signature and BIP 342 redefines OP_CHECKSIG for Schnorr instead of ECDSA, with no ECDSA option.",
+    "commit": "b3ef864",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki"
+  },
+  {
+    "id": "2026-10-15-key-pool",
+    "date": "2026-10-15",
+    "page": "/glossary/key-pool",
+    "title": "Key Pool",
+    "wrong": "The entry said Bitcoin Core keeps its keypool as a derivation window for gap-limit scanning, with addresses beyond 20 unused derivations not scanned.",
+    "fixed": "The 20-address gap limit is BIP 44's convention for other HD wallets. Bitcoin Core's keypool is its own lookahead window, raised from 100 to 1,000 keys in 0.15.0 (2017) so a restored backup still finds payments to addresses handed out after it was made.",
+    "commit": "b3ef864",
+    "source": "https://bitcoincore.org/en/releases/0.15.0/"
+  },
+  {
+    "id": "2026-10-15-ml-dsa-dilithium",
+    "date": "2026-10-15",
+    "page": "/glossary/ml-dsa-dilithium",
+    "title": "ML-DSA / Dilithium (FIPS 204)",
+    "wrong": "The entry gave ML-DSA-65 signatures as about 3,293 bytes and ML-DSA-87 signatures as about 4,595 bytes, the sizes in the draft standard.",
+    "fixed": "The final FIPS 204 (August 2024) sets ML-DSA-65 signatures at 3,309 bytes and ML-DSA-87 at 4,627 bytes; the entry now gives those figures.",
+    "commit": "b3ef864",
+    "source": "https://csrc.nist.gov/pubs/fips/204/final"
+  },
+  {
+    "id": "2026-10-15-p2pk-pay-public-key",
+    "date": "2026-10-15",
+    "page": "/glossary/p2pk-pay-public-key",
+    "title": "P2PK (Pay to Public Key)",
+    "wrong": "The entry said P2PK was mostly abandoned by about 2010 because P2PKH 'replaced it for new receives once the community recognized that revealing the public key only at spend time was strictly better', presenting hashed addresses as a later invention.",
+    "fixed": "Both script types shipped in Bitcoin's first release; Satoshi's code calls P2PKH the 'short account number' form. The original client used P2PK for coinbase rewards, pay-to-IP payments and its own change, and P2PK's share of new outputs fell from 99.5% in 2009 to 30% in 2010 and 2.5% in 2011 as coins changed hands by address.",
+    "commit": "b3ef864",
+    "source": "https://github.com/bitcoin/bitcoin/blob/4405b78d6059e536c36974088a8ed4d9f0f29898/script.cpp"
+  },
+  {
+    "id": "2026-10-15-p2pkh-pay-public-key-hash",
+    "date": "2026-10-15",
+    "page": "/glossary/p2pkh-pay-public-key-hash",
+    "title": "P2PKH (Pay to Public Key Hash)",
+    "wrong": "The entry said P2PKH replaced 'the older P2PK format around 2010' and compared its 20-byte hash with 'a public key's 33 bytes'.",
+    "fixed": "P2PK is not older: both formats shipped in Bitcoin's first release, and P2PKH overtook P2PK during 2010 as coins began changing hands by address. Public keys of that era were 65 bytes; the 33-byte compressed form came later, with Bitcoin 0.6.0.",
+    "commit": "b3ef864",
+    "source": "https://github.com/bitcoin/bitcoin/blob/4405b78d6059e536c36974088a8ed4d9f0f29898/script.cpp"
+  },
+  {
+    "id": "2026-10-15-p2wsh-pay-witness-script-hash",
+    "date": "2026-10-15",
+    "page": "/glossary/p2wsh-pay-witness-script-hash",
+    "title": "P2WSH (Pay to Witness Script Hash)",
+    "wrong": "The entry said new multisig wallets 'typically default to Taproot in 2026'.",
+    "fixed": "BIP 48, the multisig derivation standard, still recommends P2WSH as the default; Bitcoin Core only added MuSig2 descriptors in version 30.0 (October 2025) and MuSig2 signing in version 31.0 (April 2026); and in September 2026 P2WSH spends were 2.1% of inputs against 0.8% for Taproot script-path spends. The entry now says Taproot multisig is arriving rather than arrived.",
+    "commit": "b3ef864",
+    "source": "https://github.com/bitcoin/bitcoin/blob/v31.1/doc/bips.md"
+  },
+  {
+    "id": "2026-10-15-post-quantum-bitcoin",
+    "date": "2026-10-15",
+    "page": "/glossary/post-quantum-bitcoin",
+    "title": "Post-Quantum Bitcoin",
+    "wrong": "The entry said that under BIP 361's Phase B Satoshi's P2PK outputs become unspendable without a seed-based rescue, and that anyone who cannot produce a BIP 32 derivation proof, Satoshi included, has their coins locked, implying such a rescue exists for P2PK coins.",
+    "fixed": "BIP 361's rescue example is a BIP 32 hardened-derivation proof, which only wallets that derive keys from a seed can give. The BIP says no rescue protocol is currently believed possible for P2PK outputs and points to a separate Hourglass proposal for them; under BIP 361 alone those coins are locked.",
+    "commit": "b3ef864",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0361.mediawiki"
+  },
+  {
+    "id": "2026-10-15-schnorr-signature",
+    "date": "2026-10-15",
+    "page": "/glossary/schnorr-signature",
+    "title": "Schnorr Signature",
+    "wrong": "The entry said that the sum of two valid Schnorr signatures is itself a valid signature for the sum of the corresponding keys.",
+    "fixed": "Two independently made signatures do not add, because each one's challenge hash commits to its own nonce. What BIP-340 describes is that collaborating signers can produce one signature that is valid for the sum of their public keys, which is what the entry now says.",
+    "commit": "b3ef864",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki"
+  },
+  {
+    "id": "2026-10-15-slh-dsa-sphincs-plus",
+    "date": "2026-10-15",
+    "page": "/glossary/slh-dsa-sphincs-plus",
+    "title": "SLH-DSA / SPHINCS+ (FIPS 205)",
+    "wrong": "The entry said the small and fast SLH-DSA variants trade signature size for verification speed, and that the smallest SLH-DSA signatures are about ten times larger than ML-DSA signatures.",
+    "fixed": "FIPS 205 defines the s parameter sets for relatively small signatures and the f sets for relatively fast signature generation; verification speed is not the trade. The smallest SLH-DSA signature, 7,856 bytes, is about three times ML-DSA-44's 2,420 bytes.",
+    "commit": "b3ef864",
+    "source": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.205.pdf"
+  },
+  {
+    "id": "2026-10-15-slh-dsa-sphincs-plus-2",
+    "date": "2026-10-15",
+    "page": "/glossary/slh-dsa-sphincs-plus",
+    "title": "SLH-DSA / SPHINCS+ (FIPS 205)",
+    "wrong": "The entry said Bitcoin's post-quantum discussion treats SLH-DSA as the conservative fallback and tends to assume ML-DSA as the default scheme.",
+    "fixed": "That is NIST's ordering, not Bitcoin's. Most Bitcoin post-quantum work has gone into hash-based signatures, whose security rests only on the hash function holding and which are simpler to implement, including the SHRINCS draft BIP posted in August 2026.",
+    "commit": "b3ef864",
+    "source": "https://bitcoinops.org/en/newsletters/2026/07/03/"
+  },
+  {
     "id": "2026-10-13-address",
     "date": "2026-10-13",
     "page": "/glossary/address",
