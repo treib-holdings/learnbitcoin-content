@@ -2,12 +2,19 @@
 title: "Fork"
 slug: fork
 draft: false
-shortDefinition: "A change in blockchain rules-can be 'hard' (incompatible) or 'soft' (compatible with previous rules)."
+updated: "2026-10-13"
+shortDefinition: "A change in blockchain rules - can be 'hard' (incompatible) or 'soft' (compatible with previous rules)."
 keyTakeaways:
   - "Hard forks risk creating permanent alternate chains"
   - "Soft forks remain compatible with older clients"
   - "Consensus is crucial to avoid chain splits"
-sources: []
+sources:
+  - { label: "BIP-99 - Motivation and deployment of consensus rule changes (definitions: a softfork makes previously valid blocks invalid; a hardfork makes previously invalid blocks valid and requires all users to upgrade)", url: "https://github.com/bitcoin/bips/blob/master/bip-0099.mediawiki" }
+  - { label: "Bitcoin Core source - src/kernel/chainparams.cpp (the soft-fork activation heights every node enforces: BIP65Height 388381, CSVHeight 419328, SegwitHeight 481824, plus the BIP16 exception block)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/chainparams.cpp" }
+  - { label: "BIP-341 - Taproot (Status: Deployed; the deployment did activate at height 709632 on Bitcoin mainnet, 14 November 2021)", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki" }
+  - { label: "BIP-50 - March 2013 Chain Fork Post-Mortem (the accidental split between 0.8 and pre-0.8 nodes; the two-month temporary rules in 0.8.1; block 252,451 on 16 August 2013 forking unpatched nodes off the network)", url: "https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki" }
+  - { label: "Bitcoin Cash - UAHF Technical Specification (a block size hard fork from the original 1 MB chain; activation time 1 August 2017 12:20 UTC)", url: "https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/uahf-technical-spec.md" }
+  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 5: when two nodes broadcast different versions of the next block, the tie is broken when the next proof-of-work is found", url: "https://bitcoin.org/bitcoin.pdf" }
 relatedTerms:
   - airdrop-btc-fork
   - alt-season
@@ -37,7 +44,7 @@ Examples: [SegWit](/glossary/segwit-segregated-witness-bip-141) (2017), [Taproot
 
 **Hard fork.** *Loosens or otherwise breaks* the rules. Blocks valid under new rules may be invalid under old rules. Old nodes reject new blocks. Not backwards-compatible. Creates a permanent [chain split](/glossary/chain-split) unless every node upgrades.
 
-Examples in Bitcoin's history: none of Bitcoin's consensus upgrades since 2010 have been hard forks; the community has consistently chosen soft forks. The "Bitcoin Cash" split in 2017 was a hard-fork rebrand-as-altcoin rather than an upgrade of Bitcoin itself.
+Examples in Bitcoin's history: none that are undisputed. The upgrades listed above, from P2SH to Taproot in 2021, were all soft forks. The disputed episode is 2013: in March a database limit in older versions split the chain by mistake, the temporary rule that patched over it was then allowed to lapse, and in August a block left unpatched nodes behind for good. Whether any of that counts as a hard fork is still argued by the developers who were there; the chapter linked below takes it up. The "Bitcoin Cash" split of August 2017 was a hard fork by its own specification, a rebrand-as-altcoin rather than an upgrade of Bitcoin itself.
 
 The asymmetry between soft and hard forks is one of Bitcoin's quieter conservative defenses. Soft forks can ship gradually with no disruption if they have broad support. Hard forks are essentially impossible to deploy on Bitcoin without splitting the network - so changes that *require* a hard fork (e.g., changing the [21M cap](/glossary/asymptote)) are practically infeasible.
 
