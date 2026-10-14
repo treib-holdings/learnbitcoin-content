@@ -2688,7 +2688,7 @@
     "page": "/rabbit-hole/quantum-and-bitcoin",
     "title": "Quantum and Bitcoin",
     "wrong": "The chapter put quantum-exposed bitcoin at about 30.5 percent of supply and said the gap to BIP-361's figure of more than 34 percent came from different counting rules, with ChainQuery as the lower bound and BIP-361 as the upper bound. It also attributed a redeem-script counting rule to BIP-361 that the BIP does not contain.",
-    "fixed": "ChainQuery's June 23, 2026 methodology update fixed a second bug that had dropped about half of the old uncompressed-key P2PK coins. With that fix applied, the chapter gives about 35.6 percent (7,142,979 BTC at block 967,001, September 14, 2026), in line with Wicked Smart Bitcoin's independent count of 35.2 percent at block 961,000. The gap is described as measurement bugs rather than methodology, and the opening animation and its text description were updated from 25 to 36 percent the same day.",
+    "fixed": "ChainQuery's June 23, 2026 methodology update fixed a second bug that had dropped about half of the old uncompressed-key P2PK coins. With that fix applied, the chapter gave about 35.6 percent (7,142,979 BTC at block 967,001, September 14, 2026; a figure the chapter itself updated on October 15, 2026 to 35.4 percent, 7,105,243 BTC at block 970,878), in line with Wicked Smart Bitcoin's independent count of 35.2 percent at block 961,000. The gap is described as measurement bugs rather than methodology, and the opening animation and its text description were updated from 25 to 36 percent the same day.",
     "commit": "8ea7be1",
     "source": "https://chainquery.com/reports/quantum-exposure"
   },

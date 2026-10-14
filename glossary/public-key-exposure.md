@@ -3,6 +3,7 @@ title: "Public Key Exposure"
 slug: public-key-exposure
 draft: false
 published: "2026-10-12"
+updated: "2026-10-15"
 shortDefinition: "The state of a coin whose public key is out in the open, on the chain or in someone else's hands, so that anyone with a way to break the key, such as a future quantum computer, could spend it. Exposed is not the same as stolen. Some script types show the key from creation; hashed types show it on their first spend, which is why address reuse is the main way modern coins end up exposed."
 keyTakeaways:
   - "Two classes: always-exposed (P2PK, bare multisig, Taproot) show the key from creation; reuse-exposed (P2PKH, P2SH, P2WPKH, P2WSH) hide it behind a hash until the first spend, after which every later deposit to that address sits behind a public key"
@@ -48,4 +49,4 @@ Exposure follows the key, not the address string. One private key yields a P2PKH
 
 How much is exposed depends on the counting rule. ChainQuery's quantum-exposure report at block 970,878 (snapshot 2026-10-11) put the total at about 35 percent of supply, 7,105,243 BTC. Of that, 5,172,596 BTC was reuse-exposed, about one coin in four, and the largest bucket was P2WPKH at 2,081,021 BTC: segwit-era wallets, not Satoshi's. Project Eleven's Risq List and Glassnode count under different rules, so the three figures bracket each other rather than agree to the coin.
 
-The way out is the oldest advice in Bitcoin: use each address once, and if you already spent from a reused address, move everything there to a fresh hashed address in one transaction. See [Address Reuse](/glossary/address-reuse), [Post-Quantum Bitcoin](/glossary/post-quantum-bitcoin) and the [Quantum and Bitcoin rabbit hole](/rabbit-hole/quantum-and-bitcoin).
+The way out is the oldest advice in Bitcoin: use each address once, and if you already spent from a reused address, move everything there to a fresh hashed address in one transaction. The [Use It Once rabbit hole](/rabbit-hole/address-reuse) walks through why one spend exposes every later deposit. See [Address Reuse](/glossary/address-reuse), [Post-Quantum Bitcoin](/glossary/post-quantum-bitcoin) and the [Quantum and Bitcoin rabbit hole](/rabbit-hole/quantum-and-bitcoin).

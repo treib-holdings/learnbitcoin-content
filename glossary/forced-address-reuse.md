@@ -3,6 +3,7 @@ title: "Forced Address Reuse"
 slug: forced-address-reuse
 draft: false
 published: "2026-10-12"
+updated: "2026-10-15"
 shortDefinition: "An attack in which someone pays a small amount to an address you have already used, betting that your wallet will later spend that crumb together with your other coins and link them all. It is the Bitcoin Wiki's name for what the press calls a dust attack, and it only works against an address that has been used before."
 keyTakeaways:
   - "The crumb itself is harmless; the damage comes when it is spent in the same transaction as your other coins, because common-input ownership then ties them together"
@@ -15,7 +16,8 @@ sources:
   - { label: "Bitcoin Core PR #13756 - avoid_reuse wallet flag (kallewoof, merged 2019-06-18)", url: "https://github.com/bitcoin/bitcoin/pull/13756" }
   - { label: "Bitcoin Core 0.21.0 release notes (partial spend avoidance by default when fee-neutral)", url: "https://bitcoincore.org/en/releases/0.21.0/" }
   - { label: "Bitcoin Core PR #23065 - persistent option for lockunspent (merged 2021-09-26, shipped in 23.0)", url: "https://github.com/bitcoin/bitcoin/pull/23065" }
-  - { label: "Matt Corallo, bitcoin-dev - PQC: What is our Goal, Even? (19 April 2026): dusting attacks could trigger many wallets to reveal a public key too soon", url: "http://mirror.b10c.me/lists/bitcoindev/39f3c26e-2cb5-4dcb-a269-78c793174b2a@mattcorallo.com/" }
+  - { label: "Matt Corallo, bitcoin-dev - PQC: What is our Goal, Even? (19 April 2026): dusting attacks could trigger many wallets to reveal a public key too soon", url: "https://mirror.b10c.me/lists/bitcoindev/39f3c26e-2cb5-4dcb-a269-78c793174b2a@mattcorallo.com/" }
+  - { label: "Matt Corallo, bitcoin-dev - PQC: What is our Goal, Even? (19 April 2026), the thread on Google Groups", url: "https://groups.google.com/g/bitcoindev/c/Qy4gwAGTK2w" }
 relatedTerms:
   - dust-attack
   - dust

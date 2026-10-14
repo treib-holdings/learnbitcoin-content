@@ -2,7 +2,7 @@
 title: "Address Reuse"
 slug: address-reuse
 draft: false
-updated: "2026-10-12"
+updated: "2026-10-15"
 shortDefinition: "Paying the same Bitcoin address more than once. It hands your full history, in one place, to anyone watching, puts every coin at the address behind one key, and, once that key has signed, leaves later deposits sitting in the open. Modern wallets avoid it by default."
 keyTakeaways:
   - "Every payment to a reused address is linked in public, forever: counterparties, amounts and timing, all in one place for anyone who ties the address to you"
@@ -58,4 +58,4 @@ The order of events matters. Receiving twice at an address that has never spent 
 
 BIP-360 makes the same point from the other side: protection from long exposure attacks does not wait for post-quantum signatures; it requires that users not expose their keys through reuse. Reuse costs privacy, key security and quantum safety at once, and one habit fixes all three.
 
-See [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) for how address reuse feeds the clustering heuristics, and for Silent Payments as the fix for permanent addresses; see the [Quantum and Bitcoin rabbit hole](/rabbit-hole/quantum-and-bitcoin) for what an exposed key does and does not mean, and why nobody should panic-move coins.
+The whole argument, with the numbers and the calm clean-up, is the [Use It Once rabbit hole](/rabbit-hole/address-reuse). See [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) for how address reuse feeds the clustering heuristics, and for Silent Payments as the fix for permanent addresses; see the [Quantum and Bitcoin rabbit hole](/rabbit-hole/quantum-and-bitcoin) for what an exposed key does and does not mean, and why nobody should panic-move coins.

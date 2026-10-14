@@ -1,0 +1,223 @@
+---
+title: "Use It Once: Why Reusing a Bitcoin Address Is Dangerous"
+slug: address-reuse
+draft: false
+published: "2026-10-15"
+status: live
+section: rabbit-hole
+category: custody-privacy
+alsoIn: ["how-it-works"]
+featured: true
+tagline: "One bitcoin in four sits at an address that was spent from and then paid again. What a reused address gives away, to whom, why it keeps happening eighteen years after the whitepaper said not to, and how to stop without rushing."
+order: 21
+estimatedMinutes: 15
+ogImage: "/diagrams/og/address-reuse-three-moments.png"
+ogImageAlt: "Two timelines. Top: three deposits to three fresh addresses, each key hidden behind a hash, one spend that leaves coins behind a public key for about ten minutes, in the mempool. Bottom: one address paid three times, its key published forever on the first spend, every later deposit sitting behind a public key for years, not minutes."
+sources:
+  - { label: "Bitcoin whitepaper, section 10: Privacy (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto on bitcointalk, 25 November 2009 - use bitcoin addresses only once", url: "https://satoshi.nakamotoinstitute.org/posts/bitcointalk/11/" }
+  - { label: "ChainQuery quantum-exposure report (live, weekly; figures in this chapter from the 2026-10-11 snapshot, block 970,878)", url: "https://chainquery.com/reports/quantum-exposure" }
+  - { label: "ChainQuery - top quantum-exposed addresses, with attribution confidence", url: "https://chainquery.com/lists/quantum-at-risk" }
+  - { label: "ChainQuery x LearnBitcoin Baseline 2026 Q2 PDF", url: "https://chainquery.com/reports/quantum-quarterly/baseline_2026.pdf" }
+  - { label: "Project Eleven - Bitcoin Risq List (block 970,566 snapshot)", url: "https://bitcoin-risq-list.projecteleven.com/" }
+  - { label: "Glassnode Research - Measuring Bitcoin's Quantum-Exposed Supply (20 May 2026)", url: "https://research.glassnode.com/measuring-bitcoins-quantum-exposed-supply/" }
+  - { label: "Rafael Schultze-Kraft (Glassnode co-founder) on X, 8 October 2026 - updated exposure thread with entity shares and disclaimer", url: "https://x.com/n3ocortex/status/2108179068482924745" }
+  - { label: "Justin Drake on X, 7 October 2026 - the bunker mode post", url: "https://x.com/drakefjustin/status/2107837081313505768" }
+  - { label: "Juan Galt (Bitcoin Magazine) on X, 7 October 2026", url: "https://x.com/JuanSGalt/status/2107895153944129676" }
+  - { label: "Yehuda Lindell (Coinbase) on X, 8 October 2026 - no evidence of a break", url: "https://x.com/LindellYehuda/status/2107999859219587309" }
+  - { label: "Charles Guillemet (Ledger) on X, 7 October 2026 - operational mistakes versus the scenario being mitigated", url: "https://x.com/P3b7_/status/2107879248765874659" }
+  - { label: "Vitalik Buterin on X, 7 October 2026 - botched migrations", url: "https://x.com/VitalikButerin/status/2107976296320106851" }
+  - { label: "Matthew Green (Johns Hopkins) on X, 9 October 2026 - a 1 percent chance and a 15 percent chance, based on vibes but nobody has better ones", url: "https://x.com/matthew_d_green/status/2108550647104623064" }
+  - { label: "Adam Back (Blockstream) on X, 7 October 2026 - this is AI fear mongering", url: "https://x.com/adam3us/status/2107938687921299467" }
+  - { label: "Alman and Vassilevska Williams - Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in Sparse Lopsided Graphs (arXiv, 5 October 2026; the paper's abstract says, near its end, 'Claude, an AI model developed by Anthropic, discovered the algorithm', and its last paragraph adds that Claude verified the main results in Lean 4, its Acknowledgments and Methodology section says an internal Anthropic research model found it, and the main results are certified in Lean 4; the arXiv listing-page abstract omits the sentence)", url: "https://arxiv.org/abs/2610.06783" }
+  - { label: "openai/math on GitHub - the 6 October 2026 catalogue of AI-written manuscripts (README: 719 manuscripts in 372 families, after three were withdrawn on 7 October; CONTENTS index read 2026-10-11)", url: "https://github.com/openai/math" }
+  - { label: "Scott Aaronson - The Mathocalypse (7 October 2026; the cryptography remark is in an appended update, live by 8 October)", url: "https://scottaaronson.blog/?p=10169" }
+  - { label: "Delving Bitcoin - PQC output type discussion (Pieter Wuille, July to October 2026)", url: "https://delvingbitcoin.org/t/pqc-output-type-discussion/2749" }
+  - { label: "Matt Corallo, bitcoin-dev, 19 April 2026 - reply in the thread PQC: What is our Goal, Even? (why reuse persists; dusting attacks), b10c mirror", url: "https://mirror.b10c.me/lists/bitcoindev/39f3c26e-2cb5-4dcb-a269-78c793174b2a@mattcorallo.com/" }
+  - { label: "The same Matt Corallo message on Google Groups (bitcoindev)", url: "https://groups.google.com/g/bitcoindev/c/Qy4gwAGTK2w/m/wC4vF78RAQAJ" }
+  - { label: "Bitcoin Optech - Output linking topic", url: "https://bitcoinops.org/en/topics/output-linking/" }
+  - { label: "Bitcoin Optech Newsletter, 15 January 2019 - biased nonces and reused addresses", url: "https://bitcoinops.org/en/newsletters/2019/01/15/" }
+  - { label: "Bitcoin Optech Newsletter, 19 March 2019 - looking up your own addresses leaks your privacy", url: "https://bitcoinops.org/en/newsletters/2019/03/19/" }
+  - { label: "Bitcoin Optech Newsletter #425, 2 October 2026 - Optech's summary of Wuille on address reuse; Core PR #35301", url: "https://bitcoinops.org/en/newsletters/2026/10/02/" }
+  - { label: "BIP-32 - Hierarchical Deterministic Wallets", url: "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" }
+  - { label: "BIP-44 - Multi-Account Hierarchy for Deterministic Wallets (gap limit)", url: "https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki" }
+  - { label: "BIP-47 - Reusable Payment Codes (status Deployed; the notification transaction)", url: "https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki" }
+  - { label: "BIP-141 - Segregated Witness (where the key is revealed)", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
+  - { label: "BIP-340 - Schnorr Signatures (synthetic nonces)", url: "https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki" }
+  - { label: "BIP-341 - Taproot (the public-key-hash footnote)", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki" }
+  - { label: "BIP-352 - Silent Payments", url: "https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki" }
+  - { label: "BIP-360 - Pay-to-Merkle-Root (draft; long and short exposure attacks)", url: "https://github.com/bitcoin/bips/blob/master/bip-0360.mediawiki" }
+  - { label: "BIP-361 - Post-Quantum Migration (draft)", url: "https://github.com/bitcoin/bips/blob/master/bip-0361.mediawiki" }
+  - { label: "BOLT 12 - Offers (introduction: invoices are per user; the optional offer_absolute_expiry field)", url: "https://github.com/lightning/bolts/blob/master/12-offer-encoding.md" }
+  - { label: "Bitcoin Core issue #2429 - old-address list encourages reuse (gmaxwell, 2013)", url: "https://github.com/bitcoin/bitcoin/issues/2429" }
+  - { label: "Bitcoin Core PR #3716 - remove the reuse-address checkbox (2014 to 2017)", url: "https://github.com/bitcoin/bitcoin/pull/3716" }
+  - { label: "Bitcoin Core PR #10831 - keypool default raised to 1,000 (2017)", url: "https://github.com/bitcoin/bitcoin/pull/10831" }
+  - { label: "Bitcoin Core PR #12257 - avoid partial spends (2018)", url: "https://github.com/bitcoin/bitcoin/pull/12257" }
+  - { label: "Bitcoin Core PR #13756 - the avoid_reuse wallet flag (kallewoof; opened July 2018, merged June 2019; the peppering line is its description)", url: "https://github.com/bitcoin/bitcoin/pull/13756" }
+  - { label: "Bitcoin Core PR #14582 - avoid partial spends by default when fee-neutral (2020)", url: "https://github.com/bitcoin/bitcoin/pull/14582" }
+  - { label: "Bitcoin Core PR #23065 - persistent option for lockunspent (2021)", url: "https://github.com/bitcoin/bitcoin/pull/23065" }
+  - { label: "Bitcoin Core PR #35301 - silent payments BIP logic (merged 23 September 2026)", url: "https://github.com/bitcoin/bitcoin/pull/35301" }
+  - { label: "Bitcoin Core GUI issue #341 - no toggle for avoid_reuse (open since 2021)", url: "https://github.com/bitcoin-core/gui/issues/341" }
+  - { label: "Bitcoin Core 0.13.0 release notes (HD wallets by default)", url: "https://bitcoincore.org/en/releases/0.13.0/" }
+  - { label: "Bitcoin Core 0.16.0 release notes (reuse option removed)", url: "https://bitcoincore.org/en/releases/0.16.0/" }
+  - { label: "Bitcoin Core 0.17.0 release notes (-avoidpartialspends)", url: "https://bitcoincore.org/en/releases/0.17.0/" }
+  - { label: "Bitcoin Core 0.19.0.1 release notes (avoid_reuse)", url: "https://bitcoincore.org/en/releases/0.19.0.1/" }
+  - { label: "Bitcoin Core 0.21.0 release notes (-maxapsfee)", url: "https://bitcoincore.org/en/releases/0.21.0/" }
+  - { label: "bitcoin.org alert, 11 August 2013 - Android security vulnerability", url: "https://bitcoin.org/en/alert/2013-08-11-android" }
+  - { label: "Mike Hearn, bitcoin-dev, 11 August 2013 - Android key rotation", url: "https://mirror.b10c.me/lists/bitcoindev/5207BB9D.3090701@plan99.net/" }
+  - { label: "Android Developers Blog - Some SecureRandom Thoughts (14 August 2013)", url: "https://android-developers.googleblog.com/2013/08/some-securerandom-thoughts.html" }
+  - { label: "Nils Schneider - Recovering Bitcoin private keys using weak signatures from the blockchain (28 January 2013, Wayback Machine capture of 21 October 2013)", url: "https://web.archive.org/web/20131021125657/http://www.nilsschneider.net/2013/01/28/recovering-bitcoin-private-keys.html" }
+  - { label: "Meiklejohn et al. - A Fistful of Bitcoins (IMC 2013)", url: "https://cseweb.ucsd.edu/~smeiklejohn/files/imc13.pdf" }
+  - { label: "Harrigan and Fretter - The Unreasonable Effectiveness of Address Clustering (2016)", url: "https://arxiv.org/abs/1605.06369" }
+  - { label: "Stuetz et al. - Reuse of Public Keys Across UTXO and Account-Based Cryptocurrencies (2026)", url: "https://arxiv.org/abs/2601.19500" }
+  - { label: "Bitcoin Wiki - Address reuse", url: "https://en.bitcoin.it/wiki/Address_reuse" }
+  - { label: "Bitcoin Wiki - Privacy (forced address reuse)", url: "https://en.bitcoin.it/wiki/Privacy" }
+  - { label: "Peter Todd, bitcoin-dev, 4 August 2023 - BIP-352 addresses should have an expiration time", url: "https://mirror.b10c.me/lists/bitcoindev/ZM03twumu88V2NFH@petertodd.org/" }
+  - { label: "Fireblocks - Bitcoin Bunker Mode and What It Actually Protects (Michael Gutkin, 8 October 2026)", url: "https://www.fireblocks.com/blog/bitcoin-bunker-mode-public-key-exposure" }
+  - { label: "BTCPay Server docs - Wallet FAQ (one address per invoice, the gap limit)", url: "https://docs.btcpayserver.org/FAQ/Wallet/" }
+  - { label: "mempool.space - mining graphs, block fee rates (a rolling window; the 1 sat/vB daily medians for 6 to 10 October 2026 were read from its data on 2026-10-12)", url: "https://mempool.space/graphs/mining/block-fee-rates" }
+relatedTerms: [address-reuse, address-clustering, chain-analysis, change-output, coin-control, dust-attack, hd-wallet-hierarchical-deterministic-wallet, xpub-extended-public-key, p2pk-pay-public-key, p2pkh-pay-public-key-hash, p2wpkh-pay-witness-public-key-hash, p2sh-p2wsh-nested-segwit, taproot, silent-payments, payment-codes-bip-47, post-quantum-bitcoin, bip-360, bip-361, paper-wallet, proof-of-reserves, gap-limit, forced-address-reuse, public-key-exposure, nonce-reuse, avoid-reuse]
+---
+
+> **Where you're going:** A Bitcoin address is a one-time payment slip, not an account number. Paying it twice hands your history to anyone watching, puts every coin at that address behind one key, and, once that key has signed, leaves the coins sitting in the open. This chapter shows what one reuse gives away, why one bitcoin in four is parked that way, how to stop, and what to do calmly if you already did it.
+
+## Bunker mode
+
+On 7 October 2026 Justin Drake, an Ethereum researcher, called on the blockchain industry to "calmly begin planning" for "bunker mode": "a controlled mass migration of assets to fresh addresses, i.e. addresses whose pubkeys remain hidden behind a hash." Holders, "starting with large and sophisticated ones, should consider moving the bulk of their funds to addresses that have never signed a transaction", and "when they do sign one, they should also move remaining funds to a new address." Then: "Don't rush."
+
+Four hours later Juan Galt, a Bitcoin Magazine reporter, replied: "Only an Ethereum developer would think that not reusing addresses is 'Bunker mode'."
+
+Drake's advice is the [whitepaper's](/glossary/whitepaper), section 10, 2008: "a new key pair should be used for each transaction to keep them from being linked to a common owner." Yet by [ChainQuery's](https://chainquery.com/reports/quantum-exposure) count (a sister site whose node produced these figures), 5,172,596 BTC, about one coin in four (25.7 percent of supply), sits at a hashed address that was spent from and then paid again (snapshot 2026-10-11, block 970,878). That is [address reuse](/glossary/address-reuse) in this chapter's sense; call those coins reuse-exposed. Two address types in use today, the Satoshi-era P2PK and Taproot, show their key from the day they are created (bare multisig does too, and holds almost nothing); call those always-exposed. Add them and it is 7,105,243 BTC, about 35 percent.
+
+Sixteen days before Drake, on the Delving Bitcoin developer forum, Pieter Wuille, who opened its discussion of a post-quantum output type, wrote "Address reuse is entrenched". Bitcoin Optech, the developer newsletter, summarized him on 2 October: a proposed output type would let each owner decide when to stop relying on today's keys, "but Wuille believes address reuse and public key sharing are too entrenched for most users to benefit." The people building Bitcoin's quantum defense have stopped assuming you will behave. This chapter is about keeping your coins in the two-thirds whose keys are still hidden, the group they did not give up on.
+
+No computer that exists can derive a private key from a public key; the 2013 key recoveries described below exploited broken signing software, not the math behind [ECDSA](/glossary/ecdsa-elliptic-curve-digital-signature-algorithm), Bitcoin's signature scheme. Yehuda Lindell, a Coinbase cryptographer, replied that there is "no evidence whatsoever pointing to a break of decades old hardness assumptions like elliptic curve cryptography". [Exposed](/glossary/public-key-exposure) in this chapter means the public key is on the chain, not that anything was stolen, and no [cryptographically relevant quantum computer](/glossary/crqc-cryptographically-relevant-quantum-computer) exists. The advice was already right in 2013, for reasons that have nothing to do with AI or quantum computers (the Android story below).
+
+## An address is not a key
+
+A [public key](/glossary/public-key) is a number your wallet derives from your [private key](/glossary/private-key) (technically a point on an [elliptic curve](/glossary/elliptic-curve) called secp256k1). An address is not that: for most types it encodes a hash of the key (or of a script), and the public key stays hidden until you spend; then it goes into the transaction for everyone to check, while your private key never leaves your wallet. [Taproot](/glossary/taproot) is the exception; a bc1p address is the tweaked [x-only](/glossary/x-only-public-key) key itself, public from creation.
+
+A spend carries a signature and the key that checks it, in a public field: the scriptSig in older transactions, the witness in [segwit](/glossary/segwit-segregated-witness-bip-141) ones. Until then a hash stands in for the key: HASH160 (20 bytes) for key addresses and for 3... script addresses, SHA256 (32 bytes) for bc1q script addresses, as the table's third column shows.
+
+| Script | Prefix | Key visible at creation | Key visible after first spend | Later deposits exposed |
+|---|---|---|---|---|
+| [P2PK](/glossary/p2pk-pay-public-key) | raw hex | yes | yes | always |
+| [P2PKH](/glossary/p2pkh-pay-public-key-hash) | 1... | no (HASH160) | yes, in the scriptSig | forever |
+| [P2SH](/glossary/p2sh) | 3... | no (hash of a script) | yes, if the spend reveals a key (multisig redeem script, or the witness for [nested segwit](/glossary/p2sh-p2wsh-nested-segwit)) | forever |
+| [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash) | bc1q (42 characters) | no (HASH160) | yes, in the [witness](/glossary/segwit-segregated-witness-bip-141) | forever |
+| [P2WSH](/glossary/p2wsh-pay-witness-script-hash) | bc1q (62 characters) | no (SHA256 of a script) | yes, if the witness script contains keys | forever |
+| [P2TR](/glossary/bip-341) | bc1p | yes (tweaked x-only key) | n/a | always |
+
+One private key can also be written as a 1..., a 3... and a bc1q address; reveal it through any one and all three are exposed, so switching address type is not moving to a fresh key.
+
+[BIP-341](/glossary/bip-341), the Taproot specification, raises the strongest objection to hiding keys behind hashes, in a footnote: "While the usage of public key hashes is often said to protect against ECDLP breaks or quantum computers, this protection is very weak at best: transactions are not protected while being confirmed, and a very large portion of the currency's supply is not under such protection regardless." (ECDLP is the math problem a key rests on.) Both halves are true, and neither argues for reuse: the first is the ten-minute window below, the second is the reuse pile this chapter is about. Our [Taproot chapter](/rabbit-hole/how-taproot-works) grants the footnote its facts, and so does this one; we part from it on the conclusion: two-thirds of the supply behind a hash is worth keeping, and the reuse pile is the part a user can shrink.
+
+## What Drake was pointing at
+
+Drake's reason was AI, not quantum. His "ECDSA breaks before qday ... in months not years" (qday: the day a quantum computer can break a key) came labeled "IMO" and "worst case", and his evidence was new AI-made mathematics. On 6 October OpenAI published a catalogue of AI-written manuscripts, 719 of them after three were withdrawn the next day; its index lists no classical cryptanalytic result, and Scott Aaronson, passing on what "several people have pointed out", called cryptography "extremely conspicuous by its absence". The one broken hardness assumption Drake cited, a faster-than-expected algorithm for a textbook problem called 3SUM, is a separate 5 October paper by Josh Alman and Virginia Vassilevska Williams.
+
+Near the end of its abstract: "Claude, an AI model developed by Anthropic, discovered the algorithm"; its methodology section is more specific: an internal Anthropic research model found it while probing a cryptographic hardness assumption, and the authors wrote it up and take responsibility for it. This site is produced with Claude, the public model. The result says nothing about elliptic curves. Its main results are machine-checked in Lean 4; what nobody has reviewed is "months not years". Lindell, Charles Guillemet of Ledger and Adam Back of Blockstream rejected it; Matthew Green, a Johns Hopkins cryptographer, gave odds instead, "a 1% chance" that public-key cryptography fails outright and "a 15% chance" of losing confidence in "our existing public-key encryption algorithms", "based on vibes, but nobody has better ones". None of it changes the fix, which is already in your wallet.
+
+## The spend is the reveal: minutes versus years
+
+A fresh-address user's key goes public at broadcast and stays on the chain forever, but the coins behind it leave once the spend confirms, about ten minutes at a competitive fee, longer if it waits; after that the key guards nothing. A reused address keeps every later deposit behind an already-public key for the whole holding period. [BIP-360](/glossary/bip-360), a draft proposal for quantum-safe addresses, calls these short and long exposure, and states the thesis: "Protection from long exposure quantum attacks does not depend on the activation of post-quantum signatures in Bitcoin, but requires that users do not expose their public keys to attackers via public key reuse or other unsafe practices."
+
+<figure>
+  <img src="/diagrams/address-reuse-three-moments.svg" alt="Two timelines. Top, fresh address each time: three deposits to three gray padlocked boxes; one spend shows a short orange segment, coins behind a public key for about ten minutes while the transaction waits in the mempool, ending at a block; the other boxes stay gray, key never shown. Bottom, one address used again: the first spend turns the box orange, key published forever, and deposits two and three land on it, behind a public key for the whole holding period, bracketed long exposure: coins behind a public key for years, not minutes, BIP-360. Callout: all three payments linked; one key, three coins; exposed at rest." />
+  <figcaption>With fresh addresses, coins sit behind a public key for minutes. At a reused address they sit there for as long as they stay.</figcaption>
+</figure>
+
+The age split makes this about users today. ChainQuery lists reuse-exposed coins by how long ago the key was revealed: about 1.48 million BTC five years or more, 2.62 million one to five years and 1.07 million under a year; the always-exposed coins older than five years are the Satoshi-era P2PK row, about 1.71 million BTC. So reuse-exposed coins whose keys went public within five years, about 3.69 million BTC, outweigh the whole P2PK pile two to one. These are today's wallets, not Satoshi's.
+
+<figure>
+  <img src="/diagrams/address-reuse-by-age.svg" alt="Four stacked bars of exposed bitcoin by age since the key was revealed, split reuse-exposed and always-exposed. Five years or more: 1,482,345 BTC reuse, 1,714,876 always (all P2PK). One to five years: 2,621,372 reuse, 77,237 always. Thirty days to one year: 981,429 reuse, 127,999 always. Under thirty days: 87,450 reuse, 12,536 always. Footer: reuse-exposed coins younger than five years, about 3.69 million BTC, twice the P2PK pile. Source ChainQuery, 2026-10-11, block 970,878." />
+  <figcaption>Who is exposed, and since when. Most of the reuse pile had its key revealed in the last five years. Snapshot 2026-10-11, block 970,878. Source: ChainQuery.</figcaption>
+</figure>
+
+Receiving twice at an address never spent from leaks privacy, not the key; spending once and receiving again leaks both.
+
+## Satoshi's firewall: what the chain analyst sees
+
+A year after the whitepaper, on the bitcointalk forum, Satoshi put the design claim in one sentence: "If the identities of the people using the bitcoin addresses are not known and each address is used only once, then this information only reveals that some unknown person transferred some amount to someone else."
+
+Our [privacy chapter](/rabbit-hole/bitcoin-privacy) covers the [chain analysis](/glossary/chain-analysis) industry. Meiklejohn and colleagues, who stated the clustering rules formally in 2013 and called them heuristics, put the first this way: "If two (or more) addresses are inputs to the same transaction, they are controlled by the same user." That rule clusters senders. Reuse feeds the cluster from the other side: a reused address is a known destination, so every payment to it joins whatever cluster the analyst had already built around it. Harrigan and Fretter's 2016 paper on why [clustering](/glossary/address-clustering) works so well names address reuse first among "the primary reasons behind this effectiveness".
+
+In everyday terms, from the Bitcoin Wiki. Reuse one [paper wallet](/glossary/paper-wallet) address and whoever sold you a small top-up can follow it on the chain and find the savings behind it. Get paid at one address and each payer can read every other payment you receive there. The Wiki concludes: "A better name would be something like 'bitcoin invoice'."
+
+## One key, many coins: the 2013 warning
+
+Key security is the third reason, after exposure and privacy, and it has nothing to do with quantum computers. One address per payment means one compromised key costs one payment; a reused address puts every payment ever made to it behind one key, so one compromise takes all of them.
+
+On 28 January 2013 a developer, Nils Schneider, found two inputs signed by the same key whose signatures shared a value they must never share, and recovered the key; the culprit was a wallet whose random-number generator "was returning the same 'random' number every time." The same class of bug hit Android that summer: on 11 August 2013 bitcoin.org warned that "all Android wallets generated to date" were "vulnerable to theft". The alert prescribed [key rotation](/glossary/key-rotation): "key rotation is necessary" and "make sure not to send back your bitcoins to your old insecure addresses."
+
+The attack needs two signatures from the same key; a key that signs once cannot leak this way, and reuse is what gives one key a hundredth signature. Every signature needs a fresh one-time random number, the [nonce](/glossary/nonce), and in both 2013 cases the wallet reused one. Wallets now derive it from the key and the message instead of rolling dice (RFC 6979; [BIP-340](/glossary/bip-340) does the same for Schnorr signatures, with fresh randomness mixed in), which made the bug class rare. [Nonce reuse](/glossary/nonce-reuse) is a signing bug a wallet using RFC 6979 or BIP-340 nonces should not have; address reuse is the habit that turns a signing bug into a key leak.
+
+An [xpub](/glossary/xpub-extended-public-key) is an extended public key, a parent public key plus its chaincode, one string that lets a server or an app generate all the addresses under it without being able to spend. [BIP-32](/glossary/bip-32) gives it a warning of its own: anyone holding your xpub and any one non-hardened private key under it, the ordinary kind an account derives, can work out all the others. An xpub also hands over every public key in the account at once, which is why BIP-360 says xpubs "also reveal quantum vulnerable public key information."
+
+## Why it keeps happening
+
+Reuse was once rational: before [HD wallets](/glossary/hd-wallet-hierarchical-deterministic-wallet), a fresh address could outrun the last backup. The habit outlived the reason.
+
+Why it persists anyway, from Bitcoin developer Matt Corallo on the bitcoin-dev mailing list, 19 April 2026: "the more I think about the address reuse problem ... the more I don't think its going away." His three reasons: "wallets get user complaints when their address changes"; for "funds, family offices, many custodians, and exchange hot wallets, address reuse is an important security feature", since "much of the large-bitcoin-wallet industry is built around keeping a list of allowed addresses"; and users "just reusing an address that was provided to them." A custody provider confirmed it after Drake. Fireblocks, 8 October 2026: "By default, change from every spend returns to the permanent address, so once that address has spent it stays exposed".
+
+The big reused balances are institutional. All twenty of ChainQuery's largest exposed addresses are reuse-exposed. Two Binance [proof-of-reserves](/glossary/proof-of-reserves) addresses, labeled from Binance's own feed, hold about 249,000 and 171,000 BTC, and the top five addresses together hold about 787,000 BTC, 11 percent of everything exposed. Rafael Schultze-Kraft, a Glassnode co-founder, posted per-exchange exposure shares on 8 October with a caveat that applies to ChainQuery's labels too: "None of it should be read as a risk ranking, solvency signal, or a statement about the security of any exchange or custodian. Entity balances cover labeled addresses only." Mining pool payout addresses and published donation addresses are reused by design.
+
+In the same Delving thread, Wuille asks of users who already reused how they "can stop being paid to the same address". You cannot stop other people reusing your address, and some do it on purpose.
+
+## Crumbs that follow you: forced address reuse
+
+The Bitcoin Wiki's name for the attack is [forced address reuse](/glossary/forced-address-reuse); the press calls it a [dust attack](/glossary/dust-attack), a name the Wiki calls incorrect. An adversary pays [dust](/glossary/dust), a crumb of a few hundred satoshis, to addresses already used on the chain, and if your wallet later spends the crumb alongside other coins, the common-input rule under "Satoshi's firewall" above links them all.
+
+The advice splits in two. A crumb on an address you had already emptied: never spend it; freeze it with your wallet's [coin control](/glossary/coin-control) (Core's [`lockunspent`](https://chainquery.com/rpc/lockunspent) does the same). A crumb on an address still holding your coins: spend everything there together, crumb included, with no inputs from anywhere else. Those coins were already linked; what you must not do is link them to the rest of your wallet.
+
+Bitcoin Core automated that split in steps. Version 0.17.0 (2018) added `-avoidpartialspends`, which spends all coins at one address together but, as its release note noted, still picked up coins sent there later; 0.19.0.1 (2019) answered with the [`avoid_reuse`](/glossary/avoid-reuse) wallet flag, which skips coins sent to an address after it was spent from, because, as the July 2018 proposal behind it (PR #13756, by kallewoof) put it, "a payer could otherwise begin tracking a payee's wallet by regularly peppering a known UTXO with dust outputs". Since 0.21.0 (2021) the wallet avoids partial spends by default when it costs no extra fee; `avoid_reuse` itself is still off by default, needs a rescan on an existing wallet and has no GUI toggle.
+
+## Why fresh is free now
+
+"I will lose track of all those addresses" was true before HD wallets and has been false since they shipped. BIP-32 (2012): one seed, every future key. [BIP-44](/glossary/bip-44) keeps change on its own branch of addresses, separate from the ones you hand out, and sets the [gap limit](/glossary/gap-limit), "currently set to 20": a recovering wallet scans until it finds twenty unused addresses in a row, so the one way to lose track is to mint far more unpaid addresses than the gap, which BIP-44 tells wallets to warn about.
+
+Bitcoin Core has been an HD wallet by default since 0.13.0 (2016) and keeps 1,000 keys ahead in its [keypool](/glossary/key-pool). A 2014 proposal to remove the reuse checkbox was shelved until "deterministic wallets are implemented (then there is no excuse left to reuse addresses)", reopened once HD shipped, and 0.16.0 (2018) announced: "The option to reuse a previous address has now been removed." The reuse button outlived HD wallets by about a year and a half.
+
+The remaining trap is the user: the receive screen shows the latest unused address until it is used, so copy it to two people and you have manufactured the reuse yourself.
+
+> **Pro tip:** One address per person who owes you money. If two people are paying you, press "new address" twice. Think invoice, not account number.
+
+## When you really need one address forever
+
+Tip jars, invoice footers and withdrawal whitelists are real needs; each fix has a cost.
+
+**Hand out an xpub.** BIP-32 foresaw it in 2012, calling the receiving-branch xpub "a sort of 'super address'". BTCPay Server's documentation (read October 2026) describes the mechanism: a [watch-only](/glossary/watch-only-wallet) xpub on the server, and it "generates a new address for every invoice". Three costs. Whoever holds the xpub sees every payment that account ever receives. A server minting an address per invoice can outrun the gap limit on invoices nobody paid; BTCPay warns that after "20 consecutive unpaid invoices" an external wallet "stops fetching the transactions". And the BIP-32 warning above: that xpub plus any one leaked key from the account is every key in the account. So give the server an xpub for a separate account; a leak then costs that account alone.
+
+**[Silent payments](/glossary/silent-payments), BIP-352.** You publish one code; each sender derives a fresh address from it that only you can recognize, with no contact between you. ([BIP-47 payment codes](/glossary/payment-codes-bip-47) tried this in 2015 but needed an on-chain notification transaction per sender; silent payments drop it.) Costs: the receiver must scan the chain, "generally feasible for full nodes but poses a challenge for light clients", and every output is Taproot, so coins meant to sit for a decade are better swept once to a hashed address. Wallet support began arriving in 2024 and is still spreading; as of October 2026 Bitcoin Core has merged the BIP logic but "does not yet enable sending or receiving silent payments".
+
+**Lightning, for the tip jar.** A Lightning invoice ([BOLT 11](/glossary/bolt-11)) is for one payment. A [BOLT 12](/glossary/bolt) offer, or a Lightning address, can be reused because a node or a server mints a fresh invoice behind it each time, which makes a Lightning address as private as whoever runs that server.
+
+Of the "publish a code, not an address" fixes, the static ones share one failure, raised by Bitcoin developer Peter Todd in 2023: wallets get lost or compromised, and a static code with no expiry keeps attracting payments for a wallet that is gone; in his words, "toxic data: funds sent to those addresses can be easily lost forever". BIP-352 has no expiry field; a BOLT 12 offer can carry one.
+
+## If you already reused: the calm version
+
+Our [quantum chapter](/rabbit-hole/quantum-and-bitcoin) says what to do. Here is how.
+
+**Know what moving fixes.** The key is in a block forever; moving puts the coins behind a fresh hash. ChainQuery's rule: "Coins leave that pool only when they're spent to a non-always-exposed script type", so sweeping to a bc1p (Taproot) address, which shows its key from day one, does not count.
+
+**One spend, that address only.** Everything at the reused address is already linked, so spending all of it in one transaction adds no new link; merging in coins from other addresses does. Inputs from that address only, to one fresh hashed address your wallet will never show twice. The same goes for a reused P2SH or P2WSH [multisig](/glossary/multisig) address, whose first spend publishes every key. The Wiki's caveat: someone who already holds the private key can still race the sweep in the minutes before it confirms, the short window under "The spend is the reveal" above.
+
+**Reused once and never spent?** Nothing is exposed yet; make the first spend the last. A stranger's crumb follows the split under "Crumbs that follow you" above.
+
+**Pick a boring day.** Check the [fee pressure](https://chainquery.com/fee-pressure) gauge and wait for a Low day.
+
+**Find your own.** [`listreceivedbyaddress`](https://chainquery.com/rpc/listreceivedbyaddress) on a node lists, for each of your addresses, the transactions that paid it; two or more means the address was paid twice, and if it was spent from in between, that is reuse in this chapter's sense. On a [block explorer](/glossary/block-explorer), remember Wuille's warning via Optech, 2019: "looking up your own addresses on a block explorer leaks your privacy to the site operator." That includes ChainQuery: node first, and [Tor](/glossary/tor-hidden-service) if you must use an explorer.
+
+**Do not rush.** Drake: "Don't rush." Vitalik Buterin, Ethereum's co-founder: "I personally have lost more money in botched migrations than I have lost in all hacks combined." Guillemet: a mass migration "would create operational mistakes that lose funds with higher probability than the scenario being mitigated." Our quantum chapter, months earlier: "Do not panic-move coins." The chain agreed: the week of 7 October brought no fee spike (a 1 sat/vB median block fee rate every day from 6 to 10 October) and no exodus from the exposed pool, which shrank by 12,319 BTC, about a sixth of one percent, with nothing in ChainQuery's short history to mark the week as unusual. As of 12 October the developer forums and the bitcoin-dev list had not discussed it at all.
+
+> **Pro tip:** Anyone selling you a "bunker mode" product is selling something your wallet already does for free.
+
+## What this buys us
+
+- **You know an address is an invoice.** One payment, then done.
+- **You know what one reuse leaks.** The past, the future, your counterparties, and, once you spend, the key.
+- **You know the three reasons are independent.** Public-key exposure, privacy and key security each stand on their own, and one habit fixes all three.
+- **You know the fix is already your wallet's default.** HD wallets, the gap limit and the removed reuse button did the work years ago; Core's optional `avoid_reuse` flag handles the crumbs. Do not undo it.
+- **You know the calm sequence if you already did it.** One spend, that address only, on a quiet day, to a fresh hash, and no rush.
+
+Use it once.
