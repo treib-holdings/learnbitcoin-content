@@ -49,7 +49,7 @@ Por qué importa en la práctica:
 
 - **Un respaldo, direcciones infinitas.** Genera una dirección nueva para cada transacción sin hacer más respaldos.
 - **Billeteras de solo lectura.** Importa una xpub en una app del celular para monitorear el saldo de una billetera de hardware (hardware wallet) sin exponer ninguna clave privada.
-- **Separación entre cuentas.** El [BIP 44 (en inglés)](/glossary/bip-44) usa rutas endurecidas a nivel de cuenta, para que una cuenta expuesta no contamine a sus hermanas.
+- **Separación entre cuentas.** El [BIP 44](/es/glosario/bip-44) usa rutas endurecidas a nivel de cuenta, para que una cuenta expuesta no contamine a sus hermanas.
 - **Portabilidad entre billeteras.** Restaura la semilla en otra billetera que use la misma ruta de derivación y el mismo tipo de script y obtendrás las mismas direcciones; el BIP 32 deja la disposición del árbol como una simple recomendación, y por eso el BIP 44 y los descriptores de salida la fijan. La semilla es el activo; el software es reemplazable.
 
 El BIP 32 por sí solo dice únicamente que la semilla es una secuencia de bytes aleatorios; no especifica cómo respaldarla en una forma que una persona pueda anotar. De eso se encarga el [BIP 39](/es/glosario/bip-39): las frases semilla mnemónicas (también llamadas frases de recuperación). Juntos son la base de la autocustodia moderna en Bitcoin.

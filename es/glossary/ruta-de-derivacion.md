@@ -39,7 +39,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Una ruta de derivación es la ruta, separada por barras, que entra en el árbol de una billetera HD del [BIP 32](/es/glosario/bip-32) y le dice a la billetera exactamente qué clave derivar a partir de la semilla maestra. El formato, tal como lo fija el [BIP 44 (en inglés)](/glossary/bip-44), es:
+Una ruta de derivación es la ruta, separada por barras, que entra en el árbol de una billetera HD del [BIP 32](/es/glosario/bip-32) y le dice a la billetera exactamente qué clave derivar a partir de la semilla maestra. El formato, tal como lo fija el [BIP 44](/es/glosario/bip-44), es:
 
 ```
 m / purpose' / coin_type' / account' / change / address_index

@@ -58,7 +58,7 @@ Todos los formatos representan el mismo concepto de fondo: "para gastar los BTC 
 Algunas cosas que una dirección no es:
 
 - **No es tu identidad.** Una dirección es un destino, no una cuenta. Una billetera suele generar muchas direcciones para recibir.
-- **No es anónima.** La cadena es completamente pública. Si una dirección se ha vinculado contigo (por el KYC de un exchange, una donación pública, una dirección reutilizada), toda transacción que la toque puede rastrearse hasta ti. Consulta [Fungibilidad (en inglés)](/glossary/fungibility).
+- **No es anónima.** La cadena es completamente pública. Si una dirección se ha vinculado contigo (por el KYC de un exchange, una donación pública, una dirección reutilizada), toda transacción que la toque puede rastrearse hasta ti. Consulta [Fungibilidad](/es/glosario/fungibilidad).
 - **No es permanente.** La mayoría de las billeteras generan una dirección nueva para cada pago entrante. [Reutilizar direcciones](/es/glosario/reutilizacion-de-direcciones) filtra privacidad al concentrar la actividad en un solo lugar observable.
 
 Comparte direcciones sin problema para recibir. Genera direcciones nuevas con frecuencia. Trata el historial on-chain de cualquier dirección como una anotación en un registro público, porque eso es exactamente lo que es.

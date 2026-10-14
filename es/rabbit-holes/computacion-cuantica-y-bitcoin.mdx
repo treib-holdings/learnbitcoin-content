@@ -1,0 +1,254 @@
+---
+title: "Computación cuántica y Bitcoin"
+slug: computacion-cuantica-y-bitcoin
+translationOf: quantum-and-bitcoin
+sourceHash: "191335b98ab4"
+sourceCommit: "3508921"
+sourceUpdated: "2026-10-15"
+translation:
+  method: "llm-draft"
+draft: false
+published: "2026-10-15"
+status: live
+section: rabbit-hole
+category: hard-questions
+alsoIn: ["custody-privacy"]
+featured: true
+tagline: "Una amenaza real con un calendario lento. Qué podría romper una computadora cuántica grande, qué monedas están expuestas y cómo Bitcoin podría actualizarse antes."
+order: 12
+estimatedMinutes: 14
+sources:
+  - { label: "ChainQuery quantum-exposure report (live, weekly; figures in this chapter from the 2026-10-11 snapshot, block 970,878)", url: "https://chainquery.com/reports/quantum-exposure" }
+  - { label: "Wicked Smart Bitcoin - quantum exposure dashboard and published history", url: "https://wickedsmartbitcoin.com/quantum_exposure" }
+  - { label: "ChainQuery x LearnBitcoin Baseline 2026 Q2 PDF", url: "https://chainquery.com/reports/quantum-quarterly/baseline_2026.pdf" }
+  - { label: "BIP-360 - Pay-to-Merkle-Root (draft)", url: "https://github.com/bitcoin/bips/blob/master/bip-0360.mediawiki" }
+  - { label: "BIP-361 - Post-Quantum Migration (draft)", url: "https://github.com/bitcoin/bips/blob/master/bip-0361.mediawiki" }
+  - { label: "FIPS 204 - ML-DSA", url: "https://csrc.nist.gov/pubs/fips/204/final" }
+  - { label: "FIPS 205 - SLH-DSA", url: "https://csrc.nist.gov/pubs/fips/205/final" }
+  - { label: "NIST Post-Quantum Cryptography Project", url: "https://csrc.nist.gov/projects/post-quantum-cryptography" }
+  - { label: "Shor 1994 - Algorithms for quantum computation", url: "https://ieeexplore.ieee.org/document/365700" }
+  - { label: "Bluvstein et al. - Logical quantum processor based on reconfigurable atom arrays, Nature (2023; up to 280 physical and 48 logical qubits)", url: "https://www.nature.com/articles/s41586-023-06927-3" }
+  - { label: "Google Quantum AI - Quantum error correction below the surface code threshold, Nature (2024; Willow)", url: "https://www.nature.com/articles/s41586-024-08449-y" }
+  - { label: "IBM - quantum roadmap, including the 1,121-qubit Condor processor (2023)", url: "https://www.ibm.com/quantum/blog/quantum-roadmap-2033" }
+  - { label: "Bitcoin governance glossary entry", url: "https://www.learnbitcoin.com/glossary/bitcoin-governance" }
+  - { label: "Bitcoin Optech Newsletter #412 - why Bitcoin post-quantum work has focused on hash-based signatures (3 July 2026)", url: "https://bitcoinops.org/en/newsletters/2026/07/03/" }
+  - { label: "Bitcoin Optech Newsletter #417 - Pieter Wuille's thread on post-quantum output types: P2MR, P2TRv2, P2TRH, P2QR (7 August 2026)", url: "https://bitcoinops.org/en/newsletters/2026/08/07/" }
+  - { label: "Bitcoin Optech Newsletter #421 - SHRINCS draft BIP, a semi-stateful hash-based signature scheme (4 September 2026)", url: "https://bitcoinops.org/en/newsletters/2026/09/04/" }
+relatedTerms:
+  - post-quantum-bitcoin
+  - shors-algorithm
+  - grovers-algorithm
+  - crqc-cryptographically-relevant-quantum-computer
+  - ml-dsa-dilithium
+  - slh-dsa-sphincs-plus
+  - bitcoin-governance
+  - miner-signaling
+  - taproot
+  - p2pk-pay-public-key
+  - address-reuse
+---
+
+> **Adónde vas:** Las firmas de Bitcoin dependen de una matemática que una computadora cuántica lo bastante grande podría romper. Esa computadora todavía no existe. La matemática se entiende desde 1994. Esta página recorre qué está expuesto en realidad, qué no, qué puede hacer Bitcoin al respecto y por qué la respuesta es gobernanza, no pánico.
+
+<figure>
+  <video
+    src="/videos/quantum-timeline.mp4"
+    poster="/videos/posters/quantum-timeline.png"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls
+    controlslist="nodownload noplaybackrate noremoteplayback"
+    preload="metadata"
+    aria-label="Animación de cuarenta y cinco segundos en cuatro estados. Hoy: 36% de la oferta en direcciones expuestas a lo cuántico (naranja), 64% a salvo detrás de un hash (gris). Bitcoin se prepara: se activa un esquema de firma poscuántica, la barra cambia despacio, el naranja residual crece en su lugar hasta un 18% varado (claves perdidas, permanente) y el resto de la oferta migra a un color tinta oscuro rotulado PQ-safe (a salvo de lo cuántico), con 82%. Llega lo cuántico: la barra no cambia; la amenaza se encuentra con una red preparada, y el residuo lleva el rótulo Claves perdidas, varadas para siempre. Manifiesto de cierre: Lo cuántico es real. Bitcoin se está preparando. Deja de reutilizar direcciones."
+  ></video>
+  <figcaption>Cuarenta y cinco segundos. La barra se mueve cuando Bitcoin se prepara. Se queda quieta cuando llega lo cuántico. Preparación, no pánico.</figcaption>
+</figure>
+
+La computación cuántica es el argumento de FUD (miedo, incertidumbre y duda) que más se repite después de la degradación del dinero fiat y la energía. Casi todo el ruido es catastrofismo ("lo cuántico rompe Bitcoin mañana") o desdén ("faltan décadas, ignóralo"). Las dos posturas están equivocadas. La versión honesta es más interesante y más útil: la amenaza es real, el calendario es lento, la solución es la gobernanza y Bitcoin tiene capacidad de actuar. Esa última parte importa. El sistema se diseñó para evolucionar justo bajo este tipo de restricción.
+
+## La cifra que impacta
+
+Alrededor del **35.4% de la oferta en circulación** está en direcciones expuestas a lo cuántico a octubre de 2026: más de un bitcoin de cada tres. Esa cifra se movió dos veces entre la medición Baseline 2026 Q2 y la metodología v1.2, y los dos movimientos fueron correcciones a la medición, no cambios en la cadena. La medición original Baseline 2026 Q2 contó 5,071,264 BTC, un 25.3%. Una corrección del parser en junio de 2026 (metodología v1.1) incorporó cerca de 1.04 millones de BTC de reutilización en SegWit anidado que el primer recorrido había pasado por alto, y llevó la cifra a alrededor del 30.5%. Una segunda corrección una semana después (v1.2) descubrió que cerca de la mitad de las monedas P2PK antiguas con clave sin comprimir se habían descartado en silencio por un error en el emparejamiento de claves; repararlo movió P2PK de unos 0.85 millones a unos 1.72 millones de BTC, y la cifra principal a 35.4%. ChainQuery detectó el segundo error al comparar sus resultados con el conteo independiente de Wicked Smart Bitcoin, después de que su autor publicara el pipeline como código abierto, y le reconoce el mérito de haber cerrado la brecha.
+
+El desglose de abajo es la cifra en vivo: 7,105,243 BTC en 14,053,432 direcciones. Algunas de esas monedas están inactivas; los grupos expuestos por reutilización, que son la mayor parte del total, están en direcciones desde las que se ha gastado al menos una vez. El grupo más grande no son las monedas de Satoshi, sino **2,081,021 BTC en direcciones SegWit modernas (P2WPKH) que se reutilizaron al menos una vez**, lo que apunta a billeteras comunes en uso cotidiano. Las monedas P2PK de la era de Satoshi son ahora el segundo grupo, cerca de una cuarta parte del montón.
+
+Instantánea: 11 de octubre de 2026, bloque 970,878, actualizada cada domingo. El desglose completo:
+
+<figure>
+  <img src="/diagrams/quantum-exposure-stacked.svg" alt="Gráfica de barras horizontales de los seis tipos de script de Bitcoin que contienen BTC expuestos a lo cuántico. P2WPKH expuesto por reutilización encabeza con 2,081,021 BTC (29.3% del conjunto en riesgo). P2PK siempre expuesto, 1,714,876 BTC. P2SH expuesto por reutilización, 1,193,585 BTC. P2PKH expuesto por reutilización, 1,187,424 BTC. P2WSH expuesto por reutilización, 710,566 BTC. P2TR siempre expuesto, 217,771 BTC. Total: 7,105,243 BTC en 14,053,432 direcciones." />
+  <figcaption>Seis grupos, ordenados por BTC en riesgo. Los tipos siempre expuestos (P2PK, P2TR) en naranja oscuro. Los tipos expuestos por reutilización en naranja más claro. Cifras en vivo tras las correcciones v1.1 y v1.2; el grupo P2SH ahora incluye la reutilización en SegWit anidado. Instantánea del 11 de octubre de 2026, bloque 970,878. Fuente: ChainQuery.</figcaption>
+</figure>
+
+Fuente: [informe de exposición cuántica de ChainQuery](https://chainquery.com/reports/quantum-exposure), calculado en un nodo de Bitcoin Core, con instantáneas semanales cada domingo.
+
+Esto no es una crisis. Es lo que obliga a moverse.
+
+## La versión honesta de la cifra
+
+El BIP 361 afirma que "over 34% of all bitcoin" (más del 34% de todos los bitcoins) tenía una clave pública revelada en la cadena al 1 de marzo de 2026. La cifra estricta de ChainQuery es de alrededor del 35.4% en el bloque 970,878. Bajo la medición Baseline 2026 Q2 las dos estaban a nueve puntos de distancia, y una versión anterior de este capítulo atribuía la brecha a la metodología.
+
+La regla conservadora, la que aplica el tablero de Wicked Smart Bitcoin y que ChainQuery describe como un análisis al estilo del BIP 361, cuenta todas las direcciones P2SH y P2WSH cuyo redeem script se haya revelado alguna vez en la cadena. ChainQuery solo cuenta aquellas en las que el script revelado contiene de verdad una clave pública seguida de un opcode de la familia CHECKSIG. Los scripts que solo tienen un bloqueo de tiempo quedan fuera. Los scripts de preimagen de hash quedan fuera. No filtran claves públicas al gastar.
+
+Esa distinción sigue siendo correcta, y resultó valer apenas unas decenas de BTC. La brecha de nueve puntos eran dos errores de medición, descritos arriba, y una vez corregidos los conteos convergieron. El [tablero de exposición cuántica de Wicked Smart Bitcoin](https://wickedsmartbitcoin.com/quantum_exposure) aplica la regla conservadora al estilo del BIP 361 directamente a los datos de la cadena y publica su historial: sus instantáneas dan 34.45% en el bloque 950,000 (18 de mayo de 2026) y 35.19% en el bloque 961,000 (4 de agosto de 2026), y ChainQuery queda un poco por encima de la segunda porque mide en un bloque posterior. La distancia entre los tres conteos es ahora deriva por altura de bloque, no diferencias de análisis.
+
+Esa convergencia es la razón para confiar en la cifra. Un conteo analítico, un conteo on-chain conservador y un conteo on-chain estricto, construidos por gente que no estaba de acuerdo en las reglas, llegan a la misma respuesta. Seguimos usando el número de ChainQuery porque es reproducible a partir de los datos de la cadena, y seguimos citando el BIP 361 porque es la referencia contra la que se está escribiendo un soft fork propuesto.
+
+Sea como sea: más de un tercio de la oferta, a octubre de 2026.
+
+## Qué significa en realidad "expuesto a lo cuántico"
+
+Hay dos clases de exposición. El orden importa, porque el caso fácil explica el difícil.
+
+**Siempre expuesto.** La clave pública está en la cadena desde el momento en que se crea la salida. No hace falta ningún gasto.
+
+- **[P2PK](/es/glosario/p2pk) (pago a clave pública):** el script de salida contiene literalmente la clave pública. Las recompensas coinbase de la era de Satoshi lo usan. 1,714,876 BTC en 39,458 direcciones, casi todo recompensas coinbase que nunca se han movido. Cerca del 60% de esta porción corresponde al [patrón Patoshi](https://chainquery.com/stories/patoshi-pattern), la huella del ExtraNonce de un único minero temprano dominante cuyos bloques representan alrededor del 40% de los primeros 50,000 bloques, según el conteo de Sergio Demian Lerner.
+- **Multisig sin hash (bare multisig):** el script contiene la clave pública de cada firmante. Rara en el uso moderno, todavía en la cadena por despliegues antiguos, y prácticamente nada en el conteo actual.
+- **[P2TR](/es/glosario/taproot) (Taproot, BIP 341):** la dirección bech32m ES la clave pública ajustada (tweaked). No hay ninguna capa de hash delante. **Toda salida Taproot nueva queda expuesta de forma permanente por diseño.** 217,771 BTC en 5,080,376 direcciones, y cada salida Taproot nueva se suma.
+
+**Expuesto por reutilización.** La clave pública queda oculta detrás de un hash al crear la salida, pero el testigo (witness) del gasto contiene la clave pública en bruto. Después del primer gasto, todo depósito futuro a esa dirección queda expuesto.
+
+- **P2PKH:** la dirección legacy que empieza con "1...". 1,187,424 BTC en direcciones legacy reutilizadas.
+- **P2WPKH:** la forma corta "bc1q..." de SegWit nativo. 2,081,021 BTC, el grupo más grande de todos. Esto no es Satoshi. Es gente que actualizó su billetera y siguió reutilizando direcciones.
+- **P2WSH y P2SH:** las formas de hash de script en SegWit y legacy. Se cuentan como expuestas solo cuando el redeem script revelado contiene un push de clave pública seguido de un opcode de la familia CHECKSIG, o contiene OP_CHECKMULTISIG / OP_CHECKMULTISIGVERIFY. Las variantes multisig importan: la mayoría de los gastos P2SH y P2WSH de almacenamiento en frío 2 de 3 se ven así en la cadena. 710,566 BTC en P2WSH y 1,193,585 BTC en P2SH; la mayor parte de la cifra de P2SH son direcciones de SegWit anidado (P2WPKH envuelto en P2SH, más algo de P2WSH envuelto en P2SH) cuya clave pública se revela en el testigo: las monedas que añadió la corrección v1.1.
+
+Aquí el protocolo no te protege. Las buenas prácticas, sí.
+
+Referencias: [BIP 143](/es/glosario/bip-143) (la estructura del testigo en SegWit, donde se revela la clave pública), [BIP 341](/es/glosario/bip-341) (Taproot usa la clave pública ajustada en bruto, sin capa de hash), [BIP 361](/es/glosario/bip-361) (el marco de migración propuesto).
+
+## Por qué no podemos arreglarlo hoy sin más
+
+Una pregunta natural: si la reutilización es el grupo más grande, ¿por qué esta cifra no se encoge sola a medida que los usuarios migran a direcciones nuevas? Lo hace, en el margen. Pero hay tres razones por las que la cifra se resiste a bajar, y entenderlas es la diferencia entre actuar con sensatez y entrar en pánico.
+
+**El conjunto por reutilización puede vaciarse. El conjunto siempre expuesto, no.** La acción individual funciona sobre el conjunto expuesto por reutilización, 5,172,596 BTC en la instantánea del 11 de octubre de 2026: mueve las monedas a una dirección nueva, no la reutilices nunca, y esos BTC salen del conjunto en riesgo. Las billeteras modernas lo hacen por defecto. La sangría de hoy viene de la custodia legacy (exchanges antiguos, billeteras de hardware anteriores a 2020, scripts personalizados) y de usuarios que anulan a mano el comportamiento por defecto para consolidar en una sola dirección pública.
+
+El conjunto siempre expuesto (unos 1.93 millones de BTC, casi todo en los grupos P2PK y P2TR de arriba) es otro problema. Las recompensas coinbase P2PK de 2009 y 2010 necesitan las claves privadas originales para moverse, y se presume que una fracción grande de esas claves se perdió para siempre. La multisig sin hash tiene el mismo problema de claves perdidas, a menor escala. Y [P2TR](/es/glosario/taproot) no tiene forma de volver a ocultar nada: la dirección bech32m ES la clave pública ajustada, así que cada salida Taproot nueva se suma a la oferta siempre expuesta en el momento de crearse. No puedes migrar fuera de P2TR sin un tipo de destino que todavía no existe.
+
+**El acto de migrar crea su propia superficie de ataque.** Cada gasto desde un tipo de dirección con hash revela la clave pública durante los pocos minutos que pasan entre la transmisión y la confirmación. Hoy no existe ninguna [CRQC (computadora cuántica criptográficamente relevante)](/es/glosario/crqc), así que esta ventana es teórica. Pero si una CRQC existiera y estuviera vigilando el mempool, un atacante podría derivar la clave privada en tiempo real, transmitir una transacción competidora con una comisión más alta y robar los fondos antes de que la transacción original se confirmara. El gasto mismo se convierte en el vector. Es el ataque "en vuelo" (in-flight) con el que tiene que lidiar cualquier marco de migración poscuántica.
+
+<figure>
+  <img src="/diagrams/quantum-inflight-attack.svg" alt="Línea de tiempo en dos carriles que muestra el ataque en vuelo. Carril superior: Alice firma una transacción de 10 BTC para Bob; la firma y la clave pública quedan visibles en el testigo mientras la transacción espera en el mempool unos 10 minutos; su transacción queda fuera del bloque. Carril inferior: un atacante lee del mempool la clave pública, ahora visible, deriva la clave privada con el algoritmo de Shor y transmite una transacción competidora con una comisión más alta que se confirma primero. Hoy esto es teórico porque no existe ninguna CRQC; después de una CRQC sería rutina." />
+  <figcaption>La ventana del mempool es la superficie de ataque. Hoy es teórica. En una era con CRQC es el mayor riesgo de la migración, y por eso migrar en masa de golpe concentra el peligro en vez de diluirlo.</figcaption>
+</figure>
+
+**La migración masiva es la peor respuesta posible.** Un pánico en el que todos los que tienen monedas consolidan a la vez dispara las comisiones, extiende la superficie del ataque en vuelo a millones de UTXOs al mismo tiempo y le da a una CRQC temprana el entorno más lleno de blancos que vaya a ver jamás. La respuesta correcta es la aburrida: migrar con calma, a lo largo de una ventana de varios años, con un calendario que el propio protocolo pueda defender.
+
+El marco que le da sentido al resto de este capítulo: la acción individual ayuda a los individuos. No resuelve el problema sistémico. El conjunto por reutilización puede encogerse con el comportamiento de los usuarios. El piso siempre expuesto solo puede encogerse con un cambio de protocolo. Los dos conjuntos solo se resuelven del todo cuando un esquema de firma poscuántica se despliegue y la gente migre a direcciones nativas PQ. Por eso la respuesta es gobernanza, no pánico. La solución tiene que ser la gobernanza.
+
+## La amenaza real es Shor, no Grover
+
+"Lo cuántico rompe Bitcoin" es una frase. La amenaza depende de a qué parte de Bitcoin te refieras.
+
+El **[algoritmo de Shor](/es/glosario/algoritmo-de-shor)** rompe la criptografía de curva elíptica. Dada la clave pública en la curva secp256k1, Shor deriva la clave privada en tiempo polinómico en una computadora cuántica lo bastante grande. Es lo que amenaza las firmas [ECDSA](/es/glosario/ecdsa) y [Schnorr](/es/glosario/firma-schnorr) de Bitcoin. Es la exposición existencial. Es la razón de que importe la cifra de oferta expuesta: alrededor del 35% de todos los BTC.
+
+El **[algoritmo de Grover](/es/glosario/algoritmo-de-grover)** da una aceleración cuadrática en la búsqueda no estructurada. Aplicado a SHA-256, reduce la seguridad efectiva a la mitad: 256 bits pasan a ser 128. Molesto. No catastrófico. Una seguridad simétrica de 128 bits sigue siendo el piso estándar en el resto de la criptografía. La [prueba de trabajo](/es/glosario/prueba-de-trabajo) de Bitcoin sobrevive a Grover. Las direcciones con hash de Bitcoin (P2PKH y P2WPKH desde las que nunca se ha gastado) sobreviven a Grover. El tope de 21 millones sobrevive a Grover.
+
+El eslabón débil es la firma, no el hash. Esa es toda la historia de por qué el "Bitcoin poscuántico" consiste en reemplazar esquemas de firma, no en reemplazar SHA-256.
+
+## El calendario, versión honesta
+
+No existe ninguna [computadora cuántica criptográficamente relevante (CRQC)](/es/glosario/crqc). Una CRQC capaz de correr Shor contra secp256k1 necesita millones de cúbits (qubits) físicos estables organizados en miles de cúbits lógicos mediante corrección de errores, con coherencia sostenida a lo largo de millones de operaciones de compuerta y una fidelidad de compuerta lo bastante alta para que la sobrecarga de la corrección de errores no se dispare.
+
+El estado del arte en 2026: cantidades de cúbits físicos de cientos a pocos miles, y cúbits lógicos demostrados (con corrección o con detección de errores) que se cuentan por decenas como mucho, todos sobre códigos pequeños. Varios órdenes de magnitud separan los sistemas de hoy de una CRQC, en varios ejes (cantidad de cúbits, tasas de error, tiempo de coherencia).
+
+La curva de progreso es constante, pero no es la ley de Moore. Duplicar los cúbits lógicos es mucho más difícil que duplicar transistores, porque la sobrecarga de la corrección de errores crece con el tamaño del sistema. La mayoría de las estimaciones de los expertos sitúan una CRQC capaz de romper ECDSA de 256 bits en algún punto de una ventana de 10 a 30 años. Los autores del BIP 361 citan una ventana de 2027 a 2030, tomada del Quantum Technology Monitor 2025 de McKinsey. Las estimaciones pesimistas la empujan a la década de 2040 o más allá.
+
+La disciplina consiste en planear para el caso optimista mientras el caso optimista todavía está en tiempo futuro. El caso optimista viene siendo "ya en 2027" desde 2017, y el umbral se sigue desplazando hacia adelante a medida que los avances del hardware cuántico chocan con la realidad de ingeniería de la corrección de errores. La tendencia apunta a que la capacidad llegará tarde o temprano. La respuesta honesta es "antes de que estemos listos, y posiblemente de golpe".
+
+El horizonte de planificación correcto es, por lo tanto, "antes de eso, con margen". La gobernanza de Bitcoin se mueve en años. Encaja.
+
+## Qué puede hacer Bitcoin, y qué está haciendo
+
+Tres categorías de respuesta, en orden de cuánto trastornan a los usuarios actuales.
+
+**1. Fomentar las buenas prácticas hoy.** No requiere ningún cambio de protocolo.
+
+- Usa scripts modernos con hash (P2WPKH, P2PKH) y nunca reutilices la dirección.
+- Evita P2TR para el almacenamiento en frío que tenga que sobrevivir a la ventana de migración, porque las salidas P2TR están expuestas desde su creación.
+- Mueve las monedas P2PK antiguas a scripts modernos cuando sea seguro hacerlo.
+
+Esto es gratis. También es voluntario, y ese es el límite.
+
+**2. Un soft fork para retirar los tipos de script vulnerables.** Deshabilitar los gastos desde P2PK y otros scripts siempre expuestos a partir de una altura de bloque determinada. Forzar la migración antes de que la amenaza llegue. La parte polémica: las monedas cuyas claves se perdieron (o cuyo dueño guarda silencio) quedan bloqueadas para siempre. Si eso es una virtud o un defecto es la pregunta más encendida de todo el debate.
+
+**3. Un soft fork para añadir esquemas de firma poscuántica.** Tipos de salida nuevos que usan firmas poscuánticas. Los usuarios mueven sus monedas a direcciones PQ a lo largo de años. Es el camino probable. Dos BIPs ya en borrador enmarcan el trabajo: el [BIP 360](/es/glosario/bip-360) propone Pay-to-Merkle-Root (P2MR), una variante de Taproot que elimina el gasto por la ruta de clave para que la dirección bech32m ya no revele una clave pública; eso corrige el riesgo cuántico de exposición prolongada en las salidas de Tapscript y aporta la plataforma con Tapscript que necesitaría un futuro opcode de firma PQ. El [BIP 361](/es/glosario/bip-361) define el marco de migración que retira ECDSA y Schnorr a lo largo de una ventana de varios años. P2MR no es el único diseño de salida en discusión: en 2026 Pieter Wuille abrió un hilo en Delving Bitcoin que lo sopesa frente a alternativas como P2TRv2, una nueva versión de Taproot que llevaría un opcode de firma poscuántica, y P2TRH, una variante de Taproot con la clave de salida protegida por un hash. El esquema de firma en sí todavía no tiene consenso. En 2026 el grupo de trabajo de SHRINCS publicó un primer borrador de BIP para SHRINCS, un esquema basado en hash compatible con SLH-DSA.
+
+Las tres categorías pasan por el mismo proceso de gobernanza. No hay gobernanza rápida. No hay una autoridad central de actualizaciones. La lentitud es la virtud, y también la restricción. Consulta la entrada [gobernanza de Bitcoin](/es/glosario/gobernanza-de-bitcoin) para el modelo de los cinco vetos que decide qué soft forks se activan de verdad.
+
+## Los candidatos a reemplazo
+
+El NIST finalizó dos estándares de firma poscuántica en agosto de 2024. Los dos están sobre la mesa.
+
+<figure>
+  <img src="/diagrams/pq-signature-sizes.svg" alt="Gráfica de barras horizontales que compara los tamaños de firma en la cadena. Schnorr ocupa 64 bytes; ECDSA, unos 71 bytes. ML-DSA-65 ocupa unos 3,293 bytes, 51 veces más que Schnorr. SLH-DSA-128s ocupa unos 7,856 bytes, 123 veces más. SLH-DSA-256f ocupa unos 49,856 bytes, 779 veces más. En un bloque de 4 MB caben hoy unos 4,500 gastos, alrededor de 1,000 gastos ML-DSA-65 y solo unos 80 gastos SLH-DSA-256f." />
+  <figcaption>El costo en espacio en el bloque es donde se siente la migración. La elección criptográfica entre ML-DSA y SLH-DSA es también una decisión del mercado de comisiones.</figcaption>
+</figure>
+
+Los dos esquemas, lado a lado:
+
+| | [ML-DSA](/es/glosario/ml-dsa) (Dilithium) | [SLH-DSA](/es/glosario/slh-dsa) (SPHINCS+) |
+|---|---|---|
+| Matemática | Basado en retículos (MLWE, MSIS) | Basado en hash (árboles de Merkle de firmas de un solo uso) |
+| Supuesto de seguridad | Los problemas de retículos son difíciles tanto para lo cuántico como para lo clásico | Solo la seguridad de la familia de funciones hash SHA-256 |
+| Madurez | Matemática más nueva, menos criptoanálisis colectivo | Primitivas conservadoras y bien entendidas |
+| Tamaño de firma | ~2.5 - 4.5 KB | ~7 - 50 KB |
+| Velocidad de verificación | Rápida | Más lenta |
+| Disyuntiva | Más pequeño y más rápido, menos maduro | Más grande y más lento, más conservador |
+| Especificación | [FIPS 204](https://csrc.nist.gov/pubs/fips/204/final) | [FIPS 205](https://csrc.nist.gov/pubs/fips/205/final) |
+
+El trabajo poscuántico de Bitcoin se ha centrado sobre todo en la familia basada en hash, la de la columna de SLH-DSA. Sus firmas son grandes, pero su seguridad descansa únicamente en que la función hash aguante, y es más simple de implementar. El borrador de BIP de SHRINCS es un ejemplo: a cambio de guardar un poco de estado en la billetera, baja una firma basada en hash a 548 bytes, con una alternativa de 5,777 bytes que no necesita estado. Los esquemas de retículos como ML-DSA y Falcon tienen firmas más pequeñas que SLH-DSA y siguen apareciendo en la discusión, pero la matemática que hay detrás es más nueva. También se discute un esquema híbrido que combine una firma clásica con una firma PQ durante la ventana de transición: cinturón y tirantes frente a la posibilidad de que el propio esquema PQ se rompa antes de que caiga el esquema clásico.
+
+La elección final depende del consenso. No hay comité. Lo que hay es el mismo proceso de gobernanza que produjo [Taproot](/es/glosario/taproot) y [SegWit](/es/glosario/segwit), corriendo a su escala de tiempo natural.
+
+## Qué puedes hacer hoy
+
+Las acciones que de verdad ayudan.
+
+- **Audita tus propios UTXOs.** ¿Tienes salidas P2PK entre tus monedas? Muévelas a direcciones modernas. ¿Alguna dirección que reutilizaste? Mueve esos saldos a direcciones nuevas.
+- **Usa scripts modernos con hash.** P2WPKH y P2PKH guardan el hash de la clave pública. La clave pública no se revela hasta que gastas. Si gastas una vez y nunca reutilizas, tu ventana de exposición son los pocos minutos entre la transmisión y la confirmación.
+- **Nunca reutilices direcciones.** Las billeteras modernas lo hacen por defecto. No anules ese comportamiento.
+- **Piensa bien antes de usar Taproot para el almacenamiento en frío de largo plazo.** P2TR está expuesto desde su creación. Las ventajas de Taproot son reales (privacidad, eficiencia para scripts complejos), pero para un almacenamiento del tipo "déjalo diez años y olvídate", los scripts con hash tienen una superficie de ataque más pequeña durante la ventana de migración.
+- **No muevas monedas por pánico.** La amenaza no es inminente. Una transacción de consolidación mal pensada es hoy un riesgo mayor para tus monedas que una CRQC.
+- **Sigue las discusiones de los BIPs.** La comunidad necesita nodos informados más que nodos ansiosos.
+
+## La incertidumbre honesta
+
+Lo que no sabemos.
+
+- Cuándo llegará una CRQC. Hay estimaciones desde 5 hasta 50 años. La respuesta honesta es "antes de que estemos listos, y posiblemente de golpe".
+- Si la primera CRQC será pública. Un actor estatal o un laboratorio privado podría construir una antes de que alguien la anuncie.
+- Si ML-DSA o SLH-DSA aguantarán el criptoanálisis futuro. La matemática de retículos es más joven que RSA o ECDSA; la comunidad criptográfica tiene menos experiencia acumulada en atacarla.
+- Si la gobernanza de Bitcoin puede sacar un soft fork en el plazo que hace falta. Lo ha hecho antes. No hay garantía de que vuelva a hacerlo.
+
+Estas incertidumbres no cambian la respuesta. La afilan. **La preparación de Bitcoin tiene que empezar antes de que la amenaza sea concreta, porque cuando la amenaza sea concreta ya será demasiado tarde.**
+
+Esa preparación está ocurriendo, en público, despacio, con polémica, exactamente como el protocolo se diseñó para evolucionar.
+
+## Cierre
+
+Lo cuántico es real. Bitcoin se está preparando. El consenso lento que frustra a quienes tienen prisa es el mismo consenso lento que protege de quienes entran en pánico.
+
+Confía en el mecanismo. Míralo funcionar.
+
+Mueve tus monedas a direcciones modernas.
+
+---
+
+**Fuentes y lecturas adicionales**
+
+- Informe de exposición cuántica de ChainQuery: https://chainquery.com/reports/quantum-exposure (en vivo, instantáneas semanales; las cifras de arriba son del 11 de octubre de 2026, bloque 970,878)
+- BIP 361 - Post-Quantum Migration (migración poscuántica): https://github.com/bitcoin/bips/blob/master/bip-0361.mediawiki
+- NIST FIPS 204 (ML-DSA): https://csrc.nist.gov/pubs/fips/204/final
+- NIST FIPS 205 (SLH-DSA): https://csrc.nist.gov/pubs/fips/205/final
+- Proyecto de criptografía poscuántica del NIST: https://csrc.nist.gov/projects/post-quantum-cryptography
+- Shor 1994 - *Algorithms for quantum computation*
+
+Entradas del glosario relacionadas en este sitio:
+- [Bitcoin poscuántico](/es/glosario/bitcoin-poscuantico)
+- [Algoritmo de Shor](/es/glosario/algoritmo-de-shor)
+- [Algoritmo de Grover](/es/glosario/algoritmo-de-grover)
+- [CRQC (computadora cuántica criptográficamente relevante)](/es/glosario/crqc)
+- [ML-DSA (Dilithium)](/es/glosario/ml-dsa)
+- [SLH-DSA (SPHINCS+)](/es/glosario/slh-dsa)
+- [Gobernanza de Bitcoin](/es/glosario/gobernanza-de-bitcoin)

@@ -59,6 +59,6 @@ Bitcoin Core incluye el control de monedas desde la versión 0.9.0 (marzo de 201
 
 La recomendación general: si te importa la privacidad o quieres optimizar comisiones, aprende a usar el control de monedas. Si usas Bitcoin como dinero para gastos cotidianos, la selección automática que trae por defecto está bien. El control está ahí para cuando lo necesites.
 
-Consulta [UTXO](/es/glosario/utxo) para el concepto de fondo y [Agrupación de direcciones (en inglés)](/glossary/address-clustering) para el problema de privacidad que esto resuelve.
+Consulta [UTXO](/es/glosario/utxo) para el concepto de fondo y [Agrupación de direcciones](/es/glosario/agrupacion-de-direcciones) para el problema de privacidad que esto resuelve.
 
-Lee [Privacidad en Bitcoin (en inglés)](/rabbit-hole/bitcoin-privacy) para entender por qué juntar monedas es la fuga que el control de monedas existe para evitar.
+Lee [Privacidad en Bitcoin](/es/a-fondo/privacidad-en-bitcoin) para entender por qué juntar monedas es la fuga que el control de monedas existe para evitar.

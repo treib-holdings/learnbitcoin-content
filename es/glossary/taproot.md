@@ -58,7 +58,7 @@ translation:
   method: "llm-draft"
 ---
 
-Taproot es el soft fork (una bifurcación compatible hacia atrás) que se activó en Bitcoin en noviembre de 2021, a la altura de bloque 709,632, y que trajo al protocolo dos mejoras criptográficas: las [firmas Schnorr (en inglés)](/glossary/schnorr-signature) ([BIP 340](https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki)) y el propio Taproot ([BIP 341](https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki), escrito por Pieter Wuille, Jonas Nick y Anthony Towns), junto con el nuevo lenguaje Tapscript ([BIP 342](https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki)) para condiciones de gasto avanzadas.
+Taproot es el soft fork (una bifurcación compatible hacia atrás) que se activó en Bitcoin en noviembre de 2021, a la altura de bloque 709,632, y que trajo al protocolo dos mejoras criptográficas: las [firmas Schnorr](/es/glosario/firma-schnorr) ([BIP 340](https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki)) y el propio Taproot ([BIP 341](https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki), escrito por Pieter Wuille, Jonas Nick y Anthony Towns), junto con el nuevo lenguaje Tapscript ([BIP 342](https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki)) para condiciones de gasto avanzadas.
 
 La característica principal es que **toda salida Taproot se ve igual en la cadena**. Da lo mismo si respalda una billetera de una sola firma, una multisig o un script complejo con bloqueos de tiempo y preimágenes de hash: la salida en la cadena es solo una clave pública de 32 bytes, y si las partes cooperan, el gasto es una sola firma Schnorr de 64 bytes. Quien observa no puede saber cuál de los tres se usó, a menos que se revele una ruta de script. Para la privacidad, esto es enorme.
 
@@ -82,15 +82,15 @@ La combinación hace que los contratos complejos paguen un costo casi nulo en la
 - **Multisig barata.** Pagas por la firma que de verdad usas, no por todas las claves con las que te comprometiste.
 - **Menos datos en la cadena.** Las firmas Schnorr ocupan 64 bytes fijos; las firmas ECDSA codificadas en DER llegan a 72 y se quedan en 71 incluso cuando se buscan a propósito firmas [low-R (en inglés)](/glossary/low-r-signatures).
 - **Criptografía más limpia.** Schnorr tiene pruebas de seguridad más sólidas que ECDSA.
-- **Una base para protocolos futuros.** Los [Silent Payments (en inglés)](/glossary/silent-payments), los Discreet Log Contracts (DLCs) y las construcciones más nuevas de Lightning se benefician de las primitivas de Taproot.
+- **Una base para protocolos futuros.** Los [Silent Payments](/es/glosario/silent-payments), los Discreet Log Contracts (DLCs) y las construcciones más nuevas de Lightning se benefician de las primitivas de Taproot.
 
 ## Adopción
 
 La adopción de Taproot tardó unos años en extenderse por el software de billeteras, las billeteras de hardware y la infraestructura. En 2026 casi todo el software ya lo admite para enviar y recibir, pero la mayoría de las billeteras importantes todavía entregan por defecto direcciones SegWit nativas `bc1q`; Bitcoin Core lo hace, y ofrece Taproot como opción. Alrededor del 5% de las salidas recién creadas son `bc1p...`, por debajo del pico de las [inscripciones (en inglés)](/glossary/inscriptions) de 2024, aunque por cantidad Taproot ya es el tipo de salida más numeroso del conjunto de UTXOs.
 
-Vale la pena nombrar una propiedad estructural: las salidas Taproot se comprometen con la clave pública ajustada (tweaked) directamente en la dirección bech32m; no hay una capa de hash delante. Toda salida P2TR está por eso "siempre expuesta" en términos [poscuánticos (en inglés)](/glossary/post-quantum-bitcoin): la clave pública está en la cadena desde que se crea la salida, se gaste o no alguna vez. A cambio se obtienen la privacidad de la ruta de clave y la eficiencia para los contratos complejos. La solución, cuando lleguen las firmas poscuánticas, es un nuevo tipo de salida, no abandonar Taproot.
+Vale la pena nombrar una propiedad estructural: las salidas Taproot se comprometen con la clave pública ajustada (tweaked) directamente en la dirección bech32m; no hay una capa de hash delante. Toda salida P2TR está por eso "siempre expuesta" en términos [poscuánticos](/es/glosario/bitcoin-poscuantico): la clave pública está en la cadena desde que se crea la salida, se gaste o no alguna vez. A cambio se obtienen la privacidad de la ruta de clave y la eficiencia para los contratos complejos. La solución, cuando lleguen las firmas poscuánticas, es un nuevo tipo de salida, no abandonar Taproot.
 
-Lee [Firma Schnorr (en inglés)](/glossary/schnorr-signature) y [Agregación de firmas (en inglés)](/glossary/signature-aggregation) para conocer las piezas básicas.
+Lee [Firma Schnorr](/es/glosario/firma-schnorr) y [Agregación de firmas (en inglés)](/glossary/signature-aggregation) para conocer las piezas básicas.
 
 Lee [El proceso de los BIPs (en inglés)](/rabbit-hole/bip-process) para ver el proceso que llevó a activar Taproot.
 

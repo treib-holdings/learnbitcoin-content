@@ -50,14 +50,14 @@ Es la forma *compatible hacia atrás* de hacer evolucionar el protocolo Bitcoin.
 
 Soft forks destacados de Bitcoin:
 
-- **[BIP 16 (P2SH) (en inglés)](/glossary/p2sh)**: 2012. Añadió las salidas P2SH, el tipo de script detrás de las direcciones que empiezan con 3.
+- **[BIP 16 (P2SH)](/es/glosario/p2sh)**: 2012. Añadió las salidas P2SH, el tipo de script detrás de las direcciones que empiezan con 3.
 - **[BIP 65 (CLTV) (en inglés)](/glossary/bip-65-opchecklocktimeverify)**: 2015. Añadió `OP_CHECKLOCKTIMEVERIFY` para los [bloqueos de tiempo absolutos (en inglés)](/glossary/absolute-locktime) en los scripts.
 - **[BIP 68/112/113 (CSV) (en inglés)](/glossary/checksequenceverify-csv)**: 2016. Añadió los bloqueos de tiempo relativos.
 - **[BIP 141 (SegWit)](/es/glosario/segwit)**: 2017. El grande: movió los datos de firma a un testigo (witness) separado, corrigió la maleabilidad por terceros y elevó la capacidad efectiva del bloque a entre 1.6 y 2 MB, aproximadamente, bajo un nuevo límite de 4 millones de unidades de peso.
-- **[BIP 340/341/342 (Taproot)](/es/glosario/taproot)**: 2021. Añadió las [firmas Schnorr (en inglés)](/glossary/schnorr-signature), Taproot y Tapscript.
+- **[BIP 340/341/342 (Taproot)](/es/glosario/taproot)**: 2021. Añadió las [firmas Schnorr](/es/glosario/firma-schnorr), Taproot y Tapscript.
 
 La activación suele pasar por la [señalización de mineros (en inglés)](/glossary/miner-signaling): suficientes mineros deben señalizar en los encabezados de sus bloques que están listos para las reglas nuevas antes de que el soft fork "quede fijado" (locked in) y empiece a hacerse cumplir. El mecanismo está definido en el [BIP 9](/es/glosario/bip-9-versionbits) y sus sucesores. Tras la activación, los nodos que no se han actualizado siguen funcionando, pero pueden aceptar bloques que violen las reglas nuevas; por eso los soft forks que de verdad cuentan con apoyo mayoritario son prácticamente seguros, mientras que los disputados pueden provocar [divisiones de la cadena](/es/glosario/division-de-la-cadena).
 
-El enfoque del soft fork es conservador: Bitcoin puede añadir funciones sin obligar a todo el mundo a actualizarse al mismo tiempo. También es parte de la razón por la que Bitcoin evoluciona despacio: para activarse de verdad, cualquier propuesta tiene que superar una vara muy alta de consenso entre la comunidad, los mineros y los nodos económicos. Esa dinámica completa entre todas las partes es lo que describe la [gobernanza de Bitcoin (en inglés)](/glossary/bitcoin-governance); los soft forks son la forma más común que toma ese proceso cuando el objetivo es añadir capacidades sin dividir la red.
+El enfoque del soft fork es conservador: Bitcoin puede añadir funciones sin obligar a todo el mundo a actualizarse al mismo tiempo. También es parte de la razón por la que Bitcoin evoluciona despacio: para activarse de verdad, cualquier propuesta tiene que superar una vara muy alta de consenso entre la comunidad, los mineros y los nodos económicos. Esa dinámica completa entre todas las partes es lo que describe la [gobernanza de Bitcoin](/es/glosario/gobernanza-de-bitcoin); los soft forks son la forma más común que toma ese proceso cuando el objetivo es añadir capacidades sin dividir la red.
 
 Lee [El proceso de los BIPs (en inglés)](/rabbit-hole/bip-process) para ver cómo un soft fork pasa de propuesta a activación.

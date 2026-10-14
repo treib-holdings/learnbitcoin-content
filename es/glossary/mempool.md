@@ -44,4 +44,4 @@ Los [mineros](/es/glosario/minero) arman bloques candidatos a partir de su propi
 
 Cuando una transacción entra en un bloque, cada nodo ve ese bloque, lo valida y elimina de su mempool las transacciones incluidas. Las transacciones que llevan tiempo esperando también pueden ser expulsadas cuando falta memoria o reemplazadas al [subir la comisión](/es/glosario/subir-la-comision) (fee bumping).
 
-Profundiza en el [tema a fondo sobre el mempool (en inglés)](/rabbit-hole/mempool): mercados de comisiones, reglas de expulsión, RBF y cómo se ve en realidad una transacción "atascada" a nivel del protocolo. Mira el estado del mempool en vivo en la [página del nodo (en inglés)](/node) o en la [sección 6 del tema a fondo sobre minería (en inglés)](/rabbit-hole/mining).
+Profundiza en el [tema a fondo sobre el mempool (en inglés)](/rabbit-hole/mempool): mercados de comisiones, reglas de expulsión, RBF y cómo se ve en realidad una transacción "atascada" a nivel del protocolo. Mira el estado del mempool en vivo en la [página del nodo](/es/nodo) o en la [sección 6 del tema a fondo sobre minería (en inglés)](/rabbit-hole/mining).

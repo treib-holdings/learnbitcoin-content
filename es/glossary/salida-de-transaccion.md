@@ -46,15 +46,15 @@ En el formato que circula por la red, cada salida consta de dos campos: un valor
 
 El script de bloqueo puede ser simple ("quien tenga esta clave privada puede gastar") o tan complejo como se quiera (multisig, con bloqueo de tiempo, con bloqueo por hash, o lógica general de [Bitcoin Script (en inglés)](/glossary/bitcoin-script)). En la práctica dominan un puñado de patrones estándar:
 
-- **[P2PKH (en inglés)](/glossary/p2pkh-pay-public-key-hash)**: direcciones legacy (las anteriores a SegWit) que empiezan con `1`. Se gasta revelando una clave pública más una firma que le corresponda.
-- **[P2SH (en inglés)](/glossary/p2sh)**: direcciones que empiezan con `3`. Se gasta revelando un script de canje (redeem script), que es el que define las condiciones reales de gasto, junto con los datos que lo satisfacen.
-- **[P2WPKH (en inglés)](/glossary/p2wpkh-pay-witness-public-key-hash)**: direcciones SegWit que empiezan con `bc1q...`. El equivalente de P2PKH en SegWit nativo.
-- **[P2WSH (en inglés)](/glossary/p2wsh-pay-witness-script-hash)**: direcciones SegWit que también empiezan con `bc1q...` (pero más largas: 62 caracteres en vez de 42). El equivalente de P2SH en SegWit nativo.
+- **[P2PKH](/es/glosario/p2pkh)**: direcciones legacy (las anteriores a SegWit) que empiezan con `1`. Se gasta revelando una clave pública más una firma que le corresponda.
+- **[P2SH](/es/glosario/p2sh)**: direcciones que empiezan con `3`. Se gasta revelando un script de canje (redeem script), que es el que define las condiciones reales de gasto, junto con los datos que lo satisfacen.
+- **[P2WPKH](/es/glosario/p2wpkh)**: direcciones SegWit que empiezan con `bc1q...`. El equivalente de P2PKH en SegWit nativo.
+- **[P2WSH](/es/glosario/p2wsh)**: direcciones SegWit que también empiezan con `bc1q...` (pero más largas: 62 caracteres en vez de 42). El equivalente de P2SH en SegWit nativo.
 - **[Taproot](/es/glosario/taproot) (P2TR)**: direcciones que empiezan con `bc1p...`. Añade el gasto por ruta de clave (key path) y por ruta de script (script path) con firmas Schnorr.
 
 Las salidas son *indivisibles*. No puedes gastar la mitad de un UTXO: lo gastas entero y te devuelves el sobrante en una nueva **[salida de cambio](/es/glosario/salida-de-cambio)**. Por eso la mayoría de las [transacciones](/es/glosario/transaccion) que haces tienen dos salidas: una para el destinatario real y otra de vuelta a tu propia billetera.
 
 Dos casos especiales que vale la pena conocer:
 
-- **Salidas de [polvo (dust)](/es/glosario/polvo).** Las salidas que valen menos que la comisión que costaría gastarlas (546 sats para una salida legacy, 294 para P2WPKH y 330 para Taproot, con la tasa de polvo por defecto de Bitcoin Core de 3 sat/vB) no son estándar: la política de retransmisión por defecto se niega a retransmitirlas o minarlas. Consulta [límite de polvo (en inglés)](/glossary/dust-limit).
+- **Salidas de [polvo (dust)](/es/glosario/polvo).** Las salidas que valen menos que la comisión que costaría gastarlas (546 sats para una salida legacy, 294 para P2WPKH y 330 para Taproot, con la tasa de polvo por defecto de Bitcoin Core de 3 sat/vB) no son estándar: la política de retransmisión por defecto se niega a retransmitirlas o minarlas. Consulta [límite de polvo](/es/glosario/limite-de-polvo).
 - **Salidas [OP_RETURN (en inglés)](/glossary/opreturn).** Un script de bloqueo que empieza con `OP_RETURN` es imposible de gastar, y se puede demostrar. Normalmente llevan cero satoshis y existen solo para incrustar datos, como metadatos de protocolos, certificaciones o anclas de sidechains (cadenas laterales), sin inflar el conjunto de UTXOs.

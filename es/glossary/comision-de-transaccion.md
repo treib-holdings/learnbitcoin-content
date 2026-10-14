@@ -51,7 +51,7 @@ La comisión de transacción es lo que les pagas a los [mineros](/es/glosario/mi
 
 Las comisiones se expresan como una *tasa*, no como un total: **sats por byte virtual (sat/vB)**. Una transacción más grande paga más comisión a la misma tasa. Tamaños típicos de transacción:
 
-- [P2WPKH (en inglés)](/glossary/p2wpkh-pay-witness-public-key-hash) simple (1 entrada, 2 salidas): unos 140 vB
+- [P2WPKH](/es/glosario/p2wpkh) simple (1 entrada, 2 salidas): unos 140 vB
 - [Taproot](/es/glosario/taproot) (1 entrada, 2 salidas): unos 110 vB
 - Multisig 2 de 3: unos 250 vB
 - Consolidaciones con muchas entradas: más de 500 vB
@@ -67,4 +67,4 @@ La dinámica del mercado de comisiones:
 
 A largo plazo, las comisiones de transacción están llamadas a convertirse en *el* incentivo de los mineros. En el año que terminó en octubre de 2026 fueron cerca del 0.6% de los ingresos por [recompensa de bloque](/es/glosario/recompensa-de-bloque) (cerca del 6.5% en 2024). A medida que el [subsidio de bloque](/es/glosario/subsidio-de-bloque) se reduce a la mitad una y otra vez hasta llegar a cero hacia 2140, las comisiones pasan a ser el 100% de esa recompensa. Si para entonces el mercado de comisiones será lo bastante grande para pagar una seguridad sólida es una pregunta abierta.
 
-Mira las franjas de comisión del mempool en vivo en la [página del nodo (en inglés)](/node) o en la [sección 6 del tema a fondo sobre minería (en inglés)](/rabbit-hole/mining).
+Mira las franjas de comisión del mempool en vivo en la [página del nodo](/es/nodo) o en la [sección 6 del tema a fondo sobre minería (en inglés)](/rabbit-hole/mining).

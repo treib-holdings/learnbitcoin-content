@@ -50,8 +50,8 @@ CoinJoin es útil de verdad y limitado de verdad. Mejora la fungibilidad de tus 
 
 El panorama de las implementaciones cambió drásticamente en 2024. **El coordinador de Wasabi** (operado por zkSNACKs) cerró a mediados de 2024 bajo presión regulatoria. **Samourai Whirlpool** se apagó en abril de 2024, cuando el Departamento de Justicia de Estados Unidos arrestó a sus fundadores por cargos de conspiración para lavar dinero y para transmitir dinero sin licencia; en 2025 se declararon culpables solo del cargo de transmisión de dinero y fueron condenados a cinco y cuatro años. En 2026, las opciones que siguen funcionando incluyen **JoinMarket** (entre pares, sin operador central; su código original se archivó en abril de 2026 y el desarrollo continúa en el proyecto independiente joinmarket-ng), **Joinstr** (rondas organizadas a través de relays de Nostr) y la billetera **Wasabi** (que ahora se usa con coordinadores operados de forma independiente).
 
-[PayJoin (en inglés)](/glossary/payjoin) es un enfoque distinto y de menor escala que logra objetivos de privacidad parecidos sin mezclas por lotes.
+[PayJoin](/es/glosario/payjoin) es un enfoque distinto y de menor escala que logra objetivos de privacidad parecidos sin mezclas por lotes.
 
 La privacidad en Bitcoin se puede lograr, pero exige un esfuerzo deliberado. CoinJoin es una herramienta; la disciplina con las direcciones, Tor, [Lightning](/es/glosario/lightning-network) y evitar los puntos de control del KYC son otras.
 
-Lee [Privacidad en Bitcoin (en inglés)](/rabbit-hole/bitcoin-privacy) para ver el panorama completo después de 2024: qué protege CoinJoin y qué no, qué cambiaron los arrestos y qué sobrevivió.
+Lee [Privacidad en Bitcoin](/es/a-fondo/privacidad-en-bitcoin) para ver el panorama completo después de 2024: qué protege CoinJoin y qué no, qué cambiaron los arrestos y qué sobrevivió.

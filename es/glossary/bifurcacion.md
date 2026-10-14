@@ -63,4 +63,4 @@ La asimetría entre soft forks y hard forks es una de las defensas conservadoras
 
 Las palabras "bifurcación" y "fork" también se usan a veces, de forma confusa, para divergencias *temporales* (dos mineros que encuentran bloques a la misma altura), pero a esas conviene llamarlas [reorganizaciones](/es/glosario/reorganizacion) breves (reorgs): la red las resuelve en uno o dos bloques.
 
-Para seguir una bifurcación accidental minuto a minuto, lee [La bifurcación de 2013 (en inglés)](/rabbit-hole/2013-chain-fork).
+Para seguir una bifurcación accidental minuto a minuto, lee [La bifurcación de 2013](/es/a-fondo/bifurcacion-de-2013).

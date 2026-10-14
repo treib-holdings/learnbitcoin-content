@@ -1,0 +1,322 @@
+---
+title: "La bifurcación de la cadena de 2013"
+slug: bifurcacion-de-2013
+translationOf: 2013-chain-fork
+sourceHash: "15d8e25d2522"
+sourceCommit: "0fdb496"
+sourceUpdated: "2026-10-01"
+translation:
+  method: "llm-draft"
+draft: false
+published: "2026-10-15"
+status: live
+section: rabbit-hole
+category: history
+alsoIn: ["who-decides"]
+featured: true
+tagline: "El 11 de marzo de 2013 una actualización de software partió Bitcoin en dos cadenas. Desarrolladores, operadores de pools y exchanges lo discutieron en una sala de chat pública y lo volvieron a unir en menos de ocho horas. Este es el registro, con las horas exactas."
+order: 19
+estimatedMinutes: 14
+ogImage: "/diagrams/og/2013-chain-fork.png"
+ogImageAlt: "Línea de tiempo de dos carriles de la bifurcación de la cadena de Bitcoin del 11 al 12 de marzo de 2013. La cadena se divide después del bloque 225,429. El carril superior, gris, que siguieron los nodos de la versión 0.8, empieza con un bloque de 998 kB del pool de Slush a las 22:39 UTC, tiene alrededor del 60 por ciento del poder de cómputo, corre 25 bloques y termina en el 225,454. El carril inferior, naranja, que todas las versiones podían seguir, rebasa en el bloque 225,455 a las 06:20 UTC y continúa como la única cadena."
+sources:
+  - { label: "BIP-50 - March 2013 Chain Fork Post-Mortem", url: "https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki" }
+  - { label: "BIP-50 revision history (the February 2016 rewrite)", url: "https://github.com/bitcoin/bips/commits/master/bip-0050.mediawiki" }
+  - { label: "bitcoin.org - 11/12 March 2013 Chain Fork Information", url: "https://bitcoin.org/en/alert/2013-03-11-chain-fork" }
+  - { label: "bitcoin.org - the chain fork notice as it read on 12 March 2013, 02:45 UTC (Wayback Machine)", url: "http://web.archive.org/web/20130312113133/http://bitcoin.org/chainfork.html" }
+  - { label: "bitcoin.org - March 2013 upgrade deadline (the May 15 notice)", url: "https://bitcoin.org/en/alert/2013-03-15-upgrade-deadline" }
+  - { label: "#bitcoin-dev IRC log, 11 March 2013 (buildingbitcoin.org, Wayback Machine)", url: "http://web.archive.org/web/20200923052820/https://buildingbitcoin.org/bitcoin-dev/log-2013-03-11.html" }
+  - { label: "#bitcoin-dev IRC log, 12 March 2013 (buildingbitcoin.org, Wayback Machine)", url: "http://web.archive.org/web/20200921053434/https://buildingbitcoin.org/bitcoin-dev/log-2013-03-12.html" }
+  - { label: "Pieter Wuille - first email to bitcoin-development, 12 March 2013 00:18 UTC", url: "https://gnusha.org/pi/bitcoindev/CAPg+sBip_4Jtxhq+rm-na2=RSJ_PuoZt+akGgJyo0b_Bwbr1Dw@mail.gmail.com/" }
+  - { label: "Pieter Wuille - Alert: chain fork caused by pre-0.8 clients dealing badly with large blocks (BitcoinTalk)", url: "https://bitcointalk.org/index.php?topic=152030.0" }
+  - { label: "Pieter Wuille - 0.8 was wrong for not following the rules of the network, bitcoin-development (13 March 2013)", url: "https://gnusha.org/pi/bitcoindev/20130313183824.GB7921@vps7135.xlshosting.net/" }
+  - { label: "Gavin Andresen - 0.8.1 plan, bitcoin-development (17 March 2013)", url: "https://gnusha.org/pi/bitcoindev/CABsx9T050Zia=5Xy4fRh_RtjOQzAVi-UPKmhYCuKbdZTF3U7dA@mail.gmail.com/" }
+  - { label: "Bitcoin 0.7.2 source - src/db.cpp, the 10,000 lock setting", url: "https://github.com/bitcoin/bitcoin/blob/v0.7.2/src/db.cpp#L85-L86" }
+  - { label: "Bitcoin 0.8.1 source - src/main.cpp, the 4,500 txid rule", url: "https://github.com/bitcoin/bitcoin/blob/v0.8.1/src/main.cpp#L2056-L2073" }
+  - { label: "Bitcoin 0.8.1 release notes", url: "https://bitcoin.org/en/release/v0.8.1" }
+  - { label: "Bitcoin Core PR #2373 - the temporary block rule", url: "https://github.com/bitcoin/bitcoin/pull/2373" }
+  - { label: "Mike Hearn - Soft block size limit reached, action required by YOU (BitcoinTalk, 6 March 2013)", url: "https://bitcointalk.org/index.php?topic=149668.0" }
+  - { label: "macbook-air - A successful DOUBLE SPEND US$10000 against OKPAY this morning (BitcoinTalk)", url: "https://bitcointalk.org/index.php?topic=152348.0" }
+  - { label: "BTC Guild pool thread, 12 March 2013 (Eleuthria on the cost)", url: "https://bitcointalk.org/index.php?topic=49417.1840" }
+  - { label: "blockchain.info - the orphaned block 225,430 (Wayback Machine, 14 March 2013)", url: "https://web.archive.org/web/20130314234504/http://blockchain.info/block/000000000000015c50b165fcdd33556f8b44800c5298943ac70b112df480c023" }
+  - { label: "mempool.space - block 225,430 on the surviving chain", url: "https://mempool.space/block/00000000000001c108384350f74090433e7fcf79a606b8e797f065b130575932" }
+  - { label: "mempool.space - block 225,455, where the old chain overtook", url: "https://mempool.space/block/000000000000016924f85069603be8164578eedf113f44d60bf0438cba047c7f" }
+  - { label: "mempool.space - block 252,451, 16 August 2013", url: "https://mempool.space/block/0000000000000024b58eeb1134432f00497a6a860412996e7a260f47126eed07" }
+  - { label: "bitcoin-data/stale-blocks - some headers of the abandoned chain", url: "https://github.com/bitcoin-data/stale-blocks/blob/master/stale-blocks.csv" }
+  - { label: "NVD - CVE-2013-3220", url: "https://nvd.nist.gov/vuln/detail/CVE-2013-3220" }
+  - { label: "Pieter Wuille - How is a hard fork resolved? (Bitcoin Stack Exchange, April 2013)", url: "https://bitcoin.stackexchange.com/a/10000" }
+  - { label: "Pieter Wuille - Chaincode Labs podcast, part 1 (2020 transcript)", url: "https://btctranscripts.com/chaincode-podcast/2020-01-28-pieter-wuille-part1" }
+  - { label: "Vitalik Buterin - Bitcoin Network Shaken by Blockchain Fork (Bitcoin Magazine, 13 March 2013)", url: "https://bitcoinmagazine.com/technical/bitcoin-network-shaken-by-blockchain-fork-1363144448" }
+  - { label: "Ars Technica - Major glitch in Bitcoin network sparks sell-off; price temporarily falls 23% (12 March 2013)", url: "https://arstechnica.com/information-technology/2013/03/major-glitch-in-bitcoin-network-sparks-sell-off-price-temporarily-falls-23/" }
+  - { label: "Hacker News - Bitcoin blockchain issue, Mt Gox deposits temporarily suspended (12 March 2013)", url: "https://news.ycombinator.com/item?id=5359406" }
+  - { label: "Alan Reiner - bitcoin-development, 12 March 2013", url: "https://www.mail-archive.com/bitcoin-development@lists.sourceforge.net/msg01832.html" }
+  - { label: "Neighbourhood Pool Watch - weekly pool and network statistics, 10 March 2013", url: "https://organofcorti.blogspot.com/2013/03/10th-march-2013-weekly-pool-and-network.html" }
+  - { label: "Neighbourhood Pool Watch - weekly pool and network statistics, 17 March 2013", url: "https://organofcorti.blogspot.com/2013/03/17th-march-2013-weekly-pool-and-network.html" }
+  - { label: "Mt. Gox USD trade history (bitcoincharts archive, Wayback Machine)", url: "http://web.archive.org/web/20161229014309/http://api.bitcoincharts.com/v1/csv/mtgoxUSD.csv.gz" }
+  - { label: "99Bitcoins - Bitcoin Obituaries", url: "https://99bitcoins.com/bitcoin-obituaries/" }
+  - { label: "BitMEX Research - Bitcoin's consensus forks (Wayback Machine)", url: "https://web.archive.org/web/20240110121831/https://blog.bitmex.com/bitcoins-consensus-forks/" }
+  - { label: "Pieter Wuille - why consensus-relevant libraries are pinned (Bitcoin Stack Exchange)", url: "https://bitcoin.stackexchange.com/a/75147" }
+  - { label: "Arvind Narayanan - Analyzing the 2013 Bitcoin fork (Princeton CITP, 2015)", url: "https://blog.citp.princeton.edu/2015/07/28/analyzing-the-2013-bitcoin-fork-centralized-decision-making-saved-the-day/" }
+  - { label: "Jameson Lopp - Running Bitcoin Core v0.7 and earlier (2022)", url: "https://blog.lopp.net/running-bitcoin-core-v0-7-and-earlier/" }
+  - { label: "Satoshi Nakamoto on alternative implementations (BitcoinTalk, 17 June 2010)", url: "https://bitcointalk.org/index.php?topic=195.msg1611#msg1611" }
+  - { label: "bitcoin.org - the July 2015 BIP-66 fork alert", url: "https://bitcoin.org/en/alert/2015-07-04-spv-mining" }
+  - { label: "Bitcoin Core - CVE-2018-17144 full disclosure", url: "https://bitcoincore.org/en/2018/09/20/notice/" }
+relatedTerms:
+  - bip-50
+  - chain-split
+  - fork
+  - soft-fork
+  - reorg-reorganization
+  - stale-block
+  - orphan-block
+  - double-spend
+  - longest-chain-rule
+  - transaction-finality
+  - fork-detection
+  - mining-pool
+  - hash-rate
+  - full-node
+  - bitcoin-core
+  - block-size
+  - mt-gox
+  - inflation-bug
+  - bitcoin-governance
+  - consensus-parameter
+hasInteractive: []
+---
+
+> **Adónde vas:** Durante siete horas y cuarenta y un minutos de marzo de 2013, la red Bitcoin estuvo partida en dos. Un cambio de base de datos en la versión 0.8 había eliminado en silencio un límite que nadie sabía que era una regla, un bloque grande lo cruzó, y los nodos viejos y los nuevos dejaron de estar de acuerdo sobre cuál era la cadena. Este capítulo sigue esa noche desde el registro público del chat: quién lo notó, quién defendió cuál cadena, el operador de pool que podía decidir el resultado él solo y pagó el costo, el único doble gasto, y la reparación, que se completó dos meses después con un cambio de regla planeado que puede contar o no como una segunda bifurcación. De paso corrige varias cosas que la versión que suele contarse dice mal, incluida la duración de la bifurcación.
+
+## Un cambio de base de datos
+
+Bitcoin 0.8.0 salió en febrero de 2013 y su atractivo principal era la velocidad. Todas las versiones anteriores habían guardado el índice de bloques en Berkeley DB, una base de datos embebida de los años noventa, y sincronizar un [nodo](/es/glosario/nodo-completo) nuevo se había vuelto dolorosamente lento. La versión 0.8 la reemplazó por LevelDB, una adaptación (port) que Mike Hearn había empezado, y por un motor de validación rediseñado que escribió Pieter Wuille. Los nodos sincronizaban mucho más rápido. Nadie tenía la intención de cambiar qué bloques eran válidos, y las notas de la versión no decían que nada relacionado con la validez hubiera cambiado.
+
+Al mismo tiempo, los bloques se estaban llenando. El protocolo permitía un megabyte, pero el valor predeterminado del software para los mineros era construir bloques de como máximo 250,000 bytes, y a principios de marzo el servicio de apuestas SatoshiDice enviaba transacciones suficientes para tocar ese techo. El 6 de marzo Mike Hearn publicó en BitcoinTalk un hilo titulado "Soft block size limit reached, action required by YOU" (se alcanzó el límite blando de tamaño de bloque, se requiere que TÚ actúes), en el que les decía a los mineros que el valor predeterminado se había alcanzado y que tenían que decidir qué hacer al respecto, con subir ese ajuste como primera opción. Varios lo subieron. El pool de Slush pasó a 500 kB, y después a más. El resumen de Gregory Maxwell, dado en la sala de chat mientras la bifurcación seguía en marcha: "Gavin and Mike went around and nagged pools to increase their target sizes.. so its not surprising that someone was running with a big setting." (Gavin y Mike anduvieron insistiéndoles a los pools para que subieran sus tamaños objetivo.. así que no sorprende que alguien estuviera corriendo con un ajuste grande.)
+
+Para el 11 de marzo, alrededor del 60 por ciento del [hashrate](/es/glosario/hashrate), el poder de cómputo de la red, corría sobre la base de datos nueva, y algunos pools construían bloques hasta cuatro veces más grandes que el valor predeterminado anterior.
+
+## El bloque 225,430
+
+A las 22:39:09 UTC del 11 de marzo de 2013, el pool de Slush minó el bloque 225,430. Contenía 1,752 transacciones y pesaba unos 998,000 bytes, apenas por debajo del límite de un megabyte. No rompía ninguna regla de ningún documento. Los nodos con la 0.8 lo aceptaron y siguieron adelante.
+
+Muchos nodos con la 0.7 y versiones anteriores, no. Sus registros se llenaron de una sola línea:
+
+```
+Lock table is out of available lock entries
+```
+
+*(La tabla de locks, los bloqueos internos de la base de datos, se quedó sin entradas disponibles.)*
+
+Esos nodos trataron el bloque como inválido y se quedaron esperando un bloque distinto a esa altura. Los mineros que seguían con software viejo al final produjeron uno, a las 23:24:19, cuarenta y cinco minutos después: 797 transacciones, 249 kB. Ese es el bloque de la altura 225,430 en la cadena que sobrevivió, y el que muestra un explorador de bloques. El original sobrevive solo en archivos históricos.
+
+Desde ese momento hubo dos cadenas con una historia común hasta el bloque 225,429. Los nodos nuevos siguieron la cadena con más trabajo de minería detrás, la que contenía el bloque grande, mientras que los nodos viejos habían rechazado ese bloque y se quedaron en la otra.
+
+<figure>
+  <img src="/diagrams/2013-chain-fork.svg" alt="Línea de tiempo de dos carriles, 11 y 12 de marzo de 2013, UTC. Una sola cadena naranja llega al bloque 225,429 a las 21:59 y se divide. Carril superior, gris, la cadena que siguieron los nodos 0.8: bloque 225,430 del pool de Slush a las 22:39, 998 kB y 1,752 transacciones, alrededor del 60 por ciento del poder de cómputo, 13 bloques de ventaja hacia las 02:05, y termina en una X en el bloque 225,454 con 25 bloques abandonados y 625 BTC de recompensas de bloque perdidos por los mineros que los construyeron. Carril inferior, naranja, la cadena que todas las versiones podían seguir: primer bloque a las 23:24, 45 minutos por detrás, rebasa en el bloque 225,455 a las 06:20, y desde ahí continúa una sola cadena naranja. Marcadores: 23:11 primer reporte en la sala de chat de los desarrolladores, 00:05 se reconoce la división, 00:45 los desarrolladores y BTC Guild acuerdan volver atrás, 02:36 todos los servidores de BTC Guild en la cadena vieja, 06:20 la reorganización." />
+  <figcaption>La cadena que tenía detrás la mayor parte del poder de cómputo fue la que se descartó.</figcaption>
+</figure>
+
+## La regla que nadie escribió
+
+La causa eran dos líneas en la configuración de la base de datos del software viejo, en `src/db.cpp`:
+
+```
+dbenv.set_lk_max_locks(10000);
+dbenv.set_lk_max_objects(10000);
+```
+
+Berkeley DB toma un lock sobre cada página de la base de datos que toca durante una actualización, y Bitcoin escribía cada bloque en la base de datos como una sola actualización de todo o nada. Esas dos líneas limitaban el número de locks a 10,000. El número lo había elegido el propio Bitcoin, años antes; el valor predeterminado de Berkeley DB es 1,000. La estimación de Wuille a la mañana siguiente fue que actualizar n entradas del índice de transacciones necesita hasta 2n locks, y que el bloque en cuestión "modified slightly over 5000 transaction index entries" (modificó poco más de 5000 entradas del índice de transacciones), lo que lo ponía más allá de lo que tenía un nodo viejo.
+
+El tamaño del bloque era un asunto secundario. En la [testnet](/es/glosario/testnet) se habían probado bloques llenos de un megabyte y habían pasado. Lo que importaba era cuántas transacciones anteriores distintas tocaba un bloque, y un bloque podía estar por debajo del límite de tamaño y por encima del límite de locks. El [BIP 50](/es/glosario/bip-50), el postmortem que se escribió por primera vez ese mes y se reescribió en parte en 2016, lo dice sin rodeos: "it did not occur to anyone that there could be blocks that were smaller but require more locks than were available." (a nadie se le ocurrió que pudiera haber bloques más pequeños pero que requirieran más locks de los disponibles.)
+
+El límite, además, cambiaba de una máquina a otra. Los locks se toman por página, y qué entradas comparten una página depende del orden en que cada nodo haya escrito su base de datos. El BIP 50 otra vez: "the number of locks required depends on the exact arrangement of the blkindex.dat on disk." (el número de locks necesarios depende de la disposición exacta del blkindex.dat en el disco.) El mismo bloque podía pasar en un nodo 0.7 y fallar en otro. Algunos parecen haberlo aceptado: Peter Todd reportó esa noche que uno de sus nodos 0.7 parecía haber seguido la cadena que se suponía que debía rechazar, con un registro lleno de errores.
+
+El software viejo, encima, reportaba mal la falla. Quedarse sin locks es un error de recursos, como un disco lleno, pero el código lo trataba como si el bloque fuera inválido. Wuille, en 2020: "a failure to grab a lock would be treated as that block being invalid." (no poder tomar un lock se trataba como que ese bloque era inválido.)
+
+Así que Bitcoin venía haciendo cumplir un límite no escrito desde 2009, uno que los bloques habían sido demasiado pequeños para alcanzar, y la versión 0.8 lo eliminó sin que nadie supiera que estaba ahí.
+
+## 23:11: un nodo roto
+
+El primer reporte llegó a las 23:11:01 UTC, treinta y dos minutos después del bloque, en el canal #bitcoin-dev de Freenode. Un operador de nodo con el apodo thermoman escribió:
+
+```
+23:11:01 thermoman: i'm getting invalid chain and "no available lock entries" in db.log
+23:11:09 thermoman: anyone help?
+```
+
+*(Es decir: "me sale cadena inválida y 'no available lock entries' en db.log"; "¿alguien me ayuda?")*
+
+Wuille, que aparece en el registro como sipa, respondió en cuestión de minutos y lo trató como lo que parecía, un servidor que se portaba mal. "0.8 won't have that problem, as it doesn't use BDB for the blockchain anymore." (La 0.8 no va a tener ese problema, porque ya no usa BDB para la cadena de bloques; BDB es Berkeley DB.) Luego, a las 23:32: "the problem is BDB ran out of locks and can't do modifications anymore." (el problema es que BDB se quedó sin locks y ya no puede hacer modificaciones.) El consejo fue actualizar. thermoman dijo que no podía actualizar un servidor de producción en ese momento.
+
+A las 23:42 un segundo usuario, jouke, reportó que su nodo 0.7 le advertía que ese nodo, o el resto de la red, necesitaba actualizarse. A las 23:59 pegó el mismo error de locks, y thermoman respondió "same here!" (¡aquí igual!). Unos segundos después Wuille escribió:
+
+```
+23:59:57 sipa: i wonder if there's something that triggered it on the network
+```
+
+*(Es decir: "me pregunto si hay algo en la red que lo haya disparado".)*
+
+## "so... yay accidental hardfork?"
+
+Tomó seis minutos más. Wuille notó que un explorador de bloques público no había pasado de la altura 225,431 mientras su propio nodo iba en la 225,439. Luke Dashjr revisó sus propios registros, encontró el error de locks y escribió:
+
+```
+00:05:48 Luke-Jr: so... yay accidental hardfork? :x
+00:06:06 jouke: Holy crap
+```
+
+*(Es decir: "o sea... ¿viva el hard fork accidental? :x"; "No puede ser".)*
+
+Un hard fork es un cambio de reglas que el software viejo no puede seguir, de modo que los nodos que no se actualizan terminan en una cadena aparte. Nadie había planeado este.
+
+La primera pregunta práctica fue sobre el dinero. Dashjr le preguntó a Mark Karpeles, de [Mt. Gox](/es/glosario/mt-gox), que estaba en el canal como MagicalTux, de qué lado estaba el exchange más grande. Estaba en software viejo. Dashjr sugirió congelar los depósitos. A las 00:10:47, cinco minutos después de que apareciera la palabra "hardfork", Karpeles escribió: "I've disabled the import of bitcoin blocks." (Desactivé la importación de bloques de bitcoin.)
+
+El consejo de Dashjr a quien hizo el primer reporte sigue valiendo para cualquiera que quede atrapado en una división de la cadena: "this problem is bigger than just you; just don't trust confirmations at this point IMO." (este problema va más allá de ti; en mi opinión, por ahora simplemente no confíes en las confirmaciones.) Una confirmación es un bloque añadido encima del que contiene tu pago. En una división, las confirmaciones de la cadena que pierde desaparecen.
+
+A las 00:18 Wuille escribió a la lista de correo de desarrollo. Ese primer mensaje daba la instrucción equivocada: "Immediate solution is upgrading to 0.8, or manually setting the number of lock objects higher in your database." (La solución inmediata es actualizar a la 0.8, o subir a mano el número de objetos de lock en tu base de datos.) El correo corregido salió a la 01:01, aunque Wuille venía defendiendo la cadena vieja en el canal desde las 00:24.
+
+## Veinte minutos para decidir
+
+A las 00:20 la situación estaba clara. La cadena que seguían los nodos 0.8 iba seis bloques adelante y tenía la mayoría del poder de cómputo. La otra cadena era la única que los nodos viejos podrían aceptar jamás, porque iban a rechazar el bloque 225,430 para siempre sin importar cuánto trabajo se apilara encima. Las dos no iban a converger solas.
+
+Una salida era pasar a todos los usuarios a la 0.8 de inmediato. La otra era sacar de la cadena más larga a suficientes mineros para que la más corta la rebasara.
+
+Gavin Andresen, entonces el mantenedor principal, partió de la posición de manual:
+
+```
+00:22:18 gavinandresen: the 0.8 fork is longer, yes? So majority hashpower is 0.8....
+00:22:46 gavinandresen: first rule of bitcoin: majority hashpower wins
+00:22:53 Luke-Jr: gavinandresen: if we go with 0.8, we are hardforking
+00:23:28 Luke-Jr: gavinandresen: majority hashpower has never ruled on a hardfork before
+00:24:29 sipa: and i disagree with majority hashpower wins; this is a hardfork - just a majority isn't enough
+```
+
+*(Es decir: Andresen: "la bifurcación de la 0.8 es más larga, ¿sí? Entonces la mayoría del poder de cómputo está en la 0.8...."; "primera regla de bitcoin: gana la mayoría del poder de cómputo". Dashjr: "si nos vamos con la 0.8, estamos haciendo un hard fork"; "la mayoría del poder de cómputo nunca ha decidido un hard fork". Wuille: "y no estoy de acuerdo con que gane la mayoría del poder de cómputo; esto es un hard fork - una simple mayoría no basta".)*
+
+El argumento de Wuille era sobre quién saldría lastimado. Los mineros se habían actualizado rápido, pero la mayoría de los comercios y los exchanges seguían en versiones viejas. Escribió que "even with 90% of mining power on 0.8, all merchants on an old client will be vulnerable" (incluso con el 90% del poder de cómputo en la 0.8, todos los comercios con un cliente viejo van a quedar vulnerables), y luego: "the only sane choice is making a chain that we know now everyone accepts." (la única opción sensata es hacer una cadena que ya sabemos que todos aceptan.) Y unos minutos después: "we _cannot_ get every bitcoin user in the world to now instantly switch to 0.8." (_no podemos_ hacer que todos los usuarios de bitcoin del mundo se cambien ahora mismo a la 0.8.)
+
+Andresen todavía no estaba convencido. A las 00:39: "Going backwards is the wrong thing to do, in my opinion." (Ir hacia atrás es lo incorrecto, en mi opinión.) A las 00:40: "The bug is clearly in 0.7." (El bug está claramente en la 0.7.) Un habitual del canal respondió que el bug estaba en la 0.8, ya que quitar la base de datos vieja había cambiado el comportamiento, y Wuille le dio la razón. Dashjr le contestó a Andresen: "it's a bitcoin rule we didn't know about." (es una regla de bitcoin que no conocíamos.)
+
+Michael Marsee, que dirigía BTC Guild bajo el nombre Eleuthria, lo zanjó. BTC Guild era el pool más grande, estaba en la 0.8 y representaba cerca de la mitad del poder de cómputo de esa cadena. Había estado siguiendo la discusión, y a las 00:28 dijo que volver atrás "seems to be the right solution" (parece ser la solución correcta). A las 00:30:45, catorce minutos antes de que los mantenedores estuvieran formalmente de acuerdo, escribió: "Working on rolling back BTC Guild to 0.7 now." (Trabajando ahora mismo en regresar BTC Guild a la 0.7.) Segundos después: "An involuntary hardfork doesn't gain legitimacy due to majority." (Un hard fork involuntario no gana legitimidad por tener mayoría.) A las 00:43 le pidió al canal que lo confirmara. Jeff Garzik (jgarzik) era otro de los desarrolladores, y ACK es la abreviatura con la que dicen que están de acuerdo.
+
+```
+00:43:42 Eleuthria: I can single handedly put 0.7 back to the majority hash power
+00:43:53 Eleuthria: I just need confirmation that thats what should be done
+00:44:10 sipa: Eleuthria: imho, that is was you should do, but we should have consensus first
+00:44:27 jgarzik: sipa, Eleuthria: ACK on preferring 0.7 chain, for the moment
+00:44:55 gavinandresen: Eleuthria: if you can cleanly get us back on the 0.7 chain, ACK from here, too
+00:45:03 Eleuthria: alright
+```
+
+*(Es decir: Marsee: "Yo solo puedo devolverle a la 0.7 la mayoría del poder de cómputo"; "Solo necesito confirmación de que eso es lo que hay que hacer". Wuille: "en mi humilde opinión, eso es lo que deberías hacer, pero primero deberíamos tener consenso". Garzik: "ACK a preferir la cadena de la 0.7, por el momento". Andresen: "si puedes devolvernos limpiamente a la cadena de la 0.7, ACK desde aquí también". Marsee: "de acuerdo".)*
+
+## La vuelta atrás
+
+La decisión llegó treinta y nueve minutos después de que se reconociera la bifurcación. Llevarla a cabo tomó casi toda la noche.
+
+Un pool no puede cambiar de cadena moviendo un interruptor. Marsee tuvo que cargar una copia de toda la cadena en el formato viejo en cada uno de sus servidores y reiniciarlos uno por uno. Le dijo al canal "it will take about 45 minutes" (va a tomar unos 45 minutos). También detuvo los pagos, porque cada pago que el pool había hecho en la cadena de la 0.8 estaba a punto de dejar de existir.
+
+Mientras eso corría, el resto del ecosistema dejó de mover dinero. Erik Voorhees pausó SatoshiDice a las 00:59. El exchange Bitfloor hizo una pausa a la 01:11. BitPay congeló sus operaciones. Se reportó que Coinbase había suspendido las ventas. A la 01:12 Andresen le dijo al canal "Everybody mining on version 0.8 should stop mining for now" (Todos los que estén minando con la versión 0.8 deberían dejar de minar por ahora), y en cuestión de minutos el mismo mensaje salió como alerta de red, un aviso firmado que los desarrolladores podían entonces enviar a todos los nodos.
+
+El mercado lo notó más o menos a la misma hora. Bitcoin se negociaba a poco más de $48 (dólares estadounidenses) en Mt. Gox, cerca de su máximo histórico. Alrededor de una hora y media después tocó los $36.65, y en menos de media hora estaba de vuelta en torno a los $45.
+
+El primer servidor de BTC Guild volvió a estar en línea en la cadena vieja a la 01:23. A las 02:36: "All BTC Guild servers now on 0.7." (Todos los servidores de BTC Guild ya están en la 0.7.)
+
+Marek Palatinus, que dirigía el pool de Slush y cuyo bloque lo había empezado todo, llegó a la 01:38, en plena madrugada para él. "I woke up at 3am thanks to one guy who called me over skype" (Me desperté a las 3 de la mañana gracias a un tipo que me llamó por Skype), escribió después en el foro. Su intento de volver a la 0.7 falló, con errores de base de datos y una sincronización que habría tomado horas, y el registro de los noventa minutos siguientes es la parte menos serena de todo el registro. Wuille escribió ahí mismo un parche de emergencia que permitía indicarle a un nodo 0.8 que rechazara un bloque específico, lo probó y se lo entregó hacia las 03:00 con la nota "for the love of god, check that that is the right block; i'm falling asleep now." (por el amor de dios, revisa que ese sea el bloque correcto; ya me estoy quedando dormido.) A las 03:17 Palatinus reportó que estaba arreglado. El BIP 50 dice que bajó de versión, pero el registro muestra que el intento de bajar de versión falló y que el pool corrió una 0.8 parchada.
+
+La brecha entre las cadenas llegó a 13 bloques hacia las 02:00, y ese fue más o menos el máximo. La cadena abandonada recibió sus últimos bloques de rezagados: uno de un minero anónimo, con marca de tiempo 03:28, y uno con marca 05:17 de un servidor de BTC Guild que todos, incluido su dueño, habían olvidado que seguía corriendo la 0.8. Las líneas de Marsee mientras lo descubría: "what the", "how the hell...", "merged mining server", "That server is now offline." (algo así como: "pero qué", "cómo diablos...", "servidor de minería fusionada", "Ese servidor ya está apagado".)
+
+La cadena vieja empató a las 06:19:32 y rebasó a las 06:20:04 con el bloque 225,455, minado por BTC Guild. Los nodos con la 0.8 hicieron lo que hace el software cuando aparece una cadena válida más larga, y un operador pegó el resultado en el canal:
+
+```
+06:22:32 EvilPete: REORGANIZE: Disconnect 25 blocks; ...
+06:22:32 EvilPete: REORGANIZE: Connect 26 blocks; ...
+```
+
+*(Es decir: REORGANIZAR: desconectar 25 bloques; conectar 26 bloques.)*
+
+Karpeles, a las 06:36: "the good blockchain won against the bad blockchain." (la cadena de bloques buena le ganó a la cadena de bloques mala.) Mt. Gox reabrió los depósitos a las 06:54.
+
+El costo recayó en los mineros que habían estado en la cadena abandonada. Veinticinco bloques a 25 BTC cada uno son 625 BTC de [subsidio de bloque](/es/glosario/subsidio-de-bloque), más las comisiones, que esos mineros perdieron; las recompensas de esas alturas se las llevó quien las minó en la cadena que sobrevivió. Marsee les había pagado a sus mineros por horas de trabajo en bloques que ahora no valían nada, y calculó que la bifurcación le costó entre 150 y 200 BTC. Palatinus contó seis bloques de su pool perdidos. Wuille a Marsee, a las 03:40: "wow... i'm really glad you're still helping us out with this, despite those losses." (guau... me alegra mucho que sigas ayudándonos con esto, a pesar de esas pérdidas.)
+
+## El doble gasto
+
+A las 00:55, con las dos cadenas corriendo en paralelo, Vitalik Buterin, entonces un redactor de diecinueve años de Bitcoin Magazine, preguntó en el canal: "could someone listening in here plan a double spend attack right now?" (¿alguien que esté escuchando aquí podría planear un ataque de doble gasto ahora mismo?) Un doble gasto significa que las mismas monedas se pagan a dos destinatarios y solo uno de los pagos sobrevive.
+
+Alguien lo hizo, aunque según su propio relato no lo había planeado. Un usuario de BitcoinTalk llamado macbook-air había enviado 211.9093 BTC, unos $10,000 de entonces, al procesador de pagos OKPay a las 00:08 para fondear una cuenta en el exchange BTC-e, antes de saber que algo andaba mal. El pago se confirmó en la cadena de la 0.8 a la 01:30, y a las 02:08 el exchange le acreditó $9,800. OKPay no había pausado sus operaciones, aunque para entonces la alerta de Wuille llevaba treinta y ocho minutos publicada en BitcoinTalk.
+
+A las 04:53, después de leer sobre la bifurcación, hizo dos transacciones nuevas que enviaban las monedas de ese pago a una dirección suya, en lugar de a OKPay. Esas se confirmaron en la otra cadena a las 05:01. Cuando la cadena de la 0.8 se abandonó, el pago a OKPay se fue con ella.
+
+Las dos mitades se pueden verificar. La transacción que pagaba a OKPay no existe en la cadena que sobrevivió. Las dos transacciones que la reemplazaron están en el bloque 225,446.
+
+Esa misma tarde publicó sobre el asunto con la frase "I bet merchants would think twice before they decide to accept Bitcoins after the incident." (Apuesto a que los comercios lo van a pensar dos veces antes de decidir aceptar bitcoins después del incidente.) A la mañana siguiente reportó que OKPay lo había llamado por teléfono y que el dinero había sido devuelto, y OKPay lo confirmó en el mismo hilo: "Yes we resolved this situation." (Sí, resolvimos esta situación.)
+
+El aviso oficial en bitcoin.org, actualizado por última vez a las 02:45 mientras las cadenas seguían separadas, les había dicho a los comercios que el riesgo de exactamente esto era pequeño, porque las transacciones estaban llegando a las dos cadenas. El BIP 50 lo registra como "at least one large double spend" (al menos un doble gasto grande) por parte de "someone experimenting to see if it was possible" (alguien que experimentaba para ver si era posible). También sugiere por qué funcionó aunque las dos cadenas vieron las transacciones en el mismo orden: lo más probable es que, cuando los pools bajaron de versión, sus listas de transacciones pendientes se borraran, de modo que el gasto en conflicto no encontró resistencia.
+
+No se ha documentado ninguna otra pérdida para los usuarios a causa de la división.
+
+## Desde afuera
+
+Los desarrolladores esperaban que los enterraran. Alan Reiner, que mantenía la billetera Armory, escribió a la lista de correo esa mañana: "Undoubtedly, many articles (and especially commenters) will shape this into 'the end of Bitcoin'." (Sin duda, muchos artículos (y sobre todo los comentaristas) van a convertir esto en 'el fin de Bitcoin'.)
+
+El reportaje de Buterin para Bitcoin Magazine, publicado al día siguiente, lo llamó "one of the closest moments that we have come to the underlying Bitcoin protocol actually failing" (uno de los momentos en que más cerca hemos estado de que el protocolo Bitcoin subyacente fallara de verdad), y terminó: "we passed with flying colors." (pasamos con honores.) También dio las cifras de 24 bloques y seis horas que la mayoría de los relatos posteriores repite.
+
+La prensa general lo cubrió en cuestión de horas y estuvo más tranquila que los foros. El titular de Ars Technica fue "Major glitch in Bitcoin network sparks sell-off; price temporarily falls 23%" (Una falla grave en la red Bitcoin provoca una ola de ventas; el precio cae temporalmente 23%), y el artículo llamó a esa noche "an important test of the cryptocurrency's decentralized governance structure" (una prueba importante de la estructura de gobernanza descentralizada de la criptomoneda). El hilo de Hacker News tenía las dos reacciones a unos pocos comentarios de distancia: un lector calificó el manejo de "nothing short of incredible" (nada menos que increíble), y otro dijo que "demonstrates that Bitcoin is extremely vulnerable to double spending" (demuestra que Bitcoin es extremadamente vulnerable al doble gasto).
+
+La [lista de obituarios](/es/glosario/obituarios-de-bitcoin) que mantiene 99Bitcoins, que recopila declaraciones publicadas de que Bitcoin ha muerto, no tenía ninguna entrada para marzo de 2013 cuando se consultó en octubre de 2026. Salta de diciembre de 2012 a abril de 2013.
+
+## ¿De quién era el bug?
+
+La discusión de la sala de chat continuó durante días, y los desarrolladores se quedaron con una respuesta que reparte la culpa entre las dos versiones.
+
+Maxwell, en el canal mientras la bifurcación seguía en marcha (la ortografía es suya): "0.8 was buggy in that it did not faithfully emulate 0.7 which was an absolute non-negoitable requirement. 0.7 was buggy because it had an unknown implicit limitation that arose out of the behavior of the underlying database library." (La 0.8 tenía un bug en el sentido de que no emulaba fielmente a la 0.7, lo que era un requisito absoluto y no negociable. La 0.7 tenía un bug porque tenía una limitación implícita desconocida que surgía del comportamiento de la biblioteca de base de datos subyacente.)
+
+Wuille, que había escrito buena parte de la 0.8, en la lista de correo el 13 de marzo: "0.7 and before had a bug, but 0.8 was wrong for not following the rules of the network (which I hate to say, as I'm responsible for many changes in 0.8)." (La 0.7 y las anteriores tenían un bug, pero la 0.8 se equivocó al no seguir las reglas de la red (lo que odio decir, porque soy responsable de muchos de los cambios de la 0.8).) El mismo correo tiene la frase por la que se recuerda el incidente: "The protocol is whatever the network enforces." (El protocolo es lo que sea que la red haga cumplir.)
+
+El comportamiento viejo quedó registrado en la base de datos pública de vulnerabilidades como CVE-2013-3220, y era peor que un límite sobre los bloques muy cargados. Una [reorganización](/es/glosario/reorganizacion), el cambio de una cadena a otra más larga, se procesa como una sola actualización grande de la base de datos, así que los nodos viejos podían quedarse sin locks al cambiar de cadena y no lograr seguir una perfectamente válida. Por eso el límite no podía conservarse como regla y tenía que desaparecer, y eliminar una regla que vuelve inválidos algunos bloques es, por definición, un [hard fork](/es/glosario/bifurcacion).
+
+## La reparación, y el plazo
+
+La versión 0.8.1 se anunció el 18 de marzo. Sus notas de la versión describen "just two changes" (solo dos cambios).
+
+El primero era una regla temporal que todos los nodos actualizados hacían cumplir. Del 21 de marzo al 15 de mayo de 2013, un bloque era inválido si hacía referencia a más de 4,500 txids distintos (identificadores de transacción), contando sus propias transacciones y todas las transacciones anteriores de las que gastaban. El número se eligió para quedar con margen por debajo de los aproximadamente 5,000 que los nodos viejos podían manejar. Durante esas ocho semanas, los nodos nuevos obedecieron voluntariamente el límite accidental de los nodos viejos, reformulado como algo que todos los nodos podían calcular de la misma manera. La versión 0.8.1 también se negaba a minar bloques de más de 500,000 bytes hasta el 15 de mayo. Ese segundo número es el que suele citarse, pero era un tope sobre lo que la propia 0.8.1 minaba, no una regla sobre qué bloques eran válidos.
+
+El segundo cambio era un checkpoint (punto de control), el hash de un bloque fijado en el código del software, que anclaba el bloque sobreviviente de la altura 225,430 para que ningún nodo 0.8.1 pudiera ser llevado de vuelta a la cadena abandonada.
+
+A todos los que seguían con software viejo se les dijo que actualizaran o que añadieran una línea a un archivo de configuración para subir el límite de locks, y se les dio una fecha. Andresen: "After May 15, miners will be free to create blocks up to 1MB, and anybody running old versions who ignored the alerts may be left behind." (Después del 15 de mayo, los mineros tendrán libertad para crear bloques de hasta 1 MB, y cualquiera que corra versiones viejas y haya ignorado las alertas puede quedarse atrás.) Las alertas de red lo repitieron en marzo y en mayo.
+
+El 15 de mayo la regla temporal expiró. No pasó nada visible, porque nada obliga a un minero a producir un bloque que los nodos viejos no puedan manejar. El BIP 50 fecha en el 16 de agosto de 2013 el momento en que los nodos sin parchar se quedaron atrás de verdad, cuando el bloque 252,451 "was accepted by the main network, forking unpatched nodes off the network." (fue aceptado por la red principal, y dejó fuera de la red, por bifurcación, a los nodos sin parchar.) Ese bloque tenía 1,486 transacciones; al analizarlo salen 5,172 txids distintos según la medida de la 0.8.1, por encima tanto de la regla temporal como del límite viejo.
+
+Si algo de esto debería llamarse hard fork es algo que discuten las personas que mejor lo sabrían. Wuille llamó así al cambio de mayo en marzo de 2013, por adelantado. En 2020, hablando de la eliminación original del límite viejo por parte de la 0.8, matizó: "It is debatable whether it is a hard fork given that the old code was actually inconsistent with itself all the time." (Es discutible si es un hard fork, dado que el código viejo en realidad era inconsistente consigo mismo todo el tiempo.) Maxwell ha señalado lo mismo, que un nodo viejo podía atascarse o no según su base de datos. Jameson Lopp lo probó en 2022 sincronizando versiones viejas desde cero y encontró que se atascaban a alturas distintas, algunas bastante después de agosto de 2013. Como el límite cambiaba de una máquina a otra, no hay una sola fecha en la que haya dejado de aplicarse.
+
+## Lo que la versión que suele contarse dice mal
+
+Este incidente está resumido en muchos lugares, incluida una versión anterior de nuestro propio glosario. Tres cosas del relato habitual no se tratan arriba:
+
+- **"BTC Guild perdió más de mil bitcoins por la bifurcación."** Marsee perdió 1,254 BTC la noche anterior en un accidente sin relación, mientras actualizaba a la 0.8. La bifurcación le costó entre 150 y 200.
+- **Citar el BIP 50 como el relato de 2013.** Partes del texto se reescribieron en febrero de 2016. El texto original llamaba al suceso un "unexpected hard fork" (hard fork inesperado) y describía a los pools con la 0.8 como "running the bug-free version" (corriendo la versión sin bugs). La frase sobre el límite de locks que "implicitly had become a network consensus rule" (se había convertido implícitamente en una regla de consenso de la red) es de la edición posterior.
+- **Las marcas de tiempo.** Las capturas posteriores de Wayback Machine del archivo de registros de bitcoinstats.com van una hora atrasadas respecto de UTC, y un análisis de 2015 publicado por el Center for Information Technology Policy de Princeton heredó el desfase. Las horas de este capítulo vienen del archivo de buildingbitcoin.org y coinciden con los encabezados de los bloques y con las marcas de tiempo de la lista de correo.
+
+Y seis que sí se tratan, reunidas aquí porque son las que más se repiten:
+
+- **"Una bifurcación de 24 bloques."** Los nodos que se reorganizaron registraron "Disconnect 25 blocks" (desconectar 25 bloques). La cadena abandonada fue del 225,430 al 225,454 inclusive.
+- **"Seis horas."** Del bloque que lo desató a la reorganización hay 7 horas y 41 minutos. Seis horas es la cifra del reportaje de Bitcoin Magazine, y más o menos el tiempo desde el primer correo de Wuille.
+- **"El bloque era demasiado grande."** Estaba por debajo del límite de un megabyte. La causa fue el número de entradas de la base de datos que tocaba.
+- **"El límite de locks predeterminado de Berkeley DB."** Los 10,000 los fijó el propio código de Bitcoin.
+- **"La 0.8.1 impuso un límite de tamaño de bloque de 500 kB."** La regla que los nodos hacían cumplir era de 4,500 txids. La cifra de 500 kB era un tope sobre lo que la propia 0.8.1 minaba.
+- **"Los desarrolladores acordaron volver atrás, y los dos pools bajaron de versión."** El mantenedor principal defendió la otra cadena durante veinte minutos, el primer correo oficial recomendó lo contrario de lo que se hizo, y el pool de Slush no pudo bajar de versión en absoluto.
+
+## Los incidentes a uno y otro lado
+
+En agosto de 2010 una verificación que faltaba dejó que un bloque creara 184,000 millones de bitcoins, y la reparación endureció una regla que había sido demasiado laxa; esa historia está en [el postmortem del bug de inflación (en inglés)](/rabbit-hole/inflation-bug-postmortem). En julio de 2015, durante el [soft fork](/es/glosario/soft-fork) planeado del BIP 66 (un endurecimiento de reglas que los nodos viejos siguen aceptando), mineros que no estaban verificando los bloques por completo construyeron cinco más encima de uno inválido. En septiembre de 2018 se descubrió que un cambio de rendimiento había eliminado una verificación contra entradas duplicadas, y se parchó antes de que nadie lo aprovechara. Las respuestas de 2015 y 2018 pasaron por alertas y versiones coordinadas. Hasta 2026, ningún incidente posterior se ha discutido línea por línea en una sala de chat abierta como se discutió el de marzo de 2013.
+
+## Qué ganamos con esto
+
+Dos versiones del mismo software discreparon sobre un bloque válido, la mayor parte del poder de cómputo estaba del lado que hubo que abandonar, y cada paso desde el primer reporte hasta el último bloque abandonado ocurrió en público y con una marca de tiempo. Vale la pena tener ese registro por cuatro razones.
+
+- **Las reglas son lo que los nodos hacen cumplir.** Las reglas de Bitcoin son lo que los nodos de la red acepten, incluido el comportamiento que nadie diseñó, sin importar lo que diga el whitepaper o cualquier especificación. Satoshi argumentó en 2010 contra una segunda implementación porque "so much of the design depends on all nodes getting exactly identical results in lockstep" (gran parte del diseño depende de que todos los nodos obtengan resultados exactamente idénticos, en perfecta sincronía). En 2013 una versión nueva del mismo software rompió esa sincronía. Wuille ha dicho que ese susto es la razón por la que los desarrolladores conservan versiones exactas y fijas de las bibliotecas que podrían afectar el consenso, incluidas dentro del propio árbol de código fuente de [Bitcoin Core](/es/glosario/bitcoin-core).
+- **La mayoría del poder de cómputo no lo decidió.** La cadena con alrededor del 60 por ciento del poder de cómputo fue la que se abandonó, porque quienes la corrían concluyeron que la otra era la única que todos los usuarios podían seguir. La misma pregunta volvió en 2017 en la [guerra del tamaño de bloque (en inglés)](/rabbit-hole/block-size-war).
+- **La reparación rápida dependió de la concentración.** El operador de un solo pool podía mover por sí mismo alrededor de un tercio de la red, y los desarrolladores y operadores de exchanges que importaban estaban en una sola sala de chat. Marsee lo dijo esa noche: "If we were fully decentralized without pools, this could've been a much larger problem than it was today." (Si estuviéramos totalmente descentralizados, sin pools, esto podría haber sido un problema mucho más grande de lo que fue hoy.) Con la minería más repartida, que por lo demás es la meta y el tema de la entrada sobre [centralización de la minería](/es/glosario/centralizacion-de-la-mineria), un rescate como este sería más lento y más difícil de coordinar.
+- **Sabes qué hacer en una división.** El consejo de los primeros diez minutos de esa noche no ha cambiado, y lo tienes abajo, en el Consejo pro.
+
+> **Consejo pro:** Si alguna vez oyes que la cadena se dividió, haz lo que Luke Dashjr le dijo a la primera persona que reportó esta división: deja de confiar en las confirmaciones hasta que se resuelva. Si la cadena en la que está tu pago se abandona, sus confirmaciones se van con ella, por muchas que fueran. No envíes ni aceptes nada grande, y lee el aviso de los desarrolladores antes de actualizar o bajar de versión cualquier cosa. La noche que se describe aquí, la primera instrucción que salió fue la equivocada.

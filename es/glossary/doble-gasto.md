@@ -46,4 +46,4 @@ Después de seis confirmaciones (cerca de una hora), un atacante tendría que co
 
 La seguridad de Bitcoin contra el doble gasto es lo que la prueba de trabajo (proof-of-work) *compra*. El [tema a fondo sobre minería (en inglés)](/rabbit-hole/mining) explica por qué la energía gastada no es un desperdicio: es el costo de hacer que el registro sea resistente a la falsificación.
 
-Para un doble gasto real contra un procesador de pagos durante una división de la cadena, con las transacciones todavía verificables, lee [La bifurcación de la cadena de 2013 (en inglés)](/rabbit-hole/2013-chain-fork).
+Para un doble gasto real contra un procesador de pagos durante una división de la cadena, con las transacciones todavía verificables, lee [La bifurcación de la cadena de 2013](/es/a-fondo/bifurcacion-de-2013).

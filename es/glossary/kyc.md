@@ -59,4 +59,4 @@ Existen formas de conseguir bitcoin sin KYC: minarlo, ganarlo como pago por tu t
 
 Un enfoque bitcoiner defendible: a veces el KYC es la única puerta de entrada disponible, y usarla a propósito está bien. Pero minimiza qué parte de tus bitcoins llega a tocarlo alguna vez, y evita que un servicio con KYC sea tu punto de custodia a largo plazo.
 
-Lee [Privacidad en Bitcoin (en inglés)](/rabbit-hole/bitcoin-privacy) para ver cómo el registro del exchange se convierte en el ancla que le pone nombre a todo un grupo de direcciones (un clúster).
+Lee [Privacidad en Bitcoin](/es/a-fondo/privacidad-en-bitcoin) para ver cómo el registro del exchange se convierte en el ancla que le pone nombre a todo un grupo de direcciones (un clúster).

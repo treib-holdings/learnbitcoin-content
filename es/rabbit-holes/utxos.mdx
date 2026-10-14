@@ -1,0 +1,155 @@
+---
+title: "UTXOs"
+slug: utxos
+translationOf: utxos
+sourceHash: "a1804a10db88"
+sourceCommit: "0fdb496"
+sourceUpdated: "2026-10-02"
+translation:
+  method: "llm-draft"
+draft: false
+status: live
+published: "2026-10-15"
+section: rabbit-hole
+category: how-it-works
+featured: true
+tagline: "Bitcoin no tiene saldos. Tiene UTXOs. Una vez que los ves, ya no puedes dejar de verlos."
+order: 6
+estimatedMinutes: 10
+sources:
+  - { label: "Mastering Bitcoin (3rd ed.) Ch. 6 - Transactions", url: "https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch06_transactions.adoc" }
+  - { label: "Bitcoin Core source - CCoinsViewCache", url: "https://github.com/bitcoin/bitcoin/blob/master/src/coins.h" }
+  - { label: "Bitcoin Core source - CoinSelection", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/coinselection.cpp" }
+  - { label: "Bitcoin Core source - wallet/spend.cpp (picks the lowest-waste result)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/spend.cpp" }
+  - { label: "Bitcoin Core source - policy/policy.cpp (dust threshold)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/policy.cpp" }
+  - { label: "ChainQuery - gettxoutsetinfo (UTXO set size and total)", url: "https://chainquery.com/rpc/gettxoutsetinfo" }
+  - { label: "UTXO glossary entry", url: "https://www.learnbitcoin.com/glossary/utxo-unspent-transaction-output" }
+relatedTerms: ["utxo-unspent-transaction-output", "transaction-fee", "coin-control", "dust-limit", "address-clustering", "coinjoin", "payjoin"]
+hasInteractive: []
+ogImage: "/diagrams/og/alice-pays-bob.png"
+ogImageAlt: "Alice le paga 0.5 BTC a Bob: un diagrama de una transacción con UTXOs que muestra cómo se consume la entrada de 1.0 BTC y se crean dos UTXOs nuevos (0.5 BTC para Bob y 0.499 BTC de cambio para Alice), con 0.001 BTC de comisión para el minero."
+---
+
+> **Adónde vas:** La mayoría de quienes llegan a Bitcoin se imaginan una billetera de Bitcoin como una cuenta bancaria: un saldo que sube y baja. Bitcoin no funciona así. Vas a aprender qué es un UTXO, por qué "tu saldo" se calcula desde cero cada vez que abres la billetera y por qué casi todas las fugas de privacidad en Bitcoin se remontan a cómo se enlazan los UTXOs entre sí.
+
+## 1. Cambiar de modelo mental
+
+Cuando alguien dice "tengo 0.3 BTC", suena como si hubiera una fila en una base de datos con su nombre y el número 0.3. Bitcoin no tiene filas así.
+
+Bitcoin tiene **UTXOs**: del inglés **U**nspent **T**ransaction **O**utputs, salidas de transacción no gastadas. Porciones discretas de bitcoin, cada una bloqueada por un script específico, repartidas por toda la cadena de bloques. Cuando tu billetera dice que tienes 0.3 BTC, lo que en realidad quiere decir es: "encontramos diecisiete UTXOs que puedes gastar, y suman 0.3 BTC".
+
+Una vez que lo ves, ya no puedes dejar de verlo. El problema del cambio, las fugas de privacidad, la aritmética de las comisiones, el problema del polvo: todo eso viene de los UTXOs.
+
+## 2. Qué es en realidad un UTXO
+
+Un UTXO tiene tres partes:
+
+- **Un valor.** Cuánto bitcoin, medido en satoshis (1 BTC = 100,000,000 sats).
+- **Un script de bloqueo.** Un programa pequeño que define quién puede gastarlo. El script más común dice "quien pueda presentar una firma que coincida con este hash de clave pública".
+- **Una procedencia.** La transacción de la que salió y qué índice de salida ocupa dentro de esa transacción.
+
+Esa es toda la estructura. Un UTXO es un valor protegido por un script. Cuando alguien gasta un UTXO, demuestra que puede satisfacer el script (normalmente presentando una firma), y el UTXO se consume.
+
+La cadena de bloques no guarda "saldos". Guarda transacciones, y cada nodo completo construye a partir de ellas un conjunto gigante de UTXOs. Tu nodo calcula tu saldo revisando qué UTXOs puede desbloquear tu billetera.
+
+## 3. Gastar: entran entradas, salen salidas
+
+Una [transacción](/es/glosario/transaccion) de Bitcoin tiene dos lados:
+
+- **Entradas:** UTXOs que se consumen (se gastan por completo).
+- **Salidas:** UTXOs nuevos que se crean.
+
+Aquí viene lo importante: **los UTXOs se consumen enteros.** No puedes gastar medio UTXO. Si Alice tiene un UTXO de 1.0 BTC y quiere enviarle 0.5 BTC a Bob, gasta el UTXO completo de 1.0 BTC. La transacción crea dos UTXOs nuevos: uno de 0.5 BTC para Bob y otro de aproximadamente 0.499 BTC de vuelta para Alice. Los 0.001 BTC que faltan son la comisión.
+
+<figure>
+  <img src="/diagrams/alice-pays-bob.svg" alt="El UTXO de 1.0 BTC de Alice se consume en una transacción que crea dos UTXOs nuevos: 0.5 BTC para Bob y 0.499 BTC de cambio para Alice en una dirección nueva. Los 0.001 BTC restantes son la comisión que se paga al minero." />
+  <figcaption>El UTXO de 1.0 BTC de Alice se consume entero. Se crean dos UTXOs nuevos; la comisión de 0.001 BTC es la diferencia entre entradas y salidas.</figcaption>
+</figure>
+
+Ese segundo UTXO es el **cambio.** Es tu propio dinero, que vuelve a ti en una porción nueva.
+
+Mecánicamente es idéntico a pagar un café de 4 dólares con un billete de 20. No partes el billete de 20 por la mitad. Entregas el billete completo y recibes 16 dólares de cambio. Las transacciones de Bitcoin funcionan igual.
+
+## 4. El problema de la dirección de cambio
+
+Cuando tu billetera crea cambio, tiene dos opciones: mandarlo de vuelta a la **misma dirección** desde la que gastaste, o mandarlo a una **dirección nueva** que también controlas.
+
+Casi todas las billeteras modernas eligen una dirección nueva. ¿Por qué? Privacidad.
+
+Si el cambio volviera siempre a la dirección de origen, cualquiera que observe la cadena de bloques podría enlazar sin esfuerzo todas las transacciones que hayas hecho. Al usar una dirección de cambio nueva cada vez, tu billetera rompe ese enlace fácil.
+
+Pero eso crea un problema distinto: **la reutilización de direcciones es ahora una huella muy clara.** Si reutilizas una dirección, cualquiera que observe puede ver todos los UTXOs que alguna vez llegaron a ella y afirmar con confianza: "esta persona controla todos estos". La mayoría de las fugas de privacidad en Bitcoin empiezan con la reutilización de direcciones.
+
+(Consulta [agrupación de direcciones](/es/glosario/agrupacion-de-direcciones) para ver cómo lo explotan las empresas de [análisis de cadena](/es/glosario/analisis-de-cadena).)
+
+## 5. Tu "saldo" es una suma
+
+El "saldo" de tu billetera se calcula, no se guarda. Cuando abres la billetera:
+
+1. La billetera deriva todas las direcciones que puede controlar (a partir de la semilla, mediante una ruta de derivación [BIP 32](/es/glosario/bip-32)).
+2. La billetera (o el nodo o servidor del que depende) encuentra las salidas no gastadas bloqueadas a esas direcciones.
+3. La billetera suma sus valores.
+
+Esa suma es tu saldo. No hay ninguna fila en ninguna base de datos que diga "el usuario X tiene 0.3 BTC". Hay 17 UTXOs, cada uno bloqueado por un script que tu billetera puede satisfacer, y la suma de sus valores es 0.3 BTC.
+
+Esto tiene consecuencias prácticas. Si tu saldo de 0.3 BTC es un solo UTXO de 0.3 BTC, enviar 0.1 BTC es sencillo: una entrada, dos salidas, transacción pequeña, comisión pequeña. Si tu saldo de 0.3 BTC son 300 UTXOs de 0.001 BTC cada uno, enviar 0.1 BTC exige consumir más de 100 de ellos como entradas (los adicionales cubren la comisión): una transacción mucho más grande con una comisión mucho más alta.
+
+La forma de tu conjunto de UTXOs importa tanto como el total.
+
+## 6. Selección de monedas
+
+Elegir qué UTXOs gastar se llama **selección de monedas.** Es un problema de optimización nada trivial, con varios objetivos que compiten entre sí:
+
+- **Minimizar las comisiones.** Menos entradas y más pequeñas hacen una transacción más pequeña.
+- **Minimizar el cambio.** Crear cambio que sirva, no polvo.
+- **Preservar la privacidad.** No enlazar UTXOs que no hace falta enlazar.
+- **Controlar el tamaño del conjunto de UTXOs.** Evitar dejar una billetera llena de UTXOs minúsculos.
+
+Bitcoin Core corre varios algoritmos en cada gasto y se queda con el resultado que menos desperdicia en comisiones. [Branch and Bound](/es/glosario/branch-and-bound) busca una coincidencia exacta que no necesite cambio; **Knapsack**, **Single Random Draw** y, cuando las comisiones están altas, [CoinGrinder](/es/glosario/coingrinder) aportan las alternativas. Otras billeteras usan heurísticas más simples ("el más grande primero", "el más pequeño primero", "al azar").
+
+La mayoría de los usuarios nunca piensa en la selección de monedas. Y probablemente debería. (Consulta [control de monedas](/es/glosario/control-de-monedas) para las billeteras que la exponen.)
+
+## 7. El conjunto de UTXOs a escala global
+
+En octubre de 2026, el [gettxoutsetinfo](https://chainquery.com/rpc/gettxoutsetinfo) de Bitcoin Core reporta unos **165 millones de UTXOs**, que suman algo más de 20 millones de BTC.
+
+Ese conjunto es lo que mantiene cada nodo completo (en memoria, en disco, con una caché, según la configuración). Cuando recibes una transacción, tu nodo verifica que cada entrada apunte a un UTXO real y no gastado. Esa comprobación tiene que ser rápida, y por eso los nodos optimizan tanto el conjunto de UTXOs.
+
+El tamaño del conjunto de UTXOs es una métrica de rendimiento que sostiene todo lo demás. Cada nodo nuevo que arranca tiene que descargar y verificar suficiente historial de la cadena para reconstruirlo. Las transacciones de spam que crean montones de UTXOs pequeños (ataques de polvo, transacciones cargadas de inscripciones) inflan el conjunto e imponen un costo a cada operador de nodo, para siempre.
+
+Por eso "las transacciones pequeñas salen gratis" no es cierto. Incluso una transacción con una comisión minúscula puede añadir salidas al conjunto de UTXOs, y cada operador de nodo paga por guardarlas hasta que se gastan.
+
+## 8. Privacidad: los UTXOs quedan enlazados
+
+En cuanto creas una transacción con varias entradas, declaras públicamente que la misma entidad controla todas ellas. Esto se llama **heurística de propiedad común de las entradas**, y es la herramienta más poderosa que tienen las empresas de análisis de cadena.
+
+Si recibes el UTXO A el lunes y el UTXO B el martes, de fuentes distintas, solo tú puedes enlazarlos en privado: el mundo no sabe que comparten dueño. Pero en el momento en que los gastas juntos en una sola transacción, el enlace es permanente y público.
+
+Por eso importa el [control de monedas](/es/glosario/control-de-monedas). Y por eso existen [CoinJoin](/es/glosario/coinjoin) y [PayJoin](/es/glosario/payjoin): para crear a propósito ambigüedad sobre qué UTXOs pertenecen a quién.
+
+Una regla práctica útil: cada entrada que agregas a una transacción añade una declaración pública de propiedad común. Combina UTXOs de fuentes distintas solo cuando ya hayas aceptado que esas fuentes quedan enlazadas en público.
+
+## 9. Polvo: cuando gastar un UTXO cuesta más de lo que vale
+
+Las transacciones tienen un piso de comisión: cuanto más pequeño es un UTXO, mayor es el porcentaje de su valor que se va en comisión cuando intentas gastarlo. En algún punto, la comisión supera el valor.
+
+Bitcoin Core define un [límite de polvo](/es/glosario/limite-de-polvo), por defecto 294 satoshis para una salida P2WPKH típica y 546 para una P2PKH más antigua, por debajo del cual sus nodos no retransmiten una transacción que cree esa salida. El razonamiento: un UTXO que cuesta más gastar de lo que vale es espacio desperdiciado para siempre en el conjunto de UTXOs de cada nodo.
+
+Los [ataques de polvo](/es/glosario/ataque-de-polvo) explotan esto: un atacante envía UTXOs minúsculos (apenas por encima del límite de polvo) a muchas direcciones que intenta desanonimizar. Si una víctima gasta uno de ellos por accidente en una transacción junto con sus otros UTXOs, el atacante confirma la propiedad de todos esos UTXOs mediante la heurística de entrada común descrita arriba.
+
+La defensa: nunca gastes polvo junto con tus otras monedas. Congélalo con el [control de monedas](/es/glosario/control-de-monedas), y consulta [barrido de polvo](/es/glosario/barrido-de-polvo) para la versión cuidadosa.
+
+## 10. Qué ganamos con esto
+
+El modelo de UTXOs es una de las decisiones de diseño menos valoradas de Bitcoin. Comparados con los sistemas basados en cuentas (Ethereum, la mayoría de los bancos), los UTXOs son:
+
+- **Sencillos de comprobar.** Cada transacción nombra las monedas exactas que gasta, así que el nodo la comprueba contra esos registros del conjunto de UTXOs y nada más. El resto del historial de quien envía no importa.
+- **Paralelizables.** Dos transacciones que tocan UTXOs distintos se pueden validar en paralelo sin coordinación.
+- **Auditables.** La oferta a cualquier altura de bloque es la suma de todos los UTXOs a esa altura. Sin malabares del tipo "cuál es el saldo total de todas las cuentas".
+- **Flexibles para la privacidad.** Tener varios UTXOs por usuario es el *sustrato* de técnicas como CoinJoin y PayJoin. Los sistemas basados en cuentas no tienen esa opción.
+
+El costo es el modelo mental. Los saldos de cuenta son más fáciles de explicarle a un principiante. Los UTXOs son más fáciles de escalar y de auditar.
+
+Bitcoin eligió auditabilidad y escalabilidad. Ahora entiendes por qué.
+
+> **Consejo pro:** Cuando estés diagnosticando una transacción atascada o sorprendentemente cara, la primera pregunta es siempre "¿cuántos UTXOs consumió tu billetera para armarla?". La mayoría de las sorpresas con las comisiones en Bitcoin se remontan a la selección de monedas.

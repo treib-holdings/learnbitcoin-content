@@ -56,4 +56,4 @@ Cuando a los bloques les sobra espacio, las estimaciones para todos los objetivo
 
 Cuando la demanda se dispara, las estimaciones se disparan con ella. El 20 de abril de 2024, cuando el protocolo de tokens Runes se activó en el cuarto halving, la tasa de comisión mediana en el bloque 840,000 fue de unos 200 sat/vB.
 
-Las estimaciones son *conjeturas*. Si pagas de menos y te quedas atascado, lee [Subir la comisión](/es/glosario/subir-la-comision). El mercado de comisiones en vivo se puede ver en la [sección 6 del tema a fondo sobre minería (en inglés)](/rabbit-hole/mining) y en la [página del nodo (en inglés)](/node).
+Las estimaciones son *conjeturas*. Si pagas de menos y te quedas atascado, lee [Subir la comisión](/es/glosario/subir-la-comision). El mercado de comisiones en vivo se puede ver en la [sección 6 del tema a fondo sobre minería (en inglés)](/rabbit-hole/mining) y en la [página del nodo](/es/nodo).

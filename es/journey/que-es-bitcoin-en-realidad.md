@@ -200,7 +200,7 @@ El capítulo 1 terminó con una lista de seis propiedades que querríamos del di
 
 - **Portátil** - bitcoin se mueve a la velocidad de un paquete de internet. Mil millones de dólares pueden cruzar cualquier frontera en minutos.
 - **Divisible** - un bitcoin se divide en 100 millones de satoshis. (El [tema a fondo sobre las unidades de Bitcoin (en inglés)](/rabbit-hole/bitcoin-units) muestra la escala completa.)
-- **Duradero** - la red funciona desde enero de 2009. Sus dos peores incidentes se repararon, cada uno, en menos de un día. En agosto de 2010 un bug creó 184,000 millones de BTC, y la cadena reparada los borró (ver [la autopsia del bug de inflación (en inglés)](/rabbit-hole/inflation-bug-postmortem)). En marzo de 2013 la cadena se partió en dos (ver [la bifurcación de 2013 (en inglés)](/rabbit-hole/2013-chain-fork)). Tus monedas existen mientras exista la red.
+- **Duradero** - la red funciona desde enero de 2009. Sus dos peores incidentes se repararon, cada uno, en menos de un día. En agosto de 2010 un bug creó 184,000 millones de BTC, y la cadena reparada los borró (ver [la autopsia del bug de inflación (en inglés)](/rabbit-hole/inflation-bug-postmortem)). En marzo de 2013 la cadena se partió en dos (ver [la bifurcación de 2013](/es/a-fondo/bifurcacion-de-2013)). Tus monedas existen mientras exista la red.
 - **Verificable** - puedes correr un nodo en una laptop y verificar por tu cuenta toda la historia. Sin necesidad de confiar en nadie.
 - **Escaso** - con un tope de 21 millones fijado por código que cada nodo hace cumplir. El tope nunca se ha subido. Casi con certeza nunca se subirá.
 - **Soberano** - ningún gobierno, empresa ni individuo puede emitir, congelar, confiscar ni invalidar tus bitcoins sin tu clave privada.

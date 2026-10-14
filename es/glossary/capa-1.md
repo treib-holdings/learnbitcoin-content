@@ -52,7 +52,7 @@ Lo que vive en la capa 1:
 
 Las propiedades para las que está optimizada la capa 1:
 
-- **Irreversibilidad.** Una vez que una transacción queda enterrada bajo suficientes bloques, es prácticamente permanente. La [regla de la cadena más larga (en inglés)](/glossary/longest-chain-rule) y la prueba de trabajo acumulada hacen que reescribirla cueste más de lo que cualquier atacante plausible puede pagar.
+- **Irreversibilidad.** Una vez que una transacción queda enterrada bajo suficientes bloques, es prácticamente permanente. La [regla de la cadena más larga](/es/glosario/regla-de-la-cadena-mas-larga) y la prueba de trabajo acumulada hacen que reescribirla cueste más de lo que cualquier atacante plausible puede pagar.
 - **Resistencia a la censura.** Nadie puede impedir que una transacción concreta termine por minarse. Algunos mineros podrían intentarlo, pero existen otros que no lo harán.
 - **Verificabilidad.** Cada nodo valida todo por su cuenta. Sin necesidad de confiar en nadie.
 - **Cumplimiento del tope de 21 millones.** La [asíntota de la emisión (en inglés)](/glossary/asymptote) se hace cumplir aquí, en cada nodo y en cada bloque.

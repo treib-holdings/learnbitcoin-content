@@ -43,4 +43,4 @@ Para darte una idea de la escala: la red Bitcoin cambió su dificultad más de 4
 
 La dificultad es la parte de la [prueba de trabajo](/es/glosario/prueba-de-trabajo) (proof-of-work) que hace que el sistema se ajuste solo. Ya sea que compitan 10 mineros o 10,000, los bloques siguen saliendo más o menos cada 10 minutos y los BTC se emiten según el calendario. A la red no le importa el precio del hardware ni el de la electricidad. Le importa el hashrate, y se ajusta en respuesta a él.
 
-La [sección 4 del tema a fondo sobre minería (en inglés)](/rabbit-hole/mining) explica el mecanismo, y la [página del nodo (en inglés)](/node) muestra la dificultad actual y el avance de la época.
+La [sección 4 del tema a fondo sobre minería (en inglés)](/rabbit-hole/mining) explica el mecanismo, y la [página del nodo](/es/nodo) muestra la dificultad actual y el avance de la época.

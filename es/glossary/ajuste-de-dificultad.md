@@ -54,4 +54,4 @@ Es una de las piezas de diseño de mecanismos más trascendentes y menos valorad
 
 El mecanismo ha resistido eventos enormes: la prohibición de la minería en China en 2021 (el hashrate cayó cerca de 50% en cuestión de semanas; la dificultad se corrigió 28% a la baja en el siguiente ajuste), el éxodo de mineros del mercado bajista de 2022 y cuatro halvings. Cada vez, la red se reequilibra y vuelve a su promedio de 10 minutos en una o dos épocas.
 
-Puedes ver en vivo el avance de la época actual y la estimación del próximo ajuste en la [sección 4 del tema a fondo sobre minería (en inglés)](/rabbit-hole/mining) o en la [página del nodo (en inglés)](/node).
+Puedes ver en vivo el avance de la época actual y la estimación del próximo ajuste en la [sección 4 del tema a fondo sobre minería (en inglés)](/rabbit-hole/mining) o en la [página del nodo](/es/nodo).

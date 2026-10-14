@@ -47,7 +47,7 @@ Un servicio oculto de Tor, que hoy se llama oficialmente **servicio onion** (oni
 
 Para un [nodo de Bitcoin](/es/glosario/nodo), correr como servicio onion de Tor aporta:
 
-- **Privacidad en la capa de red.** Tu IP real no aparece en las listas de pares, no la ven las empresas de [análisis de cadena (en inglés)](/glossary/chain-analysis) que escanean la red entre pares, y no la registran quienes operan otros nodos.
+- **Privacidad en la capa de red.** Tu IP real no aparece en las listas de pares, no la ven las empresas de [análisis de cadena](/es/glosario/analisis-de-cadena) que escanean la red entre pares, y no la registran quienes operan otros nodos.
 - **Resistencia a la censura.** La ubicación y la dirección IP de un servicio onion están ocultas, lo que, según el Tor Project, dificulta que un adversario lo censure o identifique a quien lo opera. Una lista de bloqueo de IPs conocidas de nodos de Bitcoin no puede incluir la tuya, porque la IP detrás de una dirección `.onion` nunca se anuncia a la red.
 - **Protección contra [ataques de escucha (en inglés)](/glossary/eavesdropping-attack).** Sin tu IP, a quien observa le cuesta mucho más relacionar lo que transmites con tu ubicación física o tu identidad.
 - **Una segunda red por la que conectarse.** Desde la versión 26.0, Bitcoin Core mantiene al menos una conexión saliente en cada red a la que puede llegar, lo que, según sus notas de versión, mejora la resistencia a los [ataques de eclipse (en inglés)](/glossary/eclipse-attack). Un nodo que está en Tor y también en la internet abierta (clearnet) es más difícil de acorralar que uno que está solo en una de las dos.
@@ -58,4 +58,4 @@ Bitcoin Core es compatible con Tor desde la versión 0.7, de 2012, y desde la ve
 
 Si haces autocustodia y corres un [nodo completo](/es/glosario/nodo-completo), correrlo a través de Tor es la mejora de privacidad más grande que puedes hacer en la capa de red. Muy recomendable para cualquiera a quien le importe que su actividad on-chain no se relacione con la IP de su casa.
 
-Lee [Privacidad en Bitcoin (en inglés)](/rabbit-hole/bitcoin-privacy) para ver qué fuga cierra Tor y cuáles no toca.
+Lee [Privacidad en Bitcoin](/es/a-fondo/privacidad-en-bitcoin) para ver qué fuga cierra Tor y cuáles no toca.

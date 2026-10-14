@@ -220,6 +220,6 @@ Ese dinero haría los tres trabajos (medio de intercambio, reserva de valor, uni
 
 Tendría que ser algo de un tipo nuevo. Tendría que usar criptografía para que la escasez fuera demostrable. Tendría que usar una red en lugar de una bóveda. Tendría que ser un protocolo, no un producto.
 
-Ese dinero existe. Lleva funcionando desde enero de 2009. Dos veces, en 2010 y en 2013, un error de software obligó a la red a descartar un tramo de su registro de transacciones, y las dos veces volvió a un único registro acordado en menos de un día; cada episodio tiene su tema a fondo, [el de 2010 (en inglés)](/rabbit-hole/inflation-bug-postmortem) y [el de 2013 (en inglés)](/rabbit-hole/2013-chain-fork). El siguiente capítulo trata de qué es en realidad.
+Ese dinero existe. Lleva funcionando desde enero de 2009. Dos veces, en 2010 y en 2013, un error de software obligó a la red a descartar un tramo de su registro de transacciones, y las dos veces volvió a un único registro acordado en menos de un día; cada episodio tiene su tema a fondo, [el de 2010 (en inglés)](/rabbit-hole/inflation-bug-postmortem) y [el de 2013](/es/a-fondo/bifurcacion-de-2013). El siguiente capítulo trata de qué es en realidad.
 
 > **Consejo pro:** Si solo te quedas con una cosa de este capítulo, que sea esta: la inflación es una *política*, no una fuerza de la naturaleza. Una vez que lo ves, ya no puedes dejar de verlo. Todo lo que hace Bitcoin responde a un sistema que se construyó, con intención o por descuido, para ir perdiendo valor con el tiempo.

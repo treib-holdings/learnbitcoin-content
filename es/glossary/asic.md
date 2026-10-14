@@ -59,4 +59,4 @@ Lo que cuesta:
 - **Presión hacia la centralización.** La oferta de ASICs está dominada por unos pocos fabricantes. Entre los mineros encuestados para el informe de Cambridge de 2025, las máquinas de Bitmain representaban el 82% del hardware por hashrate, las de MicroBT el 15% y las de Canaan el 2.1%. La concentración geográfica de la minería sigue a los precios de la electricidad.
 - **Huella energética.** Cambridge estimó el consumo de la minería en unos 138 TWh al año a junio de 2024, alrededor del 0.5% de la electricidad mundial. Los mineros que Cambridge encuestó obtenían el 52.4% de su energía de fuentes renovables y nucleares, con el gas natural como la mayor fuente individual, con un 38.2%.
 
-Lee [Minería](/es/glosario/mineria) para el panorama general y [Centralización de la minería (en inglés)](/glossary/mining-centralization) para las preocupaciones estructurales.
+Lee [Minería](/es/glosario/mineria) para el panorama general y [Centralización de la minería](/es/glosario/centralizacion-de-la-mineria) para las preocupaciones estructurales.
