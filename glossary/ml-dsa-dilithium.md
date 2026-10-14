@@ -7,6 +7,7 @@ linkText:
   - "FIPS 204"
 draft: false
 published: "2026-06-01"
+updated: "2026-10-15"
 shortDefinition: "The NIST-standardized lattice-based post-quantum signature scheme, one of the options discussed for Bitcoin's post-quantum migration."
 keyTakeaways:
   - "NIST-standardized lattice-based PQ signature scheme (FIPS 204, August 2024)"
@@ -37,8 +38,8 @@ ML-DSA is a digital signature scheme whose security depends on the hardness of l
 The scheme produces signatures using polynomial arithmetic over module lattices. Three parameter sets are standardized:
 
 - **ML-DSA-44**: ~128-bit security, ~2,420-byte signatures
-- **ML-DSA-65**: ~192-bit security, ~3,293-byte signatures
-- **ML-DSA-87**: ~256-bit security, ~4,595-byte signatures
+- **ML-DSA-65**: ~192-bit security, ~3,309-byte signatures
+- **ML-DSA-87**: ~256-bit security, ~4,627-byte signatures
 
 [Public keys](/glossary/public-key) range from ~1,300 to ~2,600 bytes depending on parameter set.
 
@@ -54,7 +55,7 @@ Compared to Bitcoin's current schemes:
 
 - ECDSA signature (DER-encoded on-chain): ~71-72 bytes
 - Schnorr signature ([BIP-340](https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki)): exactly 64 bytes
-- ML-DSA-65 signature (mid-range parameter set): ~3,293 bytes
+- ML-DSA-65 signature (mid-range parameter set): ~3,309 bytes
 
 That's a ~50x increase in signature size. The downstream effects:
 

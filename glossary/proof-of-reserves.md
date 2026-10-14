@@ -6,12 +6,19 @@ linkText:
   - "proof-of-reserves"
 draft: false
 published: "2026-06-18"
+updated: "2026-10-15"
 shortDefinition: "A cryptographic attestation that an exchange or custodian actually holds the coins it claims to. A real improvement after FTX - but it proves assets, not solvency."
 keyTakeaways:
   - "Proof of reserves uses on-chain data and cryptography to show a custodian controls a specific set of coins"
   - "It became a standard demand the week FTX collapsed, because FTX is exactly what it is meant to catch"
   - "It is a partial signal, not a guarantee: it proves assets without proving liabilities, and a snapshot can be staged for the day of the audit"
-sources: []
+sources:
+  - { label: "BIP-127 - Simple Proof-of-Reserves Transactions (assigned 2019-01-28): proofs of reserves are a way for companies managing large amounts of bitcoins to prove ownership over a given amount of funds; the BIP formalizes only the de-facto method and notes its privacy shortcomings", url: "https://github.com/bitcoin/bips/blob/master/bip-0127.mediawiki" }
+  - { label: "Bitcoin Optech - Proof of reserves topic: a timestamped commitment to a distribution of funds signed by the entity who controls them; it cannot guarantee the funds are available; a merkle-sum tree can show each depositor their own amount and how it contributes to the proven total", url: "https://bitcoinops.org/en/topics/proof-of-reserves/" }
+  - { label: "Dagher, Bunz, Bonneau, Clark, Boneh - Provisions: Privacy-preserving proofs of solvency for Bitcoin exchanges (2015): a proof of solvency demonstrates that the exchange controls sufficient reserves to settle each customer's account", url: "https://eprint.iacr.org/2015/1008" }
+  - { label: "PCAOB Office of the Investor Advocate - Exercise caution with proof of reserve reports (March 8, 2023): PoR reports purport to verify an asset type at a particular moment in time, likely do not address liabilities or whether the assets were borrowed, and give no assurance about what happens after the report", url: "https://pcaobus.org/resources/information-for-investors/investor-advisories/investor-advisory-exercise-caution-with-third-party-verification-proof-of-reserve-reports" }
+  - { label: "CoinDesk - Crypto exchanges scramble to compile proof of reserves as FTX contagion grips markets (November 9, 2022): within 24 hours nine exchanges said they would publish Merkle tree reserve certificates, after Binance's CEO called for proof of reserves on November 8", url: "https://www.coindesk.com/business/2022/11/09/crypto-exchanges-scramble-to-compile-proof-of-reserves-as-ftx-contagion-grips-markets" }
+  - { label: "SEC v. Bankman-Fried (S.D.N.Y. 22-cv-10501), complaint (December 13, 2022): FTX customer funds were diverted to Alameda Research; FTX paused all customer withdrawals on November 8, 2022", url: "https://www.sec.gov/files/litigation/complaints/2022/comp-pr2022-219.pdf" }
 relatedTerms:
   - ftx
   - counterparty-risk

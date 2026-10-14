@@ -2,13 +2,20 @@
 title: "Schnorr Signature"
 slug: schnorr-signature
 draft: false
-updated: "2026-09-17"
+updated: "2026-10-15"
 shortDefinition: "A more efficient signature scheme introduced with Taproot, enabling key and signature aggregation for better privacy and lower fees."
 keyTakeaways:
   - "Reduces transaction size for multi-signatures"
   - "Easier to prove correctness than ECDSA, with unique algebraic properties"
   - "Forms the basis for advanced features like MuSig2 key aggregation and Taproot key-path spends"
-sources: []
+sources:
+  - { label: "BIP-340 - Schnorr Signatures for secp256k1: 64-byte signatures versus DER-encoded ECDSA of variable size up to 72 bytes; provably SUF-CMA secure in the random oracle model assuming ECDLP, while ECDSA's best proofs rely on stronger assumptions; non-malleable; linearity lets collaborating parties produce a signature valid for the sum of their public keys; explicitly not a unique signature scheme", url: "https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki" }
+  - { label: "BIP-341 - Taproot: the deployment activated at height 709632 on mainnet; cross-input aggregation was left out because it interacts in complex ways with upgrade mechanisms", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki" }
+  - { label: "mempool.space - block 709,632, the first block under Taproot rules, timestamped 2021-11-14 05:15 UTC", url: "https://mempool.space/block/709632" }
+  - { label: "BIP-327 - MuSig2 for BIP340-compatible Multi-Signatures: a MuSig2 Taproot output is a single BIP340 key and spending it takes a single signature cooperatively produced by all signers, indistinguishable to an observer from a single-signer output", url: "https://github.com/bitcoin/bips/blob/master/bip-0327.mediawiki" }
+  - { label: "Google Patents - US 4,995,082, Claus P. Schnorr: filed February 23, 1990, granted February 19, 1991, anticipated expiration February 23, 2010, status expired", url: "https://patents.google.com/patent/US4995082A/en" }
+  - { label: "Bitcoin Core - libsecp256k1 README: constant time, constant memory access signing and public key generation, intended to be free of timing side channels for secret-key operations", url: "https://github.com/bitcoin-core/secp256k1/blob/master/README.md" }
+  - { label: "Bitcoin v0.1.5 - key.h (2009): keys and signatures go through OpenSSL's EC_KEY, ECDSA_sign and ECDSA_verify on the secp256k1 curve", url: "https://github.com/bitcoin/bitcoin/blob/v0.1.5/key.h" }
 relatedTerms:
   - taproot
   - bip-342-tapscript
@@ -35,7 +42,7 @@ Schnorr signatures are Bitcoin's modern signature scheme, activated with [Taproo
 
 What Schnorr brings that ECDSA doesn't:
 
-- **Linearity.** Schnorr signatures are linear in the math: the sum of two valid signatures is also a valid signature for the sum of the corresponding keys. This sounds esoteric but unlocks [signature aggregation](/glossary/signature-aggregation), which is the biggest practical win.
+- **Linearity.** Schnorr signatures are linear in the math: cosigners can combine their partial signatures into one signature that is valid for the sum of their public keys. This sounds esoteric but unlocks [signature aggregation](/glossary/signature-aggregation), which is the biggest practical win.
 - **Single-signature aggregation across cosigners.** A 5-of-5 multisig under Schnorr (via the MuSig2 protocol) appears on-chain as a single signature - indistinguishable from a single-sig spend. Five-of-five used to require five signatures and was obvious from the block; now it looks like one person spending. Privacy + space savings. This is aggregation among the cosigners of one output. A transaction with five Taproot inputs still carries five signatures, and combining signatures across inputs would need another soft fork.
 - **Smaller signatures.** A Schnorr signature is 64 bytes vs ECDSA's variable 70-72. Saves block space, saves fees.
 - **Cleaner provable security.** Schnorr has a tighter security proof than ECDSA under standard assumptions, which makes cryptographers happier.
@@ -43,7 +50,7 @@ What Schnorr brings that ECDSA doesn't:
 
 Production Schnorr implementations - Bitcoin's libsecp256k1 chief among them - require strict [constant-time](/glossary/constant-time) discipline at the signing path to avoid leaking key material through timing or cache-access side channels. The math is clean; the engineering needed to defend it on real hardware is its own discipline.
 
-The usual story is that Bitcoin used ECDSA because Claus Schnorr's patent had only just expired. It had not: US patent 4,995,082 was filed in February 1990 and expired in February 2010, more than a year after Bitcoin launched. The duller reason is that ECDSA was the standardized elliptic-curve scheme with an implementation in OpenSSL, and Satoshi used what was there. It then took the community more than a decade to design, review, and deploy Schnorr well. The wait paid off; Schnorr is now considered one of the cleanest signature schemes in production cryptography.
+The usual story is that Bitcoin used ECDSA because Claus Schnorr's patent had only just expired, too late for the scheme to be standardized. It had not: US patent 4,995,082 was filed in February 1990 and expired in February 2010, more than a year after Bitcoin launched. The duller reason is that ECDSA was the standardized elliptic-curve scheme with an implementation in OpenSSL, and Satoshi used what was there. It then took the community more than a decade to design, review, and deploy Schnorr well. The wait paid off; Schnorr is now considered one of the cleanest signature schemes in production cryptography.
 
 Schnorr inherits ECDSA's elliptic-curve discrete logarithm assumption, and therefore its quantum vulnerability. A sufficiently powerful quantum computer running [Shor's algorithm](/glossary/shors-algorithm) breaks both schemes. See [Post-Quantum Bitcoin](/glossary/post-quantum-bitcoin) for the migration framework.
 

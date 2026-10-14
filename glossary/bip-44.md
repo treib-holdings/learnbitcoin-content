@@ -2,12 +2,19 @@
 title: "BIP 44"
 slug: bip-44
 draft: false
+updated: "2026-10-15"
 shortDefinition: "Extends BIP 32's HD wallet framework to support multiple accounts, coin types, and organizational structures."
 keyTakeaways:
   - "Gives a standard multi-account layout for HD wallets"
   - "Allows multiple coin types under one seed phrase"
   - "Improves cross-compatibility between different wallets"
-sources: []
+sources:
+  - { label: "BIP 44 - Multi-Account Hierarchy for Deterministic Wallets, by Marek Palatinus and Pavol Rusnak (the m / purpose' / coin_type' / account' / change / address_index layout, hardened at the first three levels, change 0 for receiving and 1 for change; status Deployed)", url: "https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki" }
+  - { label: "BIP 32 - Hierarchical Deterministic Wallets (hardened child keys cannot be derived from an extended public key; a parent xpub plus any non-hardened child private key is equivalent to the parent xprv, which is why the account level is hardened)", url: "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" }
+  - { label: "SLIP-0044 - Registered coin types for BIP-0044 (coin type 0 is Bitcoin; created 2014-07-09)", url: "https://github.com/satoshilabs/slips/blob/master/slip-0044.md" }
+  - { label: "BIP 49 - Derivation scheme for P2WPKH-nested-in-P2SH based accounts (purpose 49'; status Deployed)", url: "https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki" }
+  - { label: "BIP 84 - Derivation scheme for P2WPKH based accounts (purpose 84'; status Deployed)", url: "https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki" }
+  - { label: "BIP 86 - Key Derivation for Single Key P2TR Outputs (purpose 86'; status Deployed)", url: "https://github.com/bitcoin/bips/blob/master/bip-0086.mediawiki" }
 relatedTerms:
   - address-derivation-path
   - bip-bitcoin-improvement-proposal
@@ -45,6 +52,6 @@ What each level means:
 - **0** - change indicator. 0 = receive addresses, 1 = internal change addresses.
 - **0** - address index. Incremented for each fresh address.
 
-The apostrophes mean "hardened" derivation - a level that can't be derived from a parent extended *public* key alone. This prevents an exposed xpub from compromising the rest of the wallet hierarchy.
+The apostrophes mean "hardened" derivation - a level that can't be derived from a parent extended *public* key, only from the private one. BIP-32 hardens the account level for a reason: an extended public key plus any one non-hardened private key below it gives away the parent extended private key, so with the account level hardened (and the two levels above it), a leak inside one account can't reach the master key or the other accounts.
 
-BIP-44 is the spec that turned "back up your seed phrase" into a portable, reliable, multi-implementation standard. Almost every modern wallet follows it (or a BIP-49 / BIP-84 / BIP-86 variant for different address types). See [Hierarchical Deterministic Wallet](/glossary/hierarchical-deterministic-wallet) for the underlying BIP-32 framework this builds on.
+BIP-44 is the spec that turned "back up your seed phrase" into a portable, reliable, multi-implementation standard. Most seed-phrase wallets follow it or one of its siblings for other address types (BIP-49, BIP-84, BIP-86), all of which the BIPs repository marks as deployed. See [Hierarchical Deterministic Wallet](/glossary/hierarchical-deterministic-wallet) for the underlying [BIP-32](/glossary/bip-32) framework this builds on.

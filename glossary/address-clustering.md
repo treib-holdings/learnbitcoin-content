@@ -2,12 +2,18 @@
 title: "Address Clustering"
 slug: address-clustering
 draft: false
+updated: "2026-10-15"
 shortDefinition: "A chain analysis method associating multiple addresses with one user or entity based on transaction patterns."
 keyTakeaways:
   - "Groups addresses under a single controller"
   - "Used by chain analysis to track user behavior"
   - "Reduces privacy if addresses share transaction patterns"
-sources: []
+sources:
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, section 10, Privacy (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Meiklejohn et al. - A Fistful of Bitcoins: Characterizing Payments Among Men with No Names, IMC 2013 (October 2013)", url: "https://cseweb.ucsd.edu/~smeiklejohn/files/imc13.pdf" }
+  - { label: "BIP-78 - A Simple Payjoin Proposal: the common-input, change-scriptpubkey and change-round-amount heuristics", url: "https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki" }
+  - { label: "Bitcoin Optech - Output linking topic", url: "https://bitcoinops.org/en/topics/output-linking/" }
+  - { label: "Bitcoin Wiki - Privacy: common-input-ownership heuristic, change address detection, timing correlation, coin control", url: "https://en.bitcoin.it/wiki/Privacy" }
 relatedTerms:
   - address
   - address-indexing
@@ -26,7 +32,7 @@ The main heuristics:
 - **Common-input ownership.** If a single [transaction](/glossary/transaction) spends UTXOs from multiple addresses, those addresses almost certainly share an owner (the only entity that could have signed for all of them). This is the single strongest clustering heuristic and the reason [PayJoin](/glossary/payjoin) is so disruptive to analysis - it deliberately violates this assumption.
 - **Change-output detection.** A transaction usually has two outputs: payment + change. Change typically returns to the sender. Detecting which output is change reveals more about ownership. Several heuristics (round-number payments, fresh-address patterns, script-type matching) work imperfectly to identify change outputs.
 - **Address reuse.** If you've seen address A before in any context, every new transaction touching A is linked to the prior history.
-- **Timing correlation.** Transactions broadcast around the same time, from the same network location, with similar fee patterns - these correlate to a single user.
+- **Timing correlation.** Transactions broadcast around the same time, from the same network address, or with the same wallet fingerprint (fee patterns and other defaults) are correlated to a single user.
 - **External anchoring.** Exchanges with KYC have customer records mapping addresses to identities. Once an address in a cluster is identified, the whole cluster is identified.
 
 The privacy defense is to deliberately violate these heuristics:
