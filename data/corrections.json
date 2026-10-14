@@ -1,5 +1,265 @@
 [
   {
+    "id": "2026-10-13-address",
+    "date": "2026-10-13",
+    "page": "/glossary/address",
+    "title": "Address",
+    "wrong": "The entry said every address encodes a hash of a public key or script, and that the bc1p Taproot format was introduced with BIP 341.",
+    "fixed": "A Taproot address encodes a tweaked 32-byte public key directly, not a hash. BIP 341 defines the output; the bc1p address encoding is Bech32m from BIP 350.",
+    "commit": "c52bac9",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki"
+  },
+  {
+    "id": "2026-10-13-address-derivation-path",
+    "date": "2026-10-13",
+    "page": "/glossary/address-derivation-path",
+    "title": "Address Derivation Path",
+    "wrong": "The entry said some wallets reserve change index 2 for internal change, and called the second path level a registered chain ID.",
+    "fixed": "BIP 44 defines two chains only: 0, the external chain for receiving addresses, and 1, the internal chain for change. The second level is the registered coin type, 0 for Bitcoin and 1 for testnet.",
+    "commit": "c52bac9",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki"
+  },
+  {
+    "id": "2026-10-13-altcoin",
+    "date": "2026-10-13",
+    "page": "/glossary/altcoin",
+    "title": "Altcoin",
+    "wrong": "The entry said Bitcoin borrowed Schnorr signatures and MAST from altcoin research.",
+    "fixed": "Neither came from an altcoin: Schnorr signatures go back to Claus Schnorr's 1990 patent filing, and Taproot's script trees descend from Bitcoin's own MAST proposals, which BIP 341 lists among the earlier Bitcoin ideas it combines.",
+    "commit": "c52bac9",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki"
+  },
+  {
+    "id": "2026-10-13-bip-bitcoin-improvement-proposal",
+    "date": "2026-10-13",
+    "page": "/glossary/bip-bitcoin-improvement-proposal",
+    "title": "BIP (Bitcoin Improvement Proposal)",
+    "wrong": "The entry listed the BIP types as Standards Track, Informational and Process while also saying BIP 3 had replaced the old process in January 2026.",
+    "fixed": "Since BIP 3 took effect in January 2026 the types are Specification, Informational and Process; Standards Track was the BIP 2 name for what is now a Specification BIP, and it covers interoperability standards such as address formats as well as protocol rules.",
+    "commit": "c52bac9",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0003.md"
+  },
+  {
+    "id": "2026-10-13-bitcoin-core",
+    "date": "2026-10-13",
+    "page": "/glossary/bitcoin-core",
+    "title": "Bitcoin Core",
+    "wrong": "The entry said Lurking Wife Mode was added to Bitcoin Core by Sjors Provoost in 2015, and that major versions brought SegWit in 2017 and Taproot signaling in 2021.",
+    "fixed": "The GUI's Mask Values toggle was written by Hennadii Stepanov and merged in May 2020 (pull request 16432); the Lurking Wife Mode name came from Wasabi Wallet. SegWit's mainnet parameters shipped in the maintenance release 0.13.1 and Taproot's activation parameters in 0.21.1; Bitcoin Core's stated policy is to ship consensus changes first in maintenance releases rather than major versions.",
+    "commit": "c52bac9",
+    "source": "https://github.com/bitcoin/bitcoin/pull/16432"
+  },
+  {
+    "id": "2026-10-13-bitcoin-inheritance-planning",
+    "date": "2026-10-13",
+    "page": "/glossary/bitcoin-inheritance-planning",
+    "title": "Bitcoin Inheritance Planning",
+    "wrong": "The entry described the time-locked multisig approach as a 2-of-3 in which you hold two keys and a designated heir or trustee holds one, with a time-locked branch letting 'the heir + trustee' spend after a delay. The key counts did not add up and no mechanism was named.",
+    "fixed": "It now describes a script with a second branch that a designated heir, alone or with a trustee, can use only after the coins have sat untouched for a set delay, enforced by a relative locktime (BIP 68) that CheckSequenceVerify (BIP 112) checks in the script, whose clock restarts whenever the owner moves the coins, and notes that Bitcoin Core's output descriptor language expresses the delay with Miniscript's older().",
+    "commit": "c52bac9",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0112.mediawiki"
+  },
+  {
+    "id": "2026-10-13-block-height",
+    "date": "2026-10-13",
+    "page": "/glossary/block-height",
+    "title": "Block Height",
+    "wrong": "The entry said soft forks such as Taproot, SegWit and BIP 66 activate when a target height is reached or when signaling thresholds clear in a retarget window.",
+    "fixed": "BIP 66, like BIP 34 and BIP 65, activated by a rolling supermajority of the previous 1,000 blocks, not by a retarget-window tally or a set height. The retarget-period tally is BIP 9's mechanism, used for SegWit, and Taproot's fixed minimum activation height of 709,632 was an addition to it.",
+    "commit": "c52bac9",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki"
+  },
+  {
+    "id": "2026-10-13-block-propagation",
+    "date": "2026-10-13",
+    "page": "/glossary/block-propagation",
+    "title": "Block Propagation",
+    "wrong": "The entry said that in 2026 a new block typically reaches about 80% of reachable nodes within 5-8 seconds and substantially everyone within 30 seconds, and listed Falcon alongside FIBRE as dedicated relay networks run by miners that push blocks across the globe in tens of milliseconds.",
+    "fixed": "No measurement supports those figures. The KIT network monitor, which records when its peers in Germany announce a new block, saw half of the announcements within about 0.8 seconds of the first and 90% within about 2.5 seconds in October 2026; the 2013 measurement across the reachable network (median 6.5 seconds) is given for comparison. Falcon was removed, since its site no longer exists, and the FIBRE description now follows the FIBRE project's own page, which says the original network sat in stasis for almost a decade before a public network was revived.",
+    "commit": "c52bac9",
+    "source": "https://www.dsn.kastel.kit.edu/bitcoin/"
+  },
+  {
+    "id": "2026-10-13-dust",
+    "date": "2026-10-13",
+    "page": "/glossary/dust",
+    "title": "Dust",
+    "wrong": "The entry said Bitcoin Core won't relay a transaction with an output below its dust threshold at all.",
+    "fixed": "Since Bitcoin Core 29.0 there is one exception, ephemeral dust: a zero-fee transaction may carry one dust output if a child transaction relayed with it spends that output. The 546-sat figure for a legacy output was right; the entry now also gives the P2WPKH figure, 294 sats at the default 3 sat/vB dust fee rate, and calls the policy by its glossary name, the dust limit.",
+    "commit": "c52bac9",
+    "source": "https://bitcoincore.org/en/releases/29.0/"
+  },
+  {
+    "id": "2026-10-13-genesis-block",
+    "date": "2026-10-13",
+    "page": "/glossary/genesis-block",
+    "title": "Genesis Block",
+    "wrong": "The entry said the genesis message was written in 80 bytes, implied that Satoshi deliberately hard-coded the 50 BTC reward so that it is not part of the UTXO set, and said its author had not been seen since the block was mined.",
+    "fixed": "The headline in the coinbase is 69 bytes; 80 bytes is the size of a block header. The reward is unspendable because the original code never added the genesis coinbase to the UTXO set, a special case Bitcoin Core preserves, and whether Satoshi intended it is not known. Satoshi kept posting publicly until December 2010.",
+    "commit": "c52bac9",
+    "source": "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp"
+  },
+  {
+    "id": "2026-10-13-htlc-hashed-time-locked-contract",
+    "date": "2026-10-13",
+    "page": "/glossary/htlc-hashed-time-locked-contract",
+    "title": "HTLC (Hashed Time-Locked Contract)",
+    "wrong": "The entry said an HTLC's funds are spendable by anyone who reveals the preimage, and its script sketch showed a claim path with no signature check.",
+    "fixed": "The claim path is bound to the intended receiver's key as well as the preimage; a revealed preimage alone identifies nobody, so without the signature check anyone who saw it could take the funds. The script sketch now shows the receiver's signature on the claim path and the sender's on the refund path.",
+    "commit": "c52bac9",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0199.mediawiki"
+  },
+  {
+    "id": "2026-10-13-key-split",
+    "date": "2026-10-13",
+    "page": "/glossary/key-split",
+    "title": "Key Split",
+    "wrong": "The entry said SLIP-39 is a standardized Shamir scheme for BIP 39 seeds, and that tools like SeedSigner can produce SLIP-39 shares from any seed.",
+    "fixed": "SLIP-39 splits a wallet's BIP 32 master seed using its own 1024-word list and was proposed by the BIP 39 authors as a replacement for BIP 39; the two are mostly not compatible, and converting an existing phrase yields 59-word shares. SeedSigner's published feature list does not include SLIP-39, so that claim was removed.",
+    "commit": "c52bac9",
+    "source": "https://github.com/satoshilabs/slips/blob/master/slip-0039.md"
+  },
+  {
+    "id": "2026-10-13-kyc-know-your-customer",
+    "date": "2026-10-13",
+    "page": "/glossary/kyc-know-your-customer",
+    "title": "KYC (Know Your Customer)",
+    "wrong": "The entry said every exchange hacked since 2014 has leaked KYC data including passport scans and home addresses to attackers who use it for physical attacks, and it listed submarine swaps among non-KYC ways to obtain bitcoin.",
+    "fixed": "The blanket claim was replaced with a sourced example: Coinbase's May 2025 disclosure that bribed support agents had handed attackers customer names, addresses, partial Social Security numbers, government ID images and balances, used in social-engineering thefts. Submarine swaps exchange on-chain bitcoin for Lightning bitcoin and are not a way to acquire bitcoin, so they were removed; the named marketplaces were replaced with FinCEN's own line between users and money transmitters.",
+    "commit": "c52bac9",
+    "source": "https://www.cnbc.com/2025/05/15/coinbase-says-hackers-bribed-staff-to-steal-customer-data-and-are-demanding-20-million-ransom.html"
+  },
+  {
+    "id": "2026-10-13-layer-1",
+    "date": "2026-10-13",
+    "page": "/glossary/layer-1",
+    "title": "Layer 1",
+    "wrong": "The entry said layer 1 handles about 7 transactions per second on average with a hard cap that doesn't change, and that layer 1 is the part of Bitcoin that doesn't change.",
+    "fixed": "The consensus cap is 4,000,000 weight units per block, not a transaction count; yearly averages since 2016 have ranged from about 2.5 to 7 transactions per second depending on transaction size. Layer 1's rules do change, by soft fork, with SegWit and Taproot as the landmark examples.",
+    "commit": "c52bac9",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki"
+  },
+  {
+    "id": "2026-10-13-merkle-root",
+    "date": "2026-10-13",
+    "page": "/glossary/merkle-root",
+    "title": "Merkle Root",
+    "wrong": "The entry said the Merkle root is a 32-byte commitment to potentially gigabytes of transaction data.",
+    "fixed": "A block is capped at 4,000,000 weight units, under 4 MB serialized, so a Merkle root commits to at most a few megabytes of transaction data. The sentence now says so.",
+    "commit": "c52bac9",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki"
+  },
+  {
+    "id": "2026-10-13-miner",
+    "date": "2026-10-13",
+    "page": "/glossary/miner",
+    "title": "Miner",
+    "wrong": "The entry said, in the present tense, that today's miners sit near hydro in Sichuan during the wet season, stranded gas in West Texas, geothermal in Iceland and off-peak nuclear in France.",
+    "fixed": "China clamped down on mining in 2021, so the Sichuan example is now dated to when China still allowed mining. The Texas, Iceland and France examples had no source and were replaced with the siting patterns the Cambridge Digital Mining Industry Report documents: hydro-rich regions, flared gas at oil wells and stranded renewables.",
+    "commit": "c52bac9",
+    "source": "https://www.jbs.cam.ac.uk/wp-content/uploads/2025/04/2025-04-cambridge-digital-mining-industry-report.pdf"
+  },
+  {
+    "id": "2026-10-13-not-your-keys-not-your-coins",
+    "date": "2026-10-13",
+    "page": "/glossary/not-your-keys-not-your-coins",
+    "title": "Not Your Keys, Not Your Coins",
+    "wrong": "The entry dated QuadrigaCX's failure to 2018.",
+    "fixed": "Quadriga's CEO died in December 2018, but the exchange announced the death on January 14, 2019 and had ceased operations and filed for creditor protection by February 5, 2019. The collapse is now dated 2019, matching the QuadrigaCX entry and the custody chapter.",
+    "commit": "c52bac9",
+    "source": "https://www.osc.ca/quadrigacxreport/"
+  },
+  {
+    "id": "2026-10-13-paper-wallet",
+    "date": "2026-10-13",
+    "page": "/glossary/paper-wallet",
+    "title": "Paper Wallet",
+    "wrong": "The entry said a paper wallet has to be swept whole because Bitcoin Script doesn't allow partial spends of a UTXO, and that most paper-wallet losses come from people sending change to nowhere.",
+    "fixed": "A transaction spends a UTXO in full whatever the script; the remainder goes to a change output controlled by the wallet that signed. The classic loss is spending part of a paper wallet from a software wallet and assuming the rest is still on the paper, when it sits at a change address that was never backed up.",
+    "commit": "c52bac9",
+    "source": "https://en.bitcoin.it/wiki/Paper_wallet"
+  },
+  {
+    "id": "2026-10-13-payment-channel",
+    "date": "2026-10-13",
+    "page": "/glossary/payment-channel",
+    "title": "Payment Channel",
+    "wrong": "The entry said payments inside a channel are enforced cryptographically rather than via the proof-of-work chain.",
+    "fixed": "Channel states are enforced by the chain: either party can broadcast the latest signed state at any time, and in Lightning a party that broadcasts a revoked state forfeits the channel balance to the other side through a penalty transaction. The chain is the court of last resort, not bypassed.",
+    "commit": "c52bac9",
+    "source": "https://lightning.network/lightning-network-paper.pdf"
+  },
+  {
+    "id": "2026-10-13-price-floor-btc",
+    "date": "2026-10-13",
+    "page": "/glossary/price-floor-btc",
+    "title": "Price Floor (BTC)",
+    "wrong": "The 2024 bullet said hash rate growth merely slowed after the April 2024 halving and that price did not crash because spot demand had structural ETF support, stated as fact without a source.",
+    "fixed": "Hash rate fell after the halving: difficulty dropped about 10 percent between April 24 and July 5, 2024 before resuming growth. The ETF explanation was unsupported and was replaced by what the data show, a price between about $50,000 and $73,000 through October 2024 rather than a fall toward the new cost of production.",
+    "commit": "c52bac9",
+    "source": "https://mempool.space/api/v1/mining/difficulty-adjustments/all"
+  },
+  {
+    "id": "2026-10-13-proof-work-pow",
+    "date": "2026-10-13",
+    "page": "/glossary/proof-work-pow",
+    "title": "Proof-of-Work (PoW)",
+    "wrong": "The entry said producing a valid block hash takes trillions of attempts.",
+    "fixed": "The expected number of attempts is the difficulty times 2^32, roughly 570 sextillion (5.7 x 10^23) at the October 2026 difficulty of about 133 trillion.",
+    "commit": "c52bac9",
+    "source": "https://en.bitcoin.it/wiki/Difficulty"
+  },
+  {
+    "id": "2026-10-13-public-key",
+    "date": "2026-10-13",
+    "page": "/glossary/public-key",
+    "title": "Public Key",
+    "wrong": "The entry said most address types hash the public key with SHA-256 then RIPEMD-160 'or just SHA-256 for newer formats', and that the public key is only revealed when you spend.",
+    "fixed": "Legacy and native SegWit single-key addresses both use HASH160 (SHA-256 then RIPEMD-160); the SHA-256-only form hashes a script, not a key; and Taproot addresses contain a tweaked public key directly, so the hashing protection against a future quantum attack does not apply to them.",
+    "commit": "c52bac9",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki"
+  },
+  {
+    "id": "2026-10-13-reorg-reorganization",
+    "date": "2026-10-13",
+    "page": "/glossary/reorg-reorganization",
+    "title": "Reorg (Reorganization)",
+    "wrong": "The entry called the 25-block reorganization of March 2013 the deepest a software disagreement has caused on mainnet, said deep reorgs have been caused by brief network partitions or deliberate testnet attacks, and described the abandoned blocks as invalidated.",
+    "fixed": "The 53-block reorganization of 16 August 2010, when the patched chain overtook the chain carrying the value overflow block, was deeper; the entry now names both, drops the unsupported causes, and calls the abandoned blocks stale, which is what they are.",
+    "commit": "c52bac9",
+    "source": "https://mempool.space/block/00000000005c22d199706df1c38b38d76f8401920dcbe91edf3417f8847da707"
+  },
+  {
+    "id": "2026-10-13-replace-fee-rbf",
+    "date": "2026-10-13",
+    "page": "/glossary/replace-fee-rbf",
+    "title": "Replace-by-Fee (RBF)",
+    "wrong": "The entry said a transaction signals replaceability with an nSequence value below the maximum, that only nodes following BIP 125 replace transactions, and that merchants accepting zero-conf payments could require non-RBF transactions instead of waiting for a confirmation.",
+    "fixed": "The signal is an nSequence of 0xfffffffd or lower (0xfffffffe does not signal); a replacement must also pay for its own relay; and since Bitcoin Core 28.0 (October 2024) nodes replace unsignaled transactions by default, with the option to disable that removed in 29.0, so requiring non-RBF transactions no longer protects anyone.",
+    "commit": "c52bac9",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki"
+  },
+  {
+    "id": "2026-10-13-second-layer",
+    "date": "2026-10-13",
+    "page": "/glossary/second-layer",
+    "title": "Second Layer",
+    "wrong": "The entry described Ark as a service operator letting users transact through short-lived off-chain channels, called Chaumian e-cash mints federated, and called Lightning genuinely trustless.",
+    "fixed": "Ark shares on-chain UTXOs through trees of pre-signed off-chain transactions built in rounds, with expiring virtual UTXOs and unilateral exit; e-cash mints hold the bitcoin and issue blind-signed tokens, and users must trust the mint; Lightning needs no trusted third party but does need someone watching the chain.",
+    "commit": "c52bac9",
+    "source": "https://bitcoinops.org/en/topics/ark/"
+  },
+  {
+    "id": "2026-10-13-tor-hidden-service",
+    "date": "2026-10-13",
+    "page": "/glossary/tor-hidden-service",
+    "title": "Tor Hidden Service",
+    "wrong": "The entry said Bitcoin Core has shipped first-class Tor support since 2014, that Tor adds about 200 to 500 ms of round-trip time because of a three-hop relay structure, and that Tor's random circuit selection protects a node against eclipse attacks.",
+    "fixed": "Bitcoin Core has had Tor support since version 0.7 in 2012 and has created onion services automatically since version 0.12 in 2016. A connection to an onion service runs through six relays, three picked by each side, and the Tor Project's own measurements put the median round trip at about 440 ms in 2026, from roughly 290 to 700 ms across its vantage points. The entry now credits eclipse resistance to Bitcoin Core keeping an outbound connection on every reachable network since version 26.0, which its release notes say improves resistance to eclipse attacks.",
+    "commit": "c52bac9",
+    "source": "https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.7.0.md"
+  },
+  {
     "id": "2026-10-13-bip-32",
     "date": "2026-10-13",
     "page": "/glossary/bip-32",
