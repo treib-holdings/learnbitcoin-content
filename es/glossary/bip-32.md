@@ -42,16 +42,16 @@ La construcción es sencilla. La semilla pasa por HMAC-SHA512 con la clave fija 
 
 Hay dos modos de derivación que importan:
 
-- **No endurecida** (non-hardened, índice del hijo < 2^31). La clave pública hija se puede derivar a partir de la clave pública padre más el chaincode. Esto es lo que hace que el xpub sea útil: entrégale el xpub a alguien y podrá derivar todas las direcciones de recepción sin ver nunca el lado privado.
+- **No endurecida** (non-hardened, índice del hijo < 2^31). La clave pública hija se puede derivar a partir de la clave pública padre más el chaincode. Esto es lo que hace que la xpub sea útil: entrégale la xpub a alguien y podrá derivar todas las direcciones de recepción sin ver nunca el lado privado.
 - **Endurecida** (hardened, índice del hijo >= 2^31). La derivación requiere la clave privada padre. Un atacante que obtenga una clave privada hija endurecida no puede reconstruir la clave padre ni las claves hermanas. Esto cierra un ataque famoso contra la derivación no endurecida. Por convención, el BIP 44 usa derivación endurecida en las rutas a nivel de cuenta, para que una clave de cuenta filtrada no comprometa las demás cuentas.
 
 Por qué importa en la práctica:
 
 - **Un respaldo, direcciones infinitas.** Genera una dirección nueva para cada transacción sin hacer más respaldos.
-- **Billeteras de solo lectura.** Importa un xpub en una app del celular para monitorear el saldo de una billetera de hardware (hardware wallet) sin exponer ninguna clave privada.
+- **Billeteras de solo lectura.** Importa una xpub en una app del celular para monitorear el saldo de una billetera de hardware (hardware wallet) sin exponer ninguna clave privada.
 - **Separación entre cuentas.** El [BIP 44 (en inglés)](/glossary/bip-44) usa rutas endurecidas a nivel de cuenta, para que una cuenta expuesta no contamine a sus hermanas.
 - **Portabilidad entre billeteras.** Restaura la semilla en otra billetera que use la misma ruta de derivación y el mismo tipo de script y obtendrás las mismas direcciones; el BIP 32 deja la disposición del árbol como una simple recomendación, y por eso el BIP 44 y los descriptores de salida la fijan. La semilla es el activo; el software es reemplazable.
 
 El BIP 32 por sí solo dice únicamente que la semilla es una secuencia de bytes aleatorios; no especifica cómo respaldarla en una forma que una persona pueda anotar. De eso se encarga el [BIP 39](/es/glosario/bip-39): las frases semilla mnemónicas (también llamadas frases de recuperación). Juntos son la base de la autocustodia moderna en Bitcoin.
 
-Especificación: [BIP-32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki).
+Especificación: [BIP 32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki).

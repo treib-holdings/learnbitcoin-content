@@ -237,7 +237,7 @@ La otra cara del envío: cómo lograr que te *paguen*.
 
 **Lightning:**
 - Genera una factura. Puedes especificar un monto (por ejemplo, "págame 5,000 sats") o dejarlo abierto ("págame cualquier monto").
-- Las facturas vencen. Si una factura no dice cuándo, la especificación de facturas de Lightning (BOLT 11) la considera válida por una hora. El software de los nodos suele traer un valor por defecto más largo, como 24 horas (LND) o una semana (Core Lightning). Cuando una vence, generas otra.
+- Las facturas vencen. Si una factura no dice cuándo, la especificación de facturas Lightning (BOLT 11) la considera válida por una hora. El software de los nodos suele traer un valor por defecto más largo, como 24 horas (LND) o una semana (Core Lightning). Cuando una vence, generas otra.
 - Quien envía paga tu factura; el pago normalmente llega en segundos; la factura queda consumida.
 
 Existe una convención llamada **Lightning Address** (una dirección Lightning; se ve como un correo electrónico: `you@yourdomain.com`) que permite que la gente te pague sin pedirte una factura nueva cada vez; un servidor web en ese dominio crea una nueva para cada pago. Es cómodo, pero requiere correr ese servidor o usar un servicio que lo haga. Opcional para la mayoría; útil si haces trabajo de cara al público y recibes propinas.

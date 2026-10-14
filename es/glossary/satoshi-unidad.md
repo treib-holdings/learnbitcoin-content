@@ -4,7 +4,6 @@ slug: satoshi-unidad
 translationOf: satoshi-unit
 sourceHash: "f9d4ae271a3f"
 sourceCommit: "01378cb"
-sourceUpdated: "2026-05-14"
 translation:
   method: "llm-draft"
 published: "2026-10-13"

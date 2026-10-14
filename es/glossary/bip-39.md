@@ -39,7 +39,7 @@ La matemática:
 2. Se agrega una suma de verificación (checksum) derivada de SHA-256, cuyo largo es la cantidad de bits de entropía dividida entre 32.
 3. Se divide el resultado en grupos de 11 bits y se busca cada grupo en la lista de 2048 palabras del BIP 39.
 
-El resultado es una frase de 12, 15, 18, 21 o 24 palabras. Con 12 palabras se codifican 128 bits de entropía; con 24 palabras, 256 bits (la escala completa está en [bits de entropía de la frase mnemónica (en inglés)](/glossary/mnemonic-entropy-bits)). Ambas opciones quedan muy lejos del alcance de la fuerza bruta; elegir una u otra es cuestión de preferencia.
+El resultado es una frase de 12, 15, 18, 21 o 24 palabras. Con 12 palabras se codifican 128 bits de entropía; con 24 palabras, 256 bits (la escala completa está en [bits de entropía de la frase semilla](/es/glosario/bits-de-entropia)). Ambas opciones quedan muy lejos del alcance de la fuerza bruta; elegir una u otra es cuestión de preferencia.
 
 Para obtener la semilla real de la billetera (la entrada de la derivación [BIP 32](/es/glosario/bip-32)), la frase mnemónica pasa por PBKDF2-HMAC-SHA512 con 2048 iteraciones, usando como sal (salt) la cadena "mnemonic" más una passphrase opcional. Con una passphrase vacía obtienes una billetera; con una passphrase no vacía obtienes una billetera completamente distinta a partir de las mismas palabras. A esa [passphrase](/es/glosario/passphrase) opcional a veces se le llama la "palabra 25".
 
@@ -52,4 +52,4 @@ Por qué importa el BIP 39:
 
 La lista en inglés se eligió con cuidado: 2048 palabras (exactamente 11 bits cada una), ninguna comparte sus primeras cuatro letras con otra (así que una palabra escrita a medias se resuelve sin ambigüedad) y sin pares fáciles de confundir. Es el estándar de frase semilla más usado.
 
-Especificación: [BIP-39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
+Especificación: [BIP 39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).

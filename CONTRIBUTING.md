@@ -208,6 +208,31 @@ so it must be exact. The Spanish filename itself is free as long as it
 is ASCII: an `es/pages/inicio.md` with `translationOf: home` is the
 Spanish home page.
 
+**The title is the term.** A Spanish glossary entry's `title` is the
+word every Spanish page uses for that concept, in every chapter, page
+and UI string: "billetera", not "cartera" or "monedero". There is no
+separate word list; the glossary is it, and `es/GUIA-DE-ESTILO.md`
+covers the rest (register, numbers, dates, punctuation, the words that
+are not glossary terms). Two optional fields on a Spanish glossary
+entry carry the decision:
+
+    aliases: ["wallet", "billetera digital"]   # other phrasings and loanwords that mean the same thing; the auto-linker links them to this entry
+    avoid: ["cartera", "monedero"]             # rejected alternatives: words a Spanish page must not use for this concept
+
+`avoid` words are never auto-linked. The web build's `check-translations`
+step prints an `AVOIDED <file>:<line>` warning (it does not fail) for
+every occurrence of one in another Spanish file's prose, accent- and
+case-insensitive, whole word; list the plural too if it should be caught
+("carteras"). Introducing the rejected word once in a parenthesis right
+after the chosen term is fine and not flagged: "tu billetera (cartera)".
+Frontmatter, code and link targets are not scanned, and the entry that
+lists a word may discuss it freely. To see the current table (Spanish
+title, slug, English title, aliases, avoid, reviewed), run
+`pnpm terminology` in the web repo; it is generated from
+`es/glossary/*.md`, so to change a term, change the entry. Write the
+`translation:` block in block form (one key per line); the check does
+not read the one-line `{ ... }` form.
+
 The web build's `check-translations` step refuses a Spanish file that
 is missing `translationOf` or `sourceHash`;
 whose `translationOf` names no English entry, a draft, or a chapter

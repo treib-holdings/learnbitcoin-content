@@ -44,7 +44,7 @@ wpkh([d34db33f/84h/0h/0h]xpub6BosfCnifzxcF.../<0;1>/*)#cm5e6jrn
 Desglosado:
 
 - `wpkh(...)` - el tipo de script. En este caso, witness public-key hash (P2WPKH, SegWit nativo).
-- `[d34db33f/84h/0h/0h]` - el origen BIP 32: la huella (fingerprint) de la clave maestra y la ruta de derivación que lleva hasta este xpub.
+- `[d34db33f/84h/0h/0h]` - el origen BIP 32: la huella (fingerprint) de la clave maestra y la ruta de derivación que lleva hasta esta xpub.
 - `xpub6Bos...` - la clave pública extendida.
 - `/<0;1>/*` - multipath (varias rutas en una): deriva claves hijas tanto en `/0/*` (recepción) como en `/1/*` (cambio); el `*` representa los índices no endurecidos (unhardened) de esas claves hijas, que la billetera recorre dentro de un rango (de 0 a 1000 por defecto en Bitcoin Core).
 - `#cm5e6jrn` - una suma de verificación (checksum), para que un error al copiarlo haga fallar la importación de inmediato.

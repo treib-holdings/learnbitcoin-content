@@ -30,6 +30,6 @@ Lo que vuelve obsoleto a un bloque no es ningún defecto del bloque en sí: cual
 
 Los bloques obsoletos son normales. El objetivo de Bitcoin de un bloque cada 10 minutos equivale a unos 52,600 bloques al año, encontrados por mineros repartidos por todo el mundo, y los hallazgos casi simultáneos dejan decenas de ellos obsoletos cada año. El conjunto de datos público bitcoin-data/stale-blocks registra entre 28 y 93 al año de 2022 a 2025. Cuanto más largo es el tiempo promedio entre bloques y mejor la propagación de los bloques, más baja es la tasa de bloques obsoletos. El tiempo de bloque de 10 minutos de Bitcoin se eligió en parte para mantener baja esa tasa.
 
-El término más antiguo para lo mismo es [bloque huérfano (en inglés)](/glossary/orphan-block), que todavía aparece a veces en documentación más antigua, pero que ya se distingue formalmente de un caso distinto (y más raro): aquel en que un nodo literalmente todavía no ha recibido el bloque padre.
+El término más antiguo para lo mismo es [bloque huérfano](/es/glosario/bloque-huerfano), que todavía aparece a veces en documentación más antigua, pero que ya se distingue formalmente de un caso distinto (y más raro): aquel en que un nodo literalmente todavía no ha recibido el bloque padre.
 
 Los bloques obsoletos no indican un problema en Bitcoin. Indican que Bitcoin está funcionando: mineros independientes en todo el planeta compiten por extender la cadena, y la red converge en el lado que tenga más trabajo acumulado.

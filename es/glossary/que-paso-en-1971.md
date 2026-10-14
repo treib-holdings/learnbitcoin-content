@@ -7,7 +7,7 @@ sourceCommit: "57cbe8a"
 sourceUpdated: "2026-10-02"
 translation:
   method: "llm-draft"
-linkText:
+aliases:
   - "ventana del oro"
 draft: false
 published: "2026-10-13"
