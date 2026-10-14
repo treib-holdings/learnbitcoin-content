@@ -11,7 +11,7 @@ aliases:
   - "direcciones"
   - "dirección de Bitcoin"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una cadena de caracteres (que suele empezar con 1, 3 o bc1) que representa un destino para pagos en Bitcoin, derivada de una clave pública."
 keyTakeaways:
   - "Se deriva de una clave pública o de un script, normalmente mediante un hash criptográfico"

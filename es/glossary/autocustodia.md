@@ -2,7 +2,7 @@
 title: "Autocustodia"
 slug: autocustodia
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Tener en tus manos las claves privadas de tus propios bitcoins, de modo que ningún exchange, banco ni custodio se interponga entre tú y tus monedas. Lo que Bitcoin se construyó para hacer posible."
 keyTakeaways:
   - "En autocustodia controlas las claves privadas directamente: no hay ningún tercero que pueda congelar, prestar o perder tus monedas"

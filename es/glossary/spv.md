@@ -2,7 +2,7 @@
 title: "SPV (verificación simplificada de pagos)"
 slug: spv
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un modelo de cliente ligero que verifica transacciones con los encabezados de los bloques y pruebas de Merkle, en lugar de la cadena de bloques (blockchain) completa."
 keyTakeaways:
   - "Guarda solo los encabezados de los bloques y se apoya en pruebas de Merkle"

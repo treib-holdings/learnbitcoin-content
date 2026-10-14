@@ -2,7 +2,7 @@
 title: "Polvo (dust)"
 slug: polvo
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una cantidad muy pequeña de BTC en un UTXO, muchas veces por debajo de la comisión que haría falta para gastarla de forma rentable."
 keyTakeaways:
   - "Salidas tan pequeñas que gastarlas cuesta más en comisiones de lo que valen"

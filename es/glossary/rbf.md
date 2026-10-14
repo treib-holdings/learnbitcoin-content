@@ -2,7 +2,7 @@
 title: "Replace-by-Fee (RBF)"
 slug: rbf
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un mecanismo que permite a quien envía retransmitir una transacción sin confirmar con una comisión más alta, reemplazando la transacción original en el mempool."
 keyTakeaways:
   - "Permite subir la comisión de transacciones sin confirmar"

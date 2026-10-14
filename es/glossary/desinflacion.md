@@ -2,7 +2,7 @@
 title: "Desinflación"
 slug: desinflacion
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una reducción de la tasa de inflación. La tasa de emisión de Bitcoin se frena con cada halving, un ejemplo de comportamiento desinflacionario."
 keyTakeaways:
   - "Describe una tasa de inflación que baja con el tiempo"

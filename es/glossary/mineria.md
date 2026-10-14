@@ -2,7 +2,7 @@
 title: "Minería"
 slug: mineria
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Usar poder de cómputo para resolver la prueba de trabajo de Bitcoin, validar transacciones y asegurar la cadena de bloques (blockchain)."
 keyTakeaways:
   - "Asegura el registro mediante cálculos de prueba de trabajo"

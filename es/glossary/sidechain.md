@@ -2,7 +2,7 @@
 title: "Sidechain (cadena lateral)"
 slug: sidechain
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una cadena de bloques (blockchain) externa, interoperable con Bitcoin mediante un peg (anclaje), como Liquid, que permite funciones nuevas o transacciones más rápidas."
 keyTakeaways:
   - "Añade funciones extra sin cambiar la unidad monetaria, que sigue siendo BTC"

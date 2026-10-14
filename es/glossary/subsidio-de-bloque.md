@@ -2,7 +2,7 @@
 title: "Subsidio de bloque"
 slug: subsidio-de-bloque
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "La parte de BTC recién emitidos dentro de la recompensa de bloque de un minero; se reduce a la mitad cada 210,000 bloques."
 keyTakeaways:
   - "Empieza en 50 BTC por bloque y se reduce a la mitad más o menos cada cuatro años"

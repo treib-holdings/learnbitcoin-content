@@ -2,7 +2,7 @@
 title: "Raíz de Merkle"
 slug: raiz-de-merkle
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "El único hash de 32 bytes en la cima del árbol de Merkle de un bloque, que resume todas las transacciones incluidas."
 keyTakeaways:
   - "El hash final que encapsula cada transacción del bloque"

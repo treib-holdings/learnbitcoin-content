@@ -2,7 +2,7 @@
 title: "Clave pública"
 slug: clave-publica
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Se deriva de una clave privada mediante multiplicación en una curva elíptica y sirve para verificar firmas o generar direcciones de BTC."
 keyTakeaways:
   - "Es el núcleo de la criptografía de Bitcoin: verificar firmas hechas con claves privadas"

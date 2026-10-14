@@ -2,7 +2,7 @@
 title: "Irreversibilidad de la transacción (finality)"
 slug: irreversibilidad-de-la-transaccion
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Después de varias confirmaciones, revertir una transacción mediante una reorganización (reorg) se vuelve muy improbable, lo que da una irreversibilidad práctica."
 keyTakeaways:
   - "Cada bloque nuevo reduce la probabilidad de que un ataque por reorganización tenga éxito"

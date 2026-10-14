@@ -2,7 +2,7 @@
 title: "BIP 66"
 slug: bip-66
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Exige firmas codificadas en DER estricto, lo que mitiga ciertos problemas de maleabilidad de transacciones y de lectura de firmas."
 keyTakeaways:
   - "Hace que las firmas sigan un único estándar DER"

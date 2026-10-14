@@ -2,7 +2,7 @@
 title: "Bits de entropía de la frase semilla"
 slug: bits-de-entropia
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "La aleatoriedad binaria subyacente con la que se generan las palabras de una frase semilla de BIP 39 (normalmente 128, 192 o 256 bits)."
 keyTakeaways:
   - "128 bits -> 12 palabras, 256 bits -> 24 palabras, etc."

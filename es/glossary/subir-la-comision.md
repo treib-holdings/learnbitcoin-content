@@ -2,7 +2,7 @@
 title: "Subir la comisión (fee bumping)"
 slug: subir-la-comision
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Aumentar la prioridad de una transacción después de transmitirla, normalmente con Replace-by-Fee (RBF) o Child Pays for Parent (CPFP)."
 keyTakeaways:
   - "Evita que una transacción se quede atascada en el mempool con una comisión baja"

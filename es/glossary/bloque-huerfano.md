@@ -2,7 +2,7 @@
 title: "Bloque huérfano"
 slug: bloque-huerfano
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Término antiguo para un bloque que no fue aceptado en la mejor cadena (hoy se llama, con más precisión, bloque obsoleto o bloque huérfano según el caso)."
 keyTakeaways:
   - "En otros sistemas también se les llama bloques obsoletos (stale) o bloques tío (uncle)"

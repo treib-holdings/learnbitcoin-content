@@ -8,7 +8,7 @@ aliases:
   - "hidden service"
   - "onion service"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Alojar un nodo o un servicio de Bitcoin a través de Tor, ocultando las direcciones IP reales y mejorando la privacidad y la resistencia a la censura."
 keyTakeaways:
   - "Oculta la ubicación del nodo e impide la correlación directa por IP"

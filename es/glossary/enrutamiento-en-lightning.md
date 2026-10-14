@@ -8,7 +8,7 @@ aliases:
   - "enrutar un pago"
   - "Lightning routing"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Encontrar una ruta de canales Lightning desde quien envía hasta quien recibe, que puede pasar por varios intermediarios."
 keyTakeaways:
   - "Elige una ruta de canales conectados con capacidad suficiente"

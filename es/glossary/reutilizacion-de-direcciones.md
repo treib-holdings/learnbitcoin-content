@@ -12,7 +12,7 @@ aliases:
   - "reutilización de dirección"
   - "dirección reutilizada"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Pagar más de una vez a la misma dirección de Bitcoin. Entrega todo tu historial, en un solo lugar, a cualquiera que mire; pone todas las monedas de esa dirección detrás de una sola clave; y, una vez que esa clave ha firmado, deja los depósitos posteriores a la vista. Las billeteras modernas lo evitan por defecto."
 keyTakeaways:
   - "Cada pago a una dirección reutilizada queda vinculado en público, para siempre: contrapartes, montos y fechas, todo en un solo lugar para cualquiera que relacione la dirección contigo"

@@ -2,7 +2,7 @@
 title: "KYC (conoce a tu cliente)"
 slug: kyc
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Regulaciones que obligan a las empresas a verificar la identidad de sus usuarios, con el fin de prevenir el lavado de dinero y los delitos financieros."
 keyTakeaways:
   - "Exige verificar la identidad del usuario antes de prestarle servicios financieros"

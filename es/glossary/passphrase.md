@@ -2,7 +2,7 @@
 title: "Passphrase (la palabra 25)"
 slug: passphrase
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una passphrase opcional que se mezcla en la derivación de una semilla BIP 39 y actúa como una 'palabra 25' para mayor protección."
 keyTakeaways:
   - "Refuerza la seguridad más allá de la frase semilla por sí sola"

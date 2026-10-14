@@ -2,7 +2,7 @@
 title: "Xpub (clave pública extendida)"
 slug: xpub
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una función del BIP 32 que permite derivar claves públicas hijas sin exponer la clave privada maestra."
 keyTakeaways:
   - "Permite derivar muchas direcciones hijas a partir de una sola raíz"

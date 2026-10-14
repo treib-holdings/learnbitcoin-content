@@ -2,7 +2,7 @@
 title: "Frase semilla"
 slug: frase-semilla
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "12 o 24 palabras en inglés (BIP 39) que codifican el secreto maestro de una billetera de Bitcoin. Es el respaldo completo: si la pierdes, pierdes las monedas; si se filtra, otra persona las tiene."
 keyTakeaways:
   - "El estándar es el BIP 39: una lista de 2,048 palabras, 11 bits por palabra y una suma de verificación integrada"

@@ -5,7 +5,7 @@ aliases:
   - "peg out"
   - "pegout"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Devolver los tokens de una sidechain a BTC en la cadena principal, después de que la federación o la multisig verifica que la transacción es válida."
 keyTakeaways:
   - "Los tokens de la sidechain se canjean por BTC reales en la cadena principal"

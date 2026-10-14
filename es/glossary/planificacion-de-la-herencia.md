@@ -6,7 +6,7 @@ aliases:
   - "planificación de herencia"
   - "herencia de bitcoin"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Estrategias para que tus herederos puedan acceder a tus BTC si mueres, a menudo con multisig, albaceas de confianza o scripts con bloqueo de tiempo."
 keyTakeaways:
   - "Evita que los BTC queden inaccesibles al morir su dueño"

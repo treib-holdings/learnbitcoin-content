@@ -2,7 +2,7 @@
 title: "Whitepaper"
 slug: whitepaper
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "La publicación original de Satoshi Nakamoto de 2008, 'Bitcoin: A Peer-to-Peer Electronic Cash System', que detalla el diseño de Bitcoin."
 keyTakeaways:
   - "Documento pionero que inventó la moneda digital descentralizada"

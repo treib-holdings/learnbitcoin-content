@@ -2,7 +2,7 @@
 title: "Nodo"
 slug: nodo
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una computadora que corre software de Bitcoin para validar y retransmitir bloques y transacciones, haciendo cumplir las reglas de consenso de la red."
 keyTakeaways:
   - "Valida transacciones y bloques según el consenso"

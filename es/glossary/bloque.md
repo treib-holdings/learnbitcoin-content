@@ -2,7 +2,7 @@
 title: "Bloque"
 slug: bloque
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una estructura de datos que agrupa transacciones y hace referencia al hash del bloque anterior para formar la cadena de bloques (blockchain) de Bitcoin."
 keyTakeaways:
   - "Agrupa transacciones válidas en un formato de datos estructurado"

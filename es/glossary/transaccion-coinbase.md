@@ -4,7 +4,7 @@ slug: transaccion-coinbase
 aliases:
   - "transacciones coinbase"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "La primera transacción de cada bloque: crea los BTC nuevos (el subsidio de bloque) y cobra las comisiones de transacción."
 keyTakeaways:
   - "Genera los BTC recién creados de cada bloque"

@@ -2,7 +2,7 @@
 title: "Pool de minería"
 slug: pool-de-mineria
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un grupo de mineros que suman su hashrate y reparten las recompensas en proporción al trabajo que aporta cada uno."
 keyTakeaways:
   - "Junta recursos para que los mineros cobren con más regularidad"

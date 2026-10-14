@@ -2,7 +2,7 @@
 title: "Capa 1"
 slug: capa-1
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "La cadena de bloques (blockchain) de la red principal de Bitcoin (mainnet), donde las transacciones se liquidan en la cadena bajo el consenso completo de la prueba de trabajo."
 keyTakeaways:
   - "La base de la seguridad y de la liquidación en Bitcoin"

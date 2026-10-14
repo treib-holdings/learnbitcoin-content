@@ -2,7 +2,7 @@
 title: "División de la clave (key split)"
 slug: division-de-la-clave
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Repartir una clave privada en varios fragmentos (por ejemplo, con el secreto compartido de Shamir), de modo que ninguna parte por sí sola pueda gastar los fondos."
 keyTakeaways:
   - "Mejora la seguridad al repartir la clave privada entre varias manos"

@@ -2,7 +2,7 @@
 title: "HSM (módulo de seguridad de hardware)"
 slug: hsm
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un dispositivo especializado, diseñado para guardar y administrar claves criptográficas de forma segura; se usa a menudo en la custodia institucional de BTC."
 keyTakeaways:
   - "Mantiene las claves privadas selladas dentro del hardware"

@@ -2,7 +2,7 @@
 title: "Minero"
 slug: minero
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un participante que usa hardware especializado para encontrar hashes de bloque válidos, con lo que asegura la red y gana recompensas de bloque."
 keyTakeaways:
   - "Busca un hash de bloque que cumpla con la dificultad de la red"

@@ -10,7 +10,7 @@ translation:
 aliases:
   - "ventana del oro"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "El 15 de agosto de 1971 el presidente Nixon cerró la ventana del oro: los gobiernos extranjeros ya no podían cambiar dólares por oro de Estados Unidos a $35 la onza. Eso eliminó el último límite externo sobre el dólar. El meme popular que le echa la culpa de casi todas las tendencias económicas desde entonces va más lejos de lo que respalda el registro histórico."
 keyTakeaways:
   - "El discurso televisado de Nixon del domingo 15 de agosto de 1971 suspendió la convertibilidad del dólar en oro para gobiernos extranjeros y bancos centrales, congeló sueldos y precios por 90 días y puso un recargo del 10 por ciento a las importaciones sujetas a aranceles"

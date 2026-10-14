@@ -2,7 +2,7 @@
 title: "ASIC (circuito integrado de aplicación específica)"
 slug: asic
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un chip de hardware especializado, diseñado para sobresalir en una sola tarea; los ASICs de Bitcoin no hacen otra cosa que el hash SHA-256 que se usa en la minería."
 keyTakeaways:
   - "Chips hechos a la medida para minar Bitcoin"

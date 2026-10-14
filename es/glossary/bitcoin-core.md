@@ -2,7 +2,7 @@
 title: "Bitcoin Core"
 slug: bitcoin-core
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "La implementación de referencia del protocolo Bitcoin, iniciada originalmente por Satoshi Nakamoto y mantenida hoy por desarrolladores de la comunidad."
 keyTakeaways:
   - "Fija el estándar de cómo se hacen cumplir las reglas de Bitcoin"

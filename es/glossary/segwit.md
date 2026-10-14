@@ -2,7 +2,7 @@
 title: "SegWit (testigo segregado, BIP 141)"
 slug: segwit
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "El BIP principal de Segregated Witness (testigo segregado), que separa los datos de testigo, corrige la maleabilidad y, en la práctica, aumenta la capacidad de los bloques."
 keyTakeaways:
   - "Saca los datos de testigo del hash que forma el id de la transacción; siguen dentro del bloque"

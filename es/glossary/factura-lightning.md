@@ -10,7 +10,7 @@ aliases:
   - "invoice Lightning"
   - "Lightning invoice"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una solicitud de pago en la red Lightning, codificada por lo general como una cadena BOLT 11 para enviarla y recibirla con facilidad."
 keyTakeaways:
   - "Codifica los datos de un pago por Lightning (monto, destino, vencimiento)"

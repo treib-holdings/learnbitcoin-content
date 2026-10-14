@@ -2,7 +2,7 @@
 title: "Estimación de comisión"
 slug: estimacion-de-comision
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Predecir la tasa en sat/vByte necesaria para confirmar dentro de cierto plazo, según las condiciones actuales de la red."
 keyTakeaways:
   - "Ayuda a no pagar de más ni de menos en comisiones de transacción"

@@ -8,7 +8,7 @@ aliases:
   - "contratos bloqueados por hash y tiempo"
   - "Hashed Time-Locked Contract"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un mecanismo que exige un secreto (la preimagen) para desbloquear un pago antes de que venza un bloqueo de tiempo; es la base de la red Lightning y de los intercambios atómicos."
 keyTakeaways:
   - "Permite pagos e intercambios que reducen al mínimo la necesidad de confiar"

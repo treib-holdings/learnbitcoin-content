@@ -3,7 +3,7 @@ title: "Soberanía"
 slug: soberania
 draft: false
 status: live
-published: "2026-10-13"
+published: "2026-10-14"
 order: 6
 goDeeper: ["bitcoin-privacy", "decentralization", "seed-backup-strategies"]
 estimatedMinutes: 45

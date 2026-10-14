@@ -2,7 +2,7 @@
 title: "Mempool"
 slug: mempool
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "La 'sala de espera' local de un nodo para las transacciones sin confirmar, de la que los mineros toman transacciones al armar bloques nuevos."
 keyTakeaways:
   - "Guarda las transacciones pendientes que esperan confirmación"

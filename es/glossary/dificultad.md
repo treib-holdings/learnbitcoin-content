@@ -2,7 +2,7 @@
 title: "Dificultad"
 slug: dificultad
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una medida de qué tan difícil es encontrar un hash de bloque por debajo del objetivo de la red. Se ajusta cada 2016 bloques (unas dos semanas)."
 keyTakeaways:
   - "Regula el hallazgo de bloques a unos 10 minutos en promedio"

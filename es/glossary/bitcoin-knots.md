@@ -4,7 +4,7 @@ slug: bitcoin-knots
 aliases:
   - "Knots"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Software de nodo construido a partir del código de Bitcoin Core, con filtros de retransmisión adicionales. Las versiones anteriores al 9 de mayo de 2026 siguen la cadena principal de Bitcoin; las posteriores siguen una cadena que se separó en agosto de 2026."
 keyTakeaways:
   - "Construido a partir del código de Bitcoin Core, con sus propios ajustes de retransmisión y valores por defecto que filtran muchas transacciones que llevan datos"

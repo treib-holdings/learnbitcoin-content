@@ -2,7 +2,7 @@
 title: "BOLT 11"
 slug: bolt-11
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un formato de factura (invoice) de la red Lightning, que suele empezar con lnbc... y codifica los datos del pago, como el monto y el destino."
 keyTakeaways:
   - "Codifica pagos por Lightning en un formato de factura estructurado"

@@ -2,7 +2,7 @@
 title: "Billetera de hardware"
 slug: billetera-de-hardware
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un dispositivo físico que guarda las claves privadas fuera de línea y firma transacciones en un entorno seguro."
 keyTakeaways:
   - "Guardar las claves fuera de línea impide el robo por software"

@@ -2,7 +2,7 @@
 title: "Bifurcación (fork)"
 slug: bifurcacion
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un cambio en las reglas de la cadena de bloques (blockchain); puede ser un hard fork (incompatible) o un soft fork (compatible con las reglas anteriores)."
 keyTakeaways:
   - "Los hard forks corren el riesgo de crear cadenas alternativas permanentes"

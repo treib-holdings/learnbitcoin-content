@@ -7,7 +7,7 @@ aliases:
   - "liquidez de mercado"
   - "liquidity"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "La facilidad de comprar o vender BTC con un impacto mínimo en el precio (en los mercados) o la capacidad de los canales (en Lightning)."
 keyTakeaways:
   - "Mercados de BTC: volumen y profundidad del libro de órdenes para operar sin sobresaltos"

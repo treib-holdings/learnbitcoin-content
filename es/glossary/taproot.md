@@ -7,7 +7,7 @@ aliases:
   - "salidas Taproot"
   - "direcciones Taproot"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "El soft fork de 2021 (BIPs 340, 341 y 342) que trajo a Bitcoin las firmas Schnorr, las salidas Taproot y Tapscript. Toda salida Taproot se ve igual en la cadena, sea cual sea el script que tenga detrás."
 keyTakeaways:
   - "Se activó en noviembre de 2021 a la altura de bloque 709,632: la mayor actualización del protocolo de Bitcoin desde SegWit"

@@ -2,7 +2,7 @@
 title: "PSBT (transacción de Bitcoin parcialmente firmada)"
 slug: psbt
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Formato estándar del BIP 174 para pasar una transacción que todavía no está firmada del todo entre varios dispositivos o cofirmantes sin exponer las claves privadas. El estándar de flujo de trabajo que hace que la autocustodia moderna sea viable de verdad."
 keyTakeaways:
   - "Un solo objeto binario (normalmente codificado en base64) que lleva el esqueleto de la transacción sin firmar y, por cada entrada, los datos del UTXO, las rutas de derivación y las firmas parciales"

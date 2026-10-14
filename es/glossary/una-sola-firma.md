@@ -2,7 +2,7 @@
 title: "Una sola firma (single-sig)"
 slug: una-sola-firma
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una sola firma ECDSA o Schnorr que controla una salida: la configuración típica de una sola firma (single-sig), a diferencia de la multisig."
 keyTakeaways:
   - "El enfoque estándar: una clave privada firma y una firma basta"

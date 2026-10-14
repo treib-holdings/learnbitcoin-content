@@ -2,7 +2,7 @@
 title: "Halving"
 slug: halving
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Cada 210,000 bloques (unos 4 años), el subsidio de bloque de Bitcoin se reduce un 50%, lo que frena la emisión de nuevos BTC."
 keyTakeaways:
   - "Ocurre más o menos cada cuatro años y reduce las recompensas en BTC nuevos"

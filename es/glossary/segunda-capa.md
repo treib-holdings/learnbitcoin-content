@@ -2,7 +2,7 @@
 title: "Segunda capa"
 slug: segunda-capa
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Redes construidas sobre la cadena principal de Bitcoin, como Lightning o las sidechains, para ganar escalabilidad o funciones."
 keyTakeaways:
   - "Alivia la carga de la cadena base para lograr pagos más rápidos y baratos"

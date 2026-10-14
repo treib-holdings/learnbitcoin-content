@@ -4,7 +4,7 @@ slug: control-de-monedas
 aliases:
   - "coin control"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Función de una billetera que te permite elegir a mano qué UTXOs gastar, lo que ayuda a la privacidad y a optimizar las comisiones."
 keyTakeaways:
   - "Permite elegir con precisión qué UTXOs entran en una transacción"

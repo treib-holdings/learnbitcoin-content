@@ -2,7 +2,7 @@
 title: "Exchange"
 slug: exchange
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un servicio o mercado para comerciar con BTC, ya sea centralizado (CEX) o descentralizado (DEX)."
 keyTakeaways:
   - "Permite cambiar fiat por BTC o una criptomoneda por otra"

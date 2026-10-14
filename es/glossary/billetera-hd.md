@@ -8,7 +8,7 @@ aliases:
   - "billeteras jerárquicas deterministas"
   - "HD wallet"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una billetera que usa rutas de derivación de BIP 32 para crear un árbol de claves estructurado a partir de una sola semilla."
 keyTakeaways:
   - "Permite recuperar todas las direcciones a partir de una sola semilla maestra"

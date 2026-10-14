@@ -6,7 +6,7 @@ aliases:
   - "piso de precio"
   - "price floor"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "La idea, discutida, de que el precio de BTC no cae por debajo del punto de equilibrio de los mineros, aunque la historia muestra que no hay ningún piso garantizado."
 keyTakeaways:
   - "Hay quien toma el punto de equilibrio de los mineros como un nivel de soporte del mercado"

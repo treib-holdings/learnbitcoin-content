@@ -7,7 +7,7 @@ sourceCommit: "b8304cf"
 sourceUpdated: "2026-10-13"
 translation: { method: "llm-draft" }
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "El estándar de 2013 para codificar la semilla de una billetera como 12 a 24 palabras en inglés, con una passphrase opcional como protección adicional."
 keyTakeaways:
   - "Codifica de 128 a 256 bits de entropía como 12 a 24 palabras tomadas de una lista de 2048"

@@ -11,7 +11,7 @@ aliases:
   - "air-gapped"
   - "air gap"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Describe un dispositivo completamente aislado de cualquier red, usado para generar o guardar claves privadas sin conexión de forma segura."
 keyTakeaways:
   - "Impide los ataques remotos por la red contra las claves privadas"

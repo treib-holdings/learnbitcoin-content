@@ -2,7 +2,7 @@
 title: "Billetera"
 slug: billetera
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Software o hardware que administra claves privadas y direcciones y permite enviar y recibir BTC."
 keyTakeaways:
   - "Administra las claves que controlan salidas de BTC, no dinero físico"

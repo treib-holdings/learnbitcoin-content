@@ -4,7 +4,7 @@ slug: lightning-network
 aliases:
   - "red Lightning"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un sistema de capa 2 sobre Bitcoin que permite pagos rápidos y de baja comisión a través de canales off-chain, y que se liquida en la cadena solo cuando hace falta."
 keyTakeaways:
   - "Resuelve las comisiones altas on-chain y las confirmaciones lentas para los pagos de todos los días"

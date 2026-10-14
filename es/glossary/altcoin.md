@@ -2,7 +2,7 @@
 title: "Altcoin"
 slug: altcoin
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Cualquier criptomoneda que no sea Bitcoin; abarca una enorme variedad de monedas con características y objetivos diversos."
 keyTakeaways:
   - "Incluye miles de criptomonedas distintas de Bitcoin"

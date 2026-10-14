@@ -2,7 +2,7 @@
 title: "Billetera de solo lectura"
 slug: billetera-de-solo-lectura
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una billetera que contiene solo claves públicas o direcciones y permite vigilar saldos sin poder gastar."
 keyTakeaways:
   - "Da visibilidad de los fondos sin capacidad de gastar"

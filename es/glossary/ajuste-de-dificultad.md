@@ -2,7 +2,7 @@
 title: "Ajuste de dificultad"
 slug: ajuste-de-dificultad
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "La recalibración automática de la dificultad de minería de Bitcoin cada 2016 bloques para mantener un intervalo de 10 minutos entre bloques."
 keyTakeaways:
   - "Ocurre más o menos cada dos semanas (2016 bloques)"

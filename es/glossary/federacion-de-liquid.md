@@ -7,7 +7,7 @@ aliases:
   - "Liquid Federation"
   - "funcionarios de Liquid"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "El grupo de empresas detrás de la sidechain Liquid; 15 funcionarios operados por sus miembros firman los bloques y tienen las claves de la multisig que guarda los BTC anclados."
 keyTakeaways:
   - "Grupo federado con multisig que asegura el peg de la sidechain Liquid"

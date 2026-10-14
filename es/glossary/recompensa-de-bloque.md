@@ -2,7 +2,7 @@
 title: "Recompensa de bloque"
 slug: recompensa-de-bloque
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "El incentivo que reciben los mineros por encontrar un bloque válido: el subsidio de bloque más las comisiones de transacción."
 keyTakeaways:
   - "Combina BTC nuevos (el subsidio) y las comisiones que pagan los usuarios"

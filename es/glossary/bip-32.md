@@ -7,7 +7,7 @@ sourceCommit: "b8304cf"
 sourceUpdated: "2026-10-13"
 translation: { method: "llm-draft" }
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "El estándar de Pieter Wuille de 2012 para la derivación determinista de claves: una semilla se convierte en un árbol de claves, todas reproducibles a partir de un solo respaldo."
 keyTakeaways:
   - "Define las claves extendidas (xpub / xprv) y la derivación de claves hijas mediante HMAC-SHA512"

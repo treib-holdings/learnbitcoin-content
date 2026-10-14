@@ -2,7 +2,7 @@
 title: "Nonce"
 slug: nonce
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un campo de 32 bits en el encabezado del bloque que los mineros van variando para encontrar un hash por debajo del objetivo de dificultad de la red."
 keyTakeaways:
   - "Es central en el proceso de prueba de trabajo al calcular el hash del bloque"

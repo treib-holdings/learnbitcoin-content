@@ -2,7 +2,7 @@
 title: "Inflación"
 slug: inflacion
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "El ritmo al que entran en circulación nuevos BTC, que disminuye con el tiempo por los halvings."
 keyTakeaways:
   - "Empieza alta en el lanzamiento (50 BTC por bloque) y se reduce en cada halving"

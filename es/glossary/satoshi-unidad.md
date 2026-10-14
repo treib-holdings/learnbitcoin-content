@@ -6,7 +6,7 @@ sourceHash: "f9d4ae271a3f"
 sourceCommit: "01378cb"
 translation:
   method: "llm-draft"
-published: "2026-10-13"
+published: "2026-10-14"
 draft: false
 shortDefinition: "La unidad más pequeña de Bitcoin: 1 sat = 0.00000001 BTC (100 millones de sats = 1 BTC)."
 keyTakeaways:

@@ -6,7 +6,7 @@ aliases:
   - "custodial wallet"
   - "wallet custodial"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una billetera en la que un tercero guarda las claves privadas en nombre del usuario, parecido a un banco que guarda los fondos de sus clientes."
 keyTakeaways:
   - "Los fondos los controla una entidad externa"

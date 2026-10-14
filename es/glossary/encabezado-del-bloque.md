@@ -2,7 +2,7 @@
 title: "Encabezado del bloque"
 slug: encabezado-del-bloque
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "El resumen de 80 bytes que va al principio de un bloque: versión, hash del bloque anterior, raíz de Merkle, marca de tiempo, objetivo de dificultad (bits) y nonce."
 keyTakeaways:
   - "Contiene los elementos esenciales que se hashean en la prueba de trabajo"

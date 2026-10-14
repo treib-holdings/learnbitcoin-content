@@ -7,7 +7,7 @@ avoid:
   - "tasa de hash"
   - "velocidad de hash"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "La capacidad de hash conjunta de todos los mineros de la red, medida en hashes por segundo (TH/s, PH/s, EH/s)."
 keyTakeaways:
   - "Muestra el caudal total de prueba de trabajo que protege a Bitcoin"

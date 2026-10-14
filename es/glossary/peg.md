@@ -2,7 +2,7 @@
 title: "Peg-in"
 slug: peg
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Bloquear BTC en la cadena principal para recibir tokens anclados en una sidechain (por ejemplo, el L-BTC de Liquid)."
 keyTakeaways:
   - "Transfiere BTC de la cadena principal a una dirección de la sidechain"

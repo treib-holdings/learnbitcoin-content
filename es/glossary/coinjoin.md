@@ -2,7 +2,7 @@
 title: "CoinJoin"
 slug: coinjoin
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Método de privacidad que combina las entradas de varios usuarios en una sola transacción, de modo que no se sepa qué salidas corresponden a qué entradas."
 keyTakeaways:
   - "Mezcla varias entradas y salidas en una sola transacción"

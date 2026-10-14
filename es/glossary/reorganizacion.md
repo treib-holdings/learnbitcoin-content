@@ -2,7 +2,7 @@
 title: "Reorganización (reorg)"
 slug: reorganizacion
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Cuando aparece una cadena con más prueba de trabajo acumulada, los nodos abandonan su punta actual y se pasan a ella, y los bloques de la punta vieja quedan obsoletos."
 keyTakeaways:
   - "Ocurre si una cadena que iba atrás supera en prueba de trabajo a la cadena principal"

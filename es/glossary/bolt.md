@@ -2,7 +2,7 @@
 title: "BOLT"
 slug: bolt
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Siglas de 'Basis of Lightning Technology': las especificaciones que definen cómo interactúan las implementaciones de la red Lightning y cómo se mantienen compatibles entre sí."
 keyTakeaways:
   - "Define la mecánica central del protocolo Lightning"

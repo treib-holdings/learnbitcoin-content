@@ -2,7 +2,7 @@
 title: "Off-chain"
 slug: off-chain
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Cualquier actividad relacionada con Bitcoin que no se liquida directamente en la cadena de bloques (blockchain) principal, incluidos los canales Lightning, las sidechains y la contabilidad interna de los custodios."
 keyTakeaways:
   - "Reduce el uso de la red principal; ahorra espacio en el bloque y comisiones"

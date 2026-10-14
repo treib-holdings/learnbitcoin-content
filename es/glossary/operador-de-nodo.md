@@ -2,7 +2,7 @@
 title: "Operador de nodo"
 slug: operador-de-nodo
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una persona o entidad que corre un nodo de Bitcoin para verificar bloques y transacciones y ayudar a mantener la red."
 keyTakeaways:
   - "Hace cumplir las reglas de consenso directamente, sin depender de intermediarios"

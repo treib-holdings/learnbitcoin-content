@@ -6,7 +6,7 @@ aliases:
   - "regla de consenso"
   - "reglas de consenso"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una regla o configuración de toda la red, como el límite de peso del bloque o la regla de dificultad, que todos los nodos completos deben seguir para que haya consenso."
 keyTakeaways:
   - "Define las reglas fundamentales de validez de bloques y transacciones"

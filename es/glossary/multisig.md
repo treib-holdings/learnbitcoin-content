@@ -2,7 +2,7 @@
 title: "Multisig"
 slug: multisig
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una configuración de billetera en la que gastar exige firmas de más de una clave (M de N, por ejemplo 2 de 3), de modo que ninguna clave ni ninguna persona que la tenga puede mover los fondos por sí sola."
 keyTakeaways:
   - "Gastar exige las firmas de M de N cofirmantes (por ejemplo, 2 de 3)"

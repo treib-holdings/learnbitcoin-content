@@ -2,7 +2,7 @@
 title: "Descentralización"
 slug: descentralizacion
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Repartir el control y la toma de decisiones entre muchos participantes en lugar de una sola autoridad central."
 keyTakeaways:
   - "Principio central que garantiza que no haya un punto único de falla"

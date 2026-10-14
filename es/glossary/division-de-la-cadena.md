@@ -2,7 +2,7 @@
 title: "División de la cadena"
 slug: division-de-la-cadena
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Ocurre cuando reglas de consenso en conflicto hacen que la cadena de bloques (blockchain) se separe en dos cadenas incompatibles."
 keyTakeaways:
   - "Deja dos cadenas de bloques con una historia compartida pero reglas distintas"

@@ -2,7 +2,7 @@
 title: "Fiat"
 slug: fiat
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Dinero emitido por un gobierno, como el dólar (USD) o el euro (EUR), sin respaldo en ninguna mercancía física y cuyo valor depende de la autoridad del Estado."
 keyTakeaways:
   - "Lo emiten y regulan los gobiernos"

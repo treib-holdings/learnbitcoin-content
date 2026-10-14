@@ -2,7 +2,7 @@
 title: "Bloque génesis"
 slug: bloque-genesis
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "El primer bloque de Bitcoin, minado por Satoshi Nakamoto el 3 de enero de 2009, con una referencia a un titular del Times."
 keyTakeaways:
   - "Lo minó Satoshi y es el cimiento de la cadena de bloques (blockchain)"

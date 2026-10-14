@@ -2,7 +2,7 @@
 title: "Salida (de una transacción)"
 slug: salida-de-transaccion
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Especifica una cantidad de BTC y un script (script de bloqueo) que determina cómo se puede gastar. Las salidas se convierten en UTXOs hasta que se gastan."
 keyTakeaways:
   - "Define al destinatario y las condiciones de gasto"

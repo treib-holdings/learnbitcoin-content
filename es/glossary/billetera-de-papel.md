@@ -2,7 +2,7 @@
 title: "Billetera de papel"
 slug: billetera-de-papel
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una clave privada (y su dirección) impresa en papel para guardar BTC sin conexión. Segura si se genera bien, pero físicamente vulnerable."
 keyTakeaways:
   - "Toda su seguridad depende de generarla bien sin conexión y de resguardar la clave"

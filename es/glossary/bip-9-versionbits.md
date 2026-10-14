@@ -2,7 +2,7 @@
 title: "BIP 9 (bits de versión)"
 slug: bip-9-versionbits
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un método de señalización que permite a los mineros indicar en los encabezados de bloque su apoyo a propuestas de soft fork antes de alcanzar los umbrales de activación."
 keyTakeaways:
   - "Usa bits de los encabezados de bloque para la señalización de los mineros"

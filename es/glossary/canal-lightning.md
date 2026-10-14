@@ -6,7 +6,7 @@ aliases:
   - "canales Lightning"
   - "Lightning channel"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un canal de pago off-chain entre dos partes en la red Lightning, que permite transacciones rápidas y de baja comisión antes de la liquidación en la cadena."
 keyTakeaways:
   - "Bloquea BTC en una dirección multisig 2 de 2 para transferencias off-chain"

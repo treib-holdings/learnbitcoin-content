@@ -2,7 +2,7 @@
 title: "Explorador de bloques"
 slug: explorador-de-bloques
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una herramienta en línea para consultar datos de la cadena de bloques (blockchain): transacciones, direcciones, bloques y más."
 keyTakeaways:
   - "Muestra públicamente historiales de transacciones e información de los bloques"

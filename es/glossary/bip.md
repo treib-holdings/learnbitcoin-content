@@ -2,7 +2,7 @@
 title: "BIP (propuesta de mejora de Bitcoin)"
 slug: bip
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un documento de diseño que propone cambios o adiciones al protocolo de Bitcoin y a los estándares de su ecosistema."
 keyTakeaways:
   - "Propuestas formales para el protocolo o los estándares de Bitcoin"

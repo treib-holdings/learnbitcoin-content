@@ -7,7 +7,7 @@ sourceCommit: "b8304cf"
 sourceUpdated: "2026-10-13"
 translation: { method: "llm-draft" }
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una notación legible para humanos que describe cómo generar o monitorear determinados scripts y direcciones de Bitcoin."
 keyTakeaways:
   - "Simplifica compartir y administrar conjuntos de direcciones y scripts"

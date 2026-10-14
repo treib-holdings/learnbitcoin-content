@@ -4,7 +4,7 @@ slug: seleccion-de-monedas
 aliases:
   - "coin selection"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "El problema de ingeniería de billeteras que consiste en elegir qué UTXOs gastar al armar una transacción. La elección fija la comisión, decide si hay una salida de cambio y determina cuáles de tus direcciones quedan vinculadas públicamente entre sí."
 keyTakeaways:
   - "Todo pago on-chain empieza con una selección: la billetera guarda un conjunto de monedas independientes y debe elegir un subconjunto cuyo total cubra el monto más la comisión"

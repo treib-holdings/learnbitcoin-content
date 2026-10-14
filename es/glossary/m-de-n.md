@@ -7,7 +7,7 @@ aliases:
   - "multisig M de N"
   - "umbral M de N"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una forma genérica de describir una multisig: hacen falta M firmas de un total de N firmantes posibles (por ejemplo, 2 de 3)."
 keyTakeaways:
   - "Término general para las configuraciones de firma por umbral"

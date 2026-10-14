@@ -6,7 +6,7 @@ aliases:
   - "transacción de Bitcoin"
   - "transacciones de Bitcoin"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una estructura de datos que mueve BTC de unas entradas (que hacen referencia a UTXOs) a unas salidas (scripts de bloqueo). Se firma con claves privadas."
 keyTakeaways:
   - "Consta de entradas, salidas, firmas y, opcionalmente, scripts o datos"

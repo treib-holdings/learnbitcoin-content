@@ -2,7 +2,7 @@
 title: "UTXO (salida de transacción no gastada)"
 slug: utxo
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una porción gastable de BTC registrada en la cadena. Cada entrada de una transacción consume uno o más UTXOs."
 keyTakeaways:
   - "Refleja el concepto de 'moneda' en el modelo de registro de Bitcoin"

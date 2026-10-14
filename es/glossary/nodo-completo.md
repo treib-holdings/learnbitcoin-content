@@ -2,7 +2,7 @@
 title: "Nodo completo"
 slug: nodo-completo
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un cliente de Bitcoin que descarga y valida todos los bloques y transacciones, y hace cumplir las reglas por su cuenta."
 keyTakeaways:
   - "Guarda y valida la cadena de bloques completa en tu propio equipo"

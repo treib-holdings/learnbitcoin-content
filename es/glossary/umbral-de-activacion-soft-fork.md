@@ -4,7 +4,7 @@ slug: umbral-de-activacion-soft-fork
 aliases:
   - "umbral de activación"
   - "umbral de despliegue"
-published: "2026-10-13"
+published: "2026-10-14"
 draft: false
 shortDefinition: "El porcentaje de bloques que deben señalizar apoyo a un soft fork antes de que quede fijado (locked in) y se active (por ejemplo, 95%)."
 keyTakeaways:

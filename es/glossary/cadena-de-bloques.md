@@ -5,7 +5,7 @@ aliases:
   - "cadena de bloques"
   - "blockchain"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un registro distribuido que enlaza lotes de transacciones (bloques) mediante hashes criptográficos, de modo que cualquier alteración del historial queda en evidencia."
 keyTakeaways:
   - "Cada bloque se enlaza criptográficamente con el anterior"

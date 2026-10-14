@@ -7,7 +7,7 @@ aliases:
   - "proof of work"
   - "PoW"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "El mecanismo de consenso de Bitcoin, en el que los mineros calculan hashes SHA-256 hasta que el hash de un bloque válido cumple con el objetivo de dificultad."
 keyTakeaways:
   - "Proponer bloques válidos exige un esfuerzo computacional enorme"

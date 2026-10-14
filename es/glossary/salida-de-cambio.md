@@ -6,7 +6,7 @@ aliases:
   - "salidas de cambio"
   - "dirección de cambio"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "La salida que una transacción le devuelve a quien gasta cuando las entradas seleccionadas superan el pago más la comisión. Las monedas de Bitcoin se gastan enteras, como los billetes, y el cambio es la diferencia."
 keyTakeaways:
   - "Las billeteras mandan el cambio a una dirección interna nueva, en una rama de derivación aparte (el BIP 44 reserva la cadena 1 para el cambio), así que una dirección de cambio nunca aparece en una solicitud de pago"

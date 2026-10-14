@@ -6,7 +6,7 @@ aliases:
   - "capacidad de canal"
   - "channel capacity"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "La cantidad de BTC bloqueada en un canal Lightning, que determina cuánto se puede enviar o recibir a través de ese canal."
 keyTakeaways:
   - "Representa el total de fondos bloqueados disponibles para pagos off-chain"

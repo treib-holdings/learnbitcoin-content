@@ -2,7 +2,7 @@
 title: "Privacidad"
 heading: "Esto es todo lo que sabemos de ti."
 description: "Qué datos recopila LearnBitcoin, quién los ve y cuánto tiempo se guardan. Versión corta: casi nada, a menos que te suscribas al boletín."
-published: "2026-10-13"
+published: "2026-10-14"
 translationOf: "privacy"
 sourceHash: "21a42cda6819"
 sourceCommit: "265648e"

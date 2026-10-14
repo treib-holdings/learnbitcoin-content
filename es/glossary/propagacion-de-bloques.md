@@ -2,7 +2,7 @@
 title: "Propagación de bloques"
 slug: propagacion-de-bloques
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "El proceso por el que los bloques recién minados se transmiten entre los nodos de Bitcoin de todo el mundo."
 keyTakeaways:
   - "Los mineros transmiten a sus pares los bloques recién encontrados"

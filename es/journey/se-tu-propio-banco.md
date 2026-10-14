@@ -9,7 +9,7 @@ translation:
   method: "llm-draft"
 draft: false
 status: live
-published: "2026-10-13"
+published: "2026-10-14"
 order: 4
 goDeeper: ["mt-gox-ftx-graveyard", "seed-backup-strategies", "key-space"]
 estimatedMinutes: 35

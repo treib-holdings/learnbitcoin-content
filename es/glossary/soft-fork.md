@@ -2,7 +2,7 @@
 title: "Soft fork"
 slug: soft-fork
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un cambio compatible hacia atrás que vuelve más estrictas las reglas de consenso de Bitcoin. Los bloques que cumplen las reglas nuevas siguen pareciendo válidos a los nodos que no se han actualizado, y una mayoría de los mineros, medida en hashrate (el poder de cómputo de la red), puede imponerlas."
 keyTakeaways:
   - "Cambios de reglas compatibles hacia atrás, que endurecen las restricciones o añaden otras nuevas"

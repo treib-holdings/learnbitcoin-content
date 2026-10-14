@@ -2,7 +2,7 @@
 title: "Bloque obsoleto"
 slug: bloque-obsoleto
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un bloque válido que no pasa a formar parte de la cadena principal; históricamente se le llamaba a menudo 'bloque huérfano'."
 keyTakeaways:
   - "Pierden la carrera por formar la cadena más larga, y con ella la recompensa de bloque"

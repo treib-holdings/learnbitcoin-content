@@ -9,7 +9,7 @@ aliases:
   - "comisiones de red"
   - "comisión de minería"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una cantidad que incluye quien envía para recompensar a los mineros por priorizar la confirmación de su transacción."
 keyTakeaways:
   - "Motiva a los mineros a incluir tu transacción en un bloque"

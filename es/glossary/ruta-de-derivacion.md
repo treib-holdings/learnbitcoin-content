@@ -11,7 +11,7 @@ aliases:
   - "rutas de derivación"
   - "derivation path"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una ruta estructurada dentro de una billetera HD (jerárquica determinista), por ejemplo m/44'/0'/0'/0/0, para generar una secuencia de claves y direcciones."
 keyTakeaways:
   - "Estructura cómo las billeteras HD generan múltiples direcciones"

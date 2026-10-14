@@ -2,7 +2,7 @@
 title: "Canal de pago"
 slug: canal-de-pago
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un mecanismo off-chain (Lightning, por ejemplo) que permite transacciones repetidas entre dos partes sin tocar la cadena de bloques (blockchain) a cada rato."
 keyTakeaways:
   - "Permite transacciones frecuentes sin pagar varias comisiones on-chain"

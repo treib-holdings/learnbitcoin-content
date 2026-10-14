@@ -2,7 +2,7 @@
 title: "Entrada (de una transacción)"
 slug: entrada-de-transaccion
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una referencia a un UTXO concreto que se está gastando, junto con la firma que desbloquea esos fondos."
 keyTakeaways:
   - "Identifica qué UTXO se está gastando"

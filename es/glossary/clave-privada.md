@@ -5,7 +5,7 @@ aliases:
   - "claves privadas"
   - "private key"
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Un secreto de 256 bits que da el poder de gastar los BTC de las direcciones derivadas de él; debe mantenerse confidencial."
 keyTakeaways:
   - "El secreto central con el que se firman las transacciones"

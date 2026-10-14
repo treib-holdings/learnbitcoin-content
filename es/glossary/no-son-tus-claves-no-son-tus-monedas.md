@@ -2,7 +2,7 @@
 title: "No son tus claves, no son tus monedas"
 slug: no-son-tus-claves-no-son-tus-monedas
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "La máxima de Bitcoin según la cual, si otra persona tiene tus claves privadas, en realidad no eres dueño de los bitcoins: tienes una promesa de esa persona. Demostrada, una y otra vez, por una década de custodios que quebraron."
 keyTakeaways:
   - "Si un tercero controla las claves, tienes un pagaré, no bitcoin: su valor depende de la solvencia y la honestidad de ese tercero"

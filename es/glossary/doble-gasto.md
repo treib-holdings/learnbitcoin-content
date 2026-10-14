@@ -2,7 +2,7 @@
 title: "Doble gasto"
 slug: doble-gasto
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Intentar usar el mismo UTXO más de una vez, algo que las reglas de consenso de Bitcoin impiden una vez que la transacción está confirmada."
 keyTakeaways:
   - "La lógica del registro de Bitcoin invalida las salidas ya gastadas"

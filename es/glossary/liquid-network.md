@@ -2,7 +2,7 @@
 title: "Liquid Network"
 slug: liquid-network
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Una sidechain federada desarrollada por Blockstream, con liquidaciones más rápidas, transacciones confidenciales y un modelo de BTC anclado (peg)."
 keyTakeaways:
   - "Un peg federado asegura los BTC bloqueados en la cadena principal dentro de una multisig"

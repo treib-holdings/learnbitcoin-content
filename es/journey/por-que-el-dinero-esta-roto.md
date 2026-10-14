@@ -9,7 +9,7 @@ translation:
   method: "llm-draft"
 draft: false
 status: live
-published: "2026-10-13"
+published: "2026-10-14"
 order: 1
 goDeeper: ["supply", "halvings", "bitcoin-units"]
 estimatedMinutes: 22

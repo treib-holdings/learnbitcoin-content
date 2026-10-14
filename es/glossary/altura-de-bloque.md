@@ -2,7 +2,7 @@
 title: "Altura de bloque"
 slug: altura-de-bloque
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "El número de bloques desde el bloque génesis (que está a la altura 0)."
 keyTakeaways:
   - "Cuenta los bloques desde el bloque génesis original"

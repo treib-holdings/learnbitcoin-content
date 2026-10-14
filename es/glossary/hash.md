@@ -2,7 +2,7 @@
 title: "Hash"
 slug: hash
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "La salida de una función criptográfica (por ejemplo, SHA-256) que condensa los datos de entrada en un resumen de tamaño fijo."
 keyTakeaways:
   - "Convierte datos de tamaño variable en una salida pseudoaleatoria de longitud fija"

@@ -2,7 +2,7 @@
 title: "Secreto compartido de Shamir"
 slug: secreto-compartido-de-shamir
 draft: false
-published: "2026-10-13"
+published: "2026-10-14"
 shortDefinition: "Esquema criptográfico que divide un secreto en N partes de modo que cualquier grupo de M partes (el umbral) puede reconstruirlo, pero con menos no se puede."
 keyTakeaways:
   - "La matemática estándar para dividir una semilla y repartirla entre varios lugares"
