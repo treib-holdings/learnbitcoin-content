@@ -2,9 +2,9 @@
 title: "Reutilización de direcciones"
 slug: reutilizacion-de-direcciones
 translationOf: address-reuse
-sourceHash: "62abd984e56a"
-sourceCommit: "b4fda3b"
-sourceUpdated: "2026-10-12"
+sourceHash: "760d8bd1b3b2"
+sourceCommit: "3508921"
+sourceUpdated: "2026-10-15"
 translation:
   method: "llm-draft"
 aliases:
@@ -13,6 +13,7 @@ aliases:
   - "dirección reutilizada"
 draft: false
 published: "2026-10-14"
+updated: "2026-10-15"
 shortDefinition: "Pagar más de una vez a la misma dirección de Bitcoin. Entrega todo tu historial, en un solo lugar, a cualquiera que mire; pone todas las monedas de esa dirección detrás de una sola clave; y, una vez que esa clave ha firmado, deja los depósitos posteriores a la vista. Las billeteras modernas lo evitan por defecto."
 keyTakeaways:
   - "Cada pago a una dirección reutilizada queda vinculado en público, para siempre: contrapartes, montos y fechas, todo en un solo lugar para cualquiera que relacione la dirección contigo"
@@ -68,4 +69,4 @@ El orden de los hechos importa. Recibir dos veces en una dirección que nunca ha
 
 El BIP 360 plantea lo mismo desde el otro lado: la protección contra los ataques de exposición prolongada no espera a las firmas poscuánticas; exige que los usuarios no expongan sus claves mediante la reutilización. Reutilizar cuesta privacidad, seguridad de las claves y seguridad cuántica a la vez, y un solo hábito arregla las tres cosas.
 
-Consulta [Privacidad en Bitcoin (en inglés)](/rabbit-hole/bitcoin-privacy) para saber cómo la reutilización de direcciones alimenta las heurísticas de agrupamiento (clustering), y sobre los Silent Payments como solución para las direcciones permanentes; ver el tema a fondo [Computación cuántica y Bitcoin (en inglés)](/rabbit-hole/quantum-and-bitcoin) para saber qué significa y qué no significa una clave expuesta, y por qué nadie debería mover sus monedas por pánico.
+El argumento completo, con las cifras y la limpieza sin prisas, está en el capítulo a fondo [Úsala una sola vez (en inglés)](/rabbit-hole/address-reuse). Consulta [Privacidad en Bitcoin (en inglés)](/rabbit-hole/bitcoin-privacy) para saber cómo la reutilización de direcciones alimenta las heurísticas de agrupamiento (clustering), y sobre los Silent Payments como solución para las direcciones permanentes; ver el tema a fondo [Computación cuántica y Bitcoin (en inglés)](/rabbit-hole/quantum-and-bitcoin) para saber qué significa y qué no significa una clave expuesta, y por qué nadie debería mover sus monedas por pánico.
