@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-10-16-vanity-address",
+    "date": "2026-10-16",
+    "page": "/glossary/vanity-address",
+    "title": "Vanity Address",
+    "wrong": "The entry said that in split-key vanity generation 'neither party ever sees the full private key', listed the 1BitcoinEater burn address among 'famous' vanity addresses, recommended a tool called bitcoin-vanity-search that does not exist, put Taproot bc1p prefixes in the bech32 cost table as if a try cost the same, and said a vanity service 'emails you the seed'.",
+    "fixed": "The requester publishes a public point, the searcher returns an offset, and the requester adds the two to get the full private key, which only the searcher never learns; the entry says so and tells the reader to check the address before funding it. 1BitcoinEater is described as the opposite construction (hand-written text with a computed checksum, no key search, no key) and linked to the burn-address entry, with BitMEX's 3BMEX deposit addresses as the genuine example. The tools are VanitySearch and vanitygen++, with a note that the original vanitygen is Base58-only. Taproot prefixes take the same number of tries but cost more per try, and a service hands over a private key, not a seed.",
+    "commit": "6fae376",
+    "source": "https://github.com/JeanLucPons/VanitySearch"
+  },
+  {
     "id": "2026-10-15-bip-360",
     "date": "2026-10-15",
     "page": "/glossary/bip-360",
