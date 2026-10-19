@@ -1,5 +1,16 @@
 [
   {
+    "id": "2026-10-19-address-reuse",
+    "date": "2026-10-19",
+    "page": "/rabbit-hole/address-reuse",
+    "title": "Use It Once: Why Reusing a Bitcoin Address Is Dangerous",
+    "wrong": "The 2013 section said one address per payment means one compromised key costs one payment, and that a key that signs once cannot leak through a repeated nonce, which read as if fresh addresses were the whole defense against a broken random number generator.",
+    "fixed": "It now says fresh addresses shrink the damage without repairing the generator: if a wallet's random numbers were bad, every key it made with them is suspect, which is why the bitcoin.org alert of 11 August 2013 called for new keys from 'a repaired random number generator', not just for new addresses.",
+    "commit": "087caae",
+    "source": "https://bitcoin.org/en/alert/2013-08-11-android",
+    "credit": "pooya87 and nc50lc (BitcoinTalk)"
+  },
+  {
     "id": "2026-10-16-vanity-address",
     "date": "2026-10-16",
     "page": "/glossary/vanity-address",
