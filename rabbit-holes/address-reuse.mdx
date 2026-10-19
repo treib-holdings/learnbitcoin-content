@@ -3,6 +3,7 @@ title: "Use It Once: Why Reusing a Bitcoin Address Is Dangerous"
 slug: address-reuse
 draft: false
 published: "2026-10-15"
+updated: "2026-10-19"
 status: live
 section: rabbit-hole
 category: custody-privacy
@@ -150,7 +151,7 @@ Key security is the third reason, after exposure and privacy, and it has nothing
 
 On 28 January 2013 a developer, Nils Schneider, found two inputs signed by the same key whose signatures shared a value they must never share, and recovered the key; the culprit was a wallet whose random-number generator "was returning the same 'random' number every time." The same class of bug hit Android that summer: on 11 August 2013 bitcoin.org warned that "all Android wallets generated to date" were "vulnerable to theft". The alert prescribed [key rotation](/glossary/key-rotation): "key rotation is necessary" and "make sure not to send back your bitcoins to your old insecure addresses."
 
-The attack needs two signatures from the same key; a key that signs once cannot leak this way, and reuse is what gives one key a hundredth signature. Every signature needs a fresh one-time random number, the [nonce](/glossary/nonce), and in both 2013 cases the wallet reused one. Wallets now derive it from the key and the message instead of rolling dice (RFC 6979; [BIP-340](/glossary/bip-340) does the same for Schnorr signatures, with fresh randomness mixed in), which made the bug class rare. [Nonce reuse](/glossary/nonce-reuse) is a signing bug a wallet using RFC 6979 or BIP-340 nonces should not have; address reuse is the habit that turns a signing bug into a key leak.
+The attack needs two signatures from the same key; a key that signs once cannot leak this way, and reuse is what gives one key a hundredth signature. Every signature needs a fresh one-time random number, the [nonce](/glossary/nonce), and in both 2013 cases the wallet reused one. Wallets now derive it from the key and the message instead of rolling dice (RFC 6979; [BIP-340](/glossary/bip-340) does the same for Schnorr signatures, with fresh randomness mixed in), which made the bug class rare. [Nonce reuse](/glossary/nonce-reuse) is a signing bug a wallet using RFC 6979 or BIP-340 nonces should not have; address reuse is the habit that turns a signing bug into a key leak. As BitcoinTalk readers pooya87 and nc50lc pointed out, fresh addresses shrink the damage without repairing the generator: if a wallet's random numbers were bad, every key it made with them is suspect, which is why the 2013 alert called for new keys from "a repaired random number generator", not just for new addresses.
 
 An [xpub](/glossary/xpub-extended-public-key) is an extended public key, a parent public key plus its chaincode, one string that lets a server or an app generate all the addresses under it without being able to spend. [BIP-32](/glossary/bip-32) gives it a warning of its own: anyone holding your xpub and any one non-hardened private key under it, the ordinary kind an account derives, can work out all the others. An xpub also hands over every public key in the account at once, which is why BIP-360 says xpubs "also reveal quantum vulnerable public key information."
 
