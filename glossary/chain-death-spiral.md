@@ -6,7 +6,7 @@ linkText:
   - "death spiral"
   - "difficulty death spiral"
 draft: false
-published: "2026-10-20"
+published: "2026-10-19"
 shortDefinition: "The feared feedback loop in which a proof-of-work chain loses most of its hash rate, blocks slow to a crawl, the retarget that would lower difficulty recedes because it is counted in blocks rather than time, and the remaining miners leave too. Real for a minority fork; for Bitcoin it has stayed a thought experiment, and the 2021 loss of roughly half the hash rate ended at the next retarget."
 keyTakeaways:
   - "The window is counted in blocks, not time: if hash rate falls to a fraction f of what the difficulty was set for, blocks average 10/f minutes and the next retarget is 2,016 of them away; at half the hash rate that is four weeks, at five percent about nine months"

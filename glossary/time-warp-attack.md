@@ -7,7 +7,7 @@ linkText:
   - "time warp"
   - "timewarp"
 draft: false
-published: "2026-10-20"
+published: "2026-10-19"
 shortDefinition: "A way for miners with most of the hash rate to push Bitcoin's difficulty toward its minimum by lying about block timestamps. It works because the 2,016-block retarget window measures 2,015 intervals and does not overlap the window before it. Known since about 2011, never seen on mainnet, and the fix is the first rule in BIP-54."
 keyTakeaways:
   - "The retarget compares the first and last timestamps of a 2,016-block window, 2,015 intervals apart, and the next window starts fresh; the first block of a window may carry an earlier stamp than the last block of the previous one as long as it beats the median of the eleven before it"

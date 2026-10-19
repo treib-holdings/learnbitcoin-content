@@ -6,7 +6,7 @@ linkText:
   - "emergency difficulty adjustment (EDA)"
   - "EDA"
 draft: false
-published: "2026-10-20"
+published: "2026-10-19"
 shortDefinition: "The extra difficulty rule Bitcoin Cash launched with on August 1, 2017: whenever the chain's median time past had advanced twelve hours or more over six blocks, the next block's difficulty dropped by 20 percent. It kept a minority chain alive and then made it oscillate, as miners left to trigger the cut and returned to mine the cheap blocks. Replaced on November 13, 2017 by a rolling 144-block algorithm."
 keyTakeaways:
   - "The rule (UAHF specification, REQ-7): when the median time past of the tip is 12 hours or more past the median time past six blocks earlier, the target rises by a quarter, a 20 percent difficulty cut, on top of the normal 2,016-block retarget"

@@ -7,7 +7,7 @@ linkText:
   - "block timestamps"
   - "timestamp rules"
 draft: false
-published: "2026-10-20"
+published: "2026-10-19"
 shortDefinition: "The two consensus checks a node applies to the time a miner writes into a block header: it must be later than the median of the previous eleven blocks, and it may not be more than two hours ahead of the node's own clock. Both are in Satoshi's 2009 code and both are still in Bitcoin Core's validation.cpp."
 keyTakeaways:
   - "Lower bound: a block's timestamp must be strictly greater than the median time past of the eleven blocks before it, which keeps the chain's clock moving forward even though individual timestamps may run backwards"

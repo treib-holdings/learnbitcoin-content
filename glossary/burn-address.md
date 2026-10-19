@@ -2,7 +2,7 @@
 title: "Burn Address"
 slug: burn-address
 draft: false
-updated: "2026-10-20"
+updated: "2026-10-19"
 shortDefinition: "An address for which no private key is known, effectively removing any BTC sent there from circulation."
 keyTakeaways:
   - "Coins sent there can't be reclaimed without a private key"

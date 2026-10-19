@@ -9,7 +9,7 @@ linkText:
   - "difficulty epoch"
   - "difficulty period"
 draft: false
-updated: "2026-10-20"
+updated: "2026-10-19"
 shortDefinition: "The automatic recalibration of Bitcoin's mining difficulty every 2,016 blocks, also called retargeting, that keeps the average block interval near ten minutes. The new difficulty is the old one scaled by two weeks divided by the time the last window took, clamped to a factor of four either way."
 keyTakeaways:
   - "Every 2,016 blocks (about two weeks) every node rescales the difficulty by two weeks divided by the time the window just finished took, measured from its first block's timestamp to its last; the ratio is clamped between a quarter and four"

@@ -7,7 +7,7 @@ linkText:
   - "BIP-54"
   - "BIP 54"
 draft: false
-published: "2026-10-20"
+published: "2026-10-19"
 shortDefinition: "A proposed soft fork, BIP-54, that bundles fixes for four old defects in Bitcoin's consensus rules: the time warp attack, blocks built to take minutes to validate, 64-byte transactions that confuse Merkle proofs, and the duplicate-coinbase check nodes still carry for BIP-30. Matt Corallo drafted it in 2019; Antoine Poinsot revived it in 2024 and the finished text was numbered in 2025. Not activated."
 keyTakeaways:
   - "Four rules: the first block of a difficulty window may not be stamped more than two hours before the previous block, and the last block not before the window's first; a transaction may count at most 2,500 signature operations across its inputs' scripts; a transaction whose witness-stripped size is exactly 64 bytes is invalid; a coinbase must set nLockTime to the block height minus one"

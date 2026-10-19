@@ -2,7 +2,7 @@
 title: "Difficulty"
 slug: difficulty
 draft: false
-updated: "2026-10-20"
+updated: "2026-10-19"
 shortDefinition: "A measure of how tough it is to find a block hash below the network's target. Adjusted every 2016 blocks (~two weeks)."
 keyTakeaways:
   - "Regulates block discovery to ~10 minutes on average"
