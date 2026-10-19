@@ -7,6 +7,7 @@ linkText:
   - "median-time-past"
   - "MTP"
 draft: false
+updated: "2026-10-20"
 shortDefinition: "Bitcoin uses the median of the last 11 block timestamps as 'network time.' Here's why - and how it stops miners from gaming time-locked transactions."
 keyTakeaways:
   - "Prevents outlier timestamps from messing with time-based rules"
@@ -16,6 +17,7 @@ sources: []
 relatedTerms:
   - absolute-locktime
   - bip-113
+  - block-timestamp-rules
 liveWidget: ~
 ---
 

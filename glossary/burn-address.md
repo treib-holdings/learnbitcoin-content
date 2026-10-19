@@ -2,17 +2,20 @@
 title: "Burn Address"
 slug: burn-address
 draft: false
+updated: "2026-10-20"
 shortDefinition: "An address for which no private key is known, effectively removing any BTC sent there from circulation."
 keyTakeaways:
   - "Coins sent there can't be reclaimed without a private key"
   - "Used in symbolic or supply-reduction scenarios"
   - "Irreversible action removing BTC from the economy"
-sources: []
+sources:
+  - { label: "Bitcoin Wiki - Vanitygen: the difficulty table puts a key search for 1BitcoinEaterAddressDontSend at about 3.3e33 years", url: "https://en.bitcoin.it/wiki/Vanitygen" }
 relatedTerms:
   - address
   - address-reuse
   - b32-address
   - coin-freeze
+  - vanity-address
   - volatility
 liveWidget: ~
 ---
@@ -21,7 +24,7 @@ A burn address is a Bitcoin address whose private key is provably unknown. Coins
 
 Three common ways to build a burn address:
 
-- **Provably-unowned vanity addresses.** Patterns like `1BitcoinEater...Eat...` are chosen specifically so the address looks intentional and unspendable. The full address still has to derive from a hash, which means there is *some* private key, but the structure of the address makes it astronomically improbable that anyone could find it.
+- **Hand-written eater addresses.** `1BitcoinEaterAddressDontSendf59kuE` was not found by a [vanity address](/glossary/vanity-address) search: the text was typed by hand and only the last six characters were worked out so the checksum passes, so the hash it encodes was never derived from any key, and producing one would mean inverting a 160-bit hash.
 - **`OP_RETURN` outputs.** Strictly speaking these aren't addresses at all; they're outputs with a script that's deliberately invalid for spending. Bitcoin Core won't even index them as UTXOs. Used for embedding data on-chain (timestamps, commitments, attestations).
 - **Mathematically-impossible addresses.** Addresses derived from "magic" hash inputs (all zeros, the SHA-256 of "burn", etc.) that no realistic key search can reproduce.
 

@@ -1,7 +1,7 @@
 ---
 title: "Block Time"
 slug: block-time
-updated: "2026-10-10"
+updated: "2026-10-20"
 draft: false
 shortDefinition: "The average interval between consecutive blocks, targeted around 10 minutes for Bitcoin."
 keyTakeaways:
@@ -24,6 +24,7 @@ relatedTerms:
   - block-header
   - block-height
   - block-propagation
+  - block-timestamp-rules
   - blockchain
   - difficulty-retargeting
   - mtp-median-time-past
