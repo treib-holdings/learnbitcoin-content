@@ -3,7 +3,7 @@ title: "Use It Once: Why Reusing a Bitcoin Address Is Dangerous"
 slug: address-reuse
 draft: false
 published: "2026-10-15"
-updated: "2026-10-19"
+updated: "2026-10-20"
 status: live
 section: rabbit-hole
 category: custody-privacy
@@ -63,6 +63,7 @@ sources:
   - { label: "Bitcoin Core 0.16.0 release notes (reuse option removed)", url: "https://bitcoincore.org/en/releases/0.16.0/" }
   - { label: "Bitcoin Core 0.17.0 release notes (-avoidpartialspends)", url: "https://bitcoincore.org/en/releases/0.17.0/" }
   - { label: "Bitcoin Core 0.19.0.1 release notes (avoid_reuse)", url: "https://bitcoincore.org/en/releases/0.19.0.1/" }
+  - { label: "Bitcoin Core source at v31.1 - src/wallet/rpc/spend.cpp line 311: sendtoaddress is the one RPC that asks coin selection to skip dirty coins (confirmed on regtest, 2026-10-20)", url: "https://github.com/bitcoin/bitcoin/blob/v31.1/src/wallet/rpc/spend.cpp#L311" }
   - { label: "Bitcoin Core 0.21.0 release notes (-maxapsfee)", url: "https://bitcoincore.org/en/releases/0.21.0/" }
   - { label: "bitcoin.org alert, 11 August 2013 - Android security vulnerability", url: "https://bitcoin.org/en/alert/2013-08-11-android" }
   - { label: "Mike Hearn, bitcoin-dev, 11 August 2013 - Android key rotation", url: "https://mirror.b10c.me/lists/bitcoindev/5207BB9D.3090701@plan99.net/" }
@@ -171,7 +172,7 @@ The Bitcoin Wiki's name for the attack is [forced address reuse](/glossary/force
 
 The advice splits in two. A crumb on an address you had already emptied: never spend it; freeze it with your wallet's [coin control](/glossary/coin-control) (Core's [`lockunspent`](https://chainquery.com/rpc/lockunspent) does the same). A crumb on an address still holding your coins: spend everything there together, crumb included, with no inputs from anywhere else. Those coins were already linked; what you must not do is link them to the rest of your wallet.
 
-Bitcoin Core automated that split in steps. Version 0.17.0 (2018) added `-avoidpartialspends`, which spends all coins at one address together but, as its release note noted, still picked up coins sent there later; 0.19.0.1 (2019) answered with the [`avoid_reuse`](/glossary/avoid-reuse) wallet flag, which skips coins sent to an address after it was spent from, because, as the July 2018 proposal behind it (PR #13756, by kallewoof) put it, "a payer could otherwise begin tracking a payee's wallet by regularly peppering a known UTXO with dust outputs". Since 0.21.0 (2021) the wallet avoids partial spends by default when it costs no extra fee; `avoid_reuse` itself is still off by default, needs a rescan on an existing wallet and has no GUI toggle.
+Bitcoin Core automated that split in steps. Version 0.17.0 (2018) added `-avoidpartialspends`, which spends all coins at one address together but, as its release note noted, still picked up coins sent there later; 0.19.0.1 (2019) answered with the [`avoid_reuse`](/glossary/avoid-reuse) wallet flag, which marks coins sent to an address after it was spent from and keeps `sendtoaddress` (though not Core's other send commands or its GUI) from spending them, because, as the July 2018 proposal behind it (PR #13756, by kallewoof) put it, "a payer could otherwise begin tracking a payee's wallet by regularly peppering a known UTXO with dust outputs". Since 0.21.0 (2021) the wallet avoids partial spends by default when it costs no extra fee; `avoid_reuse` itself is still off by default, needs a rescan on an existing wallet and has no GUI toggle.
 
 ## Why fresh is free now
 
