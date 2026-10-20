@@ -1,5 +1,27 @@
 [
   {
+    "id": "2026-10-20-avoid-reuse",
+    "date": "2026-10-20",
+    "page": "/glossary/avoid-reuse",
+    "title": "Avoid Reuse (Bitcoin Core)",
+    "wrong": "The entry said that with the flag on, dirty coins (sent to an address the wallet had already spent from) are left out of coin selection, as if every way of spending from the wallet applied the filter.",
+    "fixed": "It now says the filter is applied by sendtoaddress alone: in Bitcoin Core's wallet code the dirty-coin check runs only when the command building the transaction asks for it, and only sendtoaddress does, so send, sendmany, sendall, fundrawtransaction, walletcreatefundedpsbt and the GUI spend dirty coins with the flag on. Confirmed on a Bitcoin Core 31.1 regtest node on 2026-10-20, where sendtoaddress answered 'Insufficient funds' and the other five commands each spent the dirty coin.",
+    "commit": "d3c6f51",
+    "source": "https://github.com/bitcoin/bitcoin/blob/v31.1/src/wallet/spend.cpp#L333",
+    "credit": "the coin selection chapter's research pass (2026-10-20)"
+  },
+  {
+    "id": "2026-10-20-address-reuse",
+    "date": "2026-10-20",
+    "page": "/rabbit-hole/address-reuse",
+    "title": "Use It Once: Why Reusing a Bitcoin Address Is Dangerous",
+    "wrong": "The chapter said Bitcoin Core's avoid_reuse wallet flag skips coins sent to an address after it was spent from, which read as if the whole wallet refused to spend them.",
+    "fixed": "It now says the flag marks those coins as dirty and keeps sendtoaddress from spending them, while Core's other send commands and its GUI do not apply the filter. Confirmed on a Bitcoin Core 31.1 regtest node on 2026-10-20.",
+    "commit": "d3c6f51",
+    "source": "https://github.com/bitcoin/bitcoin/blob/v31.1/src/wallet/rpc/spend.cpp#L311",
+    "credit": "the coin selection chapter's research pass (2026-10-20)"
+  },
+  {
     "id": "2026-10-19-address-reuse",
     "date": "2026-10-19",
     "page": "/rabbit-hole/address-reuse",
