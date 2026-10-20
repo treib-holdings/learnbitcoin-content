@@ -1,5 +1,38 @@
 [
   {
+    "id": "2026-10-20-dust-attack",
+    "date": "2026-10-20",
+    "page": "/glossary/dust-attack",
+    "title": "Dust Attack",
+    "wrong": "The entry said Bitcoin Core's avoid_reuse wallet flag skips coins paid to an address you already spent from, as if every way of spending from the wallet applied the filter.",
+    "fixed": "It now says the flag marks those coins and sendtoaddress skips them, while Core's other send commands and its GUI do not, so coin control and freezing still do the job by hand. Confirmed on a Bitcoin Core 31.1 regtest node on 2026-10-20.",
+    "commit": "46b1511",
+    "source": "https://github.com/bitcoin/bitcoin/blob/v31.1/src/wallet/rpc/spend.cpp#L311",
+    "credit": "the coin selection chapter's research pass (2026-10-20)"
+  },
+  {
+    "id": "2026-10-20-forced-address-reuse",
+    "date": "2026-10-20",
+    "page": "/glossary/forced-address-reuse",
+    "title": "Forced Address Reuse",
+    "wrong": "The entry said Bitcoin Core 0.19.0.1 closed the gap left by -avoidpartialspends with the avoid_reuse flag, which marks every address the wallet has spent from and skips coins sent there afterwards, as if every send path applied the filter.",
+    "fixed": "It now says the flag flags such coins as dirty and that sendtoaddress skips them by default while Core's other send commands and its GUI do not. Confirmed on a Bitcoin Core 31.1 regtest node on 2026-10-20.",
+    "commit": "46b1511",
+    "source": "https://github.com/bitcoin/bitcoin/blob/v31.1/src/wallet/rpc/spend.cpp#L311",
+    "credit": "the coin selection chapter's research pass (2026-10-20)"
+  },
+  {
+    "id": "2026-10-20-address-reuse-2",
+    "date": "2026-10-20",
+    "page": "/rabbit-hole/address-reuse",
+    "title": "Use It Once: Why Reusing a Bitcoin Address Is Dangerous",
+    "wrong": "The closing checklist said Core's optional avoid_reuse flag handles the crumbs, which read as if the flag alone kept a dust crumb from ever being spent.",
+    "fixed": "It now says the flag keeps sendtoaddress from spending the crumbs, in line with the regtest check of 2026-10-20 that found Core's other send commands and its GUI do not apply the filter.",
+    "commit": "46b1511",
+    "source": "https://github.com/bitcoin/bitcoin/blob/v31.1/src/wallet/rpc/spend.cpp#L311",
+    "credit": "the coin selection chapter's research pass (2026-10-20)"
+  },
+  {
     "id": "2026-10-20-avoid-reuse",
     "date": "2026-10-20",
     "page": "/glossary/avoid-reuse",
