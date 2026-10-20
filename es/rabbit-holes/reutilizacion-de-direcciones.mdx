@@ -2,13 +2,14 @@
 title: "Úsala una sola vez: por qué reutilizar una dirección de Bitcoin es peligroso"
 slug: reutilizacion-de-direcciones
 translationOf: address-reuse
-sourceHash: "8664939941fb"
-sourceCommit: "3508921"
-sourceUpdated: "2026-10-15"
+sourceHash: "f7850f756d6a"
+sourceCommit: "46b1511"
+sourceUpdated: "2026-10-20"
 translation:
   method: "llm-draft"
 draft: false
 published: "2026-10-15"
+updated: "2026-10-20"
 status: live
 section: rabbit-hole
 category: custody-privacy
@@ -68,6 +69,7 @@ sources:
   - { label: "Bitcoin Core 0.16.0 release notes (reuse option removed)", url: "https://bitcoincore.org/en/releases/0.16.0/" }
   - { label: "Bitcoin Core 0.17.0 release notes (-avoidpartialspends)", url: "https://bitcoincore.org/en/releases/0.17.0/" }
   - { label: "Bitcoin Core 0.19.0.1 release notes (avoid_reuse)", url: "https://bitcoincore.org/en/releases/0.19.0.1/" }
+  - { label: "Bitcoin Core source at v31.1 - src/wallet/rpc/spend.cpp line 311: sendtoaddress is the one RPC that asks coin selection to skip dirty coins (confirmed on regtest, 2026-10-20)", url: "https://github.com/bitcoin/bitcoin/blob/v31.1/src/wallet/rpc/spend.cpp#L311" }
   - { label: "Bitcoin Core 0.21.0 release notes (-maxapsfee)", url: "https://bitcoincore.org/en/releases/0.21.0/" }
   - { label: "bitcoin.org alert, 11 August 2013 - Android security vulnerability", url: "https://bitcoin.org/en/alert/2013-08-11-android" }
   - { label: "Mike Hearn, bitcoin-dev, 11 August 2013 - Android key rotation", url: "https://mirror.b10c.me/lists/bitcoindev/5207BB9D.3090701@plan99.net/" }
@@ -176,7 +178,7 @@ El nombre que la Bitcoin Wiki le da al ataque es [reutilización forzada de dire
 
 El consejo se divide en dos. Una migaja en una dirección que ya habías vaciado: no la gastes nunca; congélala con el [control de monedas](/es/glosario/control-de-monedas) de tu billetera (el [`lockunspent`](https://chainquery.com/rpc/lockunspent) de Core hace lo mismo). Una migaja en una dirección que todavía guarda tus monedas: gasta todo lo que hay ahí junto, migaja incluida, sin entradas de ningún otro lado. Esas monedas ya estaban vinculadas; lo que no debes hacer es vincularlas con el resto de tu billetera.
 
-Bitcoin Core automatizó esa división por pasos. La versión 0.17.0 (2018) añadió `-avoidpartialspends`, que gasta juntas todas las monedas de una misma dirección pero, como señalaba su nota de versión, seguía recogiendo las monedas enviadas ahí después; la 0.19.0.1 (2019) respondió con la opción [`avoid_reuse`](/es/glosario/avoid-reuse) de la billetera, que omite las monedas enviadas a una dirección después de que se gastó desde ella, porque, como lo expresó la propuesta de julio de 2018 que hay detrás (el PR #13756, de kallewoof), "a payer could otherwise begin tracking a payee's wallet by regularly peppering a known UTXO with dust outputs" (quien paga podría empezar a rastrear la billetera de quien cobra salpicando con regularidad un UTXO conocido con salidas de polvo). Desde la 0.21.0 (2021) la billetera evita los gastos parciales por defecto cuando no cuesta comisión extra; `avoid_reuse` en sí sigue desactivada por defecto, necesita un rescan en una billetera ya existente y no tiene interruptor en la interfaz gráfica.
+Bitcoin Core automatizó esa división por pasos. La versión 0.17.0 (2018) añadió `-avoidpartialspends`, que gasta juntas todas las monedas de una misma dirección pero, como señalaba su nota de versión, seguía recogiendo las monedas enviadas ahí después; la 0.19.0.1 (2019) respondió con la opción [`avoid_reuse`](/es/glosario/avoid-reuse) de la billetera, que marca las monedas enviadas a una dirección después de que se gastó desde ella e impide que `sendtoaddress` (aunque no los demás comandos de envío de Core ni su interfaz gráfica) las gaste, porque, como lo expresó la propuesta de julio de 2018 que hay detrás (el PR #13756, de kallewoof), "a payer could otherwise begin tracking a payee's wallet by regularly peppering a known UTXO with dust outputs" (quien paga podría empezar a rastrear la billetera de quien cobra salpicando con regularidad un UTXO conocido con salidas de polvo). Desde la 0.21.0 (2021) la billetera evita los gastos parciales por defecto cuando no cuesta comisión extra; `avoid_reuse` en sí sigue desactivada por defecto, necesita un rescan en una billetera ya existente y no tiene interruptor en la interfaz gráfica.
 
 ## Por qué una dirección nueva ya no cuesta nada
 
@@ -223,7 +225,7 @@ Nuestro [capítulo cuántico](/es/a-fondo/computacion-cuantica-y-bitcoin) dice q
 - **Sabes que una dirección es una factura.** Un pago, y listo.
 - **Sabes qué filtra una sola reutilización.** El pasado, el futuro, tus contrapartes y, en cuanto gastas, la clave.
 - **Sabes que las tres razones son independientes.** La exposición de la clave pública, la privacidad y la seguridad de las claves se sostienen cada una por su cuenta, y un solo hábito arregla las tres.
-- **Sabes que la solución ya es el comportamiento por defecto de tu billetera.** Las billeteras HD, el gap limit y el botón de reutilizar que se eliminó hicieron el trabajo hace años; la opción `avoid_reuse` de Core, que es opcional, se encarga de las migajas. No lo deshagas.
+- **Sabes que la solución ya es el comportamiento por defecto de tu billetera.** Las billeteras HD, el gap limit y el botón de reutilizar que se eliminó hicieron el trabajo hace años; la opción `avoid_reuse` de Core, que es opcional, impide que `sendtoaddress` gaste las migajas. No lo deshagas.
 - **Sabes cuál es la secuencia con calma si ya lo hiciste.** Un solo gasto, solo desde esa dirección, en un día tranquilo, hacia un hash nuevo, y sin prisas.
 
 Úsala una sola vez.
