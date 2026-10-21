@@ -2,7 +2,7 @@
 title: "Dust Limit"
 slug: dust-limit
 draft: false
-updated: "2026-10-02"
+updated: "2026-10-21"
 shortDefinition: "A threshold below which an output is deemed dust and rejected by nodes' default policy as non-standard (e.g., ~546 sat for legacy P2PKH)."
 keyTakeaways:
   - "Prevents trivial outputs from flooding the network"
@@ -12,6 +12,8 @@ sources:
   - { label: "Bitcoin Core - GetDustThreshold in src/policy/policy.cpp", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/policy.cpp" }
   - { label: "Bitcoin Core - DUST_RELAY_TX_FEE default in src/policy/policy.h", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/policy.h" }
   - { label: "Bitcoin Core 29.0 release notes - ephemeral dust", url: "https://bitcoincore.org/en/releases/29.0/" }
+  - { label: "Bitcoin Core 29.1 release notes (September 2025) - default minrelaytxfee lowered to 100 sat/kvB, the dust feerate unchanged", url: "https://bitcoincore.org/en/releases/29.1/" }
+  - { label: "Bitcoin Core 30.0 release notes (October 2025) - the same relay defaults restated as 0.1 sat/vB, dust unchanged", url: "https://bitcoincore.org/en/releases/30.0/" }
   - { label: "Bitcoin Optech - Uneconomical outputs (dust) topic", url: "https://bitcoinops.org/en/topics/uneconomical-outputs/" }
 relatedTerms:
   - discard-threshold
@@ -34,6 +36,8 @@ The exact threshold depends on the output script type, because the calculation a
 - **OP_RETURN** outputs are exempt because they're provably unspendable (no future spending cost to amortize).
 
 The formula in Bitcoin Core: `dust_threshold = (output_size + input_size) * dustRelayFee / 1000`, where `dustRelayFee` defaults to 3,000 sats/kvB. Operators can adjust the fee rate, which changes the threshold proportionally.
+
+The dust limit is a different number from the relay floor. Bitcoin Core 29.1 (September 2025) lowered the default minimum relay fee rate to 0.1 sat/vB and 30.0 restated it, while the dust relay fee rate stayed at 3,000 sats/kvB, so the thresholds above did not move.
 
 What "non-standard" means in practice:
 

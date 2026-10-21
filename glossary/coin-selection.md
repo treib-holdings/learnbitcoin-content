@@ -6,6 +6,7 @@ linkText:
   - "coin-selection"
 draft: false
 published: "2026-09-08"
+updated: "2026-10-21"
 shortDefinition: "The wallet-engineering problem of choosing which UTXOs to spend when building a transaction. The choice sets the fee, decides whether there is a change output, and determines which of your addresses get publicly linked together."
 keyTakeaways:
   - "Every on-chain payment starts with a selection: a wallet holds a pool of discrete coins and must pick a subset whose total covers the amount plus the fee"
@@ -15,7 +16,9 @@ sources:
   - { label: "Bitcoin Core - src/wallet/coinselection.cpp", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/coinselection.cpp" }
   - { label: "Mark Erhardt - An Evaluation of Coin Selection Strategies (2016)", url: "https://murch.one/wp-content/uploads/2016/11/erhardt2016coinselection.pdf" }
   - { label: "Bitcoin Optech - Coin selection topic", url: "https://bitcoinops.org/en/topics/coin-selection/" }
-  - { label: "Bitcoin Core PR #22009 - Decide which coin selection solution to use based on waste metric", url: "https://github.com/bitcoin/bitcoin/pull/22009" }
+  - { label: "Bitcoin Core PR #22009 - Decide which coin selection solution to use based on waste metric (shipped in 23.0)", url: "https://github.com/bitcoin/bitcoin/pull/22009" }
+  - { label: "Bitcoin Core PR #24584 - wallet: avoid mixing different OutputTypes during coin selection (shipped in 24.0.1)", url: "https://github.com/bitcoin/bitcoin/pull/24584" }
+  - { label: "Bitcoin Optech Newsletter, 10 August 2022 (single-type input sets)", url: "https://bitcoinops.org/en/newsletters/2022/08/10/" }
 relatedTerms:
   - utxo-unspent-transaction-output
   - utxo-pool
@@ -40,5 +43,7 @@ The decision has three consequences that the user rarely sees. Fees: every input
 Those three goals pull in different directions, which is why coin selection is a genuine engineering problem and not a lookup. The reference treatment is Mark "Murch" Erhardt's 2016 thesis, which evaluated the strategies of the day against a real transaction workload and found that the then-standard approach in [Bitcoin Core](/glossary/bitcoin-core), a Knapsack solver that tried to keep change at or above a fixed 0.01 BTC minimum, found changeless exact matches on fewer than 1.5 percent of payments, where a purpose-built search found them for up to 30 percent.
 
 Bitcoin Core's wallet now runs several algorithms on every spend and compares the results. [Branch and Bound](/glossary/branch-and-bound-bnb), from Murch's thesis, searches for an exact match that needs no change at all. Knapsack and Single Random Draw produce ordinary solutions with change. [CoinGrinder](/glossary/coingrinder), added in version 27.0 in 2024, hunts for the lightest input set when fees are high. The wallet scores each candidate with a waste metric that combines the fee paid now, the fee a change output will cost later, and any excess that goes to the miner, and it keeps the candidate that wastes least. You can read all of it in `src/wallet/coinselection.cpp`.
+
+Two rules shape what those algorithms see. Since 23.0 (April 2022) every candidate is scored by the waste metric and the lowest wins (PR #22009). And since 24.0.1 (December 2022) selection runs once per address type the wallet holds and mixes types only when no single type can cover the payment (PR #24584), so a bc1q payment is not funded with a mix of legacy and segwit coins that would tell an analyst which output is the change.
 
 For the user the practical lessons are short. Consolidate small coins during cheap fee periods so that expensive periods do not force your wallet to spend a dozen inputs. Keep coins from different sources apart with coin control if their histories should not be linked. And prefer wallets that show you which coins they picked, since you cannot override a choice you never saw.

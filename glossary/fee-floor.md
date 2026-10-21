@@ -2,7 +2,7 @@
 title: "Fee Floor"
 slug: fee-floor
 draft: false
-updated: "2026-10-10"
+updated: "2026-10-21"
 shortDefinition: "An unofficial minimum fee rate below which transactions rarely get mined, especially during busy mempool conditions."
 keyTakeaways:
   - "Reflects the lowest competitive fee rate during congestion"
@@ -12,7 +12,8 @@ sources:
   - { label: "Bitcoin Core 29.0 - policy/policy.h (DEFAULT_MIN_RELAY_TX_FEE 1,000 sat/kvB, which is 1 sat/vB)", url: "https://github.com/bitcoin/bitcoin/blob/v29.0/src/policy/policy.h" }
   - { label: "Bitcoin Core 29.1 release notes (September 2025) - default minrelaytxfee lowered to 100 sat/kvB (0.1 sat/vB); it can still be changed with the configuration option", url: "https://bitcoincore.org/en/releases/29.1/" }
   - { label: "Bitcoin Core 31 - policy/policy.h (DEFAULT_MIN_RELAY_TX_FEE 100 sat/kvB, which is 0.1 sat/vB)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/policy/policy.h" }
-  - { label: "Bitcoin Core 31.0 release notes (April 2026) - in one-parent-one-child package relay the parent can pay less than -minrelaytxfee, even zero", url: "https://bitcoincore.org/en/releases/31.0/" }
+  - { label: "Bitcoin Core 30.0 release notes (October 2025) - minrelaytxfee and incrementalrelayfee defaults restated as 0.1 sat/vB", url: "https://bitcoincore.org/en/releases/30.0/" }
+  - { label: "Bitcoin Core 31.0 release notes (April 2026) - in one-parent-one-child package relay the parent can pay less than -minrelaytxfee, even zero; the fee estimator minimum bucket lowered to 0.1 sat/vB", url: "https://bitcoincore.org/en/releases/31.0/" }
   - { label: "mempool.space - block 970,789 (15:45 UTC, October 10, 2026): median fee rate about 0.28 sat/vB, lowest about 0.27", url: "https://mempool.space/block/00000000000000000000eaf9b45110e63316329599163509bb047200297ce813" }
   - { label: "mempool.space - block 840,000, the fourth halving (00:09 UTC, April 20, 2024): fee rates from about 100 sat/vB, median about 200", url: "https://mempool.space/block/0000000000000000000320283a032748cef8227873ff4872689bf23f1cda83a5" }
   - { label: "Ordinals documentation - Runes specification (the Runes protocol activates on block 840,000)", url: "https://docs.ordinals.com/runes/specification.html" }
@@ -42,7 +43,7 @@ The fee floor is the practical minimum fee rate (in sat/vByte) below which Bitco
 
 Two related concepts that get conflated:
 
-- **The relay-policy minimum.** The lowest fee rate a node will *accept* into its mempool and pass on, set in Bitcoin Core by `-minrelaytxfee`. Core's default was 1 sat/vB until version 29.1 (September 2025) lowered it to 0.1 sat/vB. Below it, a Core node won't take the transaction on its own, though a child transaction that pays enough can sometimes bring a cheaper parent in with it. Each node operator can change the setting.
+- **The relay-policy minimum.** The lowest fee rate a node will *accept* into its mempool and pass on, set in Bitcoin Core by `-minrelaytxfee`. Core's default was 1 sat/vB until version 29.1 (September 2025) lowered it to 0.1 sat/vB; 30.0 restated the same default, and 31.0 (April 2026) lowered the fee estimator's own minimum to match. Below it, a Core node won't take the transaction on its own, though a child transaction that pays enough can sometimes bring a cheaper parent in with it. Each node operator can change the setting.
 - **The market floor.** The fee rate the cheapest transactions in recent blocks actually paid. During congestion this can be far above the relay minimum; in quiet periods it can fall close to it.
 
 How the market floor behaves:
