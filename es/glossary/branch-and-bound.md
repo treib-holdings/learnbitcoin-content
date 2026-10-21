@@ -11,6 +11,7 @@ avoid:
   - "ramificación y acotamiento"
 draft: false
 published: "2026-10-15"
+updated: "2026-10-21"
 shortDefinition: "El algoritmo de selección de monedas de Bitcoin Core que busca coincidencias exactas: una búsqueda en profundidad, acotada, de un conjunto de entradas que cubra el pago tan de cerca que no haga falta ninguna salida de cambio."
 keyTakeaways:
   - "Propuesto en la tesis de 2016 de Mark 'Murch' Erhardt, implementado en Bitcoin Core por Andrew Chow e incluido en la versión 0.17.0 en 2018"
@@ -31,14 +32,14 @@ relatedTerms:
   - transaction-fee
 liveWidget: ~
 translationOf: branch-and-bound-bnb
-sourceHash: "0537b6bdfe3e"
-sourceCommit: "0ea202c"
-sourceUpdated: "2026-09-08"
+sourceHash: "12ed12620788"
+sourceCommit: "044488a"
+sourceUpdated: "2026-10-21"
 translation:
   method: "llm-draft"
 ---
 
-Branch and Bound es el algoritmo de [selección de monedas](/es/glosario/seleccion-de-monedas) que intenta no crear [cambio](/es/glosario/salida-de-cambio) en absoluto. Dado el monto de un pago y el conjunto de monedas de la billetera, busca un subconjunto cuyo total caiga en una ventana estrecha: como mínimo, el pago más su comisión; como máximo, esa cifra más lo que habría costado crear una salida de cambio. Cualquier combinación dentro de la ventana puede gastarse como una [transacción sin cambio (en inglés)](/glossary/changeless-transaction), y el pequeño excedente se va al minero en lugar de volver como una moneda nueva.
+Branch and Bound es el algoritmo de [selección de monedas](/es/glosario/seleccion-de-monedas) que intenta no crear [cambio](/es/glosario/salida-de-cambio) en absoluto. Dado el monto de un pago y el conjunto de monedas de la billetera, busca un subconjunto cuyo total caiga en una ventana estrecha: como mínimo, el pago más su comisión; como máximo, esa cifra más lo que habría costado crear y gastar después una salida de cambio. Cualquier combinación dentro de la ventana puede gastarse como una [transacción sin cambio (en inglés)](/glossary/changeless-transaction), y el pequeño excedente se va al minero en lugar de volver como una moneda nueva.
 
 El nombre describe la búsqueda. El algoritmo ordena las monedas por valor y las recorre en un árbol en profundidad; en cada paso se ramifica según incluya o no la siguiente moneda. La poda es lo que mantiene eso manejable: cada vez que el total acumulado se pasa de la ventana, o las monedas que quedan no pueden alcanzarla de ninguna manera, la rama se abandona de inmediato. También se detiene tras un presupuesto fijo de intentos, 100,000 en la implementación de Core, y devuelve el mejor conjunto sin cambio que haya encontrado, o nada. Los demás algoritmos de la billetera corren junto a él de todos modos, así que el usuario nunca se queda esperándolo.
 
