@@ -1,5 +1,27 @@
 [
   {
+    "id": "2026-10-21-branch-and-bound-bnb",
+    "date": "2026-10-21",
+    "page": "/glossary/branch-and-bound-bnb",
+    "title": "Branch and Bound (BnB)",
+    "wrong": "The entry said the search window runs from the payment plus its fee up to that figure plus what a change output would have cost to create.",
+    "fixed": "The window's upper bound is the payment plus its fee plus the cost of creating and later spending a change output, which is how Bitcoin Core defines cost_of_change for SelectCoinsBnB in src/wallet/coinselection.cpp (created at the transaction's fee rate, spent at the discard fee rate).",
+    "commit": "044488a",
+    "source": "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/coinselection.cpp",
+    "credit": "the coin selection chapter's research pass (2026-10-20)"
+  },
+  {
+    "id": "2026-10-21-dust",
+    "date": "2026-10-21",
+    "page": "/glossary/dust",
+    "title": "Dust",
+    "wrong": "The entry said the default relay floor has been 0.1 sat/vB since Bitcoin Core 30.0.",
+    "fixed": "Bitcoin Core 29.1 (September 4, 2025) lowered the default minrelaytxfee and incrementalrelayfee to 100 satoshis per kvB, which is 0.1 sat/vB; 30.0 (October 10, 2025) restated the same two defaults in sat/vB. The entry now dates the change to 29.1 and cites both release notes.",
+    "commit": "044488a",
+    "source": "https://bitcoincore.org/en/releases/29.1/",
+    "credit": "the coin selection chapter's research pass (2026-10-20)"
+  },
+  {
     "id": "2026-10-20-dust-attack",
     "date": "2026-10-20",
     "page": "/glossary/dust-attack",
