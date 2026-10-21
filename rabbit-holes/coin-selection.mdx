@@ -1,0 +1,206 @@
+---
+title: "Which Coins Does Your Wallet Spend?"
+slug: coin-selection
+draft: true
+published: "2026-10-22"
+status: live
+section: rabbit-hole
+category: how-it-works
+alsoIn: ["custody-privacy"]
+featured: false
+tagline: "Your wallet does not have a balance. It has a bag of coins, and every payment starts by choosing which to spend. What that choice costs today, what it costs later, what it tells a chain analyst, and how the reference wallet decides, with four algorithms and one score."
+order: 22
+estimatedMinutes: 15
+ogImage: "/diagrams/og/coin-selection-four-candidates.png"
+ogImageAlt: "A six-coin native-segwit wallet pays 100,000 sats at 1 sat/vB. Four candidate input sets, one per Bitcoin Core algorithm, with their waste scores: Branch and Bound, three small coins and no change, -1,822; Knapsack, -1,601; Single Random Draw, -989; CoinGrinder, greyed because it runs only above 30 sat/vB, -377. A scale on the right marks the lowest score as the winner."
+sources:
+  - { label: "Mark Erhardt - An Evaluation of Coin Selection Strategies, master's thesis, Karlsruhe Institute of Technology (dated 31 October 2016)", url: "https://murch.one/wp-content/uploads/2016/11/erhardt2016coinselection.pdf" }
+  - { label: "Bitcoin Core - src/wallet/coinselection.cpp (SelectCoinsBnB, KnapsackSolver, SelectCoinsSRD, CoinGrinder, RecalculateWaste, GenerateChangeTarget)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/coinselection.cpp" }
+  - { label: "Bitcoin Core - src/wallet/coinselection.h (effective value in struct COutput; CHANGE_LOWER and CHANGE_UPPER)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/coinselection.h" }
+  - { label: "Bitcoin Core - src/wallet/spend.cpp (cost of change, AvailableCoins, AttemptSelection, ChooseSelectionResult, the Coin Selection log line)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/spend.cpp" }
+  - { label: "Bitcoin Core - src/wallet/fees.cpp (GetDiscardRate)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/fees.cpp" }
+  - { label: "Bitcoin Core - src/wallet/wallet.h (DEFAULT_CONSOLIDATE_FEERATE, DEFAULT_DISCARD_FEE, DEFAULT_TRANSACTION_MINFEE, DEFAULT_WALLET_RBF)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/wallet.h" }
+  - { label: "Bitcoin Core - src/policy/policy.cpp (GetDustThreshold and the input size comments)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/policy.cpp" }
+  - { label: "Bitcoin Core - src/policy/policy.h (MAX_STANDARD_TX_WEIGHT, DUST_RELAY_TX_FEE)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/policy.h" }
+  - { label: "Bitcoin Core source at v31.1 - src/wallet/rpc/spend.cpp line 311: sendtoaddress is the one RPC that asks coin selection to skip dirty coins (the send RPCs confirmed on a regtest node, 2026-10-20)", url: "https://github.com/bitcoin/bitcoin/blob/v31.1/src/wallet/rpc/spend.cpp#L311" }
+  - { label: "Bitcoin Core PR #10637 - Coin Selection with Murch's algorithm (Andrew Chow; merged March 2018, shipped in 0.17.0)", url: "https://github.com/bitcoin/bitcoin/pull/10637" }
+  - { label: "Bitcoin Core PR #17331 - Use effective values throughout coin selection (22.0)", url: "https://github.com/bitcoin/bitcoin/pull/17331" }
+  - { label: "Bitcoin Core PR #22009 - Decide which coin selection solution to use based on waste metric (23.0)", url: "https://github.com/bitcoin/bitcoin/pull/22009" }
+  - { label: "Bitcoin Core PR #17526 - Add Single Random Draw as an additional coin selection algorithm (23.0)", url: "https://github.com/bitcoin/bitcoin/pull/17526" }
+  - { label: "Bitcoin Core PR #23789 - Strictly match tx change type to improve privacy (23.0)", url: "https://github.com/bitcoin/bitcoin/pull/23789" }
+  - { label: "Bitcoin Core PR #24584 - Avoid mixing different OutputTypes during coin selection (24.0.1)", url: "https://github.com/bitcoin/bitcoin/pull/24584" }
+  - { label: "Bitcoin Core PR #24494 - Generate random change target for each tx for better privacy (24.0.1)", url: "https://github.com/bitcoin/bitcoin/pull/24494" }
+  - { label: "Bitcoin Core PR #25495 - Revert the Branch and Bound zero-waste early exit (24.0.1)", url: "https://github.com/bitcoin/bitcoin/pull/25495" }
+  - { label: "Bitcoin Core PR #27877 - Add CoinGrinder coin selection algorithm (Mark Erhardt; 27.0; the sentence on metrics for privacy and wallet health)", url: "https://github.com/bitcoin/bitcoin/pull/27877" }
+  - { label: "Bitcoin Core PR #28994 - Skip BnB when SFFO is enabled (27.0)", url: "https://github.com/bitcoin/bitcoin/pull/28994" }
+  - { label: "Bitcoin Core PR #32150 - Optimize BnB exploration (merged 3 June 2026)", url: "https://github.com/bitcoin/bitcoin/pull/32150" }
+  - { label: "Bitcoin Core PR #23065 - Persistent option for lockunspent (23.0)", url: "https://github.com/bitcoin/bitcoin/pull/23065" }
+  - { label: "Bitcoin Core PR #14582 - Avoid partial spends by default when fee-neutral (0.21.0)", url: "https://github.com/bitcoin/bitcoin/pull/14582" }
+  - { label: "Bitcoin Core PR #13756 - The avoid_reuse wallet flag (0.19.0.1)", url: "https://github.com/bitcoin/bitcoin/pull/13756" }
+  - { label: "Bitcoin Core 0.17.0 release notes (Branch and Bound; shuffled inputs)", url: "https://bitcoincore.org/en/releases/0.17.0/" }
+  - { label: "Bitcoin Core 0.21.0 release notes (partial spend avoidance by default; the Branch and Bound zero-waste exit)", url: "https://bitcoincore.org/en/releases/0.21.0/" }
+  - { label: "Bitcoin Core 23.0 release notes (25 April 2022)", url: "https://bitcoincore.org/en/releases/23.0/" }
+  - { label: "Bitcoin Core 24.0.1 release notes (change output amounts are now randomized)", url: "https://bitcoincore.org/en/releases/24.0.1/" }
+  - { label: "Bitcoin Core 27.0 release notes (CoinGrinder; Branch and Bound disabled when the fee is subtracted from outputs)", url: "https://bitcoincore.org/en/releases/27.0/" }
+  - { label: "Bitcoin Core 29.1 release notes (default relay feerate lowered to 100 satoshis per kvB, September 2025)", url: "https://bitcoincore.org/en/releases/29.1/" }
+  - { label: "Bitcoin Core 30.0 release notes (the same floor restated as 0.1 sat/vB)", url: "https://bitcoincore.org/en/releases/30.0/" }
+  - { label: "Bitcoin Core 31.0 release notes (fee estimator minimum bucket lowered to 0.1 sat/vB, April 2026)", url: "https://bitcoincore.org/en/releases/31.0/" }
+  - { label: "Bitcoin Optech - Coin selection topic", url: "https://bitcoinops.org/en/topics/coin-selection/" }
+  - { label: "Bitcoin Optech - Uneconomical outputs topic (the two meanings of dust)", url: "https://bitcoinops.org/en/topics/uneconomical-outputs/" }
+  - { label: "Bitcoin Optech - Output linking topic", url: "https://bitcoinops.org/en/topics/output-linking/" }
+  - { label: "Bitcoin Optech - Transaction size calculator (input and output sizes in vbytes)", url: "https://bitcoinops.org/en/tools/calc-size/" }
+  - { label: "Bitcoin Optech Newsletter #4, 17 July 2018 (the consolidation caution; -avoidpartialspends)", url: "https://bitcoinops.org/en/newsletters/2018/07/17/" }
+  - { label: "Bitcoin Optech Newsletter, 8 September 2021 (the waste metric, PR #22009)", url: "https://bitcoinops.org/en/newsletters/2021/09/08/" }
+  - { label: "Bitcoin Optech Newsletter, 6 October 2021 (the Single Random Draw simulation; persistent locks)", url: "https://bitcoinops.org/en/newsletters/2021/10/06/" }
+  - { label: "Bitcoin Optech Newsletter, 25 May 2022 (Erhardt's definition of waste)", url: "https://bitcoinops.org/en/newsletters/2022/05/25/" }
+  - { label: "Bitcoin Optech Newsletter, 10 August 2022 (single-type input sets, PR #24584)", url: "https://bitcoinops.org/en/newsletters/2022/08/10/" }
+  - { label: "Bitcoin Optech Newsletter, 21 February 2024 (CoinGrinder)", url: "https://bitcoinops.org/en/newsletters/2024/02/21/" }
+  - { label: "Bitcoin Optech Newsletter, 12 June 2026 (the Branch and Bound rewrite, PR #32150)", url: "https://bitcoinops.org/en/newsletters/2026/06/12/" }
+  - { label: "Bitcoin Optech Newsletter, 31 July 2026 (the long-term feerate against the discard feerate)", url: "https://bitcoinops.org/en/newsletters/2026/07/31/" }
+  - { label: "Delving Bitcoin - GutterGuard and CoinGrinder Simulation results (Mark Erhardt, December 2023)", url: "https://delvingbitcoin.org/t/gutterguard-and-coingrinder-simulation-results/279" }
+  - { label: "Meiklejohn et al. - A Fistful of Bitcoins: Characterizing Payments Among Men with No Names (IMC 2013)", url: "https://cseweb.ucsd.edu/~smeiklejohn/files/imc13.pdf" }
+  - { label: "Moser and Narayanan - Resurrecting Address Clustering in Bitcoin (arXiv 2107.05749, v2 of 10 July 2022)", url: "https://arxiv.org/abs/2107.05749" }
+  - { label: "Bitcoin Wiki - Privacy (cited for its catalogue of change-detection clues only)", url: "https://en.bitcoin.it/wiki/Privacy" }
+  - { label: "ChainQuery - Bitcoin distribution report (live, weekly; figures in this chapter from the 2026-10-18 snapshot)", url: "https://chainquery.com/reports/distribution" }
+  - { label: "ChainQuery - UTXO repartition report (live, weekly; figures from the 2026-10-18 snapshot)", url: "https://chainquery.com/reports/utxo-repartition" }
+  - { label: "ChainQuery - fee-pressure history, 365-day window, computed from its own node's blocks (read 2026-10-21)", url: "https://chainquery.com/reports/fee-pressure/history?window=365d" }
+  - { label: "ChainQuery - fee-pressure history, five-year window (read 2026-10-21)", url: "https://chainquery.com/reports/fee-pressure/history?window=5y" }
+  - { label: "ChainQuery - live fee pressure", url: "https://chainquery.com/fee-pressure" }
+  - { label: "ChainQuery RPC reference - sendtoaddress (the avoid_reuse argument)", url: "https://chainquery.com/rpc/sendtoaddress" }
+  - { label: "ChainQuery RPC reference - lockunspent (the persistent flag)", url: "https://chainquery.com/rpc/lockunspent" }
+  - { label: "mempool.space - mining graphs, block fee rates (daily medians read 2026-10-20; the series differs between downloads, so every figure from it is rounded)", url: "https://mempool.space/graphs/mining/block-fee-rates" }
+  - { label: "mempool.space - block 840,000, the halving block (median fee rate 200 sat/vB, 37.6 BTC in fees)", url: "https://mempool.space/block/0000000000000000000320283a032748cef8227873ff4872689bf23f1cda83a5" }
+relatedTerms: [coin-selection, waste-metric, effective-value, branch-and-bound-bnb, coingrinder, changeless-transaction, change-output, utxo-pool, utxo-unspent-transaction-output, consolidation-transaction, dust, dust-limit, dust-sweeping, dust-attack, coin-control, avoid-reuse, forced-address-reuse, address-reuse, address-clustering, chain-analysis, fee-estimation, fee-bumping, replace-fee-rbf, transaction-fee, bitcoin-core, mempool, p2wpkh-pay-witness-public-key-hash, p2pkh-pay-public-key-hash, taproot, coinjoin, payjoin, lightning-network, fee-sniping]
+---
+
+> **Where you're going:** A Bitcoin wallet does not hold a balance. It holds a pile of coins, and every payment starts by deciding which of them to spend. That decision sets the fee you pay today, the fee you will pay later, and which of your addresses get welded together on a public ledger for good. This chapter opens the reference wallet to show the four algorithms that make the pick and the one score that judges them, when merging your coins pays and what it costs, and what the score cannot see.
+
+## The fee that made no sense
+
+One week you sent 0.5 BTC and paid 141 satoshis in fees. The next week you sent 0.001 BTC and paid 6,850. The payment was five hundred times smaller and the fee nearly fifty times larger, and the wallet gave no reason.
+
+The reason is that a wallet spends coins, and spends them whole. Our [UTXOs chapter](/rabbit-hole/utxos) has the model; Mark Erhardt's 2016 thesis on coin selection, the reference work this chapter leans on throughout, has the analogy: spending a coin is "more similar to cashing in a cashier's check than a bank wire", usable "in full or not at all". The first payment happened to fit one coin: one input, two outputs, 141 vbytes (the unit a transaction's size is priced in), on a day when a block cost 1 satoshi per vbyte. The second had to be assembled from nine small coins, and a native-segwit input, the bc1q kind, weighs 68 vbytes, so the transaction came to 685 vbytes on a 10 sat/vB day.
+
+[Coin selection](/glossary/coin-selection) is the name for the step in which the wallet picks the coins. Every on-chain payment you have ever sent went through it, and unless you used [coin control](/glossary/coin-control) to overrule it, the wallet decided alone, and it wrote the decision down: [Bitcoin Core](/glossary/bitcoin-core) writes one line to its debug log for every transaction it builds, `Coin Selection: Algorithm:bnb, Waste Metric Score:...`, naming which of its algorithms won and what the winning score was. The rest of this chapter explains that line.
+
+> **Pro tip:** If you run Bitcoin Core, open `debug.log` after a send and search for "Coin Selection". The algorithm name (`bnb`, `knapsack`, `srd`, `cg` or `manual`) and the score tell you what the wallet just decided on your behalf.
+
+## Three costs, one pick
+
+A selection is a bet on three prices at once.
+
+**The fee now.** Every input adds bytes, and the bytes are priced at the going rate. The sizes are fixed by the transaction format:
+
+| Input type | Size | Fee at 1 sat/vB | at 10 sat/vB | at 100 sat/vB |
+|---|---|---|---|---|
+| Legacy ([P2PKH](/glossary/p2pkh-pay-public-key-hash)) | 148 vbytes | 148 sats | 1,480 | 14,800 |
+| Native segwit ([P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash)) | 68 vbytes | 68 sats | 680 | 6,800 |
+| [Taproot](/glossary/taproot) | 57.5 vbytes | 57.5 sats | 575 | 5,750 |
+
+For half a day on 20 April 2024, the day of the halving, the median block fee rate was roughly 1,200 sat/vB by mempool.space's record (the full day's median was lower, about 870; see the table below), so one native-segwit input cost about 80,000 sats, or 0.0008 BTC, to spend.
+
+**The fee later.** When the coins picked overshoot the payment, the wallet creates a [change output](/glossary/change-output), and change bills you twice: 31 vbytes to create a native-segwit output now, and 68 vbytes to spend the new coin later. Bitcoin Core prices exactly that. Its wallet code defines the cost of change as the fee to create the output at the transaction's fee rate plus the fee to spend it at a "discard" fee rate, the wallet's guess at a cheap future day (below it the wallet would rather hand the change to the miner than create it), which sits at its floor of 3 sat/vB in a calm market. At 1 sat/vB that is 68 x 3 + 31 x 1 = 235 sats; at 10 sat/vB, 514; at 100 sat/vB, if the discard rate stays at its floor, 3,304.
+
+**The weld.** Every input in a transaction is assumed to belong to the same owner. That is the whitepaper's own warning and the first rule of [chain analysis](/glossary/chain-analysis); our [privacy chapter](/rabbit-hole/bitcoin-privacy) covers the industry built on it. The selection is the moment the weld happens, and the number of inputs is the number of addresses welded. Analysts also assume a wallet adds no input it did not need, so, in the words of a 2022 Princeton catalogue of change clues, "if one output is smaller than any of the (2+) inputs, it is likely the change." Erhardt's conclusion names the bind: "The main conundrum is to achieve low user costs, low network resource usage, and good privacy all at once."
+
+[Dust](/glossary/dust) is where the first cost turns a coin into a liability, and the word means two things. The narrow one is the [dust limit](/glossary/dust-limit), a relay floor below which nodes refuse an output outright: 546 sats for a legacy output, 294 for native segwit. The broad one, which Bitcoin Optech calls an uneconomical output, moves with the fee rate: a 10,000-sat coin behind a 68-vbyte input costs 0.68 percent of itself to spend at 1 sat/vB and 68 percent at 100. The chain is full of candidates. At [ChainQuery's](https://chainquery.com/reports/distribution) 2026-10-18 snapshot (a sister site whose node produced these figures), 18,106,788 of the 57,236,067 addresses holding any bitcoin, 31.6 percent, held less than 10,000 sats, and together held about 536 BTC, under three thousandths of one percent of the supply. By the same node's [count of outputs](https://chainquery.com/reports/utxo-repartition), a third of all unspent outputs are Taproot, and they hold 1.1 percent of the coins.
+
+## The thesis that changed the wallet
+
+Mark Erhardt, who writes as Murch, submitted "An Evaluation of Coin Selection Strategies" at the Karlsruhe Institute of Technology on 31 October 2016. The data set was one real wallet's history: 36,256 payments from a web wallet service, 24,388 in and 11,860 out, values and order only. He replayed it through nine selection policies, ten runs each, and counted what each one cost.
+
+The receipts were not kind to Bitcoin Core. Its policy at the time found an exact match, a payment that needed no change, on 67 of the 11,860 outgoing payments: 0.57 percent. The search he designed, [Branch and Bound](/glossary/branch-and-bound-bnb), found 3,614, or 30.47 percent. In its two variants, which differed in how small a change output they tolerated, it kept the wallet's [pool of coins](/glossary/utxo-pool) 35 to 37 percent smaller on average and came in 6.4 to 6.7 percent cheaper in total than the cheapest policy it was tested against. The thesis also carried a warning the wallet's authors would quote seven years later: the policy that spent the fewest coins on average grew a pool "fifteen times as large as Bitcoin Core's".
+
+The old wallet, in the caption of the thesis's figure 3.2, "tries three different ways of creating an exact match, 1. with a single UTXO, 2. by combining all UTXOs smaller than the target, and 3. by performing a knapsack algorithm. Only then will it consider sets that would cause a change output." The knapsack aimed for the target plus 0.01 BTC of change, "a magic number with unknown justification for its value", and the wallet chose coins before it knew the fee, then chose again with the fee added to the target, a loop "shown to overestimate fees by up to 30% in the original scenario".
+
+The caveats are the thesis's own, and they bound every number above: one data set, from a service's wallet that saw about two deposits per withdrawal, not a person's; a model with no addresses, so privacy could be argued but not measured; and fees held constant. Andrew Chow implemented Branch and Bound in Bitcoin Core, and it shipped in version 0.17.0 in October 2018. The thesis's own "future work" lookahead, which abandons a branch of the search once the coins still undecided cannot reach the target, is in the shipped code too.
+
+## Four algorithms, one judge
+
+Since 27.0 (April 2024) Bitcoin Core's wallet has run up to four selection algorithms on every payment, once per address type it holds, and let a single score pick the winner.
+
+<figure>
+  <img src="/diagrams/coin-selection-four-candidates.svg" alt="Left, a wallet's six coins as discs: 1,200,000, 150,000, 130,000, 50,000, 30,000 and 20,260 sats. Middle, four candidate input sets for a 100,000-sat payment. Branch and Bound: the three small coins, no change, 14 sats of excess to the miner, waste -1,822. Knapsack: one medium coin and two small, with change, waste -1,601. Single Random Draw: the two medium coins, with change, waste -989. CoinGrinder, greyed: the large coin alone, with change, waste -377, runs only above 30 sat/vB. Right, a vertical waste scale with the four scores marked; the lowest, Branch and Bound, is orange and labelled lowest wins. Footer: fee rate 1 sat/vB, long-term rate 10 sat/vB; each input scores 68 x (1 - 10) = -612 and a change output costs 235, so sweeping small coins is rewarded." />
+  <figcaption>Four algorithms propose, one score decides. A native-segwit wallet paying 100,000 sats at 1 sat/vB, long-term rate 10 sat/vB: every input scores -612, a change output costs 235, and the three-coin changeless set wins. CoinGrinder is shown for comparison; it runs only above 30 sat/vB.</figcaption>
+</figure>
+
+**Branch and Bound** prices each coin at its [effective value](/glossary/effective-value), its amount minus its own input fee, then hunts for a set whose effective values land inside a window: at least the payment plus the fee on the rest of the transaction, and at most that figure plus what a change output would cost to create and later spend. Anything in the window ships as a [changeless transaction](/glossary/changeless-transaction), the excess going to the miner. The search is deterministic: the coins are sorted by effective value, largest first, and for each one the search tries taking it before leaving it out, with a budget of 100,000 tries. It keeps looking past the first match for the lowest-waste one; an early exit on a zero-waste match, added in 0.21.0, was reverted in 24.0.1 because at low fee rates zero can be beaten. It is skipped when the fee is being subtracted from the amount sent.
+
+**Knapsack** is the solver from 2012, still in the wallet. It shuffles the coins, takes any single coin or any set of smaller coins that matches the target exactly, and otherwise runs up to a thousand random walks aiming at the payment alone, then, if none lands on it exactly, a thousand more aiming at the payment plus a change target. Since 24.0.1 that target is drawn at random for each transaction: the change fee plus 50,000 sats for payments of 25,000 sats or less, otherwise the change fee plus a random value between 50,000 sats and the smaller of twice the payment (the average output, when there are several) and 1,000,000 sats, so the 0.01 BTC magic number survives as the top of the range. Knapsack is also the one algorithm that will still spend a coin worth less than its own input fee, a leftover kept on purpose. Erhardt's 2023 scorecard for it reads, in part, "Aggressively selects UTXOs with small amounts", and that habit is why it is still there.
+
+**Single Random Draw** shuffles the coins and adds them until the total covers the payment, its fees, and a 50,000-sat change floor, so it always makes change and never makes tiny change. It was added as a third candidate in 23.0, and Optech reported the author's result: "In simulations based on about 8,000 payments, the PR author found that the addition of the SRD algorithm reduced overall transaction fees by 6% and increased the occurrence of changeless transactions from 5.4% to 9.0%."
+
+**[CoinGrinder](/glossary/coingrinder)** searches for the lightest input set, the fewest bytes, always with change, and runs only when the fee rate is above three times the wallet's long-term rate, 30 sat/vB by default. Erhardt wrote it after the 2023 fee spikes produced transactions like one he described "with 856 inputs at 46 s/vB" that paid 0.036 BTC in fees "when the wallet contained a single input with sufficient funds". It shipped in 27.0 in April 2024.
+
+**The judge** is the [waste metric](/glossary/waste-metric). For every candidate the wallet takes the size of the inputs in vbytes times the difference between the current fee rate and a long-term fee rate (10 sat/vB by default, the `-consolidatefeerate` setting), and adds the cost of change if the candidate makes change, or the excess thrown to the miner if it does not. Lowest wins; a tie goes to the candidate with more inputs. The long-term rate is where the wallet switches between consolidating and economizing: below 10 sat/vB every extra input lowers the score, above it every extra input raises it. Inputs are compared against the long-term rate; the future spend of a change output is priced at the discard rate.
+
+Worked through for a native-segwit wallet at 1 sat/vB, each input contributes 68 x (1 - 10) = -612 to the score, a reward. A changeless pair of inputs with 200 sats of excess scores 2 x (-612) + 200 = -1,024; a single input with change scores -612 + 235 = -377; the pair wins. At 100 sat/vB each input contributes 68 x 90 = 6,120: the pair scores 12,440, the single input with change 9,424, and the single input wins. The same pool and the same payment, a different winner, because the price of an input moved.
+
+Waste has judged every candidate since 23.0 (April 2022); a rewrite of the Branch and Bound search merged in June 2026 for the next major release.
+
+## The payment with no change
+
+A changeless payment saves 31 vbytes now and 68 later, and it removes the one output chain analysts work hardest to label. The 2013 paper that stated the clustering rules formally, by Sarah Meiklejohn and colleagues, needed a change output before its second rule could fire at all: the controller of the inputs also controls the one-time change address "(if such an address exists)". When it does not exist, the trail from this payment to your next one is cut.
+
+How often you get one depends on the shape of your pool, so every rate comes with its scenario. Erhardt's replay: 0.57 percent for the old wallet, about 30 percent for Branch and Bound, on a service wallet with varied coins. Bitcoin Core's own simulation for the Single Random Draw change: 5.4 percent before, 9.0 after, over 7,893 withdrawals. Erhardt's December 2023 simulation of a small hot wallet at that year's fee rates, on Core's code of the day: 1,985 changeless out of 5,005 withdrawals, 39.7 percent, with Branch and Bound finding all but four. No chain-wide number exists. A wallet holding one large coin never gets a changeless payment.
+
+The other side reads change well and admits its misses. Meiklejohn's team, applying their change rule naively in 2013, labelled over 4 million change addresses, 13 percent of them wrongly, and even after waiting a week to drop the labels that later activity proved wrong "still ended up with a giant super-cluster containing the public keys of Mt. Gox, Instawallet, BitPay, and Silk Road, among others; in total, this super-cluster contained 1.6 million public keys". Nine years later Malte Moser and Arvind Narayanan at Princeton compiled 26 change clues, found most "have true positive rates between 10% to 30%" with few false positives, and trained a model that reaches 82 percent at a 0.06 percent false positive rate. Applied conservatively to 310 million standard transactions whose change was unknown, it labelled a change output in 50.24 percent of them.
+
+Three clues from the analysts' catalogue go beyond the round-amount, fresh-address and script-type tells our glossary covers. The unnecessary input, above. The fee bump: when a stuck transaction is replaced at a higher fee, the fee comes out of the change, so the output that shrank is the change. And the fingerprint: Bitcoin Core sets a locktime (a field that keeps a transaction out of any block before the current one) on every transaction it builds, to discourage [fee sniping](/glossary/fee-sniping); when one of its outputs is later spent by a transaction with the same habit, that output was probably the change.
+
+Core answers each clue, and each answer has a version. The change output goes at a random position and, since 0.17.0, the inputs are shuffled; the change takes the address type of the payee when it can, so a Taproot payment gets Taproot change (23.0); selection runs per address type and mixes types only as a last resort (24.0.1); the change target is randomized (24.0.1); and change too small to be worth spending is dropped to the fee, which makes a payment that looks exactly like a Branch and Bound match. What it cannot do: hide a round payment amount, or stop looking like Bitcoin Core.
+
+## When to consolidate, and what it costs
+
+Your wallet may already be consolidating without telling you. Below the 10 sat/vB long-term rate the waste metric rewards every extra input, and Knapsack's habit of scooping small coins supplies the candidates, so a Bitcoin Core wallet sweeps up a little with each cheap payment. Above 30 sat/vB CoinGrinder does the opposite. By mempool.space's daily record, no day between 12 December 2024 and 20 October 2026 had a median block fee rate of 10 sat/vB or more, so for those 22 months the reference wallet was in its consolidating mode every day.
+
+Doing it on purpose has its own arithmetic. Twenty native-segwit coins merged into one is a 1,402-vbyte [consolidation transaction](/glossary/consolidation-transaction): 1,402 sats at 1 sat/vB. Spending the same twenty coins as inputs on a 100 sat/vB day would cost 136,000 sats in input fees alone. Days like that happen: by mempool.space's daily medians, 2023 had about thirty of them and 2024 about a dozen. Our [mempool chapter](/rabbit-hole/mempool) covers the market that sets the rate.
+
+The record since 2023, by mempool.space's daily medians, rounded:
+
+| When | Daily median block fee rate |
+|---|---|
+| 8 May 2023 | about 440 sat/vB |
+| 16 December 2023 | about 350 sat/vB |
+| 20 April 2024, the halving | about 870 sat/vB for the day; the halving block itself, 840,000, had a median of 200 sat/vB and paid 37.6 BTC in fees |
+| 12 December 2024 | the last day at 10 sat/vB or more, as of 20 October 2026 |
+| 29 June 2025 | the first day at 1 sat/vB or less |
+| the year to October 2026 | roughly 280 of 365 days at 1 sat/vB or less |
+
+ChainQuery's [fee-pressure history](https://chainquery.com/reports/fee-pressure/history?window=365d), computed from the blocks its own node validated, agrees: 99.3 percent of the blocks in the year to mid-October 2026 fell in its lowest fee-pressure band, which tops out at 5 sat/vB, and over [five years](https://chainquery.com/reports/fee-pressure/history?window=5y) 2.4 percent of blocks fell in its highest, above 100 sat/vB.
+
+One price does not move with the fee rate. A consolidation is the most legible shape on the chain, many inputs and one output with no change, and an analyst reads it, correctly, as one owner tidying up. For coins that already sit on one address the price is zero: the address had already linked them. Across addresses, and above all across sources, it is the weld from above, made at scale. Erhardt's thesis put the limit case plainly: "If a wallet continuously merged all funds it contained, it would reveal the total balance and all economic activity to every trading partner of its user." A sweep that includes a crumb you cannot explain is a [forced address reuse](/glossary/forced-address-reuse) attack succeeding; freeze such coins instead. In Bitcoin Core a lock set in the coin control window, or with [`lockunspent`](https://chainquery.com/rpc/lockunspent) and its persistent flag, survives a restart (since 23.0).
+
+The floor itself moved in 2025 and 2026. Core 29.1 (September 2025) lowered the default relay floor to 0.1 sat/vB, and 30.0 restated it; 31.0 (April 2026) let the fee estimator report rates below 1 sat/vB. The wallet's own default minimum stayed at 1 sat/vB, and the dust limits did not move. So since 29.1, "1 sat/vB" is the floor of a Core wallet's defaults rather than of the market, and on a day like the 280 in the table a consolidation sent there confirms quickly for a few hundred sats. Optech warned in 2018 that a cheap consolidation might wait weeks in the [mempool](/glossary/mempool); Core's wallet signals [replace-by-fee](/glossary/replace-fee-rbf) by default (`DEFAULT_WALLET_RBF` in `src/wallet/wallet.h`), so one that stalls can be [bumped](/glossary/fee-bumping).
+
+> **Pro tip:** Consolidate only coins that already share an address or a source, on a 1 sat/vB day, to a fresh address, with replace-by-fee on. Leave any coin you cannot account for out, and lock it.
+
+## What the score cannot see
+
+Start with the limit no algorithm touches. Optech's output-linking page: "When you receive several payments to the same Bitcoin address, other users can reasonably assume that the same person received all of those payments even if the payments are later spent in separate transactions." The link is made on receipt, by the address, before any selection runs. [Use It Once](/rabbit-hole/address-reuse) is the chapter for that; nothing here undoes a reused address.
+
+Core's [`avoid_reuse`](/glossary/avoid-reuse) wallet flag is the one wallet setting that touches selection, and it is narrower than its name. With the flag on, coins sitting on an address the wallet has already spent from are marked dirty and kept out of a payment only when the payment is sent with the [`sendtoaddress`](https://chainquery.com/rpc/sendtoaddress) command; Core's other send commands and its GUI never ask for the filter, so they spend the dirty coins (the send commands checked on a Core 31.1 node on a private test network, regtest, on 2026-10-20; the GUI by code reading). It knows only the addresses this wallet has spent from, it is off by default, and it has no switch in the GUI. The lock above is the GUI's freeze button.
+
+The rest of the list, each item with its source:
+
+- **The weld is the protocol.** Meiklejohn's team called the common-input rule "an inherent property of the Bitcoin protocol". Selection chooses which inputs to weld; only [CoinJoin](/glossary/coinjoin), [PayJoin](/glossary/payjoin) or [Lightning](/glossary/lightning-network) changes who is assumed to own them.
+- **Thrift leaks.** The fee-optimal transaction and the privacy-optimal one are usually different transactions, and CoinGrinder builds exactly the shape the unnecessary-input clue feeds on.
+- **Changeless is luck plus pool shape.** From 0.57 percent to 40 percent across the scenarios above; "the simulation results are highly dependent on the scenario", in the thesis's words.
+- **The wallet is a fingerprint.** Locktime, version, replace-by-fee signalling, input ordering, the selection itself: Moser and Narayanan count 17 such tells. No setting hides them; the only cover is a wallet many other people use.
+- **Selection knows nothing about where coins came from.** Core groups coins by address and type, not by source, and will weld an identified exchange withdrawal to a cash purchase if both are confirmed and the score likes the pair. Labels and coin control are the only guard.
+- **One address type per wallet, if you can.** Selection runs per type since 24.0.1 and mixes types only when one type cannot cover a payment.
+- **A pool can be unspendable in one go.** A standard transaction is capped at 400,000 weight units (100,000 vbytes, about 1,470 native-segwit inputs), and the wallet's error for a pool of crumbs is "The inputs size exceeds the maximum weight. Please try sending a smaller amount or manually consolidating your wallet's UTXOs". Consolidate in stages.
+
+The wallet's own authors say the same in the pull request that added CoinGrinder: "In the long-term, we should introduce additional metrics to score different input set candidates, e.g. on basis of their privacy and wallet health impact". The score that picks your coins is a fee score. That is honest engineering, and it means the privacy half of the job is yours.
+
+> **Pro tip:** Keep one address type per wallet, and label every coin by where it came from on the day it arrives. Coin selection will never ask.
+
+## What this buys us
+
+- **You know your balance is a bag of coins.** Every payment starts with a pick, and the pick is why the same amount costs different fees on different days.
+- **You know the three costs of a pick.** The fee now (68 vbytes per native-segwit input), the fee later (a change output bills twice), and the weld.
+- **You know the four algorithms and the one score.** Branch and Bound for no change, Knapsack for sweeping, Single Random Draw for a plain shuffle, CoinGrinder for expensive days; the waste metric judges, and it is a fee score.
+- **You know when consolidating pays and what it costs.** Below 10 sat/vB the wallet already leans that way; at 1 sat/vB twenty coins merge for 1,402 sats; the weld costs the same at any fee rate, so merge only what is already linked.
+- **You know the honest limits.** A reused address is linked before any selection runs; `avoid_reuse` filters one command; the score has no privacy term.
+
+Pick on purpose.

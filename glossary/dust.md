@@ -2,7 +2,7 @@
 title: "Dust"
 slug: dust
 draft: false
-updated: "2026-10-13"
+updated: "2026-10-21"
 shortDefinition: "A very small BTC amount in a UTXO, often below the fee required to spend it economically."
 keyTakeaways:
   - "Small outputs that cost more in fees to spend than their value"
@@ -11,7 +11,8 @@ keyTakeaways:
 sources:
   - { label: "Bitcoin Core - GetDustThreshold in src/policy/policy.cpp (546 satoshis for a legacy output and 294 for P2WPKH at the default dust relay rate of 3,000 sat/kvB)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/policy.cpp" }
   - { label: "Bitcoin Core 29.0 release notes - ephemeral dust: a single dust output is allowed in a zero-fee transaction, provided the spender of any of its outputs also spends the dust (2025)", url: "https://bitcoincore.org/en/releases/29.0/" }
-  - { label: "Bitcoin Core 30.0 release notes - minrelaytxfee and incrementalrelayfee defaults lowered to 0.1 satoshis per vB (October 10, 2025)", url: "https://bitcoincore.org/en/releases/30.0/" }
+  - { label: "Bitcoin Core 29.1 release notes - minrelaytxfee and incrementalrelayfee defaults lowered to 100 satoshis per kvB, which is 0.1 sat/vB (September 4, 2025)", url: "https://bitcoincore.org/en/releases/29.1/" }
+  - { label: "Bitcoin Core 30.0 release notes - the same two defaults restated as 0.1 satoshis per vB (October 10, 2025)", url: "https://bitcoincore.org/en/releases/30.0/" }
   - { label: "Bitcoin Optech - Uneconomical outputs (dust) topic: outputs worth less than the fee to spend them, the dust limit, and dust attacks", url: "https://bitcoinops.org/en/topics/uneconomical-outputs/" }
   - { label: "Bitcoin Optech - Transaction size calculator (a P2WPKH input is 68 vbytes: 36-byte outpoint, 1-byte scriptSig length, 4-byte sequence and 27 vbytes of witness)", url: "https://bitcoinops.org/en/tools/calc-size/" }
   - { label: "Bitcoin Wiki - Bitcoin faucet (sites that purport to pay bitcoin for free but often pay such paltry sums as to make the effort pointless)", url: "https://en.bitcoin.it/wiki/Bitcoin_faucet" }
@@ -38,4 +39,4 @@ Where dust comes from:
 
 Bitcoin Core also enforces a policy floor, the [dust limit](/glossary/dust-limit), below which it won't relay a transaction: 546 sats for a legacy P2PKH output and 294 sats for P2WPKH, at the default dust fee rate of 3 sat/vB. Outputs below the limit are non-standard and don't propagate, with one narrow exception since Bitcoin Core 29.0: ephemeral dust, a single dust output in a zero-fee transaction that a child transaction relayed alongside it spends right away. Above the limit but still economically dust is fine to create, just expensive to spend.
 
-If you have dust, the right move is usually to wait. When fees drop to 1 sat/vB or lower (idle periods do happen, and since Bitcoin Core 30.0 the default relay floor is 0.1 sat/vB), you can [sweep](/glossary/dust-sweeping) many dust UTXOs into one larger output with a [consolidation transaction](/glossary/consolidation-transaction). Just be aware: consolidating dust links the addresses involved, so do it deliberately, not casually.
+If you have dust, the right move is usually to wait. When fees drop to 1 sat/vB or lower (idle periods do happen, and since Bitcoin Core 29.1, in September 2025, the default relay floor is 0.1 sat/vB), you can [sweep](/glossary/dust-sweeping) many dust UTXOs into one larger output with a [consolidation transaction](/glossary/consolidation-transaction). Just be aware: consolidating dust links the addresses involved, so do it deliberately, not casually.

@@ -6,6 +6,7 @@ linkText:
   - "branch-and-bound"
 draft: false
 published: "2026-09-08"
+updated: "2026-10-21"
 shortDefinition: "Bitcoin Core's exact-match coin selection algorithm: a bounded depth-first search for a set of inputs that covers the payment closely enough to need no change output at all."
 keyTakeaways:
   - "Proposed in Mark 'Murch' Erhardt's 2016 thesis, implemented in Bitcoin Core by Andrew Chow, shipped in version 0.17.0 in 2018"
@@ -27,7 +28,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Branch and Bound is the [coin selection](/glossary/coin-selection) algorithm that tries to avoid creating [change](/glossary/change-output) altogether. Given a payment amount and the wallet's pool of coins, it looks for a subset whose total lands in a narrow window: at least the payment plus its fee, and at most that figure plus what a change output would have cost to create. Any combination inside the window can be spent as a [changeless transaction](/glossary/changeless-transaction), with the small excess going to the miner instead of coming back as a new coin.
+Branch and Bound is the [coin selection](/glossary/coin-selection) algorithm that tries to avoid creating [change](/glossary/change-output) altogether. Given a payment amount and the wallet's pool of coins, it looks for a subset whose total lands in a narrow window: at least the payment plus its fee, and at most that figure plus what a change output would have cost to create and later spend. Any combination inside the window can be spent as a [changeless transaction](/glossary/changeless-transaction), with the small excess going to the miner instead of coming back as a new coin.
 
 The name describes the search. The algorithm sorts the coins by value and walks them in a depth-first tree, at each step branching on whether to include the next coin. The bound is what keeps that tractable: whenever the running total overshoots the window, or the remaining coins cannot possibly reach it, the branch is abandoned immediately. It also stops after a fixed budget of attempts, 100,000 in the Core implementation, returning the best changeless set it found or nothing at all. The wallet's other algorithms run alongside it in any case, so a user never waits on it.
 
