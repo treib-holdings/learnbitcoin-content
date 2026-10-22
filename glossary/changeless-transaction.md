@@ -6,6 +6,7 @@ linkText:
   - "changeless"
 draft: false
 published: "2026-09-08"
+updated: "2026-10-22"
 shortDefinition: "A transaction whose inputs match the payment closely enough that no change output is needed; the small excess goes to the miner as fee. Cheaper to build, cheaper to spend from later, and it gives change detection nothing to work with."
 keyTakeaways:
   - "Drops the change output (about 31 vbytes for a native SegWit output) and the future cost of spending it (about 68 vbytes for a native SegWit input), for the price of a slightly larger fee"
@@ -34,3 +35,5 @@ The first benefit is cost, and it is larger than it looks. An output is not free
 The second benefit is privacy. The most productive trick in [chain analysis](/glossary/chain-analysis) is change detection: look at a transaction's two outputs, decide which one is the change, and follow it into the sender's next transaction. The clues are familiar. The change is the odd amount while the payment is round; the change goes to a fresh address while the payee's address might be reused; the change matches the script type of the inputs. A changeless transaction removes the second output entirely, so there is nothing to compare and no thread to pull. The analyst sees a payment and does not know whether the sender kept anything at all.
 
 The catch is that exact matches are only possible when the wallet's [pool of coins](/glossary/utxo-pool) contains a combination that happens to land in the window, which depends on how many coins you hold and how varied their sizes are. A wallet with one large coin never gets a changeless spend. A wallet that has received many payments of assorted sizes gets them surprisingly often. This is one of the quieter arguments for keeping a spread of coin sizes rather than consolidating everything into a single lump, and one of the reasons Core runs Branch and Bound on every send.
+
+Go deeper in [Which Coins Does Your Wallet Spend?](/rabbit-hole/coin-selection) - how often changeless payments happen, scenario by scenario, and how well analysts read the change when there is one.

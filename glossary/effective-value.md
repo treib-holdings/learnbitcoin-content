@@ -4,7 +4,7 @@ slug: effective-value
 linkText:
   - "effective value"
   - "effective values"
-draft: true
+draft: false
 published: "2026-10-22"
 shortDefinition: "A coin's amount minus the fee it will cost to spend it as an input at the fee rate of the transaction being built. Coin selection adds up effective values, not face values, so the target stays fixed while the wallet searches; a coin whose effective value is zero or negative is not worth spending at that fee rate."
 keyTakeaways:

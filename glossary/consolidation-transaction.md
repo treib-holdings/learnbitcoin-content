@@ -2,6 +2,7 @@
 title: "Consolidation Transaction"
 slug: consolidation-transaction
 draft: false
+updated: "2026-10-22"
 shortDefinition: "A transaction combining multiple small UTXOs into a single output, typically done during low-fee periods."
 keyTakeaways:
   - "Combines small UTXOs into fewer, larger outputs"
@@ -32,3 +33,5 @@ The practical recipe:
 The privacy tradeoff is real. Consolidation tells the public chain: "these UTXOs all share an owner." If they came from KYC sources or distinct identity contexts, you've just linked them. The right move when privacy matters is to consolidate UTXOs that are *already publicly linked* (came from the same source, were already used together) rather than mixing isolated ones.
 
 Exchanges and merchants do this routinely as ordinary operations. Individual users typically consolidate every few months if at all. See [Dust](/glossary/dust) for the small-UTXO problem this addresses.
+
+Go deeper in [Which Coins Does Your Wallet Spend?](/rabbit-hole/coin-selection) - the pay-now-or-pay-later arithmetic, the fee record since 2023, and the privacy price that does not move with the fee rate.

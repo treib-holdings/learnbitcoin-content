@@ -218,6 +218,8 @@ Eavesdropping Attack	eavesdropping-attack
 ECDSA (Elliptic Curve Digital Signature Algorithm)	ecdsa-elliptic-curve-digital-signature-algorithm
 Eclipse Attack	eclipse-attack
 EDA	emergency-difficulty-adjustment-eda
+effective value	effective-value
+effective values	effective-value
 Elliptic Curve	elliptic-curve
 Eltoo	eltoo
 Emergency Difficulty Adjustment	emergency-difficulty-adjustment-eda
@@ -582,6 +584,8 @@ Wallet	wallet
 Wallet Import Format (WIF)	wallet-import-format-wif
 Wasabi	wasabi-wallet
 Wasabi Wallet	wasabi-wallet
+waste metric	waste-metric
+waste score	waste-metric
 Watch-Only Wallet	watch-only-wallet
 Whirlpool	whirlpool-samourai
 Whitepaper	whitepaper

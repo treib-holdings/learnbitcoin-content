@@ -2,7 +2,7 @@
 title: "Dust Limit"
 slug: dust-limit
 draft: false
-updated: "2026-10-21"
+updated: "2026-10-22"
 shortDefinition: "A threshold below which an output is deemed dust and rejected by nodes' default policy as non-standard (e.g., ~546 sat for legacy P2PKH)."
 keyTakeaways:
   - "Prevents trivial outputs from flooding the network"
@@ -52,3 +52,5 @@ Why the limit exists:
 - **Spam resistance.** Tiny outputs are a cheap way to abuse the network. The dust limit raises the cost.
 
 Users typically encounter the dust limit only at the edges - building a transaction with very small change output, or trying to send a tiny amount. The wallet either consolidates the dust into the fee or refuses to build the transaction, depending on the wallet's UX.
+
+Go deeper in [Which Coins Does Your Wallet Spend?](/rabbit-hole/coin-selection) - the two meanings of dust, and how the fee rate decides which coins are worth spending.

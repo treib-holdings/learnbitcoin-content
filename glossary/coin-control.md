@@ -2,7 +2,7 @@
 title: "Coin Control"
 slug: coin-control
 draft: false
-updated: "2026-10-13"
+updated: "2026-10-22"
 shortDefinition: "A wallet feature allowing users to manually select which UTXOs to spend, aiding privacy and fee optimization."
 keyTakeaways:
   - "Allows precise selection of specific UTXOs for transactions"
@@ -54,3 +54,5 @@ The general guidance: if you care about privacy or fee optimization, learn coin 
 See [UTXO](/glossary/utxo-unspent-transaction-output) for the underlying concept and [Address Clustering](/glossary/address-clustering) for the privacy concern this addresses.
 
 See [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) for why merging coins is the leak coin control exists to prevent.
+
+Go deeper in [Which Coins Does Your Wallet Spend?](/rabbit-hole/coin-selection) - what the wallet's automatic selection optimizes for, and the limits that make coin control the only guard for privacy.

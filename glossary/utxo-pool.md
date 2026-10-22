@@ -5,6 +5,7 @@ linkText:
   - "UTXO pool"
 draft: false
 published: "2026-09-08"
+updated: "2026-10-22"
 shortDefinition: "The set of unspent outputs a wallet controls and can draw on to build transactions. Its shape, a few large coins or many small ones, decides your future fees and how much of your history gets linked when you spend."
 keyTakeaways:
   - "Distinct from the global UTXO set, which is every unspent output on the network; your pool is the slice your keys can sign for"
@@ -37,3 +38,5 @@ What matters about a pool is its shape. Two wallets holding the same total can b
 The management advice follows from the shape. Fees on Bitcoin are cyclical, so the cheap weeks are the time to run a [consolidation](/glossary/consolidation-transaction) that sweeps small coins into a few larger ones, leaving the pool ready for the expensive weeks when you want to spend as few inputs as possible. [CoinGrinder](/glossary/coingrinder), the algorithm Bitcoin Core uses at high fee rates, optimizes for light transactions and skips small coins, so sweeping them up is left to you.
 
 There is a privacy dimension too. Each coin in the pool arrived from somewhere, and [chain analysts](/glossary/chain-analysis) assume that every coin spent in the same transaction shares an owner. Consolidating your whole pool into one coin is the cheapest possible transaction and also the most revealing one, since it publicly links every source you ever received from. [Coin control](/glossary/coin-control) exists so that you can decide which parts of the pool are allowed to meet, and a labeled pool, with coins tagged by where they came from, is the difference between managing that and finding out later.
+
+Go deeper in [Which Coins Does Your Wallet Spend?](/rabbit-hole/coin-selection) - how the shape of a pool decides the fee, the change and the weld on every payment.

@@ -7,7 +7,7 @@ linkText:
   - "change address"
 draft: false
 published: "2026-09-08"
-updated: "2026-10-21"
+updated: "2026-10-22"
 shortDefinition: "The output a transaction sends back to the spender when the selected inputs exceed the payment plus the fee. Bitcoin coins are spent whole, like paper bills, and the change is the difference."
 keyTakeaways:
   - "Wallets send change to a fresh internal address on a separate derivation branch (BIP-44 reserves chain 1 for change), so a change address never appears in a request for payment"
@@ -51,3 +51,5 @@ Bitcoin Core blurs them in four ways, each with a version. The change output is 
 Change also has a floor. If the surplus would be so small that spending it later costs more than it is worth, it is [dust](/glossary/dust), and a well-built wallet will drop the output and let the miner keep the difference rather than create a coin nobody will ever spend. Between that floor and the point where a change output is clearly worth having sits the tolerance that [Branch and Bound](/glossary/branch-and-bound-bnb) uses to decide whether a slightly overpaid fee beats a slightly pointless coin.
 
 Change from a [CoinJoin](/glossary/coinjoin) is the exception to everything above. It is unmixed by definition, and spending it together with the mixed outputs undoes the mix. Privacy-focused wallets label it, quarantine it, and warn you when you touch it, which is the right instinct for change in general.
+
+Go deeper in [Which Coins Does Your Wallet Spend?](/rabbit-hole/coin-selection) - what a change output costs twice, how analysts detect it, and what Bitcoin Core does to blur the clues.

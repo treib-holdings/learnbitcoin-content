@@ -4,7 +4,7 @@ slug: utxos
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-10-02"
+updated: "2026-10-22"
 section: rabbit-hole
 category: how-it-works
 featured: true
@@ -103,6 +103,8 @@ Picking which UTXOs to spend is called **coin selection.** It is a non-trivial o
 Bitcoin Core runs several algorithms on every spend and keeps whichever result wastes the least in fees. [Branch and Bound](/glossary/branch-and-bound-bnb) looks for an exact match that needs no change; **Knapsack**, **Single Random Draw**, and, when fees are high, [CoinGrinder](/glossary/coingrinder) supply the alternatives. Other wallets use simpler heuristics ("largest first," "smallest first," "random").
 
 Most users never think about coin selection. Most users probably should. (See [coin control](/glossary/coin-control) for wallets that expose it.)
+
+Go deeper in [Which Coins Does Your Wallet Spend?](/rabbit-hole/coin-selection) - the four algorithms Bitcoin Core runs, the waste score that judges them, and when consolidating pays.
 
 ## 7. The UTXO Set, Globally
 

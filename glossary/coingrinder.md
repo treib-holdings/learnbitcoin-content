@@ -5,6 +5,7 @@ linkText:
   - "CoinGrinder"
 draft: false
 published: "2026-09-08"
+updated: "2026-10-22"
 shortDefinition: "A Bitcoin Core coin selection algorithm, added in version 27.0 in 2024, that searches for the input set with the smallest total weight so that transactions built during high-fee periods cost as little as possible."
 keyTakeaways:
   - "Authored by Mark 'Murch' Erhardt and merged as Bitcoin Core PR #27877; it runs only when fee rates are elevated, since input weight matters most when every byte is expensive"
@@ -36,3 +37,5 @@ The search itself is another bounded depth-first walk over the coins, this time 
 The algorithm was written by Mark "Murch" Erhardt, whose 2016 thesis had already reshaped Core's coin selection once, and it landed in version 27.0 in April 2024, after a review that began in mid-2023, when that year's Ordinals-driven fee spikes had shown exactly the problem it was written to solve. It is gated on the fee rate: Core runs it only when the transaction's fee rate exceeds three times the wallet's long-term fee-rate estimate (the `-consolidatefeerate` setting, 10 sat/vB by default, so 30 sat/vB and up), because minimizing input weight at ordinary fee levels would mean never spending small coins and letting them pile up as [dust](/glossary/dust).
 
 That last point is the user-facing lesson. CoinGrinder protects you from overpaying during a fee spike, but it does so by ignoring your small coins. Those still need to be swept up eventually, and the time to do it is a [consolidation](/glossary/consolidation-transaction) during a cheap week, when spending a dozen inputs costs almost nothing.
+
+Go deeper in [Which Coins Does Your Wallet Spend?](/rabbit-hole/coin-selection) - why the wallet consolidates below 10 sat/vB and economizes above 30, with the fee record since 2023.

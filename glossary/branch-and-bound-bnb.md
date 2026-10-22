@@ -6,7 +6,7 @@ linkText:
   - "branch-and-bound"
 draft: false
 published: "2026-09-08"
-updated: "2026-10-21"
+updated: "2026-10-22"
 shortDefinition: "Bitcoin Core's exact-match coin selection algorithm: a bounded depth-first search for a set of inputs that covers the payment closely enough to need no change output at all."
 keyTakeaways:
   - "Proposed in Mark 'Murch' Erhardt's 2016 thesis, implemented in Bitcoin Core by Andrew Chow, shipped in version 0.17.0 in 2018"
@@ -37,3 +37,5 @@ The name describes the search. The algorithm sorts the coins by value and walks 
 The idea comes from Mark "Murch" Erhardt's 2016 master's thesis on coin selection, which showed that the Knapsack approach [Bitcoin Core](/glossary/bitcoin-core) had used since the early days almost never found the exact matches it was designed for (under 1.5 percent of payments in his simulation), while Branch and Bound found them for up to 30 percent and shrank the wallet's UTXO footprint by more than a third. Andrew Chow implemented Branch and Bound for Core, the pull request was merged in 2018, and it shipped in version 0.17.0 that October. From 0.17 through 22.0 it ran first, with Knapsack as the fallback. Since version 23.0 the wallet runs every algorithm on each spend and keeps the lowest-waste result, and a changeless Branch and Bound solution usually wins that comparison. A rewrite of the search that stops re-evaluating input sets it has already visited (PR #32150) merged in June 2026 for the next major release.
 
 Why go to the trouble of avoiding change? Because a change output is a cost that pays twice. It adds bytes to the current transaction, and it creates a fresh coin that will add more bytes to some future transaction when it is finally spent. It is also the output that [chain analysts](/glossary/chain-analysis) follow to link one of your transactions to the next. A transaction with no change is cheaper to build, cheaper to spend from later, and gives the change-detection heuristic nothing to work with. Branch and Bound finds those transactions when they exist, which turns out to be more often than people expect once a wallet holds a reasonable spread of coin sizes.
+
+Go deeper in [Which Coins Does Your Wallet Spend?](/rabbit-hole/coin-selection) - the window in Core's own numbers, the three algorithms it competes with, and the waste score that picks the winner.

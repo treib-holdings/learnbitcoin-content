@@ -2,6 +2,7 @@
 title: "UTXO (Unspent Transaction Output)"
 slug: utxo-unspent-transaction-output
 draft: false
+updated: "2026-10-22"
 shortDefinition: "A spendable piece of BTC recorded on-chain. Each transaction input consumes one or more UTXOs."
 keyTakeaways:
   - "Reflects the 'coin' concept in Bitcoin's ledger model"
@@ -41,4 +42,4 @@ Thinking in UTXOs matters for two practical reasons:
 - **Fees.** Every input you spend takes up roughly 68-148 bytes (depending on script type), and bigger transactions cost more. Many small UTXOs = expensive transactions. Periodically consolidating them when fees are low can save you money later.
 - **Privacy.** When you spend two UTXOs in the same transaction, you're publicly declaring they had a common owner. Chain analysts use this to cluster addresses. Coin control (manually choosing which UTXOs to spend) and tools like [CoinJoin](/glossary/coinjoin) let you push back.
 
-Go deeper in the [UTXOs rabbit hole](/rabbit-hole/utxos) - change addresses, coin selection, dust, and the privacy implications. See also [Transaction](/glossary/transaction) for the data structure that consumes and creates UTXOs, and the [Mining rabbit hole section 6](/rabbit-hole/mining) for how miners value them.
+Go deeper in the [UTXOs rabbit hole](/rabbit-hole/utxos) - change addresses, coin selection, dust, and the privacy implications - and in [Which Coins Does Your Wallet Spend?](/rabbit-hole/coin-selection) for how a wallet picks which UTXOs to spend. See also [Transaction](/glossary/transaction) for the data structure that consumes and creates UTXOs, and the [Mining rabbit hole section 6](/rabbit-hole/mining) for how miners value them.

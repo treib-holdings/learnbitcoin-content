@@ -6,7 +6,7 @@ linkText:
   - "coin-selection"
 draft: false
 published: "2026-09-08"
-updated: "2026-10-21"
+updated: "2026-10-22"
 shortDefinition: "The wallet-engineering problem of choosing which UTXOs to spend when building a transaction. The choice sets the fee, decides whether there is a change output, and determines which of your addresses get publicly linked together."
 keyTakeaways:
   - "Every on-chain payment starts with a selection: a wallet holds a pool of discrete coins and must pick a subset whose total covers the amount plus the fee"
@@ -47,3 +47,5 @@ Bitcoin Core's wallet now runs several algorithms on every spend and compares th
 Two rules shape what those algorithms see. Since 23.0 (April 2022) every candidate is scored by the waste metric and the lowest wins (PR #22009). And since 24.0.1 (December 2022) selection runs once per address type the wallet holds and mixes types only when no single type can cover the payment (PR #24584), so a bc1q payment is not funded with a mix of legacy and segwit coins that would tell an analyst which output is the change.
 
 For the user the practical lessons are short. Consolidate small coins during cheap fee periods so that expensive periods do not force your wallet to spend a dozen inputs. Keep coins from different sources apart with coin control if their histories should not be linked. And prefer wallets that show you which coins they picked, since you cannot override a choice you never saw.
+
+Go deeper in [Which Coins Does Your Wallet Spend?](/rabbit-hole/coin-selection) - the three costs of a pick, the four algorithms and the one score that judges them, when consolidating pays, and what the score cannot see.

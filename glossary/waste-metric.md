@@ -4,7 +4,7 @@ slug: waste-metric
 linkText:
   - "waste metric"
   - "waste score"
-draft: true
+draft: false
 published: "2026-10-22"
 shortDefinition: "The score Bitcoin Core's wallet uses to pick between the input sets its coin selection algorithms propose: the fee the inputs cost now minus what they would cost at a long-term fee rate, plus either the cost of a change output or the excess paid to the miner. The lowest score wins. It is a fee score; it has no privacy term."
 keyTakeaways:
