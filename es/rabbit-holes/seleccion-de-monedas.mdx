@@ -1,0 +1,207 @@
+---
+title: "¿Qué monedas gasta tu billetera?"
+slug: seleccion-de-monedas
+translationOf: coin-selection
+sourceHash: "e927fac775c4"
+sourceCommit: "ded4695"
+sourceUpdated: "2026-10-22"
+translation:
+  method: "llm-draft"
+draft: false
+published: "2026-10-22"
+status: live
+section: rabbit-hole
+category: how-it-works
+alsoIn: ["custody-privacy"]
+featured: false
+tagline: "Tu billetera no tiene un saldo. Tiene una bolsa de monedas, y cada pago empieza por elegir cuáles gastar. Lo que esa elección cuesta hoy, lo que cuesta después, lo que le cuenta a un analista de cadena y cómo decide la billetera de referencia, con cuatro algoritmos y una sola puntuación."
+order: 22
+estimatedMinutes: 15
+ogImage: "/diagrams/og/coin-selection-four-candidates.png"
+ogImageAlt: "Una billetera de segwit nativo con seis monedas paga 100,000 sats a 1 sat/vB. Cuatro conjuntos de entradas candidatos, uno por cada algoritmo de Bitcoin Core, con su puntuación de desperdicio: Branch and Bound, tres monedas pequeñas y sin cambio, -1,822; Knapsack, -1,601; Single Random Draw, -989; CoinGrinder, en gris porque solo corre por encima de 30 sat/vB, -377. Una escala a la derecha marca la puntuación más baja como ganadora."
+sources:
+  - { label: "Mark Erhardt - An Evaluation of Coin Selection Strategies, master's thesis, Karlsruhe Institute of Technology (dated 31 October 2016)", url: "https://murch.one/wp-content/uploads/2016/11/erhardt2016coinselection.pdf" }
+  - { label: "Bitcoin Core - src/wallet/coinselection.cpp (SelectCoinsBnB, KnapsackSolver, SelectCoinsSRD, CoinGrinder, RecalculateWaste, GenerateChangeTarget)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/coinselection.cpp" }
+  - { label: "Bitcoin Core - src/wallet/coinselection.h (effective value in struct COutput; CHANGE_LOWER and CHANGE_UPPER)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/coinselection.h" }
+  - { label: "Bitcoin Core - src/wallet/spend.cpp (cost of change, AvailableCoins, AttemptSelection, ChooseSelectionResult, the Coin Selection log line)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/spend.cpp" }
+  - { label: "Bitcoin Core - src/wallet/fees.cpp (GetDiscardRate)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/fees.cpp" }
+  - { label: "Bitcoin Core - src/wallet/wallet.h (DEFAULT_CONSOLIDATE_FEERATE, DEFAULT_DISCARD_FEE, DEFAULT_TRANSACTION_MINFEE, DEFAULT_WALLET_RBF)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/wallet.h" }
+  - { label: "Bitcoin Core - src/policy/policy.cpp (GetDustThreshold and the input size comments)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/policy.cpp" }
+  - { label: "Bitcoin Core - src/policy/policy.h (MAX_STANDARD_TX_WEIGHT, DUST_RELAY_TX_FEE)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/policy.h" }
+  - { label: "Bitcoin Core source at v31.1 - src/wallet/rpc/spend.cpp line 311: sendtoaddress is the one RPC that asks coin selection to skip dirty coins (the send RPCs confirmed on a regtest node, 2026-10-20)", url: "https://github.com/bitcoin/bitcoin/blob/v31.1/src/wallet/rpc/spend.cpp#L311" }
+  - { label: "Bitcoin Core PR #10637 - Coin Selection with Murch's algorithm (Andrew Chow; merged March 2018, shipped in 0.17.0)", url: "https://github.com/bitcoin/bitcoin/pull/10637" }
+  - { label: "Bitcoin Core PR #17331 - Use effective values throughout coin selection (22.0)", url: "https://github.com/bitcoin/bitcoin/pull/17331" }
+  - { label: "Bitcoin Core PR #22009 - Decide which coin selection solution to use based on waste metric (23.0)", url: "https://github.com/bitcoin/bitcoin/pull/22009" }
+  - { label: "Bitcoin Core PR #17526 - Add Single Random Draw as an additional coin selection algorithm (23.0)", url: "https://github.com/bitcoin/bitcoin/pull/17526" }
+  - { label: "Bitcoin Core PR #23789 - Strictly match tx change type to improve privacy (23.0)", url: "https://github.com/bitcoin/bitcoin/pull/23789" }
+  - { label: "Bitcoin Core PR #24584 - Avoid mixing different OutputTypes during coin selection (24.0.1)", url: "https://github.com/bitcoin/bitcoin/pull/24584" }
+  - { label: "Bitcoin Core PR #24494 - Generate random change target for each tx for better privacy (24.0.1)", url: "https://github.com/bitcoin/bitcoin/pull/24494" }
+  - { label: "Bitcoin Core PR #25495 - Revert the Branch and Bound zero-waste early exit (24.0.1)", url: "https://github.com/bitcoin/bitcoin/pull/25495" }
+  - { label: "Bitcoin Core PR #27877 - Add CoinGrinder coin selection algorithm (Mark Erhardt; 27.0; the sentence on metrics for privacy and wallet health)", url: "https://github.com/bitcoin/bitcoin/pull/27877" }
+  - { label: "Bitcoin Core PR #28994 - Skip BnB when SFFO is enabled (27.0)", url: "https://github.com/bitcoin/bitcoin/pull/28994" }
+  - { label: "Bitcoin Core PR #23065 - Persistent option for lockunspent (23.0)", url: "https://github.com/bitcoin/bitcoin/pull/23065" }
+  - { label: "Bitcoin Core PR #14582 - Avoid partial spends by default when fee-neutral (0.21.0)", url: "https://github.com/bitcoin/bitcoin/pull/14582" }
+  - { label: "Bitcoin Core PR #13756 - The avoid_reuse wallet flag (0.19.0.1)", url: "https://github.com/bitcoin/bitcoin/pull/13756" }
+  - { label: "Bitcoin Core 0.17.0 release notes (Branch and Bound; shuffled inputs)", url: "https://bitcoincore.org/en/releases/0.17.0/" }
+  - { label: "Bitcoin Core 0.21.0 release notes (partial spend avoidance by default; the Branch and Bound zero-waste exit)", url: "https://bitcoincore.org/en/releases/0.21.0/" }
+  - { label: "Bitcoin Core 23.0 release notes (25 April 2022)", url: "https://bitcoincore.org/en/releases/23.0/" }
+  - { label: "Bitcoin Core 24.0.1 release notes (change output amounts are now randomized)", url: "https://bitcoincore.org/en/releases/24.0.1/" }
+  - { label: "Bitcoin Core 27.0 release notes (CoinGrinder; Branch and Bound disabled when the fee is subtracted from outputs)", url: "https://bitcoincore.org/en/releases/27.0/" }
+  - { label: "Bitcoin Core 29.1 release notes (default relay feerate lowered to 100 satoshis per kvB, September 2025)", url: "https://bitcoincore.org/en/releases/29.1/" }
+  - { label: "Bitcoin Core 31.0 release notes (fee estimator minimum bucket lowered to 0.1 sat/vB, April 2026)", url: "https://bitcoincore.org/en/releases/31.0/" }
+  - { label: "Bitcoin Optech - Coin selection topic", url: "https://bitcoinops.org/en/topics/coin-selection/" }
+  - { label: "Bitcoin Optech - Uneconomical outputs topic (the two meanings of dust)", url: "https://bitcoinops.org/en/topics/uneconomical-outputs/" }
+  - { label: "Bitcoin Optech - Output linking topic", url: "https://bitcoinops.org/en/topics/output-linking/" }
+  - { label: "Bitcoin Optech - Transaction size calculator (input and output sizes in vbytes)", url: "https://bitcoinops.org/en/tools/calc-size/" }
+  - { label: "Bitcoin Optech Newsletter #4, 17 July 2018 (the consolidation caution; -avoidpartialspends)", url: "https://bitcoinops.org/en/newsletters/2018/07/17/" }
+  - { label: "Bitcoin Optech Newsletter, 8 September 2021 (the waste metric, PR #22009)", url: "https://bitcoinops.org/en/newsletters/2021/09/08/" }
+  - { label: "Bitcoin Optech Newsletter, 6 October 2021 (the Single Random Draw simulation; persistent locks)", url: "https://bitcoinops.org/en/newsletters/2021/10/06/" }
+  - { label: "Bitcoin Optech Newsletter, 25 May 2022 (Erhardt's definition of waste)", url: "https://bitcoinops.org/en/newsletters/2022/05/25/" }
+  - { label: "Bitcoin Optech Newsletter, 10 August 2022 (single-type input sets, PR #24584)", url: "https://bitcoinops.org/en/newsletters/2022/08/10/" }
+  - { label: "Bitcoin Optech Newsletter, 21 February 2024 (CoinGrinder)", url: "https://bitcoinops.org/en/newsletters/2024/02/21/" }
+  - { label: "Bitcoin Optech Newsletter, 31 July 2026 (the long-term feerate against the discard feerate)", url: "https://bitcoinops.org/en/newsletters/2026/07/31/" }
+  - { label: "Delving Bitcoin - GutterGuard and CoinGrinder Simulation results (Mark Erhardt, December 2023)", url: "https://delvingbitcoin.org/t/gutterguard-and-coingrinder-simulation-results/279" }
+  - { label: "Meiklejohn et al. - A Fistful of Bitcoins: Characterizing Payments Among Men with No Names (IMC 2013)", url: "https://cseweb.ucsd.edu/~smeiklejohn/files/imc13.pdf" }
+  - { label: "Moser and Narayanan - Resurrecting Address Clustering in Bitcoin (arXiv 2107.05749, v2 of 10 July 2022)", url: "https://arxiv.org/abs/2107.05749" }
+  - { label: "Bitcoin Wiki - Privacy (cited for its catalogue of change-detection clues only)", url: "https://en.bitcoin.it/wiki/Privacy" }
+  - { label: "ChainQuery - Bitcoin distribution report (live, weekly; figures in this chapter from the 2026-10-18 snapshot)", url: "https://chainquery.com/reports/distribution" }
+  - { label: "ChainQuery - UTXO repartition report (live, weekly; figures from the 2026-10-18 snapshot)", url: "https://chainquery.com/reports/utxo-repartition" }
+  - { label: "ChainQuery - fee-pressure history, 365-day window, computed from its own node's blocks (read 2026-10-21)", url: "https://chainquery.com/reports/fee-pressure/history?window=365d" }
+  - { label: "ChainQuery - fee-pressure history, five-year window (read 2026-10-21)", url: "https://chainquery.com/reports/fee-pressure/history?window=5y" }
+  - { label: "ChainQuery - live fee pressure", url: "https://chainquery.com/fee-pressure" }
+  - { label: "ChainQuery RPC reference - sendtoaddress (the avoid_reuse argument)", url: "https://chainquery.com/rpc/sendtoaddress" }
+  - { label: "ChainQuery RPC reference - lockunspent (the persistent flag)", url: "https://chainquery.com/rpc/lockunspent" }
+  - { label: "mempool.space - mining graphs, block fee rates (daily medians read 2026-10-20; the series differs between downloads, so every figure from it is rounded)", url: "https://mempool.space/graphs/mining/block-fee-rates" }
+  - { label: "mempool.space - block 840,000, the halving block (median fee rate 200 sat/vB, 37.6 BTC in fees)", url: "https://mempool.space/block/0000000000000000000320283a032748cef8227873ff4872689bf23f1cda83a5" }
+relatedTerms: [coin-selection, waste-metric, effective-value, branch-and-bound-bnb, coingrinder, changeless-transaction, change-output, utxo-pool, utxo-unspent-transaction-output, consolidation-transaction, dust, dust-limit, dust-sweeping, dust-attack, coin-control, avoid-reuse, forced-address-reuse, address-reuse, address-clustering, chain-analysis, fee-estimation, fee-bumping, replace-fee-rbf, transaction-fee, bitcoin-core, mempool, p2wpkh-pay-witness-public-key-hash, p2pkh-pay-public-key-hash, taproot, coinjoin, payjoin, lightning-network, fee-sniping]
+---
+
+> **Adónde vas:** Una billetera de Bitcoin no guarda un saldo. Guarda un montón de monedas, y cada pago empieza por decidir cuáles de ellas gastar. Esa decisión fija la comisión que pagas hoy, la comisión que pagarás después y cuáles de tus direcciones quedan soldadas entre sí en un libro público para siempre. Este capítulo abre la billetera de referencia para mostrar los cuatro algoritmos que hacen la elección y la única puntuación que los juzga, cuándo conviene juntar tus monedas y qué cuesta, y qué es lo que la puntuación no ve.
+
+## La comisión que no tenía sentido
+
+Una semana enviaste 0.5 BTC y pagaste 141 satoshis de comisión. La semana siguiente enviaste 0.001 BTC y pagaste 6,850. El pago era quinientas veces más pequeño y la comisión casi cincuenta veces más grande, y la billetera no dio ninguna explicación.
+
+La explicación es que una billetera gasta monedas, y las gasta enteras. Nuestro [capítulo sobre los UTXOs](/es/a-fondo/utxos) tiene el modelo; la tesis de 2016 de Mark Erhardt sobre selección de monedas, la obra de referencia en la que se apoya todo este capítulo, tiene la analogía: gastar una moneda es "more similar to cashing in a cashier's check than a bank wire" (más parecido a cobrar un cheque de caja que a una transferencia bancaria), utilizable "in full or not at all" (entera o nada). El primer pago cupo por casualidad en una sola moneda: una entrada, dos salidas, 141 vbytes (la unidad en la que se cobra el tamaño de una transacción), un día en que un bloque costaba 1 satoshi por vbyte. El segundo tuvo que armarse con nueve monedas pequeñas, y una entrada de segwit nativo, la de tipo bc1q, pesa 68 vbytes, así que la transacción llegó a 685 vbytes en un día de 10 sat/vB.
+
+[Selección de monedas](/es/glosario/seleccion-de-monedas) es el nombre del paso en el que la billetera escoge las monedas. Cada pago on-chain que hayas enviado en tu vida pasó por él y, a menos que hayas usado el [control de monedas](/es/glosario/control-de-monedas) para intervenir, la billetera decidió sola, y dejó la decisión por escrito: [Bitcoin Core](/es/glosario/bitcoin-core) escribe una línea en su registro de depuración por cada transacción que construye, `Coin Selection: Algorithm:bnb, Waste Metric Score:...`, con el nombre del algoritmo que ganó y la puntuación ganadora. El resto de este capítulo explica esa línea.
+
+> **Consejo pro:** Si corres Bitcoin Core, abre `debug.log` después de un envío y busca "Coin Selection". El nombre del algoritmo (`bnb`, `knapsack`, `srd`, `cg` o `manual`) y la puntuación te dicen qué acaba de decidir la billetera en tu nombre.
+
+## Tres costos, una elección
+
+Una selección es una apuesta sobre tres precios a la vez.
+
+**La comisión de ahora.** Cada entrada agrega bytes, y los bytes se cobran a la tarifa del momento. Los tamaños los fija el formato de la transacción:
+
+| Tipo de entrada | Tamaño | Comisión a 1 sat/vB | a 10 sat/vB | a 100 sat/vB |
+|---|---|---|---|---|
+| Legacy ([P2PKH](/es/glosario/p2pkh)) | 148 vbytes | 148 sats | 1,480 | 14,800 |
+| Segwit nativo ([P2WPKH](/es/glosario/p2wpkh)) | 68 vbytes | 68 sats | 680 | 6,800 |
+| [Taproot](/es/glosario/taproot) | 57.5 vbytes | 57.5 sats | 575 | 5,750 |
+
+Durante medio día del 20 de abril de 2024, el día del halving, la tasa de comisión mediana por bloque fue de unos 1,200 sat/vB según el registro de mempool.space (la mediana del día completo fue más baja, unos 870; mira la tabla más abajo), así que gastar una sola entrada de segwit nativo costaba unos 80,000 sats, es decir 0.0008 BTC.
+
+**La comisión de después.** Cuando las monedas elegidas superan el monto del pago, la billetera crea una [salida de cambio](/es/glosario/salida-de-cambio), y el cambio te cobra dos veces: 31 vbytes para crear una salida de segwit nativo ahora y 68 vbytes para gastar la moneda nueva después. Bitcoin Core pone precio exactamente a eso. El código de su billetera define el costo del cambio como la comisión por crear la salida a la tasa de la transacción más la comisión por gastarla a una tasa de "descarte" (discard), la estimación que hace la billetera de un día barato en el futuro (por debajo de ella, la billetera prefiere entregarle el cambio al minero antes que crearlo), que en un mercado tranquilo se queda en su piso de 3 sat/vB. A 1 sat/vB eso da 68 x 3 + 31 x 1 = 235 sats; a 10 sat/vB, 514; a 100 sat/vB, si la tasa de descarte sigue en su piso, 3,304.
+
+**La soldadura.** Se da por hecho que todas las entradas de una transacción pertenecen al mismo dueño. Es la advertencia del propio whitepaper y la primera regla del [análisis de cadena](/es/glosario/analisis-de-cadena); nuestro [capítulo sobre privacidad](/es/a-fondo/privacidad-en-bitcoin) cubre la industria construida sobre ella. La selección es el momento en que ocurre la soldadura, y el número de entradas es el número de direcciones soldadas. Los analistas también dan por hecho que una billetera no agrega ninguna entrada que no necesite, así que, en palabras de un catálogo de pistas del cambio publicado en Princeton en 2022, "if one output is smaller than any of the (2+) inputs, it is likely the change" (si una salida es más pequeña que cualquiera de las dos o más entradas, probablemente sea el cambio). La conclusión de Erhardt le pone nombre al aprieto: "The main conundrum is to achieve low user costs, low network resource usage, and good privacy all at once" (el gran dilema es lograr costos bajos para el usuario, bajo uso de recursos de la red y buena privacidad, todo a la vez).
+
+El [polvo (dust)](/es/glosario/polvo) es donde el primer costo convierte una moneda en una carga, y la palabra significa dos cosas. La acepción estrecha es el [límite de polvo](/es/glosario/limite-de-polvo), un piso de retransmisión por debajo del cual los nodos rechazan una salida sin más: 546 sats para una salida legacy, 294 para segwit nativo. La acepción amplia, que Bitcoin Optech llama salida antieconómica, se mueve con la tasa de comisión: una moneda de 10,000 sats detrás de una entrada de 68 vbytes cuesta el 0.68 por ciento de sí misma para gastarse a 1 sat/vB y el 68 por ciento a 100. La cadena está llena de candidatas. En la instantánea del 18 de octubre de 2026 de [ChainQuery](https://chainquery.com/reports/distribution) (un sitio hermano cuyo nodo produjo estas cifras), 18,106,788 de las 57,236,067 direcciones con algo de bitcoin, el 31.6 por ciento, tenían menos de 10,000 sats, y entre todas sumaban unos 536 BTC, menos de tres milésimas de uno por ciento de la oferta. Según el [recuento de salidas](https://chainquery.com/reports/utxo-repartition) del mismo nodo, un tercio de todas las salidas no gastadas son Taproot, y guardan el 1.1 por ciento de las monedas.
+
+## La tesis que cambió la billetera
+
+Mark Erhardt, que firma como Murch, presentó "An Evaluation of Coin Selection Strategies" (una evaluación de estrategias de selección de monedas) en el Instituto Tecnológico de Karlsruhe el 31 de octubre de 2016. El conjunto de datos era el historial de una billetera real: 36,256 pagos de un servicio de billetera web, 24,388 entrantes y 11,860 salientes, solo montos y orden. Lo reprodujo con nueve políticas de selección, diez corridas cada una, y contó lo que costaba cada una.
+
+Los resultados no fueron amables con Bitcoin Core. Su política de entonces encontró una coincidencia exacta, un pago que no necesitaba cambio, en 67 de los 11,860 pagos salientes: el 0.57 por ciento. La búsqueda que él diseñó, [Branch and Bound](/es/glosario/branch-and-bound), encontró 3,614, el 30.47 por ciento. En sus dos variantes, que diferían en cuán pequeña toleraban una salida de cambio, mantuvo el [conjunto de monedas de la billetera (en inglés)](/glossary/utxo-pool) entre un 35 y un 37 por ciento más pequeño en promedio y resultó entre un 6.4 y un 6.7 por ciento más barata en total que la política más barata contra la que se probó. La tesis también traía una advertencia que los autores de la billetera citarían siete años después: la política que gastaba menos monedas en promedio hizo crecer un conjunto "fifteen times as large as Bitcoin Core's" (quince veces más grande que el de Bitcoin Core).
+
+La billetera vieja, según el pie de la figura 3.2 de la tesis, "tries three different ways of creating an exact match, 1. with a single UTXO, 2. by combining all UTXOs smaller than the target, and 3. by performing a knapsack algorithm. Only then will it consider sets that would cause a change output" (prueba tres maneras distintas de crear una coincidencia exacta: 1. con un solo UTXO, 2. combinando todos los UTXOs más pequeños que el objetivo y 3. ejecutando un algoritmo de la mochila; solo entonces considera conjuntos que producirían una salida de cambio). El algoritmo de la mochila apuntaba al objetivo más 0.01 BTC de cambio, "a magic number with unknown justification for its value" (un número mágico cuyo valor no tiene justificación conocida), y la billetera elegía las monedas antes de conocer la comisión, y después volvía a elegir con la comisión sumada al objetivo, un bucle "shown to overestimate fees by up to 30% in the original scenario" (que demostró sobrestimar las comisiones hasta en un 30 por ciento en el escenario original).
+
+Las salvedades son de la propia tesis, y acotan cada cifra de arriba: un solo conjunto de datos, de la billetera de un servicio que recibía unos dos depósitos por cada retiro, no la de una persona; un modelo sin direcciones, así que la privacidad podía argumentarse pero no medirse; y comisiones constantes. Andrew Chow implementó Branch and Bound en Bitcoin Core, y salió en la versión 0.17.0 en octubre de 2018.
+
+## Cuatro algoritmos, un solo juez
+
+Desde la 27.0 (abril de 2024), la billetera de Bitcoin Core corre hasta cuatro algoritmos de selección en cada pago, una vez por cada tipo de dirección que tiene, y deja que una sola puntuación elija al ganador.
+
+<figure>
+  <img src="/diagrams/coin-selection-four-candidates.svg" alt="A la izquierda, las seis monedas de una billetera como discos: 1,200,000, 150,000, 130,000, 50,000, 30,000 y 20,260 sats. En el centro, cuatro conjuntos de entradas candidatos para un pago de 100,000 sats. Branch and Bound: las tres monedas pequeñas, sin cambio, 14 sats de excedente para el minero, desperdicio -1,822. Knapsack: una moneda mediana y dos pequeñas, con cambio, desperdicio -1,601. Single Random Draw: las dos monedas medianas, con cambio, desperdicio -989. CoinGrinder, en gris: la moneda grande sola, con cambio, desperdicio -377, solo corre por encima de 30 sat/vB. A la derecha, una escala vertical de desperdicio con las cuatro puntuaciones marcadas; la más baja, Branch and Bound, está en naranja y dice que la más baja gana. Pie: tasa de comisión 1 sat/vB, tasa a largo plazo 10 sat/vB; cada entrada puntúa 68 x (1 - 10) = -612 y una salida de cambio cuesta 235, así que barrer monedas pequeñas se premia." />
+  <figcaption>Cuatro algoritmos proponen, una puntuación decide. Una billetera de segwit nativo que paga 100,000 sats a 1 sat/vB, con tasa a largo plazo de 10 sat/vB: cada entrada puntúa -612, una salida de cambio cuesta 235, y gana el conjunto de tres monedas sin cambio. CoinGrinder aparece a modo de comparación; solo corre por encima de 30 sat/vB.</figcaption>
+</figure>
+
+**Branch and Bound** valora cada moneda por su [valor efectivo](/es/glosario/valor-efectivo), su monto menos la comisión de su propia entrada, y después busca un conjunto cuyos valores efectivos caigan dentro de una ventana: como mínimo, el pago más la comisión del resto de la transacción; como máximo, esa cifra más lo que costaría crear y gastar después una salida de cambio. Cualquier cosa dentro de la ventana sale como una [transacción sin cambio (en inglés)](/glossary/changeless-transaction), con el excedente para el minero. La búsqueda es determinista: las monedas se ordenan por valor efectivo, de mayor a menor, y para cada una la búsqueda prueba primero tomarla y después dejarla fuera, con un presupuesto de 100,000 intentos. Sigue buscando más allá de la primera coincidencia hasta encontrar la de menor desperdicio; una salida anticipada al hallar un desperdicio de cero, agregada en la 0.21.0, se revirtió en la 24.0.1 porque con tasas de comisión bajas el cero se puede mejorar. Se omite cuando la comisión se descuenta del monto enviado.
+
+**Knapsack** (el algoritmo de la mochila) es el solucionador de 2012, todavía en la billetera. Baraja las monedas, toma cualquier moneda sola o cualquier conjunto de monedas más pequeñas que coincida exactamente con el objetivo y, si no, corre hasta mil caminatas aleatorias apuntando al pago a secas y después, si ninguna cae exactamente en él, mil más apuntando al pago más un objetivo de cambio. Desde la 24.0.1 ese objetivo se sortea para cada transacción, entre 50,000 sats y alrededor de un millón, con los 0.01 BTC de la tesis sobreviviendo como techo. Knapsack es además el único algoritmo que todavía gasta una moneda que vale menos que la comisión de su propia entrada, un vestigio conservado a propósito. La evaluación que Erhardt le hizo en 2023 dice, en parte, "Aggressively selects UTXOs with small amounts" (selecciona agresivamente UTXOs de montos pequeños), y esa costumbre es la razón por la que sigue ahí.
+
+**Single Random Draw** (sorteo aleatorio simple) baraja las monedas y las va sumando hasta que el total cubre el pago, sus comisiones y un piso de cambio de 50,000 sats, así que siempre crea cambio y nunca crea cambio diminuto. Se agregó como tercer candidato en la 23.0, y Optech informó el resultado del autor: "In simulations based on about 8,000 payments, the PR author found that the addition of the SRD algorithm reduced overall transaction fees by 6% and increased the occurrence of changeless transactions from 5.4% to 9.0%" (en simulaciones basadas en unos 8,000 pagos, el autor del PR encontró que agregar el algoritmo SRD redujo las comisiones totales un 6 por ciento y aumentó la frecuencia de transacciones sin cambio del 5.4 al 9.0 por ciento).
+
+**[CoinGrinder](/es/glosario/coingrinder)** busca el conjunto de entradas más liviano, el de menos bytes, siempre con cambio, y solo corre cuando la tasa de comisión supera el triple de la tasa a largo plazo de la billetera, 30 sat/vB por defecto. Erhardt lo escribió después de que los picos de comisiones de 2023 produjeran transacciones como una que describió "with 856 inputs at 46 s/vB" (con 856 entradas a 46 sat/vB) que pagó 0.036 BTC de comisión "when the wallet contained a single input with sufficient funds" (cuando la billetera tenía una sola entrada con fondos suficientes). Salió en la 27.0 en abril de 2024.
+
+**El juez** es la [métrica de desperdicio](/es/glosario/metrica-de-desperdicio), que decide entre los candidatos desde la 23.0 (abril de 2022). Para cada candidato, la billetera toma el tamaño de las entradas en vbytes multiplicado por la diferencia entre la tasa de comisión actual y una tasa a largo plazo (10 sat/vB por defecto, la opción `-consolidatefeerate`), y suma el costo del cambio si el candidato crea cambio, o el excedente que se le tira al minero si no lo crea. Gana la más baja; un empate se lo lleva el candidato con más entradas. La tasa a largo plazo es donde la billetera cambia entre consolidar y ahorrar: por debajo de 10 sat/vB cada entrada adicional baja la puntuación, por encima cada entrada adicional la sube. Las entradas se comparan contra la tasa a largo plazo; el gasto futuro de una salida de cambio se valora a la tasa de descarte.
+
+Resuelto para una billetera de segwit nativo a 1 sat/vB, cada entrada aporta 68 x (1 - 10) = -612 a la puntuación, un premio. Un par de entradas sin cambio con 200 sats de excedente puntúa 2 x (-612) + 200 = -1,024; una sola entrada con cambio puntúa -612 + 235 = -377; gana el par. A 100 sat/vB cada entrada aporta 68 x 90 = 6,120: el par puntúa 12,440, la entrada sola con cambio 9,424, y gana la entrada sola. El mismo conjunto y el mismo pago, un ganador distinto, porque el precio de una entrada se movió.
+
+## El pago sin cambio
+
+Un pago sin cambio ahorra 31 vbytes ahora y 68 después, y elimina la salida que los analistas de cadena más se esfuerzan por etiquetar. El artículo de 2013 que formuló las reglas de agrupamiento de manera formal, de Sarah Meiklejohn y colegas, necesitaba una salida de cambio para que su segunda regla pudiera aplicarse siquiera: quien controla las entradas controla también la dirección de cambio de un solo uso "(if such an address exists)" (si tal dirección existe). Cuando no existe, el rastro de este pago hasta el siguiente que hagas queda cortado.
+
+Con qué frecuencia consigues uno depende de la forma de tu conjunto de monedas, así que cada tasa viene con su escenario. La reproducción de Erhardt: 0.57 por ciento para la billetera vieja, alrededor del 30 por ciento para Branch and Bound, en la billetera de un servicio con monedas variadas. La simulación de Bitcoin Core para el cambio de Single Random Draw: 5.4 por ciento antes, 9.0 después, sobre 7,893 retiros. La simulación de Erhardt de diciembre de 2023, de una billetera caliente pequeña con las tasas de comisión de ese año y el código de Core de ese momento: 1,985 sin cambio de 5,005 retiros, el 39.7 por ciento, con Branch and Bound encontrando todos menos cuatro. No existe una cifra para toda la cadena. Una billetera que tiene una sola moneda grande nunca consigue un pago sin cambio.
+
+El otro lado lee bien el cambio y admite sus fallos. El equipo de Meiklejohn, aplicando su regla del cambio de forma ingenua en 2013, etiquetó más de 4 millones de direcciones de cambio, el 13 por ciento de ellas mal, y aun después de esperar una semana para descartar las etiquetas que la actividad posterior demostró erróneas, "still ended up with a giant super-cluster containing the public keys of Mt. Gox, Instawallet, BitPay, and Silk Road, among others; in total, this super-cluster contained 1.6 million public keys" (igual terminó con un superclúster gigante que contenía las claves públicas de Mt. Gox, Instawallet, BitPay y Silk Road, entre otros; en total, ese superclúster contenía 1.6 millones de claves públicas). Nueve años después, Malte Moser y Arvind Narayanan, en Princeton, recopilaron 26 pistas del cambio, encontraron que la mayoría "have true positive rates between 10% to 30%" (tienen tasas de verdaderos positivos de entre el 10 y el 30 por ciento) con pocos falsos positivos, y entrenaron un modelo que alcanza el 82 por ciento con una tasa de falsos positivos del 0.06 por ciento. Aplicado con cautela a 310 millones de transacciones estándar cuyo cambio se desconocía, etiquetó una salida de cambio en el 50.24 por ciento de ellas.
+
+Tres pistas del catálogo de los analistas van más allá de las señales de monto redondo, dirección nueva y tipo de script que cubre nuestro glosario. La entrada innecesaria, de más arriba. La subida de comisión: cuando una transacción atascada se reemplaza por otra con mayor comisión, la comisión sale del cambio, así que la salida que se achicó es el cambio. Y la huella: Bitcoin Core fija un locktime (un campo que mantiene una transacción fuera de cualquier bloque anterior al actual) en cada transacción que construye, para desalentar el [fee sniping (en inglés)](/glossary/fee-sniping); cuando una de sus salidas se gasta después en una transacción con la misma costumbre, esa salida probablemente era el cambio.
+
+Core responde a cada pista. La salida de cambio va en una posición aleatoria y las entradas se barajan; el cambio toma el tipo de dirección del destinatario cuando puede, así que un pago a Taproot recibe cambio Taproot; la selección corre por tipo de dirección y solo mezcla tipos como último recurso (desde la 24.0.1); el objetivo de cambio se sortea; y el cambio demasiado pequeño para que valga la pena gastarlo se deja en la comisión, lo que produce un pago que se ve exactamente igual que una coincidencia de Branch and Bound. Lo que no puede hacer: ocultar un monto de pago redondo, ni dejar de parecer Bitcoin Core.
+
+## Cuándo consolidar, y qué cuesta
+
+Puede que tu billetera ya esté consolidando sin decírtelo. Por debajo de la tasa a largo plazo de 10 sat/vB, la métrica de desperdicio premia cada entrada adicional, y la costumbre de Knapsack de recoger monedas pequeñas provee los candidatos, así que una billetera de Bitcoin Core barre un poco con cada pago barato. Por encima de 30 sat/vB, CoinGrinder hace lo contrario. Según el registro diario de mempool.space, ningún día entre el 12 de diciembre de 2024 y el 20 de octubre de 2026 tuvo una tasa de comisión mediana por bloque de 10 sat/vB o más, así que durante esos 22 meses la billetera de referencia estuvo en modo consolidación todos los días.
+
+Hacerlo a propósito tiene su propia aritmética. Veinte monedas de segwit nativo fundidas en una son una [transacción de consolidación (en inglés)](/glossary/consolidation-transaction) de 1,402 vbytes: 1,402 sats a 1 sat/vB. Gastar esas mismas veinte monedas como entradas en un día de 100 sat/vB costaría 136,000 sats solo en comisiones de entrada. Días así ocurren: según las medianas diarias de mempool.space, 2023 tuvo unos treinta y 2024 alrededor de una docena. Nuestro [capítulo sobre el mempool (en inglés)](/rabbit-hole/mempool) cubre el mercado que fija la tarifa.
+
+El registro desde 2023, según las medianas diarias de mempool.space, redondeado:
+
+| Cuándo | Tasa de comisión mediana diaria por bloque |
+|---|---|
+| 8 de mayo de 2023 | unos 440 sat/vB |
+| 16 de diciembre de 2023 | unos 350 sat/vB |
+| 20 de abril de 2024, el halving | unos 870 sat/vB en el día; el propio bloque del halving, el 840,000, tuvo una mediana de 200 sat/vB y pagó 37.6 BTC en comisiones |
+| 12 de diciembre de 2024 | el último día a 10 sat/vB o más, al 20 de octubre de 2026 |
+| 29 de junio de 2025 | el primer día a 1 sat/vB o menos |
+| el año hasta octubre de 2026 | unos 280 de 365 días a 1 sat/vB o menos |
+
+El [historial de presión de comisiones](https://chainquery.com/reports/fee-pressure/history?window=365d) de ChainQuery, calculado a partir de los bloques que validó su propio nodo, coincide: el 99.3 por ciento de los bloques del año hasta mediados de octubre de 2026 cayó en su banda más baja de presión de comisiones, que llega hasta 5 sat/vB, y en [cinco años](https://chainquery.com/reports/fee-pressure/history?window=5y) el 2.4 por ciento de los bloques cayó en la más alta, por encima de 100 sat/vB.
+
+Un precio no se mueve con la tasa de comisión. Una consolidación es la forma más legible de la cadena, muchas entradas y una sola salida sin cambio, y un analista la lee, correctamente, como un dueño ordenando sus cosas. Para monedas que ya están en una misma dirección el precio es cero: la dirección ya las había vinculado. Entre direcciones, y sobre todo entre orígenes, es la soldadura de más arriba, hecha a escala. La tesis de Erhardt planteó el caso límite sin rodeos: "If a wallet continuously merged all funds it contained, it would reveal the total balance and all economic activity to every trading partner of its user" (si una billetera fusionara continuamente todos los fondos que contiene, revelaría el saldo total y toda la actividad económica a cada contraparte de su usuario). Un barrido que incluya una migaja que no puedes explicar es un ataque de [reutilización forzada de direcciones](/es/glosario/reutilizacion-forzada-de-direcciones) que tuvo éxito; congela esas monedas en vez de gastarlas. En Bitcoin Core, un bloqueo fijado en la ventana de control de monedas, o con [`lockunspent`](https://chainquery.com/rpc/lockunspent) y su opción persistente, sobrevive a un reinicio (desde la 23.0).
+
+El propio piso de retransmisión bajó a 0.1 sat/vB en 2025 y el estimador de comisiones lo siguió en 2026, mientras que el mínimo por defecto de una billetera Core se quedó en 1 sat/vB, así que en un día como los 280 de la tabla una consolidación enviada a 1 sat/vB se confirma rápido por unos cientos de sats. Optech advirtió en 2018 que una consolidación barata podía esperar semanas en el [mempool](/es/glosario/mempool); la billetera de Core señaliza [Replace-by-Fee](/es/glosario/rbf) por defecto, así que a una que se atasque se le puede [subir la comisión](/es/glosario/subir-la-comision).
+
+> **Consejo pro:** Consolida solo monedas que ya compartan una dirección o un origen, en un día de 1 sat/vB, hacia una dirección nueva, con Replace-by-Fee activado. Deja fuera cualquier moneda cuyo origen no puedas explicar, y bloquéala.
+
+## Lo que la puntuación no ve
+
+Empieza por el límite que ningún algoritmo toca. La página de Optech sobre vinculación de salidas: "When you receive several payments to the same Bitcoin address, other users can reasonably assume that the same person received all of those payments even if the payments are later spent in separate transactions" (cuando recibes varios pagos en la misma dirección de Bitcoin, otros usuarios pueden suponer razonablemente que la misma persona recibió todos esos pagos, aunque después se gasten en transacciones separadas). El vínculo se crea al recibir, por la dirección, antes de que corra cualquier selección. [Úsala una sola vez](/es/a-fondo/reutilizacion-de-direcciones) es el capítulo para eso; nada de lo que hay aquí deshace una dirección reutilizada.
+
+La opción de billetera [`avoid_reuse`](/es/glosario/avoid-reuse) de Core es el único ajuste de la billetera que toca la selección, y es más estrecha de lo que sugiere su nombre. Con la opción activada, las monedas que están en una dirección desde la que la billetera ya gastó se marcan como sucias y se dejan fuera de un pago solo cuando el pago se envía con el comando [`sendtoaddress`](https://chainquery.com/rpc/sendtoaddress); los demás comandos de envío de Core y su interfaz gráfica nunca piden el filtro, así que gastan las monedas sucias (los comandos de envío se comprobaron en un nodo Core 31.1 en una red de prueba privada, regtest, el 20 de octubre de 2026; la interfaz gráfica, por lectura del código). Solo conoce las direcciones desde las que esta billetera gastó, está desactivada por defecto y no tiene ningún interruptor en la interfaz gráfica. El bloqueo de arriba es el botón de congelar de la interfaz gráfica.
+
+El resto de la lista, cada punto con su fuente:
+
+- **La soldadura es el protocolo.** El equipo de Meiklejohn llamó a la regla de la entrada común "an inherent property of the Bitcoin protocol" (una propiedad inherente del protocolo de Bitcoin). La selección elige qué entradas soldar; solo [CoinJoin](/es/glosario/coinjoin), [PayJoin](/es/glosario/payjoin) o [Lightning](/es/glosario/lightning-network) cambian quién se supone que las posee.
+- **El ahorro filtra información.** La transacción óptima en comisiones y la óptima en privacidad suelen ser transacciones distintas, y CoinGrinder construye exactamente la forma de la que se alimenta la pista de la entrada innecesaria.
+- **Sin cambio es suerte más forma del conjunto.** Del 0.57 al 40 por ciento en los escenarios de arriba; "the simulation results are highly dependent on the scenario" (los resultados de la simulación dependen mucho del escenario), en palabras de la tesis.
+- **La billetera es una huella.** El locktime, la versión, la señalización de Replace-by-Fee, el orden de las entradas, la propia selección: Moser y Narayanan cuentan 17 señales así. Ningún ajuste las oculta; la única cobertura es una billetera que use mucha otra gente.
+- **La selección no sabe nada del origen de las monedas.** Core agrupa las monedas por dirección y tipo, no por origen, y soldará un retiro identificado de un exchange con una compra en efectivo si ambos están confirmados y a la puntuación le gusta el par. Las etiquetas y el control de monedas son la única defensa.
+- **Un solo tipo de dirección por billetera, si puedes.** La selección corre por tipo desde la 24.0.1 y solo mezcla tipos cuando uno solo no alcanza para cubrir un pago.
+- **Un conjunto puede ser imposible de gastar de una vez.** Una transacción estándar tiene un tope de 400,000 unidades de peso (100,000 vbytes, unas 1,470 entradas de segwit nativo), y el error de la billetera para un conjunto de migajas es "The inputs size exceeds the maximum weight. Please try sending a smaller amount or manually consolidating your wallet's UTXOs" (el tamaño de las entradas supera el peso máximo; intenta enviar un monto menor o consolidar manualmente los UTXOs de tu billetera). Consolida por etapas.
+
+Los propios autores de la billetera dicen lo mismo en el pull request que agregó CoinGrinder: "In the long-term, we should introduce additional metrics to score different input set candidates, e.g. on basis of their privacy and wallet health impact" (a largo plazo deberíamos introducir métricas adicionales para puntuar los distintos conjuntos de entradas candidatos, por ejemplo según su impacto en la privacidad y en la salud de la billetera). La puntuación que elige tus monedas es una puntuación de comisiones. Eso es ingeniería honesta, y significa que la mitad del trabajo que corresponde a la privacidad es tuya.
+
+> **Consejo pro:** Mantén un solo tipo de dirección por billetera, y etiqueta cada moneda con su origen el día que llega. La selección de monedas nunca te lo va a preguntar.
+
+## Qué ganamos con esto
+
+- **Sabes que tu saldo es una bolsa de monedas.** Cada pago empieza con una elección, y la elección es la razón por la que el mismo monto cuesta comisiones distintas en días distintos.
+- **Sabes los tres costos de una elección.** La comisión de ahora (68 vbytes por entrada de segwit nativo), la de después (una salida de cambio cobra dos veces) y la soldadura.
+- **Sabes los cuatro algoritmos y la única puntuación.** Branch and Bound para no tener cambio, Knapsack para barrer, Single Random Draw para un sorteo simple, CoinGrinder para los días caros; la métrica de desperdicio juzga, y es una puntuación de comisiones.
+- **Sabes cuándo conviene consolidar y qué cuesta.** Por debajo de 10 sat/vB la billetera ya se inclina a eso; a 1 sat/vB veinte monedas se fusionan por 1,402 sats; la soldadura cuesta lo mismo a cualquier tasa, así que fusiona solo lo que ya está vinculado.
+- **Sabes los límites honestos.** Una dirección reutilizada queda vinculada antes de que corra cualquier selección; `avoid_reuse` filtra un solo comando; la puntuación no tiene término de privacidad.
+
+Elige a propósito.
