@@ -14,7 +14,7 @@ keyTakeaways:
   - "Even script-free outputs are tweaked, because an untweaked aggregate key lets one participant hide a script inside a key the others believe is plain"
 sources:
   - { label: "BIP-341 - Taproot: SegWit version 1 spending rules", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki" }
-  - { label: "Gregory Maxwell - Taproot: Privacy preserving switchable scripting, bitcoin-dev (2018)", url: "https://www.mail-archive.com/bitcoin-dev@lists.linuxfoundation.org/msg06673.html" }
+  - { label: "Gregory Maxwell - Taproot: Privacy preserving switchable scripting, bitcoin-dev (2018)", url: "https://www.learnbitcoin.com/archive/m/CAAS2fgTXg5kk6TyUM9dS%3Dtf5N0_Z-GKVmzMLwTW1HxUgrqdo%2BQ%40mail.gmail.com" }
   - { label: "Bitcoin Optech - Taproot topic", url: "https://bitcoinops.org/en/topics/taproot/" }
 relatedTerms:
   - taproot

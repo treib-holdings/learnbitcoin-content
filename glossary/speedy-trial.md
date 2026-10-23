@@ -11,7 +11,7 @@ keyTakeaways:
   - "Miners reached the 90 percent threshold on June 12, 2021, about six weeks into the three-month window; Taproot then waited until block 709,632 (November 14, 2021) to actually activate"
   - "Not a BIP itself - it is a deployment strategy, a modified BIP-9 with a minimum activation height, and it remains Bitcoin's most recent successful consensus activation"
 sources:
-  - { label: "bitcoin-dev mailing list - David Harding, Taproot activation proposal Speedy Trial (2021)", url: "https://www.mail-archive.com/bitcoin-dev@lists.linuxfoundation.org/msg09604.html" }
+  - { label: "bitcoin-dev mailing list - David Harding, Taproot activation proposal Speedy Trial (2021)", url: "https://www.learnbitcoin.com/archive/m/20210306034343.fhwrxmq6gbb2os5m%40ganymede" }
   - { label: "Bitcoin Core 0.21.1 release notes (2021)", url: "https://bitcoincore.org/en/releases/0.21.1/" }
   - { label: "Bitcoin Optech Newsletter #153 - Taproot locked in (2021)", url: "https://bitcoinops.org/en/newsletters/2021/06/16/" }
 relatedTerms:
