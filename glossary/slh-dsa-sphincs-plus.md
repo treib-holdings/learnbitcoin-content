@@ -21,7 +21,7 @@ sources:
   - { label: "BIP-361 - Post Quantum Migration and Legacy Signature Sunset (draft, assigned 2026-02-11): header lists Requires: TBD Post Quantum Signature BIP", url: "https://github.com/bitcoin/bips/blob/master/bip-0361.mediawiki" }
   - { label: "Bitcoin Optech Newsletter #412 (July 3, 2026): why Bitcoin post-quantum work has focused on hash-based signatures - weaker security assumptions, implementation simplicity, fast verification and suitability as a long-term fallback; hybrid schemes under discussion", url: "https://bitcoinops.org/en/newsletters/2026/07/03/" }
   - { label: "Bitcoin Optech Newsletter #421 (September 4, 2026): SHRINCS draft BIP, a semi-stateful hash-based signature scheme for Bitcoin with 48-byte public keys, 548-byte stateful signatures and a 5,777-byte stateless fallback", url: "https://bitcoinops.org/en/newsletters/2026/09/04/" }
-  - { label: "Bitcoin-Dev mailing list - conduition, SHRINCS: an efficient hash-based signature scheme for Bitcoin (first draft) (August 26, 2026): first draft of a BIP specifying SHRINCS, a semi-stateful hash-based signature scheme for Bitcoin, posted on behalf of the SHRINCS working group", url: "https://groups.google.com/g/bitcoindev/c/HbVboXIFiG8" }
+  - { label: "Bitcoin-Dev mailing list - conduition, SHRINCS: an efficient hash-based signature scheme for Bitcoin (first draft) (August 26, 2026): first draft of a BIP specifying SHRINCS, a semi-stateful hash-based signature scheme for Bitcoin, posted on behalf of the SHRINCS working group", url: "https://www.learnbitcoin.com/archive/m/-w8D4WbD7zY2bfYQIES40iBZQWbZx6ab-S6EW8tWsMEFaHO9NEOLUkte_MZZgNQDd0pljCM2wD1Ccnk3BfjwLPgCiVz-NfTwjHJ4aZHUqUw%3D%40proton.me" }
 relatedTerms:
   - post-quantum-bitcoin
   - bip-361

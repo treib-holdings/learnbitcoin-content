@@ -11,7 +11,7 @@ keyTakeaways:
 sources:
   - { label: "Nils Schneider - Recovering Bitcoin private keys using weak signatures from the blockchain (28 January 2013, archived copy)", url: "https://web.archive.org/web/20131021125657/http://www.nilsschneider.net/2013/01/28/recovering-bitcoin-private-keys.html" }
   - { label: "bitcoin.org alert - Android security vulnerability and key rotation (11 August 2013)", url: "https://bitcoin.org/en/alert/2013-08-11-android" }
-  - { label: "Mike Hearn, bitcoin-dev - Android key rotation (11 August 2013)", url: "http://mirror.b10c.me/lists/bitcoindev/5207BB9D.3090701@plan99.net/" }
+  - { label: "Mike Hearn, bitcoin-dev - Android key rotation (11 August 2013)", url: "https://www.learnbitcoin.com/archive/m/5207BB9D.3090701%40plan99.net" }
   - { label: "Android Developers Blog - Some SecureRandom Thoughts (14 August 2013)", url: "https://android-developers.googleblog.com/2013/08/some-securerandom-thoughts.html" }
   - { label: "Bitcoin Optech Newsletter, 15 January 2019 (Breitner and Heninger, weak nonces and address reuse)", url: "https://bitcoinops.org/en/newsletters/2019/01/15/" }
   - { label: "BIP-340 - Schnorr Signatures for secp256k1 (synthetic nonce)", url: "https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki" }

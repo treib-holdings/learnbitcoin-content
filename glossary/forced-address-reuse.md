@@ -17,8 +17,8 @@ sources:
   - { label: "Bitcoin Core source at v31.1 - src/wallet/rpc/spend.cpp line 311: sendtoaddress is the one RPC that asks coin selection to skip dirty coins (confirmed on regtest, 2026-10-20)", url: "https://github.com/bitcoin/bitcoin/blob/v31.1/src/wallet/rpc/spend.cpp#L311" }
   - { label: "Bitcoin Core 0.21.0 release notes (partial spend avoidance by default when fee-neutral)", url: "https://bitcoincore.org/en/releases/0.21.0/" }
   - { label: "Bitcoin Core PR #23065 - persistent option for lockunspent (merged 2021-09-26, shipped in 23.0)", url: "https://github.com/bitcoin/bitcoin/pull/23065" }
-  - { label: "Matt Corallo, bitcoin-dev - PQC: What is our Goal, Even? (19 April 2026): dusting attacks could trigger many wallets to reveal a public key too soon", url: "https://mirror.b10c.me/lists/bitcoindev/39f3c26e-2cb5-4dcb-a269-78c793174b2a@mattcorallo.com/" }
-  - { label: "Matt Corallo, bitcoin-dev - PQC: What is our Goal, Even? (19 April 2026), the thread on Google Groups", url: "https://groups.google.com/g/bitcoindev/c/Qy4gwAGTK2w" }
+  - { label: "Matt Corallo, bitcoin-dev - PQC: What is our Goal, Even? (19 April 2026): dusting attacks could trigger many wallets to reveal a public key too soon", url: "https://www.learnbitcoin.com/archive/m/39f3c26e-2cb5-4dcb-a269-78c793174b2a%40mattcorallo.com" }
+  - { label: "Matt Corallo, bitcoin-dev - PQC: What is our Goal, Even? (19 April 2026), the thread on LearnBitcoin's archive", url: "https://www.learnbitcoin.com/archive/m/05E6D06B-1F72-48F6-B4F3-0225675BCC1F%40mattcorallo.com" }
 relatedTerms:
   - dust-attack
   - dust
