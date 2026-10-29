@@ -1,0 +1,220 @@
+---
+title: "Quindecillones: por qué nadie puede tropezar con tus bitcoins"
+slug: quindecillones
+translationOf: quindecillions
+sourceHash: "b55dad6cdec6"
+sourceCommit: "6e572f0"
+sourceUpdated: "2026-10-29"
+translation:
+  method: "llm-draft"
+draft: false
+published: "2026-10-29"
+status: live
+section: rabbit-hole
+category: how-it-works
+alsoIn: ["custody-privacy"]
+featured: false
+tagline: "Después de una búsqueda de direcciones personalizadas, los lectores preguntan si la dirección ya tenía monedas y cuántas billeteras encontró la búsqueda en el camino. Cada dirección de Bitcoin es un cajón. Hay unos 1.5 x 10^48, 57 millones guardan monedas y ninguna búsqueda registrada ha dado con uno con fondos por casualidad. La misma aritmética explica por qué nadie tiene que registrar una clave antes de usarla."
+order: 23
+estimatedMinutes: 14
+ogImage: "/diagrams/og/quindecillions-drawers.png"
+ogImageAlt: "Una pared de cajones grises pequeños llena la izquierda de la tarjeta. A la derecha, un contador marca 10^48, un quindecillón, con la línea 2^160 direcciones de Bitcoin, 1.46 x 10^48, y debajo 57,213,806 tienen monedas, según ChainQuery al 25 de octubre de 2026, una cota superior. Después, las probabilidades para una clave al azar, 1 entre 2.6 x 10^40. Una escala logarítmica a lo largo del borde inferior va de un cajón a 10^48 con cinco marcas: nuestras dos búsquedas de direcciones personalizadas en 1.4 x 10^12 cajones abiertos; todas las búsquedas públicas por fuerza bruta jamás corridas, sumadas, unos 10^21; la cota del cumpleaños en 1.4 x 10^24, las extracciones al azar antes de que sea probable que dos coincidan; 2.6 x 10^40, los cajones abiertos en promedio antes de que uno tenga monedas; y 1.46 x 10^48, todos los cajones. Leyenda: ninguna búsqueda registrada ha dado con un cajón con fondos por casualidad."
+sources:
+  - { label: "James D'Angelo (World Bitcoin Network) - Bitcoin 101: Quindecillions & The Amazing Math Of Bitcoin's Private Keys (video, 17 October 2014)", url: "https://www.youtube.com/watch?v=ZloHVKk7DHk" }
+  - { label: "SEC 2 v2.0, section 2.4.1 - the secp256k1 group order n", url: "https://www.secg.org/sec2-v2.pdf" }
+  - { label: "Bitcoin Wiki - Private key (the valid key range)", url: "https://en.bitcoin.it/wiki/Private_key" }
+  - { label: "Bitcoin Core - src/hash.h (Hash160: RIPEMD-160 of SHA-256, 20 bytes)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/hash.h" }
+  - { label: "BIP 16 - Pay to Script Hash (3... addresses commit to a 20-byte hash)", url: "https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki" }
+  - { label: "BIP 141 - Segregated Witness: the 20-byte P2WPKH program, the 32-byte P2WSH program, and why 2^80 work 'is not infeasible anymore'", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
+  - { label: "BIP 143 - only compressed public keys are accepted in version 0 witness programs", url: "https://github.com/bitcoin/bips/blob/master/bip-0143.mediawiki" }
+  - { label: "BIP 341 - Taproot outputs are 32-byte x-only public keys", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki" }
+  - { label: "Merriam-Webster - quindecillion: 1 followed by 48 zeros (US), 90 zeros (also, British) (Wayback Machine copy, 14 December 2025; the live page refuses automated fetches)", url: "https://web.archive.org/web/20251214053118/https://www.merriam-webster.com/dictionary/quindecillion" }
+  - { label: "Dictionary.com - quindecillion", url: "https://www.dictionary.com/browse/quindecillion" }
+  - { label: "ChainQuery - Bitcoin distribution report (live, weekly; 57,213,806 addresses with at least one UTXO at the 2026-10-25 snapshot, block 973,026)", url: "https://chainquery.com/reports/distribution" }
+  - { label: "ChainQuery - quantum exposure report (5,098,744 funded Taproot addresses at the 2026-10-25 snapshot)", url: "https://chainquery.com/reports/quantum-exposure" }
+  - { label: "ChainQuery - UTXO repartition report (2,837,579 P2WSH outputs at the 2026-10-25 snapshot)", url: "https://chainquery.com/reports/utxo-repartition" }
+  - { label: "NPR - University of Hawaii estimate of sand grains on Earth, about 7.5 x 10^18", url: "https://www.npr.org/sections/krulwich/2012/09/17/161096233/which-is-greater-the-number-of-sand-grains-on-earth-or-stars-in-the-sky" }
+  - { label: "ESA Planck - the Universe is 13.82 billion years old", url: "https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_reveals_an_almost_perfect_Universe" }
+  - { label: "UN World Population Prospects 2024 - 8.2 billion people in 2024", url: "https://www.un.org/sustainabledevelopment/blog/2024/07/press-release-wpp2024/" }
+  - { label: "Wikipedia - Composition of the human body (about 7 x 10^27 atoms in a 70 kg adult)", url: "https://en.wikipedia.org/wiki/Composition_of_the_human_body" }
+  - { label: "mempool.space API - network hash rate, three-day window (1.09 x 10^21 hashes per second, read 2026-10-28)", url: "https://mempool.space/api/v1/mining/hashrate/3d" }
+  - { label: "mempool.space - the 2015 puzzle transaction: 256 outputs of 0.001 x k BTC, block 339,085", url: "https://mempool.space/tx/08389f34c98c606322740c0be6a7125d9860bb8d5cb182c02f98461e5fa6cd15" }
+  - { label: "mempool.space - the 11 July 2017 transaction that raised every unsolved prize to 0.01 x k BTC", url: "https://mempool.space/tx/5d45587cfd1d5b0fb826805541da7d94c61fe432259e68ee26f4a04544384164" }
+  - { label: "mempool.space - the 1 June 2019 spend that put the public keys of puzzles 65, 70, ..., 160 on chain", url: "https://mempool.space/tx/17e4e323cfbc68d7f0071cad09364e8193eedf8fefbcbd8a21b4b65717a4b3d3" }
+  - { label: "mempool.space - the 16 April 2023 transaction that raised every unsolved prize to 0.1 x k BTC", url: "https://mempool.space/tx/12f34b58b04dfb0233ce889f674781c0e0c7ba95482cca469125af41a78d13b3" }
+  - { label: "mempool.space - the puzzle 66 solving transaction, block 861,068, 12 September 2024", url: "https://mempool.space/tx/57a88f47e4c047740b782a5562fca143ce85de0373cbff3a7d406e9ae7fc2f5f" }
+  - { label: "mempool.space - the puzzle 69 address (emptied 30 April 2025, block 894,620)", url: "https://mempool.space/address/19vkiEajfhuZ8bs8Zu2jgmC6oqZbWqhxhG" }
+  - { label: "mempool.space - the puzzle 135 address (emptied 28 July 2026, block 959,946)", url: "https://mempool.space/address/16RGFo6hjq9ym6Pj7N5H7L1NR1rVPJyw2v" }
+  - { label: "mempool.space - the puzzle 71 address (7.1 BTC, unspent as of 28 October 2026)", url: "https://mempool.space/address/1PWo3JeB9jrGwfHDNpdGK54CRas7fsVzXU" }
+  - { label: "bitcointalk - the puzzle creator's one post, 27 April 2017: 'It is simply a crude measuring instrument, of the cracking strength of the community'", url: "https://bitcointalk.org/index.php?topic=1306983.msg18765941#msg18765941" }
+  - { label: "Jean-Luc Pons - Kangaroo README: a Pollard's kangaroo solver for the puzzles whose public keys are exposed; puzzle 115 took 2^58.36 group operations on 256 GPUs", url: "https://github.com/JeanLucPons/Kangaroo" }
+  - { label: "brichard19 - BitCrack README: a GPU tool 'for brute-forcing Bitcoin private keys' written for the puzzle", url: "https://github.com/brichard19/BitCrack" }
+  - { label: "Large Bitcoin Collider - live statistics page (search space covered: 55.87 of 160 bits, 65.93 x 10^15 keys, on 28 October 2026)", url: "https://lbc.cryptoguru.org/stats" }
+  - { label: "Large Bitcoin Collider - statistics page, Wayback Machine copy of 15 December 2017 (24-hour rate 2,771 million keys a second, the highest in any archived snapshot)", url: "https://web.archive.org/web/20171215141636/https://lbc.cryptoguru.org/stats" }
+  - { label: "Large Bitcoin Collider - trophies page (the pool's finds; the last is dated 15 November 2017)", url: "https://lbc.cryptoguru.org/trophies" }
+  - { label: "Large Bitcoin Collider - about page (Wayback Machine copy, 17 April 2017: pool inception 10 August 2016 and the early milestones)", url: "https://web.archive.org/web/20170417062334id_/https://lbc.cryptoguru.org/about" }
+  - { label: "Bitcoin Wiki - Brainwallet (the passphrase scheme is filed under 'Obsolete brainwallet style')", url: "https://en.bitcoin.it/wiki/Brainwallet" }
+  - { label: "DEF CON 23 - speakers page: Ryan Castellucci, Cracking Cryptocurrency Brainwallets (abstract)", url: "https://defcon.org/html/defcon-23/dc-23-speakers.html" }
+  - { label: "Ryan Castellucci - Cracking Cryptocurrency Brainwallets, slides as delivered on 7 August 2015 (60 pages)", url: "https://rya.nc/files/cracking_cryptocurrency_brainwallets.pdf" }
+  - { label: "Ryan Castellucci - Why I'm Releasing a Brainwallet Cracker at DEFCON 23 (8 July 2015)", url: "https://rya.nc/defcon-brainwallets.html" }
+  - { label: "ryancdotorg - Brainflayer repository and README", url: "https://github.com/ryancdotorg/brainflayer" }
+  - { label: "Vasek, Bonneau, Castellucci, Keith and Moore - The Bitcoin Brain Drain: A Short Paper on the Use and Abuse of Bitcoin Brain Wallets (Financial Cryptography 2016, preproceedings PDF)", url: "https://fc16.ifca.ai/preproceedings/36_Vasek.pdf" }
+  - { label: "The same paper in Springer's Financial Cryptography and Data Security volume (LNCS 9603), pp. 609-618, DOI 10.1007/978-3-662-54970-4_36", url: "https://doi.org/10.1007/978-3-662-54970-4_36" }
+  - { label: "Milk Sad - research update 16 (6 January 2026): 20,397 one-round-SHA-256 brain wallet addresses found; a 5.26 BTC sweep in February 2025", url: "https://milksad.info/posts/research-update-16/" }
+  - { label: "bitcoin.org - Android Security Vulnerability alert, 11 August 2013", url: "https://bitcoin.org/en/alert/2013-08-11-android" }
+  - { label: "Android Developers Blog - Some SecureRandom Thoughts, 14 August 2013", url: "https://android-developers.googleblog.com/2013/08/some-securerandom-thoughts.html" }
+  - { label: "MITRE - CVE-2023-31290: Trust Wallet Core, entropy of 32 bits, 'only four billion possible mnemonics'", url: "https://cveawg.mitre.org/api/cve/CVE-2023-31290" }
+  - { label: "Trust Wallet - browser extension WASM vulnerability post-mortem, 22 April 2023 (Wayback Machine copy; the live page returns 410)", url: "https://web.archive.org/web/20230423004645id_/https://community.trustwallet.com/t/browser-extension-wasm-vulnerability-postmortem/750787" }
+  - { label: "Ledger - Funds of every wallet created with the Trust Wallet browser extension could have been stolen (25 April 2023)", url: "https://blog.ledger.com/Funds-of-every-wallet-created-with-the-Trust-Wallet-browser-extension-could-have-been-stolen/" }
+  - { label: "MITRE - CVE-2023-39910: Libbitcoin Explorer 3.x wallet entropy 'is weak, aka the Milk Sad issue'", url: "https://cveawg.mitre.org/api/cve/CVE-2023-39910" }
+  - { label: "Milk Sad - disclosure write-up: 32 bits of system time, the 12 July 2023 sweep of about 29.65 BTC, over 2,600 affected wallets", url: "https://milksad.info/disclosure.html" }
+  - { label: "Unciphered - Randstorm (Wayback Machine copy, 26 September 2024; the live page is gone)", url: "https://web.archive.org/web/20240926132048id_/https://www.unciphered.com/randstorm" }
+  - { label: "Bitcoin Optech Newsletter #416, 31 July 2026 - the COLDCARD seed generation flaw; 'estimated losses exceed 1,000 BTC'", url: "https://bitcoinops.org/en/newsletters/2026/07/31/" }
+  - { label: "Coinkite - COLDCARD Mk3 seed generation warning (security advisory, 30 July 2026)", url: "https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/" }
+  - { label: "Coinkite - entropy technical backgrounder (30 July 2026): 'we estimate the effective search space at about 40 bits'", url: "https://blog.coinkite.com/entropy-technical-backgrounder/" }
+  - { label: "Block Engineering - Predictable RNG fallback and 32-bit reseed in COLDCARD firmware (30 July 2026)", url: "https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware" }
+  - { label: "Independent Security Evaluators - Ethercombing: Finding Secrets in Popular Places (732 Ethereum private keys found in 32-bit sub-ranges, balances as of March 2019)", url: "https://www.ise.io/casestudies/ethercombing/" }
+relatedTerms: [vanity-address, private-key, address, hash, p2pkh-pay-public-key-hash, seed-phrase, mnemonic-entropy-bits, public-key-exposure]
+---
+
+> **Adónde vas:** Después de que publicamos dos direcciones personalizadas en octubre de 2026, volvieron una y otra vez las mismas dos preguntas: ¿la dirección ya tenía dinero? y ¿cuántas billeteras encontró la búsqueda en el camino? Las dos suponen que el espacio de direcciones es como una guía telefónica: grande, pero poblada. Este capítulo cambia esa imagen por una pared de cajones. Cuenta los cajones, cuenta los que tienen monedas, calcula qué deja atrás una búsqueda de un billón de claves en su camino hacia una coincidencia, y después mira de dónde salen las historias reales de "alguien encontró una billetera". Termina con la razón por la que un espacio así de grande significa que nadie tiene que pedir permiso, ni registrar nada, antes de crear una clave.
+
+> **Crédito:** Este capítulo recrea una lección de la Blackboard Series "Bitcoin 101" de James D'Angelo para la World Bitcoin Network: ["Quindecillions & The Amazing Math Of Bitcoin's Private Keys"](https://www.youtube.com/watch?v=ZloHVKk7DHk) (17 de octubre de 2014). Los cajones y el pirata son su imagen. Las palabras, los dibujos, las animaciones y los números de aquí son nuestros, reconstruidos con datos de octubre de 2026. Es la primera de una serie de recreaciones con crédito de la Blackboard Series.
+
+## La pregunta que nos siguen haciendo
+
+En octubre de 2026 corrimos dos búsquedas de [direcciones personalizadas (en inglés)](/glossary/vanity-address), las llamadas vanity addresses, en una laptop: doce hilos de CPU y sin GPU. La primera pedía una dirección que empezara con `1LearnBTC`, con cualquier combinación de mayúsculas y minúsculas, y encontró una después de 46 minutos y unos 203,000 millones de claves. La segunda pedía `bc1qlearn8tc` exacto y encontró una después de 6 horas y 1 minuto y unos 1.24 billones de claves. Entre las dos corridas se generaron 1.44 billones de claves privadas, cada una se convirtió en una dirección y se descartó toda la que no empezara con los ocho caracteres correctos. La entrada del glosario tiene la tabla y los comprobantes.
+
+Las preguntas que siguieron fueron las mismas que James D'Angelo respondía en un pizarrón en 2014. ¿`1LeArNBtc...` ya tenía dinero cuando la encontramos? Y de 1.44 billones de direcciones, ¿cuántas eran de alguien?
+
+La respuesta honesta a la segunda pregunta es que el software nunca miró. Un buscador de direcciones personalizadas compara cada dirección con un patrón, no con el registro. Así que la pregunta real es de probabilidad: de 1.44 billones de direcciones, ¿cuántas esperarías que tuvieran monedas? El resto de este capítulo es la aritmética detrás de la respuesta, que es cero, hasta unos 28 decimales.
+
+## Una clave es un número y una dirección es un hash más corto
+
+Una [clave privada](/es/glosario/clave-privada) de Bitcoin es un número entre 1 y un límite de 78 dígitos que fija la [curva](/es/glosario/curva-eliptica) que usa Bitcoin: 115,792,089,237,316,195,423,570,985,008,687,907,852,837,564,279,074,904,382,605,163,141,518,161,494,336 claves válidas, unas 1.16 x 10^77. Nuestro capítulo [Espacio de claves (en inglés)](/rabbit-hole/key-space) es el paseo por la escala de ese número, y aquí no se repite nada de eso.
+
+Una [dirección](/es/glosario/direccion) es más pequeña. Para las direcciones que usa la mayoría de la gente, las que empiezan con `1`, `3` o `bc1q` (las de 42 caracteres), la billetera toma la [clave pública](/es/glosario/clave-publica), o un script en el caso de una dirección `3...`, y la pasa por dos funciones de [hash](/es/glosario/hash), SHA-256 y después RIPEMD-160, y se queda con el resultado de 20 bytes. Bitcoin Core llama Hash160 a esa función. Veinte bytes son 160 bits, así que hay 2^160 direcciones posibles de este tipo: 1,461,501,637,330,902,918,203,684,832,716,283,019,655,932,542,976, o unas 1.46 x 10^48. Las tres grafías son un solo espacio. Una dirección [P2PKH](/es/glosario/p2pkh), una dirección [P2SH](/es/glosario/p2sh) y una dirección [P2WPKH](/es/glosario/p2wpkh) envuelven cada una un número de 160 bits en una codificación distinta y una suma de verificación (checksum); la suma de verificación alarga la dirección y no agrega direcciones nuevas.
+
+De ahí siguen dos consecuencias. Primera: como hay 2^256 claves y 2^160 direcciones, unas 2^96 claves llevan a cada dirección: 7.9 x 10^28, en promedio. Nunca se ha publicado un par así, y encontrar uno es un problema de 2^80 que Espacio de claves ya cubre. Segunda: la palabra del título cuenta direcciones. Un quindecillón es 10^48 en la escala que usan el inglés estadounidense y el británico moderno, y 2^160 es 1.46 x 10^48, así que los cajones suman alrededor de un quindecillón y medio. El título nombra el espacio de direcciones; el espacio de claves es 29 órdenes de magnitud más grande. Nosotros contamos direcciones, porque una dirección es el cajón donde están las monedas de un desconocido.
+
+Un aparte antes de los cajones. Dos tipos de salida más nuevos no encajan para nada en la historia de los 160 bits. Una dirección [P2WSH](/es/glosario/p2wsh) se compromete con un hash de 256 bits de un script, y una dirección [Taproot](/es/glosario/taproot), las que empiezan con `bc1p`, se compromete con una clave pública de 256 bits sin ningún hash delante. Una búsqueda de claves que pasa por un hash de 160 bits no puede llegar a ninguna de las dos, y el capítulo las cuenta por separado más abajo. [Cómo funciona Taproot en realidad (en inglés)](/rabbit-hole/how-taproot-works) tiene el mecanismo.
+
+## Una pared de cajones
+
+Esta es la imagen de D'Angelo, con nuestras palabras. Cada dirección es un cajón. Los cajones no están en un edificio, porque ningún edificio alberga 10^48 de nada; están en una pared, y la pared es a su vez un cajón de una pared más grande, y así veinticuatro veces. La animación se aleja un factor de cien en cada paso y dice qué significa cada escala para ti.
+
+<figure>
+  <video
+    src="/videos/quindecillions-drawers.mp4"
+    poster="/videos/posters/quindecillions-drawers.png"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls
+    controlslist="nodownload noplaybackrate noremoteplayback"
+    preload="metadata"
+    aria-label="Animación de veintiocho segundos. Tarjeta de título: Cada dirección es un cajón, una recreación con crédito de la lección de pizarrón de James D'Angelo de 2014. Un cajón llena el cuadro, rotulado un cajón, una dirección de Bitcoin. La vista se aleja sin detenerse: el cajón se vuelve una celda de una pared de cien cajones, esa pared se vuelve un cajón de la pared siguiente, y así a lo largo de veinticuatro paredes, mientras un contador en la esquina sube de 10 a la 0 a 10 a la 48 con el nombre en escala corta de cada número al lado. Las leyendas pasan a medida que sube el contador. En 10 a la 12: nuestras dos búsquedas de direcciones personalizadas abrieron 1.4 billones de cajones entre las dos. En 10 a la 18: granos de arena en la Tierra, unos 7.5 x 10^18. En 10 a la 22: todas las búsquedas públicas por fuerza bruta jamás corridas, sumadas a lo largo de una década, unos 10^21 cajones. En 10 a la 24: elige 1.4 x 10^24 cajones al azar antes de que sea probable que dos sean el mismo. En 10 a la 40: cajones abiertos, en promedio, antes de que uno tenga monedas, 2.6 x 10^40. En 10 a la 48: 2 a la 160 direcciones de Bitcoin, 1.46 x 10^48, un quindecillón y medio. El zoom se frena hasta detenerse en la última pared. Tarjeta final: Un quindecillón y medio de cajones. 2 a la 160 direcciones de Bitcoin. Todas las búsquedas públicas juntas han abierto unos 10^21 de ellos."
+  ></video>
+  <figcaption>Veintiocho segundos, un factor de cien por paso. Las leyendas son los números reales de este capítulo: nuestras búsquedas, la arena, todas las búsquedas públicas sumadas, la cota del cumpleaños y la distancia promedio entre cajones con fondos. El recuento de direcciones con fondos detrás de la línea de 2.6 x 10^40 es la instantánea de ChainQuery del 18 de octubre de 2026; la instantánea del 25 de octubre da la misma cifra a dos dígitos.</figcaption>
+</figure>
+
+Dos de esas leyendas necesitan que se muestre el cálculo.
+
+La primera es la cota del cumpleaños. Si la gente saca cajones al azar de una pared de 2^160, ¿cuántas extracciones hacen falta antes de que sea probable que dos caigan en el mismo cajón? La respuesta para cualquier pared de N cajones es aproximadamente 1.18 veces la raíz cuadrada de N, y para N = 2^160 eso da 1.42 x 10^24 extracciones. Cada dirección que alguien haya creado alguna vez es una extracción de esta pared. Nadie publica un recuento de cuántas direcciones han existido; toma dos mil millones redondos como una estimación por lo alto, y la probabilidad de que dos cualesquiera de esos dos mil millones coincidan sale en alrededor de 1 entre 7 x 10^29. Por eso nunca se ha publicado una colisión así, y por eso ninguna billetera se molesta en comprobarlo.
+
+La segunda es la cifra por clave. ChainQuery recorre todo el conjunto de monedas sin gastar cada domingo y las agrupa por dirección. En su instantánea del 25 de octubre de 2026, bloque 973,026, 57,213,806 direcciones tenían al menos una salida sin gastar. Divide la pared por ese recuento y obtienes el número promedio de cajones que una clave al azar tendría que abrir antes de que uno tuviera algo dentro: 2^160 / 57,213,806, que es 2.55 x 10^40. Las probabilidades para una sola clave son el recíproco, 1 entre 2.55 x 10^40, y son una cota superior, porque 5,098,744 de esas direcciones con fondos son Taproot y hasta 2,837,579 más son P2WSH, cajones que una búsqueda de 160 bits no puede abrir en absoluto. El conjunto que sí puede alcanzar es de unos 49 a 52 millones, y el exponente no se mueve. Un número más de la misma instantánea: el 31.7 por ciento de las direcciones con fondos tiene menos de 0.0001 BTC, así que una búsqueda que sí cayera en una encontraría, una de cada tres veces, menos de diez dólares, y la mayoría de las veces menos de cien.
+
+## El pirata
+
+Ahora dale los cajones a un pirata que los abre uno por uno, tan rápido como nuestra laptop generaba claves: hasta 74 millones por segundo.
+
+<figure>
+  <video
+    src="/videos/quindecillions-pirate.mp4"
+    poster="/videos/posters/quindecillions-pirate.png"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls
+    controlslist="nodownload noplaybackrate noremoteplayback"
+    preload="metadata"
+    aria-label="Animación de veintitrés segundos. Tarjeta de título: El pirata, una recreación con crédito de la lección de pizarrón de James D'Angelo de 2014. A la izquierda, un banco de veinticuatro cajones se abre y se cierra a destellos. A la derecha, cuatro lecturas: cajones abiertos, tiempo frente a los cajones, cajones con fondos encontrados y probabilidad hasta ahora, con una barra debajo rotulada edad del universo, 13,800 millones de años. Durante tres segundos el reloj corre en tiempo real a 74 millones de cajones por segundo bajo la leyenda Un pirata, una laptop: 74 millones de cajones por segundo; el contador llega a 222 millones y cajones con fondos encontrados se queda en cero. Leyenda: Déjalo seguir. El reloj se acelera y la barra se llena: 13,820 millones de años, 3.23 x 10^25 cajones abiertos, encontrados cero, probabilidad hasta ahora 0.000000000000 por ciento. Leyenda: La edad del universo. Nada encontrado. Leyenda: Mil millones de vidas del universo. Todavía nada. La barra se desborda y un multiplicador cuenta hasta mil millones de vidas del universo; la lectura de tiempo llega a 1.38 x 10^19 años, encontrados se queda en cero, y la lectura de probabilidad por fin se mueve, a 0.000126 por ciento. Una franja de fuentes debajo de las lecturas acredita la CPU de nuestra laptop (74 millones de claves por segundo), el recuento de direcciones con fondos de ChainQuery y a ESA Planck por la edad del universo. Tarjeta final: Mil millones de universos para una probabilidad de 0.0001 por ciento. 2 a la 160 cajones, 57 millones con monedas. Adivinar no es una estrategia."
+  ></video>
+  <figcaption>Veintitrés segundos a la velocidad de nuestra laptop. Después de una edad del universo el pirata ha abierto 3.2 x 10^25 cajones y su número esperado de hallazgos es 1.3 x 10^-15. Después de mil millones de vidas del universo su probabilidad de haber encontrado un cajón con fondos llega al 0.0001 por ciento, alrededor de uno entre 790,000. Los 57 millones de su tarjeta final son el recuento de ChainQuery del 18 de octubre de 2026; el recuento del 25 de octubre es 57,213,806 y no cambia nada en pantalla.</figcaption>
+</figure>
+
+La laptop solitaria del pirata necesita unos 1.09 x 10^25 años para esperar un acierto con fondos. El universo tiene 13,820 millones de años, así que eso son más o menos 790 billones de edades del universo. Tres buscadores más grandes:
+
+- Dale a cada una de las 8,200 millones de personas de la Tierra la misma laptop y ponlas a correr todas a la vez: unos 1.3 x 10^15 años, que son 96,500 edades del universo.
+- Toma toda la red de minería de Bitcoin, unos 1.09 x 10^21 hashes por segundo el 28 de octubre de 2026, y finge que cada hash fuera una comprobación de clave: unos 7.4 x 10^11 años, 54 edades del universo. Un hash de minería es SHA-256 dos veces sobre un encabezado de bloque de 80 bytes; una comprobación de clave es una multiplicación en la curva seguida de dos hashes, y el hardware de minería no puede hacerla. La fila es una cota superior de velocidad por un margen amplio.
+- Espacio de claves imagina diez mil millones de computadoras comprobando un billón de claves por segundo cada una durante mil millones de años, unas 2^128 claves en total, y le da a esa flota unas pocas posibilidades entre diez mil millones de dar con una dirección en particular. Pon la misma flota contra todas las direcciones con fondos a la vez y su probabilidad después de mil millones de años es de alrededor del 1.2 por ciento.
+
+Y eso nos devuelve a nuestras dos búsquedas. La probabilidad de que cualquiera de las 1.44 billones de direcciones que generamos tuviera monedas era como mucho de 5.6 x 10^-29, o alrededor de una entre 1.8 x 10^28. Un cuerpo humano adulto tiene unos 7 x 10^27 átomos. Así que las probabilidades eran las mismas que nombrar un átomo de antemano y después sacarlo, a ciegas, de entre todos los átomos de dos personas y media. Por eso la respuesta a "¿cuántas billeteras encontraron?" es cero.
+
+## De dónde salen las historias de "encontré una billetera"
+
+Son reales, y cada una de las que pudimos encontrar es una de dos fallas. Ninguna de las dos es una búsqueda del espacio de direcciones.
+
+**El humano eligió la clave.** Una brain wallet (billetera cerebral), en su forma original, es una frase que se pasa una vez por SHA-256 y se usa como clave privada. La Bitcoin Wiki archiva el esquema bajo "Obsolete brainwallet style" (estilo de brainwallet obsoleto), con la línea "Humans are not a reliable source of entropy" (los humanos no son una fuente confiable de entropía). El atacante no busca entre 2^256 claves; busca entre las frases que la gente elige: diccionarios, letras de canciones, citas, listas de contraseñas filtradas, con las reglas habituales de mayúsculas y puntuación aplicadas, y comprueba cada candidata contra todas las direcciones con fondos a la vez.
+
+Ryan Castellucci mostró cómo en DEF CON 23, el 7 de agosto de 2015, donde liberó un cracker llamado Brainflayer. Probaba cada frase candidata contra un [filtro de consulta (en inglés)](/glossary/bloom-filter) construido con todas las direcciones que alguna vez habían recibido monedas, así que un solo intento se comprobaba contra todo el conjunto con fondos en un solo paso, y sus diapositivas suman los saldos máximos de todo lo que había crackeado en "733 BTC", nada de lo cual se quedó. En el paper que siguió, Vasek, Bonneau, Castellucci, Keith y Moore probaron unos 300,000 millones de contraseñas candidatas contra toda la cadena hasta agosto de 2015 y encontraron 884 brain wallets. Entre todas habían recibido 1,806 BTC, y la mitad se drenaron en los 21 minutos siguientes a recibir fondos. Nuestras dos corridas de direcciones personalizadas probaron 1.44 billones de claves, cinco veces más, y la aritmética dice que no encontraron nada. Los 300,000 millones se sacaron del conjunto de frases que la gente elige; nuestros 1.44 billones se sacaron de 2^256.
+
+Los depósitos nuevos en brain wallets son raros y no han parado. La actualización de enero de 2026 del grupo de investigación Milk Sad cuenta 20,397 direcciones de brain wallet con una sola ronda de SHA-256 encontradas en total y registra un depósito de 5.26 BTC barrido en febrero de 2025, "very plausibly" (muy plausiblemente) en cuestión de segundos. La diapositiva de Castellucci de 2015 describía el mercado al que estaba entrando: "Every 5 character password I try gets swiped in seconds" (cada contraseña de 5 caracteres que pruebo se la llevan en segundos). El barrido de febrero de 2025 muestra el mismo mercado diez años después.
+
+**La aleatoriedad del software estaba rota.** La otra familia de historias es la de billeteras que pidieron 128 o 256 bits de aleatoriedad y recibieron muchos menos. El atacante entonces enumera el espacio pequeño que creó el error, exactamente como Brainflayer enumera frases.
+
+| Caso | Cuándo | Qué salió mal | Qué quedaba por buscar | Qué se llevaron |
+|---|---|---|---|---|
+| Billeteras de Android ([alerta de bitcoin.org](https://bitcoin.org/en/alert/2013-08-11-android)) | Agosto de 2013 | El generador de números aleatorios de la plataforma no se sembraba bien; el mismo nonce de firma se reutilizaba entre transacciones | Ninguna búsqueda: dos firmas con el mismo [nonce](/es/glosario/reutilizacion-de-nonce) entregan la clave privada en una sola ecuación | Un mensaje de foro del 10 de agosto de 2013 contaba 55.82 BTC en una dirección recolectora "so far" (hasta ahora); no existe un total en una fuente primaria |
+| Extensión de navegador de Trust Wallet (CVE-2023-31290) | Error en noviembre de 2022, explotaciones en diciembre de 2022 y marzo de 2023 | Un generador de números aleatorios de propósito general (Mersenne Twister) sembrado con 32 bits | Unos 4,000 millones de frases semilla posibles | Unos 170,000 dólares en dos explotaciones, según el informe posterior del proveedor |
+| Libbitcoin Explorer, "Milk Sad" (CVE-2023-39910) | Código de 2017, barridos de mayo a julio de 2023 | Mersenne Twister sembrado con 32 bits de la hora del sistema | 2^32 semillas, todas comprobables por una computadora para videojuegos en menos de un día | Unos 29.65 BTC en un solo barrido el 12 de julio de 2023, más de 2,600 billeteras afectadas |
+| Randstorm (billeteras de navegador, de 2011 a 2015) | Revelado en noviembre de 2023 | Aleatoriedad débil del navegador en código de billeteras de la era BitcoinJS | El propio modelo de exposición de Unciphered: unos 1.4 millones de BTC en billeteras potencialmente débiles | Solo una estimación; no se le atribuye ningún robo confirmado |
+| COLDCARD Mk2 y Mk3 | Firmware desde marzo de 2021, robos del 29 al 30 de julio de 2026 | Una opción de compilación desvió la generación de la semilla a un generador por software en lugar del de hardware | Unos 40 bits de aleatoriedad (entropía) en vez de 128 | "Estimated losses exceed 1,000 BTC" (las pérdidas estimadas superan los 1,000 BTC) (Optech); las claves se regeneraron fuera de línea, los dispositivos nunca se tocaron |
+
+En cada fila el atacante buscó en un espacio pequeño que había creado un humano o un error. En Ethereum, un estudio de 2019 encontró 732 claves privadas en uso que estaban en rincones de 32 bits del espacio de claves de esa cadena, puestas ahí por código defectuoso. Los sitios web que dicen listar todas las claves privadas de Bitcoin son otra vez la misma aritmética: una página es una lista corta de claves calculadas a partir de su número de página, con una consulta de saldo adjunta, así que abrir una es hacer un puñado de extracciones al azar de 2^256. "Revisé una página del directorio y estaba vacía" es el único resultado que las probabilidades permiten, y una clave con fondos en una página así es una clave débil, elegida por un humano o producida por un generador roto.
+
+Lo que esto significa para ti está en [Estrategias de respaldo de la frase semilla (en inglés)](/rabbit-hole/seed-backup-strategies) y en la entrada [frase semilla](/es/glosario/frase-semilla): doce palabras llevan 128 bits de aleatoriedad y 24 llevan 256, cuando las genera la billetera. La entrada [bits de entropía](/es/glosario/bits-de-entropia) tiene los recuentos.
+
+## Lo que la fuerza bruta ha alcanzado de verdad
+
+Las brain wallets y los generadores rotos son fallas de la clave. El registro público de lo que la fuerza bruta simple alcanza contra claves aleatorias bien hechas es más delgado. Existen dos instrumentos.
+
+El 15 de enero de 2015 alguien envió 32.896 BTC a 256 direcciones en una sola transacción, 0.001 BTC por k a la dirección número k, donde la clave privada número k se había elegido de un rango de k bits. El acertijo 1 tiene una clave de un bit, el acertijo 66 una clave entre 2^65 y 2^66, y así sucesivamente. El único mensaje conocido del creador, del 27 de abril de 2017, lo llamó "simply a crude measuring instrument, of the cracking strength of the community" (simplemente un instrumento de medición tosco, de la capacidad de cracking de la comunidad); después el creador multiplicó por diez cada premio sin resolver ese julio y otra vez por diez en abril de 2023, así que desde abril de 2023 un acertijo k sin resolver guarda 0.1 x k BTC. Los rangos son minúsculos para los estándares de este capítulo, y ese es el punto: hacen que una búsqueda que nunca terminaría en 2^160 termine en meses, y las fechas de resolución son la medición.
+
+En ese tablero conviven dos problemas distintos. Mientras la clave pública de un acertijo es desconocida, el único ataque es el de la sección anterior: elegir una clave en el rango, derivar la dirección, comparar. El 1 de junio de 2019 el creador gastó una cantidad minúscula de los acertijos 65, 70, 75 y de cada quinto acertijo hasta el 160, y un gasto desde una dirección legacy (una que empieza con 1) pone la clave pública en la cadena. Desde ese bloque esos veinte acertijos se volvieron otro problema, ir hacia atrás desde una clave pública conocida hasta su clave privada dentro de un rango conocido, que el método del canguro de Pollard hace en aproximadamente la raíz cuadrada del ancho del rango, sin ningún hash. Por eso el acertijo 105 cayó en 2019 mientras el 64 esperó hasta 2022, y por eso el acertijo 135 cayó el 28 de julio de 2026 mientras el 71 seguía abierto el 28 de octubre de 2026. Un titular de "acertijo 135 resuelto" informa un resultado del canguro sobre una clave pública conocida. [Úsala una sola vez](/es/a-fondo/reutilizacion-de-direcciones) y la entrada [exposición de la clave pública](/es/glosario/exposicion-de-la-clave-publica) tratan el mismo hecho desde el lado del usuario.
+
+El récord de fuerza bruta es el acertijo 69. Su clave estaba en un rango de 2^68 claves, unas 2.95 x 10^20, y los 6.9 BTC salieron de la dirección el 30 de abril de 2025, en el bloque 894,620. El acertijo 66 cayó en septiembre de 2024, el 67 en febrero de 2025 y el 68 en abril de 2025. Según el relato publicado en el hilo del foro del acertijo el 13 de septiembre de 2024, quien resolvió el acertijo 66 transmitió un gasto, lo que puso la clave pública en el [mempool](/es/glosario/mempool) de todos los nodos, y 45 segundos después un bot con un solucionador de canguro había recuperado la clave de 66 bits a partir de ella y había reemplazado la transacción por un gasto que pagaba 78 veces la tasa de comisión a otra dirección. La cadena solo muestra al ganador: la transacción minada fue a la dirección del bot. Al 28 de octubre de 2026, 83 de los 160 acertijos están resueltos, el 71 es el más bajo abierto, con 7.1 BTC, y 903 BTC siguen sin reclamar en el resto.
+
+El otro instrumento es el Large Bitcoin Collider, un pool que abrió en agosto de 2016 para enumerar claves privadas desde 1 hacia arriba, dos direcciones por clave, contra un filtro de todas las direcciones con fondos. Sus páginas de estadísticas archivadas muestran un máximo de 2,771 millones de claves por segundo en diciembre de 2017, y seguía corriendo el 28 de octubre de 2026, cuando su página de estadísticas marcaba 55.87 de 160 bits cubiertos: unas 6.6 x 10^16 claves en diez años. Su página de trofeos lista lo que todo eso encontró: las claves de los acertijos 43 a 54, y tres direcciones de [polvo (dust)](/es/glosario/polvo) con unos 0.008 BTC entre las tres cuyas claves privadas eran números por debajo de 2^51, al parecer depositadas como pruebas. La última entrada tiene fecha del 15 de noviembre de 2017.
+
+| Búsqueda | Años | Claves cubiertas | Fracción del espacio de direcciones de 2^160 | Qué encontró |
+|---|---|---|---|---|
+| El acertijo, parte de fuerza bruta (acertijos 1 a 69) | De 2015 a 2025 | Como mucho 2^69, unas 5.9 x 10^20 (los rangos despejados sumados; el rango individual más grande, el acertijo 69, es 2^68) | 1 parte en 2^91 | Las 69 claves que el creador puso ahí |
+| El acertijo, parte con clave pública conocida (65, 70, ..., 135) | De 2019 a 2026 | No es una búsqueda de claves: unas 2^68 operaciones en la curva para el acertijo 135 | n/a | 15 claves que el creador puso ahí y cuyas claves públicas expuso |
+| Large Bitcoin Collider | De 2016 a 2026 | 2^55.9, unas 6.6 x 10^16 | 1 parte en 2^104 | Las claves de los acertijos 43 a 54; tres direcciones de polvo con claves por debajo de 2^51 |
+| Nuestras dos búsquedas de direcciones personalizadas | 2026 | 2^40.4, unas 1.44 x 10^12 | 1 parte en 2^120 | Dos direcciones que coinciden con ocho caracteres elegidos |
+| Todo lo anterior junto | De 2015 a 2026 | Como mucho unas 2^69, del orden de 10^21 | Alrededor de 1 parte en 2^91 | Solo claves puestas a propósito en rangos pequeños |
+
+Sumadas a lo largo de once años, las búsquedas públicas más grandes de claves de Bitcoin han cubierto como mucho unas 2^69 claves. Eso es una parte en 2^91 del espacio de direcciones, y una parte en 2^187 del espacio de claves. La flota imaginaria de Espacio de claves llega a 2^128; el récord real está cincuenta y nueve duplicaciones por debajo del imaginario y noventa y una por debajo del espacio de direcciones.
+
+## Sin registro
+
+Los números de teléfono, los nombres de dominio, los números de cuenta bancaria y las placas de los autos necesitan un registro, porque sus espacios son tan pequeños que, si no, dos personas elegirían el mismo. Alguien tiene que repartirlos y llevar la lista. El espacio de Bitcoin es tan grande que nadie tiene que pedir.
+
+Supón que cada una de las 8,200 millones de personas de la Tierra generara una clave por segundo, sin coordinación y sin ninguna lista en ningún lado, durante cien años. Son 2.59 x 10^19 claves. La probabilidad de que dos cualesquiera de esas claves privadas sean iguales es de 2.9 x 10^-39. La probabilidad de que dos cualesquiera de las direcciones resultantes coincidan, la cifra de 160 bits, es de alrededor de 1 entre 4,400 millones. La probabilidad de que alguna de ellas abra una dirección que tuviera monedas en el recuento del 25 de octubre de 2026 es de alrededor de 1 entre 10^21; el experimento de un siglo tendría que repetirse 10^21 veces para esperar un solo acierto así.
+
+Esa es toda la razón por la que una clave creada en una laptop con el cable de red desconectado vale lo mismo que una clave creada en cualquier otro lugar. No hay emisor ni paso de permiso, porque no hay nada contra lo que un registro protegería. Nuestro capítulo [Descentralización (en inglés)](/rabbit-hole/decentralization) trata de lo que eso compra.
+
+> **Consejo pro:** Deja que la billetera genere la aleatoriedad. Nunca derives una clave de una frase que elegiste, de la letra de una canción o de una oración de un libro: las más comunes ya se han probado todas contra todas las direcciones con fondos, y los que drenan corren bots. Si una herramienta te ofrece una casilla para escribir tu propia entropía, déjala vacía.
+
+## Qué ganamos con esto
+
+- **Sabes qué deja atrás una búsqueda en su camino hacia una coincidencia.** Nuestras dos corridas generaron 1.44 billones de direcciones, y la probabilidad de que alguna tuviera monedas era como mucho de 5.6 x 10^-29.
+- **Sabes de dónde salen las historias reales.** En cada caso documentado la clave la eligió un humano o la debilitó un error, y el atacante enumeró un espacio pequeño.
+- **Sabes lo que la fuerza bruta ha alcanzado de verdad.** Como mucho unas 2^69 claves en once años de esfuerzo público, una parte en 2^91 del espacio de direcciones, y solo claves puestas en rangos pequeños.
+- **Sabes por qué no hay registro.** Hacen falta 1.42 x 10^24 direcciones al azar antes de que sea probable que dos coincidan, y toda la gente de la Tierra generando una clave por segundo durante un siglo tiene alrededor de una posibilidad entre 4,400 millones de producir dos direcciones iguales. Una clave creada sin conexión vale lo mismo que cualquier otra, y no hay ninguna lista que hackear ni que citar judicialmente.
+- **Sabes la frontera honesta.** Nada de esto protege una clave que un humano eligió o que un error debilitó, y nada de esto trata del único ataque que se salta las adivinanzas por completo; ese vive en [Computación cuántica y Bitcoin](/es/a-fondo/computacion-cuantica-y-bitcoin).
+
+Deja que la billetera tire los dados.
