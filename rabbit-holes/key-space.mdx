@@ -4,7 +4,7 @@ slug: key-space
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-10-09"
+updated: "2026-10-29"
 section: rabbit-hole
 category: how-it-works
 tagline: "2^256 possible private keys. Trying them all would keep every computer on Earth busy for far longer than the universe has existed."
@@ -97,6 +97,8 @@ One detail works in the attacker's favor. Addresses starting with 1 or 3 and sta
 The math doesn't care how fast your hardware gets. Doubling your computing power doubles the number of keys you can check, which moves you exactly one bit further. The imaginary fleet reached about 2^128. To cover all 2^256 keys it would have to double about 128 more times. That is not a war you can win by buying more GPUs.
 
 All of that assumes blind guessing. If your public key is already on chain, a smarter attack needs only about 2^128 steps, and the next section explains why that is still out of reach.
+
+The address-space version of this question, whether a random key can land on an address that already holds coins and what a vanity search passes on the way, has its own chapter: [Quindecillions](/rabbit-hole/quindecillions).
 
 ## So Why 256 Bits?
 
