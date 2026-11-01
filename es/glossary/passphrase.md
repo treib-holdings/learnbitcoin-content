@@ -20,8 +20,8 @@ relatedTerms:
   - seed-phrase
 liveWidget: ~
 translationOf: mnemonic-password
-sourceHash: "e19d28dada0d"
-sourceCommit: "b8304cf"
+sourceHash: "9ac9489d9f62"
+sourceCommit: "9838a39"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"

@@ -2,8 +2,8 @@
 title: "Usar Bitcoin"
 slug: usar-bitcoin
 translationOf: using-bitcoin
-sourceHash: "436eede24802"
-sourceCommit: "d5353d2"
+sourceHash: "c6d62e1b5bf0"
+sourceCommit: "9838a39"
 sourceUpdated: "2026-10-09"
 translation:
   method: "llm-draft"

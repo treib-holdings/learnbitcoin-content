@@ -2,8 +2,8 @@
 title: "Por qué el dinero está roto"
 slug: por-que-el-dinero-esta-roto
 translationOf: why-money-is-broken
-sourceHash: "2dde5f9ae0b0"
-sourceCommit: "d5353d2"
+sourceHash: "69d43c32583c"
+sourceCommit: "9838a39"
 sourceUpdated: "2026-10-09"
 translation:
   method: "llm-draft"

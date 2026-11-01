@@ -20,8 +20,8 @@ relatedTerms:
   - seed-phrase
 liveWidget: ~
 translationOf: shamir-secret-sharing
-sourceHash: "0348808a99eb"
-sourceCommit: "b8304cf"
+sourceHash: "40ab1b9a448c"
+sourceCommit: "9838a39"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"

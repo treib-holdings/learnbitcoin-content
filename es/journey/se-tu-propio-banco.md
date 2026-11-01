@@ -2,8 +2,8 @@
 title: "Sé tu propio banco"
 slug: se-tu-propio-banco
 translationOf: be-your-own-bank
-sourceHash: "db7541f5ddfe"
-sourceCommit: "d5353d2"
+sourceHash: "1c879b2aa3e8"
+sourceCommit: "9838a39"
 sourceUpdated: "2026-10-09"
 translation:
   method: "llm-draft"

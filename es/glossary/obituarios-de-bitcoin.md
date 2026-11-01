@@ -40,8 +40,8 @@ sameAs:
   - "https://99bitcoins.com/bitcoin-obituaries/"
 liveWidget: ~
 translationOf: bitcoin-obituaries
-sourceHash: "5f948a4262e5"
-sourceCommit: "ceb6634"
+sourceHash: "6c34b3f026d9"
+sourceCommit: "9838a39"
 sourceUpdated: "2026-10-12"
 translation:
   method: "llm-draft"

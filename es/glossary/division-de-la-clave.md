@@ -37,8 +37,8 @@ relatedTerms:
   - shamir-secret-sharing
 liveWidget: ~
 translationOf: key-split
-sourceHash: "fb2a8b93d9f3"
-sourceCommit: "c52bac9"
+sourceHash: "8fa56dfae017"
+sourceCommit: "9838a39"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"

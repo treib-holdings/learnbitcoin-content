@@ -38,8 +38,8 @@ aliases:
   - "VersionBits"
   - "bits de versión"
 translationOf: bip-9-versionbits
-sourceHash: "6f0e21cafde7"
-sourceCommit: "659e6f9"
+sourceHash: "6e5e97e37b07"
+sourceCommit: "9838a39"
 sourceUpdated: "2026-10-10"
 translation:
   method: "llm-draft"
