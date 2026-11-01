@@ -12,10 +12,10 @@ keyTakeaways:
   - "Shipping software as of September 2026: Electrum plugin 0.4.1, Android app 0.2.0, an Umbrel app added in July 2026, a headless daemon and CLI, a fork of Sparrow Wallet, and a Rust library with no tagged release"
   - "Ring signatures against denial of service arrived in June 2026 and optional sybil resistance in July 2026; pools that do not opt in have none, and there is no public count of completed rounds"
 sources:
-  - { label: "bitcoin-dev mailing list - joinstr announcement (2022, LearnBitcoin's archive)", url: "https://www.learnbitcoin.com/archive/m/7gXWd6OVJjiW7aCeon8q-xlWfCMJkIEVCaeokjSVI16OvQPkPmEsSeGY0cGu4yVveimNUYsyG18Ro7JgUutfqXv5wKMMgJZD2c8ftAMFcbQ%3D%40protonmail.com" }
+  - { label: "bitcoin-dev mailing list - joinstr announcement (2022, LearnBitcoin's archive)", url: "https://www.learnbitcoin.com/archive/t/2022/joinstr-coinjoin-implementation-using-nostr#m-bb2a9437" }
   - { label: "Bitcoin Optech Newsletter #214 (2022)", url: "https://bitcoinops.org/en/newsletters/2022/08/24/" }
   - { label: "Bitcoin Optech Newsletter #308 - Electrum plugin (2024)", url: "https://bitcoinops.org/en/newsletters/2024/06/21/" }
-  - { label: "Joinstr documentation - FAQ", url: "https://docs.joinstr.xyz/users/faqs" }
+  - { label: "Joinstr documentation - FAQ", url: "https://docs.joinstr.xyz/faq/" }
   - { label: "Joinstr protocol document (Nostr kind 2022, DoS and sybil mitigations)", url: "https://gitlab.com/invincible-privacy/joinstr/-/blob/main/NIP.md" }
   - { label: "Joinstr source repository (plugin, daemon, CLI, web UI)", url: "https://gitlab.com/invincible-privacy/joinstr" }
   - { label: "Umbrel app store - Joinstr", url: "https://apps.umbrel.com/app/joinstr" }

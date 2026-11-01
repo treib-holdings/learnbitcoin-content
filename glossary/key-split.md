@@ -12,7 +12,7 @@ sources:
   - { label: "Adi Shamir - How to Share a Secret, Communications of the ACM 22(11) (1979)", url: "https://web.mit.edu/6.857/OldStuff/Fall03/ref/Shamir-HowToShareASecret.pdf" }
   - { label: "SatoshiLabs - SLIP-0039: Shamir's Secret-Sharing for Mnemonic Codes (2017, Final)", url: "https://github.com/satoshilabs/slips/blob/master/slip-0039.md" }
   - { label: "BIP 39 - Mnemonic code for generating deterministic keys, Related Work (2013)", url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" }
-  - { label: "Trezor - What is Shamir backup? (accessed 2026-10-13)", url: "https://trezor.io/learn/a/what-is-shamir-backup" }
+  - { label: "Trezor - What is Shamir backup? (accessed 2026-10-13)", url: "https://trezor.io/learn/advanced/standards-proposals/what-is-shamir-backup" }
   - { label: "Jameson Lopp, Casa - Shamir's Secret Sharing shortcomings (2019-10-17)", url: "https://blog.casa.io/shamirs-secret-sharing-security-shortcomings/" }
   - { label: "Bitcoin Optech - Threshold signature topic (accessed 2026-10-13)", url: "https://bitcoinops.org/en/topics/threshold-signature/" }
 relatedTerms:

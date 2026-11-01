@@ -22,7 +22,7 @@ sources:
   - { label: "FRED - M2 Money Stock (St. Louis Fed)", url: "https://fred.stlouisfed.org/series/M2SL" }
   - { label: "BLS CPI Inflation Calculator", url: "https://www.bls.gov/data/inflation_calculator.htm" }
   - { label: "Federal Reserve - why the Fed aims for 2 percent inflation over the longer run", url: "https://www.federalreserve.gov/faqs/economy_14400.htm" }
-  - { label: "University of Warwick - Research team sheds light on Roman financial crisis (April 2022): the denarius was deliberately alloyed with copper by 87 BC", url: "https://warwick.ac.uk/newsandevents/pressreleases/research_team_sheds/" }
+  - { label: "University of Warwick - Research team sheds light on Roman financial crisis (April 2022): the denarius was deliberately alloyed with copper by 87 BC", url: "https://warwick.ac.uk/news/pressreleases/research_team_sheds/" }
   - { label: "Michael D. Bordo - Gold Standard, Concise Encyclopedia of Economics (2008): US inflation averaged 0.1 percent a year from 1880 to 1914", url: "https://www.econlib.org/library/Enc/GoldStandard.html" }
   - { label: "Federal Reserve History - Creation of the Bretton Woods System (November 2013)", url: "https://www.federalreservehistory.org/essays/bretton-woods-created" }
   - { label: "Federal Reserve History - Nixon Ends Convertibility of U.S. Dollars to Gold and Announces Wage/Price Controls (November 2013): early in the Bretton Woods era the US held about three-quarters of the world's official gold reserves", url: "https://www.federalreservehistory.org/essays/gold-convertibility-ends" }

@@ -22,9 +22,9 @@ sources:
   - { label: "BIP 84 - derivation scheme for native SegWit (P2WPKH) wallets", url: "https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki" }
   - { label: "BIP 86 - derivation scheme for single-key Taproot (P2TR) wallets", url: "https://github.com/bitcoin/bips/blob/master/bip-0086.mediawiki" }
   - { label: "Trezor Safe 5 FAQ - Bitcoin-only firmware, secure element, 20-word SLIP-39 backup as the default, 12 or 24 words as a legacy option", url: "https://trezor.io/guides/trezor-devices/trezor-safe-5/trezor-safe-5-faqs" }
-  - { label: "Trezor firmware changelog - first releases for Model One (2014), Model T (2018), Safe 3 (2023), Safe 5 (2024)", url: "https://trezor.io/learn/a/firmware-changelog" }
+  - { label: "Trezor firmware changelog - first releases for Model One (2014), Model T (2018), Safe 3 (2023), Safe 5 (2024)", url: "https://trezor.io/other/product-updates/trezor-firmware-changelog-all-versions-and-release-dates" }
   - { label: "BlueWallet - a Bitcoin-only, free and open-source wallet", url: "https://bluewallet.io/" }
-  - { label: "Keystone - Keystone 3 Pro product page (4-inch touchscreen, fingerprint authentication)", url: "https://keyst.one/shop/products/keystone-3-pro" }
+  - { label: "Keystone - official site (Keystone 3 Pro: 4-inch touchscreen, fingerprint authentication)", url: "https://keyst.one/" }
   - { label: "Keystone 3 Pro firmware 1.7.4 release notes (October 2024) - BTC signing over a USB connection", url: "https://github.com/KeystoneHQ/keystone3-firmware/releases/tag/1.7.4" }
   - { label: "Keystone 3 Pro firmware 2.0.8 release notes (April 2025) - separate BTC Only firmware", url: "https://github.com/KeystoneHQ/keystone3-firmware/releases/tag/2.0.8" }
   - { label: "Blockstream - Jade is open source, for Bitcoin and Liquid, with a virtual secure element", url: "https://blockstream.com/jade/" }

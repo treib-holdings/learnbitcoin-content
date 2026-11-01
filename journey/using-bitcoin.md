@@ -19,7 +19,7 @@ sources:
   - { label: "Bitcoin developer guide - transactions", url: "https://developer.bitcoin.org/devguide/transactions.html" }
   - { label: "BIP 125 - Opt-in Full Replace-by-Fee Signaling", url: "https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki" }
   - { label: "Lightning Network whitepaper (Poon & Dryja, 2016)", url: "https://lightning.network/lightning-network-paper.pdf" }
-  - { label: "ChainQuery - fee pressure dashboard", url: "https://chainquery.com/fee-pressure" }
+  - { label: "ChainQuery - fee pressure dashboard", url: "https://chainquery.com/reports/fee-pressure" }
   - { label: "BIP 141 - Segregated Witness (virtual size is transaction weight divided by 4)", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
   - { label: "mempool.space API docs - recommended fees (fastestFee, halfHourFee, hourFee)", url: "https://mempool.space/docs/api/rest#get-recommended-fees" }
   - { label: "Bitcoin Core source - fee estimator tracks how long past transactions took to confirm", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/fees/block_policy_estimator.h" }
@@ -124,7 +124,7 @@ In the hours before block 840,000 on April 20, 2024, the median fee rate in mine
 **Tools that show you the live state:**
 
 - [**mempool.space**](https://mempool.space) - the standard. Live mempool visualization, fee estimates, block timing.
-- [**ChainQuery's fee pressure dashboard**](https://chainquery.com/fee-pressure) - live read on what's clearing right now, served from a real Bitcoin node.
+- [**ChainQuery's fee pressure dashboard**](https://chainquery.com/reports/fee-pressure) - live read on what's clearing right now, served from a real Bitcoin node.
 - Your own node's [`estimatesmartfee`](https://chainquery.com/rpc/estimatesmartfee) - if you run one.
 
 A sensible workflow:

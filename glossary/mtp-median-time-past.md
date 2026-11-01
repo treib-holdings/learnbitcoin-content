@@ -1,5 +1,5 @@
 ---
-title: "MTP (Median Time Past) - How Bitcoin Tracks Network Time"
+title: "MTP (Median Time Past)"
 slug: mtp-median-time-past
 linkText:
   - "MTP (Median Time Past)"

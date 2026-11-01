@@ -19,7 +19,7 @@ sources:
   - { label: "BIP 148 - Mandatory activation of segwit deployment (from August 1, 2017, blocks that do not signal for SegWit are rejected)", url: "https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki" }
   - { label: "BIP 91 - Reduced threshold Segwit MASF (activates the existing SegWit deployment with less than 95% of hash power by rejecting blocks that do not signal for it)", url: "https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki" }
   - { label: "BIP 8 - Version bits with lock-in by height, by Shaolin Fry and Luke Dashjr (assigned February 1, 2017): an alternative to BIP 9 whose deployments can be set to require signaling in their final period", url: "https://github.com/bitcoin/bips/blob/master/bip-0008.mediawiki" }
-  - { label: "Braiins - Anniversary of the BIP148 UASF (August 1, 2020), a retrospective that celebrates it: says the UASF put Bitcoin's future in the hands of users, not miners, and that miners are not paid to decide the rules", url: "https://braiins.com/news/3-year-anniversary-bip148-uasf" }
+  - { label: "Braiins - Anniversary of the BIP148 UASF (August 1, 2020), a retrospective that celebrates it: says the UASF put Bitcoin's future in the hands of users, not miners, and that miners are not paid to decide the rules", url: "https://braiins.com/blog/3-year-anniversary-bip148-uasf" }
 relatedTerms:
   - bip-bitcoin-improvement-proposal
   - bip-91

@@ -1,5 +1,5 @@
 ---
-title: "BIP 65 (OP_CHECKLOCKTIMEVERIFY) - Plain-English Explainer"
+title: "BIP 65 (OP_CHECKLOCKTIMEVERIFY)"
 slug: bip-65-opchecklocktimeverify
 linkText:
   - "BIP 65 (OP_CHECKLOCKTIMEVERIFY)"

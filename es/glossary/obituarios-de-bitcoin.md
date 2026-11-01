@@ -24,7 +24,7 @@ sources:
   - { label: "BIP 91 - Reduced threshold Segwit MASF, by James Hilliard (activates once 269 of 336 blocks, 80%, signal on bit 4; while active, blocks that do not signal for SegWit on bit 1 are rejected; ends when SegWit locks in)", url: "https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki" }
   - { label: "mempool.space - block 477,120 (04:46 UTC, July 23, 2017), first block with BIP 91 active; it and every block after it up to SegWit's lock-in signal bit 1", url: "https://mempool.space/block/0000000000000000015411ca4b35f7b48ecab015b14de5627b647e262ba0ec40" }
   - { label: "Mike Belshe - Segwit2x Final Steps (bitcoin-segwit2x list, November 8, 2017, archived): SegWit had 30% support among miners in May; the organizers say Segwit2x broke the deadlock", url: "https://web.archive.org/web/20171108202305/https://lists.linuxfoundation.org/pipermail/bitcoin-segwit2x/2017-November/000685.html" }
-  - { label: "Braiins - Anniversary of the BIP148 UASF (August 1, 2020), a retrospective that celebrates it: says the pressure from the UASF was enough to force miners to adopt SegWit without SegWit2x", url: "https://braiins.com/news/3-year-anniversary-bip148-uasf" }
+  - { label: "Braiins - Anniversary of the BIP148 UASF (August 1, 2020), a retrospective that celebrates it: says the pressure from the UASF was enough to force miners to adopt SegWit without SegWit2x", url: "https://braiins.com/blog/3-year-anniversary-bip148-uasf" }
 relatedTerms:
   - fud-fear-uncertainty-doubt
   - bear-market

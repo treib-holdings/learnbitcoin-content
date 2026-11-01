@@ -23,7 +23,7 @@ sources:
   - { label: "Bitcoin developer guide - transactions", url: "https://developer.bitcoin.org/devguide/transactions.html" }
   - { label: "BIP 125 - Opt-in Full Replace-by-Fee Signaling", url: "https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki" }
   - { label: "Lightning Network whitepaper (Poon & Dryja, 2016)", url: "https://lightning.network/lightning-network-paper.pdf" }
-  - { label: "ChainQuery - fee pressure dashboard", url: "https://chainquery.com/fee-pressure" }
+  - { label: "ChainQuery - fee pressure dashboard", url: "https://chainquery.com/reports/fee-pressure" }
   - { label: "BIP 141 - Segregated Witness (virtual size is transaction weight divided by 4)", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
   - { label: "mempool.space API docs - recommended fees (fastestFee, halfHourFee, hourFee)", url: "https://mempool.space/docs/api/rest#get-recommended-fees" }
   - { label: "Bitcoin Core source - fee estimator tracks how long past transactions took to confirm", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/fees/block_policy_estimator.h" }
@@ -128,7 +128,7 @@ En las horas previas al bloque 840,000, el 20 de abril de 2024, la tasa de comis
 **Herramientas que te muestran el estado en vivo:**
 
 - [**mempool.space**](https://mempool.space): el estándar. Visualización del mempool en vivo, estimaciones de comisión, tiempos de bloque.
-- [**El tablero de presión de comisiones de ChainQuery**](https://chainquery.com/fee-pressure): lectura en vivo de lo que se está confirmando ahora mismo, servida desde un nodo de Bitcoin real.
+- [**El tablero de presión de comisiones de ChainQuery**](https://chainquery.com/reports/fee-pressure): lectura en vivo de lo que se está confirmando ahora mismo, servida desde un nodo de Bitcoin real.
 - El [`estimatesmartfee`](https://chainquery.com/rpc/estimatesmartfee) de tu propio nodo, si corres uno.
 
 Un flujo de trabajo sensato:

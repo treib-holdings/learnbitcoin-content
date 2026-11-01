@@ -22,7 +22,7 @@ sources:
   - { label: "mempool.space - block 481,824 (01:57 UTC, August 24, 2017), the first block under SegWit rules", url: "https://mempool.space/block/0000000000000000001c8018d9cb3b742ef25114f27563e3fc4a1902167f9893" }
   - { label: "Bitcoin Cash UAHF technical specification (a block size hard fork; default activation 12:20 UTC, August 1, 2017; the fork block must be over 1 MB)", url: "https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/uahf-technical-spec.md" }
   - { label: "BIP 8 - Version bits with lock-in by height, by Shaolin Fry and Luke Dashjr: all consensus rules are ultimately enforced by full nodes", url: "https://github.com/bitcoin/bips/blob/master/bip-0008.mediawiki" }
-  - { label: "Braiins - Anniversary of the BIP148 UASF (August 1, 2020), a retrospective that celebrates it: says the UASF put Bitcoin's future in the hands of users, not miners, and that August 1, 2017 proved the rules can be decided by the community; says SegWit signaling had plateaued at about 30%", url: "https://braiins.com/news/3-year-anniversary-bip148-uasf" }
+  - { label: "Braiins - Anniversary of the BIP148 UASF (August 1, 2020), a retrospective that celebrates it: says the UASF put Bitcoin's future in the hands of users, not miners, and that August 1, 2017 proved the rules can be decided by the community; says SegWit signaling had plateaued at about 30%", url: "https://braiins.com/blog/3-year-anniversary-bip148-uasf" }
 relatedTerms:
   - bip-bitcoin-improvement-proposal
   - bip-9-versionbits

@@ -12,7 +12,7 @@ sources:
   - { label: "People's Bank of China and four agencies - Notice on Preventing Bitcoin Risks, Yinfa [2013] No. 289 (December 2013, in Chinese)", url: "https://www.pbc.gov.cn/zhengwugongkai/4081330/4406346/4693545/2025112114420471161/index.html" }
   - { label: "People's Daily - seven agencies order all token offerings (ICOs) to stop (September 2017, in Chinese)", url: "http://money.people.com.cn/bank/n1/2017/0904/c202331-29514147.html" }
   - { label: "CoinDesk - China tightens crypto mining crackdown, bans trading (September 2021)", url: "https://www.coindesk.com/policy/2021/09/24/china-tightens-crypto-mining-crackdown-bans-trading" }
-  - { label: "CNBC - What investors should know about China's cryptocurrency crackdown (September 2021)", url: "https://www.cnbc.com/2021/09/24/what-investors-should-know-about-chinas-cryptocurrency-crackdown.html" }
+  - { label: "CNBC - What investors should know about China's cryptocurrency crackdown (September 2021)", url: "https://www.cnbc.com/make-it/2021/09/24/what-investors-should-know-about-chinas-cryptocurrency-crackdown.html" }
   - { label: "People's Bank of China and seven agencies - Notice on Further Preventing and Disposing of Risks Related to Virtual Currencies, Yinfa [2026] No. 42 (February 2026, in Chinese)", url: "https://www.pbc.gov.cn/tiaofasi/144941/3581332/2026020619591971323/index.html" }
   - { label: "Sergio Lerner - The Return of the Deniers and the Revenge of Patoshi (April 2019): about 22,000 blocks, close to 1.1M BTC, 99.9% of Patoshi blocks unspent", url: "https://bitslog.com/2019/04/16/the-return-of-the-deniers-and-the-revenge-of-patoshi/" }
 relatedTerms:

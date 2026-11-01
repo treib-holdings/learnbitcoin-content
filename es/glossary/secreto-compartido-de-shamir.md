@@ -12,7 +12,7 @@ sources:
   - { label: "Adi Shamir - How to Share a Secret, Communications of the ACM 22(11) (1979)", url: "https://web.mit.edu/6.857/OldStuff/Fall03/ref/Shamir-HowToShareASecret.pdf" }
   - { label: "SatoshiLabs - SLIP-0039: Shamir's Secret-Sharing for Mnemonic Codes (2017)", url: "https://github.com/satoshilabs/slips/blob/master/slip-0039.md" }
   - { label: "BIP-39 - Mnemonic code for generating deterministic keys, Related Work: SLIP-0039 proposed by the BIP-39 authors as its intended successor (2013)", url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" }
-  - { label: "Trezor - What is Shamir backup? (accessed 2026-10-13)", url: "https://trezor.io/learn/a/what-is-shamir-backup" }
+  - { label: "Trezor - What is Shamir backup? (accessed 2026-10-13)", url: "https://trezor.io/learn/advanced/standards-proposals/what-is-shamir-backup" }
 relatedTerms:
   - bitcoin-inheritance-planning
   - key-split

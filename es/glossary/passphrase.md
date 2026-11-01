@@ -11,7 +11,7 @@ keyTakeaways:
 sources:
   - { label: "BIP-39 - Mnemonic code for generating deterministic keys, From mnemonic to seed: the salt is the string mnemonic plus the passphrase; every passphrase generates a valid seed (2013)", url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" }
   - { label: "Bitcoin Wiki - Seed phrase: Electrum and some other wallets call the passphrase a 13th/25th word", url: "https://en.bitcoin.it/wiki/Seed_phrase" }
-  - { label: "Trezor - What is Shamir backup? FAQ: back up your passphrase offline as well, do not rely solely on memory (accessed 2026-10-13)", url: "https://trezor.io/learn/a/what-is-shamir-backup" }
+  - { label: "Trezor - What is Shamir backup? FAQ: back up your passphrase offline as well, do not rely solely on memory (accessed 2026-10-13)", url: "https://trezor.io/learn/advanced/standards-proposals/what-is-shamir-backup" }
 relatedTerms:
   - bip-39
   - hierarchical-deterministic-wallet
