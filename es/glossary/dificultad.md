@@ -3,6 +3,7 @@ title: "Dificultad"
 slug: dificultad
 draft: false
 published: "2026-10-14"
+updated: "2026-11-02"
 shortDefinition: "Una medida de qué tan difícil es encontrar un hash de bloque por debajo del objetivo de la red. Se ajusta cada 2016 bloques (unas dos semanas)."
 keyTakeaways:
   - "Regula el hallazgo de bloques a unos 10 minutos en promedio"
@@ -24,13 +25,14 @@ relatedTerms:
   - poisson-process
   - proof-work-pow
   - revenue-ths
+  - time-warp-attack
 sameAs:
   - "https://en.bitcoin.it/wiki/Difficulty"
 liveWidget: ~
 translationOf: difficulty
-sourceHash: "61a9c295c0db"
-sourceCommit: "1abeee5"
-sourceUpdated: "2026-10-09"
+sourceHash: "dc0038e9ae5e"
+sourceCommit: "5a07342"
+sourceUpdated: "2026-10-19"
 translation:
   method: "llm-draft"
 ---
