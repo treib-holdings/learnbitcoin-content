@@ -1,5 +1,82 @@
 [
   {
+    "id": "2026-11-02-time-warp-attack",
+    "date": "2026-11-02",
+    "page": "/glossary/time-warp-attack",
+    "title": "Time Warp Attack",
+    "wrong": "The entry called ten minutes and three tenths of a second the real target, said testnet4 was the only Bitcoin network enforcing a time warp rule, said BIP-54 moved to two hours after testnet4 showed pool software breaking the ten-minute version, put the cost of two hours under attack at about two seconds a block, and presented testnet3's 2024 block storms as its demonstration of a collapsing difficulty.",
+    "fixed": "Dividing two weeks by 2,015 gives 600.3 seconds, while blocks at constant hash rate average about 600.6 (Wuille). Bitcoin Inquisition has enforced BIP-54 on signet since February 2026. Two hours was a precaution after testnet4 exposed pool software that stamped blocks from its own clock, and under a sustained attack it costs about three seconds a block (599.9997 against 596.7211 seconds in Wuille's simulation). Testnet3 carries a time warp Greg Maxwell planted on purpose in July 2012; the 2024 storms were the minimum-difficulty bug. The discovery is now dated: ArtForz, BitcoinTalk, 12 September 2011.",
+    "commit": "5e82057",
+    "source": "https://delvingbitcoin.org/t/timewarp-attack-600-second-grace-period/1326/32",
+    "credit": "the time warp chapter's research pass (2026-11-02)"
+  },
+  {
+    "id": "2026-11-02-great-consensus-cleanup",
+    "date": "2026-11-02",
+    "page": "/glossary/great-consensus-cleanup",
+    "title": "Great Consensus Cleanup",
+    "wrong": "The entry said Bitcoin Core 29.0 refuses to build templates that break the timestamp rules, plural, and repeated the testnet4 reason and the two-second cost for the two-hour grace.",
+    "fixed": "29.0 covers the time warp rule; the negative-window rule reached Bitcoin Core's templates in 32.1 (PR #35949, October 2026). Two hours was a precaution, at a cost of about three seconds a block under a sustained attack.",
+    "commit": "5e82057",
+    "source": "https://github.com/bitcoin/bitcoin/pull/35949",
+    "credit": "the time warp chapter's research pass (2026-11-02)"
+  },
+  {
+    "id": "2026-11-02-block-timestamp-rules",
+    "date": "2026-11-02",
+    "page": "/glossary/block-timestamp-rules",
+    "title": "Block Timestamp Rules",
+    "wrong": "The entry said Bitcoin Core warns when peers' clocks disagree by 70 minutes or more, that network-adjusted time was capped at 70 minutes, and that the median of eleven cannot be dragged backwards by one miner.",
+    "fixed": "Since Bitcoin Core 28.0 (PR #29623) the node warns when its outbound peers' median clock is more than ten minutes off; 70 minutes applied in 27.x. A peer offset beyond 70 minutes was ignored, not capped, and before July 2010 there was no limit. The median never moves backwards at all; one miner cannot hold it back or push it forward. The entry also notes that templates respect BIP-54's last-block rule since 32.1.",
+    "commit": "5e82057",
+    "source": "https://github.com/bitcoin/bitcoin/pull/29623",
+    "credit": "the time warp chapter's research pass (2026-11-02)"
+  },
+  {
+    "id": "2026-11-02-mtp-median-time-past",
+    "date": "2026-11-02",
+    "page": "/glossary/mtp-median-time-past",
+    "title": "MTP (Median Time Past)",
+    "wrong": "The entry cited no sources, left out the median's first job (every block must be stamped later than it), said a timestamp may be off by a couple of hours either way, and said the median can only move forward.",
+    "fixed": "Four sources added (chain.h, validation.cpp, BIP-113, Wuille 2011). The time-too-old floor is named first. A timestamp may run two hours ahead of a node's clock and behind real time by as much as the median allows, usually about an hour. The median never moves backward and can stay the same from one block to the next.",
+    "commit": "5e82057",
+    "source": "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp",
+    "credit": "the time warp chapter's research pass (2026-11-02)"
+  },
+  {
+    "id": "2026-11-02-difficulty-retargeting",
+    "date": "2026-11-02",
+    "page": "/glossary/difficulty-retargeting",
+    "title": "Difficulty Adjustment",
+    "wrong": "The entry said the 2021 loss of half the hash rate ended at the next retarget, that the rule has not changed since 2009, and that after each halving the next window absorbed the change.",
+    "fixed": "Difficulty fell at four retargets in a row in 2021, 45 percent in all, the largest a 27.9 percent cut on July 3. The rule has not changed in substance; a July 2010 commit changed what a backwards window would do, and none has ever run backwards. After each halving the retargets absorbed it within two windows. The entry adds that the upper clamp has bound once, at block 68,544 on July 16, 2010.",
+    "commit": "5e82057",
+    "source": "https://mempool.space/api/v1/mining/hashrate/all",
+    "credit": "the time warp chapter's research pass (2026-11-02)"
+  },
+  {
+    "id": "2026-11-02-chain-death-spiral",
+    "date": "2026-11-02",
+    "page": "/glossary/chain-death-spiral",
+    "title": "Chain Death Spiral",
+    "wrong": "The entry said Bitcoin's 2021 loss of roughly half the hash rate ended at the next retarget, with one slow month in the middle.",
+    "fixed": "It took four downward retargets in a row, 45 percent in all; the 27.9 percent cut at block 689,472 on July 3, 2021 was the third and largest, and the slow stretch was one window of about three weeks.",
+    "commit": "5e82057",
+    "source": "https://mempool.space/api/v1/mining/hashrate/all",
+    "credit": "the time warp chapter's research pass (2026-11-02)"
+  },
+  {
+    "id": "2026-11-02-emergency-difficulty-adjustment-eda",
+    "date": "2026-11-02",
+    "page": "/glossary/emergency-difficulty-adjustment-eda",
+    "title": "Emergency Difficulty Adjustment (EDA)",
+    "wrong": "The entry put the subsidy Bitcoin Cash pulled forward at nearly 10,000 blocks, said BitMEX found the chain more exposed to timestamp games, and said the next retarget handled Bitcoin's 2021 hash rate loss.",
+    "fixed": "Against the ten-minute schedule the chain ran about 10,500 blocks, some 130,000 coins, ahead (nearly 10,000 is its lead over Bitcoin). BitMEX argued the exposure and then found no sign of it being exploited in October 2019 blocks. Bitcoin's 2021 loss took four ordinary retargets in a row.",
+    "commit": "5e82057",
+    "source": "https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/uahf-technical-spec.md",
+    "credit": "the time warp chapter's research pass (2026-11-02)"
+  },
+  {
     "id": "2026-10-21-branch-and-bound-bnb",
     "date": "2026-10-21",
     "page": "/glossary/branch-and-bound-bnb",
