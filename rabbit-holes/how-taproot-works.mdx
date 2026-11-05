@@ -3,7 +3,7 @@ title: "How Taproot Actually Works"
 slug: how-taproot-works
 draft: false
 published: "2026-09-17"
-updated: "2026-09-18"
+updated: "2026-11-05"
 status: live
 section: rabbit-hole
 category: how-it-works
@@ -56,7 +56,7 @@ sources:
   - { label: "mempool.space - block 709,632, the Taproot activation block", url: "https://mempool.space/block/0000000000000000000687bca986194dc2c1f949318629b44bb54ec0a94d8244" }
   - { label: "mempool.space - the first Taproot spend, block 709,635", url: "https://mempool.space/tx/33e794d097969002ee05d336686fc03c9e15a597c1b9827669460fac98799036" }
   - { label: "mainnet.observer - output type distribution", url: "https://mainnet.observer/charts/output-type-distribution-count/" }
-  - { label: "mainnet.observer - transactions spending Taproot", url: "https://mainnet.observer/charts/transactions-spending-taproot/" }
+  - { label: "mainnet.observer - transactions spending Taproot: a transaction counts when it spends at least one Taproot input; the share of all transactions was 5.2 percent over the 30 days ending 17 September 2026 and 63.1 percent over January 2024 (from its public CSVs)", url: "https://mainnet.observer/charts/transactions-spending-taproot/" }
   - { label: "mainnet.observer - P2TR key-path versus script-path inputs", url: "https://mainnet.observer/charts/inputs-p2tr-paths/" }
   - { label: "ChainQuery - UTXO set repartition by output type", url: "https://chainquery.com/reports/utxo-repartition" }
   - { label: "lnd 0.21.0 release notes - production simple taproot channels (2026)", url: "https://github.com/lightningnetwork/lnd/blob/master/docs/release-notes/release-notes-0.21.0.md" }
@@ -196,7 +196,7 @@ From Maxwell's post to that block was 1,391 days. As of September 2026, no conse
 
 The numbers are not what the launch coverage predicted, in either direction.
 
-By count, Taproot outputs are the largest kind in the UTXO set: about 54 million of 165 million unspent outputs in ChainQuery's snapshot of 14 September 2026, roughly a third. By value they hold about 1.1 percent of all bitcoin. The gap is dust: tens of millions of tiny Taproot outputs, most of them left behind by inscriptions and tokens. Measured by current use, Taproot is a minority format: over the 30 days ending 17 September 2026, about 5 percent of new outputs were Taproot and about 5 percent of transactions spent one. In January 2024, at the height of the inscription market, that second figure was 63 percent.
+By count, Taproot outputs are the largest kind in the UTXO set: about 54 million of 165 million unspent outputs in ChainQuery's snapshot of 14 September 2026, roughly a third. By value they hold about 1.1 percent of all bitcoin. The gap is dust: tens of millions of tiny Taproot outputs, most of them left behind by inscriptions and tokens. Measured by current use, Taproot is a minority format: over the 30 days ending 17 September 2026, about 5 percent of new outputs were Taproot and about 5 percent of transactions spent one (a transaction counts if any of its inputs is Taproot, the way [mainnet.observer](https://mainnet.observer/charts/transactions-spending-taproot/) measures it). For the whole of January 2024, at the height of the inscription market, that second figure was 63 percent.
 
 Wallet defaults explain the payment side. Bitcoin Core still hands out native SegWit `bc1q` addresses by default; a 2021 pull request to switch was closed in favor of an opt-in setting in the GUI, at a time when few services could pay to `bc1p`, and as of September 2026 nothing has reopened it. Trezor and Ledger default to SegWit and offer Taproot as an option you have to find. The wallets that use `bc1p` by default are mostly inscription wallets, which need a Tapscript leaf to hold the data, and some Lightning wallets, where the smaller witness is worth real money; Phoenix moved its swaps to Taproot in 2024 for that reason. Lightning itself moved slowly: simple Taproot channels were experimental in lnd from October 2023, became production in lnd 0.21 in June 2026, and were switched on by default in Eclair in May 2026, still only for private channels, with the specification for announced ones unfinished. [Silent payments](/glossary/silent-payments) always pay to a Taproot output, so every silent payment is Taproot adoption by construction.
 
