@@ -8,7 +8,7 @@ linkText:
   - "timestamp rules"
 draft: false
 published: "2026-10-19"
-updated: "2026-11-02"
+updated: "2026-11-05"
 shortDefinition: "The two consensus checks a node applies to the time a miner writes into a block header: it must be later than the median of the previous eleven blocks, and it may not be more than two hours ahead of the node's own clock. Both are in Satoshi's 2009 code and both are still in Bitcoin Core's validation.cpp."
 keyTakeaways:
   - "Lower bound: a block's timestamp must be strictly greater than the median time past of the eleven blocks before it, which keeps the chain's clock moving forward even though individual timestamps may run backwards"
@@ -41,7 +41,7 @@ liveWidget: ~
 
 A Bitcoin [block header](/glossary/block-header) carries a 32-bit timestamp that the [miner](/glossary/miner) fills in. Nothing forces it to be true. The network has no clock of its own, so the rules do not try to check the time against reality. They check it against the chain and against the validating node, and they give miners a window to work in rather than a point to hit.
 
-The first rule looks backwards. In `ContextualCheckBlockHeader` in `src/validation.cpp`, a block is rejected as `time-too-old` if its timestamp is less than or equal to the [median time past](/glossary/mtp-median-time-past) of the previous eleven blocks. The median, not the previous block's own stamp, which is why consecutive timestamps are allowed to run backwards: a miner who rolled the time forward while searching for a nonce is not forced to stay ahead of the real clock, and a block from a slow clock is not thrown out. What the median guarantees is that the chain's notion of time never moves backwards, and that one miner cannot hold it back or push it forward, since that takes six of the eleven blocks. The same median is what [BIP-113](/glossary/bip-113) made the reference for time locks.
+The first rule looks backwards. In `ContextualCheckBlockHeader` in `src/validation.cpp`, a block is rejected as `time-too-old` if its timestamp is less than or equal to the [median time past](/glossary/mtp-median-time-past) of the previous eleven blocks. The median, not the previous block's own stamp, which is why consecutive timestamps are allowed to run backwards: a miner who rolled the time forward while searching for a nonce is not forced to stay ahead of the real clock, and a block from a slow clock is not thrown out. What the median guarantees is that the chain's notion of time never moves backwards, and that one miner cannot hold it back or push it forward, since that takes six of the eleven blocks. The same median is what [BIP-113](/glossary/bip-113) made the reference for time locks. On mainnet about one block in sixty carries an earlier stamp than the block before it, a count [The Time Warp](/rabbit-hole/time-warp) takes from every header up to November 2026.
 
 The second rule looks forwards and works differently. A block whose timestamp is more than `MAX_FUTURE_BLOCK_TIME` ahead of the node's clock is rejected as `time-too-new`; the constant is two hours, 7,200 seconds, in `src/chain.h`. This one is not quite a validity rule. The block is early rather than invalid, and the same node will accept it once the two hours have passed, which is why Bitcoin Core files it under `BLOCK_TIME_FUTURE`. What it stops is a miner claiming a block took longer to find than it did. Two hours is about 0.6 percent of a two-week window, so even a miner who stamps every block at the limit cannot move the next retarget by much.
 

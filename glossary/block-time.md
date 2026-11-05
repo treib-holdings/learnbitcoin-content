@@ -1,7 +1,7 @@
 ---
 title: "Block Time"
 slug: block-time
-updated: "2026-10-19"
+updated: "2026-11-05"
 draft: false
 shortDefinition: "The average interval between consecutive blocks, targeted around 10 minutes for Bitcoin."
 keyTakeaways:
@@ -44,4 +44,4 @@ The choice of 10 minutes (rather than, say, 2.5 minutes like Litecoin, or 12 sec
 - **Long enough** that the [proof-of-work](/glossary/proof-work-pow) per block is meaningful security.
 - **Short enough** that confirmations accumulate at a useful rate. Six confirmations (the conventional "settled" threshold for large amounts) is about an hour.
 
-The [difficulty retarget](/glossary/difficulty-retargeting) every 2,016 blocks pulls the average back toward 10 minutes when global hash rate has grown (or shrunk). See the [Mining rabbit hole section 4](/rabbit-hole/mining) for the long version.
+The [difficulty retarget](/glossary/difficulty-retargeting) every 2,016 blocks pulls the average back toward 10 minutes when global hash rate has grown (or shrunk). Real blocks have averaged about 577 seconds since 2009 because hash rate keeps growing, and [The Time Warp](/rabbit-hole/time-warp) explains why the retarget's own target sits a fraction of a second above ten minutes. See the [Mining rabbit hole section 4](/rabbit-hole/mining) for the long version.

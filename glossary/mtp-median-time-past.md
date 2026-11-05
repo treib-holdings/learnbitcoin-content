@@ -7,7 +7,7 @@ linkText:
   - "median-time-past"
   - "MTP"
 draft: false
-updated: "2026-11-02"
+updated: "2026-11-05"
 shortDefinition: "Bitcoin uses the median of the last 11 block timestamps as the chain's own clock. Here's why - and how it stops miners from gaming time-locked transactions."
 keyTakeaways:
   - "Prevents outlier timestamps from messing with time-based rules"
@@ -43,4 +43,4 @@ Where MTP is used:
 
 For most users, MTP is invisible. For protocol designers building time-locked constructions, it's the precise notion of "time" Bitcoin actually uses internally. Treating block timestamps as raw real-time gives wrong answers; treating MTP as real-time gives essentially correct ones.
 
-The 11-block window is a sweet spot: large enough to resist manipulation, small enough to stay close to real time. Average lag from real time is around 60 minutes (half the window).
+The 11-block window is a sweet spot: large enough to resist manipulation, small enough to stay close to real time. Average lag from real time is around 60 minutes (half the window). A miner with most of the hash rate can do what a single miner cannot and hold the median back for weeks, which is the attack [The Time Warp](/rabbit-hole/time-warp) walks through.

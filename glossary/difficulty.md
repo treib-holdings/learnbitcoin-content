@@ -2,7 +2,7 @@
 title: "Difficulty"
 slug: difficulty
 draft: false
-updated: "2026-10-19"
+updated: "2026-11-05"
 shortDefinition: "A measure of how tough it is to find a block hash below the network's target. Adjusted every 2016 blocks (~two weeks)."
 keyTakeaways:
   - "Regulates block discovery to ~10 minutes on average"
@@ -33,6 +33,6 @@ Difficulty is set so that, given the current global [hash rate](/glossary/hash-r
 
 For a rough sense of scale, the Bitcoin network changed its difficulty more than 460 times between the genesis block and October 2026. Genesis-block difficulty was 1. Difficulty in mid-2026 was around 130 trillion. That ratio - about 14 orders of magnitude - is the entire growth of the global Bitcoin mining industry, from one CPU on a desktop to a global industrial sector.
 
-Difficulty is the part of [proof-of-work](/glossary/proof-work-pow) that makes the system self-tuning. Whether 10 miners or 10,000 are competing, blocks still come out roughly every 10 minutes and BTC is issued on schedule. The network doesn't care about the price of hardware or electricity. It cares about hash rate, and it adjusts in response to it.
+Difficulty is the part of [proof-of-work](/glossary/proof-work-pow) that makes the system self-tuning. Whether 10 miners or 10,000 are competing, blocks still come out roughly every 10 minutes and BTC is issued on schedule. The network doesn't care about the price of hardware or electricity. It cares about hash rate, and it adjusts in response to it. The adjustment takes its timing from timestamps the miners write themselves, and [The Time Warp](/rabbit-hole/time-warp) covers what a miner with most of the hash rate could do with that.
 
 See the [Mining rabbit hole section 4](/rabbit-hole/mining) for the mechanism, and the [Node page](/node) for the current difficulty and epoch progress.
