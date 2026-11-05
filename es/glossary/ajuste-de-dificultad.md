@@ -3,7 +3,7 @@ title: "Ajuste de dificultad"
 slug: ajuste-de-dificultad
 draft: false
 published: "2026-10-14"
-updated: "2026-11-02"
+updated: "2026-11-05"
 shortDefinition: "La recalibración automática de la dificultad de minería de Bitcoin cada 2,016 bloques, también llamada reajuste (retargeting), que mantiene el intervalo promedio entre bloques cerca de diez minutos. La nueva dificultad es la anterior multiplicada por dos semanas y dividida entre lo que tardó la última ventana, con un límite de un factor de cuatro hacia arriba o hacia abajo."
 keyTakeaways:
   - "Cada 2,016 bloques (unas dos semanas), cada nodo reescala la dificultad por el cociente entre dos semanas y lo que tardó la ventana que acaba de terminar, medido desde la marca de tiempo de su primer bloque hasta la del último; ese cociente queda limitado entre un cuarto y cuatro"
@@ -49,9 +49,9 @@ sameAs:
   - "https://en.bitcoin.it/wiki/Protocol_rules"
 liveWidget: ~
 translationOf: difficulty-retargeting
-sourceHash: "369d60ffc1eb"
-sourceCommit: "5e82057"
-sourceUpdated: "2026-11-02"
+sourceHash: "f6cb04a125f8"
+sourceCommit: "1361589"
+sourceUpdated: "2026-11-05"
 translation:
   method: "llm-draft"
 ---
@@ -65,7 +65,7 @@ La regla:
 - Antes de la división, el lapso se **limita a entre un cuarto y cuatro veces** dos semanas, así que ningún ajuste puede mover la dificultad más de un factor de cuatro en ninguna dirección. El límite de subida se activó una sola vez, en el bloque 68,544, el 16 de julio de 2010, cuando una ventana tardó 3.35 días; el de bajada nunca se ha activado.
 - El nuevo valor rige desde el primer bloque de la ventana siguiente y se mantiene durante 2,016 bloques. Entre un ajuste y otro no cambia nada, por mucho que tarden los bloques.
 
-Hay dos rarezas que vale la pena conocer. Entre el primer bloque de la ventana y el último hay 2,015 intervalos, no 2,016, y aun así el código compara ese lapso con 2,016 veces diez minutos. Por este error por uno (off-by-one) de Satoshi, el intervalo objetivo queda, por simple división, en diez minutos y tres décimas de segundo, y si se hace bien la estadística de dividir entre un lapso medido, más cerca de diez minutos y seis décimas. En la práctica nadie lo ha notado, porque el hashrate ha crecido durante la mayor parte de la vida de Bitcoin y los bloques han promediado menos de diez minutos de todos modos. La segunda rareza es más seria. Las ventanas no se superponen, así que la primera marca de tiempo de una ventana nunca se compara con la última de la ventana anterior. Ese hueco es el [ataque time warp (en inglés)](/glossary/time-warp-attack), y cerrarlo es la primera regla de la propuesta de soft fork [Consensus Cleanup (en inglés)](/glossary/great-consensus-cleanup). Las marcas de tiempo, a su vez, están acotadas por las [reglas de marca de tiempo de los bloques (en inglés)](/glossary/block-timestamp-rules): un piso basado en una mediana y un techo de dos horas.
+Hay dos rarezas que vale la pena conocer. Entre el primer bloque de la ventana y el último hay 2,015 intervalos, no 2,016, y aun así el código compara ese lapso con 2,016 veces diez minutos. Por este error por uno (off-by-one) de Satoshi, el intervalo objetivo queda, por simple división, en diez minutos y tres décimas de segundo, y si se hace bien la estadística de dividir entre un lapso medido, más cerca de diez minutos y seis décimas. En la práctica nadie lo ha notado, porque el hashrate ha crecido durante la mayor parte de la vida de Bitcoin y los bloques han promediado menos de diez minutos de todos modos. La segunda rareza es más seria. Las ventanas no se superponen, así que la primera marca de tiempo de una ventana nunca se compara con la última de la ventana anterior. Ese hueco es el [ataque time warp (en inglés)](/glossary/time-warp-attack), y cerrarlo es la primera regla de la propuesta de soft fork [Consensus Cleanup (en inglés)](/glossary/great-consensus-cleanup). Las marcas de tiempo, a su vez, están acotadas por las [reglas de marca de tiempo de los bloques (en inglés)](/glossary/block-timestamp-rules): un piso basado en una mediana y un techo de dos horas. Las dos rarezas vienen de una sola línea del código de la 0.1.0 de Satoshi, y el tema a fondo [El time warp](/es/a-fondo/time-warp) las sigue desde el borrador de noviembre de 2008 hasta lo que un minero mayoritario podría hacer hoy con el hueco.
 
 No hay comité, y nadie puede saltarse la regla. La red observa sus propios tiempos de bloque y se corrige, con un calendario fijo, para siempre. Una granja minera nueva no cambia el calendario de emisión; provoca una dificultad más alta en el siguiente ajuste, y la parte de los bloques que le toca a cada uno de los demás se achica en la misma proporción.
 

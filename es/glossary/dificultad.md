@@ -3,7 +3,7 @@ title: "Dificultad"
 slug: dificultad
 draft: false
 published: "2026-10-14"
-updated: "2026-11-02"
+updated: "2026-11-05"
 shortDefinition: "Una medida de qué tan difícil es encontrar un hash de bloque por debajo del objetivo de la red. Se ajusta cada 2016 bloques (unas dos semanas)."
 keyTakeaways:
   - "Regula el hallazgo de bloques a unos 10 minutos en promedio"
@@ -30,9 +30,9 @@ sameAs:
   - "https://en.bitcoin.it/wiki/Difficulty"
 liveWidget: ~
 translationOf: difficulty
-sourceHash: "dc0038e9ae5e"
-sourceCommit: "5a07342"
-sourceUpdated: "2026-10-19"
+sourceHash: "1f43ba1f5351"
+sourceCommit: "1361589"
+sourceUpdated: "2026-11-05"
 translation:
   method: "llm-draft"
 ---
@@ -43,6 +43,6 @@ La dificultad se fija de modo que, con el [hashrate](/es/glosario/hashrate) glob
 
 Para darte una idea de la escala: la red Bitcoin cambió su dificultad más de 460 veces entre el bloque génesis y octubre de 2026. La dificultad del bloque génesis era 1. A mediados de 2026 rondaba los 130 billones. Esa proporción, unos 14 órdenes de magnitud, es todo el crecimiento de la industria mundial de minería de Bitcoin: de un solo CPU en una computadora de escritorio a un sector industrial global.
 
-La dificultad es la parte de la [prueba de trabajo](/es/glosario/prueba-de-trabajo) (proof-of-work) que hace que el sistema se ajuste solo. Ya sea que compitan 10 mineros o 10,000, los bloques siguen saliendo más o menos cada 10 minutos y los BTC se emiten según el calendario. A la red no le importa el precio del hardware ni el de la electricidad. Le importa el hashrate, y se ajusta en respuesta a él.
+La dificultad es la parte de la [prueba de trabajo](/es/glosario/prueba-de-trabajo) (proof-of-work) que hace que el sistema se ajuste solo. Ya sea que compitan 10 mineros o 10,000, los bloques siguen saliendo más o menos cada 10 minutos y los BTC se emiten según el calendario. A la red no le importa el precio del hardware ni el de la electricidad. Le importa el hashrate, y se ajusta en respuesta a él. El ajuste se guía por las marcas de tiempo que escriben los propios mineros, y el tema a fondo [El time warp](/es/a-fondo/time-warp) cuenta lo que podría hacer con eso un minero con la mayor parte del hashrate.
 
 La [sección 4 del tema a fondo sobre minería (en inglés)](/rabbit-hole/mining) explica el mecanismo, y la [página del nodo](/es/nodo) muestra la dificultad actual y el avance de la época.
