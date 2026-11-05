@@ -1,5 +1,16 @@
 [
   {
+    "id": "2026-11-05-how-taproot-works",
+    "date": "2026-11-05",
+    "page": "/rabbit-hole/how-taproot-works",
+    "title": "How Taproot Actually Works",
+    "wrong": "The chapter gave the share of transactions that \"spent one\" Taproot output, 5 percent in September 2026 and 63 percent in January 2024, without saying what counts as a Taproot transaction or over what period the January figure was taken.",
+    "fixed": "It now says a transaction counts when any of its inputs is Taproot, the definition mainnet.observer uses, links that chart next to the numbers, and gives the January 2024 figure as the whole month (63.1 percent; 5.2 percent over the 30 days ending 17 September 2026), recomputed from mainnet.observer's public CSVs.",
+    "commit": "5f8d239",
+    "source": "https://mainnet.observer/charts/transactions-spending-taproot/",
+    "credit": "Veldrin (BitcoinTalk)"
+  },
+  {
     "id": "2026-11-02-time-warp-attack",
     "date": "2026-11-02",
     "page": "/glossary/time-warp-attack",
