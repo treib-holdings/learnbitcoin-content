@@ -2,13 +2,14 @@
 title: "El time warp: cómo mentir sobre la hora podría romper la dificultad de Bitcoin"
 slug: time-warp
 translationOf: time-warp
-sourceHash: "e285d4df62e4"
-sourceCommit: "1361589"
-sourceUpdated: "2026-11-05"
+sourceHash: "447f779c8d26"
+sourceCommit: "74f611d"
+sourceUpdated: "2026-11-06"
 translation:
   method: "llm-draft"
 draft: false
 published: "2026-11-05"
+updated: "2026-11-06"
 status: live
 section: rabbit-hole
 category: how-it-works
@@ -66,6 +67,7 @@ sources:
   - { label: "Jameson Lopp - Griefing Bitcoin's Testnet (4 May 2024): the 2024 block storms through the minimum-difficulty rule", url: "https://blog.lopp.net/griefing-bitcoin-testnet/" }
   - { label: "LearnBitcoin - every retarget seam on mainnet, blocks 2,016 to 973,728, from the Bitcoin Core node behind ChainQuery (CSV)", url: "https://www.learnbitcoin.com/downloads/time-warp-seams.csv" }
   - { label: "BIP-94 - Testnet 4: the first block of a window no more than 600 seconds before the previous block", url: "https://github.com/bitcoin/bips/blob/master/bip-0094.mediawiki" }
+  - { label: "Antoine Poinsot, Delving Bitcoin, 6 November 2026: Bitcoin Core PR #35793 patched to apply BIP-54's time warp check at every retarget; a mainnet header sync reproduces the -1,127 second seam at block 203,616, 'i was able to reproduce the worst seam figure from the CSV file'", url: "https://delvingbitcoin.org/t/great-consensus-cleanup-revival/710/96" }
   - { label: "UAHF technical specification v1.6 (24 July 2017), REQ-7: the Bitcoin Cash emergency difficulty adjustment", url: "https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/uahf-technical-spec.md" }
   - { label: "Bitcoin ABC v0.14.6 - src/pow.cpp: the emergency rule as shipped, a 20 percent cut per block while the twelve-hour condition holds", url: "https://github.com/Bitcoin-ABC/bitcoin-abc/blob/v0.14.6/src/pow.cpp" }
   - { label: "Blockchair - raw daily Bitcoin Cash block dumps (heights, timestamps and difficulty for 2017, checked against independent raw headers)", url: "https://gz.blockchair.com/bitcoin-cash/blocks/" }
@@ -195,7 +197,7 @@ El ataque también necesita bloques con la marca en el piso, un segundo después
   <figcaption>Cada punto es un reajuste: el primer bloque de la ventana nueva menos el último de la anterior, en minutos. Diez de 483 quedan por debajo de cero, uno de ellos más allá de la línea de diez minutos de testnet4, y el peor queda más de 100 minutos dentro de las dos horas del BIP 54.</figcaption>
 </figure>
 
-Los mismos datos ponen a prueba las dos versiones de la corrección. La regla de diez minutos de testnet4, el BIP 94, habría rechazado exactamente un bloque en la historia de Bitcoin, ese de 2012, salvo que su minero le hubiera puesto la hora 23:04:55 o una posterior. La regla de dos horas del BIP 54 no habría rechazado ninguno; la peor costura de la historia queda más de 100 minutos dentro de ella. La segunda regla de marcas de tiempo del BIP 54, la regla de la ventana negativa, dice que el último bloque de una ventana no puede llevar una marca anterior a la del primero, y ningún bloque la ha violado tampoco. Lo comprobamos todo de dos maneras con encabezados del nodo de Bitcoin Core que hay detrás de ChainQuery: leímos todos los encabezados de una sola vez y pedimos en crudo los 967 encabezados de los límites entre ventanas para volver a calcular su hash, y comprobamos cada costura negativa contra un explorador de bloques público. Cualquiera con un nodo puede repetirlo con [getblockheader](https://chainquery.com/rpc/getblockheader), y la tabla completa se puede [descargar en CSV](/downloads/time-warp-seams.csv).
+Los mismos datos ponen a prueba las dos versiones de la corrección. La regla de diez minutos de testnet4, el BIP 94, habría rechazado exactamente un bloque en la historia de Bitcoin, ese de 2012, salvo que su minero le hubiera puesto la hora 23:04:55 o una posterior. La regla de dos horas del BIP 54 no habría rechazado ninguno; la peor costura de la historia queda más de 100 minutos dentro de ella. La segunda regla de marcas de tiempo del BIP 54, la regla de la ventana negativa, dice que el último bloque de una ventana no puede llevar una marca anterior a la del primero, y ningún bloque la ha violado tampoco. Lo comprobamos todo de dos maneras con encabezados del nodo de Bitcoin Core que hay detrás de ChainQuery: leímos todos los encabezados de una sola vez y pedimos en crudo los 967 encabezados de los límites entre ventanas para volver a calcular su hash, y comprobamos cada costura negativa contra un explorador de bloques público. Cualquiera con un nodo puede repetirlo con [getblockheader](https://chainquery.com/rpc/getblockheader), y la tabla completa se puede [descargar en CSV](/downloads/time-warp-seams.csv). Antoine Poinsot, uno de los dos autores del BIP 54, [reprodujo la peor costura](https://delvingbitcoin.org/t/great-consensus-cleanup-revival/710/96) por su cuenta, sincronizando encabezados en Bitcoin Core con la comprobación del time warp del BIP 54 activada para toda la cadena.
 
 ## Cuando una regla de dificultad sí falló
 
