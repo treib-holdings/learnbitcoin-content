@@ -3,7 +3,7 @@ title: "The Time Warp: How Lying About the Time Could Break Bitcoin's Difficulty
 slug: time-warp
 draft: false
 published: "2026-11-05"
-updated: "2026-11-06"
+updated: "2026-11-09"
 status: live
 section: rabbit-hole
 category: how-it-works
@@ -43,6 +43,8 @@ sources:
   - { label: "Antoine Poinsot, Delving Bitcoin, 24 March 2024 - Great Consensus Cleanup Revival: the minority gain is 'ridiculously small'; 'a month isn't a lot of time to coordinate'", url: "https://delvingbitcoin.org/t/great-consensus-cleanup-revival/710" }
   - { label: "Antoine Poinsot, Delving Bitcoin, 17 May 2024: a block-level simulation from block 842,688, a window boundary, 'about 39 days' to difficulty 1", url: "https://delvingbitcoin.org/t/great-consensus-cleanup-revival/710/17" }
   - { label: "BIP-54 - Consensus Cleanup (Complete, 1.0.0 of 22 May 2026): the two timestamp rules; the minimum 'within 38 days' in the worst case; two hours 'out of an abundance of caution'", url: "https://github.com/bitcoin/bips/blob/master/bip-0054.md" }
+  - { label: "Pieter Wuille, r/Bitcoin, 6 November 2026, reply on this chapter's thread: a colluding majority can 'steal subsidy from future miners'", url: "https://www.reddit.com/r/Bitcoin/comments/1xorfs5/comment/19s801n26g68y/" }
+  - { label: "Pieter Wuille, r/Bitcoin, 6 November 2026: permission to use that framing here, credited ('Of course!')", url: "https://www.reddit.com/r/Bitcoin/comments/1xorfs5/comment/19s8huupj2owy/" }
   - { label: "Bitcoin mining development list, 'Mitigation for Timewarp Attack in Testnet 4', reply dated 3 September 2024: 'This would be no problem for MARA Digital Holdings'", url: "https://groups.google.com/g/bitcoinminingdev/c/jjkbeODskIk" }
   - { label: "Litecoin v0.21.5.8 - src/pow.cpp lines 40-54: each window measured back the full period, 'Code courtesy of Art Forz'", url: "https://github.com/litecoin-project/litecoin/blob/v0.21.5.8/src/pow.cpp#L40-L54" }
   - { label: "Freicoin commit beb2fa54: 'Hardfork: Fix Art Forz's time-traveller attack', code credited to ArtForz (author of record Mark Friedenbach, author date 6 August 2013; committed by Jorge Timon, 2015)", url: "https://github.com/freicoin/freicoin/commit/beb2fa54745180d755949470466cbffd1cd6ff14" }
@@ -163,6 +165,8 @@ In window 5, 2,016 blocks arrive in about 25 hours while the retarget believes t
 How long it takes depends on when the attacker starts. From the beginning of a window, as in our run, difficulty reaches its minimum in about 39.4 days, on 22 December 2026 for a 12 November start; Antoine Poinsot's block-level example of May 2024, also started on a window boundary, came to about 39. Starting about six days before a window ends is a little faster, about 37.4 days, and [BIP-54](/glossary/great-consensus-cleanup), the proposal that would close the seam, puts the worst case within 38 days.
 
 At the minimum the chain's clock is still more than 39 days behind real time, so neither timestamp rule slows the attacker down. In the model every remaining coin of the [block subsidy](/glossary/block-subsidy), about 888,300 BTC that an honest chain would pay out over the next 113 years, comes out on one simulated day. In reality the limit would be how fast the attacker could build some six million blocks and every node could check them. Every time lock counted in blocks would expire with them, from [Lightning](/glossary/lightning-network) channel deadlines to vault delays.
+
+Pieter Wuille, who proposed a fix for this seam in November 2011, [explained on Reddit](https://www.reddit.com/r/Bitcoin/comments/1xorfs5/comment/19s801n26g68y/) why the subsidy is the part that matters. Bitcoin accepts 51% attacks "as a last resort because they are inevitable in a decentralized system and the benefits from someone exploiting them are minimal", he wrote. "Timewarp breaks that: it allows a majority of the hashrate that colludes to steal subsidy from future miners". We quote him here [with his OK](https://www.reddit.com/r/Bitcoin/comments/1xorfs5/comment/19s8huupj2owy/).
 
 Everyone else stands in the way. The attack needs a majority of the hash rate for weeks, in public, and gains nothing until difficulty first falls, on day 28 when the attack starts on a window boundary or about day 20 with the best-timed start. An honest miner who wins the first block of any window and stamps it with the real time gives that window a true starting point, so it measures close to its real length, and every honest stamp in between pulls the median, and with it the attacker's floor, forward. A minority gains almost nothing; Poinsot called the gain from opportunistic timestamp games "ridiculously small for any minority hashrate".
 
