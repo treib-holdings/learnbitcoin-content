@@ -2,14 +2,14 @@
 title: "El time warp: cómo mentir sobre la hora podría romper la dificultad de Bitcoin"
 slug: time-warp
 translationOf: time-warp
-sourceHash: "447f779c8d26"
-sourceCommit: "74f611d"
-sourceUpdated: "2026-11-06"
+sourceHash: "90299db97ea9"
+sourceCommit: "d4759d6"
+sourceUpdated: "2026-11-09"
 translation:
   method: "llm-draft"
 draft: false
 published: "2026-11-05"
-updated: "2026-11-06"
+updated: "2026-11-09"
 status: live
 section: rabbit-hole
 category: how-it-works
@@ -49,6 +49,8 @@ sources:
   - { label: "Antoine Poinsot, Delving Bitcoin, 24 March 2024 - Great Consensus Cleanup Revival: the minority gain is 'ridiculously small'; 'a month isn't a lot of time to coordinate'", url: "https://delvingbitcoin.org/t/great-consensus-cleanup-revival/710" }
   - { label: "Antoine Poinsot, Delving Bitcoin, 17 May 2024: a block-level simulation from block 842,688, a window boundary, 'about 39 days' to difficulty 1", url: "https://delvingbitcoin.org/t/great-consensus-cleanup-revival/710/17" }
   - { label: "BIP-54 - Consensus Cleanup (Complete, 1.0.0 of 22 May 2026): the two timestamp rules; the minimum 'within 38 days' in the worst case; two hours 'out of an abundance of caution'", url: "https://github.com/bitcoin/bips/blob/master/bip-0054.md" }
+  - { label: "Pieter Wuille, r/Bitcoin, 6 November 2026, reply on this chapter's thread: a colluding majority can 'steal subsidy from future miners'", url: "https://www.reddit.com/r/Bitcoin/comments/1xorfs5/comment/19s801n26g68y/" }
+  - { label: "Pieter Wuille, r/Bitcoin, 6 November 2026: permission to use that framing here, credited ('Of course!')", url: "https://www.reddit.com/r/Bitcoin/comments/1xorfs5/comment/19s8huupj2owy/" }
   - { label: "Bitcoin mining development list, 'Mitigation for Timewarp Attack in Testnet 4', reply dated 3 September 2024: 'This would be no problem for MARA Digital Holdings'", url: "https://groups.google.com/g/bitcoinminingdev/c/jjkbeODskIk" }
   - { label: "Litecoin v0.21.5.8 - src/pow.cpp lines 40-54: each window measured back the full period, 'Code courtesy of Art Forz'", url: "https://github.com/litecoin-project/litecoin/blob/v0.21.5.8/src/pow.cpp#L40-L54" }
   - { label: "Freicoin commit beb2fa54: 'Hardfork: Fix Art Forz's time-traveller attack', code credited to ArtForz (author of record Mark Friedenbach, author date 6 August 2013; committed by Jorge Timon, 2015)", url: "https://github.com/freicoin/freicoin/commit/beb2fa54745180d755949470466cbffd1cd6ff14" }
@@ -169,6 +171,8 @@ En la ventana 5 llegan 2,016 bloques en unas 25 horas mientras el reajuste cree 
 Cuánto tarda depende de cuándo empieza el atacante. Desde el principio de una ventana, como en nuestra corrida, la dificultad llega a su mínimo en unos 39.4 días, el 22 de diciembre de 2026 si se empieza el 12 de noviembre; el ejemplo bloque por bloque de Antoine Poinsot de mayo de 2024, que también empezaba en el límite entre dos ventanas, dio unos 39. Empezar unos seis días antes de que termine una ventana es un poco más rápido, unos 37.4 días, y el [BIP 54 (en inglés)](/glossary/great-consensus-cleanup), la propuesta que cerraría la costura, sitúa el peor caso en 38 días como mucho.
 
 En el mínimo, el reloj de la cadena sigue más de 39 días por detrás del tiempo real, así que ninguna de las dos reglas de marca de tiempo frena al atacante. En el modelo, todas las monedas que le quedan al [subsidio de bloque](/es/glosario/subsidio-de-bloque), unos 888,300 BTC que una cadena honesta pagaría a lo largo de los próximos 113 años, salen en un solo día simulado. En la realidad, el límite sería la velocidad a la que el atacante pudiera construir unos seis millones de bloques y cada nodo pudiera verificarlos. Con ellos vencería todo bloqueo de tiempo contado en bloques, desde los plazos de los canales de [Lightning](/es/glosario/lightning-network) hasta las demoras de las bóvedas (vaults).
+
+Pieter Wuille, que propuso una corrección para esta costura en noviembre de 2011, [explicó en Reddit (en inglés)](https://www.reddit.com/r/Bitcoin/comments/1xorfs5/comment/19s801n26g68y/) por qué el subsidio es lo que importa. Bitcoin acepta los ataques del 51% "as a last resort because they are inevitable in a decentralized system and the benefits from someone exploiting them are minimal" (como último recurso, porque son inevitables en un sistema descentralizado y quien los explota gana muy poco), escribió. "Timewarp breaks that: it allows a majority of the hashrate that colludes to steal subsidy from future miners" (el timewarp rompe eso: permite que una mayoría del hashrate que se ponga de acuerdo le robe el subsidio a los mineros futuros). Lo citamos aquí [con su permiso (en inglés)](https://www.reddit.com/r/Bitcoin/comments/1xorfs5/comment/19s8huupj2owy/).
 
 Todos los demás se interponen. El ataque necesita la mayoría del hashrate durante semanas, a la vista de todos, y no gana nada hasta que la dificultad cae por primera vez, el día 28 si el ataque empieza en el límite entre dos ventanas o hacia el día 20 si se elige el mejor momento para empezar. Un minero honesto que gane el primer bloque de cualquier ventana y le ponga la hora real le da a esa ventana un punto de partida verdadero, así que se mide cerca de su duración real, y cada marca honesta intermedia empuja hacia adelante la mediana, y con ella el piso del atacante. Una minoría no gana casi nada; Poinsot dijo que la ganancia de los juegos oportunistas con las marcas de tiempo es "ridiculously small for any minority hashrate" (ridículamente pequeña para cualquier hashrate minoritario).
 
