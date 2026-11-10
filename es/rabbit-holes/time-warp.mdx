@@ -2,14 +2,14 @@
 title: "El time warp: cómo mentir sobre la hora podría romper la dificultad de Bitcoin"
 slug: time-warp
 translationOf: time-warp
-sourceHash: "90299db97ea9"
-sourceCommit: "d4759d6"
-sourceUpdated: "2026-11-09"
+sourceHash: "3aa318c0febe"
+sourceCommit: "932484d"
+sourceUpdated: "2026-11-10"
 translation:
   method: "llm-draft"
 draft: false
 published: "2026-11-05"
-updated: "2026-11-09"
+updated: "2026-11-10"
 status: live
 section: rabbit-hole
 category: how-it-works
@@ -38,9 +38,10 @@ sources:
   - { label: "Bitcoin Core 27.0 release notes: the change 'increases the importance of the node operator ensuring their system time is (and stays) correct'", url: "https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-27.0.md" }
   - { label: "Bitcoin Core PR #29623 - Simplify network-adjusted time warning logic (merged 30 April 2024, in 28.0): warns when outbound peers' median clock is more than ten minutes off", url: "https://github.com/bitcoin/bitcoin/pull/29623" }
   - { label: "BIP-113 - Median time-past as endpoint for lock-time calculations", url: "https://github.com/bitcoin/bips/blob/master/bip-0113.mediawiki" }
-  - { label: "Bitcoin 0.1.0 (9 January 2009), src/main.cpp lines 685-729, trottier/original-bitcoin mirror: the nInterval-1 loop (line 701), the unsigned span (line 706), the clamp (lines 708-711)", url: "https://github.com/trottier/original-bitcoin/blob/4184ab26345d19e87045ce7d9291e60e7d36e096/src/main.cpp#L685-L729" }
+  - { label: "Bitcoin 0.1.0 (8 January 2009), src/main.cpp lines 685-729, trottier/original-bitcoin mirror: the nInterval-1 loop (line 701), the unsigned span (line 706), the clamp (lines 708-711)", url: "https://github.com/trottier/original-bitcoin/blob/4184ab26345d19e87045ce7d9291e60e7d36e096/src/main.cpp#L685-L729" }
   - { label: "Bitcoin 0.1.0, src/util.cpp lines 320-327: 'Never go to sea with two chronometers; take one or three.'", url: "https://github.com/trottier/original-bitcoin/blob/4184ab26345d19e87045ce7d9291e60e7d36e096/src/util.cpp#L320-L327" }
-  - { label: "Satoshi Nakamoto Institute - code archive: Bitcoin v0.1.0 (9 January 2009) and the pre-release of 15 November 2008", url: "https://satoshi.nakamotoinstitute.org/code/" }
+  - { label: "Satoshi Nakamoto Institute - code archive: Bitcoin v0.1.0 and the pre-release of 15 November 2008", url: "https://satoshi.nakamotoinstitute.org/code/" }
+  - { label: "Satoshi Nakamoto - Bitcoin v0.1 released (Cryptography Mailing List, 8 January 2009)", url: "https://satoshi.nakamotoinstitute.org/emails/cryptography/16/" }
   - { label: "The November 2008 pre-release, main.cpp (BiDPHILOSOPHER/bitcoin-nov08 mirror): a 30-day look-back at 15-minute blocks, one-bit difficulty steps, every block later than its parent", url: "https://github.com/BiDPHILOSOPHER/bitcoin-nov08/blob/master/main.cpp" }
   - { label: "Bitcoin whitepaper, section 4: difficulty set by 'a moving average targeting an average number of blocks per hour'", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Pieter Wuille - Oddities of Bitcoin's difficulty adjustment (gist, 20 February 2019): honest blocks average 600(2016/2014) seconds, crediting Ian Goldberg", url: "https://gist.github.com/sipa/1a70884abe6d0a7cddc340c99f741a41" }
@@ -121,7 +122,7 @@ Dentro de esos límites, el [ajuste de dificultad](/es/glosario/ajuste-de-dificu
 
 El reajuste no siempre se construyó así. Una copia del código de Satoshi fechada a mediados de noviembre de 2008 miraba 30 días hacia atrás con un objetivo de un bloque cada 15 minutos, cambiaba la dificultad solo duplicándola o reduciéndola a la mitad, contaba cada intervalo entre bloques y exigía que cada bloque llevara una marca posterior a la de su bloque padre. El [whitepaper](/bitcoin.pdf) (PDF en inglés) describe "a moving average targeting an average number of blocks per hour" (un promedio móvil que apunta a un número promedio de bloques por hora), más cerca de ese borrador que de lo que salió.
 
-Cuando salió la 0.1.0, el 9 de enero de 2009, unas ocho semanas después, tenía ventanas fijas de 2,016 bloques, el límite de un factor de cuatro, la mediana de once bloques en lugar de aquella regla de que cada bloque fuera posterior a su padre, y este bucle para encontrar el primer bloque de una ventana:
+Cuando salió la 0.1.0, el 8 de enero de 2009, unas ocho semanas después, tenía ventanas fijas de 2,016 bloques, el límite de un factor de cuatro, la mediana de once bloques en lugar de aquella regla de que cada bloque fuera posterior a su padre, y este bucle para encontrar el primer bloque de una ventana:
 
 ```
 for (int i = 0; pindexFirst && i < nInterval-1; i++)
