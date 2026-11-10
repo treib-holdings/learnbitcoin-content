@@ -9,7 +9,7 @@ keyTakeaways:
   - "Avoids tying too many transactions to a single address"
   - "Standard practice in enterprise key management, where every key gets a cryptoperiod"
 sources:
-  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, section 10 Privacy: a new key pair should be used for each transaction to keep them from being linked to a common owner (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, section 10 Privacy: a new key pair should be used for each transaction to keep them from being linked to a common owner (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "BIP-32 - Hierarchical Deterministic Wallets: a system for deriving a tree of keypairs from a single seed (2012)", url: "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" }
   - { label: "NIST - SP 800-57 Part 1 Rev. 5, Recommendation for Key Management, section 5.3: a cryptoperiod is the time span during which a specific key is authorized for use; limiting it limits the amount of exposure if a single key is compromised (May 2020)", url: "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-57pt1r5.pdf" }
   - { label: "bitcoin.org - Android Security Vulnerability alert: key rotation is necessary, generating a new address with a repaired random number generator and sending all the money in your wallet back to yourself; do not send bitcoins back to your old insecure addresses (11 August 2013)", url: "https://bitcoin.org/en/alert/2013-08-11-android" }
@@ -31,7 +31,7 @@ liveWidget: ~
 
 "Key rotation" has two distinct meanings in Bitcoin, and conflating them is a common source of confusion:
 
-- Address rotation: using a fresh address for every receive. HD wallets do this automatically, and the keys for each address are derived from the same master seed. The seed itself doesn't rotate. This is privacy hygiene, not security rotation; the whitepaper recommended it in 2008 and HD wallets made it free.
+- Address rotation: using a fresh address for every receive. HD wallets do this automatically, and the keys for each address are derived from the same master seed. The seed itself doesn't rotate. This is privacy hygiene, not security rotation; the [whitepaper](/bitcoin.pdf) recommended it in 2008 and HD wallets made it free.
 
 - True key rotation: moving funds from one set of keys to a brand new set, then destroying or retiring the old keys. This is what corporate security policy means by "rotate the keys": NIST's key-management guidance gives every key a cryptoperiod, partly to limit the exposure if a single key is compromised. In Bitcoin it's a deliberate, manual operation: spend everything to fresh addresses derived from a new seed (Bitcoin Core's `sendall` RPC does the sweep in one call).
 

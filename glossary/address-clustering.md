@@ -9,7 +9,7 @@ keyTakeaways:
   - "Used by chain analysis to track user behavior"
   - "Reduces privacy if addresses share transaction patterns"
 sources:
-  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, section 10, Privacy (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, section 10, Privacy (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Meiklejohn et al. - A Fistful of Bitcoins: Characterizing Payments Among Men with No Names, IMC 2013 (October 2013)", url: "https://cseweb.ucsd.edu/~smeiklejohn/files/imc13.pdf" }
   - { label: "BIP-78 - A Simple Payjoin Proposal: the common-input, change-scriptpubkey and change-round-amount heuristics", url: "https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki" }
   - { label: "Bitcoin Optech - Output linking topic", url: "https://bitcoinops.org/en/topics/output-linking/" }

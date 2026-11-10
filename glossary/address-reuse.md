@@ -9,7 +9,7 @@ keyTakeaways:
   - "The first spend from a hashed address publishes its public key, so every later deposit to that address sits behind a key the whole world can read, for as long as the coins stay there"
   - "Receiving twice at an address that has never spent leaks privacy; spending once and then receiving again leaks the key too. Modern wallets hand out a fresh address for every payment, so the fix is to stop fighting them"
 sources:
-  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 10, Privacy: a new key pair should be used for each transaction to keep them from being linked to a common owner (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 10, Privacy: a new key pair should be used for each transaction to keep them from being linked to a common owner (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Satoshi Nakamoto - bitcointalk, 25 November 2009: for greater privacy, it's best to use bitcoin addresses only once", url: "https://satoshi.nakamotoinstitute.org/posts/bitcointalk/11/" }
   - { label: "BIP-360 - Pay-to-Merkle-Root (P2MR): poor wallet hygiene such as address reuse increases vulnerability to long exposure attacks; protection from them does not depend on post-quantum signatures activating", url: "https://github.com/bitcoin/bips/blob/master/bip-0360.mediawiki" }
   - { label: "Bitcoin Wiki - Address reuse", url: "https://en.bitcoin.it/wiki/Address_reuse" }
@@ -35,7 +35,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-Address reuse is the practice of receiving multiple payments at the same Bitcoin [address](/glossary/address). It's one of the most common privacy mistakes and one of the easiest to avoid. The whitepaper said so in 2008: "a new key pair should be used for each transaction to keep them from being linked to a common owner."
+Address reuse is the practice of receiving multiple payments at the same Bitcoin [address](/glossary/address). It's one of the most common privacy mistakes and one of the easiest to avoid. The [whitepaper](/bitcoin.pdf) said so in 2008: "a new key pair should be used for each transaction to keep them from being linked to a common owner."
 
 Why it matters: every Bitcoin transaction is publicly visible on the chain, forever. An address that receives one payment shows up once. An address that receives a hundred payments shows up a hundred times, with every counterparty, amount, and timestamp linked together in plain view. Anyone who knows that address belongs to you - because you posted it on Twitter, used it for a donation page, gave it to one KYC exchange - can now see your entire history through that address.
 

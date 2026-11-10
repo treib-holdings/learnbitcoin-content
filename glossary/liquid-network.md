@@ -21,7 +21,7 @@ sources:
   - { label: "mempool Liquid explorer API - BTC held in the Liquid peg wallet: 3,632.23 BTC (checked October 10, 2026)", url: "https://liquid.network/api/v1/liquid/reserves" }
   - { label: "mempool Liquid explorer API - L-BTC in circulation: 4,234.76 L-BTC (checked October 10, 2026)", url: "https://liquid.network/api/v1/liquid/pegs" }
   - { label: "Decrypt - Blockstream refuses to pay the attacker's demanded bounty for the remaining 598.5 BTC (September 11, 2026)", url: "https://decrypt.co/377959/blockstream-refuses-ransom-for-return-of-47m-in-bitcoin-from-liquid-hack-it-is-theft" }
-  - { label: "Satoshi Nakamoto - Bitcoin whitepaper: blocks assumed every 10 minutes (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin whitepaper: blocks assumed every 10 minutes (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
 relatedTerms:
   - bitcoin-bridge
   - liquid-federation

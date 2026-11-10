@@ -9,7 +9,7 @@ keyTakeaways:
   - "Constrained in throughput, leading to layer-2 expansions"
   - "Miners and full nodes collectively enforce consensus"
 sources:
-  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "BIP 141 - Segregated Witness (Consensus layer): block weight limit of 4,000,000 (2015)", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
   - { label: "Bitcoin Core - src/consensus/amount.h, MAX_MONEY (master, accessed 2026-10-13)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/consensus/amount.h" }
   - { label: "Bitcoin Core - src/kernel/chainparams.cpp, mainnet nPowTargetSpacing and nSubsidyHalvingInterval (master, accessed 2026-10-13)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/chainparams.cpp" }

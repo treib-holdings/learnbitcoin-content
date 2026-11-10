@@ -9,7 +9,7 @@ keyTakeaways:
   - "Ensures security by making attacks prohibitively expensive"
   - "Fundamental to Bitcoin's decentralized consensus design"
 sources:
-  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 4, Proof-of-Work (similar to Adam Back's Hashcash; verified by executing a single hash) and section 6, Incentive (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 4, Proof-of-Work (similar to Adam Back's Hashcash; verified by executing a single hash) and section 6, Incentive (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Adam Back - Hashcash: A Denial of Service Counter-Measure; the scheme was first announced in May 1997 (2002)", url: "http://www.hashcash.org/papers/hashcash.pdf" }
   - { label: "Bitcoin Core - CheckProofOfWork in src/pow.cpp: the block hash must not exceed the target derived from nBits", url: "https://github.com/bitcoin/bitcoin/blob/master/src/pow.cpp" }
   - { label: "Bitcoin Core - nPowTargetTimespan of two weeks and nPowTargetSpacing of 10 minutes in src/kernel/chainparams.cpp", url: "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/chainparams.cpp" }

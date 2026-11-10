@@ -10,7 +10,7 @@ keyTakeaways:
   - "ScriptPubKey can be single-sig, multisig, or advanced script"
 sources:
   - { label: "Bitcoin developer reference - Raw Transaction Format: TxOut (8-byte value, compactSize-prefixed pubkey script) and Outpoint (TXID plus output index, first output is 0)", url: "https://developer.bitcoin.org/reference/transactions.html" }
-  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 9, Combining and Splitting Value: at most two outputs, one for the payment and one returning the change (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 9, Combining and Splitting Value: at most two outputs, one for the payment and one returning the change (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "BIP-13 - Address Format for pay-to-script-hash: version byte 5 becomes the leading character 3 (2011)", url: "https://github.com/bitcoin/bips/blob/master/bip-0013.mediawiki" }
   - { label: "BIP-173 - Base32 address format for native v0-16 witness outputs: bc1 prefix, version 0 addresses are 42 or 62 characters (2017)", url: "https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki" }
   - { label: "BIP-341 - Taproot: SegWit version 1 spending rules, key path and script path spending (2020)", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki" }

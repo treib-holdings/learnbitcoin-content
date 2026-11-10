@@ -9,7 +9,7 @@ keyTakeaways:
   - "Consumes existing UTXOs and creates new ones, forming the ledger's flow"
   - "Valid transactions must satisfy script constraints for each input"
 sources:
-  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, sections 2, 6 and 9 (2008): a coin is a chain of digital signatures; if a transaction's output value is less than its input value, the difference is a transaction fee; transactions carry multiple inputs and outputs, normally one for the payment and one returning change to the sender", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, sections 2, 6 and 9 (2008): a coin is a chain of digital signatures; if a transaction's output value is less than its input value, the difference is a transaction fee; transactions carry multiple inputs and outputs, normally one for the payment and one returning change to the sender", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Bitcoin developer reference - Raw transaction format: the serialized transaction is SHA256(SHA256()) hashed to create the txid; the fields are version, inputs, outputs and lock time", url: "https://developer.bitcoin.org/reference/transactions.html" }
   - { label: "Bitcoin developer guide - Transactions: the full value of the included UTXOs must be spent or given to a miner as a fee, so most transactions include a change output paying the surplus back to the spender", url: "https://developer.bitcoin.org/devguide/transactions.html" }
   - { label: "BIP-141 - Segregated Witness: the txid remains the double SHA256 of the traditional serialization without witness data, and a separate wtxid covers the witness", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }

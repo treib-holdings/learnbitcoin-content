@@ -9,7 +9,7 @@ keyTakeaways:
   - "Improves privacy by limiting unnecessary input merging"
   - "Can optimize fees and avoid dust buildup"
 sources:
-  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 10, Privacy: some linking is still unavoidable with multi-input transactions, which necessarily reveal that their inputs were owned by the same owner (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 10, Privacy: some linking is still unavoidable with multi-input transactions, which necessarily reveal that their inputs were owned by the same owner (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Bitcoin Wiki - Privacy: the common-input-ownership heuristic, and coin control as a feature of some wallets that lets the user choose which coins are spent as inputs", url: "https://en.bitcoin.it/wiki/Privacy" }
   - { label: "Bitcoin Optech - Output linking topic (dust attacks, and coin control as a wallet defense against spending the dust)", url: "https://bitcoinops.org/en/topics/output-linking/" }
   - { label: "Bitcoin Core 0.9.0 release notes - Add Coin Control Features (19 March 2014)", url: "https://bitcoin.org/en/release/v0.9.0" }
@@ -36,7 +36,7 @@ Coin control is the wallet feature that lets you manually choose which [UTXOs](/
 
 Why coin control matters:
 
-- **Privacy.** [Address clustering](/glossary/address-clustering) heuristics depend on the common-input-ownership heuristic: all UTXOs spent in one transaction share an owner. The whitepaper itself flagged that leak. By manually choosing which UTXOs to combine, you can avoid linking addresses that you'd rather keep separate.
+- **Privacy.** [Address clustering](/glossary/address-clustering) heuristics depend on the common-input-ownership heuristic: all UTXOs spent in one transaction share an owner. The [whitepaper](/bitcoin.pdf) itself flagged that leak. By manually choosing which UTXOs to combine, you can avoid linking addresses that you'd rather keep separate.
 - **Fees.** Fewer inputs = smaller transaction = lower fees at any given sat/vB (each P2WPKH input adds about 68 vbytes). If you have many small UTXOs and one large one, sometimes spending the large one alone is much cheaper.
 - **Dust management.** You can deliberately [consolidate](/glossary/consolidation-transaction) small UTXOs ([dust](/glossary/dust)) during low-fee periods, or avoid combining them with valuable UTXOs that you don't want linked to dust sources.
 - **Source-of-funds tagging.** If you've labeled UTXOs by source (KYC vs non-KYC, business vs personal), you can selectively spend from the appropriate bucket without crossing streams.

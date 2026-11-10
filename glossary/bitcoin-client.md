@@ -23,7 +23,7 @@ sources:
   - { label: "btcd README (an alternative full node Bitcoin implementation written in Go)", url: "https://github.com/btcsuite/btcd" }
   - { label: "lnd README (pluggable chain back ends: btcd, a full node; bitcoind; and Neutrino, a light client)", url: "https://github.com/lightningnetwork/lnd" }
   - { label: "Libbitcoin Node on GitHub (Bitcoin full node built on the Libbitcoin development library)", url: "https://github.com/libbitcoin/libbitcoin-node" }
-  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, section 8, Simplified Payment Verification (keep only block headers and get the Merkle branch for a transaction)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, section 8, Simplified Payment Verification (keep only block headers and get the Merkle branch for a transaction)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "BIP-157 - Client Side Block Filtering (a light client protocol in which full nodes serve compact block filters)", url: "https://github.com/bitcoin/bips/blob/master/bip-0157.mediawiki" }
   - { label: "Neutrino README (a Bitcoin light client that uses compact block filters)", url: "https://github.com/lightninglabs/neutrino" }
   - { label: "Bitcoin Fork Monitor (forkmonitor.info) - on October 10, 2026 it runs several versions of Bitcoin Core plus btcd and bcoin side by side and compares their chain tips", url: "https://forkmonitor.info/" }
@@ -46,7 +46,7 @@ The major implementations as of 2026:
 - **Bitcoin Knots.** A fork of Bitcoin Core whose lead maintainer is Luke Dashjr, with extra relay-policy options and different defaults. Releases up to May 8, 2026 do not include BIP-110. Releases from May 9, 2026 on enforce BIP-110, a temporary limit on data in transactions, and nodes running them left Bitcoin's main chain on August 8, 2026. In September 2026 Knots shipped a hard fork that gave that split-off chain a different proof of work, BLAKE2b. The same estimate put about 13% of nodes on Knots, more than half of them on the newer releases.
 - **btcd.** A separately written full node in the Go language. The lnd Lightning node can use it as its link to the blockchain.
 - **Libbitcoin.** A separately written Bitcoin development library, with a full node built on it.
-- **Light clients.** Many wallets check their own payments without validating every block. The Bitcoin white paper describes [simplified payment verification](/glossary/spv-simplified-payment-verification): keep only the block headers and get proof that a transaction sits in a block. BIP-157 describes a newer light-client protocol in which full nodes serve compact block filters, and Neutrino is a light client that uses such filters. Either way, the wallet relies on full nodes for the data it does not check itself.
+- **Light clients.** Many wallets check their own payments without validating every block. The Bitcoin [white paper](/bitcoin.pdf) describes [simplified payment verification](/glossary/spv-simplified-payment-verification): keep only the block headers and get proof that a transaction sits in a block. BIP-157 describes a newer light-client protocol in which full nodes serve compact block filters, and Neutrino is a light client that uses such filters. Either way, the wallet relies on full nodes for the data it does not check itself.
 
 Why implementation diversity matters:
 

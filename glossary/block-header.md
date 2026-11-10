@@ -11,7 +11,7 @@ keyTakeaways:
 sources:
   - { label: "Bitcoin Core - src/primitives/block.h: CBlockHeader fields nVersion, hashPrevBlock, hashMerkleRoot, nTime, nBits, nNonce (accessed 2026-10-13)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/primitives/block.h" }
   - { label: "Bitcoin developer reference - Block Headers: 80-byte format, timestamp rules, nBits and nonce (accessed 2026-10-13)", url: "https://developer.bitcoin.org/reference/block_chain.html#block-headers" }
-  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, sections 7 and 8: 80 bytes * 6 * 24 * 365 = 4.2MB per year (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, sections 7 and 8: 80 bytes * 6 * 24 * 365 = 4.2MB per year (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Bitcoin Wiki - Block hashing algorithm: the extraNonce field in the coinbase transaction (accessed 2026-10-13)", url: "https://en.bitcoin.it/wiki/Block_hashing_algorithm" }
   - { label: "Bitcoin Core - Release notes 0.10.0: headers-first synchronization (2015)", url: "https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.10.0.md" }
   - { label: "BIP-130 - sendheaders message: announcing new blocks by header (2015)", url: "https://github.com/bitcoin/bips/blob/master/bip-0130.mediawiki" }
@@ -47,6 +47,6 @@ The six fields:
 
 To mine a block, you compute SHA-256(SHA-256(header)) and check whether the result is at or below the target encoded in *bits*. If not, change the nonce and try again. (When you exhaust all 4 billion nonce values, you tweak the [coinbase transaction](/glossary/coinbase-transaction)'s extranonce, which changes the Merkle root, and start over.)
 
-Because a header is only 80 bytes, a node can check a block's proof-of-work before it has the block itself. Bitcoin Core has synced headers first since version 0.10 (2015), and since BIP 130 a peer can ask to have new blocks announced by their headers rather than by hash alone. Lightweight clients ([SPV](/glossary/spv-simplified-payment-verification) wallets) follow the chain by checking only the headers - about 4.2 MB per year, as the whitepaper worked out - without storing the gigabytes of full transaction data.
+Because a header is only 80 bytes, a node can check a block's proof-of-work before it has the block itself. Bitcoin Core has synced headers first since version 0.10 (2015), and since BIP 130 a peer can ask to have new blocks announced by their headers rather than by hash alone. Lightweight clients ([SPV](/glossary/spv-simplified-payment-verification) wallets) follow the chain by checking only the headers - about 4.2 MB per year, as the [whitepaper](/bitcoin.pdf) worked out - without storing the gigabytes of full transaction data.
 
 See [Mining rabbit hole](/rabbit-hole/mining) for the search process; [Block](/glossary/block) for what the header is summarizing.

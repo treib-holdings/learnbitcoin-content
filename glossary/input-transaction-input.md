@@ -10,7 +10,7 @@ keyTakeaways:
   - "Multiple inputs can fund one transaction"
 sources:
   - { label: "Bitcoin Core - src/primitives/transaction.h, COutPoint and CTxIn (master, accessed 2026-10-13)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/primitives/transaction.h" }
-  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 9, Combining and Splitting Value (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 9, Combining and Splitting Value (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "BIP 141 - Segregated Witness (Consensus layer) (2015)", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
   - { label: "Bitcoin developer reference - Raw Transaction Format, TxIn (accessed 2026-10-13)", url: "https://developer.bitcoin.org/reference/transactions.html" }
   - { label: "Bitcoin Core - src/consensus/tx_verify.cpp, CheckTxInputs (master, accessed 2026-10-13)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/consensus/tx_verify.cpp" }

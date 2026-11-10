@@ -30,7 +30,7 @@ sources:
   - { label: "Bitcoin Wiki - block timestamp rules (later than the median of the last 11 blocks, at most 2 hours ahead)", url: "https://en.bitcoin.it/wiki/Block_timestamp" }
   - { label: "mempool.space API - block sizes and weights over the past year (average about 1.58 MB, October 2025 to October 2026; blockchain.com's average-block-size chart agrees)", url: "https://mempool.space/api/v1/mining/blocks/sizes-weights/1y" }
   - { label: "Meni Rosenfeld - Analysis of hashrate-based double spending (2012), Table 1: success odds by attacker share and confirmations", url: "https://arxiv.org/abs/1402.2009" }
-  - { label: "Bitcoin whitepaper, section 11 - Satoshi's own attacker calculation", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Bitcoin whitepaper, section 11 - Satoshi's own attacker calculation", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Kraken - cryptocurrency deposit processing times (credits bitcoin deposits after three confirmations)", url: "https://support.kraken.com/articles/203325283-cryptocurrency-deposit-processing-times" }
   - { label: "Bitcoin Core source - RecommendedNumConfirmations is 6; the wallet shows 'Confirming (n of 6 recommended confirmations)' (src/qt/transactionrecord.h)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/qt/transactionrecord.h" }
   - { label: "BitMEX Research - Bitcoin's consensus forks: at least three identifiable chain splits, in 2010, 2013 and 2015 (Wayback Machine)", url: "https://web.archive.org/web/20240110121831/https://blog.bitmex.com/bitcoins-consensus-forks/" }
@@ -172,7 +172,7 @@ Imagine an attacker who wants to reverse Alice's payment. They'd have to:
 
 Doable for one block, if the attacker controls enough hash power for one lucky moment. **Doable for six blocks? Nearly impossible, unless the attacker controls a large share of the world's hash power.**
 
-Here's the rough probability math from Meni Rosenfeld's 2012 analysis (Satoshi ran a simpler version in section 11 of the whitepaper), assuming the attacker controls 10% of hash power:
+Here's the rough probability math from Meni Rosenfeld's 2012 analysis (Satoshi ran a simpler version in section 11 of the [whitepaper](/bitcoin.pdf)), assuming the attacker controls 10% of hash power:
 
 | Confirmations | Probability of successful reversal |
 |---|---|

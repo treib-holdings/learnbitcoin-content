@@ -9,7 +9,7 @@ keyTakeaways:
   - "Each block references the previous block's hash"
   - "Proof-of-work secures the chain and prevents tampering"
 sources:
-  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, sections 3 to 6 (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, sections 3 to 6 (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Bitcoin developer reference - Block Headers: previous block header hash and merkle root (accessed 2026-10-13)", url: "https://developer.bitcoin.org/reference/block_chain.html#block-headers" }
   - { label: "Bitcoin Core - src/kernel/chainparams.cpp: nSubsidyHalvingInterval = 210000, nPowTargetSpacing = 10 * 60 (accessed 2026-10-13)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/chainparams.cpp" }
   - { label: "Bitcoin Core - src/validation.cpp: GetBlockSubsidy (accessed 2026-10-13)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp" }

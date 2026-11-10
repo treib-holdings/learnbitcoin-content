@@ -60,4 +60,4 @@ What sets the floor:
 
 The fee floor isn't enforced by anyone. It's just what happens when there's more transaction demand than block space. Modern wallets do [fee estimation](/glossary/fee-estimation) to set rates that comfortably clear the current floor; aggressive users sometimes underpay and rely on [RBF](/glossary/replace-fee-rbf) to bump up later if needed.
 
-In the long run, the fee floor matters more as [block subsidies](/glossary/block-subsidy) shrink and miner revenue depends more on fees. The subsidy halves every 210,000 blocks and reaches zero around 2140. After that, fees alone pay miners, as the whitepaper anticipated.
+In the long run, the fee floor matters more as [block subsidies](/glossary/block-subsidy) shrink and miner revenue depends more on fees. The subsidy halves every 210,000 blocks and reaches zero around 2140. After that, fees alone pay miners, as the [whitepaper](/bitcoin.pdf) anticipated.

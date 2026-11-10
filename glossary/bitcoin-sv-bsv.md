@@ -31,7 +31,7 @@ The split came out of a fight inside Bitcoin Cash over its direction. One side, 
 
 BSV's defining bet is enormous blocks. Where Bitcoin keeps blocks small on purpose to keep [full nodes](/glossary/full-node) cheap to run, BSV stripped out practical limits in pursuit of gigabyte-scale blocks and cheap on-chain data storage.
 
-The project is inseparable from Craig Wright's claim to be Satoshi Nakamoto, Bitcoin's pseudonymous creator. That claim drove much of BSV's marketing and a long run of lawsuits Wright filed against people who disputed it. In April 2019, after Wright threatened and sued his critics, Binance, Kraken, and ShapeShift delisted BSV, and its price fell sharply. In March 2024, the UK High Court ruled in COPA v Wright that Wright is not Satoshi, that he did not write the white paper or the original software, and that he had produced forged documents to support his story.
+The project is inseparable from Craig Wright's claim to be Satoshi Nakamoto, Bitcoin's pseudonymous creator. That claim drove much of BSV's marketing and a long run of lawsuits Wright filed against people who disputed it. In April 2019, after Wright threatened and sued his critics, Binance, Kraken, and ShapeShift delisted BSV, and its price fell sharply. In March 2024, the UK High Court ruled in COPA v Wright that Wright is not Satoshi, that he did not write the [white paper](/bitcoin.pdf) or the original software, and that he had produced forged documents to support his story.
 
 On this site, "Bitcoin" without qualification means BTC. We cover BSV as history rather than as a peer chain.
 

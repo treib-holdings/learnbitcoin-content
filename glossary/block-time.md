@@ -10,7 +10,7 @@ keyTakeaways:
   - "A core design choice balancing security and throughput"
 sources:
   - { label: "Bitcoin Core source - chainparams.cpp: mainnet nPowTargetSpacing of 10 * 60 seconds and a two-week nPowTargetTimespan (2,016 blocks)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/chainparams.cpp" }
-  - { label: "Satoshi Nakamoto - Bitcoin whitepaper: difficulty targets an average number of blocks per hour; blocks generated every 10 minutes (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin whitepaper: difficulty targets an average number of blocks per hour; blocks generated every 10 minutes (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Bitcoin Wiki - Difficulty: adjusted every 2016 blocks toward one block each 10 minutes", url: "https://en.bitcoin.it/wiki/Difficulty" }
   - { label: "Decker and Wattenhofer - Information Propagation in the Bitcoin Network: proof-of-work is a Poisson process with exponential block intervals; propagation delay causes forks (2013)", url: "https://tik-db.ee.ethz.ch/file/49318d3f56c1d525aabf7fda78b23fc0/P2P2013_041.pdf" }
   - { label: "Gervais et al. - On the Security and Performance of Proof of Work Blockchains: block interval trades performance against security (2016)", url: "https://eprint.iacr.org/2016/555" }

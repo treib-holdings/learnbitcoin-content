@@ -14,7 +14,7 @@ sources:
   - { label: "BIP-341 - Taproot (Status: Deployed; the deployment did activate at height 709632 on Bitcoin mainnet, 14 November 2021)", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki" }
   - { label: "BIP-50 - March 2013 Chain Fork Post-Mortem (the accidental split between 0.8 and pre-0.8 nodes; the two-month temporary rules in 0.8.1; block 252,451 on 16 August 2013 forking unpatched nodes off the network)", url: "https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki" }
   - { label: "Bitcoin Cash - UAHF Technical Specification (a block size hard fork from the original 1 MB chain; activation time 1 August 2017 12:20 UTC)", url: "https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/uahf-technical-spec.md" }
-  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 5: when two nodes broadcast different versions of the next block, the tie is broken when the next proof-of-work is found", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 5: when two nodes broadcast different versions of the next block, the tie is broken when the next proof-of-work is found", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
 relatedTerms:
   - airdrop-btc-fork
   - alt-season
