@@ -1,0 +1,795 @@
+[
+  {
+    "id": "2008-10-31-satoshi-announces-the-bitcoin-whitepaper",
+    "date": "2008-10-31",
+    "title": "Satoshi announces the Bitcoin whitepaper",
+    "line": "Satoshi Nakamoto announces a paper describing \"a new electronic cash system that's fully peer-to-peer, with no trusted third party\".",
+    "page": "/glossary/whitepaper",
+    "importance": 1,
+    "source": {
+      "label": "Satoshi Nakamoto, The Cryptography Mailing List (metzdowd.com archive) - Bitcoin P2P e-cash paper (announcement email, 31 October 2008)",
+      "url": "https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html",
+      "publisher": "Cryptography Mailing List"
+    }
+  },
+  {
+    "id": "2009-01-03-genesis-block-starts-the-chain-at-50",
+    "date": "2009-01-03",
+    "title": "Genesis block starts the chain at 50 BTC per block",
+    "line": "Block 0, the genesis block, is dated January 3, 2009, and the block subsidy starts at 50 BTC.",
+    "page": "/rabbit-hole/halvings",
+    "importance": 1,
+    "source": {
+      "label": "Bitcoin Core project (GitHub) - bitcoin/bitcoin: src/kernel/chainparams.cpp (main network parameters)",
+      "url": "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/chainparams.cpp",
+      "publisher": "Bitcoin Core source code"
+    }
+  },
+  {
+    "id": "2009-01-08-bitcoin-0-1-0-is-released",
+    "date": "2009-01-08",
+    "title": "Bitcoin 0.1.0 is released",
+    "line": "Satoshi announces the first release of Bitcoin on the Cryptography Mailing List.",
+    "page": "/rabbit-hole/time-warp",
+    "importance": 1,
+    "source": {
+      "label": "Satoshi Nakamoto, The Cryptography Mailing List (metzdowd.com archive) - Bitcoin v0.1 released",
+      "url": "https://www.metzdowd.com/pipermail/cryptography/2009-January/014994.html",
+      "publisher": "Cryptography Mailing List"
+    }
+  },
+  {
+    "id": "2009-01-12-satoshi-sends-the-first-bitcoin-transaction-to",
+    "date": "2009-01-12",
+    "title": "Satoshi sends the first Bitcoin transaction to Hal Finney",
+    "line": "Hal Finney receives the first Bitcoin transaction, ten coins from Satoshi, in block 170.",
+    "page": "/rabbit-hole/bitcoin-units",
+    "importance": 1,
+    "source": {
+      "label": "mempool.space (block explorer API; data from the Bitcoin blockchain) - Block 170 (block data, JSON); Hal Finney, 'Bitcoin and me', BitcoinTalk, 19 March 2013",
+      "url": "https://mempool.space/block/00000000d1145790a8694403d4063f323d499e655c83426834d4ce2f8dd4a2ee",
+      "publisher": "mempool.space, block 170"
+    }
+  },
+  {
+    "id": "2010-07-15-satoshi-adds-the-one-megabyte-block-size",
+    "date": "2010-07-15",
+    "title": "Satoshi adds the one-megabyte block size limit",
+    "line": "",
+    "page": "/rabbit-hole/block-size-war",
+    "importance": 2,
+    "source": {
+      "label": "Bitcoin source repository, commit by s_nakamoto (GitHub copy of the original SVN history) - fix openssl linkage problems, disable minimize to tray on Linux because it has too many problems including a CPU peg bug (SVN r103)",
+      "url": "https://github.com/bitcoin/bitcoin/commit/a30b56ebe76ffff9f9cc8a6667186179413c6349",
+      "publisher": "Bitcoin source code, commit"
+    }
+  },
+  {
+    "id": "2010-08-15-value-overflow-bug-creates-184-billion-btc",
+    "date": "2010-08-15",
+    "title": "Value overflow bug creates 184 billion BTC",
+    "line": "Block 74,638 created 184 billion BTC against a 21 million cap. A patch was out within five hours.",
+    "page": "/rabbit-hole/inflation-bug-postmortem",
+    "importance": 1,
+    "source": {
+      "label": "Bitcoin forum (Wayback Machine capture of 4 March 2011) - Strange block 74638 (forum thread, first post by jgarzik, 15 August 2010)",
+      "url": "http://web.archive.org/web/20110304094821/http://www.bitcoin.org:80/smf/index.php?topic=822.0",
+      "publisher": "Bitcoin forum, archive copy"
+    }
+  },
+  {
+    "id": "2010-08-16-the-patched-chain-overtakes-the-bad-one",
+    "date": "2010-08-16",
+    "title": "The patched chain overtakes the bad one",
+    "line": "",
+    "page": "/rabbit-hole/inflation-bug-postmortem",
+    "importance": 2,
+    "source": {
+      "label": "Satoshi Nakamoto, BitcoinTalk post of 16 August 2010 (Satoshi Nakamoto Institute archive) - Re: overflow bug SERIOUS",
+      "url": "https://satoshi.nakamotoinstitute.org/posts/bitcointalk/387/",
+      "publisher": "Satoshi Nakamoto, Bitcoin forum"
+    }
+  },
+  {
+    "id": "2010-11-09-first-bitcoin-is-dead-obituary-is-published",
+    "date": "2010-11-09",
+    "title": "First 'Bitcoin is dead' obituary is published",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "The Underground Economist (blog), Wayback Machine capture of 15 December 2010 - Why Bitcoin can't be a currency",
+      "url": "https://web.archive.org/web/20101215103112/http://undergroundeconomist.com/post/1528511369",
+      "publisher": "The Underground Economist, archive copy"
+    }
+  },
+  {
+    "id": "2011-01-silk-road-opens-accepting-only-bitcoin",
+    "date": "2011-01",
+    "title": "Silk Road opens, accepting only bitcoin",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "U.S. Attorney's Office, Southern District of New York (Department of Justice), press release of 29 May 2015; Wayback Machine capture of 5 January 2021 - Ross Ulbricht, A/K/A \"Dread Pirate Roberts,\" Sentenced In Manhattan Federal Court To Life In Prison",
+      "url": "https://web.archive.org/web/20210105173631/https://www.justice.gov/usao-sdny/pr/ross-ulbricht-aka-dread-pirate-roberts-sentenced-manhattan-federal-court-life-prison",
+      "publisher": "US Department of Justice, archive copy"
+    }
+  },
+  {
+    "id": "2011-06-14-wikileaks-announces-it-accepts-bitcoin-donations",
+    "date": "2011-06-14",
+    "title": "WikiLeaks announces it accepts Bitcoin donations",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "WikiLeaks on X (formerly Twitter) - WikiLeaks (@wikileaks) post of June 14, 2011",
+      "url": "https://x.com/wikileaks/status/80774521350668288",
+      "publisher": "WikiLeaks on X"
+    }
+  },
+  {
+    "id": "2011-06-19-compromised-mt-gox-account-crashes-the-price",
+    "date": "2011-06-19",
+    "title": "Compromised Mt. Gox account crashes the price to pennies",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "Ars Technica (Timothy B. Lee), 19 June 2011 - Bitcoin prices plummet on hacked exchange",
+      "url": "https://arstechnica.com/tech-policy/2011/06/bitcoin-price-plummets-on-compromised-exchange/",
+      "publisher": "Ars Technica"
+    }
+  },
+  {
+    "id": "2011-09-19-amir-taaki-writes-bip-1",
+    "date": "2011-09-19",
+    "title": "Amir Taaki writes BIP-1",
+    "line": "",
+    "page": "/rabbit-hole/bip-process",
+    "importance": 2,
+    "source": {
+      "label": "bitcoin/bips repository (GitHub) - BIP 1: BIP Purpose and Guidelines",
+      "url": "https://github.com/bitcoin/bips/blob/master/bip-0001.mediawiki",
+      "publisher": "BIP-1"
+    }
+  },
+  {
+    "id": "2012-02-11-bip-32-proposes-hd-wallets-one-seed",
+    "date": "2012-02-11",
+    "title": "BIP-32 proposes HD wallets: one seed, every future key",
+    "line": "",
+    "page": "/rabbit-hole/address-reuse",
+    "importance": 2,
+    "source": {
+      "label": "bitcoin/bips repository (GitHub) - BIP 32: Hierarchical Deterministic Wallets",
+      "url": "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki",
+      "publisher": "BIP-32"
+    }
+  },
+  {
+    "id": "2012-11-28-first-halving-cuts-the-subsidy-to-25",
+    "date": "2012-11-28",
+    "title": "First halving cuts the subsidy to 25 BTC",
+    "line": "At block 210,000 the block subsidy dropped from 50 to 25 BTC.",
+    "page": "/rabbit-hole/halvings",
+    "importance": 1,
+    "source": {
+      "label": "Bitcoin blockchain, read through mempool.space - Block 210,000 (block record from the mempool.space API)",
+      "url": "https://mempool.space/block/000000000000048b95347e83192f69cf0366076336c639f9b7228e9ba171342e",
+      "publisher": "mempool.space, block 210,000"
+    }
+  },
+  {
+    "id": "2013-01-first-asic-miners-ship-to-customers",
+    "date": "2013-01",
+    "title": "First ASIC miners ship to customers",
+    "line": "",
+    "page": "/rabbit-hole/halvings",
+    "importance": 2,
+    "source": {
+      "label": "Bitcoin Magazine (Vitalik Buterin), 23 January 2013 - Avalon Ships Bitcoin's First Consumer ASICs",
+      "url": "https://bitcoinmagazine.com/business/avalon-ships-bitcoins-first-consumer-asics-1358905223",
+      "publisher": "Bitcoin Magazine"
+    }
+  },
+  {
+    "id": "2013-03-11-block-225-430-splits-the-chain-between",
+    "date": "2013-03-11",
+    "title": "Block 225,430 splits the chain between 0.7 and 0.8 nodes",
+    "line": "A software upgrade split Bitcoin into two chains at block 225,430. It was back together 7 hours 41 minutes later.",
+    "page": "/rabbit-hole/2013-chain-fork",
+    "importance": 1,
+    "source": {
+      "label": "bitcoin.org (Bitcoin Project) notice, Wayback Machine capture of 13 March 2013 - 11/12 March 2013 Chain Fork Information",
+      "url": "http://web.archive.org/web/20130313221825/http://bitcoin.org/chainfork.html",
+      "publisher": "bitcoin.org, 2013 archive copy"
+    }
+  },
+  {
+    "id": "2013-08-11-bitcoin-org-warns-all-android-wallets-are",
+    "date": "2013-08-11",
+    "title": "bitcoin.org warns all Android wallets are open to theft",
+    "line": "",
+    "page": "/rabbit-hole/address-reuse",
+    "importance": 2,
+    "source": {
+      "label": "bitcoin.org (Bitcoin Project) alert of 11 August 2013, Wayback Machine capture of 13 August 2013 - Android Security Vulnerability",
+      "url": "http://web.archive.org/web/20130813120401/http://bitcoin.org:80/en/alert/2013-08-11-android",
+      "publisher": "bitcoin.org, 2013 archive copy"
+    }
+  },
+  {
+    "id": "2013-10-a-fistful-of-bitcoins-shows-how-coins",
+    "date": "2013-10",
+    "title": "'A Fistful of Bitcoins' shows how coins can be traced",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "Meiklejohn, Pomarole, Jordan, Levchenko, McCoy, Voelker and Savage; Proceedings of IMC '13 (ACM) - A Fistful of Bitcoins: Characterizing Payments Among Men with No Names",
+      "url": "https://cseweb.ucsd.edu/~smeiklejohn/files/imc13.pdf",
+      "publisher": "Meiklejohn et al., IMC 2013"
+    }
+  },
+  {
+    "id": "2013-10-federal-agents-seize-silk-road",
+    "date": "2013-10",
+    "title": "Federal agents seize Silk Road",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "U.S. Senate Committee on Homeland Security and Governmental Affairs, hearing of 18 November 2013 (U.S. Government Printing Office) - Beyond Silk Road: Potential Risks, Threats, and Promises of Virtual Currencies (S. Hrg. 113-516)",
+      "url": "https://www.govinfo.gov/content/pkg/CHRG-113shrg86636/pdf/CHRG-113shrg86636.pdf",
+      "publisher": "US Senate hearing record"
+    }
+  },
+  {
+    "id": "2013-12-china-s-central-bank-bars-banks-from",
+    "date": "2013-12",
+    "title": "China's central bank bars banks from handling bitcoin",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "People's Bank of China - Notice on Guarding Against Bitcoin Risks (Yinfa [2013] No. 289), dated 3 December 2013, as printed in the bank's gazette (in Chinese)",
+      "url": "https://www.pbc.gov.cn/chubanwu/114566/114579/114616/2808348/index.html",
+      "publisher": "People's Bank of China"
+    }
+  },
+  {
+    "id": "2014-02-07-mt-gox-halts-withdrawals",
+    "date": "2014-02-07",
+    "title": "Mt. Gox halts withdrawals",
+    "line": "",
+    "page": "/rabbit-hole/mt-gox-ftx-graveyard",
+    "importance": 2,
+    "source": {
+      "label": "MtGox Co. Ltd. (press release, archived by the Internet Archive on 7 February 2014) - Statement Regarding BTC Withdrawal Delays",
+      "url": "https://web.archive.org/web/20140207054536/https://www.mtgox.com/press_release_20140207.html",
+      "publisher": "Mt. Gox press release, archive copy"
+    }
+  },
+  {
+    "id": "2014-02-28-mt-gox-files-for-bankruptcy-protection-850",
+    "date": "2014-02-28",
+    "title": "Mt. Gox files for bankruptcy protection; 850,000 BTC missing",
+    "line": "Mt. Gox applies for bankruptcy protection in Tokyo with about 850,000 BTC missing, about 750,000 of them customers' coins.",
+    "page": "/rabbit-hole/mt-gox-ftx-graveyard",
+    "importance": 1,
+    "source": {
+      "label": "MtGox Co., Ltd. (Mark Karpeles, Representative Director) - Announcement Regarding an Application for Commencement of a Procedure of Civil Rehabilitation",
+      "url": "https://www.mtgox.com/img/pdf/20140228-announcement_eng.pdf",
+      "publisher": "Mt. Gox announcement"
+    }
+  },
+  {
+    "id": "2014-06-13-ghash-io-briefly-holds-51-percent-of",
+    "date": "2014-06-13",
+    "title": "GHash.io briefly holds 51 percent of mining power",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "The Guardian (Alex Hern) - Bitcoin currency could have been destroyed by '51%' attack",
+      "url": "https://www.theguardian.com/technology/2014/jun/16/bitcoin-currency-destroyed-51-attack-ghash-io",
+      "publisher": "The Guardian"
+    }
+  },
+  {
+    "id": "2015-07-04-miners-build-on-an-invalid-block-during",
+    "date": "2015-07-04",
+    "title": "Miners build on an invalid block during BIP-66 soft fork",
+    "line": "",
+    "page": "/rabbit-hole/2013-chain-fork",
+    "importance": 2,
+    "source": {
+      "label": "bitcoin-dev mailing list (public-inbox archive at gnusha.org) - Fork of invalid blocks due to BIP66 violations (bitcoin-dev thread, 4 July 2015; Gregory Maxwell's reply of 03:17 UTC)",
+      "url": "https://gnusha.org/pi/bitcoindev/COL402-EAS128602FDFB9DA83AC6C1BD2CD950@phx.gbl/t/",
+      "publisher": "Gregory Maxwell, bitcoin-dev"
+    }
+  },
+  {
+    "id": "2015-08-15-bitcoin-xt-is-released-with-its-bigger",
+    "date": "2015-08-15",
+    "title": "Bitcoin XT is released with its bigger-blocks patch",
+    "line": "",
+    "page": "/rabbit-hole/block-size-war",
+    "importance": 2,
+    "source": {
+      "label": "Mike Hearn, bitcoin-dev mailing list (gnusha.org public-inbox archive) - [bitcoin-dev] Bitcoin XT 0.11A",
+      "url": "https://gnusha.org/pi/bitcoindev/CA+w+GKT7t5OahS-+P=QAmOyFzPnOs4J6KSo+mhSrC0YggmMupg@mail.gmail.com/",
+      "publisher": "Mike Hearn, bitcoin-dev"
+    }
+  },
+  {
+    "id": "2015-09-17-cftc-holds-that-bitcoin-is-a-commodity",
+    "date": "2015-09-17",
+    "title": "CFTC holds that bitcoin is a commodity",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "US Commodity Futures Trading Commission (Release Number 7231-15) - CFTC Orders Bitcoin Options Trading Platform Operator and its CEO to Cease Illegally Offering Bitcoin Options and to Cease Operating a Facility for Trading or Processing of Swaps without Registering",
+      "url": "https://www.cftc.gov/PressRoom/PressReleases/7231-15",
+      "publisher": "CFTC"
+    }
+  },
+  {
+    "id": "2016-bitfinex-loses-119-754-btc-to-theft",
+    "date": "2016",
+    "title": "Bitfinex loses 119,754 BTC to theft",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "US Department of Justice, Office of Public Affairs (press release 22-105, 8 February 2022; Wayback Machine capture of the same day) - Two Arrested for Alleged Conspiracy to Launder $4.5 Billion in Stolen Cryptocurrency",
+      "url": "https://web.archive.org/web/20220208175406/https://www.justice.gov/opa/pr/two-arrested-alleged-conspiracy-launder-45-billion-stolen-cryptocurrency",
+      "publisher": "US Department of Justice, archive copy"
+    }
+  },
+  {
+    "id": "2016-01-14-mike-hearn-declares-the-bitcoin-experiment-failed",
+    "date": "2016-01-14",
+    "title": "Mike Hearn declares the Bitcoin experiment failed",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "Mike Hearn, Medium (Wayback Machine capture of 16 January 2016) - The resolution of the Bitcoin experiment",
+      "url": "https://web.archive.org/web/20160116005312/https://medium.com/@octskyward/the-resolution-of-the-bitcoin-experiment-dabb30201f7",
+      "publisher": "Mike Hearn, archive copy"
+    }
+  },
+  {
+    "id": "2016-02-21-hong-kong-roundtable-ends-in-a-segwit",
+    "date": "2016-02-21",
+    "title": "Hong Kong roundtable ends in a SegWit-for-2 MB deal",
+    "line": "",
+    "page": "/rabbit-hole/block-size-war",
+    "importance": 2,
+    "source": {
+      "label": "Bitcoin Roundtable, Medium (Wayback Machine capture of 20 February 2016, 20:41 UTC) - Bitcoin Roundtable Consensus",
+      "url": "https://web.archive.org/web/20160220204109/https://medium.com/@bitcoinroundtable/bitcoin-roundtable-consensus-266d475a61ff",
+      "publisher": "Bitcoin Roundtable statement, archive copy"
+    }
+  },
+  {
+    "id": "2016-07-09-second-halving-cuts-the-subsidy-to-12",
+    "date": "2016-07-09",
+    "title": "Second halving cuts the subsidy to 12.5 BTC",
+    "line": "",
+    "page": "/rabbit-hole/halvings",
+    "importance": 2,
+    "source": {
+      "label": "mempool.space (block explorer API; data from the Bitcoin blockchain) - Block 420,000 (block data, JSON)",
+      "url": "https://mempool.space/block/000000000000000002cce816c0ab2c5c269cb081896b7dcb34b8422d6b74ffa1",
+      "publisher": "mempool.space, block 420,000"
+    }
+  },
+  {
+    "id": "2017-03-bip-148-sets-a-user-activated-flag",
+    "date": "2017-03",
+    "title": "BIP-148 sets a user-activated flag day for SegWit",
+    "line": "",
+    "page": "/rabbit-hole/block-size-war",
+    "importance": 2,
+    "source": {
+      "label": "Shaolin Fry, Bitcoin Improvement Proposals repository (github.com/bitcoin/bips) - BIP 148: Mandatory activation of segwit deployment",
+      "url": "https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki",
+      "publisher": "BIP-148"
+    }
+  },
+  {
+    "id": "2017-05-23-the-new-york-agreement-is-signed",
+    "date": "2017-05-23",
+    "title": "The New York Agreement is signed",
+    "line": "",
+    "page": "/rabbit-hole/block-size-war",
+    "importance": 2,
+    "source": {
+      "label": "Digital Currency Group, Medium (Wayback Machine capture of 25 May 2017, 21:34 UTC) - Bitcoin Scaling Agreement at Consensus 2017",
+      "url": "https://web.archive.org/web/20170525213444/https://medium.com/@DCGco/bitcoin-scaling-agreement-at-consensus-2017-133521fe9a77",
+      "publisher": "Digital Currency Group, archive copy"
+    }
+  },
+  {
+    "id": "2017-08-01-bitcoin-cash-forks-off-with-bigger-blocks",
+    "date": "2017-08-01",
+    "title": "Bitcoin Cash forks off with bigger blocks",
+    "line": "A faction that wanted bigger blocks forked off onto its own chain, Bitcoin Cash. Its first block was 1.9 MB.",
+    "page": "/rabbit-hole/block-size-war",
+    "importance": 1,
+    "source": {
+      "label": "BCH Explorer (bchexplorer.cash, block explorer API; data from the Bitcoin Cash blockchain) - Bitcoin Cash block 478,559 (block data, JSON)",
+      "url": "https://bchexplorer.cash/api/v1/block/000000000000000000651ef99cb9fcbe0dadde1d424bd9f15ff20136191a5eec",
+      "publisher": "Bitcoin Cash block 478,559"
+    }
+  },
+  {
+    "id": "2017-08-24-segwit-activates-at-block-481-824",
+    "date": "2017-08-24",
+    "title": "SegWit activates at block 481,824",
+    "line": "SegWit locked in on August 9 and went live at block 481,824 on August 24.",
+    "page": "/rabbit-hole/block-size-war",
+    "importance": 1,
+    "source": {
+      "label": "mempool.space (block explorer API; data from the Bitcoin blockchain) - Block 481,824 (block data, JSON)",
+      "url": "https://mempool.space/block/0000000000000000001c8018d9cb3b742ef25114f27563e3fc4a1902167f9893",
+      "publisher": "mempool.space, block 481,824"
+    }
+  },
+  {
+    "id": "2017-09-04-china-bans-token-sales-and-bars-token",
+    "date": "2017-09-04",
+    "title": "China bans token sales and bars token trading platforms",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "People's Bank of China and six other agencies - Announcement on Preventing Risks of Token Issuance Fundraising, 4 September 2017 (in Chinese)",
+      "url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/2025092212544680468/index.html",
+      "publisher": "People's Bank of China"
+    }
+  },
+  {
+    "id": "2017-11-08-segwit2x-hard-fork-is-called-off",
+    "date": "2017-11-08",
+    "title": "SegWit2x hard fork is called off",
+    "line": "",
+    "page": "/rabbit-hole/block-size-war",
+    "importance": 2,
+    "source": {
+      "label": "Mike Belshe, bitcoin-segwit2x mailing list (Linux Foundation; Wayback Machine capture of 10 November 2017) - [Bitcoin-segwit2x] Segwit2x Final Steps",
+      "url": "https://web.archive.org/web/20171110004634/https://lists.linuxfoundation.org/pipermail/bitcoin-segwit2x/2017-November/000685.html",
+      "publisher": "SegWit2x mailing list, archive copy"
+    }
+  },
+  {
+    "id": "2017-12-bitcoin-futures-begin-trading-at-cme-and",
+    "date": "2017-12",
+    "title": "Bitcoin futures begin trading at CME and Cboe",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "US Commodity Futures Trading Commission (testimony of 6 February 2018) - Written Testimony of Chairman J. Christopher Giancarlo before the Senate Banking Committee, Washington, D.C.",
+      "url": "https://www.cftc.gov/PressRoom/SpeechesTestimony/opagiancarlo37",
+      "publisher": "CFTC testimony"
+    }
+  },
+  {
+    "id": "2018-01-23-gregory-maxwell-s-post-proposes-taproot",
+    "date": "2018-01-23",
+    "title": "Gregory Maxwell's post proposes Taproot",
+    "line": "",
+    "page": "/rabbit-hole/how-taproot-works",
+    "importance": 2,
+    "source": {
+      "label": "Gregory Maxwell, bitcoin-dev mailing list (public-inbox archive at gnusha.org) - [bitcoin-dev] Taproot: Privacy preserving switchable scripting",
+      "url": "https://gnusha.org/pi/bitcoindev/CAAS2fgTXg5kk6TyUM9dS=tf5N0_Z-GKVmzMLwTW1HxUgrqdo+Q@mail.gmail.com/",
+      "publisher": "Gregory Maxwell, bitcoin-dev"
+    }
+  },
+  {
+    "id": "2018-03-15-first-lightning-mainnet-beta-lnd-0-4",
+    "date": "2018-03-15",
+    "title": "First Lightning mainnet beta, lnd 0.4, is released",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "Lightning Labs - Announcing our first Lightning mainnet release, lnd 0.4-beta!",
+      "url": "https://blog.lightning.engineering/announcement/2018/03/15/lnd-beta.html",
+      "publisher": "Lightning Labs"
+    }
+  },
+  {
+    "id": "2018-09-17-inflation-bug-cve-2018-17144-is-reported",
+    "date": "2018-09-17",
+    "title": "Inflation bug CVE-2018-17144 is reported and patched",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "Bitcoin Core (bitcoincore.org) - Disclosure of CVE-2018-17144",
+      "url": "https://bitcoincore.org/en/2018/09/20/notice/",
+      "publisher": "Bitcoin Core"
+    }
+  },
+  {
+    "id": "2018-12-09-quadrigacx-s-chief-dies-the-exchange-fails",
+    "date": "2018-12-09",
+    "title": "QuadrigaCX's chief dies; the exchange fails two months later",
+    "line": "",
+    "page": "/rabbit-hole/mt-gox-ftx-graveyard",
+    "importance": 2,
+    "source": {
+      "label": "Ontario Securities Commission - Downfall of Quadriga (2018) - QuadrigaCX Report",
+      "url": "https://www.osc.ca/quadrigacxreport/downfall-of-quadriga.html",
+      "publisher": "Ontario Securities Commission"
+    }
+  },
+  {
+    "id": "2019-05-06-pieter-wuille-posts-the-taproot-and-tapscript",
+    "date": "2019-05-06",
+    "title": "Pieter Wuille posts the Taproot and Tapscript drafts",
+    "line": "",
+    "page": "/rabbit-hole/how-taproot-works",
+    "importance": 2,
+    "source": {
+      "label": "Pieter Wuille, bitcoin-dev mailing list (public-inbox archive at gnusha.org) - [bitcoin-dev] Taproot proposal",
+      "url": "https://gnusha.org/pi/bitcoindev/CAPg+sBg6Gg8b7hPogC==fehY3ZTHHpQReqym2fb4XXWFpMM-pQ@mail.gmail.com/",
+      "publisher": "Pieter Wuille, bitcoin-dev"
+    }
+  },
+  {
+    "id": "2020-05-11-third-halving-cuts-the-subsidy-to-6",
+    "date": "2020-05-11",
+    "title": "Third halving cuts the subsidy to 6.25 BTC",
+    "line": "",
+    "page": "/rabbit-hole/halvings",
+    "importance": 2,
+    "source": {
+      "label": "mempool.space (The Mempool Open Source Project) - Block 630,000 (mempool.space API block record)",
+      "url": "https://mempool.space/block/000000000000000000024bead8df69990852c202db0e0097c1a12ea637d7e96d",
+      "publisher": "mempool.space, block 630,000"
+    }
+  },
+  {
+    "id": "2021-05-21-china-calls-for-a-crackdown-on-bitcoin",
+    "date": "2021-05-21",
+    "title": "China calls for a crackdown on Bitcoin mining",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "State Council of China - readout of the 51st meeting of the Financial Stability and Development Committee, 21 May 2021 (in Chinese)",
+      "url": "https://www.gov.cn/xinwen/2021-05/21/content_5610192.htm",
+      "publisher": "State Council of China"
+    }
+  },
+  {
+    "id": "2021-06-12-taproot-locks-in-under-speedy-trial",
+    "date": "2021-06-12",
+    "title": "Taproot locks in under Speedy Trial",
+    "line": "",
+    "page": "/rabbit-hole/how-taproot-works",
+    "importance": 2,
+    "source": {
+      "label": "mempool.space (The Mempool Open Source Project) - Block 687,284 (mempool.space API block record)",
+      "url": "https://mempool.space/block/00000000000000000001fed67d51f261ca3ca19fb281e52c6173f1c5f889c84e",
+      "publisher": "mempool.space, block 687,284"
+    }
+  },
+  {
+    "id": "2021-07-03-difficulty-falls-27-94-percent-the-largest",
+    "date": "2021-07-03",
+    "title": "Difficulty falls 27.94 percent, the largest cut on record",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "mempool.space (The Mempool Open Source Project) - Difficulty adjustments, full history (mempool.space API)",
+      "url": "https://mempool.space/api/v1/mining/difficulty-adjustments/all",
+      "publisher": "mempool.space, difficulty data"
+    }
+  },
+  {
+    "id": "2021-09-07-el-salvador-makes-bitcoin-legal-tender",
+    "date": "2021-09-07",
+    "title": "El Salvador makes bitcoin legal tender",
+    "line": "Bitcoin becomes legal tender in El Salvador, with a government wallet and a US$30 bonus for signing up.",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 1,
+    "source": {
+      "label": "International Monetary Fund (Wayback Machine capture of 3 Jan 2022) - El Salvador: Staff Concluding Statement of the 2021 Article IV Mission",
+      "url": "https://web.archive.org/web/20220103130621/https://www.imf.org/en/News/Articles/2021/11/22/mcs-el-salvador-staff-concluding-statement-of-the-2021-article-iv-mission",
+      "publisher": "IMF, archive copy"
+    }
+  },
+  {
+    "id": "2021-11-14-taproot-activates-at-block-709-632",
+    "date": "2021-11-14",
+    "title": "Taproot activates at block 709,632",
+    "line": "Block 709,632 arrived at 05:15 UTC, mined by F2Pool, and Taproot's rules were live.",
+    "page": "/rabbit-hole/how-taproot-works",
+    "importance": 1,
+    "source": {
+      "label": "mempool.space (The Mempool Open Source Project) - Block 709,632 (mempool.space API block record)",
+      "url": "https://mempool.space/block/0000000000000000000687bca986194dc2c1f949318629b44bb54ec0a94d8244",
+      "publisher": "mempool.space, block 709,632"
+    }
+  },
+  {
+    "id": "2022-02-us-seizes-about-94-000-btc-from",
+    "date": "2022-02",
+    "title": "US seizes about 94,000 BTC from the Bitfinex hack",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-privacy",
+    "importance": 2,
+    "source": {
+      "label": "US Department of Justice, Office of Public Affairs - Two Arrested for Alleged Conspiracy to Launder $4.5 Billion in Stolen Cryptocurrency",
+      "url": "https://web.archive.org/web/20250204122005/https://www.justice.gov/opa/pr/two-arrested-alleged-conspiracy-launder-45-billion-stolen-cryptocurrency",
+      "publisher": "US Department of Justice, archive copy"
+    }
+  },
+  {
+    "id": "2022-06-12-celsius-freezes-all-customer-withdrawals",
+    "date": "2022-06-12",
+    "title": "Celsius freezes all customer withdrawals",
+    "line": "",
+    "page": "/rabbit-hole/mt-gox-ftx-graveyard",
+    "importance": 2,
+    "source": {
+      "label": "US Attorney's Office, Southern District of New York - Founder Of Celsius Sentenced To 12 Years For Fraud And Market Manipulation",
+      "url": "https://web.archive.org/web/20261031043447/https://www.justice.gov/usao-sdny/pr/founder-celsius-sentenced-12-years-fraud-and-market-manipulation",
+      "publisher": "US Department of Justice, archive copy"
+    }
+  },
+  {
+    "id": "2022-11-11-ftx-files-for-bankruptcy",
+    "date": "2022-11-11",
+    "title": "FTX files for bankruptcy",
+    "line": "FTX, Alameda and about 100 related companies filed for bankruptcy. The customer shortfall was about $8 billion.",
+    "page": "/rabbit-hole/mt-gox-ftx-graveyard",
+    "importance": 1,
+    "source": {
+      "label": "US Securities and Exchange Commission - SEC v. Samuel Bankman-Fried, Complaint (S.D.N.Y. 22-cv-10501)",
+      "url": "https://www.sec.gov/files/litigation/complaints/2022/comp-pr2022-219.pdf",
+      "publisher": "SEC complaint"
+    }
+  },
+  {
+    "id": "2022-12-14-the-first-inscription-stores-data-in-a",
+    "date": "2022-12-14",
+    "title": "The first inscription stores data in a Taproot spend",
+    "line": "",
+    "page": "/rabbit-hole/how-taproot-works",
+    "importance": 2,
+    "source": {
+      "label": "ordinals.com, the ord project's explorer (Wayback Machine copy) - Inscription 0",
+      "url": "https://web.archive.org/web/20230301124204/https://ordinals.com/inscription/6fb976ab49dcec017f1e201e84395983204ae1a7c2abf7ced0a85d692e442799i0",
+      "publisher": "ordinals.com, archive copy"
+    }
+  },
+  {
+    "id": "2023-11-02-sam-bankman-fried-is-convicted",
+    "date": "2023-11-02",
+    "title": "Sam Bankman-Fried is convicted",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "US Attorney's Office, Southern District of New York - Statement Of U.S. Attorney Damian Williams On The Conviction Of Samuel Bankman-Fried",
+      "url": "https://web.archive.org/web/20260715143906/https://www.justice.gov/usao-sdny/pr/statement-us-attorney-damian-williams-conviction-samuel-bankman-fried",
+      "publisher": "US Attorney, SDNY, archive copy"
+    }
+  },
+  {
+    "id": "2024-01-10-sec-approves-us-spot-bitcoin-etfs",
+    "date": "2024-01-10",
+    "title": "SEC approves US spot bitcoin ETFs",
+    "line": "The SEC approved US spot bitcoin ETFs, three months before the fourth halving.",
+    "page": "/rabbit-hole/halvings",
+    "importance": 1,
+    "source": {
+      "label": "US Securities and Exchange Commission (Chair Gary Gensler) - Statement on the Approval of Spot Bitcoin Exchange-Traded Products",
+      "url": "https://www.sec.gov/newsroom/speeches-statements/gensler-statement-spot-bitcoin-011023",
+      "publisher": "SEC"
+    }
+  },
+  {
+    "id": "2024-03-14-uk-court-rejects-craig-wright-s-claim",
+    "date": "2024-03-14",
+    "title": "UK court rejects Craig Wright's claim to be Satoshi",
+    "line": "",
+    "page": "/rabbit-hole/block-size-war",
+    "importance": 2,
+    "source": {
+      "label": "High Court of Justice of England and Wales (published by The National Archives, Find Case Law) - Crypto Open Patent Alliance v Craig Steven Wright [2024] EWHC 1198 (Ch)",
+      "url": "https://caselaw.nationalarchives.gov.uk/ewhc/ch/2024/1198",
+      "publisher": "High Court judgment"
+    }
+  },
+  {
+    "id": "2024-04-20-fourth-halving-cuts-the-subsidy-to-3",
+    "date": "2024-04-20",
+    "title": "Fourth halving cuts the subsidy to 3.125 BTC",
+    "line": "",
+    "page": "/rabbit-hole/halvings",
+    "importance": 2,
+    "source": {
+      "label": "mempool.space (The Mempool Open Source Project) - Block 840,000 (mempool.space API block record)",
+      "url": "https://mempool.space/block/0000000000000000000320283a032748cef8227873ff4872689bf23f1cda83a5",
+      "publisher": "mempool.space, block 840,000"
+    }
+  },
+  {
+    "id": "2024-04-24-us-charges-the-founders-of-samourai-wallet",
+    "date": "2024-04-24",
+    "title": "US charges the founders of Samourai Wallet",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-privacy",
+    "importance": 2,
+    "source": {
+      "label": "US Attorney's Office, Southern District of New York - Founders And CEO Of Cryptocurrency Mixing Service Arrested And Charged With Money Laundering And Unlicensed Money Transmitting Offenses",
+      "url": "https://web.archive.org/web/20261029010157/https://www.justice.gov/usao-sdny/pr/founders-and-ceo-cryptocurrency-mixing-service-arrested-and-charged-money-laundering",
+      "publisher": "US Attorney, SDNY, archive copy"
+    }
+  },
+  {
+    "id": "2025-03-06-us-executive-order-creates-a-strategic-bitcoin",
+    "date": "2025-03-06",
+    "title": "US executive order creates a Strategic Bitcoin Reserve",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "importance": 2,
+    "source": {
+      "label": "Federal Register (Executive Office of the President) - Executive Order 14233: Establishment of the Strategic Bitcoin Reserve and United States Digital Asset Stockpile",
+      "url": "https://www.federalregister.gov/documents/2025/03/11/2025-03992/establishment-of-the-strategic-bitcoin-reserve-and-united-states-digital-asset-stockpile",
+      "publisher": "Federal Register"
+    }
+  },
+  {
+    "id": "2026-03-09-the-20-millionth-bitcoin-is-issued",
+    "date": "2026-03-09",
+    "title": "The 20 millionth bitcoin is issued",
+    "line": "",
+    "page": "/rabbit-hole/supply",
+    "importance": 2,
+    "source": {
+      "label": "mempool.space (The Mempool Open Source Project) - Block 939,999 (mempool.space API block record)",
+      "url": "https://mempool.space/block/000000000000000000007e95c9885d9eb2d67a3b7027d678376bb487323004ca",
+      "publisher": "mempool.space, block 939,999"
+    }
+  },
+  {
+    "id": "2026-07-29-weak-coldcard-mk2-and-mk3-seeds-are",
+    "date": "2026-07-29",
+    "title": "Weak COLDCARD Mk2 and Mk3 seeds are drained",
+    "line": "",
+    "page": "/rabbit-hole/quindecillions",
+    "importance": 2,
+    "source": {
+      "label": "Bitcoin Optech Newsletter #416",
+      "url": "https://bitcoinops.org/en/newsletters/2026/07/31/",
+      "publisher": "Bitcoin Optech"
+    }
+  },
+  {
+    "id": "2026-08-08-newer-bitcoin-knots-nodes-stop-following-the",
+    "date": "2026-08-08",
+    "title": "Newer Bitcoin Knots nodes stop following the main chain",
+    "line": "",
+    "page": "/rabbit-hole/decentralization",
+    "importance": 2,
+    "source": {
+      "label": "bitcoin/bips repository on GitHub (pull request opened by jonatack) - BIP 110: update status to Closed (bitcoin/bips pull request #2245)",
+      "url": "https://github.com/bitcoin/bips/pull/2245",
+      "publisher": "bitcoin/bips pull request 2245"
+    }
+  }
+]
