@@ -3,7 +3,7 @@ title: "Security"
 heading: "What we ship, what we don't, and where third parties grade us."
 description: "How LearnBitcoin secures the site - concrete config, independent grades, honest gaps. Verify it yourself."
 published: "2026-05-23"
-updated: "2026-10-11"
+updated: "2026-11-10"
 ---
 
 Short version: this site holds none of your money and none of your
@@ -31,12 +31,17 @@ third parties grade it, and where we know we still owe work.
   page is allow-listed by SHA-256 content hash. No `unsafe-inline`
   anywhere. A build-time linter blocks new inline scripts so the policy
   cannot quietly erode.
-- **No third-party scripts.** No ad networks, no tag managers, no chat
-  widgets, no Google Fonts, no embedded iframes. Plausible analytics is
+- **One third-party script, and only on request.** No ad networks, no
+  tag managers, no chat widgets, no Google Fonts. The exception is the
+  bot check on the newsletter form, below. Plausible analytics is
   proxied through our own Cloudflare Worker so it is same-origin -
   adblockers do not block it and a CDN compromise cannot backdoor it.
 - **The newsletter form.** A plain HTML form that posts to our own
-  server. It loads nothing from anyone else. Our server passes the
+  server. When you click into it, and not before, it loads Cloudflare's
+  Turnstile bot check, in a frame of its own, from
+  challenges.cloudflare.com: the only script on the site that comes
+  from another host. We added it after a bot used the form to send
+  confirmation emails to strangers. Our server passes the
   address to Buttondown with an API key stored as a Cloudflare secret,
   never in the code or the repo. The key cannot send email or change
   account settings. It can manage subscribers, and in Buttondown that

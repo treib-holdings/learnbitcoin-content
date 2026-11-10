@@ -3,15 +3,14 @@ title: "Privacy"
 heading: "Here is everything we know about you."
 description: "What data LearnBitcoin collects, who sees it, how long it lives. Short version: almost nothing, unless you subscribe to the newsletter."
 published: "2026-05-14"
-updated: "2026-10-11"
+updated: "2026-11-10"
 ---
 
-**Changed 2026-10-11:** we are adding an email newsletter. Reading
-the site works exactly as before. If you subscribe,
-[the newsletter section](#the-newsletter) lists what is kept, including
-a record of which emails you open and which links you click. We also
-corrected the line about our server logs, which said about 30 days.
-The real figure is under "Your IP address, briefly" below.
+**Changed 2026-11-10:** the newsletter signup form now runs a bot
+check from Cloudflare, after a bot used the form to send confirmation
+emails to strangers. It loads only when you use the form. Reading the
+site works exactly as before.
+[The newsletter section](#the-newsletter) says what the check sees.
 
 Short version: almost nothing. If you subscribe to the newsletter, we
 also have your email address, and Buttondown, the company that sends
@@ -81,10 +80,11 @@ That is the full list.
 - No session recording.
 - No "anonymous" identifiers that turn out to be not anonymous.
 
-The newsletter is the one exception to "no third-party trackers": its
-emails carry Buttondown's open and click tracking. Nothing on the site
-itself does. [The newsletter](#the-newsletter) below says what that
-records.
+The newsletter is the one exception, in two places. Its emails carry
+Buttondown's open and click tracking. And its signup form, once you
+click into it, loads a bot check from Cloudflare that examines your
+browser to tell a person from a script. Nothing else on the site does
+either. [The newsletter](#the-newsletter) below says what both record.
 
 We do not sell or rent anything about you. If you subscribe to the
 newsletter, Buttondown and the companies it runs on handle your
@@ -135,6 +135,17 @@ which passes it to Buttondown and keeps no copy. Nothing about you
 travels with it: not your IP address, not your browser, not the page
 you came from. Our server logs the request for 3 days, as it logs
 every request that reaches it (see "Your IP address, briefly" above).
+
+**The bot check.** The form will not send until Cloudflare's
+[Turnstile](https://www.cloudflare.com/turnstile-privacy-policy/) has
+judged that a person, not a script, is filling it in. To decide, it
+looks at your browser and your connection, and now and then asks you
+to tick a box. It loads when you click into the form and not before,
+it never sees the address you type, and Cloudflare says it uses what
+it learns for telling bots from people and nothing else. The form
+needs JavaScript for this. If you would rather not run the check,
+write to [hello@learnbitcoin.com](mailto:hello@learnbitcoin.com) and
+we will add you by hand.
 
 **What Buttondown keeps.** Your address; when you signed up and
 confirmed; that you came through our server; the address our server
