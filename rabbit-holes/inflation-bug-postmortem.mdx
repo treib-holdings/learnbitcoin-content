@@ -4,7 +4,7 @@ slug: inflation-bug-postmortem
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-10-09"
+updated: "2026-11-10"
 section: rabbit-hole
 category: history
 featured: true
@@ -52,7 +52,7 @@ hasInteractive: []
 
 Bitcoin was nineteen months old. The network had a few hundred users, a couple thousand nodes, a closing price of about six and a half cents per BTC, and zero serious adversaries.
 
-That Sunday, an unknown actor broadcast a transaction that exploited a bug in Bitcoin's validation code. The transaction created **184,467,440,737.09551616 BTC** - more than 8,000 times the total amount of bitcoin that should ever exist - and sent it to two addresses, splitting the supply nearly evenly.
+That Sunday, an unknown actor broadcast a transaction that exploited a bug in Bitcoin's validation code. The transaction created **184,467,440,737.08551616 BTC** - more than 8,000 times the total amount of bitcoin that should ever exist - and sent it to two addresses, half to each.
 
 The next miner picked up the transaction and mined block **74,638**, including it; the block's timestamp reads 17:05 UTC. The block was valid by the code that was running. Every node accepted it. For a few hours, Bitcoin had a supply problem in the exact opposite direction of its design promise.
 
