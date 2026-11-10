@@ -1,5 +1,38 @@
 [
   {
+    "id": "2026-11-10-time-warp",
+    "date": "2026-11-10",
+    "page": "/rabbit-hole/time-warp",
+    "title": "The Time Warp: How Lying About the Time Could Break Bitcoin's Difficulty",
+    "wrong": "The chapter said Bitcoin 0.1.0 came out on 9 January 2009, in the text and in two source labels.",
+    "fixed": "Satoshi's announcement, \"Bitcoin v0.1 released\", reached the Cryptography Mailing List on 8 January 2009 (14:27 EST, 19:27 UTC). The chapter and its Spanish edition now say the 8th, and the announcement is listed in the sources.",
+    "commit": "932484d",
+    "source": "https://www.metzdowd.com/pipermail/cryptography/2009-January/014994.html",
+    "credit": "a sourcing pass over the dates in the rabbit holes (2026-11-09)"
+  },
+  {
+    "id": "2026-11-10-inflation-bug-postmortem",
+    "date": "2026-11-10",
+    "page": "/rabbit-hole/inflation-bug-postmortem",
+    "title": "The Inflation Bug Postmortem",
+    "wrong": "The chapter gave the amount the overflow transaction created as 184,467,440,737.09551616 BTC and said it was split nearly evenly between two addresses.",
+    "fixed": "The transaction had two outputs of 92,233,720,368.54275808 BTC each, which add up to 184,467,440,737.08551616 BTC. That is one million satoshis short of 2^64, which is why the total wrapped around to minus 0.01 BTC. The chapter now gives that figure and says half went to each address.",
+    "commit": "2e606a2",
+    "source": "https://bitcointalk.org/index.php?topic=822.0",
+    "credit": "a sourcing pass over the dates in the rabbit holes (2026-11-09)"
+  },
+  {
+    "id": "2026-11-10-bitcoin-is-dead",
+    "date": "2026-11-10",
+    "page": "/rabbit-hole/bitcoin-is-dead",
+    "title": "Rat Poison, Tulips and a Pet Rock: Everything Bitcoin's Been Called (so far)",
+    "wrong": "The chapter said accepting bitcoin in El Salvador became voluntary in January 2025.",
+    "fixed": "January 2025 is when the Legislative Assembly passed the reform (Decreto Legislativo No. 199, 29 January 2025, published in the Diario Oficial the next day). Its Article 8 puts it in force ninety days after publication, at the end of April 2025. The chapter and the text description of its bans diagram now say so, and the decree is listed in the sources.",
+    "commit": "8250cad",
+    "source": "https://www.jurisprudencia.gob.sv/DocumentosBoveda/R/2/2020-2029/2021/06/1080B6.HTML",
+    "credit": "a sourcing pass over the dates in the rabbit holes (2026-11-09)"
+  },
+  {
     "id": "2026-11-05-how-taproot-works",
     "date": "2026-11-05",
     "page": "/rabbit-hole/how-taproot-works",
