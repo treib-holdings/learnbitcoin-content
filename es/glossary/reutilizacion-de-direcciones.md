@@ -2,8 +2,8 @@
 title: "Reutilización de direcciones"
 slug: reutilizacion-de-direcciones
 translationOf: address-reuse
-sourceHash: "760d8bd1b3b2"
-sourceCommit: "3508921"
+sourceHash: "84c83b5fa675"
+sourceCommit: "d12964a"
 sourceUpdated: "2026-10-15"
 translation:
   method: "llm-draft"
@@ -20,7 +20,7 @@ keyTakeaways:
   - "El primer gasto desde una dirección con hash publica su clave pública, así que cada depósito posterior a esa dirección queda detrás de una clave que todo el mundo puede leer, mientras las monedas sigan ahí"
   - "Recibir dos veces en una dirección que nunca ha gastado filtra privacidad; gastar una vez y volver a recibir filtra también la clave. Las billeteras modernas entregan una dirección nueva para cada pago, así que la solución es dejar de pelear con ellas"
 sources:
-  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 10, Privacy: a new key pair should be used for each transaction to keep them from being linked to a common owner (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 10, Privacy: a new key pair should be used for each transaction to keep them from being linked to a common owner (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Satoshi Nakamoto - bitcointalk, 25 November 2009: for greater privacy, it's best to use bitcoin addresses only once", url: "https://satoshi.nakamotoinstitute.org/posts/bitcointalk/11/" }
   - { label: "BIP-360 - Pay-to-Merkle-Root (P2MR): poor wallet hygiene such as address reuse increases vulnerability to long exposure attacks; protection from them does not depend on post-quantum signatures activating", url: "https://github.com/bitcoin/bips/blob/master/bip-0360.mediawiki" }
   - { label: "Bitcoin Wiki - Address reuse", url: "https://en.bitcoin.it/wiki/Address_reuse" }
@@ -46,7 +46,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-La reutilización de direcciones es la práctica de recibir varios pagos en la misma [dirección](/es/glosario/direccion) de Bitcoin. Es uno de los errores de privacidad más comunes y uno de los más fáciles de evitar. El whitepaper ya lo decía en 2008: "a new key pair should be used for each transaction to keep them from being linked to a common owner" (debería usarse un par de claves nuevo para cada transacción, para que no se vinculen a un dueño común).
+La reutilización de direcciones es la práctica de recibir varios pagos en la misma [dirección](/es/glosario/direccion) de Bitcoin. Es uno de los errores de privacidad más comunes y uno de los más fáciles de evitar. El [whitepaper (PDF en inglés)](/bitcoin.pdf) ya lo decía en 2008: "a new key pair should be used for each transaction to keep them from being linked to a common owner" (debería usarse un par de claves nuevo para cada transacción, para que no se vinculen a un dueño común).
 
 Por qué importa: toda transacción de Bitcoin es visible públicamente en la cadena, para siempre. Una dirección que recibe un pago aparece una vez. Una dirección que recibe cien pagos aparece cien veces, con cada contraparte, cada monto y cada marca de tiempo vinculados entre sí a la vista de todos. Cualquiera que sepa que esa dirección es tuya (porque la publicaste en Twitter, la usaste en una página de donaciones o se la diste a un exchange con KYC) puede ver ahora todo tu historial a través de esa dirección.
 

@@ -2,8 +2,8 @@
 title: "Cómo funciona Bitcoin"
 slug: como-funciona-bitcoin
 translationOf: how-bitcoin-works
-sourceHash: "a9b385ddaa84"
-sourceCommit: "d5353d2"
+sourceHash: "c5da182fa432"
+sourceCommit: "d12964a"
 sourceUpdated: "2026-10-09"
 translation:
   method: "llm-draft"
@@ -34,7 +34,7 @@ sources:
   - { label: "Bitcoin Wiki - block timestamp rules (later than the median of the last 11 blocks, at most 2 hours ahead)", url: "https://en.bitcoin.it/wiki/Block_timestamp" }
   - { label: "mempool.space API - block sizes and weights over the past year (average about 1.58 MB, October 2025 to October 2026; blockchain.com's average-block-size chart agrees)", url: "https://mempool.space/api/v1/mining/blocks/sizes-weights/1y" }
   - { label: "Meni Rosenfeld - Analysis of hashrate-based double spending (2012), Table 1: success odds by attacker share and confirmations", url: "https://arxiv.org/abs/1402.2009" }
-  - { label: "Bitcoin whitepaper, section 11 - Satoshi's own attacker calculation", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Bitcoin whitepaper, section 11 - Satoshi's own attacker calculation", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Kraken - cryptocurrency deposit processing times (credits bitcoin deposits after three confirmations)", url: "https://support.kraken.com/articles/203325283-cryptocurrency-deposit-processing-times" }
   - { label: "Bitcoin Core source - RecommendedNumConfirmations is 6; the wallet shows 'Confirming (n of 6 recommended confirmations)' (src/qt/transactionrecord.h)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/qt/transactionrecord.h" }
   - { label: "BitMEX Research - Bitcoin's consensus forks: at least three identifiable chain splits, in 2010, 2013 and 2015 (Wayback Machine)", url: "https://web.archive.org/web/20240110121831/https://blog.bitmex.com/bitcoins-consensus-forks/" }
@@ -176,7 +176,7 @@ Imagina a un atacante que quiere revertir el pago de Alice. Tendría que:
 
 Se puede hacer con un bloque, si el atacante controla suficiente hashrate durante un momento de suerte. **¿Con seis bloques? Casi imposible, a menos que el atacante controle una parte grande del hashrate mundial.**
 
-Estas son las probabilidades aproximadas según el análisis de Meni Rosenfeld de 2012 (Satoshi hizo una versión más simple en la sección 11 del whitepaper), suponiendo que el atacante controla el 10% del hashrate:
+Estas son las probabilidades aproximadas según el análisis de Meni Rosenfeld de 2012 (Satoshi hizo una versión más simple en la sección 11 del [whitepaper (PDF en inglés)](/bitcoin.pdf)), suponiendo que el atacante controla el 10% del hashrate:
 
 | Confirmaciones | Probabilidad de revertir el pago con éxito |
 |---|---|

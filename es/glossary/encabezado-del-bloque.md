@@ -18,7 +18,7 @@ avoid:
 sources:
   - { label: "Bitcoin Core - src/primitives/block.h: CBlockHeader fields nVersion, hashPrevBlock, hashMerkleRoot, nTime, nBits, nNonce (accessed 2026-10-13)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/primitives/block.h" }
   - { label: "Bitcoin developer reference - Block Headers: 80-byte format, timestamp rules, nBits and nonce (accessed 2026-10-13)", url: "https://developer.bitcoin.org/reference/block_chain.html#block-headers" }
-  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, sections 7 and 8: 80 bytes * 6 * 24 * 365 = 4.2MB per year (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, sections 7 and 8: 80 bytes * 6 * 24 * 365 = 4.2MB per year (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Bitcoin Wiki - Block hashing algorithm: the extraNonce field in the coinbase transaction (accessed 2026-10-13)", url: "https://en.bitcoin.it/wiki/Block_hashing_algorithm" }
   - { label: "Bitcoin Core - Release notes 0.10.0: headers-first synchronization (2015)", url: "https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.10.0.md" }
   - { label: "BIP-130 - sendheaders message: announcing new blocks by header (2015)", url: "https://github.com/bitcoin/bips/blob/master/bip-0130.mediawiki" }
@@ -40,8 +40,8 @@ sameAs:
   - "https://en.bitcoin.it/wiki/Block_hashing_algorithm"
 liveWidget: ~
 translationOf: block-header
-sourceHash: "dbc954b20b29"
-sourceCommit: "c52bac9"
+sourceHash: "cdc09e560a72"
+sourceCommit: "d12964a"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"
@@ -60,6 +60,6 @@ Los seis campos:
 
 Para minar un bloque, calculas SHA-256(SHA-256(encabezado)) y compruebas si el resultado es igual o menor que el objetivo codificado en *bits*. Si no, cambias el nonce y vuelves a intentarlo. (Cuando agotas los 4,000 millones de valores del nonce, ajustas el extranonce de la [transacción coinbase](/es/glosario/transaccion-coinbase), lo que cambia la raíz de Merkle, y empiezas de nuevo.)
 
-Como un encabezado ocupa solo 80 bytes, un nodo puede comprobar la prueba de trabajo de un bloque antes de tener el bloque en sí. Bitcoin Core sincroniza primero los encabezados desde la versión 0.10 (2015), y desde el BIP 130 un par (un nodo vecino) puede pedir que los bloques nuevos se le anuncien por su encabezado y no solo por su hash. Los clientes ligeros (las billeteras [SPV](/es/glosario/spv)) siguen la cadena comprobando únicamente los encabezados, unos 4.2 MB al año, como calculó el whitepaper, sin almacenar los gigabytes de datos completos de las transacciones.
+Como un encabezado ocupa solo 80 bytes, un nodo puede comprobar la prueba de trabajo de un bloque antes de tener el bloque en sí. Bitcoin Core sincroniza primero los encabezados desde la versión 0.10 (2015), y desde el BIP 130 un par (un nodo vecino) puede pedir que los bloques nuevos se le anuncien por su encabezado y no solo por su hash. Los clientes ligeros (las billeteras [SPV](/es/glosario/spv)) siguen la cadena comprobando únicamente los encabezados, unos 4.2 MB al año, como calculó el [whitepaper (PDF en inglés)](/bitcoin.pdf), sin almacenar los gigabytes de datos completos de las transacciones.
 
 Mira el [tema a fondo sobre minería (en inglés)](/rabbit-hole/mining) para el proceso de búsqueda, y [Bloque](/es/glosario/bloque) para saber qué es lo que el encabezado resume.

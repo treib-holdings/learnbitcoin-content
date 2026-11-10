@@ -2,8 +2,8 @@
 title: "Dirección"
 slug: direccion
 translationOf: address
-sourceHash: "596b4833ce48"
-sourceCommit: "c52bac9"
+sourceHash: "2ac300ce4221"
+sourceCommit: "d12964a"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"
@@ -23,7 +23,7 @@ sources:
   - { label: "BIP-341 - Taproot: a Taproot output is a native SegWit version 1 output whose 32-byte witness program is a public key; key-based spends by one party or many are indistinguishable from each other (2020)", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki" }
   - { label: "BIP-340 - Schnorr Signatures for secp256k1: a fixed 64-byte format instead of DER-encoded ECDSA signatures of up to 72 bytes (2020)", url: "https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki" }
   - { label: "Bitcoin Core - 0.13.1 release notes: each byte of a segregated witness is given a weight of 1, each other byte in a block a weight of 4 (2016-10-27)", url: "https://bitcoincore.org/en/releases/0.13.1/" }
-  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 10, Privacy: a new key pair should be used for each transaction to keep them from being linked to a common owner (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 10, Privacy: a new key pair should be used for each transaction to keep them from being linked to a common owner (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
 relatedTerms:
   - address-reuse
   - b32-address

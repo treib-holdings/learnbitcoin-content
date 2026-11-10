@@ -13,7 +13,7 @@ aliases:
   - "fungibles"
   - "fungibility"
 sources:
-  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, section 10 Privacy: the necessity to announce all transactions publicly; the public can see that someone is sending an amount to someone else; a new key pair should be used for each transaction (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, section 10 Privacy: the necessity to announce all transactions publicly; the public can see that someone is sending an amount to someone else; a new key pair should be used for each transaction (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Bitcoin Wiki - Privacy: units of bitcoin are not watermarked within a transaction; if you can meaningfully distinguish one coin from another, their fungibility is weak; block chain analysis companies fingerprint particular spenders, and the surveillance company Chainalysis is used to find the ownership of addresses; CoinJoin lets multiple people cooperate on a single transaction involving all their inputs (accessed 2026-10-14)", url: "https://en.bitcoin.it/wiki/Privacy" }
   - { label: "US Treasury, OFAC - FAQ 563: digital currency addresses listed on the SDN List, including Bitcoin (XBT) addresses, carry their unique alphanumeric identifier (accessed 2026-10-14)", url: "https://ofac.treasury.gov/faqs/563" }
   - { label: "US Treasury, OFAC - FAQ 562: OFAC may add digital currency addresses to the SDN List to alert the public; parties who identify wallets associated with an SDN and hold such property should block the digital currency and file a report with OFAC (19 March 2018)", url: "https://ofac.treasury.gov/faqs/562" }
@@ -31,8 +31,8 @@ relatedTerms:
   - stealth-address
 liveWidget: ~
 translationOf: fungibility
-sourceHash: "b79737911a2f"
-sourceCommit: "b3ef864"
+sourceHash: "71010b6f2175"
+sourceCommit: "d12964a"
 sourceUpdated: "2026-10-15"
 translation:
   method: "llm-draft"

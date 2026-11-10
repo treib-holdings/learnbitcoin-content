@@ -16,7 +16,7 @@ sources:
   - { label: "Liquid Network documentation - Technical overview: Liquid is a sidechain of Bitcoin with a two-way peg, secured by functionary operators under a federated consensus model", url: "https://docs.liquid.net/docs/technical-overview" }
   - { label: "BIP-300 - Hashrate Escrows, Consensus layer (2017): a type of L2 whose withdrawals to L1 are governed by proof-of-work instead of a federation", url: "https://github.com/bitcoin/bips/blob/master/bip-0300.mediawiki" }
   - { label: "Coinbase Developer Platform - Send crypto, transfer APIs: funds can be sent to a network address or to a recipient's email; no transaction fees are required for off-blockchain cryptocurrency transactions", url: "https://docs.cdp.coinbase.com/coinbase-app/transfer-apis/send-crypto" }
-  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, section 7 (2008): blocks are generated every 10 minutes", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, section 7 (2008): blocks are generated every 10 minutes", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
 relatedTerms:
   - layer-1
   - lightning-network
@@ -25,8 +25,8 @@ relatedTerms:
   - state-channel
 liveWidget: ~
 translationOf: off-chain
-sourceHash: "274b3425217a"
-sourceCommit: "c52bac9"
+sourceHash: "7d0dda357109"
+sourceCommit: "d12964a"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"

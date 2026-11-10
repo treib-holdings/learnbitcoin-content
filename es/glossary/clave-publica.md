@@ -15,7 +15,7 @@ aliases:
 sources:
   - { label: "SECG - SEC 1: Elliptic Curve Cryptography, version 2.0 (May 21, 2009): a key pair is a secret integer d and the public point Q = dG; the security of every ECC scheme rests on the elliptic curve discrete logarithm problem, for which no general subexponential algorithm is known", url: "https://www.secg.org/sec1-v2.pdf" }
   - { label: "BIP 340 - Schnorr Signatures for secp256k1: Bitcoin has used ECDSA over secp256k1 to authenticate transactions; the standard compressed public key is 33 bytes, and Taproot keys are encoded as 32 bytes (x-only)", url: "https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki" }
-  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System (2008): each owner signs a hash of the previous transaction and the public key of the next owner, and a payee can verify the signatures to verify the chain of ownership", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System (2008): each owner signs a hash of the previous transaction and the public key of the next owner, and a payee can verify the signatures to verify the chain of ownership", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Bitcoin Core - src/hash.h: CHash160, Bitcoin's 160-bit hash (SHA-256 then RIPEMD-160)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/hash.h" }
   - { label: "BIP 141 - Segregated Witness: for a 20-byte version-0 witness program (P2WPKH), the HASH160 of the public key must match the program", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
   - { label: "BIP 341 - Taproot: a version-1 witness program is the 32-byte encoding of the output key Q, a public key tweaked with the script tree", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki" }
@@ -32,8 +32,8 @@ sameAs:
   - "https://www.wikidata.org/wiki/Q201339"
 liveWidget: ~
 translationOf: public-key
-sourceHash: "e13ddbdc2958"
-sourceCommit: "c52bac9"
+sourceHash: "ecf369444d09"
+sourceCommit: "d12964a"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"

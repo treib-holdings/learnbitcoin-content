@@ -12,7 +12,7 @@ avoid:
   - "auto custodia"
   - "custodia propia"
 sources:
-  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 2, Transactions (2008): an electronic coin is defined as a chain of digital signatures, and each owner transfers it by signing it over to the next", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 2, Transactions (2008): an electronic coin is defined as a chain of digital signatures, and each owner transfers it by signing it over to the next", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "bitcoin.org - Securing your wallet: when a third party controls your keys you rely entirely on their security and honesty, and exchanges and online wallets have been hacked, failed, or frozen access to funds; keep a backup in more than one place; forget your password and your funds are permanently lost; multi-signature protects against theft", url: "https://bitcoin.org/en/secure-your-wallet" }
   - { label: "NPR - Mt. Gox files for bankruptcy, nearly $500M of bitcoins lost (February 28, 2014): 850,000 bitcoins missing, about 100,000 of them the exchange's own", url: "https://www.npr.org/sections/thetwo-way/2014/02/28/283863219/mtgox-files-for-bankruptcy-nearly-500m-of-bitcoins-lost" }
   - { label: "Kroll, FTX case information: FTX Trading Ltd. and 101 affiliated debtors filed for Chapter 11 on November 11 and 14, 2022", url: "https://restructuring.ra.kroll.com/FTX/" }
@@ -29,8 +29,8 @@ relatedTerms:
   - multisig
 liveWidget: ~
 translationOf: self-custody
-sourceHash: "eff1a112aa9e"
-sourceCommit: "c52bac9"
+sourceHash: "fc3d1ed09d3a"
+sourceCommit: "d12964a"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"

@@ -23,7 +23,7 @@ sources:
   - { label: "Blockstream - Liquid Network Security Incident Assessment: range-proof cache bug, about 4,000 unbacked L-BTC, 3,996.02 BTC released via SideSwap's peg-out, no key compromised, two causes (the Elements consensus bug and SideSwap's online peg-out key with automatic payouts), 3,400 BTC returned, chain restarted from block 4,050,335 with valid transactions replayed, USDt and DePix unaffected (September 23, 2026)", url: "https://blog.blockstream.com/liquid-network-security-incident-assessment/" }
   - { label: "mempool Liquid explorer API - BTC held in the Liquid peg wallet: 3,632.23 BTC (checked October 10, 2026)", url: "https://liquid.network/api/v1/liquid/reserves" }
   - { label: "mempool Liquid explorer API - L-BTC in circulation: 4,234.76 L-BTC (checked October 10, 2026)", url: "https://liquid.network/api/v1/liquid/pegs" }
-  - { label: "Satoshi Nakamoto - Bitcoin whitepaper: all transactions publicly announced; blocks assumed every 10 minutes (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin whitepaper: all transactions publicly announced; blocks assumed every 10 minutes (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
 relatedTerms:
   - liquid-network
   - multisig
@@ -33,8 +33,8 @@ relatedTerms:
   - sidechain
 liveWidget: ~
 translationOf: liquid-federation
-sourceHash: "bacaee118177"
-sourceCommit: "f3d40f1"
+sourceHash: "f7e4ffeb254c"
+sourceCommit: "d12964a"
 sourceUpdated: "2026-10-10"
 translation:
   method: "llm-draft"

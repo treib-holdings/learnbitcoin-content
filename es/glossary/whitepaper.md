@@ -3,6 +3,7 @@ title: "Whitepaper"
 slug: whitepaper
 draft: false
 published: "2026-10-14"
+updated: "2026-11-10"
 shortDefinition: "La publicación original de Satoshi Nakamoto de 2008, 'Bitcoin: A Peer-to-Peer Electronic Cash System', que detalla el diseño de Bitcoin."
 keyTakeaways:
   - "Documento pionero que inventó la moneda digital descentralizada"
@@ -14,6 +15,8 @@ avoid:
   - "white paper"
   - "libro blanco"
 sources:
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System (the paper itself: PDF, nine pages)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin P2P e-cash paper, the announcement on the Cryptography Mailing List (31 October 2008)", url: "https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html" }
   - { label: "mempool.space - genesis block 0, mined January 3, 2009", url: "https://mempool.space/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f" }
 relatedTerms:
   - bitcoin-pizza-day
@@ -22,14 +25,24 @@ relatedTerms:
   - satoshi-nakamoto
 liveWidget: ~
 translationOf: whitepaper
-sourceHash: "c0d84ac5ea39"
-sourceCommit: "94e823a"
-sourceUpdated: "2026-10-09"
+sourceHash: "477fcfada528"
+sourceCommit: "cbb6a28"
+sourceUpdated: "2026-11-10"
 translation:
   method: "llm-draft"
 ---
 
 El whitepaper de Bitcoin es el documento fundacional de la red: un PDF de nueve páginas titulado *Bitcoin: A Peer-to-Peer Electronic Cash System*, publicado por [Satoshi Nakamoto](/es/glosario/satoshi-nakamoto) el 31 de octubre de 2008. Describe, con una brevedad y una precisión poco comunes, la idea central completa de Bitcoin.
+
+**Léelo:** [*Bitcoin: A Peer-to-Peer Electronic Cash System* (PDF en inglés)](/bitcoin.pdf), nueve páginas, 184 KB.
+
+La copia de este sitio es, byte por byte, el archivo que sirven bitcoin.org y el Satoshi Nakamoto Institute. Los tres tienen la misma huella SHA-256 (comprobado el 10 de noviembre de 2026):
+
+```text
+b1674191a88ec5cdd733e4240a81803105dc412d6c6708d53ab94fc248f4f553
+```
+
+Los metadatos del propio archivo lo fechan el 24 de marzo de 2009, unos meses después de que el whitepaper se anunciara por primera vez.
 
 Lo que de verdad hay en esas nueve páginas:
 
@@ -44,4 +57,4 @@ Lo que *no* está en el whitepaper: Lightning, SegWit, Taproot, las configuracio
 
 Puedes leer el whitepaper en unos 20 minutos. Son, de verdad, las nueve páginas más densas, más claras y de mayores consecuencias en la historia de la computación. Si nunca lo has leído, deberías hacerlo, sobre todo porque ha envejecido notablemente bien. Cada afirmación que hace sobre cómo funcionaría el sistema se ha sostenido desde que la red arrancó en enero de 2009.
 
-Una copia servida desde este sitio está en [/bitcoin.pdf](/bitcoin.pdf) (PDF en inglés). Lee también [Satoshi Nakamoto](/es/glosario/satoshi-nakamoto) sobre el autor, [Bloque génesis](/es/glosario/bloque-genesis) sobre el arranque de la red dos meses después y el [Capítulo 2 del Recorrido](/es/recorrido/que-es-bitcoin-en-realidad) para una lectura guiada más larga.
+Lee también [Satoshi Nakamoto](/es/glosario/satoshi-nakamoto) sobre el autor, [Bloque génesis](/es/glosario/bloque-genesis) sobre el arranque de la red dos meses después y el [Capítulo 2 del Recorrido](/es/recorrido/que-es-bitcoin-en-realidad) para una lectura guiada más larga.

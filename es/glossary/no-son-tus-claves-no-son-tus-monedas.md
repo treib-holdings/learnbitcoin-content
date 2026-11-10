@@ -12,7 +12,7 @@ aliases:
   - "no son tus llaves, no son tus monedas"
   - "not your keys, not your coins"
 sources:
-  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, section 2 (2008): an electronic coin is defined as a chain of digital signatures; each owner transfers the coin by signing it over to the next", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, section 2 (2008): an electronic coin is defined as a chain of digital signatures; each owner transfers the coin by signing it over to the next", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "NPR - Mt. Gox files for bankruptcy, nearly $500M of bitcoins lost (February 28, 2014): Mt. Gox filed for bankruptcy protection in Japan with about 850,000 bitcoins missing", url: "https://www.npr.org/sections/thetwo-way/2014/02/28/283863219/mtgox-files-for-bankruptcy-nearly-500m-of-bitcoins-lost" }
   - { label: "Ontario Securities Commission - QuadrigaCX investigation report (2020): on January 14, 2019 Quadriga announced that Cotten had died the previous month; by February 5, 2019 the platform had ceased operations and filed for creditor protection; over 76,000 clients were owed CAD 215 million", url: "https://www.osc.ca/quadrigacxreport/" }
   - { label: "SEC - charges against Sam Bankman-Fried (December 13, 2022): the undisclosed diversion of FTX customers' funds to Alameda Research", url: "https://www.sec.gov/newsroom/press-releases/2022-219" }
@@ -27,8 +27,8 @@ relatedTerms:
   - counterparty-risk
 liveWidget: ~
 translationOf: not-your-keys-not-your-coins
-sourceHash: "e13371b62661"
-sourceCommit: "c52bac9"
+sourceHash: "9ce3157b46b4"
+sourceCommit: "d12964a"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"

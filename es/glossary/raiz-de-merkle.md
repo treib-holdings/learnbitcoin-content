@@ -14,7 +14,7 @@ aliases:
   - "raíz del árbol de Merkle"
   - "merkle root"
 sources:
-  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, sections 7 and 8 (2008): transactions are hashed in a Merkle Tree with only the root included in the block's hash; a light client keeps the block headers and obtains the Merkle branch linking a transaction to its block", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, sections 7 and 8 (2008): transactions are hashed in a Merkle Tree with only the root included in the block's hash; a light client keeps the block headers and obtains the Merkle branch linking a transaction to its block", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Bitcoin.org Developer Reference - Block Chain, block headers and merkle trees: the merkle root is a SHA256(SHA256()) hash derived from all the TXIDs in the block; if all 32-bit nonce values are tested, the coinbase transaction can be changed and the merkle root updated", url: "https://developer.bitcoin.org/reference/block_chain.html" }
   - { label: "Bitcoin.org Developer Guide - Block Chain, merkle trees and SPV: hashes are paired, hashed, paired again and hashed again until a single hash remains; to verify one of five transactions an SPV client needs only three intermediate hashes plus the merkle root", url: "https://developer.bitcoin.org/devguide/block_chain.html" }
   - { label: "Bitcoin.org Developer Guide - Mining: the mining hardware iterates through every possible nonce; if none works it gets a new header with a new merkle root, made by adding extra nonce data to the coinbase transaction", url: "https://developer.bitcoin.org/devguide/mining.html" }
@@ -36,8 +36,8 @@ relatedTerms:
   - spv-simplified-payment-verification
 liveWidget: ~
 translationOf: merkle-root
-sourceHash: "719ce8e6ddd2"
-sourceCommit: "c52bac9"
+sourceHash: "d0364b2f5dd3"
+sourceCommit: "d12964a"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"

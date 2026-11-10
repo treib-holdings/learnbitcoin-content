@@ -11,7 +11,7 @@ keyTakeaways:
   - "Mejora la privacidad al evitar que se junten entradas sin necesidad"
   - "Puede optimizar las comisiones y evitar que se acumule polvo (dust)"
 sources:
-  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 10, Privacy: some linking is still unavoidable with multi-input transactions, which necessarily reveal that their inputs were owned by the same owner (2008)", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 10, Privacy: some linking is still unavoidable with multi-input transactions, which necessarily reveal that their inputs were owned by the same owner (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Bitcoin Wiki - Privacy: the common-input-ownership heuristic, and coin control as a feature of some wallets that lets the user choose which coins are spent as inputs", url: "https://en.bitcoin.it/wiki/Privacy" }
   - { label: "Bitcoin Optech - Output linking topic (dust attacks, and coin control as a wallet defense against spending the dust)", url: "https://bitcoinops.org/en/topics/output-linking/" }
   - { label: "Bitcoin Core 0.9.0 release notes - Add Coin Control Features (19 March 2014)", url: "https://bitcoin.org/en/release/v0.9.0" }
@@ -44,7 +44,7 @@ El control de monedas es la función de la billetera que te deja elegir a mano q
 
 Por qué importa el control de monedas:
 
-- **Privacidad.** Las heurísticas de agrupación de direcciones (address clustering) dependen de la heurística de propiedad común de las entradas: todos los UTXOs gastados en una misma transacción comparten dueño. El propio whitepaper ya señalaba esa fuga. Al elegir a mano qué UTXOs combinas, puedes evitar vincular direcciones que preferirías mantener separadas.
+- **Privacidad.** Las heurísticas de agrupación de direcciones (address clustering) dependen de la heurística de propiedad común de las entradas: todos los UTXOs gastados en una misma transacción comparten dueño. El propio [whitepaper (PDF en inglés)](/bitcoin.pdf) ya señalaba esa fuga. Al elegir a mano qué UTXOs combinas, puedes evitar vincular direcciones que preferirías mantener separadas.
 - **Comisiones.** Menos entradas = transacción más pequeña = comisión más baja a cualquier tasa en sat/vB (cada entrada P2WPKH suma unos 68 bytes virtuales). Si tienes muchos UTXOs pequeños y uno grande, a veces gastar solo el grande sale mucho más barato.
 - **Manejo del polvo.** Puedes consolidar a propósito los UTXOs pequeños, el [polvo (dust)](/es/glosario/polvo), cuando las comisiones están bajas, o evitar combinarlos con UTXOs valiosos que no quieres ver vinculados a fuentes de polvo.
 - **Etiquetado por origen de los fondos.** Si etiquetaste tus UTXOs según su origen (con KYC o sin KYC, del negocio o personales), puedes gastar solo del lote que corresponda sin mezclar uno con otro.

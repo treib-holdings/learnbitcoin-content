@@ -15,7 +15,7 @@ aliases:
 sources:
   - { label: "Bitcoin.org Developer Guide - Mining: mining software builds a block header and sends it to an ASIC, which iterates through every nonce; solo mining keeps the whole block reward and fees with high variance, pooled mining shares them out for smaller, steadier payouts", url: "https://developer.bitcoin.org/devguide/mining.html" }
   - { label: "Bitcoin.org Developer Reference - Block Chain, serialized blocks: the transaction fees and block subsidy together are called the block reward; a coinbase transaction that spends more than the block reward is invalid", url: "https://developer.bitcoin.org/reference/block_chain.html" }
-  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, section 5 (2008): nodes accept a block only if all transactions in it are valid and not already spent", url: "https://bitcoin.org/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, section 5 (2008): nodes accept a block only if all transactions in it are valid and not already spent", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Cambridge Centre for Alternative Finance - Cambridge Digital Mining Industry Report (April 2025): ASICs ushered in industrial-scale mining in specialised data centres; electricity is more than 80% of miners' cash operating expenses; miners are drawn to regions rich in hydropower and wind and tap stranded energy and flared natural gas; China's clampdown altered the global mining landscape", url: "https://www.jbs.cam.ac.uk/wp-content/uploads/2025/04/2025-04-cambridge-digital-mining-industry-report.pdf" }
   - { label: "Sixth Tone - After Inner Mongolia Bitcoin Ban, Sichuan Mulls Mining Shutdown (May 28, 2021): many miners flocked to Sichuan hoping to cash in on the coming wet season's cheap hydropower", url: "https://www.sixthtone.com/news/1007595" }
   - { label: "mempool.space API - mining pool shares over the last year (read 13 October 2026: 52,377 blocks; Foundry USA 28.2%, AntPool 18.1%, F2Pool 12.6%, ViaBTC 9.7%; unknown 0.5%; the solo services Solo CK, Public Pool, Braiins Solo and SoloPool.com found 23 blocks between them)", url: "https://mempool.space/api/v1/mining/pools/1y" }
@@ -38,8 +38,8 @@ relatedTerms:
   - revenue-ths
 liveWidget: ~
 translationOf: miner
-sourceHash: "bf8d161c75e9"
-sourceCommit: "c52bac9"
+sourceHash: "55c4485d8ae3"
+sourceCommit: "d12964a"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"
