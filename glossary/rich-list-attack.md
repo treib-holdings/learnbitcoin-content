@@ -15,8 +15,10 @@ sources:
   - { label: "7d5x9 - Decentralized Coinbase Payout Protocols (DCPP): A Framework for Discussion (Delving Bitcoin, 11 November 2026): names the rich list attack, the two conditions it needs, what happens to excluded miners, and the two ways out the author considers viable", url: "https://delvingbitcoin.org/t/decentralized-coinbase-payout-protocols-dcpp-a-framework-for-discussion/3060" }
   - { label: "windpath - post 13795 in the P2Pool thread on BitcoinTalk (24 November 2015): 'You can only split the 25BTC reward so many ways in a decentralized trust-less environment, and smaller miners will always get squeezed out'", url: "https://bitcointalk.org/index.php?topic=18313.msg13057899#msg13057899" }
   - { label: "p2pool/p2pool - p2pool/data.py and p2pool/work.py: a coinbase limited to the 4,000 largest payouts, and a harder share target for a miner whose expected payout per block is under the dust threshold", url: "https://github.com/p2pool/p2pool/blob/master/p2pool/data.py" }
+  - { label: "LearnBitcoin - the coinbase transaction of every P2Pool block, 2,545 rows read from the Bitcoin Core node behind ChainQuery on 11 November 2026: the most payouts in one block was 553, in block 236,962 (CSV)", url: "https://www.learnbitcoin.com/downloads/p2pool-coinbases.csv" }
 relatedTerms:
   - payout-settlement-griefing
+  - decentralized-coinbase-payout-protocol
   - p2pool
   - mining-pool
   - pooled-mining
@@ -28,7 +30,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-A rich list attack (RLA) is a way for a large miner to push small miners out of a decentralized [mining pool's](/glossary/mining-pool) payouts. It is the best-known form of [payout settlement griefing](/glossary/payout-settlement-griefing), and both names come from the same post on the Delving Bitcoin forum in November 2026.
+A rich list attack (RLA) is a way for a large miner to push small miners out of a decentralized [mining pool's](/glossary/mining-pool) payouts. It is the best-known form of [payout settlement griefing](/glossary/payout-settlement-griefing), and both names come from the same post on the Delving Bitcoin forum in November 2026, about [decentralized coinbase payout protocols](/glossary/decentralized-coinbase-payout-protocol).
 
 The setting is a pool with no operator, which pays its miners directly in the [coinbase transaction](/glossary/coinbase-transaction) of each block it finds. That transaction cannot hold an unlimited number of payouts. Each one takes up block space that could have carried a fee-paying transaction, and mining machines' firmware limits how large a coinbase they will accept. So once the pool has more miners than payout places (the post calls them slots), it needs a rule for who gets one.
 
@@ -40,7 +42,7 @@ The post gives the two conditions that make this possible. The pool cannot detec
 
 What the excluded miners lose depends on the pool's rules. In the worst case their share of the reward goes to the miners who did get slots, and it is gone. In the milder case they are owed a credit that the pool has to carry forward and settle in a later block. That needs fair rules for paying old debts, and it comes with no guarantee, because the pool's hash power can drop away before the debt is paid.
 
-The original [P2Pool](/glossary/p2pool) ran into the same squeeze without anyone attacking it. It paid every miner in the coinbase, and to keep those payouts from turning into [dust](/glossary/dust) it made a small miner's shares, the units of work the pool gives credit for, harder to find. The more hash power joined the pool, the less often a small miner was paid at all. Its code even held a rich list rule of its own: a coinbase was limited to the 4,000 largest payouts, a limit that a comment in the code calls "unlikely to ever be hit". The operator of one of its public nodes, who now runs this site, put it this way on BitcoinTalk in November 2015: "You can only split the 25BTC reward so many ways in a decentralized trust-less environment, and smaller miners will always get squeezed out." The Delving post links to that message as its reference for P2Pool's failure to scale payouts. A rich list attack brings about the same result on purpose.
+The original [P2Pool](/glossary/p2pool) ran into the same squeeze without anyone attacking it. It paid every miner in the coinbase, and to keep those payouts from turning into [dust](/glossary/dust) it made a small miner's shares, the units of work the pool gives credit for, harder to find. The more hash power joined the pool, the less often a small miner was paid at all. Its code even held a rich list rule of its own: a coinbase was limited to the 4,000 largest payouts, a limit that a comment in the code calls "unlikely to ever be hit". It never was: the most P2Pool paid in one block was 553 addresses, in May 2013. The operator of one of its public nodes, who now runs this site, put it this way on BitcoinTalk in November 2015: "You can only split the 25BTC reward so many ways in a decentralized trust-less environment, and smaller miners will always get squeezed out." The Delving post links to that message as its reference for P2Pool's failure to scale payouts. A rich list attack brings about the same result on purpose.
 
 The post's author sees two ways out and is not sure which is right. One is to stop ranking and draw the slots at random, weighted by how much each claim is worth, an idea the post credits to Matt Corallo and says still "needs to be considered carefully". The other is to reserve slots for a few named payout operators and route every small miner's earnings through one of them. The author expects both to end in about the same place, with a small number of market makers handling most small miners' payouts.
 

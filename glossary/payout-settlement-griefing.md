@@ -15,6 +15,7 @@ sources:
   - { label: "7d5x9 - Decentralized Coinbase Payout Protocols (DCPP): A Framework for Discussion (Delving Bitcoin, 11 November 2026): the post that names payout settlement griefing and describes each example given here", url: "https://delvingbitcoin.org/t/decentralized-coinbase-payout-protocols-dcpp-a-framework-for-discussion/3060" }
 relatedTerms:
   - rich-list-attack
+  - decentralized-coinbase-payout-protocol
   - p2pool
   - mining-pool
   - pooled-mining
@@ -30,7 +31,7 @@ Payout settlement griefing (PSG) is a way to attack a decentralized [mining pool
 
 It can work because miners have bills. Power, hosting and hardware payments come due whether or not the pool has paid out. A pool that pays late, or pays a little less than its rivals after costs, loses its miners even if it finds blocks at exactly the rate its hash power predicts.
 
-The name comes from a post on the Delving Bitcoin forum in November 2026, by an author writing as 7d5x9. The post is about pools that have no operator and pay their miners straight from the [coinbase transaction](/glossary/coinbase-transaction) of each block they find. It starts from one of the main reasons the original [P2Pool](/glossary/p2pool) failed: giving every miner their own output in the coinbase stops working once the pool has many miners. Every workaround the post looks at closes one gap and opens another, and it uses PSG as the name for the whole family of attacks on those gaps.
+The name comes from a post on the Delving Bitcoin forum in November 2026, by an author writing as 7d5x9. The post is about [decentralized coinbase payout protocols](/glossary/decentralized-coinbase-payout-protocol), the rules by which a pool with no operator pays its miners straight from the [coinbase transaction](/glossary/coinbase-transaction) of each block it finds. It starts from one of the main reasons the original [P2Pool](/glossary/p2pool) failed: giving every miner their own output in the coinbase stops working once the pool has many miners. Every workaround the post looks at closes one gap and opens another, and it uses PSG as the name for the whole family of attacks on those gaps.
 
 The forms it describes:
 
