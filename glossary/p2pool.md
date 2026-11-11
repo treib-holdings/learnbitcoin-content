@@ -22,6 +22,7 @@ sources:
   - { label: "windpath - post 13795 in the P2Pool thread on BitcoinTalk (24 November 2015): what a jump in the pool's hash power would do to its existing miners", url: "https://bitcointalk.org/index.php?topic=18313.msg13057899#msg13057899" }
   - { label: "P2Poolv2 wiki - P2Pool vs P2Poolv2 (read November 2026): the original's four main problems as the successor project sees them, and what it changes", url: "https://github.com/p2poolv2/p2poolv2/wiki/P2Pool-vs-P2Poolv2" }
   - { label: "7d5x9 - Decentralized Coinbase Payout Protocols (DCPP): A Framework for Discussion (Delving Bitcoin, 11 November 2026): names P2Poolv2 and Braidpool as projects reviving the idea, and describes Braidpool's payout design", url: "https://delvingbitcoin.org/t/decentralized-coinbase-payout-protocols-dcpp-a-framework-for-discussion/3060" }
+  - { label: "ChainQuery - P2Pool Decentralized Miners (read 11 November 2026): 17,377 addresses attributed to P2Pool miners, from a scan of every block's coinbase transaction and the recovered logs of the p2pool.org node", url: "https://chainquery.com/sources/p2pool-miners" }
   - { label: "p2pool.org - Decentralized Bitcoin Mining (a steward page for the domain, kept by the person who runs this site; last updated May 2026): what P2Pool was, why it stopped being viable, and the projects working toward decentralized mining since", url: "https://p2pool.org/" }
 relatedTerms:
   - mining-pool
@@ -57,6 +58,8 @@ The same design set its limits.
 The operator of a public node described the bind in the project's thread in November 2015: "If 100 PH/s was pointed to P2Pool today most (if not all) of the existing miners would see a huge spike in variance, and a large reduction in payout." (That operator now runs this site.) Pooling exists to smooth out a miner's income, and a pool can only do that in proportion to its size, so a pool that punishes its own growth cannot do the job well. The P2Poolv2 project's comparison says the same about the payouts: paying miners out of the coinbase put hard economic limits on how large the pool could grow.
 
 The last release, 17.0, came out in August 2017 and made P2Pool compatible with SegWit. The last change on the main branch of its code is dated September 2018.
+
+ChainQuery, which is run by the same person as this site, lists more than 17,000 addresses that it attributes to P2Pool miners as of November 2026. The list is built from the coinbase transactions of the blocks P2Pool found and from the logs of the public node at p2pool.org.
 
 The idea has outlived the software. As of November 2026 at least two projects are trying to rebuild it. P2Poolv2 is a rewrite that lets a share credit other shares found at about the same time, so fewer are wasted, and pays only the largest miners in the coinbase while smaller miners sell their shares for bitcoin. Braidpool collects the whole reward in one output that a large group of its miners must sign for together. Neither has settled how a pool with no operator pays thousands of small miners out of one coinbase transaction without opening a new way to cheat them. The attacks on that step now have names of their own: [payout settlement griefing](/glossary/payout-settlement-griefing) and the [rich list attack](/glossary/rich-list-attack).
 
