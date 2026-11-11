@@ -22,6 +22,7 @@ sources:
   - { label: "windpath - post 13795 in the P2Pool thread on BitcoinTalk (24 November 2015): what a jump in the pool's hash power would do to its existing miners", url: "https://bitcointalk.org/index.php?topic=18313.msg13057899#msg13057899" }
   - { label: "P2Poolv2 wiki - P2Pool vs P2Poolv2 (read November 2026): the original's four main problems as the successor project sees them, and what it changes", url: "https://github.com/p2poolv2/p2poolv2/wiki/P2Pool-vs-P2Poolv2" }
   - { label: "7d5x9 - Decentralized Coinbase Payout Protocols (DCPP): A Framework for Discussion (Delving Bitcoin, 11 November 2026): names P2Poolv2 and Braidpool as projects reviving the idea, and describes Braidpool's payout design", url: "https://delvingbitcoin.org/t/decentralized-coinbase-payout-protocols-dcpp-a-framework-for-discussion/3060" }
+  - { label: "p2pool.org - Decentralized Bitcoin Mining (a steward page for the domain, kept by the person who runs this site; last updated May 2026): what P2Pool was, why it stopped being viable, and the projects working toward decentralized mining since", url: "https://p2pool.org/" }
 relatedTerms:
   - mining-pool
   - pooled-mining
