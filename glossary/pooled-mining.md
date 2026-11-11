@@ -13,6 +13,7 @@ relatedTerms:
   - mining-pool
   - mining-subsidy
   - revenue-ths
+  - p2pool
 liveWidget: ~
 ---
 

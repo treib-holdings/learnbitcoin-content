@@ -27,6 +27,7 @@ relatedTerms:
   - pooled-mining
   - retail-mining
   - revenue-ths
+  - p2pool
 sameAs:
   - "https://en.wikipedia.org/wiki/Mining_pool"
   - "https://www.wikidata.org/wiki/Q18207063"

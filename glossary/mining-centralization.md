@@ -28,6 +28,7 @@ relatedTerms:
   - mining-pool
   - mining-algorithm
   - retail-mining
+  - p2pool
 liveWidget: ~
 ---
 

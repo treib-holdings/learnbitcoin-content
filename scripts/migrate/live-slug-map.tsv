@@ -437,6 +437,7 @@ Output Descriptor	output-descriptor
 P2MR	bip-360
 P2PK (Pay to Public Key)	p2pk-pay-public-key
 P2PKH (Pay to Public Key Hash)	p2pkh-pay-public-key-hash
+P2Pool	p2pool
 P2SH (Pay to Script Hash)	p2sh
 P2SH-P2WSH (Nested SegWit Script)	p2sh-p2wsh-nested-segwit
 P2WPKH (Pay to Witness Public Key Hash)	p2wpkh-pay-witness-public-key-hash
@@ -450,6 +451,7 @@ PayJoin	payjoin
 Payment Channel	payment-channel
 Payment Codes (BIP 47)	payment-codes-bip-47
 Payment Point	payment-point
+payout settlement griefing	payout-settlement-griefing
 Peer Bookmark	peer-bookmark
 Peer Discovery	peer-discovery
 Peer Management	peer-management
@@ -494,6 +496,7 @@ Resource Exhaustion Attack	resource-exhaustion-attack
 Retail Mining	retail-mining
 Revenue per TH/s	revenue-ths
 Reward Era	reward-era
+rich list attack	rich-list-attack
 Routing Node	routing-node
 RPC Whitelist	rpc-whitelist
 Rug Pull	rug-pull
