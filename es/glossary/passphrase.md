@@ -3,6 +3,7 @@ title: "Passphrase (la palabra 25)"
 slug: passphrase
 draft: false
 published: "2026-10-14"
+updated: "2026-11-12"
 shortDefinition: "Una passphrase opcional que se mezcla en la derivación de una semilla BIP 39 y actúa como una 'palabra 25' para mayor protección."
 keyTakeaways:
   - "Refuerza la seguridad más allá de la frase semilla por sí sola"
@@ -20,14 +21,14 @@ relatedTerms:
   - seed-phrase
 liveWidget: ~
 translationOf: mnemonic-password
-sourceHash: "9ac9489d9f62"
-sourceCommit: "9838a39"
-sourceUpdated: "2026-10-13"
+sourceHash: "557fb8816775"
+sourceCommit: "0e165a3"
+sourceUpdated: "2026-11-12"
 translation:
   method: "llm-draft"
 ---
 
-La passphrase del BIP 39, a veces llamada la "palabra 25", es una cadena de texto opcional que se mezcla durante la derivación de la semilla. Las mismas 12 o 24 palabras más una passphrase diferente dan una billetera completamente distinta. La matemática es sencilla: el BIP 39 deriva la semilla maestra con PBKDF2(mnemonic, "mnemonic" + passphrase), así que cualquier cambio en la passphrase cambia todo lo que viene después.
+La passphrase del BIP 39, a veces llamada la "palabra 25", es una cadena de texto opcional que se mezcla durante la derivación de la semilla. Las mismas 12 o 24 palabras más una passphrase diferente dan una billetera completamente distinta. La matemática es sencilla: el BIP 39 deriva la semilla maestra con PBKDF2(mnemonic, "mnemonic" + passphrase), así que cualquier cambio en la passphrase cambia todo lo que viene después. Usada por sí sola, sin palabras al azar debajo, una passphrase así sería una [brain wallet](/es/glosario/brain-wallet) (billetera cerebral).
 
 Qué ganas con esto:
 

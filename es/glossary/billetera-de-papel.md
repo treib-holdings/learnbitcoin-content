@@ -3,6 +3,7 @@ title: "Billetera de papel"
 slug: billetera-de-papel
 draft: false
 published: "2026-10-14"
+updated: "2026-11-12"
 shortDefinition: "Una clave privada (y su dirección) impresa en papel para guardar BTC sin conexión. Segura si se genera bien, pero físicamente vulnerable."
 keyTakeaways:
   - "Toda su seguridad depende de generarla bien sin conexión y de resguardar la clave"
@@ -30,14 +31,14 @@ sameAs:
   - "https://en.bitcoin.it/wiki/Paper_wallet"
 liveWidget: ~
 translationOf: paper-wallet
-sourceHash: "bb690275d308"
-sourceCommit: "d12964a"
-sourceUpdated: "2026-10-13"
+sourceHash: "006e8c5a8a43"
+sourceCommit: "0e165a3"
+sourceUpdated: "2026-11-12"
 translation:
   method: "llm-draft"
 ---
 
-Una billetera de papel es una [clave privada](/es/glosario/clave-privada) (con su [dirección](/es/glosario/direccion) correspondiente) impresa en papel, muchas veces como código QR, y guardada físicamente en vez de digitalmente. Fue popular más o menos de 2011 a 2016; hoy está obsoleta.
+Una billetera de papel es una [clave privada](/es/glosario/clave-privada) (con su [dirección](/es/glosario/direccion) correspondiente) impresa en papel, muchas veces como código QR, y guardada físicamente en vez de digitalmente. Fue popular más o menos de 2011 a 2016; hoy está obsoleta. Su hermana de esos mismos años, la [brain wallet](/es/glosario/brain-wallet) (billetera cerebral), guardaba la clave en una frase memorizada en vez de en papel, y le fue peor.
 
 El atractivo original: ninguna superficie de ataque digital. Un papel no se puede hackear por internet, no puede correr malware y nadie se lo puede llevar a distancia. Lo generas sin conexión, lo guardas en un lugar seguro y listo.
 

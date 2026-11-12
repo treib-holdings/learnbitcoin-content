@@ -3,6 +3,7 @@ title: "Frase semilla"
 slug: frase-semilla
 draft: false
 published: "2026-10-14"
+updated: "2026-11-12"
 shortDefinition: "12 o 24 palabras en inglés (BIP 39) que codifican el secreto maestro de una billetera de Bitcoin. Es el respaldo completo: si la pierdes, pierdes las monedas; si se filtra, otra persona las tiene."
 keyTakeaways:
   - "El estándar es el BIP 39: una lista de 2,048 palabras, 11 bits por palabra y una suma de verificación integrada"
@@ -41,8 +42,9 @@ sameAs:
   - "https://en.bitcoin.it/wiki/BIP_0039"
 liveWidget: ~
 translationOf: seed-phrase
-sourceHash: "7098bd1263dc"
-sourceCommit: "f73ff00"
+sourceHash: "be4f4ecd57ab"
+sourceCommit: "0e165a3"
+sourceUpdated: "2026-11-12"
 translation:
   method: "llm-draft"
 ---
@@ -60,7 +62,7 @@ El estándar es el **[BIP 39](/es/glosario/bip-39)**, publicado en 2013. Define:
 
 Esa semilla maestra de 512 bits alimenta la derivación jerárquica de claves del [BIP 32](/es/glosario/bip-32), que produce cada [clave privada](/es/glosario/clave-privada) y cada dirección que usa la billetera. La secuencia completa (palabras -> semilla maestra -> clave privada maestra -> claves derivadas -> direcciones) es puramente determinista. Entran las mismas palabras, sale la misma billetera, en cualquier software compatible con BIP 39 + BIP 32.
 
-12 palabras codifican 128 bits de entropía. 24 palabras codifican 256 bits. Cualquiera de las dos sobra: 128 bits de aleatoriedad no se pueden adivinar en ningún sentido práctico, y 256 bits están muy por encima del alcance de cualquier adversario imaginable.
+12 palabras codifican 128 bits de entropía. 24 palabras codifican 256 bits. Cualquiera de las dos sobra: 128 bits de aleatoriedad no se pueden adivinar en ningún sentido práctico, y 256 bits están muy por encima del alcance de cualquier adversario imaginable. Eso vale solo cuando la billetera elige las palabras. Una frase que inventa una persona es una [brain wallet](/es/glosario/brain-wallet) (billetera cerebral), y hay programas que las adivinan y las vacían, a menudo en cuestión de minutos.
 
 ## Por qué se impuso
 

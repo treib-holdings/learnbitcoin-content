@@ -2,13 +2,14 @@
 title: "Quindecillones: por qué nadie puede tropezar con tus bitcoins"
 slug: quindecillones
 translationOf: quindecillions
-sourceHash: "c7e0236dd815"
-sourceCommit: "9838a39"
-sourceUpdated: "2026-10-29"
+sourceHash: "dfdf1426745c"
+sourceCommit: "0e165a3"
+sourceUpdated: "2026-11-12"
 translation:
   method: "llm-draft"
 draft: false
 published: "2026-10-29"
+updated: "2026-11-12"
 status: live
 section: rabbit-hole
 category: how-it-works
@@ -55,7 +56,7 @@ sources:
   - { label: "Large Bitcoin Collider - about page (Wayback Machine copy, 17 April 2017: pool inception 10 August 2016 and the early milestones)", url: "https://web.archive.org/web/20170417062334id_/https://lbc.cryptoguru.org/about" }
   - { label: "Bitcoin Wiki - Brainwallet (the passphrase scheme is filed under 'Obsolete brainwallet style')", url: "https://en.bitcoin.it/wiki/Brainwallet" }
   - { label: "DEF CON 23 - speakers page: Ryan Castellucci, Cracking Cryptocurrency Brainwallets (abstract)", url: "https://defcon.org/html/defcon-23/dc-23-speakers.html" }
-  - { label: "Ryan Castellucci - Cracking Cryptocurrency Brainwallets, slides as delivered on 7 August 2015 (60 pages)", url: "https://web.archive.org/web/2026/https://rya.nc/files/cracking_cryptocurrency_brainwallets.pdf" }
+  - { label: "Ryan Castellucci - Cracking Cryptocurrency Brainwallets, slides as delivered on 7 August 2015 (60 pages)", url: "https://web.archive.org/web/20260114163757/https://rya.nc/files/cracking_cryptocurrency_brainwallets.pdf" }
   - { label: "Ryan Castellucci - Why I'm Releasing a Brainwallet Cracker at DEFCON 23 (8 July 2015)", url: "https://web.archive.org/web/20260113233317/https://rya.nc/defcon-brainwallets.html" }
   - { label: "ryancdotorg - Brainflayer repository and README", url: "https://github.com/ryancdotorg/brainflayer" }
   - { label: "Vasek, Bonneau, Castellucci, Keith and Moore - The Bitcoin Brain Drain: A Short Paper on the Use and Abuse of Bitcoin Brain Wallets (Financial Cryptography 2016, preproceedings PDF)", url: "https://fc16.ifca.ai/preproceedings/36_Vasek.pdf" }
@@ -157,7 +158,7 @@ Y eso nos devuelve a nuestras dos búsquedas. La probabilidad de que cualquiera 
 
 Son reales, y cada una de las que pudimos encontrar es una de dos fallas. Ninguna de las dos es una búsqueda del espacio de direcciones.
 
-**El humano eligió la clave.** Una brain wallet (billetera cerebral), en su forma original, es una frase que se pasa una vez por SHA-256 y se usa como clave privada. La Bitcoin Wiki archiva el esquema bajo "Obsolete brainwallet style" (estilo de brainwallet obsoleto), con la línea "Humans are not a reliable source of entropy" (los humanos no son una fuente confiable de entropía). El atacante no busca entre 2^256 claves; busca entre las frases que la gente elige: diccionarios, letras de canciones, citas, listas de contraseñas filtradas, con las reglas habituales de mayúsculas y puntuación aplicadas, y comprueba cada candidata contra todas las direcciones con fondos a la vez.
+**El humano eligió la clave.** Una brain wallet (billetera cerebral), en su forma original, es una frase que se pasa una vez por SHA-256 y se usa como clave privada. La Bitcoin Wiki archiva el esquema bajo "Obsolete brainwallet style" (estilo de brainwallet obsoleto), con la línea "Humans are not a reliable source of entropy" (los humanos no son una fuente confiable de entropía). El atacante no busca entre 2^256 claves; busca entre las frases que la gente elige: diccionarios, letras de canciones, citas, listas de contraseñas filtradas, con las reglas habituales de mayúsculas y puntuación aplicadas, y comprueba cada candidata contra todas las direcciones con fondos a la vez. [Brain wallets](/es/a-fondo/brain-wallets) cuenta la versión larga de la historia, desde tres que recibieron fondos en video en 2014 hasta el día de 2015 en que cerró el sitio más conocido.
 
 Ryan Castellucci mostró cómo en DEF CON 23, el 7 de agosto de 2015, donde liberó un cracker llamado Brainflayer. Probaba cada frase candidata contra un [filtro de consulta (en inglés)](/glossary/bloom-filter) construido con todas las direcciones que alguna vez habían recibido monedas, así que un solo intento se comprobaba contra todo el conjunto con fondos en un solo paso, y sus diapositivas suman los saldos máximos de todo lo que había crackeado en "733 BTC", nada de lo cual se quedó. En el paper que siguió, Vasek, Bonneau, Castellucci, Keith y Moore probaron unos 300,000 millones de contraseñas candidatas contra toda la cadena hasta agosto de 2015 y encontraron 884 brain wallets. Entre todas habían recibido 1,806 BTC, y la mitad se drenaron en los 21 minutos siguientes a recibir fondos. Nuestras dos corridas de direcciones personalizadas probaron 1.44 billones de claves, cinco veces más, y la aritmética dice que no encontraron nada. Los 300,000 millones se sacaron del conjunto de frases que la gente elige; nuestros 1.44 billones se sacaron de 2^256.
 
