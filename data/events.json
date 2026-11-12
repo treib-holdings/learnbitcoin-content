@@ -208,6 +208,23 @@
     }
   },
   {
+    "id": "2013-07-01-the-winklevoss-twins-file-for-a-bitcoin",
+    "date": "2013-07-01",
+    "title": "The Winklevoss twins file for a bitcoin ETF",
+    "line": "Eleven years before the SEC approved spot bitcoin ETFs. It turned this one down in March 2017.",
+    "page": "/glossary/spot-bitcoin-etf",
+    "importance": 2,
+    "source": {
+      "label": "Winklevoss Bitcoin Trust - Form S-1 registration statement, filed with the SEC on 1 July 2013 (EDGAR, CIK 1579346); the SEC disapproved the Bats BZX listing on 10 March 2017 (Release 34-80206)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1579346/000119312513279830/0001193125-13-279830-index.htm",
+      "publisher": "SEC EDGAR"
+    },
+    "credit": {
+      "text": "aoluain on BitcoinTalk",
+      "url": "https://bitcointalk.org/index.php?topic=5599451.msg67334914#msg67334914"
+    }
+  },
+  {
     "id": "2013-08-11-bitcoin-org-warns-all-android-wallets-are",
     "date": "2013-08-11",
     "title": "bitcoin.org warns all Android wallets are open to theft",
