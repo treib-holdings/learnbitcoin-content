@@ -2,7 +2,7 @@
 title: "Paper Wallet"
 slug: paper-wallet
 draft: false
-updated: "2026-10-13"
+updated: "2026-11-12"
 shortDefinition: "A printed private key (and address) used for offline BTC storage. Secure if generated correctly but physically vulnerable."
 keyTakeaways:
   - "Entire security depends on proper offline generation and key safeguarding"
@@ -27,7 +27,7 @@ sameAs:
 liveWidget: ~
 ---
 
-A paper wallet is a [private key](/glossary/private-key) (and matching [address](/glossary/address)) printed onto paper - often as a QR code - and stored physically rather than digitally. Popular from about 2011 to 2016; obsolete today.
+A paper wallet is a [private key](/glossary/private-key) (and matching [address](/glossary/address)) printed onto paper - often as a QR code - and stored physically rather than digitally. Popular from about 2011 to 2016; obsolete today. Its sibling from the same years, the [brain wallet](/glossary/brain-wallet), kept the key in a memorized phrase instead of on paper and fared worse.
 
 The original appeal: no digital attack surface. A piece of paper can't be hacked over the internet, can't run malware, can't be remotely exfiltrated. Generate it offline, store it somewhere safe, you're done.
 

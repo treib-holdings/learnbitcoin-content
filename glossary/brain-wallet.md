@@ -6,7 +6,7 @@ linkText:
   - "brain wallets"
   - "brainwallet"
   - "brainwallets"
-draft: true
+draft: false
 published: "2026-11-12"
 shortDefinition: "A Bitcoin private key made from a passphrase a person chose and memorized. Programs guess such phrases and empty the wallets, so the scheme is obsolete. The classic form hashed the phrase once with SHA-256, and deposits are often taken in the block that confirms them. A seed phrase made by the wallet replaced it."
 keyTakeaways:
@@ -50,4 +50,4 @@ The best-known tool, brainwallet.org, closed on 7 August 2015 with a final chang
 
 What replaced it is a [seed phrase](/glossary/seed-phrase). Under [BIP-39](/glossary/bip-39) the wallet draws 128 to 256 random bits and shows them to you as 12 to 24 words. It picks the words and you copy them down. Twelve such words have about 3.4 x 10^38 possibilities, and every combination is as likely as any other, so there is no list of likely ones to try. Making the hash slower, as some later tools did, raises the cost of each guess but cannot rescue a phrase near the top of an attacker's list.
 
-As of November 2026 the Bitcoin Wiki uses the word in a narrower sense, for memorizing a seed phrase that a wallet generated. Nobody can guess that, but memory fails in its own ways. In one study 88 percent of participants could still type a random 56-bit secret, less than half the size of a twelve-word seed phrase, a few days after learning it, and 59 percent could two weeks later. A secret kept only in memory is also lost when its owner dies. Use memory as a second copy at most. If you still hold coins behind a phrase you once made up, treat that key as public and move them to an address from a wallet that generated its own seed.
+As of November 2026 the Bitcoin Wiki uses the word in a narrower sense, for memorizing a seed phrase that a wallet generated. Nobody can guess that, but memory fails in its own ways. In one study 88 percent of participants could still type a random 56-bit secret, less than half the size of a twelve-word seed phrase, a few days after learning it, and 59 percent could two weeks later. A secret kept only in memory is also lost when its owner dies. Use memory as a second copy at most. If you still hold coins behind a phrase you once made up, treat that key as public and move them to an address from a wallet that generated its own seed. The whole story, with the chain data behind it, is the [Brain Wallets rabbit hole](/rabbit-hole/brain-wallets).

@@ -2,6 +2,7 @@
 title: "Seed Phrase"
 slug: seed-phrase
 draft: false
+updated: "2026-11-12"
 shortDefinition: "12 or 24 English words (BIP-39) that encode a Bitcoin wallet's master secret. The complete backup; lose it and you lose the coins, leak it and someone else has them."
 keyTakeaways:
   - "Standard is BIP-39 - a 2,048-word list, 11 bits per word, with a built-in checksum"
@@ -49,7 +50,7 @@ The standard is **[BIP-39](/glossary/bip-39)**, published in 2013. It defines:
 
 That 512-bit master seed feeds into [BIP-32](/glossary/bip-32) hierarchical key derivation, which produces every [private key](/glossary/private-key) and address the wallet uses. The chain - words to master seed to master private key to derived keys to addresses - is purely deterministic. Same words in, same wallet out, on any BIP-39 + BIP-32 compatible software.
 
-12 words encodes 128 bits of entropy. 24 words encodes 256 bits. Either is more than enough; 128 bits of randomness is unguessable in any practical sense, and 256 bits is well beyond the reach of any conceivable adversary.
+12 words encodes 128 bits of entropy. 24 words encodes 256 bits. Either is more than enough; 128 bits of randomness is unguessable in any practical sense, and 256 bits is well beyond the reach of any conceivable adversary. That holds only when the wallet picks the words. A phrase a person makes up is a [brain wallet](/glossary/brain-wallet), and programs guess those and empty them, often within minutes.
 
 ## Why it has won
 

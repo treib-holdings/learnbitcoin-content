@@ -3,6 +3,7 @@ title: "Quindecillions: Why Nobody Can Stumble on Your Bitcoin"
 slug: quindecillions
 draft: false
 published: "2026-10-29"
+updated: "2026-11-12"
 status: live
 section: rabbit-hole
 category: how-it-works
@@ -49,7 +50,7 @@ sources:
   - { label: "Large Bitcoin Collider - about page (Wayback Machine copy, 17 April 2017: pool inception 10 August 2016 and the early milestones)", url: "https://web.archive.org/web/20170417062334id_/https://lbc.cryptoguru.org/about" }
   - { label: "Bitcoin Wiki - Brainwallet (the passphrase scheme is filed under 'Obsolete brainwallet style')", url: "https://en.bitcoin.it/wiki/Brainwallet" }
   - { label: "DEF CON 23 - speakers page: Ryan Castellucci, Cracking Cryptocurrency Brainwallets (abstract)", url: "https://defcon.org/html/defcon-23/dc-23-speakers.html" }
-  - { label: "Ryan Castellucci - Cracking Cryptocurrency Brainwallets, slides as delivered on 7 August 2015 (60 pages)", url: "https://web.archive.org/web/2026/https://rya.nc/files/cracking_cryptocurrency_brainwallets.pdf" }
+  - { label: "Ryan Castellucci - Cracking Cryptocurrency Brainwallets, slides as delivered on 7 August 2015 (60 pages)", url: "https://web.archive.org/web/20260114163757/https://rya.nc/files/cracking_cryptocurrency_brainwallets.pdf" }
   - { label: "Ryan Castellucci - Why I'm Releasing a Brainwallet Cracker at DEFCON 23 (8 July 2015)", url: "https://web.archive.org/web/20260113233317/https://rya.nc/defcon-brainwallets.html" }
   - { label: "ryancdotorg - Brainflayer repository and README", url: "https://github.com/ryancdotorg/brainflayer" }
   - { label: "Vasek, Bonneau, Castellucci, Keith and Moore - The Bitcoin Brain Drain: A Short Paper on the Use and Abuse of Bitcoin Brain Wallets (Financial Cryptography 2016, preproceedings PDF)", url: "https://fc16.ifca.ai/preproceedings/36_Vasek.pdf" }
@@ -151,11 +152,11 @@ Which brings us back to our two searches. The chance that any one of the 1.44 tr
 
 They are real, and every one we could find is one of two failures. Neither is a search of the address space.
 
-**The human picked the key.** A brain wallet, in its original form, is a passphrase run once through SHA-256 and used as the private key. The Bitcoin Wiki files the scheme under "Obsolete brainwallet style" with the line "Humans are not a reliable source of entropy". The attacker does not search 2^256 keys; he searches the phrases people pick: dictionaries, song lyrics, quotations, leaked password lists, with the usual capitalisation and punctuation rules applied, and he checks every candidate against every funded address at once.
+**The human picked the key.** A brain wallet, in its original form, is a passphrase run once through SHA-256 and used as the private key. The Bitcoin Wiki files the scheme under "Obsolete brainwallet style" with the line "Humans are not a reliable source of entropy". The attacker does not search 2^256 keys; he searches the phrases people pick: dictionaries, song lyrics, quotations, leaked password lists, with the usual capitalisation and punctuation rules applied, and he checks every candidate against every funded address at once. [Brain Wallets](/rabbit-hole/brain-wallets) tells the longer story, from three of them funded on video in 2014 to the day in 2015 when the best-known site closed.
 
-Ryan Castellucci showed how at DEF CON 23 on 7 August 2015, where he released a cracker called Brainflayer. It tested each candidate phrase against a [lookup filter](/glossary/bloom-filter) built from every address that had ever received coins, so one guess was checked against the entire funded set in one step, and his slides total the peak balances of everything he had cracked at "733 BTC", none of it kept. In the paper that followed, Vasek, Bonneau, Castellucci, Keith and Moore tested around 300 billion candidate passwords against the whole chain through August 2015 and found 884 brain wallets. They had received 1,806 BTC between them, and half were drained within 21 minutes of being funded. Our two vanity runs tried 1.44 trillion keys, five times as many, and the arithmetic says they found nothing. The 300 billion were drawn from the set of phrases people pick; our 1.44 trillion were drawn from 2^256.
+Ryan Castellucci showed how at DEF CON 23 on 7 August 2015, where they released a cracker called Brainflayer. It tested each candidate phrase against a [lookup filter](/glossary/bloom-filter) built from every address that had ever received coins, so one guess was checked against the entire funded set in one step, and their slides total the peak balances of everything they had cracked at "733 BTC", none of it kept. In the paper that followed, Vasek, Bonneau, Castellucci, Keith and Moore tested around 300 billion candidate passwords against the whole chain through August 2015 and found 884 brain wallets. They had received 1,806 BTC between them, and half were drained within 21 minutes of being funded. Our two vanity runs tried 1.44 trillion keys, five times as many, and the arithmetic says they found nothing. The 300 billion were drawn from the set of phrases people pick; our 1.44 trillion were drawn from 2^256.
 
-New brain-wallet deposits are rare and have not stopped. The Milk Sad research group's January 2026 update counts 20,397 one-round-SHA-256 brain wallet addresses found in total and records a 5.26 BTC deposit swept in February 2025, "very plausibly" within seconds. Castellucci's 2015 slide described the market he was walking into: "Every 5 character password I try gets swiped in seconds." The February 2025 sweep shows the same market ten years later.
+New brain-wallet deposits are rare and have not stopped. The Milk Sad research group's January 2026 update counts 20,397 one-round-SHA-256 brain wallet addresses found in total and records a 5.26 BTC deposit swept in February 2025, "very plausibly" within seconds. Castellucci's 2015 slide described the market they were walking into: "Every 5 character password I try gets swiped in seconds." The February 2025 sweep shows the same market ten years later.
 
 **The software's randomness was broken.** The other family of stories is wallets that asked for 128 or 256 bits of randomness and got far fewer. The attacker then enumerates the small space the bug created, exactly as Brainflayer enumerates phrases.
 

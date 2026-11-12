@@ -130,6 +130,10 @@ BlockFi	blockfi
 Bloom Filter	bloom-filter
 BOLT	bolt
 BOLT 11	bolt-11
+brain wallet	brain-wallet
+brain wallets	brain-wallet
+brainwallet	brain-wallet
+brainwallets	brain-wallet
 Branch and Bound	branch-and-bound-bnb
 branch-and-bound	branch-and-bound-bnb
 Bridge Node (Lightning)	bridge-node-lightning

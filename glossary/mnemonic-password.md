@@ -2,7 +2,7 @@
 title: "Mnemonic Password"
 slug: mnemonic-password
 draft: false
-updated: "2026-10-13"
+updated: "2026-11-12"
 shortDefinition: "An optional passphrase mixed into the derivation of a BIP 39 seed, acting like a '25th word' for extra protection."
 keyTakeaways:
   - "Enhances security beyond the base seed phrase"
@@ -21,7 +21,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The BIP 39 passphrase, sometimes called the "25th word," is an optional string mixed in during seed derivation. Same 12 or 24 words plus a different passphrase yields a completely different wallet. The math is straightforward: BIP 39 derives the master seed via PBKDF2(mnemonic, "mnemonic" + passphrase), so any change to the passphrase changes everything downstream.
+The BIP 39 passphrase, sometimes called the "25th word," is an optional string mixed in during seed derivation. Same 12 or 24 words plus a different passphrase yields a completely different wallet. The math is straightforward: BIP 39 derives the master seed via PBKDF2(mnemonic, "mnemonic" + passphrase), so any change to the passphrase changes everything downstream. Used on its own, with no random words under it, a passphrase like this would be a [brain wallet](/glossary/brain-wallet).
 
 What it buys you:
 
