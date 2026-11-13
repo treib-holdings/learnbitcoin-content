@@ -29,10 +29,10 @@ relatedTerms:
   - fee-estimation
   - branch-and-bound-bnb
   - coingrinder
-liveWidget: ~
+liveWidget: feeCalculator
 translationOf: effective-value
-sourceHash: "2275e1511b3f"
-sourceCommit: "ded4695"
+sourceHash: "898e0482c995"
+sourceCommit: "0dfe0c8"
 sourceUpdated: "2026-10-22"
 translation:
   method: "llm-draft"

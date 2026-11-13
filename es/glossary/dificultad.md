@@ -28,10 +28,10 @@ relatedTerms:
   - time-warp-attack
 sameAs:
   - "https://en.bitcoin.it/wiki/Difficulty"
-liveWidget: ~
+liveWidget: toyBlockGrind
 translationOf: difficulty
-sourceHash: "1f43ba1f5351"
-sourceCommit: "1361589"
+sourceHash: "84ef2750250c"
+sourceCommit: "0dfe0c8"
 sourceUpdated: "2026-11-05"
 translation:
   method: "llm-draft"

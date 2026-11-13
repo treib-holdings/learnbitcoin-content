@@ -26,7 +26,7 @@ relatedTerms:
   - dust-sweeping
   - transaction-fee
   - utxo-unspent-transaction-output
-liveWidget: ~
+liveWidget: feeCalculator
 translationOf: dust-limit
 sourceHash: "a6f75fc7324a"
 sourceCommit: "fa94f44"

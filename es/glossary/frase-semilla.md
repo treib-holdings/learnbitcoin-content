@@ -40,10 +40,10 @@ sameAs:
   - "https://en.bitcoin.it/wiki/Seed_phrase"
   - "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"
   - "https://en.bitcoin.it/wiki/BIP_0039"
-liveWidget: ~
+liveWidget: bip39Words
 translationOf: seed-phrase
-sourceHash: "be4f4ecd57ab"
-sourceCommit: "0e165a3"
+sourceHash: "4de25bdbea4c"
+sourceCommit: "0dfe0c8"
 sourceUpdated: "2026-11-12"
 translation:
   method: "llm-draft"

@@ -2,8 +2,8 @@
 title: "Ruta de derivación"
 slug: ruta-de-derivacion
 translationOf: address-derivation-path
-sourceHash: "95059a63d810"
-sourceCommit: "c52bac9"
+sourceHash: "a965da28bfec"
+sourceCommit: "0dfe0c8"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"
@@ -36,7 +36,7 @@ relatedTerms:
   - seed-entropy-mixer
   - seed-phrase
   - seed-tool
-liveWidget: ~
+liveWidget: derivationPaths
 ---
 
 Una ruta de derivación es la ruta, separada por barras, que entra en el árbol de una billetera HD del [BIP 32](/es/glosario/bip-32) y le dice a la billetera exactamente qué clave derivar a partir de la semilla maestra. El formato, tal como lo fija el [BIP 44](/es/glosario/bip-44), es:

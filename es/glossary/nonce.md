@@ -23,10 +23,10 @@ sameAs:
   - "https://en.wikipedia.org/wiki/Cryptographic_nonce"
   - "https://www.wikidata.org/wiki/Q1749235"
   - "https://en.bitcoin.it/wiki/Nonce"
-liveWidget: ~
+liveWidget: toyBlockGrind
 translationOf: nonce
-sourceHash: "73942fd65219"
-sourceCommit: "94e823a"
+sourceHash: "d585fba7eb04"
+sourceCommit: "0dfe0c8"
 sourceUpdated: "2026-10-09"
 translation:
   method: "llm-draft"

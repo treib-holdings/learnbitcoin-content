@@ -19,10 +19,10 @@ relatedTerms:
   - mnemonic-entropy-bits
   - private-key
   - seed-phrase
-liveWidget: ~
+liveWidget: bip39Passphrase
 translationOf: mnemonic-password
-sourceHash: "557fb8816775"
-sourceCommit: "0e165a3"
+sourceHash: "d8bd10b1f922"
+sourceCommit: "0dfe0c8"
 sourceUpdated: "2026-11-12"
 translation:
   method: "llm-draft"

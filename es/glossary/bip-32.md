@@ -2,8 +2,8 @@
 title: "BIP 32 (billeteras HD)"
 slug: bip-32
 translationOf: bip-32
-sourceHash: "517f93dbd184"
-sourceCommit: "b8304cf"
+sourceHash: "e5b03313ad4d"
+sourceCommit: "0dfe0c8"
 sourceUpdated: "2026-10-13"
 translation: { method: "llm-draft" }
 draft: false
@@ -33,7 +33,7 @@ relatedTerms:
 sameAs:
   - "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki"
   - "https://en.bitcoin.it/wiki/BIP_0032"
-liveWidget: ~
+liveWidget: derivationPaths
 ---
 
 El BIP 32, escrito por Pieter Wuille en febrero de 2012, es el estándar fundacional de las billeteras HD (jerárquicas deterministas) de Bitcoin. Una semilla de 128 a 512 bits (la semilla del BIP 39 tiene 512) produce un árbol de claves, todas reproducibles a partir de esa única semilla. Respalda la semilla y habrás respaldado todas las claves que tu billetera llegue a derivar.

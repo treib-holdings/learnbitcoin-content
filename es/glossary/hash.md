@@ -34,10 +34,10 @@ sameAs:
   - "https://en.wikipedia.org/wiki/Cryptographic_hash_function"
   - "https://www.wikidata.org/wiki/Q477202"
   - "https://en.bitcoin.it/wiki/Hash"
-liveWidget: ~
+liveWidget: toyBlockGrind
 translationOf: hash
-sourceHash: "4269dd3b4def"
-sourceCommit: "94e823a"
+sourceHash: "e4daadf81fab"
+sourceCommit: "0dfe0c8"
 sourceUpdated: "2026-10-09"
 translation:
   method: "llm-draft"

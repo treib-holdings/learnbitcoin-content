@@ -2,8 +2,8 @@
 title: "Dirección"
 slug: direccion
 translationOf: address
-sourceHash: "2ac300ce4221"
-sourceCommit: "d12964a"
+sourceHash: "81f5da105d56"
+sourceCommit: "0dfe0c8"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"
@@ -41,7 +41,7 @@ relatedTerms:
   - vanity-address
 sameAs:
   - "https://en.bitcoin.it/wiki/Address"
-liveWidget: ~
+liveWidget: bech32Checksum
 ---
 
 Una dirección de Bitcoin es una cadena corta de caracteres que representa el destino de un pago. Normalmente codifica un [hash](/es/glosario/hash) de una [clave pública](/es/glosario/clave-publica) o de un script; una dirección Taproot codifica directamente una clave pública ajustada (tweaked). En cualquier caso, su formato está pensado para copiarse, pegarse y escanearse con facilidad.

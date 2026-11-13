@@ -2,8 +2,8 @@
 title: "BIP 39 (frase semilla)"
 slug: bip-39
 translationOf: bip-39
-sourceHash: "2d1fed63677d"
-sourceCommit: "b8304cf"
+sourceHash: "4a43e1133cd4"
+sourceCommit: "0dfe0c8"
 sourceUpdated: "2026-10-13"
 translation: { method: "llm-draft" }
 draft: false
@@ -28,7 +28,7 @@ relatedTerms:
 sameAs:
   - "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"
   - "https://en.bitcoin.it/wiki/BIP_0039"
-liveWidget: ~
+liveWidget: bip39Words
 ---
 
 El BIP 39, escrito por Marek Palatinus, Pavol Rusnak, Aaron Voisine y Sean Bowe en septiembre de 2013, define cómo una billetera de Bitcoin codifica su semilla como una secuencia de 12 a 24 palabras comunes del inglés. Es el estándar más común de frase semilla (también llamada frase de recuperación), aunque no el único: Electrum genera a propósito su propio formato de semilla.

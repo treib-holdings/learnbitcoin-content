@@ -32,10 +32,10 @@ relatedTerms:
 sameAs:
   - "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki"
   - "https://en.bitcoin.it/wiki/BIP_0032"
-liveWidget: ~
+liveWidget: derivationPaths
 translationOf: xpub-extended-public-key
-sourceHash: "d1751b2933c2"
-sourceCommit: "b4fda3b"
+sourceHash: "020125edd8ec"
+sourceCommit: "0dfe0c8"
 sourceUpdated: "2026-10-12"
 translation:
   method: "llm-draft"

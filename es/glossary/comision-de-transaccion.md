@@ -10,6 +10,7 @@ aliases:
   - "comisión de minería"
 draft: false
 published: "2026-10-14"
+updated: "2026-11-13"
 shortDefinition: "Una cantidad que incluye quien envía para recompensar a los mineros por priorizar la confirmación de su transacción."
 keyTakeaways:
   - "Motiva a los mineros a incluir tu transacción en un bloque"
@@ -21,6 +22,7 @@ sources:
   - { label: "mempool.space API - median fee rates in mined blocks, last 3 years (peak on April 20, 2024)", url: "https://mempool.space/api/v1/mining/blocks/fee-rates/3y" }
   - { label: "Ordinals docs - Runes specification (activates on block 840,000)", url: "https://docs.ordinals.com/runes/specification.html" }
   - { label: "mempool.space - block fee rates chart (in 2026 about a third of blocks had a median fee rate under 1 sat/vB)", url: "https://mempool.space/graphs/mining/block-fee-rates" }
+  - { label: "Bitcoin Optech - Transaction size calculator (1 input, 2 outputs: 140.5 vbytes for P2WPKH; 154 for P2TR, a 57.5 vbyte input and two 43 vbyte outputs)", url: "https://bitcoinops.org/en/tools/calc-size/" }
 relatedTerms:
   - absolute-fee
   - accelerator
@@ -38,11 +40,11 @@ relatedTerms:
   - transaction-chaining
 sameAs:
   - "https://en.bitcoin.it/wiki/Miner_fees"
-liveWidget: ~
+liveWidget: feeCalculator
 translationOf: transaction-fee
-sourceHash: "a639af86a92c"
-sourceCommit: "1abeee5"
-sourceUpdated: "2026-10-09"
+sourceHash: "8f3d420fb41c"
+sourceCommit: "0dfe0c8"
+sourceUpdated: "2026-11-13"
 translation:
   method: "llm-draft"
 ---
@@ -52,11 +54,11 @@ La comisión de transacción es lo que les pagas a los [mineros](/es/glosario/mi
 Las comisiones se expresan como una *tasa*, no como un total: **sats por byte virtual (sat/vB)**. Una transacción más grande paga más comisión a la misma tasa. Tamaños típicos de transacción:
 
 - [P2WPKH](/es/glosario/p2wpkh) simple (1 entrada, 2 salidas): unos 140 vB
-- [Taproot](/es/glosario/taproot) (1 entrada, 2 salidas): unos 110 vB
+- [Taproot](/es/glosario/taproot) (1 entrada, 2 salidas): unos 154 vB (su entrada es más pequeña que la de P2WPKH; sus salidas, más grandes)
 - Multisig 2 de 3: unos 250 vB
 - Consolidaciones con muchas entradas: más de 500 vB
 
-A 10 sat/vB, costarían 1,400 / 1,100 / 2,500 / más de 5,000 sats, respectivamente. Las comisiones reales varían muchísimo según la congestión de la red.
+A 10 sat/vB, costarían 1,400 / 1,540 / 2,500 / más de 5,000 sats, respectivamente. Las comisiones reales varían muchísimo según la congestión de la red.
 
 La dinámica del mercado de comisiones:
 

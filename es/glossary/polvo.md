@@ -28,10 +28,10 @@ relatedTerms:
   - dust-sweeping
   - transaction-fee
   - utxo-unspent-transaction-output
-liveWidget: ~
+liveWidget: feeCalculator
 translationOf: dust
-sourceHash: "90ed8f1d5dae"
-sourceCommit: "044488a"
+sourceHash: "fbd80b0388b0"
+sourceCommit: "0dfe0c8"
 sourceUpdated: "2026-10-21"
 translation:
   method: "llm-draft"
