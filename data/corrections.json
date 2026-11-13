@@ -1,5 +1,27 @@
 [
   {
+    "id": "2026-11-13-transaction-fee",
+    "date": "2026-11-13",
+    "page": "/glossary/transaction-fee",
+    "title": "Transaction Fee",
+    "wrong": "The entry put a Taproot transaction with 1 input and 2 outputs at about 110 vB, and its fee at 10 sat/vB at 1,100 sats.",
+    "fixed": "It is about 154 vB: 10.5 vB of overhead, a 57.5 vB key-path input and two 43 vB outputs, by Bitcoin Optech's size calculator. 110 vB is the size with one output. The entry and its Spanish edition now say about 154 vB and 1,540 sats, and the calculator is listed in the sources.",
+    "commit": "abda514",
+    "source": "https://bitcoinops.org/en/tools/calc-size/",
+    "credit": "the glossary widgets' sourcing pass (2026-11-13)"
+  },
+  {
+    "id": "2026-11-13-bip-173-bech32",
+    "date": "2026-11-13",
+    "page": "/glossary/bip-173-bech32",
+    "title": "BIP 173 (Bech32)",
+    "wrong": "The entry said bech32 leaves out look-alike characters such as l and 0, said an all-lowercase bech32 address makes a smaller QR code than Base58, and named Pieter Wuille as its only designer.",
+    "fixed": "BIP 173 leaves 1, b, i and o out of the data part; l and 0 are in it. The QR saving comes from uppercase: a bech32 address never mixes case, so it can go into a QR code in uppercase and use the alphanumeric mode, which the BIP puts at 45% more compact than the byte mode a mixed-case Base58 address needs. The BIP's authors are Pieter Wuille and Greg Maxwell. The entry now says so and lists BIP 173 and BIP 350 in its sources.",
+    "commit": "b89debf",
+    "source": "https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki",
+    "credit": "the glossary widgets' sourcing pass (2026-11-13)"
+  },
+  {
     "id": "2026-11-10-time-warp",
     "date": "2026-11-10",
     "page": "/rabbit-hole/time-warp",
