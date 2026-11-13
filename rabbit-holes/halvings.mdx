@@ -11,7 +11,7 @@ featured: true
 tagline: "Every 210,000 blocks, the new-Bitcoin tap halves. Why, when, and what happens after."
 order: 3
 estimatedMinutes: 12
-level: intermediate
+level: beginner
 sources:
   - { label: "Bitcoin Core source - GetBlockSubsidy", url: "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp" }
   - { label: "BIP 42 - finite monetary supply", url: "https://github.com/bitcoin/bips/blob/master/bip-0042.mediawiki" }
@@ -49,15 +49,17 @@ hasInteractive: ["halvingCountdown"]
 
 import HalvingCountdown from '@components/halving/HalvingCountdown.svelte';
 
-> **Where you're going:** A halving is just a number cut in half, but it's the most important number in Bitcoin's monetary policy. You'll learn what one is, why the schedule exists, what happened at each of the four so far, and what changes for miners and holders when the next one hits.
+> **Where you're going:** A halving is just a number cut in half, but it's the most important number in Bitcoin's monetary policy, its rules for creating new coins. You'll learn what one is, why the schedule exists, what happened at each of the four so far, and what changes for miners, who earn the new coins, and for people who hold bitcoin when the next one hits.
 
 ## 1. What a Halving Is
+
+Bitcoin runs on a network of computers. They all follow the same rules, which are written into the software they run, and together they keep one shared record of payments. The record grows in batches called blocks, and a new block is added about every ten minutes. Blocks are numbered in order, starting with block 0 (known as the genesis block), and a block's number is called its height. The blocks are added by miners, who run computers that race to solve a puzzle. Whoever solves it first is said to have found, or mined, the next block, and Bitcoin's rules let the winner pay itself in that block with newly created bitcoin. Every bitcoin in existence was first paid out this way.
 
 Every 210,000 blocks, the amount of new bitcoin paid to miners for finding the next block gets cut in half.
 
 That's it. That's the whole event.
 
-The block subsidy started at **50 BTC** when the network launched in January 2009. It dropped to 25 at block 210,000 (November 2012), to 12.5 at block 420,000 (July 2016), to 6.25 at 630,000 (May 2020) and to 3.125 at 840,000 (April 2024). It is still 3.125 as of October 2026.
+The payment of new bitcoin is called the block subsidy. It started at **50 BTC** (BTC is short for bitcoin) when the network launched in January 2009. It dropped to 25 at block 210,000 (November 2012), to 12.5 at block 420,000 (July 2016), to 6.25 at 630,000 (May 2020) and to 3.125 at 840,000 (April 2024). It is still 3.125 as of October 2026. The halvings come about four years apart because 210,000 blocks, at about ten minutes each, take that long.
 
 The next halving will be at block 1,050,000. As of October 2026 it is expected around April 2028, and the subsidy will drop to 1.5625 BTC.
 
@@ -71,11 +73,11 @@ The idea borrows from gold mining. New gold enters circulation only when someone
 
 The schedules are different, though. Gold mining has not slowed down. About two-thirds of all the gold ever mined came out of the ground after 1950, and the World Gold Council's first estimates put 2025 mine output at a record high. Mines produced roughly 3,300 to 3,672 tonnes that year, depending on whose estimate you use, which grew gold's above-ground supply by about 1.5 to 1.7%. About 222,600 tonnes had been mined in all of history by mid-2026.
 
-Bitcoin's issuance is front-loaded and fixed in code. Half of all coins were issued in the first four years, and the rate halves every 210,000 blocks after that.
+Bitcoin's issuance, the creation of new coins, is front-loaded and fixed in code. There will never be more than 21 million bitcoin. Half of them were issued in the first four years, and the rate halves every 210,000 blocks after that.
 
-The result is a **disinflationary asset**: not just stable in supply, but with a *decreasing* rate of new issuance. Each halving reduces Bitcoin's annual inflation rate (see [the Supply Schedule rabbit hole](/rabbit-hole/supply), which also compares it with the dollar). As of October 2026 the rate is about 0.8% a year, and after the next halving it will be roughly 0.4%.
+The result is a **disinflationary asset**: not just stable in supply, but with a *decreasing* rate of new issuance. Each halving reduces Bitcoin's annual inflation rate (see [the Supply Schedule rabbit hole](/rabbit-hole/supply), which also compares it with the dollar). Inflation here means the new coins issued in a year as a share of the coins that already exist, not a rise in prices. As of October 2026 the rate is about 0.8% a year, and after the next halving it will be roughly 0.4%.
 
-This wasn't accidental. From the [whitepaper](/bitcoin.pdf):
+This wasn't accidental. From the [whitepaper](/bitcoin.pdf), the 2008 paper in which Bitcoin's creator, known only by the pseudonym Satoshi Nakamoto, first described the system:
 
 > "The steady addition of a constant of amount of new coins is analogous to gold miners expending resources to add gold to circulation. In our case, it is CPU time and electricity that is expended."
 
@@ -102,7 +104,7 @@ Dates are UTC. Block 840,000 was mined at 00:09 UTC on April 20, 2024, which was
 
 Each halving cuts the amount left to mine in half. After halving 1, half of all bitcoin had been issued. After halving 2, three-quarters. After halving 4, 93.75%. As of October 2026, about 95.7% has been mined.
 
-The end point is fixed too. Bitcoin counts in whole satoshis, so the subsidy reaches exactly 1 satoshi at halving 32 and zero at halving 33, around 2140. After that, miners earn revenue only from transaction fees.
+The end point is fixed too. Bitcoin counts in whole satoshis, its smallest unit (100 million satoshis make one bitcoin), so the subsidy reaches exactly 1 satoshi at halving 32 and zero at halving 33, around 2140. After that, miners earn revenue only from transaction fees. A transaction is a payment, and its fee is an amount the sender chooses to add for the miner whose block includes it. A block has room for only so many transactions, so senders offer more when many are waiting. The subsidy and the fees together are called the block reward.
 
 ## 4. The Four That Have Happened
 
@@ -110,28 +112,28 @@ A halving is more than an arithmetic event. It's a moment of structural change f
 
 ### 1st Halving - November 28, 2012
 - **Block 210,000.** Subsidy dropped from 50 to 25 BTC.
-- **Mining ran mostly on GPUs, with some FPGAs,** at this point. The first ASIC miners shipped to customers about two months later, in January 2013.
+- **Mining ran mostly on GPUs (graphics cards), with some FPGAs (reprogrammable chips),** at this point. The first ASIC miners, machines built around chips that do nothing but mine, shipped to customers about two months later, in January 2013.
 - **Price** at the halving: about $12. Twelve months later: about $1,000.
 - **Aftermath:** First proof that the halving schedule actually executes as designed. Sounds obvious; was novel.
 
 ### 2nd Halving - July 9, 2016
 - **Block 420,000.** Subsidy dropped from 25 to 12.5 BTC.
-- **ASIC era** in full swing. China dominated mining hash share.
+- **ASIC era** in full swing. China dominated mining hash share, meaning its miners ran the largest slice of the network's computing power.
 - **Price** at the halving: about $650. Twelve months later: about $2,500.
-- **Aftermath:** The 2017 bull market and SegWit activation (block 481,824, August 2017) both came within the next 18 months.
+- **Aftermath:** The 2017 bull market (a long run of rising prices) and SegWit activation (block 481,824, August 2017) both came within the next 18 months. SegWit was an upgrade to Bitcoin's rules, in force from that block on, that among other things let each block hold more transactions.
 
 ### 3rd Halving - May 11, 2020
 - **Block 630,000.** Subsidy dropped from 12.5 to 6.25 BTC.
-- Happened **two months after the March 2020 COVID crash**. In those same weeks the Federal Reserve's balance sheet grew from $4.3 trillion (March 11) to $6.9 trillion (May 13, 2020), the biggest nine-week increase in dollars on record. Strange juxtaposition.
+- Happened **two months after the March 2020 COVID crash**. In those same weeks the Federal Reserve (the Fed), the US central bank, was creating new dollars to buy bonds and make loans, and its balance sheet grew from $4.3 trillion (March 11) to $6.9 trillion (May 13, 2020), the biggest nine-week increase in dollars on record. Strange juxtaposition.
 - **Price** at the halving: about $8,600. Twelve months later: about $56,000.
-- **Aftermath:** Massive institutional adoption wave, MicroStrategy bought, Tesla bought, El Salvador adopted.
+- **Aftermath:** Massive institutional adoption wave, MicroStrategy bought bitcoin, Tesla bought bitcoin, El Salvador adopted it.
 
 ### 4th Halving - April 20, 2024 (UTC)
 - **Block 840,000.** Subsidy dropped from 6.25 to 3.125 BTC.
-- **The halving block carried 37.6 BTC in fees, 12 times its 3.125 BTC subsidy.** Runes, a token protocol from Casey Rodarmor (who also created [Ordinals](/glossary/ordinals)), switched on at exactly block 840,000. Transactions carrying rune data paid about 98% of that block's fees.
+- **The halving block carried 37.6 BTC in fees, 12 times its 3.125 BTC subsidy.** Runes, a token protocol from Casey Rodarmor (who also created [Ordinals](/glossary/ordinals)), switched on at exactly block 840,000. It lets people create tokens, units of their own invention that are separate from bitcoin, and trade them by writing extra data into Bitcoin transactions. Transactions carrying rune data paid about 98% of that block's fees.
 - **Fee record.** As of October 2026, April 20, 2024 was still the biggest day for fees in dollar terms in blockchain.com's records, about $81 million. Block 840,000 was not a record for a single block, though. Block 409,008 carried 291 BTC in fees in 2016, almost all of it from one transaction.
 - **Price** at the halving: about $64,000. Twelve months later: about $85,000.
-- **Context:** The SEC had approved US spot bitcoin ETFs on January 10, 2024, three months before the halving. The price also passed its old all-time high in March 2024, before the halving. In the three earlier cycles, the old high was broken only after the halving.
+- **Context:** The SEC, the US markets regulator, had approved US spot bitcoin ETFs on January 10, 2024, three months before the halving. These are funds that hold bitcoin and trade on the stock market like a company's shares, so investors can buy them through an ordinary brokerage account. The price also passed its old all-time high in March 2024, before the halving. In the three earlier cycles, the old high was broken only after the halving.
 
 After each of the four halvings from 2012 to 2024, the price set a new all-time high within about eight months. The highest price in the two years after each halving came 12 to 18 months in. From the halving price to that two-year high, the rise was about 90x after 2012, 30x after 2016, 8x after 2020 and just under 2x after 2024. We'll come back to whether any of this is causation, correlation, or coincidence.
 
@@ -145,18 +147,18 @@ What this looks like in practice:
 
 **After halving 4:** with the same fees, an average block pays 3.125 + 0.44, about 3.57 BTC.
 
-The hardware cost, the electricity cost, and the difficulty are all the same the day before and the day after. Revenue, in BTC terms, drops by about 47%. (In April 2024 fees did not stay the same. They jumped when Runes launched at block 840,000, then fell back within about a week. More on that below.)
+The hardware cost, the electricity cost, and the difficulty (the network's setting for how hard the mining puzzle is) are all the same the day before and the day after. Revenue, in BTC terms, drops by about 47%. (In April 2024 fees did not stay the same. They jumped when Runes launched at block 840,000, then fell back within about a week. More on that below.)
 
 This puts pressure on miners. Specifically:
 
 - **Inefficient miners get pushed out.** If your power cost was breakeven at the old reward, you're losing money at the new one. You either upgrade hardware, find cheaper power, or shut down.
-- **Hash rate drops temporarily.** Marginal miners going offline reduces total network hash rate.
-- **Difficulty adjusts down.** Bitcoin recalculates difficulty every 2,016 blocks, based on how fast those blocks came. With less hash rate, blocks come slower, so the next adjustment makes mining easier and more profitable for the survivors. After each of the four halvings so far, difficulty went down at least once within about four weeks.
+- **Hash rate drops temporarily.** The mining puzzle can only be solved by guessing, and each guess is called a hash. Hash rate, the measure of the network's computing power, is the number of guesses that all the miners' machines together make each second. Marginal miners going offline reduces total network hash rate.
+- **Difficulty adjusts down.** Bitcoin recalculates difficulty every 2,016 blocks, or about every two weeks. It looks at how fast those blocks came and aims for one block every ten minutes. With less hash rate, blocks come slower, so the next adjustment makes mining easier and more profitable for the survivors. After each of the four halvings so far, difficulty went down at least once within about four weeks.
 - **Equilibrium is reached.** In all four cases, difficulty then climbed back above its pre-halving level, somewhere between about five weeks and three and a half months after the halving.
 
-If Bitcoin's price doesn't rise to compensate, the halving is a major test of network security. To fully make up for a halving in dollar terms, the price has to double. It doubled within 2 to 10 months of each of the first three halvings. After the 2024 halving, the highest daily close through early October 2026 was about $125,000, on October 6, 2025. That was a little short of double the roughly $64,000 price at the halving.
+If Bitcoin's price doesn't rise to compensate, the halving is a major test of network security. Hash rate is what protects the record of payments: to rewrite it, an attacker would need more computing power than all the other miners combined, and miners can only run the machines their income pays for. Miners pay for machines and electricity in ordinary money, so what counts for them is the dollar value of the bitcoin they earn. To fully make up for a halving in dollar terms, the price has to double. It doubled within 2 to 10 months of each of the first three halvings. After the 2024 halving, the highest daily close through early October 2026 was about $125,000, on October 6, 2025. That was a little short of double the roughly $64,000 price at the halving.
 
-Hash rate recovered anyway. Difficulty was back above its pre-halving level by July 31, 2024, and despite some dips it kept rising until late 2025, when it peaked about 80% above its level at the halving. It then eased. In early October 2026 it was still about 54% higher than at the halving.
+Hash rate recovered anyway. Difficulty, which follows hash rate up and down, was back above its pre-halving level by July 31, 2024, and despite some dips it kept rising until late 2025, when it peaked about 80% above its level at the halving. It then eased. In early October 2026 it was still about 54% higher than at the halving.
 
 Fees helped only briefly. The Runes launch pushed fees on April 20, 2024 to about $81 million for the day, and within about a week daily fees were back below their early-2024 average.
 
@@ -166,7 +168,7 @@ You will hear, often, that "halvings cause bull markets." This is the most commo
 
 Here's what is *actually* true:
 
-**The first-order effect.** A halving cuts the *flow* of new bitcoin entering the market in half. If demand stays constant, less new supply should, all else equal, push prices up. The catch is that the halving's block height is public years ahead, so traders can try to price it in long before it arrives.
+**The first-order effect.** A halving cuts the *flow* of new bitcoin entering the market in half. If demand stays constant, less new supply should, all else equal, push prices up. The catch is that the halving's block height (its block number) is public years ahead, so traders can try to price it in, buying early so that the price already reflects the halving, long before it arrives.
 
 **The complication.** "All else equal" never holds. The 2020 halving came two months into the Fed's COVID-era balance-sheet expansion, which ran until April 2022. The 2024 halving came three months after the SEC approved US spot bitcoin ETFs. Attributing the price action that followed *only* to the halving is bad statistics.
 
@@ -176,13 +178,13 @@ Anyone who tells you with high confidence what the price will be 18 months after
 
 ## 7. The Long Tail
 
-After halving 32 (block 6,720,000, around 2136), the subsidy will be exactly 1 satoshi per block. After halving 33 (block 6,930,000, around 2140), integer rounding takes the subsidy to zero. From that point forward, miners earn nothing from new issuance.
+After halving 32 (block 6,720,000, around 2136), the subsidy will be exactly 1 satoshi per block. After halving 33 (block 6,930,000, around 2140), rounding down to whole satoshis takes the subsidy to zero. From that point forward, miners earn nothing from new issuance.
 
 This is sometimes posed as a worry: *how will the network be secured when the subsidy is gone?*
 
 The design answer is fees. The [whitepaper](/bitcoin.pdf) says that once a predetermined number of coins have entered circulation, "the incentive can transition entirely to transaction fees." The data through October 2026 doesn't show whether fees will ever be big enough to pay for strong security on their own.
 
-Here is the fee share of everything miners were paid, measured from block data on mempool.space:
+Here is the fee share of everything miners were paid, measured from block data on the site mempool.space:
 
 - **January 1, 2024 to halving 4** (blocks 823,786 to 839,999): about 6.6%, or 0.44 BTC per block next to a 6.25 BTC subsidy.
 - **The first 2,016 blocks after halving 4** (to May 4, 2024, the Runes rush): about 33%.
@@ -193,7 +195,7 @@ Here is the fee share of everything miners were paid, measured from block data o
 
 Fees spiked for about a week after halving 4, then drifted down. By 2025 they were a smaller share of miner revenue than before the halving, even though the subsidy had been cut in half. As of October 2026, the subsidy is doing nearly all the work.
 
-The plan is still for fees to be 100% of miner revenue once the subsidy reaches zero, around 2140. Whether the fee market grows enough by then is one of the big open questions in Bitcoin. The [Mining rabbit hole](/rabbit-hole/mining) and the [Bitcoin and Energy rabbit hole](/rabbit-hole/energy) also call it an open question.
+The plan is still for fees to be 100% of miner revenue once the subsidy reaches zero, around 2140. Whether the fee market, the bidding among senders for room in blocks, grows enough by then is one of the big open questions in Bitcoin. The [Mining rabbit hole](/rabbit-hole/mining) and the [Bitcoin and Energy rabbit hole](/rabbit-hole/energy) also call it an open question.
 
 ## 8. The Next One
 
@@ -211,7 +213,7 @@ What you can expect:
 What you don't need to worry about:
 
 - The halving "not happening." It happens at block 1,050,000, deterministically, no matter what.
-- The schedule "being changed." Raising the cap or adding issuance would only stick if node operators chose to run the new rules, and as of October 2026 no proposal to do that has even been assigned a BIP number. [The Supply Schedule rabbit hole](/rabbit-hole/supply) explains why it is unlikely.
+- The schedule "being changed." Nodes are the computers that check every block against Bitcoin's rules and reject any that break them. Raising the 21 million cap or adding issuance would only stick if node operators, the people who run them, chose to run the new rules. As of October 2026 no proposal to raise the cap or add issuance has even been assigned a BIP number, an early step in the usual process for proposing a change to Bitcoin (BIP stands for Bitcoin Improvement Proposal). [The Supply Schedule rabbit hole](/rabbit-hole/supply) explains why it is unlikely.
 - The network "breaking." Networks don't break on halvings. They sometimes wobble, then re-equilibrate.
 
 > **Pro tip:** Halvings are a great moment to explain Bitcoin to people who haven't paid attention. The narrative is concrete (number goes down), the block height is known years in advance, and the structural claim is verifiable. Use the moment. Just don't promise anyone what comes after.
