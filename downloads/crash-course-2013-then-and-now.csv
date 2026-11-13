@@ -1,0 +1,39 @@
+reading,block_254412_evening_of_aug_26_2013_pdt,block_975500_2026-11-12,how
+block height,254412,975500,"then: the last block stamped before 7:00 pm PDT on August 26, 2013; now: a block of November 12, 2026"
+block stamp (UTC),2013-08-27 01:46:06,2026-11-12 00:58:35,the time the miner wrote in the header
+block subsidy (BTC),25.0,3.125,by the schedule
+bitcoin issued (BTC),11610325.000,20110940.625,"by the schedule, through this block"
+share of the 21 million (%),55.29,95.77,
+new supply per year at 144 blocks a day (%),11.32,0.82,subsidy x 144 x 365 / issued
+difficulty,65750060.149,148364561003867.406,from the block header
+unspent outputs,6886838,163336787,"Bitcoin Core's count of unspent outputs after this block (gettxoutsetinfo), as served by the node"
+day the rows marked that day cover (UTC),2013-08-26,2026-11-11,the last full UTC day before the block; a block belongs to the day of the time stamp in its own header
+blocks stamped that day,166,134,heights 254232 to 254397; heights 975360 to 975493
+hash rate that day (TH/s),542.6,988282472,"sum of difficulty x 2^32 over the day's blocks / 86,400 seconds"
+transactions that day,56093,565571,"every transaction in the blocks stamped that day, coinbases included; series that sort blocks into days by median time and leave coinbases out differ by a percent or two"
+fees that day (BTC),40.80643368,3.15151613,
+fees per block that day (BTC),0.24582,0.02352,
+fees as a share of miner income that day (%),0.97,0.75,fees / (fees + subsidy)
+"fees as a share of miner income, the seven UTC days ending that day (%)",0.73,0.78,fees / (fees + subsidy) over the blocks stamped 2013-08-20 to 2013-08-26; 2026-11-05 to 2026-11-11
+"transactions a day, the same seven days",56875,484101,coinbases included
+hash rate on the day before and the day after that day (TH/s),493.5; 552.4,,"August 25, 2013 (151 blocks) and August 27, 2013 (169 blocks), same sum; the later block was read on November 12, 2026, before its day after was complete"
+same sum with one block fewer that day (TH/s),539.3,,the day's figure x 165 / 166; the talk said 539
+first and last block with 6.8 to 6.9 million unspent outputs,249883 (2013-08-02); 254853 (2013-08-29),,"the unbroken run of blocks around block 254412 whose count is at least 6,800,000 and under 6,900,000; the talk said 6.8 million"
+six blocks after the block: minutes taken,92.7,,stamp of block 254418 minus stamp of block 254412
+"blocks stamped 6:30 to 9:30 pm PDT on August 26, 2013",19 (heights 254411 to 254429),,"01:30 to 04:30 UTC on August 27, 2013"
+the two blocks stamped 7:00 to 8:00 pm PDT: seconds apart,70,,block 254413 to block 254414
+longest gap between those blocks (minutes),46.8,,"block 254414 to block 254415, 2807 seconds"
+shortest gap between those blocks (seconds),26,,block 254416 to block 254417
+blocks stamped from the end of the longest gap to 9:30 pm PDT,15 (heights 254415 to 254429),,
+"transactions in those blocks, coinbases left out",6089,,
+share of them paying exactly 0.0005 BTC; exactly 0.0001 BTC; nothing (%),43.0; 28.4; 6.5,,"2620, 1727 and 393 transactions"
+fees in those blocks (BTC),10.74361631,,equals the sum of each block's coinbase outputs less 25 BTC
+largest transaction in those blocks: BTC paid out; fee (sats),2780.31615673; 50000,,transaction 2cc2ad81d3ee5418a2bc8375ceb92f5b28d3ea392062a3c9aaec381885a53aea
+reference price (USD),112.12,73805.52,Coin Metrics PriceUSD daily close for 2013-08-26 and 2026-11-11
+issued supply at that price (USD),1301727752,1484298464409,issued x price
+mean block spacing in a retarget period (minutes),7.57,9.48,"then: the period that holds the block, blocks 254016 to 256031; now: the last complete period before the block, blocks 971712 to 973727"
+hash rate over that retarget period (TH/s),622.1,1061171427,difficulty x 2^32 / mean spacing
+"fees per block, the 144 blocks ending at the block (BTC)",0.25659,0.02337,
+"fees as a share of miner income, same 144 blocks (%)",1.02,0.74,fees / (fees + subsidy)
+"mean fee per transaction, same 144 blocks (sats)",75886,560,total fees / transactions other than coinbases
+"mean block size, same 144 blocks (bytes)",148490,1585687,
