@@ -11,7 +11,7 @@ featured: true
 tagline: "21 million, forever. Here's how the math works, and why it is so hard to change."
 order: 2
 estimatedMinutes: 12
-level: intermediate
+level: beginner
 sources:
   - { label: "Bitcoin Core source - GetBlockSubsidy and the coinbase amount check (src/validation.cpp)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp" }
   - { label: "Bitcoin Core source - nSubsidyHalvingInterval = 210000, and SegwitHeight = 481824 (src/kernel/chainparams.cpp)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/chainparams.cpp" }
@@ -50,27 +50,29 @@ hasInteractive: ["supplyChart"]
 
 import SupplyChart from '@components/supply/SupplyChart.svelte';
 
-> **Where you're going:** You'll understand exactly where the 21 million number comes from, why the real ceiling is 20,999,999.9769 BTC instead of a clean 21M, and why every full node on the network enforces the schedule.
+> **Where you're going:** You'll understand exactly where the 21 million number comes from, why the real ceiling is 20,999,999.9769 BTC (BTC is short for bitcoin) instead of a clean 21M, and why every full node on the network, meaning every computer that checks for itself that Bitcoin's rules are followed, enforces the schedule.
 
 ## 1. The 21 Million Number
 
-If Bitcoin had a slogan, "21 million, forever" would be it. The cap is mentioned in every introductory article, plastered on every conference t-shirt, and tattooed on a non-trivial number of forearms.
+If Bitcoin had a slogan, "21 million, forever" would be it. It means that no more than 21 million bitcoin will ever exist. The cap is mentioned in every introductory article, plastered on every conference t-shirt, and tattooed on a non-trivial number of forearms.
 
 It's also the easiest claim to verify and one of the hardest claims to actually break. Most people who repeat it don't know where the number comes from. Let's fix that.
 
-The cap comes from a rule every Bitcoin node applies to every block. The new coins a block may create depend only on its height, and that allowance halves on a fixed schedule. Add up every block's allowance and you get **a geometric series**. Because each reward is rounded down to whole satoshis, the total lands just short of 21 million.
+First the basics; skip this paragraph if you know what blocks, miners and nodes are. Bitcoin records payments in entries known as transactions and gathers them into batches called blocks. A new block is added about every ten minutes, each one linked to the block before, which is why the record is called the blockchain, or just the chain. Blocks are built, or mined, by miners: people and companies whose computers race each other to add the next one, which takes a great deal of electricity. The rules make the race harder or easier every two weeks or so, which keeps blocks about ten minutes apart however many miners join. The winner may pay itself brand-new bitcoin in its block, up to a set amount called the block subsidy. Nodes, also called full nodes, are the computers that run Bitcoin's software: each keeps its own copy of the chain and checks every new block against the rules written into that software. Together they make up the Bitcoin network. A block's height is its number in the sequence, counting from 0, and block 0 is known as the genesis block.
 
-If a miner tried to issue more than the schedule allows, every other node would reject the block. The math is in the code, the code runs on tens of thousands of computers, and changing it would require near-universal coordination across people who genuinely don't want it changed.
+The cap comes from a rule every Bitcoin node applies to every block. The new coins a block may create depend only on its height, and that allowance halves on a fixed schedule. Add up every block's allowance and you get **a geometric series**, a sum whose parts keep shrinking by the same fraction (here, each stretch of 210,000 blocks adds half as much as the one before). Because each block's subsidy is rounded down to whole satoshis (a satoshi, or sat, is the smallest unit of bitcoin, one hundred-millionth of a coin), the total lands just short of 21 million.
+
+If a miner tried to issue (create) more new coins than the schedule allows, every other node would reject the block. A rejected block is left out of every node's copy of the chain, so the miner would earn nothing from it. The math is in the code, the code runs on tens of thousands of computers, and changing it would require near-universal coordination across people who genuinely don't want it changed.
 
 It's the most boring kind of scarcity. It's also the most reliable kind ever invented.
 
 ## 2. Where It Comes From
 
-The supply schedule is defined in `GetBlockSubsidy`, a function in Bitcoin Core's source code. The math:
+The supply schedule is defined in `GetBlockSubsidy`, a short piece of code in Bitcoin Core, the most widely used software for running a Bitcoin node. The math:
 
-- **First block reward:** 50 BTC
-- **Halving interval:** every 210,000 blocks (about every 4 years at 10-minute average block time)
-- **Halving rule:** the reward halves at each interval and rounds toward zero in satoshi precision
+- **First block subsidy:** 50 BTC
+- **Halving interval:** every 210,000 blocks (about every 4 years at 10-minute average block time, the gap between one block and the next)
+- **Halving rule:** the subsidy halves at each interval and is rounded down to a whole number of satoshis
 
 That's it. Two numbers and one rule. The cap is what falls out.
 
@@ -96,17 +98,17 @@ S = 10,500,000 x 2
 S = 21,000,000
 ```
 
-The series converges to exactly 21 million in the mathematical limit. In practice the reward is counted in whole satoshis and every halving rounds down, so the most the rules can ever issue is **20,999,999.9769 BTC**, which is exactly 2,099,999,997,690,000 satoshis.
+Here S is the total, and the part in parentheses adds up to 2: each number in it covers half of the gap that is left, so the running total goes 1, then 1.5, then 1.75, then 1.875, closing in on 2 and never passing it. The series converges to exactly 21 million in the mathematical limit, that is, if the halvings went on forever. In practice the subsidy is counted in whole satoshis and every halving rounds down, so the most the rules can ever issue is **20,999,999.9769 BTC**, which is exactly 2,099,999,997,690,000 satoshis.
 
 The "missing" 0.0231 BTC comes from that rounding. The first nine halvings divide evenly. The 10th (block 2,100,000, around 2048) is the first that doesn't, and from then on every era pays a fraction of a satoshi per block less than the pure math says. Those fractions add up to about 0.0207 BTC.
 
-The other 0.0024 BTC is the tail that never gets paid once the reward would fall below 1 satoshi. Block 6,929,999 is the last one with a subsidy (1 satoshi). From block 6,930,000, expected around 2140, the subsidy is zero and no more bitcoin will ever be issued.
+The other 0.0024 BTC is the tail that never gets paid once the subsidy would fall below 1 satoshi. Block 6,929,999 is the last one with a subsidy (1 satoshi). From block 6,930,000, expected around 2140, the subsidy is zero and no more bitcoin will ever be issued.
 
 ## 4. The Halving Schedule
 
-We covered this briefly in [Chapter 2](/journey/what-bitcoin-actually-is) of the Journey. Here it is in full detail:
+[Chapter 2](/journey/what-bitcoin-actually-is) of the Journey, this site's six-chapter course from zero, covers this briefly. Here it is in full detail. The last column is the total number of bitcoin issued by the time each halving arrives:
 
-| Halving | Block | Date | New reward | Cumulative supply |
+| Halving | Block | Date | New subsidy | Cumulative supply |
 |---|---|---|---|---|
 | Genesis | 0 | Jan 3, 2009 | 50 BTC | 0 |
 | 1st | 210,000 | Nov 28, 2012 | 25 BTC | 10,500,000 |
@@ -130,21 +132,21 @@ The slightly-less-than-21M number is worth pausing on, because it gets at someth
 
 Bitcoin tracks balances in **satoshis**, not BTC. One satoshi is the smallest representable unit: 1 / 100,000,000 of a BTC. (See the [Bitcoin Units rabbit hole](/rabbit-hole/bitcoin-units) for a full walk through the scale.)
 
-When you halve a reward, you halve the satoshi count. 50 BTC = 5,000,000,000 satoshis. After 1 halving: 2,500,000,000. After 2: 1,250,000,000. And so on.
+When you halve a subsidy, you halve the satoshi count. 50 BTC = 5,000,000,000 satoshis. After 1 halving: 2,500,000,000. After 2: 1,250,000,000. And so on.
 
-Eventually you reach a halving where the reward is below 1 satoshi. At that point, integer division by 2 produces 0. There's nothing smaller than a satoshi (on the base layer, anyway), so the subsidy becomes zero and stays there.
+Eventually you reach a halving where the subsidy is below 1 satoshi. At that point, integer division by 2, which drops any fraction, produces 0. There's nothing smaller than a satoshi, at least on Bitcoin's own chain, so the subsidy becomes zero and stays there.
 
 This happens at halving 33 (block 6,930,000), somewhere around the year 2140. The total issued at that moment is 20,999,999.9769 BTC. That's the real ceiling, and "21 million" is the rounded version.
 
-Zero stays zero for good because of [BIP 42](/glossary/bip-42), a rule added in 2014 that makes the code return zero outright once 64 halvings have passed. The code halves the reward by shifting its binary digits one place to the right for each halving so far, and C++ leaves a shift of 64 places or more undefined. Without BIP 42, on every platform Bitcoin Core supported at the time, the reward would have jumped back to 50 BTC at halving 64 (around the year 2263) and started the cycle over.
+Zero stays zero for good because of [BIP 42](/glossary/bip-42), a rule added in 2014 that makes the code return zero outright once 64 halvings have passed. (BIP stands for Bitcoin Improvement Proposal, the formal document in which a change like this one is proposed.) Rounding alone keeps the subsidy at zero from halving 33 through halving 63. The rule was needed for what would have come next, because the code works out every block's subsidy from scratch: it starts from 50 BTC and halves that as many times as there have been halvings, and its way of halving stops working once the count reaches 64. Without BIP 42, on every platform (kind of computer) Bitcoin Core supported at the time, the subsidy would have jumped back to 50 BTC at halving 64 (around the year 2263) and started the cycle over. The detail, for the curious: the code holds the subsidy as a row of 64 binary digits and halves it by shifting them one place to the right for each halving so far, and C++, the language Bitcoin Core is written in, leaves a shift of 64 places or more undefined, which means the language makes no promise about the result. On those platforms, a shift of exactly 64 places left the full 50 BTC untouched.
 
-The coins people can actually spend will end up a little below the ceiling. The 50 BTC in the [genesis block](/glossary/genesis-block) was never spendable. In November 2010, blocks 91,842 and 91,880 repeated the transaction IDs of two earlier coinbase transactions and overwrote them, which made another 100 BTC unspendable. [BIP 30](/glossary/bip-30), the rule that now forbids such duplicates, had to make an exception for those two blocks.
+The coins people can actually spend will end up a little below the ceiling. The 50 BTC in the [genesis block](/glossary/genesis-block), the very first block, was never spendable. In November 2010, blocks 91,842 and 91,880 each carried a payment to the miner that exactly duplicated one in an earlier block, down to its transaction ID, the fingerprint that tells one transaction from another. Each duplicate overwrote the original, and the two together made another 100 BTC unspendable. [BIP 30](/glossary/bip-30), the rule that now forbids such duplicates, had to make an exception for those two blocks.
 
-Some miners have also claimed less than they were allowed. The miner of block 501,726, in December 2017, claimed none of its 12.5 BTC subsidy. Other coins have been sent to outputs nobody can ever spend. Bitcoin Core's source code even says that its hard-coded 21 million limit, MAX_MONEY, is only a sanity check and not the total money supply, which "currently happens to be less than 21,000,000 BTC for various reasons."
+Some miners have also claimed less than they were allowed. The miner of block 501,726, in December 2017, claimed none of its 12.5 BTC subsidy. Other coins have been sent to destinations that nobody can ever spend from. Bitcoin Core's source code even says that its hard-coded 21 million limit, MAX_MONEY, is only a sanity check, a limit for catching impossible amounts, and not the total money supply, which "currently happens to be less than 21,000,000 BTC for various reasons."
 
 ## 6. Bitcoin's Inflation Rate vs. Gold
 
-Bitcoin's *annual inflation rate* is the new supply issued in a year divided by the supply that already exists. Here is the math for era 4 (the fifth era, since the count in section 3 starts at era 0), which runs from block 840,000 (April 2024) to block 1,049,999 (around April 2028):
+Bitcoin's *annual inflation rate* is the new supply issued in a year divided by the supply that already exists. That is growth in the number of coins, not the rise in prices that the word usually means. Here is the math for era 4 (the fifth era, since the count in section 3 starts at era 0), which runs from block 840,000 (April 2024) to block 1,049,999 (around April 2028):
 
 - Subsidy in era 4: 3.125 BTC per block
 - Blocks per year: ~52,560 (144 a day at the 10-minute target; 52,221 blocks were actually mined between October 1, 2025 and October 1, 2026)
@@ -156,7 +158,7 @@ The rate drifts down a little within the era as supply grows: about 0.83% right 
 
 For comparison:
 - **Gold:** about 1.5-1.7% in 2025. Mines produced roughly 3,300 to 3,670 tonnes that year (USGS and World Gold Council estimates). About 222,600 tonnes had been mined in all of history as of mid-2026.
-- **US dollar M2:** grew about 6.8% a year on average from 1971 to 2024. It jumped 24.5% in 2020 and 12.5% in 2021, then shrank slightly in 2022 and 2023.
+- **US dollar M2:** this broad measure of the dollars people hold, mostly as cash and in bank accounts, grew about 6.8% a year on average from 1971 to 2024. It jumped 24.5% in 2020 and 12.5% in 2021, then shrank slightly in 2022 and 2023.
 - **Other currencies:** broad money growth varies a lot by country and year. In 2024 the World Bank recorded 0.1% for Japan, 2.6% for the UK and 6.6% for Australia, against 36.9% for Turkey and 123.1% for Argentina.
 
 After the 5th halving (block 1,050,000, around 2028), Bitcoin's annual issuance will drop to ~82,125 BTC, and its inflation rate will halve to roughly 0.4%.
@@ -175,25 +177,25 @@ Three reasons, in order of importance:
 
 **2. The cap is the value proposition.** Many people hold bitcoin precisely because the supply is fixed. Raising the cap would undercut the main reason they hold it, and they are exactly the people a cap change would need to win over.
 
-**3. There's no one to ask.** Bitcoin has no CEO, no board, no foundation in charge and no Satoshi. Even if someone wanted to raise the cap, there is no central party with the authority to propose it credibly. Any proposal would mean a fork. When Bitcoin Cash split off in 2017, the chain that stuck with the existing rules kept the name and most of the market value (see the [block size war](/rabbit-hole/block-size-war)).
+**3. There's no one to ask.** Bitcoin has no CEO, no board, no foundation in charge and no Satoshi (Satoshi Nakamoto, Bitcoin's pseudonymous creator, after whom the unit is named, left the project in its early years). Even if someone wanted to raise the cap, there is no central party with the authority to propose it credibly. Any proposal would mean a fork, a change of rules that can split the chain in two if only part of the network adopts it. When Bitcoin Cash split off in 2017 with rules of its own, the chain that stuck with the existing rules kept the name and most of the market value (see the [block size war](/rabbit-hole/block-size-war)).
 
-None of this is a guarantee. The cap is a Schelling point, a rule everyone expects everyone else to defend, and nobody has seriously tried to move it. As of October 2026, no proposal to raise the cap or add a permanent "tail emission" has been assigned a BIP number. The only BIP that changes how many coins can ever be issued is [BIP 42](/glossary/bip-42), which made the cap stricter.
+None of this is a guarantee. The cap is a Schelling point, a rule everyone expects everyone else to defend, and nobody has seriously tried to move it. As of October 2026, no proposal to raise the cap or add a permanent "tail emission" (new coins in every block, forever) has been assigned a BIP number, an early step in the usual process for proposing a change. The only BIP that changes how many coins can ever be issued is [BIP 42](/glossary/bip-42), which made the cap stricter.
 
-Tail emission does have supporters. Developer Peter Todd argued in a 2022 essay that a fixed reward per block would not be inflationary in the long run, because the supply would level off where the coins lost each year match the new ones. He also noted that adding one to Bitcoin would take a hard fork.
+Tail emission does have supporters. Developer Peter Todd argued in a 2022 essay that a fixed subsidy per block would not be inflationary in the long run, because the supply would level off where the coins lost each year match the new ones. He also noted that adding a tail emission to Bitcoin would take a hard fork, the kind of fork in which software that has not been updated rejects the new blocks, so every node has to adopt the change.
 
 Through October 2026, every real threat to the supply came from a bug. In August 2010 a transaction created 184 billion BTC; a patched release came out within hours, and the chain carrying those coins was abandoned the next day (see [The Inflation Bug Postmortem](/rabbit-hole/inflation-bug-postmortem)). In September 2018 Bitcoin Core disclosed CVE-2018-17144, a flaw in versions 0.15.0 to 0.16.2 that could have let a miner create coins out of thin air. It was patched, and nobody is known to have exploited it.
 
-Even the biggest fight over Bitcoin's rules, the 2015-2017 block size war, was only about how big blocks could be. The side opposing a hard-fork size increase won. [SegWit](/glossary/segwit-segregated-witness-bip-141) replaced the 1 MB limit with a 4 million weight unit limit in August 2017, and the [SegWit2x](/glossary/segwit2x) hard fork was called off that November.
+Even the biggest fight over Bitcoin's rules, the 2015-2017 block size war, was only about how big blocks could be. At the time a block could hold at most 1 MB (one megabyte) of data. The side opposing a hard-fork size increase won. [SegWit](/glossary/segwit-segregated-witness-bip-141), an upgrade written so that nodes running older software would still accept the new blocks, replaced the 1 MB limit with a 4 million weight unit limit in August 2017. Weight is a newer measure of size that counts a transaction's signature data at a discount, so a block can hold more transactions. The [SegWit2x](/glossary/segwit2x) hard fork, which would have raised the limit further, was called off that November.
 
 ## 8. After Block 6,930,000
 
-When the last satoshi is mined around the year 2140, miners stop receiving any *new* bitcoin. From that point forward, their entire revenue comes from **transaction fees** - the small amounts users attach to transactions to incentivize inclusion.
+When the last satoshi is mined around the year 2140, miners stop receiving any *new* bitcoin. From that point forward, their entire revenue comes from **transaction fees** - the small amounts users attach to their transactions so that miners will include them in a block. (Until then, the subsidy and the fees together make up the block reward.)
 
-This is sometimes posed as a worry: *will miners still mine if there's no subsidy?* Nobody knows for sure yet. The bet is that people will still pay enough in fees to make mining worth the electricity. Researchers have pointed out real risks in a fee-only world, such as miners being tempted to re-mine a recent block to grab its fees ([Carlsten et al., 2016](https://www.cs.princeton.edu/~arvindn/publications/mining_CCS.pdf)). The subsidy doesn't reach zero until around 2140, but it halves about every four years, so the question starts to matter long before then.
+This is sometimes posed as a worry: *will miners still mine if there's no subsidy?* Nobody knows for sure yet. The bet is that people will still pay enough in fees to make mining worth the electricity. It matters because the miners' work is what protects the record of payments: to rewrite any of it, someone would have to do that work over again. Researchers have pointed out real risks in a fee-only world, such as miners being tempted to re-mine a recent block to grab its fees ([Carlsten et al., 2016](https://www.cs.princeton.edu/~arvindn/publications/mining_CCS.pdf)). The subsidy doesn't reach zero until around 2140, but it halves about every four years, so the question starts to matter long before then.
 
-Fees have not taken over yet. They jump when block space is in demand (about 13% of miner revenue across 2017, and about 6.5% in both 2023 and 2024) and fall back when it isn't. Over the 52,560 blocks (roughly a year) up to October 9, 2026, fees were about 0.6% of what miners earned. After block 6,929,999, fees will be all of it.
+Fees have not taken over yet. A block has room for only so many transactions, and when more people want in than can fit, they bid against each other with higher fees. That bidding is called the fee market. So fees jump when block space is in demand (about 13% of miner revenue across 2017, and about 6.5% in both 2023 and 2024) and fall back when it isn't. Over the 52,560 blocks (roughly a year) up to October 9, 2026, fees were about 0.6% of what miners earned. After block 6,929,999, fees will be all of it.
 
-This is also why scaling Bitcoin matters. On-chain [batching](/glossary/batch-transaction) lets many payments share a small amount of block space, and so do the [Lightning Network](/glossary/lightning-network) and other second-layer tools. The hope is that more people using Bitcoin this way keeps block space in demand, so fees stay high enough to pay miners. Whether that works out is still an open question.
+This is also why scaling Bitcoin (making it carry more payments) matters. On-chain [batching](/glossary/batch-transaction), which combines many payments into one transaction, lets them share a small amount of block space, and so do the [Lightning Network](/glossary/lightning-network) and other second-layer tools, which are payment systems built on top of Bitcoin. The hope is that more people using Bitcoin this way keeps block space in demand, so fees stay high enough to pay miners. Whether that works out is still an open question.
 
 After 2140, Bitcoin's security will rest on the fee market, which no schedule controls. Fees will be whatever users are willing to pay for limited block space.
 
@@ -205,7 +207,7 @@ It means:
 
 - **Nobody can dilute your savings beyond the published schedule.** New coins still come out (about 0.82% a year as of 2026, shrinking at every halving), but no one can print extra bitcoin to fund a war, a stimulus or a bailout.
 - **The schedule is known all the way to 2140.** You can plan around it across human lifetimes.
-- **There is no "growth target."** The Federal Reserve aims for 2% inflation over the longer run, measured by the PCE price index. Bitcoin has no target at all; it just follows the schedule.
+- **There is no "growth target."** The Federal Reserve, the US central bank, aims for 2% inflation over the longer run, measured by the PCE price index, which tracks the prices people pay and not the number of dollars. Bitcoin has no target at all; it just follows the schedule.
 
 That's the deal. Boring, fixed, verifiable, durable. A monetary system without a steering wheel.
 
