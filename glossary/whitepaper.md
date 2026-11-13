@@ -10,7 +10,7 @@ keyTakeaways:
   - "Considered a landmark in cryptographic and monetary innovation"
 sources:
   - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System (the paper itself: PDF, nine pages)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
-  - { label: "Satoshi Nakamoto - Bitcoin P2P e-cash paper, the announcement on the Cryptography Mailing List (31 October 2008)", url: "https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html" }
+  - { label: "Satoshi Nakamoto - Bitcoin P2P e-cash paper, the announcement on the Cryptography Mailing List (October 31, 2008)", url: "https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html" }
   - { label: "mempool.space - genesis block 0, mined January 3, 2009", url: "https://mempool.space/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f" }
 relatedTerms:
   - bitcoin-pizza-day
@@ -24,13 +24,13 @@ The Bitcoin whitepaper is the founding document of the network: a nine-page PDF 
 
 **Read it:** [*Bitcoin: A Peer-to-Peer Electronic Cash System*](/bitcoin.pdf) (PDF, nine pages, 184 KB).
 
-The copy on this site is byte for byte the file that bitcoin.org and the Satoshi Nakamoto Institute serve. All three have the same SHA-256 fingerprint (checked 10 November 2026):
+The copy on this site is byte for byte the file that bitcoin.org and the Satoshi Nakamoto Institute serve. All three have the same SHA-256 fingerprint (checked November 10, 2026):
 
 ```text
 b1674191a88ec5cdd733e4240a81803105dc412d6c6708d53ab94fc248f4f553
 ```
 
-The file's own metadata dates it to 24 March 2009, a few months after the paper was first announced.
+The file's own metadata dates it to March 24, 2009, a few months after the paper was first announced.
 
 What's actually in those nine pages:
 

@@ -9,12 +9,12 @@ keyTakeaways:
   - "Historically, BTC price can breach these levels briefly or for extended periods"
   - "Not a hard floor due to complex market and economic factors"
 sources:
-  - { label: "Satoshi Nakamoto - bitcointalk, 21 February 2010: the price of any commodity tends to gravitate toward the production cost", url: "https://satoshi.nakamotoinstitute.org/posts/bitcointalk/65/" }
+  - { label: "Satoshi Nakamoto - bitcointalk, February 21, 2010: the price of any commodity tends to gravitate toward the production cost", url: "https://satoshi.nakamotoinstitute.org/posts/bitcointalk/65/" }
   - { label: "Bitcoin Core - nPowTargetTimespan of two weeks, nPowTargetSpacing of 10 minutes and nSubsidyHalvingInterval of 210,000 blocks in src/kernel/chainparams.cpp", url: "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/chainparams.cpp" }
-  - { label: "mempool.space - Difficulty adjustments, full history (JSON; fetched 13 October 2026)", url: "https://mempool.space/api/v1/mining/difficulty-adjustments/all" }
-  - { label: "mempool.space - Network hash rate, daily, full history (JSON; fetched 13 October 2026)", url: "https://mempool.space/api/v1/mining/hashrate/all" }
-  - { label: "mempool.space - Historical BTC/USD price (JSON; fetched 13 October 2026)", url: "https://mempool.space/api/v1/historical-price?currency=USD" }
-  - { label: "mempool.space - Block 840,000, the fourth halving (20 April 2024)", url: "https://mempool.space/block/0000000000000000000320283a032748cef8227873ff4872689bf23f1cda83a5" }
+  - { label: "mempool.space - Difficulty adjustments, full history (JSON; fetched October 13, 2026)", url: "https://mempool.space/api/v1/mining/difficulty-adjustments/all" }
+  - { label: "mempool.space - Network hash rate, daily, full history (JSON; fetched October 13, 2026)", url: "https://mempool.space/api/v1/mining/hashrate/all" }
+  - { label: "mempool.space - Historical BTC/USD price (JSON; fetched October 13, 2026)", url: "https://mempool.space/api/v1/historical-price?currency=USD" }
+  - { label: "mempool.space - Block 840,000, the fourth halving (April 20, 2024)", url: "https://mempool.space/block/0000000000000000000320283a032748cef8227873ff4872689bf23f1cda83a5" }
 relatedTerms:
   - bull-market
   - dca-dollar-cost-averaging

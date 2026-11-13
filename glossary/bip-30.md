@@ -10,8 +10,8 @@ keyTakeaways:
   - "Part of ongoing improvements to transaction validity"
 sources:
   - { label: "BIP 30 - Duplicate transactions (the rule, and the two grandfathered blocks 91,842 and 91,880)", url: "https://github.com/bitcoin/bips/blob/master/bip-0030.mediawiki" }
-  - { label: "mempool.space - block 91,842 (14 November 2010), whose 50 BTC coinbase repeats the txid of block 91,812's", url: "https://mempool.space/block/00000000000a4d0a398161ffc163c503763b1f4360639393e0e4c8e300e0caec" }
-  - { label: "mempool.space - block 91,880 (15 November 2010), whose 50 BTC coinbase repeats the txid of block 91,722's", url: "https://mempool.space/block/00000000000743f190a18c5577a3c2d2a1f610ae9601ac046a38084ccb7cd721" }
+  - { label: "mempool.space - block 91,842 (November 14, 2010), whose 50 BTC coinbase repeats the txid of block 91,812's", url: "https://mempool.space/block/00000000000a4d0a398161ffc163c503763b1f4360639393e0e4c8e300e0caec" }
+  - { label: "mempool.space - block 91,880 (November 15, 2010), whose 50 BTC coinbase repeats the txid of block 91,722's", url: "https://mempool.space/block/00000000000743f190a18c5577a3c2d2a1f610ae9601ac046a38084ccb7cd721" }
   - { label: "Bitcoin Core 31.0.0 RPC docs - gettxoutsetinfo, which counts coins lost to BIP 30 duplicates as unspendable", url: "https://bitcoincore.org/en/doc/31.0.0/rpc/blockchain/gettxoutsetinfo/" }
 relatedTerms:
   - bip-bitcoin-improvement-proposal

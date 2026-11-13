@@ -15,9 +15,9 @@ keyTakeaways:
   - "Each way of paying small miners later opens a route for payout settlement griefing"
   - "As of November 2026 it is an open design problem with no agreed answer"
 sources:
-  - { label: "7d5x9 - Decentralized Coinbase Payout Protocols (DCPP): A Framework for Discussion (Delving Bitcoin, 11 November 2026): the term, the three constraints, the earlier designs as described here (Belcher's hub, Braidpool, P2Poolv2), the transaction id problem and the two ways out the author considers viable", url: "https://delvingbitcoin.org/t/decentralized-coinbase-payout-protocols-dcpp-a-framework-for-discussion/3060" }
+  - { label: "7d5x9 - Decentralized Coinbase Payout Protocols (DCPP): A Framework for Discussion (Delving Bitcoin, November 11, 2026): the term, the three constraints, the earlier designs as described here (Belcher's hub, Braidpool, P2Poolv2), the transaction id problem and the two ways out the author considers viable", url: "https://delvingbitcoin.org/t/decentralized-coinbase-payout-protocols-dcpp-a-framework-for-discussion/3060" }
   - { label: "P2Poolv2 wiki - P2Pool vs P2Poolv2 (read November 2026): the largest miners paid in the coinbase, smaller miners trading their shares for bitcoin", url: "https://github.com/p2poolv2/p2poolv2/wiki/P2Pool-vs-P2Poolv2" }
-  - { label: "LearnBitcoin - the coinbase transaction of every P2Pool block, 2,545 rows read from the Bitcoin Core node behind ChainQuery on 11 November 2026: the most payouts in one block was 553, in block 236,962 (CSV)", url: "https://www.learnbitcoin.com/downloads/p2pool-coinbases.csv" }
+  - { label: "LearnBitcoin - the coinbase transaction of every P2Pool block, 2,545 rows read from the Bitcoin Core node behind ChainQuery on November 11, 2026: the most payouts in one block was 553, in block 236,962 (CSV)", url: "https://www.learnbitcoin.com/downloads/p2pool-coinbases.csv" }
 relatedTerms:
   - p2pool
   - payout-settlement-griefing

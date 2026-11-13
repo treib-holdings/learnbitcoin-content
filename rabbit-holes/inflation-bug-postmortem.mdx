@@ -15,14 +15,14 @@ ogImage: "/diagrams/og/inflation-bug-postmortem.png"
 ogImageAlt: "Block 74,638 created billions of bitcoin over the 21M cap. The bug value 184,467,440,737 stacked above the legitimate 21,000,000 cap - visualizing the moment Bitcoin almost became fiat-like uncapped supply."
 sources:
   - { label: "CVE-2010-5139 - Bitcoin value overflow vulnerability", url: "https://nvd.nist.gov/vuln/detail/CVE-2010-5139" }
-  - { label: "BitcoinTalk - Strange block 74638 (thread #822, the first report, 15 August 2010, 18:08 UTC)", url: "https://bitcointalk.org/index.php?topic=822.0" }
-  - { label: "BitcoinTalk - overflow bug SERIOUS (thread #823, Satoshi's draft patch and posts, 15-16 August 2010)", url: "https://bitcointalk.org/index.php?topic=823.0" }
-  - { label: "BitcoinTalk - Satoshi Nakamoto, Version 0.3.10 - block 74638 overflow PATCH! (thread #827, 15 August 2010, 23:48 UTC)", url: "https://bitcointalk.org/index.php?topic=827.0" }
-  - { label: "Bitcoin source, SVN rev 132 - fix for block 74638 overflow output transaction (15 August 2010, 21:35 UTC)", url: "https://github.com/bitcoin/bitcoin/commit/d4c6b90ca3f9b47adb1b2724a0c3514f80635c84" }
-  - { label: "mempool.space - block 74,691, where the patched chain overtook the bad one (16 August 2010, 08:20 UTC)", url: "https://mempool.space/block/00000000005c22d199706df1c38b38d76f8401920dcbe91edf3417f8847da707" }
+  - { label: "BitcoinTalk - Strange block 74638 (thread #822, the first report, August 15, 2010, 18:08 UTC)", url: "https://bitcointalk.org/index.php?topic=822.0" }
+  - { label: "BitcoinTalk - overflow bug SERIOUS (thread #823, Satoshi's draft patch and posts, August 15-16, 2010)", url: "https://bitcointalk.org/index.php?topic=823.0" }
+  - { label: "BitcoinTalk - Satoshi Nakamoto, Version 0.3.10 - block 74638 overflow PATCH! (thread #827, August 15, 2010, 23:48 UTC)", url: "https://bitcointalk.org/index.php?topic=827.0" }
+  - { label: "Bitcoin source, SVN rev 132 - fix for block 74638 overflow output transaction (August 15, 2010, 21:35 UTC)", url: "https://github.com/bitcoin/bitcoin/commit/d4c6b90ca3f9b47adb1b2724a0c3514f80635c84" }
+  - { label: "mempool.space - block 74,691, where the patched chain overtook the bad one (August 16, 2010, 08:20 UTC)", url: "https://mempool.space/block/00000000005c22d199706df1c38b38d76f8401920dcbe91edf3417f8847da707" }
   - { label: "Coin Metrics community API - BTC PriceUSD daily close, August 2010 (about $0.065 on August 15)", url: "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=PriceUSD&frequency=1d&start_time=2010-08-01&end_time=2010-08-31&page_size=100" }
   - { label: "BIP 42 - finite monetary supply (the OTHER infinite-supply bug)", url: "https://github.com/bitcoin/bips/blob/master/bip-0042.mediawiki" }
-  - { label: "Bitcoin Core PR #3842 - Fix for GetBlockValue() after block 13,440,000 (opened by ditto-b 11 March 2014, merged 3 April 2014)", url: "https://github.com/bitcoin/bitcoin/pull/3842" }
+  - { label: "Bitcoin Core PR #3842 - Fix for GetBlockValue() after block 13,440,000 (opened by ditto-b March 11, 2014, merged April 3, 2014)", url: "https://github.com/bitcoin/bitcoin/pull/3842" }
   - { label: "Bitcoin Core source - GetBlockSubsidy, where the BIP 42 rule lives (src/validation.cpp)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp" }
   - { label: "Bitcoin Wiki - Value overflow incident", url: "https://en.bitcoin.it/wiki/Value_overflow_incident" }
   - { label: "Inflation Bug glossary entry", url: "https://www.learnbitcoin.com/glossary/inflation-bug" }
@@ -104,7 +104,7 @@ To remove block 74,638 from history, the network needed to mine a *longer* chain
 
 The patched clients started mining a new chain from block 74,637, ignoring 74,638 and everything that followed. The first block on it was mined at 23:53 UTC, minutes after the release. Miners who had not upgraded kept extending the bad chain in the meantime.
 
-About 15 hours after the bad block was mined, at 08:20 UTC on 16 August, the patched chain reached block 74,691 and passed the bad chain. Nodes reorganized to it. Block 74,638 and the 52 blocks built on top of it, 53 in all, were rolled back. The 184 billion BTC ceased to exist.
+About 15 hours after the bad block was mined, at 08:20 UTC on August 16, the patched chain reached block 74,691 and passed the bad chain. Nodes reorganized to it. Block 74,638 and the 52 blocks built on top of it, 53 in all, were rolled back. The 184 billion BTC ceased to exist.
 
 This is the largest intentional reorg in Bitcoin's history. It remains a reminder that "the chain" is whatever the majority of nodes choose to accept, and that under genuine emergency, that majority can move quickly.
 

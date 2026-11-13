@@ -14,7 +14,7 @@ estimatedMinutes: 15
 ogImage: "/diagrams/og/coin-selection-four-candidates.png"
 ogImageAlt: "A six-coin native-segwit wallet pays 100,000 sats at 1 sat/vB. Four candidate input sets, one per Bitcoin Core algorithm, with their waste scores: Branch and Bound, three small coins and no change, -1,822; Knapsack, -1,601; Single Random Draw, -989; CoinGrinder, greyed because it runs only above 30 sat/vB, -377. A scale on the right marks the lowest score as the winner."
 sources:
-  - { label: "Mark Erhardt - An Evaluation of Coin Selection Strategies, master's thesis, Karlsruhe Institute of Technology (dated 31 October 2016)", url: "https://murch.one/wp-content/uploads/2016/11/erhardt2016coinselection.pdf" }
+  - { label: "Mark Erhardt - An Evaluation of Coin Selection Strategies, master's thesis, Karlsruhe Institute of Technology (dated October 31, 2016)", url: "https://murch.one/wp-content/uploads/2016/11/erhardt2016coinselection.pdf" }
   - { label: "Bitcoin Core - src/wallet/coinselection.cpp (SelectCoinsBnB, KnapsackSolver, SelectCoinsSRD, CoinGrinder, RecalculateWaste, GenerateChangeTarget)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/coinselection.cpp" }
   - { label: "Bitcoin Core - src/wallet/coinselection.h (effective value in struct COutput; CHANGE_LOWER and CHANGE_UPPER)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/coinselection.h" }
   - { label: "Bitcoin Core - src/wallet/spend.cpp (cost of change, AvailableCoins, AttemptSelection, ChooseSelectionResult, the Coin Selection log line)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/spend.cpp" }
@@ -38,7 +38,7 @@ sources:
   - { label: "Bitcoin Core PR #13756 - The avoid_reuse wallet flag (0.19.0.1)", url: "https://github.com/bitcoin/bitcoin/pull/13756" }
   - { label: "Bitcoin Core 0.17.0 release notes (Branch and Bound; shuffled inputs)", url: "https://bitcoincore.org/en/releases/0.17.0/" }
   - { label: "Bitcoin Core 0.21.0 release notes (partial spend avoidance by default; the Branch and Bound zero-waste exit)", url: "https://bitcoincore.org/en/releases/0.21.0/" }
-  - { label: "Bitcoin Core 23.0 release notes (25 April 2022)", url: "https://bitcoincore.org/en/releases/23.0/" }
+  - { label: "Bitcoin Core 23.0 release notes (April 25, 2022)", url: "https://bitcoincore.org/en/releases/23.0/" }
   - { label: "Bitcoin Core 24.0.1 release notes (change output amounts are now randomized)", url: "https://bitcoincore.org/en/releases/24.0.1/" }
   - { label: "Bitcoin Core 27.0 release notes (CoinGrinder; Branch and Bound disabled when the fee is subtracted from outputs)", url: "https://bitcoincore.org/en/releases/27.0/" }
   - { label: "Bitcoin Core 29.1 release notes (default relay feerate lowered to 100 satoshis per kvB, September 2025)", url: "https://bitcoincore.org/en/releases/29.1/" }
@@ -47,16 +47,16 @@ sources:
   - { label: "Bitcoin Optech - Uneconomical outputs topic (the two meanings of dust)", url: "https://bitcoinops.org/en/topics/uneconomical-outputs/" }
   - { label: "Bitcoin Optech - Output linking topic", url: "https://bitcoinops.org/en/topics/output-linking/" }
   - { label: "Bitcoin Optech - Transaction size calculator (input and output sizes in vbytes)", url: "https://bitcoinops.org/en/tools/calc-size/" }
-  - { label: "Bitcoin Optech Newsletter #4, 17 July 2018 (the consolidation caution; -avoidpartialspends)", url: "https://bitcoinops.org/en/newsletters/2018/07/17/" }
-  - { label: "Bitcoin Optech Newsletter, 8 September 2021 (the waste metric, PR #22009)", url: "https://bitcoinops.org/en/newsletters/2021/09/08/" }
-  - { label: "Bitcoin Optech Newsletter, 6 October 2021 (the Single Random Draw simulation; persistent locks)", url: "https://bitcoinops.org/en/newsletters/2021/10/06/" }
-  - { label: "Bitcoin Optech Newsletter, 25 May 2022 (Erhardt's definition of waste)", url: "https://bitcoinops.org/en/newsletters/2022/05/25/" }
-  - { label: "Bitcoin Optech Newsletter, 10 August 2022 (single-type input sets, PR #24584)", url: "https://bitcoinops.org/en/newsletters/2022/08/10/" }
-  - { label: "Bitcoin Optech Newsletter, 21 February 2024 (CoinGrinder)", url: "https://bitcoinops.org/en/newsletters/2024/02/21/" }
-  - { label: "Bitcoin Optech Newsletter, 31 July 2026 (the long-term feerate against the discard feerate)", url: "https://bitcoinops.org/en/newsletters/2026/07/31/" }
+  - { label: "Bitcoin Optech Newsletter #4, July 17, 2018 (the consolidation caution; -avoidpartialspends)", url: "https://bitcoinops.org/en/newsletters/2018/07/17/" }
+  - { label: "Bitcoin Optech Newsletter, September 8, 2021 (the waste metric, PR #22009)", url: "https://bitcoinops.org/en/newsletters/2021/09/08/" }
+  - { label: "Bitcoin Optech Newsletter, October 6, 2021 (the Single Random Draw simulation; persistent locks)", url: "https://bitcoinops.org/en/newsletters/2021/10/06/" }
+  - { label: "Bitcoin Optech Newsletter, May 25, 2022 (Erhardt's definition of waste)", url: "https://bitcoinops.org/en/newsletters/2022/05/25/" }
+  - { label: "Bitcoin Optech Newsletter, August 10, 2022 (single-type input sets, PR #24584)", url: "https://bitcoinops.org/en/newsletters/2022/08/10/" }
+  - { label: "Bitcoin Optech Newsletter, February 21, 2024 (CoinGrinder)", url: "https://bitcoinops.org/en/newsletters/2024/02/21/" }
+  - { label: "Bitcoin Optech Newsletter, July 31, 2026 (the long-term feerate against the discard feerate)", url: "https://bitcoinops.org/en/newsletters/2026/07/31/" }
   - { label: "Delving Bitcoin - GutterGuard and CoinGrinder Simulation results (Mark Erhardt, December 2023)", url: "https://delvingbitcoin.org/t/gutterguard-and-coingrinder-simulation-results/279" }
   - { label: "Meiklejohn et al. - A Fistful of Bitcoins: Characterizing Payments Among Men with No Names (IMC 2013)", url: "https://cseweb.ucsd.edu/~smeiklejohn/files/imc13.pdf" }
-  - { label: "Moser and Narayanan - Resurrecting Address Clustering in Bitcoin (arXiv 2107.05749, v2 of 10 July 2022)", url: "https://arxiv.org/abs/2107.05749" }
+  - { label: "Moser and Narayanan - Resurrecting Address Clustering in Bitcoin (arXiv 2107.05749, v2 of July 10, 2022)", url: "https://arxiv.org/abs/2107.05749" }
   - { label: "Bitcoin Wiki - Privacy (cited for its catalogue of change-detection clues only)", url: "https://en.bitcoin.it/wiki/Privacy" }
   - { label: "ChainQuery - Bitcoin distribution report (live, weekly; figures in this chapter from the 2026-10-18 snapshot)", url: "https://chainquery.com/reports/distribution" }
   - { label: "ChainQuery - UTXO repartition report (live, weekly; figures from the 2026-10-18 snapshot)", url: "https://chainquery.com/reports/utxo-repartition" }
@@ -94,7 +94,7 @@ A selection is a bet on three prices at once.
 | Native segwit ([P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash)) | 68 vbytes | 68 sats | 680 | 6,800 |
 | [Taproot](/glossary/taproot) | 57.5 vbytes | 57.5 sats | 575 | 5,750 |
 
-For half a day on 20 April 2024, the day of the halving, the median block fee rate was roughly 1,200 sat/vB by mempool.space's record (the full day's median was lower, about 870; see the table below), so one native-segwit input cost about 80,000 sats, or 0.0008 BTC, to spend.
+For half a day on April 20, 2024, the day of the halving, the median block fee rate was roughly 1,200 sat/vB by mempool.space's record (the full day's median was lower, about 870; see the table below), so one native-segwit input cost about 80,000 sats, or 0.0008 BTC, to spend.
 
 **The fee later.** When the coins picked overshoot the payment, the wallet creates a [change output](/glossary/change-output), and change bills you twice: 31 vbytes to create a native-segwit output now, and 68 vbytes to spend the new coin later. Bitcoin Core prices exactly that. Its wallet code defines the cost of change as the fee to create the output at the transaction's fee rate plus the fee to spend it at a "discard" fee rate, the wallet's guess at a cheap future day (below it the wallet would rather hand the change to the miner than create it), which sits at its floor of 3 sat/vB in a calm market. At 1 sat/vB that is 68 x 3 + 31 x 1 = 235 sats; at 10 sat/vB, 514; at 100 sat/vB, if the discard rate stays at its floor, 3,304.
 
@@ -104,7 +104,7 @@ For half a day on 20 April 2024, the day of the halving, the median block fee ra
 
 ## The thesis that changed the wallet
 
-Mark Erhardt, who writes as Murch, submitted "An Evaluation of Coin Selection Strategies" at the Karlsruhe Institute of Technology on 31 October 2016. The data set was one real wallet's history: 36,256 payments from a web wallet service, 24,388 in and 11,860 out, values and order only. He replayed it through nine selection policies, ten runs each, and counted what each one cost.
+Mark Erhardt, who writes as Murch, submitted "An Evaluation of Coin Selection Strategies" at the Karlsruhe Institute of Technology on October 31, 2016. The data set was one real wallet's history: 36,256 payments from a web wallet service, 24,388 in and 11,860 out, values and order only. He replayed it through nine selection policies, ten runs each, and counted what each one cost.
 
 The receipts were not kind to Bitcoin Core. Its policy at the time found an exact match, a payment that needed no change, on 67 of the 11,860 outgoing payments: 0.57 percent. The search he designed, [Branch and Bound](/glossary/branch-and-bound-bnb), found 3,614, or 30.47 percent. In its two variants, which differed in how small a change output they tolerated, it kept the wallet's [pool of coins](/glossary/utxo-pool) 35 to 37 percent smaller on average and came in 6.4 to 6.7 percent cheaper in total than the cheapest policy it was tested against. The thesis also carried a warning the wallet's authors would quote seven years later: the policy that spent the fewest coins on average grew a pool "fifteen times as large as Bitcoin Core's".
 
@@ -147,7 +147,7 @@ Core answers each clue. The change output goes at a random position and the inpu
 
 ## When to consolidate, and what it costs
 
-Your wallet may already be consolidating without telling you. Below the 10 sat/vB long-term rate the waste metric rewards every extra input, and Knapsack's habit of scooping small coins supplies the candidates, so a Bitcoin Core wallet sweeps up a little with each cheap payment. Above 30 sat/vB CoinGrinder does the opposite. By mempool.space's daily record, no day between 12 December 2024 and 20 October 2026 had a median block fee rate of 10 sat/vB or more, so for those 22 months the reference wallet was in its consolidating mode every day.
+Your wallet may already be consolidating without telling you. Below the 10 sat/vB long-term rate the waste metric rewards every extra input, and Knapsack's habit of scooping small coins supplies the candidates, so a Bitcoin Core wallet sweeps up a little with each cheap payment. Above 30 sat/vB CoinGrinder does the opposite. By mempool.space's daily record, no day between December 12, 2024, and October 20, 2026, had a median block fee rate of 10 sat/vB or more, so for those 22 months the reference wallet was in its consolidating mode every day.
 
 Doing it on purpose has its own arithmetic. Twenty native-segwit coins merged into one is a 1,402-vbyte [consolidation transaction](/glossary/consolidation-transaction): 1,402 sats at 1 sat/vB. Spending the same twenty coins as inputs on a 100 sat/vB day would cost 136,000 sats in input fees alone. Days like that happen: by mempool.space's daily medians, 2023 had about thirty of them and 2024 about a dozen. Our [mempool chapter](/rabbit-hole/mempool) covers the market that sets the rate.
 
@@ -155,11 +155,11 @@ The record since 2023, by mempool.space's daily medians, rounded:
 
 | When | Daily median block fee rate |
 |---|---|
-| 8 May 2023 | about 440 sat/vB |
-| 16 December 2023 | about 350 sat/vB |
-| 20 April 2024, the halving | about 870 sat/vB for the day; the halving block itself, 840,000, had a median of 200 sat/vB and paid 37.6 BTC in fees |
-| 12 December 2024 | the last day at 10 sat/vB or more, as of 20 October 2026 |
-| 29 June 2025 | the first day at 1 sat/vB or less |
+| May 8, 2023 | about 440 sat/vB |
+| December 16, 2023 | about 350 sat/vB |
+| April 20, 2024, the halving | about 870 sat/vB for the day; the halving block itself, 840,000, had a median of 200 sat/vB and paid 37.6 BTC in fees |
+| December 12, 2024 | the last day at 10 sat/vB or more, as of October 20, 2026 |
+| June 29, 2025 | the first day at 1 sat/vB or less |
 | the year to October 2026 | roughly 280 of 365 days at 1 sat/vB or less |
 
 ChainQuery's [fee-pressure history](https://chainquery.com/reports/fee-pressure/history?window=365d), computed from the blocks its own node validated, agrees: 99.3 percent of the blocks in the year to mid-October 2026 fell in its lowest fee-pressure band, which tops out at 5 sat/vB, and over [five years](https://chainquery.com/reports/fee-pressure/history?window=5y) 2.4 percent of blocks fell in its highest, above 100 sat/vB.

@@ -17,7 +17,7 @@ sources:
   - { label: "Bitcoin Core - src/chain.h: GetMedianTimePast sorts the timestamps of the last nMedianTimeSpan = 11 blocks and returns the middle one", url: "https://github.com/bitcoin/bitcoin/blob/master/src/chain.h" }
   - { label: "Bitcoin Core - src/validation.cpp: ContextualCheckBlockHeader rejects a block stamped at or below the previous block's median time past (time-too-old)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp" }
   - { label: "BIP-113 - Median time-past as endpoint for lock-time calculations: time-based lock times compare against the median of the past 11 blocks, which advances monotonically", url: "https://github.com/bitcoin/bips/blob/master/bip-0113.mediawiki" }
-  - { label: "Pieter Wuille - bitcoin-dev, Difficulty adjustment / time issues (7 November 2011): a block's timestamp must lie between the median of the previous eleven, roughly five blocks in the past, and two hours in the future", url: "https://www.learnbitcoin.com/archive/t/2011/difficulty-adjustment-time-issues#m-939617d6" }
+  - { label: "Pieter Wuille - bitcoin-dev, Difficulty adjustment / time issues (November 7, 2011): a block's timestamp must lie between the median of the previous eleven, roughly five blocks in the past, and two hours in the future", url: "https://www.learnbitcoin.com/archive/t/2011/difficulty-adjustment-time-issues#m-939617d6" }
 relatedTerms:
   - absolute-locktime
   - bip-113

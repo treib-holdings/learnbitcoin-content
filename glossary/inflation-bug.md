@@ -10,9 +10,9 @@ keyTakeaways:
   - "Historically rare but extremely serious vulnerability"
 sources:
   - { label: "Inflation Bug Postmortem rabbit hole", url: "https://www.learnbitcoin.com/rabbit-hole/inflation-bug-postmortem" }
-  - { label: "Bitcoin Core - Disclosure of CVE-2018-17144 (20 September 2018)", url: "https://bitcoincore.org/en/2018/09/20/notice/" }
+  - { label: "Bitcoin Core - Disclosure of CVE-2018-17144 (September 20, 2018)", url: "https://bitcoincore.org/en/2018/09/20/notice/" }
   - { label: "NVD - CVE-2018-17144", url: "https://nvd.nist.gov/vuln/detail/CVE-2018-17144" }
-  - { label: "Bitcoin Core 0.15.2 release notes - the older-branch patch (28 September 2018)", url: "https://bitcoincore.org/en/releases/0.15.2/" }
+  - { label: "Bitcoin Core 0.15.2 release notes - the older-branch patch (September 28, 2018)", url: "https://bitcoincore.org/en/releases/0.15.2/" }
   - { label: "NVD - CVE-2010-5139, the 2010 value overflow", url: "https://nvd.nist.gov/vuln/detail/CVE-2010-5139" }
 relatedTerms:
   - bip-42
@@ -27,7 +27,7 @@ liveWidget: ~
 
 An inflation bug is the most severe class of Bitcoin software vulnerability: a flaw that would let an attacker create more BTC than the protocol's 21-million-coin cap allows, by tricking validators into accepting invalid transactions or invalid coinbase outputs.
 
-The one that actually minted coins came first. In August 2010 a value-overflow bug (CVE-2010-5139) let a single transaction create about 184 billion BTC, and the network rolled the chain back to remove it within a day. The most cited example is CVE-2018-17144, reported privately on 17 September 2018, patched on 18 September, and fully disclosed on 20 September.
+The one that actually minted coins came first. In August 2010 a value-overflow bug (CVE-2010-5139) let a single transaction create about 184 billion BTC, and the network rolled the chain back to remove it within a day. The most cited example is CVE-2018-17144, reported privately on September 17, 2018, patched on September 18, and fully disclosed on September 20.
 
 What the 2018 bug was:
 
@@ -39,8 +39,8 @@ How it got found and fixed:
 
 - Awemany (a developer working on Bitcoin Cash software) discovered the bug while reviewing inherited Bitcoin Core code.
 - They reported it privately, as a crash bug, to developers of Bitcoin Core and two other node projects. Within three hours a Core developer had worked out that it was also an inflation bug.
-- Bitcoin Core 0.16.3 shipped the fix on 18 September, the day after the report; patched releases for the two older branches followed on 28 September.
-- One large mining pool had upgraded within six hours of the report. By the full disclosure on 20 September, Bitcoin Core estimated that over half of the hash rate had upgraded.
+- Bitcoin Core 0.16.3 shipped the fix on September 18, the day after the report; patched releases for the two older branches followed on September 28.
+- One large mining pool had upgraded within six hours of the report. By the full disclosure on September 20, Bitcoin Core estimated that over half of the hash rate had upgraded.
 - No one is known to have exploited the bug in the wild before the fix.
 
 Why this matters:

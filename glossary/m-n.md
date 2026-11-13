@@ -11,7 +11,7 @@ keyTakeaways:
 sources:
   - { label: "BIP-11 - M-of-N Standard Transactions (2011; proposes standardness for up to 3 keys)", url: "https://github.com/bitcoin/bips/blob/master/bip-0011.mediawiki" }
   - { label: "Bitcoin Core - BIPs implemented (doc/bips.md): multisig outputs standard since v0.6.0", url: "https://github.com/bitcoin/bitcoin/blob/v31.1/doc/bips.md" }
-  - { label: "Bitcoin 0.6.0 release notes (30 March 2012): multisignature transactions become standard", url: "https://bitcoin.org/en/release/v0.6.0" }
+  - { label: "Bitcoin 0.6.0 release notes (March 30, 2012): multisignature transactions become standard", url: "https://bitcoin.org/en/release/v0.6.0" }
   - { label: "BIP-383 - Multisig Output Script Descriptors (key limits: 3 bare, 15 in P2SH, 20 otherwise)", url: "https://github.com/bitcoin/bips/blob/master/bip-0383.mediawiki" }
   - { label: "BIP-141 - Segregated Witness: P2WSH bypasses the 520-byte push limit (10,000-byte script max)", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
   - { label: "BIP-387 - Tapscript Multisig Output Script Descriptors (multi_a, up to 999 keys)", url: "https://github.com/bitcoin/bips/blob/master/bip-0387.mediawiki" }

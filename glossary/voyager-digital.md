@@ -9,7 +9,7 @@ published: "2026-06-18"
 updated: "2026-10-12"
 shortDefinition: "A crypto brokerage that marketed accounts as 'FDIC insured,' then froze withdrawals and went bankrupt in 2022 when its roughly $650M loan to hedge fund 3AC defaulted."
 keyTakeaways:
-  - "Voyager lent more than $650M of customer assets to Three Arrows Capital; when 3AC defaulted, it froze withdrawals and filed for bankruptcy on 5 July 2022"
+  - "Voyager lent more than $650M of customer assets to Three Arrows Capital; when 3AC defaulted, it froze withdrawals and filed for bankruptcy on July 5, 2022"
   - "It marketed accounts as 'FDIC insured,' which the FTC charged was false: the FDIC covered only the partner bank's US dollars against the bank failing, not crypto and not Voyager's own insolvency"
   - "Rescues by FTX and then Binance.US both fell through; by September 2024 creditors had been paid 70 percent of their allowed claims"
 sources:
@@ -37,7 +37,7 @@ liveWidget: ~
 
 Voyager Digital was a publicly traded crypto brokerage that advertised high yields and told customers their money was about as safe as it would be in a bank. That wasn't true.
 
-Founded in 2018 and led by Stephen Ehrlich, Voyager took customer deposits and lent them out for yield. More than $650 million of that went to a single borrower, the hedge fund [Three Arrows Capital](/glossary/celsius-genesis-3ac-cluster). When 3AC defaulted in June 2022, Voyager froze withdrawals on 1 July and filed for Chapter 11 on 5 July 2022. At the time, Voyager said it had about $1.3 billion of crypto on the platform and more than $350 million of customers' cash at a partner bank. The CFTC later put what it owed its customers in the United States at more than $1.7 billion.
+Founded in 2018 and led by Stephen Ehrlich, Voyager took customer deposits and lent them out for yield. More than $650 million of that went to a single borrower, the hedge fund [Three Arrows Capital](/glossary/celsius-genesis-3ac-cluster). When 3AC defaulted in June 2022, Voyager froze withdrawals on July 1 and filed for Chapter 11 on July 5, 2022. At the time, Voyager said it had about $1.3 billion of crypto on the platform and more than $350 million of customers' cash at a partner bank. The CFTC later put what it owed its customers in the United States at more than $1.7 billion.
 
 The marketing is the part worth remembering. Voyager told customers "YOUR USD IS FDIC INSURED", and Ehrlich told them their funds were "as safe with us as at a bank." The Federal Trade Commission charged that this was false. Voyager wasn't a bank, and its customers' deposits weren't eligible for FDIC insurance. Their cash sat in Voyager's account at a partner bank and was protected only if that bank failed, and their crypto wasn't covered at all. Voyager settled with the FTC in 2023. In 2025 Ehrlich settled both the FTC's case and a parallel fraud case brought by the Commodity Futures Trading Commission: he and his wife agreed to pay the FTC $2.8 million, he accepted a ban on marketing or selling retail crypto products, and he was ordered to pay $750,000 to Voyager customers.
 

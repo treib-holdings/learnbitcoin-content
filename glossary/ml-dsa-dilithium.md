@@ -15,8 +15,8 @@ keyTakeaways:
   - "Discussed for Bitcoin's PQ migration, though Bitcoin's post-quantum work has mostly focused on hash-based schemes"
 sources:
   - { label: "NIST FIPS 204 - Module-Lattice-Based Digital Signature Standard (August 2024)", url: "https://csrc.nist.gov/pubs/fips/204/final" }
-  - { label: "Bitcoin Optech Newsletter #412 - why Bitcoin post-quantum work has focused on hash-based signatures (3 July 2026)", url: "https://bitcoinops.org/en/newsletters/2026/07/03/" }
-  - { label: "Bitcoin Optech Newsletter #421 - SHRINCS draft BIP, a semi-stateful hash-based signature scheme (4 September 2026)", url: "https://bitcoinops.org/en/newsletters/2026/09/04/" }
+  - { label: "Bitcoin Optech Newsletter #412 - why Bitcoin post-quantum work has focused on hash-based signatures (July 3, 2026)", url: "https://bitcoinops.org/en/newsletters/2026/07/03/" }
+  - { label: "Bitcoin Optech Newsletter #421 - SHRINCS draft BIP, a semi-stateful hash-based signature scheme (September 4, 2026)", url: "https://bitcoinops.org/en/newsletters/2026/09/04/" }
 relatedTerms:
   - post-quantum-bitcoin
   - bip-361

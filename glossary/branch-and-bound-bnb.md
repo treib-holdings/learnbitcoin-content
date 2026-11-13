@@ -17,8 +17,8 @@ sources:
   - { label: "Mark Erhardt - An Evaluation of Coin Selection Strategies (2016)", url: "https://murch.one/wp-content/uploads/2016/11/erhardt2016coinselection.pdf" }
   - { label: "Bitcoin Core 0.17.0 release notes", url: "https://bitcoincore.org/en/releases/0.17.0/" }
   - { label: "Bitcoin Core - src/wallet/coinselection.cpp", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/coinselection.cpp" }
-  - { label: "Bitcoin Core PR #32150 - coinselection: Optimize BnB exploration (merged 3 June 2026)", url: "https://github.com/bitcoin/bitcoin/pull/32150" }
-  - { label: "Bitcoin Optech Newsletter, 12 June 2026 (the Branch and Bound rewrite)", url: "https://bitcoinops.org/en/newsletters/2026/06/12/" }
+  - { label: "Bitcoin Core PR #32150 - coinselection: Optimize BnB exploration (merged June 3, 2026)", url: "https://github.com/bitcoin/bitcoin/pull/32150" }
+  - { label: "Bitcoin Optech Newsletter, June 12, 2026 (the Branch and Bound rewrite)", url: "https://bitcoinops.org/en/newsletters/2026/06/12/" }
 relatedTerms:
   - coin-selection
   - changeless-transaction

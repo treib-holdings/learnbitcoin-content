@@ -10,11 +10,11 @@ keyTakeaways:
   - "Part of older or internal wallet logic, now usually hidden by HD frameworks"
 sources:
   - { label: "BIP-32 - Hierarchical Deterministic Wallets: the reference client caches (by default) 100 keys in a pool of reserve keys to avoid a backup after every transaction; nodes can keep a pool of N look-ahead keys to watch for incoming payments (2012)", url: "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" }
-  - { label: "Bitcoin Core - 0.13.0 release notes: newly created wallets use hierarchical deterministic key generation per BIP 32; backups of HD wallets can re-generate all possible private keys, even ones not yet generated at the time of the backup (23 August 2016)", url: "https://bitcoincore.org/en/releases/0.13.0/" }
-  - { label: "Bitcoin Core - 0.15.0 release notes: the default keypool increased to 1000 keys to make recovery more robust (14 September 2017)", url: "https://bitcoincore.org/en/releases/0.15.0/" }
+  - { label: "Bitcoin Core - 0.13.0 release notes: newly created wallets use hierarchical deterministic key generation per BIP 32; backups of HD wallets can re-generate all possible private keys, even ones not yet generated at the time of the backup (August 23, 2016)", url: "https://bitcoincore.org/en/releases/0.13.0/" }
+  - { label: "Bitcoin Core - 0.15.0 release notes: the default keypool increased to 1000 keys to make recovery more robust (September 14, 2017)", url: "https://bitcoincore.org/en/releases/0.15.0/" }
   - { label: "BIP-44 - Multi-Account Hierarchy for Deterministic Wallets: address gap limit is currently set to 20 (2014)", url: "https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki" }
   - { label: "Bitcoin Core - doc/descriptors.md: ranged descriptors cover child keys in a configurable range, by default 0-1000 (accessed 2026-10-14)", url: "https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md" }
-  - { label: "Bitcoin Core - 30.0 release notes: BDB legacy wallets can no longer be created or loaded and can be migrated to the descriptor wallet format (10 October 2025)", url: "https://bitcoincore.org/en/releases/30.0/" }
+  - { label: "Bitcoin Core - 30.0 release notes: BDB legacy wallets can no longer be created or loaded and can be migrated to the descriptor wallet format (October 10, 2025)", url: "https://bitcoincore.org/en/releases/30.0/" }
 relatedTerms:
   - bitcoin-core
   - hd-wallet-hierarchical-deterministic-wallet

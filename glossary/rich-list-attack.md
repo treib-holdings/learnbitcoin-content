@@ -12,10 +12,10 @@ keyTakeaways:
   - "The pool cannot stop it, because with no operator there is nobody to check that two accounts are different people"
   - "The original P2Pool hit the same squeeze through ordinary growth, with no attacker involved"
 sources:
-  - { label: "7d5x9 - Decentralized Coinbase Payout Protocols (DCPP): A Framework for Discussion (Delving Bitcoin, 11 November 2026): names the rich list attack, the two conditions it needs, what happens to excluded miners, and the two ways out the author considers viable", url: "https://delvingbitcoin.org/t/decentralized-coinbase-payout-protocols-dcpp-a-framework-for-discussion/3060" }
-  - { label: "windpath - post 13795 in the P2Pool thread on BitcoinTalk (24 November 2015): 'You can only split the 25BTC reward so many ways in a decentralized trust-less environment, and smaller miners will always get squeezed out'", url: "https://bitcointalk.org/index.php?topic=18313.msg13057899#msg13057899" }
+  - { label: "7d5x9 - Decentralized Coinbase Payout Protocols (DCPP): A Framework for Discussion (Delving Bitcoin, November 11, 2026): names the rich list attack, the two conditions it needs, what happens to excluded miners, and the two ways out the author considers viable", url: "https://delvingbitcoin.org/t/decentralized-coinbase-payout-protocols-dcpp-a-framework-for-discussion/3060" }
+  - { label: "windpath - post 13795 in the P2Pool thread on BitcoinTalk (November 24, 2015): 'You can only split the 25BTC reward so many ways in a decentralized trust-less environment, and smaller miners will always get squeezed out'", url: "https://bitcointalk.org/index.php?topic=18313.msg13057899#msg13057899" }
   - { label: "p2pool/p2pool - p2pool/data.py and p2pool/work.py: a coinbase limited to the 4,000 largest payouts, and a harder share target for a miner whose expected payout per block is under the dust threshold", url: "https://github.com/p2pool/p2pool/blob/master/p2pool/data.py" }
-  - { label: "LearnBitcoin - the coinbase transaction of every P2Pool block, 2,545 rows read from the Bitcoin Core node behind ChainQuery on 11 November 2026: the most payouts in one block was 553, in block 236,962 (CSV)", url: "https://www.learnbitcoin.com/downloads/p2pool-coinbases.csv" }
+  - { label: "LearnBitcoin - the coinbase transaction of every P2Pool block, 2,545 rows read from the Bitcoin Core node behind ChainQuery on November 11, 2026: the most payouts in one block was 553, in block 236,962 (CSV)", url: "https://www.learnbitcoin.com/downloads/p2pool-coinbases.csv" }
 relatedTerms:
   - payout-settlement-griefing
   - decentralized-coinbase-payout-protocol

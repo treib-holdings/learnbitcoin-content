@@ -12,7 +12,7 @@ keyTakeaways:
   - "Most forms rely on one miner posing as many, which a pool with no operator has no way to detect"
   - "The best-known form is the rich list attack, where a large miner crowds small miners out of the block's payout slots"
 sources:
-  - { label: "7d5x9 - Decentralized Coinbase Payout Protocols (DCPP): A Framework for Discussion (Delving Bitcoin, 11 November 2026): the post that names payout settlement griefing and describes each example given here", url: "https://delvingbitcoin.org/t/decentralized-coinbase-payout-protocols-dcpp-a-framework-for-discussion/3060" }
+  - { label: "7d5x9 - Decentralized Coinbase Payout Protocols (DCPP): A Framework for Discussion (Delving Bitcoin, November 11, 2026): the post that names payout settlement griefing and describes each example given here", url: "https://delvingbitcoin.org/t/decentralized-coinbase-payout-protocols-dcpp-a-framework-for-discussion/3060" }
 relatedTerms:
   - rich-list-attack
   - decentralized-coinbase-payout-protocol

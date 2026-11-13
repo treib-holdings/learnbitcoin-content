@@ -16,9 +16,9 @@ sources:
   - { label: "Bitcoin Core - src/wallet/coinselection.h (the comment above RecalculateWaste)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/coinselection.h" }
   - { label: "Bitcoin Core - src/wallet/spend.cpp (cost of change: created at the effective feerate, spent at the discard feerate)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/wallet/spend.cpp" }
   - { label: "Bitcoin Core PR #22009 - Decide which coin selection solution to use based on waste metric (Andrew Chow; merged September 2021, shipped in 23.0)", url: "https://github.com/bitcoin/bitcoin/pull/22009" }
-  - { label: "Bitcoin Optech Newsletter, 8 September 2021 (the waste score in plain words)", url: "https://bitcoinops.org/en/newsletters/2021/09/08/" }
-  - { label: "Bitcoin Optech Newsletter, 25 May 2022 (Mark Erhardt's definition of waste)", url: "https://bitcoinops.org/en/newsletters/2022/05/25/" }
-  - { label: "Bitcoin Optech Newsletter, 31 July 2026 (the long-term feerate against the discard feerate)", url: "https://bitcoinops.org/en/newsletters/2026/07/31/" }
+  - { label: "Bitcoin Optech Newsletter, September 8, 2021 (the waste score in plain words)", url: "https://bitcoinops.org/en/newsletters/2021/09/08/" }
+  - { label: "Bitcoin Optech Newsletter, May 25, 2022 (Mark Erhardt's definition of waste)", url: "https://bitcoinops.org/en/newsletters/2022/05/25/" }
+  - { label: "Bitcoin Optech Newsletter, July 31, 2026 (the long-term feerate against the discard feerate)", url: "https://bitcoinops.org/en/newsletters/2026/07/31/" }
   - { label: "Bitcoin Core PR #27877 - Add CoinGrinder coin selection algorithm (the sentence on metrics for privacy and wallet health)", url: "https://github.com/bitcoin/bitcoin/pull/27877" }
 relatedTerms:
   - coin-selection

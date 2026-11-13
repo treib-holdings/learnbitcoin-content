@@ -40,6 +40,6 @@ Verification runs the construction backwards. The node hashes the revealed scrip
 
 What the chain learns from a script-path spend is one script, the internal key, and the leaf's depth. What it does not learn is the rest of the tree: BIP-341's own five-leaf example spends one leaf by revealing three hashes and nothing about the other four scripts. The depth does leak a little about the tree's shape, which is why the BIP suggests wallets vary their tree layouts. And the choice of door is itself information. Using the script path announces that the key path was not used, and the usual reason is that the people behind the internal key did not all sign.
 
-Script-path spends were about one in ten Taproot spends in the 30 days to 17 September 2026, though they were nearly half in the first quarter of that year, with one large exception. During the inscription waves of 2023 and early 2024 they were the majority, because inscriptions store their data inside a leaf script that is revealed exactly this way.
+Script-path spends were about one in ten Taproot spends in the 30 days to September 17, 2026, though they were nearly half in the first quarter of that year, with one large exception. During the inscription waves of 2023 and early 2024 they were the majority, because inscriptions store their data inside a leaf script that is revealed exactly this way.
 
 See [How Taproot Actually Works](/rabbit-hole/how-taproot-works) for the construction and what each door reveals.

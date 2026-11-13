@@ -4,8 +4,8 @@
     "date": "2026-11-10",
     "page": "/rabbit-hole/time-warp",
     "title": "The Time Warp: How Lying About the Time Could Break Bitcoin's Difficulty",
-    "wrong": "The chapter said Bitcoin 0.1.0 came out on 9 January 2009, in the text and in two source labels.",
-    "fixed": "Satoshi's announcement, \"Bitcoin v0.1 released\", reached the Cryptography Mailing List on 8 January 2009 (14:27 EST, 19:27 UTC). The chapter and its Spanish edition now say the 8th, and the announcement is listed in the sources.",
+    "wrong": "The chapter said Bitcoin 0.1.0 came out on January 9, 2009, in the text and in two source labels.",
+    "fixed": "Satoshi's announcement, \"Bitcoin v0.1 released\", reached the Cryptography Mailing List on January 8, 2009 (14:27 EST, 19:27 UTC). The chapter and its Spanish edition now say the 8th, and the announcement is listed in the sources.",
     "commit": "932484d",
     "source": "https://www.metzdowd.com/pipermail/cryptography/2009-January/014994.html",
     "credit": "a sourcing pass over the dates in the rabbit holes (2026-11-09)"
@@ -27,7 +27,7 @@
     "page": "/rabbit-hole/bitcoin-is-dead",
     "title": "Rat Poison, Tulips and a Pet Rock: Everything Bitcoin's Been Called (so far)",
     "wrong": "The chapter said accepting bitcoin in El Salvador became voluntary in January 2025.",
-    "fixed": "January 2025 is when the Legislative Assembly passed the reform (Decreto Legislativo No. 199, 29 January 2025, published in the Diario Oficial the next day). Its Article 8 puts it in force ninety days after publication, at the end of April 2025. The chapter and the text description of its bans diagram now say so, and the decree is listed in the sources.",
+    "fixed": "January 2025 is when the Legislative Assembly passed the reform (Decreto Legislativo No. 199, January 29, 2025, published in the Diario Oficial the next day). Its Article 8 puts it in force ninety days after publication, at the end of April 2025. The chapter and the text description of its bans diagram now say so, and the decree is listed in the sources.",
     "commit": "8250cad",
     "source": "https://www.jurisprudencia.gob.sv/DocumentosBoveda/R/2/2020-2029/2021/06/1080B6.HTML",
     "credit": "a sourcing pass over the dates in the rabbit holes (2026-11-09)"
@@ -38,7 +38,7 @@
     "page": "/rabbit-hole/how-taproot-works",
     "title": "How Taproot Actually Works",
     "wrong": "The chapter gave the share of transactions that \"spent one\" Taproot output, 5 percent in September 2026 and 63 percent in January 2024, without saying what counts as a Taproot transaction or over what period the January figure was taken.",
-    "fixed": "It now says a transaction counts when any of its inputs is Taproot, the definition mainnet.observer uses, links that chart next to the numbers, and gives the January 2024 figure as the whole month (63.1 percent; 5.2 percent over the 30 days ending 17 September 2026), recomputed from mainnet.observer's public CSVs.",
+    "fixed": "It now says a transaction counts when any of its inputs is Taproot, the definition mainnet.observer uses, links that chart next to the numbers, and gives the January 2024 figure as the whole month (63.1 percent; 5.2 percent over the 30 days ending September 17, 2026), recomputed from mainnet.observer's public CSVs.",
     "commit": "5f8d239",
     "source": "https://mainnet.observer/charts/transactions-spending-taproot/",
     "credit": "Veldrin (BitcoinTalk)"
@@ -49,7 +49,7 @@
     "page": "/glossary/time-warp-attack",
     "title": "Time Warp Attack",
     "wrong": "The entry called ten minutes and three tenths of a second the real target, said testnet4 was the only Bitcoin network enforcing a time warp rule, said BIP-54 moved to two hours after testnet4 showed pool software breaking the ten-minute version, put the cost of two hours under attack at about two seconds a block, and presented testnet3's 2024 block storms as its demonstration of a collapsing difficulty.",
-    "fixed": "Dividing two weeks by 2,015 gives 600.3 seconds, while blocks at constant hash rate average about 600.6 (Wuille). Bitcoin Inquisition has enforced BIP-54 on signet since February 2026. Two hours was a precaution after testnet4 exposed pool software that stamped blocks from its own clock, and under a sustained attack it costs about three seconds a block (599.9997 against 596.7211 seconds in Wuille's simulation). Testnet3 carries a time warp Greg Maxwell planted on purpose in July 2012; the 2024 storms were the minimum-difficulty bug. The discovery is now dated: ArtForz, BitcoinTalk, 12 September 2011.",
+    "fixed": "Dividing two weeks by 2,015 gives 600.3 seconds, while blocks at constant hash rate average about 600.6 (Wuille). Bitcoin Inquisition has enforced BIP-54 on signet since February 2026. Two hours was a precaution after testnet4 exposed pool software that stamped blocks from its own clock, and under a sustained attack it costs about three seconds a block (599.9997 against 596.7211 seconds in Wuille's simulation). Testnet3 carries a time warp Greg Maxwell planted on purpose in July 2012; the 2024 storms were the minimum-difficulty bug. The discovery is now dated: ArtForz, BitcoinTalk, September 12, 2011.",
     "commit": "5e82057",
     "source": "https://delvingbitcoin.org/t/timewarp-attack-600-second-grace-period/1326/32",
     "credit": "the time warp chapter's research pass (2026-11-02)"
@@ -203,7 +203,7 @@
     "page": "/rabbit-hole/address-reuse",
     "title": "Use It Once: Why Reusing a Bitcoin Address Is Dangerous",
     "wrong": "The 2013 section said one address per payment means one compromised key costs one payment, and that a key that signs once cannot leak through a repeated nonce, which read as if fresh addresses were the whole defense against a broken random number generator.",
-    "fixed": "It now says fresh addresses shrink the damage without repairing the generator: if a wallet's random numbers were bad, every key it made with them is suspect, which is why the bitcoin.org alert of 11 August 2013 called for new keys from 'a repaired random number generator', not just for new addresses.",
+    "fixed": "It now says fresh addresses shrink the damage without repairing the generator: if a wallet's random numbers were bad, every key it made with them is suspect, which is why the bitcoin.org alert of August 11, 2013, called for new keys from 'a repaired random number generator', not just for new addresses.",
     "commit": "087caae",
     "source": "https://bitcoin.org/en/alert/2013-08-11-android",
     "credit": "pooya87 and nc50lc (BitcoinTalk)"
@@ -574,7 +574,7 @@
     "page": "/glossary/reorg-reorganization",
     "title": "Reorg (Reorganization)",
     "wrong": "The entry called the 25-block reorganization of March 2013 the deepest a software disagreement has caused on mainnet, said deep reorgs have been caused by brief network partitions or deliberate testnet attacks, and described the abandoned blocks as invalidated.",
-    "fixed": "The 53-block reorganization of 16 August 2010, when the patched chain overtook the chain carrying the value overflow block, was deeper; the entry now names both, drops the unsupported causes, and calls the abandoned blocks stale, which is what they are.",
+    "fixed": "The 53-block reorganization of August 16, 2010, when the patched chain overtook the chain carrying the value overflow block, was deeper; the entry now names both, drops the unsupported causes, and calls the abandoned blocks stale, which is what they are.",
     "commit": "c52bac9",
     "source": "https://mempool.space/block/00000000005c22d199706df1c38b38d76f8401920dcbe91edf3417f8847da707"
   },
@@ -844,7 +844,7 @@
     "page": "/glossary/celsius-genesis-3ac-cluster",
     "title": "Celsius, Genesis, and 3AC (the 2022 Contagion)",
     "wrong": "The entry presented Celsius's June 2022 withdrawal freeze as a result of Three Arrows Capital's default, and said BlockFi went down the same way as the lenders 3AC failed to repay.",
-    "fixed": "Celsius froze withdrawals on 12 June 2022, before 3AC was put into liquidation at the end of that month. BlockFi was hurt by 3AC's collapse but kept going on a $400 million credit line from FTX, and filed for bankruptcy after FTX failed in November 2022.",
+    "fixed": "Celsius froze withdrawals on June 12, 2022, before 3AC was put into liquidation at the end of that month. BlockFi was hurt by 3AC's collapse but kept going on a $400 million credit line from FTX, and filed for bankruptcy after FTX failed in November 2022.",
     "commit": "659e6f9",
     "source": "https://www.justice.gov/usao-sdny/pr/founder-celsius-sentenced-12-years-fraud-and-market-manipulation"
   },
@@ -883,8 +883,8 @@
     "date": "2026-10-10",
     "page": "/glossary/ftx",
     "title": "FTX",
-    "wrong": "The entry said FTX, Alameda and roughly 130 affiliated companies filed for bankruptcy on 11 November 2022, and that Sam Bankman-Fried was convicted on seven fraud counts.",
-    "fixed": "The court record shows FTX Trading and 101 affiliated companies filing on 11 and 14 November 2022. Bankman-Fried was convicted on all seven counts against him, including fraud and conspiracy to launder money.",
+    "wrong": "The entry said FTX, Alameda and roughly 130 affiliated companies filed for bankruptcy on November 11, 2022, and that Sam Bankman-Fried was convicted on seven fraud counts.",
+    "fixed": "The court record shows FTX Trading and 101 affiliated companies filing on November 11 and 14, 2022. Bankman-Fried was convicted on all seven counts against him, including fraud and conspiracy to launder money.",
     "commit": "659e6f9",
     "source": "https://www.justice.gov/usao-sdny/pr/statement-us-attorney-damian-williams-conviction-samuel-bankman-fried"
   },
@@ -1064,7 +1064,7 @@
     "page": "/rabbit-hole/mt-gox-ftx-graveyard",
     "title": "Mt. Gox to FTX: The Custody Graveyard",
     "wrong": "The chapter said customers lost money in every one of the seven collapses, told the 2022 story as if Three Arrows Capital's default set off Celsius's freeze, said about 130 companies filed for bankruptcy with FTX, and said Sam Bankman-Fried was convicted on seven fraud counts.",
-    "fixed": "In most of the collapses customers lost some money for good. Celsius froze withdrawals on 12 June 2022, before 3AC was put into liquidation at the end of that month. FTX, Alameda and about 100 related companies filed for bankruptcy, and Bankman-Fried was convicted on all seven counts, including fraud and conspiracy to launder money.",
+    "fixed": "In most of the collapses customers lost some money for good. Celsius froze withdrawals on June 12, 2022, before 3AC was put into liquidation at the end of that month. FTX, Alameda and about 100 related companies filed for bankruptcy, and Bankman-Fried was convicted on all seven counts, including fraud and conspiracy to launder money.",
     "commit": "8bb2e1c",
     "source": "https://www.justice.gov/usao-sdny/pr/statement-us-attorney-damian-williams-conviction-samuel-bankman-fried"
   },
@@ -1523,7 +1523,7 @@
     "page": "/glossary/discard-threshold",
     "title": "Discard Threshold",
     "wrong": "The entry said mempool.space's next-block fee estimate shows the discard threshold, and gave about 1 sat/vB as the floor in calm periods.",
-    "fixed": "mempool.space shows the mempool's fee floor on its dashboard as 'Minimum fee', relabeled 'Purging' when it rises above the relay minimum. Bitcoin Core 29.1 (September 2025) lowered the default relay minimum from 1 to 0.1 sat/vB. The entry's definition was itself corrected on 10 October 2026: in Bitcoin Core the discard threshold is a wallet setting for dropping tiny change, not the mempool floor.",
+    "fixed": "mempool.space shows the mempool's fee floor on its dashboard as 'Minimum fee', relabeled 'Purging' when it rises above the relay minimum. Bitcoin Core 29.1 (September 2025) lowered the default relay minimum from 1 to 0.1 sat/vB. The entry's definition was itself corrected on October 10, 2026: in Bitcoin Core the discard threshold is a wallet setting for dropping tiny change, not the mempool floor.",
     "commit": "94e823a",
     "source": "https://github.com/mempool/mempool/blob/master/frontend/src/app/dashboard/dashboard.component.html"
   },
@@ -2431,7 +2431,7 @@
     "page": "/rabbit-hole/decentralization",
     "title": "Decentralization",
     "wrong": "The chapter said the mining pool GHash.io \"approached 51%\" of the hash rate in 2014 and that miners left it \"within weeks\".",
-    "fixed": "GHash.io held 51 percent of the hash rate for a few hours on 13 June 2014, and miners moved their hash power to other pools within days.",
+    "fixed": "GHash.io held 51 percent of the hash rate for a few hours on June 13, 2014, and miners moved their hash power to other pools within days.",
     "commit": "a35bd87",
     "source": "https://www.theguardian.com/technology/2014/jun/16/bitcoin-currency-destroyed-51-attack-ghash-io"
   },
@@ -2461,7 +2461,7 @@
     "page": "/rabbit-hole/energy",
     "title": "Bitcoin and Energy",
     "wrong": "The chapter said mining uses about 173 TWh a year, roughly three quarters of one percent of global electricity, and put the sustainable share of its energy in the mid-50s to mid-60s percent. It also said Bitcoin uses half as much as gold mining and less than the world's tumble dryers.",
-    "fixed": "Cambridge's own figures give about 140 to 175 TWh, half to two-thirds of one percent (updated on 10 October 2026 to about 140 to 160 TWh, roughly half of one percent), and sustainable-mix estimates run from about a quarter to 60 percent, with Cambridge's 2025 survey at 52.4 percent. The gold figure was corrected to roughly equal, and the tumble-dryer line was dropped because Cambridge's own comparison did not support it.",
+    "fixed": "Cambridge's own figures give about 140 to 175 TWh, half to two-thirds of one percent (updated on October 10, 2026, to about 140 to 160 TWh, roughly half of one percent), and sustainable-mix estimates run from about a quarter to 60 percent, with Cambridge's 2025 survey at 52.4 percent. The gold figure was corrected to roughly equal, and the tumble-dryer line was dropped because Cambridge's own comparison did not support it.",
     "commit": "6851044",
     "source": "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/"
   },
@@ -2481,7 +2481,7 @@
     "page": "/glossary/energy-fud",
     "title": "Energy FUD",
     "wrong": "The entry put Bitcoin's mining draw \"in the high tens of TWh per year\".",
-    "fixed": "Cambridge's figures put it at about 140 to 175 TWh a year depending on method, roughly half to two-thirds of one percent of the world's electricity, a range that was itself updated on 10 October 2026 to about 140 to 160 TWh, roughly half of one percent.",
+    "fixed": "Cambridge's figures put it at about 140 to 175 TWh a year depending on method, roughly half to two-thirds of one percent of the world's electricity, a range that was itself updated on October 10, 2026, to about 140 to 160 TWh, roughly half of one percent.",
     "commit": "6851044",
     "source": "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/"
   },
@@ -2490,7 +2490,7 @@
     "date": "2026-10-05",
     "page": "/glossary/ftx",
     "title": "FTX",
-    "wrong": "The entry said FTX claims were valued as of 11 November 2022, \"when bitcoin was around $16,000\".",
+    "wrong": "The entry said FTX claims were valued as of November 11, 2022, \"when bitcoin was around $16,000\".",
     "fixed": "The bankruptcy estate's own conversion table priced bitcoin at $16,871 for that date, and the entry uses that figure.",
     "commit": "6851044",
     "source": "https://restructuring.ra.kroll.com/FTX/ExternalCall-DownloadPDF?id1=MzA1ODIxOA%3D%3D&id2=0"
@@ -2520,8 +2520,8 @@
     "date": "2026-10-05",
     "page": "/glossary/inflation-bug",
     "title": "Inflation Bug",
-    "wrong": "The entry dated the disclosure of CVE-2018-17144 to 18 September 2018 and said patched releases for all supported branches shipped within 24 hours. It called the 2018 bug the canonical example without mentioning the 2010 bug that actually created coins.",
-    "fixed": "The bug was reported on 17 September, Bitcoin Core 0.16.3 fixed it on 18 September, full disclosure came on 20 September, and the older branches were patched on 28 September. The entry names the affected versions, 0.15.0 to 0.16.2, and opens with the August 2010 overflow bug.",
+    "wrong": "The entry dated the disclosure of CVE-2018-17144 to September 18, 2018, and said patched releases for all supported branches shipped within 24 hours. It called the 2018 bug the canonical example without mentioning the 2010 bug that actually created coins.",
+    "fixed": "The bug was reported on September 17, Bitcoin Core 0.16.3 fixed it on September 18, full disclosure came on September 20, and the older branches were patched on September 28. The entry names the affected versions, 0.15.0 to 0.16.2, and opens with the August 2010 overflow bug.",
     "commit": "6851044",
     "source": "https://bitcoincore.org/en/2018/09/20/notice/"
   },
@@ -2541,7 +2541,7 @@
     "page": "/rabbit-hole/lightning-routing",
     "title": "Lightning Routing",
     "wrong": "The chapter's closing summary said Lightning fees are essentially free and that capacity \"keeps growing as more nodes open more channels\".",
-    "fixed": "Fees are tiny but never quite zero. Public capacity hit a record in late 2025 and then fell back in 2026, while the number of public nodes and channels had been shrinking since 2022, a claim that was itself corrected on 9 October 2026.",
+    "fixed": "Fees are tiny but never quite zero. Public capacity hit a record in late 2025 and then fell back in 2026, while the number of public nodes and channels had been shrinking since 2022, a claim that was itself corrected on October 9, 2026.",
     "commit": "6851044",
     "source": "https://bitcoinvisuals.com/static/data/data_daily.csv"
   },
@@ -2551,7 +2551,7 @@
     "page": "/rabbit-hole/mining",
     "title": "Mining",
     "wrong": "The chapter put mining at about 173 TWh a year, roughly three quarters of one percent of global electricity, cited \"two decades of empirical evidence\" for a system launched in 2009, and said geographic dispersion had roughly doubled, without a source.",
-    "fixed": "By Cambridge's methods mining draws about 140 to 175 TWh a year, half to two-thirds of one percent of the world's electricity, a range that was itself updated on 10 October 2026 to about 140 to 160 TWh, roughly half of one percent. The evidence is dated from 2009, and the unsourced dispersion claim was removed.",
+    "fixed": "By Cambridge's methods mining draws about 140 to 175 TWh a year, half to two-thirds of one percent of the world's electricity, a range that was itself updated on October 10, 2026, to about 140 to 160 TWh, roughly half of one percent. The evidence is dated from 2009, and the unsourced dispersion claim was removed.",
     "commit": "6851044",
     "source": "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/"
   },
@@ -2560,7 +2560,7 @@
     "date": "2026-10-05",
     "page": "/rabbit-hole/mt-gox-ftx-graveyard",
     "title": "Mt. Gox to FTX: The Custody Graveyard",
-    "wrong": "The chapter said FTX claims were valued as of 11 November 2022, \"when bitcoin was around $16,000\".",
+    "wrong": "The chapter said FTX claims were valued as of November 11, 2022, \"when bitcoin was around $16,000\".",
     "fixed": "The bankruptcy estate's conversion table priced bitcoin at $16,871 for that date, and the chapter uses that figure.",
     "commit": "6851044",
     "source": "https://restructuring.ra.kroll.com/FTX/ExternalCall-DownloadPDF?id1=MzA1ODIxOA%3D%3D&id2=0"
@@ -2600,7 +2600,7 @@
     "date": "2026-10-05",
     "page": "/glossary/bitcoin-obituaries",
     "title": "Bitcoin Obituaries",
-    "wrong": "The entry dated the first obituary to 15 December 2010, listed Paul Krugman's \"Bitcoin Is Evil\" among the famous entries on 99Bitcoins' list, and said obituaries pile up in the year after each top.",
+    "wrong": "The entry dated the first obituary to December 15, 2010, listed Paul Krugman's \"Bitcoin Is Evil\" among the famous entries on 99Bitcoins' list, and said obituaries pile up in the year after each top.",
     "fixed": "The first entry is a blog post from November 2010; 99Bitcoins dates it by its archived copy. Krugman's piece was never on that list, and obituaries cluster around each top and through the crash, with 113 of 2017's 124 coming before the December top.",
     "commit": "f4830ea",
     "source": "https://99bitcoins.com/bitcoin-obituaries/"
@@ -2610,8 +2610,8 @@
     "date": "2026-10-02",
     "page": "/glossary/intrinsic-value",
     "title": "Intrinsic Value",
-    "wrong": "The entry said the US \"ended convertibility to gold\" on 15 August 1971, which skipped the 1933-34 and 1968 changes that had already ended it for everyone but foreign governments and central banks.",
-    "fixed": "No one, not even a foreign central bank, has been able to redeem dollars for gold since 15 August 1971, when the US closed the last gold window.",
+    "wrong": "The entry said the US \"ended convertibility to gold\" on August 15, 1971, which skipped the 1933-34 and 1968 changes that had already ended it for everyone but foreign governments and central banks.",
+    "fixed": "No one, not even a foreign central bank, has been able to redeem dollars for gold since August 15, 1971, when the US closed the last gold window.",
     "commit": "be23d1b",
     "source": "https://www.federalreservehistory.org/essays/gold-convertibility-ends"
   },
@@ -2841,7 +2841,7 @@
     "page": "/rabbit-hole/mining",
     "title": "Mining",
     "wrong": "The chapter said each difficulty adjustment is clamped at +/-300% and that difficulty had grown about 10^13 times since 2009. It also put fees at 3 to 10% of miner revenue and mining at 0.5% of global electricity.",
-    "fixed": "Bitcoin Core caps each adjustment at a factor of four, so at most +300% up or -75% down, and difficulty has grown about 10^14 times. Fees were about 0.6% of miner revenue in the year to October 2026, and the energy share was changed to about 0.75%, a figure that was itself corrected on 5 October 2026.",
+    "fixed": "Bitcoin Core caps each adjustment at a factor of four, so at most +300% up or -75% down, and difficulty has grown about 10^14 times. Fees were about 0.6% of miner revenue in the year to October 2026, and the energy share was changed to about 0.75%, a figure that was itself corrected on October 5, 2026.",
     "commit": "8d556c3",
     "source": "https://github.com/bitcoin/bitcoin/blob/master/src/pow.cpp"
   },

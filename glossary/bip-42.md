@@ -10,7 +10,7 @@ keyTakeaways:
   - "Core to Bitcoin's 'sound money' narrative"
 sources:
   - { label: "BIP 42 - A finite monetary supply for Bitcoin", url: "https://github.com/bitcoin/bips/blob/master/bip-0042.mediawiki" }
-  - { label: "Bitcoin Core PR #3842 - Fix for GetBlockValue() after block 13,440,000 (merged 3 April 2014)", url: "https://github.com/bitcoin/bitcoin/pull/3842" }
+  - { label: "Bitcoin Core PR #3842 - Fix for GetBlockValue() after block 13,440,000 (merged April 3, 2014)", url: "https://github.com/bitcoin/bitcoin/pull/3842" }
   - { label: "Bitcoin Core source - GetBlockSubsidy (src/validation.cpp)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp" }
 relatedTerms:
   - bip-bitcoin-improvement-proposal

@@ -9,7 +9,7 @@ published: "2026-09-29"
 updated: "2026-10-12"
 shortDefinition: "The running list of times a journalist, economist, or executive declared Bitcoin dead, kept by the site 99Bitcoins since a first entry from November 2010. The list stood at 477 in September 2026. The count matters less than the pattern: the obituaries pile up around each top and through the crash that follows, and they say the same thing every cycle."
 keyTakeaways:
-  - "The first entry is a blog post from November 2010, when a bitcoin traded for about 22 cents (99Bitcoins dates it 15 December 2010, the day of the archived copy it links). The peak year was 2017, with more than 120 obituaries, followed by more than 90 in 2018"
+  - "The first entry is a blog post from November 2010, when a bitcoin traded for about 22 cents (99Bitcoins dates it December 15, 2010, the day of the archived copy it links). The peak year was 2017, with more than 120 obituaries, followed by more than 90 in 2018"
   - "The famous ones on the list: Forbes, 'So, That's the End of Bitcoin Then' (June 2011); Wired, 'The Rise and Fall of Bitcoin' (November 2011); Mike Hearn, 'The resolution of the Bitcoin experiment' (January 2016). Paul Krugman's 'Bitcoin Is Evil' (December 2013) is as famous but was never on 99Bitcoins' list"
   - "The list has a selection problem in both directions. Some entries are hedged predictions or headlines the writer did not choose, and nobody keeps the matching list of Bitcoiners who declared the dollar dead"
 sources:
@@ -39,7 +39,7 @@ sameAs:
 liveWidget: ~
 ---
 
-A Bitcoin obituary is a published claim, by someone with a platform, that Bitcoin is dead, worthless, or about to fail. The site 99Bitcoins has kept a dated list of them since the beginning, with a link to each. The first entry is a blog post arguing that Bitcoin could never be a currency, published in November 2010, when one traded for about 22 cents. 99Bitcoins dates it 15 December 2010, the day of the archived copy it links, and by June 2011 its author had added an update walking the argument back. By September 2026 the list had 477 entries. It has not grown since April 2024, when 99Bitcoins stopped adding to it; other trackers kept counting.
+A Bitcoin obituary is a published claim, by someone with a platform, that Bitcoin is dead, worthless, or about to fail. The site 99Bitcoins has kept a dated list of them since the beginning, with a link to each. The first entry is a blog post arguing that Bitcoin could never be a currency, published in November 2010, when one traded for about 22 cents. 99Bitcoins dates it December 15, 2010, the day of the archived copy it links, and by June 2011 its author had added an update walking the argument back. By September 2026 the list had 477 entries. It has not grown since April 2024, when 99Bitcoins stopped adding to it; other trackers kept counting.
 
 The shape of the list is more interesting than the number. Obituaries track the price: they pile up around each top, as bubble calls, and keep coming through the crash that follows. The peak was 2017, with 124 entries, 113 of them in the run-up to the December top, followed by 94 in 2018 as the price fell 84 percent. Searches for "is bitcoin dead" run the other way and spike in crash weeks, when the writers have mostly moved on. The [bear market](/glossary/bear-market) entry describes the same cycle from the price side.
 

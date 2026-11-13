@@ -10,11 +10,11 @@ keyTakeaways:
   - "Users end up with coins on both chains if they controlled keys"
 sources:
   - { label: "BIP 50 - March 2013 Chain Fork Post-Mortem (Gavin Andresen, 2013; 0.8 swapped Berkeley DB for LevelDB, older nodes hit the BDB lock limit, the 0.8 chain held about 60% of the hash power, and BTCGuild and Slush downgraded to 0.7 to end the split)", url: "https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki" }
-  - { label: "bitcoin.org - 11/12 March 2013 Chain Fork Information (the notice as updated 16 May 2013)", url: "https://bitcoin.org/en/alert/2013-03-11-chain-fork" }
-  - { label: "mempool.space - block 225,455 (06:20 UTC, 12 March 2013), where the chain every version could follow overtook the abandoned 25-block chain", url: "https://mempool.space/block/000000000000016924f85069603be8164578eedf113f44d60bf0438cba047c7f" }
-  - { label: "Bitcoin Cash - UAHF technical specification (GitHub, 2017; activation at Unix time 1501590000, 1 August 2017 12:20 UTC; the fork block must exceed 1 MB; blocks of at least 8 MB; signature digest revised for a non-SegWit deployment)", url: "https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/uahf-technical-spec.md" }
+  - { label: "bitcoin.org - 11/12 March 2013 Chain Fork Information (the notice as updated May 16, 2013)", url: "https://bitcoin.org/en/alert/2013-03-11-chain-fork" }
+  - { label: "mempool.space - block 225,455 (06:20 UTC, March 12, 2013), where the chain every version could follow overtook the abandoned 25-block chain", url: "https://mempool.space/block/000000000000016924f85069603be8164578eedf113f44d60bf0438cba047c7f" }
+  - { label: "Bitcoin Cash - UAHF technical specification (GitHub, 2017; activation at Unix time 1501590000, August 1, 2017, 12:20 UTC; the fork block must exceed 1 MB; blocks of at least 8 MB; signature digest revised for a non-SegWit deployment)", url: "https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/uahf-technical-spec.md" }
   - { label: "Bitcoin SV - release 0.1.0 notes (GitHub, October 2018; support for the November 2018 upgrade that split it from Bitcoin Cash, 128 MB blocks)", url: "https://github.com/bitcoin-sv/bitcoin-sv/releases/tag/v0.1.0" }
-  - { label: "Blockchair - Bitcoin Cash chain stats (JSON; 13 October 2026: 24-hour hash rate 3.2 EH/s against 1,069 EH/s on the matching Bitcoin endpoint, api.blockchair.com/bitcoin/stats)", url: "https://api.blockchair.com/bitcoin-cash/stats" }
+  - { label: "Blockchair - Bitcoin Cash chain stats (JSON; October 13, 2026: 24-hour hash rate 3.2 EH/s against 1,069 EH/s on the matching Bitcoin endpoint, api.blockchair.com/bitcoin/stats)", url: "https://api.blockchair.com/bitcoin-cash/stats" }
 relatedTerms:
   - airdrop-btc-fork
   - bitcoin-cash
@@ -36,7 +36,7 @@ Once split, each chain proceeds with its own blocks, its own miners, and its own
 
 Notable chain splits in Bitcoin's history:
 
-- **[Bitcoin Cash](/glossary/bitcoin-cash) (BCH) - August 2017.** The big one. The [block size war](/glossary/block-size-war) of 2015-2017 culminated in BCH forking off Bitcoin on 1 August 2017 with 8 MB blocks and no [SegWit](/glossary/segwit-segregated-witness-bip-141). Today BCH still exists as a separate network with a few tenths of a percent of Bitcoin's hash rate.
+- **[Bitcoin Cash](/glossary/bitcoin-cash) (BCH) - August 2017.** The big one. The [block size war](/glossary/block-size-war) of 2015-2017 culminated in BCH forking off Bitcoin on August 1, 2017, with 8 MB blocks and no [SegWit](/glossary/segwit-segregated-witness-bip-141). Today BCH still exists as a separate network with a few tenths of a percent of Bitcoin's hash rate.
 - **[Bitcoin SV](/glossary/bitcoin-sv-bsv) (BSV) - November 2018.** A fork from BCH, not Bitcoin, with 128 MB blocks. Two forks removed from Bitcoin, and further still from relevance.
 - **March 2013 (accidental, and it healed).** Version 0.8 replaced the database under the node software and, without anyone knowing, removed a limit that older versions had been enforcing. One large block split old nodes from new for 7 hours 41 minutes. Miners with most of the hash power then abandoned their own 25-block chain so that the chain older nodes could follow would overtake it. Unlike the two splits above, this one reconciled. The log of that night is in [The 2013 Chain Fork](/rabbit-hole/2013-chain-fork).
 

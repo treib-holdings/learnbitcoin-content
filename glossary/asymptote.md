@@ -11,8 +11,8 @@ keyTakeaways:
 sources:
   - { label: "Supply Schedule rabbit hole", url: "https://www.learnbitcoin.com/rabbit-hole/supply" }
   - { label: "Bitcoin Core source - GetBlockSubsidy, the halving schedule every node enforces (src/validation.cpp)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp" }
-  - { label: "mempool.space - block 969,999 (5 October 2026); 20,093,750 BTC issued by the schedule through this block", url: "https://mempool.space/block/000000000000000000001d95e5f7284cb199b8620eb6a7938dd9696f85751bb3" }
-  - { label: "ChainQuery - circulating supply and annual inflation rate (live; 0.8173% on 9 October 2026, cross-checked against the GetBlockSubsidy schedule)", url: "https://chainquery.com/api/edu/supply" }
+  - { label: "mempool.space - block 969,999 (October 5, 2026); 20,093,750 BTC issued by the schedule through this block", url: "https://mempool.space/block/000000000000000000001d95e5f7284cb199b8620eb6a7938dd9696f85751bb3" }
+  - { label: "ChainQuery - circulating supply and annual inflation rate (live; 0.8173% on October 9, 2026, cross-checked against the GetBlockSubsidy schedule)", url: "https://chainquery.com/api/edu/supply" }
   - { label: "BIP 42 - A finite monetary supply for Bitcoin (2014; keeps the subsidy at zero after halving 64)", url: "https://github.com/bitcoin/bips/blob/master/bip-0042.mediawiki" }
 relatedTerms:
   - block-subsidy

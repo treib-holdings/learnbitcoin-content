@@ -12,7 +12,7 @@ sources:
   - { label: "BIP-383 - Multisig Output Script Descriptors (key limits: 3 bare, 15 in P2SH, 20 otherwise)", url: "https://github.com/bitcoin/bips/blob/master/bip-0383.mediawiki" }
   - { label: "BIP-342 - Validation of Taproot Scripts (OP_CHECKMULTISIG disabled, OP_CHECKSIGADD added)", url: "https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki" }
   - { label: "BIP-341 - Taproot deployment: activated at block 709632", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki" }
-  - { label: "mempool.space - block 709,632, the Taproot activation block (14 November 2021)", url: "https://mempool.space/block/0000000000000000000687bca986194dc2c1f949318629b44bb54ec0a94d8244" }
+  - { label: "mempool.space - block 709,632, the Taproot activation block (November 14, 2021)", url: "https://mempool.space/block/0000000000000000000687bca986194dc2c1f949318629b44bb54ec0a94d8244" }
   - { label: "BIP-141 - Segregated Witness: P2WSH bypasses the 520-byte push limit (10,000-byte script max)", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
   - { label: "BIP-327 - MuSig2 for BIP340-compatible Multi-Signatures", url: "https://github.com/bitcoin/bips/blob/master/bip-0327.mediawiki" }
   - { label: "BIP-445 (Draft as of October 2026) - FROST Signing Protocol for BIP340 Signatures", url: "https://github.com/siv2r/bip-frost-signing" }

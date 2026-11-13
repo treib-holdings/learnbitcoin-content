@@ -13,7 +13,7 @@ sources:
   - { label: "Federal Reserve - Is it legal for a business to refuse cash? (FAQ quoting 31 U.S.C. 5103: coins and currency are legal tender for all debts, public charges, taxes, and dues)", url: "https://www.federalreserve.gov/faqs/currency_12772.htm" }
   - { label: "BLS - CPI Inflation Calculator ($100 in January 1913 has the same buying power as $3,418.16 in August 2026)", url: "https://data.bls.gov/cgi-bin/cpicalc.pl?cost1=100&year1=191301&year2=202608" }
   - { label: "INDEC - Indice de precios al consumidor, serie historica, sheet 'Indices IPC Cobertura Nacional' (national general index, December 2016 = 100: 126.99 in January 2018, 12,276.77 in August 2026)", url: "https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_09_26.xls" }
-  - { label: "Satoshi Nakamoto - Bitcoin open source implementation of P2P currency, P2P Foundation, 11 February 2009 (the central bank must be trusted not to debase the currency, but the history of fiat currencies is full of breaches of that trust)", url: "https://satoshi.nakamotoinstitute.org/posts/p2pfoundation/1/" }
+  - { label: "Satoshi Nakamoto - Bitcoin open source implementation of P2P currency, P2P Foundation, February 11, 2009 (the central bank must be trusted not to debase the currency, but the history of fiat currencies is full of breaches of that trust)", url: "https://satoshi.nakamotoinstitute.org/posts/p2pfoundation/1/" }
   - { label: "Bitcoin Core source - GetBlockSubsidy, the fixed issuance schedule every node enforces (src/validation.cpp)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp" }
 relatedTerms:
   - bitcoin-atm

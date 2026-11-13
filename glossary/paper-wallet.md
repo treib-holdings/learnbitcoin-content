@@ -10,11 +10,11 @@ keyTakeaways:
   - "Largely supplanted by hardware wallets or more robust cold storage"
 sources:
   - { label: "Bitcoin Wiki - Paper wallet: an obsolete and unsafe method popular between 2011 and 2016; change addresses are not handled; sweep the entire balance into a deterministic wallet", url: "https://en.bitcoin.it/wiki/Paper_wallet" }
-  - { label: "MyCrypto - Disclosure: key generation vulnerability found on WalletGenerator.net, served code did not match GitHub from after 17 August 2018 until 23 May 2019 (24 May 2019)", url: "https://blog.mycrypto.com/disclosure--key-generation-vulnerability-found-on-walletgenerator-net---potentially-malicious-/" }
+  - { label: "MyCrypto - Disclosure: key generation vulnerability found on WalletGenerator.net, served code did not match GitHub from after August 17, 2018, until May 23, 2019 (May 24, 2019)", url: "https://blog.mycrypto.com/disclosure--key-generation-vulnerability-found-on-walletgenerator-net---potentially-malicious-/" }
   - { label: "Bitcoin Wiki - BitcoinPaperWallet: sold in April 2018, later found returning 60 pre-generated keypairs hidden in a fake unit test", url: "https://en.bitcoin.it/wiki/BitcoinPaperWallet" }
   - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 9, Combining and Splitting Value: one output for the payment and one returning the change (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "BIP-39 - Mnemonic code for generating deterministic keys (2013)", url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" }
-  - { label: "Bitcoin Core 30.0 release notes - legacy wallets can no longer be created or loaded; importprivkey and the other legacy-only RPCs removed (10 October 2025)", url: "https://bitcoincore.org/en/releases/30.0/" }
+  - { label: "Bitcoin Core 30.0 release notes - legacy wallets can no longer be created or loaded; importprivkey and the other legacy-only RPCs removed (October 10, 2025)", url: "https://bitcoincore.org/en/releases/30.0/" }
 relatedTerms:
   - address
   - bitcoin-inheritance-planning

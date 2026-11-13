@@ -10,7 +10,7 @@ keyTakeaways:
   - "Receiving twice at an address that has never spent leaks privacy; spending once and then receiving again leaks the key too. Modern wallets hand out a fresh address for every payment, so the fix is to stop fighting them"
 sources:
   - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 10, Privacy: a new key pair should be used for each transaction to keep them from being linked to a common owner (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
-  - { label: "Satoshi Nakamoto - bitcointalk, 25 November 2009: for greater privacy, it's best to use bitcoin addresses only once", url: "https://satoshi.nakamotoinstitute.org/posts/bitcointalk/11/" }
+  - { label: "Satoshi Nakamoto - bitcointalk, November 25, 2009: for greater privacy, it's best to use bitcoin addresses only once", url: "https://satoshi.nakamotoinstitute.org/posts/bitcointalk/11/" }
   - { label: "BIP-360 - Pay-to-Merkle-Root (P2MR): poor wallet hygiene such as address reuse increases vulnerability to long exposure attacks; protection from them does not depend on post-quantum signatures activating", url: "https://github.com/bitcoin/bips/blob/master/bip-0360.mediawiki" }
   - { label: "Bitcoin Wiki - Address reuse", url: "https://en.bitcoin.it/wiki/Address_reuse" }
   - { label: "ChainQuery - Quantum exposure report (snapshot 2026-10-11, block 970,878: 5,172,596 BTC still sitting at hashed addresses that had already been spent from)", url: "https://chainquery.com/reports/quantum-exposure" }

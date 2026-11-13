@@ -18,7 +18,7 @@ sources:
   - { label: "Bitcoin Optech - Coin selection topic", url: "https://bitcoinops.org/en/topics/coin-selection/" }
   - { label: "Bitcoin Core PR #22009 - Decide which coin selection solution to use based on waste metric (shipped in 23.0)", url: "https://github.com/bitcoin/bitcoin/pull/22009" }
   - { label: "Bitcoin Core PR #24584 - wallet: avoid mixing different OutputTypes during coin selection (shipped in 24.0.1)", url: "https://github.com/bitcoin/bitcoin/pull/24584" }
-  - { label: "Bitcoin Optech Newsletter, 10 August 2022 (single-type input sets)", url: "https://bitcoinops.org/en/newsletters/2022/08/10/" }
+  - { label: "Bitcoin Optech Newsletter, August 10, 2022 (single-type input sets)", url: "https://bitcoinops.org/en/newsletters/2022/08/10/" }
 relatedTerms:
   - utxo-unspent-transaction-output
   - utxo-pool

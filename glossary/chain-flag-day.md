@@ -9,7 +9,7 @@ keyTakeaways:
   - "Popular in user-activated soft fork strategies"
   - "Can unify the network or risk a chain split"
 sources:
-  - { label: "BIP 341 - Deployment: modified BIP 9, 90% threshold, signaling 24 April to 11 August 2021, minimum activation height 709,632", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#deployment" }
+  - { label: "BIP 341 - Deployment: modified BIP 9, 90% threshold, signaling April 24 to August 11, 2021, minimum activation height 709,632", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#deployment" }
   - { label: "BIP 148 - Mandatory activation of segwit deployment, by Shaolin Fry (a BIP16-like flag day soft fork: from midnight August 1, 2017, by median time past, blocks that do not signal for SegWit on bit 1 are rejected, until SegWit locks in)", url: "https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki" }
   - { label: "BIP 91 - Reduced threshold Segwit MASF (activates once 269 of 336 blocks, 80%, signal on bit 4; while active, blocks that do not signal for SegWit on bit 1 are rejected)", url: "https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki" }
   - { label: "mempool.space - block 476,784 (02:53 UTC, July 21, 2017), first block of BIP 91's locked-in period; 284 of the previous 336 blocks signaled bit 4", url: "https://mempool.space/block/000000000000000000b01b490a1c1f383e10feabefbe0afda46e185b42928ab5" }
