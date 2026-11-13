@@ -2,7 +2,7 @@
 title: "Transaction Fee"
 slug: transaction-fee
 draft: false
-updated: "2026-10-09"
+updated: "2026-11-13"
 shortDefinition: "An amount included by the sender to reward miners for prioritizing transaction confirmation."
 keyTakeaways:
   - "Motivates miners to include your transaction in a block"
@@ -14,6 +14,7 @@ sources:
   - { label: "mempool.space API - median fee rates in mined blocks, last 3 years (peak on April 20, 2024)", url: "https://mempool.space/api/v1/mining/blocks/fee-rates/3y" }
   - { label: "Ordinals docs - Runes specification (activates on block 840,000)", url: "https://docs.ordinals.com/runes/specification.html" }
   - { label: "mempool.space - block fee rates chart (in 2026 about a third of blocks had a median fee rate under 1 sat/vB)", url: "https://mempool.space/graphs/mining/block-fee-rates" }
+  - { label: "Bitcoin Optech - Transaction size calculator (1 input, 2 outputs: 140.5 vbytes for P2WPKH; 154 for P2TR, a 57.5 vbyte input and two 43 vbyte outputs)", url: "https://bitcoinops.org/en/tools/calc-size/" }
 relatedTerms:
   - absolute-fee
   - accelerator
@@ -39,11 +40,11 @@ A transaction fee is what you pay [miners](/glossary/miner) to include your [Bit
 Fees are quoted as a *rate*, not a total: **sats per virtual byte (sat/vB)**. A larger transaction costs more in fees at the same rate. Typical transaction sizes:
 
 - Simple [P2WPKH](/glossary/p2wpkh-pay-witness-public-key-hash) (1 input, 2 outputs): ~140 vB
-- [Taproot](/glossary/taproot) (1 input, 2 outputs): ~110 vB
+- [Taproot](/glossary/taproot) (1 input, 2 outputs): ~154 vB (its input is smaller than P2WPKH's, its outputs bigger)
 - 2-of-3 multisig: ~250 vB
 - Consolidations with many inputs: 500+ vB
 
-At 10 sat/vB, those would cost 1,400 / 1,100 / 2,500 / 5,000+ sats respectively. Real fees vary wildly depending on network congestion.
+At 10 sat/vB, those would cost 1,400 / 1,540 / 2,500 / 5,000+ sats respectively. Real fees vary wildly depending on network congestion.
 
 The fee market dynamics:
 
