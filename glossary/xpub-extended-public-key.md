@@ -26,7 +26,7 @@ relatedTerms:
 sameAs:
   - "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki"
   - "https://en.bitcoin.it/wiki/BIP_0032"
-liveWidget: ~
+liveWidget: derivationPaths
 ---
 
 An xpub is a [BIP 32](/glossary/bip-32) extended public key: a parent public key bundled together with its [chaincode](/glossary/chaincode). With both pieces, anyone can derive all non-hardened child public keys (and therefore all addresses) under that branch of the wallet tree, without ever seeing a private key. Each child gets a chaincode of its own, computed from the parent's, which is what lets the derivation keep going down the branch.

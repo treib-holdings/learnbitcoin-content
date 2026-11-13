@@ -26,7 +26,7 @@ sameAs:
   - "https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki"
   - "https://en.bitcoin.it/wiki/BIP_0173"
   - "https://bitcoinops.org/en/topics/bech32/"
-liveWidget: ~
+liveWidget: bech32Checksum
 ---
 
 [BIP-173](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki) defines **bech32**, the address format used for native [SegWit](/glossary/segwit-segregated-witness-bip-141) outputs. Bech32 addresses are recognizable by their `bc1q` prefix (mainnet) or `tb1q` (testnet).

@@ -22,7 +22,7 @@ relatedTerms:
   - dust-sweeping
   - transaction-fee
   - utxo-unspent-transaction-output
-liveWidget: ~
+liveWidget: feeCalculator
 ---
 
 The dust limit is Bitcoin Core's policy threshold below which an output is considered "dust" and the transaction is treated as non-standard, meaning the node won't relay or include it in its mempool, with one narrow exception, below.

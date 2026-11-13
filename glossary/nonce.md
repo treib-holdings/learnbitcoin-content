@@ -21,7 +21,7 @@ sameAs:
   - "https://en.wikipedia.org/wiki/Cryptographic_nonce"
   - "https://www.wikidata.org/wiki/Q1749235"
   - "https://en.bitcoin.it/wiki/Nonce"
-liveWidget: ~
+liveWidget: toyBlockGrind
 ---
 
 The nonce is a 32-bit field in the [block header](/glossary/block-header) that miners change while searching for a valid block. "Nonce" is short for "number used once."

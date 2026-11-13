@@ -29,7 +29,7 @@ relatedTerms:
   - fee-estimation
   - branch-and-bound-bnb
   - coingrinder
-liveWidget: ~
+liveWidget: feeCalculator
 ---
 
 A coin's effective value is its face value minus the fee its input will add to the transaction that spends it. It is the number [Bitcoin Core's](/glossary/bitcoin-core) [coin selection](/glossary/coin-selection) adds up, so the target stays fixed while the wallet searches: each coin already carries its own fee. The idea is from Mark Erhardt's 2016 thesis, which gave the formula as the coin's value minus the fee per byte times the bytes of an input, with the example of a 100,000-satoshi coin being worth 98,520 satoshis at 10 satoshis per byte behind a 148-byte legacy input. In native segwit terms an input is 68 vbytes, so a 10,000 sat coin is worth 9,932 sats at 1 sat/vB and 3,200 at 100 sat/vB; at about 147 sat/vB it is worth nothing.

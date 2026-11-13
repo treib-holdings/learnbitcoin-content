@@ -32,7 +32,7 @@ relatedTerms:
   - transaction-chaining
 sameAs:
   - "https://en.bitcoin.it/wiki/Miner_fees"
-liveWidget: ~
+liveWidget: feeCalculator
 ---
 
 A transaction fee is what you pay [miners](/glossary/miner) to include your [Bitcoin transaction](/glossary/transaction) in a block. Mechanically, it's the difference between the sum of input values and the sum of output values - whatever you don't explicitly send to an output, the miner who confirms the transaction collects.

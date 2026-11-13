@@ -30,7 +30,7 @@ sameAs:
   - "https://en.wikipedia.org/wiki/Cryptographic_hash_function"
   - "https://www.wikidata.org/wiki/Q477202"
   - "https://en.bitcoin.it/wiki/Hash"
-liveWidget: ~
+liveWidget: toyBlockGrind
 ---
 
 A hash is the output of a hash function: an algorithm that takes input of any size and produces a fixed-length, pseudorandom-looking output. Bitcoin uses **SHA-256**, which always produces 256 bits (64 hex characters), regardless of whether you fed it one byte or one terabyte.

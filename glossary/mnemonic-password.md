@@ -18,7 +18,7 @@ relatedTerms:
   - mnemonic-entropy-bits
   - private-key
   - seed-phrase
-liveWidget: ~
+liveWidget: bip39Passphrase
 ---
 
 The BIP 39 passphrase, sometimes called the "25th word," is an optional string mixed in during seed derivation. Same 12 or 24 words plus a different passphrase yields a completely different wallet. The math is straightforward: BIP 39 derives the master seed via PBKDF2(mnemonic, "mnemonic" + passphrase), so any change to the passphrase changes everything downstream. Used on its own, with no random words under it, a passphrase like this would be a [brain wallet](/glossary/brain-wallet).

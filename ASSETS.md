@@ -227,8 +227,27 @@ Live components in `learnbitcoin-web/src/components/`. Embedded in MDX (not plai
 | **Difficulty clock** | `mining/DifficultyClock.svelte` | [rabbit-holes/mining](rabbit-holes/mining.mdx) |
 | **Mempool histogram** | `mining/MempoolHistogram.svelte` | [rabbit-holes/mining](rabbit-holes/mining.mdx), [rabbit-holes/mempool](rabbit-holes/mempool.mdx) |
 | **Key space visualizer** | `keyspace/KeySpaceVisualizer.svelte` | [rabbit-holes/key-space](rabbit-holes/key-space.mdx) |
+| **Bech32 checksum** | `glossary/Bech32Checksum.svelte` | [glossary/bip-173-bech32](glossary/bip-173-bech32.md), [glossary/address](glossary/address.md) (`liveWidget: bech32Checksum`: edit BIP 173's example address and see the verdict); [glossary/bech32m](glossary/bech32m.md) (`liveWidget: bech32mChecksum`: the q-before-p weakness, bech32 against bech32m) |
+| **BIP 39 entropy to words** | `glossary/Bip39Words.svelte` | [glossary/bip-39](glossary/bip-39.md), [glossary/seed-phrase](glossary/seed-phrase.md) (`liveWidget: bip39Words`) |
+| **Same words, another passphrase** | `glossary/Bip39Passphrase.svelte` | [glossary/mnemonic-password](glossary/mnemonic-password.md) (`liveWidget: bip39Passphrase`) |
+| **Derivation paths** | `glossary/DerivationPaths.svelte` | [glossary/address-derivation-path](glossary/address-derivation-path.md), [glossary/bip-32](glossary/bip-32.md), [glossary/xpub-extended-public-key](glossary/xpub-extended-public-key.md) (`liveWidget: derivationPaths`) |
+| **Toy block grind** | `glossary/ToyBlockGrind.svelte` | [glossary/nonce](glossary/nonce.md), [glossary/difficulty](glossary/difficulty.md), [glossary/hash](glossary/hash.md) (`liveWidget: toyBlockGrind`) |
+| **Fee calculator** | `glossary/FeeCalculator.svelte` | [glossary/transaction-fee](glossary/transaction-fee.md), [glossary/dust](glossary/dust.md), [glossary/dust-limit](glossary/dust-limit.md), [glossary/effective-value](glossary/effective-value.md) (`liveWidget: feeCalculator`) |
+| **Latest block** | `tip/LiveBlockHeight.svelte` | [glossary/block](glossary/block.md) (`liveWidget: liveBlockHeight`); also `/node` |
 
-There are also site-chrome widgets (`LivePrice`, `LiveBlockHeight`) used in Astro pages only (homepage, `/node`, glossary). Those are not for content embedding.
+There is also a site-chrome widget (`LivePrice`) used on `/node` only. It is not for content embedding.
+
+### Glossary widgets: the `liveWidget` field
+
+Glossary entries are plain `.md`, so they cannot import a component. An entry names its widget in frontmatter instead, and the page renders it under the body, hydrated when it scrolls into view:
+
+```yaml
+liveWidget: feeCalculator   # or ~ for none
+```
+
+The names are the keys of the map in `learnbitcoin-web/src/lib/glossary-widgets.ts`: `liveBlockHeight`, `bech32Checksum`, `bech32mChecksum`, `bip39Words`, `bip39Passphrase`, `derivationPaths`, `toyBlockGrind`, `feeCalculator`. A name the map does not have fails the build. The Spanish twin of an entry carries the same value; the widget's words come from `learnbitcoin-web/src/lib/i18n/widgets.mjs`.
+
+Every widget except `liveBlockHeight` runs entirely in the reader's browser: no network calls and no WebAssembly. The ones that show keys or addresses use a public demo wallet (the BIP 39 test phrase "abandon ... about", printed in BIP 84 and BIP 86) and say on the page that its keys are public and must never hold funds. Before an entry gets a widget, it needs primary sources (see CONTRIBUTING.md).
 
 ### How to embed an interactive widget
 

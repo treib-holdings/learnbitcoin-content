@@ -24,7 +24,7 @@ relatedTerms:
   - dust-sweeping
   - transaction-fee
   - utxo-unspent-transaction-output
-liveWidget: ~
+liveWidget: feeCalculator
 ---
 
 Dust is a [UTXO](/glossary/utxo-unspent-transaction-output) so small that spending it would cost more in transaction fees than it's worth. There's no fixed cutoff for that; it depends on the fee rate at the moment you'd want to spend.

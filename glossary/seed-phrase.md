@@ -34,7 +34,7 @@ sameAs:
   - "https://en.bitcoin.it/wiki/Seed_phrase"
   - "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"
   - "https://en.bitcoin.it/wiki/BIP_0039"
-liveWidget: ~
+liveWidget: bip39Words
 ---
 
 A seed phrase is a sequence of 12 or 24 English words that encodes the master secret for an entire Bitcoin wallet. Also called a "mnemonic phrase" or "recovery phrase" - the terms are interchangeable in practice.

@@ -23,7 +23,7 @@ relatedTerms:
 sameAs:
   - "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"
   - "https://en.bitcoin.it/wiki/BIP_0039"
-liveWidget: ~
+liveWidget: bip39Words
 ---
 
 BIP 39, authored by Marek Palatinus, Pavol Rusnak, Aaron Voisine, and Sean Bowe in September 2013, defines how a Bitcoin wallet encodes its seed as a sequence of 12 to 24 ordinary English words. It is the most common seed phrase standard, though not the only one: Electrum deliberately generates its own seed format instead.

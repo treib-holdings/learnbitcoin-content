@@ -28,7 +28,7 @@ relatedTerms:
 sameAs:
   - "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki"
   - "https://en.bitcoin.it/wiki/BIP_0032"
-liveWidget: ~
+liveWidget: derivationPaths
 ---
 
 BIP 32, authored by Pieter Wuille in February 2012, is the foundational standard for hierarchical deterministic (HD) Bitcoin wallets. One seed of 128 to 512 bits (the BIP 39 seed is 512) produces a tree of keys, all reproducible from that single seed. Back up the seed, and you've backed up every key your wallet will ever derive.

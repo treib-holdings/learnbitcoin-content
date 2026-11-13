@@ -24,7 +24,7 @@ relatedTerms:
   - time-warp-attack
 sameAs:
   - "https://en.bitcoin.it/wiki/Difficulty"
-liveWidget: ~
+liveWidget: toyBlockGrind
 ---
 
 Difficulty is a number that defines how hard it is to mine a Bitcoin block right now. Specifically, it determines the **target** value that a [block header](/glossary/block-header) [hash](/glossary/hash) must fall below to be valid. Higher difficulty = lower target = more attempts needed on average to find a valid hash.

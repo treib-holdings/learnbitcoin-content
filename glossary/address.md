@@ -32,7 +32,7 @@ relatedTerms:
   - vanity-address
 sameAs:
   - "https://en.bitcoin.it/wiki/Address"
-liveWidget: ~
+liveWidget: bech32Checksum
 ---
 
 A Bitcoin address is a short string that represents a destination for a payment. It usually encodes a [hash](/glossary/hash) of a [public key](/glossary/public-key) or of a script; a Taproot address encodes a tweaked public key directly. Either way it is formatted to be easy to copy, paste, and scan.

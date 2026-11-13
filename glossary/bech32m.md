@@ -22,7 +22,7 @@ relatedTerms:
   - native-segwit
   - p2wpkh-pay-witness-public-key-hash
   - p2wsh-pay-witness-script-hash
-liveWidget: ~
+liveWidget: bech32mChecksum
 ---
 
 Bech32m is the address-encoding format used for [Taproot](/glossary/taproot) and any future SegWit version. It looks like `bc1p...` on mainnet and `tb1p...` on testnet, using the same character set as the original [bech32](/glossary/bip-173-bech32) format but with a different checksum constant.

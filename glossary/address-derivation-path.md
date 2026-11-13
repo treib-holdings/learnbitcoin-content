@@ -27,7 +27,7 @@ relatedTerms:
   - seed-entropy-mixer
   - seed-phrase
   - seed-tool
-liveWidget: ~
+liveWidget: derivationPaths
 ---
 
 A derivation path is the slash-separated route into a [BIP 32](/glossary/bip-32) HD wallet tree, telling the wallet exactly which key to derive from the master seed. The format, as laid out in [BIP 44](/glossary/bip-44), is:
