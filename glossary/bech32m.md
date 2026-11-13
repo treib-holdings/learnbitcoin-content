@@ -8,7 +8,12 @@ keyTakeaways:
   - "Supports Taproot addresses using 'bc1p' prefix"
   - "Enhanced checksum for fewer address errors"
   - "Defined in BIP-350 as an upgrade over bech32"
-sources: []
+sources:
+  - { label: "BIP-350 - Bech32m format for v1+ witness addresses: the 'q' insertion weakness, the constant 0x2bc830a3 in place of 1, bech32 kept for witness version 0 because those addresses are valid at only two lengths (2020)", url: "https://github.com/bitcoin/bips/blob/master/bip-0350.mediawiki" }
+  - { label: "BIP-173 - Base32 address format for native v0-16 witness outputs: the original bech32 checksum (2017)", url: "https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki" }
+  - { label: "sipa/bech32 issue #51 - Jonathan Knowles: deleting or inserting a single character can leave a bech32 string valid, found with property tests (May 28, 2019)", url: "https://github.com/sipa/bech32/issues/51" }
+  - { label: "Pieter Wuille, bitcoin-dev - Bech32 weakness and impact on bip-taproot addresses (November 7, 2019)", url: "https://www.learnbitcoin.com/archive/t/2019/bech32-weakness-and-impact-on-bip-taproot-addresses#m-c76656f9" }
+  - { label: "Pieter Wuille, bitcoin-dev - Progress on bech32 for future Segwit Versions (BIP-173) (December 5, 2020): the analysis that chose the constant 0x2bc830a3", url: "https://www.learnbitcoin.com/archive/t/2020/progress-on-bech32-for-future-segwit-versions-bip-173#m-fffda578" }
 relatedTerms:
   - address
   - b32-address
