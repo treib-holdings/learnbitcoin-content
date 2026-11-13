@@ -266,6 +266,33 @@ rename one after it has shipped; change its label instead.
 Journey chapters can list rabbit holes to read next with
 `goDeeper: ["<rabbit-hole slug>", ...]`.
 
+## Reader levels
+
+Every rabbit hole says who it is for, by what the reader is assumed to
+know already. Topic and length play no part.
+
+- **`level: beginner`** - assumes nothing about Bitcoin. Every Bitcoin
+  term is explained in plain words where it first comes up, including
+  the most basic ones (block, node, address, wallet, transaction),
+  which the glossary auto-linker skips on purpose.
+- **`level: intermediate`** - assumes the basics: what a transaction, a
+  block, a miner, a node, an address and a private key are. That is
+  about what Journey chapters 2 to 4 teach.
+- **`level: advanced`** - assumes the reader knows how Bitcoin works
+  inside: inputs and outputs, scripts, signatures, fee rates, soft
+  forks. The chapter makes its case in those terms, sometimes in code
+  or math.
+
+The test: can a reader at that level get from the top to the bottom
+without losing the thread? A hard word the argument does not rest on
+does not raise the level.
+
+**Required on every rabbit hole that is not a draft.** The web build's
+`check-levels` step fails without it. A Spanish translation carries the
+level of its English source, and the same step fails if the two differ.
+The three ids are permanent; the words a page shows for them live in the
+web repo (`src/lib/i18n/strings.mjs`).
+
 ## Publishing dates
 
 Journey chapters and rabbit holes carry three ISO-date frontmatter
