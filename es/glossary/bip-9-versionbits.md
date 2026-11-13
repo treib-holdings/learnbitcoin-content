@@ -11,7 +11,7 @@ keyTakeaways:
 sources:
   - { label: "BIP 9 - deployment assignments (csv, from May 2016, was the first)", url: "https://github.com/bitcoin/bips/blob/master/bip-0009/assignments.mediawiki" }
   - { label: "BIP 65 - deployed with the older IsSuperMajority switchover, not BIP 9", url: "https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki" }
-  - { label: "BIP 341 - Deployment: modified BIP 9, 90% threshold, signaling 24 April to 11 August 2021, minimum activation height 709,632", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#deployment" }
+  - { label: "BIP 341 - Deployment: modified BIP 9, 90% threshold, signaling April 24 to August 11, 2021, minimum activation height 709,632", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#deployment" }
   - { label: "BIP 9 - Version bits (threshold 1,916 of 2,016 blocks, 95%; a change is locked in for one retarget period, then active)", url: "https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki" }
   - { label: "BIP 141 - Segregated Witness, deployment (BIP-9 bit 1, signaling from November 15, 2016)", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
   - { label: "Bitcoin Magazine - BIP91: The SegWit Activation Kludge That Should Keep Bitcoin Whole (Aaron van Wirdum, June 16, 2017): SegWit needs 95 percent of blocks to signal bit 1, and so far only some 30 percent of hash power is signaling", url: "https://bitcoinmagazine.com/technical/bip91-segwit-activation-kludge-should-keep-bitcoin-whole" }
@@ -38,8 +38,8 @@ aliases:
   - "VersionBits"
   - "bits de versión"
 translationOf: bip-9-versionbits
-sourceHash: "6e5e97e37b07"
-sourceCommit: "9838a39"
+sourceHash: "5137729eb2f8"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-10-10"
 translation:
   method: "llm-draft"

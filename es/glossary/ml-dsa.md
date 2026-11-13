@@ -16,8 +16,8 @@ keyTakeaways:
   - "Se discute para la migración poscuántica de Bitcoin, aunque el trabajo poscuántico de Bitcoin se ha centrado sobre todo en esquemas basados en hash"
 sources:
   - { label: "NIST FIPS 204 - Module-Lattice-Based Digital Signature Standard (August 2024)", url: "https://csrc.nist.gov/pubs/fips/204/final" }
-  - { label: "Bitcoin Optech Newsletter #412 - why Bitcoin post-quantum work has focused on hash-based signatures (3 July 2026)", url: "https://bitcoinops.org/en/newsletters/2026/07/03/" }
-  - { label: "Bitcoin Optech Newsletter #421 - SHRINCS draft BIP, a semi-stateful hash-based signature scheme (4 September 2026)", url: "https://bitcoinops.org/en/newsletters/2026/09/04/" }
+  - { label: "Bitcoin Optech Newsletter #412 - why Bitcoin post-quantum work has focused on hash-based signatures (July 3, 2026)", url: "https://bitcoinops.org/en/newsletters/2026/07/03/" }
+  - { label: "Bitcoin Optech Newsletter #421 - SHRINCS draft BIP, a semi-stateful hash-based signature scheme (September 4, 2026)", url: "https://bitcoinops.org/en/newsletters/2026/09/04/" }
 relatedTerms:
   - post-quantum-bitcoin
   - bip-361
@@ -29,8 +29,8 @@ relatedTerms:
   - elliptic-curve
 liveWidget: ~
 translationOf: ml-dsa-dilithium
-sourceHash: "261cc10b3c1d"
-sourceCommit: "b3ef864"
+sourceHash: "1d8bb1a49a32"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-06-01"
 translation:
   method: "llm-draft"

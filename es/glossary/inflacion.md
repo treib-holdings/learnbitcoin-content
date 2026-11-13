@@ -10,8 +10,8 @@ keyTakeaways:
   - "Define la narrativa de escasez de Bitcoin frente a la inflación del dinero fiat"
 sources:
   - { label: "Bitcoin Core source - GetBlockSubsidy, the halving schedule every node enforces (src/validation.cpp)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp" }
-  - { label: "mempool.space - block 969,999 (5 October 2026); 20,093,750 BTC issued by the schedule through this block", url: "https://mempool.space/block/000000000000000000001d95e5f7284cb199b8620eb6a7938dd9696f85751bb3" }
-  - { label: "ChainQuery - circulating supply and annual inflation rate (live; 0.8173% on 9 October 2026, cross-checked against the GetBlockSubsidy schedule)", url: "https://chainquery.com/api/edu/supply" }
+  - { label: "mempool.space - block 969,999 (October 5, 2026); 20,093,750 BTC issued by the schedule through this block", url: "https://mempool.space/block/000000000000000000001d95e5f7284cb199b8620eb6a7938dd9696f85751bb3" }
+  - { label: "ChainQuery - circulating supply and annual inflation rate (live; 0.8173% on October 9, 2026, cross-checked against the GetBlockSubsidy schedule)", url: "https://chainquery.com/api/edu/supply" }
   - { label: "World Gold Council - How much gold has been mined? (222,600 t, end-Q2 2026)", url: "https://www.gold.org/goldhub/data/how-much-gold" }
   - { label: "World Gold Council - Gold Demand Trends Full Year 2025, supply (mine production 3,672 t)", url: "https://www.gold.org/goldhub/research/gold-demand-trends/gold-demand-trends-full-year-2025/supply" }
   - { label: "USGS Mineral Commodity Summaries 2026 - Gold (world mine production 2025: 3,300 t)", url: "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-gold.pdf" }
@@ -26,8 +26,8 @@ relatedTerms:
   - mining-subsidy
 liveWidget: ~
 translationOf: inflation
-sourceHash: "3afce368828c"
-sourceCommit: "1abeee5"
+sourceHash: "1f6cfc44dafa"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-10-09"
 translation:
   method: "llm-draft"

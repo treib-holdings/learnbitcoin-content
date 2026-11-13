@@ -2,8 +2,8 @@
 title: "Qué pasó en 1971 (el shock de Nixon)"
 slug: que-paso-en-1971
 translationOf: what-happened-in-1971
-sourceHash: "3a8675f6243e"
-sourceCommit: "57cbe8a"
+sourceHash: "cf9e1c787019"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-10-02"
 translation:
   method: "llm-draft"

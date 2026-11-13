@@ -16,11 +16,11 @@ aliases:
   - "hardware security module"
 sources:
   - { label: "NIST - FIPS 140-2, Security Requirements for Cryptographic Modules (Level 2 requires tamper-evidence and role-based authentication; Level 3 adds tamper detection/response that zeroizes keys and identity-based authentication)", url: "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.140-2.pdf" }
-  - { label: "NIST CMVP - Cryptographic Module Validation Program (validating to FIPS 140-3 since September 2020; FIPS 140-2 modules accepted through 21 September 2026, then moved to the Historical list)", url: "https://csrc.nist.gov/projects/cryptographic-module-validation-program" }
+  - { label: "NIST CMVP - Cryptographic Module Validation Program (validating to FIPS 140-3 since September 2020; FIPS 140-2 modules accepted through September 21, 2026, then moved to the Historical list)", url: "https://csrc.nist.gov/projects/cryptographic-module-validation-program" }
   - { label: "PCI Security Standards Council - PTS Hardware Security Module (HSM) standard for the financial payments industry", url: "https://www.pcisecuritystandards.org/standards/pts-hardware-security-module-hsm/" }
   - { label: "CA/Browser Forum - Baseline Requirements, section 6.2.7 (a CA must protect its private key in a device validated to at least FIPS 140-2 Level 3, FIPS 140-3 Level 3, or Common Criteria EAL 4+)", url: "https://github.com/cabforum/servercert/blob/main/docs/BR.md" }
   - { label: "Square - Subzero, HSM cold storage (FIPS-certified HSMs protect the private key material; moving funds out requires a multi-party signing ceremony; the HSMs only allow sending to Square-owned addresses)", url: "https://github.com/square/subzero" }
-  - { label: "AWS - CloudHSM price list, US East (N. Virginia): $1.60 hourly charge per HSM, effective 1 April 2026", url: "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/CloudHSM/current/us-east-1/index.csv" }
+  - { label: "AWS - CloudHSM price list, US East (N. Virginia): $1.60 hourly charge per HSM, effective April 1, 2026", url: "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/CloudHSM/current/us-east-1/index.csv" }
 relatedTerms:
   - air-gapped
   - bitcoin-vault
@@ -37,8 +37,8 @@ relatedTerms:
   - security
 liveWidget: ~
 translationOf: hardware-security-module-hsm
-sourceHash: "9e0d7f3078d3"
-sourceCommit: "c52bac9"
+sourceHash: "164e0570b7d3"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"

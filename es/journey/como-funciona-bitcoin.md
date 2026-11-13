@@ -2,8 +2,8 @@
 title: "Cómo funciona Bitcoin"
 slug: como-funciona-bitcoin
 translationOf: how-bitcoin-works
-sourceHash: "c5da182fa432"
-sourceCommit: "d12964a"
+sourceHash: "4e50e8dfeb2f"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-10-09"
 translation:
   method: "llm-draft"
@@ -25,9 +25,9 @@ sources:
   - { label: "Mastering Bitcoin, 3rd edition (Andreas M. Antonopoulos and David A. Harding, CC-BY-SA)", url: "https://github.com/bitcoinbook/bitcoinbook" }
   - { label: "Mastering Bitcoin, ch. 9 - fees and fee rates (miners rank transactions by fee per unit of size)", url: "https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch09_fees.adoc" }
   - { label: "Mastering Bitcoin, ch. 12 - mining (ASICs, the 32-bit nonce and the extra nonce, subsidy plus fees, pool servers that build the candidate block, the 10-minute interval as a design compromise)", url: "https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch12_mining.adoc" }
-  - { label: "mempool.space API - mining pools over the past year (named pools found all but 288 of 52,323 blocks, year to 9 October 2026)", url: "https://mempool.space/api/v1/mining/pools/1y" }
+  - { label: "mempool.space API - mining pools over the past year (named pools found all but 288 of 52,323 blocks, year to October 9, 2026)", url: "https://mempool.space/api/v1/mining/pools/1y" }
   - { label: "mempool.space - a one-input, two-output payment in block 970,600 (222 bytes, 141 virtual bytes)", url: "https://mempool.space/tx/951df0fc57709bd21518c24864826adeef3e7f43399da71f166304239550c9d5" }
-  - { label: "mempool.space API - block fee rates over the past year (block median fee rate of 3 sat/vB or less in about 99% of samples, year to 9 October 2026)", url: "https://mempool.space/api/v1/mining/blocks/fee-rates/1y" }
+  - { label: "mempool.space API - block fee rates over the past year (block median fee rate of 3 sat/vB or less in about 99% of samples, year to October 9, 2026)", url: "https://mempool.space/api/v1/mining/blocks/fee-rates/1y" }
   - { label: "Bitcoin Core source - default mempool size limit of 300 MB (src/kernel/mempool_options.h)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/mempool_options.h" }
   - { label: "Bitcoin Core source - CalculateNextWorkRequired: the 2016-block retarget and its factor-of-four limit (src/pow.cpp)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/pow.cpp" }
   - { label: "BIP 9 - version bits: miners signal soft-fork readiness in the block version field", url: "https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki" }
@@ -38,12 +38,12 @@ sources:
   - { label: "Kraken - cryptocurrency deposit processing times (credits bitcoin deposits after three confirmations)", url: "https://support.kraken.com/articles/203325283-cryptocurrency-deposit-processing-times" }
   - { label: "Bitcoin Core source - RecommendedNumConfirmations is 6; the wallet shows 'Confirming (n of 6 recommended confirmations)' (src/qt/transactionrecord.h)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/qt/transactionrecord.h" }
   - { label: "BitMEX Research - Bitcoin's consensus forks: at least three identifiable chain splits, in 2010, 2013 and 2015 (Wayback Machine)", url: "https://web.archive.org/web/20240110121831/https://blog.bitmex.com/bitcoins-consensus-forks/" }
-  - { label: "bitcoin.org alert - July 2015 chain forks (a 6-block fork on 4 July, after BIP 66, from miners who were not validating blocks)", url: "https://bitcoin.org/en/alert/2015-07-04-spv-mining" }
+  - { label: "bitcoin.org alert - July 2015 chain forks (a 6-block fork on July 4, after BIP 66, from miners who were not validating blocks)", url: "https://bitcoin.org/en/alert/2015-07-04-spv-mining" }
   - { label: "bitcoin-data/stale-blocks - public dataset of stale blocks (between 28 and 93 a year from 2022 through 2025, as of October 2026)", url: "https://github.com/bitcoin-data/stale-blocks" }
   - { label: "mempool.space API - every difficulty adjustment (summed, about 1.03 x 10^29 hashes of total work through block 970,600)", url: "https://mempool.space/api/v1/mining/difficulty-adjustments/all" }
-  - { label: "mempool.space API - network hash rate (about 995 EH/s on 9 October 2026; total work divided by hash rate is about 3.3 years)", url: "https://mempool.space/api/v1/mining/hashrate/1m" }
+  - { label: "mempool.space API - network hash rate (about 995 EH/s on October 9, 2026; total work divided by hash rate is about 3.3 years)", url: "https://mempool.space/api/v1/mining/hashrate/1m" }
   - { label: "Cambridge Judge Business School - Cambridge study (April 2025): about 138 TWh a year, roughly 0.5% of global electricity", url: "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/" }
-  - { label: "blockchain.com - total size of the blockchain (774,075 MB on 8 October 2026)", url: "https://www.blockchain.com/explorer/charts/blocks-size" }
+  - { label: "blockchain.com - total size of the blockchain (774,075 MB on October 8, 2026)", url: "https://www.blockchain.com/explorer/charts/blocks-size" }
   - { label: "Bitcoin Core source - the -assumevalid option (src/init.cpp)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/init.cpp" }
 ---
 

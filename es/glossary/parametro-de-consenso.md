@@ -17,7 +17,7 @@ sources:
   - { label: "Bitcoin Core - src/kernel/chainparams.cpp (nSubsidyHalvingInterval 210,000; a two-week retarget timespan at 10-minute block spacing, 2,016 blocks)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/chainparams.cpp" }
   - { label: "Bitcoin Wiki - Controlled supply (50 BTC per block in the first era, a 50% reduction every 210,000 blocks, a retarget every 2,016 blocks, and the exact total of 20,999,999.9769 BTC)", url: "https://en.bitcoin.it/wiki/Controlled_supply" }
   - { label: "Bitcoin Optech - Soft fork activation topic (BIP 8, BIP 9 and Speedy Trial; the activation history from P2SH in 2012 through CLTV in 2015, CSV in 2016 and SegWit in 2017)", url: "https://bitcoinops.org/en/topics/soft-fork-activation/" }
-  - { label: "Bitcoin Core - doc/bips.md (the BIPs each release implements: P2SH took effect on 1 April 2012; Taproot rules shipped in 0.21.0 with mainnet activation parameters in 0.21.1)", url: "https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md" }
+  - { label: "Bitcoin Core - doc/bips.md (the BIPs each release implements: P2SH took effect on April 1, 2012; Taproot rules shipped in 0.21.0 with mainnet activation parameters in 0.21.1)", url: "https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md" }
   - { label: "Bitcoin Core 0.21.1 release notes - Taproot activation by Speedy Trial, a variation of BIP 9 versionbits with a 90% threshold, active from block 709,632 (2021)", url: "https://bitcoincore.org/en/releases/0.21.1/" }
 relatedTerms:
   - block
@@ -34,8 +34,8 @@ relatedTerms:
   - soft-fork
 liveWidget: ~
 translationOf: consensus-parameter
-sourceHash: "b9c544971931"
-sourceCommit: "c52bac9"
+sourceHash: "b15179e693a5"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"

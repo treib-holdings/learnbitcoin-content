@@ -21,7 +21,7 @@ sources:
   - { label: "BIP-341 - Taproot: SegWit version 1 spending rules (2020): multi-party public keys and signatures are indistinguishable from their single-party equivalents, so most applications can use the key-based spending path", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki" }
   - { label: "Bitcoin Optech - MuSig topic page: multiple users each with their own private key create a combined public key that is indistinguishable from any other schnorr pubkey", url: "https://bitcoinops.org/en/topics/musig/" }
   - { label: "BOLT #3 - Bitcoin Transaction and Script Formats: the funding output is a P2WSH 2-of-2 OP_CHECKMULTISIG script", url: "https://github.com/lightning/bolts/blob/master/03-transactions.md" }
-  - { label: "mainnet.observer (formerly transactionfee.info) - Input Types by Count (daily data read 13 October 2026: over the previous 30 days P2WPKH 71%, P2TR key path 8%, P2PKH 7% and nested P2WPKH 4% of inputs; P2A anchors 6%; P2SH, P2WSH, nested P2WSH and P2TR script path about 4% together)", url: "https://mainnet.observer/charts/inputs-types-by-count/" }
+  - { label: "mainnet.observer (formerly transactionfee.info) - Input Types by Count (daily data read October 13, 2026: over the previous 30 days P2WPKH 71%, P2TR key path 8%, P2PKH 7% and nested P2WPKH 4% of inputs; P2A anchors 6%; P2SH, P2WSH, nested P2WSH and P2TR script path about 4% together)", url: "https://mainnet.observer/charts/inputs-types-by-count/" }
 relatedTerms:
   - interactive-multi-sig
   - m-n
@@ -33,8 +33,8 @@ relatedTerms:
   - signature-clipping
 liveWidget: ~
 translationOf: mono-signature
-sourceHash: "cf6cb1ec7249"
-sourceCommit: "c52bac9"
+sourceHash: "7a4c22d49011"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"

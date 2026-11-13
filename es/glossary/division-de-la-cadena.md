@@ -10,11 +10,11 @@ keyTakeaways:
   - "Quienes controlaban sus claves terminan con monedas en las dos cadenas"
 sources:
   - { label: "BIP 50 - March 2013 Chain Fork Post-Mortem (Gavin Andresen, 2013; 0.8 swapped Berkeley DB for LevelDB, older nodes hit the BDB lock limit, the 0.8 chain held about 60% of the hash power, and BTCGuild and Slush downgraded to 0.7 to end the split)", url: "https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki" }
-  - { label: "bitcoin.org - 11/12 March 2013 Chain Fork Information (the notice as updated 16 May 2013)", url: "https://bitcoin.org/en/alert/2013-03-11-chain-fork" }
-  - { label: "mempool.space - block 225,455 (06:20 UTC, 12 March 2013), where the chain every version could follow overtook the abandoned 25-block chain", url: "https://mempool.space/block/000000000000016924f85069603be8164578eedf113f44d60bf0438cba047c7f" }
-  - { label: "Bitcoin Cash - UAHF technical specification (GitHub, 2017; activation at Unix time 1501590000, 1 August 2017 12:20 UTC; the fork block must exceed 1 MB; blocks of at least 8 MB; signature digest revised for a non-SegWit deployment)", url: "https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/uahf-technical-spec.md" }
+  - { label: "bitcoin.org - 11/12 March 2013 Chain Fork Information (the notice as updated May 16, 2013)", url: "https://bitcoin.org/en/alert/2013-03-11-chain-fork" }
+  - { label: "mempool.space - block 225,455 (06:20 UTC, March 12, 2013), where the chain every version could follow overtook the abandoned 25-block chain", url: "https://mempool.space/block/000000000000016924f85069603be8164578eedf113f44d60bf0438cba047c7f" }
+  - { label: "Bitcoin Cash - UAHF technical specification (GitHub, 2017; activation at Unix time 1501590000, August 1, 2017, 12:20 UTC; the fork block must exceed 1 MB; blocks of at least 8 MB; signature digest revised for a non-SegWit deployment)", url: "https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/uahf-technical-spec.md" }
   - { label: "Bitcoin SV - release 0.1.0 notes (GitHub, October 2018; support for the November 2018 upgrade that split it from Bitcoin Cash, 128 MB blocks)", url: "https://github.com/bitcoin-sv/bitcoin-sv/releases/tag/v0.1.0" }
-  - { label: "Blockchair - Bitcoin Cash chain stats (JSON; 13 October 2026: 24-hour hash rate 3.2 EH/s against 1,069 EH/s on the matching Bitcoin endpoint, api.blockchair.com/bitcoin/stats)", url: "https://api.blockchair.com/bitcoin-cash/stats" }
+  - { label: "Blockchair - Bitcoin Cash chain stats (JSON; October 13, 2026: 24-hour hash rate 3.2 EH/s against 1,069 EH/s on the matching Bitcoin endpoint, api.blockchair.com/bitcoin/stats)", url: "https://api.blockchair.com/bitcoin-cash/stats" }
 relatedTerms:
   - airdrop-btc-fork
   - bitcoin-cash
@@ -29,8 +29,8 @@ sameAs:
   - "https://en.wikipedia.org/wiki/Bitcoin_Cash"
 liveWidget: ~
 translationOf: chain-split
-sourceHash: "dc1db99a3350"
-sourceCommit: "c52bac9"
+sourceHash: "1d574b576f2a"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"

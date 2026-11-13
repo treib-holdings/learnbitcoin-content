@@ -2,8 +2,8 @@
 title: "Por qué el dinero está roto"
 slug: por-que-el-dinero-esta-roto
 translationOf: why-money-is-broken
-sourceHash: "69d43c32583c"
-sourceCommit: "9838a39"
+sourceHash: "f197193daee1"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-10-09"
 translation:
   method: "llm-draft"
@@ -27,9 +27,9 @@ sources:
   - { label: "Federal Reserve History - Creation of the Bretton Woods System (November 2013)", url: "https://www.federalreservehistory.org/essays/bretton-woods-created" }
   - { label: "Federal Reserve History - Nixon Ends Convertibility of U.S. Dollars to Gold and Announces Wage/Price Controls (November 2013): early in the Bretton Woods era the US held about three-quarters of the world's official gold reserves", url: "https://www.federalreservehistory.org/essays/gold-convertibility-ends" }
   - { label: "Federal Reserve History - The Great Inflation (November 2013)", url: "https://www.federalreservehistory.org/essays/great-inflation" }
-  - { label: "Foreign Relations of the United States, 1964-1968, Vol. VIII, Document 99 - Treasury Secretary Fowler to President Johnson on France's gold conversions (21 June 1966)", url: "https://history.state.gov/historicaldocuments/frus1964-68v08/d99" }
+  - { label: "Foreign Relations of the United States, 1964-1968, Vol. VIII, Document 99 - Treasury Secretary Fowler to President Johnson on France's gold conversions (June 21, 1966)", url: "https://history.state.gov/historicaldocuments/frus1964-68v08/d99" }
   - { label: "Nixon's August 15, 1971 Address (full text)", url: "https://www.presidency.ucsb.edu/documents/address-the-nation-outlining-new-economic-policy-the-challenge-peace" }
-  - { label: "Federal Reserve Board - Greenbook, part IV: gold sale to France (18 August 1971)", url: "https://www.federalreserve.gov/monetarypolicy/files/FOMC19710824greenbook19710818.pdf" }
+  - { label: "Federal Reserve Board - Greenbook, part IV: gold sale to France (August 18, 1971)", url: "https://www.federalreserve.gov/monetarypolicy/files/FOMC19710824greenbook19710818.pdf" }
   - { label: "Lyn Alden - What Is Money, Anyway? (March 2022)", url: "https://www.lynalden.com/what-is-money/" }
   - { label: "Cantillon - Essay on the Nature of Trade in General (1755), Liberty Fund edition", url: "https://oll.libertyfund.org/titles/essay-on-the-nature-of-trade-in-general-lf-ed" }
   - { label: "BLS - Common Misconceptions about the Consumer Price Index: Questions and Answers (the 1983 and 1999 method changes)", url: "https://www.bls.gov/cpi/factsheets/common-misconceptions-about-cpi.htm" }
@@ -37,11 +37,11 @@ sources:
   - { label: "BLS - CPI-U, hospital services (annual average 101.7 in 1997, 433.655 in 2025)", url: "https://data.bls.gov/timeseries/CUUR0000SEMD01?from_year=1997&to_year=2025&annualAveragesRequested=true" }
   - { label: "BLS - CPI-U, college tuition and fees (annual average 294.1 in 1997, 955.326 in 2025)", url: "https://data.bls.gov/timeseries/CUUR0000SEEB01?from_year=1997&to_year=2025&annualAveragesRequested=true" }
   - { label: "Federal Reserve - Changes in U.S. Family Finances from 2022 to 2025 (October 2026): 56 percent of all families, and 31 percent of families in the bottom half by income, held stock directly or indirectly", url: "https://www.federalreserve.gov/publications/files/scf26.pdf" }
-  - { label: "mempool.space - the genesis block, dated 3 January 2009", url: "https://mempool.space/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f" }
+  - { label: "mempool.space - the genesis block, dated January 3, 2009", url: "https://mempool.space/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f" }
   - { label: "Bitcoin Wiki - Value overflow incident (August 2010)", url: "https://en.bitcoin.it/wiki/Value_overflow_incident" }
-  - { label: "mempool.space - block 74,691 (16 August 2010, 08:20 UTC), where the corrected chain overtook the bad one", url: "https://mempool.space/block/00000000005c22d199706df1c38b38d76f8401920dcbe91edf3417f8847da707" }
+  - { label: "mempool.space - block 74,691 (August 16, 2010, 08:20 UTC), where the corrected chain overtook the bad one", url: "https://mempool.space/block/00000000005c22d199706df1c38b38d76f8401920dcbe91edf3417f8847da707" }
   - { label: "BIP-50 - March 2013 Chain Fork Post-Mortem", url: "https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki" }
-  - { label: "mempool.space - block 225,455 (12 March 2013, 06:20 UTC), where the chain every version could follow overtook the one only version 0.8 accepted", url: "https://mempool.space/block/000000000000016924f85069603be8164578eedf113f44d60bf0438cba047c7f" }
+  - { label: "mempool.space - block 225,455 (March 12, 2013, 06:20 UTC), where the chain every version could follow overtook the one only version 0.8 accepted", url: "https://mempool.space/block/000000000000016924f85069603be8164578eedf113f44d60bf0438cba047c7f" }
 ---
 
 > **Adónde vas:** Al terminar este capítulo podrás explicar, en palabras sencillas y a tu papá, por qué el dólar estadounidense ha perdido la mayor parte de su poder adquisitivo desde 1971, y por qué eso no es un accidente. Todavía no te habrás topado con Bitcoin. Solo verás la forma del problema que intenta resolver.

@@ -16,7 +16,7 @@ avoid:
   - "libro blanco"
 sources:
   - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System (the paper itself: PDF, nine pages)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
-  - { label: "Satoshi Nakamoto - Bitcoin P2P e-cash paper, the announcement on the Cryptography Mailing List (31 October 2008)", url: "https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html" }
+  - { label: "Satoshi Nakamoto - Bitcoin P2P e-cash paper, the announcement on the Cryptography Mailing List (October 31, 2008)", url: "https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html" }
   - { label: "mempool.space - genesis block 0, mined January 3, 2009", url: "https://mempool.space/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f" }
 relatedTerms:
   - bitcoin-pizza-day
@@ -25,8 +25,8 @@ relatedTerms:
   - satoshi-nakamoto
 liveWidget: ~
 translationOf: whitepaper
-sourceHash: "477fcfada528"
-sourceCommit: "cbb6a28"
+sourceHash: "3995e2f40f87"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-11-10"
 translation:
   method: "llm-draft"

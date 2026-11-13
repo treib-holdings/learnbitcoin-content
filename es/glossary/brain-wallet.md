@@ -17,12 +17,12 @@ aliases:
   - "billeteras cerebrales"
 sources:
   - { label: "Bitcoin Wiki - Brainwallet (read November 2026): the passphrase scheme is filed under 'Obsolete brainwallet style' and 'should not be used'; the word covers memorizing a wallet-generated seed phrase", url: "https://en.bitcoin.it/wiki/Brainwallet" }
-  - { label: "brainwallet.github.io - js/brainwallet.js at the site's last working commit (1 August 2015): the key is one SHA-256 of the passphrase box", url: "https://github.com/brainwallet/brainwallet.github.io/blob/f7679dd03f39a04edced641960a7c3df1116fea9/js/brainwallet.js" }
-  - { label: "brainwallet.github.io - the last commit, 'closed permanently', 7 August 2015", url: "https://github.com/brainwallet/brainwallet.github.io/commit/fa462be9af74da30ae7e78203c11b94a0f887539" }
-  - { label: "Ryan Castellucci - Cracking Cryptocurrency Brainwallets, slides as delivered at DEF CON 23 on 7 August 2015 (Wayback Machine copy): 'Brainwallets make the Blockchain a public password hash database'", url: "https://web.archive.org/web/20260114163757/https://rya.nc/files/cracking_cryptocurrency_brainwallets.pdf" }
+  - { label: "brainwallet.github.io - js/brainwallet.js at the site's last working commit (August 1, 2015): the key is one SHA-256 of the passphrase box", url: "https://github.com/brainwallet/brainwallet.github.io/blob/f7679dd03f39a04edced641960a7c3df1116fea9/js/brainwallet.js" }
+  - { label: "brainwallet.github.io - the last commit, 'closed permanently', August 7, 2015", url: "https://github.com/brainwallet/brainwallet.github.io/commit/fa462be9af74da30ae7e78203c11b94a0f887539" }
+  - { label: "Ryan Castellucci - Cracking Cryptocurrency Brainwallets, slides as delivered at DEF CON 23 on August 7, 2015 (Wayback Machine copy): 'Brainwallets make the Blockchain a public password hash database'", url: "https://web.archive.org/web/20260114163757/https://rya.nc/files/cracking_cryptocurrency_brainwallets.pdf" }
   - { label: "Vasek, Bonneau, Castellucci, Keith and Moore - The Bitcoin Brain Drain (Financial Cryptography 2016, preproceedings PDF): 884 wallets, 1,806 BTC, all but 21 drained, half within 21 minutes", url: "https://fc16.ifca.ai/preproceedings/36_Vasek.pdf" }
-  - { label: "Milk Sad - research update 16, Investigating Weak Brainwallets (6 January 2026): 20,397 known one-round SHA-256 addresses, 'a lower bound'", url: "https://milksad.info/posts/research-update-16/" }
-  - { label: "LearnBitcoin - every payment to 39 brain wallet addresses, 1,150 rows, read 9 November 2026: all 112 payments of 2025 and 2026 were spent in the block that confirmed them (CSV)", url: "https://www.learnbitcoin.com/downloads/brain-wallets-deposits.csv" }
+  - { label: "Milk Sad - research update 16, Investigating Weak Brainwallets (January 6, 2026): 20,397 known one-round SHA-256 addresses, 'a lower bound'", url: "https://milksad.info/posts/research-update-16/" }
+  - { label: "LearnBitcoin - every payment to 39 brain wallet addresses, 1,150 rows, read November 9, 2026: all 112 payments of 2025 and 2026 were spent in the block that confirmed them (CSV)", url: "https://www.learnbitcoin.com/downloads/brain-wallets-deposits.csv" }
   - { label: "BIP-39 - Mnemonic code for generating deterministic keys: computer-generated randomness, 128 to 256 bits, 'not a way to process user-created sentences (also known as brainwallets) into a wallet seed'", url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" }
   - { label: "Bonneau and Schechter - Towards Reliable Storage of 56-bit Secrets in Human Memory (USENIX Security 2014, paper PDF, section 5.4): 88 percent recalled a random 56-bit secret in a first follow-up, 59 percent in a second", url: "https://www.usenix.org/system/files/conference/usenixsecurity14/sec14-paper-bonneau.pdf" }
 relatedTerms:
@@ -40,8 +40,8 @@ sameAs:
   - "https://en.bitcoin.it/wiki/Brainwallet"
 liveWidget: ~
 translationOf: brain-wallet
-sourceHash: "585f2643fe09"
-sourceCommit: "0e165a3"
+sourceHash: "81a03e684cbb"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-11-12"
 translation:
   method: "llm-draft"

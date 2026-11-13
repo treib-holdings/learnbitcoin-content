@@ -13,7 +13,7 @@ aliases:
   - "payment channel"
   - "payment channels"
 sources:
-  - { label: "Joseph Poon and Thaddeus Dryja - The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments, sections 2 and 3: 2-of-2 multisignature funding output, old states invalidated by penalty, balance reflected on the blockchain only when a party disagrees (14 January 2016)", url: "https://lightning.network/lightning-network-paper.pdf" }
+  - { label: "Joseph Poon and Thaddeus Dryja - The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments, sections 2 and 3: 2-of-2 multisignature funding output, old states invalidated by penalty, balance reflected on the blockchain only when a party disagrees (January 14, 2016)", url: "https://lightning.network/lightning-network-paper.pdf" }
   - { label: "Lightning BOLT #0 - Introduction and Index: channels, commitment transactions, commitment revocation keys, penalty transactions", url: "https://github.com/lightning/bolts/blob/master/00-introduction.md" }
   - { label: "Lightning BOLT #3 - Bitcoin Transaction and Script Formats: funding output is a P2WSH 2-of-2 multisig; to_self_delay and penalty transactions", url: "https://github.com/lightning/bolts/blob/master/03-transactions.md" }
   - { label: "BIP-118 - SIGHASH_ANYPREVOUT for Taproot Scripts, consensus soft fork, status Draft", url: "https://github.com/bitcoin/bips/blob/master/bip-0118.mediawiki" }
@@ -33,8 +33,8 @@ relatedTerms:
   - submarine-swap
 liveWidget: ~
 translationOf: payment-channel
-sourceHash: "d4d6d3535d5c"
-sourceCommit: "c52bac9"
+sourceHash: "9c9af82e63d5"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"

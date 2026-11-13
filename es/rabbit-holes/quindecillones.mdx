@@ -2,8 +2,8 @@
 title: "Quindecillones: por qué nadie puede tropezar con tus bitcoins"
 slug: quindecillones
 translationOf: quindecillions
-sourceHash: "dfdf1426745c"
-sourceCommit: "0e165a3"
+sourceHash: "573dc0598baf"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-11-12"
 translation:
   method: "llm-draft"
@@ -21,7 +21,7 @@ estimatedMinutes: 14
 ogImage: "/diagrams/og/quindecillions-drawers.png"
 ogImageAlt: "Una pared de cajones grises pequeños llena la izquierda de la tarjeta. A la derecha, un contador marca 10^48, un quindecillón, con la línea 2^160 direcciones de Bitcoin, 1.46 x 10^48, y debajo 57,213,806 tienen monedas, según ChainQuery al 25 de octubre de 2026, una cota superior. Después, las probabilidades para una clave al azar, 1 entre 2.6 x 10^40. Una escala logarítmica a lo largo del borde inferior va de un cajón a 10^48 con cinco marcas: nuestras dos búsquedas de direcciones personalizadas en 1.4 x 10^12 cajones abiertos; todas las búsquedas públicas por fuerza bruta jamás corridas, sumadas, unos 10^21; la cota del cumpleaños en 1.4 x 10^24, las extracciones al azar antes de que sea probable que dos coincidan; 2.6 x 10^40, los cajones abiertos en promedio antes de que uno tenga monedas; y 1.46 x 10^48, todos los cajones. Leyenda: ninguna búsqueda registrada ha dado con un cajón con fondos por casualidad."
 sources:
-  - { label: "James D'Angelo (World Bitcoin Network) - Bitcoin 101: Quindecillions & The Amazing Math Of Bitcoin's Private Keys (video, 17 October 2014)", url: "https://www.youtube.com/watch?v=ZloHVKk7DHk" }
+  - { label: "James D'Angelo (World Bitcoin Network) - Bitcoin 101: Quindecillions & The Amazing Math Of Bitcoin's Private Keys (video, October 17, 2014)", url: "https://www.youtube.com/watch?v=ZloHVKk7DHk" }
   - { label: "SEC 2 v2.0, section 2.4.1 - the secp256k1 group order n", url: "https://www.secg.org/sec2-v2.pdf" }
   - { label: "Bitcoin Wiki - Private key (the valid key range)", url: "https://en.bitcoin.it/wiki/Private_key" }
   - { label: "Bitcoin Core - src/hash.h (Hash160: RIPEMD-160 of SHA-256, 20 bytes)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/hash.h" }
@@ -29,7 +29,7 @@ sources:
   - { label: "BIP 141 - Segregated Witness: the 20-byte P2WPKH program, the 32-byte P2WSH program, and why 2^80 work 'is not infeasible anymore'", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
   - { label: "BIP 143 - only compressed public keys are accepted in version 0 witness programs", url: "https://github.com/bitcoin/bips/blob/master/bip-0143.mediawiki" }
   - { label: "BIP 341 - Taproot outputs are 32-byte x-only public keys", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki" }
-  - { label: "Merriam-Webster - quindecillion: 1 followed by 48 zeros (US), 90 zeros (also, British) (Wayback Machine copy, 14 December 2025; the live page refuses automated fetches)", url: "https://web.archive.org/web/20251214053118/https://www.merriam-webster.com/dictionary/quindecillion" }
+  - { label: "Merriam-Webster - quindecillion: 1 followed by 48 zeros (US), 90 zeros (also, British) (Wayback Machine copy, December 14, 2025; the live page refuses automated fetches)", url: "https://web.archive.org/web/20251214053118/https://www.merriam-webster.com/dictionary/quindecillion" }
   - { label: "Dictionary.com - quindecillion", url: "https://www.dictionary.com/browse/quindecillion" }
   - { label: "ChainQuery - Bitcoin distribution report (live, weekly; 57,213,806 addresses with at least one UTXO at the 2026-10-25 snapshot, block 973,026)", url: "https://chainquery.com/reports/distribution" }
   - { label: "ChainQuery - quantum exposure report (5,098,744 funded Taproot addresses at the 2026-10-25 snapshot)", url: "https://chainquery.com/reports/quantum-exposure" }
@@ -40,40 +40,40 @@ sources:
   - { label: "Wikipedia - Composition of the human body (about 7 x 10^27 atoms in a 70 kg adult)", url: "https://en.wikipedia.org/wiki/Composition_of_the_human_body" }
   - { label: "mempool.space API - network hash rate, three-day window (1.09 x 10^21 hashes per second, read 2026-10-28)", url: "https://mempool.space/api/v1/mining/hashrate/3d" }
   - { label: "mempool.space - the 2015 puzzle transaction: 256 outputs of 0.001 x k BTC, block 339,085", url: "https://mempool.space/tx/08389f34c98c606322740c0be6a7125d9860bb8d5cb182c02f98461e5fa6cd15" }
-  - { label: "mempool.space - the 11 July 2017 transaction that raised every unsolved prize to 0.01 x k BTC", url: "https://mempool.space/tx/5d45587cfd1d5b0fb826805541da7d94c61fe432259e68ee26f4a04544384164" }
-  - { label: "mempool.space - the 1 June 2019 spend that put the public keys of puzzles 65, 70, ..., 160 on chain", url: "https://mempool.space/tx/17e4e323cfbc68d7f0071cad09364e8193eedf8fefbcbd8a21b4b65717a4b3d3" }
-  - { label: "mempool.space - the 16 April 2023 transaction that raised every unsolved prize to 0.1 x k BTC", url: "https://mempool.space/tx/12f34b58b04dfb0233ce889f674781c0e0c7ba95482cca469125af41a78d13b3" }
-  - { label: "mempool.space - the puzzle 66 solving transaction, block 861,068, 12 September 2024", url: "https://mempool.space/tx/57a88f47e4c047740b782a5562fca143ce85de0373cbff3a7d406e9ae7fc2f5f" }
-  - { label: "mempool.space - the puzzle 69 address (emptied 30 April 2025, block 894,620)", url: "https://mempool.space/address/19vkiEajfhuZ8bs8Zu2jgmC6oqZbWqhxhG" }
-  - { label: "mempool.space - the puzzle 135 address (emptied 28 July 2026, block 959,946)", url: "https://mempool.space/address/16RGFo6hjq9ym6Pj7N5H7L1NR1rVPJyw2v" }
-  - { label: "mempool.space - the puzzle 71 address (7.1 BTC, unspent as of 28 October 2026)", url: "https://mempool.space/address/1PWo3JeB9jrGwfHDNpdGK54CRas7fsVzXU" }
-  - { label: "bitcointalk - the puzzle creator's one post, 27 April 2017: 'It is simply a crude measuring instrument, of the cracking strength of the community'", url: "https://bitcointalk.org/index.php?topic=1306983.msg18765941#msg18765941" }
+  - { label: "mempool.space - the July 11, 2017 transaction that raised every unsolved prize to 0.01 x k BTC", url: "https://mempool.space/tx/5d45587cfd1d5b0fb826805541da7d94c61fe432259e68ee26f4a04544384164" }
+  - { label: "mempool.space - the June 1, 2019 spend that put the public keys of puzzles 65, 70, ..., 160 on chain", url: "https://mempool.space/tx/17e4e323cfbc68d7f0071cad09364e8193eedf8fefbcbd8a21b4b65717a4b3d3" }
+  - { label: "mempool.space - the April 16, 2023 transaction that raised every unsolved prize to 0.1 x k BTC", url: "https://mempool.space/tx/12f34b58b04dfb0233ce889f674781c0e0c7ba95482cca469125af41a78d13b3" }
+  - { label: "mempool.space - the puzzle 66 solving transaction, block 861,068, September 12, 2024", url: "https://mempool.space/tx/57a88f47e4c047740b782a5562fca143ce85de0373cbff3a7d406e9ae7fc2f5f" }
+  - { label: "mempool.space - the puzzle 69 address (emptied April 30, 2025, block 894,620)", url: "https://mempool.space/address/19vkiEajfhuZ8bs8Zu2jgmC6oqZbWqhxhG" }
+  - { label: "mempool.space - the puzzle 135 address (emptied July 28, 2026, block 959,946)", url: "https://mempool.space/address/16RGFo6hjq9ym6Pj7N5H7L1NR1rVPJyw2v" }
+  - { label: "mempool.space - the puzzle 71 address (7.1 BTC, unspent as of October 28, 2026)", url: "https://mempool.space/address/1PWo3JeB9jrGwfHDNpdGK54CRas7fsVzXU" }
+  - { label: "bitcointalk - the puzzle creator's one post, April 27, 2017: 'It is simply a crude measuring instrument, of the cracking strength of the community'", url: "https://bitcointalk.org/index.php?topic=1306983.msg18765941#msg18765941" }
   - { label: "Jean-Luc Pons - Kangaroo README: a Pollard's kangaroo solver for the puzzles whose public keys are exposed; puzzle 115 took 2^58.36 group operations on 256 GPUs", url: "https://github.com/JeanLucPons/Kangaroo" }
   - { label: "brichard19 - BitCrack README: a GPU tool 'for brute-forcing Bitcoin private keys' written for the puzzle", url: "https://github.com/brichard19/BitCrack" }
-  - { label: "Large Bitcoin Collider - live statistics page (search space covered: 55.87 of 160 bits, 65.93 x 10^15 keys, on 28 October 2026)", url: "https://lbc.cryptoguru.org/stats" }
-  - { label: "Large Bitcoin Collider - statistics page, Wayback Machine copy of 15 December 2017 (24-hour rate 2,771 million keys a second, the highest in any archived snapshot)", url: "https://web.archive.org/web/20171215141636/https://lbc.cryptoguru.org/stats" }
-  - { label: "Large Bitcoin Collider - trophies page (the pool's finds; the last is dated 15 November 2017)", url: "https://lbc.cryptoguru.org/trophies" }
-  - { label: "Large Bitcoin Collider - about page (Wayback Machine copy, 17 April 2017: pool inception 10 August 2016 and the early milestones)", url: "https://web.archive.org/web/20170417062334id_/https://lbc.cryptoguru.org/about" }
+  - { label: "Large Bitcoin Collider - live statistics page (search space covered: 55.87 of 160 bits, 65.93 x 10^15 keys, on October 28, 2026)", url: "https://lbc.cryptoguru.org/stats" }
+  - { label: "Large Bitcoin Collider - statistics page, Wayback Machine copy of December 15, 2017 (24-hour rate 2,771 million keys a second, the highest in any archived snapshot)", url: "https://web.archive.org/web/20171215141636/https://lbc.cryptoguru.org/stats" }
+  - { label: "Large Bitcoin Collider - trophies page (the pool's finds; the last is dated November 15, 2017)", url: "https://lbc.cryptoguru.org/trophies" }
+  - { label: "Large Bitcoin Collider - about page (Wayback Machine copy, April 17, 2017: pool inception August 10, 2016, and the early milestones)", url: "https://web.archive.org/web/20170417062334id_/https://lbc.cryptoguru.org/about" }
   - { label: "Bitcoin Wiki - Brainwallet (the passphrase scheme is filed under 'Obsolete brainwallet style')", url: "https://en.bitcoin.it/wiki/Brainwallet" }
   - { label: "DEF CON 23 - speakers page: Ryan Castellucci, Cracking Cryptocurrency Brainwallets (abstract)", url: "https://defcon.org/html/defcon-23/dc-23-speakers.html" }
-  - { label: "Ryan Castellucci - Cracking Cryptocurrency Brainwallets, slides as delivered on 7 August 2015 (60 pages)", url: "https://web.archive.org/web/20260114163757/https://rya.nc/files/cracking_cryptocurrency_brainwallets.pdf" }
-  - { label: "Ryan Castellucci - Why I'm Releasing a Brainwallet Cracker at DEFCON 23 (8 July 2015)", url: "https://web.archive.org/web/20260113233317/https://rya.nc/defcon-brainwallets.html" }
+  - { label: "Ryan Castellucci - Cracking Cryptocurrency Brainwallets, slides as delivered on August 7, 2015 (60 pages)", url: "https://web.archive.org/web/20260114163757/https://rya.nc/files/cracking_cryptocurrency_brainwallets.pdf" }
+  - { label: "Ryan Castellucci - Why I'm Releasing a Brainwallet Cracker at DEFCON 23 (July 8, 2015)", url: "https://web.archive.org/web/20260113233317/https://rya.nc/defcon-brainwallets.html" }
   - { label: "ryancdotorg - Brainflayer repository and README", url: "https://github.com/ryancdotorg/brainflayer" }
   - { label: "Vasek, Bonneau, Castellucci, Keith and Moore - The Bitcoin Brain Drain: A Short Paper on the Use and Abuse of Bitcoin Brain Wallets (Financial Cryptography 2016, preproceedings PDF)", url: "https://fc16.ifca.ai/preproceedings/36_Vasek.pdf" }
   - { label: "The same paper in Springer's Financial Cryptography and Data Security volume (LNCS 9603), pp. 609-618, DOI 10.1007/978-3-662-54970-4_36", url: "https://doi.org/10.1007/978-3-662-54970-4_36" }
-  - { label: "Milk Sad - research update 16 (6 January 2026): 20,397 one-round-SHA-256 brain wallet addresses found; a 5.26 BTC sweep in February 2025", url: "https://milksad.info/posts/research-update-16/" }
-  - { label: "bitcoin.org - Android Security Vulnerability alert, 11 August 2013", url: "https://bitcoin.org/en/alert/2013-08-11-android" }
-  - { label: "Android Developers Blog - Some SecureRandom Thoughts, 14 August 2013", url: "https://android-developers.googleblog.com/2013/08/some-securerandom-thoughts.html" }
+  - { label: "Milk Sad - research update 16 (January 6, 2026): 20,397 one-round-SHA-256 brain wallet addresses found; a 5.26 BTC sweep in February 2025", url: "https://milksad.info/posts/research-update-16/" }
+  - { label: "bitcoin.org - Android Security Vulnerability alert, August 11, 2013", url: "https://bitcoin.org/en/alert/2013-08-11-android" }
+  - { label: "Android Developers Blog - Some SecureRandom Thoughts, August 14, 2013", url: "https://android-developers.googleblog.com/2013/08/some-securerandom-thoughts.html" }
   - { label: "MITRE - CVE-2023-31290: Trust Wallet Core, entropy of 32 bits, 'only four billion possible mnemonics'", url: "https://cveawg.mitre.org/api/cve/CVE-2023-31290" }
-  - { label: "Trust Wallet - browser extension WASM vulnerability post-mortem, 22 April 2023 (Wayback Machine copy; the live page returns 410)", url: "https://web.archive.org/web/20230423004645id_/https://community.trustwallet.com/t/browser-extension-wasm-vulnerability-postmortem/750787" }
-  - { label: "Ledger - Funds of every wallet created with the Trust Wallet browser extension could have been stolen (25 April 2023)", url: "https://www.ledger.com/blog/Funds-of-every-wallet-created-with-the-Trust-Wallet-browser-extension-could-have-been-stolen" }
+  - { label: "Trust Wallet - browser extension WASM vulnerability post-mortem, April 22, 2023 (Wayback Machine copy; the live page returns 410)", url: "https://web.archive.org/web/20230423004645id_/https://community.trustwallet.com/t/browser-extension-wasm-vulnerability-postmortem/750787" }
+  - { label: "Ledger - Funds of every wallet created with the Trust Wallet browser extension could have been stolen (April 25, 2023)", url: "https://www.ledger.com/blog/Funds-of-every-wallet-created-with-the-Trust-Wallet-browser-extension-could-have-been-stolen" }
   - { label: "MITRE - CVE-2023-39910: Libbitcoin Explorer 3.x wallet entropy 'is weak, aka the Milk Sad issue'", url: "https://cveawg.mitre.org/api/cve/CVE-2023-39910" }
-  - { label: "Milk Sad - disclosure write-up: 32 bits of system time, the 12 July 2023 sweep of about 29.65 BTC, over 2,600 affected wallets", url: "https://milksad.info/disclosure.html" }
-  - { label: "Unciphered - Randstorm (Wayback Machine copy, 26 September 2024; the live page is gone)", url: "https://web.archive.org/web/20240926132048id_/https://www.unciphered.com/randstorm" }
-  - { label: "Bitcoin Optech Newsletter #416, 31 July 2026 - the COLDCARD seed generation flaw; 'estimated losses exceed 1,000 BTC'", url: "https://bitcoinops.org/en/newsletters/2026/07/31/" }
-  - { label: "Coinkite - COLDCARD Mk3 seed generation warning (security advisory, 30 July 2026)", url: "https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/" }
-  - { label: "Coinkite - entropy technical backgrounder (30 July 2026): 'we estimate the effective search space at about 40 bits'", url: "https://blog.coinkite.com/entropy-technical-backgrounder/" }
-  - { label: "Block Engineering - Predictable RNG fallback and 32-bit reseed in COLDCARD firmware (30 July 2026)", url: "https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware" }
+  - { label: "Milk Sad - disclosure write-up: 32 bits of system time, the July 12, 2023 sweep of about 29.65 BTC, over 2,600 affected wallets", url: "https://milksad.info/disclosure.html" }
+  - { label: "Unciphered - Randstorm (Wayback Machine copy, September 26, 2024; the live page is gone)", url: "https://web.archive.org/web/20240926132048id_/https://www.unciphered.com/randstorm" }
+  - { label: "Bitcoin Optech Newsletter #416, July 31, 2026 - the COLDCARD seed generation flaw; 'estimated losses exceed 1,000 BTC'", url: "https://bitcoinops.org/en/newsletters/2026/07/31/" }
+  - { label: "Coinkite - COLDCARD Mk3 seed generation warning (security advisory, July 30, 2026)", url: "https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/" }
+  - { label: "Coinkite - entropy technical backgrounder (July 30, 2026): 'we estimate the effective search space at about 40 bits'", url: "https://blog.coinkite.com/entropy-technical-backgrounder/" }
+  - { label: "Block Engineering - Predictable RNG fallback and 32-bit reseed in COLDCARD firmware (July 30, 2026)", url: "https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware" }
   - { label: "Independent Security Evaluators - Ethercombing: Finding Secrets in Popular Places (732 Ethereum private keys found in 32-bit sub-ranges, balances as of March 2019)", url: "https://www.ise.io/casestudies/ethercombing/" }
 relatedTerms: [vanity-address, private-key, address, hash, p2pkh-pay-public-key-hash, seed-phrase, mnemonic-entropy-bits, public-key-exposure]
 ---

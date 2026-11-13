@@ -38,8 +38,8 @@ sameAs:
   - https://en.wikipedia.org/wiki/Mt._Gox
 liveWidget: ~
 translationOf: mt-gox
-sourceHash: "7de99509f87e"
-sourceCommit: "d728434"
+sourceHash: "56d5fbccc878"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-10-10"
 translation:
   method: "llm-draft"

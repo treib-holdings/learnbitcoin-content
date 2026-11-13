@@ -2,8 +2,8 @@
 title: "Reutilización de direcciones"
 slug: reutilizacion-de-direcciones
 translationOf: address-reuse
-sourceHash: "84c83b5fa675"
-sourceCommit: "d12964a"
+sourceHash: "dec76dbda79a"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-10-15"
 translation:
   method: "llm-draft"
@@ -21,7 +21,7 @@ keyTakeaways:
   - "Recibir dos veces en una dirección que nunca ha gastado filtra privacidad; gastar una vez y volver a recibir filtra también la clave. Las billeteras modernas entregan una dirección nueva para cada pago, así que la solución es dejar de pelear con ellas"
 sources:
   - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 10, Privacy: a new key pair should be used for each transaction to keep them from being linked to a common owner (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
-  - { label: "Satoshi Nakamoto - bitcointalk, 25 November 2009: for greater privacy, it's best to use bitcoin addresses only once", url: "https://satoshi.nakamotoinstitute.org/posts/bitcointalk/11/" }
+  - { label: "Satoshi Nakamoto - bitcointalk, November 25, 2009: for greater privacy, it's best to use bitcoin addresses only once", url: "https://satoshi.nakamotoinstitute.org/posts/bitcointalk/11/" }
   - { label: "BIP-360 - Pay-to-Merkle-Root (P2MR): poor wallet hygiene such as address reuse increases vulnerability to long exposure attacks; protection from them does not depend on post-quantum signatures activating", url: "https://github.com/bitcoin/bips/blob/master/bip-0360.mediawiki" }
   - { label: "Bitcoin Wiki - Address reuse", url: "https://en.bitcoin.it/wiki/Address_reuse" }
   - { label: "ChainQuery - Quantum exposure report (snapshot 2026-10-11, block 970,878: 5,172,596 BTC still sitting at hashed addresses that had already been spent from)", url: "https://chainquery.com/reports/quantum-exposure" }

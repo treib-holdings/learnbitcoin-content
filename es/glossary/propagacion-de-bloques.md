@@ -16,7 +16,7 @@ sources:
   - { label: "BIP 152 - Compact Block Relay (Matt Corallo, 2016; 80-byte header plus 6-byte short transaction IDs; high-bandwidth mode to at most three peers, relayed before full validation once the header checks out)", url: "https://github.com/bitcoin/bips/blob/master/bip-0152.mediawiki" }
   - { label: "Bitcoin Core 0.13.0 release notes - Compact Block support (BIP 152) (August 23, 2016)", url: "https://bitcoincore.org/en/releases/0.13.0/" }
   - { label: "Christian Decker and Roger Wattenhofer - Information Propagation in the Bitcoin Network (IEEE P2P 2013; median 6.5 seconds and mean 12.6 seconds for a node to receive a block; propagation delay as the primary cause of blockchain forks)", url: "https://tik-old.ee.ethz.ch/file//49318d3f56c1d525aabf7fda78b23fc0/P2P2013_041.pdf" }
-  - { label: "KIT DSN Research Group - Bitcoin Network Monitor, current block propagation delay distribution (raw file data/curblock.gpd as served on 13 October 2026: half of peer announcements within 0.84 seconds of the first, 90% within 2.5 seconds, 99% within 10.4 seconds)", url: "https://www.dsn.kastel.kit.edu/bitcoin/" }
+  - { label: "KIT DSN Research Group - Bitcoin Network Monitor, current block propagation delay distribution (raw file data/curblock.gpd as served on October 13, 2026: half of peer announcements within 0.84 seconds of the first, 90% within 2.5 seconds, 99% within 10.4 seconds)", url: "https://www.dsn.kastel.kit.edu/bitcoin/" }
   - { label: "FIBRE - The Fast Internet Bitcoin Relay Engine (UDP transport, forward error correction and compact blocks; the original network sat in stasis for almost a decade before Localhost Research revived a public network)", url: "https://bitcoinfibre.org/" }
   - { label: "Blockstream - Blockstream Satellite (broadcasts the Bitcoin blockchain worldwide 24/7 for free from geosynchronous satellites, so a node is not cut off when its internet connection fails)", url: "https://blockstream.com/satellite/" }
 relatedTerms:
@@ -34,8 +34,8 @@ relatedTerms:
   - stale-block
 liveWidget: ~
 translationOf: block-propagation
-sourceHash: "354d91fc6239"
-sourceCommit: "c52bac9"
+sourceHash: "396e96230c98"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"

@@ -14,7 +14,7 @@ sources:
   - { label: "Satoshi Nakamoto - Bitcoin whitepaper, section 10, Privacy: some linking is still unavoidable with multi-input transactions, which necessarily reveal that their inputs were owned by the same owner (2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
   - { label: "Bitcoin Wiki - Privacy: the common-input-ownership heuristic, and coin control as a feature of some wallets that lets the user choose which coins are spent as inputs", url: "https://en.bitcoin.it/wiki/Privacy" }
   - { label: "Bitcoin Optech - Output linking topic (dust attacks, and coin control as a wallet defense against spending the dust)", url: "https://bitcoinops.org/en/topics/output-linking/" }
-  - { label: "Bitcoin Core 0.9.0 release notes - Add Coin Control Features (19 March 2014)", url: "https://bitcoin.org/en/release/v0.9.0" }
+  - { label: "Bitcoin Core 0.9.0 release notes - Add Coin Control Features (March 19, 2014)", url: "https://bitcoin.org/en/release/v0.9.0" }
   - { label: "Bitcoin Optech - Transaction size calculator (a P2WPKH input is 68 vbytes: 36-byte outpoint, 1-byte scriptSig length, 4-byte sequence and 27 vbytes of witness)", url: "https://bitcoinops.org/en/tools/calc-size/" }
 relatedTerms:
   - address-clustering

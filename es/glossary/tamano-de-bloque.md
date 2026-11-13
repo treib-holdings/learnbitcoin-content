@@ -15,11 +15,11 @@ keyTakeaways:
   - "SegWit introdujo un sistema por peso, de hasta 4 millones de unidades de peso"
   - "Permite una capacidad efectiva mayor que el límite estricto de 1 MB"
 sources:
-  - { label: "Bitcoin Core on GitHub - commit a30b56e by Satoshi Nakamoto, 15 July 2010 (adds static const unsigned int MAX_BLOCK_SIZE = 1000000 to main.h; the commit message mentions only an OpenSSL linkage fix)", url: "https://github.com/bitcoin/bitcoin/commit/a30b56ebe76ffff9f9cc8a6667186179413c6349" }
+  - { label: "Bitcoin Core on GitHub - commit a30b56e by Satoshi Nakamoto, July 15, 2010 (adds static const unsigned int MAX_BLOCK_SIZE = 1000000 to main.h; the commit message mentions only an OpenSSL linkage fix)", url: "https://github.com/bitcoin/bitcoin/commit/a30b56ebe76ffff9f9cc8a6667186179413c6349" }
   - { label: "Bitcoin Wiki - Block size limit controversy (the 1 MB limit was added in 2010 in two unannounced commits and only became the binding limit after the May 2013 hard fork removed the database lock limit)", url: "https://en.bitcoin.it/wiki/Block_size_limit_controversy" }
   - { label: "BIP 141 - Segregated Witness, consensus layer (blocks were limited to 1,000,000 bytes; block weight is base size times 3 plus total size and must not exceed 4,000,000)", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
   - { label: "Bitcoin Core - src/consensus/consensus.h (MAX_BLOCK_WEIGHT 4,000,000; WITNESS_SCALE_FACTOR 4)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/consensus/consensus.h" }
-  - { label: "mempool.space - Block sizes and weights graph (1-month series to 14 October 2026; per-point average sizes from 0.87 to 2.75 MB with a median of 1.59 MB; median weight 3,993,795 WU and 92.7 percent of points above 3.9 million WU)", url: "https://mempool.space/graphs/mining/block-sizes-weights" }
+  - { label: "mempool.space - Block sizes and weights graph (1-month series to October 14, 2026; per-point average sizes from 0.87 to 2.75 MB with a median of 1.59 MB; median weight 3,993,795 WU and 92.7 percent of points above 3.9 million WU)", url: "https://mempool.space/graphs/mining/block-sizes-weights" }
   - { label: "bitcoin.org - Running a full node, minimum requirements (desktop or laptop hardware, 2 gigabytes of memory, 7 gigabytes of free disk space, a broadband connection with at least 400 kilobits per second upload)", url: "https://bitcoin.org/en/full-node" }
 relatedTerms:
   - bip-42
@@ -36,8 +36,8 @@ sameAs:
   - "https://en.bitcoin.it/wiki/Block_size_limit_controversy"
 liveWidget: ~
 translationOf: block-size
-sourceHash: "ed2412ed6c20"
-sourceCommit: "b3ef864"
+sourceHash: "3f5273fe46de"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-10-15"
 translation:
   method: "llm-draft"

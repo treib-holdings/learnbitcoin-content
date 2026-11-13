@@ -27,8 +27,8 @@ relatedTerms:
   - double-spend
 liveWidget: ~
 translationOf: bip-50
-sourceHash: "8bc8f3ac24b9"
-sourceCommit: "6637eb3"
+sourceHash: "634946d6e96d"
+sourceCommit: "e722e85"
 translation:
   method: "llm-draft"
 ---

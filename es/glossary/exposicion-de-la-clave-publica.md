@@ -23,7 +23,7 @@ sources:
   - { label: "BIP-341 - Taproot (the witness program is the tweaked public key)", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki" }
   - { label: "ChainQuery - Quantum exposure report (figures from snapshot 2026-10-11, block 970,878)", url: "https://chainquery.com/reports/quantum-exposure" }
   - { label: "Project Eleven - Bitcoin Risq List", url: "https://bitcoin-risq-list.projecteleven.com/" }
-  - { label: "Glassnode Research - Measuring Bitcoin's Quantum-Exposed Supply (20 May 2026)", url: "https://research.glassnode.com/measuring-bitcoins-quantum-exposed-supply/" }
+  - { label: "Glassnode Research - Measuring Bitcoin's Quantum-Exposed Supply (May 20, 2026)", url: "https://research.glassnode.com/measuring-bitcoins-quantum-exposed-supply/" }
 relatedTerms:
   - address-reuse
   - post-quantum-bitcoin
@@ -43,8 +43,8 @@ relatedTerms:
   - shors-algorithm
 liveWidget: ~
 translationOf: public-key-exposure
-sourceHash: "f87cb1709e85"
-sourceCommit: "3508921"
+sourceHash: "15a32e94bcaa"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-10-15"
 translation:
   method: "llm-draft"

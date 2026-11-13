@@ -19,7 +19,7 @@ sources:
   - { label: "Bitcoin Core - CheckProofOfWork in src/pow.cpp: the block hash must not exceed the target derived from nBits", url: "https://github.com/bitcoin/bitcoin/blob/master/src/pow.cpp" }
   - { label: "Bitcoin Core - nPowTargetTimespan of two weeks and nPowTargetSpacing of 10 minutes in src/kernel/chainparams.cpp", url: "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/chainparams.cpp" }
   - { label: "Bitcoin Wiki - Difficulty: expected number of hashes to find a block is D * 2^48 / 0xffff, about D * 2^32", url: "https://en.bitcoin.it/wiki/Difficulty" }
-  - { label: "mempool.space - Network hash rate and difficulty, last 30 days (JSON; fetched 13 October 2026: about 1,000 EH/s, difficulty 132.7 trillion)", url: "https://mempool.space/api/v1/mining/hashrate/1m" }
+  - { label: "mempool.space - Network hash rate and difficulty, last 30 days (JSON; fetched October 13, 2026: about 1,000 EH/s, difficulty 132.7 trillion)", url: "https://mempool.space/api/v1/mining/hashrate/1m" }
 relatedTerms:
   - anti-sybil-mechanism
   - byzantine-fault-tolerance
@@ -40,8 +40,8 @@ sameAs:
   - "https://en.bitcoin.it/wiki/Proof_of_work"
 liveWidget: ~
 translationOf: proof-work-pow
-sourceHash: "713261ee0601"
-sourceCommit: "d12964a"
+sourceHash: "e9d79ba519f4"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-10-13"
 translation:
   method: "llm-draft"

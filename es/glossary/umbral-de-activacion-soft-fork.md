@@ -12,7 +12,7 @@ keyTakeaways:
   - "Garantiza que las actualizaciones solo se activen con un apoyo alto de los mineros"
   - "A veces se critica por darles a los mineros una influencia desproporcionada"
 sources:
-  - { label: "BIP 341 - Deployment: modified BIP 9, 90% threshold, signaling 24 April to 11 August 2021, minimum activation height 709,632", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#deployment" }
+  - { label: "BIP 341 - Deployment: modified BIP 9, 90% threshold, signaling April 24 to August 11, 2021, minimum activation height 709,632", url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#deployment" }
   - { label: "BIP 9 - Version bits (threshold 1,916 of 2,016 blocks, 95%, in a 2,016-block retarget period)", url: "https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki" }
   - { label: "BIP 141 - Segregated Witness, deployment (BIP-9 bit 1, signaling from November 15, 2016)", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
   - { label: "Bitcoin Magazine - BIP91: The SegWit Activation Kludge That Should Keep Bitcoin Whole (Aaron van Wirdum, June 16, 2017): only some 30 percent of hash power signals for SegWit; SegWit2x pairs SegWit with a hard fork to 2 MB; BIP91 uses its own 80% trigger on bit 4 to activate the existing SegWit deployment", url: "https://bitcoinmagazine.com/technical/bip91-segwit-activation-kludge-should-keep-bitcoin-whole" }
@@ -36,8 +36,8 @@ relatedTerms:
   - soft-fork
 liveWidget: ~
 translationOf: deployment-threshold-soft-fork
-sourceHash: "8a4ccb6aceeb"
-sourceCommit: "659e6f9"
+sourceHash: "a4a3c35c3393"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-10-10"
 translation:
   method: "llm-draft"

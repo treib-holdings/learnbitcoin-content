@@ -19,8 +19,8 @@ keyTakeaways:
 sources:
   - { label: "Bitcoin Optech - Transaction size calculator (inputs of 148 vbytes for P2PKH, 68 for P2WPKH and 57.5 for a P2TR key-path spend; 10.5 vbytes of fixed overhead in a segwit transaction)", url: "https://bitcoinops.org/en/tools/calc-size/" }
   - { label: "Bitcoin Optech - Uneconomical outputs (dust) topic (outputs worth less than the fee to spend them; the dust limit exists to keep them from growing the UTXO set)", url: "https://bitcoinops.org/en/topics/uneconomical-outputs/" }
-  - { label: "mempool.space - Block fee rates graph (1-month series to 14 October 2026; the median block's median feerate was 1 sat/vB overall and on six days of the week, 2 sat/vB on Fridays; 90th percentile 3 sat/vB)", url: "https://mempool.space/graphs/mining/block-fee-rates" }
-  - { label: "mempool.space - recommended fees (two fetches on 14 October 2026; fastest 3 to 4 sat/vB, hour, economy and minimum 1 sat/vB)", url: "https://mempool.space/api/v1/fees/recommended" }
+  - { label: "mempool.space - Block fee rates graph (1-month series to October 14, 2026; the median block's median feerate was 1 sat/vB overall and on six days of the week, 2 sat/vB on Fridays; 90th percentile 3 sat/vB)", url: "https://mempool.space/graphs/mining/block-fee-rates" }
+  - { label: "mempool.space - recommended fees (two fetches on October 14, 2026; fastest 3 to 4 sat/vB, hour, economy and minimum 1 sat/vB)", url: "https://mempool.space/api/v1/fees/recommended" }
   - { label: "Bitcoin Wiki - Privacy (the common-input-ownership heuristic: inputs spent together are assumed to share an owner, which is exactly what a consolidation across privacy boundaries gives away)", url: "https://en.bitcoin.it/wiki/Privacy" }
 relatedTerms:
   - discard-threshold
@@ -32,8 +32,8 @@ relatedTerms:
   - utxo-unspent-transaction-output
 liveWidget: ~
 translationOf: dust-sweeping
-sourceHash: "8c6007fc85bd"
-sourceCommit: "b3ef864"
+sourceHash: "8737bab51d2a"
+sourceCommit: "e722e85"
 sourceUpdated: "2026-10-15"
 translation:
   method: "llm-draft"
