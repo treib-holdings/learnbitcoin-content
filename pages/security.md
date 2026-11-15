@@ -3,12 +3,12 @@ title: "Security"
 heading: "What we ship, what we don't, and where third parties grade us."
 description: "How LearnBitcoin secures the site - concrete config, independent grades, honest gaps. Verify it yourself."
 published: "2026-05-23"
-updated: "2026-11-10"
+updated: "2026-11-15"
 ---
 
 Short version: this site holds none of your money and none of your
 keys. The personal data tied to it is the newsletter list, which
-Buttondown keeps for us, and a server log that clears after 3 days;
+Buttondown keeps for us, and a server log that clears after 7 days;
 [the privacy page](/privacy#what-we-actually-collect) says what each
 holds. Our server holds a single Buttondown key so the signup form
 works. Apart from that key and that short log there is nothing here to
@@ -79,7 +79,7 @@ This is a content site that serves HTML and a few PNGs. We do not:
 
 - Hold any of your money, keys or seed phrases. The personal data tied
   to the site is the newsletter list, which Buttondown holds, and a
-  server log that clears after 3 days;
+  server log that clears after 7 days;
   [the privacy page](/privacy#what-we-actually-collect) lists both.
 - Run any custodial service, exchange, or wallet.
 - Promise zero-day-fix SLAs. We rescan after every significant change

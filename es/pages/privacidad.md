@@ -3,6 +3,7 @@ title: "Privacidad"
 heading: "Esto es todo lo que sabemos de ti."
 description: "Qué datos recopila LearnBitcoin, quién los ve y cuánto tiempo se guardan. Versión corta: casi nada, a menos que te suscribas al boletín."
 published: "2026-10-14"
+updated: "2026-11-15"
 translationOf: "privacy"
 sourceHash: "21a42cda6819"
 sourceCommit: "265648e"
@@ -14,13 +15,11 @@ translation:
 Esta traducción es informativa. [La versión en inglés](/privacy) es la
 que rige; si difieren, vale la inglesa.
 
-**Cambio del 11 de octubre de 2026:** agregamos un boletín por correo
-electrónico. Leer el sitio funciona exactamente igual que antes. Si te
-suscribes, [la sección del boletín](#el-boletin) detalla qué se guarda,
-incluido un registro de qué correos abres y en qué enlaces haces clic.
-También corregimos la línea sobre los registros de nuestro servidor,
-que decía unos 30 días. La cifra real está más abajo, en "Tu dirección
-IP, por poco tiempo".
+**Cambio del 15 de noviembre de 2026:** el registro de nuestro servidor
+se guarda durante 7 días, no 3. Es así desde finales de octubre, cuando
+pasamos a un plan de pago de Cloudflare que lo conserva más tiempo, y
+en ese momento no actualizamos esta página. Lo que contiene el registro
+no cambió; está más abajo, en "Tu dirección IP, por poco tiempo".
 
 La versión corta de este aviso de privacidad: casi nada. Si te
 suscribes al boletín, también tenemos tu dirección de correo, y
@@ -41,7 +40,7 @@ cada visitante. El nuestro también. La mayoría de las solicitudes nunca
 llegan a nuestro propio código: las páginas son archivos estáticos,
 servidos por Cloudflare. Las que sí llegan (el script de analítica y
 su ping, las imágenes de vista previa para compartir, el formulario del
-boletín) se registran durante 3 días. La entrada contiene tu dirección
+boletín) se registran durante 7 días. La entrada contiene tu dirección
 IP, la cadena user-agent de tu navegador (el texto con el que se
 identifica), la página desde la que vino la solicitud y la ubicación
 que Cloudflare deduce a partir de la IP, hasta el nivel de ciudad y
@@ -152,7 +151,7 @@ en servicios que operan otras empresas
 propio servidor, que se la pasa a Buttondown y no guarda copia. Nada
 sobre ti viaja con ella: ni tu dirección IP, ni tu navegador, ni la
 página de la que venías. Nuestro servidor registra la solicitud durante
-3 días, como registra cada solicitud que le llega (ver "Tu dirección
+7 días, como registra cada solicitud que le llega (ver "Tu dirección
 IP, por poco tiempo", más arriba).
 
 **Qué guarda Buttondown.** Tu dirección; cuándo te inscribiste y

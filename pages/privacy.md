@@ -3,14 +3,14 @@ title: "Privacy"
 heading: "Here is everything we know about you."
 description: "What data LearnBitcoin collects, who sees it, how long it lives. Short version: almost nothing, unless you subscribe to the newsletter."
 published: "2026-05-14"
-updated: "2026-11-10"
+updated: "2026-11-15"
 ---
 
-**Changed 2026-11-10:** the newsletter signup form now runs a bot
-check from Cloudflare, after a bot used the form to send confirmation
-emails to strangers. It loads only when you use the form. Reading the
-site works exactly as before.
-[The newsletter section](#the-newsletter) says what the check sees.
+**Changed November 15, 2026:** our server log is kept for 7 days, not 3.
+It has been 7 since late October, when we moved to a paid Cloudflare
+plan that keeps the log longer, and we did not update this page then.
+What the log holds is the same as before; it is under "Your IP address,
+briefly" below.
 
 Short version: almost nothing. If you subscribe to the newsletter, we
 also have your email address, and Buttondown, the company that sends
@@ -30,7 +30,7 @@ clicks for each subscriber, and
 visitor. Ours does too. Most requests never reach our own code: the
 pages are static files, served by Cloudflare. The ones that do (the
 analytics script and its ping, the share-preview images, the
-newsletter form) are logged for 3 days. The entry holds your IP
+newsletter form) are logged for 7 days. The entry holds your IP
 address, your browser's user-agent string, the page the request came
 from, and the location Cloudflare works out from the IP, down to city
 and postal code. It never holds what you typed into the form. We keep
@@ -133,7 +133,7 @@ on services run by other companies
 **What happens to it.** The form posts your address to our own server,
 which passes it to Buttondown and keeps no copy. Nothing about you
 travels with it: not your IP address, not your browser, not the page
-you came from. Our server logs the request for 3 days, as it logs
+you came from. Our server logs the request for 7 days, as it logs
 every request that reaches it (see "Your IP address, briefly" above).
 
 **The bot check.** The form will not send until Cloudflare's
