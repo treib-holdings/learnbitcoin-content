@@ -3,7 +3,7 @@ title: "Security"
 heading: "What we ship, what we don't, and where third parties grade us."
 description: "How LearnBitcoin secures the site - concrete config, independent grades, honest gaps. Verify it yourself."
 published: "2026-05-23"
-updated: "2026-11-15"
+updated: "2026-11-16"
 ---
 
 Short version: this site holds none of your money and none of your
@@ -49,7 +49,8 @@ third parties grade it, and where we know we still owe work.
   treat it like a password and replace it if it ever leaks.
 - **No cookies, no tracking pixels on this site.** Plausible is
   cookieless. The only browser storage we set is `lb_progress_v1`,
-  which holds your reading progress and never leaves your device.
+  which holds your reading progress, with the "Do it" steps marked
+  done, and never leaves your device.
   (Cloudflare sets its own `cf_clearance` / `__cf_bm` cookies for
   abuse mitigation; we do not read them.) The newsletter emails are
   the exception: they carry Buttondown's open-tracking image and
@@ -81,7 +82,13 @@ This is a content site that serves HTML and a few PNGs. We do not:
   to the site is the newsletter list, which Buttondown holds, and a
   server log that clears after 7 days;
   [the privacy page](/privacy#what-we-actually-collect) lists both.
-- Run any custodial service, exchange, or wallet.
+- Run any custodial service or exchange, or any wallet for real
+  bitcoin. We do run a practice wallet, at practice.learnbitcoin.com,
+  which the "Do it" cards in the Journey open. It works on a practice
+  network whose coins are worth nothing. Its 12 words and its private
+  keys are made in your browser and never leave it, and
+  [its own statement](https://practice.learnbitcoin.com/about) says
+  what it stores and what its server sees.
 - Promise zero-day-fix SLAs. We rescan after every significant change
   and patch real findings within 14 days.
 

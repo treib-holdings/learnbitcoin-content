@@ -53,6 +53,8 @@ A few seconds later, Bob's wallet shows the incoming payment as "unconfirmed." R
 
 This chapter is what happens in between. We'll go layer by layer. By the end, you'll be able to draw it on a napkin.
 
+**Do it:** [Pass it on](https://practice.learnbitcoin.com/do/pass-it-on). Tap Send yourself: pay a few practice coins into the pot for the next learner, and watch the payment get its first confirmation.
+
 ## 2. There Are No Balances
 
 Here's the first idea most people get wrong:
@@ -92,6 +94,8 @@ The transaction is then **signed** - Alice's wallet uses her private key to prod
 
 What gets broadcast to the network is a little over 200 bytes of data: the inputs, the outputs, the signatures, the metadata. That's it. The whole transaction fits in a thumbnail image's worth of bytes.
 
+**Do it:** [There are no balances](https://practice.learnbitcoin.com/do/no-balances). Count the coins (the UTXOs) in your own practice wallet, then read what one of your payments did to them: what it spent, what went where, the change and the fee.
+
 ## 4. The Mempool - The Waiting Room
 
 Once Alice's wallet broadcasts the transaction, it goes to one of her wallet's connected nodes, which forwards it to its peers, which forward to theirs. Within seconds, nearly every node on the Bitcoin network has heard about Alice's transaction and stored it in its local **mempool** - short for "memory pool" - the queue of valid transactions waiting to be mined.
@@ -103,6 +107,8 @@ A few things to notice:
 - **The mempool is sorted by fee rate.** Miners want to maximize their earnings per block, so they pick the transactions that pay the most per byte of block space first. Your fee rate (sats per virtual byte), not the amount you send, determines your seat in line.
 
 You can [look at a live mempool yourself](https://chainquery.com/reports/mempool) - that page shows one Bitcoin node's mempool at the moment you load it, sorted into fee-rate bands.
+
+**Do it:** [The waiting room](https://practice.learnbitcoin.com/do/waiting-room). Send a payment and watch it wait, get into a block, and reach six confirmations.
 
 ## 5. Mining: How a Block Actually Gets Made
 

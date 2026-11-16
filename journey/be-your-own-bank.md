@@ -112,7 +112,7 @@ Those words encode a number. The number seeds a deterministic generator (defined
 
 - **Anyone with your seed phrase has your bitcoin.** There is no second factor. There is no recovery. There is no "but they'd need your password too" - a wallet's password or PIN only locks that one app or device, and the words restore the wallet anywhere without it. The one exception is an optional [passphrase](/glossary/mnemonic-password), sometimes called the "25th word," that is mixed into the seed. If you set one, back it up as carefully as the words, because the words alone open a different, usually empty, wallet.
 - **12 vs 24 words.** Both are secure. 12 words = 128 bits of entropy; 24 words = 256 bits. Both are well beyond brute-force range. The choice is a matter of preference. (Defaults vary by device. As of October 2026, the Trezor Safe 5 defaults to a 20-word backup under a different standard, [SLIP-39](/glossary/shamir-secret-sharing), and offers 12 or 24 words as a legacy option.)
-- **Never type your seed into a website. Never. Ever.** Not your wallet provider's site. Not a help page. Not anywhere. The only places the seed should live are on your wallet device and on physical backups *you* created.
+- **Never type your seed into a website. Never. Ever.** Not your wallet provider's site. Not a help page. Not anywhere. The only places the seed should live are on your wallet device and on physical backups *you* created. (Our practice wallet, at practice.learnbitcoin.com, asks you to type the words of a practice wallet. Those words guard coins that are worth nothing, and that is the only reason it is safe. The words of a wallet for real bitcoin, even one that is still empty, never go into a web page, that one included.)
 - **Do not memorize it.** Brains forget seeds, even ones you were sure you'd remember. Steel does not.
 - **Do not photograph it.** Phones back up to clouds. Clouds get breached.
 
@@ -204,6 +204,10 @@ We've made printable seed-backup forms for both [12-word](/downloads/seed-backup
 
 **One more thing.** Do not split your seed phrase across multiple locations as a security measure ("first 6 words here, last 6 words there"). This is called *seed splitting* and it provides much less security than you'd expect - losing one location loses everything, *and* whoever finds one half has far less left to guess. Half of a 12-word seed leaves about 2^62 possibilities instead of 2^128 ([the math](/rabbit-hole/seed-backup-strategies)). If you want geographic redundancy for advanced setups, use [multisig](/glossary/multisig) (chapter 6) or [Shamir's Secret Sharing](/glossary/shamir-secret-sharing), not seed splitting.
 
+**Do it:** [The seed](https://practice.learnbitcoin.com/do/the-seed). Put the 12 words of your practice wallet on paper, in order, then check the paper: the step asks you to type three of the words. That is safe for one reason only: these words guard practice coins that are worth nothing.
+
+**Do it:** [Prove the backup](https://practice.learnbitcoin.com/do/prove-the-backup). Remove the practice wallet from your browser, then bring it back, coins and all, by typing its 12 words from the paper. It is the test from point 3 above, run where a mistake costs nothing. Practice words only: the words of a wallet for real bitcoin, even an empty one, never go into a web page.
+
 ## 8. Receiving Your First Transaction
 
 This is the moment.
@@ -239,7 +243,7 @@ Honest list. The ordering is editorial, because no complete count exists. The be
 
 1. **Being talked into sending it.** A fake investment site that shows a growing balance and never lets the money out. A caller who says your account is at risk and has you "protect" your money through a Bitcoin ATM. A stranger online who turns the talk to investing. Then a "recovery service" that wants a fee to get it back, which is the second scam. In the FBI's report for 2025, investment fraud alone was about $7.2 billion of the $11.4 billion that people reported losing in complaints involving crypto. Nobody real will ever tell you to pay, move or protect money this way.
 2. **Leaving funds with an exchange or lender.** The company goes bankrupt (Mt. Gox, FTX, Celsius, BlockFi). Withdrawals freeze, and customers wait months or years for whatever the bankruptcy returns. Mt. Gox collapsed in February 2014 and began repaying creditors in bitcoin in July 2024 ([the full story](/rabbit-hole/mt-gox-ftx-graveyard)).
-3. **Phishing the seed.** Fake support reps, fake wallet updates, fake "verify your wallet" pages. **No legitimate wallet, ever, asks you to type your seed online.** If it does, it's a scam.
+3. **Phishing the seed.** Fake support reps, fake wallet updates, fake "verify your wallet" pages. **No legitimate wallet, ever, asks you to type your seed online.** If it does, it's a scam. (The practice steps of section 7 ask for the words of a practice wallet at practice.learnbitcoin.com, which guard nothing of value. A page that asks for the words of a wallet for real bitcoin, even one that is still empty, is a scam, whatever it calls itself.)
 4. **Losing the seed.** Single backup, single location, single fire.
 5. **Buggy or malicious wallet software.** Use audited, open-source wallets. Verify download signatures from the publisher when possible.
 6. **Wrong derivation path / address type.** You restore to a wallet using a different default than the one that generated it, see "0 BTC," panic. Less common with modern wallets but happens. Solution: try restoring with each common standard (BIP 84 for native SegWit, BIP 86 for Taproot, etc.) before assuming theft.

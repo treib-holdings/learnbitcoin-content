@@ -89,6 +89,51 @@ The site has a consistent voice. The short version:
 If you are unsure whether something fits the voice, look at a few
 existing entries and match the cadence.
 
+## "Do it" lines in Journey chapters
+
+A Journey chapter can send the reader to a step of the practice wallet
+at practice.learnbitcoin.com. The line is a paragraph of its own, with
+a blank line before it and after it, not indented, and not inside a
+list, a quote or a table:
+
+```
+**Do it:** [Hold some](https://practice.learnbitcoin.com/do/hold-some). A few plain sentences.
+```
+
+- **The label** is `**Do it:**` in an English chapter and `**Hazlo:**`
+  in a Spanish one: bold written with asterisks, with the colon inside
+  the bold.
+- **The link** is the step's own address and nothing more:
+  `https://practice.learnbitcoin.com/do/<id>` in English and
+  `https://practice.learnbitcoin.com/es/do/<id>` in Spanish. Its text
+  is the step's title as the practice wallet shows it, in plain words.
+- **The description** follows the link's full stop: plain text, with
+  italics or bold where needed. No second link, no code, no image.
+- **One line for a step**, in the chapter the step belongs to, and
+  only in a chapter saved as `.md`: `hold-some` in
+  `what-bitcoin-actually-is`; `pass-it-on`, `no-balances` and
+  `waiting-room` in `how-bitcoin-works`; `the-seed` and
+  `prove-the-backup` in `be-your-own-bank`. The Spanish twin carries
+  the same steps.
+- In a Journey chapter the two bold labels stand for a card and
+  nothing else, and a step is linked from its line only. Anywhere else
+  they are ordinary labels, and a line there that holds one together
+  with a link to a step fails the build: cards belong to Journey
+  chapters.
+- To take a line out for a while, put it inside an HTML comment.
+- A chapter that holds a line keeps its slug, unless the practice
+  wallet's list of chapters and the website's change with it.
+- While any chapter holds a line, the privacy page, its Spanish twin
+  and the security page must go on saying what the cards do. The
+  website's build looks for it.
+- A line that asks the reader to type the words of a practice wallet
+  says that this is safe with practice words only. Chapter 4's rule,
+  never type a seed into a website, names the practice wallet as its
+  one exception, and the two must go on agreeing.
+
+The website turns a well-formed line into a card. Its build refuses a
+malformed one and says why.
+
 ## sameAs values
 
 Glossary entries can list external URLs to authoritative references

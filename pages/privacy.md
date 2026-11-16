@@ -3,8 +3,18 @@ title: "Privacy"
 heading: "Here is everything we know about you."
 description: "What data LearnBitcoin collects, who sees it, how long it lives. Short version: almost nothing, unless you subscribe to the newsletter."
 published: "2026-05-14"
-updated: "2026-11-15"
+updated: "2026-11-16"
 ---
+
+**Changed November 16, 2026:** some Journey chapters now have "Do it"
+cards that open a step of our practice wallet at
+practice.learnbitcoin.com. Your browser's record of reading progress
+now also notes which of those steps are marked done. The practice
+wallet is a separate site with its own privacy statement. Both are
+under "Cookies and local storage" below. We also now say, under
+Plausible, that each click on a link that leaves this site is
+reported to it. That has been so since May 2026, and this page did not
+say it.
 
 **Changed November 15, 2026:** our server log is kept for 7 days, not 3.
 It has been 7 since late October, when we moved to a paid Cloudflare
@@ -44,7 +54,13 @@ their own retention policy.
 **Aggregate page views via Plausible.** We use [Plausible Analytics](https://plausible.io/data-policy),
 which is cookieless, does not fingerprint you, and does not build a
 profile. It tells us "this page got N views this week" without knowing
-which views were yours.
+which views were yours. The same script also reports each click on a
+link that leaves this site, with the address the link leads to. A
+"Do it" card is such a link, so a click on one is reported with the
+step and the chapter in its address. When the practice wallet's link
+brings you back, the page view that is counted names the chapter and
+the step, at times with the steps you have done, and never where you
+came from.
 
 **A few small requests to ChainQuery for the live numbers.** The home
 page, the [node page](/node), and any chapter or glossary entry with a
@@ -104,7 +120,8 @@ neither of which needs your consent:
   which rabbit holes and Journey chapters you have read, which
   checklist items you have ticked, and when, so the site can show
   check marks and the home page can point you to the next Journey
-  chapter. The data lives only on your device. It is never sent to
+  chapter. It also notes which "Do it" steps of the Journey are
+  marked done, and when. The data lives only on your device. It is never sent to
   our server. Clear your browser storage and it is gone. If the home
   page shows a "Pick up where you left off" line, its "Clear my
   reading progress" button erases this data too.
@@ -113,6 +130,19 @@ That is why there is no cookie banner. Reading the site asks nothing
 of you. The newsletter asks for your consent once, when you sign up
 and click the confirm link. The manifesto promised no dark patterns;
 this is what that looks like in practice.
+
+**"Do it" cards.** A "Do it" card in a Journey chapter opens our
+practice wallet at practice.learnbitcoin.com, in the same tab. That is
+a separate site with
+[its own privacy statement](https://practice.learnbitcoin.com/about).
+The card's link tells it which chapter you came from, so that it can
+send you back. The wallet's link back names the step and says whether
+it is done, and once it is done it also names the other steps of that
+chapter that you have done. That is how this site knows which cards to
+mark. The practice wallet keeps its own note of your steps in your
+browser, and counts the screens people open and the steps they finish;
+its statement says what, and how to erase the note. The "Clear my
+reading progress" button does not touch it.
 
 ## The newsletter
 
