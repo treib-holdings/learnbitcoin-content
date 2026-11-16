@@ -4,8 +4,8 @@ slug: sovereignty
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-10-09"
-reviewedAt: "2026-10-09"
+updated: "2026-11-16"
+reviewedAt: "2026-11-16"
 order: 6
 goDeeper: ["bitcoin-privacy", "decentralization", "seed-backup-strategies"]
 estimatedMinutes: 45
@@ -21,15 +21,15 @@ sources:
   - { label: "BIP 67 - deterministic public key sorting for multisig", url: "https://github.com/bitcoin/bips/blob/master/bip-0067.mediawiki" }
   - { label: "Bitcoin Privacy - bitcoin.org reference", url: "https://bitcoin.org/en/protect-your-privacy" }
   - { label: "Privacy Best Practices PDF (this site)", url: "https://www.learnbitcoin.com/downloads/bitcoin-privacy-best-practices.pdf" }
-  - { label: "Bitnodes - reachable Bitcoin nodes (25,514 counted on October 9, 2026)", url: "https://bitnodes.io" }
-  - { label: "Bitcoin Core 31 - reduce-memory.md (default -dbcache 1024 MiB, or 450 MiB if less than 4096 MiB of RAM is detected; -maxmempool 300 MB)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/doc/reduce-memory.md" }
-  - { label: "Bitcoin Core 31 - caches.cpp (the 1024 MiB cache needs at least 4096 MiB of RAM as reported by the operating system)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/node/caches.cpp" }
+  - { label: "bitnodes.io, no longer the original service (it lapsed in May 2026 and has a new operator) - reachable Bitcoin nodes (25,514 counted on October 9, 2026; 18,519 on November 16, 2026)", url: "https://bitnodes.io" }
+  - { label: "Bitcoin Core 32.1 - reduce-memory.md (default -dbcache 1024 MiB, or 450 MiB if less than 4096 MiB of RAM is detected; -maxmempool 300 MB)", url: "https://github.com/bitcoin/bitcoin/blob/v32.1/doc/reduce-memory.md" }
+  - { label: "Bitcoin Core 32.1 - caches.cpp (the 1024 MiB cache needs at least 4096 MiB of RAM as reported by the operating system)", url: "https://github.com/bitcoin/bitcoin/blob/v32.1/src/node/caches.cpp" }
   - { label: "Linux kernel docs - /proc/meminfo (MemTotal is physical RAM minus reserved memory and the kernel's own code)", url: "https://docs.kernel.org/filesystems/proc.html" }
   - { label: "bitcoin.org - Running a full node (2 GB RAM minimum; the first download takes at least several days)", url: "https://bitcoin.org/en/full-node" }
-  - { label: "Blockchain.com - blockchain size chart (774,075 MB on October 8, 2026)", url: "https://www.blockchain.com/explorer/charts/blocks-size" }
+  - { label: "blockchain.com chart data, raw - total size of the blockchain (774,075 MB on October 8, 2026; 783,067 MB on November 15, 2026)", url: "https://api.blockchain.info/charts/blocks-size?timespan=3years&format=json&sampled=false" }
   - { label: "mempool.space - block sizes and weights (about 82.5 GB of blocks mined from October 2025 to October 2026)", url: "https://mempool.space/graphs/mining/block-sizes-weights" }
-  - { label: "Bitcoin Core 31 - chainparams.cpp (mainnet disk guidelines 856 and 14, which the setup screen adds up to 870 GB)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/kernel/chainparams.cpp" }
-  - { label: "Bitcoin Core 31 - intro.cpp (the setup screen adds the two figures and says at least 870 GB of data will be stored)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/qt/intro.cpp" }
+  - { label: "Bitcoin Core 32.1 - chainparams.cpp (mainnet disk guidelines 897 and 14, which the setup screen adds up to 911 GB)", url: "https://github.com/bitcoin/bitcoin/blob/v32.1/src/kernel/chainparams.cpp" }
+  - { label: "Bitcoin Core 32.1 - intro.cpp (the setup screen adds the two figures and says at least 911 GB of data will be stored)", url: "https://github.com/bitcoin/bitcoin/blob/v32.1/src/qt/intro.cpp" }
   - { label: "Bitcoin Core 31 - init.cpp help text for -assumevalid and -txindex", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/init.cpp" }
   - { label: "Bitcoin Core 31 - getrawtransaction help (finds confirmed transactions only with -txindex or a block hash)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/rpc/rawtransaction.cpp" }
   - { label: "Bitcoin Core - descriptors.md (addr() descriptors and watch-only descriptor wallets)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/doc/descriptors.md" }
@@ -44,7 +44,10 @@ sources:
   - { label: "Foundation Devices - Passport hardware wallet firmware (GitHub)", url: "https://github.com/Foundation-Devices/passport2" }
   - { label: "Coinkite - COLDCARD Security Advisory (July 30, 2026, updated August 2026)", url: "https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/" }
   - { label: "COLDCARD Security Status - minimum fixed firmware by model", url: "https://coldcard.com/security/status" }
-  - { label: "CoinDesk - Coldcard flaw drains 594 BTC from single-signature wallets (July 31, 2026)", url: "https://www.coindesk.com/tech/2026/07/31/major-bitcoin-wallet-flaw-drains-594-btc-in-25-minute-sweep" }
+  - { label: "Block - analysis of the Coldcard seed-generation flaw (July 30, 2026): firmware 4.0.0 through 4.1.9 on the Mk2 and Mk3; a multisig made only of affected devices stays exposed", url: "https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware" }
+  - { label: "FBI Internet Crime Complaint Center - cryptocurrency kiosk fraud (May 15, 2026): 13,460 complaints and $389 million lost in 2025", url: "https://www.ic3.gov/PSA/2026/PSA260515-2" }
+  - { label: "US DOJ SDNY - Samourai Wallet founders sentenced to five and four years (November 2025)", url: "https://www.justice.gov/usao-sdny/pr/founders-samourai-wallet-cryptocurrency-mixing-service-sentenced-five-and-four-years" }
+  - { label: "JoinMarket - the original client, archived April 27, 2026 with a warning not to use it", url: "https://github.com/JoinMarket-Org/joinmarket-clientserver" }
   - { label: "Bitcoin Core - multisig tutorial (one wsh(sortedmulti(...)) descriptor holds all three xpubs)", url: "https://github.com/bitcoin/bitcoin/blob/master/doc/multisig-tutorial.md" }
   - { label: "BIP 87 - an M-of-N restore needs M seeds plus every cosigner's public key, so back up the descriptor", url: "https://github.com/bitcoin/bips/blob/master/bip-0087.mediawiki" }
   - { label: "BIP 129 - Bitcoin Secure Multisig Setup (anyone who learns the configuration can monitor the wallet)", url: "https://github.com/bitcoin/bips/blob/master/bip-0129.mediawiki" }
@@ -86,11 +89,11 @@ You can use Bitcoin without running a node. You're using Bitcoin right now witho
 
 **Censorship resistance.** A wallet relying on a service can be cut off from that service. A wallet talking to your own node cannot be - your node is yours.
 
-**Supporting the network.** Each additional full node strengthens the network's [decentralization](/rabbit-hole/decentralization). There are tens of thousands of nodes globally; adding one is a meaningful contribution. (Not a financial one - running a node doesn't earn you anything. The reward is the system itself.)
+**Supporting the network.** Each additional full node strengthens the network's [decentralization](/rabbit-hole/decentralization). There are thousands of reachable nodes globally (roughly 17,000 to 21,000 on one public counter in November 2026); adding one is a meaningful contribution. (Not a financial one - running a node doesn't earn you anything. The reward is the system itself.)
 
 **Fee data, mempool data, address data on demand.** With your own node, you have direct access to everything the network knows. Want to monitor an address? Add it to a watch-only wallet on your node. Want to know the current fee market? Query your node. Want a custom data feed? Query your node.
 
-A full node on Bitcoin Core's default settings uses a gigabyte or two of RAM. Version 31 sets aside about 1.4 GB for caches on an 8 GB machine and 0.8 GB on a 4 GB Raspberry Pi. The blockchain held about 775 GB of block data as of October 2026 and grows by roughly 80 GB a year, and Bitcoin Core 31 asks for at least 870 GB of disk in all.
+A full node on Bitcoin Core's default settings uses a gigabyte or two of RAM. Version 32 sets aside about 1.4 GB for caches on an 8 GB machine and 0.8 GB on a 4 GB Raspberry Pi. The blockchain held about 783 GB of block data as of November 2026 and grows by roughly 80 GB a year, and Bitcoin Core 32 asks for at least 911 GB of disk in all.
 
 It runs on any modern hardware. Once it's running, you can mostly forget about it for months at a time.
 
@@ -100,7 +103,7 @@ Don't overthink this. Get something running. Improve it later.
 
 **Three hardware options:**
 
-- **Raspberry Pi 5 with a 2 TB SSD.** Low power, fits anywhere, runs 24/7. The classic Bitcoin node hardware. As of October 2026, a 1 TB drive is too tight, since Bitcoin Core 31's setup screen asks for at least 870 GB and the chain adds roughly 80 GB a year.
+- **Raspberry Pi 5 with a 2 TB SSD.** Low power, fits anywhere, runs 24/7. The classic Bitcoin node hardware. As of November 2026, a 1 TB drive is too tight, since Bitcoin Core 32's setup screen asks for at least 911 GB and the chain adds roughly 80 GB a year.
 - **A refurbished mini PC (Intel NUC class or equivalent).** More headroom than the Pi if you might add Lightning or other self-hosted services later.
 - **A repurposed laptop or desktop you already own.** Free, if the hardware is reasonable. Best for someone comfortable with software setup who doesn't want to buy anything new.
 
@@ -177,7 +180,7 @@ A 2-of-3 multisig requires three things.
 
 **Three hardware wallets, from three different manufacturers.** Vendor diversity is the rule, not specific brands. Blockstream (Jade), Foundation (Passport) and Trezor are three of the many hardware wallet makers; choose three brands you trust and can verify. A hardware vulnerability in one model should not compromise more than one of your keys. The July 2026 Coldcard entropy incident is the case study: seeds generated on affected firmware were guessable, wallets were drained, and a multisig with only one affected key would have held.
 
-Coinkite, the company that makes the Coldcard, has published an advisory. If any of your keys was generated on a Coldcard Mk2 or Mk3 running firmware 4.0.1 through 4.1.9, or on a Mk4, Mk5 or Q running firmware older than the fixed release the advisory lists, replace that seed. Then move the funds to a new multisig wallet built with the replacement key. A seed created with at least 50 fair, private dice rolls is the exception.
+Coinkite, the company that makes the Coldcard, has published an advisory. If any of your keys was generated on a Coldcard Mk2 or Mk3 running firmware 4.0.1 through 4.1.9 (Block's independent analysis includes 4.0.0, so treat any 4.x firmware before 4.2.0 as affected), or on a Mk4, Mk5 or Q running firmware older than the fixed release the advisory lists, replace that seed. Then move the funds to a new multisig wallet built with the replacement key. A seed created with at least 50 fair, private dice rolls is the exception.
 
 **Three seed phrases**, each generated on its own hardware wallet, each backed up independently on metal in physically separate locations. Keep a copy of the wallet [descriptor](/glossary/output-descriptor) with each one. The descriptor is a line of text recording all three public keys and the 2-of-3 rule; the coordinator gives it to you in step 3 below. Every multisig address is built from all three public keys, so two seeds alone cannot rebuild the wallet. The descriptor lets whoever holds it see the balance, but not spend it.
 
@@ -213,13 +216,13 @@ The basics, in order of effort:
 
 **3. Run your wallet over Tor.** The internet sees IP addresses tied to transactions even when the blockchain doesn't. Tor breaks that. Node OSes offer Tor as a setting or an add-on service.
 
-**4. Avoid KYC for everything if you can.** Buying bitcoin without ID is meaningfully harder than buying with ID, but the privacy benefit is real. Peer-to-peer markets such as Bisq and RoboSats work. (AgoraDesk, another peer-to-peer market, shut down in 2024.) Bitcoin ATMs work in some places. Earning bitcoin (freelancing for it, etc.) works.
+**4. Avoid KYC for everything if you can.** Buying bitcoin without ID is meaningfully harder than buying with ID, but the privacy benefit is real. Peer-to-peer markets such as Bisq and RoboSats work. (AgoraDesk, another peer-to-peer market, shut down in 2024.) Earning bitcoin (freelancing for it, etc.) works. Bitcoin ATMs are not the way: in the US their operators fall under anti-money-laundering rules, so a machine is no dependable way around ID, the fees are steep, and they are a favorite tool of scammers. The FBI counted $389 million lost in complaints involving them in 2025. Nobody real will ever send you to one.
 
 **5. Don't talk about your stack publicly.** Not your address, not your balance, not your hardware setup. Anonymity in social spaces is its own form of self-defense. (Use pseudonymous accounts where useful.)
 
-**6. Sweep KYC and no-KYC coins separately.** If half your coins are from a regulated exchange (KYC) and half from peer-to-peer (no KYC), keeping them in different wallets prevents accidentally linking your KYC identity to your private holdings.
+**6. Keep KYC and no-KYC coins apart.** If half your coins are from a regulated exchange (KYC) and half from peer-to-peer (no KYC), keeping them in different wallets prevents accidentally linking your KYC identity to your private holdings.
 
-**7. Consider CoinJoin.** A privacy-enhancing technique where multiple users pool transactions to obscure which inputs map to which outputs. The landscape changed in 2024. US prosecutors charged the two founders of Samourai Wallet, which ran one of the two major coordinators, and they were arrested, one in the US and one in Portugal. The company behind Wasabi Wallet then shut down the other major coordinator. Decentralized designs, which have no coordinator to charge or shut down, came through 2024 intact. Read [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) before using any of them.
+**7. Consider CoinJoin.** A privacy-enhancing technique where multiple users pool transactions to obscure which inputs map to which outputs. The landscape changed in 2024. US prosecutors charged the two founders of Samourai Wallet, which ran one of the two major coordinators, and they were arrested, one in the US and one in Portugal. Both pleaded guilty in 2025 and were sentenced to five and four years. The company behind Wasabi Wallet shut down the other major coordinator in 2024. Decentralized designs, which have no coordinator to charge or shut down, came through 2024 intact, but the original JoinMarket program was archived in April 2026 with a warning not to use it; a separate project has taken up the design. Read [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) before using any of them.
 
 We've put together a [Privacy Best Practices PDF](/downloads/bitcoin-privacy-best-practices.pdf) and a [Privacy Checklist](/downloads/privacy-checklist.pdf) - both downloadable from this site. Read them before scaling up.
 
@@ -230,7 +233,7 @@ The hardest part of self-custody is something the marketing doesn't talk about: 
 If you die with self-custodied bitcoin and no inheritance plan, your coins are likely lost forever. Your heirs may know you held bitcoin. They will not know your seed. They will not know your passphrase. They will not know which hardware wallet to look for. The bitcoin is on the chain, but unreachable.
 
 <figure>
-  <img src="/diagrams/inheritance-recovery.svg" alt="A left-to-right inheritance recovery diagram. An heir starts on the left, retrieves a sealed letter from the lawyer, follows the letter's instructions to three seed locations (Seed 1 at home, Seed 2 at the bank, Seed 3 at a relative). Two of the three seeds are collected (orange) and the third is grayed out (not needed). The two collected seeds feed into the coordinator, which combines signatures, and funds are recovered." />
+  <img src="/diagrams/inheritance-recovery.svg" alt="A left-to-right inheritance recovery diagram. An heir starts on the left, finds the sealed letter in the owner's files, follows the letter's instructions to three seed locations (Seed 1 at home, Seed 2 at the bank, Seed 3 at a relative), each kept with a copy of the wallet descriptor. Two of the three seeds are collected (orange) and the third is grayed out (not needed). The two collected seeds and the descriptor feed into the coordinator, which rebuilds the wallet and combines signatures, and funds are recovered." />
   <figcaption>With a plan, recovery is a path. Without one, the chain is unreachable even when the bitcoin is right there.</figcaption>
 </figure>
 

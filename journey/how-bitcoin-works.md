@@ -4,8 +4,8 @@ slug: how-bitcoin-works
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-10-09"
-reviewedAt: "2026-10-09"
+updated: "2026-11-16"
+reviewedAt: "2026-11-16"
 order: 3
 goDeeper: ["utxos", "mempool", "mining"]
 estimatedMinutes: 30
@@ -39,7 +39,7 @@ sources:
   - { label: "mempool.space API - every difficulty adjustment (summed, about 1.03 x 10^29 hashes of total work through block 970,600)", url: "https://mempool.space/api/v1/mining/difficulty-adjustments/all" }
   - { label: "mempool.space API - network hash rate (about 995 EH/s on October 9, 2026; total work divided by hash rate is about 3.3 years)", url: "https://mempool.space/api/v1/mining/hashrate/1m" }
   - { label: "Cambridge Judge Business School - Cambridge study (April 2025): about 138 TWh a year, roughly 0.5% of global electricity", url: "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/" }
-  - { label: "blockchain.com - total size of the blockchain (774,075 MB on October 8, 2026)", url: "https://www.blockchain.com/explorer/charts/blocks-size" }
+  - { label: "blockchain.com chart data, raw - total size of the blockchain (774,075 MB on October 8, 2026)", url: "https://api.blockchain.info/charts/blocks-size?timespan=3years&format=json&sampled=false" }
   - { label: "Bitcoin Core source - the -assumevalid option (src/init.cpp)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/init.cpp" }
 ---
 
@@ -150,7 +150,7 @@ The header is dense. It contains:
 The clever part is the **merkle root**. It's the root of a binary tree built by hashing transactions in pairs, then hashing pairs of those hashes, all the way up. The result is a single value that depends on every transaction in the block. Change any transaction, and the merkle root changes, and the block's hash changes, and the chain breaks.
 
 <figure>
-  <img src="/diagrams/merkle-tree.svg" alt="A binary Merkle tree. Eight transactions (TX1 through TX8) at the bottom are paired and hashed together to produce four intermediate hashes. Those four are paired and hashed again to produce two more. The final pair is hashed once more to produce the single Merkle root at the top. The block's 80-byte header contains only that root." />
+  <img src="/diagrams/merkle-tree.svg" alt="A binary Merkle tree. Eight transactions (TX1 through TX8) at the bottom are paired and hashed together to produce four intermediate hashes. Those four are paired and hashed again to produce two more. The final pair is hashed once more to produce the single Merkle root at the top. Of the whole tree, only that root goes into the block's 80-byte header." />
   <figcaption>Eight transactions, hashed pairwise up to a single root. Change any leaf, and every hash on the path to the root changes too.</figcaption>
 </figure>
 

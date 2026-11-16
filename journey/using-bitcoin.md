@@ -4,8 +4,8 @@ slug: using-bitcoin
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-10-09"
-reviewedAt: "2026-10-09"
+updated: "2026-11-16"
+reviewedAt: "2026-11-16"
 order: 5
 goDeeper: ["mempool", "lightning-routing", "utxos"]
 estimatedMinutes: 30
@@ -23,7 +23,9 @@ sources:
   - { label: "BIP 141 - Segregated Witness (virtual size is transaction weight divided by 4)", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
   - { label: "mempool.space API docs - recommended fees (fastestFee, halfHourFee, hourFee)", url: "https://mempool.space/docs/api/rest#get-recommended-fees" }
   - { label: "Bitcoin Core source - fee estimator tracks how long past transactions took to confirm", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/fees/block_policy_estimator.h" }
-  - { label: "Bitcoin Core PR #34075 - mempool-based fee estimation (merged August 2026 for version 32.0)", url: "https://github.com/bitcoin/bitcoin/pull/34075" }
+  - { label: "Bitcoin Core PR #34075 - mempool-based fee estimation (merged August 2026; shipped in version 32.1)", url: "https://github.com/bitcoin/bitcoin/pull/34075" }
+  - { label: "Bitcoin Core 32.1 release notes (October 2026) - the first release of the 32 series; estimatesmartfee now also reads the mempool", url: "https://bitcoincore.org/en/releases/32.1/" }
+  - { label: "Jameson Lopp - Bitcoin address poisoning attacks (look-alike addresses that match the first and last characters)", url: "https://blog.lopp.net/bitcoin-address-poisoning-attacks/" }
   - { label: "Ordinals docs - Runes specification (activates on block 840,000)", url: "https://docs.ordinals.com/runes/specification.html" }
   - { label: "mempool.space - block 840,002, first block over 500 sat/vB median after the April 20, 2024 halving", url: "https://mempool.space/block/00000000000000000002c0cc73626b56fb3ee1ce605b0ce125cc4fb58775a0a9" }
   - { label: "mempool.space - block 840,005, median fee rate about 2,879 sat/vB", url: "https://mempool.space/block/000000000000000000027b0ec0e3acadd018cd19e7dd976602f216a1bc12d079" }
@@ -36,7 +38,7 @@ sources:
   - { label: "Bitcoin Optech - Child pays for parent (CPFP)", url: "https://bitcoinops.org/en/topics/cpfp/" }
   - { label: "Bitcoin Core source - kernel/mempool_options.h (default mempool expiry 336 hours)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/mempool_options.h" }
   - { label: "ChainQuery - abandontransaction RPC reference", url: "https://chainquery.com/rpc/abandontransaction" }
-  - { label: "blockchain.com - bitcoin market price (about $63,800 on April 20, 2024)", url: "https://www.blockchain.com/explorer/charts/market-price" }
+  - { label: "mempool.space API - bitcoin price on April 20, 2024 (about $63,800)", url: "https://mempool.space/api/v1/historical-price?currency=USD&timestamp=1713571200" }
   - { label: "Bitcoin Core source - kernel/chainparams.cpp (10-minute block target)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/chainparams.cpp" }
   - { label: "BOLT 2 - Peer protocol (the funder puts up the channel's bitcoin; dual funding is an option)", url: "https://github.com/lightning/bolts/blob/master/02-peer-protocol.md" }
   - { label: "BOLT 4 - Onion routing (the route is constructed by the origin node)", url: "https://github.com/lightning/bolts/blob/master/04-onion-routing.md" }
@@ -47,7 +49,7 @@ sources:
   - { label: "LUD-16 - Lightning Address specification", url: "https://github.com/lnurl/luds/blob/luds/16.md" }
   - { label: "BOLT 12 - Offers (added to the Lightning spec in September 2024)", url: "https://github.com/lightning/bolts/blob/master/12-offer-encoding.md" }
   - { label: "Bitcoin Optech - Offers (implementation progress by year)", url: "https://bitcoinops.org/en/topics/offers/" }
-  - { label: "Jameson Lopp - Known physical bitcoin attacks (365 entries, December 2014 to October 2026)", url: "https://github.com/jlopp/physical-bitcoin-attacks" }
+  - { label: "Jameson Lopp - Known physical bitcoin attacks (823 entries on November 15, 2026, the earliest from May 2014; the list more than doubled in October 2026, when older cases were added)", url: "https://github.com/jlopp/physical-bitcoin-attacks" }
 ---
 
 > **Where you're going:** You'll send an on-chain transaction with a fee you chose deliberately, generate a Lightning invoice, and receive a Lightning payment. Both should feel different. Both should leave you with a working mental model of when to use which.
@@ -85,7 +87,7 @@ You'll use both. Knowing which is which is most of the skill.
 
 Open your wallet. Tap Send. You'll be asked for three things:
 
-- **A destination address.** A long string starting with `bc1` (modern format) or `3` or `1` (older formats). Always paste from a trusted source. Always double-check the first and last several characters. Treat addresses like account numbers, not URLs.
+- **A destination address.** A long string starting with `bc1` (modern format) or `3` or `1` (older formats). Always paste from a trusted source, never from your transaction history. Check the whole address, not only its first and last characters: look-alike addresses are made to match those. Treat addresses like account numbers, not URLs.
 - **An amount.** In BTC or sats, your call. Modern wallets let you toggle.
 - **A fee rate.** Usually in **sat/vB** (satoshis per virtual byte), the price for each unit of your transaction's size. A virtual byte works like a byte, except signature data counts at a quarter of its real size.
 
@@ -95,7 +97,7 @@ A few things to internalize:
 - **Always send a tiny test first** when you're using a new address for any serious amount. A few thousand sats. Confirm it arrived. Then send the rest.
 - **Address checking is your job.** No central authority can reverse a misdirected transaction. Bitcoin works exactly like Bitcoin says it works.
 
-Many wallets give you three suggested fee rates (e.g., 2 sat/vB, 5 sat/vB, 12 sat/vB) corresponding to "within about an hour," "within about half an hour," and "next block." These are estimates. Some are built from the current mempool. Bitcoin Core versions through 31 base theirs only on how long recent transactions at each fee rate took to confirm. Version 32, in release testing as of October 2026, also reads the current mempool.
+Many wallets give you three suggested fee rates (e.g., 2 sat/vB, 5 sat/vB, 12 sat/vB) corresponding to "within about an hour," "within about half an hour," and "next block." These are estimates. Some are built from the current mempool. Bitcoin Core versions through 31 base theirs only on how long recent transactions at each fee rate took to confirm. Version 32, released in October 2026, also reads the current mempool.
 
 ## 3. Reading the Mempool
 
@@ -139,7 +141,7 @@ There is no "right" fee. There is "the fee you need to pay to get into the next 
 ## 4. Replace-by-Fee (RBF) - When Your Tx Gets Stuck
 
 <figure>
-  <img src="/diagrams/bumping-stuck-tx.svg" alt="Two-row diagram of the two mechanisms for unsticking a Bitcoin transaction. Top row, RBF: a stuck transaction at 5 sat per virtual byte (gray) is replaced by a new version of the transaction, spending the same coins, at 50 sat per virtual byte (orange), which confirms in the next block while the original disappears. Bottom row, CPFP: a stuck parent at 5 sat per virtual byte (gray) has its change output spent by a new child transaction at 50 sat per virtual byte (orange); both parent and child end up in the next block because the miner sees the combined fee. Tagline: Your transaction is not stuck forever. It is at the wrong fee level for current conditions." />
+  <img src="/diagrams/bumping-stuck-tx.svg" alt="Two-row diagram of the two mechanisms for unsticking a Bitcoin transaction. Top row, RBF: a stuck transaction at 5 sat per virtual byte (gray) is replaced by a new version of the transaction, spending the same coins, at 50 sat per virtual byte (orange), which confirms in the next block while the original disappears. Bottom row, CPFP: a stuck parent at 5 sat per virtual byte (gray) has its change output spent by a new child transaction at about 110 sat per virtual byte (orange), enough to lift the pair's average to about 50; both parent and child end up in the next block because the miner weighs them as a pair. Tagline: Your transaction is not stuck forever. It is at the wrong fee level for current conditions." />
   <figcaption>Two mechanisms, same outcome: a stuck transaction gets into the next block. RBF replaces the original. CPFP rescues it via a high-fee child.</figcaption>
 </figure>
 
@@ -238,7 +240,7 @@ The flip side of sending: how to *get* paid.
 
 There's a convention called **Lightning Address** (looks like an email: `you@yourdomain.com`) that lets people pay you without asking you for a new invoice each time; a web server at that domain creates a fresh one for each payment. Convenient, but requires running that server or using a service that does. Optional for most users, useful if you do public-facing work that takes tips.
 
-**Offers** ([BOLT-12](/glossary/bolt), added to the Lightning spec in September 2024) are reusable payment codes that need no web server. As of October 2026, wallet support is still uneven.
+**Offers** ([BOLT-12](/glossary/bolt), added to the Lightning spec in September 2024) are reusable payment codes that need no web server. As of November 2026, wallet support is still uneven.
 
 ## 9. The Sovereignty Side-Effects
 
@@ -247,7 +249,7 @@ Once you're using Bitcoin for real, a few things become tangible that were previ
 - **You can pay anyone, anywhere, anytime.** No bank hours. No correspondent banking. No "we can't send to that country." A wallet on a phone with internet is a global financial terminal.
 - **Privacy is your job.** Every on-chain transaction is public forever. Avoid address reuse. Consider coin control if you're handling sensitive amounts. We have a [Privacy Best Practices](/downloads/bitcoin-privacy-best-practices.pdf) PDF on this site; read it before serious use.
 - **Mistakes are permanent.** Wrong address, wrong amount, wrong network - there's no helpdesk. Always test small first. Always verify before sending.
-- **You're a target.** Each person who knows you hold real bitcoin adds a little to your risk. As of October 2026, Jameson Lopp's public list of physical attacks on people and businesses holding bitcoin or other crypto has 365 entries since December 2014, 86 of them in 2025, and it notes that many attacks are not publicly reported. Don't talk publicly about how much you hold. Don't put a sign outside your house that says "I HODL." The threat is low for most people but nonzero.
+- **You're a target.** Each person who knows you hold real bitcoin adds a little to your risk. As of November 2026, Jameson Lopp's public list of physical attacks on people and businesses holding bitcoin or other crypto has 823 entries going back to 2014, 174 of them in 2025, and it notes that many attacks are not publicly reported. Don't talk publicly about how much you hold. Don't put a sign outside your house that says "I HODL." The threat is low for most people but nonzero.
 
 These aren't reasons to avoid Bitcoin. They're the operational consequences of opting out of the trusted-third-party world. Worth it. Just real.
 

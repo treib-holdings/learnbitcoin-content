@@ -2,8 +2,8 @@
 title: "Be Your Own Bank"
 slug: be-your-own-bank
 draft: false
-updated: "2026-10-09"
-reviewedAt: "2026-10-09"
+updated: "2026-11-16"
+reviewedAt: "2026-11-16"
 status: live
 published: "2026-05-15"
 order: 4
@@ -27,12 +27,19 @@ sources:
   - { label: "Keystone - official site (Keystone 3 Pro: 4-inch touchscreen, fingerprint authentication)", url: "https://keyst.one/" }
   - { label: "Keystone 3 Pro firmware 1.7.4 release notes (October 2024) - BTC signing over a USB connection", url: "https://github.com/KeystoneHQ/keystone3-firmware/releases/tag/1.7.4" }
   - { label: "Keystone 3 Pro firmware 2.0.8 release notes (April 2025) - separate BTC Only firmware", url: "https://github.com/KeystoneHQ/keystone3-firmware/releases/tag/2.0.8" }
-  - { label: "Blockstream - Jade is open source, for Bitcoin and Liquid, with a virtual secure element", url: "https://blockstream.com/jade/" }
+  - { label: "Blockstream - Jade is open source, for Bitcoin and Liquid, and uses a PIN server (a blind oracle) in place of a secure-element chip", url: "https://blockstream.com/jade/" }
   - { label: "Coinkite - Coldcard security advisory: affected firmware, fixed versions and migration steps (2026)", url: "https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/" }
-  - { label: "CoinDesk - Coldcard flaw drains 594 BTC in a 25-minute sweep (July 31, 2026)", url: "https://www.coindesk.com/tech/2026/07/31/major-bitcoin-wallet-flaw-drains-594-btc-in-25-minute-sweep" }
+  - { label: "COLDCARD Security Status - minimum fixed firmware by model (Mk2 and Mk3: 4.2.0)", url: "https://coldcard.com/security/status" }
+  - { label: "Coinkite - COLDCARD migration guide (a seed made on an affected device stays affected wherever it is used; move every wallet that hangs off it)", url: "https://coldcard.com/security/migrate" }
+  - { label: "Block - analysis of the Coldcard seed-generation flaw (July 30, 2026): on the Mk2 and Mk3 the change first shipped in firmware 4.0.0 on March 17, 2021", url: "https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware" }
+  - { label: "Bitcoin Optech Newsletter 416 (July 31, 2026) - the Coldcard thefts and what owners should do", url: "https://bitcoinops.org/en/newsletters/2026/07/31/" }
+  - { label: "Bitcoin Wiki - Paper wallet (a single printed key; obsolete and unsafe)", url: "https://en.bitcoin.it/wiki/Paper_wallet" }
+  - { label: "Trezor - check a backup on the Trezor Safe 5 without wiping the device", url: "https://trezor.io/guides/backups-recovery/general-standards/check-backup-on-trezor-safe-5" }
+  - { label: "Jameson Lopp - Bitcoin address poisoning attacks (look-alike addresses that match the first and last characters)", url: "https://blog.lopp.net/bitcoin-address-poisoning-attacks/" }
+  - { label: "FBI Internet Crime Complaint Center - 2025 report: $11.37 billion lost in complaints involving cryptocurrency, about $7.2 billion of it to investment fraud", url: "https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf" }
   - { label: "Jameson Lopp - metal seed backup stress tests (as of October 2026, 10 of 75 products got an F for heat)", url: "https://jlopp.github.io/metal-bitcoin-storage-reviews/" }
   - { label: "Bitcoin Core v31.1 - 10-minute block target (nPowTargetSpacing)", url: "https://github.com/bitcoin/bitcoin/blob/v31.1/src/kernel/chainparams.cpp" }
-  - { label: "Bitcoin Core v31.1 (July 2026, the latest release as of October 2026) - verifymessage only accepts legacy (1...) addresses", url: "https://github.com/bitcoin/bitcoin/blob/v31.1/src/common/signmessage.cpp" }
+  - { label: "Bitcoin Core v32.1 (October 2026) - verifymessage only accepts legacy (1...) addresses", url: "https://github.com/bitcoin/bitcoin/blob/v32.1/src/common/signmessage.cpp" }
   - { label: "BIP 322 - generic signed messages; the original format only works for 1... addresses", url: "https://github.com/bitcoin/bips/blob/master/bip-0322.mediawiki" }
   - { label: "BIP 137 - message signatures for SegWit addresses", url: "https://github.com/bitcoin/bips/blob/master/bip-0137.mediawiki" }
   - { label: "Mt. Gox - application for civil rehabilitation (February 28, 2014)", url: "https://www.mtgox.com/img/pdf/20140228-announcement_eng.pdf" }
@@ -118,7 +125,7 @@ A "wallet" is just software that manages keys. The categories matter more than t
 - **Hot wallet** - keys live on an internet-connected device (phone, laptop). Convenient. Higher attack surface. Best for small, working-balance amounts.
 - **Cold wallet** - keys live on a device that's never connected to the internet. More effort to use. Much harder to compromise. Best for long-term holdings.
 - **Hardware wallet** - a small dedicated device (pocket-sized, some no bigger than a USB stick) that holds keys and signs transactions, while a companion app on your phone or laptop handles everything else. The keys never leave the hardware. **This is the standard recommendation for any amount you'd be sad to lose.**
-- **Paper wallet** - keys written on paper, no device at all. Cheap. Easy to mess up. We don't recommend it as a primary backup anymore (lots of subtle ways to get it wrong) but as a *secondary* backup of a seed, it's useful.
+- **Paper wallet** - an older practice: a single private key and its address printed on paper, usually by a website. It is considered obsolete and unsafe, and we don't recommend it. (A handwritten copy of your seed words is a different thing, and a good one. Section 7 covers it.)
 - **Multisig** - a wallet where spending requires multiple keys, often held in different places. Eliminates single-point-of-failure. The right answer for serious balances. We'll get to it in chapter 6.
 
 **The right pattern for most people:**
@@ -135,7 +142,7 @@ We don't sell wallets. We don't take affiliate commissions. The names below are 
 
 <figure>
   <img src="/photos/hardware-wallet-ecosystem.jpg" alt="Four Bitcoin hardware wallets from four different vendors on a light wood surface, left to right: Trezor Safe 5 (vertical touchscreen with secure element), Blockstream Jade (compact stick with a small color screen and a select button), Coldcard Mk4 (transparent case showing the circuit board and physical numeric keypad), and Keystone 3 Pro (large 4-inch touchscreen, shown on its side, with fingerprint sensor, signing mostly by QR code). Four different design philosophies for the same problem: keeping a private key off an internet-connected device." />
-  <figcaption>The hardware wallet ecosystem. Four vendors, four design philosophies, one job: keep the private key off the internet.</figcaption>
+  <figcaption>The hardware wallet ecosystem. Four vendors, four design philosophies, one job: keep the private key off the internet. The photo was taken before August 2026; the Coldcard in it is no longer on the list below.</figcaption>
 </figure>
 
 **Free, open-source mobile wallets (hot, beginner-friendly), for example:**
@@ -160,12 +167,12 @@ We don't sell wallets. We don't take affiliate commissions. The names below are 
 
 <figure>
   <img src="/photos/jade-unlock.jpg" alt="The Blockstream Jade hardware wallet powered on, displaying its unlock screen. The compact device shows 'Unlock Jade' on a small color screen, with status indicators for initialization and firmware version. The JADE wordmark is embossed on the side." />
-  <figcaption>Blockstream Jade at unlock. Small color screen and a select button. Instead of a secure-element chip, Jade relies on a PIN server that Blockstream calls a virtual secure element.</figcaption>
+  <figcaption>Blockstream Jade at unlock. Small color screen and a select button. Instead of a secure-element chip, Jade relies on a PIN server, a scheme Blockstream calls a blind oracle.</figcaption>
 </figure>
 
-*Coldcard was on this list until July 2026, when a firmware entropy flaw left seeds guessable and wallets were drained at scale ([CoinDesk's report](https://www.coindesk.com/tech/2026/07/31/major-bitcoin-wallet-flaw-drains-594-btc-in-25-minute-sweep) has the details). We removed it the week the drains began.*
+*Coldcard was on this list until August 3, 2026. A flaw in how its firmware generated seeds had left them guessable, and from July 30, 2026, wallets were drained at scale. We removed it four days after the first thefts. Coinkite's [status page](https://coldcard.com/security/status) is the current record.*
 
-*Coinkite, which makes Coldcard, says in its [advisory](https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/) that the flaw affects seeds generated on Mk2 and Mk3 firmware 4.0.1 (March 2021) through 4.1.9, and on Mk4, Mk5 and Q firmware older than the fixed versions. If your seed came from one of those and you didn't mix in at least 50 dice rolls of your own, rolled in private, treat it as compromised. Move the funds to a new seed made on a second device or on the same Coldcard once its firmware is updated, following the advisory's steps.*
+*Coinkite, which makes Coldcard, says in its [advisory](https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/) that the flaw affects seeds generated on Mk2 and Mk3 firmware 4.0.1 (March 2021) through 4.1.9, and on Mk4, Mk5 and Q firmware older than the fixed versions (5.6.0 on the Mk4 and Mk5, 1.5.0Q on the Q, and 6.6.0X and 6.6.0QX on the Edge track). An independent [analysis by Block](https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware) puts Mk2 and Mk3 firmware 4.0.0 in the affected range too, so on a Mk2 or Mk3 treat a seed made on any 4.x firmware before 4.2.0 as affected. If your seed came from any of these and you didn't mix in at least 50 dice rolls of your own, rolled in private, treat it as compromised, wherever that seed is used now. Move the funds, from every wallet that hangs off the seed, to a new seed made on a second device running fixed firmware or on the same Coldcard once its firmware is updated, following Coinkite's [migration guide](https://coldcard.com/security/migrate).*
 
 **Why "Bitcoin-only" matters:** a wallet that supports 50 cryptocurrencies carries code and libraries for all 50, and every one of them is another place where things can go wrong. Bitcoin-only firmware has fewer features but a smaller codebase that is easier to audit. If you're using a hardware wallet for Bitcoin, run Bitcoin-only firmware. (Most of the above support it.)
 
@@ -190,7 +197,7 @@ Your seed phrase needs to survive: fire, flood, theft, loss, your own forgetfuln
 
 1. **Write the seed on paper, then transcribe to metal.** Stamped or engraved steel plates (sold under many brand names, or a do-it-yourself washer-and-stamp setup) hold up to fire and water far better than paper, but not every metal product does. In [Jameson Lopp's stress tests](https://jlopp.github.io/metal-bitcoin-storage-reviews/), 10 of the 75 products tested as of October 2026 got an F for heat, so look up how a product did before you buy it. Keep the paper copy as a secondary backup, never as your only one.
 2. **Store backups in at least two physically separate locations.** A safe at home plus a safe-deposit box, or two homes, or one location plus a trusted family member's. The goal is that no single fire or burglary loses both copies.
-3. **Verify the backup.** Before you put any meaningful amount in the wallet, wipe the device and restore from your seed. If the restored wallet shows the same addresses, the backup is good. This is the only way to *know* the backup works.
+3. **Verify the backup.** Do it before you put any meaningful amount in the wallet. If your device can check a written backup against the seed it holds without erasing anything, use that first (the Trezor Safe 5 has [such a check](https://trezor.io/guides/backups-recovery/general-standards/check-backup-on-trezor-safe-5)). Otherwise, restore the words on a second device of the same kind and compare the first receive address. (The words of a hardware wallet never go into an app on a phone or computer.) Wiping your only device and restoring it is a fair test too, but only while the wallet is still empty. A backup you have not tested is a hope.
 4. **Document for inheritance.** Write a sealed letter for your heirs that explains where the backups are, what software to install, and what addresses to expect. Don't put the seed itself in the letter; put instructions for finding it.
 
 We've made printable seed-backup forms for both [12-word](/downloads/seed-backup-12-word.pdf) and [24-word](/downloads/seed-backup-24-word.pdf) seeds, available on this site. Use them or your own format - what matters is consistency and durability.
@@ -222,23 +229,24 @@ How:
 1. In your wallet, find "Sign message." (Many wallets have it, sometimes behind an advanced setting; some mobile wallets leave it out.)
 2. Enter a message: *"I control address bc1qexampleaddress. Today's date is YYYY-MM-DD."*
 3. Sign. You get a base64 blob.
-4. Anyone can paste the (message, signature, address) triple into a verifier, such as a wallet's "Verify message" feature, and they will see "valid" or "invalid." The original signing format only covers old-style addresses that start with 1, though, and as of October 2026 Bitcoin Core's [verifymessage](https://chainquery.com/rpc/verifymessage) RPC accepts only those. Wallets sign for bc1 addresses in other formats, such as [BIP 137](https://github.com/bitcoin/bips/blob/master/bip-0137.mediawiki) or [BIP 322](https://github.com/bitcoin/bips/blob/master/bip-0322.mediawiki), and not every wallet uses the same one, so check the signature with a wallet that supports the format it was signed in.
+4. Anyone can paste the (message, signature, address) triple into a verifier, such as a wallet's "Verify message" feature, and they will see "valid" or "invalid." The original signing format only covers old-style addresses that start with 1, though, and as of November 2026 (version 32.1) Bitcoin Core's [verifymessage](https://chainquery.com/rpc/verifymessage) RPC accepts only those. Wallets sign for bc1 addresses in other formats, such as [BIP 137](https://github.com/bitcoin/bips/blob/master/bip-0137.mediawiki) or [BIP 322](https://github.com/bitcoin/bips/blob/master/bip-0322.mediawiki), and not every wallet uses the same one, so check the signature with a wallet that supports the format it was signed in.
 
 This is how you prove ownership of an address to an insurance company, an inheritance lawyer, or a future suspicious you. No coins move and no fee is paid. The signature is portable, but it carries no timestamp. A date typed into the message is only a claim, because whoever holds the key can sign the same words at any time.
 
 ## 10. The Common Ways People Lose Bitcoin
 
-Honest list, ordered by what shows up most often in incident postmortems and exchange compromise reports. The ordering is editorial - exact frequencies aren't published anywhere reliable.
+Honest list. The ordering is editorial, because no complete count exists. The best public figures are the FBI's yearly totals of what people report to it, and in those the largest loss by far is the first item here.
 
-1. **Leaving funds with an exchange or lender.** The company goes bankrupt (Mt. Gox, FTX, Celsius, BlockFi). Withdrawals freeze, and customers wait months or years for whatever the bankruptcy returns. Mt. Gox collapsed in February 2014 and began repaying creditors in bitcoin in July 2024 ([the full story](/rabbit-hole/mt-gox-ftx-graveyard)).
-2. **Phishing the seed.** Fake support reps, fake wallet updates, fake "verify your wallet" pages. **No legitimate wallet, ever, asks you to type your seed online.** If it does, it's a scam.
-3. **Losing the seed.** Single backup, single location, single fire.
-4. **Buggy or malicious wallet software.** Use audited, open-source wallets. Verify download signatures from the publisher when possible.
-5. **Wrong derivation path / address type.** You restore to a wallet using a different default than the one that generated it, see "0 BTC," panic. Less common with modern wallets but happens. Solution: try restoring with each common standard (BIP 84 for native SegWit, BIP 86 for Taproot, etc.) before assuming theft.
-6. **Sending to the wrong address.** Bitcoin transactions are irreversible. Always check the first and last several characters of an address before sending. Better, send a small test first.
-7. **Inheritance failure.** Owner dies, heirs have no idea where the seed is. Common; preventable; document.
+1. **Being talked into sending it.** A fake investment site that shows a growing balance and never lets the money out. A caller who says your account is at risk and has you "protect" your money through a Bitcoin ATM. A stranger online who turns the talk to investing. Then a "recovery service" that wants a fee to get it back, which is the second scam. In the FBI's report for 2025, investment fraud alone was about $7.2 billion of the $11.4 billion that people reported losing in complaints involving crypto. Nobody real will ever tell you to pay, move or protect money this way.
+2. **Leaving funds with an exchange or lender.** The company goes bankrupt (Mt. Gox, FTX, Celsius, BlockFi). Withdrawals freeze, and customers wait months or years for whatever the bankruptcy returns. Mt. Gox collapsed in February 2014 and began repaying creditors in bitcoin in July 2024 ([the full story](/rabbit-hole/mt-gox-ftx-graveyard)).
+3. **Phishing the seed.** Fake support reps, fake wallet updates, fake "verify your wallet" pages. **No legitimate wallet, ever, asks you to type your seed online.** If it does, it's a scam.
+4. **Losing the seed.** Single backup, single location, single fire.
+5. **Buggy or malicious wallet software.** Use audited, open-source wallets. Verify download signatures from the publisher when possible.
+6. **Wrong derivation path / address type.** You restore to a wallet using a different default than the one that generated it, see "0 BTC," panic. Less common with modern wallets but happens. Solution: try restoring with each common standard (BIP 84 for native SegWit, BIP 86 for Taproot, etc.) before assuming theft.
+7. **Sending to the wrong address.** Bitcoin transactions are irreversible. Check the whole address before sending, on your hardware wallet's own screen if you use one, and never copy an address out of your transaction history: thieves send tiny payments from look-alike addresses that match the first and last characters of ones you have used, hoping you will copy theirs. Send a small test first, then check the full address again.
+8. **Inheritance failure.** Owner dies, heirs have no idea where the seed is. Common; preventable; document.
 
-The pattern is mostly **operational, not technical**. The cryptography is not the failure point. You are. So is everyone. Plan accordingly.
+The pattern is mostly **operational, not technical**. The cryptography is rarely the failure point. You are. So is everyone. Plan accordingly.
 
 ## 11. Your Milestone
 

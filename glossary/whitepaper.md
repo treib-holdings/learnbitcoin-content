@@ -2,14 +2,15 @@
 title: "Whitepaper"
 slug: whitepaper
 draft: false
-updated: "2026-11-10"
+updated: "2026-11-16"
 shortDefinition: "Satoshi Nakamoto's original 2008 publication, 'Bitcoin: A Peer-to-Peer Electronic Cash System,' detailing Bitcoin's design."
 keyTakeaways:
   - "Pioneering document that invented decentralized digital currency"
   - "Explains block headers, PoW, and peer-to-peer consensus"
   - "Considered a landmark in cryptographic and monetary innovation"
 sources:
-  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System (the paper itself: PDF, nine pages)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System (the paper itself: PDF, nine pages; the revision of March 24, 2009)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
+  - { label: "The paper as it stood in October 2008: an eight-page copy dated October 3, 2008, saved by a mailing-list member that week (hosted by Gwern Branwen)", url: "https://gwern.net/doc/bitcoin/2008-10-03-nakamoto-bitcoindraft.pdf" }
   - { label: "Satoshi Nakamoto - Bitcoin P2P e-cash paper, the announcement on the Cryptography Mailing List (October 31, 2008)", url: "https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html" }
   - { label: "mempool.space - genesis block 0, mined January 3, 2009", url: "https://mempool.space/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f" }
 relatedTerms:
@@ -20,7 +21,7 @@ relatedTerms:
 liveWidget: ~
 ---
 
-The Bitcoin whitepaper is the founding document of the network: a nine-page PDF titled **"Bitcoin: A Peer-to-Peer Electronic Cash System"**, published by [Satoshi Nakamoto](/glossary/satoshi-nakamoto) on October 31, 2008. It describes, with unusual brevity and precision, the entire core idea of Bitcoin.
+The Bitcoin whitepaper is the founding document of the network: a PDF titled **"Bitcoin: A Peer-to-Peer Electronic Cash System"**, published by [Satoshi Nakamoto](/glossary/satoshi-nakamoto) on October 31, 2008. The copy that survives from that week runs to eight pages; the file read today, revised in March 2009, runs to nine. It describes, with unusual brevity and precision, the entire core idea of Bitcoin.
 
 **Read it:** [*Bitcoin: A Peer-to-Peer Electronic Cash System*](/bitcoin.pdf) (PDF, nine pages, 184 KB).
 

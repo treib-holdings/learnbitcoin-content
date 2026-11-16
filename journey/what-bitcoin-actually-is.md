@@ -4,8 +4,8 @@ slug: what-bitcoin-actually-is
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-10-10"
-reviewedAt: "2026-10-09"
+updated: "2026-11-16"
+reviewedAt: "2026-11-16"
 order: 2
 goDeeper: ["supply", "decentralization", "energy"]
 estimatedMinutes: 25
@@ -13,9 +13,10 @@ tagline: "Not a stock. Not a company. Not a payment app. Bitcoin is a new kind o
 prerequisites: ["why-money-is-broken"]
 relatedTerms: ["satoshi-nakamoto", "whitepaper", "proof-work-pow", "decentralization", "halving-halvening", "genesis-block", "block-subsidy", "hash"]
 ogImage: "/diagrams/og/network-topology.png"
-ogImageAlt: "Two network topologies side by side. On the left, a single central bank hub stands alone. On the right, Bitcoin as roughly thirty-five peer nodes connected in an organic mesh with no center. One central bank, versus tens of thousands of Bitcoin nodes. No one is in charge."
+ogImageAlt: "Two network topologies side by side. On the left, a single central bank hub stands alone. On the right, Bitcoin as roughly thirty-five peer nodes connected in an organic mesh with no center. One central bank, versus thousands of Bitcoin nodes. No one is in charge."
 sources:
-  - { label: "Bitcoin Whitepaper (Satoshi Nakamoto, 2008)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
+  - { label: "Bitcoin Whitepaper (Satoshi Nakamoto, 2008; the nine-page file is the revision of March 24, 2009)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
+  - { label: "The paper as it stood in October 2008: an eight-page copy dated October 3, 2008, saved by a mailing-list member that week (hosted by Gwern Branwen)", url: "https://gwern.net/doc/bitcoin/2008-10-03-nakamoto-bitcoindraft.pdf" }
   - { label: "ChainQuery - getblock RPC reference and playground (run it with the genesis block hash)", url: "https://chainquery.com/rpc/getblock" }
   - { label: "mempool.space - the genesis block (block 0, January 3, 2009), whose coinbase carries The Times headline", url: "https://mempool.space/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f" }
   - { label: "Satoshi Nakamoto - Bitcoin P2P e-cash paper, the Cryptography Mailing List at metzdowd.com (October 31, 2008, 14:10 EDT)", url: "https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html" }
@@ -24,7 +25,7 @@ sources:
   - { label: "Satoshi Nakamoto Institute - Satoshi's forum posts (the last BitcoinTalk post is dated December 12, 2010)", url: "https://satoshi.nakamotoinstitute.org/posts/" }
   - { label: "Sergio Lerner - The Return of the Deniers and the Revenge of Patoshi (2019): about 1.1M coins attributed to Satoshi, 99.9% of those blocks unspent", url: "https://bitslog.com/2019/04/16/the-return-of-the-deniers-and-the-revenge-of-patoshi/" }
   - { label: "FRED - Federal Reserve total assets (WALCL): $925.7 billion on September 10, 2008, $1,969.1 billion on October 29, 2008", url: "https://fred.stlouisfed.org/series/WALCL" }
-  - { label: "FRED - M2 money stock, seasonally adjusted (M2SL): $7.51 trillion in January 2008, $23.34 trillion in August 2026", url: "https://fred.stlouisfed.org/series/M2SL" }
+  - { label: "FRED - M2 money stock, seasonally adjusted (M2SL): $7.51 trillion in January 2008, $23.30 trillion in August 2026 (as revised)", url: "https://fred.stlouisfed.org/series/M2SL" }
   - { label: "Meni Rosenfeld - Analysis of hashrate-based double-spending (December 2012), Table 1: 0.059% for a 10% attacker after 6 confirmations", url: "https://arxiv.org/abs/1402.2009" }
   - { label: "Bitcoin Core GetBlockSubsidy (permalink, Oct 2026) - halves the subsidy every 210,000 blocks, counted in whole satoshis", url: "https://github.com/bitcoin/bitcoin/blob/4bacf21a13c2ed25ef9362ca38f26bf0a67d22c9/src/validation.cpp#L1833-L1844" }
   - { label: "mempool.space - block 840,000, the fourth halving (mined 00:09 UTC April 20, 2024)", url: "https://mempool.space/block/0000000000000000000320283a032748cef8227873ff4872689bf23f1cda83a5" }
@@ -32,7 +33,7 @@ sources:
   - { label: "World Gold Council - How much gold has been mined? (about 222,600 t, end-Q2 2026)", url: "https://www.gold.org/goldhub/data/how-much-gold" }
   - { label: "World Gold Council - Gold Demand Trends Full Year 2025, supply (mine production 3,672 t)", url: "https://www.gold.org/goldhub/research/gold-demand-trends/gold-demand-trends-full-year-2025/supply" }
   - { label: "USGS Mineral Commodity Summaries 2026 - Gold (world mine production 2025: 3,300 t)", url: "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-gold.pdf" }
-  - { label: "BTC Nodes - reachable Bitcoin nodes (25,514 in the 19:28 UTC snapshot of October 9, 2026; the old bitnodes.io API now redirects here)", url: "https://btcnodes.io" }
+  - { label: "BTC Nodes - reachable Bitcoin nodes (25,514 in the 19:28 UTC snapshot of October 9, 2026 and 18,519 on November 16, 2026; the old bitnodes.io API now redirects here)", url: "https://btcnodes.io" }
   - { label: "BTC Nodes API - bitnodes.io snapshot of October 9, 2026, 19:28 UTC (25,514 nodes, main chain at height 970,671; 1,829 nodes with Knots user agents report heights off the main chain: 656 stuck at 961,639 and 1,173 near 976,430, ahead of the main chain)", url: "https://btcnodes.io/api/v1/snapshots/1791574083/" }
   - { label: "Mike Belshe - Segwit2x Final Steps, calling off the planned 2MB fork (bitcoin-segwit2x list, November 8, 2017, archived)", url: "https://web.archive.org/web/20171108202305/https://lists.linuxfoundation.org/pipermail/bitcoin-segwit2x/2017-November/000685.html" }
   - { label: "Bitcoin Wiki - Value overflow incident (August 15, 2010; patched client within five hours)", url: "https://en.bitcoin.it/wiki/Value_overflow_incident" }
@@ -64,7 +65,7 @@ sources:
 
 On Friday, October 31, 2008 - Halloween - at 2:10pm Eastern, an email landed on the Cryptography Mailing List at metzdowd.com. The sender was someone calling themselves Satoshi Nakamoto. The subject line was unremarkable: *"Bitcoin P2P e-cash paper."* The body was short. It had one sentence of introduction, a list of the system's five main properties, and the paper's abstract.
 
-It linked to a PDF on bitcoin.org: [*Bitcoin: A Peer-to-Peer Electronic Cash System*](/bitcoin.pdf). Nine pages. Eight references. No marketing.
+It linked to a PDF on bitcoin.org: [*Bitcoin: A Peer-to-Peer Electronic Cash System*](/bitcoin.pdf). The copy that survives from that week runs to eight pages; the version read today, revised in March 2009, runs to nine. Eight references. No marketing.
 
 The context matters. Lehman Brothers had collapsed six weeks earlier. The financial crisis was at full boil. The US government had just signed a $700 billion bank bailout. Every major economy was scrambling to keep its banking system from imploding. The Federal Reserve's balance sheet (the total of everything it owned, including the loans it had made) had more than doubled in seven weeks, from about $926 billion on September 10 to $1.97 trillion on October 29.
 
@@ -175,13 +176,13 @@ A lot of people, hearing "no CEO, no company," assume Bitcoin must therefore be 
 
 There are three groups of participants, and they keep each other honest:
 
-- **Node operators** - anyone running Bitcoin software that validates every transaction and every block. Their copy of the rules is what counts as Bitcoin. There are tens of thousands.
+- **Node operators** - anyone running Bitcoin software that validates every transaction and every block. Their copy of the rules is what counts as Bitcoin. There are many thousands: a public counter reached roughly 17,000 to 21,000 of them in November 2026, and it cannot see the ones that accept no incoming connections.
 - **Miners** - specialized computers competing to add the next block in exchange for the reward. They produce blocks but they don't *make the rules*; if they produce an invalid block, nodes reject it and the work is wasted.
 - **Developers** - people who write the software. There are several independent implementations; the dominant one is called Bitcoin Core. Developers can propose changes, but they cannot impose them; nodes choose what software to run.
 
 <figure>
   <img src="/diagrams/network-topology.svg" alt="Two network topologies side by side. On the left, a central bank: a single institutional hub standing alone. On the right, the Bitcoin network: roughly thirty-five peer nodes scattered across the panel and connected to their neighbors in an organic mesh, with no central node." />
-  <figcaption>One central bank, versus tens of thousands of Bitcoin nodes. No center, no headquarters, no off switch.</figcaption>
+  <figcaption>One central bank, versus thousands of Bitcoin nodes. No center, no headquarters, no off switch.</figcaption>
 </figure>
 
 This is the genuinely radical part. **No one is in charge.** Not the largest miner. Not the most prolific developer. Not the wealthiest holder. The rules are upheld by everyone running a node, and changes to the rules require near-universal agreement. There have been attempted "takeovers" - chiefly in 2017, by a coalition of large miners and businesses - and the network defeated them by simply continuing to enforce the existing rules. The coalition called off its planned fork, SegWit2x, in November 2017 for lack of consensus.
