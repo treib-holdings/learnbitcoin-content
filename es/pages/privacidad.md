@@ -96,10 +96,13 @@ Esa es la lista completa.
 - Nada de grabación de sesiones.
 - Nada de identificadores "anónimos" que al final no lo son.
 
-El boletín es la única excepción a "nada de rastreadores de terceros":
-sus correos llevan el seguimiento de aperturas y clics de Buttondown.
-Nada en el propio sitio lo hace. [El boletín](#el-boletin), más abajo,
-dice qué registra eso.
+El boletín es la única excepción, en dos lugares. Sus correos llevan
+el seguimiento de aperturas y clics de Buttondown. Y su formulario de
+inscripción, cuando haces clic en él, carga una comprobación contra
+bots de Cloudflare que examina tu navegador para distinguir a una
+persona de un script. Nada más en el sitio hace ninguna de las dos
+cosas. [El boletín](#el-boletin), más abajo, dice qué registra cada
+una.
 
 No vendemos ni alquilamos nada sobre ti. Si te suscribes al boletín,
 Buttondown y las empresas cuyos servicios usa manejan tu dirección y
@@ -153,6 +156,18 @@ sobre ti viaja con ella: ni tu dirección IP, ni tu navegador, ni la
 página de la que venías. Nuestro servidor registra la solicitud durante
 7 días, como registra cada solicitud que le llega (ver "Tu dirección
 IP, por poco tiempo", más arriba).
+
+**La comprobación contra bots.** El formulario no se envía hasta que
+[Turnstile](https://www.cloudflare.com/turnstile-privacy-policy/), de
+Cloudflare, haya juzgado que lo está llenando una persona y no un
+script. Para decidirlo, mira tu navegador y tu conexión, y de vez en
+cuando te pide marcar una casilla. Se carga cuando haces clic en el
+formulario y no antes, nunca ve la dirección que escribes, y
+Cloudflare dice que usa lo que averigua para distinguir a los bots de
+las personas y para nada más. El formulario necesita JavaScript para
+esto. Si prefieres no pasar por la comprobación, escribe a
+[hello@learnbitcoin.com](mailto:hello@learnbitcoin.com) y te
+agregamos a mano.
 
 **Qué guarda Buttondown.** Tu dirección; cuándo te inscribiste y
 confirmaste; que llegaste a través de nuestro servidor; la dirección IP
