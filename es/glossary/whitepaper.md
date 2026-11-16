@@ -3,7 +3,7 @@ title: "Whitepaper"
 slug: whitepaper
 draft: false
 published: "2026-10-14"
-updated: "2026-11-10"
+updated: "2026-11-16"
 shortDefinition: "La publicación original de Satoshi Nakamoto de 2008, 'Bitcoin: A Peer-to-Peer Electronic Cash System', que detalla el diseño de Bitcoin."
 keyTakeaways:
   - "Documento pionero que inventó la moneda digital descentralizada"
@@ -15,7 +15,8 @@ avoid:
   - "white paper"
   - "libro blanco"
 sources:
-  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System (the paper itself: PDF, nine pages)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System (the paper itself: PDF, nine pages; the revision of March 24, 2009)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
+  - { label: "The paper as it stood in October 2008: an eight-page copy dated October 3, 2008, saved by a mailing-list member that week (hosted by Gwern Branwen)", url: "https://gwern.net/doc/bitcoin/2008-10-03-nakamoto-bitcoindraft.pdf" }
   - { label: "Satoshi Nakamoto - Bitcoin P2P e-cash paper, the announcement on the Cryptography Mailing List (October 31, 2008)", url: "https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html" }
   - { label: "mempool.space - genesis block 0, mined January 3, 2009", url: "https://mempool.space/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f" }
 relatedTerms:
@@ -25,14 +26,14 @@ relatedTerms:
   - satoshi-nakamoto
 liveWidget: ~
 translationOf: whitepaper
-sourceHash: "3995e2f40f87"
-sourceCommit: "e722e85"
-sourceUpdated: "2026-11-10"
+sourceHash: "9c9930f74075"
+sourceCommit: "8cada55"
+sourceUpdated: "2026-11-16"
 translation:
   method: "llm-draft"
 ---
 
-El whitepaper de Bitcoin es el documento fundacional de la red: un PDF de nueve páginas titulado *Bitcoin: A Peer-to-Peer Electronic Cash System*, publicado por [Satoshi Nakamoto](/es/glosario/satoshi-nakamoto) el 31 de octubre de 2008. Describe, con una brevedad y una precisión poco comunes, la idea central completa de Bitcoin.
+El whitepaper de Bitcoin es el documento fundacional de la red: un PDF titulado *Bitcoin: A Peer-to-Peer Electronic Cash System*, publicado por [Satoshi Nakamoto](/es/glosario/satoshi-nakamoto) el 31 de octubre de 2008. La copia que se conserva de esa semana tiene ocho páginas; el archivo que se lee hoy, revisado en marzo de 2009, tiene nueve. Describe, con una brevedad y una precisión poco comunes, la idea central completa de Bitcoin.
 
 **Léelo:** [*Bitcoin: A Peer-to-Peer Electronic Cash System* (PDF en inglés)](/bitcoin.pdf), nueve páginas, 184 KB.
 

@@ -2,14 +2,15 @@
 title: "Cómo funciona Bitcoin"
 slug: como-funciona-bitcoin
 translationOf: how-bitcoin-works
-sourceHash: "4e50e8dfeb2f"
-sourceCommit: "e722e85"
-sourceUpdated: "2026-10-09"
+sourceHash: "0e399f2813b5"
+sourceCommit: "8cada55"
+sourceUpdated: "2026-11-16"
 translation:
   method: "llm-draft"
 draft: false
 status: live
 published: "2026-10-14"
+updated: "2026-11-16"
 order: 3
 goDeeper: ["utxos", "mempool", "mining"]
 estimatedMinutes: 30
@@ -43,7 +44,7 @@ sources:
   - { label: "mempool.space API - every difficulty adjustment (summed, about 1.03 x 10^29 hashes of total work through block 970,600)", url: "https://mempool.space/api/v1/mining/difficulty-adjustments/all" }
   - { label: "mempool.space API - network hash rate (about 995 EH/s on October 9, 2026; total work divided by hash rate is about 3.3 years)", url: "https://mempool.space/api/v1/mining/hashrate/1m" }
   - { label: "Cambridge Judge Business School - Cambridge study (April 2025): about 138 TWh a year, roughly 0.5% of global electricity", url: "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/" }
-  - { label: "blockchain.com - total size of the blockchain (774,075 MB on October 8, 2026)", url: "https://www.blockchain.com/explorer/charts/blocks-size" }
+  - { label: "blockchain.com chart data, raw - total size of the blockchain (774,075 MB on October 8, 2026)", url: "https://api.blockchain.info/charts/blocks-size?timespan=3years&format=json&sampled=false" }
   - { label: "Bitcoin Core source - the -assumevalid option (src/init.cpp)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/init.cpp" }
 ---
 
@@ -154,7 +155,7 @@ El encabezado es denso. Contiene:
 La parte ingeniosa es la **raíz de Merkle**. Es la raíz de un árbol binario que se construye calculando el hash de las transacciones de dos en dos, luego el hash de pares de esos hashes, y así hasta arriba. El resultado es un solo valor que depende de cada transacción del bloque. Cambia cualquier transacción y cambia la raíz de Merkle, y cambia el hash del bloque, y la cadena se rompe.
 
 <figure>
-  <img src="/diagrams/merkle-tree.svg" alt="Un árbol de Merkle binario. Ocho transacciones (TX1 a TX8) en la base se emparejan y se les calcula el hash en conjunto para producir cuatro hashes intermedios. Esos cuatro se emparejan y se les vuelve a calcular el hash para producir dos más. Al último par se le calcula el hash una vez más para producir la única raíz de Merkle en la cima. El encabezado de 80 bytes del bloque contiene solo esa raíz." />
+  <img src="/diagrams/merkle-tree.svg" alt="Un árbol de Merkle binario. Ocho transacciones (TX1 a TX8) en la base se emparejan y se les calcula el hash en conjunto para producir cuatro hashes intermedios. Esos cuatro se emparejan y se les vuelve a calcular el hash para producir dos más. Al último par se le calcula el hash una vez más para producir la única raíz de Merkle en la cima. De todo el árbol, solo esa raíz entra en el encabezado de 80 bytes del bloque." />
   <figcaption>Ocho transacciones, con hashes calculados por pares hasta llegar a una sola raíz. Cambia cualquier hoja y también cambia cada hash en el camino hacia la raíz.</figcaption>
 </figure>
 

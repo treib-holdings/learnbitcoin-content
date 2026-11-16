@@ -2,14 +2,15 @@
 title: "Usar Bitcoin"
 slug: usar-bitcoin
 translationOf: using-bitcoin
-sourceHash: "c6d62e1b5bf0"
-sourceCommit: "9838a39"
-sourceUpdated: "2026-10-09"
+sourceHash: "a9a6759242b9"
+sourceCommit: "8cada55"
+sourceUpdated: "2026-11-16"
 translation:
   method: "llm-draft"
 draft: false
 status: live
 published: "2026-10-14"
+updated: "2026-11-16"
 order: 5
 goDeeper: ["mempool", "lightning-routing", "utxos"]
 estimatedMinutes: 30
@@ -27,7 +28,9 @@ sources:
   - { label: "BIP 141 - Segregated Witness (virtual size is transaction weight divided by 4)", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
   - { label: "mempool.space API docs - recommended fees (fastestFee, halfHourFee, hourFee)", url: "https://mempool.space/docs/api/rest#get-recommended-fees" }
   - { label: "Bitcoin Core source - fee estimator tracks how long past transactions took to confirm", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/fees/block_policy_estimator.h" }
-  - { label: "Bitcoin Core PR #34075 - mempool-based fee estimation (merged August 2026 for version 32.0)", url: "https://github.com/bitcoin/bitcoin/pull/34075" }
+  - { label: "Bitcoin Core PR #34075 - mempool-based fee estimation (merged August 2026; shipped in version 32.1)", url: "https://github.com/bitcoin/bitcoin/pull/34075" }
+  - { label: "Bitcoin Core 32.1 release notes (October 2026) - the first release of the 32 series; estimatesmartfee now also reads the mempool", url: "https://bitcoincore.org/en/releases/32.1/" }
+  - { label: "Jameson Lopp - Bitcoin address poisoning attacks (look-alike addresses that match the first and last characters)", url: "https://blog.lopp.net/bitcoin-address-poisoning-attacks/" }
   - { label: "Ordinals docs - Runes specification (activates on block 840,000)", url: "https://docs.ordinals.com/runes/specification.html" }
   - { label: "mempool.space - block 840,002, first block over 500 sat/vB median after the April 20, 2024 halving", url: "https://mempool.space/block/00000000000000000002c0cc73626b56fb3ee1ce605b0ce125cc4fb58775a0a9" }
   - { label: "mempool.space - block 840,005, median fee rate about 2,879 sat/vB", url: "https://mempool.space/block/000000000000000000027b0ec0e3acadd018cd19e7dd976602f216a1bc12d079" }
@@ -40,7 +43,7 @@ sources:
   - { label: "Bitcoin Optech - Child pays for parent (CPFP)", url: "https://bitcoinops.org/en/topics/cpfp/" }
   - { label: "Bitcoin Core source - kernel/mempool_options.h (default mempool expiry 336 hours)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/mempool_options.h" }
   - { label: "ChainQuery - abandontransaction RPC reference", url: "https://chainquery.com/rpc/abandontransaction" }
-  - { label: "blockchain.com - bitcoin market price (about $63,800 on April 20, 2024)", url: "https://www.blockchain.com/explorer/charts/market-price" }
+  - { label: "mempool.space API - bitcoin price on April 20, 2024 (about $63,800)", url: "https://mempool.space/api/v1/historical-price?currency=USD&timestamp=1713571200" }
   - { label: "Bitcoin Core source - kernel/chainparams.cpp (10-minute block target)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/chainparams.cpp" }
   - { label: "BOLT 2 - Peer protocol (the funder puts up the channel's bitcoin; dual funding is an option)", url: "https://github.com/lightning/bolts/blob/master/02-peer-protocol.md" }
   - { label: "BOLT 4 - Onion routing (the route is constructed by the origin node)", url: "https://github.com/lightning/bolts/blob/master/04-onion-routing.md" }
@@ -51,7 +54,7 @@ sources:
   - { label: "LUD-16 - Lightning Address specification", url: "https://github.com/lnurl/luds/blob/luds/16.md" }
   - { label: "BOLT 12 - Offers (added to the Lightning spec in September 2024)", url: "https://github.com/lightning/bolts/blob/master/12-offer-encoding.md" }
   - { label: "Bitcoin Optech - Offers (implementation progress by year)", url: "https://bitcoinops.org/en/topics/offers/" }
-  - { label: "Jameson Lopp - Known physical bitcoin attacks (365 entries, December 2014 to October 2026)", url: "https://github.com/jlopp/physical-bitcoin-attacks" }
+  - { label: "Jameson Lopp - Known physical bitcoin attacks (823 entries on November 15, 2026, the earliest from May 2014; the list more than doubled in October 2026, when older cases were added)", url: "https://github.com/jlopp/physical-bitcoin-attacks" }
 ---
 
 > **Adónde vas:** Vas a enviar una transacción on-chain con una comisión que elegiste a propósito, generar una factura Lightning (invoice) y recibir un pago por Lightning. Las dos cosas deberían sentirse distintas. Las dos deberían dejarte un modelo mental que te sirva para saber cuándo usar cada una.
@@ -89,7 +92,7 @@ Vas a usar las dos. Saber cuál es cuál ya es la mayor parte de la habilidad.
 
 Abre tu billetera. Toca Enviar. Te va a pedir tres cosas:
 
-- **Una dirección de destino.** Una cadena larga que empieza con `bc1` (formato moderno) o con `3` o `1` (formatos más antiguos). Pégala siempre desde una fuente confiable. Revisa siempre dos veces varios caracteres del principio y del final. Trata las direcciones como números de cuenta, no como URLs.
+- **Una dirección de destino.** Una cadena larga que empieza con `bc1` (formato moderno) o con `3` o `1` (formatos más antiguos). Pégala siempre desde una fuente confiable, nunca desde tu historial de transacciones. Revisa la dirección completa, no solo los primeros y los últimos caracteres: las direcciones parecidas están hechas para coincidir en esos. Trata las direcciones como números de cuenta, no como URLs.
 - **Un monto.** En BTC o en sats, tú decides. Las billeteras modernas te dejan alternar entre las dos.
 - **Una tasa de comisión.** Normalmente en **sat/vB** (satoshis por byte virtual), el precio por cada unidad del tamaño de tu transacción. Un byte virtual funciona como un byte, salvo que los datos de firma cuentan a un cuarto de su tamaño real.
 
@@ -99,7 +102,7 @@ Algunas cosas para interiorizar:
 - **Envía siempre una prueba pequeña primero** cuando uses una dirección nueva para cualquier monto serio. Unos cuantos miles de sats. Confirma que llegó. Luego envía el resto.
 - **Revisar la dirección es tu responsabilidad.** Ninguna autoridad central puede revertir una transacción mal dirigida. Bitcoin funciona exactamente como Bitcoin dice que funciona.
 
-Muchas billeteras te sugieren tres tasas de comisión (por ejemplo, 2 sat/vB, 5 sat/vB y 12 sat/vB) que corresponden a "en aproximadamente una hora", "en aproximadamente media hora" y "en el siguiente bloque". Son estimaciones. Algunas se construyen a partir del mempool actual. Las versiones de Bitcoin Core hasta la 31 basan las suyas solo en cuánto tardaron en confirmarse las transacciones recientes a cada tasa de comisión. La versión 32, en pruebas previas al lanzamiento a octubre de 2026, también lee el mempool actual.
+Muchas billeteras te sugieren tres tasas de comisión (por ejemplo, 2 sat/vB, 5 sat/vB y 12 sat/vB) que corresponden a "en aproximadamente una hora", "en aproximadamente media hora" y "en el siguiente bloque". Son estimaciones. Algunas se construyen a partir del mempool actual. Las versiones de Bitcoin Core hasta la 31 basan las suyas solo en cuánto tardaron en confirmarse las transacciones recientes a cada tasa de comisión. La versión 32, lanzada en octubre de 2026, también lee el mempool actual.
 
 ## 3. Leer el mempool
 
@@ -143,7 +146,7 @@ No existe la comisión "correcta". Existe "la comisión que necesitas pagar para
 ## 4. Replace-by-Fee (RBF): cuando tu transacción se atasca
 
 <figure>
-  <img src="/diagrams/bumping-stuck-tx.svg" alt="Diagrama de dos filas con los dos mecanismos para destrabar una transacción de Bitcoin. Fila superior, RBF: una transacción atascada a 5 sat por byte virtual (gris) es reemplazada por una nueva versión de la transacción, que gasta las mismas monedas, a 50 sat por byte virtual (naranja), que se confirma en el siguiente bloque mientras la original desaparece. Fila inferior, CPFP: una nueva transacción hija a 50 sat por byte virtual (naranja) gasta la salida de cambio de una transacción padre atascada a 5 sat por byte virtual (gris); padre e hija terminan en el siguiente bloque porque el minero ve la comisión combinada. Lema: Tu transacción no está atascada para siempre. Está en el nivel de comisión equivocado para las condiciones actuales." />
+  <img src="/diagrams/bumping-stuck-tx.svg" alt="Diagrama de dos filas con los dos mecanismos para destrabar una transacción de Bitcoin. Fila superior, RBF: una transacción atascada a 5 sat por byte virtual (gris) es reemplazada por una nueva versión de la transacción, que gasta las mismas monedas, a 50 sat por byte virtual (naranja), que se confirma en el siguiente bloque mientras la original desaparece. Fila inferior, CPFP: una nueva transacción hija a unos 110 sat por byte virtual (naranja), suficiente para subir el promedio del par a unos 50, gasta la salida de cambio de una transacción padre atascada a 5 sat por byte virtual (gris); padre e hija terminan en el siguiente bloque porque el minero las evalúa como un par. Lema: Tu transacción no está atascada para siempre. Está en el nivel de comisión equivocado para las condiciones actuales." />
   <figcaption>Dos mecanismos, mismo resultado: una transacción atascada entra en el siguiente bloque. RBF reemplaza la original. CPFP la rescata con una transacción hija de comisión alta.</figcaption>
 </figure>
 
@@ -242,7 +245,7 @@ La otra cara del envío: cómo lograr que te *paguen*.
 
 Existe una convención llamada **Lightning Address** (una dirección Lightning; se ve como un correo electrónico: `you@yourdomain.com`) que permite que la gente te pague sin pedirte una factura nueva cada vez; un servidor web en ese dominio crea una nueva para cada pago. Es cómodo, pero requiere correr ese servidor o usar un servicio que lo haga. Opcional para la mayoría; útil si haces trabajo de cara al público y recibes propinas.
 
-Las **Offers** (ofertas; [BOLT 12](/es/glosario/bolt), añadido a la especificación de Lightning en septiembre de 2024) son códigos de pago reutilizables que no necesitan servidor web. A octubre de 2026, la compatibilidad de las billeteras sigue siendo desigual.
+Las **Offers** (ofertas; [BOLT 12](/es/glosario/bolt), añadido a la especificación de Lightning en septiembre de 2024) son códigos de pago reutilizables que no necesitan servidor web. A noviembre de 2026, la compatibilidad de las billeteras sigue siendo desigual.
 
 ## 9. Los efectos secundarios de la soberanía
 
@@ -251,7 +254,7 @@ Una vez que usas Bitcoin de verdad, algunas cosas que antes eran abstractas se v
 - **Puedes pagarle a cualquiera, en cualquier lugar, a cualquier hora.** Sin horarios bancarios. Sin banca corresponsal. Sin "no podemos enviar a ese país". Una billetera en un celular con internet es una terminal financiera global.
 - **La privacidad es tu responsabilidad.** Cada transacción on-chain es pública para siempre. Evita la reutilización de direcciones. Considera el control de monedas si manejas montos delicados. Tenemos en este sitio una guía de [buenas prácticas de privacidad](/downloads/bitcoin-privacy-best-practices.pdf) (PDF en inglés); léela antes de usar Bitcoin en serio.
 - **Los errores son permanentes.** Dirección equivocada, monto equivocado, red equivocada: no hay mesa de ayuda. Prueba siempre con poco primero. Verifica siempre antes de enviar.
-- **Eres un objetivo.** Cada persona que sabe que tienes bitcoin de verdad suma un poco a tu riesgo. A octubre de 2026, la lista pública de Jameson Lopp de ataques físicos contra personas y negocios que tienen bitcoin u otras criptomonedas lleva 365 entradas desde diciembre de 2014, 86 de ellas en 2025, y aclara que muchos ataques no se reportan públicamente. No hables en público de cuánto tienes. No pongas un letrero afuera de tu casa que diga "I HODL". La amenaza es baja para la mayoría de la gente, pero no es cero.
+- **Eres un objetivo.** Cada persona que sabe que tienes bitcoin de verdad suma un poco a tu riesgo. A noviembre de 2026, la lista pública de Jameson Lopp de ataques físicos contra personas y negocios que tienen bitcoin u otras criptomonedas lleva 823 entradas que se remontan a 2014, 174 de ellas en 2025, y aclara que muchos ataques no se reportan públicamente. No hables en público de cuánto tienes. No pongas un letrero afuera de tu casa que diga "I HODL". La amenaza es baja para la mayoría de la gente, pero no es cero.
 
 No son razones para evitar Bitcoin. Son las consecuencias operativas de salirte del mundo de los terceros de confianza. Vale la pena. Solo que son reales.
 
