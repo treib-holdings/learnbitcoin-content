@@ -2,8 +2,8 @@
 title: "Cómo funciona Bitcoin"
 slug: como-funciona-bitcoin
 translationOf: how-bitcoin-works
-sourceHash: "0e399f2813b5"
-sourceCommit: "8cada55"
+sourceHash: "2da224ddfd2d"
+sourceCommit: "d2cef09"
 sourceUpdated: "2026-11-16"
 translation:
   method: "llm-draft"
@@ -58,6 +58,8 @@ Unos segundos después, la billetera de Bob muestra el pago entrante como "sin c
 
 Este capítulo es lo que pasa en medio. Vamos capa por capa. Al final, vas a poder dibujarlo en una servilleta.
 
+**Hazlo:** [Pásala](https://practice.learnbitcoin.com/es/do/pass-it-on). Toca Enviar tú: deja unas monedas de práctica en el fondo común para quien viene después de ti, y mira cómo el pago recibe su primera confirmación.
+
 ## 2. No hay saldos
 
 Esta es la primera idea que la mayoría de la gente entiende mal:
@@ -97,6 +99,8 @@ Después la transacción se **firma**: la billetera de Alice usa su clave privad
 
 Lo que se transmite a la red son poco más de 200 bytes de datos: las entradas, las salidas, las firmas, los metadatos. Eso es todo. La transacción entera cabe en lo que pesa una imagen en miniatura.
 
+**Hazlo:** [No hay saldos](https://practice.learnbitcoin.com/es/do/no-balances). Cuenta las monedas (los UTXOs) de tu propia billetera de práctica, y luego lee lo que uno de tus pagos hizo con ellas: qué gastó, qué fue adónde, el cambio y la comisión.
+
 ## 4. El mempool: la sala de espera
 
 Cuando la billetera de Alice transmite la transacción, esta llega a uno de los nodos a los que la billetera está conectada, que la reenvía a sus pares, que la reenvían a los suyos. En cuestión de segundos, casi todos los nodos de la red Bitcoin se han enterado de la transacción de Alice y la han guardado en su **mempool** local (por "memory pool", la reserva en memoria): la fila de transacciones válidas que esperan a que las minen.
@@ -108,6 +112,8 @@ Algunas cosas que conviene notar:
 - **El mempool se ordena por tasa de comisión.** Los mineros quieren maximizar lo que ganan por bloque, así que eligen primero las transacciones que pagan más por cada byte de espacio en el bloque. Tu tasa de comisión (sats por byte virtual), no el monto que envías, decide tu lugar en la fila.
 
 Puedes [ver un mempool en vivo con tus propios ojos](https://chainquery.com/reports/mempool): esa página muestra el mempool de un nodo de Bitcoin en el momento en que la cargas, ordenado en franjas de tasa de comisión.
+
+**Hazlo:** [La sala de espera](https://practice.learnbitcoin.com/es/do/waiting-room). Envía un pago y míralo esperar, entrar en un bloque y llegar a seis confirmaciones.
 
 ## 5. Minería: cómo se hace un bloque en realidad
 

@@ -3,17 +3,28 @@ title: "Privacidad"
 heading: "Esto es todo lo que sabemos de ti."
 description: "Qué datos recopila LearnBitcoin, quién los ve y cuánto tiempo se guardan. Versión corta: casi nada, a menos que te suscribas al boletín."
 published: "2026-10-14"
-updated: "2026-11-15"
+updated: "2026-11-16"
 translationOf: "privacy"
-sourceHash: "21a42cda6819"
-sourceCommit: "265648e"
-sourceUpdated: "2026-10-11"
+sourceHash: "6c56c21449ff"
+sourceCommit: "d2cef09"
+sourceUpdated: "2026-11-16"
 translation:
   method: "llm-draft"
 ---
 
 Esta traducción es informativa. [La versión en inglés](/privacy) es la
 que rige; si difieren, vale la inglesa.
+
+**Cambio del 16 de noviembre de 2026:** algunos capítulos del Recorrido
+ahora tienen tarjetas "Hazlo" que abren un paso de nuestra billetera de
+práctica en practice.learnbitcoin.com. El registro de progreso de
+lectura que guarda tu navegador ahora anota también cuáles de esos
+pasos están marcados como hechos. La billetera de práctica es un sitio
+aparte, con su propia declaración de privacidad. Las dos cosas están
+más abajo, en "Cookies y almacenamiento local". También decimos ahora,
+en el apartado de Plausible, que cada clic en un enlace que sale de
+este sitio se le reporta. Es así desde mayo de 2026, y esta página no
+lo decía.
 
 **Cambio del 15 de noviembre de 2026:** el registro de nuestro servidor
 se guarda durante 7 días, no 3. Es así desde finales de octubre, cuando
@@ -57,7 +68,13 @@ retención.
 **Visitas agregadas por página, con Plausible.** Usamos [Plausible Analytics](https://plausible.io/data-policy),
 que no usa cookies, no toma la huella digital (fingerprint) de tu
 navegador y no arma ningún perfil. Nos dice "esta página tuvo N visitas
-esta semana" sin saber cuáles fueron las tuyas.
+esta semana" sin saber cuáles fueron las tuyas. El mismo script también
+reporta cada clic en un enlace que sale de este sitio, con la dirección
+a la que lleva el enlace. Una tarjeta "Hazlo" es uno de esos enlaces,
+así que un clic en ella se reporta con el paso y el capítulo que van en
+su dirección. Cuando el enlace de la billetera de práctica te trae de
+vuelta, la visita que se cuenta nombra el capítulo y el paso, a veces
+con los pasos que ya hiciste, y nunca de dónde vienes.
 
 **Unas pocas solicitudes pequeñas a ChainQuery para las cifras en
 vivo.** La página de inicio, la página del nodo y cualquier capítulo o
@@ -123,8 +140,9 @@ consentimiento:
   qué temas a fondo y qué capítulos del Recorrido has leído, qué puntos
   de las listas de verificación has marcado, y cuándo, para que el
   sitio pueda mostrar marcas de verificación y la página de inicio
-  pueda señalarte el siguiente capítulo del Recorrido. Los datos viven
-  solo en tu dispositivo. Nunca se envían a nuestro servidor. Borra el
+  pueda señalarte el siguiente capítulo del Recorrido. También anota
+  qué pasos "Hazlo" del Recorrido están marcados como hechos, y
+  cuándo. Los datos viven solo en tu dispositivo. Nunca se envían a nuestro servidor. Borra el
   almacenamiento de tu navegador y desaparecen. Si la página de inicio
   en inglés muestra la línea "Pick up where you left off" (retoma donde
   lo dejaste), su botón "Clear my reading progress" (borrar mi progreso
@@ -134,6 +152,19 @@ Por eso no hay banner de cookies. Leer el sitio no te pide nada. El
 boletín te pide tu consentimiento una sola vez, cuando te inscribes y
 haces clic en el enlace de confirmación. El manifiesto prometió que no
 habría patrones oscuros; así se ve eso en la práctica.
+
+**Tarjetas "Hazlo".** Una tarjeta "Hazlo" de un capítulo del Recorrido
+abre nuestra billetera de práctica en practice.learnbitcoin.com, en la
+misma pestaña. Es un sitio aparte, con
+[su propia declaración de privacidad](https://practice.learnbitcoin.com/es/about).
+El enlace de la tarjeta le dice de qué capítulo vienes, para que pueda
+enviarte de vuelta. El enlace de vuelta de la billetera nombra el paso
+y dice si está hecho, y cuando lo está nombra también los otros pasos
+de ese capítulo que ya hiciste. Así es como este sitio sabe qué
+tarjetas marcar. La billetera de práctica guarda en tu navegador su
+propia nota de tus pasos, y cuenta las pantallas que la gente abre y
+los pasos que termina; su declaración dice qué, y cómo borrar la nota.
+El botón "Clear my reading progress" no la toca.
 
 <h2 id="el-boletin">El boletín</h2>
 

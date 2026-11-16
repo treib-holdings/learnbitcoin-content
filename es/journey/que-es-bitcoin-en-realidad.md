@@ -2,8 +2,8 @@
 title: "Qué es Bitcoin en realidad"
 slug: que-es-bitcoin-en-realidad
 translationOf: what-bitcoin-actually-is
-sourceHash: "730831b94f1d"
-sourceCommit: "8cada55"
+sourceHash: "e52e53b2d28c"
+sourceCommit: "d2cef09"
 sourceUpdated: "2026-11-16"
 translation:
   method: "llm-draft"
@@ -232,6 +232,8 @@ Ya conociste Bitcoin en el plano conceptual. Sabes qué es, quién lo hizo, por 
 El capítulo 3 es *cómo funciona por dentro*: la maquinaria. Bloques, transacciones, el mempool, comisiones, UTXOs. El modelo que te permite razonar sobre Bitcoin en vez de solo creer en él.
 
 El capítulo 4 es *tenerlo de verdad*. Frases semilla (también llamadas frases de recuperación), billeteras de hardware (hardware wallets), autocustodia. Lo vas a hacer, no solo a leer sobre ello.
+
+**Hazlo:** [Ten algunas](https://practice.learnbitcoin.com/es/do/hold-some). No tienes que esperar al capítulo 4 para tener algunas monedas. Crea una billetera de práctica, pide monedas de práctica y míralas llegar. En el camino la billetera te muestra 12 palabras; el capítulo 4 las explica.
 
 Por ahora, quédate con lo que acabas de aprender. **[El dinero se rompió en 1971](/es/glosario/que-paso-en-1971). Seis semanas después de la caída de Lehman Brothers, alguien propuso una alternativa. Sigue funcionando, el calendario de emisión sigue en su curso y el tope de 21 millones nunca se ha subido.** Ese es el hecho básico. Todo lo demás es detalle.
 

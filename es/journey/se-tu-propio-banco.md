@@ -2,8 +2,8 @@
 title: "Sé tu propio banco"
 slug: se-tu-propio-banco
 translationOf: be-your-own-bank
-sourceHash: "193c05415787"
-sourceCommit: "8cada55"
+sourceHash: "2b8e16ecd07f"
+sourceCommit: "d2cef09"
 sourceUpdated: "2026-11-16"
 translation:
   method: "llm-draft"
@@ -116,7 +116,7 @@ Esas palabras codifican un número. Ese número alimenta un generador determinis
 
 - **Quien tenga tu frase semilla tiene tus bitcoins.** No hay segundo factor. No hay recuperación. No hay "pero también necesitarían tu contraseña": la contraseña o el PIN de una billetera solo bloquea esa app o ese dispositivo, y las palabras restauran la billetera en cualquier otro lado sin necesitarlos. La única excepción es una [passphrase](/es/glosario/passphrase) opcional, la llamada "palabra 25", que se mezcla con la semilla. Si configuras una, respáldala con el mismo cuidado que las palabras, porque las palabras solas abren una billetera distinta, normalmente vacía.
 - **12 vs 24 palabras.** Las dos opciones son seguras. 12 palabras = 128 bits de entropía; 24 palabras = 256 bits. Ambas están muy lejos del alcance de la fuerza bruta. La elección es cuestión de preferencia. (Los valores por defecto varían según el dispositivo. A octubre de 2026, la Trezor Safe 5 usa por defecto un respaldo de 20 palabras bajo otro estándar, [SLIP-39](/es/glosario/secreto-compartido-de-shamir), y ofrece 12 o 24 palabras como opción tradicional.)
-- **Nunca escribas tu frase semilla en un sitio web. Nunca. Jamás.** Ni en el sitio del proveedor de tu billetera. Ni en una página de ayuda. En ningún lado. Los únicos lugares donde debe vivir la frase semilla son tu dispositivo de billetera y los respaldos físicos que *tú* creaste.
+- **Nunca escribas tu frase semilla en un sitio web. Nunca. Jamás.** Ni en el sitio del proveedor de tu billetera. Ni en una página de ayuda. En ningún lado. Los únicos lugares donde debe vivir la frase semilla son tu dispositivo de billetera y los respaldos físicos que *tú* creaste. (Nuestra billetera de práctica, en practice.learnbitcoin.com, te pide escribir las palabras de una billetera de práctica. Esas palabras cuidan monedas que no valen nada, y esa es la única razón por la que es seguro. Las palabras de una billetera para bitcoin de verdad, aunque todavía esté vacía, nunca se escriben en una página web, incluida esa.)
 - **No la memorices.** El cerebro olvida frases semilla, incluso las que jurabas que recordarías. El acero no.
 - **No le tomes foto.** Los celulares se respaldan en la nube. Y las nubes sufren filtraciones.
 
@@ -208,6 +208,10 @@ Hicimos formularios imprimibles de respaldo de la frase semilla, para frases de 
 
 **Una cosa más.** No dividas tu frase semilla entre varios lugares como medida de seguridad ("las primeras 6 palabras aquí, las últimas 6 allá"). Esto se llama *dividir la frase semilla* (seed splitting) y da mucha menos seguridad de la que esperarías: si pierdes uno de los lugares, lo pierdes todo, *y* quien encuentre una mitad tiene mucho menos que adivinar. La mitad de una frase de 12 palabras deja unas 2^62 posibilidades en lugar de 2^128 ([las cuentas (en inglés)](/rabbit-hole/seed-backup-strategies)). Si quieres redundancia geográfica en configuraciones avanzadas, usa [multisig](/es/glosario/multisig) (capítulo 6) o el [secreto compartido de Shamir](/es/glosario/secreto-compartido-de-shamir), no la división de la frase semilla.
 
+**Hazlo:** [La semilla](https://practice.learnbitcoin.com/es/do/the-seed). Pasa a papel las 12 palabras de tu billetera de práctica, en orden, y luego comprueba el papel: el paso te pide escribir en la página tres de las palabras. Eso es seguro por una sola razón: estas palabras cuidan monedas de práctica que no valen nada.
+
+**Hazlo:** [Comprueba el respaldo](https://practice.learnbitcoin.com/es/do/prove-the-backup). Quita la billetera de práctica de tu navegador y tráela de vuelta, con sus monedas, escribiendo sus 12 palabras desde el papel. Es la prueba del punto 3 de arriba, hecha donde un error no cuesta nada. Solo con palabras de práctica: las palabras de una billetera para bitcoin de verdad, aunque esté vacía, nunca se escriben en una página web.
+
 ## 8. Recibir tu primera transacción
 
 Este es el momento.
@@ -243,7 +247,7 @@ Lista honesta. El orden es editorial, porque no existe un conteo completo. Las m
 
 1. **Dejarse convencer de enviarlo.** Un sitio de inversiones falso que muestra un saldo que crece y nunca deja salir el dinero. Alguien que te llama, dice que tu cuenta está en riesgo y te hace "proteger" tu dinero a través de un cajero automático de Bitcoin. Un desconocido en internet que lleva la conversación hacia las inversiones. Después, un "servicio de recuperación" que pide una comisión para recuperarlo, y esa es la segunda estafa. En el informe del FBI correspondiente a 2025, el fraude de inversiones por sí solo sumó unos 7,200 millones de dólares de los 11,400 millones que la gente reportó haber perdido en denuncias relacionadas con criptomonedas. Nadie legítimo te dirá nunca que pagues, muevas o protejas dinero de esta manera.
 2. **Dejar fondos en un exchange o una plataforma de préstamos.** La empresa quiebra (Mt. Gox, FTX, Celsius, BlockFi). Los retiros se congelan y los clientes esperan meses o años por lo que la quiebra devuelva. Mt. Gox colapsó en febrero de 2014 y empezó a devolverles bitcoin a sus acreedores en julio de 2024 ([la historia completa (en inglés)](/rabbit-hole/mt-gox-ftx-graveyard)).
-3. **Phishing de la frase semilla.** Falsos agentes de soporte, falsas actualizaciones de la billetera, falsas páginas de "verifica tu billetera". **Ninguna billetera legítima, nunca, te pide escribir tu frase semilla en línea.** Si lo hace, es una estafa.
+3. **Phishing de la frase semilla.** Falsos agentes de soporte, falsas actualizaciones de la billetera, falsas páginas de "verifica tu billetera". **Ninguna billetera legítima, nunca, te pide escribir tu frase semilla en línea.** Si lo hace, es una estafa. (Los pasos de práctica de la sección 7 piden las palabras de una billetera de práctica en practice.learnbitcoin.com, que no cuidan nada de valor. Una página que pide las palabras de una billetera para bitcoin de verdad, aunque todavía esté vacía, es una estafa, se llame como se llame.)
 4. **Perder la frase semilla.** Un solo respaldo, un solo lugar, un solo incendio.
 5. **Software de billetera con errores o malicioso.** Usa billeteras auditadas y de código abierto. Cuando se pueda, verifica las firmas de descarga que publica el desarrollador.
 6. **Ruta de derivación o tipo de dirección equivocados.** Restauras la frase semilla en una billetera que usa un valor por defecto distinto del de la billetera que la generó, ves "0 BTC" y entras en pánico. Es menos común con billeteras modernas, pero pasa. Solución: intenta restaurar con cada estándar común (BIP 84 para SegWit nativo, BIP 86 para Taproot, etc.) antes de dar por hecho un robo.

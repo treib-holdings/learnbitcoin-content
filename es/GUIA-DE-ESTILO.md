@@ -210,6 +210,7 @@ tal cual.
 |---|---|---|
 | Where you're going: | Adónde vas: | cita de apertura de cada capítulo; en negrita, como en inglés: `> **Adónde vas:** ...` |
 | Pro tip: | Consejo pro: | cita de cierre |
+| Do it: | Hazlo: | línea que abre una tarjeta de la billetera de práctica en un capítulo del Recorrido; un párrafo propio, sin sangría, en negrita con asteriscos y con los dos puntos dentro: `**Hazlo:** [Título](https://practice.learnbitcoin.com/es/do/<id>). Unas pocas frases.` El título es el que la billetera da al paso: Ten algunas, Pásala, No hay saldos, La sala de espera, La semilla, Comprueba el respaldo. Las reglas completas están en CONTRIBUTING.md |
 | What this buys us / you / Bitcoin | Qué ganamos con esto / Qué ganas con esto / Qué gana Bitcoin con esto | sección de cierre de los temas a fondo y de algunas entradas |
 | Options, not gospel / Starting points, not gospel | Opciones, no dogmas / Puntos de partida, no dogmas | apartes de los capítulos 5 y 6 |
 | Your Milestone | Tu meta | encabezado de sección en los capítulos |
@@ -354,6 +355,9 @@ el uso en frases.
 | 12 / 24 words | 12 / 24 palabras | "una frase de 12 palabras" |
 | seed (the derived bytes) | la semilla | cuando "seed" significa la frase, "frase semilla" |
 | backup (noun / verb) | respaldo / respaldar | no "copia de seguridad" (España); "metal backup" = "respaldo en metal" |
+| practice wallet / practice coins | billetera de práctica / monedas de práctica | las palabras de la propia billetera de práctica (practice.learnbitcoin.com); "de práctica" para todo lo de su red |
+| the pot (practice wallet) | el fondo común | adonde el paso "Pásala" envía monedas para quien viene después |
+| a wallet for real bitcoin, even one that is still empty | una billetera para bitcoin de verdad, aunque todavía esté vacía | la forma fija de la regla de la frase semilla junto a los pasos de práctica; no "una billetera con dinero" |
 | SLIP-39 | SLIP-39 | - |
 | cosigner / coordinator | cofirmante / coordinador | - |
 | single point of failure | punto único de falla | "falla", no "fallo" |
