@@ -1,5 +1,71 @@
 [
   {
+    "id": "2026-11-16-whitepaper",
+    "date": "2026-11-16",
+    "page": "/glossary/whitepaper",
+    "title": "Whitepaper",
+    "wrong": "The entry called the paper Satoshi published on October 31, 2008 a nine-page PDF.",
+    "fixed": "The copy that survives from that week, dated October 3, 2008 and saved by a member of the mailing list, runs to eight pages. The nine-page file read today is the revision of March 24, 2009. The entry now says so. The Spanish edition carries the same correction.",
+    "commit": "8cada55",
+    "source": "https://gwern.net/doc/bitcoin/2008-10-03-nakamoto-bitcoindraft.pdf",
+    "credit": "the Journey fact-check (2026-11-16)"
+  },
+  {
+    "id": "2026-11-16-be-your-own-bank",
+    "date": "2026-11-16",
+    "page": "/journey/be-your-own-bank",
+    "title": "Be Your Own Bank",
+    "wrong": "The chapter called a handwritten copy of the seed words a 'paper wallet' and recommended it as a secondary backup. It said wiping the device and restoring from the seed is the only way to know a backup works. It said Coldcard came off its list of examples in July 2026, the week the thefts began, linked a first-day news report that said the newer models were not affected, and gave the affected Mk2 and Mk3 firmware as starting at 4.0.1. It told readers to check the first and last several characters of an address. It said the frequency of each kind of loss is not published anywhere reliable, and its list left out scams.",
+    "fixed": "A paper wallet is a single printed key, an older practice now considered unsafe; the chapter says so and keeps the handwritten seed copy under backups. For testing a backup it now puts first a check that erases nothing (the Trezor Safe 5 has one), then a restore on a second device, and last wiping the only device, which is a fair test only while the wallet is empty. Coldcard came off the list on August 3, 2026, four days after the first thefts; the note now links Coinkite's status page and migration guide and adds that Block's analysis puts firmware 4.0.0 in the affected range. Readers are told to check the whole address and never to copy one from their transaction history, because look-alike addresses are made to match the first and last characters. The list of losses now leads with being talked into sending the coins, the largest loss in the FBI's figures for 2025 (about $7.2 billion of $11.4 billion). The Spanish edition carries the same correction.",
+    "commit": "8cada55",
+    "source": "https://coldcard.com/security/status",
+    "credit": "the Journey fact-check (2026-11-16)"
+  },
+  {
+    "id": "2026-11-16-sovereignty",
+    "date": "2026-11-16",
+    "page": "/journey/sovereignty",
+    "title": "Sovereignty",
+    "wrong": "The privacy picture showed a public Electrum server learning a wallet's addresses, balance and history, and not its IP address. A heading told readers to 'sweep' KYC and no-KYC coins separately. The inheritance picture showed heirs recovering a 2-of-3 wallet from two seeds and no descriptor, with the letter held by a lawyer. The chapter listed Bitcoin ATMs among the ways to buy without ID.",
+    "fixed": "The server sees the IP address too, and the picture now marks it. The heading now says to keep the two kinds of coins apart ('sweep' means emptying a key into a wallet). The inheritance picture now shows a copy of the wallet descriptor with each seed and the letter in the owner's files, as the text beside it says. The ATM line is gone: in the US the operators fall under anti-money-laundering rules, and the FBI counted $389 million lost in complaints involving the machines in 2025. The chapter also notes that Block's analysis puts Coldcard firmware 4.0.0 in the affected range. The Spanish edition carries the same correction.",
+    "commit": "8cada55",
+    "source": "https://electrum.readthedocs.io/en/latest/faq.html",
+    "credit": "the Journey fact-check (2026-11-16)"
+  },
+  {
+    "id": "2026-11-16-using-bitcoin",
+    "date": "2026-11-16",
+    "page": "/journey/using-bitcoin",
+    "title": "Using Bitcoin",
+    "wrong": "The picture of the two ways to unstick a payment showed a child transaction at 50 sat/vB lifting a 5 sat/vB parent into a block that costs 50 sat/vB. The chapter told readers to double-check the first and last several characters of an address.",
+    "fixed": "Miners weigh parent and child as a pair, so that child would bring the pair to about 25 sat/vB. The picture and its description now show a child at about 110 sat/vB, which lifts the pair to about 50. Readers are told to check the whole address and never to paste one from their transaction history. The Spanish edition carries the same correction.",
+    "commit": "8cada55",
+    "source": "https://bitcoinops.org/en/topics/cpfp/",
+    "credit": "the Journey fact-check (2026-11-16)"
+  },
+  {
+    "id": "2026-11-16-what-bitcoin-actually-is",
+    "date": "2026-11-16",
+    "page": "/journey/what-bitcoin-actually-is",
+    "title": "What Bitcoin Actually Is",
+    "wrong": "The chapter said the paper Satoshi linked in the email of October 31, 2008 was nine pages long.",
+    "fixed": "The copy that survives from that week, dated October 3, 2008 and saved by a member of the mailing list, runs to eight pages. The nine-page file read today is the revision of March 24, 2009. The chapter now says so. The Spanish edition carries the same correction.",
+    "commit": "8cada55",
+    "source": "https://gwern.net/doc/bitcoin/2008-10-03-nakamoto-bitcoindraft.pdf",
+    "credit": "the Journey fact-check (2026-11-16)"
+  },
+  {
+    "id": "2026-11-16-how-bitcoin-works",
+    "date": "2026-11-16",
+    "page": "/journey/how-bitcoin-works",
+    "title": "How Bitcoin Works",
+    "wrong": "The description of the merkle tree picture said the block's 80-byte header 'contains only' the merkle root.",
+    "fixed": "The header holds six fields and the root is one of them. The description, and the same sentence inside the diagram file, now say that of the whole tree only the root goes into the header. The Spanish edition carries the same correction.",
+    "commit": "8cada55",
+    "source": "https://github.com/bitcoin/bitcoin/blob/v32.1/src/primitives/block.h",
+    "credit": "the Journey fact-check (2026-11-16)"
+  },
+  {
     "id": "2026-11-13-transaction-fee",
     "date": "2026-11-13",
     "page": "/glossary/transaction-fee",
