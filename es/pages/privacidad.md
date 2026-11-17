@@ -5,8 +5,8 @@ description: "Qué datos recopila LearnBitcoin, quién los ve y cuánto tiempo s
 published: "2026-10-14"
 updated: "2026-11-16"
 translationOf: "privacy"
-sourceHash: "cf88a68a081a"
-sourceCommit: "ad0b423"
+sourceHash: "d743a6c21a01"
+sourceCommit: "fcf274d"
 sourceUpdated: "2026-11-16"
 translation:
   method: "llm-draft"
@@ -22,9 +22,12 @@ lectura que guarda tu navegador ahora anota también cuáles de esos
 pasos están marcados como hechos. La billetera de práctica es un sitio
 aparte, con su propia declaración de privacidad. Las dos cosas están
 más abajo, en "Cookies y almacenamiento local". También decimos ahora,
-en el apartado de Plausible, que cada clic en un enlace que sale de
-este sitio se le reporta. Es así desde mayo de 2026, y esta página no
-lo decía.
+en el apartado de Plausible, qué más reporta su script: cada clic en un
+enlace que sale de este sitio, la página o el sitio del que vienes, y
+cuánto tiempo estuvo abierta una página y hasta dónde se bajó en ella.
+Y decimos que nuestro servidor pasa cada reporte con tu dirección IP y
+los datos de tu navegador. Los clics y la dirección IP llegan a
+Plausible desde mayo de 2026, y esta página no lo decía.
 
 **Cambio del 15 de noviembre de 2026:** el registro de nuestro servidor
 se guarda durante 7 días, no 3. Es así desde finales de octubre, cuando
@@ -72,9 +75,18 @@ esta semana" sin saber cuáles fueron las tuyas. El mismo script también
 reporta cada clic en un enlace que sale de este sitio, con la dirección
 a la que lleva el enlace. Una tarjeta "Hazlo" es uno de esos enlaces,
 así que un clic en ella se reporta con el paso y el capítulo que van en
-su dirección. Cuando el enlace de la billetera de práctica te trae de
+su dirección. Con cada visita y cada clic el script envía también la
+página o el sitio del que vienes, si tu navegador lo da, con una
+excepción: cuando el enlace de la billetera de práctica te trae de
 vuelta, la visita que se cuenta nombra el capítulo y el paso, a veces
-con los pasos que ya hiciste, y nunca de dónde vienes.
+con los pasos que ya hiciste, y nunca de dónde vienes. Cuando sales de
+una página o cambias a otra cosa, el script reporta cuánto tiempo
+estuvo la página frente a ti y hasta dónde bajaste. Nuestro servidor
+pasa cada uno de estos reportes a Plausible con tu dirección IP y lo
+que tu navegador envía en cada solicitud: su nombre, su versión, su
+sistema y sus idiomas. Plausible dice que los usa para contar a cada
+visitante una vez al día y para deducir un país, una región y una
+ciudad, y que no guarda ninguno de los dos.
 
 **Unas pocas solicitudes pequeñas a ChainQuery para las cifras en
 vivo.** La página de inicio, la página del nodo y cualquier capítulo o
