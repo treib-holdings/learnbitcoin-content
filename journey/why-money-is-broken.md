@@ -39,7 +39,7 @@ sources:
   - { label: "FRED - 3-month Treasury bill rate (TB3MS): a dollar kept in Treasury bills since 1971 grew at least 28% more than prices rose, before tax; it fell behind prices in the 1970s, and since 2009 it has lost about 19% against prices; the smallest bill cost $10,000 from 1970", url: "https://fred.stlouisfed.org/series/TB3MS" }
 ---
 
-> **Where you're going:** By the end you will know what problem Bitcoin was made to solve and what its answer costs. You will also have checked one number for your own lifetime.
+> **Where you're going:** By the end you will know what problem Bitcoin was made to solve and what its answer costs. You'll also have checked a number that puts it all in perspective for your own lifetime.
 
 **A guess first.** Think of the year you were born. What would it take today to buy what $100 bought then? Remember your number. The end of the page has you check it.
 
@@ -103,11 +103,9 @@ The gap between the two numbers is inflation over your lifetime. Not in the Unit
 
 "Wages rise too, and savings earn interest. So where is the harm?"
 
-That is right as far as it goes. The typical American household's income has grown faster than prices since 1971. Someone with enough to buy Treasury bills, which are short loans to the government, stayed ahead of prices over that whole time, before tax. That was not so in the 1970s, and after tax it is about even at best.
+They can, and that matters. Rising prices don’t mean everyone becomes poorer. Wages can grow faster than prices, and savers have ways to earn interest that helps offset inflation. But neither happens automatically. Pay may lag behind rising costs, and money held as cash or in a low-interest account can lose purchasing power. Even when interest keeps up, taxes can reduce what a saver keeps.
 
-The harm falls on money that earns little or nothing: cash, and ordinary savings in the years when interest is lower than inflation. That has been the usual case since 2009. And the arrangement works only as well as the people running it. In the 1970s it did not work well.
-
-Bitcoin's answer is a rule in place of people's judgment. Its cost is the one above. Bitcoin pays no interest either, and its price swings far more than a dollar's.
+Bitcoin's answer is a rule in place of people's judgment. Its cost is the one above. Bitcoin pays no interest either, and today its price swings far more than a dollar's.
 
 ## Check yourself
 
