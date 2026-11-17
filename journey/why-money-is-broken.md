@@ -103,7 +103,7 @@ The gap between the two numbers is inflation over your lifetime. Not in the Unit
 
 "Wages rise too, and savings earn interest. So where is the harm?"
 
-They can, and that matters. Rising prices don’t mean everyone becomes poorer. Wages can grow faster than prices, and savers have ways to earn interest that helps offset inflation. But neither happens automatically. Pay may lag behind rising costs, and money held as cash or in a low-interest account can lose purchasing power. Even when interest keeps up, taxes can reduce what a saver keeps.
+They can, and that matters. Rising prices don't mean everyone becomes poorer. Wages can grow faster than prices, and savers have ways to earn interest that helps offset inflation. But neither happens automatically. Pay may lag behind rising costs, and money held as cash or in a low-interest account can lose purchasing power. Even when interest keeps up, taxes can reduce what a saver keeps.
 
 Bitcoin's answer is a rule in place of people's judgment. Its cost is the one above. Bitcoin pays no interest either, and today its price swings far more than a dollar's.
 
