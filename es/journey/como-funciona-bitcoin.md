@@ -2,15 +2,15 @@
 title: "Cómo funciona Bitcoin"
 slug: como-funciona-bitcoin
 translationOf: how-bitcoin-works
-sourceHash: "79250a7c841f"
-sourceCommit: "1f15747"
-sourceUpdated: "2026-11-16"
+sourceHash: "062d281c4194"
+sourceCommit: "5bf47cb"
+sourceUpdated: "2026-11-17"
 translation:
   method: "llm-draft"
 draft: false
 status: live
 published: "2026-10-14"
-updated: "2026-11-16"
+updated: "2026-11-17"
 order: 3
 goDeeper: ["utxos", "mempool", "mining"]
 estimatedMinutes: 30

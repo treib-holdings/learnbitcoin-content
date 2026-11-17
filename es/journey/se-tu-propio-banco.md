@@ -2,15 +2,15 @@
 title: "Sé tu propio banco"
 slug: se-tu-propio-banco
 translationOf: be-your-own-bank
-sourceHash: "4581a6403dff"
-sourceCommit: "1f15747"
-sourceUpdated: "2026-11-16"
+sourceHash: "32ddf8afa838"
+sourceCommit: "5bf47cb"
+sourceUpdated: "2026-11-17"
 translation:
   method: "llm-draft"
 draft: false
 status: live
 published: "2026-10-14"
-updated: "2026-11-16"
+updated: "2026-11-17"
 order: 4
 goDeeper: ["mt-gox-ftx-graveyard", "seed-backup-strategies", "key-space"]
 estimatedMinutes: 35

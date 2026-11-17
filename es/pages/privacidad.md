@@ -3,11 +3,11 @@ title: "Privacidad"
 heading: "Esto es todo lo que sabemos de ti."
 description: "Qué datos recopila LearnBitcoin, quién los ve y cuánto tiempo se guardan. Versión corta: casi nada, a menos que te suscribas al boletín."
 published: "2026-10-14"
-updated: "2026-11-16"
+updated: "2026-11-17"
 translationOf: "privacy"
-sourceHash: "363ed02940b3"
-sourceCommit: "baa5c5b"
-sourceUpdated: "2026-11-16"
+sourceHash: "9a382dd86a74"
+sourceCommit: "5bf47cb"
+sourceUpdated: "2026-11-17"
 translation:
   method: "llm-draft"
 ---
@@ -15,7 +15,7 @@ translation:
 Esta traducción es informativa. [La versión en inglés](/privacy) es la
 que rige; si difieren, vale la inglesa.
 
-**Cambio del 16 de noviembre de 2026:** algunos capítulos del Recorrido
+**Cambio del 17 de noviembre de 2026:** algunos capítulos del Recorrido
 ahora tienen tarjetas "Hazlo" que abren un paso de nuestra billetera de
 práctica en practice.learnbitcoin.com. El registro de progreso de
 lectura que guarda tu navegador ahora anota también cuáles de esos

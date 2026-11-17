@@ -2,15 +2,15 @@
 title: "Qué es Bitcoin en realidad"
 slug: que-es-bitcoin-en-realidad
 translationOf: what-bitcoin-actually-is
-sourceHash: "54f444f45774"
-sourceCommit: "1f15747"
-sourceUpdated: "2026-11-16"
+sourceHash: "f93bc4c3abc5"
+sourceCommit: "5bf47cb"
+sourceUpdated: "2026-11-17"
 translation:
   method: "llm-draft"
 draft: false
 status: live
 published: "2026-10-14"
-updated: "2026-11-16"
+updated: "2026-11-17"
 order: 2
 goDeeper: ["supply", "decentralization", "energy"]
 estimatedMinutes: 25
