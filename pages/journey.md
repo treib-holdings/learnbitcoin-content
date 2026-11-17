@@ -10,7 +10,7 @@ minutes of reading, then something you do yourself.
 No account. Nothing to buy. Nobody selling anything.
 
 Did someone send you this? Good. Keep them in mind: chapter 6 has a small job
-for them. Here on your own? Everything works without one.
+for them. Here on your own? Everything will work fine, continue on.
 
 Stop after chapter 3 and you will know what Bitcoin is. Stop after chapter 5
 and you will have used it, with practice coins that are worth nothing. Chapters
