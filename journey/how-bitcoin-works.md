@@ -53,7 +53,7 @@ A few seconds later, Bob's wallet shows the incoming payment as "unconfirmed." R
 
 This chapter is what happens in between. We'll go layer by layer. By the end, you'll be able to draw it on a napkin.
 
-**Do it:** [Pass it on](https://practice.learnbitcoin.com/do/pass-it-on). Tap Send yourself: pay a few practice coins into the pot for the next learner, and watch the payment get its first confirmation.
+**Do it:** [Pass it on](https://practice.learnbitcoin.com/do/pass-it-on). Your turn to tap Send: pay a few practice coins into the pot for the next learner, and watch the payment get its first confirmation. Blocks come much faster on the practice network, so that takes about a minute, not ten.
 
 ## 2. There Are No Balances
 
@@ -108,7 +108,7 @@ A few things to notice:
 
 You can [look at a live mempool yourself](https://chainquery.com/reports/mempool) - that page shows one Bitcoin node's mempool at the moment you load it, sorted into fee-rate bands.
 
-**Do it:** [The waiting room](https://practice.learnbitcoin.com/do/waiting-room). Send a payment and watch it wait, get into a block, and reach six confirmations.
+**Do it:** [The waiting room](https://practice.learnbitcoin.com/do/waiting-room). Send a payment and watch it wait, get into a block, and reach six confirmations. Blocks come much faster on the practice network, so six of them take a few minutes, not an hour.
 
 ## 5. Mining: How a Block Actually Gets Made
 

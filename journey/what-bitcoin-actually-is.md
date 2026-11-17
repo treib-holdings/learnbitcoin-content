@@ -228,8 +228,8 @@ Chapter 3 is *how it works under the hood* - the machinery. Blocks, transactions
 
 Chapter 4 is *owning it for real*. Seed phrases, hardware wallets, self-custody. You'll do it, not just read about it.
 
-**Do it:** [Hold some](https://practice.learnbitcoin.com/do/hold-some). You do not have to wait for chapter 4 to hold some. Make a practice wallet, ask for practice coins and watch them arrive. The wallet shows you 12 words on the way; chapter 4 explains them.
+**Do it:** [Hold some](https://practice.learnbitcoin.com/do/hold-some). Practice coins, that is: play money, free to ask for, so you do not have to wait for chapter 4. Make a practice wallet, ask for some and watch them arrive. On the way the wallet shows you 12 words and asks you to write them on paper; chapter 4 explains them.
 
-For now, sit with the thing you just learned. **[Money got broken in 1971](/glossary/what-happened-in-1971). Six weeks after Lehman Brothers collapsed, someone proposed an alternative. It's still running, the supply schedule is still on track, and the 21 million cap has never been raised.** That's the basic fact of the matter. Everything else is detail.
+Before you go on, sit with what this chapter taught. **[Money got broken in 1971](/glossary/what-happened-in-1971). Six weeks after Lehman Brothers collapsed, someone proposed an alternative. It's still running, the supply schedule is still on track, and the 21 million cap has never been raised.** That's the basic fact of the matter. Everything else is detail.
 
 > **Pro tip:** If you want to verify *any* claim in this chapter, the [whitepaper](/bitcoin.pdf) is nine pages and unchanged since 2009. The [genesis block](https://chainquery.com/rpc/getblock) is still there (run `getblock` on any live node with hash `000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f`), with the *Times* headline embedded in it. The network has been running, with public source code, since January 2009. Verify, don't trust.

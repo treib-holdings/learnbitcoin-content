@@ -27,10 +27,11 @@ third parties grade it, and where we know we still owe work.
   refuses to fall back to plain HTTP for a year. We are on the
   [browser preload list](https://hstspreload.org) so the protection
   covers your *first* visit too.
-- **Strict Content Security Policy.** Every executable script on every
-  page is allow-listed by SHA-256 content hash. No `unsafe-inline`
-  anywhere. A build-time linter blocks new inline scripts so the policy
-  cannot quietly erode.
+- **Strict Content Security Policy.** Scripts load only from this
+  site's own address and, for the newsletter's bot check, from
+  challenges.cloudflare.com. Inline script blocks are allow-listed by
+  SHA-256 hash. No `unsafe-inline` anywhere. A build-time linter blocks
+  new inline scripts so the policy cannot quietly erode.
 - **One third-party script, and only on request.** No ad networks, no
   tag managers, no chat widgets, no Google Fonts. The exception is the
   bot check on the newsletter form, below. Plausible analytics is
@@ -86,7 +87,9 @@ This is a content site that serves HTML and a few PNGs. We do not:
   bitcoin. We do run a practice wallet, at practice.learnbitcoin.com,
   which the "Do it" cards in the Journey open. It works on a practice
   network whose coins are worth nothing. Its 12 words and its private
-  keys are made in your browser and never leave it, and
+  keys are made in your browser and are never sent to us (a wallet made
+  with a passkey is rebuilt from that passkey, which your password
+  manager keeps), and
   [its own statement](https://practice.learnbitcoin.com/about) says
   what it stores and what its server sees.
 - Promise zero-day-fix SLAs. We rescan after every significant change

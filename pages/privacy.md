@@ -139,10 +139,11 @@ The card's link tells it which chapter you came from, so that it can
 send you back. The wallet's link back names the step and says whether
 it is done, and once it is done it also names the other steps of that
 chapter that you have done. That is how this site knows which cards to
-mark. The practice wallet keeps its own note of your steps in your
-browser, and counts the screens people open and the steps they finish;
-its statement says what, and how to erase the note. The "Clear my
-reading progress" button does not touch it.
+mark. The practice wallet keeps the wallet itself and its own note of
+your steps in your browser, and counts a few things people do there,
+such as the screens they open and the steps they finish; its statement
+lists every one, and says how to erase the note. The "Clear my reading
+progress" button does not touch it.
 
 ## The newsletter
 

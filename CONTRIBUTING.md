@@ -130,6 +130,11 @@ list, a quote or a table:
   says that this is safe with practice words only. Chapter 4's rule,
   never type a seed into a website, names the practice wallet as its
   one exception, and the two must go on agreeing.
+- A line that names the parts of a step, or says how long a step takes,
+  follows the practice wallet. Today the "Pass it on" and "The waiting
+  room" lines say that blocks come much faster on the practice network
+  than on Bitcoin (it makes one about every 30 seconds). If the wallet's
+  steps or its block time change, the lines change with them.
 
 The website turns a well-formed line into a card. Its build refuses a
 malformed one and says why.
