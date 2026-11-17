@@ -1,10 +1,17 @@
 ---
 title: "Journey"
-heading: "Zero to sovereignty."
-description: "Zero to sovereignty. One opinionated path from 'what is money?' to 'I run my own Bitcoin node.' Six chapters. No shortcuts. No bullshit."
+heading: "Bitcoin, from the beginning."
+description: "Seven short chapters for someone starting from nothing. A few minutes of reading each, then something you do yourself. No account, nothing to buy, nobody selling anything."
 ---
 
-One opinionated path from *what is money?* to *I run my own Bitcoin
-node*. Six chapters, end-to-end. Each one terminates in something you
-actually do - not just something you read. Pace yourself; this is not a
-sprint.
+Seven short chapters for someone starting from nothing. Each one is a few
+minutes of reading, then something you do yourself.
+
+No account. Nothing to buy. Nobody selling anything.
+
+Did someone send you this? Good. Keep them in mind: chapter 6 has a small job
+for them. Here on your own? Everything works without one.
+
+Stop after chapter 3 and you will know what Bitcoin is. Stop after chapter 5
+and you will have used it, with practice coins that are worth nothing. Chapters
+6 and 7 are only for someone who wants the real thing.

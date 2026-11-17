@@ -2,7 +2,7 @@
 title: "Volatility"
 slug: volatility
 draft: false
-updated: "2026-10-10"
+updated: "2026-11-17"
 shortDefinition: "A measure of how quickly and widely BTC's price swings over time, often higher than many traditional assets."
 keyTakeaways:
   - "BTC frequently sees large price swings in short periods"
@@ -49,7 +49,7 @@ The honest framing: Bitcoin's price is a multi-decade information-discovery proc
 For users, this means:
 
 - **Don't trade if you can help it.** In a classic study of 66,465 US households investing in stocks from 1991 to 1996, the ones that traded most earned 11.4% a year, against 17.9% for the market.
-- **[DCA](/glossary/dca-dollar-cost-averaging)** is the practical defense against trying to time the volatility. Buy on a schedule; ignore the price.
+- **[DCA](/glossary/dca-dollar-cost-averaging)** is how people who have already decided to buy avoid trying to time the volatility. Whether to buy at all is yours to decide.
 - **Hold what you can afford to hold.** If volatility makes you sleep poorly, you have too much in BTC. Right-sizing the position to your tolerance is more important than predicting the next move.
 
 People who held through the 2018 and 2022 crashes without selling are the ones who learned to ignore the volatility. The asset moves; the protocol doesn't. See [HODL](/glossary/hodl) for the cultural shorthand.

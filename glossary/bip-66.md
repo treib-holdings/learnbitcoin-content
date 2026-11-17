@@ -2,7 +2,7 @@
 title: "BIP 66"
 slug: bip-66
 draft: false
-updated: "2026-10-10"
+updated: "2026-11-17"
 shortDefinition: "Enforces strict DER-encoded signatures, mitigating certain transaction malleability and parsing issues."
 keyTakeaways:
   - "Makes signatures conform to a single DER standard"
@@ -45,4 +45,4 @@ The fix at the root came with [SegWit](/glossary/segwit-segregated-witness-bip-1
 
 BIP-66 reused the version-number switchover from [BIP-34](/glossary/bip-34): once 950 of the previous 1,000 blocks were version 3, version 2 blocks became invalid. The [BIP-9](/glossary/bip-9-versionbits) version-bits mechanism came later, and its first deployment was the CSV soft fork of 2016 ([BIP-68](/glossary/bip-68-relative-locktime), BIP-112 and BIP-113).
 
-Enforcement began on July 4, 2015. Shortly after, a small miner that had not upgraded produced an invalid block, and miners who were not fully validating extended it into a 6-block chain before the valid chain pulled ahead. [How Bitcoin Works](/journey/how-bitcoin-works) puts that fork alongside the other deep reorgs in Bitcoin's history.
+Enforcement began on July 4, 2015. Shortly after, a small miner that had not upgraded produced an invalid block, and miners who were not fully validating extended it into a 6-block chain before the valid chain pulled ahead. [Transaction Finality](/glossary/transaction-finality) sets that fork beside the 25-block reorganization of March 2013, in its short history of deep reorgs.

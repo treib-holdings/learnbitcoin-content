@@ -4,6 +4,7 @@ slug: what-happened-in-1971
 linkText:
   - "gold window"
 draft: false
+updated: "2026-11-17"
 published: "2026-10-02"
 shortDefinition: "On August 15, 1971, President Nixon closed the gold window: foreign governments could no longer swap dollars for US gold at $35 an ounce. It removed the last outside limit on the dollar. The popular meme that blames it for nearly every economic trend since then goes further than the record does."
 keyTakeaways:
@@ -48,4 +49,4 @@ After 1971 inflation got much worse. Consumer prices rose 12.3 percent in the ye
 
 The phrase "WTF happened in 1971?" comes from a website of about 80 charts, most with a red arrow near 1971. One of its founders has called it a meme and said any chart with an unusual bend in 1971 goes on it. Its lead chart, pay against productivity, puts the arrow at 1973. How big that gap looks depends on whether you count benefits as pay and which inflation measure you use; economists Anna Stansbury and Lawrence Summers find that the rest shows up as wider inequality and a shrinking share of income paid to workers. None of the mainstream explanations runs through gold. The defensible claim is narrower: after August 1971 the dollar was [fiat](/glossary/fiat) money for everyone, redeemable in nothing, with no outside limit on how many could be issued.
 
-Satoshi Nakamoto did not mention 1971 in the [whitepaper](/glossary/whitepaper) or his P2P Foundation forum posts. "The central bank must be trusted not to debase the currency," he [wrote there on February 11, 2009](https://satoshi.nakamotoinstitute.org/posts/p2pfoundation/1/), adding that the history of fiat currencies is full of that trust being broken. Bitcoin replaces that trust with an issuance schedule every node checks. The [supply schedule](/rabbit-hole/supply) covers how it works, and the journey chapter [Why Money Is Broken](/journey/why-money-is-broken) tells the longer story.
+Satoshi Nakamoto did not mention 1971 in the [whitepaper](/glossary/whitepaper) or his P2P Foundation forum posts. "The central bank must be trusted not to debase the currency," he [wrote there on February 11, 2009](https://satoshi.nakamotoinstitute.org/posts/p2pfoundation/1/), adding that the history of fiat currencies is full of that trust being broken. Bitcoin replaces that trust with an issuance schedule every node checks. The [supply schedule](/rabbit-hole/supply) covers how it works, and the journey chapter [Why It Was Made](/journey/why-money-is-broken) tells the longer story.

@@ -2,7 +2,7 @@
 title: "KYC (Know Your Customer)"
 slug: kyc-know-your-customer
 draft: false
-updated: "2026-10-13"
+updated: "2026-11-17"
 shortDefinition: "Regulations requiring businesses to verify user identities, aimed at preventing money laundering and financial crime."
 keyTakeaways:
   - "Mandates user ID checks before providing financial services"
@@ -15,6 +15,7 @@ sources:
   - { label: "EUR-Lex - Directive (EU) 2018/843 (AMLD5), bringing virtual currency exchange and custodian wallet providers under EU anti-money laundering rules (2018-05-30)", url: "https://eur-lex.europa.eu/eli/dir/2018/843/oj" }
   - { label: "U.S. Department of the Treasury - Treasury Sanctions Notorious Virtual Currency Mixer Tornado Cash (2022-08-08)", url: "https://home.treasury.gov/news/press-releases/jy0916" }
   - { label: "CNBC - Coinbase says hackers bribed staff to steal customer data and are demanding $20 million ransom (2025-05-15)", url: "https://www.cnbc.com/2025/05/15/coinbase-says-hackers-bribed-staff-to-steal-customer-data-and-are-demanding-20-million-ransom.html" }
+  - { label: "US Federal Trade Commission - What To Know About Cryptocurrency and Scams: scams often start on social media or a dating app, or with an unexpected text, email or call", url: "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-and-scams" }
 relatedTerms:
   - aml-anti-money-laundering
   - bitlicense
@@ -45,8 +46,8 @@ For ordinary users, KYC creates several real costs:
 - **Data risk.** Your ID photos sit on servers, and on the screens of support contractors, that get breached.
 - **Geographic asymmetry.** KYC rules differ from country to country and change over time. The US regime dates from 2013, the EU's from 2018, and the thresholds and paperwork vary with them.
 
-Non-KYC ways to get bitcoin exist: mining it, earning it as payment for your work or goods, and buying it from another person directly. FinCEN's own guidance keeps the small cases outside the regulated zone: a person who obtains bitcoin and spends it on goods and services is a "user", not a money transmitter, and so is someone who sells a little on an infrequent basis and not for profit. Peer-to-peer marketplaces that put buyers and sellers in direct contact are the organized form of that last option. They're more friction than the giants but preserve the properties most people came to Bitcoin for.
+Non-KYC ways to get bitcoin exist: mining it, earning it as payment for your work or goods, and receiving it from someone you know in person. FinCEN's own guidance keeps the small cases outside the regulated zone: a person who obtains bitcoin and spends it on goods and services is a "user", not a money transmitter, and so is someone who sells a little on an infrequent basis and not for profit. Buying from a stranger is another matter: dealing with strangers is how many scams begin, so this site recommends no marketplace.
 
-A defensible Bitcoiner approach: KYC is sometimes the only available on-ramp, and that's fine to use deliberately. But minimize how much of your stack ever touches it, and avoid making KYC venues the long-term custody point.
+A defensible approach: a licensed company that checks your identity is the careful way to buy, and [If You Decide to Hold Some](/journey/using-bitcoin) shows how to find one. What you can limit is how long your coins stay there: do not make it the long-term custody point.
 
 See [Privacy on Bitcoin](/rabbit-hole/bitcoin-privacy) for how the exchange record becomes the anchor that names an entire address cluster.

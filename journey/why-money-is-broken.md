@@ -1,219 +1,142 @@
 ---
-title: "Why Money Is Broken"
+title: "Why It Was Made"
 slug: why-money-is-broken
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-10-09"
-reviewedAt: "2026-10-09"
-order: 1
-goDeeper: ["supply", "halvings", "bitcoin-units"]
-estimatedMinutes: 22
-tagline: "Inflation isn't a force of nature. It's a policy. Once you see how fiat actually works, Bitcoin stops looking strange."
-prerequisites: []
-relatedTerms: ["fiat", "inflation", "disinflation", "cbdc-central-bank-digital-currency", "satoshi-nakamoto"]
-ogImage: "/diagrams/og/dollar-purchasing-power.png"
-ogImageAlt: "What a dollar buys, 1970 to 2026: a line chart showing one dollar's purchasing power declining to about 12 cents over more than half a century of compounded inflation at roughly 4 percent annual CPI."
+updated: "2026-11-17"
+reviewedAt: "2026-11-16"
+order: 2
+goDeeper: ["supply", "halvings"]
+estimatedMinutes: 5
+tagline: "What happens to a dollar over time, who decides, and the different rule Bitcoin follows."
+prerequisites: ["what-bitcoin-actually-is"]
+relatedTerms: ["halving-halvening", "satoshi-nakamoto", "genesis-block"]
 sources:
-  - { label: "FRED - M2 Money Stock (St. Louis Fed)", url: "https://fred.stlouisfed.org/series/M2SL" }
-  - { label: "BLS CPI Inflation Calculator", url: "https://www.bls.gov/data/inflation_calculator.htm" }
-  - { label: "Federal Reserve - why the Fed aims for 2 percent inflation over the longer run", url: "https://www.federalreserve.gov/faqs/economy_14400.htm" }
-  - { label: "University of Warwick - Research team sheds light on Roman financial crisis (April 2022): the denarius was deliberately alloyed with copper by 87 BC", url: "https://warwick.ac.uk/news/pressreleases/research_team_sheds/" }
-  - { label: "Michael D. Bordo - Gold Standard, Concise Encyclopedia of Economics (2008): US inflation averaged 0.1 percent a year from 1880 to 1914", url: "https://www.econlib.org/library/Enc/GoldStandard.html" }
-  - { label: "Federal Reserve History - Creation of the Bretton Woods System (November 2013)", url: "https://www.federalreservehistory.org/essays/bretton-woods-created" }
-  - { label: "Federal Reserve History - Nixon Ends Convertibility of U.S. Dollars to Gold and Announces Wage/Price Controls (November 2013): early in the Bretton Woods era the US held about three-quarters of the world's official gold reserves", url: "https://www.federalreservehistory.org/essays/gold-convertibility-ends" }
-  - { label: "Federal Reserve History - The Great Inflation (November 2013)", url: "https://www.federalreservehistory.org/essays/great-inflation" }
-  - { label: "Foreign Relations of the United States, 1964-1968, Vol. VIII, Document 99 - Treasury Secretary Fowler to President Johnson on France's gold conversions (June 21, 1966)", url: "https://history.state.gov/historicaldocuments/frus1964-68v08/d99" }
-  - { label: "Nixon's August 15, 1971 Address (full text)", url: "https://www.presidency.ucsb.edu/documents/address-the-nation-outlining-new-economic-policy-the-challenge-peace" }
-  - { label: "Federal Reserve Board - Greenbook, part IV: gold sale to France (August 18, 1971)", url: "https://www.federalreserve.gov/monetarypolicy/files/FOMC19710824greenbook19710818.pdf" }
-  - { label: "Lyn Alden - What Is Money, Anyway? (March 2022)", url: "https://www.lynalden.com/what-is-money/" }
-  - { label: "Cantillon - Essay on the Nature of Trade in General (1755), Liberty Fund edition", url: "https://oll.libertyfund.org/titles/essay-on-the-nature-of-trade-in-general-lf-ed" }
-  - { label: "BLS - Common Misconceptions about the Consumer Price Index: Questions and Answers (the 1983 and 1999 method changes)", url: "https://www.bls.gov/cpi/factsheets/common-misconceptions-about-cpi.htm" }
-  - { label: "BLS - CPI-U, all items (annual average 160.5 in 1997, 321.943 in 2025)", url: "https://data.bls.gov/timeseries/CUUR0000SA0?from_year=1997&to_year=2025&annualAveragesRequested=true" }
-  - { label: "BLS - CPI-U, hospital services (annual average 101.7 in 1997, 433.655 in 2025)", url: "https://data.bls.gov/timeseries/CUUR0000SEMD01?from_year=1997&to_year=2025&annualAveragesRequested=true" }
-  - { label: "BLS - CPI-U, college tuition and fees (annual average 294.1 in 1997, 955.326 in 2025)", url: "https://data.bls.gov/timeseries/CUUR0000SEEB01?from_year=1997&to_year=2025&annualAveragesRequested=true" }
-  - { label: "Federal Reserve - Changes in U.S. Family Finances from 2022 to 2025 (October 2026): 56 percent of all families, and 31 percent of families in the bottom half by income, held stock directly or indirectly", url: "https://www.federalreserve.gov/publications/files/scf26.pdf" }
-  - { label: "mempool.space - the genesis block, dated January 3, 2009", url: "https://mempool.space/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f" }
-  - { label: "Bitcoin Wiki - Value overflow incident (August 2010)", url: "https://en.bitcoin.it/wiki/Value_overflow_incident" }
-  - { label: "mempool.space - block 74,691 (August 16, 2010, 08:20 UTC), where the corrected chain overtook the bad one", url: "https://mempool.space/block/00000000005c22d199706df1c38b38d76f8401920dcbe91edf3417f8847da707" }
-  - { label: "BIP-50 - March 2013 Chain Fork Post-Mortem", url: "https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki" }
-  - { label: "mempool.space - block 225,455 (March 12, 2013, 06:20 UTC), where the chain every version could follow overtook the one only version 0.8 accepted", url: "https://mempool.space/block/000000000000016924f85069603be8164578eedf113f44d60bf0438cba047c7f" }
+  - { label: "US Bureau of Labor Statistics - Consumer Price Index for All Urban Consumers, all items: 40.5 on average in 1971, 337.511 in October 2026, so what cost $100 in 1971 costs about $833; up about 2.7% a year since January 2012", url: "https://data.bls.gov/timeseries/CUUR0000SA0?from_year=1971&to_year=2026&annualAveragesRequested=true" }
+  - { label: "US Bureau of Labor Statistics - CPI Inflation Calculator", url: "https://www.bls.gov/data/inflation_calculator.htm" }
+  - { label: "Federal Reserve - statement of January 25, 2012: inflation of 2 percent a year, measured by the price index for personal consumption, is the rate most consistent with its mandate", url: "https://www.federalreserve.gov/newsevents/pressreleases/monetary20120125c.htm" }
+  - { label: "Federal Reserve - Why does the Federal Reserve aim for 2 percent inflation over time? (answer last updated January 26, 2015, as archived July 1, 2019): a lower rate would raise the chance of falling into deflation", url: "https://web.archive.org/web/20190701071438/http://www.federalreserve.gov/faqs/economy_14400.htm" }
+  - { label: "Federal Reserve - Monetary policy: what are its goals, how does it work? (room to cut interest rates when the economy weakens)", url: "https://www.federalreserve.gov/monetarypolicy/monetary-policy-what-are-its-goals-how-does-it-work.htm" }
+  - { label: "Federal Reserve History - The Great Inflation, 1965 to 1982 (Michael Bryan, 2013): its origins were Federal Reserve policies that let the supply of money grow too fast", url: "https://www.federalreservehistory.org/essays/great-inflation" }
+  - { label: "Bank of England - Money creation in the modern economy (March 2014): banks create money when they make loans, and a central bank can add to it by buying assets", url: "https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy" }
+  - { label: "FRED - M2 money stock (M2SL): $7.51 trillion in January 2008, $23.41 trillion in September 2026, about three times as much", url: "https://fred.stlouisfed.org/series/M2SL" }
+  - { label: "FRED - Federal Reserve total assets (WALCL): $0.92 trillion at the start of 2008, $6.76 trillion in late 2026", url: "https://fred.stlouisfed.org/series/WALCL" }
+  - { label: "Federal Reserve History - Nixon Ends Convertibility of U.S. Dollars to Gold and Announces Wage/Price Controls (August 15, 1971)", url: "https://www.federalreservehistory.org/essays/gold-convertibility-ends" }
+  - { label: "Federal Reserve History - The Smithsonian Agreement: by the 1960s the dollars held abroad had passed the US gold stock", url: "https://www.federalreservehistory.org/essays/smithsonian-agreement" }
+  - { label: "Federal Reserve History - Federal Reserve Reform Act of 1977: the law tells the Fed to promote maximum employment, stable prices and moderate long-term interest rates", url: "https://www.federalreservehistory.org/essays/fed-reform-act-of-1977" }
+  - { label: "Michael Bordo - Gold Standard, Concise Encyclopedia of Economics: inflation averaged 0.1% a year from 1880 to 1914", url: "https://www.econlib.org/library/Enc/GoldStandard.html" }
+  - { label: "Federal Reserve History - Banking Panics of the Gilded Age, 1863 to 1913 (Gary Richardson and Tim Sablik, 2015): eight panics, three of them nationwide", url: "https://www.federalreservehistory.org/essays/banking-panics-of-the-gilded-age" }
+  - { label: "mempool.space API - block 0, stamped January 3, 2009", url: "https://mempool.space/api/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f" }
+  - { label: "Bitcoin Core, chainparams.cpp, line 71 - the text written into block 0: that day's headline from The Times about a second bailout for banks", url: "https://github.com/bitcoin/bitcoin/blob/4bacf21a13c2ed25ef9362ca38f26bf0a67d22c9/src/kernel/chainparams.cpp#L71" }
+  - { label: "Satoshi Nakamoto - Bitcoin open source implementation of P2P currency, P2P Foundation forum (February 11, 2009)", url: "https://satoshi.nakamotoinstitute.org/posts/p2pfoundation/1/" }
+  - { label: "Satoshi Nakamoto - P2P Foundation forum (February 18, 2009): nobody acts as a central bank to adjust the supply, so the supply is set in advance and the value moves instead", url: "https://satoshi.nakamotoinstitute.org/posts/p2pfoundation/3/" }
+  - { label: "Satoshi Nakamoto - Bitcoin v0.1 released (January 8, 2009): 21,000,000 coins in total, the new amount cut in half every 4 years", url: "https://www.metzdowd.com/pipermail/cryptography/2009-January/014994.html" }
+  - { label: "Bitcoin Core, validation.cpp - a block that pays its maker more than the fees plus the scheduled amount is rejected", url: "https://github.com/bitcoin/bitcoin/blob/4bacf21a13c2ed25ef9362ca38f26bf0a67d22c9/src/validation.cpp#L2608-L2611" }
+  - { label: "Board of Governors of the Federal Reserve System - Economic Well-Being of U.S. Households in 2025 (May 2026), table 33: 9% of adults held cryptocurrency as an investment, 2% used it to buy something or make a payment", url: "https://www.federalreserve.gov/publications/2026-economic-well-being-of-us-households-in-2025-banking.htm" }
+  - { label: "Coin Metrics - BTC daily reference price since 2010: falls of more than half from a record high in 2011, twice between 2013 and 2015, in 2017 to 2018, twice between 2021 and 2022, and from October 2025 to June 2026; a buyer on December 16, 2017 was down 15% five years later", url: "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=PriceUSD&frequency=1d&start_time=2010-07-18&page_size=10000" }
+  - { label: "US Census Bureau - historical income tables, Table H-5: median household income in 2025 dollars, $59,970 in 1971 and $87,460 in 2025", url: "https://www2.census.gov/programs-surveys/cps/tables/time-series/historical-income-households/h05.xlsx" }
+  - { label: "FRED - 3-month Treasury bill rate (TB3MS): a dollar kept in Treasury bills since 1971 grew at least 28% more than prices rose, before tax; it fell behind prices in the 1970s, and since 2009 it has lost about 19% against prices; the smallest bill cost $10,000 from 1970", url: "https://fred.stlouisfed.org/series/TB3MS" }
 ---
 
-> **Where you're going:** By the end of this chapter, you'll be able to explain - in plain English, to your dad - why the dollar has lost most of its purchasing power since 1971, and why that isn't an accident. You won't have met Bitcoin yet. You'll just see the shape of the problem it tries to solve.
+> **Where you're going:** By the end you will know what problem Bitcoin was made to solve and what its answer costs. You will also have checked one number for your own lifetime.
 
-<figure>
-  <video
-    src="/videos/purchasing-power.mp4"
-    poster="/videos/posters/purchasing-power.png"
-    autoplay
-    muted
-    loop
-    playsinline
-    controls
-    controlslist="nodownload noplaybackrate noremoteplayback"
-    preload="metadata"
-    aria-label="Animated line chart: what a dollar buys, measured in 1970 dollars, declines decade by decade from $1 in 1970 to about $0.12 in 2026, with green dollar coins continuously fading as purchasing power erodes."
-  ></video>
-  <figcaption>Half a century of inflation, decade by decade. By 2026 a dollar bought about what 12 cents bought in 1970.</figcaption>
-</figure>
+**A guess first.** Think of the year you were born. What would it take today to buy what $100 bought then? Remember your number. The end of the page has you check it.
 
-## 1. The Feeling That Something's Wrong
+## What happens to a dollar over time?
 
-You make more money than you used to. Your rent is higher. Your groceries cost more. The number on your paycheck went up; the number of grocery bags it carries home didn't.
+It buys less. What cost $100 in 1971 costs more than $800 today. (Why 1971? That year comes up again below.)
 
-Most people feel this. Most people are also told, in various polite ways, that they're imagining it. *Inflation is normal. The economy is strong. Just put your money in the stock market.*
+The name for this is **inflation**: prices rising, year after year, so that each dollar buys a little less. Most years it is slow enough to miss. It was fast in the 1970s, and again from 2021 to 2023.
 
-Here's the thing: you aren't imagining it. The dollar in your pocket is, by design, worth a little less than it was last year - and a lot less than it was when your grandparents were your age. That's not a glitch. That's how the system was built.
+## Is that on purpose?
 
-This chapter walks through how it got built that way, who benefits, and why it matters.
+Partly. Since 2012 the Federal Reserve (the Fed), the central bank of the United States, has aimed for prices to rise about 2 percent a year. They have risen a little faster than that. Even at 2 percent, a dollar loses about a fifth of what it buys every ten years.
 
-## 2. What Money Is Actually For
+The Fed has given its reasons. Aim lower, it says, and the economy is more likely to slip into falling prices, which it ties to very weak economies. A rate a little above zero also leaves it room to cut interest rates in a slump.
 
-Strip away the brand names and currency symbols and money has three jobs:
+The fast years were not on purpose. An essay on the Fed's own history site puts the blame for the 1970s on the Fed's policies. For most of the forty years after that, inflation stayed low.
 
-- **Medium of exchange** - you can trade it for stuff. Beats hauling around chickens.
-- **Store of value** - you can save it now and spend it later without losing purchasing power.
-- **Unit of account** - you can use it to measure and compare prices.
+## Who decides how much money there is?
 
-Dollars are great at job one. They're okay at job three (prices in dollars are confusing across decades, but workable). They're terrible at job two over any meaningful time horizon.
+People do. The Fed steers how easy it is to borrow. Banks create new money when they lend: a loan appears as new money in the borrower's account. And since 2008 the Fed has created trillions of dollars itself, to buy bonds.
 
-That second-job failure is the entire subject of this chapter.
+The total is called the **money supply**. For dollars it has tripled since 2008. Prices did not triple with it. They rose by a little more than half.
 
-## 3. A Short History of Money
+Until 1971 there was meant to be an outside limit. Other countries could hand dollars to the United States and get gold back at a fixed price. By the 1960s that was failing: there were more dollars abroad than gold to cover them. In August 1971 President Nixon ended it.
 
-This is the version you can tell at a dinner party.
+Since then the limit has been the judgment of the people in charge, under a law that tells them to keep prices stable. Judgment has a case: money can be added in a panic, as it was in 2008 and 2020. Gold did not prevent panics. Before 1914 prices held, but bank panics came every few years.
 
-1. **People bartered.** It worked badly. You had to find someone who had what you wanted *and* wanted what you had. Economists call this the "coincidence of wants." Most people call it inconvenient.
+## What did Bitcoin's maker want instead?
 
-2. **Commodity money.** Communities settled on scarce, durable things - salt, shells, cattle, beads, copper, silver, gold. Gold won most rounds because it's portable, divisible, durable, verifiable, and rare. It earned the job.
+The first aim you have met already: payments with no bank in the middle. The second was a money whose supply does not rest on anyone's judgment.
 
-3. **Coins.** Governments stamped metal into standard weights so you didn't have to weigh it every time. They also discovered they could put a little less silver or gold in each coin and pocket the difference. This is called *debasement*, and Rome was already doing it to its silver denarius by 87 BC.
+Bitcoin started in January 2009, in the middle of a banking crisis. Its first block has a newspaper headline of that day written into it, about a second rescue for banks. A month later its maker, Satoshi Nakamoto, wrote that ordinary money needs a central bank that "must be trusted not to debase the currency". To debase a currency is to make each unit worth less by making more of it.
 
-4. **Paper money - backed.** Goldsmiths and later banks issued paper notes that promised "redeemable for X grams of gold on demand." Paper is lighter than metal, so this was an improvement. As long as the issuer actually had the gold, it worked.
+So Bitcoin's supply follows a rule set at the start. There will be at most 21 million coins. That limit is called **the cap**, and it has never been raised.
 
-5. **Paper money - partially backed.** Banks figured out that not everyone redeems at once. They could issue more notes than they had gold, as long as the math stayed quiet.
+New coins come out with each block. About every four years the number of new coins in a block is cut in half. Each cut is called a **halving**. Anyone can read the schedule, and the computers that keep the record enforce it.
 
-6. **The classical gold standard (~1870-1914).** Most major economies pegged their currencies to specific weights of gold. International trade settled in gold. Inflation was near zero over decades.
+The hope behind the rule is simple. If more people want a thing and nobody can make more of it, each piece buys more. That is the bet, and nobody can promise it will pay.
 
-7. **Bretton Woods (1944).** After two world wars wrecked the old system, the world rebuilt around a US dollar pegged to gold at $35/oz, with every other currency pegged to the dollar. At the start America held about three-quarters of the world's official gold, and other governments held dollars they could trade in for it.
+## What does that rule cost?
 
-8. **August 15, 1971.** Nixon went on television and closed the last way to turn dollars into gold, which by then only foreign governments and central banks could use. The suspension was supposed to be temporary. It was never restored. We have lived in the post-1971 monetary world ever since.
+What it gives up is a steady price. Nobody can make more bitcoin when people suddenly want it, or less when they do not. So every rise and fall in how much people want it shows up in the price. Owners most often say they hold it as an investment, so the price also moves with their hopes and fears.
 
-That's the history. The next section is what changed in 1971 and why it matters.
+The price has fallen by more than half at least seven times. The dollar's buying power has never fallen that fast. There have been five-year stretches in which a buyer ended up with less than at the start.
 
-## 4. The Nixon Shock
+So the two designs give up opposite things. The dollar gives up long-run value to stay steady from month to month. Bitcoin gives up steadiness to keep its supply fixed.
 
-By the late 1960s, the United States had spent heavily - Vietnam, the Great Society, the space race - and printed dollars to do it. Foreign governments holding those dollars were trading more and more of them in for the gold the peg promised. France had made it policy by 1966 to turn all its new dollars into gold, at least $34 million a month. In early August 1971 it bought another $191 million of US gold.
+Whether a fixed supply holds its value over decades is not known yet. Bitcoin has under twenty years of prices to go on, not a hundred.
 
-There wasn't enough gold to honor the promises.
+## Do it
 
-On [August 15, 1971](/glossary/what-happened-in-1971), Nixon announced a "temporary" suspension of dollar-to-gold conversion. He told Americans:
+This one needs no wallet. It takes a couple of minutes.
 
-> "...if you are among the overwhelming majority of Americans who buy American-made products in America, your dollar will be worth just as much tomorrow as it is today."
+- [ ] Open the [inflation calculator](https://www.bls.gov/data/inflation_calculator.htm) of the US Bureau of Labor Statistics, at bls.gov. It asks for an amount and two dates, and nothing else.
+- [ ] Type 100 in the box, with no dollar sign. In the first pair of lists, choose the year you were born. Leave the second date alone, and press Calculate.
+- [ ] Read the amount that appears. That is what it takes today to buy what $100 bought then. Compare it with your guess.
 
-Measured by the US Consumer Price Index, by 2025 a dollar bought about what **13 cents** bought in 1971. You can verify this yourself on the [BLS inflation calculator](https://www.bls.gov/data/inflation_calculator.htm). Eighty-seven percent of the dollar's purchasing power was deleted over fifty-four years.
+The gap between the two numbers is inflation over your lifetime. Not in the United States? Many countries' central banks or statistics offices have the same tool for their own money, and in some countries the gap is far wider than the dollar's.
 
-August 1971 was the moment the dollar stopped being tethered to anything scarce. From then on, the supply could expand whenever it was politically convenient - which, it turns out, is most of the time.
+## A fair objection
 
-## 5. The Cantillon Effect (Without the Jargon)
+"Wages rise too, and savings earn interest. So where is the harm?"
 
-Here's a question most introductory economics classes avoid:
+That is right as far as it goes. The typical American household's income has grown faster than prices since 1971. Someone with enough to buy Treasury bills, which are short loans to the government, stayed ahead of prices over that whole time, before tax. That was not so in the 1970s, and after tax it is about even at best.
 
-**When new money enters an economy, who gets it first?**
+The harm falls on money that earns little or nothing: cash, and ordinary savings in the years when interest is lower than inflation. That has been the usual case since 2009. And the arrangement works only as well as the people running it. In the 1970s it did not work well.
 
-Not everyone, all at once, evenly. The new money flows through specific channels - government spending, bank lending, financial markets - and the people closest to those channels get it before prices have time to adjust.
+Bitcoin's answer is a rule in place of people's judgment. Its cost is the one above. Bitcoin pays no interest either, and its price swings far more than a dollar's.
 
-By the time the new money reaches your paycheck, prices have already moved up to reflect the larger money supply. You're not richer. You're holding more dollars that buy the same things, or less.
+## Check yourself
 
-This is called the **Cantillon effect**, after Richard Cantillon, an 18th-century banker who described it in his 1755 essay on commerce. It's not a conspiracy theory. It's a structural consequence of how monetary expansion actually works.
+<details>
+<summary>What is inflation?</summary>
 
-Who benefits, in rough order of proximity to new money:
+Prices rising over time, so that each dollar buys less. Reread "What happens to a dollar over time?"
 
-1. **The government**, which spends it first
-2. **Primary dealers and large banks**, which lend it next
-3. **Corporations** that borrow at low rates and use the cash to buy back stock and bid up asset prices
-4. **Asset owners** - real estate, equities, gold - whose holdings rise as money chases them
-5. **Workers**, eventually, through wages - but with a lag
+</details>
 
-If you own assets, monetary expansion is roughly neutral or beneficial to you. If you live paycheck to paycheck and save in cash, monetary expansion is a continuous, quiet tax.
+<details>
+<summary>What limits how many dollars there are? How many bitcoin?</summary>
 
-## 6. The Math of Compounding
+For dollars, the judgment of the central bank, and how much banks lend. For bitcoin, a rule set at the start: the cap of 21 million. Reread "Who decides how much money there is?" and the section after it.
 
-"Two percent inflation" sounds tame. Compounded, it isn't.
+</details>
 
-| Annual inflation | 10 years | 20 years | 40 years |
-|---|---|---|---|
-| 2% | -18% | -33% | -55% |
-| 3% | -26% | -45% | -69% |
-| 5% | -39% | -62% | -86% |
-| 7% | -49% | -74% | -93% |
+<details>
+<summary>What does Bitcoin give up by having a fixed supply?</summary>
 
-The official US CPI averaged around 4% a year from 1971 to 2025. That's a working life of erosion.
+A steady price. Nobody can add or remove coins to calm things down, so the price swings. Reread "What does that rule cost?"
 
-<figure>
-  <img src="/diagrams/dollar-purchasing-power.svg" alt="What a dollar buys, 1970 to 2026: a line chart showing one dollar's purchasing power declining to about 12 cents over more than half a century of compounded inflation at roughly 4 percent annual CPI." />
-  <figcaption>Counted from 1970 to 2026, a dollar kept about 12 cents of its 1970 buying power. Section 4 counts from 1971 to 2025 instead, which gives about 13 cents.</figcaption>
-</figure>
+</details>
 
-And CPI has its critics. They say changes to how it has been measured since the 1980s hold the headline number down. The Bureau of Labor Statistics, which publishes it, says the effect is smaller than they claim. By its numbers, a 1999 change that allows for shoppers switching to cheaper items trims less than 0.3 percentage points off the yearly inflation rate. A 1983 change in how homeowners' housing costs are counted made the housing part of the index rise faster when it first took effect.
+## Words you now know
 
-CPI is also only an average, and the average hides the big bills. From 1997 to 2025, overall consumer prices roughly doubled, while prices for hospital services rose to about 4.3 times their 1997 level and college tuition and fees to about 3.2 times theirs.
+- **Inflation.** Prices rising over time, so that each dollar buys less.
+- **Money supply.** All the money there is of one kind.
+- **The cap.** Bitcoin's limit of 21 million coins.
+- **Halving.** The cut, about every four years, in how many new coins come out with each block.
 
-## 7. Who Pays and Who Benefits
-
-This is where the politics get clear.
-
-**Who pays the inflation tax:**
-
-- People who save in cash
-- People on fixed incomes
-- Wage earners (because wages lag prices)
-- Young people (who must buy assets at inflated prices)
-- The poor (in 2025 only 31 percent of families in the bottom half by income owned any stock, directly or through a fund or retirement account)
-
-**Who benefits from inflation:**
-
-- Debtors paying back fixed-dollar loans (especially governments, which are the biggest debtors in history)
-- Asset owners - stocks, real estate, gold, businesses
-- People who get the new money first (see section 5)
-- Anyone whose income is leveraged to asset prices
-
-The standard advice - *just invest your savings* - works only if you have savings to invest, the knowledge to invest them, and the stomach to hold through downturns. In 2025, 44 percent of American families owned no stock at all, not even through a retirement account.
-
-Inflation, in practice, is a wealth transfer from people who hold dollars to people who hold assets. It's enacted by almost every government in modern history, and there's no line item for it on your tax return.
-
-## 8. The Quiet Tax
-
-You don't vote for inflation.
-
-When taxes go up, there's a debate. There's a bill. Someone has to defend it. When the money supply expands, there's a press release from the Federal Reserve, and most people don't read it.
-
-The transfer happens quietly, continuously, year after year. By 2025 a dollar bought about what 80 cents bought in 2020, a loss of about 20% of its buying power in five years.
-
-If a politician proposed a 20% tax on savings accounts, there would be riots. The same 20% reduction in purchasing power, delivered through monetary expansion, is described as "normal" and "the cost of doing business."
-
-This isn't a conspiracy. It's how the system functions. The people who designed it largely meant well. The consequences are what they are.
-
-## 9. The Unanswered Question
-
-So here's the question this chapter sets up but doesn't answer:
-
-**What would money look like if no one could expand its supply?**
-
-What if it were:
-
-- **Portable** - easy to move across borders, instantly
-- **Divisible** - fine enough for any purchase
-- **Durable** - doesn't rot, doesn't rust, doesn't depend on a bank
-- **Verifiable** - impossible to counterfeit
-- **Scarce** - and not just "scarce because we agreed," but *scarce because the math says so*
-- **Sovereign** - outside the control of any government or company
-
-That money would do all three jobs - medium of exchange, store of value, unit of account - and it would do the second one *as well as gold did before 1971*, with none of gold's downsides.
-
-It would have to be a new kind of thing. It would have to use cryptography to make scarcity provable. It would have to use a network instead of a vault. It would have to be a protocol, not a product.
-
-That money exists. It has been running since January 2009. Twice, in [2010](/rabbit-hole/inflation-bug-postmortem) and [2013](/rabbit-hole/2013-chain-fork), a software bug forced the network to throw out a stretch of its transaction record, and both times it was back on a single agreed record within a day. The next chapter is about what it actually is.
-
-> **Pro tip:** If you only remember one thing from this chapter, remember that inflation is a *policy*, not a force of nature. Once you see that, you can't unsee it. Everything Bitcoin does is in response to a system that was built - deliberately or carelessly - to lose its grip on value over time.
+If you have doubts by now, you are reading carefully.

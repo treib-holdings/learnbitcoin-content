@@ -1,0 +1,280 @@
+---
+title: "Multisig and Inheritance"
+slug: multisig-and-inheritance
+draft: false
+status: live
+published: "2026-11-17"
+updated: "2026-11-17"
+section: rabbit-hole
+category: custody-privacy
+order: 28
+level: intermediate
+tagline: "Whether one key is enough for what you hold, how a two-of-three wallet is set up, with the checks that catch the usual mistakes, and how the right person reaches your bitcoin if you cannot."
+estimatedMinutes: 20
+sources:
+  - { label: "Sparrow Wallet - Best Practices (read November 16, 2026): a single key for amounts up to US$100,000 and multisig above that; hardware wallets from more than one maker; devices and backups in different places; multisig takes more time and equipment; a public server sees your balance", url: "https://sparrowwallet.com/docs/best-practices.html" }
+  - { label: "Bitcoin Design Guide - Multi-key: several keys suit large amounts and guided or knowledgeable users, not small amounts or people new to bitcoin; back up the set-up itself, with every key's extended public key, fingerprint and derivation", url: "https://bitcoin.design/guide/how-it-works/private-key-management/multi-key/" }
+  - { label: "BitBox - Bitcoin multisig: benefits, risks and backup requirements (support article, updated November 10, 2026): more hardware wallets do not automatically make bitcoin safer; someone who needs no shared control and cannot confidently verify and recover a multisig wallet may be better served by a well-managed single key; with one key lost the other two can still spend, provided the wallet configuration was kept; the wallet's addresses are calculated from every signer's public information; compare each key in full, since a short fingerprint is not enough; keep a verified copy of the complete configuration with each signing backup, and protect it from disclosure, alteration and loss; two sets of recovery words are not enough without it; never enter recovery words into a computer, phone or website; a small payment does not prove that the backups are right, and a rehearsal must not reset funded devices; where a device does not remember the configuration the checks must be repeated; at registration its devices show the threshold and every signer's key and check their own; they support multisig through other makers' programs", url: "https://support.bitbox.swiss/en_US/advanced/bitcoin-multisig-benefits-risks-backups" }
+  - { label: "BitBox - Set up your BitBox02 without a microSD card (support article, updated October 28, 2026), for the BitBox02 and the BitBox02 Nova: the backup goes to a memory card unless the advanced option to write down recovery words is chosen; the device then has you confirm the written words, and can show them again later without being reset; new devices ship without firmware, which the maker's app installs; do not reset a device that holds an existing wallet; its support staff will never ask for the words", url: "https://support.bitbox.swiss/en_US/advanced/bitbox02-setup-no-microsd" }
+  - { label: "BitBox (Shift Crypto), Kaspar Etter - The pitfalls of multisig when using hardware wallets (December 3, 2019; Wayback Machine copy of July 19, 2025, because the live page refuses automated readers): if the details are wrong, multisig can leave you with less security than an ordinary single-key wallet; check the receive address on more than one hardware wallet", url: "https://web.archive.org/web/20250719224348/https://blog.bitbox.swiss/en/the-pitfalls-of-multisig-when-using-hardware-wallets/" }
+  - { label: "Trezor - Multisig wallets (read November 16, 2026), the company's statements about its own devices: they work in multisig wallets, which are made with other programs because its own app does not make them; for one person it recommends the SLIP 39 backup of SatoshiLabs, the group it is part of; it calls multisig most appropriate for groups", url: "https://trezor.io/learn/supported-assets/bitcoin/multisig-wallets-how-multi-key-security-protects-your-bitcoin" }
+  - { label: "Trezor - Trezor Safe 5 questions and answers (read November 16, 2026), the company's statement about its own device: the 20-word SLIP 39 backup is the default; select Legacy Backup Types for 12 or 24 words", url: "https://trezor.io/guides/trezor-devices/trezor-safe-5/trezor-safe-5-faqs" }
+  - { label: "Trezor firmware - developer notes on Bitcoin signing: for a multisig input, the public keys of all signers must be supplied with the request", url: "https://github.com/trezor/trezor-firmware/blob/main/docs/common/bitcoin-signing.md" }
+  - { label: "Trezor firmware - change log: the device shows the signers' public keys when it displays a multisig address (added November 2019), in the Ypub or Zpub form since version 2.3.5 of February 2021; no entry adds a step that stores a multisig wallet on the device (searched November 16, 2026)", url: "https://github.com/trezor/trezor-firmware/blob/main/core/CHANGELOG.md" }
+  - { label: "Trezor - Scams and phishing (read November 16, 2026), the company's statement about itself: it will never contact you about your wallet backup or ask you to perform actions with your wallet; a call, message or postal letter in its name is to be treated as phishing", url: "https://trezor.io/learn/security-privacy/personal-security-standards/scams-and-phishing" }
+  - { label: "Blockchain Commons - Multisig Self-Custody Scenario, by Christopher Allen and Shannon Appelcline (updated July 2023), written for a holder with a significant amount: ordinary backups lower the risk of loss and tend to raise the risk of theft; at least two hours for the set-up; update a device's firmware before using it; write the device's PIN down and store it apart from the device; print the descriptor and keep a copy in each storage place; no single place should hold enough keys to spend; tamper-evident bags; test with small amounts first and move the rest in steps; move to a new wallet at once when a key is lost or stolen; no procedure is proof against deception; why heirs need a letter, a sample letter in a specific and a vague version, incapacity and the yearly checks. Its own walk-through keeps one key in a phone app and offers online copies of backups, which this page does not", url: "https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md" }
+  - { label: "Casa - How much security do you really need for your bitcoin? (August 8, 2023), the company's own advice: $1,000 or less on a phone's single key; a three-key membership for holdings up to $100,000 and a five-key one above; the company holds one key, and its top plan includes an inheritance plan", url: "https://blog.casa.io/how-much-security-do-you-really-need-for-your-bitcoin/" }
+  - { label: "SatoshiLabs - SLIP 39, Shamir's secret-sharing for mnemonic codes, by authors with SatoshiLabs addresses: a secret is split into parts, and a set minimum number of parts rebuilds it", url: "https://github.com/satoshilabs/slips/blob/master/slip-0039.md" }
+  - { label: "FBI Internet Crime Complaint Center - 2025 report: $11.37 billion lost in complaints involving cryptocurrency. The twelve crime types in its table on page 55 in which the owner is deceived into paying add up to about $9.8 billion, which is this site's own sum. Page 53: 10,516 complaints of recovery scams, with $1.4 billion lost", url: "https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf" }
+  - { label: "FBI - public service announcement I-080124-PSA (August 1, 2024), on scammers who pose as the staff of a cryptocurrency exchange: they make the first contact, by a call or message that was not asked for, and press for action at once; do not respond, even if it appears official, and go to the official site separately; be cautious of services that claim to recover lost coins", url: "https://www.ic3.gov/PSA/2024/PSA240801" }
+  - { label: "US Securities and Exchange Commission, Office of Investor Education and Assistance - Crypto Asset Custody Basics for Retail Investors (December 12, 2025): store the seed phrase in a secure place and share it with nobody", url: "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/crypto-asset-custody-basics-retail-investors-investor-bulletin-0" }
+  - { label: "Bitcoin Core - multisig tutorial: three keys for a 2-of-3 wallet; the wallet itself is built from the public keys, with private keys disabled; payments are signed as PSBTs", url: "https://github.com/bitcoin/bitcoin/blob/master/doc/multisig-tutorial.md" }
+  - { label: "BIP 174 - Partially Signed Bitcoin Transaction format: a payment that is passed between signers until it has enough signatures; signing in turn and combining separate signatures give the same result", url: "https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki" }
+  - { label: "BIP 32 - an extended public key lets software work out a wallet's public keys without any private key, and cannot sign", url: "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" }
+  - { label: "BIP 87 - a multisig restore needs every key holder's public key as well as the seeds, so back up the descriptor; it names another path scheme as the second standard in use", url: "https://github.com/bitcoin/bips/blob/master/bip-0087.mediawiki" }
+  - { label: "BIP 380 - Output Script Descriptors: one piece of text that describes a wallet's addresses, with its keys and their derivation paths", url: "https://github.com/bitcoin/bips/blob/master/bip-0380.mediawiki" }
+  - { label: "BIP 129 - Bitcoin Secure Multisig Setup: what the coordinator and the signers each do; each signer checks that its own key is in the wallet, displays the wallet's details and stores them; the record carries the wallet's first address, which every signer is to confirm; matching short fingerprints alone is trivial to spoof; whoever can change the configuration can redirect payments, and whoever can read it can watch the wallet", url: "https://github.com/bitcoin/bips/blob/master/bip-0129.mediawiki" }
+  - { label: "BIP 388 - Wallet Policies for Descriptor Wallets: the computer is treated as untrusted; the owner registers the wallet on the device after comparing it with a trusted copy such as a printed backup; the device can then show addresses on its own screen", url: "https://github.com/bitcoin/bips/blob/master/bip-0388.mediawiki" }
+  - { label: "Sparrow Wallet - release 1.7.0 (October 27, 2022): recommends a backup of the output descriptor when a new multisig wallet is saved, and can read a Sparrow-made descriptor PDF back in", url: "https://github.com/sparrowwallet/sparrow/releases/tag/1.7.0" }
+  - { label: "Sparrow Wallet - download page (read November 16, 2026): how to verify a release before installing it", url: "https://sparrowwallet.com/download/" }
+  - { label: "Specter Desktop - README (read November 16, 2026): built around multisig with hardware wallets; a printable PDF backup of the wallet; how to verify a download; its makers' disclaimer that it is used at the user's own risk", url: "https://github.com/cryptoadvance/specter-desktop/blob/master/README.md" }
+  - { label: "Specter Desktop - FAQ: it calls the record the wallet export file; back up every key's public key; with all the seeds the wallet can be rebuilt", url: "https://github.com/cryptoadvance/specter-desktop/blob/master/docs/faq.md" }
+  - { label: "Specter Desktop - Multisig guide: three places at the least, each holding a signing device and its seed backup, and never more than one seed in a place; ideally the devices are kept apart from the backups; a device is protected by its PIN; a relative's or good friend's home as a storage place; keep the printable backup with every seed backup, and keep it private; in its table a Trezor shows the other signers' keys and does not register them inside the device; test by wiping each signing device and restoring it from its backup", url: "https://github.com/cryptoadvance/specter-desktop/blob/master/docs/multisig-guide.md" }
+  - { label: "Electrum documentation - Multisig wallets: each cosigner is given the other's master public key; no single record of the wallet is described", url: "https://electrum.readthedocs.io/en/latest/multisig.html" }
+  - { label: "Coinkite - advisory of July 30, 2026, updated since (guidance current to August 14, 2026): a firmware bug weakened the making of seed words, and attackers worked out keys and stole funds; the affected models and firmware; make no new seed until the update is installed; an update does not repair an existing seed; move with calm and care, and send a small test first; the dice-roll exception", url: "https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/" }
+  - { label: "Block - analysis of the July 2026 seed-generation flaw (July 30, 2026), by its engineers: firmware 4.0.0 through 4.1.9 on the Mk2 and Mk3; a multisig made only of affected devices stays exposed. What Block is comes from its own sites, read November 16, 2026: block.xyz lists payment businesses among its brands, and bitkey.world is its own wallet, with a hardware device", url: "https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware" }
+  - { label: "Casa - on the July 2026 flaw (August 4, 2026): a wallet whose threshold cannot be met by affected devices alone is not exposed in the same way; replace the affected key; where two affected keys can sign together it is urgent; do not send a test payment from the old wallet or send the move by the public route, and send the whole balance in one payment, because a watcher can overtake it; watch for scams built around the news, and do not let urgency push you", url: "https://blog.casa.io/coldcard-vulnerability/" }
+  - { label: "Foundation - firmware repository of its Passport Core, README: the firmware contains a copy of Trezor's source code, kept in order to use its cryptography library, and was first based on another maker's firmware", url: "https://github.com/Foundation-Devices/passport2/blob/main/README.md" }
+  - { label: "Blockstream - Jade firmware documentation: multisig wallets are registered on the device and confirmed on its screen, and an address is confirmed on the device before it is returned", url: "https://github.com/Blockstream/Jade/blob/master/docs/index.rst" }
+  - { label: "Jameson Lopp - Bitcoin Address Poisoning Attacks (April 6, 2025): check the entire address", url: "https://blog.lopp.net/bitcoin-address-poisoning-attacks/" }
+  - { label: "FDIC - Five Things to Know About Safe Deposit Boxes, Home Safes and Your Valuables (updated August 1, 2023): the contents are not insured; no box is completely protected; access after the renter's death depends on state law", url: "https://www.fdic.gov/consumer-resource-center/five-things-know-about-safe-deposit-boxes-home-safes-and-your-valuables" }
+  - { label: "ABA Journal - Next generation: Cryptocurrency and estate lawyers (November 1, 2018), one lawyer quoted in it, who trains lawyers about cryptocurrency: with coins a person holds there is often no third party for a court to order; the plan must say which program and device were used and where the seed words can be found", url: "https://www.abajournal.com/magazine/article/cryptocurrency_estate_lawyers_caution" }
+  - { label: "GOV.UK - Making a will: a will decides who gets your property; without one, the law decides", url: "https://www.gov.uk/make-will" }
+  - { label: "GOV.UK - Applying for probate: probate is the legal right to deal with a dead person's property; make no financial plans until you have it (England and Wales)", url: "https://www.gov.uk/applying-for-probate" }
+  - { label: "GOV.UK - Search probate records for documents and wills: a copy of a probate record, with the will if there is one, can be ordered online (England and Wales)", url: "https://www.gov.uk/search-will-probate" }
+  - { label: "North Carolina Judicial Branch - Estates: a will becomes a public record when it is filed after death; without a will, the law of intestacy decides who inherits", url: "https://www.nccourts.gov/help-topics/wills-and-estates/estates" }
+  - { label: "Superior Court of California, County of Orange - Wills and trusts: an executor has no authority to act until the court appoints them; a will that has been filed is likely to be open to the public", url: "https://www.occourts.org/self-help/self-help-probate/wills-trusts" }
+  - { label: "Supreme Court of New South Wales - Getting copies and access: a will, once admitted to probate, is a public document", url: "https://supremecourt.nsw.gov.au/wills-probate/copies-and-access.html" }
+  - { label: "HM Revenue and Customs - Cryptoassets Manual, CRYPTO25000 (updated November 28, 2025): cryptoassets are part of a person's estate, and their value on the date of death goes on the Inheritance Tax return", url: "https://www.gov.uk/hmrc-internal-manuals/cryptoassets-manual/crypto25000" }
+  - { label: "US Internal Revenue Service - Gifts and inheritances (reviewed September 29, 2026): the basis of inherited property is generally its fair market value on the date of death", url: "https://www.irs.gov/faqs/interest-dividends-other-types-of-income/gifts-inheritances/gifts-inheritances" }
+  - { label: "US Consumer Financial Protection Bureau - What is a power of attorney? (reviewed August 28, 2026): made in advance, it lets someone act for you if you cannot; without one, a friend or family member may have to ask a court to appoint a guardian", url: "https://www.consumerfinance.gov/ask-cfpb/what-is-a-power-of-attorney-poa-en-1149/" }
+  - { label: "GOV.UK - Make, register or end a lasting power of attorney (England and Wales)", url: "https://www.gov.uk/power-of-attorney" }
+  - { label: "Nunchuk - Inheritance (read November 16, 2026), one company's own description of such a service: it holds one key in the customer's wallet and offers an inheritance plan", url: "https://nunchuk.io/inheritance" }
+  - { label: "Liana - README (read November 16, 2026): an open-source wallet in which one key can always spend, and another only after the wallet has been inactive for a set time; the lockup is enforced by the Bitcoin network", url: "https://github.com/wizardsardine/liana/blob/master/README.md" }
+  - { label: "Liana - usage notes: back up the descriptor, without which the wallet cannot be restored; a copy shows the balance and history and cannot spend; each coin must be moved before its timelock runs out", url: "https://github.com/wizardsardine/liana/blob/master/doc/USAGE.md" }
+relatedTerms: ["multisig", "bitcoin-inheritance-planning", "m-n", "output-descriptor", "xpub-extended-public-key", "psbt", "address-derivation-path", "shamir-secret-sharing", "time-locked-contract", "hardware-wallet", "seed-phrase", "key-rotation", "inheritance-seed-backup"]
+hasInteractive: []
+---
+
+> **Where you're going:** Two questions come up after the Journey. Is one key enough for what you hold, or do you want a wallet that needs two keys out of three, called multisig? And if something happens to you, can the right person reach your coins? This page sets out the case for and against multisig as published guides and makers put it, a set-up order that includes the checks that are easy to skip, and an inheritance plan that works with one key or with three. It is for someone who has finished the Journey and holds real bitcoin, or may.
+
+**Short answers.**
+
+- **Do you need multisig?** Most of the guides cited here would not start you on it, and a multisig wallet set up badly can be less safe than one key kept well. See [Do you need it?](#do-you-need-it)
+- **What if something happens to you?** That matters at any amount. See [If something happens to you](#if-something-happens-to-you).
+- **Did someone who holds bitcoin send you here?** Start at [If you are the person they chose](#if-you-are-the-person-they-chose). The rest is written for the owner.
+
+## What can go wrong?
+
+Three things can take coins from someone who keeps their own keys.
+
+- **Loss.** Every copy of the seed words is gone or wrong, and so is the wallet.
+- **Theft.** Someone else gets the words.
+- **Coercion.** Someone forces you to hand the coins over.
+
+<figure>
+  <img src="/diagrams/threat-triangle.svg" alt="A triangle with three corners labeled THEFT (someone finds your seed), LOSS (fire, flood, forgotten), and COERCION (wrench, warrant, kidnap). At the geometric center is a pill labeled YOUR SEED. The three threats every seed backup must plan against." />
+  <figcaption>Three threats. Guarding against one often weakens the guard against another.</figcaption>
+</figure>
+
+A second copy of your words protects against loss and gives a thief a second place to look, as Blockchain Commons, which publishes custody guides, says of ordinary backups.
+
+A fourth danger is not on the triangle, and in the FBI's complaint figures, which count crimes and not accidents, it is by far the largest. Of the money people told the FBI they lost in 2025 in cases involving bitcoin and coins like it, more than four fifths, by this site's count, was sent by its owners to someone who had deceived them. No arrangement of keys prevents that.
+
+## What is multisig?
+
+The wallet you made in the Journey has one set of seed words, and whoever holds them can spend. A **multisig** wallet (short for multi-signature) is built from several sets, each on its own device, with a rule for how many must sign a payment. The usual example is two of three, also written [2-of-3](/glossary/m-n): three keys, and any two can spend.
+
+Two of three survives both accidents. A lost key leaves two that can still sign, and a stolen key gives the thief one signature where two are needed.
+
+The lost-key half has a condition that the animation below leaves out, and missing it loses coins. Two keys can spend only if you also kept the wallet's **set-up record**: a block of text from the wallet program that lists the public part of all three keys and the rule. It holds no seed words and cannot spend. [What to back up](#what-to-back-up) explains it.
+
+<figure>
+  <video
+    src="/videos/multisig.mp4"
+    poster="/videos/posters/multisig.png"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls
+    controlslist="nodownload noplaybackrate noremoteplayback"
+    preload="metadata"
+    aria-label="Animated walkthrough of a 2-of-3 multisig wallet. Three hardware keys appear in a row with a 'Threshold: 2 of 3' label and the caption 'Three different makers. A bug in one can't break the others.' A transaction signs with two keys and broadcasts. Loss scenario: Key B fades to gray with a 'lost' label; the other two keys still sign and the spend goes through. Theft scenario: a hooded figure grabs Key A, which turns green and is marked 'stolen'; the thief's attempt to sign alone halts at one of two signatures. Closing pillars: Multisig. Threshold-of-keys. Vendor-diverse."
+  ></video>
+  <figcaption>Three keys, and any two sign, if you kept the set-up record. The animation's line about different makers states an aim, not a guarantee.</figcaption>
+</figure>
+
+## Do you need it?
+
+**The short answer of the guides that sell nothing is no, unless the amount is large.** Here are five positions, each read on November 16, 2026.
+
+- **Sparrow Wallet's guide** (free wallet software): one key up to US$100,000, and above that at least two of three.
+- **The Bitcoin Design Guide** (for people who design bitcoin apps): several keys for large amounts and for knowledgeable or guided users, not for small amounts or newcomers.
+- **BitBox**, a maker of hardware wallets (November 2026): more devices do not by themselves make bitcoin safer, and someone who needs no shared control and cannot confidently check and recover such a wallet may be better served by one well-kept key.
+- **Trezor**, another maker: its devices work in multisig wallets, but for one person it recommends a simpler scheme of its own, a backup split into [shares](/glossary/shamir-secret-sharing), and it calls multisig most appropriate for groups.
+- **Casa**, which sells multisig as a service and holds one of the keys: at most $1,000 on a phone's single key, then three keys up to $100,000 and five above (August 2023).
+
+The course's own summary is fair: for an amount that would change your life, many advisers suggest multisig, though not all, and it is much harder to manage. Below that, keep one key well, with a backup tested before any coins went in.
+
+## What it takes
+
+**Three hardware wallets, from different makers.** Each makes its own seed words. Sparrow's guide gives the reason: a flaw in one maker's product should not be able to compromise the whole wallet.
+
+That has happened. On July 30, 2026, Coinkite, the maker of the Coldcard hardware wallet, published an advisory, and has updated it since. As it reads now: a bug in its firmware, the software inside the device, weakened the way the devices made seed words, and attackers worked out keys and stole funds. A two-of-three wallet with one such key and two from other makers was not exposed in the same way. One built only from affected devices was.
+
+Different makers is a hedge, not a guarantee: makers reuse each other's published code (another maker's firmware includes a copy of Trezor's cryptography code), and three devices are three sets of updates to keep up with.
+
+As examples only, the three devices on this site's [wallets page](/rabbit-hole/wallets), and what each maker documented about multisig on November 16, 2026:
+
+- **Jade** (Blockstream): the wallet is registered on the device and confirmed on its screen.
+- **BitBox02 Nova, Bitcoin-only edition** (BitBox): its devices register the wallet after showing you the rule and every key.
+- **Trezor Safe 5, Bitcoin-only** (Trezor): its devices work in multisig wallets made with other programs.
+
+Buy only from the maker's own shop, never from a reseller or second-hand: the wallets page says how. Check first, on the maker's own site or the program's, that the two are documented to work together.
+
+**A coordinator.** A program on your computer, it knows the public part of each key, makes the wallet's addresses and prepares payments for the devices to sign. It holds no seed words and cannot spend. Two examples, read on November 16, 2026: Sparrow Wallet (sparrowwallet.com) and Specter Desktop (specter.solutions), both free, with their code published. Neither has a phone app. Both explain how to check that a download is genuine: do it. Specter's makers add that it is used at your own risk. Electrum's guide, by contrast, describes no single set-up record. Take updates only from the maker's own site or app, opened by you: none has you type seed words into a computer or a phone.
+
+A coordinator that asks a public server shows that server your balance, which is why Sparrow's guide pairs multisig with a server you run yourself: see [Run Your Own Node](/rabbit-hole/run-your-own-node).
+
+## Setting it up, in order
+
+Set aside at least two uninterrupted hours, as Blockchain Commons advises for its own set-up, which makes other choices. No step has you type seed words into a computer, a phone or a web page.
+
+1. **Set up each device by itself.** If a device already holds a wallet with coins, do not reset it: use a new one, or first move those coins to another wallet of your own. Install the maker's current firmware, with the maker's own app, before the device makes its words (on a Jade, from a computer: its phone app offers the update only after set-up). Then have it show you new seed words on its own screen. On a BitBox, choose to write the words down: otherwise it saves its backup to a memory card. On a Trezor, choose Legacy Backup Types for 12 or 24 words: otherwise it makes a 20-word backup of another kind. Each set goes on paper, by hand, under the course's rules. Write each device's PIN or password down too, and keep it apart from the device.
+2. **Give the coordinator the public part of each key.** Software calls it an [xpub](/glossary/xpub-extended-public-key). Tell the coordinator the rule, two of three, and it builds the wallet.
+3. **Save the set-up record.** The coordinator can now export one record that holds all three public keys and the rule. Print it. The next section says why, and where not to keep it.
+4. **Load the wallet onto each device.** Until a device has been shown the whole wallet it knows only its own key, and cannot tell you whether an address is yours. Load only the record your own coordinator made. A Jade or a BitBox has you confirm the wallet on its own screen: over a cable, it asks the first time you have it show an address (step 5). Compare each key it shows, in full, with your print before you approve, on every device: a device checks only that its own key is there. A Trezor has no such step and keeps no copy of the wallet. It shows an address only if its own key is in the wallet. It can show the other keys too, but in a spelling that may differ from your print (Zpub for xpub) and cannot then be compared with it by eye. So never rely on a Trezor alone: check each address on a device that remembers the wallet as well.
+5. **Check a receive address on the devices' own screens.** A compromised computer can show you an address that is not yours. Ask the coordinator for an address, have a device display it, and compare the whole address, not only its first and last characters. Before any coins go in, have all three devices show the first address: it must be the same on each. For any large payment later, use two devices from different makers.
+6. **Test before the coins go in,** in three ways.
+   - **The record.** Read a copy of the record (never seed words), a printed copy if your program can read one, back into the same program on your own computer, under a new name. The same first address should appear: compare the whole of it with the one a device showed you.
+   - **The papers.** Where a device can check its backup without being wiped, use that. Where it cannot, wipe it now, while its key guards no coins anywhere, restore it from its paper, and repeat steps 4 and 5: a device that shows the same first address again has the right words. If it does not, nothing is lost. Start again from step 1.
+   - **The keys.** Send in a small amount from your old wallet. Spend part of it back to your old wallet with the first and second devices, and the rest with the third device and either of the others. Now each device has signed.
+
+   Only then move the rest from your old wallet, in steps.
+7. **To spend,** the coordinator prepares the payment and passes it to one device and then another, by cable, file or QR code, in a form called a [PSBT](/glossary/psbt). Check the amount and the whole address on each device before it signs. With two signatures, the coordinator sends the payment.
+
+## What to back up
+
+A single-key wallet has one thing to back up. A multisig wallet has two.
+
+**The seed words of each key.** Three sets, each on its own paper. One of the course's four rules is relaxed here: a key's paper may stay in one place, because the other two keys are its spare.
+
+**The set-up record.** Wallet software calls it the [output descriptor](/glossary/output-descriptor), the wallet configuration or the wallet export file. You need not be able to read it. You need to keep it.
+
+Every address in the wallet is made from all three public keys, and two sets of seed words give you only two of them. Without the third, software cannot work out which addresses are yours, so it cannot find the coins, let alone spend them. BIP 87, one of the published standards for these wallets, says a restore needs every key holder's public key as well as the seeds.
+
+So "lose one key and you can still spend" is true only with the record. All three sets of seed words together can rebuild the wallet. Any two cannot.
+
+The record holds no seed words and cannot spend, so it needs less secrecy than a seed, and you can keep more copies of it. Less is not none:
+
+- Anyone who reads it can see the wallet's balance and every payment in and out. Keep it out of email, photographs and online accounts, and send it to nobody: no helper needs it.
+- Anyone who can swap your copy for a changed one could trick you into paying a wallet that is not yours. That is why step 4 uses a copy you printed yourself, and why you accept a record from nobody.
+
+Never write seed words on it. Keep a copy with each key's seed words and one with your instructions for whoever comes after you.
+
+## Where the pieces go
+
+Sparrow's guide asks for the devices and their backups to be kept safe, ideally in different places. The aim is that no single fire, flood or burglary reaches two different keys.
+
+A device and the paper for the same key are one key, so they may share a place: Specter's guide gives three places as the least you need. With more places, keep each paper apart from its device, and still never two different keys together.
+
+A bank's safe deposit box is one option for one key. The FDIC, the US agency that insures bank deposits, adds three cautions: the contents are not insured by the FDIC and generally not by the bank, no box is completely protected from theft, fire or flood, and after the renter's death the rules for opening it depend on state law.
+
+Someone you know in person is another option: they can hold one device, locked by its PIN, while its paper is kept in a place that holds no other key, or else the paper, sealed in a tamper-evident bag whose number you keep and check yearly. One key cannot spend, two holders together can, and no holder needs to see the words.
+
+## If a key is lost, stolen or flawed
+
+With one key gone you can still spend, but you have no spare, and with one more gone the coins are locked. Blockchain Commons' advice is to move to a new wallet promptly. Build it from your two good keys and one new one, test it as in step 6 without wiping either device you still have (they still guard the old wallet), and move the coins to it. The new wallet has a new set-up record: load it onto each device and, once the old wallet is empty, replace every old copy and bring the letter up to date.
+
+The same goes for a key that someone may have seen or copied, and for a key that was made badly. A stolen letter of instructions is a map to every key: move the pieces to new places first, and write a new letter. If one of yours came from a device covered by the July 2026 advisory (in the sources below), replace it: updating the firmware does not repair seed words that were already made.
+
+One case is different. Where two affected keys could sign together, Casa's write-up calls it urgent. It says not to send a test payment out of the old wallet, not to move the coins in steps, and not to send the one payment by the ordinary public route, since a watching thief can overtake any payment that leaves such a wallet. The maker's advisory asks for a small test first, and makes no exception for this case. The two disagree: read both, in the sources below, before you move anything. Take the small amount for step 6 from somewhere else, and send it back there.
+
+Do not let anyone hurry you. The advisory itself asks for calm and care, and news like this brings impostors, who make the first contact. Treat any call, message or letter about your wallet as a theft, however official it looks, and open the maker's own site yourself. No part of the move has you type seed words into a computer, a phone or a web page, or give them to anyone, and nobody gives you an address to move coins to.
+
+**For owners of a device named in that advisory only.** The advisory lists the models and firmware versions, the newer models among them, with one gap. Engineers at Block, a payments company that also makes a hardware wallet, date the fault from firmware 4.0.0 on the Mk2 and Mk3 models, one release before the advisory's 4.0.1, so treat any 4.x firmware before 4.2.0 on those two as affected. The advisory exempts only seeds made with at least 50 fair, independent, private dice rolls added on the device, and says to replace the seed if you are not sure.
+
+## If something happens to you
+
+If you die, three things stand between your coins and the person you want to have them. Blockchain Commons lists them: nobody will tell that person the coins exist, no company can unlock them, and the steps are unfamiliar. A lawyer who trains lawyers on the subject made the second point to the American Bar Association's magazine in 2018: a bank obeys a court's order, and here there is often nobody for a court to order. The same holds if you are alive but too ill to act, when someone may need the coins to pay for your care.
+
+So a plan has two halves. The practical half lets the right person find and use what opens the wallet. The legal half decides whose the coins are and who may move them. A letter can do the first. Only a will, a trust or the law does the second.
+
+### If you are the person they chose
+
+- **Now.** Ask the owner to tell you that the coins exist, where the letter and the paper are kept, what the paper's words open, and who the executor is (the person a will names to carry it out). The words are the 12 or 24 seed words written on that paper. Whoever has them can take the coins, so do not ask to see them.
+- **If the day comes.** Let nobody hurry you. Read the letter. Speak to the executor, or a lawyer you choose yourself, before you move anything: in many places nobody may deal with a dead person's property until a court allows it, and then it is the executor, or whoever the court appoints, who may. If the owner is alive but cannot act, you need a power of attorney or a court's order first.
+- **Never.** Never type the words into a web page, an email or a message, never photograph them, and never show them or read them out to anyone: they go only into the kind of wallet the letter names, got from its maker's own site and never from a search. Never pay anyone who offers to recover the coins. A stranger who finds you first and offers to help is a thief.
+
+### The practical half: one person and a letter
+
+For a small amount in one wallet, the course's advice stands. One person you know in person, and would trust with the coins, should know that the paper exists, where it is, and what its words open. Whoever knows where the paper is can take the coins, so choose with care.
+
+A short letter of instructions makes that knowledge last. It is advice from people who work on custody, and it is not a legal document. Blockchain Commons publishes a sample, and the lawyer quoted in the ABA's magazine listed much the same contents.
+
+In the letter:
+
+- What you hold and roughly what it is worth, and the date.
+- The wallet app or device, and any program on the computer, each with its maker's web address.
+- Where each thing is kept. For multisig: each key and its PIN, the set-up record, and the fact that any two keys will do.
+- Someone they already know in person who understands bitcoin, to ask for help.
+- The rules, since they may never have taken the course: the words go into the wallet itself, never into a web page, and nobody who offers to help needs them, least of all someone who offers to recover the coins.
+- A line telling them to speak to the executor or a lawyer of their own choosing before they move anything.
+
+Never in the letter: the seed words, a PIN or a password. Say where each is kept, not what it is.
+
+A letter like this is a map, as sensitive as what it points to. Blockchain Commons suggests two versions: a specific one kept somewhere secure, and a vague one for anywhere less safe.
+
+### The legal half
+
+Knowing where the paper is gives someone the power to move the coins, not the right to. What follows is what courts and government sites say in a few places. It is not legal advice: the law differs between countries and between US states, and for more than a small amount, ask a lawyer who handles wills.
+
+- **Who inherits.** A will lets you decide. Without one, the law decides, as the UK government's site and US state courts both say.
+- **Keep the words out of the will.** The will says who the bitcoin is for. It holds neither the seed words nor where they are kept. Where they are kept goes in the letter, which you keep private. A will does not stay private: once it has been filed with a court after a death, or accepted by it, the public can usually read it or order a copy, as courts and government sites say for North Carolina, California, New South Wales, and England and Wales.
+- **Who may act.** In many places nobody has authority over a dead person's property until a court gives it. A California court's page says so of executors, and guidance for England and Wales says to make no financial plans until probate, the legal right to deal with what a person left, is granted.
+- **Tax.** The UK's tax office counts the coins as part of what you leave and asks for their value on the date of death. In the United States an heir's later gain is generally measured from that day's value.
+- **If you are alive but cannot act.** The same letter serves, but the law is different. In many places the document that lets someone act for you is a power of attorney, made in advance (in England and Wales, a lasting power of attorney). Without one, the US consumer finance agency says, a friend or relative may have to ask a court to appoint a guardian.
+
+### If the wallet is multisig
+
+<figure>
+  <img src="/diagrams/inheritance-recovery.svg" alt="A left-to-right diagram titled Inheritance Recovery. An heir, on the left, finds a letter kept in the owner's files. The letter points to three places, each holding a seed with a copy of the set-up record, which the figure labels descriptor: Seed 1 at home, Seed 2 at the bank, and Seed 3 at a relative's. Seed 1 and Seed 2 are orange, meaning collected. Seed 3 is gray and marked 'not needed'. The two collected seeds lead to a box labeled Coordinator, 'any 2 of 3 sign', with the note 'needs the descriptor too', and from there to Funds recovered. A line along the bottom reads: No plan = coins lost forever. With a plan, heirs have a path. Pick the plan." />
+  <figcaption>After a death, the rules for opening a bank box depend on state law, so another pair of keys may be quicker than the figure's. The words go into a hardware wallet, never into the coordinator.</figcaption>
+</figure>
+
+An heir to a multisig wallet has more to find and more to do: two of the three keys, the set-up record, and a coordinator to bring them together. A key here means a device and its PIN, or else the paper with that key's seed words, which go into a new hardware wallet of the same make, bought from its maker's own shop, and never into a computer, a phone or a web page.
+
+### Test the plan
+
+A plan that nobody has tried is a guess. Test it without touching your real seed words.
+
+1. **The skill.** Ask the person to take the Journey's chapter [Keys: What You Actually Hold](/journey/be-your-own-bank). It has them bring a practice wallet back from paper, with coins that are worth nothing.
+2. **The letter.** Have them read it and tell you, step by step, where they would go and what they would do. Fix what they stumble on. Do not open the real paper for this, and never test a backup by wiping a wallet that holds coins.
+3. **For multisig, the motions.** Let them sign a small payment at the coordinator, in the same room as you.
+
+Blockchain Commons has its readers check each storage place once a year: that the papers are there and readable, and that the letter is still true. Date the letter again whenever anything moves.
+
+### Other ways to arrange it
+
+Two more arrangements exist, and this page recommends neither.
+
+Some companies sell multisig as a service: they keep one key and run an inheritance procedure. Ask who can start that procedure, how you would stop it, and what happens to the plan if the company closes. No such company needs your seed words.
+
+Other wallets add a [timelock](/glossary/time-locked-contract): a rule, enforced by the network, that lets a second key spend only after the coins have sat unmoved for a set time. Liana (in the sources below) is an open-source example. To keep the second key locked out, its owner has to move each coin before that clock runs out, and it cannot be restored without its set-up record.
+
+## The short version
+
+One key, kept well, is what most of these guides would give most holders, and the letter and the legal half apply to them as much as to anyone. The aim is a plan you will keep up, and one that the people after you can follow.
+
+> **Pro tip:** If you do one thing from this page, do the smallest. Choose your one person, and write the letter with them.

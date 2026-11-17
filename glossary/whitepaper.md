@@ -2,7 +2,7 @@
 title: "Whitepaper"
 slug: whitepaper
 draft: false
-updated: "2026-11-16"
+updated: "2026-11-17"
 shortDefinition: "Satoshi Nakamoto's original 2008 publication, 'Bitcoin: A Peer-to-Peer Electronic Cash System,' detailing Bitcoin's design."
 keyTakeaways:
   - "Pioneering document that invented decentralized digital currency"
@@ -46,4 +46,4 @@ What's *not* in the whitepaper: Lightning, SegWit, Taproot, multisig setups, fee
 
 You can read the whitepaper in about 20 minutes. It is genuinely the densest, clearest, most consequential nine pages in the history of computing. If you've never read it, you should - especially because it has aged remarkably well. Every claim it makes about how the system would work has held up since the network launched in January 2009.
 
-See also [Satoshi Nakamoto](/glossary/satoshi-nakamoto) for the author, [Genesis Block](/glossary/genesis-block) for the network launch two months later, and [Journey Chapter 2](/journey/what-bitcoin-actually-is) for a longer guided read.
+See also [Satoshi Nakamoto](/glossary/satoshi-nakamoto) for the author, [Genesis Block](/glossary/genesis-block) for the network launch two months later, and [Journey Chapter 1](/journey/what-bitcoin-actually-is) for the idea in plain words.

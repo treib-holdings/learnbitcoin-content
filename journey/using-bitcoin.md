@@ -1,266 +1,174 @@
 ---
-title: "Using Bitcoin"
+title: "If You Decide to Hold Some"
 slug: using-bitcoin
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-11-16"
+updated: "2026-11-17"
 reviewedAt: "2026-11-16"
-order: 5
-goDeeper: ["mempool", "lightning-routing", "utxos"]
-estimatedMinutes: 30
-tagline: "On-chain transactions, fees in practice, Lightning basics. Now that you have it, here's how to actually use it."
+order: 6
+goDeeper: ["wallets", "mt-gox-ftx-graveyard", "address-reuse"]
+estimatedMinutes: 7
+tagline: "Optional. Where not to start, two careful ways to get a first small amount, and how to check a company. It names no seller."
 prerequisites: ["be-your-own-bank"]
-relatedTerms: ["lightning-network", "transaction-fee", "fee-estimation", "lightning-channel", "payment-channel", "bolt-11", "htlc-hashed-time-locked-contract", "replace-fee-rbf", "fee-bumping"]
-ogImage: "/diagrams/og/bitcoin-lifecycle.png"
-ogImageAlt: "Final frame of the Bitcoin transaction lifecycle animation. Alice's wallet on the left shows the transaction she sent (To bc1q...x4z, Amount 0.1 BTC, Fee 20 sat/vB, SEND button). Bob's wallet on the right shows the receipt (+0.1 BTC) with the confirmations counter at Final in orange. The blockchain strip across the bottom shows seven sequential blocks 920,247 through 920,253; Alice's block at 920,251 is highlighted orange. Caption: Three blocks deep. Effectively final."
+relatedTerms: ["exchange", "hardware-wallet", "custodial-wallet", "self-custody", "kyc-know-your-customer", "bitcoin-inheritance-planning"]
 sources:
-  - { label: "mempool.space - live fee dashboard", url: "https://mempool.space" }
-  - { label: "Bitcoin developer guide - transactions", url: "https://developer.bitcoin.org/devguide/transactions.html" }
-  - { label: "BIP 125 - Opt-in Full Replace-by-Fee Signaling", url: "https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki" }
-  - { label: "Lightning Network whitepaper (Poon & Dryja, 2016)", url: "https://lightning.network/lightning-network-paper.pdf" }
-  - { label: "ChainQuery - fee pressure dashboard", url: "https://chainquery.com/reports/fee-pressure" }
-  - { label: "BIP 141 - Segregated Witness (virtual size is transaction weight divided by 4)", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
-  - { label: "mempool.space API docs - recommended fees (fastestFee, halfHourFee, hourFee)", url: "https://mempool.space/docs/api/rest#get-recommended-fees" }
-  - { label: "Bitcoin Core source - fee estimator tracks how long past transactions took to confirm", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/fees/block_policy_estimator.h" }
-  - { label: "Bitcoin Core PR #34075 - mempool-based fee estimation (merged August 2026; shipped in version 32.1)", url: "https://github.com/bitcoin/bitcoin/pull/34075" }
-  - { label: "Bitcoin Core 32.1 release notes (October 2026) - the first release of the 32 series; estimatesmartfee now also reads the mempool", url: "https://bitcoincore.org/en/releases/32.1/" }
-  - { label: "Jameson Lopp - Bitcoin address poisoning attacks (look-alike addresses that match the first and last characters)", url: "https://blog.lopp.net/bitcoin-address-poisoning-attacks/" }
-  - { label: "Ordinals docs - Runes specification (activates on block 840,000)", url: "https://docs.ordinals.com/runes/specification.html" }
-  - { label: "mempool.space - block 840,002, first block over 500 sat/vB median after the April 20, 2024 halving", url: "https://mempool.space/block/00000000000000000002c0cc73626b56fb3ee1ce605b0ce125cc4fb58775a0a9" }
-  - { label: "mempool.space - block 840,005, median fee rate about 2,879 sat/vB", url: "https://mempool.space/block/000000000000000000027b0ec0e3acadd018cd19e7dd976602f216a1bc12d079" }
-  - { label: "mempool.space - block 840,064 (11:00 UTC April 20, 2024), last of the run over 500 sat/vB", url: "https://mempool.space/block/00000000000000000001289854c5bbc59c15dc0d0e73ba477222aa8f7da90e04" }
-  - { label: "mempool.space - mempool size graph, all-time view (over 144 vMB, a full day of blocks, waiting at every 12-hour reading from November 3, 2023 to July 14, 2024)", url: "https://mempool.space/graphs/mempool#all" }
-  - { label: "Bitcoin Core GUI source - Increase transaction fee menu item", url: "https://github.com/bitcoin-core/gui/blob/master/src/qt/transactionview.cpp" }
-  - { label: "Electrum source - Bump fee button", url: "https://github.com/spesmilo/electrum/blob/master/electrum/gui/qml/components/TxDetails.qml" }
-  - { label: "Bitcoin Core 28.0 release notes (October 2024) - mempoolfullrbf default changed from 0 to 1", url: "https://bitcoincore.org/en/releases/28.0/" }
-  - { label: "Bitcoin Core 30.0 release notes (October 2025) - wallet fee bumps no longer require BIP-125 signaling", url: "https://bitcoincore.org/en/releases/30.0/" }
-  - { label: "Bitcoin Optech - Child pays for parent (CPFP)", url: "https://bitcoinops.org/en/topics/cpfp/" }
-  - { label: "Bitcoin Core source - kernel/mempool_options.h (default mempool expiry 336 hours)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/mempool_options.h" }
-  - { label: "ChainQuery - abandontransaction RPC reference", url: "https://chainquery.com/rpc/abandontransaction" }
-  - { label: "mempool.space API - bitcoin price on April 20, 2024 (about $63,800)", url: "https://mempool.space/api/v1/historical-price?currency=USD&timestamp=1713571200" }
-  - { label: "Bitcoin Core source - kernel/chainparams.cpp (10-minute block target)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/chainparams.cpp" }
-  - { label: "BOLT 2 - Peer protocol (the funder puts up the channel's bitcoin; dual funding is an option)", url: "https://github.com/lightning/bolts/blob/master/02-peer-protocol.md" }
-  - { label: "BOLT 4 - Onion routing (the route is constructed by the origin node)", url: "https://github.com/lightning/bolts/blob/master/04-onion-routing.md" }
-  - { label: "mempool.space - Lightning network statistics (median channel fee 100 ppm plus 0.5 sat base, August 2026)", url: "https://mempool.space/lightning" }
-  - { label: "BOLT 11 - Invoice protocol (lnbc prefix; expiry defaults to 3600 seconds when not set)", url: "https://github.com/lightning/bolts/blob/master/11-payment-encoding.md" }
-  - { label: "LND API docs - AddInvoice (expiry defaults to 86,400 seconds)", url: "https://lightning.engineering/api-docs/api/lnd/lightning/add-invoice/" }
-  - { label: "Core Lightning docs - invoice (expiry defaults to 604,800 seconds)", url: "https://docs.corelightning.org/reference/invoice" }
-  - { label: "LUD-16 - Lightning Address specification", url: "https://github.com/lnurl/luds/blob/luds/16.md" }
-  - { label: "BOLT 12 - Offers (added to the Lightning spec in September 2024)", url: "https://github.com/lightning/bolts/blob/master/12-offer-encoding.md" }
-  - { label: "Bitcoin Optech - Offers (implementation progress by year)", url: "https://bitcoinops.org/en/topics/offers/" }
-  - { label: "Jameson Lopp - Known physical bitcoin attacks (823 entries on November 15, 2026, the earliest from May 2014; the list more than doubled in October 2026, when older cases were added)", url: "https://github.com/jlopp/physical-bitcoin-attacks" }
+  - { label: "UK Financial Conduct Authority - Crypto: The basics: be prepared to lose all your money", url: "https://www.fca.org.uk/investsmart/crypto-basics" }
+  - { label: "US Federal Trade Commission - What To Know About Cryptocurrency and Scams: never click a link from an unexpected message; payments typically cannot be reversed; accounts are not insured by a government", url: "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams" }
+  - { label: "FBI - Cryptocurrency Investment Fraud: fake investment apps can be found by searching the app stores; a person who introduces you may be an unwitting victim; fakes let victims withdraw at the start; almost all victims are later approached by recovery scammers", url: "https://www.fbi.gov/how-we-can-help-you/victim-services/national-crimes-and-victim-resources/cryptocurrency-investment-fraud" }
+  - { label: "FBI - public service announcement of December 21, 2022: criminals buy search advertisements that imitate real companies, with a web address that differs by a typo or a misplaced letter; type the company's address into the browser yourself", url: "https://www.ic3.gov/PSA/2022/PSA221221" }
+  - { label: "US Securities and Exchange Commission, Office of Investor Education and Assistance - 5 Ways Fraudsters May Lure Victims Into Scams Involving Crypto Asset Securities (May 29, 2024): a fake may let you withdraw a small amount to gain your trust; a friend or relative who recommends it may have been fooled; a demand for a deposit, fee or taxes to unfreeze an account", url: "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/crypto-scams" }
+  - { label: "FBI - public service announcement of March 14, 2023: victims who try to withdraw are told to pay a fee or taxes, and do not get their money back even if they pay", url: "https://www.ic3.gov/PSA/2023/PSA230314" }
+  - { label: "FINRA, the US brokerage industry's own regulator - Be Alert to Signs of Imposter Investment Scams (April 29, 2026): legitimate firms do not block withdrawals and require additional payments; fake apps are promoted through imposter websites; scammers ask for identity documents too", url: "https://www.finra.org/investors/insights/be-alert-signs-imposter-investment-scams" }
+  - { label: "FBI - public service announcement of July 20, 2026: avoid search results marked as sponsored, which are usually paid imitators; scammers pose as the FBI's own complaint center", url: "https://www.ic3.gov/PSA/2026/PSA260720" }
+  - { label: "US Commodity Futures Trading Commission - Don't be re-victimized by recovery frauds: a warning sign is being given reasons why a fee cannot be taken from the money itself", url: "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/RecoveryFrauds.html" }
+  - { label: "UK Financial Conduct Authority - Cryptoassets consumer research 2025: 73% of people who own crypto bought it through an exchange", url: "https://www.fca.org.uk/publication/research-notes/cryptoasset-consumer-research-2025-wave-6.pdf" }
+  - { label: "FBI - public service announcement of May 15, 2026: 13,460 complaints and $389 million in losses in 2025 in complaints that involved a cryptocurrency kiosk", url: "https://www.ic3.gov/PSA/2026/PSA260515-2" }
+  - { label: "Iowa Attorney General (February 26, 2025) - the state's two largest crypto ATM operators took 23% and 21% of the money sent through their machines, by the Attorney General's account in the lawsuits", url: "https://www.iowaattorneygeneral.gov/newsroom/attorney-general-bird-sues-crypto-atm-companies-for-costing-iowans-more-than-20-million" }
+  - { label: "Laws of Minnesota 2026, chapter 65 - virtual currency kiosks are prohibited from August 1, 2026", url: "https://www.revisor.mn.gov/laws/2026/0/Session+Law/Chapter/65/" }
+  - { label: "Indiana General Assembly, House Enrolled Act 1116 (2026) - virtual currency kiosks are banned in Indiana, from the day the act passed", url: "https://iga.in.gov/pdf-documents/124/2026/house/bills/HB1116/HB1116.05.ENRS.pdf" }
+  - { label: "Vermont Statutes, 8 V.S.A. section 2577 - virtual currency kiosks are prohibited from July 1, 2026", url: "https://legislature.vermont.gov/statutes/section/08/079/02577" }
+  - { label: "US Securities and Exchange Commission, Office of Investor Education and Assistance - Crypto Asset Custody Basics for Retail Investors (December 12, 2025): wallets connected to the internet and devices that are not; a company that holds coins for you controls the keys; ask about its fees for moving coins out", url: "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/crypto-asset-custody-basics-retail-investors-investor-bulletin-0" }
+  - { label: "Kaspersky Securelist (April 20, 2026) - 26 apps that posed as well-known wallets, almost all in China's App Store, led to wallets that copied the recovery words", url: "https://securelist.com/fakewallet-cryptostealer-ios-app-store/119474/" }
+  - { label: "mempool.space API - fee rates over the last year, in eight-hour averages: at the middle fee rate an ordinary payment never cost more than about 70 cents (checked November 16, 2026)", url: "https://mempool.space/api/v1/mining/blocks/fee-rates/1y" }
+  - { label: "Jameson Lopp - Bitcoin Address Poisoning Attacks (April 6, 2025): check the entire address, and do not copy one from your payment history", url: "https://blog.lopp.net/bitcoin-address-poisoning-attacks/" }
+  - { label: "US Internal Revenue Service - Frequently asked questions on virtual currency transactions, questions 8 and 31 to 33: the cost of a coin includes fees; a gift is not income; a gain is measured from what the giver paid; with no record of that, the cost counts as zero", url: "https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-on-virtual-currency-transactions" }
+  - { label: "US Code of Federal Regulations, 31 CFR 1022.210 - money services businesses must verify who their customers are", url: "https://www.ecfr.gov/current/title-31/section-1022.210" }
+  - { label: "European Union - Directive (EU) 2015/849, consolidated text of December 30, 2024, Articles 11 and 13: crypto-asset service providers must identify their customers", url: "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02015L0849-20241230" }
+  - { label: "Financial Action Task Force - seventh targeted update on virtual assets (2026): most countries that allow these businesses say they license or register them", url: "https://fiaumalta.org/app/uploads/2026/07/7th-targeted-update-on-implementation-fatf-standards-vas-vasps-2026.pdf.coredownload.pdf" }
+  - { label: "New York State Department of Financial Services - Virtual currency businesses: the list of regulated entities; a license is given after a review of the company's controls and people", url: "https://www.dfs.ny.gov/apps_and_licensing/virtual_currency_businesses" }
+  - { label: "New York regulation 23 NYCRR 200.19 - a licensed company must tell customers that their balances are not protected by the FDIC or SIPC, and must show its fees before each transaction", url: "https://www.law.cornell.edu/regulations/new-york/23-NYCRR-200.19" }
+  - { label: "UK Financial Conduct Authority - FCA Firm Checker", url: "https://www.fca.org.uk/consumers/fca-firm-checker" }
+  - { label: "UK Financial Conduct Authority - Clone firms: fraudsters use the name and details of a genuine firm", url: "https://www.fca.org.uk/consumers/clone-firms-individuals" }
+  - { label: "UK Financial Conduct Authority - Crypto investment scams: a registered firm does not mean access to the compensation scheme or the ombudsman", url: "https://www.fca.org.uk/consumers/crypto-investment-scams" }
+  - { label: "FDIC - Financial products that are not insured by the FDIC: crypto assets are on the list", url: "https://www.fdic.gov/resources/deposit-insurance/financial-products-not-insured" }
+  - { label: "State money transmission regulators - Settlement Agreement and Consent Order, Voyager Digital, LLC (December 2022): licensed as a money transmitter in the five states that signed; it stopped customer withdrawals on or about July 1, 2022", url: "https://dlr.sd.gov/banking/legal/documents/voyager_settlement_agrmt_consent_order_12282022.pdf" }
+  - { label: "In re Voyager Digital Holdings, Case 22-10943 (Bankr. S.D.N.Y.), Plan Administrator's Tenth Status Report (February 27, 2026): uncashed checks were being reissued, and another round of payments was expected later in 2026", url: "https://f16c0eccd54007287fb794f9a3d05f2a.cdn.bubble.io/d370/f1772223331971x274037155816343040/VOYG%20-%20DI%201848%20Plan%20Administrator%27s%20Tenth%20Status%20Report.pdf" }
+  - { label: "US Internal Revenue Service - Digital assets: holding is not reported, selling or paying with them is, and tax falls on a gain; the records to keep", url: "https://www.irs.gov/filing/digital-assets" }
+  - { label: "GOV.UK - Search probate records for documents and wills: in England and Wales a copy of a will can be ordered once probate is granted", url: "https://www.gov.uk/search-will-probate" }
+  - { label: "North Carolina Judicial Branch - Estates: a will is a public record once it has been filed after death", url: "https://www.nccourts.gov/help-topics/wills-and-estates/estates" }
+  - { label: "US Federal Trade Commission - Refund and recovery scams: someone who asks for a fee up front to get your money back is a scammer; where to report", url: "https://consumer.ftc.gov/articles/refund-and-recovery-scams" }
+  - { label: "FBI - public service announcement of August 11, 2023: recovery companies charge a fee up front; law enforcement does not charge victims; report to ic3.gov", url: "https://www.ic3.gov/PSA/2023/PSA230811" }
 ---
 
-> **Where you're going:** You'll send an on-chain transaction with a fee you chose deliberately, generate a Lightning invoice, and receive a Lightning payment. Both should feel different. Both should leave you with a working mental model of when to use which.
+> **Where you're going:** This chapter is optional. It is for someone who has decided to hold a little real bitcoin and wants to do it carefully. It names no seller, and nothing in it is an advertisement. By the end you will know where not to start, two careful ways to get a first small amount, and how to find a company on a government list.
 
-<figure>
-  <video
-    src="/videos/bitcoin-lifecycle.mp4"
-    poster="/videos/posters/bitcoin-lifecycle.png"
-    autoplay
-    muted
-    loop
-    playsinline
-    controls
-    controlslist="nodownload noplaybackrate noremoteplayback"
-    preload="metadata"
-    aria-label="Animated walkthrough of an on-chain Bitcoin transaction lifecycle. Alice's wallet shows three fields - destination address, amount, fee rate - and a SEND button. A transaction packet leaves her wallet and joins the mempool, a fee-sorted queue of unconfirmed transactions. Alice's transaction slots into its fee tier. A miner selects the top of the mempool; the chosen transactions including Alice's zip into a forming block. The block is sealed and snaps onto the end of the chain. Bob's wallet receives a notification of plus 0.1 BTC. A confirmation counter ticks from 1 to 2 to 3 to Final. Closing pillars: Public. Final. Yours."
-  ></video>
-  <figcaption>Send. Sit in the mempool sorted by fee. Sealed into a block. Snapped onto the chain. Confirmed at the recipient. No intermediary anywhere in the loop.</figcaption>
-</figure>
+**A guess first.** A trading app lets you take a little of your money back out, with no trouble. Does that prove the app is real?
 
-## 1. You Hold Some. Now What?
+## Do you need any?
 
-Self-custody is the foundation. *Use* is what gives it a point.
+No. You can stop here and keep everything you have learned.
 
-Most people, once they self-custody, treat their bitcoin like a savings bond they're afraid to touch. That's fine - bitcoin is genuinely excellent as a savings instrument, and *not selling* is a real strategy. But Bitcoin is also money, and money that never circulates isn't really money. This chapter is how to use it.
+If you go on, use an amount you could lose completely without it hurting. As one government watchdog puts it: be prepared to lose all the money you put in.
 
-The two layers we care about:
+## Where should you not start?
 
-- **On-chain.** Transactions that settle in a Bitcoin block. Final, global, slower, fee-bearing. Best for: large amounts, infrequent payments, anything you want recorded permanently.
-- **Lightning.** Payments that move through a network of bidirectional payment channels built on top of Bitcoin. Instant, near-free, smaller amounts. Best for: coffee, tips, podcast subscriptions, micropayments, day-to-day.
+Fakes come looking for you. Do not start from any of these:
 
-You'll use both. Knowing which is which is most of the skill.
+- **Someone who contacted you first**, by text, on social media or on a dating app.
+- **An advertisement, or a link in a message.**
+- **The top result of a search.** Criminals buy advertisements that imitate a real company, with a web address a letter or two off. Skip any result marked as sponsored.
+- **An app you found by searching the app store.** The FBI says fake investment apps can be found there.
+- **An investment a friend invites you into.** A friend who gives you a little bitcoin is one thing. A friend who wants you to put money into an app where theirs is growing may be in the middle of being fooled. Warn them.
+- **A Bitcoin ATM.** Some of these machines have kept more than a fifth of what people put in, scammers send people to them, and several US states have banned them.
 
-## 2. The Anatomy of Sending On-Chain
+## What do you need first?
 
-Open your wallet. Tap Send. You'll be asked for three things:
+A wallet of your own for real bitcoin. The practice wallet cannot hold any, and its 12 words must never guard any.
 
-- **A destination address.** A long string starting with `bc1` (modern format) or `3` or `1` (older formats). Always paste from a trusted source, never from your transaction history. Check the whole address, not only its first and last characters: look-alike addresses are made to match those. Treat addresses like account numbers, not URLs.
-- **An amount.** In BTC or sats, your call. Modern wallets let you toggle.
-- **A fee rate.** Usually in **sat/vB** (satoshis per virtual byte), the price for each unit of your transaction's size. A virtual byte works like a byte, except signature data counts at a quarter of its real size.
+There are two kinds. A **wallet app** is a program on your phone. A **hardware wallet** is a small device that keeps your keys away from the internet. For a first small amount, an app is enough.
 
-A few things to internalize:
+Fake wallet apps exist too, so do not search the store for one. This site's [wallets page](/rabbit-hole/wallets) names the ones it has checked, each with a link to its maker's own website and the date it was last checked. Follow that link to the store, and check that the maker's name there matches the one printed on the page.
 
-- **Fees are not a percentage of the amount.** Sending 1 BTC costs the same fee as sending 0.001 BTC (assuming both transactions use the same number of inputs and outputs). The fee is paying for *block space*, not for moving value. This is why Bitcoin is cheaper for large transfers and proportionally expensive for tiny ones - and why Lightning exists.
-- **Always send a tiny test first** when you're using a new address for any serious amount. A few thousand sats. Confirm it arrived. Then send the rest.
-- **Address checking is your job.** No central authority can reverse a misdirected transaction. Bitcoin works exactly like Bitcoin says it works.
+Then do what you practiced. Write the words on paper, test the backup before any coins go in, and keep the four rules.
 
-Many wallets give you three suggested fee rates (e.g., 2 sat/vB, 5 sat/vB, 12 sat/vB) corresponding to "within about an hour," "within about half an hour," and "next block." These are estimates. Some are built from the current mempool. Bitcoin Core versions through 31 base theirs only on how long recent transactions at each fee rate took to confirm. Version 32, released in October 2026, also reads the current mempool.
+## Door one: someone you know sends you a little
 
-## 3. Reading the Mempool
+If someone you know in person holds bitcoin, this is the gentlest start. You need no company and no account, and they ask for nothing back.
 
-<figure>
-  <video
-    src="/videos/mempool.mp4"
-    poster="/videos/posters/mempool.png"
-    autoplay
-    muted
-    loop
-    playsinline
-    controls
-    controlslist="nodownload noplaybackrate noremoteplayback"
-    preload="metadata"
-    aria-label="Animated mempool lifecycle. A transaction is broadcast and propagates across four nodes, each of which adds it to their local mempool. Transactions are sorted by fee rate into bands - 50 plus sat per virtual byte at the top, scaling down to 1-5 sat per virtual byte at the bottom. Alice broadcasts at a low fee rate early; Bob broadcasts later at a high fee rate. A miner mines the next block by scooping the top fee band. Bob confirms in that block. Time passes; subsequent blocks drain the mempool further; eventually Alice's low-fee transaction confirms several blocks later. Closing tagline: Pay the rate. Or wait."
-  ></video>
-  <figcaption>The mempool is a fee-rate-sorted queue. Higher fees confirm first. Lower fees wait, or eventually drop out and have to be rebroadcast.</figcaption>
-</figure>
+1. Open your wallet and tap Receive. It shows you an address.
+2. Send them the address. An address is not a secret, so a message is fine. Your seed words are the secret, and they never go in a message.
+3. They check the whole address, not only how it starts and ends, and send a few dollars' worth. The network fee is usually well under a dollar, and the sender pays it.
+4. Your wallet shows the payment within a minute or two. Its first confirmation usually comes within the hour.
 
-The mempool is the queue of unconfirmed transactions, sorted by fee rate. Every node has its own copy; they're nearly identical (see chapter 3).
+Then ask them for a copy of their record of what they paid for those coins, and when. In the United States the tax office measures your profit from that, and counts your cost as zero if you cannot show it.
 
-When the mempool is empty (block space exceeds demand), almost any fee gets in next block. When it's congested (demand exceeds capacity), the fee market gets real, and fee rates can jump into the hundreds or even thousands of sat/vB.
+## Door two: you buy a little from a company
 
-In the hours before block 840,000 on April 20, 2024, the median fee rate in mined blocks was about 60 to 110 sat/vB. That block brought the [fourth halving](/rabbit-hole/halvings), and it also switched on Runes, a new token protocol. Two blocks later the median passed 500 sat/vB. It stayed there for nearly 11 hours, peaking near 2,900 sat/vB.
+Most people start at an exchange, a company that trades bitcoin for ordinary money. That is also where the fakes are, so go in this order.
 
-**Tools that show you the live state:**
+1. **Take the company's name from a regulator's list**, not from an advertisement. A **regulator** is a government office that licenses financial companies. The step below shows you where the lists are.
+2. **Type the company's web address into your browser yourself.** A fake can borrow a listed company's name, so never arrive through a link, an advertisement or a search result. Before you buy, read what the company says about sending bitcoin out: its fee, and any wait.
+3. **Buy a small amount.** A licensed company will ask for ID first, as the law requires in most places. Fakes ask for ID too, which is why steps 1 and 2 come first.
+4. **Move the coins to your own wallet as soon as the company lets you.** Take the address from your own wallet. Nobody else ever gives you an address, or words. Check the whole address, because a payment to a wrong one cannot be undone. Until you move them, the company holds the keys.
 
-- [**mempool.space**](https://mempool.space) - the standard. Live mempool visualization, fee estimates, block timing.
-- [**ChainQuery's fee pressure dashboard**](https://chainquery.com/reports/fee-pressure) - live read on what's clearing right now, served from a real Bitcoin node.
-- Your own node's [`estimatesmartfee`](https://chainquery.com/rpc/estimatesmartfee) - if you run one.
+One sign matters more than any other. A real company takes its fee out of what you already hold there. A fake asks you to send more money first: a "tax", a "deposit", a fee to "unlock" your account. If that happens, stop. People who pay do not get their money back.
 
-A sensible workflow:
+And getting a little out proves nothing. The FBI warns that fakes let money out early, on purpose, to win your trust.
 
-1. Check current fee estimates before composing a transaction
-2. Pick a fee rate based on how soon you need it confirmed
-3. If you're not in a hurry, pick a low rate. In quiet periods a low-fee transaction usually confirms within hours, but in a busy stretch it can wait days. From early November 2023 to mid-July 2024, every mempool.space reading (one every 12 hours) showed a backlog bigger than a full day of blocks could hold.
-4. If you are in a hurry, pay more
+## What is a license worth?
 
-There is no "right" fee. There is "the fee you need to pay to get into the next *N* blocks." Pick *N* based on your patience.
+Less than it sounds. A licensed company has been checked by a regulator. Your coins there are still not insured by any government, in the United States or in the United Kingdom.
 
-## 4. Replace-by-Fee (RBF) - When Your Tx Gets Stuck
+Licensed companies have failed, too. One that held licenses in several US states stopped all withdrawals in July 2022. In 2026 its customers were still waiting for the last of their money. That is why step 4 matters.
 
-<figure>
-  <img src="/diagrams/bumping-stuck-tx.svg" alt="Two-row diagram of the two mechanisms for unsticking a Bitcoin transaction. Top row, RBF: a stuck transaction at 5 sat per virtual byte (gray) is replaced by a new version of the transaction, spending the same coins, at 50 sat per virtual byte (orange), which confirms in the next block while the original disappears. Bottom row, CPFP: a stuck parent at 5 sat per virtual byte (gray) has its change output spent by a new child transaction at about 110 sat per virtual byte (orange), enough to lift the pair's average to about 50; both parent and child end up in the next block because the miner weighs them as a pair. Tagline: Your transaction is not stuck forever. It is at the wrong fee level for current conditions." />
-  <figcaption>Two mechanisms, same outcome: a stuck transaction gets into the next block. RBF replaces the original. CPFP rescues it via a high-fee child.</figcaption>
-</figure>
+## Do it
 
-Suppose you sent at 5 sat/vB and then a mempool surge raised the floor to 50 sat/vB. Your transaction will sit there, possibly for hours, possibly until the mempool drops back. If you can't wait:
+Find one licensed company. It costs nothing, and you need no account.
 
-**Replace-by-Fee (RBF)** ([BIP-125](https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki)) lets you broadcast a new version of the transaction, spending the same coins, with a higher fee. Miners prefer the higher-paying version; the original disappears from the mempool. Many wallets do this with one button, usually labeled something like "Bump fee" or "Increase fee."
+- [ ] Open the [list of companies licensed by New York State](https://www.dfs.ny.gov/apps_and_licensing/virtual_currency_businesses#regulated-entities), on the state's own site, dfs.ny.gov. The link opens the page near the list: scroll down a little to the heading Regulated Entities. In the United Kingdom, use the [FCA Firm Checker](https://www.fca.org.uk/consumers/fca-firm-checker).
+- [ ] Read down the names. Is there a company you have heard of? The list uses legal names, so a familiar brand may sit under a longer one.
+- [ ] Now think of a name you have seen in an advertisement. Is it on the list under its legal name? A look-alike does not count.
 
-Under BIP-125, the original transaction signals that it is "replaceable" with a flag. Since version 28.0 (October 2024), Bitcoin Core nodes on default settings accept a higher-fee replacement even without that flag. Your wallet may still refuse to bump a transaction that lacks it; Bitcoin Core's own wallet did until version 30.0 (October 2025).
+New York's list is short and easy to read. Other US states keep their own, and so do other countries. Reach your regulator from your government's own website, not from a search.
 
-If yours won't bump, you have another option called **Child Pays for Parent (CPFP)**, where you spend the *change output* of your stuck transaction with a higher fee, dragging the parent into a block alongside it.
+A company on the list has been checked by a regulator. That does not insure your coins, and it does not prove that the website in front of you is that company's. The list also holds companies that run Bitcoin ATMs, and a license does not change what those machines cost. If you cannot find a company on a regulator's list, choose one you can.
 
-Don't memorize the mechanics. Memorize the principle: **your transaction isn't stuck forever; it's just at the wrong fee level for current conditions.** Wait or bump.
+## After you have some
 
-If the fee is so low that it never confirms, most nodes eventually drop it from their mempools (Bitcoin Core's default expiry is two weeks), and you can spend those coins again. Some wallets make you cancel or "abandon" the old transaction first. It stays valid until another transaction spending the same coins confirms, so it can still confirm if someone rebroadcasts it. You never lose bitcoin to a stuck transaction - the UTXOs are still yours, the broadcast just didn't take.
+**Keep a record.** Write down each purchase: the date, the amount, the price and the fee. Your own record is your proof of what you paid, and your tax office will want it if you ever sell or spend. Moving coins to your own wallet is not a sale.
 
-## 5. The Lightning Network: An Overview
+**Turning it back into ordinary money.** You send it to an exchange and sell it there. That is a sale, with a fee.
 
-On-chain Bitcoin is excellent at high-value, low-frequency settlement. It is *not* the right layer for buying a $4 coffee. The fee is the same whether you send $4 or $4,000, so on a busy day it can cost more than the coffee.
+**Decide who should know.** This is the course's own advice, not a government's. One person you know in person, and would trust with the coins, should know that the paper exists, where it is, and what its words open. Whoever knows where the paper is can take the coins, so choose with care. Do not write the words into a will: in many places a will becomes public.
 
-During the April 2024 Runes spike (section 3), the median fee rate stayed above 500 sat/vB for hours. Even at 500 sat/vB, a simple payment with one input and two outputs (about 141 vbytes) cost 70,500 sats, about $45 at that day's price. The first confirmation also takes about 10 minutes on average.
+**If you are ever robbed, expect more scammers.** The FBI says almost every victim of an investment scam is then approached by people who offer to get the money back, for a fee paid first. Report the loss instead: in the United States, type ic3.gov into your browser, and tell your local police. They do not charge.
 
-The Lightning Network solves this by moving small, frequent payments **off-chain**, while letting either side settle on Bitcoin's main chain at any time.
+## A fair objection
 
-The mechanics, simplified:
+"Why not just name a good company? You are leaving me to find one alone."
 
-1. **Open a channel.** Two parties (you and another node) lock bitcoin into a 2-of-2 multisig address via an on-chain transaction; usually one side puts up all of it. That's the only on-chain transaction you'll need for thousands of subsequent payments between you.
-2. **Update the balance.** Inside the channel, you and the other party can update the relative balance as many times as you want, near-instantly, with cryptographic guarantees. Each update is a signed message; the latest one is the "current truth."
-3. **Route payments.** If you don't have a direct channel with the person you want to pay, your wallet finds a path through other people's channels - A pays B, who pays C, who pays your destination - using a clever mechanism called HTLCs that ties every hop to the same secret, so the payment goes through end to end or not at all.
-4. **Close the channel.** Either party can close at any time by broadcasting the latest channel state on-chain. The final balances settle on Bitcoin's main chain. You're back to layer 1.
+There are three reasons. A named company can fail, as licensed ones have, and this page would go on sending people to it. A site that names sellers can be paid to name them, and this one carries no advertisements and no links it is paid for. And a regulator's list is kept by people whose job it is, and changes when a license is given or taken away.
 
-<figure>
-  <img src="/diagrams/lightning-channel.svg" alt="A Lightning channel between Alice and Bob. On Bitcoin Mainnet, an OPEN block locks BTC into a 2-of-2 multisig; later, a CLOSE block settles the final balances back to mainnet. Between the two on-chain anchors, the channel runs off-chain with many back-and-forth payments. Alice and Bob each have dashed channel lines to additional ghost nodes, indicating they also have channels into the wider Lightning network." />
-  <figcaption>One channel between Alice and Bob: open once on-chain, transact freely off-chain, close on-chain if ever. Each side has other channels to the wider network.</figcaption>
-</figure>
+So the course teaches the check, and the check still works when the names change. The wallets page does name wallets. They do not hold your money: you hold the keys.
 
-A Lightning payment doesn't wait for a block, so it usually completes within seconds. For small payments, routing fees are typically a few sats, far below on-chain fees. The settlement is final the moment the recipient sees the payment.
+## Check yourself
 
-The whitepaper for Lightning ([Poon & Dryja, 2016](https://lightning.network/lightning-network-paper.pdf)) is dense but readable. You don't need to read it to use Lightning, but you should know it exists.
+<details>
+<summary>Your guess at the start: an app lets you take a little of your money back out. Is it real?</summary>
 
-## 6. Lightning in Practice
+You cannot tell from that. Fakes let money out early to win your trust. The sign of a fake is being asked to send more money before it will release yours. Reread "Door two".
 
-<figure>
-  <video
-    src="/videos/lightning-mesh.mp4"
-    poster="/videos/posters/lightning-mesh.png"
-    autoplay
-    muted
-    loop
-    playsinline
-    controls
-    controlslist="nodownload noplaybackrate noremoteplayback"
-    preload="metadata"
-    aria-label="Animated Lightning Network mesh. Alice has a single channel to Bob. She uses that same channel to pay Bob directly, then to route payments to Carol, Frank, and Ivy through the network. The animation then reverses to show payments flowing back to Alice through the same one channel. The bidirectional flow is the lesson: one channel, many destinations, both directions."
-  ></video>
-  <figcaption>Alice opens one channel - to Bob. Same channel routes payments to anyone reachable in the network, in either direction.</figcaption>
-</figure>
+</details>
 
-Three categories of Lightning wallets, ordered by sovereignty. The category matters more than the specific app.
+<details>
+<summary>A friend is going to send you some bitcoin. What do you send them, and what do you never send?</summary>
 
-**Custodial.** Someone else runs the Lightning node; you have an account. Easiest setup, almost no operational complexity. You have reintroduced a trusted third party. Fine for tiny working balances, the same way a coffee-money wallet on your phone is fine. *Not where you store anything serious.*
+An address from your wallet. It is not a secret. Your seed words are, and they never go in a message. Reread "Door one".
 
-**Non-custodial, managed.** You run a Lightning node *inside the app*, on your phone, with channel management abstracted. The keys are yours; the operational complexity is handled. The sweet spot for most users post-chapter-4.
+</details>
 
-**Fully sovereign.** You run a Lightning node on your own hardware. Maximum control, maximum complexity. Best paired with the node setup in [chapter 6 (Sovereignty)](/journey/sovereignty).
+<details>
+<summary>A company is on a regulator's list. What does that not tell you?</summary>
 
-> **Starting points, not gospel.** The Lightning wallet ecosystem moves quickly. Specific apps come and go; the categories are stable. Pick the simplest option in the category that fits your trust model, verify it is currently maintained, and start.
+That your coins there are insured, that the company cannot fail, or that the website in front of you is really that company's. Reread "What is a license worth?" and the step after it.
 
-To receive a Lightning payment: in your wallet, tap "Receive," optionally enter an amount, and you'll get a long string starting with `lnbc...` (a [BOLT-11 invoice](/glossary/bolt-11)) plus a QR code. Anyone with a Lightning wallet can pay it.
+</details>
 
-To send: paste an invoice, hit Pay, done. The payment usually completes within seconds.
+## Words you now know
 
-## 7. When to Use On-Chain vs Lightning
+- **Wallet app.** A wallet that is a program on your phone.
+- **Hardware wallet.** A small device that keeps your keys away from the internet.
+- **Regulator.** A government office that licenses financial companies and keeps a list of them.
 
-A heuristic that gets most cases right:
-
-<figure>
-  <img src="/diagrams/on-chain-vs-lightning.svg" alt="Three side-by-side cards showing the recommended Bitcoin layer by payment size. Small payments under $50 use Lightning - fees and speed both favor it. Medium payments $50 to a few thousand either works - personal preference. Large payments above a few thousand use on-chain - Lightning channel capacity limits plus settlement preference. Three special cases below: recipient without a Lightning wallet means on-chain; repeated payments to the same party means open a Lightning channel; long-term storage means do not move it at all. Tagline: many people use both; knowing which is which is most of the skill." />
-  <figcaption>Three payment-size lanes plus three special cases. Most real-world payments fit somewhere on this card.</figcaption>
-</figure>
-
-Many people use both. A Lightning wallet on the phone for daily stuff; an on-chain wallet (preferably on hardware) for holding.
-
-## 8. Receiving Payments
-
-The flip side of sending: how to *get* paid.
-
-**On-chain:**
-- Generate a fresh address each time. Modern wallets do this automatically.
-- Avoid address reuse. It's a privacy leak - anyone who sees the address can later see all subsequent receipts to it.
-- Share the address as a string or a QR code. The sender pays at whatever fee rate they pick. If their payment gets stuck, you can pull it through yourself with CPFP (section 4) by spending your new output at a higher fee, if your wallet supports it.
-
-**Lightning:**
-- Generate an invoice. You can specify an amount (e.g., "pay me 5,000 sats") or leave it open ("pay me any amount").
-- Invoices expire. If an invoice doesn't say when, the Lightning invoice spec (BOLT-11) treats it as good for one hour. Node software often sets a longer default, such as 24 hours (LND) or a week (Core Lightning). After one expires, you generate a new one.
-- The sender pays your invoice; the payment usually arrives within seconds; the invoice is consumed.
-
-There's a convention called **Lightning Address** (looks like an email: `you@yourdomain.com`) that lets people pay you without asking you for a new invoice each time; a web server at that domain creates a fresh one for each payment. Convenient, but requires running that server or using a service that does. Optional for most users, useful if you do public-facing work that takes tips.
-
-**Offers** ([BOLT-12](/glossary/bolt), added to the Lightning spec in September 2024) are reusable payment codes that need no web server. As of November 2026, wallet support is still uneven.
-
-## 9. The Sovereignty Side-Effects
-
-Once you're using Bitcoin for real, a few things become tangible that were previously abstract:
-
-- **You can pay anyone, anywhere, anytime.** No bank hours. No correspondent banking. No "we can't send to that country." A wallet on a phone with internet is a global financial terminal.
-- **Privacy is your job.** Every on-chain transaction is public forever. Avoid address reuse. Consider coin control if you're handling sensitive amounts. We have a [Privacy Best Practices](/downloads/bitcoin-privacy-best-practices.pdf) PDF on this site; read it before serious use.
-- **Mistakes are permanent.** Wrong address, wrong amount, wrong network - there's no helpdesk. Always test small first. Always verify before sending.
-- **You're a target.** Each person who knows you hold real bitcoin adds a little to your risk. As of November 2026, Jameson Lopp's public list of physical attacks on people and businesses holding bitcoin or other crypto has 823 entries going back to 2014, 174 of them in 2025, and it notes that many attacks are not publicly reported. Don't talk publicly about how much you hold. Don't put a sign outside your house that says "I HODL." The threat is low for most people but nonzero.
-
-These aren't reasons to avoid Bitcoin. They're the operational consequences of opting out of the trusted-third-party world. Worth it. Just real.
-
-## 10. Your Milestone
-
-Before chapter 6 (Sovereignty - running a node, multisig, op-sec), do these three things:
-
-- [ ] Send a deliberate on-chain transaction - pick the fee rate yourself, watch it confirm
-- [ ] Open a Lightning channel or fund a self-custodial LN wallet (the non-custodial managed category in section 6 is the easy path)
-- [ ] Send and receive a Lightning payment - it should take seconds
-
-That's it. You're using Bitcoin, not just holding it. Welcome to actually living in the new monetary system.
-
-> **Pro tip:** People who say "Bitcoin is too slow for payments" are usually thinking about on-chain only. People who say "Lightning is the future of payments" sometimes forget on-chain exists. Both layers are real, both have jobs, and using Bitcoin well means knowing which is which. The system was designed to be flexible. Use the flexibility.
+What comes after a first small amount?

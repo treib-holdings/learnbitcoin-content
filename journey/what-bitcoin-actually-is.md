@@ -1,235 +1,155 @@
 ---
-title: "What Bitcoin Actually Is"
+title: "What Bitcoin Is"
 slug: what-bitcoin-actually-is
 draft: false
 status: live
 published: "2026-05-15"
 updated: "2026-11-17"
 reviewedAt: "2026-11-16"
-order: 2
-goDeeper: ["supply", "decentralization", "energy"]
-estimatedMinutes: 25
-tagline: "Not a stock. Not a company. Not a payment app. Bitcoin is a new kind of money - and the difference matters."
-prerequisites: ["why-money-is-broken"]
-relatedTerms: ["satoshi-nakamoto", "whitepaper", "proof-work-pow", "decentralization", "halving-halvening", "genesis-block", "block-subsidy", "hash"]
-ogImage: "/diagrams/og/network-topology.png"
-ogImageAlt: "Two network topologies side by side. On the left, a single central bank hub stands alone. On the right, Bitcoin as roughly thirty-five peer nodes connected in an organic mesh with no center. One central bank, versus thousands of Bitcoin nodes. No one is in charge."
+order: 1
+goDeeper: ["supply", "bitcoin-units"]
+estimatedMinutes: 5
+tagline: "What it is, who runs it and how you hold it, in plain words. Nothing to buy."
+prerequisites: []
+relatedTerms: ["wallet", "address", "block", "blockchain", "satoshi-unit", "private-key", "block-explorer", "satoshi-nakamoto", "node"]
 sources:
-  - { label: "Bitcoin Whitepaper (Satoshi Nakamoto, 2008; the nine-page file is the revision of March 24, 2009)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
-  - { label: "The paper as it stood in October 2008: an eight-page copy dated October 3, 2008, saved by a mailing-list member that week (hosted by Gwern Branwen)", url: "https://gwern.net/doc/bitcoin/2008-10-03-nakamoto-bitcoindraft.pdf" }
-  - { label: "ChainQuery - getblock RPC reference and playground (run it with the genesis block hash)", url: "https://chainquery.com/rpc/getblock" }
-  - { label: "mempool.space - the genesis block (block 0, January 3, 2009), whose coinbase carries The Times headline", url: "https://mempool.space/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f" }
-  - { label: "Satoshi Nakamoto - Bitcoin P2P e-cash paper, the Cryptography Mailing List at metzdowd.com (October 31, 2008, 14:10 EDT)", url: "https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html" }
-  - { label: "Satoshi Nakamoto - Bitcoin v0.1 released, the Cryptography Mailing List (January 8, 2009): 21,000,000 coins in total, cut in half every 4 years", url: "https://www.metzdowd.com/pipermail/cryptography/2009-January/014994.html" }
-  - { label: "Satoshi Nakamoto Institute - Bitcoin emails", url: "https://satoshi.nakamotoinstitute.org/emails/" }
-  - { label: "Satoshi Nakamoto Institute - Satoshi's forum posts (the last BitcoinTalk post is dated December 12, 2010)", url: "https://satoshi.nakamotoinstitute.org/posts/" }
-  - { label: "Sergio Lerner - The Return of the Deniers and the Revenge of Patoshi (2019): about 1.1M coins attributed to Satoshi, 99.9% of those blocks unspent", url: "https://bitslog.com/2019/04/16/the-return-of-the-deniers-and-the-revenge-of-patoshi/" }
-  - { label: "FRED - Federal Reserve total assets (WALCL): $925.7 billion on September 10, 2008, $1,969.1 billion on October 29, 2008", url: "https://fred.stlouisfed.org/series/WALCL" }
-  - { label: "FRED - M2 money stock, seasonally adjusted (M2SL): $7.51 trillion in January 2008, $23.30 trillion in August 2026 (as revised)", url: "https://fred.stlouisfed.org/series/M2SL" }
-  - { label: "Meni Rosenfeld - Analysis of hashrate-based double-spending (December 2012), Table 1: 0.059% for a 10% attacker after 6 confirmations", url: "https://arxiv.org/abs/1402.2009" }
-  - { label: "Bitcoin Core GetBlockSubsidy (permalink, Oct 2026) - halves the subsidy every 210,000 blocks, counted in whole satoshis", url: "https://github.com/bitcoin/bitcoin/blob/4bacf21a13c2ed25ef9362ca38f26bf0a67d22c9/src/validation.cpp#L1833-L1844" }
-  - { label: "mempool.space - block 840,000, the fourth halving (mined 00:09 UTC April 20, 2024)", url: "https://mempool.space/block/0000000000000000000320283a032748cef8227873ff4872689bf23f1cda83a5" }
-  - { label: "mempool.space - block 969,999 (October 5, 2026): 20,093,750 BTC issued by the schedule, against 164,250 BTC a year at 3.125 BTC per block, about 0.82%", url: "https://mempool.space/block/000000000000000000001d95e5f7284cb199b8620eb6a7938dd9696f85751bb3" }
-  - { label: "World Gold Council - How much gold has been mined? (about 222,600 t, end-Q2 2026)", url: "https://www.gold.org/goldhub/data/how-much-gold" }
-  - { label: "World Gold Council - Gold Demand Trends Full Year 2025, supply (mine production 3,672 t)", url: "https://www.gold.org/goldhub/research/gold-demand-trends/gold-demand-trends-full-year-2025/supply" }
-  - { label: "USGS Mineral Commodity Summaries 2026 - Gold (world mine production 2025: 3,300 t)", url: "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-gold.pdf" }
-  - { label: "BTC Nodes - reachable Bitcoin nodes (25,514 in the 19:28 UTC snapshot of October 9, 2026 and 18,519 on November 16, 2026; the old bitnodes.io API now redirects here)", url: "https://btcnodes.io" }
-  - { label: "BTC Nodes API - bitnodes.io snapshot of October 9, 2026, 19:28 UTC (25,514 nodes, main chain at height 970,671; 1,829 nodes with Knots user agents report heights off the main chain: 656 stuck at 961,639 and 1,173 near 976,430, ahead of the main chain)", url: "https://btcnodes.io/api/v1/snapshots/1791574083/" }
-  - { label: "Mike Belshe - Segwit2x Final Steps, calling off the planned 2MB fork (bitcoin-segwit2x list, November 8, 2017, archived)", url: "https://web.archive.org/web/20171108202305/https://lists.linuxfoundation.org/pipermail/bitcoin-segwit2x/2017-November/000685.html" }
-  - { label: "Bitcoin Wiki - Value overflow incident (August 15, 2010; patched client within five hours)", url: "https://en.bitcoin.it/wiki/Value_overflow_incident" }
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System (the design; the file read today is the revision of March 24, 2009)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
+  - { label: "Satoshi Nakamoto - Bitcoin P2P e-cash paper, the Cryptography Mailing List at metzdowd.com (October 31, 2008): the email that announced the design", url: "https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html" }
+  - { label: "Satoshi Nakamoto - Bitcoin v0.1 released, the Cryptography Mailing List (January 8, 2009): open source code, and 21,000,000 coins in total", url: "https://www.metzdowd.com/pipermail/cryptography/2009-January/014994.html" }
+  - { label: "mempool.space API - block 0, the first block, stamped January 3, 2009", url: "https://mempool.space/api/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f" }
+  - { label: "Bitcoin Core 32.1, transactionrecord.h - the wallet treats six confirmations as the recommended number", url: "https://github.com/bitcoin/bitcoin/blob/v32.1/src/qt/transactionrecord.h#L76" }
+  - { label: "Bitcoin Core, amount.h - one bitcoin is 100,000,000 satoshis", url: "https://github.com/bitcoin/bitcoin/blob/4bacf21a13c2ed25ef9362ca38f26bf0a67d22c9/src/consensus/amount.h" }
+  - { label: "Bitcoin Core, validation.cpp - the schedule of new coins: 50 a block at first, halved every 210,000 blocks until it reaches zero", url: "https://github.com/bitcoin/bitcoin/blob/4bacf21a13c2ed25ef9362ca38f26bf0a67d22c9/src/validation.cpp#L1833-L1844" }
+  - { label: "Bitcoin Core, validation.cpp - a block that pays its maker more than the fees plus the scheduled amount is rejected", url: "https://github.com/bitcoin/bitcoin/blob/4bacf21a13c2ed25ef9362ca38f26bf0a67d22c9/src/validation.cpp#L2608-L2611" }
+  - { label: "Satoshi Nakamoto Institute - Satoshi's forum posts (the last on the Bitcoin forum is dated December 12, 2010; the index also lists one disputed line from March 7, 2014)", url: "https://satoshi.nakamotoinstitute.org/posts/" }
+  - { label: "High Court of England and Wales - COPA v Wright (May 20, 2024): the one claim to be Satoshi Nakamoto that was tested in court failed", url: "https://caselaw.nationalarchives.gov.uk/ewhc/ch/2024/1198" }
+  - { label: "BTC Nodes - computers that accept connections from others: 18,519 in the snapshot of November 16, 2026, of which 90.1% announced themselves as Bitcoin Core and 9.6% as Bitcoin Knots, which is built from Core's code", url: "https://btcnodes.io/api/v1/snapshots/1794846425/" }
+  - { label: "mempool.space API - who made the last month's blocks (three pools made 62% of them in the month to November 16, 2026)", url: "https://mempool.space/api/v1/mining/pools/1m" }
+  - { label: "Bitcoin Core - the signing keys that may merge changes into the program (five, October 2026)", url: "https://github.com/bitcoin/bitcoin/blob/4bacf21a13c2ed25ef9362ca38f26bf0a67d22c9/contrib/verify-commits/trusted-keys" }
+  - { label: "Bitcoin Core 32.1 release notes (October 27, 2026) - How to Upgrade: a new version is installed by hand", url: "https://bitcoincore.org/en/releases/32.1/" }
+  - { label: "Bitcoin Core - download page: one of the copies offered, a snap, is updated by the computer without being asked", url: "https://bitcoincore.org/en/download/" }
+  - { label: "Bitcoin Wiki - Value overflow incident (August 15, 2010): 184 billion coins created by a bug, a patched program within five hours", url: "https://en.bitcoin.it/wiki/Value_overflow_incident" }
   - { label: "BIP 50 - March 2013 Chain Fork Post-Mortem", url: "https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki" }
-  - { label: "mempool.space - block 225,455 (06:20 UTC March 12, 2013), where the chain every version accepted took the lead again", url: "https://mempool.space/block/000000000000016924f85069603be8164578eedf113f44d60bf0438cba047c7f" }
-  - { label: "Coin Metrics - BTC daily reference price (about $124,800 on October 6, 2025; about $58,500 on June 30, 2026)", url: "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=PriceUSD&frequency=1d&start_time=2025-10-01&end_time=2026-10-08&page_size=10000" }
-  - { label: "Cambridge Judge Business School - Cambridge study: sustainable energy rising in Bitcoin mining (April 2025; 138 TWh, about 0.5% of global electricity; 52.4% from renewables and nuclear among 49 surveyed firms)", url: "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/" }
+  - { label: "Bitcoin Core - notice of September 20, 2018: a bug that could have let a block maker create coins, fixed on September 18 and described in full two days later", url: "https://bitcoincore.org/en/2018/09/20/notice/" }
+  - { label: "UK Financial Conduct Authority - Cryptoassets consumer research 2025: 74% of people who own crypto keep it at the exchange where they bought it", url: "https://www.fca.org.uk/publication/research-notes/cryptoasset-consumer-research-2025-wave-6.pdf" }
+  - { label: "European Central Bank - Use of cash by companies in the euro area in 2026 (August 13, 2026), chart 1: 1% of companies with physical points of sale accept crypto-assets or stablecoins", url: "https://www.ecb.europa.eu/press/use-of-cash/html/ecb.uccea202608.en.html" }
+  - { label: "Board of Governors of the Federal Reserve System - Economic Well-Being of U.S. Households in 2025 (May 2026), table 33: 9% of adults held cryptocurrency as an investment, 2% used it to buy something or make a payment", url: "https://www.federalreserve.gov/publications/2026-economic-well-being-of-us-households-in-2025-banking.htm" }
+  - { label: "Federal Reserve Bank of Atlanta - 2025 Survey and Diary of Consumer Payment Choice (May 2026), table E: 66.7% of people who own cryptocurrency say it is an investment", url: "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/surveys/consumer-payments/survey-diary-consumer-payment-choice/2025/2025-SDCPC-results-report.pdf" }
+  - { label: "US Federal Trade Commission - What To Know About Cryptocurrency and Scams: only scammers will guarantee profits or big returns", url: "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams" }
+  - { label: "Coin Metrics - BTC daily reference price since 2010: falls of more than half from a record high in 2011, twice between 2013 and 2015, in 2017 to 2018, twice between 2021 and 2022, and from October 2025 to June 2026", url: "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=PriceUSD&frequency=1d&start_time=2010-07-18&page_size=10000" }
 ---
 
-> **Where you're going:** You'll be able to describe Bitcoin from first principles - not as a "coin" or "investment," but as a network, a protocol, and a fixed supply of monetary units governed by rules no one can change unilaterally. By the end you'll know who made it, what it actually does, and what trade-offs it asks of you.
+> **Where you're going:** By the end you will know what Bitcoin is and who runs it. You will also have tried it yourself, with practice coins that are worth nothing.
 
-<figure>
-  <video
-    src="/videos/fixed-vs-infinite.mp4"
-    poster="/videos/posters/fixed-vs-infinite.png"
-    autoplay
-    muted
-    loop
-    playsinline
-    controls
-    controlslist="nodownload noplaybackrate noremoteplayback"
-    preload="metadata"
-    aria-label="Side-by-side animated chart: the US Dollar M2 supply growing past a 'Glass ceiling' to over $22 trillion, while Bitcoin supply rises with halving steps and plateaus below its 21 million cap. The end-card spells out the difference in zeros: 22,000,000,000,000 versus 21,000,000."
-  ></video>
-  <figcaption>Two supply schedules, side by side. USD: over $22T in M2 ($23.3T as of August 2026), with no cap. BTC: 21M, locked.</figcaption>
-</figure>
+**A guess first.** Who runs Bitcoin: a company, a government, or nobody? Remember your answer. The end of the page comes back to it.
 
-## 1. A Strange Email
+You have probably met Bitcoin through its price. People buy and sell it for dollars, euros and other money, and the price moves a lot. Put the price to one side for a few minutes. This chapter is about the thing itself, and it needs no technical background.
 
-On Friday, October 31, 2008 - Halloween - at 2:10pm Eastern, an email landed on the Cryptography Mailing List at metzdowd.com. The sender was someone calling themselves Satoshi Nakamoto. The subject line was unremarkable: *"Bitcoin P2P e-cash paper."* The body was short. It had one sentence of introduction, a list of the system's five main properties, and the paper's abstract.
+## What is it?
 
-It linked to a PDF on bitcoin.org: [*Bitcoin: A Peer-to-Peer Electronic Cash System*](/bitcoin.pdf). The copy that survives from that week runs to eight pages; the version read today, revised in March 2009, runs to nine. Eight references. No marketing.
+Bitcoin was built to be money for the internet. You can send it to anyone, anywhere, and no bank or payment company has to approve it.
 
-The context matters. Lehman Brothers had collapsed six weeks earlier. The financial crisis was at full boil. The US government had just signed a $700 billion bank bailout. Every major economy was scrambling to keep its banking system from imploding. The Federal Reserve's balance sheet (the total of everything it owned, including the loans it had made) had more than doubled in seven weeks, from about $926 billion on September 10 to $1.97 trillion on October 29.
+A bank keeps a record of what everyone has, and you trust the bank to keep it straight. Bitcoin keeps track of who has what without a bank. The next section says how.
 
-Satoshi's email was, in retrospect, the polite version of *"Maybe try this instead."*
+## Where is the money?
 
-Sixty-four days later, on January 3, 2009, Satoshi mined the first block of the Bitcoin network. Embedded in that block - permanently, unforgeably - was a string of text:
+It is on a shared record. Thousands of computers around the world each keep a copy. They all run the same kind of program, with the rules written into it. The main rules are easy to say: nobody can spend coins they do not have, spend the same coins twice, or make new coins outside a fixed schedule.
 
-> *"The Times 03/Jan/2009 Chancellor on brink of second bailout for banks"*
+Each computer checks every new payment against those rules and ignores any that break them. Anyone may run one. The program is free, and anyone can read how it works.
 
-It was the front-page headline of the London *Times* that morning. It is still there in every full copy of the Bitcoin blockchain on Earth.
+New payments are added to the record in batches called **blocks**, about one every ten minutes. Each block is linked to the one before it, like the links of a chain. That is all the word *blockchain* means.
 
-This chapter is about what that strange email pointed at.
+When a block takes in your payment, the payment has one **confirmation**. Each block added after it is one more. After six, a payment is usually treated as final.
 
-## 2. What Bitcoin Is (and Isn't)
+## How much is there?
 
-Most people meet Bitcoin through its price. That's the wrong door. Let's reset.
+The rules allow 21 million bitcoin and no more. That limit has never been raised. New coins are released on a fixed schedule that slows down until it stops, more than a hundred years from now.
 
-**Bitcoin is, at the same time, three things:**
+You do not need a whole one. A bitcoin divides into 100 million pieces called **sats**, so a person can hold or send a few dollars' worth.
 
-- **A network** - thousands of computers around the world running compatible software, talking to each other, keeping a shared ledger
-- **A protocol** - the precise rules every one of those computers follows: what's a valid transaction, what's a valid block, how new units are issued, what wins ties
-- **A unit of account** - the 21-million-supply asset whose movements that network tracks
+## How do you hold it?
 
-Crucially, **Bitcoin is not:**
+You can hold it without an account and without giving your name. The record holds no names. It lists coins against **addresses**. An address is a string of letters and numbers that you give to someone who wants to pay you.
 
-- A stock - there's no company behind it
-- A token - it's not built on top of another network
-- A payment app - it's the layer underneath payment apps
-- "Crypto" - that's a marketing umbrella that mostly refers to other things
+Your coins are never on your phone. They stay on the shared record. What you hold is a secret that lets you spend them, called a **key**. A **wallet** is the app that keeps your keys.
 
-Bitcoin has no CEO. No board. No headquarters. No legal entity. No marketing budget. No customer service. If you have a question, you read the code. If you want to use it, you run software. If you want to change it, you'll need to convince every other participant to change too - which has been attempted, and which we'll get to.
+Whoever has the key can spend the coins, and nobody can without it. If you lose it, nobody can give it back, because there is no company to ask.
 
-This is *deeply* unlike everything else in the modern financial system. It's also the only design that produces the properties we listed at the end of chapter 1.
+Many people leave their coins with a company instead. Then the company holds the keys, not them. A later chapter is about that choice, and about keeping a key safe so that a lost phone does not mean lost coins.
 
-## 3. The Whitepaper in Five Minutes
+## Who runs it?
 
-The whitepaper is nine pages and you can read it in an hour. The argument runs like this:
+No single person, company or government.
 
-**The problem.** Online commerce relies on trusted third parties - banks, payment processors - to settle transactions. Those intermediaries can reverse payments, so merchants guard against fraud by asking customers for more information than they would otherwise need. The intermediaries also add cost and friction. Cash works without trusted third parties. Online cash, until Bitcoin, did not.
+It was started in 2009 by someone using the name Satoshi Nakamoto. Nobody has shown who that was. Satoshi stopped writing in public at the end of 2010, and Bitcoin has run without its founder ever since.
 
-**The proposal.** A digital cash system in which transactions are broadcast to a network, batched into blocks, and ordered by a competitive computation called proof-of-work. The longest chain of these blocks, the one with the most proof-of-work behind it, is the truth.
+Today each of those thousands of computers belongs to whoever chose to run it. Each one follows the rules of the program its owner picked. A new version arrives only if the owner installs it, or has told the computer to. So there is no switch that one person can flip to change the rules for everyone.
 
-**The key insight.** The network reaches agreement on transaction order *without* anyone in charge - because reorganizing past blocks gets exponentially harder the deeper you go. The system has no off-switch and no editor.
+## What it is not
 
-**The economics.** Participants who add new blocks ("miners") are paid in newly-issued bitcoin plus transaction fees. The paper itself says only that a "predetermined number" of coins will enter circulation. The numbers arrived with the software in January 2009, when Satoshi announced a total of 21 million coins, with issuance cut in half every four years.
+- **Not a company, and not a share in one.** There are no profits and nobody to pay them out. There are only the coins.
+- **Not a bank.** Nobody can reverse a payment for you or reset a lost key.
+- **Not everyday money, at least not yet.** You can send it to anyone, but few shops take it. The reason owners give most often for having some is investment.
+- **Not a promise.** The price has fallen by more than half at least seven times. Anyone who guarantees you a profit is running a scam. This Journey will not tell you whether to buy any.
 
-That's it. That's the whitepaper. The rest is engineering.
+## Try it
 
-## 4. The 21 Million Cap
+That is enough to try it. The step below opens this site's own practice wallet, at practice.learnbitcoin.com. It asks for no name, no email and no money, and it takes a few minutes. Practice coins are sent, received and confirmed the way bitcoin is, and they are worth nothing.
 
-Where does 21 million come from?
+Three things will come up. First the wallet asks whether to use a passkey, which is a login that your phone or computer keeps for you. Where both choices are offered, either works, and without is simpler.
 
-Bitcoin issues new units as a reward for mining each block. A block happens roughly every 10 minutes. The reward started at 50 BTC and halves every 210,000 blocks - about every four years.
+Then it shows you 12 words and asks you to write them down. They are a master key: every key in this wallet is made from them. Here they guard practice coins only.
 
-Here's the math:
+Last, before the coins are sent, a check run by Cloudflare, a company that guards websites, makes sure you are a person. It may ask you to tick a box.
 
-```
-50 + 25 + 12.5 + 6.25 + 3.125 + ... = 100 BTC (one block's reward in each era, added up)
-210,000 blocks per era x 100 BTC = 21,000,000 BTC (rounded; actual: 20,999,999.9769)
-```
+**Do it:** [Hold some](https://practice.learnbitcoin.com/do/hold-some). Make a practice wallet, ask for practice coins and watch a block take them in.
 
-The supply is a geometric series that converges. New issuance shrinks toward zero, and because Bitcoin counts in whole satoshis, the subsidy hits exactly zero at block 6,930,000, around the year 2140.
+## What the step shows
 
-The cap is enforced by every full node on the network. If a miner tried to issue more than the schedule allows, every other node would reject the block as invalid. The cap isn't a promise. It's not legislation. It's not a guideline. It is a property of the software that every participant runs.
+You make a wallet, and it makes its keys from 12 words. It gives you an address, practice coins are sent to it, and a block takes the payment in. That is its first confirmation. If you skipped the step, you can go back to it at any time.
 
-To change the 21M cap, you would have to convince virtually every node operator on Earth to run different software. The political cost of doing that is the social contract that makes Bitcoin valuable in the first place - break it, and you break what you were trying to inherit.
+Last, the step can tell you which block took a coin of yours in, and offers you a look at that coin on a block explorer, a website that shows the record to anyone who asks. We run the practice network and its explorer too, so here you see the idea and not the proof. On Bitcoin, explorers are run by many different people, and anyone can run the program and check the record directly.
 
-This is what "sound money" means, technically. Not "we promise to be careful." But "the rules are the rules and you can verify them yourself."
+## A fair objection
 
-## 5. Proof-of-Work as the World's Loudest Clock
+"Nobody runs it" is too simple.
 
-Mining is the part most people get wrong. Let's get it right.
+Nearly all of those computers run the same program or a close copy of it, and a small group of programmers looks after that program. A few large groups make most of the blocks.
 
-A Bitcoin block is just a list of transactions plus a header. To "mine" a block, a computer tries to find a number (a "nonce") such that the cryptographic hash of the header is below a certain target. Most numbers don't work. You guess, you check, you guess, you check. Trillions of times per second.
+At least three times a bug put the whole record at risk, in 2010, 2013 and 2018, and a handful of people fixed it within days. The first let someone create billions of coins out of nothing. Each fix held only because the people running the computers went along with it.
 
-When someone finds a valid nonce, they broadcast the block to the network. Everyone checks the work (cheap - just one hash) and adds it to their copy of the chain.
+So some people matter far more than others. What we can say so far is narrower than "nobody runs it": none of them has changed a rule that the people running those computers refused. The chapter called Fair Questions tells how close that has come to a test.
 
-Why bother? Two reasons.
+## Check yourself
 
-**One: it's the network's clock.** Roughly every 10 minutes, a block appears. That cadence anchors the entire system. Without proof-of-work, there's no objective way for participants spread across the world to agree on what happened first.
+<details>
+<summary>Who can change the record?</summary>
 
-**Two: it makes rewriting history expensive.** To reorganize old blocks, an attacker would need to redo all the proof-of-work that has accumulated since - outpacing the rest of the world's mining at the same time. The deeper the block, the more astronomical the cost. After six blocks (about an hour), an attacker with a tenth of the world's mining power has about a 1-in-1,700 chance of ever catching up, by Meni Rosenfeld's 2012 analysis. Only an attacker with most of the mining power could count on it.
+No one alone. Thousands of computers each check every new payment against the same rules, and each follows the program its owner picked. Reread "Who runs it?"
 
-The energy use is the feature. It's what converts physical reality (electricity, hardware, time) into the security that protects every Bitcoin in existence. Gold gets its monetary properties from being hard to dig out of the ground. Bitcoin gets its monetary properties from being hard to add blocks to. The mechanism is different. The role is the same.
+</details>
 
-## 6. The Halving Schedule
+<details>
+<summary>What does a wallet keep?</summary>
 
-Every 210,000 blocks, the block reward halves. This is not an opinion poll. It is a line of code that every node enforces.
+Your keys: the secrets that let you spend your coins. The coins themselves stay on the shared record. Reread "How do you hold it?"
 
-| Halving | Block height | Approx. date | New reward |
-|---|---|---|---|
-| Genesis | 0 | Jan 3, 2009 | 50 BTC |
-| First | 210,000 | Nov 28, 2012 | 25 BTC |
-| Second | 420,000 | Jul 9, 2016 | 12.5 BTC |
-| Third | 630,000 | May 11, 2020 | 6.25 BTC |
-| Fourth | 840,000 | Apr 20, 2024 (UTC) | 3.125 BTC |
-| Fifth | 1,050,000 | ~2028 | 1.5625 BTC |
+</details>
 
-The annual issuance rate of new bitcoin, once high, was about 0.82% as of October 2026, roughly half the pace at which mining added to the world's gold stock in 2025 (about 1.5 to 1.7%). After the fifth halving, due around 2028, it will be about 0.4%. At block 6,930,000, around 2140, it reaches zero. The [Supply Schedule rabbit hole](/rabbit-hole/supply) has the math.
+<details>
+<summary>Your guess at the start: who runs Bitcoin?</summary>
 
-Compare that to fiat. The US M2 money supply more than tripled from January 2008 to August 2026, from about $7.5 trillion to $23.3 trillion. Across those same years, Bitcoin's supply, launched in January 2009, followed its predetermined path, regardless of who was in office.
+Not a company and not a government. No single person or group runs it, though some matter far more than others. Reread "A fair objection".
 
-This is what scarcity looks like when it's encoded in math instead of policy.
+</details>
 
-## 7. The Question of Who's in Charge
+## Words you now know
 
-A lot of people, hearing "no CEO, no company," assume Bitcoin must therefore be a free-for-all. It isn't.
+- **Block.** A batch of new payments added to the shared record. All the blocks, linked in order, are the blockchain.
+- **Confirmation.** A block that holds your payment, or one added after it.
+- **Sats.** The small pieces of a bitcoin. 100 million make one.
+- **Address.** What you give someone so that they can pay you.
+- **Key.** The secret that lets you spend your coins. This wallet makes all its keys from 12 words.
+- **Wallet.** The app that keeps your keys.
 
-There are three groups of participants, and they keep each other honest:
-
-- **Node operators** - anyone running Bitcoin software that validates every transaction and every block. Their copy of the rules is what counts as Bitcoin. There are many thousands: a public counter reached roughly 17,000 to 21,000 of them in November 2026, and it cannot see the ones that accept no incoming connections.
-- **Miners** - specialized computers competing to add the next block in exchange for the reward. They produce blocks but they don't *make the rules*; if they produce an invalid block, nodes reject it and the work is wasted.
-- **Developers** - people who write the software. There are several independent implementations; the dominant one is called Bitcoin Core. Developers can propose changes, but they cannot impose them; nodes choose what software to run.
-
-<figure>
-  <img src="/diagrams/network-topology.svg" alt="Two network topologies side by side. On the left, a central bank: a single institutional hub standing alone. On the right, the Bitcoin network: roughly thirty-five peer nodes scattered across the panel and connected to their neighbors in an organic mesh, with no central node." />
-  <figcaption>One central bank, versus thousands of Bitcoin nodes. No center, no headquarters, no off switch.</figcaption>
-</figure>
-
-This is the genuinely radical part. **No one is in charge.** Not the largest miner. Not the most prolific developer. Not the wealthiest holder. The rules are upheld by everyone running a node, and changes to the rules require near-universal agreement. There have been attempted "takeovers" - chiefly in 2017, by a coalition of large miners and businesses - and the network defeated them by simply continuing to enforce the existing rules. The coalition called off its planned fork, SegWit2x, in November 2017 for lack of consensus.
-
-**About Satoshi.** The person or people who created Bitcoin stopped posting in public in December 2010. They left no will, no trademark, no foundation. Almost none of the coins they are believed to have mined has ever moved. We don't know who they were. We probably never will. This is a feature: there is no founder to capture, coerce, or compromise. Bitcoin has been ownerless for nearly its entire existence. That is part of what makes it durable.
-
-If you want to go deeper on this - what "decentralized" actually means, where Bitcoin lands on the spectrum, and how the 2017 takeover attempt was defeated - see the [Decentralization rabbit hole](/rabbit-hole/decentralization).
-
-## 8. The Properties, Re-Examined
-
-Chapter 1 ended with a list of six properties we'd want from sound money. Let's check Bitcoin against each:
-
-- **Portable** - bitcoin moves at the speed of an internet packet. A billion dollars can cross any border in minutes.
-- **Divisible** - one bitcoin divides into 100 million satoshis. (See the [Bitcoin Units rabbit hole](/rabbit-hole/bitcoin-units) for the full scale.)
-- **Durable** - the network has run since January 2009. Its two worst incidents were each repaired within a day. In August 2010 a bug created 184 billion BTC, and the repaired chain erased them (see [The Inflation Bug Postmortem](/rabbit-hole/inflation-bug-postmortem)). In March 2013 the chain split in two (see [The 2013 Chain Fork](/rabbit-hole/2013-chain-fork)). Your coins exist as long as the network exists.
-- **Verifiable** - you can run a node on a laptop and personally verify the entire history. No trust required.
-- **Scarce** - capped at 21 million by code that every node enforces. The cap has never been raised. It almost certainly never will be.
-- **Sovereign** - no government, no company, no individual can issue, freeze, seize, or invalidate your bitcoin without your private key.
-
-Gold satisfies most of these too - and was, for thousands of years, the world's best money. Bitcoin's claim is that it satisfies all six *and* removes gold's downsides (custodianship, divisibility at small scales, settlement speed). Whether that claim holds is something you'll decide for yourself by chapter 6.
-
-## 9. The Honest Trade-offs
-
-"Bitcoin only. No bullshit." applies to the bull case too.
-
-**Volatility.** Bitcoin's price is volatile in fiat terms. From its October 2025 high to its June 2026 low, the daily price fell about 53%. This is partly because monetization is a process, not an event; partly because the asset is small relative to global wealth.
-
-**On-chain settlement speed.** A Bitcoin transaction takes roughly 10 minutes to confirm and an hour to be considered fully settled. This is a deliberate trade-off - slower settlement makes the system harder to attack - but it means on-chain isn't ideal for buying coffee. (The Lightning Network solves this, mostly; chapter 5.)
-
-**Learning curve.** The user experience has improved enormously but is still not as smooth as your banking app. Self-custody requires you to take responsibility for your keys. Losing them means losing your coins. There's no helpdesk.
-
-**Energy use.** Bitcoin's mining network uses significant electricity - roughly 0.5% of global consumption, or about 138 TWh a year, by a 2025 University of Cambridge estimate. The miners Cambridge surveyed got 52.4% of their power from renewables and nuclear. That energy isn't wasted (it secures the network), but it isn't free. Whether that cost is worth what it buys is a values question.
-
-**Custody risk.** If you self-custody, you carry the risk. If you don't self-custody, you've reintroduced exactly the trusted third parties Bitcoin was designed to eliminate. Both have failure modes.
-
-None of these trade-offs are fatal. None are hidden. They're the price of admission.
-
-## 10. Where We Go From Here
-
-You've now met Bitcoin at the conceptual level. You know what it is, who made it, why it has the properties it has, and what it costs to use.
-
-Chapter 3 is *how it works under the hood* - the machinery. Blocks, transactions, mempool, fees, UTXOs. The model that lets you reason about Bitcoin instead of just believing in it.
-
-Chapter 4 is *owning it for real*. Seed phrases, hardware wallets, self-custody. You'll do it, not just read about it.
-
-**Do it:** [Hold some](https://practice.learnbitcoin.com/do/hold-some). Practice coins, that is: play money, free to ask for, so you do not have to wait for chapter 4. Make a practice wallet, ask for some and watch a block take them in. On the way the wallet shows you 12 words and asks you to write them on paper; chapter 4 explains them.
-
-Before you go on, sit with what this chapter taught. **[Money got broken in 1971](/glossary/what-happened-in-1971). Six weeks after Lehman Brothers collapsed, someone proposed an alternative. It's still running, the supply schedule is still on track, and the 21 million cap has never been raised.** That's the basic fact of the matter. Everything else is detail.
-
-> **Pro tip:** If you want to verify *any* claim in this chapter, the [whitepaper](/bitcoin.pdf) is nine pages and unchanged since 2009. The [genesis block](https://chainquery.com/rpc/getblock) is still there (run `getblock` on any live node with hash `000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f`), with the *Times* headline embedded in it. The network has been running, with public source code, since January 2009. Verify, don't trust.
+Why would anyone want money like this?

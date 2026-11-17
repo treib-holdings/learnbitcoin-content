@@ -2,7 +2,7 @@
 title: "Fiat"
 slug: fiat
 draft: false
-updated: "2026-10-13"
+updated: "2026-11-17"
 shortDefinition: "Government-issued money, like USD or EUR, unbacked by any physical commodity and relying on state authority for value."
 keyTakeaways:
   - "Issued and regulated by governments"
@@ -32,6 +32,6 @@ Fiat is money declared valuable by government decree rather than by any physical
 
 Fiat has two superpowers that Bitcoin doesn't. First, a state's authority can force people to accept it - try paying your US taxes in BTC. Second, the issuer can create more of it on demand. That second power is also why fiat reliably loses purchasing power over decades. The US dollar has lost about 97% of its 1913 value: what $100 bought in January 1913 cost $3,418 in August 2026, by the BLS's own calculator. The Argentine peso has lost about 99% of its 2018 value in under a decade: INDEC's consumer price index rose 97-fold between January 2018 and August 2026.
 
-Bitcoin was designed as a direct alternative: no issuer, no discretionary policy, a fixed supply. That doesn't mean fiat is going away tomorrow. Most people on Earth get paid in fiat, pay rent in fiat, and convert to BTC through a "fiat on-ramp" - an exchange, ATM, or peer-to-peer trade. The two systems coexist. Bitcoin's role is to be the option that can't be diluted.
+Bitcoin was designed as a direct alternative: no issuer, no discretionary policy, a fixed supply. That doesn't mean fiat is going away tomorrow. Most people on Earth get paid in fiat and pay rent in fiat, and those who want bitcoin can get it through a "fiat on-ramp" such as an exchange: see [If You Decide to Hold Some](/journey/using-bitcoin). The two systems coexist. Bitcoin's role is to be the option that can't be diluted.
 
-See [Inflation](/glossary/inflation) for the specific mechanism by which fiat purchasing power declines, and [Journey Chapter 1](/journey/why-money-is-broken) for the long version of why this matters.
+See [Inflation](/glossary/inflation) for the specific mechanism by which fiat purchasing power declines, and [Journey Chapter 2](/journey/why-money-is-broken) for the long version of why this matters.

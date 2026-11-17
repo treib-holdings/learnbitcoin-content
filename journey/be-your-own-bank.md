@@ -1,266 +1,149 @@
 ---
-title: "Be Your Own Bank"
+title: "Keys: What You Actually Hold"
 slug: be-your-own-bank
 draft: false
-updated: "2026-11-17"
-reviewedAt: "2026-11-16"
 status: live
 published: "2026-05-15"
-order: 4
-goDeeper: ["mt-gox-ftx-graveyard", "seed-backup-strategies", "key-space"]
-estimatedMinutes: 35
-tagline: "If your keys live on an exchange, you don't own Bitcoin. You own an IOU. This chapter teaches you to own actual Bitcoin."
+updated: "2026-11-17"
+reviewedAt: "2026-11-16"
+order: 5
+goDeeper: ["mt-gox-ftx-graveyard", "brain-wallets", "seed-backup-strategies"]
+estimatedMinutes: 6
+tagline: "Twelve words are the way back to your coins. Learn to keep them, with practice words first."
 prerequisites: ["how-bitcoin-works"]
-relatedTerms: ["seed-phrase", "private-key", "hardware-wallet", "custodial-wallet", "address", "deterministic-wallet", "watch-only-wallet", "paper-wallet", "multisig", "shamir-secret-sharing", "hierarchical-multisig"]
+relatedTerms: ["seed-phrase", "private-key", "wallet", "self-custody", "custodial-wallet", "exchange"]
 legacyUrls: ["/be-your-own-bank"]
-ogImage: "/diagrams/og/hd-wallet-tree.png"
-ogImageAlt: "One seed, every address. A 12-word seed phrase at the top derives a master key, which deterministically derives every child key and address the wallet will ever use. Back up the seed once and the whole tree is recoverable forever."
 sources:
-  - { label: "BIP 39 - Mnemonic seed phrases, word checksum and the optional passphrase (Bitcoin Improvement Proposal)", url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" }
-  - { label: "BIP 32 - Hierarchical deterministic wallets", url: "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" }
-  - { label: "BIP 141 - a native SegWit (bc1q) address commits to the hash of a public key", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
-  - { label: "BIP 84 - derivation scheme for native SegWit (P2WPKH) wallets", url: "https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki" }
-  - { label: "BIP 86 - derivation scheme for single-key Taproot (P2TR) wallets", url: "https://github.com/bitcoin/bips/blob/master/bip-0086.mediawiki" }
-  - { label: "Trezor Safe 5 FAQ - Bitcoin-only firmware, secure element, 20-word SLIP-39 backup as the default, 12 or 24 words as a legacy option", url: "https://trezor.io/guides/trezor-devices/trezor-safe-5/trezor-safe-5-faqs" }
-  - { label: "Trezor firmware changelog - first releases for Model One (2014), Model T (2018), Safe 3 (2023), Safe 5 (2024)", url: "https://trezor.io/other/product-updates/trezor-firmware-changelog-all-versions-and-release-dates" }
-  - { label: "BlueWallet - a Bitcoin-only, free and open-source wallet", url: "https://bluewallet.io/" }
-  - { label: "Keystone - official site (Keystone 3 Pro: 4-inch touchscreen, fingerprint authentication)", url: "https://keyst.one/" }
-  - { label: "Keystone 3 Pro firmware 1.7.4 release notes (October 2024) - BTC signing over a USB connection", url: "https://github.com/KeystoneHQ/keystone3-firmware/releases/tag/1.7.4" }
-  - { label: "Keystone 3 Pro firmware 2.0.8 release notes (April 2025) - separate BTC Only firmware", url: "https://github.com/KeystoneHQ/keystone3-firmware/releases/tag/2.0.8" }
-  - { label: "Blockstream - Jade is open source, for Bitcoin and Liquid, and uses a PIN server (a blind oracle) in place of a secure-element chip", url: "https://blockstream.com/jade/" }
-  - { label: "Coinkite - Coldcard security advisory: affected firmware, fixed versions and migration steps (2026)", url: "https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/" }
-  - { label: "COLDCARD Security Status - minimum fixed firmware by model (Mk2 and Mk3: 4.2.0)", url: "https://coldcard.com/security/status" }
-  - { label: "Coinkite - COLDCARD migration guide (a seed made on an affected device stays affected wherever it is used; move every wallet that hangs off it)", url: "https://coldcard.com/security/migrate" }
-  - { label: "Block - analysis of the Coldcard seed-generation flaw (July 30, 2026): on the Mk2 and Mk3 the change first shipped in firmware 4.0.0 on March 17, 2021", url: "https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware" }
-  - { label: "Bitcoin Optech Newsletter 416 (July 31, 2026) - the Coldcard thefts and what owners should do", url: "https://bitcoinops.org/en/newsletters/2026/07/31/" }
-  - { label: "Bitcoin Wiki - Paper wallet (a single printed key; obsolete and unsafe)", url: "https://en.bitcoin.it/wiki/Paper_wallet" }
-  - { label: "Trezor - check a backup on the Trezor Safe 5 without wiping the device", url: "https://trezor.io/guides/backups-recovery/general-standards/check-backup-on-trezor-safe-5" }
-  - { label: "Jameson Lopp - Bitcoin address poisoning attacks (look-alike addresses that match the first and last characters)", url: "https://blog.lopp.net/bitcoin-address-poisoning-attacks/" }
-  - { label: "FBI Internet Crime Complaint Center - 2025 report: $11.37 billion lost in complaints involving cryptocurrency, about $7.2 billion of it to investment fraud", url: "https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf" }
-  - { label: "Jameson Lopp - metal seed backup stress tests (as of October 2026, 10 of 75 products got an F for heat)", url: "https://jlopp.github.io/metal-bitcoin-storage-reviews/" }
-  - { label: "Bitcoin Core v31.1 - 10-minute block target (nPowTargetSpacing)", url: "https://github.com/bitcoin/bitcoin/blob/v31.1/src/kernel/chainparams.cpp" }
-  - { label: "Bitcoin Core v32.1 (October 2026) - verifymessage only accepts legacy (1...) addresses", url: "https://github.com/bitcoin/bitcoin/blob/v32.1/src/common/signmessage.cpp" }
-  - { label: "BIP 322 - generic signed messages; the original format only works for 1... addresses", url: "https://github.com/bitcoin/bips/blob/master/bip-0322.mediawiki" }
-  - { label: "BIP 137 - message signatures for SegWit addresses", url: "https://github.com/bitcoin/bips/blob/master/bip-0137.mediawiki" }
-  - { label: "Mt. Gox - application for civil rehabilitation (February 28, 2014)", url: "https://www.mtgox.com/img/pdf/20140228-announcement_eng.pdf" }
-  - { label: "Mt. Gox Rehabilitation Trustee - first repayments in bitcoin and Bitcoin Cash (July 5, 2024)", url: "https://www.mtgox.com/img/pdf/20240705_01_announcement_en.pdf" }
-  - { label: "Bitcoin Privacy Best Practices (PDF, this site)", url: "https://www.learnbitcoin.com/downloads/bitcoin-privacy-best-practices.pdf" }
-  - { label: "12-word seed backup form (PDF, this site)", url: "https://www.learnbitcoin.com/downloads/seed-backup-12-word.pdf" }
-  - { label: "24-word seed backup form (PDF, this site)", url: "https://www.learnbitcoin.com/downloads/seed-backup-24-word.pdf" }
+  - { label: "BIP 39 - how a wallet turns random numbers into 12 to 24 words, and the words into the seed its keys are made from", url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" }
+  - { label: "BIP 32 - how every key in a wallet is made, in a fixed order, from one seed", url: "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" }
+  - { label: "Trezor - How to use a wallet backup: no digital copies, screenshots and photographs included; the maker never asks for it; whoever has it can reach the coins from another wallet", url: "https://trezor.io/guides/backups-recovery/general-standards/how-to-use-a-wallet-backup" }
+  - { label: "Trezor - Best practices for securing your wallet backup: a lost backup cannot be recovered by anyone; several copies in separate places, away from the eyes of guests", url: "https://trezor.io/blog/security/best-practices-for-securing-your-wallet-backup" }
+  - { label: "Trezor - What to do if your wallet backup goes missing: move the coins to a new wallet with a new backup", url: "https://trezor.io/blog/security/what-to-do-if-your-trezor-or-wallet-backup-goes-missing" }
+  - { label: "Trezor - Check backup: a backup is tested inside the wallet itself, before it is relied on", url: "https://trezor.io/guides/backups-recovery/general-standards/check-backup-on-trezor-safe-5" }
+  - { label: "US Securities and Exchange Commission, Office of Investor Education and Assistance - Crypto Asset Custody Basics for Retail Investors (December 12, 2025): store the seed phrase in a secure place and share it with nobody; a wallet that is lost, stolen or damaged may be lost for good; a company that holds coins for you controls the keys", url: "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/crypto-asset-custody-basics-retail-investors-investor-bulletin-0" }
+  - { label: "Kaspersky Securelist (February 5, 2025) - apps in both app stores that searched photo galleries for recovery phrases", url: "https://securelist.com/sparkcat-stealer-in-app-store-and-google-play/115385/" }
+  - { label: "FBI Internet Crime Complaint Center - 2025 report: $11.37 billion lost in complaints involving cryptocurrency, about $7.2 billion of it to investment fraud; the figures are what people reported, for every cryptocurrency", url: "https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf" }
+  - { label: "Mt. Gox - announcement that it had applied to a Tokyo court for civil rehabilitation, with about 750,000 of its customers' bitcoins missing (February 28, 2014)", url: "https://www.mtgox.com/img/pdf/20140228-announcement_eng.pdf" }
+  - { label: "Mt. Gox - bankruptcy proceedings begin (April 24, 2014)", url: "https://www.mtgox.com/img/pdf/20140424_announce_qa_en.pdf" }
+  - { label: "Christian Decker and Roger Wattenhofer - Bitcoin Transaction Malleability and MtGox (2014): Mt. Gox had been the largest Bitcoin exchange", url: "https://arxiv.org/abs/1403.6676" }
+  - { label: "In re FTX Trading Ltd., declaration of John J. Ray III (November 17, 2022): FTX.com was among the largest exchanges in the world", url: "https://storage.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.24.0.pdf" }
+  - { label: "Coinkite - advisory of July 30, 2026: a flaw in a wallet maker's devices weakened the making of seed words, and funds were stolen", url: "https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/" }
+  - { label: "Mt. Gox trustee - repayments in bitcoin begin (July 5, 2024), ten years after the collapse", url: "https://www.mtgox.com/img/pdf/20240705_01_announcement_en.pdf" }
+  - { label: "FTX - bankruptcy case record (filed November 11, 2022; the repayment plan took effect January 3, 2025)", url: "https://restructuring.ra.kroll.com/FTX/" }
+  - { label: "US Bankruptcy Court, District of Delaware - In re FTX Trading Ltd., opinion of June 26, 2024: customers' claims for coins are valued in dollars at the prices of the day the company filed", url: "https://www.deb.uscourts.gov/sites/deb/files/opinions/FTX%20Opinion%20and%20Order%20Digital%20Asset%20Estimation.pdf" }
+  - { label: "European Union - Regulation (EU) 2023/1114 on markets in crypto-assets, Article 59: companies that hold or trade crypto-assets for customers need an authorisation", url: "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32023R1114" }
+  - { label: "New York State Department of Financial Services - virtual currency businesses: the state's license", url: "https://www.dfs.ny.gov/virtual_currency_businesses" }
+  - { label: "FDIC - Understanding deposit insurance: at least $250,000 for each depositor at each insured bank", url: "https://www.fdic.gov/resources/deposit-insurance/understanding-deposit-insurance" }
+  - { label: "US Code of Federal Regulations, 12 CFR 1005.6 - a customer's loss from a payment they did not authorize is limited", url: "https://www.ecfr.gov/current/title-12/chapter-X/part-1005/subpart-A/section-1005.6" }
 ---
 
-> **Where you're going:** By the end of this chapter, you'll have generated a wallet you control, backed up the seed properly, received a real (small) Bitcoin transaction, and cross-checked it on a block explorer. You'll have done self-custody. Optional: do it for real.
+> **Where you're going:** By the end you will know what the 12 words are, the four rules for keeping them, and the two main ways people hold bitcoin. You will also have made a paper copy of your practice wallet's words and proved that it works. Have a pen and paper ready.
 
-## 1. The Promise You Make to Yourself
+**A guess first.** Your phone falls into a lake tomorrow, with a bitcoin wallet on it. What happens to the coins?
 
-Up until this chapter, you've been *learning about* Bitcoin. From here on, you can *use* it - but only if you're willing to take on the responsibility that comes with sovereign money.
+## What are the 12 words?
 
-The bargain is this: **you, and only you, hold the keys. Nobody can take them. Nobody can freeze them. And nobody is going to help you if you lose them.**
+When you made your practice wallet, it showed you 12 words. They are called **seed words**. (Real wallets also call them a recovery phrase, and some use 24 words.) Every key and every address in the wallet is made from them, in the same order every time.
 
-That's not a marketing line. It's how the math works. A Bitcoin address is derived from a private key, by way of its public key. The private key is a 256-bit number. Whoever has the number can sign transactions that spend the coins. There is no second factor. There is no recovery email. There is no customer service.
+So every key and every address can be made again from the words. Put the same words into the same kind of wallet on a new phone, and the same keys, the same addresses and the same coins appear. The coins were never on the old phone. They are on the record, and the words are how you reach them.
 
-This is the deal. This chapter is about taking it seriously without being scared of it.
+So the phone in the lake costs you a phone. It costs you the coins only if the words went with it.
 
-## 2. Custodial vs Self-Custody
+## What follows from that?
 
-Most people who "own Bitcoin" don't, technically.
+Whoever has the words has the coins. In a wallet like this one there is no password behind them and no second check.
 
-When you buy bitcoin on an exchange - Coinbase, Kraken, Binance, Cash App - the exchange holds the keys. You hold a number in their database that says "you are owed X bitcoin." It's an IOU. It looks like Bitcoin on your screen, but legally and technically it's a claim against the exchange.
+And if the words are lost, along with the phone, nobody can reach the coins again. No company can reset them, because no company has them.
 
-This is fine for some uses (trading, beginners, very small amounts). It is **not Bitcoin's value proposition.** Custodial bitcoin can be frozen by the custodian, seized by a government, lost in a hack, lost in a bankruptcy, withheld for KYC reasons, or simply unavailable when their servers are down.
+A copy of the words, kept safe, is called a **backup**.
 
-You can't have the properties from chapter 2 - *portable, scarce, sovereign* - and trust a third party with your keys. The whole point was to remove the third party.
+## How do you keep the words?
 
-**Self-custody** means you generate and hold the private keys yourself. Your wallet software does this - it generates a random number, derives the keys, and shows you addresses. The number lives on your device (and a backup), not in anyone's database.
+Four rules.
 
-The trade-off is symmetric: with custody comes risk (not your keys, not your coins), and with self-custody comes responsibility (lose your keys, lose your coins). Bitcoin lets you choose; most other systems don't even give you the option.
+1. **On paper, by hand.** Not in a photo, a note on your phone, an email or a file. In 2025 researchers reported apps in both big app stores that searched people's photos for these words.
+2. **Never typed into a website, an email or a message.** Treat any page that asks for real words as a scam, with no exception. The only words you ever type into a web page are the ones this site's practice wallet made.
+3. **Never given, shown or read out to anyone.** No company and no helper needs your words, not even three of them. Someone who asks is trying to take your coins, however kind or official they sound.
+4. **In more than one place.** Then one fire or one burglary does not take the only copy. Whoever finds the paper has the coins, so keep it out of a visitor's sight, and not in a notebook you take out often.
 
-## 3. Keys, Not Coins
+Real words go into one place only: your own wallet, on its own screen, when you set it up or bring it back yourself. And do not use a web page as a wallet for real bitcoin.
 
-The mental shift that matters most: **you don't own coins. You own keys.**
+One thing the rules leave open. If nobody else knows the paper exists, nobody can reach your coins after you. But whoever knows where it is can take them. The next chapter comes back to this.
 
-Bitcoin doesn't exist as files on your computer. It exists as UTXOs (see chapter 3) on the global ledger. Your wallet doesn't "contain" bitcoin in any meaningful sense - it contains the keys that authorize spending specific UTXOs on the ledger.
+## Make a backup
 
-This is why:
-- A wallet on a hardware device with no internet can still "have" bitcoin
-- You can have the same wallet open on multiple devices (they're showing the same UTXOs)
-- Restoring a wallet on a new device brings back the same balance once the wallet has scanned the chain for your addresses (the chain is the truth; the device just reads it)
+Now make a backup of your practice wallet. The step has you type three of the words, to check your paper. That is safe for one reason only: they guard practice coins that are worth nothing. If you have no practice wallet yet, the step helps you make one first.
 
-When you "back up your wallet," you're backing up the *keys* - specifically, the seed they're derived from. If you have the seed, you can reconstruct all the keys, on any device, forever.
+The practice wallet is at practice.learnbitcoin.com and nowhere else. Look at the web address in your browser's address bar before you type a word.
 
-<figure>
-  <img src="/diagrams/hd-wallet-tree.svg" alt="A hierarchical deterministic wallet tree: a 12-word seed phrase at the top derives a master key, which in turn derives a practically unlimited sequence of child keys and addresses. Five sample bc1q addresses branch from the master key, with the implication that millions more follow the same derivation." />
-  <figcaption>One seed encodes a deterministic tree of keys and addresses. Back up the seed once; the whole tree is recoverable forever.</figcaption>
-</figure>
+**Do it:** [The seed](https://practice.learnbitcoin.com/do/the-seed). Put the 12 words of your practice wallet on paper, in order. Then the step asks you for three of them, to check your paper.
 
-This is one of Bitcoin's most powerful properties and one of the easiest to underestimate.
+Write "practice" on that paper, and never use these 12 words for real bitcoin: they have been on a web page. A wallet for real bitcoin makes its own words.
 
-## 4. The Seed Phrase
+Did you take a screenshot instead? With practice words no harm is done. With real words, deleting it is not enough: the fix is a new wallet with new words, and the coins moved to it. So practice the real habit now, which is paper only.
 
-Modern Bitcoin wallets don't make you back up individual private keys. They give you a **seed phrase** - usually 12 or 24 English words.
+## Does the backup work?
 
-It looks like this (don't use this one - it's a public example):
+You do not know that a backup works until you have tested it. A misspelled word, or two words in the wrong order, can sit unnoticed until the day you need them.
 
-```
-abandon abandon abandon abandon abandon abandon
-abandon abandon abandon abandon abandon about
-```
+One sure test is to bring the wallet back from the paper alone. In the next step you remove the practice wallet from your browser. Then you **restore** it, which means bringing it back, by typing the 12 words.
 
-Those words encode a number. The number seeds a deterministic generator (defined in [BIP 39](/glossary/bip-39) and [BIP 32](/glossary/bip-32)) that produces every key and address your wallet will ever need. From one seed, you get a tree of millions of addresses. They're all derived; only one secret matters.
+Nothing of value can be lost. Have the paper in your hand before you start. If the words on it turn out to be wrong, the practice wallet is gone and you make a new one. (A wallet made with a passkey can still be opened with the passkey. The step asks you to use the paper.)
 
-**A few facts that should change your behavior:**
+With real bitcoin, this test is done before any coins go into the wallet, never after.
 
-- **Anyone with your seed phrase has your bitcoin.** There is no second factor. There is no recovery. There is no "but they'd need your password too" - a wallet's password or PIN only locks that one app or device, and the words restore the wallet anywhere without it. The one exception is an optional [passphrase](/glossary/mnemonic-password), sometimes called the "25th word," that is mixed into the seed. If you set one, back it up as carefully as the words, because the words alone open a different, usually empty, wallet.
-- **12 vs 24 words.** Both are secure. 12 words = 128 bits of entropy; 24 words = 256 bits. Both are well beyond brute-force range. The choice is a matter of preference. (Defaults vary by device. As of October 2026, the Trezor Safe 5 defaults to a 20-word backup under a different standard, [SLIP-39](/glossary/shamir-secret-sharing), and offers 12 or 24 words as a legacy option.)
-- **Never type your seed into a website. Never. Ever.** Not your wallet provider's site. Not a help page. Not anywhere. The only places the seed should live are on your wallet device and on physical backups *you* created. (Our practice wallet, at practice.learnbitcoin.com, asks you to type the words of a practice wallet. Those words guard coins that are worth nothing, and that is the only reason it is safe. The words of a wallet for real bitcoin, even one that is still empty, never go into a web page, that one included.)
-- **Do not memorize it.** Brains forget seeds, even ones you were sure you'd remember. Steel does not.
-- **Do not photograph it.** Phones back up to clouds. Clouds get breached.
+**Do it:** [Prove the backup](https://practice.learnbitcoin.com/do/prove-the-backup). Remove the practice wallet from your browser, then bring it back, with its coins, from the 12 words on your paper.
 
-The seed phrase is not a password. It is the *root* of your entire Bitcoin existence. Treat it accordingly.
+If the coins came back, you have seen the whole idea. The browser did not hold your coins. The paper holds the way to reach them. You hold keys, not coins.
 
-## 5. Wallet Types - When to Use Each
+## Who should keep the keys?
 
-A "wallet" is just software that manages keys. The categories matter more than the brands:
+There are two main ways to hold bitcoin. The difference is who keeps the keys, and the word for keeping them is **custody**.
 
-- **Hot wallet** - keys live on an internet-connected device (phone, laptop). Convenient. Higher attack surface. Best for small, working-balance amounts.
-- **Cold wallet** - keys live on a device that's never connected to the internet. More effort to use. Much harder to compromise. Best for long-term holdings.
-- **Hardware wallet** - a small dedicated device (pocket-sized, some no bigger than a USB stick) that holds keys and signs transactions, while a companion app on your phone or laptop handles everything else. The keys never leave the hardware. **This is the standard recommendation for any amount you'd be sad to lose.**
-- **Paper wallet** - an older practice: a single private key and its address printed on paper, usually by a website. It is considered obsolete and unsafe, and we don't recommend it. (A handwritten copy of your seed words is a different thing, and a good one. Section 7 covers it.)
-- **Multisig** - a wallet where spending requires multiple keys, often held in different places. Eliminates single-point-of-failure. The right answer for serious balances. We'll get to it in chapter 6.
+**A company keeps them.** This is an account at an exchange. You get a login, a password that can be reset, and a help desk. In many countries such companies need a license. The company holds the keys, so what you have is its promise to hand the coins over.
 
-**The right pattern for most people:**
+That is only as good as the company. One of the largest exchanges of 2014 went bankrupt with customers' coins missing, and so did one of the largest of 2022. Customers waited years, and a court decided what they got back. For some it was dollars, not coins.
 
-- A hot wallet on your phone for small everyday amounts
-- A hardware wallet for the rest
-- A multisig setup once your stack justifies the complexity
+**You keep them.** This is a wallet of your own, like the practice one. No company holds your coins, so none can freeze them or lend them out. What is left is yours to guard against: a faulty wallet, a lost paper, a burglar, a trick, and what happens to the coins when you die.
 
-You can mix and match. Wallets are just tools.
+Neither way is safe by itself, and one danger is the same in both: being deceived. Of the money people told the FBI they lost in 2025 in cases involving bitcoin and coins like it, most was sent by its owners to someone who had tricked them.
 
-## 6. Picking Your First Wallet
+## A fair objection
 
-We don't sell wallets. We don't take affiliate commissions. The names below are examples of what exists as of October 2026, not endorsements. Whatever you consider, check it against the "Why Bitcoin-only matters" and "What to avoid" notes further down.
+"Twelve words on a piece of paper? That sounds less safe than my bank, not more."
 
-<figure>
-  <img src="/photos/hardware-wallet-ecosystem.jpg" alt="Four Bitcoin hardware wallets from four different vendors on a light wood surface, left to right: Trezor Safe 5 (vertical touchscreen with secure element), Blockstream Jade (compact stick with a small color screen and a select button), Coldcard Mk4 (transparent case showing the circuit board and physical numeric keypad), and Keystone 3 Pro (large 4-inch touchscreen, shown on its side, with fingerprint sensor, signing mostly by QR code). Four different design philosophies for the same problem: keeping a private key off an internet-connected device." />
-  <figcaption>The hardware wallet ecosystem. Four vendors, four design philosophies, one job: keep the private key off the internet. The photo was taken before August 2026; the Coldcard in it is no longer on the list below.</figcaption>
-</figure>
+Against the things that usually go wrong, a bank is safer. A forgotten password can be reset. A stolen card can be cancelled. In the United States the government insures deposits up to a limit, and a payment you did not make can usually be undone.
 
-**Free, open-source mobile wallets (hot, beginner-friendly), for example:**
-- **BlueWallet** (iOS, Android) - Bitcoin-only, open source
+Keeping your own keys protects against different things: a company that fails, an account that is frozen, a bank that will not send your payment. It does that by removing the protections as well. Some people want that, and some do not. It is also why this course has you practice first, with coins that are worth nothing.
 
-**Hardware wallets (cold, serious balances), for example:**
-- **Trezor Safe 5** - multi-coin by default, also sold with Bitcoin-only firmware, which any Safe 5 can run
+## Check yourself
 
-<figure>
-  <img src="/photos/trezor-safe-5-pin.jpg" alt="The Trezor Safe 5 hardware wallet powered on, displaying its scrambled PIN entry screen. The number positions are randomized on each unlock to prevent shoulder-surfing and smudge-pattern attacks. The device sits on dark leather, with the embossed Trezor lock icon visible below the screen." />
-  <figcaption>Trezor Safe 5 in PIN entry. Numbers shuffle on every unlock - shoulder-surfing and smudge attacks don't work when the layout changes.</figcaption>
-</figure>
+<details>
+<summary>Your phone is lost. What do you need to get your coins back?</summary>
 
-- **Keystone 3 Pro** - multi-coin by default, with a separate Bitcoin-only firmware; signs mostly by QR code, though it can also connect over USB to some wallet apps; fingerprint sensor, large 4-inch touchscreen
+The 12 words. Put into the same kind of wallet on a new phone, they bring back the same keys and the same coins. Without a backup, nothing can. Reread "What are the 12 words?"
 
-<figure>
-  <img src="/photos/keystone-3-pro-box.jpg" alt="The Keystone 3 Pro hardware wallet resting on its side on its blue retail packaging. The device's 4-inch touchscreen is dark; the box shows the Keystone wordmark and product name. Light wood surface in the background." />
-  <figcaption>Keystone 3 Pro arrives in this box. It has a 4-inch touchscreen and signs mostly by QR code, though it can also connect to some wallet apps over USB.</figcaption>
-</figure>
+</details>
 
-- **Jade** by Blockstream - open source, supports only Bitcoin and Blockstream's [Liquid](/glossary/liquid-network) sidechain
+<details>
+<summary>Someone from "wallet support" messages you and asks for three of your words, to fix a problem. What do you do?</summary>
 
-<figure>
-  <img src="/photos/jade-unlock.jpg" alt="The Blockstream Jade hardware wallet powered on, displaying its unlock screen. The compact device shows 'Unlock Jade' on a small color screen, with status indicators for initialization and firmware version. The JADE wordmark is embossed on the side." />
-  <figcaption>Blockstream Jade at unlock. Small color screen and a select button. Instead of a secure-element chip, Jade relies on a PIN server, a scheme Blockstream calls a blind oracle.</figcaption>
-</figure>
+Nothing they ask. No company needs your words, not even three of them, and anyone who asks is trying to take your coins. Reread "How do you keep the words?"
 
-*Coldcard was on this list until August 3, 2026. A flaw in how its firmware generated seeds had left them guessable, and from July 30, 2026, wallets were drained at scale. We removed it four days after the first thefts. Coinkite's [status page](https://coldcard.com/security/status) is the current record.*
+</details>
 
-*Coinkite, which makes Coldcard, says in its [advisory](https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/) that the flaw affects seeds generated on Mk2 and Mk3 firmware 4.0.1 (March 2021) through 4.1.9, and on Mk4, Mk5 and Q firmware older than the fixed versions (5.6.0 on the Mk4 and Mk5, 1.5.0Q on the Q, and 6.6.0X and 6.6.0QX on the Edge track). An independent [analysis by Block](https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware) puts Mk2 and Mk3 firmware 4.0.0 in the affected range too, so on a Mk2 or Mk3 treat a seed made on any 4.x firmware before 4.2.0 as affected. If your seed came from any of these and you didn't mix in at least 50 dice rolls of your own, rolled in private, treat it as compromised, wherever that seed is used now. Move the funds, from every wallet that hangs off the seed, to a new seed made on a second device running fixed firmware or on the same Coldcard once its firmware is updated, following Coinkite's [migration guide](https://coldcard.com/security/migrate).*
+<details>
+<summary>Where should the paper not be kept?</summary>
 
-**Why "Bitcoin-only" matters:** a wallet that supports 50 cryptocurrencies carries code and libraries for all 50, and every one of them is another place where things can go wrong. Bitcoin-only firmware has fewer features but a smaller codebase that is easier to audit. If you're using a hardware wallet for Bitcoin, run Bitcoin-only firmware. (Most of the above support it.)
+In a notebook you take out often. Anywhere a visitor might look. And not in only one place. The words themselves never go into a photo or a file. Reread the four rules.
 
-**What to avoid for self-custody:**
-- Any wallet that asks you to upload your seed for "backup"
-- Any wallet without published source code
-- Any "wallet" that's actually a custodial account inside a brokerage or payments app
-- Browser extensions, for any serious amount - too much attack surface
+</details>
 
-The wallet ecosystem moves quickly, so the example names above will date faster than the wallet categories in section 5.
+## Words you now know
 
-<figure>
-  <img src="/photos/trezor-evolution.jpg" alt="Four Trezor hardware wallets in chronological order on a light wood surface, left to right: Trezor One (2014), Trezor Model T (2018), Trezor Safe 3 (2023), Trezor Safe 5 (2024). The shapes and screen sizes show a decade of progression - from the original two-button monochrome design to the 2024 touchscreen Safe 5 with a secure element." />
-  <figcaption>Ten years of Trezor hardware wallets. The Trezor One on the left shipped in 2014, and the Safe 5 on the right shipped in 2024.</figcaption>
-</figure>
+- **Seed words.** The words, 12 here and 24 in some wallets, that every key in a wallet is made from. Also called a recovery phrase.
+- **Backup.** A copy of the seed words, kept safe.
+- **Restore.** To bring a wallet back from its seed words.
+- **Custody.** Who keeps the keys: you, or a company on your behalf.
 
-## 7. Backing Up Properly
-
-Your seed phrase needs to survive: fire, flood, theft, loss, your own forgetfulness, and a moderately determined adversary. That sounds dramatic until you realize it has to last decades.
-
-**The standard approach:**
-
-1. **Write the seed on paper, then transcribe to metal.** Stamped or engraved steel plates (sold under many brand names, or a do-it-yourself washer-and-stamp setup) hold up to fire and water far better than paper, but not every metal product does. In [Jameson Lopp's stress tests](https://jlopp.github.io/metal-bitcoin-storage-reviews/), 10 of the 75 products tested as of October 2026 got an F for heat, so look up how a product did before you buy it. Keep the paper copy as a secondary backup, never as your only one.
-2. **Store backups in at least two physically separate locations.** A safe at home plus a safe-deposit box, or two homes, or one location plus a trusted family member's. The goal is that no single fire or burglary loses both copies.
-3. **Verify the backup.** Do it before you put any meaningful amount in the wallet. If your device can check a written backup against the seed it holds without erasing anything, use that first (the Trezor Safe 5 has [such a check](https://trezor.io/guides/backups-recovery/general-standards/check-backup-on-trezor-safe-5)). Otherwise, restore the words on a second device of the same kind and compare the first receive address. (The words of a hardware wallet never go into an app on a phone or computer.) Wiping your only device and restoring it is a fair test too, but only while the wallet is still empty. A backup you have not tested is a hope.
-4. **Document for inheritance.** Write a sealed letter for your heirs that explains where the backups are, what software to install, and what addresses to expect. Don't put the seed itself in the letter; put instructions for finding it.
-
-We've made printable seed-backup forms for both [12-word](/downloads/seed-backup-12-word.pdf) and [24-word](/downloads/seed-backup-24-word.pdf) seeds, available on this site. Use them or your own format - what matters is consistency and durability.
-
-**One more thing.** Do not split your seed phrase across multiple locations as a security measure ("first 6 words here, last 6 words there"). This is called *seed splitting* and it provides much less security than you'd expect - losing one location loses everything, *and* whoever finds one half has far less left to guess. Half of a 12-word seed leaves about 2^62 possibilities instead of 2^128 ([the math](/rabbit-hole/seed-backup-strategies)). If you want geographic redundancy for advanced setups, use [multisig](/glossary/multisig) (chapter 6) or [Shamir's Secret Sharing](/glossary/shamir-secret-sharing), not seed splitting.
-
-**Do it:** [The seed](https://practice.learnbitcoin.com/do/the-seed). Put the 12 words of your practice wallet on paper, in order, then check the paper: the step asks you to type three of the words. That is safe for one reason only: these are practice words. If you have no practice wallet yet, the step helps you make one first.
-
-**Do it:** [Prove the backup](https://practice.learnbitcoin.com/do/prove-the-backup). Remove the practice wallet from your browser, then bring it back, coins and all, by typing its 12 words from the paper. It is the last test of point 3 above, wipe and restore, run here with the coins still in because a mistake here costs nothing. Practice words only: the words of a wallet for real bitcoin, even an empty one, never go into a web page.
-
-## 8. Receiving Your First Transaction
-
-This is the moment.
-
-1. **Open your wallet** (we'll assume you picked one from section 6 and set it up).
-2. **Generate a fresh address.** Every wallet has a "Receive" button. Click it. The wallet derives a new address from your seed and shows it to you, usually as a QR code and a string starting with `bc1`.
-3. **Send a small amount to that address.** From an exchange, another wallet, anywhere. Five or ten dollars worth of sats. Don't send your life savings to a brand-new wallet you've never used.
-4. **Watch the mempool.** Your wallet will show "unconfirmed" as soon as the sender broadcasts the transaction and it enters the mempool. Blocks arrive every 10 minutes on average, but the gap between them is random. If the fee is high enough for the next block, the first confirmation usually comes within 20 minutes, and occasionally takes longer. Six confirmations take about an hour on average.
-5. **Cross-check the receive address externally.** Open [ChainQuery.com/address/](https://chainquery.com/address) and paste your address. You should see the same balance and the same incoming transaction. Two independent views of the same chain. This is a cross-check, not full verification, because you are still trusting someone else's node, and the explorer learns which address you looked up. Running your own node (chapter 6) is how you verify without trusting anyone.
-
-Congratulations. You just did self-custody.
-
-The bitcoin you just received is yours in a way that custodial bitcoin never was. No exchange can freeze it. No government can seize it without your private key. You can move it anywhere, anytime, on a Sunday at 3 a.m., for any reason. That's the whole point.
-
-## 9. Sign a Message - Prove You Own It
-
-Here's a useful trick: you can prove you control an address *without* moving any coins.
-
-Bitcoin supports **message signing**. Your wallet uses your private key to produce a signature on an arbitrary text message. Anyone with the signature, the message, and your address can verify the signature is valid - proving you have the key.
-
-How:
-
-1. In your wallet, find "Sign message." (Many wallets have it, sometimes behind an advanced setting; some mobile wallets leave it out.)
-2. Enter a message: *"I control address bc1qexampleaddress. Today's date is YYYY-MM-DD."*
-3. Sign. You get a base64 blob.
-4. Anyone can paste the (message, signature, address) triple into a verifier, such as a wallet's "Verify message" feature, and they will see "valid" or "invalid." The original signing format only covers old-style addresses that start with 1, though, and as of November 2026 (version 32.1) Bitcoin Core's [verifymessage](https://chainquery.com/rpc/verifymessage) RPC accepts only those. Wallets sign for bc1 addresses in other formats, such as [BIP 137](https://github.com/bitcoin/bips/blob/master/bip-0137.mediawiki) or [BIP 322](https://github.com/bitcoin/bips/blob/master/bip-0322.mediawiki), and not every wallet uses the same one, so check the signature with a wallet that supports the format it was signed in.
-
-This is how you prove ownership of an address to an insurance company, an inheritance lawyer, or a future suspicious you. No coins move and no fee is paid. The signature is portable, but it carries no timestamp. A date typed into the message is only a claim, because whoever holds the key can sign the same words at any time.
-
-## 10. The Common Ways People Lose Bitcoin
-
-Honest list. The ordering is editorial, because no complete count exists. The best public figures are the FBI's yearly totals of what people report to it, and in those the largest loss by far is the first item here.
-
-1. **Being talked into sending it.** A fake investment site that shows a growing balance and never lets the money out. A caller who says your account is at risk and has you "protect" your money through a Bitcoin ATM. A stranger online who turns the talk to investing. Then a "recovery service" that wants a fee to get it back, which is the second scam. In the FBI's report for 2025, investment fraud alone was about $7.2 billion of the $11.4 billion that people reported losing in complaints involving crypto. Nobody real will ever tell you to pay, move or protect money this way.
-2. **Leaving funds with an exchange or lender.** The company goes bankrupt (Mt. Gox, FTX, Celsius, BlockFi). Withdrawals freeze, and customers wait months or years for whatever the bankruptcy returns. Mt. Gox collapsed in February 2014 and began repaying creditors in bitcoin in July 2024 ([the full story](/rabbit-hole/mt-gox-ftx-graveyard)).
-3. **Phishing the seed.** Fake support reps, fake wallet updates, fake "verify your wallet" pages. **No legitimate wallet, ever, asks you to type your seed online.** If it does, it's a scam. (The practice steps of section 7 ask for the words of a practice wallet at practice.learnbitcoin.com, which guard nothing of value. A page that asks for the words of a wallet for real bitcoin, even one that is still empty, is a scam, whatever it calls itself.)
-4. **Losing the seed.** Single backup, single location, single fire.
-5. **Buggy or malicious wallet software.** Use audited, open-source wallets. Verify download signatures from the publisher when possible.
-6. **Wrong derivation path / address type.** You restore to a wallet using a different default than the one that generated it, see "0 BTC," panic. Less common with modern wallets but happens. Solution: try restoring with each common standard (BIP 84 for native SegWit, BIP 86 for Taproot, etc.) before assuming theft.
-7. **Sending to the wrong address.** Bitcoin transactions are irreversible. Check the whole address before sending, on your hardware wallet's own screen if you use one, and never copy an address out of your transaction history: thieves send tiny payments from look-alike addresses that match the first and last characters of ones you have used, hoping you will copy theirs. Send a small test first, then check the full address again.
-8. **Inheritance failure.** Owner dies, heirs have no idea where the seed is. Common; preventable; document.
-
-The pattern is mostly **operational, not technical**. The cryptography is rarely the failure point. You are. So is everyone. Plan accordingly.
-
-## 11. Your Milestone
-
-Before you move on to chapter 5, do these four things:
-
-- [ ] Pick a wallet (mobile is fine for now; hardware once you've got hands-on confidence)
-- [ ] Generate a seed and back it up on paper *and* metal
-- [ ] Receive a small amount (a few dollars' worth of sats; not your savings)
-- [ ] Sign a message proving you control the receiving address (if your wallet offers message signing; see section 9)
-
-That's it. You've done self-custody. You're no longer dependent on an exchange or a custodian to hold the keys to your money. Whether or not you go bigger from here is your call.
-
-> **Pro tip:** The hardest part of self-custody isn't technical, it's psychological. The first time you hold a real seed you're solely responsible for, it feels heavy. That weight is the actual product of Bitcoin - sovereign ownership. People who claim self-custody is "too hard" mostly mean it feels heavy. They're not wrong. They're just not seeing the trade.
+Everything so far has used practice coins. What follows is about the real thing.

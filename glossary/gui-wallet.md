@@ -32,7 +32,7 @@ Categories of GUI wallets:
 - **Bitcoin Core (Qt build).** The reference implementation also ships with a GUI version. Validates the full chain, manages a wallet, exposes most node functions through menus. Default choice for anyone running a full node who wants a wallet on top.
 - **Specter Desktop, Sparrow, Nunchuk.** Desktop GUI wallets focused on power users, hardware wallet support, multisig coordination. Built on top of a separate Bitcoin Core node (or Electrum-protocol backend).
 - **Mobile wallets.** Phone-based wallets with simple UX. They range from non-custodial (BlueWallet, for example) to custodial.
-- **Hardware wallet companion apps.** Trezor Suite, Ledger Live, Foundation Envoy, Bitbox app. The GUI runs on a computer or phone; signing happens on the connected hardware device.
+- **Hardware wallet companion apps.** Trezor Suite, Foundation Envoy, Bitbox app. The GUI runs on a computer or phone; signing happens on the connected hardware device.
 - **Lightweight clients.** Electrum (the original) and various forks. Connect to Electrum servers rather than running a full node; faster setup but trades off some self-sovereignty.
 
 What a good GUI wallet provides:

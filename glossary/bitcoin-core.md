@@ -2,7 +2,7 @@
 title: "Bitcoin Core"
 slug: bitcoin-core
 draft: false
-updated: "2026-10-13"
+updated: "2026-11-17"
 shortDefinition: "The reference implementation of the Bitcoin protocol, originally started by Satoshi Nakamoto, now maintained by community developers."
 keyTakeaways:
   - "Sets the standard for Bitcoin's rule enforcement"
@@ -49,6 +49,6 @@ Bitcoin Core aims for a major release every six months, each with incremental im
 
 The codebase has its quirks too. The GUI's "Mask Values" toggle, which hides balances and amounts from anyone looking over your shoulder, was merged in 2020; during review someone compared it to [Wasabi Wallet](/glossary/wasabi-wallet)'s version of the same idea, known as [Lurking Wife Mode](/glossary/lurking-wife-mode) - a small reminder that real humans write this software.
 
-See [Full Node](/glossary/full-node) for what running it means, and [Sovereignty Journey](/journey/sovereignty) for why you might want to.
+See [Full Node](/glossary/full-node) for what running it means, and [Run Your Own Node](/rabbit-hole/run-your-own-node) for running one yourself.
 
 For why changes near validation are treated so conservatively, see [The 2013 Chain Fork](/rabbit-hole/2013-chain-fork), the night a database swap turned out to be a consensus change.

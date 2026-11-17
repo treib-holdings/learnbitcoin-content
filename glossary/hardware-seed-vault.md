@@ -2,7 +2,7 @@
 title: "Hardware Seed Vault"
 slug: hardware-seed-vault
 draft: false
-updated: "2026-08-03"
+updated: "2026-11-17"
 shortDefinition: "A secure, offline environment (hardware or secure device) for generating/storing seed phrases."
 keyTakeaways:
   - "Protects seed phrases from online threats"
@@ -26,10 +26,10 @@ liveWidget: ~
 
 A hardware seed vault is a purpose-built offline environment whose only job is to generate, hold, and occasionally use a Bitcoin seed without ever exposing it to networked hardware.
 
-It's a bigger umbrella than "hardware wallet." A hardware wallet (Trezor, Jade, BitBox, Ledger, etc.) is the consumer-friendly version: a small dedicated signing device. A seed vault might be:
+It's a bigger umbrella than "hardware wallet." A hardware wallet (Trezor, Jade, BitBox, etc.) is the consumer-friendly version: a small dedicated signing device. A seed vault might be:
 
-- An air-gapped laptop that's never connected to a network, with the seed entered manually and held in encrypted offline storage.
-- A SeedSigner-style stateless device that derives keys from a memorized or paper-stored seed each signing session.
+- An air-gapped laptop that's never connected to a network and is used for nothing else. (A specialist's arrangement: for an ordinary wallet the rule stands that seed words are never typed into a computer or kept in a file.)
+- A SeedSigner-style stateless device that derives keys from a paper-stored seed each signing session.
 - A vault appliance built around a hardware security module (HSM) in an institutional setting, with multi-person physical access controls.
 - A dedicated computer running in a Faraday-shielded room, used only for offline transaction signing via PSBT files transferred on SD cards.
 

@@ -1,7 +1,7 @@
 ---
 title: "Learn Bitcoin: Start Here"
 heading: "New to Bitcoin? Start here."
-description: "New to Bitcoin? Start here. The Journey is six chapters from 'what is money?' to running your own node. The glossary explains every term in plain language."
+description: "New to Bitcoin? Start here. The Journey is seven short chapters for someone starting from nothing. The glossary explains every term in plain language."
 ---
 
 Two ways in. Read the Journey in order, or look up the one word that

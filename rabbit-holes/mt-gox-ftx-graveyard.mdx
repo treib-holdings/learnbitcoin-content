@@ -3,7 +3,7 @@ title: "Mt. Gox to FTX: The Custody Graveyard"
 slug: mt-gox-ftx-graveyard
 draft: false
 published: "2026-06-23"
-updated: "2026-11-10"
+updated: "2026-11-17"
 status: live
 section: rabbit-hole
 category: custody-privacy
@@ -57,6 +57,12 @@ sources:
   - { label: "Associated Press - North Korea denies involvement in Binance hack (November 2, 2026): Kim Yo Jong called the FBI announcement a trite provocation", url: "https://apnews.com/article/north-korea-binance-cryptocurrency-heist-01c9b80d938dd67c747e268c410f265d" }
   - { label: "FBI - North Korea Responsible for $1.5 Billion Bybit Hack, alert I-022625-PSA (February 26, 2025): about $1.5 billion in virtual assets taken from Bybit on or about February 21, 2025", url: "https://www.ic3.gov/PSA/2025/PSA250226" }
   - { label: "mempool.space - block 973,732 (October 29, 2026, 20:20:06 UTC), which holds the first payments to 18 of the 19 Bitcoin addresses in the FBI alert (the other was first paid in block 973,738); read through the mempool.space API on November 10, 2026, the 19 addresses held 18,270.2 BTC between them and had spent nothing", url: "https://mempool.space/block/00000000000000000001332dd90244852b5f3c0178c0acf76390001496b70f23" }
+  - { label: "State money transmission regulators - Settlement Agreement and Consent Order, Voyager Digital, LLC (December 2022): Voyager was licensed as a money transmitter in the five states that signed, and stopped customer withdrawals on or about July 1, 2022", url: "https://dlr.sd.gov/banking/legal/documents/voyager_settlement_agrmt_consent_order_12282022.pdf" }
+  - { label: "Sparrow Wallet - Best practices: a single-key wallet for amounts up to US$100,000 and multisig above that; multisig takes more time and resources", url: "https://sparrowwallet.com/docs/best-practices.html" }
+  - { label: "BitBox - The pitfalls of multisig when using hardware wallets (December 3, 2019, archived copy): a multisig setup can end up less secure than an ordinary single-key wallet", url: "https://web.archive.org/web/20250719224348/https://blog.bitbox.swiss/en/the-pitfalls-of-multisig-when-using-hardware-wallets/" }
+  - { label: "FDIC - Financial products that are not insured by the FDIC: crypto assets are on the list", url: "https://www.fdic.gov/resources/deposit-insurance/financial-products-not-insured" }
+  - { label: "New York regulation 23 NYCRR 200.19 - a licensed company must tell its customers that their balances have no FDIC or SIPC protection", url: "https://www.law.cornell.edu/regulations/new-york/23-NYCRR-200.19" }
+  - { label: "FBI - public service announcement of December 21, 2022: criminals buy search advertisements that imitate real companies; type the company's address into the browser yourself", url: "https://www.ic3.gov/PSA/2022/PSA221221" }
 relatedTerms:
   - mt-gox
   - quadriga-cx
@@ -166,7 +172,7 @@ It would be easy, and a little dishonest, to stop there. All of this is a strong
 
 **Self-custody moves the risk, it doesn't erase it.** Once you hold your own keys, you also hold every way of losing them. Lose your [seed phrase](/glossary/seed-phrase) and the coins are gone for good, with none of the partial recovery the Mt. Gox creditors eventually got. A bad backup, a house fire, a passphrase you forget, an heir who has no idea what a hardware wallet is, a thief who knows you keep keys at home: those are all your problem now instead of an exchange's. For a lot of people that's still the better deal. It's a real trade, though, not a free upgrade, and our [seed backup strategies](/rabbit-hole/seed-backup-strategies) chapter exists because getting this part right is genuinely hard.
 
-**Some custody is fine.** A custodian that's actually regulated, audited, and insured can be a reasonable choice for an institution, for someone holding more than they can safely secure on their own, or for a beginner who isn't ready to manage keys yet. The seven companies that failed weren't dangerous because custody is inherently evil. They were dangerous because they were unregulated, unaudited, or lying, while telling everyone they were safe.
+**Some custody is fine.** A custodian that's actually regulated and audited, and says plainly what it doesn't insure, can be a reasonable choice for an institution, for someone holding more than they can safely secure on their own, or for a beginner who isn't ready to manage keys yet. The seven companies that failed weren't dangerous because custody is inherently evil. They were dangerous because they were unregulated, unaudited, or lying, while telling everyone they were safe. A license did not prevent it: one of the seven held money transmitter licenses in several US states.
 
 **Proof of reserves helps, a little.** By early 2023, some exchanges were publishing "proof of reserves" reports, meant to show they control a given set of coins. It's a genuine improvement. It also isn't proof that the exchange is solvent: a company can demonstrate the assets it holds while saying nothing about what it owes, and it can arrange to look fully funded on the one day it knows it's being checked. Useful information, not a guarantee.
 
@@ -176,7 +182,7 @@ You don't have to pick between trusting everyone and burying steel plates in the
 
 - Treat an exchange like a cash register, not a vault. Keep only what you're actively trading there, and only an amount you could stand to lose if withdrawals stopped tomorrow.
 - Move anything you're holding for the long term into a wallet you control. The one skill it takes is backing up a [seed phrase](/glossary/seed-phrase) properly, and you can learn that in an afternoon.
-- Match the setup to the amount. A single hardware wallet is already a big step up from an exchange balance. Multisig is worth the extra effort once the sum is large enough that losing it would change your life.
-- If you do leave some with a custodian, use one that's regulated, audited, and insured, and stay aware that you're still trusting a promise.
+- Match the setup to the amount. A single hardware wallet is already a big step up from an exchange balance. For a sum large enough that losing it would change your life, many advisers suggest multisig, though not all, and it is much harder to manage.
+- If you do leave some with a custodian, take its name from a regulator's list, type its web address yourself, and remember that a license doesn't insure your coins: you're still trusting a promise.
 
 None of this means everyone running a custodian is a crook. It means a balance with a custodian is a promise, and Bitcoin is the rare case where you don't have to rely on the promise at all. Every company in this chapter asked you to trust that your coins were really there. With Bitcoin you can just hold them yourself. That is the whole point of holding your own keys, and the people in this chapter learned it the expensive way.

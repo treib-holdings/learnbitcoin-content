@@ -2,18 +2,16 @@
 title: "Double-Blind Marketplace"
 slug: double-blind-marketplace
 draft: false
-updated: "2026-10-10"
+updated: "2026-11-17"
 shortDefinition: "An online market where both buyer and seller have minimal identifying info about each other, often using Bitcoin-based escrow."
 keyTakeaways:
   - "Protects buyer and seller identities in trades"
   - "Often uses multisig or LN escrows for trust minimization"
   - "Can be anonymity-friendly but poses regulatory challenges"
 sources:
-  - { label: "Bisq wiki - Frequently asked questions: 2-of-2 multisig escrow in the v1 protocol, all P2P traffic over Tor, no registration or KYC, mediation then arbitration for disputes", url: "https://bisq.wiki/Frequently_asked_questions" }
-  - { label: "Bisq on GitHub - peer-to-peer networking and multi-signature escrow, non-custodial, with human arbitration", url: "https://github.com/bisq-network/bisq" }
-  - { label: "Bisq on GitHub - releases (v1.10.9, October 1, 2026)", url: "https://github.com/bisq-network/bisq/releases" }
-  - { label: "RoboSats on GitHub - Lightning hold invoices to minimize custody and trust, generated robot avatars, Tor onion address", url: "https://github.com/RoboSats/robosats" }
-  - { label: "RoboSats on GitHub - releases (v0.8.7-alpha, September 9, 2026)", url: "https://github.com/RoboSats/robosats/releases" }
+  - { label: "FinCEN - FIN-2019-G001 (May 9, 2019), section 5.1: peer-to-peer trading platforms let buyers and sellers find each other; where the platform is only a forum, the two settle between their own wallets", url: "https://www.fincen.gov/sites/default/files/2019-05/FinCEN%20Guidance%20CVC%20FINAL%20508.pdf" }
+  - { label: "Bitcoin Wiki - Contract, example 2: escrow and dispute mediation: for a trade with somebody the buyer does not know or trust, buyer, merchant and mediator each provide a key to a 2-of-3 multisig, so a third party decides only if something goes wrong", url: "https://en.bitcoin.it/wiki/Contract" }
+  - { label: "US Federal Trade Commission - What To Know About Cryptocurrency and Scams: scams often start on social media or a dating app, or with an unexpected text, email or call; cryptocurrency payments typically are not reversible", url: "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-and-scams" }
 relatedTerms:
   - decentralization
   - decentralized-exchange-dex
@@ -34,10 +32,7 @@ The pattern that makes it work:
 - **Settlement layer:** Bitcoin (and especially [Lightning](/glossary/lightning-network)) handles payment without requiring traditional financial-system identifiers.
 - **Escrow layer:** [multisig](/glossary/escrowed-lightning-channel) or HTLC-based escrow holds funds during the trade. A trusted (but not custodial) third party can mediate disputes.
 
-Two Bitcoin-native examples, both still putting out new releases as of October 2026:
-
-- **Bisq** - peer-to-peer trading software. In its original protocol each trade's bitcoin sits in a 2-of-2 multisig escrow held by the two traders, all network traffic goes over Tor, and no registration or KYC is needed.
-- **RoboSats** - peer-to-peer trading over Lightning, using hold invoices to keep custody to a minimum, and built to be used through Tor.
+Peer-to-peer bitcoin trading is one case: platforms where a buyer and a seller find each other and settle the trade between themselves, with the coins in [escrow](/glossary/escrow) and a mediator to call on if it goes wrong. This site recommends none of them. You would be trading with someone you do not know, which is how many scams begin, and a bitcoin payment typically cannot be reversed: [If You Decide to Hold Some](/journey/using-bitcoin) shows the careful way to buy.
 
 What double-blind marketplaces enable:
 

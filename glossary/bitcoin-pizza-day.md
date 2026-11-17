@@ -2,7 +2,7 @@
 title: "Bitcoin Pizza Day"
 slug: bitcoin-pizza-day
 draft: false
-updated: "2026-10-09"
+updated: "2026-11-17"
 shortDefinition: "May 22, 2010-famously marking the first real-world BTC purchase (10,000 BTC for two pizzas)."
 keyTakeaways:
   - "Marks the first reported commercial transaction with BTC"
@@ -15,6 +15,7 @@ sources:
     url: "https://x.com/jercos/status/2058557130727477546"
   - { label: "Laszlo Hanyecz - Pizza for bitcoins? (Bitcoin Talk, May 18, 2010)", url: "https://bitcointalk.org/index.php?topic=137.0" }
   - { label: "mempool.space - the 10,000 BTC pizza payment, block 57,043 (May 22, 2010)", url: "https://mempool.space/tx/a1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d" }
+  - { label: "European Central Bank - Use of cash by companies in the euro area in 2026 (August 13, 2026), chart 1: 1% of companies that take payments at physical locations accept crypto-assets or stablecoins", url: "https://www.ecb.europa.eu/press/use-of-cash/html/ecb.uccea202608.en.html" }
 relatedTerms:
   - bitcoin-script
   - merchant-adoption
@@ -63,6 +64,6 @@ The pizza day story is told two different ways:
 
 Laszlo went on to be the first person to mine Bitcoin on a GPU (a major performance jump at the time) and made several more BTC-for-pizza trades through 2010. He's said publicly he doesn't regret it.
 
-**May 22 is now Bitcoin Pizza Day** - celebrated with pizza-themed meetups, sat-denominated pizza promotions from Lightning-enabled vendors, and a recurring reminder of how far the network has come. In 2026 you can still order a pizza with sats via Lightning at any number of merchants. The thing Laszlo and jercos did experimentally in 2010 now takes 30 seconds and a QR code.
+**May 22 is now Bitcoin Pizza Day** - celebrated with pizza-themed meetups, sat-denominated pizza promotions from Lightning-enabled vendors, and a recurring reminder of how far the network has come. Few shops take bitcoin even now: in a European Central Bank survey for 2026, 1 percent of euro-area companies that take payments in person accepted crypto-assets or stablecoins. Where one does, the thing Laszlo and jercos did experimentally in 2010 now takes 30 seconds and a QR code.
 
-See [Journey Chapter 5](/journey/using-bitcoin) for the modern version of "actually spending bitcoin."
+See [How a Payment Works](/journey/how-bitcoin-works) for what happens when you send a payment today.

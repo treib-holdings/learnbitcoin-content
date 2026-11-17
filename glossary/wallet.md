@@ -2,7 +2,7 @@
 title: "Wallet"
 slug: wallet
 draft: false
-updated: "2026-10-13"
+updated: "2026-11-17"
 shortDefinition: "Software or hardware managing private keys and addresses, enabling users to send/receive BTC."
 keyTakeaways:
   - "Manages keys that control BTC outputs, not physical currency"
@@ -17,6 +17,8 @@ sources:
   - { label: "Bitcoin Core - doc/external-signer.md: spending from a hardware wallet through an external signer and PSBT (accessed 2026-10-13)", url: "https://github.com/bitcoin/bitcoin/blob/master/doc/external-signer.md" }
   - { label: "Bitcoin Core - doc/multisig-tutorial.md: a 2-of-3 multisig built from three signer wallets and one watch-only wallet, run inside the node (accessed 2026-10-13)", url: "https://github.com/bitcoin/bitcoin/blob/master/doc/multisig-tutorial.md" }
   - { label: "Bitcoin Core - 0.9.0 release notes, GUI: Add Coin Control Features (accessed 2026-10-13)", url: "https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.9.0.md" }
+  - { label: "Sparrow Wallet - Best practices: a single-key wallet for amounts up to US$100,000 and multisig above that; multisig takes more time and resources", url: "https://sparrowwallet.com/docs/best-practices.html" }
+  - { label: "BitBox - The pitfalls of multisig when using hardware wallets (December 3, 2019, archived copy): a multisig setup can end up less secure than an ordinary single-key wallet", url: "https://web.archive.org/web/20250719224348/https://blog.bitbox.swiss/en/the-pitfalls-of-multisig-when-using-hardware-wallets/" }
 relatedTerms:
   - bitcoin-client
   - bitcoin-dev-kit-bdk
@@ -56,8 +58,8 @@ Wallets come in several archetypes, each with different security/convenience tra
 - **Mobile wallets** - you hold the keys on the phone itself. Convenient daily use, hot-wallet security model: the keys live on an internet-connected device.
 - **Desktop wallets** - Bitcoin Core's own wallet and others. Often connect to your own node, and usually offer [coin control](/glossary/coin-control) (Bitcoin Core's GUI has had it since version 0.9.0).
 - **[Hardware wallets](/glossary/hardware-wallet)** - keys stay on a dedicated signing device, never touching internet-connected machines. Your computer passes transactions in and out; the device signs.
-- **[Multisig](/glossary/multisig) setups** - more than one key, usually on separate devices, required to authorize a transaction. Strongly recommended for significant amounts.
+- **[Multisig](/glossary/multisig) setups** - more than one key, usually on separate devices, required to authorize a transaction. Many advisers suggest them for significant amounts, though not all, and they are much harder to manage.
 
-The right wallet depends on what you're holding and what you're doing. Spending money you'd carry as cash? A mobile wallet is fine. Long-term savings? Hardware, ideally multisig. The general rule: more value -> more friction -> more separation between keys and online surfaces.
+The right wallet depends on what you're holding and what you're doing. Spending money you'd carry as cash? A mobile wallet is fine. Long-term savings? A hardware wallet, and for larger amounts perhaps multisig. The general rule: more value -> more friction -> more separation between keys and online surfaces.
 
-See the [Journey: Be Your Own Bank](/journey/be-your-own-bank) chapter for the full walkthrough.
+See [Keys: What You Actually Hold](/journey/be-your-own-bank) for the four rules, and the dated [wallets page](/rabbit-hole/wallets) for which wallet.

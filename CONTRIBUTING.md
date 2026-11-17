@@ -127,14 +127,13 @@ list, a quote or a table:
   and the security page must go on saying what the cards do. The
   website's build looks for it.
 - A line that asks the reader to type the words of a practice wallet
-  says that this is safe with practice words only. Chapter 4's rule,
-  never type a seed into a website, names the practice wallet as its
-  one exception, and the two must go on agreeing.
+  says that this is safe with practice words only. The rule in chapter
+  5 ("Keys: What You Actually Hold"), never type a seed into a website,
+  names the practice wallet as its one exception, and the two must go on
+  agreeing.
 - A line that names the parts of a step, or says how long a step takes,
-  follows the practice wallet. Today the "Pass it on" and "The waiting
-  room" lines say that blocks come much faster on the practice network
-  than on Bitcoin (it makes one about every 30 seconds). If the wallet's
-  steps or its block time change, the lines change with them.
+  follows the practice wallet. If the wallet's steps or its block time
+  (about 30 seconds today) change, the lines change with them.
 
 The website turns a well-formed line into a card. Its build refuses a
 malformed one and says why.
@@ -196,7 +195,7 @@ a cache-busting facade — the rendered card content is unchanged.
 
 ```
 glossary/             # One markdown file per term
-journey/              # Six narrative chapters
+journey/              # Seven narrative chapters
 rabbit-holes/         # Deep dives, mostly MDX (interactive widgets)
 pages/                # Editorial copy of the fixed pages (home, manifesto, policies)
 es/                   # The Spanish edition: the same four directories, see below
@@ -327,7 +326,7 @@ know already. Topic and length play no part.
   which the glossary auto-linker skips on purpose.
 - **`level: intermediate`** - assumes the basics: what a transaction, a
   block, a miner, a node, an address and a private key are. That is
-  about what Journey chapters 2 to 4 teach.
+  about what Journey chapters 1 to 4 teach.
 - **`level: advanced`** - assumes the reader knows how Bitcoin works
   inside: inputs and outputs, scripts, signatures, fee rates, soft
   forks. The chapter makes its case in those terms, sometimes in code
