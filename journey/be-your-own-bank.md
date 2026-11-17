@@ -204,7 +204,7 @@ We've made printable seed-backup forms for both [12-word](/downloads/seed-backup
 
 **One more thing.** Do not split your seed phrase across multiple locations as a security measure ("first 6 words here, last 6 words there"). This is called *seed splitting* and it provides much less security than you'd expect - losing one location loses everything, *and* whoever finds one half has far less left to guess. Half of a 12-word seed leaves about 2^62 possibilities instead of 2^128 ([the math](/rabbit-hole/seed-backup-strategies)). If you want geographic redundancy for advanced setups, use [multisig](/glossary/multisig) (chapter 6) or [Shamir's Secret Sharing](/glossary/shamir-secret-sharing), not seed splitting.
 
-**Do it:** [The seed](https://practice.learnbitcoin.com/do/the-seed). Put the 12 words of your practice wallet on paper, in order, then check the paper: the step asks you to type three of the words. That is safe for one reason only: these are practice words.
+**Do it:** [The seed](https://practice.learnbitcoin.com/do/the-seed). Put the 12 words of your practice wallet on paper, in order, then check the paper: the step asks you to type three of the words. That is safe for one reason only: these are practice words. If you have no practice wallet yet, the step helps you make one first.
 
 **Do it:** [Prove the backup](https://practice.learnbitcoin.com/do/prove-the-backup). Remove the practice wallet from your browser, then bring it back, coins and all, by typing its 12 words from the paper. It is the last test of point 3 above, wipe and restore, run here with the coins still in because a mistake here costs nothing. Practice words only: the words of a wallet for real bitcoin, even an empty one, never go into a web page.
 

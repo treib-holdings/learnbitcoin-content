@@ -228,7 +228,7 @@ Chapter 3 is *how it works under the hood* - the machinery. Blocks, transactions
 
 Chapter 4 is *owning it for real*. Seed phrases, hardware wallets, self-custody. You'll do it, not just read about it.
 
-**Do it:** [Hold some](https://practice.learnbitcoin.com/do/hold-some). Practice coins, that is: play money, free to ask for, so you do not have to wait for chapter 4. Make a practice wallet, ask for some and watch them arrive. On the way the wallet shows you 12 words and asks you to write them on paper; chapter 4 explains them.
+**Do it:** [Hold some](https://practice.learnbitcoin.com/do/hold-some). Practice coins, that is: play money, free to ask for, so you do not have to wait for chapter 4. Make a practice wallet, ask for some and watch a block take them in. On the way the wallet shows you 12 words and asks you to write them on paper; chapter 4 explains them.
 
 Before you go on, sit with what this chapter taught. **[Money got broken in 1971](/glossary/what-happened-in-1971). Six weeks after Lehman Brothers collapsed, someone proposed an alternative. It's still running, the supply schedule is still on track, and the 21 million cap has never been raised.** That's the basic fact of the matter. Everything else is detail.
 

@@ -53,7 +53,7 @@ A few seconds later, Bob's wallet shows the incoming payment as "unconfirmed." R
 
 This chapter is what happens in between. We'll go layer by layer. By the end, you'll be able to draw it on a napkin.
 
-**Do it:** [Pass it on](https://practice.learnbitcoin.com/do/pass-it-on). Your turn to tap Send: pay a few practice coins into the pot for the next learner, and watch the payment get its first confirmation. Blocks come much faster on the practice network, so that takes about a minute, not ten.
+**Do it:** [Pass it on](https://practice.learnbitcoin.com/do/pass-it-on). Your turn to tap Send: pay a few practice coins into the pot for the next learner, and watch the payment get its first confirmation. Blocks come much faster on the practice network, so that takes about a minute, not ten. If you have no practice wallet yet, the step helps you make one first.
 
 ## 2. There Are No Balances
 
