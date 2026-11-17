@@ -117,9 +117,9 @@ list, a quote or a table:
   the same steps.
 - In a Journey chapter the two bold labels stand for a card and
   nothing else, and a step is linked from its line only. Anywhere else
-  they are ordinary labels, and a line there that holds one together
-  with a link to a step fails the build: cards belong to Journey
-  chapters.
+  they are ordinary labels, and a paragraph there that holds one
+  together with a link to a step fails the build (a paragraph is every
+  line up to the next blank line): cards belong to Journey chapters.
 - To take a line out for a while, put it inside an HTML comment.
 - A chapter that holds a line keeps its slug, unless the practice
   wallet's list of chapters and the website's change with it.
