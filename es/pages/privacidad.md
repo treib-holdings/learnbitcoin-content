@@ -5,8 +5,8 @@ description: "Qué datos recopila LearnBitcoin, quién los ve y cuánto tiempo s
 published: "2026-10-14"
 updated: "2026-11-16"
 translationOf: "privacy"
-sourceHash: "6c56c21449ff"
-sourceCommit: "d2cef09"
+sourceHash: "cf88a68a081a"
+sourceCommit: "ad0b423"
 sourceUpdated: "2026-11-16"
 translation:
   method: "llm-draft"
@@ -161,10 +161,11 @@ El enlace de la tarjeta le dice de qué capítulo vienes, para que pueda
 enviarte de vuelta. El enlace de vuelta de la billetera nombra el paso
 y dice si está hecho, y cuando lo está nombra también los otros pasos
 de ese capítulo que ya hiciste. Así es como este sitio sabe qué
-tarjetas marcar. La billetera de práctica guarda en tu navegador su
-propia nota de tus pasos, y cuenta las pantallas que la gente abre y
-los pasos que termina; su declaración dice qué, y cómo borrar la nota.
-El botón "Clear my reading progress" no la toca.
+tarjetas marcar. La billetera de práctica guarda en tu navegador la
+billetera misma y su propia nota de tus pasos, y cuenta unas pocas
+cosas que la gente hace ahí, como las pantallas que abre y los pasos
+que termina; su declaración las enumera todas, y dice cómo borrar la
+nota. El botón "Clear my reading progress" no la toca.
 
 <h2 id="el-boletin">El boletín</h2>
 

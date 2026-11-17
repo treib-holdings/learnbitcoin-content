@@ -2,8 +2,8 @@
 title: "Qué es Bitcoin en realidad"
 slug: que-es-bitcoin-en-realidad
 translationOf: what-bitcoin-actually-is
-sourceHash: "e52e53b2d28c"
-sourceCommit: "d2cef09"
+sourceHash: "c1676cea0598"
+sourceCommit: "ad0b423"
 sourceUpdated: "2026-11-16"
 translation:
   method: "llm-draft"
@@ -233,8 +233,8 @@ El capítulo 3 es *cómo funciona por dentro*: la maquinaria. Bloques, transacci
 
 El capítulo 4 es *tenerlo de verdad*. Frases semilla (también llamadas frases de recuperación), billeteras de hardware (hardware wallets), autocustodia. Lo vas a hacer, no solo a leer sobre ello.
 
-**Hazlo:** [Ten algunas](https://practice.learnbitcoin.com/es/do/hold-some). No tienes que esperar al capítulo 4 para tener algunas monedas. Crea una billetera de práctica, pide monedas de práctica y míralas llegar. En el camino la billetera te muestra 12 palabras; el capítulo 4 las explica.
+**Hazlo:** [Ten algunas](https://practice.learnbitcoin.com/es/do/hold-some). Monedas de práctica, se entiende: dinero de juguete, gratis, así que no tienes que esperar al capítulo 4. Crea una billetera de práctica, pide algunas y míralas llegar. En el camino la billetera te muestra 12 palabras y te pide escribirlas en papel; el capítulo 4 las explica.
 
-Por ahora, quédate con lo que acabas de aprender. **[El dinero se rompió en 1971](/es/glosario/que-paso-en-1971). Seis semanas después de la caída de Lehman Brothers, alguien propuso una alternativa. Sigue funcionando, el calendario de emisión sigue en su curso y el tope de 21 millones nunca se ha subido.** Ese es el hecho básico. Todo lo demás es detalle.
+Antes de seguir, quédate con lo que este capítulo te enseñó. **[El dinero se rompió en 1971](/es/glosario/que-paso-en-1971). Seis semanas después de la caída de Lehman Brothers, alguien propuso una alternativa. Sigue funcionando, el calendario de emisión sigue en su curso y el tope de 21 millones nunca se ha subido.** Ese es el hecho básico. Todo lo demás es detalle.
 
 > **Consejo pro:** Si quieres verificar *cualquier* afirmación de este capítulo, el [whitepaper](/bitcoin.pdf) tiene nueve páginas y no ha cambiado desde 2009. El [bloque génesis](https://chainquery.com/rpc/getblock) sigue ahí (corre `getblock` en cualquier nodo activo con el hash `000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f`), con el titular del *Times* incrustado. La red lleva funcionando, con código fuente público, desde enero de 2009. Verifica, no confíes.

@@ -2,8 +2,8 @@
 title: "Cómo funciona Bitcoin"
 slug: como-funciona-bitcoin
 translationOf: how-bitcoin-works
-sourceHash: "2da224ddfd2d"
-sourceCommit: "d2cef09"
+sourceHash: "e8061397055b"
+sourceCommit: "ad0b423"
 sourceUpdated: "2026-11-16"
 translation:
   method: "llm-draft"
@@ -58,7 +58,7 @@ Unos segundos después, la billetera de Bob muestra el pago entrante como "sin c
 
 Este capítulo es lo que pasa en medio. Vamos capa por capa. Al final, vas a poder dibujarlo en una servilleta.
 
-**Hazlo:** [Pásala](https://practice.learnbitcoin.com/es/do/pass-it-on). Toca Enviar tú: deja unas monedas de práctica en el fondo común para quien viene después de ti, y mira cómo el pago recibe su primera confirmación.
+**Hazlo:** [Pásala](https://practice.learnbitcoin.com/es/do/pass-it-on). Toca Enviar tú: deja unas monedas de práctica en el fondo común para quien viene después de ti, y mira cómo el pago recibe su primera confirmación. En la red de práctica los bloques llegan mucho más rápido, así que eso tarda más o menos un minuto, no diez.
 
 ## 2. No hay saldos
 
@@ -113,7 +113,7 @@ Algunas cosas que conviene notar:
 
 Puedes [ver un mempool en vivo con tus propios ojos](https://chainquery.com/reports/mempool): esa página muestra el mempool de un nodo de Bitcoin en el momento en que la cargas, ordenado en franjas de tasa de comisión.
 
-**Hazlo:** [La sala de espera](https://practice.learnbitcoin.com/es/do/waiting-room). Envía un pago y míralo esperar, entrar en un bloque y llegar a seis confirmaciones.
+**Hazlo:** [La sala de espera](https://practice.learnbitcoin.com/es/do/waiting-room). Envía un pago y míralo esperar, entrar en un bloque y llegar a seis confirmaciones. En la red de práctica los bloques llegan mucho más rápido, así que las seis tardan unos minutos, no una hora.
 
 ## 5. Minería: cómo se hace un bloque en realidad
 
