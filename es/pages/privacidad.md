@@ -5,8 +5,8 @@ description: "Qué datos recopila LearnBitcoin, quién los ve y cuánto tiempo s
 published: "2026-10-14"
 updated: "2026-11-16"
 translationOf: "privacy"
-sourceHash: "d743a6c21a01"
-sourceCommit: "fcf274d"
+sourceHash: "363ed02940b3"
+sourceCommit: "baa5c5b"
 sourceUpdated: "2026-11-16"
 translation:
   method: "llm-draft"
@@ -154,11 +154,13 @@ consentimiento:
   sitio pueda mostrar marcas de verificación y la página de inicio
   pueda señalarte el siguiente capítulo del Recorrido. También anota
   qué pasos "Hazlo" del Recorrido están marcados como hechos, y
-  cuándo. Los datos viven solo en tu dispositivo. Nunca se envían a nuestro servidor. Borra el
-  almacenamiento de tu navegador y desaparecen. Si la página de inicio
+  cuándo. Los datos viven solo en tu dispositivo. Nunca se envían a nuestro servidor. Si la página de inicio
   en inglés muestra la línea "Pick up where you left off" (retoma donde
   lo dejaste), su botón "Clear my reading progress" (borrar mi progreso
-  de lectura) también elimina estos datos.
+  de lectura) los elimina. Borrar el almacenamiento de tu navegador
+  para este sitio también los elimina. Eso puede borrar además una
+  billetera de práctica guardada en el mismo navegador. Su llave de
+  acceso (passkey) o sus 12 palabras en papel la traen de vuelta.
 
 Por eso no hay banner de cookies. Leer el sitio no te pide nada. El
 boletín te pide tu consentimiento una sola vez, cuando te inscribes y
