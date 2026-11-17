@@ -133,9 +133,11 @@ neither of which needs your consent:
   check marks and the home page can point you to the next Journey
   chapter. It also notes which "Do it" steps of the Journey are
   marked done, and when. The data lives only on your device. It is never sent to
-  our server. Clear your browser storage and it is gone. If the home
-  page shows a "Pick up where you left off" line, its "Clear my
-  reading progress" button erases this data too.
+  our server. If the home page shows a "Pick up where you left off"
+  line, its "Clear my reading progress" button erases it. Clearing your
+  browser's storage for this site erases it too. That can also erase a
+  practice wallet kept in the same browser. Its passkey or its 12 words
+  on paper bring it back.
 
 That is why there is no cookie banner. Reading the site asks nothing
 of you. The newsletter asks for your consent once, when you sign up
