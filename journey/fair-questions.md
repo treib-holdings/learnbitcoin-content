@@ -91,7 +91,7 @@ Watch out for a few common tricks:
 - **The urgent call.** Someone pretending to be your bank, the government, or a company says your money is in danger and tells you to send bitcoin or use a Bitcoin ATM. Hang up and contact the organization using a number you find yourself.
 - **The request for your recovery words.** Someone posing as a wallet company or offering to help asks for your 12 or 24 words. Those words give them control of your wallet. Never share them.
 
-If someone pressures you to act quickly, stop. Don’t send money or share your recovery words. Talk it through with someone you trust.
+If someone pressures you to act quickly, stop. Don't send money or share your recovery words. Talk it through with someone you trust.
 
 ## Why is it worth anything, and why does the price fall?
 
