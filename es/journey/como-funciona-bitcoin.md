@@ -2,8 +2,8 @@
 title: "Cómo funciona Bitcoin"
 slug: como-funciona-bitcoin
 translationOf: how-bitcoin-works
-sourceHash: "e8061397055b"
-sourceCommit: "ad0b423"
+sourceHash: "79250a7c841f"
+sourceCommit: "1f15747"
 sourceUpdated: "2026-11-16"
 translation:
   method: "llm-draft"
@@ -58,7 +58,7 @@ Unos segundos después, la billetera de Bob muestra el pago entrante como "sin c
 
 Este capítulo es lo que pasa en medio. Vamos capa por capa. Al final, vas a poder dibujarlo en una servilleta.
 
-**Hazlo:** [Pásala](https://practice.learnbitcoin.com/es/do/pass-it-on). Toca Enviar tú: deja unas monedas de práctica en el fondo común para quien viene después de ti, y mira cómo el pago recibe su primera confirmación. En la red de práctica los bloques llegan mucho más rápido, así que eso tarda más o menos un minuto, no diez.
+**Hazlo:** [Pásala](https://practice.learnbitcoin.com/es/do/pass-it-on). Toca Enviar tú: deja unas monedas de práctica en el fondo común para quien viene después de ti, y mira cómo el pago recibe su primera confirmación. En la red de práctica los bloques llegan mucho más rápido, así que eso tarda más o menos un minuto, no diez. Si todavía no tienes una billetera de práctica, el paso te ayuda a crear una primero.
 
 ## 2. No hay saldos
 

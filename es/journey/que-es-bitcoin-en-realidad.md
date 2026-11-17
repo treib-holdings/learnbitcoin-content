@@ -2,8 +2,8 @@
 title: "Qué es Bitcoin en realidad"
 slug: que-es-bitcoin-en-realidad
 translationOf: what-bitcoin-actually-is
-sourceHash: "c1676cea0598"
-sourceCommit: "ad0b423"
+sourceHash: "54f444f45774"
+sourceCommit: "1f15747"
 sourceUpdated: "2026-11-16"
 translation:
   method: "llm-draft"
@@ -233,7 +233,7 @@ El capítulo 3 es *cómo funciona por dentro*: la maquinaria. Bloques, transacci
 
 El capítulo 4 es *tenerlo de verdad*. Frases semilla (también llamadas frases de recuperación), billeteras de hardware (hardware wallets), autocustodia. Lo vas a hacer, no solo a leer sobre ello.
 
-**Hazlo:** [Ten algunas](https://practice.learnbitcoin.com/es/do/hold-some). Monedas de práctica, se entiende: dinero de juguete, gratis, así que no tienes que esperar al capítulo 4. Crea una billetera de práctica, pide algunas y míralas llegar. En el camino la billetera te muestra 12 palabras y te pide escribirlas en papel; el capítulo 4 las explica.
+**Hazlo:** [Ten algunas](https://practice.learnbitcoin.com/es/do/hold-some). Monedas de práctica, se entiende: dinero de juguete, gratis, así que no tienes que esperar al capítulo 4. Crea una billetera de práctica, pide algunas y mira cómo un bloque las incluye. En el camino la billetera te muestra 12 palabras y te pide escribirlas en papel; el capítulo 4 las explica.
 
 Antes de seguir, quédate con lo que este capítulo te enseñó. **[El dinero se rompió en 1971](/es/glosario/que-paso-en-1971). Seis semanas después de la caída de Lehman Brothers, alguien propuso una alternativa. Sigue funcionando, el calendario de emisión sigue en su curso y el tope de 21 millones nunca se ha subido.** Ese es el hecho básico. Todo lo demás es detalle.
 

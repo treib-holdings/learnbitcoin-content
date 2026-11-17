@@ -2,8 +2,8 @@
 title: "Sé tu propio banco"
 slug: se-tu-propio-banco
 translationOf: be-your-own-bank
-sourceHash: "65b17ac7cff6"
-sourceCommit: "ad0b423"
+sourceHash: "4581a6403dff"
+sourceCommit: "1f15747"
 sourceUpdated: "2026-11-16"
 translation:
   method: "llm-draft"
@@ -208,7 +208,7 @@ Hicimos formularios imprimibles de respaldo de la frase semilla, para frases de 
 
 **Una cosa más.** No dividas tu frase semilla entre varios lugares como medida de seguridad ("las primeras 6 palabras aquí, las últimas 6 allá"). Esto se llama *dividir la frase semilla* (seed splitting) y da mucha menos seguridad de la que esperarías: si pierdes uno de los lugares, lo pierdes todo, *y* quien encuentre una mitad tiene mucho menos que adivinar. La mitad de una frase de 12 palabras deja unas 2^62 posibilidades en lugar de 2^128 ([las cuentas (en inglés)](/rabbit-hole/seed-backup-strategies)). Si quieres redundancia geográfica en configuraciones avanzadas, usa [multisig](/es/glosario/multisig) (capítulo 6) o el [secreto compartido de Shamir](/es/glosario/secreto-compartido-de-shamir), no la división de la frase semilla.
 
-**Hazlo:** [La semilla](https://practice.learnbitcoin.com/es/do/the-seed). Pasa a papel las 12 palabras de tu billetera de práctica, en orden, y luego comprueba el papel: el paso te pide escribir tres de las palabras en la página. Eso es seguro por una sola razón: son palabras de práctica.
+**Hazlo:** [La semilla](https://practice.learnbitcoin.com/es/do/the-seed). Pasa a papel las 12 palabras de tu billetera de práctica, en orden, y luego comprueba el papel: el paso te pide escribir tres de las palabras en la página. Eso es seguro por una sola razón: son palabras de práctica. Si todavía no tienes una billetera de práctica, el paso te ayuda a crear una primero.
 
 **Hazlo:** [Comprueba el respaldo](https://practice.learnbitcoin.com/es/do/prove-the-backup). Quita la billetera de práctica de tu navegador y tráela de vuelta, con sus monedas, escribiendo sus 12 palabras desde el papel. Es la última prueba del punto 3 de arriba, borrar y restaurar, hecha aquí con las monedas dentro porque aquí un error no cuesta nada. Solo con palabras de práctica: las palabras de una billetera para bitcoin de verdad, aunque esté vacía, nunca se escriben en una página web.
 
