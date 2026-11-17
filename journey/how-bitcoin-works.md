@@ -37,13 +37,13 @@ The **signature** proves that the message comes from whoever holds the key, and 
 
 The wallet hands the signed message to the nodes, the computers that keep the record. Each one checks it against the rules and passes it to the others. Within ten seconds or so, most of them have it. No bank had to approve it.
 
-There the payment waits, with other new payments, for a block to take it in. This course calls that place **the waiting room**. Part 3 is about it.
+There the payment waits, with other new payments, for a block to take it in. This place is called the mempool you can think of it as **the waiting room**. Part 3 is about it.
 
 Every payment also includes a **fee**: usually a small amount, for the miner who puts it in a block. Most wallets suggest one and let you change it. In a quiet week it is a few cents. On one very busy day in 2024 it was more than $45 for hours.
 
 Now send one. In this step you pay some practice sats into "the pot". The pot is the practice wallet's own store: what you pay in is handed on to a learner who comes after you.
 
-The step fills in the pot's address for you, and it takes a few minutes. The practice wallet shows the fee as a rate, and you can leave it as it is. If you have no practice wallet yet, the step helps you make one first.
+The step fills in the pot's address for you, it takes about a minute. The practice wallet shows the fee as a rate, and you can leave it as it is. If you have no practice wallet yet, the step helps you make one first.
 
 **Do it:** [Pass it on](https://practice.learnbitcoin.com/do/pass-it-on). Your turn to tap Send: pay some practice sats into the pot for a learner who comes after you, and watch the payment get its first confirmation.
 
