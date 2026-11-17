@@ -68,7 +68,7 @@ sources:
   - { label: "mempool.space - block 0, the first block, with the text of that day's headline from The Times", url: "https://mempool.space/block/0" }
 ---
 
-> **Where you're going:** These are the questions a careful person asks before going further, each with a straight answer. You do not have to read them all: pick the ones that are yours. At the end you read the oldest entry in Bitcoin's record with your own eyes.
+> **Where you're going:** These are the questions a careful person might ask before going further, each with a straight answer. You do not have to read them all: pick the ones that are yours. At the end you read the oldest entry in Bitcoin's record with your own eyes.
 
 **The questions:**
 
@@ -83,45 +83,43 @@ sources:
 
 ## Is it a scam?
 
-Bitcoin itself has nobody at the center who takes in money and promises a return. But it is a favorite tool of scammers, because a bitcoin payment cannot be taken back.
+Bitcoin itself is a network, not a company collecting your money or promising you a return. But scammers use Bitcoin, just as they use other forms of money. Once a Bitcoin transaction is confirmed, you generally can't reverse it if you sent money to the wrong person.
 
-In 2025 people told the FBI they had lost more than $11 billion in cases involving cryptocurrency, the name for bitcoin and the other coins like it. Nearly two thirds of that money went to fake investments. Three shapes to know:
+Watch out for a few common tricks:
 
-- **The fake investment.** Someone you met online, or a friend who is already in, shows you a site where money grows. When you try to take yours out, there is a "tax" or a "fee" to pay first.
-- **The urgent call.** A caller says your bank account is in danger, or that you owe money. They send you to a Bitcoin ATM, a machine in a shop that turns cash into bitcoin.
-- **The rescue.** After a loss, someone offers to get your money back, for a fee paid first.
+- **The "too good to be true" investment.** Someone promises you a guaranteed profit if you send them bitcoin. They may show you a website with impressive gains, then demand more money before you can withdraw.
+- **The urgent call.** Someone pretending to be your bank, the government, or a company says your money is in danger and tells you to send bitcoin or use a Bitcoin ATM. Hang up and contact the organization using a number you find yourself.
+- **The request for your recovery words.** Someone posing as a wallet company or offering to help asks for your 12 or 24 words. Those words give them control of your wallet. Never share them.
 
-Two rules cover most of it. In the words of the US Federal Trade Commission: "Only scammers demand payment in cryptocurrency." And only scammers guarantee a profit.
-
-If it happens to you, stop and send nothing. Hang up, call the number on your bank card, and tell someone you know in person.
+If someone pressures you to act quickly, stop. Don’t send money or share your recovery words. Talk it through with someone you trust.
 
 ## Why is it worth anything, and why does the price fall?
 
-Because people will pay for it. Nothing else stands behind a bitcoin: no company owes you anything for it, and it earns nothing.
+Bitcoin has value because people want it. Some use it to send money without a bank's approval. Others value being able to hold it themselves or prefer its predictable supply. Some buy it hoping its price will rise.
 
-A dollar cannot be swapped for gold either. But US taxes must be paid in dollars, so people need them, and a central bank has the job of keeping prices stable. No law makes anyone need bitcoin.
+Bitcoin's rules limit its supply to roughly 21 million coins. New bitcoin is still being created, but at a decreasing rate. No single person can change the limit for everyone.
 
-What bitcoin has is the cap, which has never been raised, and no owner who can change the rules. Supporters say that is the value: money that nobody can make more of. In 2025 a US president ordered the government to keep the bitcoin it has seized, as a reserve.
+Scarcity alone doesn't guarantee value, though. People also have to want what's scarce. Critics question whether Bitcoin's uses justify its price; supporters believe those uses and its limited supply give it lasting value.
 
-Critics say a thing that earns nothing is worth only what the next buyer will pay, and they call that a bubble. In 2024 two officials of the European Central Bank wrote that its fair value is zero. Nobody can prove either side right.
+Bitcoin's price changes as buyers and sellers decide what they're willing to pay. News, expectations and speculation can move it sharply. Since 2011, it has fallen by more than half seven times. It has recovered from previous falls, but there's no guarantee it will recover from the next one.
 
-The price swings because nobody steadies it. Since 2011 it has fallen by more than half seven times. After six of those falls it took between six months and more than three years to climb back. The seventh began in October 2025 and was not over in November 2026. Nothing says it will end the same way.
+Unlike a savings account, bitcoin pays no interest on its own. And the amount of dollars you can exchange it for can change dramatically, even over a short time.
 
 ## Who really runs it?
 
-Two kinds of computer do the work, and the second checks the first.
+Bitcoin has no owner or central operator. Two groups do different jobs to keep it running.
 
-**Miners** make the blocks. They are people and companies whose machines race to make the next one. The winner is paid in new coins, plus a small fee from each payment in the block. The race uses a great deal of electricity: by Cambridge University's figures, between a half and three quarters of one percent of the world's in recent years.
+**Miners** compete to add blocks of transactions to the record. The miner that adds a valid block receives newly created bitcoin, along with transaction fees. Mining uses a great deal of electricity.
 
-**Nodes** check the blocks. A node is any computer that keeps a copy of the record and tests each new block against the rules. Anyone can run one, and thousands of people and businesses do, unpaid.
+**Nodes** independently check transactions and blocks against Bitcoin's rules. Anyone can run one, and thousands of people and organizations do.
 
-A block that breaks the rules is ignored by the nodes, however big the miner that made it. So miners cannot create extra coins, or spend yours.
+If a miner creates a block that breaks the rules, full nodes reject it, no matter how large the miner is. Miners cannot simply create extra bitcoin or spend yours without your keys.
 
-A few large groups, each a pool of many separate miners, do make most of the blocks. Acting together they could hold payments up, or rewrite the last few blocks to take back money they had just paid. That is a real weakness.
+But mining power matters too. A few large mining pools produce much of Bitcoin's blocks. If enough mining power acted together, it could delay transactions or reorganize recent blocks to reverse its own payments. It could not make full nodes accept coins created outside their rules.
 
-The nearest thing to a test came in 2017. Miners who made more than four fifths of the blocks, and many of the biggest Bitcoin companies, agreed to double the amount a block may hold. The program that most nodes ran never included the change. Within six months its organizers gave it up, writing that they had "not built sufficient consensus".
+A dispute in 2017 showed the limits of miners' influence. Many major companies and miners supported a proposal, which included increasing the block size limit. But the proposed increase faced significant opposition, and its organizers called it off, saying they had not built enough consensus.
 
-It is not a clean story. Another part of the same plan, a change that Bitcoin's developers had already released, did go through. And a group that wanted bigger blocks left and started a separate coin. So the rules can change when nearly everyone agrees. Being big was not enough by itself.
+Bitcoin's rules can change, and other changes did go through around that time. But being big, or controlling a lot of mining power, does not give anyone the power to change the rules for everyone.
 
 ## Could a government shut it down?
 
@@ -151,13 +149,13 @@ Most people own none. About one American adult in ten holds or uses any cryptocu
 
 ## Do it
 
-Bitcoin's record is public. Do not take our word for that. Read its first page yourself, on a site that is not ours. It takes two minutes.
+Bitcoin's transaction history is public. A block explorer is a website that lets you look through it, a bit like browsing the pages of a public ledger.
 
-- [ ] Open [block 0 at mempool.space](https://mempool.space/block/0), a website that shows the record to anyone. It asks for nothing: no name, no password, no words, no money. If a page ever does, close it.
+Let's visit Bitcoin's very first block, called the genesis block. It was created in January 2009, and its creator left a newspaper headline inside it. You don't have to take our word for it: you can find it yourself on an independent explorer.
+
+- [ ] Open the first Bitcoin block, [block zero at mempool.space](https://mempool.space/block/0), a website that shows the record to anyone. It asks for nothing: no name, no password, no words, no money. If a page ever does, close it.
 - [ ] Find the line marked Timestamp. It shows when this block was made: January 2009.
-- [ ] Scroll down to the words Newly Generated Coins. Under them you will see The Times 03/Jan/2009: a newspaper's name and date, then the start of the headline that the chapter before this one told you about. A stray letter E comes first, and a phone cuts the rest off. Just below are the first 50 bitcoin ever made.
-
-This does not prove that the record is right. It shows that the record is open: you read its oldest entry, and nobody asked who you are. Every payment written into the record since can be read the same way. So could yours, by anyone who knows your address.
+- [ ] Scroll down to the words "Coinbase (Newly Generated Coins)". Under them you will see "The Times 03/Jan/2009": a popular London newspaper's name and date, then the the headline "Chancellor on brink of second bailout for banks". Just below are the first 50 bitcoin ever made.
 
 ## A fair objection
 
