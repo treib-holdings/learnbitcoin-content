@@ -12,9 +12,12 @@ practice.learnbitcoin.com. Your browser's record of reading progress
 now also notes which of those steps are marked done. The practice
 wallet is a separate site with its own privacy statement. Both are
 under "Cookies and local storage" below. We also now say, under
-Plausible, that each click on a link that leaves this site is
-reported to it. That has been so since May 2026, and this page did not
-say it.
+Plausible, what else its script reports: each click on a link that
+leaves this site, the page or site you came from, and how long a page
+was open and how far it was scrolled. And we say that our server
+passes each report on with your IP address and your browser's details.
+The clicks and the IP address have gone to Plausible since May 2026,
+and this page did not say so.
 
 **Changed November 15, 2026:** our server log is kept for 7 days, not 3.
 It has been 7 since late October, when we moved to a paid Cloudflare
@@ -57,10 +60,18 @@ profile. It tells us "this page got N views this week" without knowing
 which views were yours. The same script also reports each click on a
 link that leaves this site, with the address the link leads to. A
 "Do it" card is such a link, so a click on one is reported with the
-step and the chapter in its address. When the practice wallet's link
+step and the chapter in its address. With each page view and each
+click the script also sends the page or site you came from, if your
+browser gives one, with one exception: when the practice wallet's link
 brings you back, the page view that is counted names the chapter and
 the step, at times with the steps you have done, and never where you
-came from.
+came from. When you leave a page or switch away from it, the script
+reports how long the page was in front of you and how far down you
+scrolled. Our server passes each of these reports on to Plausible with
+your IP address and what your browser sends with every request: its
+name, version, system and languages. Plausible says it uses them to
+count a visitor once a day and to work out a country, region and city,
+and that it stores neither.
 
 **A few small requests to ChainQuery for the live numbers.** The home
 page, the [node page](/node), and any chapter or glossary entry with a
