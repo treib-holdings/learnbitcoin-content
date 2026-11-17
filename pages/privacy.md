@@ -3,10 +3,10 @@ title: "Privacy"
 heading: "Here is everything we know about you."
 description: "What data LearnBitcoin collects, who sees it, how long it lives. Short version: almost nothing, unless you subscribe to the newsletter."
 published: "2026-05-14"
-updated: "2026-11-16"
+updated: "2026-11-17"
 ---
 
-**Changed November 16, 2026:** some Journey chapters now have "Do it"
+**Changed November 17, 2026:** some Journey chapters now have "Do it"
 cards that open a step of our practice wallet at
 practice.learnbitcoin.com. Your browser's record of reading progress
 now also notes which of those steps are marked done. The practice

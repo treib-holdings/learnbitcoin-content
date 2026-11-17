@@ -4,7 +4,7 @@ slug: how-bitcoin-works
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-11-16"
+updated: "2026-11-17"
 reviewedAt: "2026-11-16"
 order: 3
 goDeeper: ["utxos", "mempool", "mining"]

@@ -2,7 +2,7 @@
 title: "Be Your Own Bank"
 slug: be-your-own-bank
 draft: false
-updated: "2026-11-16"
+updated: "2026-11-17"
 reviewedAt: "2026-11-16"
 status: live
 published: "2026-05-15"
