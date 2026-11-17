@@ -3,6 +3,7 @@ title: "PSBT (transacción de Bitcoin parcialmente firmada)"
 slug: psbt
 draft: false
 published: "2026-10-14"
+updated: "2026-11-17"
 shortDefinition: "Formato estándar del BIP 174 para pasar una transacción que todavía no está firmada del todo entre varios dispositivos o cofirmantes sin exponer las claves privadas. El estándar de flujo de trabajo que hace que la autocustodia moderna sea viable de verdad."
 keyTakeaways:
   - "Un solo objeto binario (normalmente codificado en base64) que lleva el esqueleto de la transacción sin firmar y, por cada entrada, los datos del UTXO, las rutas de derivación y las firmas parciales"
@@ -19,6 +20,10 @@ sources:
   - { label: "BIP-370 - PSBT Version 2", url: "https://github.com/bitcoin/bips/blob/master/bip-0370.mediawiki" }
   - { label: "BIP-371 - Taproot Fields for PSBT", url: "https://github.com/bitcoin/bips/blob/master/bip-0371.mediawiki" }
   - { label: "Bitcoin Core 0.17.0 release notes - BIP 174 PSBT support", url: "https://bitcoincore.org/en/releases/0.17.0/" }
+  - { label: "Bitcoin Core pull request 21283 - Implement BIP 370 PSBTv2 (merged May 5, 2026)", url: "https://github.com/bitcoin/bitcoin/pull/21283" }
+  - { label: "Bitcoin Core 32.1 release notes - 32.0 was tagged but never released; createpsbt and the other PSBT-creating commands now make version 2 PSBTs by default", url: "https://github.com/bitcoin/bitcoin/blob/v32.1/doc/release-notes.md" }
+  - { label: "Sparrow Wallet 2.1.0 release notes (February 4, 2025) - support for loading PSBTv2 files", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.1.0" }
+  - { label: "Sparrow Wallet 2.4.0 release notes (February 10, 2026) - PSBTv2 as the default internal PSBT representation", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.4.0" }
 relatedTerms:
   - bip-bitcoin-improvement-proposal
   - bitcoin-core
@@ -40,9 +45,9 @@ sameAs:
   - "https://bitcoinops.org/en/topics/psbt/"
 liveWidget: ~
 translationOf: psbt
-sourceHash: "3721f2c47802"
-sourceCommit: "fa94f44"
-sourceUpdated: "2026-10-02"
+sourceHash: "e85e889dd518"
+sourceCommit: "74f1a22"
+sourceUpdated: "2026-11-17"
 translation:
   method: "llm-draft"
 ---
@@ -76,7 +81,7 @@ Un PSBT es un solo objeto binario (normalmente codificado como una cadena en bas
 
 ## PSBT v2
 
-PSBT v2 (BIP 370) permite modificar los conjuntos de entradas y salidas después de crear el PSBT. La compatibilidad con [Taproot](/es/glosario/taproot) viene de una especificación aparte, el BIP 371, cuyos campos funcionan en PSBTs de cualquiera de las dos versiones. La compatibilidad con v2 todavía es desigual. Sparrow, la app de Bitcoin de Ledger y el firmware reciente de Coldcard lo manejan, y Bitcoin Core lo integró en 2026 para la versión 32.0. Algunas billeteras de hardware, como Trezor y BitBox02, nunca llegan a ver un PSBT, porque la app de escritorio lo traduce al protocolo propio del dispositivo.
+PSBT v2 (BIP 370) permite modificar los conjuntos de entradas y salidas después de crear el PSBT. La compatibilidad con [Taproot](/es/glosario/taproot) viene de una especificación aparte, el BIP 371, cuyos campos funcionan en PSBTs de cualquiera de las dos versiones. La compatibilidad con v2 todavía es desigual. Sparrow lo maneja, y Bitcoin Core lo integró en mayo de 2026 y lo publicó en la versión 32.1, donde los comandos que crean un PSBT producen la versión 2 por defecto. Algunas billeteras de hardware, como Trezor y BitBox02, nunca llegan a ver un PSBT, porque la app de escritorio lo traduce al protocolo propio del dispositivo.
 
 PSBT es la infraestructura silenciosa de la autocustodia seria. Si tu configuración de billetera usa dispositivos de hardware o multisig, casi seguro usa PSBT por debajo.
 

@@ -3,7 +3,7 @@ title: "Whitepaper"
 slug: whitepaper
 draft: false
 published: "2026-10-14"
-updated: "2026-11-16"
+updated: "2026-11-17"
 shortDefinition: "La publicación original de Satoshi Nakamoto de 2008, 'Bitcoin: A Peer-to-Peer Electronic Cash System', que detalla el diseño de Bitcoin."
 keyTakeaways:
   - "Documento pionero que inventó la moneda digital descentralizada"
@@ -26,9 +26,9 @@ relatedTerms:
   - satoshi-nakamoto
 liveWidget: ~
 translationOf: whitepaper
-sourceHash: "9c9930f74075"
-sourceCommit: "8cada55"
-sourceUpdated: "2026-11-16"
+sourceHash: "4b3a20dc7914"
+sourceCommit: "74f1a22"
+sourceUpdated: "2026-11-17"
 translation:
   method: "llm-draft"
 ---
@@ -58,4 +58,4 @@ Lo que *no* está en el whitepaper: Lightning, SegWit, Taproot, las configuracio
 
 Puedes leer el whitepaper en unos 20 minutos. Son, de verdad, las nueve páginas más densas, más claras y de mayores consecuencias en la historia de la computación. Si nunca lo has leído, deberías hacerlo, sobre todo porque ha envejecido notablemente bien. Cada afirmación que hace sobre cómo funcionaría el sistema se ha sostenido desde que la red arrancó en enero de 2009.
 
-Lee también [Satoshi Nakamoto](/es/glosario/satoshi-nakamoto) sobre el autor, [Bloque génesis](/es/glosario/bloque-genesis) sobre el arranque de la red dos meses después y el [Capítulo 2 del Recorrido](/es/recorrido/que-es-bitcoin-en-realidad) para una lectura guiada más larga.
+Lee también [Satoshi Nakamoto](/es/glosario/satoshi-nakamoto) sobre el autor, [Bloque génesis](/es/glosario/bloque-genesis) sobre el arranque de la red dos meses después y el [capítulo 1 del Recorrido](/es/recorrido/que-es-bitcoin-en-realidad) para la idea en palabras sencillas.

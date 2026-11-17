@@ -1,9 +1,9 @@
 ---
-title: "Cómo funciona Bitcoin"
+title: "Cómo funciona un pago"
 slug: como-funciona-bitcoin
 translationOf: how-bitcoin-works
-sourceHash: "062d281c4194"
-sourceCommit: "5bf47cb"
+sourceHash: "493163e94975"
+sourceCommit: "74f1a22"
 sourceUpdated: "2026-11-17"
 translation:
   method: "llm-draft"
@@ -11,231 +11,123 @@ draft: false
 status: live
 published: "2026-10-14"
 updated: "2026-11-17"
-order: 3
+reviewedAt: "2026-11-16"
+order: 4
 goDeeper: ["utxos", "mempool", "mining"]
-estimatedMinutes: 30
-tagline: "Bloques, transacciones, minería, comisiones, UTXOs. La maquinaria, sin misterio y sin saltarse las partes que importan."
-prerequisites: ["what-bitcoin-actually-is"]
-relatedTerms: ["block", "transaction", "utxo-unspent-transaction-output", "mempool", "transaction-fee", "miner", "merkle-root", "nonce", "difficulty", "difficulty-retargeting", "full-node"]
-ogImage: "/diagrams/og/alice-pays-bob.png"
-ogImageAlt: "Alice le paga 0.5 BTC a Bob: diagrama de una transacción con UTXOs que muestra cómo se consume la entrada de 1.0 BTC y se crean dos UTXOs nuevos (0.5 BTC para Bob y 0.499 BTC de cambio para Alice), con 0.001 BTC de comisión para el minero."
+estimatedMinutes: 5
+tagline: "Un pago, seguido desde que tocas Enviar hasta que es definitivo. Envías uno tú, con monedas de práctica, y miras."
+prerequisites: ["fair-questions"]
+relatedTerms: ["transaction", "transaction-fee", "utxo-unspent-transaction-output", "change-output", "mempool", "miner", "transaction-finality"]
 sources:
-  - { label: "Bitcoin developer documentation", url: "https://developer.bitcoin.org/reference/transactions.html" }
-  - { label: "ChainQuery - inspect any block or transaction yourself", url: "https://chainquery.com" }
-  - { label: "Bitcoin Wiki - block protocol spec", url: "https://en.bitcoin.it/wiki/Block" }
-  - { label: "Mastering Bitcoin, 3rd edition (Andreas M. Antonopoulos and David A. Harding, CC-BY-SA)", url: "https://github.com/bitcoinbook/bitcoinbook" }
-  - { label: "Mastering Bitcoin, ch. 9 - fees and fee rates (miners rank transactions by fee per unit of size)", url: "https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch09_fees.adoc" }
-  - { label: "Mastering Bitcoin, ch. 12 - mining (ASICs, the 32-bit nonce and the extra nonce, subsidy plus fees, pool servers that build the candidate block, the 10-minute interval as a design compromise)", url: "https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch12_mining.adoc" }
-  - { label: "mempool.space API - mining pools over the past year (named pools found all but 288 of 52,323 blocks, year to October 9, 2026)", url: "https://mempool.space/api/v1/mining/pools/1y" }
-  - { label: "mempool.space - a one-input, two-output payment in block 970,600 (222 bytes, 141 virtual bytes)", url: "https://mempool.space/tx/951df0fc57709bd21518c24864826adeef3e7f43399da71f166304239550c9d5" }
-  - { label: "mempool.space API - block fee rates over the past year (block median fee rate of 3 sat/vB or less in about 99% of samples, year to October 9, 2026)", url: "https://mempool.space/api/v1/mining/blocks/fee-rates/1y" }
-  - { label: "Bitcoin Core source - default mempool size limit of 300 MB (src/kernel/mempool_options.h)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/kernel/mempool_options.h" }
-  - { label: "Bitcoin Core source - CalculateNextWorkRequired: the 2016-block retarget and its factor-of-four limit (src/pow.cpp)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/pow.cpp" }
-  - { label: "BIP 9 - version bits: miners signal soft-fork readiness in the block version field", url: "https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki" }
-  - { label: "Bitcoin Wiki - block timestamp rules (later than the median of the last 11 blocks, at most 2 hours ahead)", url: "https://en.bitcoin.it/wiki/Block_timestamp" }
-  - { label: "mempool.space API - block sizes and weights over the past year (average about 1.58 MB, October 2025 to October 2026; blockchain.com's average-block-size chart agrees)", url: "https://mempool.space/api/v1/mining/blocks/sizes-weights/1y" }
-  - { label: "Meni Rosenfeld - Analysis of hashrate-based double spending (2012), Table 1: success odds by attacker share and confirmations", url: "https://arxiv.org/abs/1402.2009" }
-  - { label: "Bitcoin whitepaper, section 11 - Satoshi's own attacker calculation", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
-  - { label: "Kraken - cryptocurrency deposit processing times (credits bitcoin deposits after three confirmations)", url: "https://support.kraken.com/articles/203325283-cryptocurrency-deposit-processing-times" }
-  - { label: "Bitcoin Core source - RecommendedNumConfirmations is 6; the wallet shows 'Confirming (n of 6 recommended confirmations)' (src/qt/transactionrecord.h)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/qt/transactionrecord.h" }
-  - { label: "BitMEX Research - Bitcoin's consensus forks: at least three identifiable chain splits, in 2010, 2013 and 2015 (Wayback Machine)", url: "https://web.archive.org/web/20240110121831/https://blog.bitmex.com/bitcoins-consensus-forks/" }
-  - { label: "bitcoin.org alert - July 2015 chain forks (a 6-block fork on July 4, after BIP 66, from miners who were not validating blocks)", url: "https://bitcoin.org/en/alert/2015-07-04-spv-mining" }
-  - { label: "bitcoin-data/stale-blocks - public dataset of stale blocks (between 28 and 93 a year from 2022 through 2025, as of October 2026)", url: "https://github.com/bitcoin-data/stale-blocks" }
-  - { label: "mempool.space API - every difficulty adjustment (summed, about 1.03 x 10^29 hashes of total work through block 970,600)", url: "https://mempool.space/api/v1/mining/difficulty-adjustments/all" }
-  - { label: "mempool.space API - network hash rate (about 995 EH/s on October 9, 2026; total work divided by hash rate is about 3.3 years)", url: "https://mempool.space/api/v1/mining/hashrate/1m" }
-  - { label: "Cambridge Judge Business School - Cambridge study (April 2025): about 138 TWh a year, roughly 0.5% of global electricity", url: "https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/" }
-  - { label: "blockchain.com chart data, raw - total size of the blockchain (774,075 MB on October 8, 2026)", url: "https://api.blockchain.info/charts/blocks-size?timespan=3years&format=json&sampled=false" }
-  - { label: "Bitcoin Core source - the -assumevalid option (src/init.cpp)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/init.cpp" }
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System: section 1 (payments that cannot be reversed), section 2 (a coin is a chain of signatures), section 4 (making a block takes work), section 5 (how the network takes a payment in), section 6 (what a payment leaves over is the fee), section 9 (coins are spent whole, and change comes back to the sender), section 11 (why later blocks make a payment harder to undo)", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
+  - { label: "Dotan, Pignolet, Schmid, Tochner and Zohar - Survey on Cryptocurrency Networking (2020), section 4.1, reporting measurements by Till Neudecker: a payment reaches half the nodes in about 5 seconds and nine in ten in about 15", url: "https://arxiv.org/pdf/2008.08412" }
+  - { label: "Bitcoin Core 31.0 release notes (April 2026) - the mempool is kept in the order payments are expected to be mined, by fee rate", url: "https://bitcoincore.org/en/releases/31.0/" }
+  - { label: "mempool.space API - fee rates over the last year, in eight-hour averages: the middle payment of a block paid 3 sats per unit of size or less in about 99 of every 100", url: "https://mempool.space/api/v1/mining/blocks/fee-rates/1y" }
+  - { label: "mempool.space API - the blocks after number 840,000 (April 20, 2024); read on through block 840,064, an ordinary payment cost $45 or more in every one, for about ten hours", url: "https://mempool.space/api/v1/blocks/840014" }
+  - { label: "Visa Core Rules and Visa Product and Service Rules (October 2026) - a card payment is approved within seconds and can be disputed for 120 days in most cases", url: "https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf" }
+  - { label: "Bitcoin Core, chainparams.cpp - blocks are aimed at one every ten minutes", url: "https://github.com/bitcoin/bitcoin/blob/v32.1/src/kernel/chainparams.cpp#L128" }
+  - { label: "Meni Rosenfeld - Analysis of hashrate-based double-spending (December 2012): the chance of undoing a payment falls with each block and depends on the attacker's share of the mining power; six blocks is a custom, not a guarantee", url: "https://arxiv.org/abs/1402.2009" }
 ---
 
-> **Adónde vas:** Vas a poder seguir una transacción desde "tocar Enviar" hasta "ya es prácticamente definitiva". Vas a entender qué hacen en realidad el mempool, las comisiones, los bloques y los mineros, y vas a tener un modelo mental lo bastante concreto para razonar sobre Bitcoin en lugar de solo creer en él.
+> **Adónde vas:** Al terminar habrás enviado un pago, habrás visto lo que gastó y habrás mirado cómo se vuelve definitivo. El capítulo tiene tres partes cortas, cada una con un paso en la billetera de práctica. La lectura lleva unos cinco minutos y los pasos unos diez. Puedes parar después de cualquier parte y volver: la página marca los pasos que ya hiciste.
 
-## 1. El botón de enviar
+**Primero, adivina.** Después de enviar bitcoin, ¿cuánto tiempo pasa hasta que nadie pueda deshacerlo: un segundo, diez minutos, una hora o una semana?
 
-Alice tiene 1 BTC. Quiere enviarle 0.5 BTC a Bob. Abre su billetera, escribe la dirección de Bob, pone el monto, elige una comisión y toca Enviar.
+## Parte 1. ¿Qué pasa cuando tocas Enviar?
 
-Unos segundos después, la billetera de Bob muestra el pago entrante como "sin confirmar". Unos diez minutos más tarde, muestra "1 confirmación". Más o menos una hora después de que Alice tocó Enviar, ya dice "6 confirmaciones": en la práctica, irreversible.
+Alice quiere pagarle a Bob. Abre su billetera, pone la dirección de Bob y un monto, y toca Enviar.
 
-Este capítulo es lo que pasa en medio. Vamos capa por capa. Al final, vas a poder dibujarlo en una servilleta.
+Su billetera escribe un mensaje corto. El mensaje dice: estas monedas mías ahora pertenecen a esa dirección. La billetera lo firma con la clave de Alice.
 
-**Hazlo:** [Pásala](https://practice.learnbitcoin.com/es/do/pass-it-on). Toca Enviar tú: deja unas monedas de práctica en el fondo común para quien viene después de ti, y mira cómo el pago recibe su primera confirmación. En la red de práctica los bloques llegan mucho más rápido, así que eso tarda más o menos un minuto, no diez. Si todavía no tienes una billetera de práctica, el paso te ayuda a crear una primero.
+La **firma** demuestra que el mensaje viene de quien tiene la clave, y lo hace sin mostrar la clave. Es el mismo tipo de matemáticas que protege el sitio web de tu banco.
 
-## 2. No hay saldos
+La billetera les entrega el mensaje firmado a los nodos, las computadoras que llevan el registro. Cada uno revisa que cumpla las reglas y lo pasa a los demás. En unos diez segundos, la mayoría ya lo tiene. Ningún banco tuvo que aprobarlo.
 
-Esta es la primera idea que la mayoría de la gente entiende mal:
+Ahí el pago espera, junto con otros pagos nuevos, a que un bloque lo incluya. Este curso llama a ese lugar **la sala de espera**. La Parte 3 trata de ella.
 
-**Bitcoin no lleva saldos de cuentas.** No hay en ningún lado una fila que diga *"Alice: 1.00000000 BTC"*. El registro contable de Bitcoin (su "libro mayor") no es eso.
+Cada pago incluye también una **comisión**: por lo general un monto pequeño, para el minero que lo pone en un bloque. La mayoría de las billeteras sugieren una y te dejan cambiarla. En una semana tranquila son unos centavos de dólar. En un día de muchísimo movimiento, en 2024, fue de más de $45 durante horas.
 
-Lo que el registro lleva son **transacciones**, y cada transacción crea **salidas** que después se pueden gastar. Una salida *no gastada* (un UTXO, por "unspent transaction output", salida de transacción no gastada) es lo único que existe. Tu "saldo" es solo la suma de todos los UTXOs que tu billetera puede gastar.
+Ahora envía uno. En este paso dejas unos sats de práctica en el "fondo común". El fondo común es la reserva de la propia billetera de práctica: lo que dejas ahí se le pasa a alguien que viene a aprender después de ti.
 
-Un modelo mental útil: Bitcoin es **como el efectivo, no como una cuenta bancaria**.
+El paso pone por ti la dirección del fondo común, y lleva unos minutos. La billetera de práctica muestra la comisión como una tasa, y puedes dejarla como está. Si todavía no tienes una billetera de práctica, el paso te ayuda a crear una primero.
 
-Cuando pagas $4.30 (dólares estadounidenses) en una cafetería con un billete de $5, no le dices a quien atiende "descuéntame $4.30 de mis $5". Entregas un billete, un objeto concreto. Te devuelven $0.70 de cambio como un conjunto *nuevo* de billetes y monedas. Tu billetera contiene objetos físicos distintos a los de antes.
+**Hazlo:** [Pásala](https://practice.learnbitcoin.com/es/do/pass-it-on). Toca Enviar tú: deja unos sats de práctica en el fondo común para quien viene a aprender después de ti, y mira cómo el pago recibe su primera confirmación.
 
-Los UTXOs funcionan exactamente así. El "1 BTC" de Alice puede ser en realidad un solo UTXO de 1 BTC, o dos UTXOs de 0.5 BTC cada uno, o 100 UTXOs de 0.01 BTC, o cualquier otra combinación. La billetera esconde la diferencia. La cadena de bloques (blockchain) no tiene esa opción.
+## Parte 2. ¿Qué gastó el pago?
 
-Esto suena a un detalle curioso. En realidad es la base de todo lo demás.
+Tu billetera muestra un solo número. Lo calcula sumando tus monedas. En el registro mismo no hay saldos, solo monedas.
 
-## 3. La anatomía de una transacción
+Una **moneda** aquí es un monto que se pagó a una de tus direcciones. Si te pagaron tres veces, tienes tres monedas, así como podrías tener en el bolsillo tres billetes de distinto valor.
 
-La transacción de Alice a Bob tiene tres partes:
+Una moneda se gasta entera, como un billete. Digamos que tienes una moneda de 10,000 sats y le pagas 6,000 a alguien. Tu billetera usa la moneda entera y crea dos nuevas: una de 6,000 para esa persona, y una de unos 3,800 que vuelve a ti.
 
-- **Entradas.** Referencias a UTXOs que Alice controla ahora mismo. Cada entrada dice "estoy gastando esta salida específica de esta transacción pasada específica". Cada entrada incluye una firma criptográfica: la prueba de que Alice tiene la clave privada autorizada para gastar ese UTXO.
-- **Salidas.** Adónde va el bitcoin. En el caso de Alice, dos salidas: 0.5 BTC a la dirección de Bob y unos 0.499 BTC de vuelta a ella misma como cambio. (El cambio va a una dirección *nueva* que la billetera de Alice genera automáticamente.)
-- **La comisión.** Lo que sobra al restar las salidas de las entradas. No es un campo aparte: es todo lo que no reclamaste de vuelta como cambio. Los mineros se lo quedan como recompensa por incluir tu transacción.
+La parte que vuelve se llama **cambio**. Con un billete, la tienda te da el cambio. Aquí lo crea tu propia billetera.
 
-En el ejemplo de Alice, las entradas suman 1.0 BTC, las salidas suman 0.999 BTC y los 0.001 BTC que faltan son la comisión.
+Los 200 sats que sobran son la comisión. Y si ninguna moneda es lo bastante grande por sí sola, la billetera usa dos o más juntas.
 
-Esa comisión es un número redondo para que el ejemplo sea simple, y es mucho más de lo que un pago así suele necesitar. Las comisiones se cobran según el tamaño de la transacción, no según el monto que mueve (más sobre las tasas de comisión en la sección 4).
+En el siguiente paso cuentas tus propias monedas. No te sorprendas si hay una sola. El pago que acabas de hacer usó entera la moneda que te dieron, y el cambio es lo que queda.
 
-Un [sat](/es/glosario/satoshi-unidad), abreviatura de satoshi, es la unidad más pequeña de bitcoin. Un bitcoin son 100 millones de sats, así que la comisión de 0.001 BTC de Alice son 100,000 sats. El tamaño se mide en bytes virtuales, que cuentan los datos de las firmas con descuento. Un pago como el de Alice ocupa unos 141 bytes virtuales. En el año que terminó en octubre de 2026, la transacción mediana de un bloque normalmente pagó 3 sats por byte virtual o menos. A esa tasa, la comisión del pago de Alice quedaría por debajo de 500 sats.
+**Hazlo:** [No hay saldos](https://practice.learnbitcoin.com/es/do/no-balances). Cuenta las monedas de tu propia billetera de práctica, y luego lee lo que uno de tus pagos hizo con ellas: qué gastó, qué fue adónde, el cambio y la comisión.
 
-<figure>
-  <img src="/diagrams/alice-pays-bob.svg" alt="El UTXO de 1.0 BTC de Alice lo consume una transacción que crea dos UTXOs nuevos: 0.5 BTC para Bob y 0.499 BTC de cambio para Alice en una dirección nueva. Los 0.001 BTC restantes son la comisión que se paga al minero." />
-  <figcaption>El UTXO de 1.0 BTC de Alice se consume entero. Se crean dos UTXOs nuevos; la comisión de 0.001 BTC es la diferencia entre entradas y salidas.</figcaption>
-</figure>
+De aquí sale algo que sorprende a la gente. La comisión paga el espacio en un bloque, y un pago ocupa más espacio cuantas más monedas usa. Así que la comisión depende de las monedas del pago, no de cuánto dinero mueve.
 
-Después la transacción se **firma**: la billetera de Alice usa su clave privada para producir una firma que demuestra que ella está autorizada para gastar esas entradas específicas. La firma no revela la clave privada. Cualquiera puede verificarla; solo Alice pudo haberla creado.
+## Parte 3. ¿Cuándo es definitivo?
 
-Lo que se transmite a la red son poco más de 200 bytes de datos: las entradas, las salidas, las firmas, los metadatos. Eso es todo. La transacción entera cabe en lo que pesa una imagen en miniatura.
+Un pago que los nodos se han pasado unos a otros todavía no está en el registro. Está en la sala de espera, una fila que tiene un nombre técnico: el mempool.
 
-**Hazlo:** [No hay saldos](https://practice.learnbitcoin.com/es/do/no-balances). Cuenta las monedas (los UTXOs) de tu propia billetera de práctica, y luego lee lo que uno de tus pagos hizo con ellas: qué gastó, qué fue adónde, el cambio y la comisión.
+Los mineros llenan cada bloque nuevo con pagos de la sala de espera. Cobran las comisiones además de las monedas nuevas. Así que cuando hay más pagos en espera de los que caben en un bloque, los pagos que ofrecen más por el espacio que ocupan van primero. Si ofreces demasiado poco en un día de mucho movimiento, tu pago espera más.
 
-## 4. El mempool: la sala de espera
+Llega un bloque más o menos cada diez minutos, en promedio. Algunos llegan en menos de un minuto, y otros tardan una hora.
 
-Cuando la billetera de Alice transmite la transacción, esta llega a uno de los nodos a los que la billetera está conectada, que la reenvía a sus pares, que la reenvían a los suyos. En cuestión de segundos, casi todos los nodos de la red Bitcoin se han enterado de la transacción de Alice y la han guardado en su **mempool** local (por "memory pool", la reserva en memoria): la fila de transacciones válidas que esperan a que las minen.
+El bloque que incluye tu pago es su primera confirmación. Para deshacer el pago, alguien tendría que hacer ese bloque otra vez, y cada bloque que vino después, más rápido que todos los demás mineros juntos. Hacer un bloque exige una cantidad enorme de cálculos, y la electricidad para hacerlos, así que eso cuesta mucho desde el primer bloque y cuesta más con cada uno.
 
-Algunas cosas que conviene notar:
+Después de seis bloques, más o menos una hora en promedio, deshacer un pago exigiría una gran parte de todo el poder de minería que existe. Por eso seis es el punto en el que la gente suele llamar definitivo a un pago. Es una costumbre, no una regla del sistema.
 
-- **El mempool no es una sola cosa global.** Cada nodo tiene su propia copia. Son casi idénticas, pero no del todo: un nodo en Tokio y un nodo en Sao Paulo pueden tener conjuntos ligeramente distintos durante unos segundos. Algunas diferencias duran más, porque cada nodo puede elegir configuraciones distintas, como cuánta memoria puede usar el mempool (300 MB por defecto en Bitcoin Core). Así, dos nodos pueden tener en espera transacciones distintas hasta que esas transacciones se minen o se descarten. El [tema a fondo sobre el mempool (en inglés)](/rabbit-hole/mempool) tiene los detalles.
-- **Las transacciones del mempool son válidas pero están sin confirmar.** Cada nodo ya comprobó que las firmas son válidas, que los UTXOs que se gastan existen de verdad y no se han gastado, y que las cuentas cuadran. Si alguna comprobación falla, la transacción se descarta.
-- **El mempool se ordena por tasa de comisión.** Los mineros quieren maximizar lo que ganan por bloque, así que eligen primero las transacciones que pagan más por cada byte de espacio en el bloque. Tu tasa de comisión (sats por byte virtual), no el monto que envías, decide tu lugar en la fila.
+Tampoco hay nadie que pueda deshacer un pago por ti. Ningún banco va a revertir uno que fue a la dirección equivocada, o a alguien que te engañó. El hábito que protege de una dirección equivocada: revisa la dirección completa antes de enviar, y envía primero un monto pequeño.
 
-Puedes [ver un mempool en vivo con tus propios ojos](https://chainquery.com/reports/mempool): esa página muestra el mempool de un nodo de Bitcoin en el momento en que la cargas, ordenado en franjas de tasa de comisión.
+Míralo pasar. En la versión de práctica de Bitcoin los bloques llegan mucho más rápido, así que seis tardan unos minutos, no una hora.
 
-**Hazlo:** [La sala de espera](https://practice.learnbitcoin.com/es/do/waiting-room). Envía un pago y míralo esperar, entrar en un bloque y llegar a seis confirmaciones. En la red de práctica los bloques llegan mucho más rápido, así que las seis tardan unos minutos, no una hora.
+**Hazlo:** [La sala de espera](https://practice.learnbitcoin.com/es/do/waiting-room). Envía un pago y míralo esperar, entrar en un bloque y llegar a seis confirmaciones.
 
-## 5. Minería: cómo se hace un bloque en realidad
+## Una objeción razonable
 
-Un minero es una computadora con chips especializados en calcular hashes (llamados ASICs, construidos para no hacer otra cosa) que trabaja junto con un nodo de Bitcoin que mantiene un mempool. Casi todos los bloques los encuentra un [pool de minería](/es/glosario/pool-de-mineria), cuyo nodo normalmente arma el bloque para todas las máquinas del pool. Entre los dos, el nodo y las máquinas que calculan hashes hacen dos cosas en paralelo:
+"Una hora para tener certeza, y ninguna manera de deshacer un error. Mi tarjeta del banco es más rápida y más segura".
 
-1. **Armar bloques candidatos.** El nodo reúne el subconjunto más rentable de transacciones de su mempool, agrega una transacción coinbase (que le paga al minero el [subsidio de bloque](/es/glosario/subsidio-de-bloque) en monedas recién creadas, más las comisiones de todas las transacciones del bloque) y construye el encabezado del bloque.
-2. **Calcular el hash del encabezado una y otra vez con nonces distintos.** Un "nonce" es solo un número: una casilla del encabezado donde el minero puede meter valores distintos. El minero prueba billones de valores por segundo, buscando un hash que quede por debajo del objetivo actual. La casilla solo admite unos 4,300 millones de valores, y el hardware moderno los recorre todos en una fracción mínima de segundo. Así que los mineros también modifican otras partes del bloque, como el espacio libre de la transacción coinbase, y vuelven a empezar la cuenta.
+Para comprar un café, lo es. Un pago con tarjeta se aprueba en segundos, y durante los meses siguientes el banco puede revertirlo si algo estuvo mal. Eso protege a quien compra.
 
-Cuando un minero encuentra un nonce que produce un hash por debajo del objetivo, transmite el bloque. Cada nodo:
+Bitcoin ofrece lo contrario: un pago que ningún banco ni gobierno tiene que aprobar y que, una vez definitivo, nadie puede revertir. Para alguien con la cuenta congelada por su banco, o con un banco que no quiere enviar su pago, eso puede importar más que la velocidad. Para un error o un fraude, es justo lo que no conviene. Los dos capítulos siguientes tratan del cuidado que eso exige.
 
-- Recibe el bloque
-- Verifica que el hash esté por debajo del objetivo
-- Verifica cada transacción del bloque
-- Agrega el bloque a su copia de la cadena
-- Quita esas transacciones de su mempool
-- Si es un minero, empieza a minar encima de este bloque nuevo
+Existen formas más rápidas de pagar con bitcoin, y se apoyan en esta. El último capítulo apunta hacia ellas.
 
-Toda esta cascada, desde "el minero encuentra el nonce" hasta "todos los nodos del planeta tienen el bloque", tarda unos segundos. El bloque llegó. La transacción de Alice ya está adentro. La billetera de Bob muestra "1 confirmación".
+## Ponte a prueba
 
-## 6. Dificultad: el reloj que se regula solo
+<details>
+<summary>¿Qué demuestra una firma?</summary>
 
-El tiempo de bloque objetivo de Bitcoin es de **10 minutos**. El número no tiene nada de mágico. Es un compromiso de diseño: lo bastante largo para que los bloques alcancen a propagarse por toda la red antes de que empiece el siguiente, y lo bastante corto para que las confirmaciones no tarden una eternidad.
+Que quien tiene la clave aprobó el pago. Lo demuestra sin mostrar la clave. Vuelve a leer la Parte 1.
 
-Pero el hashrate total de la red (su poder de cómputo) sube y baja todo el tiempo. Si el hashrate se duplicara, los bloques empezarían a llegar cada 5 minutos. Si se redujera a la mitad, cada 20.
+</details>
 
-Para que los bloques sigan llegando a un promedio de unos 10 minutos, el protocolo ajusta la dificultad cada **2016 bloques**, más o menos cada dos semanas. Si los 2016 bloques anteriores tardaron menos de dos semanas, la dificultad sube. Si tardaron más, baja. El ajuste es proporcional a cuánto se desvió el tiempo, pero un solo ajuste no puede mover la dificultad en más de un factor de cuatro en ninguna dirección.
+<details>
+<summary>Tienes dos monedas de 5,000 sats cada una y le pagas 6,000 a alguien. ¿Qué hay en el registro después?</summary>
 
-Es el mecanismo más hermoso de todo el diseño de Bitcoin. **Ningún humano fija la dificultad.** Ningún comité se reúne para "subir las tasas". La red responde a sus propias condiciones, automáticamente, cada dos semanas, para siempre.
+Las dos monedas viejas se usaron enteras. Hay dos monedas nuevas: una de 6,000 para esa persona, y una de un poco menos de 4,000 para ti como cambio. La pequeña diferencia fue para un minero como comisión. Vuelve a leer la Parte 2.
 
-Puedes [ver la cuenta regresiva del próximo ajuste de dificultad](https://chainquery.com/reports/difficulty) en la página de dificultad de ChainQuery.
+</details>
 
-## 7. Encabezados de bloque y árboles de Merkle
+<details>
+<summary>Lo que adivinaste al principio: ¿cuánto tiempo pasa hasta que nadie pueda deshacerlo?</summary>
 
-Un bloque de Bitcoin tiene dos partes: un encabezado pequeño (80 bytes) y un cuerpo con todas las transacciones (alrededor de 1.6 MB en promedio en el año que terminó en octubre de 2026).
+Más o menos una hora, que son seis bloques. Ninguna regla dice seis. Para entonces, deshacer el pago exigiría una gran parte de todo el poder de minería que existe. Vuelve a leer la Parte 3.
 
-El encabezado es denso. Contiene:
+</details>
 
-- **Versión**: un número cuyos bits los mineros pueden usar para señalar que están listos para una actualización del protocolo
-- **Hash del bloque anterior**: enlaza este bloque con el que vino antes
-- **Raíz de Merkle**: un solo hash de 32 bytes que resume *todas* las transacciones del cuerpo
-- **Marca de tiempo**: más o menos cuándo lo armó el minero (las reglas permiten una o dos horas de margen)
-- **Objetivo de dificultad**: el valor por debajo del cual tiene que quedar el hash
-- **Nonce**: el número que encontró el minero
+## Palabras que ya conoces
 
-La parte ingeniosa es la **raíz de Merkle**. Es la raíz de un árbol binario que se construye calculando el hash de las transacciones de dos en dos, luego el hash de pares de esos hashes, y así hasta arriba. El resultado es un solo valor que depende de cada transacción del bloque. Cambia cualquier transacción y cambia la raíz de Merkle, y cambia el hash del bloque, y la cadena se rompe.
+- **Firma.** Prueba, hecha con una clave, de que quien tiene esa clave aprobó un pago.
+- **Comisión.** Lo que un pago le paga al minero que lo pone en un bloque.
+- **Moneda.** Un monto recibido en un pago. El total de una billetera es la suma de sus monedas.
+- **Cambio.** La parte de una moneda gastada que vuelve a ti como una moneda nueva.
+- **La sala de espera.** Donde los pagos nuevos esperan un bloque. Su nombre técnico es el mempool.
 
-<figure>
-  <img src="/diagrams/merkle-tree.svg" alt="Un árbol de Merkle binario. Ocho transacciones (TX1 a TX8) en la base se emparejan y se les calcula el hash en conjunto para producir cuatro hashes intermedios. Esos cuatro se emparejan y se les vuelve a calcular el hash para producir dos más. Al último par se le calcula el hash una vez más para producir la única raíz de Merkle en la cima. De todo el árbol, solo esa raíz entra en el encabezado de 80 bytes del bloque." />
-  <figcaption>Ocho transacciones, con hashes calculados por pares hasta llegar a una sola raíz. Cambia cualquier hoja y también cambia cada hash en el camino hacia la raíz.</figcaption>
-</figure>
-
-¿Por qué importa esto? Porque quien solo tiene el encabezado de 80 bytes tiene un compromiso criptográfico con todas las transacciones, sin tener que descargarlas. Esto es lo que hace posibles las billeteras ligeras (SPV): pueden verificar que una transacción en particular está en un bloque en particular descargando la ruta de Merkle (un puñado de hashes) en lugar del bloque entero.
-
-El árbol de Merkle es una de esas ideas que, la primera vez que la ves, piensas "eso es matar moscas a cañonazos". La centésima vez, te das cuenta de que el cañón tenía el calibre justo.
-
-## 8. Confirmaciones: por qué esperamos
-
-La transacción de Alice está en el bloque N. La billetera de Bob dice "1 confirmación".
-
-¿Por qué esperar más? Porque en una red probabilística nada es nunca definitivo del todo; solo *cada vez más* definitivo.
-
-Imagina a un atacante que quiere revertir el pago de Alice. Tendría que:
-
-1. Construir una cadena alternativa que se bifurque a partir del bloque *anterior* a la transacción de Alice
-2. Minar esa cadena alternativa más rápido de lo que el resto del mundo mina la cadena real
-3. En algún momento transmitir su cadena más larga, haciendo que todos los nodos honestos se cambien a ella
-
-Se puede hacer con un bloque, si el atacante controla suficiente hashrate durante un momento de suerte. **¿Con seis bloques? Casi imposible, a menos que el atacante controle una parte grande del hashrate mundial.**
-
-Estas son las probabilidades aproximadas según el análisis de Meni Rosenfeld de 2012 (Satoshi hizo una versión más simple en la sección 11 del [whitepaper (PDF en inglés)](/bitcoin.pdf)), suponiendo que el atacante controla el 10% del hashrate:
-
-| Confirmaciones | Probabilidad de revertir el pago con éxito |
-|---|---|
-| 1 | ~20% |
-| 2 | ~5.6% |
-| 3 | ~1.7% |
-| 4 | ~0.55% |
-| 5 | ~0.18% |
-| 6 | ~0.06% |
-
-Seis es la primera profundidad en la que las probabilidades de un atacante con el 10% caen por debajo del 0.1%. Eso sí, la proporción que controla el atacante importa mucho. Frente a un atacante con el 30% del hashrate, seis confirmaciones todavía dejan una probabilidad de alrededor del 16%.
-
-<figure>
-  <img src="/diagrams/confirmations-stack.svg" alt="Una cadena de seis bloques de Bitcoin. El primer bloque contiene la transacción de Alice; cada bloque siguiente es una confirmación construida encima. Debajo de cada bloque está la probabilidad de que un atacante con el 10 por ciento revierta el pago con esa cantidad de confirmaciones, que cae del 20 por ciento con una confirmación a alrededor del 0.06 por ciento con seis. Un eje de casos de uso arriba va de compras pequeñas (una camiseta) a la izquierda a compras grandes (una casa) a la derecha; un eje de tiempo abajo muestra unos diez minutos por bloque, con la cadena completa liquidada en alrededor de una hora." />
-  <figcaption>Cada confirmación reduce las probabilidades de que un atacante con el 10% revierta el pago en un factor de aproximadamente tres. Después de seis, la probabilidad es de alrededor del 0.06%, o 1 entre 1,700.</figcaption>
-</figure>
-
-Por eso seis confirmaciones (alrededor de una hora) son el umbral convencional de "liquidado". Para montos muy grandes quizás quieras esperar más; para un café, con una confirmación sobra. Los exchanges fijan sus propios umbrales, y algunos aceptan menos de seis. Kraken, por ejemplo, acredita los depósitos de bitcoin después de tres. La billetera de Bitcoin Core muestra un pago como "Confirmando" hasta que llega a seis.
-
-Cuanto más profunda está una transacción, más astronómico se vuelve el costo de deshacerla. Con doce confirmaciones, un atacante tendría que rehacer unas dos horas de minería de toda la red, y hacerlo más rápido de lo que todos los demás siguen extendiendo la cadena real. Ningún atacante lo ha logrado jamás. Las únicas reorganizaciones tan profundas en la historia de Bitcoin vinieron de errores de software (ver la siguiente sección).
-
-## 9. La cadena (y las reorganizaciones)
-
-El encabezado de cada bloque incluye el hash del bloque anterior. Eso es lo que hace que sea una *cadena* y no una simple lista. Cambiar cualquier bloque cambia su hash, lo que significa que el "hash anterior" del bloque siguiente ya no coincide, lo que significa que todos los nodos rechazan el cambio.
-
-Para alterar de verdad el pasado de la cadena, tendrías que rehacer la prueba de trabajo (proof-of-work) de cada bloque desde tu objetivo hasta el más reciente, y después superar en velocidad a todos los que siguen minando la cadena real. Cuanto más atrás vayas, más trabajo hay que rehacer.
-
-Reescribir toda la cadena hasta 2009 mantendría ocupadas todas las máquinas de minería del planeta durante poco más de tres años al hashrate de octubre de 2026. Para dar una idea del costo, un estudio de Cambridge publicado en abril de 2025 estimó el consumo eléctrico de la minería de Bitcoin en unos 138 teravatios-hora al año, más o menos el 0.5% del total mundial.
-
-A veces la red tiene un desacuerdo *breve* sobre qué bloque llegó primero: dos mineros encuentran bloques válidos casi en el mismo instante, y distintas partes de la red ven primero bloques distintos. Es una bifurcación temporal, y el cambio que le pone fin se llama **reorganización (reorg)**. La bifurcación se resuelve sola en uno o dos bloques: gana la cadena que recibe encima el siguiente bloque válido, y el bloque que quedó huérfano se convierte en un "bloque obsoleto". Las transacciones que solo estaban en el bloque obsoleto vuelven al mempool.
-
-Las carreras de un bloque como esta son cosa de rutina: un conjunto de datos público de [bloques obsoletos](/es/glosario/bloque-obsoleto) registra entre 28 y 93 al año de 2022 a 2025. Las reorganizaciones de dos bloques son raras, y las más largas, rarísimas.
-
-Las reorganizaciones profundas en la historia de Bitcoin vinieron de errores de software y de problemas con actualizaciones, no de la minería normal. Las dos más profundas fueron de 53 bloques en agosto de 2010, cuando se revirtió el bug de inflación, y de 25 bloques en marzo de 2013, cuando dos versiones del software no se pusieron de acuerdo sobre si un bloque era válido. En julio de 2015, justo después de la actualización del [BIP 66](/es/glosario/bip-66), mineros que se saltaron la verificación de los bloques extendieron uno inválido hasta formar una cadena de 6 bloques. Las billeteras ligeras y los nodos que no se habían actualizado siguieron esa cadena hasta que la válida la rebasó.
-
-## 10. Verificar sin confiar
-
-No tienes que creerle a nadie nada de esto. Puedes correr un **nodo completo**: un software que descarga la cadena entera (unos 775 GB en octubre de 2026), valida cada transacción desde el bloque génesis y sigue validando cada bloque nuevo para siempre.
-
-Un nodo completo verifica:
-
-- Cada firma de cada transacción
-- Cada referencia a un UTXO (¿esta salida existe de verdad?, ¿está sin gastar?, ¿quien la gasta está autorizado?)
-- Cada encabezado de bloque (¿el hash está por debajo del objetivo?)
-- Cada regla de consenso (sin doble gasto, sin dinero creado de la nada, sin violaciones de las reglas)
-
-Bitcoin Core sí toma un atajo por defecto. Para acelerar la primera sincronización, se salta la comprobación de firmas de todos los bloques hasta uno reciente cuyo hash viene escrito en cada versión del software (la opción `assumevalid`). Todo lo demás lo sigue comprobando, y poner `assumevalid=0` apaga el atajo.
-
-Si un minero produjera un bloque inválido (digamos, pagándose a sí mismo más de lo que permite el calendario de emisión), todos los nodos completos del planeta lo rechazarían. El trabajo del minero se habría desperdiciado. El bloque nunca llegaría a formar parte de la cadena.
-
-Esto es lo que hace que Bitcoin funcione sin necesidad de confiar en nadie. No "nadie está a cargo" en un sentido vago, sino "cada participante puede verificar cada regla por su cuenta". No confías en los mineros. No confías en los desarrolladores. Ni siquiera confías en mí. Corres el software, y el software te dice qué es verdad.
-
-Una laptop puede correr un nodo completo. Una Raspberry Pi puede correr un nodo completo. No necesitas permiso de nadie; solo necesitas el software y espacio en disco. En el capítulo 6 lo vas a hacer de verdad.
-
-> **Consejo pro:** De este capítulo se te quedan tres cosas y el resto es detalle. **Una:** no hay saldos, solo UTXOs. **Dos:** la minería es un reloj más un presupuesto de seguridad. **Tres:** cualquiera con una computadora puede verificar la cadena de punta a punta. En el siguiente capítulo dejas de leer sobre Bitcoin y empiezas a tener bitcoin de verdad.
+Entonces, ¿qué es lo que tienes en realidad?

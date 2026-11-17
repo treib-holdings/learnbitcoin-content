@@ -3,6 +3,7 @@ title: "KYC (conoce a tu cliente)"
 slug: kyc
 draft: false
 published: "2026-10-14"
+updated: "2026-11-17"
 shortDefinition: "Regulaciones que obligan a las empresas a verificar la identidad de sus usuarios, con el fin de prevenir el lavado de dinero y los delitos financieros."
 keyTakeaways:
   - "Exige verificar la identidad del usuario antes de prestarle servicios financieros"
@@ -19,6 +20,7 @@ sources:
   - { label: "EUR-Lex - Directive (EU) 2018/843 (AMLD5), bringing virtual currency exchange and custodian wallet providers under EU anti-money laundering rules (2018-05-30)", url: "https://eur-lex.europa.eu/eli/dir/2018/843/oj" }
   - { label: "U.S. Department of the Treasury - Treasury Sanctions Notorious Virtual Currency Mixer Tornado Cash (2022-08-08)", url: "https://home.treasury.gov/news/press-releases/jy0916" }
   - { label: "CNBC - Coinbase says hackers bribed staff to steal customer data and are demanding $20 million ransom (2025-05-15)", url: "https://www.cnbc.com/2025/05/15/coinbase-says-hackers-bribed-staff-to-steal-customer-data-and-are-demanding-20-million-ransom.html" }
+  - { label: "US Federal Trade Commission - What To Know About Cryptocurrency and Scams: scams often start on social media or a dating app, or with an unexpected text, email or call", url: "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-and-scams" }
 relatedTerms:
   - aml-anti-money-laundering
   - bitlicense
@@ -32,9 +34,9 @@ relatedTerms:
   - security
 liveWidget: ~
 translationOf: kyc-know-your-customer
-sourceHash: "c066af81b8d4"
-sourceCommit: "c52bac9"
-sourceUpdated: "2026-10-13"
+sourceHash: "d025fff69ef4"
+sourceCommit: "74f1a22"
+sourceUpdated: "2026-11-17"
 translation:
   method: "llm-draft"
 ---
@@ -55,8 +57,8 @@ Para los usuarios comunes, el KYC genera varios costos reales:
 - **Riesgo de datos.** Las fotos de tu identificación quedan en servidores, y en las pantallas de contratistas de soporte, que sufren filtraciones.
 - **Asimetría geográfica.** Las reglas de KYC cambian de un país a otro y con el tiempo. El régimen de Estados Unidos data de 2013, el de la Unión Europea de 2018, y los umbrales y el papeleo varían con ellos.
 
-Existen formas de conseguir bitcoin sin KYC: minarlo, ganarlo como pago por tu trabajo o tus productos, y comprárselo directamente a otra persona. La propia guía de FinCEN deja los casos pequeños fuera de la zona regulada: una persona que obtiene bitcoin y lo gasta en bienes y servicios es un "user" (usuario), no un transmisor de dinero, y lo mismo vale para quien vende un poco de vez en cuando y sin fines de lucro. Los mercados entre pares (P2P) que ponen en contacto directo a compradores y vendedores son la versión organizada de esa última opción. Tienen más fricción que los gigantes, pero conservan las propiedades por las que la mayoría llegó a Bitcoin.
+Existen formas de conseguir bitcoin sin KYC: minarlo, ganarlo como pago por tu trabajo o tus productos, y recibirlo de alguien que conoces en persona. La propia guía de FinCEN deja los casos pequeños fuera de la zona regulada: una persona que obtiene bitcoin y lo gasta en bienes y servicios es un "user" (usuario), no un transmisor de dinero, y lo mismo vale para quien vende un poco de vez en cuando y sin fines de lucro. Comprarle a un desconocido es otro asunto: tratar con desconocidos es como empiezan muchas estafas, así que este sitio no recomienda ningún mercado.
 
-Un enfoque bitcoiner defendible: a veces el KYC es la única puerta de entrada disponible, y usarla a propósito está bien. Pero minimiza qué parte de tus bitcoins llega a tocarlo alguna vez, y evita que un servicio con KYC sea tu punto de custodia a largo plazo.
+Un enfoque defendible: una empresa con licencia que verifica tu identidad es la forma prudente de comprar, y el capítulo [Si decides tener un poco](/es/recorrido/usar-bitcoin) muestra cómo encontrar una. Lo que sí puedes limitar es cuánto tiempo se quedan ahí tus monedas: no la conviertas en tu punto de custodia a largo plazo.
 
 Lee [Privacidad en Bitcoin](/es/a-fondo/privacidad-en-bitcoin) para ver cómo el registro del exchange se convierte en el ancla que le pone nombre a todo un grupo de direcciones (un clúster).

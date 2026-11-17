@@ -2,15 +2,16 @@
 title: "Qué pasó en 1971 (el shock de Nixon)"
 slug: que-paso-en-1971
 translationOf: what-happened-in-1971
-sourceHash: "cf9e1c787019"
-sourceCommit: "e722e85"
-sourceUpdated: "2026-10-02"
+sourceHash: "252f2a51ce34"
+sourceCommit: "74f1a22"
+sourceUpdated: "2026-11-17"
 translation:
   method: "llm-draft"
 aliases:
   - "ventana del oro"
 draft: false
 published: "2026-10-14"
+updated: "2026-11-17"
 shortDefinition: "El 15 de agosto de 1971 el presidente Nixon cerró la ventana del oro: los gobiernos extranjeros ya no podían cambiar dólares por oro de Estados Unidos a $35 la onza. Eso eliminó el último límite externo sobre el dólar. El meme popular que le echa la culpa de casi todas las tendencias económicas desde entonces va más lejos de lo que respalda el registro histórico."
 keyTakeaways:
   - "El discurso televisado de Nixon del domingo 15 de agosto de 1971 suspendió la convertibilidad del dólar en oro para gobiernos extranjeros y bancos centrales, congeló sueldos y precios por 90 días y puso un recargo del 10 por ciento a las importaciones sujetas a aranceles"
@@ -54,4 +55,4 @@ Después de 1971 la inflación empeoró mucho. Los precios al consumidor subiero
 
 La frase "WTF happened in 1971?" (¿qué diablos pasó en 1971?) viene de un sitio web con unos 80 gráficos, la mayoría con una flecha roja cerca de 1971. Uno de sus fundadores lo ha llamado un meme y ha dicho que cualquier gráfico con un quiebre raro en 1971 va a parar ahí. Su gráfico principal, el de sueldos frente a productividad, pone la flecha en 1973. Qué tan grande se ve esa brecha depende de si cuentas las prestaciones como parte del sueldo y de qué medida de inflación uses; los economistas Anna Stansbury y Lawrence Summers encuentran que el resto se refleja en más desigualdad y en una porción cada vez menor del ingreso que va a los trabajadores. Ninguna de las explicaciones convencionales pasa por el oro. La afirmación defendible es más acotada: después de agosto de 1971 el dólar pasó a ser dinero fiat (fiduciario) para todo el mundo, canjeable por nada, sin ningún límite externo a cuántos se podían emitir.
 
-Satoshi Nakamoto no mencionó 1971 ni en el whitepaper ni en sus mensajes del foro de la P2P Foundation. "The central bank must be trusted not to debase the currency" (hay que confiar en que el banco central no degradará la moneda), [escribió allí el 11 de febrero de 2009](https://satoshi.nakamotoinstitute.org/posts/p2pfoundation/1/), y añadió que la historia de las monedas fiat está llena de casos en que esa confianza se rompió. Bitcoin reemplaza esa confianza con un calendario de emisión que cada nodo verifica. El tema a fondo sobre el [calendario de emisión (en inglés)](/rabbit-hole/supply) explica cómo funciona, y el capítulo del Recorrido [Por qué el dinero está roto](/es/recorrido/por-que-el-dinero-esta-roto) cuenta la versión larga de la historia.
+Satoshi Nakamoto no mencionó 1971 ni en el whitepaper ni en sus mensajes del foro de la P2P Foundation. "The central bank must be trusted not to debase the currency" (hay que confiar en que el banco central no degradará la moneda), [escribió allí el 11 de febrero de 2009](https://satoshi.nakamotoinstitute.org/posts/p2pfoundation/1/), y añadió que la historia de las monedas fiat está llena de casos en que esa confianza se rompió. Bitcoin reemplaza esa confianza con un calendario de emisión que cada nodo verifica. El tema a fondo sobre el [calendario de emisión (en inglés)](/rabbit-hole/supply) explica cómo funciona, y el capítulo del Recorrido [Por qué se creó](/es/recorrido/por-que-el-dinero-esta-roto) cuenta la versión larga de la historia.

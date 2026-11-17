@@ -3,6 +3,7 @@ title: "Billetera"
 slug: billetera
 draft: false
 published: "2026-10-14"
+updated: "2026-11-17"
 shortDefinition: "Software o hardware que administra claves privadas y direcciones y permite enviar y recibir BTC."
 keyTakeaways:
   - "Administra las claves que controlan salidas de BTC, no dinero físico"
@@ -22,6 +23,8 @@ sources:
   - { label: "Bitcoin Core - doc/external-signer.md: spending from a hardware wallet through an external signer and PSBT (accessed 2026-10-13)", url: "https://github.com/bitcoin/bitcoin/blob/master/doc/external-signer.md" }
   - { label: "Bitcoin Core - doc/multisig-tutorial.md: a 2-of-3 multisig built from three signer wallets and one watch-only wallet, run inside the node (accessed 2026-10-13)", url: "https://github.com/bitcoin/bitcoin/blob/master/doc/multisig-tutorial.md" }
   - { label: "Bitcoin Core - 0.9.0 release notes, GUI: Add Coin Control Features (accessed 2026-10-13)", url: "https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.9.0.md" }
+  - { label: "Sparrow Wallet - Best practices: a single-key wallet for amounts up to US$100,000 and multisig above that; multisig takes more time and resources", url: "https://sparrowwallet.com/docs/best-practices.html" }
+  - { label: "BitBox - The pitfalls of multisig when using hardware wallets (December 3, 2019, archived copy): a multisig setup can end up less secure than an ordinary single-key wallet", url: "https://web.archive.org/web/20250719224348/https://blog.bitbox.swiss/en/the-pitfalls-of-multisig-when-using-hardware-wallets/" }
 relatedTerms:
   - bitcoin-client
   - bitcoin-dev-kit-bdk
@@ -45,9 +48,9 @@ sameAs:
   - "https://en.bitcoin.it/wiki/Wallet"
 liveWidget: ~
 translationOf: wallet
-sourceHash: "8076fca5b35e"
-sourceCommit: "c52bac9"
-sourceUpdated: "2026-10-13"
+sourceHash: "011a13431fa5"
+sourceCommit: "74f1a22"
+sourceUpdated: "2026-11-17"
 translation:
   method: "llm-draft"
 ---
@@ -67,8 +70,8 @@ Las billeteras vienen en varios arquetipos, cada uno con un equilibrio distinto 
 - **Billeteras móviles**: tú tienes las claves en el propio celular. Cómodas para el uso diario, con el modelo de seguridad de una billetera caliente: las claves viven en un dispositivo conectado a internet.
 - **Billeteras de escritorio**: la billetera propia de Bitcoin Core y otras. Suelen conectarse a tu propio nodo y por lo general ofrecen [control de monedas](/es/glosario/control-de-monedas) (la interfaz gráfica de Bitcoin Core lo tiene desde la versión 0.9.0).
 - **[Billeteras de hardware](/es/glosario/billetera-de-hardware)** (hardware wallets): las claves se quedan en un dispositivo de firma dedicado y nunca tocan una máquina conectada a internet. Tu computadora pasa las transacciones de ida y vuelta; el dispositivo firma.
-- **Configuraciones [multisig](/es/glosario/multisig)**: hace falta más de una clave, normalmente en dispositivos separados, para autorizar una transacción. Muy recomendables para montos importantes.
+- **Configuraciones [multisig](/es/glosario/multisig)**: hace falta más de una clave, normalmente en dispositivos separados, para autorizar una transacción. Muchos asesores las sugieren para montos importantes, aunque no todos, y son mucho más difíciles de manejar.
 
-La billetera correcta depende de lo que guardas y de lo que haces con ello. ¿Dinero para gastar, del que llevarías en efectivo? Una billetera móvil está bien. ¿Ahorros a largo plazo? Hardware, idealmente multisig. La regla general: más valor -> más fricción -> más separación entre las claves y cualquier superficie en línea.
+La billetera correcta depende de lo que guardas y de lo que haces con ello. ¿Dinero para gastar, del que llevarías en efectivo? Una billetera móvil está bien. ¿Ahorros a largo plazo? Una billetera de hardware, y para montos mayores quizá multisig. La regla general: más valor -> más fricción -> más separación entre las claves y cualquier superficie en línea.
 
-Consulta el capítulo del Recorrido [Sé tu propio banco](/es/recorrido/se-tu-propio-banco) para el paso a paso completo.
+Consulta [Las claves: lo que tienes en realidad](/es/recorrido/se-tu-propio-banco) para las cuatro reglas, y la [página de billeteras](/es/a-fondo/billeteras), que lleva fecha, para saber qué billetera.

@@ -1,290 +1,141 @@
 ---
-title: "Soberanía"
+title: "Adónde ir después"
 slug: soberania
+translationOf: sovereignty
+sourceHash: "94f3582f44ba"
+sourceCommit: "74f1a22"
+sourceUpdated: "2026-11-17"
+translation:
+  method: "llm-draft"
 draft: false
 status: live
 published: "2026-10-14"
-updated: "2026-11-16"
-order: 6
-goDeeper: ["bitcoin-privacy", "decentralization", "seed-backup-strategies"]
-estimatedMinutes: 45
-tagline: "Corre tu propio nodo. Usa multisig. Blinda tu seguridad operativa. Graduación: no le pides permiso a nadie para usar Bitcoin."
+updated: "2026-11-17"
+reviewedAt: "2026-11-16"
+order: 7
+goDeeper: ["bitcoin-privacy", "run-your-own-node", "multisig-and-inheritance"]
+estimatedMinutes: 6
+tagline: "Un mapa de lo que viene después de lo básico, y seis reglas para tener presentes. También puedes parar aquí."
 prerequisites: ["using-bitcoin"]
-relatedTerms: ["full-node", "node", "hierarchical-multisig", "hardware-security-module-hsm", "tor-hidden-service", "bitcoin-knots", "bitcoin-core", "bitcoin-inheritance-planning", "coin-control", "address-reuse"]
-ogImage: "/diagrams/og/verify-dont-trust.png"
-ogImageAlt: "Verifica, no confíes: una comparación lado a lado que muestra una billetera hablando con tu propio nodo (que verifica cada bloque y cada regla y da una respuesta definitiva) frente a la misma billetera hablando con un servidor de terceros (que solo afirma una respuesta que no puedes auditar por tu cuenta)."
+relatedTerms: ["hardware-wallet", "lightning-network", "full-node", "multisig", "bitcoin-inheritance-planning", "address-reuse"]
 sources:
-  - { label: "Bitcoin Core - official downloads and source", url: "https://bitcoincore.org" }
-  - { label: "BIP 174 - Partially Signed Bitcoin Transaction (PSBT)", url: "https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki" }
-  - { label: "BIP 67 - deterministic public key sorting for multisig", url: "https://github.com/bitcoin/bips/blob/master/bip-0067.mediawiki" }
-  - { label: "Bitcoin Privacy - bitcoin.org reference", url: "https://bitcoin.org/en/protect-your-privacy" }
-  - { label: "Privacy Best Practices PDF (this site)", url: "https://www.learnbitcoin.com/downloads/bitcoin-privacy-best-practices.pdf" }
-  - { label: "bitnodes.io, no longer the original service (it lapsed in May 2026 and has a new operator) - reachable Bitcoin nodes (25,514 counted on October 9, 2026; 18,519 on November 16, 2026)", url: "https://bitnodes.io" }
-  - { label: "Bitcoin Core 32.1 - reduce-memory.md (default -dbcache 1024 MiB, or 450 MiB if less than 4096 MiB of RAM is detected; -maxmempool 300 MB)", url: "https://github.com/bitcoin/bitcoin/blob/v32.1/doc/reduce-memory.md" }
-  - { label: "Bitcoin Core 32.1 - caches.cpp (the 1024 MiB cache needs at least 4096 MiB of RAM as reported by the operating system)", url: "https://github.com/bitcoin/bitcoin/blob/v32.1/src/node/caches.cpp" }
-  - { label: "Linux kernel docs - /proc/meminfo (MemTotal is physical RAM minus reserved memory and the kernel's own code)", url: "https://docs.kernel.org/filesystems/proc.html" }
-  - { label: "bitcoin.org - Running a full node (2 GB RAM minimum; the first download takes at least several days)", url: "https://bitcoin.org/en/full-node" }
-  - { label: "blockchain.com chart data, raw - total size of the blockchain (774,075 MB on October 8, 2026; 783,067 MB on November 15, 2026)", url: "https://api.blockchain.info/charts/blocks-size?timespan=3years&format=json&sampled=false" }
-  - { label: "mempool.space - block sizes and weights (about 82.5 GB of blocks mined from October 2025 to October 2026)", url: "https://mempool.space/graphs/mining/block-sizes-weights" }
-  - { label: "Bitcoin Core 32.1 - chainparams.cpp (mainnet disk guidelines 897 and 14, which the setup screen adds up to 911 GB)", url: "https://github.com/bitcoin/bitcoin/blob/v32.1/src/kernel/chainparams.cpp" }
-  - { label: "Bitcoin Core 32.1 - intro.cpp (the setup screen adds the two figures and says at least 911 GB of data will be stored)", url: "https://github.com/bitcoin/bitcoin/blob/v32.1/src/qt/intro.cpp" }
-  - { label: "Bitcoin Core 31 - init.cpp help text for -assumevalid and -txindex", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/init.cpp" }
-  - { label: "Bitcoin Core 31 - getrawtransaction help (finds confirmed transactions only with -txindex or a block hash)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/rpc/rawtransaction.cpp" }
-  - { label: "Bitcoin Core - descriptors.md (addr() descriptors and watch-only descriptor wallets)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/doc/descriptors.md" }
-  - { label: "Umbrel App Store - Bitcoin Node, powered by Bitcoin Core (its settings toggle Tor, clearnet and I2P connections)", url: "https://apps.umbrel.com/app/bitcoin" }
-  - { label: "umbrelOS - runs on Intel or AMD machines, the Raspberry Pi 5 or a virtual machine", url: "https://github.com/getumbrel/umbrel" }
-  - { label: "Start9 - Installing StartOS (desktops, laptops and mini PCs; among Raspberry Pi models, the Pi 4 only)", url: "https://github.com/Start9Labs/start-technologies/blob/master/projects/start-os/docs/src/installing-startos.md" }
-  - { label: "Start9 - Tor on StartOS (not included by default; installed as a service)", url: "https://github.com/Start9Labs/start-technologies/blob/master/projects/start-os/docs/src/tor.md" }
-  - { label: "Sparrow Wallet docs - Quick Start (public server, Bitcoin Core node, or private Electrum server)", url: "https://sparrowwallet.com/docs/quick-start.html" }
-  - { label: "Sparrow Wallet docs - Connect to Bitcoin Core (Settings, Server tab)", url: "https://sparrowwallet.com/docs/connect-node.html" }
-  - { label: "Sparrow Wallet docs - Best Practices (hardware wallets from multiple vendors)", url: "https://sparrowwallet.com/docs/best-practices.html" }
-  - { label: "Blockstream - Jade hardware wallet firmware (GitHub)", url: "https://github.com/Blockstream/Jade" }
-  - { label: "Foundation Devices - Passport hardware wallet firmware (GitHub)", url: "https://github.com/Foundation-Devices/passport2" }
-  - { label: "Coinkite - COLDCARD Security Advisory (July 30, 2026, updated August 2026)", url: "https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/" }
-  - { label: "COLDCARD Security Status - minimum fixed firmware by model", url: "https://coldcard.com/security/status" }
-  - { label: "Block - analysis of the Coldcard seed-generation flaw (July 30, 2026): firmware 4.0.0 through 4.1.9 on the Mk2 and Mk3; a multisig made only of affected devices stays exposed", url: "https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware" }
-  - { label: "FBI Internet Crime Complaint Center - cryptocurrency kiosk fraud (May 15, 2026): 13,460 complaints and $389 million lost in 2025", url: "https://www.ic3.gov/PSA/2026/PSA260515-2" }
-  - { label: "US DOJ SDNY - Samourai Wallet founders sentenced to five and four years (November 2025)", url: "https://www.justice.gov/usao-sdny/pr/founders-samourai-wallet-cryptocurrency-mixing-service-sentenced-five-and-four-years" }
-  - { label: "JoinMarket - the original client, archived April 27, 2026 with a warning not to use it", url: "https://github.com/JoinMarket-Org/joinmarket-clientserver" }
-  - { label: "Bitcoin Core - multisig tutorial (one wsh(sortedmulti(...)) descriptor holds all three xpubs)", url: "https://github.com/bitcoin/bitcoin/blob/master/doc/multisig-tutorial.md" }
-  - { label: "BIP 87 - an M-of-N restore needs M seeds plus every cosigner's public key, so back up the descriptor", url: "https://github.com/bitcoin/bips/blob/master/bip-0087.mediawiki" }
-  - { label: "BIP 129 - Bitcoin Secure Multisig Setup (anyone who learns the configuration can monitor the wallet)", url: "https://github.com/bitcoin/bips/blob/master/bip-0129.mediawiki" }
-  - { label: "AgoraDesk - closure notice (wound down in 2024)", url: "https://agoradesk.com" }
-  - { label: "US DOJ SDNY - Samourai Wallet founders arrested and charged (April 24, 2024)", url: "https://www.justice.gov/usao-sdny/pr/founders-and-ceo-cryptocurrency-mixing-service-arrested-and-charged-money-laundering" }
-  - { label: "Wasabi Wallet blog - zkSNACKs ends its coinjoin coordination service on June 1, 2024 (archived copy)", url: "https://web.archive.org/web/20241007122748/https://blog.wasabiwallet.io/zksnacks-is-discontinuing-its-coinjoin-coordination-service-1st-of-june/" }
-  - { label: "Satoshi Nakamoto - Bitcoin P2P e-cash paper, cryptography mailing list (October 31, 2008)", url: "https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html" }
-translationOf: sovereignty
-sourceHash: "f5d70ad0ce4a"
-sourceCommit: "8cada55"
-sourceUpdated: "2026-11-16"
-translation:
-  method: "llm-draft"
+  - { label: "FBI Internet Crime Complaint Center - 2025 report: $11.37 billion lost in complaints involving cryptocurrency. Its table of crime types (page 55) gives $7.3 billion for investment fraud (the report's text says $7.2 billion); the twelve types in which the owner is deceived into paying add up to about $9.8 billion, which is this site's own sum", url: "https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf" }
+  - { label: "TRM Labs (October 2026) - the theft from the exchange Binance on October 29, 2026, the largest on record", url: "https://www.trmlabs.com/resources/blog/north-korea-steals-usd-6-36-billion-from-binance-in-the-largest-hack-in-history" }
+  - { label: "Satoshi Nakamoto - Bitcoin: A Peer-to-Peer Electronic Cash System, section 10: the record is public, and a new key should be used for each payment", url: "https://www.learnbitcoin.com/bitcoin.pdf" }
+  - { label: "Bitcoin Wiki - Address reuse: wallets make it easy and safe to use many addresses", url: "https://en.bitcoin.it/wiki/Address_reuse" }
+  - { label: "ABA Journal - an inheritance plan has to tell an heir where the seed words can be found", url: "https://www.abajournal.com/magazine/article/cryptocurrency_estate_lawyers_caution" }
+  - { label: "Superior Court of California, County of Orange - Wills and trusts: a will that has been filed is likely to be open to the public", url: "https://www.occourts.org/self-help/self-help-probate/wills-trusts" }
+  - { label: "Swiss National Cyber Security Centre (August 18, 2026) - letters about an urgent update lead to a page that asks for the seed words; no wallet maker will ever ask for them", url: "https://www.bacs.admin.ch/en/26w33-en" }
+  - { label: "US Cybersecurity and Infrastructure Security Agency - Update software: many updates fix security risks", url: "https://www.cisa.gov/secure-our-world/update-software" }
+  - { label: "US Securities and Exchange Commission, Office of Investor Education and Assistance - Crypto Asset Custody Basics for Retail Investors (December 12, 2025): a seed phrase restores a wallet that is lost; it is stored safely and shared with nobody; a device that is not connected to the internet is generally more secure from online threats, and can still be lost, damaged or stolen", url: "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/crypto-asset-custody-basics-retail-investors-investor-bulletin-0" }
+  - { label: "Coinkite - advisory of July 30, 2026: a firmware bug weakened the making of seed words, and attackers worked the keys out and stole funds", url: "https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/" }
+  - { label: "Joseph Poon and Thaddeus Dryja - The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments (January 14, 2016)", url: "https://lightning.network/lightning-network-paper.pdf" }
+  - { label: "Lightning specification (BOLTs) - a protocol for making fast payments with Bitcoin over a network of channels", url: "https://github.com/lightning/bolts/blob/master/00-introduction.md" }
+  - { label: "LND documentation - recovery: bringing a Lightning wallet back takes the seed words and a channel backup file as well", url: "https://github.com/lightningnetwork/lnd/blob/master/docs/recovery.md" }
+  - { label: "Bitcoin Wiki - Clearing Up Misconceptions About Full Nodes: a full node checks every rule itself", url: "https://en.bitcoin.it/wiki/Clearing_Up_Misconceptions_About_Full_Nodes" }
+  - { label: "Bitcoin Core 32.1, chainparams.cpp - the program expects the record to take about 900 GB of disk", url: "https://github.com/bitcoin/bitcoin/blob/v32.1/src/kernel/chainparams.cpp" }
+  - { label: "Bitcoin Core - multisig tutorial: a wallet that needs two of three keys to spend", url: "https://github.com/bitcoin/bitcoin/blob/master/doc/multisig-tutorial.md" }
+  - { label: "BIP 87 - to restore a multisig wallet, every key holder's public key is needed as well as the seeds", url: "https://github.com/bitcoin/bips/blob/master/bip-0087.mediawiki" }
+  - { label: "Sparrow Wallet - best practices: a wallet uses a public server unless it is pointed at a node of your own; one key for amounts up to US$100,000, several keys above that", url: "https://sparrowwallet.com/docs/best-practices.html" }
+  - { label: "US Internal Revenue Service - Digital assets: selling them, or paying with them, has to be reported", url: "https://www.irs.gov/filing/digital-assets" }
+  - { label: "US Federal Trade Commission - What To Know About Cryptocurrency and Scams: only scammers demand payment in cryptocurrency, and only scammers guarantee profits; never click a link in an unexpected message", url: "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams" }
+  - { label: "FBI - public service announcement of March 14, 2023: do not pay any additional fees or taxes to withdraw your money", url: "https://www.ic3.gov/PSA/2023/PSA230314" }
+  - { label: "US Federal Trade Commission - Bitcoin ATMs: A payment portal for scammers (September 3, 2024): slow down, and talk with someone you trust before you do anything else", url: "https://www.ftc.gov/news-events/data-visualizations/data-spotlight/2024/09/bitcoin-atms-payment-portal-scammers" }
+  - { label: "Jameson Lopp - Bitcoin Address Poisoning Attacks (April 6, 2025): check the entire address", url: "https://blog.lopp.net/bitcoin-address-poisoning-attacks/" }
+  - { label: "US Code of Federal Regulations, 12 CFR 1005.2 - the payments a bank must put right are those made without the customer's authority", url: "https://www.ecfr.gov/current/title-12/chapter-X/part-1005/subpart-A/section-1005.2" }
+  - { label: "Bitcoin Core, validation.cpp - a block that pays its maker more than the fees plus the scheduled amount is rejected", url: "https://github.com/bitcoin/bitcoin/blob/4bacf21a13c2ed25ef9362ca38f26bf0a67d22c9/src/validation.cpp#L2608-L2611" }
 ---
 
-> **Adónde vas:** Tu propio nodo de Bitcoin, validando cada transacción. Una billetera multisig que te protege contra el punto único de falla. Una postura de seguridad operativa (op-sec) que te permite tener bitcoin sin convertirte en un blanco. Este es el capítulo de graduación. Al terminarlo, no necesitarás el permiso de nadie para usar Bitcoin.
+> **Adónde vas:** Este es el último capítulo, y es un mapa. Muestra lo que viene después de lo básico, cuándo se vuelve importante cada cosa y en qué parte de este sitio puedes leer más. Termina con seis reglas que vale la pena tener presentes, hagas lo que hagas después.
 
-## 1. La graduación
+**Primero, adivina.** ¿Qué les cuesta más a los dueños de bitcoin: los hackers que se meten en sus billeteras, o los desconocidos que los convencen de enviar sus monedas?
 
-Este es el capítulo de graduación. El que convierte Bitcoin de "tengo algo de bitcoin" en "formo parte de la red".
+## ¿Tienes que ir más lejos?
 
-Hasta aquí, incluso con autocustodia, has estado *consumiendo* Bitcoin: dependiendo del nodo de alguien más para los datos de las transacciones, del hardware de alguien más para firmar, de la recomendación de alguien más para la seguridad. No está mal. La mayoría de la gente se queda ahí para siempre. El sistema les funciona.
+No. Sabes qué es Bitcoin, cómo funciona un pago y cómo se guardan las claves. Eso basta para tener un monto pequeño con cuidado. También basta para decidir no hacerlo, con buenas razones.
 
-Este capítulo es para quienes no quieren quedarse ahí. Al terminarlo vas a:
+## El mapa
 
-- Correr tu propio nodo de Bitcoin y revisar la cadena por tu cuenta en lugar de confiar en el servidor de otro
-- Usar una billetera multisig en la que una sola clave comprometida no sea fatal
-- Tener una postura de seguridad operativa que te proteja sin caer en la paranoia
-- Tener un plan para lo que pasa con tus monedas cuando ya no estés
+**Desde tus primeras monedas de verdad**
 
-Toma lo que te sirva. Sáltate lo que no. El objetivo es la soberanía, no una lista de verificación.
+**Privacidad.** El registro es público, como viste cuando leíste el bloque 0. Cualquiera que sepa que una dirección es tuya puede ver lo que se pagó a esa dirección, y adónde va después. Por eso, usa una dirección nueva cada vez que te paguen. La mayoría de las billeteras te ofrecen una nueva por sí solas. [Leer más](/es/a-fondo/privacidad-en-bitcoin).
 
-## 2. Por qué correr tu propio nodo
+**Quién debería saberlo.** Si te pasa algo, ¿puede alguien llegar a tus monedas? La forma más simple es que una persona que conoces en persona sepa que el papel existe, dónde está y qué abren sus palabras. Una carta corta, escrita junto con esa persona, puede decirlo. La carta nunca lleva las palabras, y un testamento tampoco debería llevarlas. [Leer más](/es/glosario/planificacion-de-la-herencia).
 
-Puedes usar Bitcoin sin correr un nodo. Lo estás usando ahora mismo sin uno, si tienes bitcoins en autocustodia desde el capítulo 4. Entonces, ¿para qué?
+**Tu celular.** Mantén tu billetera actualizada. Una actualización que te pide tus palabras es un robo. Antes de cambiar de celular, trae la billetera de vuelta en el nuevo, desde el papel y en la misma app, y mira que tus monedas estén ahí. Solo entonces borra el viejo. Si un celular se pierde o te lo roban, haz lo mismo en otro, y después mueve las monedas a una billetera nueva con palabras nuevas.
 
-**Verificación.** La promesa de Bitcoin, "no tienes que confiar en nadie", solo es cierta si *verificas*. Una billetera que se conecta al servidor de alguien más está confiando en que ese servidor dice la verdad sobre tu saldo y el estado de la cadena. El tercero probablemente dice la verdad. Pero "probablemente" no es lo mismo que "con certeza". Tu propio nodo te lo dice con certeza.
+**Más adelante, o quizá nunca**
 
-<figure>
-  <img src="/diagrams/verify-dont-trust.svg" alt="Verifica, no confíes: una comparación lado a lado que muestra una billetera hablando con tu propio nodo (que verifica cada bloque y cada regla y da una respuesta definitiva) frente a la misma billetera hablando con un servidor de terceros (que solo afirma una respuesta que no puedes auditar por tu cuenta)." />
-  <figcaption>Tu nodo te lo dice con certeza. El servidor de otros te dice "probablemente". Y "probablemente" no es lo mismo que "con certeza".</figcaption>
-</figure>
+**Una billetera de hardware.** Un dispositivo pequeño que mantiene tus claves lejos de internet. Importa cuando tienes más de lo que guardarías con tranquilidad en un celular. Un dispositivo se puede perder o se puede romper, así que el respaldo en papel importa tanto como antes. Y un dispositivo puede tener una falla: en 2026 se descubrió que los dispositivos de un fabricante habían creado claves que se podían adivinar, y se robaron monedas. [Leer más](/es/glosario/billetera-de-hardware).
 
-**Privacidad.** Cuando usas un servidor Electrum público (lo que traen por defecto casi todas las billeteras ligeras), ese servidor ve cada dirección de tu billetera, cada saldo, cada transacción que consultas. Con tu propio nodo, nada de eso se filtra a nadie.
+**Lightning.** Una segunda red que funciona sobre Bitcoin, hecha para pagos pequeños y rápidos. Importa cuando quieres pagar cosas con bitcoin, y no solo tenerlo. Con Lightning, o te ocupas tú de más cosas, o dejas que una empresa lo maneje por ti. [Leer más](/es/glosario/lightning-network).
 
-**Resistencia a la censura.** A una billetera que depende de un servicio se le puede cortar ese servicio. A una billetera que habla con tu propio nodo, no: el nodo es tuyo.
+**Tu propio nodo.** Un nodo, como leíste antes, es una computadora que guarda una copia del registro y revisa cada bloque. Como lo revisa todo por su cuenta, se le llama **nodo completo**, y puedes correr uno en casa. Normalmente, una billetera le pregunta a una computadora que es de otra persona. Con un nodo propio, una billetera que te deja elegir puede preguntarle al tuyo. Suele hacer falta una computadora que se deja encendida, y mucho espacio en disco. [Leer más](/es/glosario/nodo-completo).
 
-**Apoyar la red.** Cada nodo completo adicional refuerza la descentralización de la red. Hay miles de nodos alcanzables en el mundo (entre unos 17,000 y 21,000 según un contador público en noviembre de 2026); sumar uno es una contribución real. (No económica: correr un nodo no te paga nada. La recompensa es el sistema mismo.)
+**Multisig.** Una billetera que necesita más de una clave para gastar: por ejemplo, dos de tres, sin importar cuáles. Si pierdes una clave, todavía puedes gastar, siempre que también hayas guardado los datos de cómo se configuró la billetera. Un ladrón con una sola clave no puede. Para un monto que te cambiaría la vida, muchos asesores la sugieren, aunque no todos, y es mucho más difícil de manejar. [Leer más](/es/glosario/multisig).
 
-**Datos de comisiones, del mempool y de direcciones cuando los necesites.** Con tu propio nodo tienes acceso directo a todo lo que la red sabe. ¿Quieres vigilar una dirección? Agrégala a una billetera de solo lectura en tu nodo. ¿Quieres saber cómo está el mercado de comisiones? Pregúntale a tu nodo. ¿Quieres un feed de datos a tu medida? Pregúntale a tu nodo.
+**Impuestos.** Vender bitcoin de verdad, o pagar con él, es asunto de la oficina de impuestos de tu país. Su propio sitio web es por donde hay que empezar.
 
-Un nodo completo con la configuración por defecto de Bitcoin Core usa uno o dos gigabytes de RAM. La versión 32 reserva alrededor de 1.4 GB para cachés en una máquina de 8 GB y 0.8 GB en una Raspberry Pi de 4 GB. La cadena de bloques (blockchain) ocupaba unos 783 GB de datos de bloques en noviembre de 2026 y crece unos 80 GB al año, y Bitcoin Core 32 pide al menos 911 GB de disco en total.
+## Seis reglas para tener presentes
 
-Corre en cualquier hardware moderno. Una vez en marcha, puedes casi olvidarte de él durante meses.
+La mayor parte del dinero que pierden los dueños no se la llevan los hackers. Lo envía el dueño, a alguien que lo ha engañado. Del dinero que la gente le dijo al FBI que había perdido en 2025 en casos relacionados con bitcoin y monedas parecidas, más de cuatro quintas partes se fueron así. Las inversiones falsas, por sí solas, se llevaron casi dos tercios. Por eso la mayoría de estas reglas tratan de personas.
 
-## 3. Opciones de hardware y de sistema operativo
+1. **Tu frase semilla vive en papel, en más de un lugar.** Solo se teclea en tu propia billetera, y no se le muestra ni se le dice a nadie.
+2. **Nunca empieces por un desconocido, un anuncio ni un enlace en un mensaje.**
+3. **Quien exige un pago en bitcoin, o garantiza una ganancia, es un estafador.**
+4. **Nunca envíes más dinero para que te liberen tu propio dinero.** Una comisión de verdad se descuenta del dinero que ya tienes ahí.
+5. **Revisa la dirección completa cada vez.** Antes de un pago grande, envía uno pequeño.
+6. **Si alguien te está apurando, detente.** Habla con alguien que conoces en persona antes de hacer cualquier cosa.
 
-No le des muchas vueltas. Pon algo a funcionar. Mejóralo después.
+Los robos de hackers a exchanges, en su mayoría, no están en las cifras del FBI. Pueden ser muy grandes, y son el riesgo de dejar monedas con una empresa.
 
-**Tres opciones de hardware:**
+## Hazlo
 
-- **Raspberry Pi 5 con un SSD de 2 TB.** Consume poco, cabe en cualquier parte, funciona 24/7. El hardware clásico para un nodo de Bitcoin. En noviembre de 2026, un disco de 1 TB se queda corto, porque la pantalla de instalación de Bitcoin Core 32 pide al menos 911 GB y la cadena suma unos 80 GB al año.
-- **Una mini PC reacondicionada (clase Intel NUC o equivalente).** Más margen que la Pi si después quieres agregar Lightning u otros servicios autoalojados.
-- **Una laptop o computadora de escritorio que ya tengas.** Gratis, si el hardware es razonable. Lo mejor para quien se siente a gusto instalando software y no quiere comprar nada nuevo.
+Para este paso hace falta una tarjeta en blanco o un pedazo de papel, y nada más.
 
-**Tres formas de correr el software del nodo:**
+- [ ] Copia ahí las seis reglas. Solo las reglas, nunca tu frase semilla. Déjalo donde lo veas.
+- [ ] Elige un lugar del mapa sobre el que quieras leer después. O no elijas ninguno: esa también es una buena respuesta.
+- [ ] ¿Alguien te envió este Recorrido? Dile que lo terminaste.
 
-- **Umbrel.** La entrada fácil. Un sistema operativo para servidor casero con una gran tienda de apps, donde Bitcoin Core corre como su app Bitcoin Node. Interfaz web. Lo mejor si quieres apps de un clic y una experiencia pulida.
-- **Start9 (StartOS).** Enfocado en la soberanía. Interfaz web. Corre en computadoras de escritorio, laptops y mini PCs, pero en octubre de 2026 solo es compatible con la Pi 4 entre los modelos de Raspberry Pi. Tor es un servicio opcional que agregas desde su tienda.
-- **[Bitcoin Core](https://bitcoincore.org) directamente.** Sin capas intermedias. Edita `bitcoin.conf` por tu cuenta. Lo mejor si te manejas bien en la terminal y quieres cero abstracción.
+## Una objeción razonable
 
-> **Opciones, no dogmas.** Hay otras, y el ecosistema del autoalojamiento se mueve. Elige algo que te acomode y empieza: no intentes optimizar antes de tener algo corriendo.
+"Siete capítulos, y todas estas reglas. Si hace falta tanto cuidado, ¿vale la pena?".
 
-## 4. La instalación, paso a paso
+Para mucha gente no vale la pena, y parar ahí es razonable. Una cuenta de banco es más fácil, y un banco puede deshacer un pago que no hiciste.
 
-No intentes dejarlo perfecto a la primera. Solo pon algo a funcionar. Mejóralo después.
+Lo que ganas con ese cuidado es limitado: dinero que ninguna empresa guarda por ti, del que nadie puede crear más de lo que permiten las reglas, y que ningún banco tiene que aprobar. Viene con un precio que sube y baja. Algunas personas lo necesitan mucho. La mayoría de la gente rara vez lo necesita.
 
-1. **Elige el hardware.** Pi 5 + SSD si vas a comprar algo nuevo. Una laptop que te sobre, si la tienes.
-2. **Elige el sistema operativo.** Umbrel para el camino ya armado en una Pi 5. StartOS solo es compatible con la Pi 4 entre los modelos de Raspberry Pi, así que corre Start9 en una mini PC o una laptop. Bitcoin Core directamente si te manejas bien en la terminal.
-3. **Graba el sistema operativo** en el SSD o en el disco de arranque. Los proveedores de estos sistemas dan instrucciones claras para grabar la imagen. (Mac: balenaEtcher. Windows: Rufus. Linux: `dd`.)
-4. **Enciende el nodo** y conéctate a él por la interfaz web (Umbrel y Start9 te dan una URL `.local` en tu red doméstica).
-5. **Espera la sincronización.** La descarga inicial es la parte dolorosa: varios cientos de GB que hay que bajar y validar. En una Pi con un SSD decente, cuenta con varios días. No te preocupes; déjalo corriendo. Por defecto, Bitcoin Core se salta la verificación de firmas y scripts en todos los bloques hasta uno reciente que cada versión da por válido (la opción `assumevalid`). Todas las demás reglas sí las verifica. Pon `assumevalid=0` para verificar también las firmas y los scripts de esos bloques, a cambio de una sincronización más lenta.
-6. **Mientras sincroniza,** lee la documentación. Configura Tor (en algunos sistemas para nodos es una opción; en otros, un servicio adicional). Decide si quieres Lightning (sí, con el tiempo).
-7. **Cuando termine de sincronizar,** pruébalo. Haz una consulta: pide la altura del último bloque. Busca una transacción por su txid (para transacciones confirmadas que no están en tu billetera, Bitcoin Core necesita `txindex=1` en `bitcoin.conf`). Verifica un saldo.
+Decidas lo que decidas, ya conoces los engaños comunes, y puedes juzgar por tu cuenta. Y si ya tienes un poco, sabes cómo cuidarlo.
 
-Ya tienes un nodo de Bitcoin. Te damos la bienvenida.
+## Ponte a prueba
 
-## 5. Apunta tu billetera a tu nodo
+<details>
+<summary>Lo que adivinaste al principio: ¿hackers, o desconocidos que convencen al dueño?</summary>
 
-Un nodo solo sirve si tu billetera habla con él en lugar de con un servidor de terceros. Muchas billeteras lo permiten, aunque no todas; es una configuración que se hace una sola vez.
+Desconocidos que convencen al dueño, con mucha diferencia. En las cifras del FBI de 2025, más de cuatro quintas partes del dinero que los dueños dijeron haber perdido se fueron así. Vuelve a leer "Seis reglas para tener presentes".
 
-Tres billeteras de escritorio que pueden conectarse a tu propio nodo:
+</details>
 
-- **Sparrow Wallet.** Settings -> Server (Configuración -> Servidor; la interfaz de Sparrow está en inglés), luego "Bitcoin Core" para una conexión directa o "Private Electrum" (Electrum privado) para el servidor Electrum que corre tu sistema de nodo. Sparrow se convierte en un cliente ligero sobre tu nodo.
-- **Specter Desktop.** Habla directamente con tu Bitcoin Core por RPC. Pensada para multisig. Configuración un poco más avanzada.
-- **Electrum.** El cliente ligero veterano. Larga trayectoria. Apúntalo al servidor Electrum que expone tu sistema de nodo.
+<details>
+<summary>Un amigo conoce una de tus direcciones. ¿Qué puede ver?</summary>
 
-El patrón es el mismo en los tres casos: un ajuste de servidor, hecho una sola vez, que le dice a la billetera que le pregunte a tu nodo y no al de un desconocido.
+Lo que se pagó a esa dirección, y adónde va después. Por eso usas una dirección nueva cada vez que te pagan. Vuelve a leer "El mapa".
 
-Para comprobar que funciona: apaga la conexión a internet de tu casa o el DNS, y confirma que tu billetera sigue viendo tu nodo y tu saldo por la red local (LAN). Si es así, no dependes de nada externo. (Si tu billetera llega al nodo por Tor, esta prueba fallará aunque todo esté bien configurado, porque Tor necesita internet. En ese caso, revisa que el ajuste de servidor de la billetera tenga la dirección Tor de tu propio nodo, la que termina en `.onion`.)
+</details>
 
-## 6. Multisig: lo básico
+<details>
+<summary>Alguien llama de "tu exchange" y dice que tu cuenta está congelada, y que un pago la desbloqueará hoy. ¿Qué reglas se aplican?</summary>
 
-<figure>
-  <video
-    src="/videos/multisig.mp4"
-    poster="/videos/posters/multisig.png"
-    autoplay
-    muted
-    loop
-    playsinline
-    controls
-    controlslist="nodownload noplaybackrate noremoteplayback"
-    preload="metadata"
-    aria-label="Animación paso a paso de una billetera multisig 2 de 3. Tres claves de hardware aparecen en fila con la etiqueta 'Umbral: 2 de 3' y el pie 'Tres fabricantes distintos. Un error en una no rompe las otras.' Una transacción se firma con dos claves y se transmite a la red. Escenario de pérdida: la clave B se vuelve gris con la etiqueta 'perdida'; las otras dos claves firman y el gasto se completa. Escenario de robo: una figura encapuchada agarra la clave A, que se pone verde y se marca como 'robada'; el intento del ladrón de firmar solo se detiene en una de dos firmas. Pilares de cierre: Multisig. Umbral de claves. Fabricantes diversos."
-  ></video>
-  <figcaption>Tres claves. Firman dos cualesquiera. Pierde una y todavía puedes gastar. Que te roben una y el ladrón todavía no puede.</figcaption>
-</figure>
+La regla 4: nunca envíes más dinero para que te liberen tu propio dinero. Y la regla 6: alguien te está apurando, así que detente y habla con alguien que conoces en persona.
 
-Una sola frase semilla (también llamada frase de recuperación) es un punto único de falla. Si la pierdes, se van todas las monedas. Si se ve comprometida, se van todas las monedas. Para montos mayores, una billetera de una sola firma (single-sig) no basta.
+</details>
 
-La **multisig** (firma múltiple) exige varias claves para autorizar un gasto. La configuración más común es **2 de 3**: existen tres claves, dos cualesquiera pueden gastar, ninguna puede sola.
+## Palabras que ya conoces
 
-Por qué importa:
+- **Lightning.** Una red que funciona sobre Bitcoin, para pagos pequeños y rápidos.
+- **Nodo completo.** Un nodo que guarda su propia copia del registro y revisa cada bloque por su cuenta. Puedes correr uno en casa.
+- **Multisig.** Una billetera que necesita más de una clave para gastar.
 
-- Pierdes una clave: las monedas siguen seguras y recuperables (con las 2 que quedan)
-- Una clave se ve comprometida: las monedas siguen seguras (el atacante necesita otra clave)
-- Alguien entra a tu casa: quizá encuentre una clave, no las tres
-- La herencia se vuelve manejable: tus herederos necesitan la ayuda de varias partes, no solo un disco duro recuperado
+Ese es el Recorrido. Ya puedes decir qué es Bitcoin, enviar y recibir un pago, guardar un respaldo y reconocer las estafas comunes. Cuando surja una pregunta, el glosario explica las palabras, y las páginas más largas llamadas temas a fondo profundizan más.
 
-La multisig no es solo para ballenas paranoicas. La configuración correcta para $20,000 (dólares estadounidenses) en bitcoin es más o menos la misma que para $200,000. Si tienes un saldo que te importe, 2 de 3 es razonable.
-
-## 7. Multisig en la práctica
-
-Una multisig 2 de 3 necesita tres cosas.
-
-**Tres billeteras de hardware (hardware wallets), de tres fabricantes distintos.** La regla es la diversidad de fabricantes, no marcas concretas. Blockstream (Jade), Foundation (Passport) y Trezor son tres de los muchos fabricantes de billeteras de hardware; elige tres marcas en las que confíes y que puedas verificar. Una vulnerabilidad de hardware en un modelo no debería comprometer más de una de tus claves. El incidente de entropía de Coldcard de julio de 2026 es el caso de estudio: las frases semilla generadas con el firmware afectado se podían adivinar, hubo billeteras vaciadas, y una multisig con una sola clave afectada habría resistido.
-
-Coinkite, la empresa que fabrica la Coldcard, publicó un aviso de seguridad. Si alguna de tus claves se generó en una Coldcard Mk2 o Mk3 con firmware 4.0.1 a 4.1.9 (el análisis independiente de Block incluye la versión 4.0.0, así que da por afectado cualquier firmware 4.x anterior a la 4.2.0), o en una Mk4, Mk5 o Q con un firmware anterior a la versión corregida que indica el aviso, reemplaza esa frase semilla. Luego mueve los fondos a una nueva billetera multisig construida con la clave de reemplazo. La excepción es una frase semilla creada con al menos 50 tiradas de dados justos, hechas en privado.
-
-**Tres frases semilla**, cada una generada en su propia billetera de hardware, cada una respaldada por separado en metal y en lugares físicamente distintos. Guarda una copia del [descriptor](/es/glosario/descriptor-de-salida) de la billetera junto a cada una. El descriptor es una línea de texto que registra las tres claves públicas y la regla 2 de 3; el coordinador te lo entrega en el paso 3 de abajo. Cada dirección multisig se construye a partir de las tres claves públicas, así que dos frases semilla por sí solas no pueden reconstruir la billetera. El descriptor le permite a quien lo tenga ver el saldo, pero no gastarlo.
-
-**Un coordinador**: software que conoce las claves públicas de las tres y arma transacciones que dos cualesquiera pueden firmar. El coordinador *no* guarda tus claves. Solo conoce su parte pública y organiza la firma.
-
-Entre los coordinadores están **Sparrow Wallet**, **Specter Desktop** y **Electrum**. Los tres manejan la creación de billeteras 2 de 3, la generación de PSBT y la combinación de las firmas de tus billeteras de hardware.
-
-El flujo:
-
-1. Genera tres billeteras de hardware, cada una con su propia frase semilla. Respalda cada frase en acero, en tres lugares distintos.
-2. Exporta la clave *pública* de cada billetera (la xpub o el descriptor) e impórtala en el coordinador.
-3. El coordinador genera direcciones multisig a partir de las tres xpubs. Exporta el descriptor de la billetera que te muestra y guarda una copia con cada respaldo de la frase semilla. Luego recibe bitcoin en esas direcciones.
-4. Para gastar: el coordinador arma una transacción, la firmas con dos cualesquiera de tus tres billeteras de hardware (una después de la otra), el coordinador combina las firmas y la transmite a la red.
-
-La primera vez que lo haces toma un par de horas. Después, gastar se siente casi normal, solo con un paso de firma adicional.
-
-**Reparte las claves con cuidado.** Un arreglo común: una en casa, una en casa de un familiar o de alguien de confianza, una en una caja de seguridad en un banco (u otro lugar lejano). La idea es que ningún evento físico (un incendio en la casa, un robo, un desastre natural) se lleve más de una clave.
-
-## 8. Privacidad y seguridad operativa
-
-Bitcoin es *seudónimo*, no anónimo. Cada transacción on-chain es pública para siempre. Cualquiera con tiempo y herramientas de análisis de la cadena puede correlacionar direcciones con identidades. Tu privacidad es tu responsabilidad.
-
-<figure>
-  <img src="/diagrams/privacy-leaks.svg" alt="Una matriz que cruza seis hábitos comunes en Bitcoin con cinco tipos de fuga de información. Filas: Usar un servidor Electrum público, Reutilizar direcciones, Mezclar UTXOs con KYC y sin KYC, No usar Tor, Comprar en un exchange con KYC, Hablar en público de lo que tienes. Columnas: Dirección IP, Vínculo con tu identidad, Grafo de direcciones, Saldo, Historial de transacciones. Los puntos naranjas marcan las celdas donde el hábito filtra ese dato; los guiones gris claro marcan donde no. Hablar en público y usar un servidor Electrum público son los que más filtran; no usar Tor y comprar con KYC filtran una cosa concreta cada uno." />
-  <figcaption>La mayoría de las fugas de privacidad tienen una sola causa. Correr tu propio nodo, usar Tor y no hablar de lo que tienes resuelven la mayoría con tres hábitos.</figcaption>
-</figure>
-
-Lo básico, en orden de esfuerzo:
-
-**1. Nunca reutilices direcciones.** Cada pago que recibas debe ir a una dirección nueva. Las billeteras modernas lo hacen por defecto. No lo cambies.
-
-**2. Usa el control de monedas.** La mayoría de las billeteras te deja elegir qué UTXOs gastar en una transacción. No juntes UTXOs que vienen de fuentes distintas a menos que lo hayas pensado bien. Mezclar UTXOs en una transacción vincula esas fuentes públicamente.
-
-**3. Usa tu billetera a través de Tor.** Internet ve direcciones IP ligadas a transacciones aunque la cadena no las vea. Tor rompe ese vínculo. Los sistemas operativos para nodos ofrecen Tor como una opción o como un servicio adicional.
-
-**4. Evita el KYC en todo lo que puedas.** Comprar bitcoin sin identificarte es bastante más difícil que comprar identificándote, pero la ganancia en privacidad es real. Los mercados entre pares (P2P) como Bisq y RoboSats funcionan. (AgoraDesk, otro mercado entre pares, cerró en 2024.) Ganar bitcoin (trabajar como freelance a cambio de bitcoin, etc.) funciona. Los cajeros automáticos de Bitcoin no son el camino: en Estados Unidos sus operadores están sujetos a las normas contra el lavado de dinero, así que una máquina no es una forma confiable de evitar identificarte, las comisiones son muy altas, y los cajeros son una herramienta favorita de los estafadores. El FBI contó $389 millones perdidos en denuncias relacionadas con ellos en 2025. Nadie legítimo te mandará nunca a uno.
-
-**5. No hables en público de lo que tienes.** Ni tu dirección, ni tu saldo, ni tu hardware. El anonimato en los espacios sociales es una forma de defensa propia. (Usa cuentas con seudónimo donde te sirva.)
-
-**6. Mantén separadas las monedas con KYC y las monedas sin KYC.** Si la mitad de tus monedas viene de un exchange regulado (con KYC) y la otra mitad de compras entre pares (sin KYC), tenerlas en billeteras distintas evita que vincules por accidente tu identidad KYC con tus tenencias privadas.
-
-**7. Considera el CoinJoin.** Una técnica para mejorar la privacidad en la que varios usuarios juntan sus transacciones para ocultar qué entradas corresponden a qué salidas. El panorama cambió en 2024. Los fiscales de Estados Unidos acusaron a los dos fundadores de Samourai Wallet, que operaba uno de los dos grandes coordinadores, y fueron arrestados, uno en Estados Unidos y otro en Portugal. Ambos se declararon culpables en 2025 y fueron condenados a cinco y cuatro años. La empresa detrás de Wasabi Wallet cerró el otro gran coordinador en 2024. Los diseños descentralizados, que no tienen un coordinador al que acusar ni cerrar, salieron de 2024 intactos, pero el programa original de JoinMarket se archivó en abril de 2026 con una advertencia de no usarlo; un proyecto aparte ha retomado el diseño. Lee [Privacidad en Bitcoin](/es/a-fondo/privacidad-en-bitcoin) antes de usar cualquiera de ellos.
-
-Preparamos un [PDF de buenas prácticas de privacidad](/downloads/bitcoin-privacy-best-practices.pdf) y una [lista de verificación de privacidad](/downloads/privacy-checklist.pdf) (ambos en PDF, en inglés), descargables desde este sitio. Léelos antes de manejar montos mayores.
-
-## 9. Planificación de la herencia
-
-La parte más difícil de la autocustodia es algo de lo que el marketing no habla: qué pasa cuando mueres.
-
-Si mueres con bitcoin en autocustodia y sin un plan de herencia, lo más probable es que tus monedas se pierdan para siempre. Tus herederos quizá sepan que tenías bitcoin. No sabrán tu frase semilla. No sabrán tu passphrase (la palabra 25). No sabrán qué billetera de hardware buscar. Los bitcoins están en la cadena, pero fuera de alcance.
-
-<figure>
-  <img src="/diagrams/inheritance-recovery.svg" alt="Un diagrama de recuperación de herencia, de izquierda a derecha. Un heredero empieza a la izquierda, encuentra la carta sellada entre los papeles del dueño, sigue las instrucciones de la carta hasta tres ubicaciones de frases semilla (Semilla 1 en casa, Semilla 2 en el banco, Semilla 3 con un familiar), cada una guardada con una copia del descriptor de la billetera. Se recogen dos de las tres (en naranja) y la tercera queda en gris (no hace falta). Las dos recogidas y el descriptor alimentan al coordinador, que reconstruye la billetera y combina las firmas, y los fondos se recuperan." />
-  <figcaption>Con un plan, la recuperación es un camino. Sin plan, la cadena queda fuera de alcance aunque los bitcoins estén ahí mismo.</figcaption>
-</figure>
-
-Un plan de herencia razonable:
-
-1. **Documenta todo.** Una carta sellada con: dónde están los respaldos de las frases semilla, qué software de billetera instalar, qué esperar (número de UTXOs, saldo aproximado, direcciones aproximadas) e instrucciones paso a paso para la restauración. Actualízala cada año.
-2. **No pongas la frase semilla en sí en la carta.** Pon instrucciones para *encontrarla*. La frase semilla está en la caja fuerte, en la placa de metal o en la caja de seguridad del banco; la carta, en tu archivador.
-3. **Reparte la información como se debe.** Un familiar de confianza sabe que la carta existe. Un abogado o albacea sabe dónde encontrarla. Quien herede tiene una guía clara por escrito.
-4. **Para multisig**, el plan tiene que explicar cómo coordinar varias claves. Guarda una copia del descriptor de la billetera con cada respaldo de frase semilla y otra con la carta. El descriptor muestra el saldo pero no puede gastar las monedas, y sin él dos de las tres frases semilla no pueden reconstruir la billetera. Quien tenga una sola frase semilla no consigue nada por su cuenta; el sistema exige que los herederos reúnan varias piezas.
-5. **Practica la recuperación.** Haz que tus herederos (o tu albacea) intenten la restauración *mientras sigas con vida*, en testnet o con un monto mínimo. La primera vez que alguien siga tus instrucciones no debería ser después de tu muerte.
-
-La herencia de bitcoin tiene solución de verdad. La mayoría no la resuelve porque la mayoría no planifica. Sé la excepción.
-
-## 10. El modelo de amenazas
-
-<figure>
-  <img src="/diagrams/threat-triangle.svg" alt="Un triángulo con tres esquinas etiquetadas ROBO (alguien encuentra tu frase semilla), PÉRDIDA (incendio, inundación, olvido) y COERCIÓN (llave inglesa, orden judicial, secuestro). En el centro geométrico hay una etiqueta que dice TU SEMILLA. Las tres amenazas que todo respaldo de frase semilla debe prever." />
-  <figcaption>Tres amenazas. Defenderse de una suele debilitar la defensa contra otra. El trabajo de la soberanía es equilibrar las tres.</figcaption>
-</figure>
-
-Una nota sobre la paranoia: no todas las amenazas son iguales, y tratarlas como si lo fueran es perder el tiempo.
-
-Para la mayoría de la gente con montos modestos:
-
-- **La falla más probable:** perder la frase semilla (un solo respaldo, un incendio, un olvido)
-- **La segunda:** phishing (soporte falso, actualización de billetera falsa, sitio falso)
-- **La tercera:** la quiebra de un exchange (si no has retirado a autocustodia)
-- **La cuarta:** el robo físico (alguien se entera de que tienes bitcoin y entra a tu casa)
-
-Para la mayoría basta con el patrón "respaldo en acero en varios lugares + billetera de hardware + no hablar del tema". No necesitas una jaula de Faraday. No necesitas un HSM de $10,000. No necesitas ser tu propio proveedor de internet. Necesitas no ser el blanco fácil.
-
-Para montos mayores: ajusta la seguridad operativa en proporción. La distribución geográfica importa más. La multisig importa más. Hablar de lo que tienes es todavía peor idea.
-
-Esto no es un deporte de competencia. El objetivo de la soberanía es la calma, no la ansiedad.
-
-## 11. Graduación
-
-Terminaste la primera parte del Recorrido.
-
-Entiendes por qué el dinero está roto. Sabes qué es Bitcoin en realidad. Sabes cómo funciona por dentro. Haces autocustodia. Usas las dos capas. Corres tu propio nodo. Tienes multisig. Tienes un plan para lo que pasa después de ti.
-
-No necesitas permiso. No necesitas un custodio. No necesitas preguntarle a nadie si tu dinero está seguro: puedes verificarlo por tu cuenta, de punta a punta, en cualquier momento.
-
-**Ese es el trato que Bitcoin ofreció en octubre de 2008.** Tomó seis capítulos y quién sabe cuántas horas de tu tiempo, pero lo conseguiste.
-
-Hay más, claro. Nodos de enrutamiento en Lightning. Sidechains (cadenas laterales) como Liquid. Watchtowers. CoinJoin. Discreet Log Contracts. PSBT entre billeteras multisig sin conexión (air-gapped). La computación soberana en general. La privacidad de red en la capa de aplicación. Para eso abrimos una sección llamada **A fondo**: cada tema es una exploración completa sobre un solo asunto. Elige uno cuando tengas ganas. Ninguno es necesario para usar bien Bitcoin.
-
-Tu recorrido apenas empieza. [Los temas a fondo (en inglés)](/rabbit-holes) profundizan más.
-
-> **Consejo pro:** La soberanía no es un destino, es una postura. El trabajo que hiciste en estos seis capítulos no es una línea de llegada: es un cimiento. Los próximos diez años de tu relación con Bitcoin serán más ricos que estos seis capítulos porque pusiste el cimiento ahora. Diviértete. Mantente humilde. Corre un nodo.
+Una última cosa. Este sitio no tiene servicio de ayuda, y nadie de este sitio te va a pedir nunca tus palabras, tus monedas ni dinero.

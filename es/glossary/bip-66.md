@@ -3,6 +3,7 @@ title: "BIP 66"
 slug: bip-66
 draft: false
 published: "2026-10-14"
+updated: "2026-11-17"
 shortDefinition: "Exige firmas codificadas en DER estricto, lo que mitiga ciertos problemas de maleabilidad de transacciones y de lectura de firmas."
 keyTakeaways:
   - "Hace que las firmas sigan un único estándar DER"
@@ -30,9 +31,9 @@ sameAs:
   - "https://en.bitcoin.it/wiki/BIP_0066"
 liveWidget: ~
 translationOf: bip-66
-sourceHash: "f044da97b21c"
-sourceCommit: "c546920"
-sourceUpdated: "2026-10-10"
+sourceHash: "a650b62f429b"
+sourceCommit: "74f1a22"
+sourceUpdated: "2026-11-17"
 translation: { method: "llm-draft" }
 ---
 
@@ -50,4 +51,4 @@ La solución de raíz llegó con SegWit, en vigor desde el bloque 481,824, en ag
 
 El BIP 66 reutilizó el mecanismo de cambio por número de versión del BIP 34: una vez que 950 de los 1,000 bloques anteriores eran de versión 3, los bloques de versión 2 pasaban a ser inválidos. El mecanismo de bits de versión del BIP 9 llegó después, y su primer despliegue fue el soft fork CSV de 2016 (BIP 68, BIP 112 y BIP 113).
 
-La regla empezó a aplicarse el 4 de julio de 2015. Poco después, un minero pequeño que no había actualizado produjo un bloque inválido, y mineros que no validaban por completo lo extendieron hasta formar una cadena de 6 bloques antes de que la cadena válida tomara la delantera. [Cómo funciona Bitcoin](/es/recorrido/como-funciona-bitcoin) coloca esa bifurcación junto a las otras reorganizaciones (reorgs) profundas de la historia de Bitcoin.
+La regla empezó a aplicarse el 4 de julio de 2015. Poco después, un minero pequeño que no había actualizado produjo un bloque inválido, y mineros que no validaban por completo lo extendieron hasta formar una cadena de 6 bloques antes de que la cadena válida tomara la delantera. [Irreversibilidad de la transacción](/es/glosario/irreversibilidad-de-la-transaccion) coloca esa bifurcación junto a la reorganización de 25 bloques de marzo de 2013, en su breve historial de reorganizaciones (reorgs) profundas.

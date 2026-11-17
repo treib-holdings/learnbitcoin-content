@@ -2,13 +2,14 @@
 title: "Privacidad en Bitcoin: qué funciona y qué no"
 slug: privacidad-en-bitcoin
 translationOf: bitcoin-privacy
-sourceHash: "b0f1ead82842"
-sourceCommit: "0bcffea"
-sourceUpdated: "2026-10-09"
+sourceHash: "bb82a039b421"
+sourceCommit: "74f1a22"
+sourceUpdated: "2026-11-17"
 translation:
   method: "llm-draft"
 draft: false
 published: "2026-10-15"
+updated: "2026-11-17"
 status: live
 section: rabbit-hole
 category: custody-privacy
@@ -32,7 +33,7 @@ sources:
   - { label: "US DOJ SDNY - Samourai Wallet founders arrested and charged (2024)", url: "https://www.justice.gov/usao-sdny/pr/founders-and-ceo-cryptocurrency-mixing-service-arrested-and-charged-money-laundering" }
   - { label: "US DOJ SDNY - Samourai Wallet founders sentenced (2025)", url: "https://www.justice.gov/usao-sdny/pr/founders-samourai-wallet-cryptocurrency-mixing-service-sentenced-five-and-four-years" }
   - { label: "Wasabi Wallet blog - zkSNACKs discontinues its coinjoin coordination service (2024, archived copy)", url: "https://web.archive.org/web/20241007122748/https://blog.wasabiwallet.io/zksnacks-is-discontinuing-its-coinjoin-coordination-service-1st-of-june/" }
-  - { label: "JoinMarket reference implementation - archived April 2026", url: "https://github.com/JoinMarket-Org/joinmarket-clientserver" }
+  - { label: "JoinMarket reference implementation - archived April 2026; its notice says not to use the code, which has vulnerabilities that will not be patched, and a warning of November 4, 2026 says a PayJoin sent with it can lose all the funds in the payment", url: "https://github.com/JoinMarket-Org/joinmarket-clientserver" }
   - { label: "joinmarket-ng - successor implementation", url: "https://github.com/joinmarket-ng/joinmarket-ng" }
   - { label: "BIP-78 - A Simple Payjoin Proposal", url: "https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki" }
   - { label: "BIP-77 - Async Payjoin", url: "https://github.com/bitcoin/bips/blob/master/bip-0077.md" }
@@ -48,6 +49,10 @@ sources:
   - { label: "Coinbase - Protecting our customers, standing up to extortionists (2025)", url: "https://www.coinbase.com/blog/protecting-our-customers-standing-up-to-extortionists" }
   - { label: "AP via France 24 - France foils new crypto kidnapping plot, arrests over 20 (2025)", url: "https://www.france24.com/en/live-news/20250527-france-foils-new-crypto-kidnapping-plot-arrests-over-20-source" }
   - { label: "Ledger - Addressing the July 2020 e-commerce and marketing data breach", url: "https://www.ledger.com/addressing-the-july-2020-e-commerce-and-marketing-data-breach" }
+  - { label: "Electrum documentation - FAQ: every server a wallet connects to sees its IP address, and the server it asks about its addresses can guess that they belong together", url: "https://electrum.readthedocs.io/en/latest/faq.html" }
+  - { label: "Bitcoin Wiki - Address reuse: good wallets make it easy and safe to use many addresses", url: "https://en.bitcoin.it/wiki/Address_reuse" }
+  - { label: "Bitcoin Optech - Trampoline payments: using a single trampoline node necessarily reveals the destination to it", url: "https://bitcoinops.org/en/topics/trampoline-payments/" }
+  - { label: "US Federal Trade Commission - What To Know About Cryptocurrency and Scams: scams often start on social media or a dating app, or with an unexpected text, email or call", url: "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-and-scams" }
 relatedTerms:
   - chain-analysis
   - address-clustering
@@ -71,7 +76,7 @@ relatedTerms:
   - lightning-network
 ---
 
-> **Adónde vas:** Cada transacción de Bitcoin es pública, permanente y cualquiera puede buscarla. Así se diseñó, y ese es también el problema de privacidad. Este capítulo explica cómo se rastrean las monedas en realidad (dos heurísticas y una base de datos), dónde se pega tu nombre real a la cadena, qué hábitos cotidianos filtran más y cuánto valen las defensas. Cubre el CoinJoin, incluido lo que cambiaron los arrestos y cierres de 2024, y las herramientas más discretas que han crecido desde entonces. No finge que la privacidad en Bitcoin sea fácil, y tampoco finge que toda la vigilancia sea mala. Si ya leíste la lista de verificación de privacidad de nuestro capítulo [Soberanía](/es/recorrido/soberania), este es el capítulo que explica por qué cada punto está en ella.
+> **Adónde vas:** Cada transacción de Bitcoin es pública, permanente y cualquiera puede buscarla. Así se diseñó, y ese es también el problema de privacidad. Este capítulo explica cómo se rastrean las monedas en realidad (dos heurísticas y una base de datos), dónde se pega tu nombre real a la cadena, qué hábitos cotidianos filtran más y cuánto valen las defensas. Cubre el CoinJoin, incluido lo que cambiaron los arrestos y cierres de 2024, y las herramientas más discretas que han crecido desde entonces. No finge que la privacidad en Bitcoin sea fácil, y tampoco finge que toda la vigilancia sea mala. Si ya leíste el párrafo sobre privacidad de nuestro capítulo [Adónde ir después](/es/recorrido/soberania), este es el capítulo que explica las razones que hay detrás.
 
 ## El modelo de privacidad de Satoshi
 
@@ -102,18 +107,18 @@ Nada de esto produce un nombre. La cadena tiene un grafo de clústeres, y el nom
 
 Tres empresas dominan la vinculación a escala industrial: Chainalysis, Elliptic y TRM Labs. Sus clientes son los exchanges, que deben filtrar los depósitos; los gobiernos, que investigan; y cada vez más los bancos y las empresas de pagos que están entre los dos. Mantienen grandes bases de datos de clústeres etiquetados, sembradas como lo hizo el paper de 2013, operando con servicios y registrando dónde aterrizan las monedas, y ampliadas por cada cliente que les pasa una dirección de depósito con un nombre encima.
 
-Esta es la parte que casi todos los consejos de privacidad se saltan. Las direcciones nuevas y Tor no hacen nada contra el registro del exchange. Limitan hasta dónde se extiende la etiqueta. La etiqueta en sí se crea en el momento en que dinero con identidad verificada toca tus claves, y las únicas formas de evitarla son adquirir bitcoin sin identificarte o aceptar la etiqueta y administrarla. Las dos son opciones legítimas, y las dos empiezan por admitir que la etiqueta existe.
+Esta es la parte que casi todos los consejos de privacidad se saltan. Las direcciones nuevas y Tor no hacen nada contra el registro del exchange. Limitan hasta dónde se extiende la etiqueta. La etiqueta en sí se crea en el momento en que dinero con identidad verificada toca tus claves, y las únicas formas de evitarla son adquirir bitcoin sin identificarte o aceptar la etiqueta y administrarla. Las dos son opciones legítimas, y las dos empiezan por admitir que la etiqueta existe. La primera, cuando significa comprarle a un desconocido, tiene un riesgo propio: tratar con desconocidos es como empiezan muchas estafas. A quien empieza le sirve más el capítulo [Si decides tener un poco](/es/recorrido/usar-bitcoin), que expone dos formas prudentes de conseguir un primer monto pequeño.
 
 ## Qué se filtra
 
 <figure>
-  <img src="/diagrams/privacy-leaks.svg" alt="Una matriz que cruza seis hábitos comunes en Bitcoin con cinco tipos de fuga de información. Filas: Usar un servidor Electrum público, Reutilizar direcciones, Mezclar UTXOs con KYC y sin KYC, No usar Tor, Comprar en un exchange con KYC, Hablar en público de lo que tienes. Columnas: Dirección IP, Vínculo con tu identidad, Grafo de direcciones, Saldo, Historial de transacciones. Los puntos naranjas marcan las celdas donde el hábito filtra ese dato; los guiones gris claro marcan donde no. Hablar en público y usar un servidor Electrum público son los que más filtran; no usar Tor y comprar con KYC filtran una cosa concreta cada uno." />
+  <img src="/diagrams/privacy-leaks.svg" alt="Una matriz que cruza seis hábitos comunes en Bitcoin con cinco tipos de fuga de información. Filas: Usar un servidor Electrum público, Reutilizar direcciones, Mezclar UTXOs con KYC y sin KYC, No usar Tor, Comprar en un exchange con KYC, Hablar en público de lo que tienes. Columnas: Dirección IP, Vínculo con tu identidad, Grafo de direcciones, Saldo, Historial de transacciones. Los puntos naranjas marcan las celdas donde el hábito filtra ese dato; los guiones gris claro marcan donde no. Usar un servidor Electrum público filtra cuatro cosas: dirección IP, grafo de direcciones, saldo e historial de transacciones. Hablar en público de lo que tienes también filtra cuatro: vínculo con tu identidad, grafo de direcciones, saldo e historial de transacciones. Mezclar monedas con KYC y sin KYC filtra tres, reutilizar direcciones dos, y no usar Tor y comprar con KYC una cada uno. Una línea al pie dice: Corre tu propio nodo. Usa Tor. No hables. La mayoría de las fugas desaparecen." />
   <figcaption>Seis hábitos, cinco tipos de fuga. Las dos peores filas no tienen nada que ver con la cadena de bloques.</figcaption>
 </figure>
 
 La matriz deja claro algo que se pierde en las discusiones sobre privacidad: la mayoría de las fugas ni siquiera están en la cadena.
 
-Empieza por el servidor detrás de la billetera. Una billetera ligera tiene que preguntarle a algún servidor cuáles de sus direcciones tienen monedas. Si ese servidor es uno público, operado por un desconocido, le entregaste al desconocido tu lista completa de direcciones, tu saldo y tu historial, atados a tu dirección IP. Es la fuga más grande de toda la tabla y no interviene ninguna heurística de análisis de cadena. La solución es correr tu propio [nodo](/es/glosario/nodo-completo), o como mínimo tu propio servidor de indexación encima de uno, y el capítulo [Soberanía](/es/recorrido/soberania) explica cómo hacerlo paso a paso.
+Empieza por el servidor detrás de la billetera. Una billetera ligera tiene que preguntarle a algún servidor cuáles de sus direcciones tienen monedas. Si ese servidor es uno público, operado por un desconocido, le entregaste al desconocido tu lista completa de direcciones, tu saldo y tu historial, atados a tu dirección IP. Es, empatada con otra, la fuga más grande de la tabla y no interviene ninguna heurística de análisis de cadena. La solución es correr tu propio [nodo](/es/glosario/nodo-completo), o como mínimo tu propio servidor de indexación encima de uno, y [Corre tu propio nodo (en inglés)](/rabbit-hole/run-your-own-node) explica cómo hacerlo paso a paso.
 
 Sigue la capa de red. Transmitir una transacción desde la conexión de tu casa ata esa transacción a tu dirección IP para cualquiera que observe la red entre pares, y hay gente que la observa. [Tor](/es/glosario/servicio-oculto-de-tor) arregla esa fuga concreta y ninguna otra.
 
@@ -141,19 +146,19 @@ Luego está el problema de las bases de datos. La verificación de identidad con
 
 Casi todo lo que sigue no cuesta nada y funciona.
 
-**Usa una dirección nueva para cada pago que recibas.** Es la que pidió Satoshi en 2008. Toda [billetera HD](/es/glosario/billetera-hd) moderna lo hace por defecto; no lo cambies. Si necesitas una dirección permanente para donaciones o facturas, para eso están los Silent Payments, más abajo.
+**Usa una dirección nueva para cada pago que recibas.** Es la que pidió Satoshi en 2008. Las buenas billeteras lo hacen fácil, y la mayoría de las [billeteras HD](/es/glosario/billetera-hd) modernas te ofrecen una dirección nueva por sí solas; no lo cambies. Si necesitas una dirección permanente para donaciones o facturas, para eso están los Silent Payments, más abajo.
 
-**Deja de contarles tu lista de direcciones a desconocidos.** Corre tu propio nodo y apunta tu billetera a él, o corre tu propio servidor de indexación encima de un nodo. Esto cierra de un solo movimiento la fuga más grande de la tabla. Donde eso sea imposible, entiende que un servidor público lo ve todo y elígelo en consecuencia.
+**Deja de contarles tu lista de direcciones a desconocidos.** Corre tu propio nodo y apunta tu billetera a él, o corre tu propio servidor de indexación encima de un nodo. Esto cierra de un solo movimiento una de las dos fugas más grandes de la tabla. Donde eso sea imposible, entiende que un servidor público lo ve todo y elígelo en consecuencia.
 
 **Pasa el tráfico de red por Tor.** Las conexiones de tu nodo y las transmisiones de tu billetera. En casi todo el software para nodos es un interruptor, y cierra la fuga de la IP al transmitir.
 
 **No fusiones lo que quieres mantener separado.** El [control de monedas](/es/glosario/control-de-monedas) te deja elegir qué monedas gasta un pago. Etiqueta las monedas según de dónde vinieron, y nunca gastes un retiro identificado de un exchange en la misma transacción que monedas adquiridas en privado. La heurística de entrada común solo puede soldar lo que tú le entregas.
 
-**Gasta por Lightning donde puedas.** Un pago por [Lightning](/es/glosario/lightning-network) no aterriza en la cadena, y el enrutamiento cebolla (onion routing) hace que un solo nodo intermedio no sepa a la vez quién paga y a quién se le paga. Nuestro capítulo sobre [enrutamiento en Lightning (en inglés)](/rabbit-hole/lightning-routing) detalla qué puede ver y qué no cada salto.
+**Gasta por Lightning donde puedas.** Un pago por [Lightning](/es/glosario/lightning-network) no aterriza en la cadena, y el enrutamiento cebolla (onion routing) hace que un solo nodo intermedio no sepa a la vez quién paga y a quién se le paga. Una billetera de celular que deja la búsqueda de la ruta en manos de un solo nodo trampolín (trampoline) renuncia a parte de eso: el nodo se entera de adónde va el pago. Nuestro capítulo sobre [enrutamiento en Lightning (en inglés)](/rabbit-hole/lightning-routing) detalla qué puede ver y qué no cada salto.
 
 **Di menos.** Nada de capturas de pantalla del saldo, nada de hablar de tus bitcoins bajo tu nombre real, nada de reutilizar la dirección de tu perfil público para algo privado.
 
-Son hábitos más que una lista de verificación. La lista de verificación vive en el capítulo [Soberanía](/es/recorrido/soberania) y en el [PDF de buenas prácticas de privacidad](/downloads/bitcoin-privacy-best-practices.pdf) (PDF en inglés), y este capítulo es la razón por la que cada punto está en ella. Fíjate en lo que falta en la lista: nada de lo anterior requiere una herramienta especial, un coordinador ni una comisión.
+Son hábitos más que una lista de verificación. Un resumen de una página con los más simples está en el [PDF de buenas prácticas de privacidad](/downloads/bitcoin-privacy-best-practices.pdf) (PDF en inglés); también cubre las contraseñas y los inicios de sesión con dos factores, que este capítulo no cubre. Fíjate en lo que falta en la lista: nada de lo anterior requiere una herramienta especial, un coordinador ni una comisión.
 
 ## CoinJoin, y lo que pasó en 2024
 
@@ -163,7 +168,7 @@ Tiene límites que la publicidad suele omitir. Solo protege las monedas que pasa
 
 La ley entró por el coordinador. El 24 de abril de 2024, los fiscales de Estados Unidos anunciaron cargos contra los dos fundadores de [Samourai Wallet](/es/glosario/whirlpool-samourai), uno arrestado en Pensilvania y el otro en Portugal, cuyo coordinador Whirlpool había organizado durante años rondas de denominación fija. La acusación los imputó por conspiración para lavar dinero y por operar un negocio de transmisión de dinero sin licencia, y el segundo cargo es el que importó, porque el coordinador nunca tuvo en su poder las monedas de nadie. Los fiscales trataron un software que organizaba una transacción como un negocio que transmitía dinero. Una semana después, la empresa detrás de [Wasabi Wallet](/es/glosario/wasabi-wallet), que operaba el otro gran coordinador, anunció que se retiraba. Su coordinador se apagó el 1 de junio de 2024, y a la empresa nunca se le imputó nada. En julio de 2025, los fundadores de Samourai se declararon culpables del cargo de transmisión de dinero, el cargo de lavado se retiró, y en noviembre de ese año fueron condenados a cinco y cuatro años. Como el caso terminó en un acuerdo de culpabilidad, ningún tribunal resolvió si un coordinador no custodial es un transmisor de dinero. Lo más cercano a una resolución vino de fuera de Bitcoin: en agosto de 2025, un jurado de Nueva York declaró culpable a Roman Storm, desarrollador del mezclador de Ethereum Tornado Cash, bajo la misma ley de transmisión de dinero, por un software sin coordinador alguno, mientras no lograba ponerse de acuerdo sobre los cargos de lavado y de sanciones. Su petición para anular ese veredicto ya se había argumentado, pero seguía sin decidirse a septiembre de 2026, con un nuevo juicio por los cargos sin veredicto fijado para abril de 2027. Así que la cuestión se está litigando más que resolviendo, y cualquiera que piense en operar un coordinador tiene que contar con que la respuesta sea que sí.
 
-Lo que sobrevivió es la parte en la que no hay a quién arrestar. [JoinMarket](/es/glosario/joinmarket), el CoinJoin descentralizado original, nunca ha tenido coordinador: los makers anuncian liquidez, los takers pagan una comisión y el taker arma la transacción. Pasó 2024 intacto, y luego chocó con otra pared cuando sus propios mantenedores archivaron el código de referencia en abril de 2026 por falta de desarrollo, dejando a un sucesor independiente a cargo de la red. [Joinstr](/es/glosario/joinstr) coordina las rondas a través de relays de Nostr, sin coordinador alguno; empezó como prueba de concepto en 2022, para 2026 ya había publicado plugins para billeteras y una app para nodos, y sigue teniendo una base de usuarios diminuta. El cliente de Wasabi en sí sigue funcionando, apuntado al coordinador independiente en el que cada usuario decida confiar. En resumen, conseguir un CoinJoin es más difícil en 2026 de lo que era en 2023, las opciones que sobreviven son más técnicas, y el dilema de llamar la atención por usarlo se agudizó. Sigue siendo la herramienta más fuerte que hay, y conseguirla ahora cuesta más trabajo.
+Lo que sobrevivió es la parte en la que no hay a quién arrestar. [JoinMarket](/es/glosario/joinmarket), el CoinJoin descentralizado original, nunca ha tenido coordinador: los makers anuncian liquidez, los takers pagan una comisión y el taker arma la transacción. Pasó 2024 intacto, y luego chocó con otra pared cuando sus propios mantenedores archivaron el código de referencia en abril de 2026. El aviso del repositorio dice ahora que no se use ese código, porque tiene vulnerabilidades que no se van a parchar, y una advertencia añadida el 4 de noviembre de 2026 dice que enviar un PayJoin con él puede hacer perder todos los fondos del pago. Un sucesor independiente lleva la red. [Joinstr](/es/glosario/joinstr) coordina las rondas a través de relays de Nostr, sin coordinador alguno; empezó como prueba de concepto en 2022, para 2026 ya había publicado plugins para billeteras y una app para nodos, y sigue teniendo una base de usuarios diminuta. El cliente de Wasabi en sí sigue funcionando, apuntado al coordinador independiente en el que cada usuario decida confiar. En resumen, conseguir un CoinJoin es más difícil en 2026 de lo que era en 2023, las opciones que sobreviven son más técnicas, y el dilema de llamar la atención por usarlo se agudizó. Sigue siendo la herramienta más fuerte que hay, y conseguirla ahora cuesta más trabajo.
 
 ## Las herramientas más discretas
 

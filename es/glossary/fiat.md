@@ -3,6 +3,7 @@ title: "Fiat"
 slug: fiat
 draft: false
 published: "2026-10-14"
+updated: "2026-11-17"
 shortDefinition: "Dinero emitido por un gobierno, como el dólar (USD) o el euro (EUR), sin respaldo en ninguna mercancía física y cuyo valor depende de la autoridad del Estado."
 keyTakeaways:
   - "Lo emiten y regulan los gobiernos"
@@ -32,9 +33,9 @@ relatedTerms:
   - volatility
 liveWidget: ~
 translationOf: fiat
-sourceHash: "a05775bf283b"
-sourceCommit: "e722e85"
-sourceUpdated: "2026-10-13"
+sourceHash: "b5447b667e36"
+sourceCommit: "74f1a22"
+sourceUpdated: "2026-11-17"
 translation:
   method: "llm-draft"
 ---
@@ -43,6 +44,6 @@ El dinero fiat (fiduciario) es dinero que vale porque un gobierno lo decreta, no
 
 El fiat tiene dos superpoderes que Bitcoin no tiene. Primero, la autoridad de un Estado puede obligar a la gente a aceptarlo: intenta pagar tus impuestos en Estados Unidos con BTC. Segundo, el emisor puede crear más cuando quiera. Ese segundo poder es también la razón por la que el fiat pierde poder adquisitivo, sin falta, década tras década. El dólar estadounidense ha perdido cerca del 97% de su valor de 1913: lo que $100 compraban en enero de 1913 costaba $3,418 en agosto de 2026, según la propia calculadora del BLS, la oficina de estadísticas laborales de Estados Unidos. El peso argentino ha perdido cerca del 99% de su valor de 2018 en menos de una década: el índice de precios al consumidor del INDEC se multiplicó por 97 entre enero de 2018 y agosto de 2026.
 
-Bitcoin se diseñó como una alternativa directa: sin emisor, sin política discrecional, con una oferta fija. Eso no significa que el fiat vaya a desaparecer mañana. La mayoría de las personas del planeta cobran en fiat, pagan el alquiler en fiat y convierten a BTC por una "rampa de entrada" (fiat on-ramp): un exchange, un cajero automático de Bitcoin o un intercambio entre pares (P2P). Los dos sistemas coexisten. El papel de Bitcoin es ser la opción que no se puede diluir.
+Bitcoin se diseñó como una alternativa directa: sin emisor, sin política discrecional, con una oferta fija. Eso no significa que el fiat vaya a desaparecer mañana. La mayoría de las personas del planeta cobran en fiat y pagan el alquiler en fiat, y quienes quieren bitcoin pueden conseguirlo por una "rampa de entrada" (fiat on-ramp), como un exchange: consulta [Si decides tener un poco](/es/recorrido/usar-bitcoin). Los dos sistemas coexisten. El papel de Bitcoin es ser la opción que no se puede diluir.
 
-Consulta [Inflación](/es/glosario/inflacion) para el mecanismo concreto por el que el fiat pierde poder adquisitivo, y el [capítulo 1 del Recorrido](/es/recorrido/por-que-el-dinero-esta-roto) para la versión larga de por qué esto importa.
+Consulta [Inflación](/es/glosario/inflacion) para el mecanismo concreto por el que el fiat pierde poder adquisitivo, y el [capítulo 2 del Recorrido](/es/recorrido/por-que-el-dinero-esta-roto) para la versión larga de por qué esto importa.

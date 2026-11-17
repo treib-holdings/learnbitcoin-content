@@ -78,9 +78,9 @@ español latinoamericano neutro, tuteo, números al estilo es-419, fechas
 - Bitcoin (red, protocolo) / bitcoin (unidad); BTC; sat, sats; satoshi.
   Lightning, Taproot, SegWit, Liquid, Bitcoin Core y Bitcoin Knots son
   nombres: "la red Lightning", "el protocolo Bitcoin".
-- Títulos y encabezados en mayúscula inicial solamente: "Por qué el
-  dinero está roto", "Cómo funciona Bitcoin", "## 4. El tope de 21
-  millones". Los nombres de sección van con mayúscula cuando se nombran:
+- Títulos y encabezados en mayúscula inicial solamente: "Por qué se
+  creó", "Cómo funciona un pago", "## Seis reglas para tener
+  presentes". Los nombres de sección van con mayúscula cuando se nombran:
   "el Recorrido", "A fondo"; "el glosario" va en minúscula en prosa, como
   en inglés.
 - "banco central" en minúscula salvo dentro de un nombre propio; "la
@@ -182,12 +182,14 @@ Los slugs y los nombres de archivo son ASCII en todos los idiomas:
 
 - Un enlace a una página que existe en español apunta a su URL en
   español: `/es/glosario/<slug>` para una entrada con archivo bajo
-  `es/glossary/` (el `slug:` de ese archivo), `/es/recorrido/<slug>`
-  para los seis capítulos del Recorrido (por-que-el-dinero-esta-roto,
-  que-es-bitcoin-en-realidad, como-funciona-bitcoin, usar-bitcoin,
-  se-tu-propio-banco, soberania), `/es`, `/es/manifiesto` y
-  `/es/privacidad`.
-- Todo lo demás (temas a fondo, entradas sin traducir, correcciones,
+  `es/glossary/` (el `slug:` de ese archivo), `/es/a-fondo/<slug>`
+  para un tema a fondo con archivo bajo `es/rabbit-holes/`,
+  `/es/recorrido/<slug>` para los siete capítulos del Recorrido, en
+  este orden (que-es-bitcoin-en-realidad, por-que-el-dinero-esta-roto,
+  preguntas-razonables, como-funciona-bitcoin, se-tu-propio-banco,
+  usar-bitcoin, soberania; las direcciones son anteriores a los títulos
+  de hoy y no cambian), `/es`, `/es/manifiesto` y `/es/privacidad`.
+- Todo lo demás (temas a fondo y entradas sin traducir, correcciones,
   boletín, nodo) va como texto plano si es una mención de paso, o con la
   URL en inglés y " (en inglés)" añadido al texto del enlace si el lector
   lo necesita. Nunca se inventa una URL. Los PDF descargables conservan
@@ -212,8 +214,15 @@ tal cual.
 | Pro tip: | Consejo pro: | cita de cierre |
 | Do it: | Hazlo: | línea que abre una tarjeta de la billetera de práctica en un capítulo del Recorrido; un párrafo propio, sin sangría, en negrita con asteriscos y con los dos puntos dentro: `**Hazlo:** [Título](https://practice.learnbitcoin.com/es/do/<id>). Unas pocas frases.` El título es el que la billetera da al paso: Ten algunas, Pásala, No hay saldos, La sala de espera, La semilla, Comprueba el respaldo. Las reglas completas están en CONTRIBUTING.md |
 | What this buys us / you / Bitcoin | Qué ganamos con esto / Qué ganas con esto / Qué gana Bitcoin con esto | sección de cierre de los temas a fondo y de algunas entradas |
-| Options, not gospel / Starting points, not gospel | Opciones, no dogmas / Puntos de partida, no dogmas | apartes de los capítulos 5 y 6 |
-| Your Milestone | Tu meta | encabezado de sección en los capítulos |
+| Options, not gospel / Starting points, not gospel | Opciones, no dogmas / Puntos de partida, no dogmas | apartes de algunos temas a fondo |
+| A guess first. | Primero, adivina. | párrafo que abre cada capítulo del Recorrido, después de "Adónde vas"; en negrita, con el punto dentro |
+| Your guess at the start: | Lo que adivinaste al principio: | la primera pregunta de "Ponte a prueba" |
+| Do it / Try it (encabezado) | Hazlo / Pruébalo | encabezado de la parte práctica de un capítulo; sin dos puntos, para que no se confunda con la línea de una tarjeta |
+| A fair objection | Una objeción razonable | encabezado de los capítulos del Recorrido; "razonable" es también el "fair" de "Preguntas razonables" |
+| Check yourself | Ponte a prueba | encabezado de los capítulos del Recorrido |
+| Reread "X". | Vuelve a leer "X". | respuestas de "Ponte a prueba"; X es el encabezado en español, letra por letra |
+| Words you now know | Palabras que ya conoces | encabezado de los capítulos del Recorrido |
+| More (en el mapa del capítulo 7) | Leer más | texto del enlace al final de cada entrada del mapa |
 | Sources | Fuentes | pie de página |
 | Key takeaways | Ideas clave | encabezado de las entradas |
 | Related terms | Términos relacionados | pie de las entradas |
@@ -300,7 +309,9 @@ el uso en frases.
 | peer-to-peer | entre pares (P2P) | "red entre pares"; "P2P" tras la primera mención; no "punto a punto" |
 | protocol | protocolo | - |
 | network | red | - |
-| ledger | registro (contable) | "un registro compartido"; "libro mayor" es jerga contable, admitida una vez como glosa |
+| ledger | registro (contable) | "un registro compartido"; "libro mayor" es jerga contable, admitida una vez como glosa. En el Recorrido "el registro" es solo el registro compartido de Bitcoin: una línea suya es "una anotación", y las notas de cómo se configuró una billetera son "los datos" |
+| Who runs it? / nobody runs it | ¿Quién manda? / nadie manda | "manda en Bitcoin" cuando se nombra; "mandar" no se usa en el Recorrido con el sentido de enviar |
+| ordinary money | dinero normal | no "dinero común": el curso ya tiene "el fondo común" |
 | chain / main chain | la cadena / la cadena principal | - |
 | timestamp | marca de tiempo | no "sello de tiempo" |
 | consensus | consenso | la entrada "Parámetro de consenso" cubre las reglas; la palabra suelta va así |
@@ -317,7 +328,7 @@ el uso en frases.
 | verify, don't trust | verifica, no confíes | en ese orden, el del sitio |
 | trusted third party | tercero de confianza | - |
 | intermediary | intermediario | - |
-| sovereignty / sovereign | soberanía / soberano | el capítulo se titula "Soberanía" |
+| sovereignty / sovereign | soberanía / soberano | el capítulo 7 conserva la dirección "soberania"; su título es "Adónde ir después" |
 | on-chain | on-chain (invariable) | adjetivo: "una transacción on-chain"; cuando es un lugar, "en la cadena": "se liquida en la cadena"; "Off-chain" sí tiene entrada |
 
 ### Transacciones y comisiones
@@ -378,6 +389,15 @@ el uso en frases.
 | Electrum server | servidor Electrum | - |
 | privacy / pseudonymous | privacidad / seudónimo (adj. seudónima) | "Bitcoin es seudónimo, no anónimo"; no "pseudónimo" |
 | no-KYC | sin KYC | "comprar sin KYC"; "KYC" sí tiene entrada |
+| type (the 12 words) | teclear | cuando lo que se teclea son las palabras de una billetera: "nunca se teclean en un sitio web". "Escribir" queda para el papel ("escríbelas en papel"). Lo demás que se escribe en una pantalla (una dirección web, un número) sigue siendo "escribir", como dicen las pantallas |
+| guard (what the words guard) | proteger | "aquí solo protegen monedas de práctica"; "cuidar" es "look after" |
+| seed words | frase semilla; "las 12 palabras" cuando el inglés las cuenta | el Recorrido enseña "frase semilla" en el capítulo 5; "recovery phrase" = "frase de recuperación" |
+| wallet app | app de billetera | - |
+| someone you know in person | alguien que conoces en persona | no "alguien de confianza": la regla del curso es conocer a la persona en persona |
+| fake (company, app) | falso: una empresa falsa, una app falsa | "scammer" = "estafador" |
+| regulator | regulador | - |
+| help desk | servicio de ayuda | "wallet support", entre comillas, es lo que dice el estafador: "soporte de la billetera" |
+| trading app / investment app | app de inversiones | no "app de trading" |
 
 ### Lightning y otras capas
 

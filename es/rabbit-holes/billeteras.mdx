@@ -1,0 +1,204 @@
+---
+title: "Billeteras: una lista corta y con fecha"
+slug: billeteras
+translationOf: wallets
+sourceHash: "4347257e3cd4"
+sourceCommit: "74f1a22"
+sourceUpdated: "2026-11-17"
+translation:
+  method: "llm-draft"
+draft: false
+published: "2026-11-17"
+updated: "2026-11-17"
+status: live
+section: rabbit-hole
+category: custody-privacy
+tagline: "Una app para celular revisada con ocho pruebas sencillas el 17 de noviembre de 2026, billeteras de hardware de tres fabricantes, y cómo comprobar que la app que instalas es la de verdad. Nadie pagó por estar en la lista."
+order: 26
+estimatedMinutes: 9
+level: beginner
+sources:
+  - { label: "BlueWallet in Apple's App Store (web page read November 17, 2026): Developer and Seller both read Bluewallet Services, S. R. L.; the line under the title is a subtitle; version 8.0.3 of October 17, 2026; languages English, French and Spanish; a Version History list that runs back to 2024; a Copyright line that reads BlueWallet Services S.R.L.; a row of other apps headed You Might Also Like", url: "https://apps.apple.com/us/app/bluewallet-bitcoin-wallet/id1376878040" }
+  - { label: "Apple's public lookup record for the same app (read November 17, 2026): seller name Bluewallet Services, S. R. L.; seller's website bluewallet.io; first released May 27, 2018", url: "https://itunes.apple.com/lookup?id=1376878040&country=us" }
+  - { label: "BlueWallet on Google Play (web page read November 17, 2026): BlueWallet Services S. R. L. under the app's title; 1M+ downloads; updated October 4, 2026; a release date of November 26, 2018 in the page's own data; About the developer shows a person's name and United Kingdom; a row of other apps headed Similar apps", url: "https://play.google.com/store/apps/details?id=io.bluewallet.bluewallet" }
+  - { label: "WalletScrutiny - BlueWallet: the developer's name as each store prints it; iPhone release May 27, 2018; Android release November 2018", url: "https://walletscrutiny.com/mobile/io.bluewallet.bluewallet/" }
+  - { label: "BlueWallet - maker's site: a Bitcoin-only wallet for iPhone and Android, with links to its listings in both stores", url: "https://bluewallet.io/" }
+  - { label: "BlueWallet - terms: the private key is stored on your device; BlueWallet has no access to it, cannot recover it and cannot identify you", url: "https://bluewallet.io/tos/" }
+  - { label: "BlueWallet - Create a Bitcoin wallet: the add wallet screen, the Bitcoin button and Create", url: "https://bluewallet.io/docs/create-bitcoin-wallet/" }
+  - { label: "BlueWallet - Receive a Bitcoin transaction: Receive shows the wallet's address", url: "https://bluewallet.io/docs/receive-bitcoin-transaction/" }
+  - { label: "BlueWallet - Wallet details: Delete Wallet removes the wallet from this device; a wallet that still has a balance asks for the amount first", url: "https://bluewallet.io/docs/wallet-details/" }
+  - { label: "BlueWallet - Import a wallet: Import wallet on the add-wallet screen; type the seed words in order and tap Import", url: "https://bluewallet.io/docs/import-wallet/" }
+  - { label: "BlueWallet - how to recover a wallet elsewhere: 12 or 24 word seeds on standard paths, recoverable in another maker's wallet", url: "https://bluewallet.io/docs/recover-wallet/" }
+  - { label: "BlueWallet - privacy policy: basic usage events and crash reports are collected, and the user can opt out in the app's privacy settings", url: "https://bluewallet.io/privacy/" }
+  - { label: "BlueWallet source code (MIT license), the app's own English text at version 8.0.2: wallet kinds named Bitcoin, Multisig Vault and Lightning; the instruction to write the words down on a piece of paper; the labels Receive, Delete Wallet, Import wallet, Disable Analytics, Speed Up, Cancel and Buy Bitcoin", url: "https://github.com/BlueWallet/BlueWallet/blob/v8.0.2/loc/en.json" }
+  - { label: "BlueWallet source code at version 8.0.2 - a new wallet is made from 16 random bytes, which gives 12 words", url: "https://github.com/BlueWallet/BlueWallet/blob/v8.0.2/class/wallets/abstract-hd-electrum-wallet.ts" }
+  - { label: "BlueWallet source code at version 8.0.2 - the screen shown once a wallet is made: the instruction to write the words down, the words and one button", url: "https://github.com/BlueWallet/BlueWallet/blob/v8.0.2/screen/wallets/PleaseBackup.tsx" }
+  - { label: "BlueWallet source code at version 8.0.2 - when imported words were never used, the app offers a new wallet of its standard kind", url: "https://github.com/BlueWallet/BlueWallet/blob/v8.0.2/class/wallet-import.ts" }
+  - { label: "BlueWallet source code at version 8.0.2 - the Buy Bitcoin button, added October 1, 2026: shown on a Bitcoin wallet's screen; it opens a selling company's page with the wallet's receive address", url: "https://github.com/BlueWallet/BlueWallet/blob/v8.0.2/components/BuyBitcoinButton.tsx" }
+  - { label: "BlueWallet pull request 9083 - check what a server reports about a pending payment before Speed Up or Cancel replaces it (opened November 2, 2026, merged November 7, 2026)", url: "https://github.com/BlueWallet/BlueWallet/pull/9083" }
+  - { label: "BlueWallet releases on GitHub (read November 17, 2026): the newest marked version is v8.0.2", url: "https://github.com/BlueWallet/BlueWallet/releases" }
+  - { label: "BlueWallet source code at version 8.0.2 - Android: the phone's own backup of the app's data is switched off", url: "https://github.com/BlueWallet/BlueWallet/blob/v8.0.2/android/app/src/main/AndroidManifest.xml" }
+  - { label: "BlueWallet source code at version 8.0.2 - iPhone: the app's stored data is marked for this device only", url: "https://github.com/BlueWallet/BlueWallet/blob/v8.0.2/class/blue-app.ts" }
+  - { label: "Google Play Console Help - a developer name can be different from the legal name; Google displays the legal name separately", url: "https://support.google.com/googleplay/android-developer/answer/13628312?hl=en" }
+  - { label: "Apple - iPhone User Guide, Get apps in the App Store: an app's page shows its developer among its details; tap Get to download a free app", url: "https://support.apple.com/guide/iphone/get-apps-iphc90580097/ios" }
+  - { label: "Google - Android Help, Download apps to your Android device: use the Play Store app; under the app's title, check the ratings and the number of downloads; tap Install; apps from other sources can put a device at risk", url: "https://support.google.com/android/answer/9457058?hl=en" }
+  - { label: "Apple Support (June 4, 2026) - an app installed by hand from outside the App Store cannot be opened until its developer is trusted in Settings", url: "https://support.apple.com/en-us/118254" }
+  - { label: "Kaspersky Securelist (April 20, 2026) - in March 2026 researchers found 26 apps in Apple's App Store that posed as well-known wallets, almost all in China's store; they opened web pages made to look like the App Store, which used profiles to install copies of real wallets changed to take the recovery words", url: "https://securelist.com/fakewallet-cryptostealer-ios-app-store/119474/" }
+  - { label: "FBI - Cryptocurrency Investment Fraud: fake investment apps can be found by searching the app stores (read in the Internet Archive's copy of November 13, 2026; the site refuses automated readers)", url: "https://www.fbi.gov/how-we-can-help-you/victim-services/national-crimes-and-victim-resources/cryptocurrency-investment-fraud" }
+  - { label: "FBI - public service announcement of December 21, 2022: criminals buy search advertisements that imitate real businesses, with a web address a letter or two off; type the address into the browser yourself", url: "https://www.ic3.gov/PSA/2022/PSA221221" }
+  - { label: "Malwarebytes (June 1, 2026) - Fake BlueWallet steals passwords, accounts, and crypto from Macs: a fake download site at an address made to look like the maker's, with a word joined on in front and another ending; BlueWallet itself was not compromised", url: "https://www.malwarebytes.com/blog/threat-intel/2026/06/fake-bluewallet-steals-passwords-accounts-and-crypto-from-macs" }
+  - { label: "FINRA, the US brokerage industry's own regulator - Be Alert to Signs of Imposter Investment Scams (April 29, 2026): a sign of a fraudulent app is a developer name that does not match the firm's", url: "https://www.finra.org/investors/insights/be-alert-signs-imposter-investment-scams" }
+  - { label: "Apple Support (September 14, 2026) - How to manually update apps from the App Store: apps from the App Store are updated inside the App Store", url: "https://support.apple.com/en-us/102629" }
+  - { label: "Google Play Help - How to update apps on Android: apps are updated in the Google Play Store app", url: "https://support.google.com/googleplay/answer/113412?hl=en" }
+  - { label: "Trezor (September 10, 2026) - a list of 347,149 email addresses was taken from its newsletter provider, and a fake security alert sent in Trezor's name led to an app that asked for the wallet backup; anyone who entered it should move their funds to a new wallet", url: "https://trezor.io/blog/news/security-incident-at-brevo-our-third-party-email-provider" }
+  - { label: "BitBox Support (updated October 29, 2026) - What to do after interacting with a phishing attempt: if recovery words were entered into a suspicious page or app, move the funds to a newly made wallet with new words", url: "https://support.bitbox.swiss/en_US/phishing-scams/respond-to-phishing" }
+  - { label: "Coinkite - Coldcard security advisory (July 30, 2026): a bug in firmware released from March 2021 on weakened seed generation, and attackers used the weak seeds to steal funds; updating does not repair an existing seed", url: "https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/" }
+  - { label: "Coldcard firmware - the source code, public on GitHub", url: "https://github.com/Coldcard/firmware" }
+  - { label: "Coinspect - weak wallet seed generation: if a wallet was created with weak randomness, updating the app does not make its recovery phrase safer", url: "https://www.coinspect.com/blog/weak-wallet-seed-generation/" }
+  - { label: "WalletScrutiny - methodology: what it means to match an app to its published code; nobody it asked could do this for any iPhone app", url: "https://walletscrutiny.com/methodology/" }
+  - { label: "Sparrow Wallet - home page: a Bitcoin wallet for people who want control of their own money, licensed under the Apache 2 licence", url: "https://sparrowwallet.com/" }
+  - { label: "Sparrow Wallet - download page: release 2.5.6 for Windows, Mac and Linux, signed by its one named developer on October 29, 2026, with the steps to verify a download", url: "https://sparrowwallet.com/download/" }
+  - { label: "Sparrow Wallet - Quick Start: the wallet makes 12 or 24 words, has you write them down and asks you to re-enter them", url: "https://sparrowwallet.com/docs/quick-start.html" }
+  - { label: "Malwarebytes (July 29, 2026) - Apple accused of letting a fake wallet app steal $1.8 million: the plaintiffs installed an app called Sparrow Wallet, though the real Sparrow has never had an iPhone app; many such scams send users to a fake App Store web page", url: "https://www.malwarebytes.com/blog/news/2026/07/apple-accused-of-letting-fake-crypto-app-steal-1-8-million" }
+  - { label: "TechCrunch (July 27, 2026) - Apple sued: in a lawsuit filed the Friday before, three plaintiffs say a fake wallet app cost them more than $1.8 million together", url: "https://techcrunch.com/2026/07/27/apple-sued-after-alleged-app-store-crypto-scam-cost-users-1-8m/" }
+  - { label: "Trezor (October 30, 2026) - Implant reported in a Trezor sold by CryptoBilis, until October 2026 an authorized Trezor reseller", url: "https://trezor.io/blog/news/implant-reported-in-a-trezor-sold-by-cryptobilis" }
+  - { label: "Trezor (November 12, 2026) - Our CryptoBilis investigation: three Safe 5 devices bought from that reseller held an added circuit board that stores the recovery words and sends them out; buy directly from trezor.io", url: "https://trezor.io/blog/news/our-cryptobilis-investigation-what-we-found-and-what-weve-changed" }
+  - { label: "Trezor - Authenticate Trezor Safe 5: backup cards with words already written or printed on them mean do not use the device", url: "https://trezor.io/guides/trezor-devices/trezor-safe-5/authenticate-trezor-safe-5" }
+  - { label: "Trezor - Is my device safe to use: a new device ships without firmware, and one with firmware already installed should not be used", url: "https://trezor.io/support/troubleshooting/device-issues/is-my-device-safe-to-use" }
+  - { label: "Trezor (November 16, 2026) - data for about 27,000 orders was taken from a shipping partner; no wallet backups were involved; scammers may use the details in calls, texts, emails or letters", url: "https://trezor.io/blog/news/data-breach-at-trezor-shipping-partner-skladon" }
+  - { label: "Trezor (August 13, 2026) - customer order data was taken from another shipping provider; devices remain secure, and affected customers may see more phishing", url: "https://trezor.io/blog/news/recent-customer-data-exposed-in-shipping-provider-incident" }
+  - { label: "BitBox - Email address exposure at newsletter provider Brevo: on September 10, 2026 attackers downloaded its list of email addresses and sent emails that led to a website asking for recovery words (read in the Internet Archive's copy of October 24, 2026; the blog refuses automated readers)", url: "https://blog.bitbox.swiss/en/email-address-exposure-at-newsletter-provider-brevo/" }
+  - { label: "Trezor - Scams and phishing: Trezor never contacts owners about their wallet backup, and any request for it is a scam", url: "https://trezor.io/learn/security-privacy/personal-security-standards/scams-and-phishing" }
+  - { label: "Blockstream - Jade: Jade Plus $149 and Jade Core $99; open-source hardware and firmware; Bitcoin and Liquid support; Genuine Check on both models; a Blind Oracle that takes part in unlocking", url: "https://blockstream.com/jade" }
+  - { label: "Blockstream Jade firmware source code - the basic set-up goes straight to a 12-word phrase; only 12 or 24 words are supported", url: "https://github.com/Blockstream/Jade/blob/master/main/ui/mnemonic.c" }
+  - { label: "Blockstream Help - Set up Jade: write the recovery phrase down, then verify the backup by selecting the correct words; set-up is finished through a companion app", url: "https://help.blockstream.com/blockstream-jade/set-up-transact-recover-your-wallet/set-up-jade" }
+  - { label: "Blockstream Help - Perform a Genuine Check with Jade: the Blockstream app offers the check during set-up; the device signs a challenge; if it fails, do not use the device", url: "https://help.blockstream.com/blockstream-jade/set-up-transact-recover-your-wallet/perform-a-genuine-check-with-jade" }
+  - { label: "Blockstream Help - Update Jade firmware: updating before set-up is recommended; on a phone the update is offered only after set-up is complete", url: "https://help.blockstream.com/blockstream-jade/set-up-transact-recover-your-wallet/update-jade-firmware" }
+  - { label: "Blockstream Help - the blind oracle: to unlock, the companion app connects Jade to a server run by Blockstream; two ways to avoid needing it", url: "https://help.blockstream.com/blockstream-jade/faqs/how-does-jade-protect-my-recovery-phrase-with-a-blind-oracle" }
+  - { label: "BitBox - shop: BitBox02 Nova, $195, in a Bitcoin-only and a Multi edition (read in the Internet Archive's copy of October 15, 2026; the shop refuses automated readers)", url: "https://shop.bitbox.swiss/en/" }
+  - { label: "BitBox Support (updated October 21, 2026) - set-up with a microSD card backup: the backup is saved on the included card, which the device password does not encrypt; never put the card into a computer or phone", url: "https://support.bitbox.swiss/en_US/basics/bitbox02-setup-microsd-backup" }
+  - { label: "BitBox Support (updated October 28, 2026) - set-up without a microSD card: write down 24 recovery words and verify them on the device; the steps use a computer", url: "https://support.bitbox.swiss/en_US/advanced/bitbox02-setup-no-microsd" }
+  - { label: "BitBox Support (updated November 9, 2026) - Which BitBox edition should I choose?: Bitcoin-only or Multi is fixed at the factory and cannot be converted afterwards, so the choice is made before buying", url: "https://support.bitbox.swiss/en_US/bitbox02/bitbox02-edition-comparison" }
+  - { label: "BitBox Support (updated November 6, 2026) - Check your BitBox before first use: the app checks by itself that the device is genuine; never use recovery words supplied with a device; never send recovery words to support", url: "https://support.bitbox.swiss/en_US/orders-shipping/verifying-the-bitbox02-packaging" }
+  - { label: "BitBox02 firmware source code (Apache license)", url: "https://github.com/BitBoxSwiss/bitbox02-firmware" }
+  - { label: "BitBoxApp source code (Apache license), its list of changes - buying and selling bitcoin and swapping coins inside the app, through outside companies", url: "https://github.com/BitBoxSwiss/bitbox-wallet-app/blob/master/CHANGELOG.md" }
+  - { label: "Trezor - Safe 5 Bitcoin-only product page: $129; open-source; the default backup is 20 words; no set-up or sending on an iPhone", url: "https://trezor.io/trezor-safe-5-bitcoin-only" }
+  - { label: "Trezor - Safe 5 questions and answers: the 20-word backup is the default; select Legacy Backup Types for 12 or 24 words", url: "https://trezor.io/guides/trezor-devices/trezor-safe-5/trezor-safe-5-faqs" }
+  - { label: "Trezor Suite source code at version 26.10.2 - the set-up screen's own name for the 12- and 24-word choice: Legacy wallet backup types", url: "https://github.com/trezor/trezor-suite/blob/v26.10.2/suite/intl/src/messages.ts" }
+  - { label: "Trezor - Get started with the Trezor Safe 5: set-up needs a computer or an Android phone, not an iPhone", url: "https://trezor.io/guides/trezor-devices/trezor-safe-5/get-started-with-the-trezor-safe-5" }
+  - { label: "Trezor - Getting to know Trezor Suite: on an iPhone, models other than the Safe 7 are view-only", url: "https://trezor.io/guides/trezor-suite/getting-to-know-trezor-suite" }
+  - { label: "Socket (August 19, 2026) - 77 linked Firefox extensions: 40 steal wallet secrets or passwords, 37 are deceptive shells with no stealing code", url: "https://socket.dev/blog/firefox-crypto-wallet-theft" }
+  - { label: "US Securities and Exchange Commission, Office of Investor Education - Crypto Asset Custody Basics for Retail Investors (December 12, 2025): who holds the keys in a wallet you control and in an account at a company", url: "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/crypto-asset-custody-basics-retail-investors-investor-bulletin-0" }
+  - { label: "FBI - public service announcement of August 1, 2024: scammers pose as employees of an exchange and contact the victim first; use the official contact, never a number the caller gives", url: "https://www.ic3.gov/PSA/2024/PSA240801" }
+relatedTerms: ["wallet", "hardware-wallet", "seed-phrase", "self-custody", "custodial-wallet", "private-key"]
+hasInteractive: []
+---
+
+> **Adónde vas:** Una app de billetera para bitcoin de verdad y billeteras de hardware de tres fabricantes, revisadas el 17 de noviembre de 2026. Después, cómo comprobar que tu app es la de verdad.
+
+> **La respuesta corta.** Hoy hay una sola app para celular en esta lista: BlueWallet, de [bluewallet.io](https://bluewallet.io/). Cada tienda muestra el desarrollador, que es como la tienda llama a quien hizo una app. En tu celular debe decir exactamente:
+>
+> - iPhone (App Store): `Bluewallet Services, S. R. L.` (una w minúscula, y una coma)
+> - Android (Google Play): `BlueWallet Services S. R. L.` (una W mayúscula, y sin coma)
+>
+> En orden: abre el sitio web del fabricante en tu celular y lee la dirección que muestra tu navegador. Toca su enlace a la tienda de tu celular. Comprueba el nombre del desarrollador. Instala. Después crea una billetera nueva, escribe sus 12 palabras en papel, y prueba el papel antes de que entre una sola moneda. Cada paso está más abajo.
+
+## BlueWallet
+
+- **Sitio web del fabricante:** [bluewallet.io](https://bluewallet.io/)
+- **Funciona en:** iPhone y Android. Gratis. También está en español.
+- **En el App Store desde** mayo de 2018, en Google Play desde noviembre de 2018.
+- **Última revisión:** 17 de noviembre de 2026.
+
+La app está traducida al español dos veces, así que algunos botones tienen dos nombres. Tu celular muestra uno de los dos, y esta página da los dos. Donde una traducción dice billetera, la otra dice cartera.
+
+{/* El nombre de un botón que contiene una palabra del glosario va abajo como cadena entre llaves. El enlazador del glosario no las lee, y el nombre queda entero. */}
+
+### Cuando la abras por primera vez
+
+1. **Crea una billetera nueva del tipo llamado Bitcoin,** no Bóveda Multifirma (o Vault multifirma; en inglés, {'Multisig Vault'}), que es una billetera con varias claves, ni Lightning, que es una segunda red de pagos. Este curso no ha explicado esos dos.
+2. **Créala nueva: toca Crear (Create).** No pongas en la app palabras que ya tenías de antes, ni ninguna que te haya dado alguien. Nunca uses las palabras de la billetera de práctica para bitcoin de verdad. Solo las 12 palabras que esta app crea para ti se teclean alguna vez en ella, en el paso 4.
+3. **Escribe las 12 palabras nuevas en papel antes que nada.**
+4. **Prueba el papel antes de que entre una sola moneda,** como practicaste. Anota la dirección completa que aparece en Recibir (Receive). Quita la billetera vacía con Eliminar Billetera (o Borrar cartera; en inglés, Delete Wallet). Tráela de vuelta desde el papel, en la misma app, con Importar billetera (o Importar cartera; en inglés, Import wallet). La misma dirección, hasta el último carácter, significa que el papel está bien. Si la app rechaza las palabras, o la dirección es distinta, el papel está mal: quita cualquier billetera que haya vuelto, destruye ese papel y empieza de nuevo con una billetera nueva. Haz esto una sola vez, por tu cuenta: nadie te va a pedir nunca que lo hagas. Nunca lo intentes con una billetera que tenga monedas.
+
+### Conviene saber
+
+- **No toques Comprar Bitcoin (Buy Bitcoin).** Según el código publicado de la app, el texto del programa que cualquiera puede leer, este botón abre el sitio web de un vendedor de bitcoin y le pasa la siguiente dirección de tu billetera. Este sitio no nombra a ningún vendedor: el capítulo [Si decides tener un poco](/es/recorrido/usar-bitcoin) muestra cómo elegir uno de la lista de un regulador.
+- **Informes.** Según su política de privacidad, la app le envía a su fabricante informes de fallas y datos básicos de uso hasta que actives la opción Desactivar análisis (o Deshabilitar analíticas; en inglés, Disable Analytics).
+- **No toques todavía {'Aumentar Comisión'} (Speed Up) ni Cancelar Transacción (Cancel).** Cambian un pago que todavía está esperando. Un arreglo de seguridad hace que la app compruebe primero lo que le dice otra computadora. El fabricante lo terminó el 7 de noviembre de 2026, y todavía no está en las tiendas. Llegará como una actualización normal en la tienda de tu celular. Hasta que esta página diga que llegó, no toques ninguno de los dos: un pago lento puede esperar.
+- **En Google Play,** un recuadro llamado Acerca del desarrollador (o Información del desarrollador; en inglés, About the developer) muestra el nombre de una persona, no el de la empresa. Ese recuadro no es la comprobación: la comprobación es el nombre que está debajo del título de la app.
+
+## Cómo conseguir la app de verdad
+
+1. **En el celular que va a tener la billetera, abre el sitio web del fabricante** desde el enlace de esta página, o escribe tú la dirección. Antes de tocar, lee la dirección de esta misma página: learnbitcoin.com. Cuando el sitio del fabricante haya cargado, lee la dirección que muestra tu navegador. Debe ser bluewallet.io exactamente: nada pegado por delante, y ninguna otra terminación. Nunca empieces por un resultado de búsqueda, un anuncio ni un enlace en un mensaje.
+2. **Toca su enlace a la tienda de tu celular.** Debe abrir la app de la tienda del propio celular, no una página web disfrazada de tienda: la app de la tienda no muestra ninguna dirección web arriba. Una instalación de verdad nunca pide un archivo, un perfil (un archivo que cambia la configuración de tu celular) ni un cambio en Configuración (o Ajustes; en inglés, Settings).
+3. **Lee el nombre del desarrollador antes de instalar.** En Google Play está justo debajo del título de la app. En el App Store esa línea es una descripción corta: busca la palabra Desarrollador (Developer) en la fila de datos de más abajo, o baja hasta Ficha técnica (o Información; en inglés, Information) y lee Vendedor (en algunos países, Proveedor; en inglés, Seller o Provider). La línea Copyright (o Derechos de autor) que está ahí escribe el nombre de una tercera manera. Esa línea no es la comprobación. En España, debajo de Proveedor hay además una línea que dice que el desarrollador no se ha identificado como comerciante de esta app. Tampoco es la comprobación.
+4. **Dos comprobaciones gratis.** La app de verdad muestra 1 M+ descargas (1M+ downloads) en Google Play, y años de Historial de versiones (Version History) en el App Store. Si la tuya muestra menos, detente. Una app falsa también puede tener historial: estas dos se suman a la comprobación del nombre y no la reemplazan.
+5. **Ignora las otras apps** que muestre la tienda.
+6. **Si el nombre es distinto, o la tienda se abrió como una página web, detente.** No instales, y no busques en la tienda. Ciérrala y empieza de nuevo desde el paso 1. No se pierde nada, porque no hay nada instalado.
+
+**Las actualizaciones** llegan solo por la tienda de tu celular. Nadie te llama ni te envía correos o mensajes por una actualización, y ninguna actualización pide tus palabras.
+
+**Si se teclearon palabras de verdad en algo de lo que ahora dudas,** crea una billetera nueva con palabras nuevas siguiendo estos pasos, de inmediato, y mueve las monedas a ella. Nadie que te contacte puede hacerlo por ti, y nadie más te da palabras ni una dirección.
+
+**Eso es todo lo que necesitas para la app del celular.** Dos reglas de más abajo también van aquí: un "soporte" que te contacta primero no es soporte, y cualquier cosa que pida las palabras de una billetera que ya tienes es un robo. El resto de esta página es para quien lee con cuidado: lo que no puede decirte, cómo se eligió la app, una billetera para computadora, billeteras de hardware para más adelante, y de qué mantenerte lejos.
+
+## Lo que esta página no puede decirte
+
+- **Que una billetera no tiene fallas.** No puedes ver cómo crea su frase semilla. En 2026 el código publicado no impidió una falla en los dispositivos de un fabricante, y ninguna actualización arregla palabras que se crearon mal.
+- **Que tu app coincide con el código publicado.** Para las apps de iPhone, un proyecto que comprueba esto dice que nadie lo ha logrado.
+- **Lo que una tienda muestre mañana.** Si la fecha de Última revisión, más arriba, tiene más de seis meses, ten más cuidado.
+
+Una billetera que falla en una prueba sale de la lista, y la [página de correcciones (en inglés)](/corrections) lo dice. Eso, por sí solo, no pone en peligro ninguna moneda. Si alguna vez hay algo que hacer, la página de correcciones dirá qué. Nadie te va a contactar.
+
+Esta lista está solo en learnbitcoin.com. El sitio no se la envía a nadie, y ninguna billetera puede decir que el sitio la aprobó.
+
+## Cómo se eligió
+
+Se revisaron otras apps. La mayoría son buenas en aquello para lo que están hechas, pero cada una falló en alguna prueba para una primera billetera.
+
+1. Tú tienes las claves.
+2. Su código está publicado.
+3. Solo Bitcoin.
+4. Una frase semilla normal, que se muestra cuando se crea la billetera y que también funciona en otras billeteras.
+5. Sin cuenta.
+6. Un fabricante con nombre (cada tienda muestra el nombre de una empresa) y una actualización en los últimos seis meses.
+7. En las dos tiendas, con enlace desde el sitio web del fabricante.
+8. Tus palabras se quedan en tu celular a menos que tú decidas otra cosa.
+
+BlueWallet pasó las ocho, según lo que publican su fabricante y las tiendas, con dos advertencias. La versión del App Store va un paso por delante de la versión más nueva marcada en su código publicado (prueba 2). Y el recuadro de Google Play llamado Acerca del desarrollador (o Información del desarrollador) muestra el nombre de una persona donde se esperaría el de una empresa (prueba 6). El software en sí no se probó.
+
+Nadie pagó por estar en la lista.
+
+## En una computadora
+
+Para quien no tiene un teléfono inteligente: Sparrow, un programa de billetera para Windows, Mac y Linux, de [sparrowwallet.com](https://sparrowwallet.com/). Su fabricante lo describe como adecuado para usuarios avanzados, aunque no difícil de usar. Pasó las pruebas 1 a 5 y la 8. Las pruebas 6 y 7 tratan de tiendas de apps, y Sparrow no está en ninguna: un solo desarrollador, con nombre, firma cada versión, la última el 29 de octubre de 2026.
+
+En una demanda presentada contra Apple en julio de 2026, tres personas dicen que una app falsa con el nombre de Sparrow les quitó más de 1.8 millones de dólares. La página de descargas de Sparrow muestra cómo comprobar que tu archivo es el de verdad.
+
+## Billeteras de hardware
+
+Para cuando tengas más de lo que guardarías en un celular. Las ocho pruebas se escribieron para apps: cada dispositivo está aquí con criterios parecidos, y solo si haces lo que dice su párrafo. Cuestan entre $100 y $200, más o menos.
+
+- **Compra únicamente en la tienda del propio fabricante.** En 2026 Trezor encontró tres de sus dispositivos, vendidos por una tienda autorizada, con una pieza añadida que copia las palabras del dueño. Trezor dice que ninguno de los tres dueños perdió monedas.
+- **Nunca uses un dispositivo que llegue ya configurado, o con palabras en la caja.** El dispositivo crea las suyas: ponlas en papel, siguiendo las cuatro reglas de [Las claves: lo que tienes en realidad](/es/recorrido/se-tu-propio-banco), y pruébalas antes de que entre una sola moneda.
+- **Ninguna comprobación de que un dispositivo es auténtico pide tus palabras.**
+- **Consigue la app propia del dispositivo en el sitio web del fabricante,** nunca buscándola. En un celular, de la misma forma que más arriba. En una computadora, el sitio web del fabricante te da un archivo: no lo tomes de ningún otro lugar. Instala las actualizaciones del dispositivo únicamente dentro de esa app, nunca desde un correo ni desde un enlace. La app de cada fabricante también ofrece comprar, vender o intercambiar monedas. No necesitas nada de eso.
+- **Para pedir ayuda, abre tú la dirección del fabricante.** Las listas de clientes y de boletines de los fabricantes se filtraron más de una vez en 2026. Eso no afecta a ninguna moneda, pero trae llamadas, mensajes y cartas que se hacen pasar por el fabricante. No respondas a ninguno.
+
+**Jade Core o Jade Plus,** de [blockstream.com/jade](https://blockstream.com/jade): 12 palabras normales. Al configurarlo, haz su Genuine Check (la comprobación de que es auténtico). Actualiza su firmware, el software que lleva dentro: en una computadora, antes de configurarlo; en un celular, justo después. Para desbloquearse, normalmente tiene que conectarse, a través de una app, con una computadora que opera su fabricante. El fabricante dice que esa computadora no se entera de nada sobre tu billetera. También funciona con Liquid, una red que este curso no usa.
+
+**BitBox02 Nova, edición Bitcoin-only,** de [shop.bitbox.swiss](https://shop.bitbox.swiss/en/). Elige esa edición al hacer el pedido: no se puede cambiar después. Usa la configuración del fabricante sin la tarjeta de memoria: en una computadora, en Opciones avanzadas (Advanced options), activa Omitir la copia de seguridad de la tarjeta microSD (Skip microSD card backup). Escribes 24 palabras y el dispositivo las comprueba. La tarjeta es un archivo, y la regla del curso es papel. Si de todos modos usas una, trátala exactamente igual que el papel, y nunca la pongas en un celular ni en una computadora.
+
+**Trezor Safe 5, Bitcoin-only,** de [trezor.io/trezor-safe-5-bitcoin-only](https://trezor.io/trezor-safe-5-bitcoin-only). Su respaldo habitual es de 20 palabras de otro tipo. Para 12 o 24, elige Tipos Legacy de las copias de seguridad (en inglés, Legacy wallet backup types; así llama su app a los tipos más antiguos) al configurarlo. Necesita una computadora o un celular Android, no un iPhone.
+
+## De qué mantenerte lejos
+
+- **Una "billetera" que nunca te ofrece una frase semilla.** Lo más probable es que una empresa tenga las claves.
+- **Una billetera en una página web, o añadida a un navegador, para bitcoin de verdad.** En agosto de 2026 unos investigadores relacionaron 77 complementos de un mismo navegador con una sola operación de robo.
+- **Cualquier cosa que pida las palabras de una billetera que ya tienes,** para "conectarla", "verificarla", "sincronizarla" o "repararla". Eso es un robo. Las palabras de verdad se teclean en un solo lugar: tu propia billetera, en su propia pantalla, cuando eres tú quien la configura, prueba tu papel o la trae de vuelta.
+- **Un "soporte" que te contacta primero,** o un número de teléfono sacado de una búsqueda o de un mensaje.
+
+## Qué ganas con esto
+
+Un camino cuidadoso hasta una billetera de verdad. La lista va a cambiar, y esta página dirá cuándo.

@@ -1,9 +1,9 @@
 ---
-title: "Sé tu propio banco"
+title: "Las claves: lo que tienes en realidad"
 slug: se-tu-propio-banco
 translationOf: be-your-own-bank
-sourceHash: "32ddf8afa838"
-sourceCommit: "5bf47cb"
+sourceHash: "59a8aeaf1df4"
+sourceCommit: "74f1a22"
 sourceUpdated: "2026-11-17"
 translation:
   method: "llm-draft"
@@ -11,260 +11,144 @@ draft: false
 status: live
 published: "2026-10-14"
 updated: "2026-11-17"
-order: 4
-goDeeper: ["mt-gox-ftx-graveyard", "seed-backup-strategies", "key-space"]
-estimatedMinutes: 35
-tagline: "Si tus claves viven en un exchange, no tienes bitcoin: tienes un pagaré. Este capítulo te enseña a tener bitcoin de verdad."
+reviewedAt: "2026-11-16"
+order: 5
+goDeeper: ["mt-gox-ftx-graveyard", "brain-wallets", "seed-backup-strategies"]
+estimatedMinutes: 6
+tagline: "Doce palabras son el camino de vuelta a tus monedas. Aprende a guardarlas, primero con palabras de práctica."
 prerequisites: ["how-bitcoin-works"]
-relatedTerms: ["seed-phrase", "private-key", "hardware-wallet", "custodial-wallet", "address", "deterministic-wallet", "watch-only-wallet", "paper-wallet", "multisig", "shamir-secret-sharing", "hierarchical-multisig"]
-ogImage: "/diagrams/og/hd-wallet-tree.png"
-ogImageAlt: "Una semilla, todas las direcciones. Una frase semilla de 12 palabras en la parte superior deriva una clave maestra, que a su vez deriva de forma determinista cada clave hija y cada dirección que la billetera usará jamás. Respalda la semilla una vez y el árbol completo se puede recuperar para siempre."
+relatedTerms: ["seed-phrase", "private-key", "wallet", "self-custody", "custodial-wallet", "exchange"]
 sources:
-  - { label: "BIP 39 - Mnemonic seed phrases, word checksum and the optional passphrase (Bitcoin Improvement Proposal)", url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" }
-  - { label: "BIP 32 - Hierarchical deterministic wallets", url: "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" }
-  - { label: "BIP 141 - a native SegWit (bc1q) address commits to the hash of a public key", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
-  - { label: "BIP 84 - derivation scheme for native SegWit (P2WPKH) wallets", url: "https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki" }
-  - { label: "BIP 86 - derivation scheme for single-key Taproot (P2TR) wallets", url: "https://github.com/bitcoin/bips/blob/master/bip-0086.mediawiki" }
-  - { label: "Trezor Safe 5 FAQ - Bitcoin-only firmware, secure element, 20-word SLIP-39 backup as the default, 12 or 24 words as a legacy option", url: "https://trezor.io/guides/trezor-devices/trezor-safe-5/trezor-safe-5-faqs" }
-  - { label: "Trezor firmware changelog - first releases for Model One (2014), Model T (2018), Safe 3 (2023), Safe 5 (2024)", url: "https://trezor.io/other/product-updates/trezor-firmware-changelog-all-versions-and-release-dates" }
-  - { label: "BlueWallet - a Bitcoin-only, free and open-source wallet", url: "https://bluewallet.io/" }
-  - { label: "Keystone - official site (Keystone 3 Pro: 4-inch touchscreen, fingerprint authentication)", url: "https://keyst.one/" }
-  - { label: "Keystone 3 Pro firmware 1.7.4 release notes (October 2024) - BTC signing over a USB connection", url: "https://github.com/KeystoneHQ/keystone3-firmware/releases/tag/1.7.4" }
-  - { label: "Keystone 3 Pro firmware 2.0.8 release notes (April 2025) - separate BTC Only firmware", url: "https://github.com/KeystoneHQ/keystone3-firmware/releases/tag/2.0.8" }
-  - { label: "Blockstream - Jade is open source, for Bitcoin and Liquid, and uses a PIN server (a blind oracle) in place of a secure-element chip", url: "https://blockstream.com/jade/" }
-  - { label: "Coinkite - Coldcard security advisory: affected firmware, fixed versions and migration steps (2026)", url: "https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/" }
-  - { label: "COLDCARD Security Status - minimum fixed firmware by model (Mk2 and Mk3: 4.2.0)", url: "https://coldcard.com/security/status" }
-  - { label: "Coinkite - COLDCARD migration guide (a seed made on an affected device stays affected wherever it is used; move every wallet that hangs off it)", url: "https://coldcard.com/security/migrate" }
-  - { label: "Block - analysis of the Coldcard seed-generation flaw (July 30, 2026): on the Mk2 and Mk3 the change first shipped in firmware 4.0.0 on March 17, 2021", url: "https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware" }
-  - { label: "Bitcoin Optech Newsletter 416 (July 31, 2026) - the Coldcard thefts and what owners should do", url: "https://bitcoinops.org/en/newsletters/2026/07/31/" }
-  - { label: "Bitcoin Wiki - Paper wallet (a single printed key; obsolete and unsafe)", url: "https://en.bitcoin.it/wiki/Paper_wallet" }
-  - { label: "Trezor - check a backup on the Trezor Safe 5 without wiping the device", url: "https://trezor.io/guides/backups-recovery/general-standards/check-backup-on-trezor-safe-5" }
-  - { label: "Jameson Lopp - Bitcoin address poisoning attacks (look-alike addresses that match the first and last characters)", url: "https://blog.lopp.net/bitcoin-address-poisoning-attacks/" }
-  - { label: "FBI Internet Crime Complaint Center - 2025 report: $11.37 billion lost in complaints involving cryptocurrency, about $7.2 billion of it to investment fraud", url: "https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf" }
-  - { label: "Jameson Lopp - metal seed backup stress tests (as of October 2026, 10 of 75 products got an F for heat)", url: "https://jlopp.github.io/metal-bitcoin-storage-reviews/" }
-  - { label: "Bitcoin Core v31.1 - 10-minute block target (nPowTargetSpacing)", url: "https://github.com/bitcoin/bitcoin/blob/v31.1/src/kernel/chainparams.cpp" }
-  - { label: "Bitcoin Core v32.1 (October 2026) - verifymessage only accepts legacy (1...) addresses", url: "https://github.com/bitcoin/bitcoin/blob/v32.1/src/common/signmessage.cpp" }
-  - { label: "BIP 322 - generic signed messages; the original format only works for 1... addresses", url: "https://github.com/bitcoin/bips/blob/master/bip-0322.mediawiki" }
-  - { label: "BIP 137 - message signatures for SegWit addresses", url: "https://github.com/bitcoin/bips/blob/master/bip-0137.mediawiki" }
-  - { label: "Mt. Gox - application for civil rehabilitation (February 28, 2014)", url: "https://www.mtgox.com/img/pdf/20140228-announcement_eng.pdf" }
-  - { label: "Mt. Gox Rehabilitation Trustee - first repayments in bitcoin and Bitcoin Cash (July 5, 2024)", url: "https://www.mtgox.com/img/pdf/20240705_01_announcement_en.pdf" }
-  - { label: "Bitcoin Privacy Best Practices (PDF, this site)", url: "https://www.learnbitcoin.com/downloads/bitcoin-privacy-best-practices.pdf" }
-  - { label: "12-word seed backup form (PDF, this site)", url: "https://www.learnbitcoin.com/downloads/seed-backup-12-word.pdf" }
-  - { label: "24-word seed backup form (PDF, this site)", url: "https://www.learnbitcoin.com/downloads/seed-backup-24-word.pdf" }
+  - { label: "BIP 39 - how a wallet turns random numbers into 12 to 24 words, and the words into the seed its keys are made from", url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" }
+  - { label: "BIP 32 - how every key in a wallet is made, in a fixed order, from one seed", url: "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" }
+  - { label: "Trezor - How to use a wallet backup: no digital copies, screenshots and photographs included; the maker never asks for it; whoever has it can reach the coins from another wallet", url: "https://trezor.io/guides/backups-recovery/general-standards/how-to-use-a-wallet-backup" }
+  - { label: "Trezor - Best practices for securing your wallet backup: a lost backup cannot be recovered by anyone; several copies in separate places, away from the eyes of guests", url: "https://trezor.io/blog/security/best-practices-for-securing-your-wallet-backup" }
+  - { label: "Trezor - What to do if your wallet backup goes missing: move the coins to a new wallet with a new backup", url: "https://trezor.io/blog/security/what-to-do-if-your-trezor-or-wallet-backup-goes-missing" }
+  - { label: "Trezor - Check backup: a backup is tested inside the wallet itself, before it is relied on", url: "https://trezor.io/guides/backups-recovery/general-standards/check-backup-on-trezor-safe-5" }
+  - { label: "US Securities and Exchange Commission, Office of Investor Education and Assistance - Crypto Asset Custody Basics for Retail Investors (December 12, 2025): store the seed phrase in a secure place and share it with nobody; a wallet that is lost, stolen or damaged may be lost for good; a company that holds coins for you controls the keys", url: "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/crypto-asset-custody-basics-retail-investors-investor-bulletin-0" }
+  - { label: "Kaspersky Securelist (February 5, 2025) - apps in both app stores that searched photo galleries for recovery phrases", url: "https://securelist.com/sparkcat-stealer-in-app-store-and-google-play/115385/" }
+  - { label: "FBI Internet Crime Complaint Center - 2025 report: $11.37 billion lost in complaints involving cryptocurrency, about $7.2 billion of it to investment fraud; the figures are what people reported, for every cryptocurrency", url: "https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf" }
+  - { label: "Mt. Gox - announcement that it had applied to a Tokyo court for civil rehabilitation, with about 750,000 of its customers' bitcoins missing (February 28, 2014)", url: "https://www.mtgox.com/img/pdf/20140228-announcement_eng.pdf" }
+  - { label: "Mt. Gox - bankruptcy proceedings begin (April 24, 2014)", url: "https://www.mtgox.com/img/pdf/20140424_announce_qa_en.pdf" }
+  - { label: "Christian Decker and Roger Wattenhofer - Bitcoin Transaction Malleability and MtGox (2014): Mt. Gox had been the largest Bitcoin exchange", url: "https://arxiv.org/abs/1403.6676" }
+  - { label: "In re FTX Trading Ltd., declaration of John J. Ray III (November 17, 2022): FTX.com was among the largest exchanges in the world", url: "https://storage.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.24.0.pdf" }
+  - { label: "Coinkite - advisory of July 30, 2026: a flaw in a wallet maker's devices weakened the making of seed words, and funds were stolen", url: "https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/" }
+  - { label: "Mt. Gox trustee - repayments in bitcoin begin (July 5, 2024), ten years after the collapse", url: "https://www.mtgox.com/img/pdf/20240705_01_announcement_en.pdf" }
+  - { label: "FTX - bankruptcy case record (filed November 11, 2022; the repayment plan took effect January 3, 2025)", url: "https://restructuring.ra.kroll.com/FTX/" }
+  - { label: "US Bankruptcy Court, District of Delaware - In re FTX Trading Ltd., opinion of June 26, 2024: customers' claims for coins are valued in dollars at the prices of the day the company filed", url: "https://www.deb.uscourts.gov/sites/deb/files/opinions/FTX%20Opinion%20and%20Order%20Digital%20Asset%20Estimation.pdf" }
+  - { label: "European Union - Regulation (EU) 2023/1114 on markets in crypto-assets, Article 59: companies that hold or trade crypto-assets for customers need an authorisation", url: "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32023R1114" }
+  - { label: "New York State Department of Financial Services - virtual currency businesses: the state's license", url: "https://www.dfs.ny.gov/virtual_currency_businesses" }
+  - { label: "FDIC - Understanding deposit insurance: at least $250,000 for each depositor at each insured bank", url: "https://www.fdic.gov/resources/deposit-insurance/understanding-deposit-insurance" }
+  - { label: "US Code of Federal Regulations, 12 CFR 1005.6 - a customer's loss from a payment they did not authorize is limited", url: "https://www.ecfr.gov/current/title-12/chapter-X/part-1005/subpart-A/section-1005.6" }
 ---
 
-> **Adónde vas:** Al terminar este capítulo habrás generado una billetera que controlas, respaldado la semilla como se debe, recibido una transacción de Bitcoin real (y pequeña) y la habrás cotejado en un explorador de bloques. Habrás hecho autocustodia. Opcional: hacerlo de verdad.
+> **Adónde vas:** Al terminar sabrás qué son las 12 palabras, las cuatro reglas para guardarlas y las dos formas principales en que la gente tiene bitcoin. También habrás hecho una copia en papel de las palabras de tu billetera de práctica y habrás comprobado que funciona. Ten a mano un bolígrafo y papel.
 
-## 1. La promesa que te haces
+**Primero, adivina.** Mañana tu celular se cae a un lago, con una billetera de bitcoin dentro. ¿Qué pasa con las monedas?
 
-Hasta este capítulo has estado *aprendiendo sobre* Bitcoin. De aquí en adelante puedes *usarlo*, pero solo si aceptas la responsabilidad que viene con el dinero soberano.
+## ¿Qué son las 12 palabras?
 
-El trato es este: **tú, y solo tú, tienes las claves. Nadie puede quitártelas. Nadie puede congelarlas. Y nadie va a ayudarte si las pierdes.**
+Cuando creaste tu billetera de práctica, te mostró 12 palabras. Juntas se llaman **frase semilla**. (Las billeteras de verdad también la llaman frase de recuperación, y algunas usan 24 palabras.) De esas palabras sale cada clave y cada dirección de la billetera, siempre en el mismo orden.
 
-No es una frase de marketing. Así funcionan las matemáticas. Una dirección de Bitcoin se deriva de una clave privada, pasando por su clave pública. La clave privada es un número de 256 bits. Quien tenga ese número puede firmar transacciones que gasten las monedas. No hay segundo factor. No hay correo de recuperación. No hay servicio al cliente.
+Por eso cada clave y cada dirección puede volver a salir de las palabras. Pon las mismas palabras en el mismo tipo de billetera en un celular nuevo, y aparecen las mismas claves, las mismas direcciones y las mismas monedas. Las monedas nunca estuvieron en el celular viejo. Están en el registro, y las palabras son la forma de llegar a ellas.
 
-Ese es el trato. Este capítulo trata de tomárselo en serio sin tenerle miedo.
+Así que el celular en el lago te cuesta un celular. Te cuesta las monedas solo si las palabras se fueron con él.
 
-## 2. Custodia de terceros vs autocustodia
+## ¿Qué consecuencias tiene eso?
 
-La mayoría de quienes "tienen bitcoin" no lo tienen, en términos técnicos.
+Quien tenga las palabras tiene las monedas. En una billetera como esta no hay ninguna contraseña detrás de ellas, ni una segunda comprobación.
 
-Cuando compras bitcoin en un exchange (Coinbase, Kraken, Binance, Cash App), el exchange guarda las claves. Tú tienes un número en su base de datos que dice "se te deben X bitcoins". Es un pagaré. En tu pantalla parece bitcoin, pero legal y técnicamente es un derecho de cobro contra el exchange.
+Y si las palabras se pierden, junto con el celular, nadie puede volver a llegar a las monedas. Ninguna empresa puede restablecer las palabras, porque ninguna empresa las tiene.
 
-Para algunos usos está bien (trading, principiantes, montos muy pequeños). Pero **no es la propuesta de valor de Bitcoin.** El bitcoin en custodia de un tercero puede ser congelado por el custodio, incautado por un gobierno, perdido en un hackeo, perdido en una quiebra, retenido por razones de KYC o simplemente no estar disponible cuando sus servidores se caen.
+Una copia de las palabras, bien guardada, se llama **respaldo**.
 
-No puedes tener las propiedades del capítulo 2 (*portátil, escaso, soberano*) y a la vez confiarle tus claves a un tercero. El objetivo era precisamente eliminar al tercero.
+## ¿Cómo se guardan las palabras?
 
-**Autocustodia** significa que las claves privadas las generas y las guardas tú. Lo hace el software de tu billetera: genera un número aleatorio, deriva las claves y te muestra direcciones. El número vive en tu dispositivo (y en un respaldo), no en la base de datos de nadie.
+Cuatro reglas.
 
-El trato es simétrico: la custodia trae riesgo (no son tus claves, no son tus monedas) y la autocustodia trae responsabilidad (si pierdes tus claves, pierdes tus monedas). Bitcoin te deja elegir; la mayoría de los otros sistemas ni siquiera te dan la opción.
+1. **En papel, a mano.** No en una foto, ni en una nota en tu celular, ni en un correo electrónico, ni en un archivo. En 2025, unos investigadores informaron que en las dos grandes tiendas de apps había apps que buscaban estas palabras en las fotos de la gente.
+2. **Nunca se teclean en un sitio web, en un correo ni en un mensaje.** Trata como una estafa cualquier página que pida palabras de verdad, sin ninguna excepción. Las únicas palabras que vas a teclear alguna vez en una página web son las que creó la billetera de práctica de este sitio.
+3. **Nunca se dan, se muestran ni se leen en voz alta a nadie.** Ninguna empresa ni nadie que te ayude necesita tus palabras, ni siquiera tres de ellas. Quien te las pide intenta quitarte tus monedas, por muy amable u oficial que suene.
+4. **En más de un lugar.** Así, un solo incendio o un solo robo no se lleva la única copia. Quien encuentre el papel tiene las monedas, así que guárdalo donde una visita no pueda verlo, y no en un cuaderno que sacas a menudo.
 
-## 3. Claves, no monedas
+Las palabras de verdad se teclean en un solo lugar: tu propia billetera, en su propia pantalla, cuando eres tú quien la configura o la trae de vuelta. Y no uses una página web como una billetera para bitcoin de verdad.
 
-El cambio mental que más importa: **no tienes monedas. Tienes claves.**
+Hay una cosa que las reglas dejan sin resolver. Si nadie más sabe que el papel existe, nadie podrá llegar a tus monedas cuando ya no estés. Pero quien sepa dónde está puede llevárselas. El próximo capítulo vuelve sobre esto.
 
-Bitcoin no existe como archivos en tu computadora. Existe como UTXOs (ver capítulo 3) en el registro global. Tu billetera no "contiene" bitcoin en ningún sentido real: contiene las claves que autorizan gastar ciertos UTXOs de ese registro.
+## Haz un respaldo
 
-Por eso:
-- Una billetera en un dispositivo de hardware sin internet puede "tener" bitcoin igual
-- Puedes tener la misma billetera abierta en varios dispositivos (están mostrando los mismos UTXOs)
-- Restaurar una billetera en un dispositivo nuevo devuelve el mismo saldo en cuanto la billetera termina de escanear la cadena en busca de tus direcciones (la cadena es la verdad; el dispositivo solo la lee)
+Ahora haz un respaldo de tu billetera de práctica. El paso te pide teclear tres de las palabras, para comprobar tu papel. Eso es seguro por una sola razón: estas palabras protegen monedas de práctica que no valen nada. Si todavía no tienes una billetera de práctica, el paso te ayuda a crear una primero.
 
-Cuando "respaldas tu billetera", lo que respaldas son las *claves*; en concreto, la semilla de la que se derivan. Si tienes la semilla, puedes reconstruir todas las claves, en cualquier dispositivo, para siempre.
+La billetera de práctica está en practice.learnbitcoin.com y en ningún otro lugar. Mira la dirección web en la barra de direcciones de tu navegador antes de teclear una sola palabra.
 
-<figure>
-  <img src="/diagrams/hd-wallet-tree.svg" alt="Árbol de una billetera HD (jerárquica determinista): una frase semilla de 12 palabras en la parte superior deriva una clave maestra, que a su vez deriva una secuencia prácticamente ilimitada de claves hijas y direcciones. Cinco direcciones bc1q de ejemplo se ramifican desde la clave maestra, dando a entender que millones más siguen la misma derivación." />
-  <figcaption>Una semilla codifica un árbol determinista de claves y direcciones. Respalda la semilla una vez; el árbol completo se puede recuperar para siempre.</figcaption>
-</figure>
+**Hazlo:** [La semilla](https://practice.learnbitcoin.com/es/do/the-seed). Pasa a papel las 12 palabras de tu billetera de práctica, en orden. Después el paso te pide tres de ellas, para comprobar tu papel.
 
-Es una de las propiedades más poderosas de Bitcoin y una de las más fáciles de subestimar.
+Escribe "práctica" en ese papel, y nunca uses estas 12 palabras para bitcoin de verdad: estuvieron en una página web. Una billetera para bitcoin de verdad crea sus propias palabras.
 
-## 4. La frase semilla
+¿Tomaste una captura de pantalla en vez de pasarlas a papel? Con palabras de práctica no pasa nada. Con palabras de verdad, borrarla no basta: la solución es una billetera nueva con palabras nuevas, y mover las monedas a ella. Así que practica ahora el hábito de verdad, que es solo papel.
 
-Las billeteras de Bitcoin modernas no te obligan a respaldar claves privadas una por una. Te dan una **frase semilla** (también llamada frase de recuperación): normalmente 12 o 24 palabras en inglés.
+## ¿Funciona el respaldo?
 
-Se ve así (no uses esta: es un ejemplo público):
+No sabes si un respaldo funciona hasta que lo pruebas. Una palabra mal escrita, o dos palabras en el orden equivocado, pueden pasar desapercibidas hasta el día en que las necesites.
 
-```
-abandon abandon abandon abandon abandon abandon
-abandon abandon abandon abandon abandon about
-```
+Una prueba que no deja dudas es traer la billetera de vuelta solo con el papel. En el siguiente paso quitas la billetera de práctica de tu navegador. Después la **restauras**, que significa traerla de vuelta, tecleando las 12 palabras.
 
-Esas palabras codifican un número. Ese número alimenta un generador determinista (definido en el [BIP 39](/es/glosario/bip-39) y el [BIP 32](/es/glosario/bip-32)) que produce cada clave y cada dirección que tu billetera necesitará jamás. De una sola semilla sale un árbol de millones de direcciones. Todas son derivadas; solo un secreto importa.
+No se puede perder nada de valor. Ten el papel en la mano antes de empezar. Si las palabras del papel resultan estar mal, la billetera de práctica se pierde y creas una nueva. (Una billetera creada con una llave de acceso, o passkey, todavía se puede abrir con la llave de acceso. El paso te pide usar el papel.)
 
-**Unos cuantos hechos que deberían cambiar tu comportamiento:**
+Con bitcoin de verdad, esta prueba se hace antes de que entre una sola moneda en la billetera, nunca después.
 
-- **Quien tenga tu frase semilla tiene tus bitcoins.** No hay segundo factor. No hay recuperación. No hay "pero también necesitarían tu contraseña": la contraseña o el PIN de una billetera solo bloquea esa app o ese dispositivo, y las palabras restauran la billetera en cualquier otro lado sin necesitarlos. La única excepción es una [passphrase](/es/glosario/passphrase) opcional, la llamada "palabra 25", que se mezcla con la semilla. Si configuras una, respáldala con el mismo cuidado que las palabras, porque las palabras solas abren una billetera distinta, normalmente vacía.
-- **12 vs 24 palabras.** Las dos opciones son seguras. 12 palabras = 128 bits de entropía; 24 palabras = 256 bits. Ambas están muy lejos del alcance de la fuerza bruta. La elección es cuestión de preferencia. (Los valores por defecto varían según el dispositivo. A octubre de 2026, la Trezor Safe 5 usa por defecto un respaldo de 20 palabras bajo otro estándar, [SLIP-39](/es/glosario/secreto-compartido-de-shamir), y ofrece 12 o 24 palabras como opción tradicional.)
-- **Nunca escribas tu frase semilla en un sitio web. Nunca. Jamás.** Ni en el sitio del proveedor de tu billetera. Ni en una página de ayuda. En ningún lado. Los únicos lugares donde debe vivir la frase semilla son tu dispositivo de billetera y los respaldos físicos que *tú* creaste. (Nuestra billetera de práctica, en practice.learnbitcoin.com, te pide escribir las palabras de una billetera de práctica. Esas palabras cuidan monedas que no valen nada, y esa es la única razón por la que es seguro. Las palabras de una billetera para bitcoin de verdad, aunque todavía esté vacía, nunca se escriben en una página web, incluida esa.)
-- **No la memorices.** El cerebro olvida frases semilla, incluso las que jurabas que recordarías. El acero no.
-- **No le tomes foto.** Los celulares se respaldan en la nube. Y las nubes sufren filtraciones.
+**Hazlo:** [Comprueba el respaldo](https://practice.learnbitcoin.com/es/do/prove-the-backup). Quita la billetera de práctica de tu navegador y luego tráela de vuelta, con sus monedas, desde las 12 palabras de tu papel.
 
-La frase semilla no es una contraseña. Es la *raíz* de toda tu existencia en Bitcoin. Trátala como tal.
+Si las monedas volvieron, ya viste la idea completa. El navegador no tenía tus monedas. El papel tiene la forma de llegar a ellas. Tú tienes claves, no monedas.
 
-## 5. Tipos de billetera: cuándo usar cada uno
+## ¿Quién debería guardar las claves?
 
-Una "billetera" no es más que software que administra claves. Las categorías importan más que las marcas:
+Hay dos formas principales de tener bitcoin. La diferencia es quién guarda las claves, y a guardarlas se le llama **custodia**.
 
-- **Billetera caliente** (hot wallet): las claves viven en un dispositivo conectado a internet (celular, laptop). Cómoda. Mayor superficie de ataque. Ideal para montos pequeños, de uso diario.
-- **Billetera fría** (cold wallet): las claves viven en un dispositivo que nunca se conecta a internet. Más trabajo para usarla. Mucho más difícil de comprometer. Ideal para lo que vas a guardar a largo plazo.
-- **Billetera de hardware** (hardware wallet): un dispositivo pequeño y dedicado (cabe en el bolsillo; algunos no son más grandes que una memoria USB) que guarda las claves y firma transacciones, mientras una app complementaria en tu celular o laptop se encarga de todo lo demás. Las claves nunca salen del hardware. **Es la recomendación estándar para cualquier monto que te dolería perder.**
-- **Billetera de papel**: una práctica más antigua, en la que una sola clave privada y su dirección se imprimen en papel, normalmente desde un sitio web. Se considera obsoleta e insegura, y no la recomendamos. (Una copia escrita a mano de las palabras de tu frase semilla es otra cosa, y es buena. De eso trata la sección 7.)
-- **Multisig**: una billetera donde gastar requiere varias claves, a menudo guardadas en lugares distintos. Elimina el punto único de falla. La respuesta correcta para saldos serios. Llegaremos a ella en el capítulo 6.
+**Las guarda una empresa.** Esto es una cuenta en un exchange. Recibes un nombre de usuario, una contraseña que se puede restablecer y un servicio de ayuda. En muchos países esas empresas necesitan una licencia. La empresa tiene las claves, así que lo que tú tienes es su promesa de entregarte las monedas.
 
-**El patrón correcto para la mayoría de la gente:**
+Esa promesa solo vale lo que vale la empresa. Uno de los exchanges más grandes de 2014 quebró y faltaban monedas de sus clientes, y lo mismo pasó con uno de los más grandes de 2022. Los clientes esperaron años, y un tribunal decidió qué recuperaban. Para algunos fueron dólares, no monedas.
 
-- Una billetera caliente en tu celular para montos pequeños del día a día
-- Una billetera de hardware para el resto
-- Una multisig cuando lo que has acumulado justifique la complejidad
+**Las guardas tú.** Esto es una billetera propia, como la de práctica. Ninguna empresa tiene tus monedas, así que ninguna puede congelarlas ni prestarlas. De lo que queda te cuidas tú: de una billetera defectuosa, de un papel perdido, de un ladrón, de un engaño, y de lo que pase con las monedas cuando mueras.
 
-Puedes combinarlas. Las billeteras son solo herramientas.
+Ninguna de las dos formas es segura por sí sola, y hay un peligro que es el mismo en las dos: que te engañen. Del dinero que la gente le dijo al FBI que había perdido en 2025 en casos relacionados con bitcoin y monedas parecidas, la mayor parte la enviaron sus dueños a alguien que los había engañado.
 
-## 6. Elegir tu primera billetera
+## Una objeción razonable
 
-No vendemos billeteras. No cobramos comisiones de afiliado. Los nombres de abajo son ejemplos de lo que existe a octubre de 2026, no recomendaciones. Sea cual sea la que consideres, contrástala con las notas "Por qué importa que sea solo Bitcoin" y "Qué evitar" más abajo.
+"¿Doce palabras en un pedazo de papel? Eso suena menos seguro que mi banco, no más".
 
-<figure>
-  <img src="/photos/hardware-wallet-ecosystem.jpg" alt="Cuatro billeteras de hardware de Bitcoin de cuatro fabricantes distintos sobre una superficie de madera clara, de izquierda a derecha: Trezor Safe 5 (pantalla táctil vertical con elemento seguro), Blockstream Jade (dispositivo compacto tipo memoria USB con una pequeña pantalla a color y un botón de selección), Coldcard Mk4 (carcasa transparente que deja ver la placa de circuitos y un teclado numérico físico) y Keystone 3 Pro (pantalla táctil grande de 4 pulgadas, mostrada de lado, con sensor de huella; firma sobre todo por código QR). Cuatro filosofías de diseño distintas para el mismo problema: mantener una clave privada fuera de un dispositivo conectado a internet." />
-  <figcaption>El ecosistema de billeteras de hardware. Cuatro fabricantes, cuatro filosofías de diseño, una sola tarea: mantener la clave privada fuera de internet. La foto se tomó antes de agosto de 2026; la Coldcard que aparece en ella ya no está en la lista de abajo.</figcaption>
-</figure>
+Contra las cosas que suelen salir mal, un banco es más seguro. Una contraseña olvidada se puede restablecer. Una tarjeta robada se puede cancelar. En Estados Unidos el gobierno asegura los depósitos hasta un límite, y un pago que no hiciste normalmente se puede deshacer.
 
-**Billeteras móviles gratuitas y de código abierto (calientes, aptas para principiantes), por ejemplo:**
-- **BlueWallet** (iOS, Android): solo Bitcoin, código abierto
+Guardar tus propias claves protege contra otras cosas: una empresa que quiebra, una cuenta que te congelan, un banco que no quiere enviar tu pago. Lo hace quitando también las protecciones. Algunas personas quieren eso, y otras no. También por eso este curso te hace practicar primero, con monedas que no valen nada.
 
-**Billeteras de hardware (frías, para saldos serios), por ejemplo:**
-- **Trezor Safe 5**: multimoneda por defecto; también se vende con firmware solo para Bitcoin, que cualquier Safe 5 puede correr
+## Ponte a prueba
 
-<figure>
-  <img src="/photos/trezor-safe-5-pin.jpg" alt="La billetera de hardware Trezor Safe 5 encendida, mostrando su pantalla de ingreso de PIN con los números desordenados. La posición de los números cambia al azar en cada desbloqueo para impedir que alguien mire por encima del hombro o deduzca el PIN por las huellas en la pantalla. El dispositivo descansa sobre cuero oscuro, con el ícono de candado de Trezor grabado en relieve debajo de la pantalla." />
-  <figcaption>Trezor Safe 5 en la pantalla de PIN. Los números se barajan en cada desbloqueo: mirar por encima del hombro o leer las huellas en la pantalla no sirve de nada cuando la disposición cambia.</figcaption>
-</figure>
+<details>
+<summary>Tu celular se perdió. ¿Qué necesitas para recuperar tus monedas?</summary>
 
-- **Keystone 3 Pro**: multimoneda por defecto, con un firmware solo para Bitcoin aparte; firma sobre todo por código QR, aunque también puede conectarse por USB a algunas apps de billetera; sensor de huella, pantalla táctil grande de 4 pulgadas
+Las 12 palabras. Puestas en el mismo tipo de billetera en un celular nuevo, traen de vuelta las mismas claves y las mismas monedas. Sin un respaldo, nada puede hacerlo. Vuelve a leer "¿Qué son las 12 palabras?".
 
-<figure>
-  <img src="/photos/keystone-3-pro-box.jpg" alt="La billetera de hardware Keystone 3 Pro apoyada de lado sobre su caja azul de venta. La pantalla táctil de 4 pulgadas del dispositivo está apagada; la caja muestra el logotipo de Keystone y el nombre del producto. Superficie de madera clara al fondo." />
-  <figcaption>La Keystone 3 Pro llega en esta caja. Tiene una pantalla táctil de 4 pulgadas y firma sobre todo por código QR, aunque también puede conectarse a algunas apps de billetera por USB.</figcaption>
-</figure>
+</details>
 
-- **Jade**, de Blockstream: código abierto; solo funciona con Bitcoin y [Liquid](/es/glosario/liquid-network), la sidechain (cadena lateral) de Blockstream
+<details>
+<summary>Alguien de "soporte de la billetera" te envía un mensaje y te pide tres de tus palabras, para arreglar un problema. ¿Qué haces?</summary>
 
-<figure>
-  <img src="/photos/jade-unlock.jpg" alt="La billetera de hardware Blockstream Jade encendida, mostrando su pantalla de desbloqueo. El dispositivo compacto muestra 'Unlock Jade' en una pequeña pantalla a color, con indicadores de estado de inicialización y versión de firmware. El logotipo JADE está grabado en relieve en el costado." />
-  <figcaption>Blockstream Jade en la pantalla de desbloqueo. Pantalla pequeña a color y un botón de selección. En lugar de un chip de elemento seguro, Jade depende de un servidor de PIN, un esquema que Blockstream llama oráculo ciego (blind oracle).</figcaption>
-</figure>
+Nada de lo que pide. Ninguna empresa necesita tus palabras, ni siquiera tres de ellas, y cualquiera que te las pida intenta quitarte tus monedas. Vuelve a leer "¿Cómo se guardan las palabras?".
 
-*Coldcard estuvo en esta lista hasta el 3 de agosto de 2026. Una falla en la forma en que su firmware generaba las semillas las había dejado adivinables, y desde el 30 de julio de 2026 se vaciaron billeteras a gran escala. La quitamos cuatro días después de los primeros robos. La [página de estado](https://coldcard.com/security/status) de Coinkite es el registro actualizado.*
+</details>
 
-*Coinkite, el fabricante de Coldcard, dice en su [aviso de seguridad](https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/) que la falla afecta a las semillas generadas en Mk2 y Mk3 con firmware de la 4.0.1 (marzo de 2021) a la 4.1.9, y en Mk4, Mk5 y Q con firmware anterior a las versiones corregidas (la 5.6.0 en la Mk4 y la Mk5, la 1.5.0Q en la Q, y la 6.6.0X y la 6.6.0QX en la línea Edge). Un [análisis independiente de Block](https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware) pone también el firmware 4.0.0 de las Mk2 y Mk3 dentro del rango afectado, así que en una Mk2 o Mk3 da por afectada cualquier semilla creada con un firmware 4.x anterior a la 4.2.0. Si tu semilla salió de alguno de esos y no mezclaste al menos 50 tiradas de dados propias, lanzadas en privado, dala por comprometida, sin importar dónde se use ahora esa semilla. Mueve los fondos, de todas las billeteras que dependan de esa semilla, a una semilla nueva creada en un segundo dispositivo con firmware corregido o en la misma Coldcard una vez actualizado su firmware, siguiendo la [guía de migración](https://coldcard.com/security/migrate) de Coinkite.*
+<details>
+<summary>¿Dónde no se debe guardar el papel?</summary>
 
-**Por qué importa que sea "solo Bitcoin":** una billetera que admite 50 criptomonedas carga con código y bibliotecas para las 50, y cada una es un lugar más donde algo puede salir mal. El firmware solo para Bitcoin tiene menos funciones, pero una base de código más pequeña y más fácil de auditar. Si usas una billetera de hardware para Bitcoin, corre firmware solo para Bitcoin. (La mayoría de las de arriba lo admiten.)
+En un cuaderno que sacas a menudo. En cualquier lugar donde una visita pueda mirar. Y tampoco en un solo lugar. Las palabras mismas nunca van en una foto ni en un archivo. Vuelve a leer las cuatro reglas.
 
-**Qué evitar para la autocustodia:**
-- Cualquier billetera que te pida subir tu frase semilla como "respaldo"
-- Cualquier billetera sin código fuente publicado
-- Cualquier "billetera" que en realidad sea una cuenta custodial dentro de una app de inversiones o de pagos
-- Extensiones del navegador, para cualquier monto serio: demasiada superficie de ataque
+</details>
 
-El ecosistema de billeteras cambia rápido, así que los nombres de ejemplo de arriba envejecerán más rápido que las categorías de billetera de la sección 5.
+## Palabras que ya conoces
 
-<figure>
-  <img src="/photos/trezor-evolution.jpg" alt="Cuatro billeteras de hardware Trezor en orden cronológico sobre una superficie de madera clara, de izquierda a derecha: Trezor One (2014), Trezor Model T (2018), Trezor Safe 3 (2023), Trezor Safe 5 (2024). Las formas y los tamaños de pantalla muestran una década de progreso: del diseño original monocromo de dos botones a la Safe 5 de 2024 con pantalla táctil y elemento seguro." />
-  <figcaption>Diez años de billeteras de hardware Trezor. La Trezor One de la izquierda salió en 2014 y la Safe 5 de la derecha salió en 2024.</figcaption>
-</figure>
+- **Frase semilla.** Las palabras, 12 aquí y 24 en algunas billeteras, de las que sale cada clave de una billetera. También se llama frase de recuperación.
+- **Respaldo.** Una copia de la frase semilla, bien guardada.
+- **Restaurar.** Traer una billetera de vuelta desde su frase semilla.
+- **Custodia.** Quién guarda las claves: tú, o una empresa por ti.
 
-## 7. Respaldar como se debe
-
-Tu frase semilla tiene que sobrevivir a incendios, inundaciones, robos, extravíos, a tu propia mala memoria y a un adversario medianamente decidido. Suena dramático hasta que te das cuenta de que tiene que durar décadas.
-
-**El método estándar:**
-
-1. **Escribe la frase semilla en papel y luego pásala a metal.** Las placas de acero estampadas o grabadas (vendidas bajo muchas marcas, o un montaje casero con arandelas y punzones) resisten el fuego y el agua mucho mejor que el papel, pero no todos los productos de metal lo hacen. En [las pruebas de resistencia de Jameson Lopp](https://jlopp.github.io/metal-bitcoin-storage-reviews/), 10 de los 75 productos probados a octubre de 2026 reprobaron la prueba de calor (calificación F), así que averigua cómo le fue a un producto antes de comprarlo. Conserva la copia en papel como respaldo secundario, nunca como el único.
-2. **Guarda los respaldos en al menos dos lugares físicamente separados.** Una caja fuerte en casa más una caja de seguridad en un banco, o dos casas, o un lugar más la casa de un familiar de confianza. La meta es que ningún incendio ni robo, por sí solo, se lleve las dos copias.
-3. **Verifica el respaldo.** Hazlo antes de poner cualquier monto significativo en la billetera. Si tu dispositivo puede cotejar un respaldo escrito con la semilla que guarda, sin borrar nada, usa eso primero (la Trezor Safe 5 tiene [una comprobación así](https://trezor.io/guides/backups-recovery/general-standards/check-backup-on-trezor-safe-5)). Si no, restaura las palabras en un segundo dispositivo del mismo tipo y compara la primera dirección de recepción. (Las palabras de una billetera de hardware nunca se escriben en una app de teléfono o de computadora.) Borrar tu único dispositivo y restaurarlo también es una prueba válida, pero solo mientras la billetera siga vacía. Un respaldo que no has probado es una esperanza.
-4. **Documenta para la herencia.** Escribe una carta sellada para tus herederos que explique dónde están los respaldos, qué software instalar y qué direcciones esperar. No pongas la frase semilla en la carta; pon instrucciones para encontrarla.
-
-Hicimos formularios imprimibles de respaldo de la frase semilla, para frases de [12 palabras](/downloads/seed-backup-12-word.pdf) y de [24 palabras](/downloads/seed-backup-24-word.pdf) (PDF en inglés), disponibles en este sitio. Úsalos o usa tu propio formato: lo que importa es la consistencia y la durabilidad.
-
-**Una cosa más.** No dividas tu frase semilla entre varios lugares como medida de seguridad ("las primeras 6 palabras aquí, las últimas 6 allá"). Esto se llama *dividir la frase semilla* (seed splitting) y da mucha menos seguridad de la que esperarías: si pierdes uno de los lugares, lo pierdes todo, *y* quien encuentre una mitad tiene mucho menos que adivinar. La mitad de una frase de 12 palabras deja unas 2^62 posibilidades en lugar de 2^128 ([las cuentas (en inglés)](/rabbit-hole/seed-backup-strategies)). Si quieres redundancia geográfica en configuraciones avanzadas, usa [multisig](/es/glosario/multisig) (capítulo 6) o el [secreto compartido de Shamir](/es/glosario/secreto-compartido-de-shamir), no la división de la frase semilla.
-
-**Hazlo:** [La semilla](https://practice.learnbitcoin.com/es/do/the-seed). Pasa a papel las 12 palabras de tu billetera de práctica, en orden, y luego comprueba el papel: el paso te pide escribir tres de las palabras en la página. Eso es seguro por una sola razón: son palabras de práctica. Si todavía no tienes una billetera de práctica, el paso te ayuda a crear una primero.
-
-**Hazlo:** [Comprueba el respaldo](https://practice.learnbitcoin.com/es/do/prove-the-backup). Quita la billetera de práctica de tu navegador y tráela de vuelta, con sus monedas, escribiendo sus 12 palabras desde el papel. Es la última prueba del punto 3 de arriba, borrar y restaurar, hecha aquí con las monedas dentro porque aquí un error no cuesta nada. Solo con palabras de práctica: las palabras de una billetera para bitcoin de verdad, aunque esté vacía, nunca se escriben en una página web.
-
-## 8. Recibir tu primera transacción
-
-Este es el momento.
-
-1. **Abre tu billetera** (supondremos que elegiste una de la sección 6 y la configuraste).
-2. **Genera una dirección nueva.** Toda billetera tiene un botón "Recibir". Haz clic ahí. La billetera deriva una dirección nueva desde tu frase semilla y te la muestra, normalmente como un código QR y una cadena de texto que empieza con `bc1`.
-3. **Envía un monto pequeño a esa dirección.** Desde un exchange, desde otra billetera, desde donde sea. El equivalente a cinco o diez dólares estadounidenses en sats. No mandes los ahorros de tu vida a una billetera recién creada que nunca has usado.
-4. **Observa el mempool.** Tu billetera mostrará "sin confirmar" en cuanto el remitente transmita la transacción y esta entre al mempool. Los bloques llegan cada 10 minutos en promedio, pero el intervalo entre uno y otro es aleatorio. Si la comisión alcanza para el siguiente bloque, la primera confirmación suele llegar en menos de 20 minutos, y de vez en cuando tarda más. Seis confirmaciones toman alrededor de una hora en promedio.
-5. **Coteja la dirección de recepción en una fuente externa.** Abre [ChainQuery.com/address/](https://chainquery.com/address) y pega tu dirección. Deberías ver el mismo saldo y la misma transacción entrante. Dos vistas independientes de la misma cadena. Es un cotejo, no una verificación completa, porque sigues confiando en el nodo de otra persona, y el explorador se entera de qué dirección consultaste. Correr tu propio nodo (capítulo 6) es la forma de verificar sin confiar en nadie.
-
-Felicidades. Acabas de hacer autocustodia.
-
-El bitcoin que acabas de recibir es tuyo de una forma en que el bitcoin en custodia de un tercero nunca lo fue. Ningún exchange puede congelarlo. Ningún gobierno puede incautarlo sin tu clave privada. Puedes moverlo a donde sea, cuando sea, un domingo a las 3 de la mañana, por la razón que sea. De eso se trata todo.
-
-## 9. Firma un mensaje: demuestra que la dirección es tuya
-
-Un truco útil: puedes demostrar que controlas una dirección *sin* mover ninguna moneda.
-
-Bitcoin permite la **firma de mensajes**. Tu billetera usa tu clave privada para producir una firma sobre un texto cualquiera. Cualquiera que tenga la firma, el mensaje y tu dirección puede verificar que la firma es válida, lo que demuestra que tienes la clave.
-
-Cómo se hace:
-
-1. En tu billetera, busca "Firmar mensaje". (Muchas billeteras lo tienen, a veces escondido en una opción avanzada; algunas billeteras móviles lo omiten.)
-2. Escribe un mensaje: *"Controlo la dirección bc1qexampleaddress. La fecha de hoy es AAAA-MM-DD."*
-3. Firma. Obtienes un bloque de texto en base64.
-4. Cualquiera puede pegar el trío (mensaje, firma, dirección) en un verificador, como la función "Verificar mensaje" de una billetera, y verá "válida" o "inválida". Eso sí, el formato de firma original solo cubre las direcciones de estilo antiguo que empiezan con 1, y a noviembre de 2026 (versión 32.1) el RPC [verifymessage](https://chainquery.com/rpc/verifymessage) de Bitcoin Core acepta solo esas. Para direcciones bc1, las billeteras firman en otros formatos, como [BIP 137](https://github.com/bitcoin/bips/blob/master/bip-0137.mediawiki) o [BIP 322](https://github.com/bitcoin/bips/blob/master/bip-0322.mediawiki), y no todas usan el mismo, así que verifica la firma con una billetera que admita el formato con el que se firmó.
-
-Así es como demuestras que una dirección es tuya ante una aseguradora, un abogado de sucesiones o tu propio yo del futuro, el día que desconfíe. No se mueve ninguna moneda y no se paga ninguna comisión. La firma se puede presentar en cualquier parte, pero no lleva marca de tiempo. Una fecha escrita en el mensaje es solo una afirmación, porque quien tenga la clave puede firmar las mismas palabras en cualquier momento.
-
-## 10. Las formas más comunes de perder bitcoin
-
-Lista honesta. El orden es editorial, porque no existe un conteo completo. Las mejores cifras públicas son los totales anuales de lo que la gente le reporta al FBI, y en ellos la mayor pérdida, de lejos, es el primer punto de esta lista.
-
-1. **Dejarse convencer de enviarlo.** Un sitio de inversiones falso que muestra un saldo que crece y nunca deja salir el dinero. Alguien que te llama, dice que tu cuenta está en riesgo y te hace "proteger" tu dinero a través de un cajero automático de Bitcoin. Un desconocido en internet que lleva la conversación hacia las inversiones. Después, un "servicio de recuperación" que pide una comisión para recuperarlo, y esa es la segunda estafa. En el informe del FBI correspondiente a 2025, el fraude de inversiones por sí solo sumó unos 7,200 millones de dólares de los 11,400 millones que la gente reportó haber perdido en denuncias relacionadas con criptomonedas. Nadie legítimo te dirá nunca que pagues, muevas o protejas dinero de esta manera.
-2. **Dejar fondos en un exchange o una plataforma de préstamos.** La empresa quiebra (Mt. Gox, FTX, Celsius, BlockFi). Los retiros se congelan y los clientes esperan meses o años por lo que la quiebra devuelva. Mt. Gox colapsó en febrero de 2014 y empezó a devolverles bitcoin a sus acreedores en julio de 2024 ([la historia completa (en inglés)](/rabbit-hole/mt-gox-ftx-graveyard)).
-3. **Phishing de la frase semilla.** Falsos agentes de soporte, falsas actualizaciones de la billetera, falsas páginas de "verifica tu billetera". **Ninguna billetera legítima, nunca, te pide escribir tu frase semilla en línea.** Si lo hace, es una estafa. (Los pasos de práctica de la sección 7 piden las palabras de una billetera de práctica en practice.learnbitcoin.com, que no cuidan nada de valor. Una página que pide las palabras de una billetera para bitcoin de verdad, aunque todavía esté vacía, es una estafa, se llame como se llame.)
-4. **Perder la frase semilla.** Un solo respaldo, un solo lugar, un solo incendio.
-5. **Software de billetera con errores o malicioso.** Usa billeteras auditadas y de código abierto. Cuando se pueda, verifica las firmas de descarga que publica el desarrollador.
-6. **Ruta de derivación o tipo de dirección equivocados.** Restauras la frase semilla en una billetera que usa un valor por defecto distinto del de la billetera que la generó, ves "0 BTC" y entras en pánico. Es menos común con billeteras modernas, pero pasa. Solución: intenta restaurar con cada estándar común (BIP 84 para SegWit nativo, BIP 86 para Taproot, etc.) antes de dar por hecho un robo.
-7. **Enviar a la dirección equivocada.** Las transacciones de Bitcoin son irreversibles. Revisa la dirección completa antes de enviar, en la propia pantalla de tu billetera de hardware si usas una, y nunca copies una dirección de tu historial de transacciones: los ladrones envían pagos diminutos desde direcciones parecidas, que coinciden en los primeros y los últimos caracteres con las que has usado, con la esperanza de que copies la de ellos. Manda primero un monto pequeño de prueba y luego vuelve a revisar la dirección completa.
-8. **Falla en la herencia.** El dueño muere y los herederos no tienen idea de dónde está la frase semilla. Común; evitable; documenta.
-
-El patrón es sobre todo **operativo, no técnico**. La criptografía rara vez es el punto de falla. Lo eres tú. Como todo el mundo. Planifica en consecuencia.
-
-## 11. Tu meta
-
-Antes de pasar al capítulo 5, haz estas cuatro cosas:
-
-- [ ] Elige una billetera (una móvil está bien por ahora; una de hardware cuando la práctica te haya dado confianza)
-- [ ] Genera una frase semilla y respáldala en papel *y* en metal
-- [ ] Recibe un monto pequeño (unos pocos dólares en sats; no tus ahorros)
-- [ ] Firma un mensaje que demuestre que controlas la dirección de recepción (si tu billetera ofrece firma de mensajes; ver sección 9)
-
-Eso es todo. Hiciste autocustodia. Ya no dependes de un exchange ni de un custodio para guardar las claves de tu dinero. Que vayas por más a partir de aquí, o no, es decisión tuya.
-
-> **Consejo pro:** Lo más difícil de la autocustodia no es técnico, es psicológico. La primera vez que tienes en tus manos una frase semilla real de la que solo tú respondes, se siente pesado. Ese peso es el verdadero producto de Bitcoin: la propiedad soberana. Quienes dicen que la autocustodia es "demasiado difícil" en su mayoría quieren decir que se siente pesado. No se equivocan. Solo que no están viendo lo que reciben a cambio.
+Hasta aquí todo se hizo con monedas de práctica. Lo que sigue trata de bitcoin de verdad.

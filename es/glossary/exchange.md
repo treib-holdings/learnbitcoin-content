@@ -3,6 +3,7 @@ title: "Exchange"
 slug: exchange
 draft: false
 published: "2026-10-14"
+updated: "2026-11-17"
 shortDefinition: "Un servicio o mercado para comerciar con BTC, ya sea centralizado (CEX) o descentralizado (DEX)."
 keyTakeaways:
   - "Permite cambiar fiat por BTC o una criptomoneda por otra"
@@ -12,15 +13,15 @@ aliases:
   - "exchanges"
 sources:
   - { label: "Coinbase Global - 2025 annual report on Form 10-K (filed February 12, 2026): customer crypto is held in omnibus wallets and recorded on Coinbase's ledger; trading runs on its order books", url: "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000015/coin-20251231.htm" }
-  - { label: "US DOJ - Binance and its CEO plead guilty (November 21, 2023): Binance operates the world's largest cryptocurrency exchange, Binance.com", url: "https://www.justice.gov/archives/opa/pr/binance-and-ceo-plead-guilty-federal-charges-4b-resolution" }
   - { label: "Robinhood Markets - 2025 annual report on Form 10-K (filed February 18, 2026): Robinhood bought Bitstamp, a globally scaled crypto exchange, in June 2025; Bitstamp safeguards its private keys internally and with third-party custodians", url: "https://www.sec.gov/Archives/edgar/data/1783879/000178387926000023/hood-20251231.htm" }
+  - { label: "New York State Department of Financial Services - Virtual currency businesses: its list of regulated entities held 39 companies on November 16, 2026, exchanges among them (it also lists custodians, payment companies and kiosk operators)", url: "https://www.dfs.ny.gov/apps_and_licensing/virtual_currency_businesses" }
   - { label: "Bitcoin Wiki - Atomic swap: two parties swap coins on two chains without trusting a third party", url: "https://en.bitcoin.it/wiki/Atomic_swap" }
-  - { label: "Bisq wiki - Introduction: a peer-to-peer exchange network; Bisq never holds user funds; no registration or KYC", url: "https://bisq.wiki/Introduction" }
+  - { label: "FinCEN - FIN-2019-G001 (May 9, 2019), section 5.1: peer-to-peer trading platforms let buyers and sellers find each other; where the two settle between their own wallets, the platform holds nothing for them", url: "https://www.fincen.gov/sites/default/files/2019-05/FinCEN%20Guidance%20CVC%20FINAL%20508.pdf" }
   - { label: "Wired - The Rise and Fall of the World's Largest Bitcoin Exchange (November 6, 2013): Mt. Gox booked 70 percent of bitcoin trades in April 2013", url: "https://www.wired.com/2013/11/mtgox/" }
   - { label: "NPR - Mt. Gox files for bankruptcy, nearly $500M of bitcoins lost (February 28, 2014): 850,000 bitcoins missing", url: "https://www.npr.org/sections/thetwo-way/2014/02/28/283863219/mtgox-files-for-bankruptcy-nearly-500m-of-bitcoins-lost" }
   - { label: "WizSec - The missing MtGox bitcoins (April 19, 2015): most or all were stolen from the hot wallet over time, beginning in late 2011", url: "https://blog.wizsec.jp/2015/04/the-missing-mtgox-bitcoins.html" }
   - { label: "Mt. Gox Rehabilitation Trustee - first repayments in bitcoin and Bitcoin Cash (July 5, 2024)", url: "https://www.mtgox.com/img/pdf/20240705_01_announcement_en.pdf" }
-  - { label: "Mt. Gox Rehabilitation Trustee - notice changing the repayment deadline (October 27, 2025): repayments largely complete for creditors who finished the required procedures, many others still unpaid, deadline moved to October 31, 2026", url: "https://www.mtgox.com/img/pdf/20251027_1cc36334-e8b2-4fe4-8135-97d9a149e4f7_announcement_en.pdf" }
+  - { label: "Mt. Gox Rehabilitation Trustee - notice changing the repayment deadline (October 16, 2026): repayments largely complete for creditors who finished the required procedures, many others still unpaid, deadline moved from October 31, 2026 to October 31, 2027", url: "https://www.mtgox.com/img/pdf/20261016_b3a13e0f-55f6-4653-913b-be80762390e8_announcement_en.pdf" }
   - { label: "Ontario Securities Commission - QuadrigaCX investigation report (2020): Canada's largest crypto trading platform; operated like a Ponzi scheme; clients lost at least CAD 169 million", url: "https://www.osc.ca/quadrigacxreport/" }
   - { label: "NPR - QuadrigaCX says it can't access funds after its CEO died (February 4, 2019): the widow's court affidavit says only Gerald Cotten moved coins out of cold storage; he died December 9, 2018", url: "https://www.npr.org/2019/02/04/691296170/cryptocurrency-exchange-says-it-cant-access-millions-after-founder-s-unexpected" }
   - { label: "CBC - Quadriga's cold wallets come up empty (March 1, 2019): the court-appointed monitor, Ernst & Young, found they had been empty since April 2018", url: "https://www.cbc.ca/news/canada/nova-scotia/cryptocurrency-still-missing-quadriga-s-cold-wallets-1.5040099" }
@@ -41,26 +42,26 @@ relatedTerms:
   - price-slippage
 liveWidget: ~
 translationOf: exchange
-sourceHash: "9b887604ddb5"
-sourceCommit: "8bb2e1c"
-sourceUpdated: "2026-10-10"
+sourceHash: "b990bb1af3b2"
+sourceCommit: "74f1a22"
+sourceUpdated: "2026-11-17"
 translation:
   method: "llm-draft"
 ---
 
 Un exchange es cualquier servicio que permite a sus usuarios cambiar bitcoin por otros activos: moneda fiat (fiduciaria), stablecoins u otras criptomonedas. Las dos categorías estructurales importan más que las marcas:
 
-- **Exchange centralizado (CEX).** Una empresa custodia los fondos de los clientes, empareja las órdenes en un libro de órdenes interno y liquida las operaciones en sus propios registros. El exchange, o un custodio que contrata, tiene las claves privadas; los clientes tienen un saldo en el registro contable del exchange. Coinbase, Binance y Bitstamp son ejemplos, y hay decenas más.
-- **Exchange descentralizado (DEX).** Las operaciones pasan por contratos inteligentes o por protocolos de emparejamiento entre pares (P2P); los usuarios conservan la custodia de sus propios fondos en todo momento. En Bitcoin en concreto, los intercambios atómicos (atomic swaps) y protocolos como Bisq entran aquí.
+- **Exchange centralizado (CEX).** Una empresa custodia los fondos de los clientes, empareja las órdenes en un libro de órdenes interno y liquida las operaciones en sus propios registros. El exchange, o un custodio que contrata, tiene las claves privadas; los clientes tienen un saldo en el registro contable del exchange. Hay muchos: tan solo el estado de Nueva York tenía en su lista 39 empresas de moneda virtual con licencia el 16 de noviembre de 2026, exchanges entre ellas.
+- **Exchange descentralizado (DEX).** Las operaciones pasan por contratos inteligentes o por protocolos de emparejamiento entre pares (P2P); los usuarios conservan la custodia de sus propios fondos en todo momento. En Bitcoin en concreto, los intercambios atómicos (atomic swaps) y los protocolos P2P entran aquí, y te ponen frente a desconocidos: consulta [Si decides tener un poco](/es/recorrido/usar-bitcoin).
 
 La línea divisoria es el modelo de confianza. Un CEX es un custodio: confías en que no pierda, congele ni se robe tus monedas. Un DEX (en sentido estricto) es un lugar de encuentro: confías en el protocolo, pero conservas tus claves.
 
 El historial de quiebras de los CEX es una de las lecciones más importantes para quien llega a Bitcoin. Los grandes colapsos históricos:
 
-- **Mt. Gox (2014)**: exchange con sede en Tokio que manejaba cerca del 70% de las operaciones con bitcoin en abril de 2013; en 2014 reportó unos 850,000 BTC desaparecidos, la mayoría robados de su billetera caliente a lo largo de los años anteriores. El fideicomisario empezó a pagar a los acreedores en bitcoin en julio de 2024. En octubre de 2025 dijo que los pagos estaban en gran parte completos para los acreedores que habían terminado los trámites, que muchos otros seguían sin cobrar, y movió la fecha límite al 31 de octubre de 2026.
+- **Mt. Gox (2014)**: exchange con sede en Tokio que manejaba cerca del 70% de las operaciones con bitcoin en abril de 2013; en 2014 reportó unos 850,000 BTC desaparecidos, la mayoría robados de su billetera caliente a lo largo de los años anteriores. El fideicomisario empezó a pagar a los acreedores en bitcoin en julio de 2024. En octubre de 2026 dijo que los pagos estaban en gran parte completos para los acreedores que habían terminado los trámites, que muchos otros seguían sin cobrar, y movió la fecha límite del 31 de octubre de 2026 al 31 de octubre de 2027.
 - **QuadrigaCX (2019)**: el exchange de criptomonedas más grande de Canadá. Tras la muerte de su CEO en diciembre de 2018, la empresa dijo que solo él podía acceder a sus billeteras frías. El supervisor designado por el tribunal descubrió que estaban vacías desde abril de 2018, y la Comisión de Valores de Ontario concluyó que el exchange había operado como un esquema Ponzi. Los clientes perdieron al menos 169 millones de dólares canadienses (CAD).
 - **Celsius (2022)**: prestamista de criptomonedas que congeló los retiros en junio de 2022 con $4,700 millones (dólares estadounidenses) en activos de clientes en la plataforma, y se declaró en bancarrota un mes después.
 - **FTX (2022)**: uno de los exchanges de criptomonedas más grandes del mundo; se derrumbó en cuestión de días en noviembre de 2022, cuando una corrida contra el exchange dejó al descubierto que los fondos de los clientes se habían enviado a su firma hermana de trading, Alameda Research. El faltante para los clientes fue de unos $8,000 millones.
 - **BlockFi, Voyager, Genesis, Gemini Earn (2022-2023)**: prestamistas y productos de préstamo de criptomonedas que congelaron los retiros durante el contagio de 2022.
 
-El patrón se repite: un CEX no es más seguro que la competencia y la honestidad de quienes lo operan. La mayoría de la gente empieza en un CEX por comodidad (comprar con fiat tras pasar el KYC, una interfaz sencilla, servicio al cliente), pero la regla del manifiesto del capítulo 4 sigue en pie: no son tus claves, no son tus monedas. Retira a autocustodia cualquier cantidad que te importe.
+El patrón se repite: un CEX no es más seguro que la competencia y la honestidad de quienes lo operan. La mayoría de la gente empieza en un CEX por comodidad (comprar con fiat tras pasar el KYC, una interfaz sencilla, servicio al cliente), pero la vieja regla sigue en pie: [no son tus claves, no son tus monedas](/es/glosario/no-son-tus-claves-no-son-tus-monedas). Retira a autocustodia cualquier cantidad que te importe.

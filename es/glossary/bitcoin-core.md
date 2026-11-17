@@ -3,6 +3,7 @@ title: "Bitcoin Core"
 slug: bitcoin-core
 draft: false
 published: "2026-10-14"
+updated: "2026-11-17"
 shortDefinition: "La implementación de referencia del protocolo Bitcoin, iniciada originalmente por Satoshi Nakamoto y mantenida hoy por desarrolladores de la comunidad."
 keyTakeaways:
   - "Fija el estándar de cómo se hacen cumplir las reglas de Bitcoin"
@@ -32,9 +33,9 @@ sameAs:
   - "https://en.bitcoin.it/wiki/Bitcoin_Core"
 liveWidget: ~
 translationOf: bitcoin-core
-sourceHash: "0fee2894d15b"
-sourceCommit: "c52bac9"
-sourceUpdated: "2026-10-13"
+sourceHash: "e4e80f88ba32"
+sourceCommit: "74f1a22"
+sourceUpdated: "2026-11-17"
 translation:
   method: "llm-draft"
 ---
@@ -55,6 +56,6 @@ Bitcoin Core apunta a una versión mayor cada seis meses, cada una con mejoras i
 
 El código también tiene sus rarezas. La opción "Mask Values" (ocultar valores) de la interfaz gráfica, que esconde saldos y montos de cualquiera que mire por encima de tu hombro, se integró en 2020; durante la revisión alguien la comparó con la versión de la misma idea en [Wasabi Wallet](/es/glosario/wasabi-wallet), conocida como [Lurking Wife Mode (en inglés)](/glossary/lurking-wife-mode): un pequeño recordatorio de que este software lo escriben seres humanos de carne y hueso.
 
-Lee [Nodo completo](/es/glosario/nodo-completo) para saber qué implica correrlo, y [Soberanía](/es/recorrido/soberania), el capítulo del Recorrido, para saber por qué querrías hacerlo.
+Lee [Nodo completo](/es/glosario/nodo-completo) para saber qué implica correrlo, y [Corre tu propio nodo (en inglés)](/rabbit-hole/run-your-own-node) para correr uno por tu cuenta.
 
 Para entender por qué los cambios cercanos a la validación se tratan con tanto cuidado, lee [La bifurcación de la cadena de 2013](/es/a-fondo/bifurcacion-de-2013), la noche en que un cambio de base de datos resultó ser un cambio de consenso.
