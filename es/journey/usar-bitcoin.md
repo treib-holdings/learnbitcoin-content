@@ -2,15 +2,15 @@
 title: "Si decides tener un poco"
 slug: usar-bitcoin
 translationOf: using-bitcoin
-sourceHash: "05e0919be6b8"
-sourceCommit: "74f1a22"
-sourceUpdated: "2026-11-17"
+sourceHash: "36c3feb49886"
+sourceCommit: "8a5e37a"
+sourceUpdated: "2026-11-18"
 translation:
   method: "llm-draft"
 draft: false
 status: live
 published: "2026-10-14"
-updated: "2026-11-17"
+updated: "2026-11-18"
 reviewedAt: "2026-11-16"
 order: 6
 goDeeper: ["wallets", "mt-gox-ftx-graveyard", "address-reuse"]
@@ -83,6 +83,11 @@ Las empresas falsas vienen a buscarte. No empieces por ninguno de estos:
 Una billetera propia para bitcoin de verdad. La billetera de práctica no puede guardarlo, y sus 12 palabras nunca deben protegerlo.
 
 Hay dos tipos. Una **app de billetera** es un programa en tu celular. Una **billetera de hardware** es un dispositivo pequeño que mantiene tus claves lejos de internet. Para un primer monto pequeño, basta con una app.
+
+<figure>
+  <img src="/photos/journey-hardware-wallet.jpg" alt="Una billetera de hardware apoyada sobre una superficie oscura. Es un dispositivo plano, y casi todo su frente es una pantalla. La pantalla está encendida y dice, en inglés, 'Enter PIN' (escribe el PIN) y '10 tries left' (quedan 10 intentos), encima de los dígitos del 0 al 9, desordenados. Debajo de la pantalla hay un pequeño candado grabado en la carcasa." width="1000" height="750" />
+  <figcaption>Esta es una billetera de hardware: un dispositivo pequeño con pantalla propia. Para un primer monto pequeño, no la necesitas.</figcaption>
+</figure>
 
 También existen apps de billetera falsas, así que no busques una en la tienda de apps. La [página de billeteras](/es/a-fondo/billeteras) de este sitio nombra las que ha revisado, cada una con un enlace al sitio web del propio fabricante y la fecha en que se revisó por última vez. Sigue ese enlace hasta la tienda de apps, y comprueba que ahí el nombre del fabricante coincida con el que aparece en la página.
 

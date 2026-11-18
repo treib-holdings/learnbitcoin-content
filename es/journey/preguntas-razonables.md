@@ -10,7 +10,7 @@ translation:
 draft: false
 status: live
 published: "2026-11-17"
-updated: "2026-11-17"
+updated: "2026-11-18"
 reviewedAt: "2026-11-16"
 order: 3
 goDeeper: ["block-size-war", "energy", "bitcoin-is-dead"]
@@ -132,6 +132,11 @@ No es una historia sencilla. Otra parte del mismo plan, un cambio que los desarr
 ## ¿Podría un gobierno apagarlo?
 
 Ninguno lo ha hecho, y no hay ningún interruptor que apagar. Los nodos y los mineros están repartidos por muchos países.
+
+<figure>
+  <img src="/diagrams/journey-no-switch-es.svg" alt="Bajo el título 'No hay ningún interruptor que apagar', dos cosas, una al lado de la otra. A la izquierda, un recuadro solo. Dice 'Una empresa'. Debajo: 'un gobierno puede cerrarla'. A la derecha, una malla de puntos, cada uno unido a los que tiene cerca, sin ningún punto al que lleven todos los demás. Debajo: 'Bitcoin: miles de nodos repartidos por muchos países'." width="800" height="420" />
+  <figcaption>Un gobierno puede cerrar una empresa. Los nodos y los mineros de Bitcoin están repartidos por muchos países.</figcaption>
+</figure>
 
 La prueba más dura llegó en 2021, cuando China prohibió la minería. Durante algunas semanas los bloques llegaron más despacio, en la peor semana más o menos uno cada diecisiete minutos en lugar de cada diez. Nunca dejaron de llegar. En ocho meses ya había más minería que antes de la prohibición.
 

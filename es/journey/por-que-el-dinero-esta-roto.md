@@ -10,7 +10,7 @@ translation:
 draft: false
 status: live
 published: "2026-10-14"
-updated: "2026-11-17"
+updated: "2026-11-18"
 reviewedAt: "2026-11-16"
 order: 2
 goDeeper: ["supply", "halvings"]
@@ -54,6 +54,11 @@ sources:
 Que compra menos. Lo que costaba $100 en 1971 hoy cuesta más de $800. (¿Por qué 1971? Ese año vuelve a aparecer más abajo.)
 
 Esto se llama **inflación**: los precios suben, año tras año, y por eso cada dólar compra un poco menos. En la mayoría de los años es tan lenta que no se nota. Fue rápida en los años setenta, y otra vez de 2021 a 2023.
+
+<figure>
+  <img src="/diagrams/journey-dollar-since-1971-es.svg" alt="Gráfica de líneas titulada 'Lo que compra un dólar, de 1971 a 2026'. La línea empieza en $1.00 en 1971, cae rápido hasta cerca de la mitad en 1980, luego sigue bajando más despacio y termina en $0.12 en 2026. Debajo de la gráfica, una línea de texto dice: 'Cada dólar compra un poco menos.'" width="800" height="420" />
+  <figcaption>Lo que costaba $100 en 1971 hoy cuesta más de $800, así que un dólar compra ahora lo que entonces compraban unos 12 centavos. La parte empinada son los años setenta.</figcaption>
+</figure>
 
 ## ¿Eso es a propósito?
 

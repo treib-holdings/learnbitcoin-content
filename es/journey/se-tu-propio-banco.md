@@ -2,15 +2,15 @@
 title: "Las claves: lo que tienes en realidad"
 slug: se-tu-propio-banco
 translationOf: be-your-own-bank
-sourceHash: "59a8aeaf1df4"
-sourceCommit: "74f1a22"
-sourceUpdated: "2026-11-17"
+sourceHash: "dd35d32e86d4"
+sourceCommit: "8a5e37a"
+sourceUpdated: "2026-11-18"
 translation:
   method: "llm-draft"
 draft: false
 status: live
 published: "2026-10-14"
-updated: "2026-11-17"
+updated: "2026-11-18"
 reviewedAt: "2026-11-16"
 order: 5
 goDeeper: ["mt-gox-ftx-graveyard", "brain-wallets", "seed-backup-strategies"]
@@ -49,6 +49,11 @@ sources:
 ## ¿Qué son las 12 palabras?
 
 Cuando creaste tu billetera de práctica, te mostró 12 palabras. Juntas se llaman **frase semilla**. (Las billeteras de verdad también la llaman frase de recuperación, y algunas usan 24 palabras.) De esas palabras sale cada clave y cada dirección de la billetera, siempre en el mismo orden.
+
+<figure>
+  <img src="/diagrams/journey-seed-words-es.svg" alt="Bajo el título '12 palabras. Cada clave. Cada dirección.', un recuadro arriba contiene la frase semilla de 12 palabras, dibujadas como doce barras cortas. De él bajan flechas hasta una fila de recuadros: clave 1 con dirección 1, clave 2 con dirección 2, clave 3 con dirección 3, y luego tres puntos por las que siguen. Abajo: 'Siempre en el mismo orden.'" width="800" height="420" />
+  <figcaption>Cada clave y cada dirección de tu billetera sale de la frase semilla de 12 palabras que está arriba. Los números muestran el orden, que es siempre el mismo.</figcaption>
+</figure>
 
 Por eso cada clave y cada dirección puede volver a salir de las palabras. Pon las mismas palabras en el mismo tipo de billetera en un celular nuevo, y aparecen las mismas claves, las mismas direcciones y las mismas monedas. Las monedas nunca estuvieron en el celular viejo. Están en el registro, y las palabras son la forma de llegar a ellas.
 

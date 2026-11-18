@@ -2,15 +2,15 @@
 title: "Qué es Bitcoin"
 slug: que-es-bitcoin-en-realidad
 translationOf: what-bitcoin-actually-is
-sourceHash: "d60c116870f5"
-sourceCommit: "58a12b8"
-sourceUpdated: "2026-11-17"
+sourceHash: "c0477e00ac79"
+sourceCommit: "8a5e37a"
+sourceUpdated: "2026-11-18"
 translation:
   method: "llm-draft"
 draft: false
 status: live
 published: "2026-10-14"
-updated: "2026-11-17"
+updated: "2026-11-18"
 reviewedAt: "2026-11-16"
 order: 1
 goDeeper: ["supply", "bitcoin-units"]
@@ -61,6 +61,11 @@ Cada computadora revisa que cada pago nuevo cumpla esas reglas e ignora los que 
 Los pagos nuevos se agregan al registro en lotes llamados **bloques**, más o menos uno cada diez minutos. Cada bloque está unido al anterior, como los eslabones de una cadena. Eso es todo lo que quiere decir *cadena de bloques* (blockchain).
 
 Cuando un bloque incluye tu pago, el pago tiene una **confirmación**. Cada bloque que se agrega después es una más. Después de seis confirmaciones, un pago suele considerarse definitivo.
+
+<figure>
+  <img src="/diagrams/journey-six-confirmations-es.svg" alt="Bajo el título 'Cada bloque nuevo es una confirmación más' hay seis bloques en fila, unidos en cadena y numerados del 1 al 6. Debajo, un corchete dice 'confirmaciones'. Una flecha que dice 'tu pago' apunta al bloque 1, relleno de naranja. Otra, que dice 'suele considerarse definitivo', apunta al bloque 6, de borde naranja. Al pie: más o menos un bloque cada diez minutos." width="800" height="420" />
+  <figcaption>El bloque que incluye tu pago es su primera confirmación, y cada bloque que se agrega después es una más. Después de seis, un pago suele considerarse definitivo.</figcaption>
+</figure>
 
 ## ¿Cuánto hay?
 

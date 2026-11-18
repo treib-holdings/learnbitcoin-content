@@ -10,7 +10,7 @@ translation:
 draft: false
 status: live
 published: "2026-10-14"
-updated: "2026-11-17"
+updated: "2026-11-18"
 reviewedAt: "2026-11-16"
 order: 4
 goDeeper: ["utxos", "mempool", "mining"]
@@ -64,6 +64,11 @@ Una moneda se gasta entera, como un billete. Digamos que tienes una moneda de 10
 La parte que vuelve se llama **cambio**. Con un billete, la tienda te da el cambio. Aquí lo crea tu propia billetera.
 
 Los 200 sats que sobran son la comisión. Y si ninguna moneda es lo bastante grande por sí sola, la billetera usa dos o más juntas.
+
+<figure>
+  <img src="/diagrams/journey-coin-spent-whole-es.svg" alt="Bajo el título 'Una moneda se gasta entera', tu moneda de 10,000 sats está a la izquierda. Dos flechas salen de ella hacia dos monedas nuevas, a la derecha: una de 6,000 sats que le pagas a alguien y una de unos 3,800 sats de cambio que vuelve a ti. Debajo, una línea dice: 'Sobran 200 sats: son la comisión.'" width="800" height="420" />
+  <figcaption>El ejemplo de arriba, en un dibujo. La moneda se usa entera, se crean dos monedas nuevas y los 200 sats que sobran son la comisión.</figcaption>
+</figure>
 
 En el siguiente paso cuentas tus propias monedas. No te sorprendas si hay una sola. El pago que acabas de hacer usó entera la moneda que te dieron, y el cambio es lo que queda.
 
