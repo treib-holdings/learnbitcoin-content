@@ -2,8 +2,8 @@
 title: "Si decides tener un poco"
 slug: usar-bitcoin
 translationOf: using-bitcoin
-sourceHash: "36c3feb49886"
-sourceCommit: "8a5e37a"
+sourceHash: "3d4783807121"
+sourceCommit: "a51ea1e"
 sourceUpdated: "2026-11-18"
 translation:
   method: "llm-draft"
@@ -11,32 +11,27 @@ draft: false
 status: live
 published: "2026-10-14"
 updated: "2026-11-18"
-reviewedAt: "2026-11-16"
+reviewedAt: "2026-11-18"
 order: 6
 goDeeper: ["wallets", "mt-gox-ftx-graveyard", "address-reuse"]
-estimatedMinutes: 7
-tagline: "Opcional. Por dónde no empezar, dos formas prudentes de conseguir un primer monto pequeño, y cómo verificar una empresa. No nombra a ningún vendedor."
+estimatedMinutes: 8
+tagline: "Recibe un poco de bitcoin de verdad de alguien que conoces, o compra un monto pequeño y muévelo a una billetera que controlas tú."
 prerequisites: ["be-your-own-bank"]
-relatedTerms: ["exchange", "hardware-wallet", "custodial-wallet", "self-custody", "kyc-know-your-customer", "bitcoin-inheritance-planning"]
+relatedTerms: ["exchange", "altcoin", "custodial-wallet", "self-custody", "kyc-know-your-customer", "bitcoin-inheritance-planning"]
 sources:
   - { label: "UK Financial Conduct Authority - Crypto: The basics: be prepared to lose all your money", url: "https://www.fca.org.uk/investsmart/crypto-basics" }
   - { label: "US Federal Trade Commission - What To Know About Cryptocurrency and Scams: never click a link from an unexpected message; payments typically cannot be reversed; accounts are not insured by a government", url: "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams" }
-  - { label: "FBI - Cryptocurrency Investment Fraud: fake investment apps can be found by searching the app stores; a person who introduces you may be an unwitting victim; fakes let victims withdraw at the start; almost all victims are later approached by recovery scammers", url: "https://www.fbi.gov/how-we-can-help-you/victim-services/national-crimes-and-victim-resources/cryptocurrency-investment-fraud" }
+  - { label: "FBI - Cryptocurrency Investment Fraud: fake investment apps can be found by searching the app stores; a person who introduces you may be an unwitting victim; fakes let victims withdraw at the start", url: "https://www.fbi.gov/how-we-can-help-you/victim-services/national-crimes-and-victim-resources/cryptocurrency-investment-fraud" }
   - { label: "FBI - public service announcement of December 21, 2022: criminals buy search advertisements that imitate real companies, with a web address that differs by a typo or a misplaced letter; type the company's address into the browser yourself", url: "https://www.ic3.gov/PSA/2022/PSA221221" }
-  - { label: "US Securities and Exchange Commission, Office of Investor Education and Assistance - 5 Ways Fraudsters May Lure Victims Into Scams Involving Crypto Asset Securities (May 29, 2024): a fake may let you withdraw a small amount to gain your trust; a friend or relative who recommends it may have been fooled; a demand for a deposit, fee or taxes to unfreeze an account", url: "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/crypto-scams" }
+  - { label: "US Securities and Exchange Commission, Office of Investor Education and Advocacy - 5 Ways Fraudsters May Lure Victims Into Scams Involving Crypto Asset Securities (May 29, 2024): a fake may let you withdraw a small amount to gain your trust; a friend or relative who recommends it may have been fooled; a demand for a deposit, fee or taxes to unfreeze an account", url: "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/crypto-scams" }
   - { label: "FBI - public service announcement of March 14, 2023: victims who try to withdraw are told to pay a fee or taxes, and do not get their money back even if they pay", url: "https://www.ic3.gov/PSA/2023/PSA230314" }
   - { label: "FINRA, the US brokerage industry's own regulator - Be Alert to Signs of Imposter Investment Scams (April 29, 2026): legitimate firms do not block withdrawals and require additional payments; fake apps are promoted through imposter websites; scammers ask for identity documents too", url: "https://www.finra.org/investors/insights/be-alert-signs-imposter-investment-scams" }
   - { label: "FBI - public service announcement of July 20, 2026: avoid search results marked as sponsored, which are usually paid imitators; scammers pose as the FBI's own complaint center", url: "https://www.ic3.gov/PSA/2026/PSA260720" }
   - { label: "US Commodity Futures Trading Commission - Don't be re-victimized by recovery frauds: a warning sign is being given reasons why a fee cannot be taken from the money itself", url: "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/RecoveryFrauds.html" }
-  - { label: "UK Financial Conduct Authority - Cryptoassets consumer research 2025: 73% of people who own crypto bought it through an exchange", url: "https://www.fca.org.uk/publication/research-notes/cryptoasset-consumer-research-2025-wave-6.pdf" }
   - { label: "FBI - public service announcement of May 15, 2026: 13,460 complaints and $389 million in losses in 2025 in complaints that involved a cryptocurrency kiosk", url: "https://www.ic3.gov/PSA/2026/PSA260515-2" }
   - { label: "Iowa Attorney General (February 26, 2025) - the state's two largest crypto ATM operators took 23% and 21% of the money sent through their machines, by the Attorney General's account in the lawsuits", url: "https://www.iowaattorneygeneral.gov/newsroom/attorney-general-bird-sues-crypto-atm-companies-for-costing-iowans-more-than-20-million" }
-  - { label: "Laws of Minnesota 2026, chapter 65 - virtual currency kiosks are prohibited from August 1, 2026", url: "https://www.revisor.mn.gov/laws/2026/0/Session+Law/Chapter/65/" }
-  - { label: "Indiana General Assembly, House Enrolled Act 1116 (2026) - virtual currency kiosks are banned in Indiana, from the day the act passed", url: "https://iga.in.gov/pdf-documents/124/2026/house/bills/HB1116/HB1116.05.ENRS.pdf" }
-  - { label: "Vermont Statutes, 8 V.S.A. section 2577 - virtual currency kiosks are prohibited from July 1, 2026", url: "https://legislature.vermont.gov/statutes/section/08/079/02577" }
   - { label: "US Securities and Exchange Commission, Office of Investor Education and Assistance - Crypto Asset Custody Basics for Retail Investors (December 12, 2025): wallets connected to the internet and devices that are not; a company that holds coins for you controls the keys; ask about its fees for moving coins out", url: "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/crypto-asset-custody-basics-retail-investors-investor-bulletin-0" }
   - { label: "Kaspersky Securelist (April 20, 2026) - 26 apps that posed as well-known wallets, almost all in China's App Store, led to wallets that copied the recovery words", url: "https://securelist.com/fakewallet-cryptostealer-ios-app-store/119474/" }
-  - { label: "mempool.space API - fee rates over the last year, in eight-hour averages: at the middle fee rate an ordinary payment never cost more than about 70 cents (checked November 16, 2026)", url: "https://mempool.space/api/v1/mining/blocks/fee-rates/1y" }
   - { label: "Jameson Lopp - Bitcoin Address Poisoning Attacks (April 6, 2025): check the entire address, and do not copy one from your payment history", url: "https://blog.lopp.net/bitcoin-address-poisoning-attacks/" }
   - { label: "US Internal Revenue Service - Frequently asked questions on virtual currency transactions, questions 8 and 31 to 33: the cost of a coin includes fees; a gift is not income; a gain is measured from what the giver paid; with no record of that, the cost counts as zero", url: "https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-on-virtual-currency-transactions" }
   - { label: "US Code of Federal Regulations, 31 CFR 1022.210 - money services businesses must verify who their customers are", url: "https://www.ecfr.gov/current/title-31/section-1022.210" }
@@ -53,133 +48,119 @@ sources:
   - { label: "US Internal Revenue Service - Digital assets: holding is not reported, selling or paying with them is, and tax falls on a gain; the records to keep", url: "https://www.irs.gov/filing/digital-assets" }
   - { label: "GOV.UK - Search probate records for documents and wills: in England and Wales a copy of a will can be ordered once probate is granted", url: "https://www.gov.uk/search-will-probate" }
   - { label: "North Carolina Judicial Branch - Estates: a will is a public record once it has been filed after death", url: "https://www.nccourts.gov/help-topics/wills-and-estates/estates" }
-  - { label: "US Federal Trade Commission - Refund and recovery scams: someone who asks for a fee up front to get your money back is a scammer; where to report", url: "https://consumer.ftc.gov/articles/refund-and-recovery-scams" }
-  - { label: "FBI - public service announcement of August 11, 2023: recovery companies charge a fee up front; law enforcement does not charge victims; report to ic3.gov", url: "https://www.ic3.gov/PSA/2023/PSA230811" }
+  - { label: "Strike - US State License Disclosures: Zap Solutions, Inc. does business as Strike and Strike.me, and is licensed in New York (read November 18, 2026)", url: "https://strike.me/legal/licenses/" }
+  - { label: "Strike - What are my available and pending balances?: a bank deposit typically settles in about five business days, and bitcoin bought with pending cash cannot be sent or withdrawn until it does (read November 18, 2026)", url: "https://strike.me/en/faq/when-can-i-send-my-bitcoin/" }
+  - { label: "Strike - What are Bitcoin fees?: bitcoin is sent on-chain to another wallet at three speeds, and the free one is broadcast 12 to 48 hours later (read November 18, 2026)", url: "https://strike.me/learn/what-are-bitcoin-fees" }
+  - { label: "River - Which states are supported by River?: clients in the United States only, in every state except Nevada and New York (read November 18, 2026)", url: "https://support.river.com/hc/en-us/articles/45684651229715-Which-states-are-supported-by-River" }
+  - { label: "River - When can I send bitcoin or withdraw cash?: bitcoin bought from a linked bank account has a holding period, and the date it ends is shown at the purchase (read November 18, 2026)", url: "https://support.river.com/hc/en-us/articles/45511623140115-When-can-I-send-bitcoin-or-withdraw-cash" }
+  - { label: "River - Can I choose my transaction fees when sending bitcoin?: bitcoin is sent on-chain at two speeds, and the standard one is batched with other sends (read November 18, 2026)", url: "https://support.river.com/hc/en-us/articles/45801155517843-Can-I-choose-my-transaction-fees-when-sending-bitcoin" }
+  - { label: "BlueWallet source code at version 8.0.2 - the Buy Bitcoin button, added October 1, 2026: shown on a Bitcoin wallet's screen; it opens a selling company's page with the wallet's receive address", url: "https://github.com/BlueWallet/BlueWallet/blob/v8.0.2/components/BuyBitcoinButton.tsx" }
+  - { label: "US Securities and Exchange Commission, Office of Investor Education and Advocacy - Investor Bulletin: Understanding Margin Accounts (June 10, 2021): with borrowed money losses mount quickly, the firm may sell without any notification, and a sale after a fall gives up the chance of a recovery (written about stock accounts)", url: "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-29" }
+  - { label: "ABA Journal - an inheritance plan has to tell an heir where the seed words can be found", url: "https://www.abajournal.com/magazine/article/cryptocurrency_estate_lawyers_caution" }
 ---
 
-> **Adónde vas:** Este capítulo es opcional. Es para quien decidió tener un poco de bitcoin de verdad y quiere hacerlo con cuidado. No nombra a ningún vendedor, y nada en él es un anuncio. Al terminar sabrás por dónde no empezar, dos formas prudentes de conseguir un primer monto pequeño y cómo encontrar una empresa en la lista de un gobierno.
+> **Adónde vas:** Este capítulo es opcional. Te deja con una billetera propia para bitcoin de verdad, y con dos formas prudentes de poner un poco en ella. Nombra una app de billetera y dos empresas. Nadie pagó por aparecer.
 
-**Primero, adivina.** Una app de inversiones te deja sacar un poco de tu dinero, sin ningún problema. ¿Eso demuestra que la app es de verdad?
+En el capítulo anterior trajiste de vuelta una billetera desde un pedazo de papel. Puedes hacer lo mismo con bitcoin de verdad. Antes tiene que cambiar una cosa. La billetera con la que practicaste, y las palabras que anotaste para ella, pertenecen a la red de práctica. Déjalas ahí.
 
-## ¿Necesitas tener bitcoin?
+**Primero, adivina.** Tocas Comprar. Una empresa toma tus dólares y te muestra un saldo en bitcoin. Un minuto después se te cae el celular al lago. ¿Qué te devuelve esas monedas: tu cuenta en la empresa, o las 12 palabras que anotaste?
 
-No. Puedes parar aquí y quedarte con todo lo que aprendiste.
+## Empieza con una billetera vacía
 
-Si sigues, usa un monto que puedas perder por completo sin que te duela. Como dice un organismo de control de un gobierno: prepárate para perder todo el dinero que pongas.
+Para el equivalente a unos pocos dólares en bitcoin, basta con una app de billetera en tu celular. Para este primer pago recomendamos BlueWallet. Funciona en iPhone y en Android, puedes usarla sin crear una cuenta, y las claves las tienes tú. Probamos los pasos para configurarla y para recuperarla desde el papel. Existen apps de billetera falsas, así que no la busques en la tienda de apps. [Consigue la app de verdad y sigue la guía de la billetera.](/es/a-fondo/billeteras)
 
-## ¿Por dónde no debes empezar?
+Crea una billetera de Bitcoin nueva. Escribe sus palabras nuevas en papel, en orden. Mientras la billetera siga vacía, sigue la guía para restaurarla y comprueba que vuelve la misma dirección para recibir. Guarda el papel en privado, como practicaste en el capítulo 5.
 
-Las empresas falsas vienen a buscarte. No empieces por ninguno de estos:
+Ahora tienes una billetera que puede recibir bitcoin de verdad. Puede quedarse vacía todo el tiempo que quieras. La app tiene su propio botón Comprar Bitcoin (Buy Bitcoin). No lo toques: abre el sitio web de otro vendedor.
 
-- **Alguien que te contactó primero**, por mensaje de texto, en redes sociales o en una app de citas.
-- **Un anuncio, o un enlace en un mensaje.**
-- **El primer resultado de una búsqueda.** Los delincuentes compran anuncios que imitan a una empresa de verdad, con una dirección web que se diferencia por una o dos letras. Sáltate cualquier resultado marcado como patrocinado.
-- **Una app que encontraste buscando en la tienda de apps.** El FBI dice que ahí se pueden encontrar apps falsas de inversiones.
-- **Una inversión a la que te invita un amigo.** Un amigo que te da un poco de bitcoin es una cosa. Un amigo que quiere que pongas dinero en una app donde el suyo está creciendo puede estar cayendo en un engaño ahora mismo. Adviértele.
-- **Un cajero automático de Bitcoin.** Algunas de estas máquinas se han quedado con más de una quinta parte de lo que la gente puso en ellas, los estafadores envían gente a ellas, y varios estados de Estados Unidos las han prohibido.
+## Si alguien te envió este curso
 
-## ¿Qué necesitas primero?
+Esta es la pequeña tarea que tenemos para esa persona. Si tiene bitcoin y quieres probar a recibir un poco, pregúntale si te enviaría el equivalente a unos pocos dólares. También sirve cualquier otra persona que conozcas en persona y que tenga bitcoin. Si están juntos, hacen falta dos celulares.
 
-Una billetera propia para bitcoin de verdad. La billetera de práctica no puede guardarlo, y sus 12 palabras nunca deben protegerlo.
+1. En el tuyo, abre tu billetera nueva y toca Recibir. El código cuadrado y la fila de letras y números que tiene debajo muestran la misma dirección.
+2. Pídele a tu amigo que escanee el código, o envíale la dirección en un mensaje. Una dirección no es un secreto. Tus palabras sí lo son, y nunca van en un mensaje. Tu amigo compara la dirección completa de su pantalla de pago con la tuya, pone un monto pequeño y revisa la comisión de la red antes de enviar. Si la comisión se ve absurda para el tamaño del regalo, pueden dejarlo para otro día.
+3. Mira tu celular. Puede que veas el pago marcado como pendiente, es decir, que espera un bloque. Ábrelo de nuevo más tarde. Cuando muestre una confirmación, un minero lo incluyó en un bloque. Viste pasar esto con monedas de práctica en el capítulo 4. Esta vez podrías gastar lo que llegó.
 
-Hay dos tipos. Una **app de billetera** es un programa en tu celular. Una **billetera de hardware** es un dispositivo pequeño que mantiene tus claves lejos de internet. Para un primer monto pequeño, basta con una app.
+Tu amigo necesitó una sola dirección. No tenía por qué ver el papel ni tomar tu celular.
 
-<figure>
-  <img src="/photos/journey-hardware-wallet.jpg" alt="Una billetera de hardware apoyada sobre una superficie oscura. Es un dispositivo plano, y casi todo su frente es una pantalla. La pantalla está encendida y dice, en inglés, 'Enter PIN' (escribe el PIN) y '10 tries left' (quedan 10 intentos), encima de los dígitos del 0 al 9, desordenados. Debajo de la pantalla hay un pequeño candado grabado en la carcasa." width="1000" height="750" />
-  <figcaption>Esta es una billetera de hardware: un dispositivo pequeño con pantalla propia. Para un primer monto pequeño, no la necesitas.</figcaption>
-</figure>
+## Si prefieres comprar un poco tú
 
-También existen apps de billetera falsas, así que no busques una en la tienda de apps. La [página de billeteras](/es/a-fondo/billeteras) de este sitio nombra las que ha revisado, cada una con un enlace al sitio web del propio fabricante y la fecha en que se revisó por última vez. Sigue ese enlace hasta la tienda de apps, y comprueba que ahí el nombre del fabricante coincida con el que aparece en la página.
+Un exchange te deja comprar bitcoin con dinero normal. Para una primera compra en Estados Unidos, miraríamos Strike (`strike.me`) o River (`river.com`). Las dos se dedican a bitcoin y te dejan enviarlo a tu propia billetera. Nadie pagó por aparecer aquí, y estos no son enlaces: escribe tú la dirección web de la empresa. Un anuncio encima de los resultados de una búsqueda puede llevarte a una imitación. Si quieres la app de la empresa, toma el enlace a la tienda desde su propio sitio.
 
-Después haz lo que practicaste. Escribe las palabras en papel, prueba el respaldo antes de que entre una sola moneda, y cumple las cuatro reglas.
+Que puedas usarlas depende de dónde vives. River, por ejemplo, no atiende en Nueva York ni en Nevada. Leímos las páginas propias de las dos empresas el 18 de noviembre de 2026. Una empresa nombrada también puede quebrar, y por eso este capítulo termina con las monedas en tu propia billetera. ¿Vives en otro país, o piensas en otra empresa? [Verifícala primero](#cualquier-otra-empresa-verifícala-primero).
 
-## Primera puerta: alguien que conoces te envía un poco
+Empieza por una dirección web que escribiste tú, nunca por ninguno de estos:
 
-Si alguien que conoces en persona tiene bitcoin, este es el comienzo más suave. No necesitas ninguna empresa ni ninguna cuenta, y esa persona no te pide nada a cambio.
+- **Una app que encontraste buscando en la tienda de apps, o el primer resultado de una búsqueda.** A las tiendas llegan apps falsas, y los delincuentes compran anuncios que imitan a una empresa de verdad.
+- **Alguien que te contactó primero,** o un enlace en un mensaje.
+- **Una "inversión" a la que te invita un amigo.** Un amigo cuyo dinero está creciendo en una app puede estar cayendo en un engaño ahora mismo.
+- **Un cajero automático de Bitcoin.** Algunas de estas máquinas se han quedado con más de una quinta parte de lo que la gente puso en ellas, y los estafadores envían gente a ellas.
 
-1. Abre tu billetera y toca Recibir. Te muestra una dirección.
-2. Envíale la dirección. Una dirección no es un secreto, así que puedes enviarla por mensaje. Tu frase semilla es el secreto, y nunca va en un mensaje.
-3. Esa persona revisa la dirección completa, no solo cómo empieza y cómo termina, y envía el equivalente a unos pocos dólares. La comisión de la red suele ser mucho menos de un dólar, y la paga quien envía.
-4. Tu billetera muestra el pago en uno o dos minutos. Su primera confirmación suele llegar en menos de una hora.
+**¿Ya tienes una cuenta en un exchange grande?** Puedes usarla para esto. No entres al casino del trading. Quizá veas una lista de "las que más suben". Una moneda que subió 80% es un buen anuncio. Ese número te dice lo que le pasó a alguien que ya la tenía. No te dice nada de lo que vas a ganar si la compras ahora. A las monedas que no son bitcoin se les suele llamar altcoins. Déjalas en paz para este ejercicio.
 
-Después pídele una copia de su registro de lo que pagó por esas monedas, y de cuándo. En Estados Unidos la oficina de impuestos calcula tu ganancia a partir de eso, y cuenta tu costo como cero si no puedes demostrarlo.
+Sáltate cualquier oferta de pedir prestado o de operar con apalancamiento. Un botón que dice 5x deja que $100 controlen unos $500 de bitcoin. Un movimiento de 10% en tu contra te cuesta cerca de la mitad de tus $100, antes de comisiones, y el exchange puede cerrar la operación mientras el precio está abajo. Aunque bitcoin se recupere después, tu operación ya terminó. Todo lo que enseña este capítulo se aprende con una sola compra pequeña.
 
-## Segunda puerta: le compras un poco a una empresa
+Antes de poner dinero, responde tres preguntas con la información de la propia empresa sobre comisiones y retiros:
 
-La mayoría de la gente empieza en un exchange, una empresa que cambia bitcoin por dinero normal. Ahí también están las empresas falsas, así que sigue este orden.
+- ¿Puedo enviar bitcoin (BTC) por la red de Bitcoin a mi propia dirección, donde vivo?
+- Con el monto que estoy dispuesto a gastar, ¿llego al mínimo de retiro? Después de los costos de la compra y del retiro, ¿cuánto bitcoin me va a llegar de verdad?
+- Si pago de esta forma, ¿cuánto tengo que esperar para poder enviarlo afuera? Una empresa puede dejarte comprar al instante mientras el pago de tu banco todavía se está acreditando.
 
-1. **Toma el nombre de la empresa de la lista de un regulador**, no de un anuncio. Un **regulador** es una oficina del gobierno que da licencias a las empresas financieras. El paso de más abajo te muestra dónde están las listas.
-2. **Escribe tú la dirección web de la empresa en tu navegador.** Una empresa falsa puede tomar prestado el nombre de una empresa de la lista, así que nunca llegues por un enlace, un anuncio ni un resultado de búsqueda. Antes de comprar, lee lo que dice la empresa sobre sacar bitcoin de ahí: su comisión, y si hay que esperar.
-3. **Compra un monto pequeño.** Una empresa con licencia primero te pedirá un documento de identidad, como exige la ley en la mayoría de los lugares. Las empresas falsas también piden un documento de identidad, y por eso los pasos 1 y 2 van primero.
-4. **Mueve las monedas a tu propia billetera en cuanto la empresa te deje.** Toma la dirección de tu propia billetera. Nadie más te da nunca una dirección, ni palabras. Revisa la dirección completa, porque un pago a una dirección equivocada no se puede deshacer. Hasta que las muevas, la empresa tiene las claves.
+Si el mínimo o las comisiones hacen que una compra pequeña no tenga sentido, detente ahí. No hay razón para gastar más con tal de terminar una lección.
 
-Una señal importa más que cualquier otra. Una empresa de verdad descuenta su comisión de lo que ya tienes ahí. Una falsa te pide que primero envíes más dinero: un "impuesto", un "depósito", una comisión para "desbloquear" tu cuenta. Si eso pasa, detente. Quienes pagan no recuperan su dinero.
+Cuenta con dos cosas, y ninguna es mala señal. La empresa te va a pedir un documento de identidad, como le exige la ley en la mayoría de los lugares. Las empresas falsas también lo piden, y por eso escribiste tú la dirección web. Y cuando pagas desde una cuenta de banco, pueden pasar algunos días antes de que puedas enviar afuera lo que compraste. En las dos empresas nombradas arriba eso es lo habitual. Esperar es normal. Que te pidan más dinero no lo es.
 
-Y sacar un poco no demuestra nada. El FBI advierte que las empresas falsas dejan salir dinero al principio, a propósito, para ganarse tu confianza.
+Si los números te sirven, elige una compra única de bitcoin (BTC) con dinero que ya tienes. El exchange puede llamarla compra spot. Gasta solo lo que podrías permitirte perder. Revisa el total antes de aceptar. Cuando la compra se completa, la empresa todavía tiene las claves.
 
-## ¿Cuánto vale una licencia?
+## Muévelo a tu propia billetera
 
-Menos de lo que parece. A una empresa con licencia la ha revisado un regulador. Aun así, ningún gobierno asegura tus monedas ahí, ni en Estados Unidos ni en el Reino Unido.
+Abre BlueWallet y toca Recibir en tu billetera de Bitcoin de verdad. En el exchange, elige Enviar o Retirar, selecciona BTC y elige la red de Bitcoin para esta dirección. Algunas empresas la llaman on-chain. Copia o escanea la dirección desde BlueWallet. Compara la dirección completa de la última pantalla del retiro con la de tu celular, y después revisa el monto y la comisión. Si algo no coincide, detente.
 
-También han quebrado empresas con licencia. Una que tenía licencias en varios estados de Estados Unidos detuvo todos los retiros en julio de 2022. En 2026 sus clientes todavía esperaban la última parte de su dinero. Por eso importa el paso 4.
+Después de enviar, abre BlueWallet y busca el pago. Puede que no aparezca enseguida: algunas empresas envían los retiros en grupo, horas después, o uno o dos días después con la velocidad más barata. Cuando veas la primera confirmación, acuérdate del celular en el lago. Antes del retiro, dependías de tu cuenta en el exchange. Cuando el bitcoin llega a una dirección de tu propia billetera, tu respaldo en papel puede restaurar las claves que te dejan gastarlo.
 
-## Hazlo
+Si alguien te dice que tienes que enviarle un pago aparte para "desbloquear" un retiro, detente. Quienes pagan no recuperan su dinero. Una empresa de verdad descuenta su comisión de lo que ya tienes ahí, y antes te la muestra en su propia vista previa. Que te exijan pagar un "impuesto" a una dirección que alguien te envió es una estafa conocida. Un estafador incluso puede dejarte retirar un poco primero para ganarse tu confianza.
 
-Encuentra una empresa con licencia. No cuesta nada, y no necesitas ninguna cuenta.
+## Cualquier otra empresa: verifícala primero
 
-- [ ] Abre la [lista de empresas con licencia del estado de Nueva York](https://www.dfs.ny.gov/apps_and_licensing/virtual_currency_businesses#regulated-entities), en el sitio del propio estado, dfs.ny.gov. La página está en inglés. El enlace abre la página cerca de la lista: baja un poco hasta el título Regulated Entities (entidades reguladas). En el Reino Unido, usa el [FCA Firm Checker](https://www.fca.org.uk/consumers/fca-firm-checker) (verificador de empresas de la FCA, también en inglés).
-- [ ] Lee los nombres de arriba abajo. ¿Hay alguna empresa de la que hayas oído hablar? La lista usa nombres legales, así que una marca conocida puede estar bajo un nombre más largo.
-- [ ] Ahora piensa en un nombre que hayas visto en un anuncio. ¿Está en la lista bajo su nombre legal? Un nombre parecido no cuenta.
+Los dos nombres de arriba son para Estados Unidos. En cualquier otro lugar, y para cualquier otra empresa, búscala primero en la lista de un regulador. Un **regulador** es una oficina del gobierno que da licencias a las empresas financieras y lleva una lista de ellas. La de Nueva York es corta: la [lista de empresas con licencia del estado de Nueva York](https://www.dfs.ny.gov/apps_and_licensing/virtual_currency_businesses#regulated-entities), bajo el título Regulated Entities (entidades reguladas). La página está en inglés. En el Reino Unido, usa el [FCA Firm Checker](https://www.fca.org.uk/consumers/fca-firm-checker) (verificador de empresas de la FCA, también en inglés). En otros países, llega a tu regulador desde el sitio web de tu propio gobierno, no desde una búsqueda.
 
-La lista de Nueva York es corta y fácil de leer. Otros estados de Estados Unidos llevan la suya, y otros países también. Llega a tu regulador desde el sitio web de tu propio gobierno, no desde una búsqueda.
+Las listas usan nombres legales, así que una marca puede estar bajo un nombre más largo: Strike está en la lista de Nueva York como Zap Solutions, Inc. River no está, porque no atiende en Nueva York. Otros estados de Estados Unidos llevan sus propias listas. Un nombre parecido no cuenta, y una empresa falsa puede tomar prestado el nombre de una empresa de la lista, así que escribe tú la dirección web.
 
-A una empresa de la lista la ha revisado un regulador. Eso no asegura tus monedas, y no demuestra que el sitio web que tienes delante sea el de esa empresa. En la lista también hay empresas que operan cajeros automáticos de Bitcoin, y una licencia no cambia lo que cuestan esas máquinas. Si no puedes encontrar una empresa en la lista de un regulador, elige una que sí puedas encontrar.
+Una licencia no asegura tus monedas, y han quebrado empresas con licencia. Una detuvo todos los retiros en julio de 2022, y en 2026 sus clientes todavía esperaban la última parte de su dinero. Esa es una razón más para sacar las monedas de ahí. Si una empresa no está en ninguna lista que puedas encontrar, elige otra.
 
-## Cuando ya tengas un poco
+## Dos cosas para hacer mientras lo tienes presente
 
-**Lleva un registro.** Anota cada compra: la fecha, el monto, el precio y la comisión. Tu propio registro es tu prueba de lo que pagaste, y la oficina de impuestos de tu país te lo va a pedir si alguna vez vendes o gastas. Mover monedas a tu propia billetera no es una venta.
+**Guarda el recibo.** Guarda la fecha, el monto de bitcoin, lo que pagaste y las comisiones. Si fue un regalo, anota cuándo lo recibiste y cuánto valía. En Estados Unidos, pídele a quien te lo dio que te diga cuándo adquirió ese bitcoin y cuánto pagó por él. Esos registros pueden importar si más adelante lo vendes o lo gastas: consulta la [guía de Estados Unidos sobre activos digitales](https://www.irs.gov/filing/digital-assets) (en inglés). Las reglas cambian según el país, y el sitio web de la oficina de impuestos de tu país es donde hay que mirar.
 
-**Convertirlo de nuevo en dinero normal.** Lo envías a un exchange y lo vendes ahí. Eso es una venta, con una comisión.
-
-**Decide quién debería saberlo.** Este es un consejo del propio curso, no de un gobierno. Una persona que conoces en persona, y a quien le confiarías las monedas, debería saber que el papel existe, dónde está y qué abren sus palabras. Quien sepa dónde está el papel puede llevarse las monedas, así que elige con cuidado. No escribas las palabras en un testamento: en muchos lugares un testamento se vuelve público.
-
-**Si alguna vez te roban, prepárate para más estafadores.** El FBI dice que, después, a casi todas las víctimas de una estafa de inversión las contactan personas que ofrecen recuperar el dinero, a cambio de una comisión que se paga por adelantado. En vez de eso, denuncia la pérdida: en Estados Unidos, escribe ic3.gov en tu navegador, y avisa a tu policía local. Ellos no cobran.
-
-## Una objeción razonable
-
-"¿Por qué no nombran simplemente una buena empresa? Me dejan buscando una por mi cuenta".
-
-Hay tres razones. Una empresa que nombremos puede quebrar, como han quebrado empresas con licencia, y esta página seguiría enviándole gente. A un sitio que nombra vendedores le pueden pagar por nombrarlos, y este no lleva anuncios ni enlaces por los que cobre. Y la lista de un regulador la lleva gente que tiene ese trabajo, y cambia cuando se da o se quita una licencia.
-
-Por eso el curso enseña a verificar, y eso sigue funcionando cuando los nombres cambian. La página de billeteras sí nombra billeteras. No guardan tu dinero: tú tienes las claves.
+El capítulo 5 dejó una pregunta sobre tu respaldo. Si te pasara algo, ¿la persona que quieres que herede tu bitcoin sabría que existe? Empieza por decirle a alguien de tu confianza que tienes una billetera. Decide cómo podría encontrar tus instrucciones cuando hagan falta. Deja las palabras fuera de todo mensaje y de todo correo, y fuera de un testamento, que en muchos lugares se vuelve público. Cualquiera que las encuentre puede gastar las monedas hoy mismo. [Planificar la herencia](/es/glosario/planificacion-de-la-herencia)
 
 ## Ponte a prueba
 
 <details>
-<summary>Lo que adivinaste al principio: una app te deja sacar un poco de tu dinero. ¿Es de verdad?</summary>
+<summary>¿Podrías terminar esta lección sin gastar dinero?</summary>
 
-Con eso no puedes saberlo. Las empresas falsas dejan salir dinero al principio para ganarse tu confianza. La señal de una empresa falsa es que te pida enviar más dinero antes de liberar el tuyo. Vuelve a leer "Segunda puerta".
-
-</details>
-
-<details>
-<summary>Un amigo te va a enviar algo de bitcoin. ¿Qué le envías tú, y qué no envías nunca?</summary>
-
-Una dirección de tu billetera. No es un secreto. Tu frase semilla sí lo es, y nunca va en un mensaje. Vuelve a leer "Primera puerta".
+Sí. Puedes recibir un regalo, o simplemente configurar una billetera vacía, comprobar que tu respaldo funciona y encontrar tu primera dirección para recibir.
 
 </details>
 
 <details>
-<summary>Una empresa está en la lista de un regulador. ¿Qué no te dice eso?</summary>
+<summary>Un exchange ofrece BTC a un precio que te gusta. ¿Qué más quieres saber?</summary>
 
-Que tus monedas ahí están aseguradas, que la empresa no puede quebrar, o que el sitio web que tienes delante es de verdad el de esa empresa. Vuelve a leer "¿Cuánto vale una licencia?" y el paso que viene después.
+Si puedes enviarlo a tu billetera, cuánto llegaría y cuándo podrías retirarlo. Vuelve a leer las tres preguntas.
+
+</details>
+
+<details>
+<summary>Tu amigo te pregunta cómo sabes que su pago llegó. ¿Qué le puedes mostrar?</summary>
+
+El pago entrante en tu propia billetera. Cuando tiene una confirmación, está en un bloque.
 
 </details>
 
 ## Palabras que ya conoces
 
 - **App de billetera.** Una billetera que es un programa en tu celular.
-- **Billetera de hardware.** Un dispositivo pequeño que mantiene tus claves lejos de internet.
+- **Retirar.** Enviar bitcoin desde tu cuenta en una empresa a una dirección tuya.
 - **Regulador.** Una oficina del gobierno que da licencias a las empresas financieras y lleva una lista de ellas.
 
 ¿Qué viene después de un primer monto pequeño?

@@ -3,8 +3,8 @@ title: "Recorrido"
 heading: "Bitcoin, desde el principio."
 description: "Siete capítulos cortos para quien empieza desde cero. Unos minutos de lectura cada uno, y luego algo que haces tú. Ninguna cuenta que abrir, nada que comprar, nadie vende nada."
 translationOf: "journey"
-sourceHash: "8ebfb29b10b3"
-sourceCommit: "58a12b8"
+sourceHash: "826f537fefa1"
+sourceCommit: "a51ea1e"
 translation:
   method: "llm-draft"
 ---
@@ -20,4 +20,6 @@ funcionar bien, sigue adelante.
 
 Si te detienes después del capítulo 3, sabrás qué es Bitcoin. Si te detienes
 después del capítulo 5, lo habrás usado, con monedas de práctica que no
-valen nada. Los capítulos 6 y 7 son solo para quien quiera bitcoin de verdad.
+valen nada. El capítulo 6 es solo para quien quiera bitcoin de verdad. El
+capítulo 7 es para todos: qué preguntar después, y cómo ayudar a la próxima
+persona.
