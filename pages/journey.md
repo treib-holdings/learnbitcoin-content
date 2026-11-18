@@ -13,5 +13,6 @@ Did someone send you this? Good. Keep them in mind: chapter 6 has a small job
 for them. Here on your own? Everything will work fine, continue on.
 
 Stop after chapter 3 and you will know what Bitcoin is. Stop after chapter 5
-and you will have used it, with practice coins that are worth nothing. Chapters
-6 and 7 are only for someone who wants the real thing.
+and you will have used it, with practice coins that are worth nothing. Chapter 6
+is only for someone who wants the real thing. Chapter 7 is for everyone: what
+to ask next, and how to help the next person.

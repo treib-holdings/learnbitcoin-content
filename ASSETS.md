@@ -191,7 +191,7 @@ Operator-shot photos of real hardware, stored at `learnbitcoin-web/public/photos
 | **Steel plate backup (tab)** | `seed-backup/steel-plate-tab.jpg` | [rabbit-holes/seed-backup-strategies §4](rabbit-holes/seed-backup-strategies.mdx) — bend-tab format |
 | **SLIP-39 share card** | `seed-backup/shamir-shares.jpg` | [rabbit-holes/seed-backup-strategies §6](rabbit-holes/seed-backup-strategies.mdx) — 20-word Shamir share format |
 | **Multisig HW lineup** | `seed-backup/multisig-three-devices.jpg` | [rabbit-holes/seed-backup-strategies §7](rabbit-holes/seed-backup-strategies.mdx) — Coldcard + Jade + Trezor (also cropped for chapter OG card at `/diagrams/og/seed-backup.jpg`) |
-| **Hardware wallet, PIN screen (Journey)** | `journey-hardware-wallet.jpg` | [journey/using-bitcoin](journey/using-bitcoin.md), where a hardware wallet is first defined, and [es/journey/usar-bitcoin](es/journey/usar-bitcoin.md) - a lighter copy (1000 px wide, camera data removed) of `trezor-safe-5-pin.jpg` under a name that states no model. The chapter names no maker. If a problem with that maker's devices becomes known, take the photo out the same day. |
+| **Hardware wallet, PIN screen (Journey)** | `journey-hardware-wallet.jpg` | [journey/sovereignty](journey/sovereignty.md), beside the question about savings, and [es/journey/soberania](es/journey/soberania.md) - a lighter copy (1000 px wide, camera data removed) of `trezor-safe-5-pin.jpg` under a name that states no model. The chapter names no maker. If a problem with that maker's devices becomes known, take the photo out the same day. |
 
 ### How to embed a photo
 
