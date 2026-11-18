@@ -160,7 +160,7 @@ Let's visit Bitcoin's very first block, called the genesis block. It was created
 
 - [ ] Open the first Bitcoin block, [block zero at mempool.space](https://mempool.space/block/0), a website that shows the record to anyone. It asks for nothing: no name, no password, no words, no money. If a page ever does, close it.
 - [ ] Find the line marked Timestamp. It shows when this block was made: January 2009.
-- [ ] Scroll down to the words "Coinbase (Newly Generated Coins)". Under them you will see "The Times 03/Jan/2009": a popular London newspaper's name and date, then the the headline "Chancellor on brink of second bailout for banks". Just below are the first 50 bitcoin ever made.
+- [ ] Scroll down to the words "Coinbase (Newly Generated Coins)". Under them you will see "The Times 03/Jan/2009": a popular London newspaper's name and date, then the headline "Chancellor on brink of second bailout for banks". Just below are the first 50 bitcoin ever made.
 
 ## A fair objection
 

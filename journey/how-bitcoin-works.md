@@ -37,7 +37,7 @@ The **signature** proves that the message comes from whoever holds the key, and 
 
 The wallet hands the signed message to the nodes, the computers that keep the record. Each one checks it against the rules and passes it to the others. Within ten seconds or so, most of them have it. No bank had to approve it.
 
-There the payment waits, with other new payments, for a block to take it in. This place is called the mempool you can think of it as **the waiting room**. Part 3 is about it.
+There the payment waits, with other new payments, for a block to take it in. This place is called the mempool. You can think of it as **the waiting room**. Part 3 is about it.
 
 Every payment also includes a **fee**: usually a small amount, for the miner who puts it in a block. Most wallets suggest one and let you change it. In a quiet week it is a few cents. On one very busy day in 2024 it was more than $45 for hours.
 
