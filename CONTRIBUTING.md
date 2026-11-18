@@ -74,6 +74,11 @@ The site has a consistent voice. The short version:
   the content files in this repo (`glossary/`, `rabbit-holes/`,
   `journey/`, `pages/` and `es/`); the website's own UI glyphs are out
   of scope.
+- **No control characters.** Below U+0020 a content file holds tabs and
+  line endings and nothing else. Text pasted from a block explorer or a
+  terminal can carry others: an editor does not show them, and a browser
+  draws them as boxes or gaps. `check-charset` refuses them, and U+007F
+  too.
 - **Slugs and filenames stay ASCII in every language** (`mineria`, not
   `minería`).
 - **Use U+00B5 (µ) for unit prefixes, not U+03BC (μ).** They look
