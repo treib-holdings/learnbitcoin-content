@@ -4,7 +4,7 @@ slug: fair-questions
 draft: false
 status: live
 published: "2026-11-17"
-updated: "2026-11-17"
+updated: "2026-11-18"
 reviewedAt: "2026-11-16"
 order: 3
 goDeeper: ["block-size-war", "energy", "bitcoin-is-dead"]
@@ -124,6 +124,11 @@ Bitcoin's rules can change, and other changes did go through around that time. B
 ## Could a government shut it down?
 
 None has, and there is no switch to turn off. The nodes and miners are spread over many countries.
+
+<figure>
+  <img src="/diagrams/journey-no-switch.svg" alt="Under the title 'There is no switch to turn off', two things side by side. On the left, one box stands alone. It reads 'One company'. Under it: 'a government can close it'. On the right, a web of dots, each joined to the dots near it, with no dot that all the others lead to. Under it: 'Bitcoin: thousands of nodes spread over many countries'." width="800" height="420" />
+  <figcaption>A government can close a company. Bitcoin's nodes and miners are spread over many countries.</figcaption>
+</figure>
 
 The hardest test came in 2021, when China banned mining. For some weeks blocks came more slowly, in the worst week about every seventeen minutes instead of ten. They never stopped. Within eight months more mining was going on than before the ban.
 

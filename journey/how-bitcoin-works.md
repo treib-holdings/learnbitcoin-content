@@ -4,7 +4,7 @@ slug: how-bitcoin-works
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-11-17"
+updated: "2026-11-18"
 reviewedAt: "2026-11-16"
 order: 4
 goDeeper: ["utxos", "mempool", "mining"]
@@ -58,6 +58,11 @@ A coin is spent whole, like a bill. Say you have one coin of 10,000 sats and you
 The part that comes back is called **change**. With a bill, the shop gives you change. Here your own wallet makes it.
 
 The 200 sats left over are the fee. And if no single coin is big enough, the wallet uses up two or more together.
+
+<figure>
+  <img src="/diagrams/journey-coin-spent-whole.svg" alt="Under the title 'A coin is spent whole', your coin of 10,000 sats sits on the left. Two arrows lead from it to two new coins on the right: 6,000 sats that you pay someone, and about 3,800 sats of change that come back to you. A line underneath reads: 'The 200 sats left over are the fee.'" width="800" height="420" />
+  <figcaption>The example above as a picture. The whole coin is used up, two new coins are made, and the 200 sats left over are the fee.</figcaption>
+</figure>
 
 In the next step you count your own coins. Do not be surprised if there is only one. The payment you just made used up the coin you were given, and the change is what is left.
 

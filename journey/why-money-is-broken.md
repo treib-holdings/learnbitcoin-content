@@ -4,7 +4,7 @@ slug: why-money-is-broken
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-11-17"
+updated: "2026-11-18"
 reviewedAt: "2026-11-16"
 order: 2
 goDeeper: ["supply", "halvings"]
@@ -48,6 +48,11 @@ sources:
 It buys less. What cost $100 in 1971 costs more than $800 today. (Why 1971? That year comes up again below.)
 
 The name for this is **inflation**: prices rising, year after year, so that each dollar buys a little less. Most years it is slow enough to miss. It was fast in the 1970s, and again from 2021 to 2023.
+
+<figure>
+  <img src="/diagrams/journey-dollar-since-1971.svg" alt="Line chart titled 'What a dollar buys, 1971 to 2026'. The line starts at $1.00 in 1971, falls steeply to about half by 1980, then keeps falling more slowly and ends at $0.12 in 2026. A line of text under the chart reads: 'Each dollar buys a little less.'" width="800" height="420" />
+  <figcaption>What cost $100 in 1971 costs more than $800 today, so a dollar now buys what about 12 cents bought then. The steep part is the 1970s.</figcaption>
+</figure>
 
 ## Is that on purpose?
 

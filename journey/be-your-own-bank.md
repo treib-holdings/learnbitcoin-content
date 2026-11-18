@@ -4,7 +4,7 @@ slug: be-your-own-bank
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-11-17"
+updated: "2026-11-18"
 reviewedAt: "2026-11-16"
 order: 5
 goDeeper: ["mt-gox-ftx-graveyard", "brain-wallets", "seed-backup-strategies"]
@@ -44,6 +44,11 @@ sources:
 ## What are the 12 words?
 
 When you made your practice wallet, it showed you 12 words. They are called **seed words**. (Real wallets also call them a recovery phrase, and some use 24 words.) Every key and every address in the wallet is made from them, in the same order every time.
+
+<figure>
+  <img src="/diagrams/journey-seed-words.svg" alt="Under the title '12 words. Every key. Every address.', a box at the top holds the 12 seed words, drawn as twelve short bars. Arrows lead down to a row of boxes: key 1 with address 1, key 2 with address 2, key 3 with address 3, then three dots for the ones that follow. Below: 'In the same order every time.'" width="800" height="420" />
+  <figcaption>Every key and every address in your wallet is made from the 12 seed words at the top. The numbers show the order, which is the same every time.</figcaption>
+</figure>
 
 So every key and every address can be made again from the words. Put the same words into the same kind of wallet on a new phone, and the same keys, the same addresses and the same coins appear. The coins were never on the old phone. They are on the record, and the words are how you reach them.
 

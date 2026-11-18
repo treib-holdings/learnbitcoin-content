@@ -4,7 +4,7 @@ slug: what-bitcoin-actually-is
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-11-17"
+updated: "2026-11-18"
 reviewedAt: "2026-11-16"
 order: 1
 goDeeper: ["supply", "bitcoin-units"]
@@ -55,6 +55,11 @@ Each computer checks every new payment against those rules and ignores any that 
 New payments are added to the record in batches called **blocks**, about one every ten minutes. Each block is linked to the one before it, like the links of a chain. That is all the word *blockchain* means.
 
 When a block takes in your payment, the payment has one **confirmation**. Each block added after it is one more. After six confirmations, a payment is usually treated as final.
+
+<figure>
+  <img src="/diagrams/journey-six-confirmations.svg" alt="Under the title 'Each new block is one more confirmation', six blocks stand in a row, linked like a chain and numbered 1 to 6. A bracket below them reads 'confirmations'. An arrow labeled 'your payment' points into block 1, filled in orange. Another, labeled 'usually treated as final', points to block 6, outlined in orange. At the bottom: about one block every ten minutes." width="800" height="420" />
+  <figcaption>The block that takes in your payment is its first confirmation, and each block added after it is one more. After six, a payment is usually treated as final.</figcaption>
+</figure>
 
 ## How much is there?
 

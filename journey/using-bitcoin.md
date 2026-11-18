@@ -4,7 +4,7 @@ slug: using-bitcoin
 draft: false
 status: live
 published: "2026-05-15"
-updated: "2026-11-17"
+updated: "2026-11-18"
 reviewedAt: "2026-11-16"
 order: 6
 goDeeper: ["wallets", "mt-gox-ftx-graveyard", "address-reuse"]
@@ -77,6 +77,11 @@ Fakes come looking for you. Do not start from any of these:
 A wallet of your own for real bitcoin. The practice wallet cannot hold any, and its 12 words must never guard any.
 
 There are two kinds. A **wallet app** is a program on your phone. A **hardware wallet** is a small device that keeps your keys away from the internet. For a first small amount, an app is enough.
+
+<figure>
+  <img src="/photos/journey-hardware-wallet.jpg" alt="A hardware wallet lying on a dark surface. It is a flat device, and most of its front is a screen. The screen is lit and reads 'Enter PIN' and '10 tries left', above the digits 0 to 9 in a mixed-up order. A small padlock mark is set into the case below the screen." width="1000" height="750" />
+  <figcaption>This is one hardware wallet: a small device with a screen of its own. You do not need one for a first small amount.</figcaption>
+</figure>
 
 Fake wallet apps exist too, so do not search the store for one. This site's [wallets page](/rabbit-hole/wallets) names the ones it has checked, each with a link to its maker's own website and the date it was last checked. Follow that link to the store, and check that the maker's name there matches the one printed on the page.
 
