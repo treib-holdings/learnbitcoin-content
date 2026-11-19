@@ -10,7 +10,7 @@ aliases:
   - "comisión de minería"
 draft: false
 published: "2026-10-14"
-updated: "2026-11-13"
+updated: "2026-11-19"
 shortDefinition: "Una cantidad que incluye quien envía para recompensar a los mineros por priorizar la confirmación de su transacción."
 keyTakeaways:
   - "Motiva a los mineros a incluir tu transacción en un bloque"
@@ -42,9 +42,9 @@ sameAs:
   - "https://en.bitcoin.it/wiki/Miner_fees"
 liveWidget: feeCalculator
 translationOf: transaction-fee
-sourceHash: "8f3d420fb41c"
-sourceCommit: "0dfe0c8"
-sourceUpdated: "2026-11-13"
+sourceHash: "8a923d9f9cc3"
+sourceCommit: "a6f2119"
+sourceUpdated: "2026-11-19"
 translation:
   method: "llm-draft"
 ---
@@ -67,6 +67,6 @@ La dinámica del mercado de comisiones:
 - **Valores por defecto según el estimador.** Tu billetera usa la [estimación de comisión](/es/glosario/estimacion-de-comision) para elegir una tasa razonable. La mayoría de las billeteras lo hacen bien; puedes cambiarla a mano si entiendes lo que está en juego.
 - **Subir la comisión** ([RBF](/es/glosario/rbf), [CPFP](/es/glosario/subir-la-comision)) es posible si pagaste de menos y tu transacción se atascó.
 
-A largo plazo, las comisiones de transacción están llamadas a convertirse en *el* incentivo de los mineros. En el año que terminó en octubre de 2026 fueron cerca del 0.6% de los ingresos por [recompensa de bloque](/es/glosario/recompensa-de-bloque) (cerca del 6.5% en 2024). A medida que el [subsidio de bloque](/es/glosario/subsidio-de-bloque) se reduce a la mitad una y otra vez hasta llegar a cero hacia 2140, las comisiones pasan a ser el 100% de esa recompensa. Si para entonces el mercado de comisiones será lo bastante grande para pagar una seguridad sólida es una pregunta abierta.
+A largo plazo, las comisiones de transacción están llamadas a convertirse en *el* incentivo de los mineros. En el año que terminó en octubre de 2026 fueron cerca del 0.6% de los ingresos por [recompensa de bloque](/es/glosario/recompensa-de-bloque) (cerca del 6.5% en 2024). El 26 de agosto de 2013 esa proporción era del 0.97%, una cifra que [El curso intensivo](/es/a-fondo/curso-intensivo-2013) calcula a partir de los bloques de ese día. A medida que el [subsidio de bloque](/es/glosario/subsidio-de-bloque) se reduce a la mitad una y otra vez hasta llegar a cero hacia 2140, las comisiones pasan a ser el 100% de esa recompensa. Si para entonces el mercado de comisiones será lo bastante grande para pagar una seguridad sólida es una pregunta abierta.
 
 Mira las franjas de comisión del mempool en vivo en la [página del nodo](/es/nodo) o en la [sección 6 del tema a fondo sobre minería (en inglés)](/rabbit-hole/mining).

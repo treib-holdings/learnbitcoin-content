@@ -8,6 +8,7 @@ avoid:
   - "velocidad de hash"
 draft: false
 published: "2026-10-14"
+updated: "2026-11-19"
 shortDefinition: "La capacidad de hash conjunta de todos los mineros de la red, medida en hashes por segundo (TH/s, PH/s, EH/s)."
 keyTakeaways:
   - "Muestra el caudal total de prueba de trabajo que protege a Bitcoin"
@@ -33,9 +34,9 @@ sameAs:
   - "https://en.bitcoin.it/wiki/Hash_per_second"
 liveWidget: ~
 translationOf: hash-rate
-sourceHash: "492234e071b2"
-sourceCommit: "1abeee5"
-sourceUpdated: "2026-10-09"
+sourceHash: "85aecef139f6"
+sourceCommit: "a6f2119"
+sourceUpdated: "2026-11-19"
 translation:
   method: "llm-draft"
 ---
@@ -51,7 +52,7 @@ Las unidades suben rápido:
 - 1 **PH/s** = mil billones (una granja de minería pequeña)
 - 1 **EH/s** = un trillón (una operación industrial grande)
 
-El hashrate de Bitcoin creció unos **14 órdenes de magnitud** entre 2009, cuando toda la red promediaba unos pocos millones de hashes por segundo, y mediados de 2026. Ese crecimiento es exactamente lo que el [ajuste de dificultad](/es/glosario/ajuste-de-dificultad) absorbe para mantener el tiempo entre bloques cerca de los 10 minutos.
+El hashrate de Bitcoin creció unos **14 órdenes de magnitud** entre 2009, cuando toda la red promediaba unos pocos millones de hashes por segundo, y mediados de 2026. Ese crecimiento es exactamente lo que el [ajuste de dificultad](/es/glosario/ajuste-de-dificultad) absorbe para mantener el tiempo entre bloques cerca de los 10 minutos. [El curso intensivo](/es/a-fondo/curso-intensivo-2013) lee de la cadena el hashrate de una noche de agosto de 2013, 543 TH/s, y lo pone al lado de los 988 EH/s del 11 de noviembre de 2026.
 
 El hashrate importa porque es el presupuesto de seguridad de Bitcoin. Para reescribir la historia, un atacante tiene que superar al resto de la red. A unos 900 EH/s, eso significa comprar, alimentar y operar más hardware de minería que todos los demás mineros del planeta juntos, durante todo el tiempo que dure el ataque. Eso es lo que *compra* la prueba de trabajo.
 
