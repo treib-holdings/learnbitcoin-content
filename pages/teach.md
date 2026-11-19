@@ -14,7 +14,7 @@ A student makes a wallet, gets coins from a faucet and sends a payment, then rem
 
 Not the Bitcoin network: a private regtest network with one operator, us, on one small server. So it proves nothing about Bitcoin by itself. The wallet cannot make a real Bitcoin address and refuses to pay one. Its keys live in a browser. That is acceptable for practice coins and for nothing else.
 
-Typing 12 words into a web page is what you teach students never to do. The wallet says so too, on the screens that ask for them: this page is the one exception, because its words only guard practice coins, and the words of any other wallet never go into a web page, this one included.
+Typing 12 words into a web page is what you teach students never to do. The wallet says so too, on the screens that ask for them. It calls itself "the one exception", because its words only guard practice coins, and says the words of any other wallet never go into a web page, "this one included".
 
 ## A class plan
 
@@ -36,7 +36,7 @@ The steps go with [the Journey](/journey), our seven short chapters for beginner
 ## Before the class
 
 - Do the first step yourself, on the network and devices your class will use. A network that blocks Cloudflare, as some schools and workplaces do, stops the faucet's check, and a content blocker can too.
-- Each student needs a browser, pen and paper. A browser keeps one practice wallet at a time. Students who share a computer share one wallet, or take turns: one is removed, under Settings, before the next is made.
+- Each student needs a browser, pen and paper. A browser keeps one practice wallet at a time. Students who share a computer share one wallet, or take turns: each removes the wallet, under Settings, and chooses "Forget my progress" on the Do it screen before the next begins.
 - After a short "are you human" check, the faucet pays 100,000 practice sats, once per address per day. For more coins, a student shows a new address and asks again.
 - It pays about 20 wallets a minute, for everyone together, so a class of 30 has its coins in about two minutes. When it says it is busy, the page asks again by itself, for up to three minutes. If a student still has no coins, pay them from your own practice wallet.
 
@@ -48,7 +48,7 @@ The browser keeps the wallet's record, which can hold the 12 words as plain text
 
 Our server sees the wallet's addresses and payments, and each request's IP address. The faucet's check is Cloudflare's and examines the browser.
 
-The wallet counts screens opened and a short, fixed list of events. Each count goes to Plausible with the IP address and the browser's name, version and system. No ID is sent. [The wallet's About page](https://practice.learnbitcoin.com/about) says the rest.
+The wallet counts screens opened and a short, fixed list of events. Each count goes to Plausible with the IP address and the browser's name, version and system. No ID is sent with a count. [The wallet's About page](https://practice.learnbitcoin.com/about) says the rest.
 
 ## For a more advanced class
 
