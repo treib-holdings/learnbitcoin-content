@@ -2,7 +2,7 @@
 title: "Hash Rate"
 slug: hash-rate
 draft: false
-updated: "2026-10-09"
+updated: "2026-11-19"
 shortDefinition: "The collective hashing power of all miners in the network, measured in hashes per second (TH/s, PH/s, EH/s)."
 keyTakeaways:
   - "Shows total proof-of-work throughput securing Bitcoin"
@@ -40,7 +40,7 @@ The units climb fast:
 - 1 **PH/s** = 1 quadrillion (a small mining farm)
 - 1 **EH/s** = 1 quintillion (a major industrial operation)
 
-Bitcoin's hash rate grew by roughly **14 orders of magnitude** between 2009, when the whole network averaged a few million hashes per second, and mid-2026. That growth is exactly what [difficulty retargeting](/glossary/difficulty-retargeting) absorbs to keep block times near 10 minutes.
+Bitcoin's hash rate grew by roughly **14 orders of magnitude** between 2009, when the whole network averaged a few million hashes per second, and mid-2026. That growth is exactly what [difficulty retargeting](/glossary/difficulty-retargeting) absorbs to keep block times near 10 minutes. [The Crash Course](/rabbit-hole/crash-course-2013) reads the rate for one evening in August 2013 off the chain, 543 TH/s, and sets it beside 988 EH/s on November 11, 2026.
 
 Hash rate matters because it's Bitcoin's security budget. To rewrite history, an attacker has to outpace the rest of the network. At roughly 900 EH/s, that means buying, powering, and operating more mining hardware than every other miner on Earth combined, for as long as the attack lasts. That's what proof-of-work *buys*.
 

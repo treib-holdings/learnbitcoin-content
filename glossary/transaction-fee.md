@@ -2,7 +2,7 @@
 title: "Transaction Fee"
 slug: transaction-fee
 draft: false
-updated: "2026-11-13"
+updated: "2026-11-19"
 shortDefinition: "An amount included by the sender to reward miners for prioritizing transaction confirmation."
 keyTakeaways:
   - "Motivates miners to include your transaction in a block"
@@ -53,6 +53,6 @@ The fee market dynamics:
 - **Estimator-driven defaults.** Your wallet uses [fee estimation](/glossary/fee-estimation) to pick a reasonable rate. Most wallets get this right; you can override if you understand the trade-off.
 - **Fee bumping** ([RBF](/glossary/replace-fee-rbf), [CPFP](/glossary/fee-bumping)) is available if you underpaid and got stuck.
 
-Long-term, transaction fees are meant to become *the* incentive for miners. In the year to October 2026 they were about 0.6% of [block reward](/glossary/block-reward) revenue (about 6.5% in 2024). As the [block subsidy](/glossary/block-subsidy) halves toward zero around 2140, fees become 100% of it. Whether the fee market will be big enough by then to pay for strong security is an open question.
+Long-term, transaction fees are meant to become *the* incentive for miners. In the year to October 2026 they were about 0.6% of [block reward](/glossary/block-reward) revenue (about 6.5% in 2024). On August 26, 2013, the share was 0.97%, a figure [The Crash Course](/rabbit-hole/crash-course-2013) works out from that day's blocks. As the [block subsidy](/glossary/block-subsidy) halves toward zero around 2140, fees become 100% of it. Whether the fee market will be big enough by then to pay for strong security is an open question.
 
 See live mempool fee bands on the [Node page](/node) or in the [Mining rabbit hole section 6](/rabbit-hole/mining).
