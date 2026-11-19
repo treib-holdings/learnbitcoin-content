@@ -5,8 +5,8 @@ description: "Una billetera de Bitcoin de verdad que tu clase usa en el navegado
 published: "2026-11-19"
 updated: "2026-11-19"
 translationOf: "teach"
-sourceHash: "932735a55f82"
-sourceCommit: "4478c78"
+sourceHash: "7fad06c39643"
+sourceCommit: "1a45d29"
 sourceUpdated: "2026-11-19"
 translation:
   method: "llm-draft"
@@ -18,9 +18,9 @@ Cada estudiante crea una billetera, recibe monedas de un faucet y envía un pago
 
 ## Lo que no es
 
-No es la red de Bitcoin: es una red regtest privada con un solo operador, nosotros, en un servidor pequeño. Por sí sola no demuestra nada sobre Bitcoin. La billetera no puede crear una dirección de Bitcoin de verdad y se niega a pagarle a una. Sus claves viven en un navegador. Eso es aceptable para monedas de práctica y para nada más.
+No es la red de Bitcoin: es una red regtest privada con un solo operador, nosotros, en un servidor pequeño. Así que por sí sola no demuestra nada sobre Bitcoin. La billetera no puede crear una dirección de Bitcoin de verdad y se niega a pagarle a una. Sus claves viven en un navegador. Eso es aceptable para monedas de práctica y para nada más.
 
-Teclear 12 palabras en una página web es lo que enseñas a no hacer nunca. La billetera también lo dice, en las pantallas que las piden: esta página es la única excepción, porque sus palabras solo protegen monedas de práctica, y las palabras de cualquier otra billetera nunca van en una página web, incluida esta.
+Teclear 12 palabras en una página web es lo que enseñas a no hacer nunca. La billetera también lo dice, en las pantallas que las piden. Se llama a sí misma "la única excepción", porque sus palabras solo protegen monedas de práctica, y dice que las palabras de cualquier otra billetera nunca van en una página web, "incluida esta".
 
 ## Un plan de clase
 
@@ -30,7 +30,7 @@ Recorre en orden los seis pasos "Hazlo" de la billetera: cerca de una hora, seg�
 2. [Pásala](https://practice.learnbitcoin.com/es/do/pass-it-on), 5 minutos. Enviar un pago al fondo común, para quien viene después, y ver su primera confirmación.
 3. [No hay saldos](https://practice.learnbitcoin.com/es/do/no-balances), 10 minutos. Contar las monedas de la billetera, luego leer qué gastó un pago, el cambio y la comisión, y buscarlo en [el explorador de bloques](https://practice-explorer.learnbitcoin.com).
 4. [La sala de espera](https://practice.learnbitcoin.com/es/do/waiting-room), 10 minutos. Enviar un pago y verlo llegar a seis confirmaciones: unos tres minutos aquí, no una hora.
-5. [La semilla](https://practice.learnbitcoin.com/es/do/the-seed), 10 minutos. Escribir las 12 palabras en papel y luego dar tres de ellas cuando la página las pide.
+5. [La semilla](https://practice.learnbitcoin.com/es/do/the-seed), 10 minutos. Escribir las 12 palabras en papel y luego dar tres de ellas cuando la página las pida.
 6. [Comprueba el respaldo](https://practice.learnbitcoin.com/es/do/prove-the-backup), 10 minutos. Quitar la billetera y luego traerla de vuelta, con sus monedas, desde las palabras en papel.
 
 En una computadora compartida, la siguiente persona puede ver la billetera y, si sus 12 palabras están guardadas ahí, gastar sus monedas. Al final, pide a cada estudiante que la quite, en Configuración, y que elija "Olvidar mi progreso" en la pantalla Hazlo.
@@ -42,7 +42,7 @@ Los pasos acompañan al [Recorrido](/es/recorrido), nuestros siete capítulos co
 ## Antes de la clase
 
 - Haz tú el primer paso antes, en la red y con los dispositivos que usará tu clase. Una red que bloquea a Cloudflare, como pasa en algunas escuelas y trabajos, detiene la comprobación del faucet, y un bloqueador de contenido también puede hacerlo.
-- Cada estudiante necesita un navegador, lápiz y papel. Un navegador guarda una sola billetera de práctica a la vez. Quienes comparten una computadora comparten una billetera, o se turnan: se quita una, en Configuración, antes de crear la siguiente.
+- Cada estudiante necesita un navegador, lápiz y papel. Un navegador guarda una sola billetera de práctica a la vez. Quienes comparten una computadora comparten una billetera, o se turnan: cada persona quita la billetera, en Configuración, y elige "Olvidar mi progreso" en la pantalla Hazlo antes de que empiece la siguiente.
 - Después de una breve comprobación contra bots, el faucet paga 100,000 sats de práctica, una vez por dirección al día. Para tener más monedas, cada estudiante muestra una dirección nueva y vuelve a pedir.
 - Paga a unas 20 billeteras por minuto, entre todas las personas que lo usan, así que una clase de 30 tiene sus monedas en unos dos minutos. Cuando dice que está ocupado, la página vuelve a pedir por sí sola, hasta por tres minutos. Si a alguien todavía le faltan monedas, págale desde tu propia billetera de práctica.
 
@@ -54,7 +54,7 @@ El navegador guarda el registro de la billetera, que puede contener las 12 palab
 
 Nuestro servidor ve las direcciones y los pagos de la billetera, y la dirección IP de cada solicitud. La comprobación del faucet es de Cloudflare y examina el navegador.
 
-La billetera cuenta las pantallas que se abren y una lista corta y fija de eventos. Cada conteo va a Plausible con la dirección IP y el nombre, la versión y el sistema del navegador. No se envía ningún identificador. [La página "Acerca de" de la billetera](https://practice.learnbitcoin.com/es/about) dice el resto.
+La billetera cuenta las pantallas que se abren y una lista corta y fija de eventos. Cada conteo va a Plausible con la dirección IP y el nombre, la versión y el sistema del navegador. Con un conteo no se envía ningún identificador. [La página "Acerca de" de la billetera](https://practice.learnbitcoin.com/es/about) dice el resto.
 
 ## Para una clase más avanzada
 
