@@ -2,8 +2,8 @@
 title: "El curso intensivo: la lección de Bitcoin que Andreas Antonopoulos dio en 2013, contada de nuevo"
 slug: curso-intensivo-2013
 translationOf: crash-course-2013
-sourceHash: "fa0821b22bd0"
-sourceCommit: "a6f2119"
+sourceHash: "c35ac2d8fce8"
+sourceCommit: "37a5e7a"
 sourceUpdated: "2026-11-19"
 translation:
   method: "llm-draft"
@@ -87,7 +87,7 @@ sources:
 relatedTerms: [block, node, hash-rate, difficulty, proof-work-pow, halving-halvening, utxo-unspent-transaction-output, double-spend, private-key, paper-wallet, hardware-wallet, nonce-reuse, transaction-fee, satoshi-unit, lightning-network, coinjoin, mixing-service, chain-analysis, mt-gox, exchange, inflation-bug, bitcoin-core]
 ---
 
-> **Adónde vas:** El lunes 26 de agosto de 2013, Andreas Antonopoulos le explicó Bitcoin a una mesa de comensales en Cupertino, California. Los anfitriones lo grabaron, y al 12 de noviembre de 2026 el video de 72 minutos se había visto más de 205,000 veces. Es la charla que llevó a Bitcoin al fundador de este sitio. Este capítulo vuelve a contar la lección con palabras sencillas, en gran parte en el orden en que él la dio, para quien oye estas ideas por primera vez: qué problema resolvió Bitcoin, cómo funciona el rompecabezas que tiene en el centro, quién tiene de verdad una moneda y para qué creía él que servía. El video no dice cuándo fue la cena, así que empezamos por encontrar la noche en la cadena.
+> **Adónde vas:** El lunes 26 de agosto de 2013, Andreas Antonopoulos le explicó Bitcoin a una mesa de comensales en Cupertino, California. Los anfitriones lo grabaron, y al 12 de noviembre de 2026 el video de 72 minutos se había visto más de 205,000 veces. Es la charla que llevó a Bitcoin al fundador de este sitio. Este capítulo vuelve a contar la lección con palabras sencillas, en gran parte en el orden en que él la dio, para quien oye estas ideas por primera vez: qué problema resolvió Bitcoin, cómo funciona el rompecabezas que tiene en el centro, quién tiene de verdad una moneda y para qué creía él que servía. El video no dice cuándo fue la cena, así que empezamos por encontrar la noche en la cadena. La lección en sí empieza en [Por qué le importaba](#por-qué-le-importaba), si prefieres empezar por ahí.
 
 > **Crédito:** Este capítulo vuelve a contar una charla de Andreas M. Antonopoulos, dada ante la sección de Silicon Valley del Jefferson Club el 26 de agosto de 2013 y publicada por el club como ["Bitcoin Cryptocurrency Crash Course with Andreas Antonopoulos"](https://www.youtube.com/watch?v=JP9-lAYngi4) (curso intensivo de la criptomoneda Bitcoin con Andreas Antonopoulos; 25 de septiembre de 2013). La lección es suya, y también la manera de contarla, incluidos el sudoku y la cafetería. Las palabras y los dibujos de aquí son nuestros, y también las lecturas de la cadena, tomadas en noviembre de 2026. Es la tercera de una serie de recreaciones con crédito de lecciones tempranas de Bitcoin; las dos primeras, [Quindecillones](/es/a-fondo/quindecillones) y [Brain wallets](/es/a-fondo/brain-wallets), vienen de la Blackboard Series de James D'Angelo.
 
@@ -147,7 +147,7 @@ Antonopoulos empieza la lección por lo que faltaba. El dinero digital anterior 
 
 ## Un rompecabezas que siempre cuesta diez minutos
 
-Su imagen para el rompecabezas es un sudoku, y esta cena es el registro más antiguo que pudimos encontrar de que la usara; entró en su libro la primavera siguiente. Llenar la cuadrícula es difícil, y para comprobar una cuadrícula terminada basta un vistazo a lo largo de las filas y las columnas. Los mineros compiten por resolver un rompecabezas de ese tipo, y todos los demás pueden comprobar al instante la respuesta del ganador. El rompecabezas resuelto se llama [prueba de trabajo](/es/glosario/prueba-de-trabajo). Cada bloque se construye sobre el anterior, así que cada bloque nuevo hace que los más viejos sean más difíciles de rehacer.
+Su imagen para el rompecabezas es un sudoku, y esta cena es el registro más antiguo que pudimos encontrar de que la usara; entró en su libro la primavera siguiente. Llenar la cuadrícula es difícil, y para comprobar una cuadrícula terminada basta un vistazo a lo largo de las filas y las columnas. Los mineros compiten por resolver un rompecabezas de ese tipo, y todos los demás pueden comprobar al instante la respuesta del ganador. El rompecabezas resuelto se llama [prueba de trabajo](/es/glosario/prueba-de-trabajo). Cada [bloque](/es/glosario/bloque), un lote de pagos, se construye sobre el anterior, así que cada bloque nuevo hace que los más viejos sean más difíciles de rehacer.
 
 El detalle en el que insiste es que el rompecabezas se mantiene, en sus palabras, "ten minutes hard" (a diez minutos de dificultad). Cuando se suma poder de cómputo, la red hace el rompecabezas más difícil, y cuando el poder se va lo hace más fácil, de modo que un bloque llega más o menos cada diez minutos en cualquiera de los dos casos.
 
