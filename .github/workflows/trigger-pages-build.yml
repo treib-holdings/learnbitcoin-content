@@ -46,7 +46,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout (full history, for the changed-file diff)
-        uses: actions/checkout@v4
+        # Pinned to a full commit SHA, as in learnbitcoin-web's deploy.yml:
+        # a tag like @v4 can be moved, and this job holds WEB_DEPLOY_PAT.
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           fetch-depth: 0
 
