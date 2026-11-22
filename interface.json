@@ -1,0 +1,321 @@
+{
+  "fullStop": ".",
+  "date": {
+    "format": "{month} {day}, {year}",
+    "months": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ]
+  },
+  "countWords": [
+    "One",
+    "Two",
+    "Three",
+    "Four",
+    "Five",
+    "Six",
+    "Seven",
+    "Eight",
+    "Nine"
+  ],
+  "shelves": {
+    "money": "Money",
+    "how-it-works": "How It Works",
+    "custody-privacy": "Custody and Privacy",
+    "who-decides": "Who Decides",
+    "history": "History",
+    "hard-questions": "Hard Questions"
+  },
+  "siteDescription": "The honest Bitcoin school. Bitcoin only. No bullshit. Have fun.",
+  "ogImageAlt": "Learn Bitcoin - The Bitcoin School. Bitcoin only. No bullshit. Have fun.",
+  "feedTitle": "LearnBitcoin RSS",
+  "feedChannelTitle": "LearnBitcoin",
+  "homeAria": "LearnBitcoin home",
+  "openMenu": "Open menu",
+  "closeMenu": "Close menu",
+  "mobileNav": "Mobile navigation",
+  "nav": {
+    "journey": "Journey",
+    "rabbitHoles": "Rabbit Holes",
+    "glossary": "Glossary",
+    "node": "Node",
+    "teach": "For teachers",
+    "manifesto": "Manifesto",
+    "corrections": "Corrections",
+    "newsletter": "Newsletter",
+    "privacy": "Privacy",
+    "security": "Security",
+    "terms": "Terms"
+  },
+  "nav2": {
+    "skip": "Skip to content",
+    "main": "Main",
+    "about": "About",
+    "footer": "Footer",
+    "doors": {
+      "learn": {
+        "label": "Learn",
+        "promise": "New here? Start at the beginning."
+      },
+      "explore": {
+        "label": "Explore",
+        "promise": "Go deep on one question."
+      },
+      "history": {
+        "label": "History",
+        "promise": "What happened, and who did it."
+      },
+      "research": {
+        "label": "Research",
+        "promise": "Primary sources and data."
+      }
+    },
+    "links": {
+      "journey": [
+        "The Journey",
+        "Seven short chapters, from the beginning"
+      ],
+      "practice": [
+        "Practice Wallet",
+        "A real wallet, with coins that are worth nothing"
+      ],
+      "glossary": [
+        "Glossary",
+        "Every term, in plain language"
+      ],
+      "allRabbitHoles": [
+        "All Rabbit Holes",
+        "Long reads on one idea each, all sourced"
+      ],
+      "timeline": [
+        "Timeline",
+        "Dated events, each linked to its chapter"
+      ],
+      "historyChapters": [
+        "History Rabbit Holes",
+        "The bug, the fork, the war, the graveyard"
+      ],
+      "archiveByYear": [
+        "The Archive by Year",
+        "What developers were arguing about, 2011 to now"
+      ],
+      "archive": [
+        "Bitcoin Dev Archive",
+        "The bitcoin-dev mailing list, readable"
+      ],
+      "bips": [
+        "BIPs",
+        "Every proposal the list discussed"
+      ],
+      "releases": [
+        "Bitcoin Core Releases",
+        "Each version and what it shipped"
+      ],
+      "data": [
+        "Data and Downloads",
+        "The files behind our chapters"
+      ],
+      "node": [
+        "Node",
+        "Live data from a full Bitcoin node"
+      ],
+      "liveNode": "Live Node"
+    }
+  },
+  "breadcrumbHome": "Home",
+  "breadcrumbRabbitHoles": "Rabbit Holes",
+  "breadcrumbGlossary": "Glossary",
+  "breadcrumbGlossaryIndex": "Bitcoin Glossary",
+  "breadcrumbJourney": "The Journey",
+  "footerTagline": "Bitcoin only. No bullshit. Have fun.",
+  "follow": "Follow",
+  "rssFeed": "RSS feed",
+  "onX": "LearnBitcoin on X",
+  "onYouTube": "LearnBitcoin on YouTube",
+  "sourceOnGitHub": "LearnBitcoin source on GitHub",
+  "sourceOnGitHubTitle": "Source on GitHub",
+  "licenseLead": "Content licensed",
+  "licenseTail": "Reuse welcome with attribution to learnbitcoin.com. No tracking on this site. No affiliate links. No newsletter spam.",
+  "rabbitHole": "Rabbit Hole",
+  "rabbitHoles": "Rabbit Holes",
+  "theJourney": "The Journey",
+  "glossary": "Glossary",
+  "min": "min",
+  "levels": {
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced"
+  },
+  "levelMeans": {
+    "beginner": "no Bitcoin knowledge needed",
+    "intermediate": "you know the basics (blocks, miners, keys)",
+    "advanced": "you know how Bitcoin works inside"
+  },
+  "chapterOf": "Chapter {n} of {total}",
+  "allRabbitHoles": "All rabbit holes",
+  "allChapters": "All chapters",
+  "markedAsRead": "Marked as read on this device",
+  "sources": "Sources",
+  "downloads": "Downloads",
+  "moreIn": "More in {shelf}",
+  "goDeeper": "Go deeper",
+  "keyTakeaways": "Key takeaways",
+  "relatedChapters": "Related chapters",
+  "externalReferences": "External references",
+  "relatedTerms": "Related terms",
+  "previous": "Previous",
+  "next": "Next",
+  "previousChapter": "Previous chapter",
+  "nextChapter": "Next chapter",
+  "finishedJourney": "You've finished the Journey",
+  "finishedJourneyNote": "That was the last chapter. The rabbit holes go further, one topic at a time.",
+  "progressText": "{done} of {total} complete",
+  "milestoneItem": "Milestone item {n}",
+  "editOnGitHub": "Edit this page on GitHub",
+  "corrected": "Corrected",
+  "was": "Was:",
+  "now": "Now:",
+  "details": "Details",
+  "published": "Published",
+  "revised": "Revised",
+  "factChecked": "Fact-checked",
+  "noCorrectionsLead": "No",
+  "correctionsLink": "corrections",
+  "noCorrections": "logged for this page.",
+  "correctionSingular": "correction",
+  "correctionPlural": "corrections",
+  "loggedForThisPage": "logged for this page",
+  "readTheOriginal": "Read the original",
+  "inEnglish": "(in English)",
+  "inEnglishTitle": "In English",
+  "pillarOne": "Bitcoin only.",
+  "pillarTwo": "No bullshit.",
+  "pillarThree": "Have fun.",
+  "winConditionKicker": "Our win condition",
+  "winCondition": "Be the link a Bitcoiner DMs their dad.",
+  "manifestoClose": "Learn what Bitcoin actually is. Learn it well. Then go run a node.",
+  "browseGlossary": "Browse the glossary",
+  "readManifesto": "Read the manifesto",
+  "nodeKicker": "Live data",
+  "nodeMonetaryPolicy": "Monetary policy",
+  "nodeMiningFees": "Mining and fees",
+  "nodeWhyKicker": "Why this page exists",
+  "nodeWhyBody": "Bitcoin is a peer-to-peer network of nodes that agree on the truth by running the same code on independent hardware. The only way to know what's actually on the chain is to ask a node. You can run one yourself - and you should.",
+  "nodeReadSovereignty": "Read: Run your own node →",
+  "translationReviewed": "Translation reviewed by {who} on {date}.",
+  "translationReviewedUndated": "Translation reviewed by {who}.",
+  "translationPending": "Translation drafted with AI assistance; a human review is still pending.",
+  "staleNotice": "The English version was updated on {date}, after this translation.",
+  "featured": "Featured",
+  "terms": "{n} terms",
+  "termsOf": "{shown} of {total}",
+  "searchTerms": "Search {n} terms...",
+  "noMatches": "No matches.",
+  "chaptersSummary": "{n} chapters · {time} of reading + hands-on",
+  "readingMinutes": "about {n} minutes",
+  "readingHours": "about {n} hours",
+  "journeyAsideLead": "Coming in from somewhere else?",
+  "journeyAside": "If you only want the hard questions, chapter 3 stands on its own. If you already hold bitcoin and want to keep it well, start at chapter 5. The order is the recommendation; it isn't a requirement.",
+  "read": "Read",
+  "exploredRabbitHole": "You've explored this rabbit hole",
+  "alsoOnShelf": "Also on this shelf:",
+  "startJourney": "Start the Journey",
+  "searchGlossary": "Search the glossary",
+  "searchPlaceholder": "Look up a term, like UTXO",
+  "search": "Search",
+  "newOnSite": "New on the site.",
+  "downTheRabbitHole": "Down the rabbit hole.",
+  "chaptersOnShelf": {
+    "one": "{n} chapter on this shelf",
+    "other": "{n} chapters on this shelf"
+  },
+  "notFoundTitle": "404 - Orphan Block",
+  "notFoundDescription": "The page you're looking for doesn't exist on this chain. Try the journey, the glossary, or a rabbit hole.",
+  "notFoundKicker": "Page not found",
+  "notFoundHeading": "Orphan block.",
+  "notFoundBody": "You followed a link to a page that isn't on this chain. No malice, no conspiracy, just a 404. The block you wanted got reorged out, or maybe was never mined.",
+  "notFoundJourney": "Start the journey",
+  "notFoundGlossary": "Open the glossary",
+  "notFoundRabbitHoles": "Pick a rabbit hole",
+  "notFoundHomeLead": "Or just go",
+  "notFoundHomeLink": "home",
+  "feedJourneyPrefix": "Journey",
+  "feedRabbitHolePrefix": "Rabbit hole",
+  "glossaryIndexHeading": "The Bitcoin dictionary, honest edition.",
+  "glossaryIndexTitle": "Bitcoin Glossary - The Honest Edition",
+  "rabbitHolesIndexHeading": "Pick a rabbit hole.",
+  "rabbitHolesIndexTitle": "Rabbit Holes",
+  "journeyIndexHeading": "Bitcoin, from the beginning.",
+  "journeyIndexTitle": "Journey",
+  "glossaryIndexDescription": "Bitcoin terms explained honestly, in plain language. Each entry starts with a short definition, then the mechanics, the tradeoffs and where to go deeper.",
+  "rabbitHolesIndexDescription": "Pick a rabbit hole. Each one is a self-contained, opinionated deep-dive on a single Bitcoin concept - interactive where it matters, sourced everywhere.",
+  "journeyIndexDescription": "Seven short chapters for someone starting from nothing. A few minutes of reading each, then something you do yourself. No account, nothing to buy, nobody selling anything.",
+  "og": {
+    "glossary": "GLOSSARY",
+    "rabbitHole": "RABBIT HOLE",
+    "minRead": "MIN READ",
+    "journey": "THE JOURNEY",
+    "chapterOf": "CHAPTER {n} OF {total}",
+    "chapters": "{n} CHAPTERS"
+  },
+  "doItLabel": "Do it",
+  "doItNote": "Opens LearnBitcoin's practice wallet in this tab. No account, no email, no money: its coins are worth nothing.",
+  "doItBack": "To come back, press \"Back to the chapter\" in the wallet. It brings you back here and, once this step is done, marks this card done. Your browser's Back button marks nothing.",
+  "doItDone": "Done",
+  "doItSaid": "Marked as done: {title}",
+  "doItToDo": {
+    "one": "{n} practice step",
+    "other": "{n} practice steps"
+  },
+  "doItProgress": "Practice steps done: {done} of {total}",
+  "doItClearConfirm": "Clear all reading progress saved in this browser? This removes the read marks on Journey chapters and rabbit holes, your checklist ticks, and the done marks on your \"Do it\" steps.",
+  "hubs": {
+    "learn": {
+      "title": "Learn Bitcoin: Start Here",
+      "heading": "New to Bitcoin? Start here.",
+      "description": "New to Bitcoin? Start here. The Journey is seven short chapters for someone starting from nothing. The glossary explains every term in plain language.",
+      "deck": "Two ways in. Read the Journey in order, or look up the one word that confused you. Nothing here needs a signup, and none of it is trying to sell you anything.",
+      "journeyBlurb": "Seven short chapters for someone starting from nothing. Each one ends in something you do yourself. No account, and nothing to buy.",
+      "journeyCount": "{n} chapters, {time} of reading",
+      "journeyStart": "Start with chapter 1",
+      "journeyAll": "See the whole path",
+      "glossaryHeading": "The glossary",
+      "glossaryBlurb": "{n} Bitcoin terms in plain language. Each entry opens with a short definition, then goes as deep as you want to follow it.",
+      "glossaryAll": "See all {n} terms, A to Z",
+      "firstWords": "Words to start with",
+      "nextHeading": "Then go deep on one question.",
+      "nextBlurb": "A rabbit hole is a long read on a single idea, with its sources."
+    },
+    "explore": {
+      "title": "Explore Bitcoin: Rabbit Holes",
+      "heading": "Go deep on one question.",
+      "description": "Go deep on one Bitcoin question at a time. Sourced long reads on how Bitcoin works, custody and privacy, who decides the rules and more.",
+      "deck": "Rabbit holes are long reads on a single idea, each with its sources at the foot of the page.",
+      "count": "{n} so far, about {hours} hours of reading. Pick a shelf, or start with the newest.",
+      "newest": "The newest",
+      "shelves": "Pick a shelf.",
+      "all": "All {n} on one page",
+      "notSure": "Not sure where to start?",
+      "notSureBody": "If Bitcoin is new to you, start with Learn and come back."
+    }
+  },
+  "translatedBy": "Translated by {who}.",
+  "notYetChecked": "Not yet checked by a second reader of this language.",
+  "checkedBy": "Checked by {who} on {date}.",
+  "checkedByUndated": "Checked by {who}.",
+  "homeDoorsHeading": "Where to go in.",
+  "goTo": "Go to",
+  "shelvesLabel": "Shelves",
+  "languageMenu": "Language",
+  "notInThisLanguage": "This page is not in English yet. This link opens the start of the English pages."
+}

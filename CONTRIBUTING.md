@@ -25,7 +25,9 @@ the rendering pipeline) lives in a separate private repo.
   matches, but manual links still beat auto-links for prose flow.
 - **sameAs links on glossary entries.** External references that go
   in the content `sameAs:` array. See below.
-- **Translations.** Long-term goal. Talk to us first.
+- **Translations.** The site carries any number of languages. Spanish
+  is live and Hindi is being prepared; see "Adding or extending a
+  language" below, and write to us before starting a new one.
 
 ## What we will not merge
 
@@ -65,15 +67,17 @@ The site has a consistent voice. The short version:
   language. Curly quotes break YAML frontmatter, and the web build's
   `check-charset` step refuses the file.
 - **Letters are not punctuation.** English content is pure ASCII,
-  except µ (U+00B5) for unit prefixes. Spanish content under `es/` may
-  also use exactly these characters, which Spanish orthography
-  requires: á é í ó ú ü ñ Á É Í Ó Ú Ü Ñ (U+00E1, U+00E9, U+00ED,
-  U+00F3, U+00FA, U+00FC, U+00F1, U+00C1, U+00C9, U+00CD, U+00D3, U+00DA,
-  U+00DC, U+00D1) and the inverted marks ¿ ¡ (U+00BF, U+00A1). Files
-  are UTF-8 in Unicode NFC. Nothing else outside ASCII. The rule covers
-  the content files in this repo (`glossary/`, `rabbit-holes/`,
-  `journey/`, `pages/` and `es/`); the website's own UI glyphs are out
-  of scope.
+  except µ (U+00B5) for unit prefixes. A language's folder may also use
+  the letters its writing needs, and no others. Spanish (`es/`): exactly
+  á é í ó ú ü ñ Á É Í Ó Ú Ü Ñ (U+00E1, U+00E9, U+00ED, U+00F3, U+00FA,
+  U+00FC, U+00F1, U+00C1, U+00C9, U+00CD, U+00D3, U+00DA, U+00DC, U+00D1)
+  and the inverted marks ¿ ¡ (U+00BF, U+00A1). Hindi (`hi/`): the
+  Devanagari block (U+0900 to U+097F, the danda included) and the rupee
+  sign (U+20B9). Files are UTF-8 in Unicode NFC. Nothing else outside
+  ASCII. The rule covers the content files in this repo (`glossary/`,
+  `rabbit-holes/`, `journey/`, `pages/` and every language's folder);
+  the two `interface.json` marks the site's own words use (the middle
+  dot and the arrow) are allowed in those files only.
 - **No control characters.** Below U+0020 a content file holds tabs and
   line endings and nothing else. Text pasted from a block explorer or a
   terminal can carry others: an editor does not show them, and a browser
@@ -107,7 +111,10 @@ list, a quote or a table:
 
 - **The label** is `**Do it:**` in an English chapter and `**Hazlo:**`
   in a Spanish one: bold written with asterisks, with the colon inside
-  the bold.
+  the bold. The practice wallet speaks those two languages. In a chapter
+  of any other language the line stays an ordinary paragraph, with a
+  label in that language and the English step's address, and no card is
+  made.
 - **The link** is the step's own address and nothing more:
   `https://practice.learnbitcoin.com/do/<id>` in English and
   `https://practice.learnbitcoin.com/es/do/<id>` in Spanish. Its text
@@ -203,7 +210,10 @@ glossary/             # One markdown file per term
 journey/              # Seven narrative chapters
 rabbit-holes/         # Deep dives, mostly MDX (interactive widgets)
 pages/                # Editorial copy of the fixed pages (home, manifesto, policies)
-es/                   # The Spanish edition: the same four directories, see below
+es/                   # Spanish: the same four directories and its interface.json, see below
+hi/                   # Hindi, in preparation: the same shape
+interface.json        # The site's own words in English, for translators (written by the web repo; do not edit by hand)
+interface.journey.json  # The part of them the Journey's pages show: where a new language starts
 data/                 # Shelf list for the rabbit holes (rabbit-hole-shelves.json)
 downloads/            # PDFs distributed at /downloads/
 ```
@@ -233,71 +243,199 @@ otherwise:
 If a chapter needs something interactive, propose a component in the
 web repo instead.
 
-## Translations (`es/`)
+## Adding or extending a language
 
-A Spanish edition is being prepared (talk to us before translating
-anything: the pilot is owner-run). Spanish files live under `es/` in
-the same four directories as the English ones (`es/glossary/`,
-`es/rabbit-holes/`, `es/journey/`, `es/pages/`), follow the English
-schema of their type, and add these fields:
+The site is written in English. Every other language is a folder here,
+named by the language's code, that mirrors the English folders:
+
+```
+journey/why-money-is-broken.md       the English page
+hi/journey/why-money-is-broken.md    the same page in Hindi
+interface.json                       the site's own words (menus, buttons, notices), in English
+hi/interface.json                    the same words in Hindi
+```
+
+Spanish (`es/`) is live. Hindi (`hi/`) is being prepared. For any other
+language, write to us first: the website shows a language only once we
+have added it to its list, which is one entry on our side.
+
+### What to translate first
+
+The Journey: seven short chapters, about 17,600 words, the path for
+someone starting from nothing.
+
+1. The seven files in `journey/`.
+2. `pages/journey.md`, the Journey's front page.
+3. `interface.journey.json`, the site's own words that those pages show:
+   about ninety short entries. Your translation of it is your language's
+   `interface.json`. (The root `interface.json` holds every word the site
+   has; the rest can wait until the pages that show them are translated.)
+
+The glossary and the rabbit holes come after that, a page at a time.
+
+### How
+
+1. **Make your copies.** Each file goes into your language's folder under
+   the same name. With Node and a clone of this repository, one command
+   makes all nine and writes their header lines:
+
+   ```
+   node scripts/start-translation.mjs hi --journey
+   ```
+
+   No Node? Ask us and we send you the nine files ready to fill in.
+
+2. **Translate.** In a chapter that is everything under the second `---`
+   line, and above it only the text of `title` and `tagline` (in a page of
+   `pages/`: `title`, `heading` and `description`). Leave every other
+   line above it as it is, `slug` and `sources` included. In your
+   `interface.json`, translate the text between the quotes on the right.
+   Leave the names on the left alone, and keep anything in `{braces}`,
+   moving it where your grammar wants it: `"Chapter {n} of {total}"` is
+   `"Capítulo {n} de {total}"` in Spanish.
+
+3. **Put your name on it.** At the top of each file:
+
+   ```yaml
+   translation:
+     method: "human"
+     translatedBy: "Your Name (Your Organization)"   # shown at the top of the page
+     translatedByUrl: "https://example.org"          # optional: makes the name a link
+   ```
+
+   When a second reader of your language has checked a page, add
+   `reviewedBy: "Their Name"` and `reviewedAt: "2026-12-01"` under it.
+   Until then the page says it has not been checked by a second reader.
+   We do not read every language ourselves, so the page tells its reader
+   who translated it and who checked it.
+
+4. **Send it.** A pull request to this repository, one chapter at a time
+   or all together. If you do not use GitHub, send us the files.
+
+### A few rules
+
+- **Your language's letters, plain punctuation.** Straight quotes (`'`
+  and `"`), the hyphen (`-`) and three periods (`...`), as on the English
+  pages. Your script's own marks are fine: the Hindi danda, the Spanish ¿
+  and ¡. The website's build refuses curly quotes, long dashes and
+  invisible characters, and names the line.
+- **Addresses stay in Latin letters.** File names and `slug` are never
+  written in another script. A new language keeps the English names
+  (`/hi/journey/why-money-is-broken`), so there is nothing to invent.
+  Spanish, the first translation, has names of its own (`/es/recorrido/...`).
+- **Links.** A link to another page of the site (`/journey/how-bitcoin-works`)
+  points to your language's page when there is one
+  (`/hi/journey/how-bitcoin-works`) and stays as it is when there is not.
+- **"Do it" lines.** Translate the label and the sentences, keep the
+  link. The practice wallet speaks English and Spanish today, so from any
+  other language the link opens the English step: say "(in English)", in
+  your language, after it.
+- **Pictures.** The Journey's drawings have English words inside them.
+  Leave each `<img>` line as it is and translate only its `alt` text and
+  the caption under it. Ask us for the drawing files if you want to make
+  them in your language.
+- **Say what is true where your readers live.** Chapter 6 names companies
+  for a first purchase in the United States. Change that for your
+  country, and tell us what you changed.
+- **Write for someone starting from nothing.** Plain words and short
+  sentences, in the tone of the English page. Where a Bitcoin term has no
+  settled word in your language, keep the English word and explain it
+  once.
+
+### What happens next
+
+We build your pages and look at them with you. A language's Journey goes
+live whole: all seven chapters and its front page together, so that no
+reader meets English halfway through. Until then your files wait here,
+unpublished (`draft: true`: leave that line, we change it on the day).
+You are free to publish your translation anywhere else at once: it is
+yours to use under CC-BY-SA-4.0, like everything in this repository.
+
+When the English page changes later, the page in your language says so
+at the top until the translation is brought up to date.
+
+### For maintainers: the fields and the checks
+
+A translated file follows the English schema of its type and adds these
+fields (`scripts/start-translation.mjs` writes them;
+`scripts/translation-source.mjs <english file>` prints the three source
+lines again when a translation is brought up to date):
 
 ```yaml
-slug: mineria                 # the Spanish URL slug, ASCII (entries only; pages/ have none)
-translationOf: mining         # the English slug; for pages/, the English file stem (home, glossary, privacy)
+slug: mineria                 # entries only. Its own word in a language with addresses of its own (Spanish); the English slug everywhere else
+translationOf: mining         # the English slug; for pages/, the English file's name without .md (home, journey, privacy)
 sourceHash: "3f9a1c2b7d4e"    # first 12 hex of sha256 over the English file's bytes at translation time
 sourceCommit: "a705ffa"       # optional: the English file's last commit, for diffing later
 sourceUpdated: "2026-10-05"   # optional: the English updated (or published) date at translation time
 translation:
-  method: "llm-draft"                # then "llm-draft+human-review" or "human" once reviewed
-  reviewedBy: "<name or handle>"     # optional; shown on the page once someone has reviewed it
+  method: "human"                    # or "llm-draft", then "llm-draft+human-review"
+  translatedBy: "Name (Organization)"   # required in a language nobody on the team reads
+  translatedByUrl: "https://..."     # optional, https only
+  reviewedBy: "<name or handle>"     # optional: a second reader; shown on the page once named
   reviewedAt: "2026-10-20"           # optional
 ```
 
-`node scripts/translation-source.mjs rabbit-holes/mining.mdx` prints
-`sourceHash`, `sourceCommit` and `sourceUpdated` for pasting; nobody
-computes a hash by hand. `translationOf` is the one key every
-cross-language feature reads (hreflang, the language switcher, reading
-progress, share cards, the "the English version was updated" notice),
-so it must be exact. The Spanish filename itself is free as long as it
-is ASCII: an `es/pages/inicio.md` with `translationOf: home` is the
-Spanish home page.
+`translationOf` is the one key every cross-language feature reads
+(alternate links, the language menu, reading progress, share cards, the
+"the English version was updated" notice), so it must be exact. Write the
+`translation:` block in block form, one key per line; the check does not
+read the one-line `{ ... }` form.
 
-**The title is the term.** A Spanish glossary entry's `title` is the
-word every Spanish page uses for that concept, in every chapter, page
-and UI string: "billetera", not "cartera" or "monedero". There is no
-separate word list; the glossary is it, and `es/GUIA-DE-ESTILO.md`
-covers the rest (register, numbers, dates, punctuation, the words that
-are not glossary terms). Two optional fields on a Spanish glossary
-entry carry the decision:
+Which languages there are, and everything technical about each (its
+addresses, the letters its files may hold, its fonts, whether it is
+switched on), is one list in the website's repository:
+`src/lib/i18n/languages.mjs`. A folder here that the list does not name
+is ignored, with a note in the build.
+
+The website's build checks every language's folder (`check-charset`,
+`check-translations`, `check-levels`, `check-published-dates`,
+`check-mdx-imports`). `check-translations` refuses a file that
+
+- is missing `translationOf` or `sourceHash`;
+- names an English page that does not exist, is a draft, or is a chapter
+  that is not live;
+- claims an English page another file of the same language already
+  claims, or reuses another file's `slug`;
+- has a `slug` that differs from its `translationOf`, in a language that
+  keeps the English addresses;
+- names no `translatedBy`, in a language nobody on the team reads.
+
+It also refuses a language that is switched on while its Journey is not
+whole (a chapter English had on the language's launch day is missing, or
+the front page is), or while its `interface.json` is missing, broken, or
+lacks a word its published pages show. A page nobody has checked is
+allowed: it says so on the page, and the build prints an UNREVIEWED line
+for it. The check warns STALE, without failing, when the English file
+has changed since `sourceHash` was taken: port the change, take the
+source lines again, bump the translation's `updated`.
+
+A language that is not switched on yet can never fail the build: its
+pages are not built, and whatever the checks find in its folder is
+printed as a warning. So translated files can be merged as they arrive.
+
+**The glossary is the terminology.** A translated glossary entry's
+`title` is the word every page of that language uses for the concept, in
+every chapter, page and interface word: in Spanish "billetera", not
+"cartera" or "monedero". There is no separate word list; the glossary is
+it, and a language's style guide covers the rest (`es/GUIA-DE-ESTILO.md`:
+register, numbers, dates, punctuation, the words that are not glossary
+terms). Two optional fields on a translated glossary entry carry the
+decision:
 
     aliases: ["wallet", "billetera digital"]   # other phrasings and loanwords that mean the same thing; the auto-linker links them to this entry
-    avoid: ["cartera", "monedero"]             # rejected alternatives: words a Spanish page must not use for this concept
+    avoid: ["cartera", "monedero"]             # rejected alternatives: words a page of this language must not use for the concept
 
-`avoid` words are never auto-linked. The web build's `check-translations`
-step prints an `AVOIDED <file>:<line>` warning (it does not fail) for
-every occurrence of one in another Spanish file's prose, accent- and
+`avoid` words are never auto-linked. `check-translations` prints an
+`AVOIDED <file>:<line>` warning (it does not fail) for every occurrence
+of one in another file of the same language, accent- and
 case-insensitive, whole word; list the plural too if it should be caught
 ("carteras"). Introducing the rejected word once in a parenthesis right
 after the chosen term is fine and not flagged: "tu billetera (cartera)".
 Frontmatter, code and link targets are not scanned, and the entry that
-lists a word may discuss it freely. To see the current table (Spanish
-title, slug, English title, aliases, avoid, reviewed), run
-`pnpm terminology` in the web repo; it is generated from
-`es/glossary/*.md`, so to change a term, change the entry. Write the
-`translation:` block in block form (one key per line); the check does
-not read the one-line `{ ... }` form.
-
-The web build's `check-translations` step refuses a Spanish file that
-is missing `translationOf` or `sourceHash`;
-whose `translationOf` names no English entry, a draft, or a chapter
-that is not live; that claims an English source another Spanish file
-already claims; or that reuses another file's `slug`. A page without a
-reviewer is allowed: it ships with a notice saying the translation is an
-AI draft pending human review, and the build prints an UNREVIEWED line
-for it; once someone reviews it, add their name and date and the notice
-becomes a credit. The check warns STALE, without failing, when the
-English file has changed since `sourceHash` was taken; port the change,
-re-run the helper, bump the Spanish `updated`.
+lists a word may discuss it freely. To see a language's table (title,
+slug, English title, aliases, avoid, reviewed), run `pnpm terminology`
+in the web repo (`--lang <code>`; Spanish when left out); it is made from
+the language's `glossary/*.md`, so to change a term, change the entry.
 
 ## Rabbit-hole shelves
 
@@ -342,10 +480,10 @@ without losing the thread? A hard word the argument does not rest on
 does not raise the level.
 
 **Required on every rabbit hole that is not a draft.** The web build's
-`check-levels` step fails without it. A Spanish translation carries the
-level of its English source, and the same step fails if the two differ.
-The three ids are permanent; the words a page shows for them live in the
-web repo (`src/lib/i18n/strings.mjs`).
+`check-levels` step fails without it. A translation carries the level
+of its English source, and the same step fails if the two differ. The
+three ids are permanent; the words a page shows for them are interface
+words (`levels` in `interface.json` and in each language's own).
 
 ## Publishing dates
 
