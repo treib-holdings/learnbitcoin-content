@@ -3,11 +3,11 @@ title: "Privacidad"
 heading: "Esto es todo lo que sabemos de ti."
 description: "Qué datos recopila LearnBitcoin, quién los ve y cuánto tiempo se guardan. Versión corta: casi nada, a menos que te suscribas al boletín."
 published: "2026-10-14"
-updated: "2026-11-17"
+updated: "2026-11-24"
 translationOf: "privacy"
-sourceHash: "9a382dd86a74"
-sourceCommit: "5bf47cb"
-sourceUpdated: "2026-11-17"
+sourceHash: "6dd04186e6f3"
+sourceCommit: "7f22dda"
+sourceUpdated: "2026-11-24"
 translation:
   method: "llm-draft"
 ---
@@ -15,7 +15,7 @@ translation:
 Esta traducción es informativa. [La versión en inglés](/privacy) es la
 que rige; si difieren, vale la inglesa.
 
-**Cambio del 17 de noviembre de 2026:** algunos capítulos del Recorrido
+**Cambio del 17 de noviembre de 2026:** algunas páginas
 ahora tienen tarjetas "Hazlo" que abren un paso de nuestra billetera de
 práctica en practice.learnbitcoin.com. El registro de progreso de
 lectura que guarda tu navegador ahora anota también cuáles de esos
@@ -74,11 +74,11 @@ navegador y no arma ningún perfil. Nos dice "esta página tuvo N visitas
 esta semana" sin saber cuáles fueron las tuyas. El mismo script también
 reporta cada clic en un enlace que sale de este sitio, con la dirección
 a la que lleva el enlace. Una tarjeta "Hazlo" es uno de esos enlaces,
-así que un clic en ella se reporta con el paso y el capítulo que van en
-su dirección. Con cada visita y cada clic el script envía también la
+así que un clic en ella se reporta con el paso y la página donde está
+la tarjeta, que van en su dirección. Con cada visita y cada clic el script envía también la
 página o el sitio del que vienes, si tu navegador lo da, con una
 excepción: cuando el enlace de la billetera de práctica te trae de
-vuelta, la visita que se cuenta nombra el capítulo y el paso, a veces
+vuelta, la visita que se cuenta nombra la página y el paso, a veces
 con los pasos que ya hiciste, y nunca de dónde vienes. Cuando sales de
 una página o cambias a otra cosa, el script reporta cuánto tiempo
 estuvo la página frente a ti y hasta dónde bajaste. Nuestro servidor
@@ -153,7 +153,7 @@ consentimiento:
   de las listas de verificación has marcado, y cuándo, para que el
   sitio pueda mostrar marcas de verificación y la página de inicio
   pueda señalarte el siguiente capítulo del Recorrido. También anota
-  qué pasos "Hazlo" del Recorrido están marcados como hechos, y
+  qué pasos "Hazlo" están marcados como hechos, y
   cuándo. Los datos viven solo en tu dispositivo. Nunca se envían a nuestro servidor. Si la página de inicio
   en inglés muestra la línea "Pick up where you left off" (retoma donde
   lo dejaste), su botón "Clear my reading progress" (borrar mi progreso
@@ -167,15 +167,16 @@ boletín te pide tu consentimiento una sola vez, cuando te inscribes y
 haces clic en el enlace de confirmación. El manifiesto prometió que no
 habría patrones oscuros; así se ve eso en la práctica.
 
-**Tarjetas "Hazlo".** Una tarjeta "Hazlo" de un capítulo del Recorrido
+**Tarjetas "Hazlo".** Una tarjeta "Hazlo"
 abre nuestra billetera de práctica en practice.learnbitcoin.com, en la
 misma pestaña. Es un sitio aparte, con
 [su propia declaración de privacidad](https://practice.learnbitcoin.com/es/about).
-El enlace de la tarjeta le dice de qué capítulo vienes, para que pueda
+El enlace de la tarjeta le dice de qué página vienes, para que pueda
 enviarte de vuelta. El enlace de vuelta de la billetera nombra el paso
 y dice si está hecho, y cuando lo está nombra también los otros pasos
-de ese capítulo que ya hiciste. Así es como este sitio sabe qué
-tarjetas marcar. La billetera de práctica guarda en tu navegador la
+de esa página que ya hiciste. Así es como este sitio sabe qué
+tarjetas marcar. Un paso se marca una sola vez: su tarjeta aparece
+como hecha en todas las páginas que la tienen. La billetera de práctica guarda en tu navegador la
 billetera misma y su propia nota de tus pasos, y cuenta unas pocas
 cosas que la gente hace ahí, como las pantallas que abre y los pasos
 que termina; su declaración las enumera todas, y dice cómo borrar la

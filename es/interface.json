@@ -243,6 +243,7 @@
   "doItLabel": "Hazlo",
   "doItNote": "La billetera de práctica de LearnBitcoin se abre en esta pestaña. Sin cuenta, sin correo y sin dinero: sus monedas no valen nada.",
   "doItBack": "Para volver, toca \"Volver al capítulo\" en la billetera. Te trae de vuelta aquí y, cuando este paso ya está hecho, marca esta tarjeta como hecha. El botón Atrás de tu navegador no marca nada.",
+  "doItBackRabbitHole": "Para volver, toca \"Volver al tema\" en la billetera. Te trae de vuelta aquí y, cuando este paso ya está hecho, marca esta tarjeta como hecha. El botón Atrás de tu navegador no marca nada.",
   "doItDone": "Hecho",
   "doItSaid": "Marcado como hecho: {title}",
   "doItToDo": {
