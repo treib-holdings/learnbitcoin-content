@@ -271,6 +271,7 @@
   "doItLabel": "Do it",
   "doItNote": "Opens LearnBitcoin's practice wallet in this tab. No account, no email, no money: its coins are worth nothing.",
   "doItBack": "To come back, press \"Back to the chapter\" in the wallet. It brings you back here and, once this step is done, marks this card done. Your browser's Back button marks nothing.",
+  "doItBackRabbitHole": "To come back, press \"Back to the rabbit hole\" in the wallet. It brings you back here and, once this step is done, marks this card done. Your browser's Back button marks nothing.",
   "doItDone": "Done",
   "doItSaid": "Marked as done: {title}",
   "doItToDo": {

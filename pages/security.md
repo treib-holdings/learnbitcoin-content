@@ -3,7 +3,7 @@ title: "Security"
 heading: "What we ship, what we don't, and where third parties grade us."
 description: "How LearnBitcoin secures the site - concrete config, independent grades, honest gaps. Verify it yourself."
 published: "2026-05-23"
-updated: "2026-11-17"
+updated: "2026-11-24"
 ---
 
 Short version: this site holds none of your money and none of your
@@ -85,7 +85,7 @@ This is a content site that serves HTML and a few PNGs. We do not:
   [the privacy page](/privacy#what-we-actually-collect) lists both.
 - Run any custodial service or exchange, or any wallet for real
   bitcoin. We do run a practice wallet, at practice.learnbitcoin.com,
-  which the "Do it" cards in the Journey open. It works on a practice
+  which the "Do it" cards open. It works on a practice
   network whose coins are worth nothing. Its 12 words and its private
   keys are made in your browser and are never sent to us (a wallet made
   with a passkey is rebuilt from that passkey, which your password
