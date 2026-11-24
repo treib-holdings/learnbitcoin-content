@@ -2,29 +2,38 @@
 title: "Bitcoin Faucet"
 slug: bitcoin-faucet
 draft: false
-shortDefinition: "A website or application distributing small BTC amounts-satoshis-often for education or marketing."
+updated: "2026-11-24"
+shortDefinition: "A website or app that gives a small amount of bitcoin, or of test coins with no value, to anyone who asks. The first, in 2010, paid five bitcoin to each visitor."
 keyTakeaways:
-  - "Distributes tiny BTC amounts as a 'freebie'"
-  - "Helps newcomers learn about Bitcoin transactions"
-  - "Commonly funded by ads or promotional budgets"
-sources: []
+  - "Gives a little coin to anyone who asks, so a newcomer can try a real transaction"
+  - "The first faucet, Gavin Andresen's in June 2010, paid 5 BTC a visitor, about 2.5 cents at the time"
+  - "The faucets that developers rely on hand out test coins that are meant to be worthless"
+sources:
+  - { label: "BitcoinTalk, Gavin Andresen, June 11, 2010 - 'Get 5 free bitcoins from freebitcoins.appspot.com': the announcement of the first faucet", url: "https://bitcointalk.org/index.php?topic=183.msg1488#msg1488" }
+  - { label: "freebitcoins.appspot.com as the Internet Archive saved it on September 11, 2010: 'about a half a US penny each, so five were worth about 2.5 US cents'", url: "https://web.archive.org/web/20100911135321/http://freebitcoins.appspot.com/" }
+  - { label: "BitcoinTalk, Gavin Andresen, September 15, 2013 - 'the whole identity-on-the-Internet thing, which nobody has solved'", url: "https://bitcointalk.org/index.php?topic=183.msg3162561#msg3162561" }
+  - { label: "LearnBitcoin - The Bitcoin Faucet: its story, and a count of every payment it received and made", url: "https://www.learnbitcoin.com/rabbit-hole/bitcoin-faucet-2010" }
+  - { label: "LearnBitcoin - every payout of 5 BTC the first faucet made, and whether it had been spent as of block 976,691 (CSV)", url: "https://www.learnbitcoin.com/downloads/bitcoin-faucet-2010-five-btc.csv" }
+  - { label: "Bitcoin Wiki - Bitcoin faucet: sites that 'often fail to deliver or pay such paltry sums as to make the effort itself pointless'; faucets for testnet coins", url: "https://en.bitcoin.it/wiki/Bitcoin_faucet" }
+  - { label: "bitcoin.org Developer Examples - Testing Applications: on testnet the satoshis spent have no real-world value; a community faucet gives free testnet satoshis", url: "https://developer.bitcoin.org/examples/testing.html" }
 relatedTerms:
-  - bitcoin-script
-  - hodl
+  - testnet
+  - signet
+  - dust
   - satoshi-unit
   - transaction
+  - bitcoin-pizza-day
 liveWidget: ~
 ---
 
-A Bitcoin faucet is a website or app that distributes tiny amounts of BTC (typically sats, not whole coins) in exchange for completing simple tasks: solving a captcha, watching an ad, clicking through a promotion.
+A Bitcoin faucet is a website or app that gives a small amount of coin to anyone who asks for it, so that a newcomer can receive a payment and see how one works before spending any money.
 
-The original Bitcoin faucet was Gavin Andresen's, launched in mid-2010, which handed out 5 BTC per visitor to anyone with a wallet address. At the time BTC was worth less than a penny, so the giveaway was negligible in dollar terms. In 2026 the cumulative payout of that faucet would be worth small fortunes if held; "Andresen's faucet" coins occasionally surface as old UTXOs that haven't moved in 15 years.
+The first was Gavin Andresen's. On June 11, 2010, he announced a web page that paid five bitcoin to any visitor who typed in an address: "I want the Bitcoin project to succeed, and I think it is more likely to be a success if people can get a handful of coins to try it out." A bitcoin was then worth about half a cent, so the gift came to about two and a half cents. As the price rose he cut the amount again and again, down to 0.001 BTC a year later, and the faucet made its last payout in October 2012.
 
-Modern faucets are generally a different operation:
+By our count of the chain it gave away about 17,577 BTC in about 158,100 payouts, and Andresen's own wallet put in more than everyone else together. Of its 2,448 payouts of five bitcoin, 789 had never been spent as of block 976,691 on November 20, 2026. The story and the count are in [The Bitcoin Faucet: Five Bitcoin for Anyone Who Asked](/rabbit-hole/bitcoin-faucet-2010).
 
-- **Microscopic payouts.** A modern faucet might pay 10-100 sats per claim (a fraction of a cent). Most users won't earn meaningful amounts, but the experience teaches what an address, transaction, and confirmation feel like.
-- **Ad-funded.** The economic model is showing ads or driving signups for other services. The user gets sats; the operator collects ad revenue or referral fees.
-- **Testnet faucets** are different and important: they give out testnet BTC (with zero monetary value) so developers can test wallet code, smart contracts, and Lightning channels without risking real coins. Every Bitcoin developer uses these regularly.
-- **Lightning faucets.** Some faucets pay over Lightning rather than on-chain, since the fee economics make on-chain dust transactions inefficient.
+The faucets that developers rely on are of another kind. They give out test coins: coins on separate networks such as [testnet](/glossary/testnet) and [signet](/glossary/signet) that are meant to have no value, so that developers and learners can try things without risking money. Of sites that offer real bitcoin for free, the Bitcoin Wiki says they often fail to deliver, or pay so little that the effort is pointless; and a very small payment can cost more in fees to spend than it is worth (see [dust](/glossary/dust)).
 
-For learners, a faucet remains a fine way to experience a real Bitcoin transaction end-to-end without spending dollars. The amounts are tiny but the mechanics are real. For anyone past the absolute beginner stage, faucets are mostly an artifact of Bitcoin's early-era community-building rather than a meaningful source of funds.
+The hard part of running a faucet has not changed since 2010. It is meant to give once to each person, and a website cannot easily tell one person from another. Andresen tried limits on internet addresses, captchas and Google accounts, and wrote in 2013 that the problem was tied to "the whole identity-on-the-Internet thing, which nobody has solved".
+
+LearnBitcoin's own [practice wallet](https://practice.learnbitcoin.com) has a faucet of the test-coin kind. It gives practice coins on a private network that we run, and they have no value.

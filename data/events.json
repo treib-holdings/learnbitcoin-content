@@ -52,6 +52,19 @@
     }
   },
   {
+    "id": "2010-06-11-gavin-andresen-opens-the-bitcoin-faucet",
+    "date": "2010-06-11",
+    "title": "Gavin Andresen opens the Bitcoin Faucet",
+    "line": "",
+    "page": "/rabbit-hole/bitcoin-faucet-2010",
+    "importance": 2,
+    "source": {
+      "label": "BitcoinTalk, Gavin Andresen, June 11, 2010 - Get 5 free bitcoins from freebitcoins.appspot.com",
+      "url": "https://bitcointalk.org/index.php?topic=183.msg1488#msg1488",
+      "publisher": "Gavin Andresen, Bitcoin forum"
+    }
+  },
+  {
     "id": "2010-07-15-satoshi-adds-the-one-megabyte-block-size",
     "date": "2010-07-15",
     "title": "Satoshi adds the one-megabyte block size limit",

@@ -2,7 +2,7 @@
 title: "Bitcoin Pizza Day"
 slug: bitcoin-pizza-day
 draft: false
-updated: "2026-11-17"
+updated: "2026-11-24"
 shortDefinition: "May 22, 2010-famously marking the first real-world BTC purchase (10,000 BTC for two pizzas)."
 keyTakeaways:
   - "Marks the first reported commercial transaction with BTC"
@@ -62,7 +62,7 @@ The pizza day story is told two different ways:
 - **"Most expensive pizza ever"** - the conventional gag, retold every May 22. Worth a chuckle. Misses the point.
 - **"First proof that Bitcoin actually worked as money"** - the version Laszlo himself has consistently offered in interviews, and the version jercos's account corroborates. Without someone willing to actually spend BTC for goods, Bitcoin is just an interesting database. Laszlo and jercos did the experiment, on the open internet, for two pizzas. They paved the road that every later BTC payment uses.
 
-Laszlo went on to be the first person to mine Bitcoin on a GPU (a major performance jump at the time) and made several more BTC-for-pizza trades through 2010. He's said publicly he doesn't regret it.
+Laszlo went on to be the first person to mine Bitcoin on a GPU (a major performance jump at the time) and made several more BTC-for-pizza trades through 2010. He's said publicly he doesn't regret it. Three weeks after the pizzas, Gavin Andresen announced a web page that gave five bitcoin to any visitor. The first reply, eighteen minutes later, was Laszlo's, and it was one word: "Awesome!" [The Bitcoin Faucet](/rabbit-hole/bitcoin-faucet-2010) tells that story.
 
 **May 22 is now Bitcoin Pizza Day** - celebrated with pizza-themed meetups, sat-denominated pizza promotions from Lightning-enabled vendors, and a recurring reminder of how far the network has come. Few shops take bitcoin even now: in a European Central Bank survey for 2026, 1 percent of euro-area companies that take payments in person accepted crypto-assets or stablecoins. Where one does, the thing Laszlo and jercos did experimentally in 2010 now takes 30 seconds and a QR code.
 
