@@ -1,5 +1,16 @@
 [
   {
+    "id": "2026-11-24-bitcoin-faucet",
+    "date": "2026-11-24",
+    "page": "/glossary/bitcoin-faucet",
+    "title": "Bitcoin Faucet",
+    "wrong": "The entry cited no sources. It said coins from Gavin Andresen's 2010 faucet 'occasionally surface' after 15 years without moving, called today's faucets a fine way for a learner to experience a real Bitcoin transaction, and said every Bitcoin developer uses testnet faucets regularly. None of that was supported.",
+    "fixed": "The entry is rewritten from the faucet's own announcement and archived page and from a count of the chain: the 2010 faucet gave away about 17,577 BTC in about 158,100 payouts, and 789 of its 2,448 payouts of 5 BTC had never been spent as of block 976,691. The Bitcoin Wiki says sites that still pay real bitcoin often fail to deliver or pay too little to be worth the effort, so the entry no longer recommends them; it describes faucets for test coins and links the new chapter on the 2010 faucet.",
+    "commit": "db69f6a",
+    "source": "https://en.bitcoin.it/wiki/Bitcoin_faucet",
+    "credit": "the research for the Bitcoin Faucet chapter (2026-11-20)"
+  },
+  {
     "id": "2026-11-17-seed-backup-strategies",
     "date": "2026-11-17",
     "page": "/rabbit-hole/seed-backup-strategies",
