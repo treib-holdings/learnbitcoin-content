@@ -16,7 +16,7 @@ sources:
   - { label: "BIP 9 - Version bits (threshold 1,916 of 2,016 blocks, 95%, in a 2,016-block retarget period)", url: "https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki" }
   - { label: "BIP 141 - Segregated Witness, deployment (BIP-9 bit 1, signaling from November 15, 2016)", url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" }
   - { label: "Bitcoin Magazine - BIP91: The SegWit Activation Kludge That Should Keep Bitcoin Whole (Aaron van Wirdum, June 16, 2017): only some 30 percent of hash power signals for SegWit; SegWit2x pairs SegWit with a hard fork to 2 MB; BIP91 uses its own 80% trigger on bit 4 to activate the existing SegWit deployment", url: "https://bitcoinmagazine.com/technical/bip91-segwit-activation-kludge-should-keep-bitcoin-whole" }
-  - { label: "Mike Belshe - Segwit2x Final Steps (bitcoin-segwit2x list, November 8, 2017, archived): SegWit had only 30% support among miners in May 2017", url: "https://web.archive.org/web/20171108202305/https://lists.linuxfoundation.org/pipermail/bitcoin-segwit2x/2017-November/000685.html" }
+  - { label: "Mike Belshe - Segwit2x Final Steps (bitcoin-segwit2x list, November 8, 2017, archived): SegWit had only 30% support among miners in May 2017", url: "https://www.learnbitcoin.com/archive/lists/segwit2x/t/2017/segwit2x-final-steps#m-e7b6eb8c" }
   - { label: "Bitcoin Magazine - Breaking Down Bitcoin's AsicBoost Scandal (Aaron van Wirdum, April 12, 2017): covert AsicBoost is largely incompatible with SegWit; Bitmain says its chips support AsicBoost but denies using it on the main chain", url: "https://bitcoinmagazine.com/technical/breaking-down-bitcoins-asicboost-scandal" }
   - { label: "BIP 8 - Version bits with lock-in by height: BIP 9's near-unanimous threshold can mean a veto by a small minority of non-signaling hash rate; its lockinontimeout option requires blocks to signal in a deployment's final period", url: "https://github.com/bitcoin/bips/blob/master/bip-0008.mediawiki" }
   - { label: "BIP 148 - Mandatory activation of segwit deployment (from midnight August 1, 2017, blocks that do not signal for SegWit are rejected, until SegWit locks in)", url: "https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki" }
@@ -36,8 +36,8 @@ relatedTerms:
   - soft-fork
 liveWidget: ~
 translationOf: deployment-threshold-soft-fork
-sourceHash: "a4a3c35c3393"
-sourceCommit: "e722e85"
+sourceHash: "7b71966e7673"
+sourceCommit: "b984104"
 sourceUpdated: "2026-10-10"
 translation:
   method: "llm-draft"

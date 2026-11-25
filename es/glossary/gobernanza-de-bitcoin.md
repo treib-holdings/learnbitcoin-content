@@ -18,7 +18,7 @@ keyTakeaways:
 sources:
   - { label: "BIP 101 - Increase maximum block size, by Gavin Andresen (a hard fork from 1 MB to 8 MB that then keeps growing, to activate once 750 of 1,000 blocks signal; status: Closed)", url: "https://github.com/bitcoin/bips/blob/master/bip-0101.mediawiki" }
   - { label: "BIP 109 - Two million byte size limit with sigop and sighash limits, by Gavin Andresen (a hard fork from 1 MB to 2 MB, to activate once 750 of 1,000 blocks signal; status: Closed)", url: "https://github.com/bitcoin/bips/blob/master/bip-0109.mediawiki" }
-  - { label: "Mike Belshe - Segwit2x Final Steps (bitcoin-segwit2x list, November 8, 2017, archived): the Segwit2x organizers suspend the planned 2MB block size increase, writing that they had not built sufficient consensus for it", url: "https://web.archive.org/web/20171108202305/https://lists.linuxfoundation.org/pipermail/bitcoin-segwit2x/2017-November/000685.html" }
+  - { label: "Mike Belshe - Segwit2x Final Steps (bitcoin-segwit2x list, November 8, 2017, archived): the Segwit2x organizers suspend the planned 2MB block size increase, writing that they had not built sufficient consensus for it", url: "https://www.learnbitcoin.com/archive/lists/segwit2x/t/2017/segwit2x-final-steps#m-e7b6eb8c" }
   - { label: "BIP 148 - Mandatory activation of segwit deployment, by Shaolin Fry (from midnight August 1, 2017, by median time past, blocks that do not signal for SegWit on bit 1 are rejected, until SegWit locks in)", url: "https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki" }
   - { label: "mempool.space - block 477,120 (04:46 UTC, July 23, 2017), first block with BIP 91 active; it and every block after it up to SegWit's lock-in on August 9 signal for SegWit on bit 1", url: "https://mempool.space/block/0000000000000000015411ca4b35f7b48ecab015b14de5627b647e262ba0ec40" }
   - { label: "mempool.space - block 481,824 (01:57 UTC, August 24, 2017), the first block under SegWit rules", url: "https://mempool.space/block/0000000000000000001c8018d9cb3b742ef25114f27563e3fc4a1902167f9893" }
@@ -35,8 +35,8 @@ ogImage: "/diagrams/og/bitcoin-governance-vetoes.png"
 ogImageAlt: "Diagrama en forma de pentágono con los cinco grupos de interés de la gobernanza de Bitcoin (Desarrolladores, Mineros, Nodos, Usuarios, Hodlers), cada uno con una leyenda de cómo veta, alrededor de una insignia central que dice CONSENSO. Título: Cinco vetos. Un consenso. Lema: Nadie manda. Todos pueden negarse."
 liveWidget: ~
 translationOf: bitcoin-governance
-sourceHash: "cf8d68068bd6"
-sourceCommit: "659e6f9"
+sourceHash: "bb76eac02de0"
+sourceCommit: "b984104"
 sourceUpdated: "2026-10-10"
 translation:
   method: "llm-draft"
