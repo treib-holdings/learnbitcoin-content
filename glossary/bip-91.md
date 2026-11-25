@@ -19,7 +19,7 @@ sources:
   - { label: "mempool.space - block 479,808 (12:36 UTC, August 9, 2017), first block of SegWit's locked-in period; all 2,016 blocks of the previous period signaled bit 1", url: "https://mempool.space/block/0000000000000000012e6060980c6475a9a8e62a1bf44b76c5d51f707d54522c" }
   - { label: "Bitcoin Core 31 - chainparams.cpp (mainnet SegwitHeight 481824)", url: "https://github.com/bitcoin/bitcoin/blob/31.x/src/kernel/chainparams.cpp" }
   - { label: "mempool.space - block 481,824, the first block under SegWit rules (mined 01:57 UTC, August 24, 2017)", url: "https://mempool.space/block/0000000000000000001c8018d9cb3b742ef25114f27563e3fc4a1902167f9893" }
-  - { label: "Mike Belshe - Segwit2x Final Steps (bitcoin-segwit2x list, November 8, 2017, archived): SegWit had 30% support among miners in May; the 2MB increase is called off for lack of sufficient consensus", url: "https://web.archive.org/web/20171108202305/https://lists.linuxfoundation.org/pipermail/bitcoin-segwit2x/2017-November/000685.html" }
+  - { label: "Mike Belshe - Segwit2x Final Steps (bitcoin-segwit2x list, November 8, 2017, archived): SegWit had 30% support among miners in May; the 2MB increase is called off for lack of sufficient consensus", url: "https://www.learnbitcoin.com/archive/lists/segwit2x/t/2017/segwit2x-final-steps#m-e7b6eb8c" }
 relatedTerms:
   - bip-bitcoin-improvement-proposal
   - bip-9-versionbits
