@@ -3,7 +3,7 @@ title: "Security"
 heading: "What we ship, what we don't, and where third parties grade us."
 description: "How LearnBitcoin secures the site - concrete config, independent grades, honest gaps. Verify it yourself."
 published: "2026-05-23"
-updated: "2026-11-24"
+updated: "2026-11-26"
 ---
 
 Short version: this site holds none of your money and none of your

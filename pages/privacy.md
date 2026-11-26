@@ -3,7 +3,7 @@ title: "Privacy"
 heading: "Here is everything we know about you."
 description: "What data LearnBitcoin collects, who sees it, how long it lives. Short version: almost nothing, unless you subscribe to the newsletter."
 published: "2026-05-14"
-updated: "2026-11-24"
+updated: "2026-11-26"
 ---
 
 **Changed November 17, 2026:** some pages now have "Do it"
