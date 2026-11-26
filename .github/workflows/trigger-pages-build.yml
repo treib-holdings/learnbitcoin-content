@@ -124,7 +124,7 @@ jobs:
                 fi
                 case "$f" in
                   es/glossary/*)     urls+=("$BASE/es/glosario/$slug") ;;
-                  es/rabbit-holes/*) urls+=("$BASE/es/madriguera/$slug") ;;
+                  es/rabbit-holes/*) urls+=("$BASE/es/a-fondo/$slug") ;;
                   es/journey/*)      urls+=("$BASE/es/recorrido/$slug") ;;
                 esac
                 ;;
