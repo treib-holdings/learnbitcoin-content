@@ -24,7 +24,7 @@ sources:
   - { label: "Bitcoin Core - src/policy/policy.cpp (GetDustThreshold and the input size comments)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/policy.cpp" }
   - { label: "Bitcoin Core - src/policy/policy.h (MAX_STANDARD_TX_WEIGHT, DUST_RELAY_TX_FEE)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/policy.h" }
   - { label: "Bitcoin Core source at v31.1 - src/wallet/rpc/spend.cpp line 311: sendtoaddress is the one RPC that asks coin selection to skip dirty coins (the send RPCs confirmed on a regtest node, 2026-10-20)", url: "https://github.com/bitcoin/bitcoin/blob/v31.1/src/wallet/rpc/spend.cpp#L311" }
-  - { label: "Bitcoin Core PR #10637 - Coin Selection with Murch's algorithm (Andrew Chow; merged March 2018, shipped in 0.17.0)", url: "https://github.com/bitcoin/bitcoin/pull/10637" }
+  - { label: "Bitcoin Core PR #10637 - Coin Selection with Murch's algorithm (Ava Chow; merged March 2018, shipped in 0.17.0)", url: "https://github.com/bitcoin/bitcoin/pull/10637" }
   - { label: "Bitcoin Core PR #17331 - Use effective values throughout coin selection (22.0)", url: "https://github.com/bitcoin/bitcoin/pull/17331" }
   - { label: "Bitcoin Core PR #22009 - Decide which coin selection solution to use based on waste metric (23.0)", url: "https://github.com/bitcoin/bitcoin/pull/22009" }
   - { label: "Bitcoin Core PR #17526 - Add Single Random Draw as an additional coin selection algorithm (23.0)", url: "https://github.com/bitcoin/bitcoin/pull/17526" }
@@ -111,7 +111,7 @@ The receipts were not kind to Bitcoin Core. Its policy at the time found an exac
 
 The old wallet, in the caption of the thesis's figure 3.2, "tries three different ways of creating an exact match, 1. with a single UTXO, 2. by combining all UTXOs smaller than the target, and 3. by performing a knapsack algorithm. Only then will it consider sets that would cause a change output." The knapsack aimed for the target plus 0.01 BTC of change, "a magic number with unknown justification for its value", and the wallet chose coins before it knew the fee, then chose again with the fee added to the target, a loop "shown to overestimate fees by up to 30% in the original scenario".
 
-The caveats are the thesis's own, and they bound every number above: one data set, from a service's wallet that saw about two deposits per withdrawal, not a person's; a model with no addresses, so privacy could be argued but not measured; and fees held constant. Andrew Chow implemented Branch and Bound in Bitcoin Core, and it shipped in version 0.17.0 in October 2018.
+The caveats are the thesis's own, and they bound every number above: one data set, from a service's wallet that saw about two deposits per withdrawal, not a person's; a model with no addresses, so privacy could be argued but not measured; and fees held constant. Ava Chow implemented Branch and Bound in Bitcoin Core, and it shipped in version 0.17.0 in October 2018.
 
 ## Four algorithms, one judge
 
