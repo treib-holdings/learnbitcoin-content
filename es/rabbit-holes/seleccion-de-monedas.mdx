@@ -2,8 +2,8 @@
 title: "¿Qué monedas gasta tu billetera?"
 slug: seleccion-de-monedas
 translationOf: coin-selection
-sourceHash: "ad4621e70131"
-sourceCommit: "0bcffea"
+sourceHash: "3e721acba660"
+sourceCommit: "e265340"
 sourceUpdated: "2026-10-22"
 translation:
   method: "llm-draft"
@@ -30,7 +30,7 @@ sources:
   - { label: "Bitcoin Core - src/policy/policy.cpp (GetDustThreshold and the input size comments)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/policy.cpp" }
   - { label: "Bitcoin Core - src/policy/policy.h (MAX_STANDARD_TX_WEIGHT, DUST_RELAY_TX_FEE)", url: "https://github.com/bitcoin/bitcoin/blob/master/src/policy/policy.h" }
   - { label: "Bitcoin Core source at v31.1 - src/wallet/rpc/spend.cpp line 311: sendtoaddress is the one RPC that asks coin selection to skip dirty coins (the send RPCs confirmed on a regtest node, 2026-10-20)", url: "https://github.com/bitcoin/bitcoin/blob/v31.1/src/wallet/rpc/spend.cpp#L311" }
-  - { label: "Bitcoin Core PR #10637 - Coin Selection with Murch's algorithm (Andrew Chow; merged March 2018, shipped in 0.17.0)", url: "https://github.com/bitcoin/bitcoin/pull/10637" }
+  - { label: "Bitcoin Core PR #10637 - Coin Selection with Murch's algorithm (Ava Chow; merged March 2018, shipped in 0.17.0)", url: "https://github.com/bitcoin/bitcoin/pull/10637" }
   - { label: "Bitcoin Core PR #17331 - Use effective values throughout coin selection (22.0)", url: "https://github.com/bitcoin/bitcoin/pull/17331" }
   - { label: "Bitcoin Core PR #22009 - Decide which coin selection solution to use based on waste metric (23.0)", url: "https://github.com/bitcoin/bitcoin/pull/22009" }
   - { label: "Bitcoin Core PR #17526 - Add Single Random Draw as an additional coin selection algorithm (23.0)", url: "https://github.com/bitcoin/bitcoin/pull/17526" }
@@ -117,7 +117,7 @@ Los resultados no fueron amables con Bitcoin Core. Su política de entonces enco
 
 La billetera vieja, según el pie de la figura 3.2 de la tesis, "tries three different ways of creating an exact match, 1. with a single UTXO, 2. by combining all UTXOs smaller than the target, and 3. by performing a knapsack algorithm. Only then will it consider sets that would cause a change output" (prueba tres maneras distintas de crear una coincidencia exacta: 1. con un solo UTXO, 2. combinando todos los UTXOs más pequeños que el objetivo y 3. ejecutando un algoritmo de la mochila; solo entonces considera conjuntos que producirían una salida de cambio). El algoritmo de la mochila apuntaba al objetivo más 0.01 BTC de cambio, "a magic number with unknown justification for its value" (un número mágico cuyo valor no tiene justificación conocida), y la billetera elegía las monedas antes de conocer la comisión, y después volvía a elegir con la comisión sumada al objetivo, un bucle "shown to overestimate fees by up to 30% in the original scenario" (que demostró sobrestimar las comisiones hasta en un 30 por ciento en el escenario original).
 
-Las salvedades son de la propia tesis, y acotan cada cifra de arriba: un solo conjunto de datos, de la billetera de un servicio que recibía unos dos depósitos por cada retiro, no la de una persona; un modelo sin direcciones, así que la privacidad podía argumentarse pero no medirse; y comisiones constantes. Andrew Chow implementó Branch and Bound en Bitcoin Core, y salió en la versión 0.17.0 en octubre de 2018.
+Las salvedades son de la propia tesis, y acotan cada cifra de arriba: un solo conjunto de datos, de la billetera de un servicio que recibía unos dos depósitos por cada retiro, no la de una persona; un modelo sin direcciones, así que la privacidad podía argumentarse pero no medirse; y comisiones constantes. Ava Chow implementó Branch and Bound en Bitcoin Core, y salió en la versión 0.17.0 en octubre de 2018.
 
 ## Cuatro algoritmos, un solo juez
 
