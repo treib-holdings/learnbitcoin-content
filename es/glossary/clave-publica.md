@@ -3,6 +3,7 @@ title: "Clave pública"
 slug: clave-publica
 draft: false
 published: "2026-10-14"
+updated: "2026-11-27"
 shortDefinition: "Se deriva de una clave privada mediante multiplicación en una curva elíptica y sirve para verificar firmas o generar direcciones de BTC."
 keyTakeaways:
   - "Es el núcleo de la criptografía de Bitcoin: verificar firmas hechas con claves privadas"
@@ -23,6 +24,7 @@ sources:
 relatedTerms:
   - address
   - b32-address
+  - new-directions-in-cryptography
   - p2pk-pay-public-key
   - post-quantum-bitcoin
   - shors-algorithm
@@ -32,9 +34,9 @@ sameAs:
   - "https://www.wikidata.org/wiki/Q201339"
 liveWidget: ~
 translationOf: public-key
-sourceHash: "ecf369444d09"
-sourceCommit: "d12964a"
-sourceUpdated: "2026-10-13"
+sourceHash: "726e97494582"
+sourceCommit: "39d2764"
+sourceUpdated: "2026-11-27"
 translation:
   method: "llm-draft"
 ---
@@ -50,4 +52,4 @@ Para qué sirven las claves públicas:
 
 ¿Por qué convertir la clave pública en hash para formar una dirección, en vez de compartir la clave pública sin más? Por dos razones. Primero, las direcciones son mucho más cortas y fáciles de manejar. Segundo, el hash agrega una capa de defensa: si algún día se rompe la criptografía de curva elíptica, por ejemplo con una computadora cuántica lo bastante potente para ejecutar el [algoritmo de Shor](/es/glosario/algoritmo-de-shor), los fondos en direcciones sin gastar siguen a salvo siempre que la clave pública nunca se haya revelado. Las direcciones reutilizadas o ya gastadas están más expuestas, y las salidas Taproot, que llevan su clave en la cadena, no reciben esta protección en absoluto. Consulta [Bitcoin poscuántico](/es/glosario/bitcoin-poscuantico) para el marco de migración.
 
-La asimetría entre la clave privada y la pública (barata en un sentido, imposible en el otro) es la base de todo lo que en Bitcoin tiene que ver con la propiedad criptográfica.
+La asimetría entre la clave privada y la pública (barata en un sentido, imposible en el otro) es la base de todo lo que en Bitcoin tiene que ver con la propiedad criptográfica. La idea de una clave en dos mitades, una publicada y otra guardada en secreto, apareció impresa por primera vez en noviembre de 1976, en [New Directions in Cryptography (en inglés)](/glossary/new-directions-in-cryptography), de Diffie y Hellman.
