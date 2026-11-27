@@ -2,7 +2,7 @@
 title: "Public Key"
 slug: public-key
 draft: false
-updated: "2026-10-13"
+updated: "2026-11-27"
 shortDefinition: "Derived from a private key via elliptic curve multiplication, used to verify signatures or generate BTC addresses."
 keyTakeaways:
   - "Core to Bitcoin's cryptography: verifying signatures derived from private keys"
@@ -19,6 +19,7 @@ sources:
 relatedTerms:
   - address
   - b32-address
+  - new-directions-in-cryptography
   - p2pk-pay-public-key
   - post-quantum-bitcoin
   - shors-algorithm
@@ -40,4 +41,4 @@ What public keys are used for:
 
 Why hash the public key into an address instead of just sharing the public key? Two reasons. First, addresses are much shorter and easier to handle. Second, hashing adds a layer of defense: if elliptic curve cryptography is ever broken (e.g. by a sufficiently powerful quantum computer running [Shor's algorithm](/glossary/shors-algorithm)), funds at unspent addresses remain safe as long as the public key has never been revealed. Reused or already-spent addresses are more exposed, and Taproot outputs, which carry their key on-chain, do not get this protection at all. See [Post-Quantum Bitcoin](/glossary/post-quantum-bitcoin) for the migration framework.
 
-The asymmetry between private and public keys - cheap one way, impossible the other - is the foundation of everything in Bitcoin that involves cryptographic ownership.
+The asymmetry between private and public keys - cheap one way, impossible the other - is the foundation of everything in Bitcoin that involves cryptographic ownership. The idea of a key in two halves, one published and one kept secret, first appeared in print in November 1976, in Diffie and Hellman's [New Directions in Cryptography](/glossary/new-directions-in-cryptography).

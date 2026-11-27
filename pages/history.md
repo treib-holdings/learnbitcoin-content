@@ -1,7 +1,7 @@
 ---
 title: "Bitcoin History: A Sourced Timeline"
 heading: "What happened, and who did it."
-description: "What happened in Bitcoin, and who did it: a timeline of dated events from 2008 to today, each one checked against the source it names."
+description: "What happened in Bitcoin, and who did it: a timeline of dated events, from the ideas it was built on to today, each checked against the source it names."
 ---
 
 Bitcoin's history from the record: the bugs, the forks, the fights and
