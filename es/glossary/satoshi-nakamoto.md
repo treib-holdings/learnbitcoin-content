@@ -3,6 +3,7 @@ title: "Satoshi Nakamoto"
 slug: satoshi-nakamoto
 draft: false
 published: "2026-10-14"
+updated: "2026-11-28"
 shortDefinition: "El creador seudónimo de Bitcoin, que publicó el whitepaper en 2008, minó los primeros bloques y desapareció en 2011."
 keyTakeaways:
   - "Inventó el diseño descentralizado de Bitcoin, basado en la prueba de trabajo"
@@ -24,9 +25,9 @@ sameAs:
   - "https://en.bitcoin.it/wiki/Satoshi_Nakamoto"
 liveWidget: ~
 translationOf: satoshi-nakamoto
-sourceHash: "0bb9e9604f32"
-sourceCommit: "457289d"
-sourceUpdated: "2026-10-09"
+sourceHash: "a83a670e34d9"
+sourceCommit: "cf006fe"
+sourceUpdated: "2026-11-28"
 translation:
   method: "llm-draft"
 ---
