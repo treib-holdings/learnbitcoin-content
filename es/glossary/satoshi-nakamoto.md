@@ -24,8 +24,8 @@ sameAs:
   - "https://en.bitcoin.it/wiki/Satoshi_Nakamoto"
 liveWidget: ~
 translationOf: satoshi-nakamoto
-sourceHash: "33e3185122c4"
-sourceCommit: "94e823a"
+sourceHash: "0bb9e9604f32"
+sourceCommit: "457289d"
 sourceUpdated: "2026-10-09"
 translation:
   method: "llm-draft"
@@ -37,6 +37,6 @@ En abril de 2011 Satoshi envió su último mensaje conocido y desapareció. En l
 
 El investigador Sergio Lerner estima que Satoshi minó cerca de 1.1 millones de BTC en 2009 y a principios de 2010, y en 2019 encontró que el 99.9% de las recompensas de esos bloques seguían sin gastarse. Las monedas más conocidas que Satoshi sí movió son los 10 BTC de la recompensa del bloque 9 que fueron a Hal Finney en el bloque 170, el 12 de enero de 2009. Las monedas intactas son una de las señales más creíbles de que, fuera quien fuera Satoshi, no lo hacía por dinero.
 
-Se han propuesto muchos candidatos (Hal Finney, Nick Szabo, Dorian Nakamoto, Adam Back, Craig Wright y otros). Ninguno se ha confirmado de forma definitiva. Puede que la identidad no se conozca nunca, y eso es una virtud, no un defecto: Bitcoin funciona porque nadie lo controla, y un fundador desconocido garantiza eso mejor que cualquier fundador al que se pudiera citar ante un tribunal, amenazar o cooptar.
+Se han propuesto muchos candidatos. Ninguno se ha confirmado de forma definitiva. Puede que la identidad no se conozca nunca, y eso es una virtud, no un defecto: Bitcoin funciona porque nadie lo controla, y un fundador desconocido garantiza eso mejor que cualquier fundador al que se pudiera citar ante un tribunal, amenazar o cooptar.
 
 El primer colaborador de Satoshi, Hal Finney, fue la primera persona aparte de Satoshi en correr Bitcoin, el destinatario de la primera transacción de bitcoin y el autor del famoso [tuit "Running bitcoin" (en inglés)](/glossary/hal-finneys-running-bitcoin) (corriendo bitcoin) del 10 de enero de 2009, hoy grabado en la cultura de Bitcoin.
