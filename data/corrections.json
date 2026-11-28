@@ -1,5 +1,14 @@
 [
   {
+    "id": "2026-11-28-satoshi-nakamoto",
+    "date": "2026-11-28",
+    "page": "/glossary/satoshi-nakamoto",
+    "title": "Satoshi Nakamoto",
+    "wrong": "The entry listed by name five people who have been proposed as Satoshi Nakamoto.",
+    "fixed": "The entry no longer names anyone as a candidate for Satoshi: naming candidates is a way of guessing, and the entry should not guess. It still says that many candidates have been proposed and that none has been confirmed.",
+    "commit": "457289d"
+  },
+  {
     "id": "2026-11-24-bitcoin-faucet",
     "date": "2026-11-24",
     "page": "/glossary/bitcoin-faucet",
