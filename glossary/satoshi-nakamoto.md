@@ -2,7 +2,7 @@
 title: "Satoshi Nakamoto"
 slug: satoshi-nakamoto
 draft: false
-updated: "2026-10-09"
+updated: "2026-11-28"
 shortDefinition: "The pseudonymous creator of Bitcoin who published the whitepaper in 2008, mined early blocks, and disappeared in 2011."
 keyTakeaways:
   - "Invented Bitcoin's proof-of-work based, decentralized design"
