@@ -31,6 +31,6 @@ In April 2011 Satoshi sent their final known message and disappeared. They had b
 
 Researcher Sergio Lerner estimates that Satoshi mined close to 1.1 million BTC in 2009 and early 2010, and in 2019 he found 99.9% of those blocks' rewards unspent. The best-known coins Satoshi did move are the 10 BTC from block 9's reward that went to Hal Finney in block 170 on January 12, 2009. The untouched coins are one of the more credible signals that whoever Satoshi was, they were not in it for the money.
 
-Many candidates have been proposed (Hal Finney, Nick Szabo, Dorian Nakamoto, Adam Back, Craig Wright, others). None have been definitively confirmed. The identity may never be known, and that's a feature: Bitcoin works because no one controls it, and an unknown founder is a stronger guarantee of that than any founder who could be subpoenaed, threatened, or co-opted.
+Many candidates have been proposed. None have been definitively confirmed. The identity may never be known, and that's a feature: Bitcoin works because no one controls it, and an unknown founder is a stronger guarantee of that than any founder who could be subpoenaed, threatened, or co-opted.
 
 Satoshi's earliest collaborator [Hal Finney](/glossary/hal-finneys-running-bitcoin) was the first person besides Satoshi to run Bitcoin, the recipient of the first BTC transaction, and the author of the famous "Running bitcoin" tweet on January 10, 2009 - now etched into Bitcoin culture.
